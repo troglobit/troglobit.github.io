@@ -1,0 +1,59 @@
+---
+layout: post
+title: "Finit v1.8"
+date: 2013-06-08 00:04
+comments: true
+categories:
+- Projects
+- Finit 
+---
+
+It's been a long time coming, but here it finally is,
+[Finit](/finit.html)
+[v1.8](ftp://troglobit.com/finit/finit-1.8.tar.xz)!  The goodies we've
+been waiting for are:
+
+   * Runlevels
+   * Multiple TTYs
+   * One-shot tasks
+
+Let's start off with tasks.  Tasks are one-shot commands, with a
+syntax like service directives, but are not monitored and respawned
+like services.  Tasks are started in parallel, just like services.
+For some cases, like the system bootstrap phase, some tasks may need
+to be executed in sequence, and for that purpose there also exists a
+run command.  Run commands are executed in the order listed in
+finit.conf and will run until completion before continuing with the
+next task or service.
+
+Multiple TTYs is another neat feature.  Similar to services many TTYs
+can be started and automatically be respawned when a user logs out.
+For embedded targets wanting to save CPU cycles usually one TTY is the
+system console.  Use the console command to point to a defined TTY to
+activate "Press any key to activate this console."
+
+Finally, runlevels!  This is the key feature in this release of Finit.
+Adding the flexibility from SysV init, without the complexity.  This
+is one of the key points of Finit -- it should be simple!
+
+   finit.conf:
+     service [2345] /usr/sbin/sshd -D -- OpenSSH Daemon
+
+This command tells Finit that the OpenSSH daemon should only run in
+runlevel 2-5.  Finit will also respawn sshd if it should crash, just
+like before.
+
+Runlevels are needed in use-cases in many embedded devices.  E.g.,
+bootstrap, upgrading, and regular operation.  It is completely up to
+the system administrator to setup the runlevels of the product or
+installation.  At boot runlevel 'S' runs, well before any networking
+is up.  This is used to to one-time probing and setup of the
+system. When done the runlevel defined in finit.conf, or the default
+2, is started.
+
+See the
+[README](https://github.com/troglobit/finit/blob/master/README.rst)
+for more information, or the code for the full details.
+
+
+

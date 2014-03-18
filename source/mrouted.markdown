@@ -1,0 +1,69 @@
+---
+layout: page
+title: "mrouted | The original multicast routing daemon"
+sharing: true
+footer: true
+date: 2013-06-07 20:54
+comments: false
+---
+
+{% img right /images/dvmrp.png 300 229 %}
+
+mrouted is an implementation of the IPv4 DVMRP multicast routing
+protocol, [RFC 1075](http://tools.ietf.org/html/rfc1075).  It is
+capable of turning a UNIX workstation, or an embedded Linux device,
+into a multicast router with tunnelling support, in order to cross
+non-multicast-aware routers.
+
+DVMRP is a distance vector based protocol, derived from RIP, suitable
+for closely located multicast users in smaller networks.  It simply
+floods all multicast streams to all routers, i.e. implicit join.  This
+is also known as "flood and prune" since you can opt out from groups
+you do not want.  For a detailed explanation of the protocol, see
+[RFC 1075](http://tools.ietf.org/html/rfc1075).  For larger networks,
+with sparsely located nodes, you might want to look into
+[pimd](/pimd.html), and for static multicast routing
+[smcroute](/smcroute.html) may be used.
+
+The mrouted routing daemon was developed by Steve Deering, Ajit
+Thyagarajan, Bill Fenner, David Thaler and Daniel Zappala. With
+contributions by many others.
+
+The last release by Mr. Fenner was 3.9-beta3 on April 26 1999 and
+mrouted has been in "beta" status since then. Several prominent UNIX
+operating systems, such as AIX, Solaris,
+[HP-UX](http://docs.hp.com/en/B2355-90777/ch01s01.html), BSD/OS,
+NetBSD, FreeBSD, OpenBSD as well as most GNU/Linux based distributions
+have used that beta as a de facto stable release, with (mostly) minor
+patches for system adaptations. Over time however many dropped
+support, but Debian and OpenBSD kept it under their wings.
+
+In March 2003 OpenBSD, led by the fearless Theo de Raadt,
+[managed to convince Stanford](http://www.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/LICENSE)
+to release mrouted under a
+[fully free license](https://github.com/troglobit/mrouted/blob/master/LICENSE),
+[the BSD license](http://en.wikipedia.org/wiki/BSD_licenses).  In
+February 2005
+[Debian nevertheless dropped mrouted](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=288112)
+as an "obsolete protocol".
+
+For a long time the OpenBSD team remained the sole guardian of this
+project.
+
+In 2010 this effort of bringing mrouted back to life was started. The
+3.9.x stable series represent the first releases in over a
+decade. Patches from all over the Internet, including OpenBSD, have
+been integrated. Support for Debian/Ubuntu is included in the tree.
+
+Issue tracker and GIT repository available at GitHub:
+
+   * [Repository](http://github.com/troglobit/mrouted)
+   * [ChangeLog](https://github.com/troglobit/mrouted/blob/master/ChangeLog) 
+   * [Issue Tracker](http://github.com/troglobit/mrouted/issues)
+   * [mrouted-3.9.5.tar.bz2](ftp://troglobit.com/mrouted/mrouted-3.9.5.tar.bz2),
+     [MD5](ftp://troglobit.com/mrouted/mrouted-3.9.5.tar.bz2.md5)
+
+See also the [Free(code) page](http://freecode.com/projects/mrouted).
+
+Problems?  See the [multicast howto](/multicast-howto.html)
+
