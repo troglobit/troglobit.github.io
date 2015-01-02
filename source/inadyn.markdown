@@ -3,19 +3,71 @@ layout: page
 title: "Inadyn | Small and Simple DDNS Client"
 sharing: true
 footer: true
-date: 2013-11-27 15:17
+date: 2014-10-15 22:04
 comments: false
 ---
 
-{% img right /images/inadyn-parachute.png 208 257 %}
+<a href="https://github.com/troglobit/inadyn"><img style="position: absolute; top: 0; right: 0; border: none; box-shadow: none;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
 
-Inadyn is a small and simple DDNS client used in many Open Source
-routers and gateways.  It automates the task of keeping a DNS record
-up to date with a user's dynamic IP address.
+{% img right /images/dyndns-multiple-sites.png 500 300 %}
+
+Inadyn is a small and simple
+[DDNS](http://en.wikipedia.org/wiki/Dynamic_DNS) client with HTTPS
+support, both GnuTLS and OpenSSL are supported.  Inadyn is commonly
+available in many GNU/Linux distributions, used in off-the-shelf
+routers and Internet gateways to automate the task of keeping your DNS
+record up to date with any IP address changes from your
+[ISP](http://en.wikipedia.org/wiki/ISP).  It can also be used in
+installations with redundant (backup) connections to the Internet.
+
+The following DDNS providers are supported natively, other providers,
+like http://twoDNS.de for instance, can be supported using the generic
+DDNS plugin.  See the
+[README](https://github.com/troglobit/inadyn/blob/master/README.md),
+or inadyn.conf(5) found in the tarball, for configuration examples.
+
+* http://www.dyndns.org
+* http://freedns.afraid.org
+* http://www.zoneedit.com
+* http://www.no-ip.com
+* http://www.easydns.com
+* http://www.tzo.com
+* http://www.3322.org
+* http://www.dnsomatic.com
+* http://www.tunnelbroker.net
+* http://dns.he.net/
+* http://www.dynsip.org
+* http://www.sitelutions.com
+* http://www.dnsexit.com
+* http://www.changeip.com
+* http://www.zerigo.com
+* http://www.dhis.org
+* https://nsupdate.info
+* http://duckdns.org
+* https://www.loopia.com
+* https://www.namecheap.com
+
+Issue tracker and GIT repository available at GitHub:
+
+* [Repository](http://github.com/troglobit/inadyn)
+* [NEWS](https://github.com/troglobit/inadyn/blob/master/NEWS.md)
+* [README](https://github.com/troglobit/inadyn/blob/master/README.md)
+* [Issue Tracker](http://github.com/troglobit/inadyn/issues)
+* [inadyn-1.99.12.tar.xz](ftp://troglobit.com/inadyn/inadyn-1.99.12.tar.xz),
+  [MD5](ftp://troglobit.com/inadyn/inadyn-1.99.12.tar.xz.md5)
+  [GPG Sign](ftp://troglobit.com/inadyn/inadyn-1.99.12.tar.xz.asc)
+
+See also the [OpenHub page](https://www.openhub.net/p/inadyn/), or the
+dormant [Free(code) page](http://freecode.com/projects/inadyn).
+
+
+Background
+----------
 
 This is the continuation of the
-[original INADYN](http://www.inatech.eu/inadyn/) by Narcis Ilisei.
-Included are relavant fixes and additions from the following forks:
+[original INADYN](http://www.inatech.eu/inadyn/) project by Narcis
+Ilisei.  Included are relavant fixes and additions from the following
+forks:
 
 * ["New" upstream](https://sourceforge.net/projects/inadyn/) by
   [Christoph Brill](http://www.egore911.de/)
@@ -24,18 +76,11 @@ Included are relavant fixes and additions from the following forks:
   [Vampik.ru](http://vampik.ru/), maintained by
   [Andrey Tikhomirov](https://github.com/vampik/inadyn)
 
+The [inadyn-mt](http://sourceforge.net/projects/inadyn-mt/) project is
+another fork from the original INADYN.  It maintains support for
+Windows and adds many new features and fixes, not just for Windows.
+
 The goal of this project is to entirely focus on *BSD and various
 embedded Linux platforms.  All sane patches addressing this target
 audience are welcome!
-
-Issue tracker and GIT repository available at GitHub:
-
-* [Repository](http://github.com/troglobit/inadyn)
-* [NEWS](https://github.com/troglobit/inadyn/blob/master/NEWS.md)
-* [README](https://github.com/troglobit/inadyn/blob/master/README.md)
-* [Issue Tracker](http://github.com/troglobit/inadyn/issues)
-* [inadyn-1.99.6.tar.bz2](ftp://troglobit.com/inadyn/inadyn-1.99.6.tar.bz2),
-  [MD5](ftp://troglobit.com/inadyn/inadyn-1.99.6.tar.bz2.md5)
-
-See also the [Free(code) page](http://freecode.com/projects/inadyn).
 
