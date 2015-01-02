@@ -3,11 +3,12 @@
 # ----------------------- #
 
 url: http://troglobit.com
-title: Troglobit|COM
-subtitle: Freedom, Software, Hacking ...
+title: Troglobit
+#subtitle: En bit av universum ...
+subtitle: '"Elegance is not a dispensable luxury" &mdash; Edsger Wybe Dijkstra'
 author: Joachim Nilsson
 simple_search: http://google.com/search
-description: UNIX, Linux, Networking, Open Source, Tech, Tools & Trivia
+description: UNIX, Linux, Networking, Multicast, Open Source, Tech, Tools & Trivia
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -64,7 +65,7 @@ github_show_profile_link: true
 github_skip_forks: true
 
 # Twitter
-twitter_user: troglobit_en
+twitter_user: troglobit
 twitter_tweet_count: 4
 twitter_show_replies: false
 twitter_follow_button: true
