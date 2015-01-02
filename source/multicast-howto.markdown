@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Multicast HowTo"
-date: 2013-07-09 21:00
+date: 2015-01-02 12:38
 comments: true
 categories:
 - Multicast
@@ -9,6 +9,34 @@ categories:
 - mrouted
 - SMCRoute
 ---
+
+These days I do most of my multicast testing with
+[CORE](http://www.nrl.navy.mil/itd/ncs/products/core), which is
+readily available i Debian/Ubuntu as simple as
+
+    sudo apt-get install core-gui
+
+CORE is extremely simple to get started with.
+
+   1. Fire up the GUI
+   2. Drag and drop a few router icons to the grid
+   3. Connect them
+   4. *BOOM* you now have IP addresses automatically assigned!
+   5. Press the Play button -- routers are now starting up
+
+Play around a bit to try it out, it's awesome!  I usually start pimd,
+mrouted, and smcroute manually with a script.  The host file system is
+reachable from each router in CORE, even though they are isolated and
+have their own
+[network namespaces](http://blog.scottlowe.org/2013/09/04/introducing-linux-network-namespaces/).
+
+For more info on network simulation, like the equally awesome
+[GNS3](http://www.gns3.com/) for instance, see
+[Brian Linkletter's Reviews](http://www.brianlinkletter.com/open-source-network-simulators/)
+   
+
+Roll Your Own Cloud
+-------------------
 
 The below setup is done using four Ubuntu 12.04 LTS virtual machines
 running the linux-virtual kernel package.  In the HowTo I mention both
@@ -102,7 +130,7 @@ The desired output from iperf is as follows:
 To achieve the same using [SMCRoute](/smcroute.html) you need to setup
 the multicast routing rules manually.  The by far easiest way to do
 this is to update `/etc/smcroute.conf` and and start/restart smcroute,
-or send SIGHUP to an already running daemon.  The below example makes
+or send `SIGHUP` to an already running daemon.  The below example makes
 use of the source-less (*,G) approach, since we in our limited setup
 have full control over all multicast senders.  There is a slight setup
 cost associated with this: the time it takes the kernel to notify
@@ -110,16 +138,18 @@ SMCRoute about a new source and before the the actual multicast route
 is written to the kernel.  In most cases this is acceptable.
 
 In `smcroute.conf` on R2:
+
     mgroup from eth0 group 225.1.2.3
     mroute from eth0 group 225.1.2.3 to eth1
 
 In `smcroute.conf` on R3:
+
     mgroup from eth0 group 225.1.2.3
     mroute from eth0 group 225.1.2.3 to eth1
 
-Now, start smcroute on each of R2 and R4 and then proceed to start
+Now, start `smcroute` on each of R2 and R4 and then proceed to start
 iperf on R4 and R1, as described above. You should get the same result
-as with mrouted and pimd.
+as with `mrouted` and `pimd`.
 
 That's it. Have fun!
 
@@ -127,11 +157,11 @@ FAQ
 ---
 
 * It doesn't work? -- Check the TTL.
-* It doesn't work? -- Check the TTL!
-* It doesn't work? -- CHECK THE TTL!
 * Why does the TTL in multicast default to 1? -- Because multicast is
   classified as broadcast, which inherently is dangerous.  Without
   proper limitation, like switches with support for IGMP Snooping,
   multicast IS broadcast.
-* It doesn't work? -- Check your network, maybe a switch between the
-  sender and the receiver doesn't properly support IGMP Snooping.
+* It doesn't work? -- Check your network topology, maybe a switch
+  between the sender and the receiver doesn't properly support IGMP
+  snooping.  For virtual/cloud setups, see above for disabling IGMP
+  snooping entirely in the Linux kernel.
