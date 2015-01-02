@@ -9,9 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="The below setup is done using four Ubuntu 12.04 LTS virtual machines
-running the linux-virtual kernel package. In the HowTo I mention both
-pimd and &hellip;">
+  <meta name="description" content="These days I do most of my multicast testing with
+CORE, which is
+readily available i Debian/Ubuntu as simple as sudo apt-get install core-gui CORE is &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +20,7 @@ pimd and &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://troglobit.github.io/blog/2013/07/09/multicast-howto/">
+  <link rel="canonical" href="http://troglobit.github.io/multicast-howto.html">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -93,14 +93,44 @@ pimd and &hellip;">
   
 
 
-<time datetime="2013-07-09T21:00:00+02:00" pubdate data-updated="true"></time>
+<time datetime="2015-01-02T12:38:00+01:00" pubdate data-updated="true"></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>The below setup is done using four Ubuntu 12.04 LTS virtual machines
+<div class="entry-content"><p>These days I do most of my multicast testing with
+<a href="http://www.nrl.navy.mil/itd/ncs/products/core">CORE</a>, which is
+readily available i Debian/Ubuntu as simple as</p>
+
+<pre><code>sudo apt-get install core-gui
+</code></pre>
+
+<p>CORE is extremely simple to get started with.</p>
+
+<ol>
+<li>. Fire up the GUI</li>
+<li>. Drag and drop a few router icons to the grid</li>
+<li>. Connect them</li>
+<li>. <em>BOOM</em> you now have IP addresses automatically assigned!</li>
+<li>. Press the Play button &ndash; routers are now starting up</li>
+</ol>
+
+
+<p>Play around a bit to try it out, it&rsquo;s awesome!  I usually start pimd,
+mrouted, and smcroute manually with a script.  The host file system is
+reachable from each router in CORE, even though they are isolated and
+have their own
+<a href="http://blog.scottlowe.org/2013/09/04/introducing-linux-network-namespaces/">network namespaces</a>.</p>
+
+<p>For more info on network simulation, like the equally awesome
+<a href="http://www.gns3.com/">GNS3</a> for instance, see
+<a href="http://www.brianlinkletter.com/open-source-network-simulators/">Brian Linkletter&rsquo;s Reviews</a></p>
+
+<h2>Roll Your Own Cloud</h2>
+
+<p>The below setup is done using four Ubuntu 12.04 LTS virtual machines
 running the linux-virtual kernel package.  In the HowTo I mention both
 <a href="/pimd.html">pimd</a> and <a href="/mrouted.html">mrouted</a>, since they work
 out-of-the-box w/o any config changes, but you could just as easily
@@ -200,24 +230,28 @@ UDP buffer size:  160 KByte (default)
 <p>To achieve the same using <a href="/smcroute.html">SMCRoute</a> you need to setup
 the multicast routing rules manually.  The by far easiest way to do
 this is to update <code>/etc/smcroute.conf</code> and and start/restart smcroute,
-or send SIGHUP to an already running daemon.  The below example makes
+or send <code>SIGHUP</code> to an already running daemon.  The below example makes
 use of the source-less (*,G) approach, since we in our limited setup
 have full control over all multicast senders.  There is a slight setup
 cost associated with this: the time it takes the kernel to notify
 SMCRoute about a new source and before the the actual multicast route
 is written to the kernel.  In most cases this is acceptable.</p>
 
-<p>In <code>smcroute.conf</code> on R2:
-    mgroup from eth0 group 225.1.2.3
-    mroute from eth0 group 225.1.2.3 to eth1</p>
+<p>In <code>smcroute.conf</code> on R2:</p>
 
-<p>In <code>smcroute.conf</code> on R3:
-    mgroup from eth0 group 225.1.2.3
-    mroute from eth0 group 225.1.2.3 to eth1</p>
+<pre><code>mgroup from eth0 group 225.1.2.3
+mroute from eth0 group 225.1.2.3 to eth1
+</code></pre>
 
-<p>Now, start smcroute on each of R2 and R4 and then proceed to start
+<p>In <code>smcroute.conf</code> on R3:</p>
+
+<pre><code>mgroup from eth0 group 225.1.2.3
+mroute from eth0 group 225.1.2.3 to eth1
+</code></pre>
+
+<p>Now, start <code>smcroute</code> on each of R2 and R4 and then proceed to start
 iperf on R4 and R1, as described above. You should get the same result
-as with mrouted and pimd.</p>
+as with <code>mrouted</code> and <code>pimd</code>.</p>
 
 <p>That&rsquo;s it. Have fun!</p>
 
@@ -225,14 +259,14 @@ as with mrouted and pimd.</p>
 
 <ul>
 <li>It doesn&rsquo;t work? &ndash; Check the TTL.</li>
-<li>It doesn&rsquo;t work? &ndash; Check the TTL!</li>
-<li>It doesn&rsquo;t work? &ndash; CHECK THE TTL!</li>
 <li>Why does the TTL in multicast default to 1? &ndash; Because multicast is
 classified as broadcast, which inherently is dangerous.  Without
 proper limitation, like switches with support for IGMP Snooping,
 multicast IS broadcast.</li>
-<li>It doesn&rsquo;t work? &ndash; Check your network, maybe a switch between the
-sender and the receiver doesn&rsquo;t properly support IGMP Snooping.</li>
+<li>It doesn&rsquo;t work? &ndash; Check your network topology, maybe a switch
+between the sender and the receiver doesn&rsquo;t properly support IGMP
+snooping.  For virtual/cloud setups, see above for disabling IGMP
+snooping entirely in the Linux kernel.</li>
 </ul>
 
 </div>
@@ -257,12 +291,12 @@ sender and the receiver doesn&rsquo;t properly support IGMP Snooping.</li>
   
 
 
-<time datetime="2013-07-09T21:00:00+02:00" pubdate data-updated="true"></time>
+<time datetime="2015-01-02T12:38:00+01:00" pubdate data-updated="true"></time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/mrouted/'>mrouted</a>, <a class='category' href='/blog/categories/multicast/'>multicast</a>, <a class='category' href='/blog/categories/pimd/'>pimd</a>, <a class='category' href='/blog/categories/smcroute/'>smcroute</a>
+    <a class='category' href='/blog/categories/multicast/'>Multicast</a>, <a class='category' href='/blog/categories/smcroute/'>SMCRoute</a>, <a class='category' href='/blog/categories/mrouted/'>mrouted</a>, <a class='category' href='/blog/categories/pimd/'>pimd</a>
   
 </span>
 
@@ -271,7 +305,7 @@ sender and the receiver doesn&rsquo;t properly support IGMP Snooping.</li>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://troglobit.github.io/blog/2013/07/09/multicast-howto/" data-via="troglobit" data-counturl="http://troglobit.github.io/blog/2013/07/09/multicast-howto/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://troglobit.github.io/multicast-howto.html" data-via="troglobit" data-counturl="http://troglobit.github.io/multicast-howto.html" >Tweet</a>
   
   
   
@@ -280,10 +314,6 @@ sender and the receiver doesn&rsquo;t properly support IGMP Snooping.</li>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/07/05/file-system-pass-through-in-kvm-slash-qemu-slash-libvirt/" title="Previous Post: File System Pass-Through in KVM/Qemu/libvirt">&laquo; File System Pass-Through in KVM/Qemu/libvirt</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2013/07/10/net-install-centos/" title="Next Post: Net Install CentOS">Net Install CentOS &raquo;</a>
       
     </p>
   </footer>
