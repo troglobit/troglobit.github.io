@@ -21,7 +21,7 @@ following packages have new releases, or can expect new releases soon:
 
    * [Minix Editline](/editline.html) v1.14.1
    * [SMCRoute](/smcroute.html) v1.99.1 -- There's even a v2.0.0 being
-     planned, with [libev](http://software.schmorp.de/pkg/libev.html) support
+     planned, with the core of SMCRoute available as a library
    * [mrouted](/mrouted.html) minor cleanup an sync with
      [OpenBSD](http://www.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/)
    * [pimd](/pimd.html) cleanups and bug fixes, needs testing
