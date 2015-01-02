@@ -10,6 +10,8 @@ Another release today is the venerable [mrouted](/mrouted.html), now
 available as
 [v3.9.7 on GitHub](https://github.com/troglobit/mrouted/releases/tag/3.9.7).
 
+<!-- more -->
+
 Changes & New Features
 ----------------------
 - SNMP Support removed.  It never compiled and would have likely

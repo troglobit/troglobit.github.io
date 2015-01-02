@@ -14,6 +14,8 @@ As a developer the answer to most such questions is usually; to
 scratch an itch.  For a very long time I've looked for a really simple
 FTP server that just works, out of the box!
 
+<!-- more -->
+
 My alternatives on GNU/Linux distributions have been: several variants
 of the original [MIT/Athena ftpd](https://github.com/mit-athena/ftpd),
 [ProFTPD](http://www.proftpd.org/),

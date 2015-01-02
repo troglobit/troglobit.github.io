@@ -28,6 +28,8 @@ based virtual testbed and a few setups using Linux' `netns` feature in
 [CORE](http://www.nrl.navy.mil/itd/ncs/products/core) -- awesome
 little proggy! :-)
 
+<!-- more -->
+
 ### Changes & New Features
 - Add IP fragmentation support for PIM register messages,
   by Michael Fine of Cumulus Networks

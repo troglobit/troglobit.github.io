@@ -27,6 +27,8 @@ For users of Ubuntu <= 13.04, watch out for the
 [libvirt bug](https://bugs.launchpad.net/ubuntu/+source/libvirt/+bug/943680)
 that I know many people run into, myself included.
 
+<!-- more -->
+
 First of all, I could never really master the beast called AppArmor in
 Ubuntu.  Once I got the hang of the files to edit, the order to make
 changes and the syntax of its profile files I think I tried every

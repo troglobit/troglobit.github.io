@@ -19,6 +19,8 @@ know what architects do for a living, they draw houses, design stuff
 and drive SAAB's.  Much like dentists.  The prefix "software" however
 does confuse people.
 
+<!-- more -->
+
 {% img right /images/programming-in-a-nutshell.gif %}
 
 In reality I'm

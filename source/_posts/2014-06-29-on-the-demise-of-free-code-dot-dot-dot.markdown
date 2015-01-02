@@ -27,6 +27,8 @@ SourceForge.  I went there to publicize my own small creations, learn
 about other similar projects and get a quick feedback on recent
 changes of new releases to projects I was interested in.
 
+<!-- more -->
+
 There exist no real replacement to free(code), except perhaps for
 [Open Hub](https://www.openhub.net/), previously known as
 [Ohloh](http://www.ohloh.net).  The

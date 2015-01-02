@@ -23,6 +23,8 @@ to programming and event libraries like
 [libev](http://software.schmorp.de/pkg/libev.html).  Up until that
 point the silver bullet everyone was using was ... Threads.
 
+<!-- more -->
+
 I don't really know when it all started, maybe it was the Linux
 revolution, the first NPTL release with GLIBC, Java or Solaris.
 Nevertheless, from my point of view it was sometime in the mid 90's
