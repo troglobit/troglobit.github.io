@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Inadyn | Small and Simple DDNS Client - Troglobit</title>
+  <meta name="author" content="Joachim Nilsson">
+
+  
+  <meta name="description" content="Inadyn | Small and Simple DDNS Client Inadyn is a small and simple
+DDNS client with HTTPS
+support, both GnuTLS and OpenSSL are supported. Inadyn is &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://troglobit.github.io/inadyn.html">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Troglobit" type="application/atom+xml">
+  <link href="/favicon.png" rel="icon">
+<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Troglobit</a></h1>
+  
+    <h2>&#8220;Elegance is not a dispensable luxury&#8221; &mdash; Edsger Wybe Dijkstra</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:troglobit.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/about">About</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/finit.html">Finit</a></li>
+  <li><a href="/inadyn.html">Inadyn</a></li>
+  <li><a href="/smcroute.html">SMCRoute</a></li>
+  <li><a href="/mrouted.html">mrouted</a></li>
+  <li><a href="/pimd.html">pimd</a></li>
+  <li><a href="/uftpd.html">uftpd</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article role="article">
+  
+  <header>
+    <h1 class="entry-title">Inadyn | Small and Simple DDNS Client</h1>
+    <p class="meta">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-10-15T22:04:00+02:00" pubdate data-updated="true"></time></p>
+  </header>
+  
+  <p><a href="https://github.com/troglobit/inadyn"><img style="position: absolute; top: 0; right: 0; border: none; box-shadow: none;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a></p>
+
+<p><img class="right" src="/images/dyndns-multiple-sites.png" width="500" height="300"></p>
+
+<p>Inadyn is a small and simple
+<a href="http://en.wikipedia.org/wiki/Dynamic_DNS">DDNS</a> client with HTTPS
+support, both GnuTLS and OpenSSL are supported.  Inadyn is commonly
+available in many GNU/Linux distributions, used in off-the-shelf
+routers and Internet gateways to automate the task of keeping your DNS
+record up to date with any IP address changes from your
+<a href="http://en.wikipedia.org/wiki/ISP">ISP</a>.  It can also be used in
+installations with redundant (backup) connections to the Internet.</p>
+
+<p>The following DDNS providers are supported natively, other providers,
+like <a href="http://twoDNS.de">http://twoDNS.de</a> for instance, can be supported using the generic
+DDNS plugin.  See the
+<a href="https://github.com/troglobit/inadyn/blob/master/README.md">README</a>,
+or inadyn.conf(5) found in the tarball, for configuration examples.</p>
+
+<ul>
+<li><a href="http://www.dyndns.org">http://www.dyndns.org</a></li>
+<li><a href="http://freedns.afraid.org">http://freedns.afraid.org</a></li>
+<li><a href="http://www.zoneedit.com">http://www.zoneedit.com</a></li>
+<li><a href="http://www.no-ip.com">http://www.no-ip.com</a></li>
+<li><a href="http://www.easydns.com">http://www.easydns.com</a></li>
+<li><a href="http://www.tzo.com">http://www.tzo.com</a></li>
+<li><a href="http://www.3322.org">http://www.3322.org</a></li>
+<li><a href="http://www.dnsomatic.com">http://www.dnsomatic.com</a></li>
+<li><a href="http://www.tunnelbroker.net">http://www.tunnelbroker.net</a></li>
+<li><a href="http://dns.he.net/">http://dns.he.net/</a></li>
+<li><a href="http://www.dynsip.org">http://www.dynsip.org</a></li>
+<li><a href="http://www.sitelutions.com">http://www.sitelutions.com</a></li>
+<li><a href="http://www.dnsexit.com">http://www.dnsexit.com</a></li>
+<li><a href="http://www.changeip.com">http://www.changeip.com</a></li>
+<li><a href="http://www.zerigo.com">http://www.zerigo.com</a></li>
+<li><a href="http://www.dhis.org">http://www.dhis.org</a></li>
+<li><a href="https://nsupdate.info">https://nsupdate.info</a></li>
+<li><a href="http://duckdns.org">http://duckdns.org</a></li>
+<li><a href="https://www.loopia.com">https://www.loopia.com</a></li>
+<li><a href="https://www.namecheap.com">https://www.namecheap.com</a></li>
+</ul>
+
+
+<p>Issue tracker and GIT repository available at GitHub:</p>
+
+<ul>
+<li><a href="http://github.com/troglobit/inadyn">Repository</a></li>
+<li><a href="https://github.com/troglobit/inadyn/blob/master/NEWS.md">NEWS</a></li>
+<li><a href="https://github.com/troglobit/inadyn/blob/master/README.md">README</a></li>
+<li><a href="http://github.com/troglobit/inadyn/issues">Issue Tracker</a></li>
+<li><a href="ftp://troglobit.com/inadyn/inadyn-1.99.12.tar.xz">inadyn-1.99.12.tar.xz</a>,
+<a href="ftp://troglobit.com/inadyn/inadyn-1.99.12.tar.xz.md5">MD5</a>
+<a href="ftp://troglobit.com/inadyn/inadyn-1.99.12.tar.xz.asc">GPG Sign</a></li>
+</ul>
+
+
+<p>See also the <a href="https://www.openhub.net/p/inadyn/">OpenHub page</a>, or the
+dormant <a href="http://freecode.com/projects/inadyn">Free(code) page</a>.</p>
+
+<h2>Background</h2>
+
+<p>This is the continuation of the
+<a href="http://www.inatech.eu/inadyn/">original INADYN</a> project by Narcis
+Ilisei.  Included are relavant fixes and additions from the following
+forks:</p>
+
+<ul>
+<li><a href="https://sourceforge.net/projects/inadyn/">&ldquo;New&rdquo; upstream</a> by
+<a href="http://www.egore911.de/">Christoph Brill</a></li>
+<li><a href="https://sourceforge.net/projects/inadyn-advanced/">Inadyn-advanced</a></li>
+<li><a href="https://github.com/vampik/inadyn">Inadyn extended</a> by
+<a href="http://vampik.ru/">Vampik.ru</a>, maintained by
+<a href="https://github.com/vampik/inadyn">Andrey Tikhomirov</a></li>
+</ul>
+
+
+<p>The <a href="http://sourceforge.net/projects/inadyn-mt/">inadyn-mt</a> project is
+another fork from the original INADYN.  It maintains support for
+Windows and adds many new features and fixes, not just for Windows.</p>
+
+<p>The goal of this project is to entirely focus on *BSD and various
+embedded Linux platforms.  All sane patches addressing this target
+audience are welcome!</p>
+
+  
+    <footer>
+      <p class="meta">
+        
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-10-15T22:04:00+02:00" pubdate data-updated="true"></time>
+        
+      </p>
+      
+        <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://troglobit.github.io/inadyn.html" data-via="troglobit" data-counturl="http://troglobit.github.io/inadyn.html" >Tweet</a>
+  
+  
+  
+</div>
+
+      
+    </footer>
+  
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Projects</h1>
+  <ul>
+    <li><a href="/finit.html">Fast Init Replacement</a></li>
+    <li><a href="/uftpd.html">Micro TFTP/FTP Daemon</a></li>
+    <li><a href="/tetris.html">Micro Tetris&trade;</a></li>
+    <li><a href="/snake.html">Micro Snake</a></li>
+    <li><a href="/editline.html">Minix Editline</a></li>
+    <li><a href="/inadyn.html">Inadyn DDNS Client</a></li>
+    <li><a href="/multicast-howto.html">Multicast HowTo</a></li>
+    <li><a href="/mrouted.html">The Original Multicast Routing Daemon</a></li>
+    <li><a href="/pimd.html">The Original PIM-SM Daemon</a></li>
+    <li><a href="/smcroute.html">SMCRoute Static Multicast Routing</a></li>
+  </ul>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/12/28/mrouted-v3-dot-9-7/">mrouted v3.9.7</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/28/last-release-of-pimd/">pimd v2.2.0 &#8211; The last release of pimd?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/21/tftp-blocksize-negotiation-in-uftpd-v1-dot-7/">TFTP blocksize negotiation in uftpd v1.7</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/">HowTo Add Multicast Routing Support to the FreeBSD kernel</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/">GnuTLS support in Inadyn and fixes to uftpd</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/troglobit">@troglobit</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'troglobit',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+<section>
+  <h1>Latest Tweets</h1>
+
+  <a class="twitter-timeline" data-dnt="true"
+     href="https://twitter.com/troglobit"
+     data-widget-id="365667052100415488">Tweets by @troglobit</a>
+  <script>!function(d,s,id){var
+    js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</section>
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Joachim Nilsson -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

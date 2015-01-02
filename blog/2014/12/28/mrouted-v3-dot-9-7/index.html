@@ -1,0 +1,307 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>mrouted v3.9.7 - Troglobit</title>
+  <meta name="author" content="Joachim Nilsson">
+
+  
+  <meta name="description" content="Another release today is the venerable mrouted, now
+available as
+v3.9.7 on GitHub. Changes &amp; New Features SNMP Support removed. It never compiled &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://troglobit.github.io/blog/2014/12/28/mrouted-v3-dot-9-7/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Troglobit" type="application/atom+xml">
+  <link href="/favicon.png" rel="icon">
+<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Troglobit</a></h1>
+  
+    <h2>&#8220;Elegance is not a dispensable luxury&#8221; &mdash; Edsger Wybe Dijkstra</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:troglobit.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/about">About</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/finit.html">Finit</a></li>
+  <li><a href="/inadyn.html">Inadyn</a></li>
+  <li><a href="/smcroute.html">SMCRoute</a></li>
+  <li><a href="/mrouted.html">mrouted</a></li>
+  <li><a href="/pimd.html">pimd</a></li>
+  <li><a href="/uftpd.html">uftpd</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Mrouted v3.9.7</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-12-28T19:38:06+01:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Another release today is the venerable <a href="/mrouted.html">mrouted</a>, now
+available as
+<a href="https://github.com/troglobit/mrouted/releases/tag/3.9.7">v3.9.7 on GitHub</a>.</p>
+
+<h2>Changes &amp; New Features</h2>
+
+<ul>
+<li>SNMP Support removed.  It never compiled and would have likely
+needed a complete refactor to support modern AgentX.</li>
+<li>Replaced static <code>config.mk</code> with configure script from pimd</li>
+<li>RSRR Support disabled by default, use <code>--enable-rsrr</code> to configure script</li>
+<li>Add <code>'enable'</code> to <code>phyint</code> directive and <code>-M/-N</code> command line options,
+thanks to Joseph Gooch (@goochjj)</li>
+<li>Add David Waitzman and Craig Partridge to list of original authors
+after being contacted by Mr Waitzman :)</li>
+<li>Change to use <code>stdint.h</code> types instead of type unsafe homegrown types</li>
+</ul>
+
+
+<h2>Bug Fixes</h2>
+
+<ul>
+<li>Fix issue with older BSD kernels, mainly for current FreeBSD 10 and
+older, that don&rsquo;t really give RAW sockets but byte swap <code>ip_len</code>
+field, Olivier Cochard-Labbé (@ocochard)</li>
+<li>Build fixes for FreeBSD, should make maintaining ports easier :)</li>
+<li>Change from <code>select()</code> to <code>poll()</code> due to descriptor limits, e.g.,
+on BSD.</li>
+<li>UNIX 2038 first audit, inspired by OpenBSD.  Cleanup type confusion
+<code>int/u_long</code> where it should be <code>time_t</code>.  Also, clarify that <code>genid</code>
+is OK, since it&rsquo;s used and stored as unsigned 32-bit integer.</li>
+<li>Lots of minor fixes detected by Coverity Scan and Clang scan-build
+<a href="https://scan.coverity.com/projects/3320">https://scan.coverity.com/projects/3320</a></li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Joachim Nilsson</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-12-28T19:38:06+01:00" pubdate data-updated="true"></time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://troglobit.github.io/blog/2014/12/28/mrouted-v3-dot-9-7/" data-via="troglobit" data-counturl="http://troglobit.github.io/blog/2014/12/28/mrouted-v3-dot-9-7/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/12/28/last-release-of-pimd/" title="Previous Post: pimd v2.2.0 -- The last release of pimd?">&laquo; pimd v2.2.0 &#8211; The last release of pimd?</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Projects</h1>
+  <ul>
+    <li><a href="/finit.html">Fast Init Replacement</a></li>
+    <li><a href="/uftpd.html">Micro TFTP/FTP Daemon</a></li>
+    <li><a href="/tetris.html">Micro Tetris&trade;</a></li>
+    <li><a href="/snake.html">Micro Snake</a></li>
+    <li><a href="/editline.html">Minix Editline</a></li>
+    <li><a href="/inadyn.html">Inadyn DDNS Client</a></li>
+    <li><a href="/multicast-howto.html">Multicast HowTo</a></li>
+    <li><a href="/mrouted.html">The Original Multicast Routing Daemon</a></li>
+    <li><a href="/pimd.html">The Original PIM-SM Daemon</a></li>
+    <li><a href="/smcroute.html">SMCRoute Static Multicast Routing</a></li>
+  </ul>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/12/28/mrouted-v3-dot-9-7/">mrouted v3.9.7</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/28/last-release-of-pimd/">pimd v2.2.0 &#8211; The last release of pimd?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/21/tftp-blocksize-negotiation-in-uftpd-v1-dot-7/">TFTP blocksize negotiation in uftpd v1.7</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/">HowTo Add Multicast Routing Support to the FreeBSD kernel</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/">GnuTLS support in Inadyn and fixes to uftpd</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/troglobit">@troglobit</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'troglobit',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+<section>
+  <h1>Latest Tweets</h1>
+
+  <a class="twitter-timeline" data-dnt="true"
+     href="https://twitter.com/troglobit"
+     data-widget-id="365667052100415488">Tweets by @troglobit</a>
+  <script>!function(d,s,id){var
+    js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</section>
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Joachim Nilsson -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

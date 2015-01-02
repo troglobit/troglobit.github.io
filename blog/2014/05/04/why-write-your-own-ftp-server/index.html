@@ -1,0 +1,359 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Why write your own FTP server? - Troglobit</title>
+  <meta name="author" content="Joachim Nilsson">
+
+  
+  <meta name="description" content="So, I finally got fed up with all other FTP servers and wrote
+my own. Why would someone in their right mind do
+something like this 2014? As a &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://troglobit.github.io/blog/2014/05/04/why-write-your-own-ftp-server/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Troglobit" type="application/atom+xml">
+  <link href="/favicon.png" rel="icon">
+<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Troglobit</a></h1>
+  
+    <h2>&#8220;Elegance is not a dispensable luxury&#8221; &mdash; Edsger Wybe Dijkstra</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:troglobit.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/about">About</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/finit.html">Finit</a></li>
+  <li><a href="/inadyn.html">Inadyn</a></li>
+  <li><a href="/smcroute.html">SMCRoute</a></li>
+  <li><a href="/mrouted.html">mrouted</a></li>
+  <li><a href="/pimd.html">pimd</a></li>
+  <li><a href="/uftpd.html">uftpd</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Why Write Your Own FTP Server?</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-04T11:25:09+02:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>So, I finally got fed up with all other FTP servers and wrote
+<a href="/uftpd.html">my own</a>.  Why would someone in their right mind do
+something like this 2014?</p>
+
+<p>As a developer the answer to most such questions is usually; to
+scratch an itch.  For a very long time I&rsquo;ve looked for a really simple
+FTP server that just works, out of the box!</p>
+
+<p>My alternatives on GNU/Linux distributions have been: several variants
+of the original <a href="https://github.com/mit-athena/ftpd">MIT/Athena ftpd</a>,
+<a href="http://www.proftpd.org/">ProFTPD</a>,
+<a href="http://www.pureftpd.org/project/pure-ftpd">Pure-FTPd</a>, and
+<a href="https://security.appspot.com/vsftpd.html">vstfptd</a>.  Most of them are
+too damn difficult to configure, have ugly configuration files or are
+plainly just too confusing.  With one exception, vsftpd.  I really
+like vsftpd!  It&rsquo;s got a simple and well documented configuration file
+(inline as comments) and always worked almost painlessly for me.</p>
+
+<p>However, over the past couple of Ubuntu LTS installations it&rsquo;s been
+starting to act up on me.  Not allowing me to have a group-writable
+root directory, and not even an ability to disable that security
+feature.</p>
+
+<p>It&rsquo;s simple really.  I&rsquo;m a developer.  I have colleagues.  We share
+servers at work.  We bootstrap and upgrade our embedded devices using
+TFTP/FTP.  We have one directory, usually <code>/srv/ftp</code>, which is group
+writable and all developers are members of that group.  Anyone can
+upload a file there and the file servers &hellip; would you know &hellip; are
+supposed to <em>serve</em> that file, as TFTP or anonymous FTP.</p>
+
+<p>Maybe I&rsquo;m a fringe user?  Maybe secured local area networks, or laptop
+to embedded device crossed-cables networks, are no longer the &ldquo;fad&rdquo;?
+Maybe a sane built-in default is no longer cool or hipster enough?</p>
+
+<p>I don&rsquo;t know anymore, and this time I was so fed up chasing around for
+answers to &ldquo;How to setup your &lsquo;favorite&rsquo; FTP Server&rdquo;, that I just sat
+down and fixed it once and for all.  I figured I&rsquo;d otherwise be doing
+this waltz over and over again, just like I already have, for the next
+10 years &hellip;</p>
+
+<p>I trawled the net once more for good candidates, this time for
+adoption and holy cow sacrifices.  I wanted a very simple base to
+start from, which I could cut up into pieces, iteratively refactor and
+improve upon until I was happy.  That took a while.</p>
+
+<p>I&rsquo;m a big fan of both the Free Software and the Open Source cultures.
+(They are slightly different you know.)  I routinely work on software
+with GNU GPL, MIT/X11, Apache, and ISC licenses, but for most of my
+own creations I usually lean towards the very permissive
+<a href="http://en.wikipedia.org/wiki/ISC_license">ISC license</a>.  Maybe
+because most of my hobby work these days are quick and dirty hacks I
+don&rsquo;t really care enough about.  It&rsquo;s a question of both taste and
+appropriateness &ndash; like software patents, I don&rsquo;t like them either,
+but for anything which I have a great investment in, or has a great
+<a href="http://en.wikipedia.org/wiki/Threshold_of_originality">threshold of originality</a>,
+I&rsquo;d use a more restrictive license to make sure the software is kept
+in the open.</p>
+
+<p>Anyway, I read much code, discarded several projects that were too
+big, too unreadable code or simply didn&rsquo;t feel right.  I tested so
+many small &ldquo;FTP&rdquo; servers that turned out to be unusable homegrown
+variants or school projects.  There&rsquo;s a lot of code out there &hellip;  I
+finally settled on <a href="https://github.com/xu-wang11/FtpServer">FtpServer</a>
+by <a href="https://github.com/xu-wang11">Xu Wang</a> as a base for my little
+project.  I suspect it too is a school project, but this one actually
+worked, right off the bat!</p>
+
+<p>I got so excited that I immediately started improving it, cleaning up
+the source code, reindenting it (KNF) and fixing small bugs here and
+there.  It was a perfect fit!  This is where I made my big mistake,
+which I hope will not eventually kill this project in the end &ndash; the
+FtpServer project did not have a license &hellip; so
+<a href="https://github.com/xu-wang11/FtpServer/issues/1">I filed a bug</a> to
+the GitHub issue tracker, added the ISC license to
+<a href="https://github.com/troglobit/uftpd">my fork</a> and continued hacking
+away.  The changes I&rsquo;ve made are so substantial that there isn&rsquo;t much
+left of the original code, so uftpd should be safe.  Yes, I named it
+uftpd, the micro ftp server &ndash; the no nonsense file transfer protocol
+daemon.</p>
+
+<p>The whole hack took about three days and I&rsquo;ve learned a lot during
+this time!  It was fun, inspiring and gave me a lot of creative energy
+that I can use in other projects: at work as well as at home :)</p>
+
+<p>See the <a href="/uftpd.html">uftpd project home</a> for download links.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Joachim Nilsson</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-04T11:25:09+02:00" pubdate data-updated="true"></time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://troglobit.github.io/blog/2014/05/04/why-write-your-own-ftp-server/" data-via="troglobit" data-counturl="http://troglobit.github.io/blog/2014/05/04/why-write-your-own-ftp-server/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/04/21/release-of-finit-v1-dot-9/" title="Previous Post: Release of Finit v1.9">&laquo; Release of Finit v1.9</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/05/14/new-release-of-the-ddns-client-inadyn/" title="Next Post: New release of the DDNS client Inadyn">New release of the DDNS client Inadyn &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Projects</h1>
+  <ul>
+    <li><a href="/finit.html">Fast Init Replacement</a></li>
+    <li><a href="/uftpd.html">Micro TFTP/FTP Daemon</a></li>
+    <li><a href="/tetris.html">Micro Tetris&trade;</a></li>
+    <li><a href="/snake.html">Micro Snake</a></li>
+    <li><a href="/editline.html">Minix Editline</a></li>
+    <li><a href="/inadyn.html">Inadyn DDNS Client</a></li>
+    <li><a href="/multicast-howto.html">Multicast HowTo</a></li>
+    <li><a href="/mrouted.html">The Original Multicast Routing Daemon</a></li>
+    <li><a href="/pimd.html">The Original PIM-SM Daemon</a></li>
+    <li><a href="/smcroute.html">SMCRoute Static Multicast Routing</a></li>
+  </ul>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/12/28/mrouted-v3-dot-9-7/">mrouted v3.9.7</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/28/last-release-of-pimd/">pimd v2.2.0 &#8211; The last release of pimd?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/21/tftp-blocksize-negotiation-in-uftpd-v1-dot-7/">TFTP blocksize negotiation in uftpd v1.7</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/">HowTo Add Multicast Routing Support to the FreeBSD kernel</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/">GnuTLS support in Inadyn and fixes to uftpd</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/troglobit">@troglobit</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'troglobit',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+<section>
+  <h1>Latest Tweets</h1>
+
+  <a class="twitter-timeline" data-dnt="true"
+     href="https://twitter.com/troglobit"
+     data-widget-id="365667052100415488">Tweets by @troglobit</a>
+  <script>!function(d,s,id){var
+    js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</section>
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Joachim Nilsson -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

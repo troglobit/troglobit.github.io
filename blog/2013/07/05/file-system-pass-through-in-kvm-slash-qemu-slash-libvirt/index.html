@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>File System Pass-Through in KVM/Qemu/libvirt - Troglobit</title>
+  <meta name="author" content="Joachim Nilsson">
+
+  
+  <meta name="description" content="This post doesn&rsquo;t cover fully setting up KVM/Qemu with virt-manager
+and creating virtual machine guests. See the Ubuntu
+KVM Installtion, &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://troglobit.github.io/blog/2013/07/05/file-system-pass-through-in-kvm-slash-qemu-slash-libvirt/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Troglobit" type="application/atom+xml">
+  <link href="/favicon.png" rel="icon">
+<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Troglobit</a></h1>
+  
+    <h2>&#8220;Elegance is not a dispensable luxury&#8221; &mdash; Edsger Wybe Dijkstra</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:troglobit.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/about">About</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/finit.html">Finit</a></li>
+  <li><a href="/inadyn.html">Inadyn</a></li>
+  <li><a href="/smcroute.html">SMCRoute</a></li>
+  <li><a href="/mrouted.html">mrouted</a></li>
+  <li><a href="/pimd.html">pimd</a></li>
+  <li><a href="/uftpd.html">uftpd</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">File System Pass-Through in KVM/Qemu/libvirt</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-05T23:56:00+02:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>This post doesn&rsquo;t cover fully setting up KVM/Qemu with virt-manager
+and creating virtual machine guests.  See the Ubuntu
+<a href="https://help.ubuntu.com/community/KVM/Installation">KVM Installtion</a>,
+<a href="https://help.ubuntu.com/community/KVM/VirtManager">VirtManager Guide</a>,
+the
+<a href="https://help.ubuntu.com/13.04/serverguide/libvirt.html">Ubuntu Server Guide on libvirt</a>,
+or
+<a href="http://www.howtoforge.com/virtualization-with-kvm-on-ubuntu-12.04-lts-p3">HowtoForge</a>
+for that.</p>
+
+<p>Instead this blog post details the most relevant steps to get file
+system pass-through between a Linux host and Qemu guest working.  The
+upstream <a href="http://wiki.qemu.org/Documentation/9psetup">Qemu docs</a>
+provide a good starting point, as is the original
+<a href="https://www.kernel.org/doc/ols/2010/ols2010-pages-109-120.pdf">IBM paper on VirtFS</a>.
+For users of Ubuntu &lt;= 13.04, watch out for the
+<a href="https://bugs.launchpad.net/ubuntu/+source/libvirt/+bug/943680">libvirt bug</a>
+that I know many people run into, myself included.</p>
+
+<p>First of all, I could never really master the beast called AppArmor in
+Ubuntu.  Once I got the hang of the files to edit, the order to make
+changes and the syntax of its profile files I think I tried every
+possible permutation without any success.  So I ended up disabling the
+profile(s) of my VM guests.  The UUID in the filename can be found in
+the details of your VM, or in the process listing on the host: <code>ps fax
+| grep guestname</code>.  Here is an example of how to disable one guest:</p>
+
+<pre><code>aa-complain /etc/apparmor.d/libvirt/libvirt-20b8c6c6-440c-bd76-254e-42fd475e6770
+</code></pre>
+
+<p>You need to install <a href="apt://apparmor-utils">apparmor-utils</a> to get the
+<code>aa-complain</code> tool.  Where <em>complain</em> basically means ignore any hits
+from the given profile and just complain in the log.  The default is
+<code>aa-enforce</code>.  For more info on AppArmor, see the
+<a href="http://wiki.apparmor.net/index.php/Documentation">excellent upstream docs</a></p>
+
+<p><img class="right" src="/images/filesystem-pass-through.png" width="500"></p>
+
+<p>Now, how to do it.  I like virsh, but for most of the time the vmware
+like
+<a href="http://virt-manager.org/">virt-manager is a lot more user friendly</a>.
+In the VM&rsquo;s Detailed view, click the &ldquo;Add Hardware&rdquo; button and select
+&ldquo;Filesystem&rdquo;.  This is where the action happens.</p>
+
+<ul>
+<li><strong>Type:</strong> preset to Passthrough</li>
+<li><strong>Mode:</strong> change to <code>Mapped</code> <em>This is the most important step in
+this blog, or you will not get read/write support!</em></li>
+<li><strong>Source path:</strong> select the path on your host that will be shared
+with this guest.  I use <code>/var/lib/libvirt/share</code> but you can use any
+directory you want</li>
+<li><strong>Target path:</strong> enter magic string that you&rsquo;ll use in the mount
+command in the guest.  I use <code>share</code>, no slashes or anything.  In
+reality this isn&rsquo;t a path per se, it&rsquo;s a tag that the guest sends to
+the kernel 9p driver via the mount command</li>
+</ul>
+
+
+<p>Please note that 9P file systems simply pass-through the owner UID/GID
+and directory permissions from the host to the guest.  This can be a
+bit confusing, but just make sure to use the same for all guests that
+share the same directory.  I chowned it to my account on the host:</p>
+
+<pre><code>host# chown jocke:users /var/lib/libvirt/share
+</code></pre>
+
+<p>In my <code>guest:/etc/modules</code> I added the following modules, even though
+the kernel can probably load them itself on demand:</p>
+
+<pre><code>9p
+9pnet
+9pnet_virtio
+</code></pre>
+
+<p>The actual command to get the ball rolling on the guest:</p>
+
+<pre><code>guest# mount -t 9p -o trans=virtio,version=9p2000.L,rw share /mnt
+</code></pre>
+
+<p>To automatically mount this every time at boot, add the following
+to your <code>guest:/etc/fstab</code>:</p>
+
+<pre><code>share   /mnt    9p  trans=virtio,version=9p2000.L,rw    0   0
+</code></pre>
+
+<p>That&rsquo;s it. Good Luck!</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Joachim Nilsson</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-05T23:56:00+02:00" pubdate data-updated="true"></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/administration/'>administration</a>, <a class='category' href='/blog/categories/linux/'>linux</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://troglobit.github.io/blog/2013/07/05/file-system-pass-through-in-kvm-slash-qemu-slash-libvirt/" data-via="troglobit" data-counturl="http://troglobit.github.io/blog/2013/07/05/file-system-pass-through-in-kvm-slash-qemu-slash-libvirt/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/06/22/programming-as-an-artform/" title="Previous Post: Programming as an Artform">&laquo; Programming as an Artform</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/07/09/multicast-howto/" title="Next Post: Multicast HowTo">Multicast HowTo &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Projects</h1>
+  <ul>
+    <li><a href="/finit.html">Fast Init Replacement</a></li>
+    <li><a href="/uftpd.html">Micro TFTP/FTP Daemon</a></li>
+    <li><a href="/tetris.html">Micro Tetris&trade;</a></li>
+    <li><a href="/snake.html">Micro Snake</a></li>
+    <li><a href="/editline.html">Minix Editline</a></li>
+    <li><a href="/inadyn.html">Inadyn DDNS Client</a></li>
+    <li><a href="/multicast-howto.html">Multicast HowTo</a></li>
+    <li><a href="/mrouted.html">The Original Multicast Routing Daemon</a></li>
+    <li><a href="/pimd.html">The Original PIM-SM Daemon</a></li>
+    <li><a href="/smcroute.html">SMCRoute Static Multicast Routing</a></li>
+  </ul>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/12/28/mrouted-v3-dot-9-7/">mrouted v3.9.7</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/28/last-release-of-pimd/">pimd v2.2.0 &#8211; The last release of pimd?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/21/tftp-blocksize-negotiation-in-uftpd-v1-dot-7/">TFTP blocksize negotiation in uftpd v1.7</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/">HowTo Add Multicast Routing Support to the FreeBSD kernel</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/">GnuTLS support in Inadyn and fixes to uftpd</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/troglobit">@troglobit</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'troglobit',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+<section>
+  <h1>Latest Tweets</h1>
+
+  <a class="twitter-timeline" data-dnt="true"
+     href="https://twitter.com/troglobit"
+     data-widget-id="365667052100415488">Tweets by @troglobit</a>
+  <script>!function(d,s,id){var
+    js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</section>
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Joachim Nilsson -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

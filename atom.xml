@@ -1,0 +1,715 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Troglobit]]></title>
+  <link href="http://troglobit.github.io/atom.xml" rel="self"/>
+  <link href="http://troglobit.github.io/"/>
+  <updated>2015-01-02T12:13:29+01:00</updated>
+  <id>http://troglobit.github.io/</id>
+  <author>
+    <name><![CDATA[Joachim Nilsson]]></name>
+    <email><![CDATA[troglobit@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[mrouted v3.9.7]]></title>
+    <link href="http://troglobit.github.io/blog/2014/12/28/mrouted-v3-dot-9-7/"/>
+    <updated>2014-12-28T19:38:06+01:00</updated>
+    <id>http://troglobit.github.io/blog/2014/12/28/mrouted-v3-dot-9-7</id>
+    <content type="html"><![CDATA[<p>Another release today is the venerable <a href="http://troglobit.github.io/mrouted.html">mrouted</a>, now
+available as
+<a href="https://github.com/troglobit/mrouted/releases/tag/3.9.7">v3.9.7 on GitHub</a>.</p>
+
+<h2>Changes &amp; New Features</h2>
+
+<ul>
+<li>SNMP Support removed.  It never compiled and would have likely
+needed a complete refactor to support modern AgentX.</li>
+<li>Replaced static <code>config.mk</code> with configure script from pimd</li>
+<li>RSRR Support disabled by default, use <code>--enable-rsrr</code> to configure script</li>
+<li>Add <code>'enable'</code> to <code>phyint</code> directive and <code>-M/-N</code> command line options,
+thanks to Joseph Gooch (@goochjj)</li>
+<li>Add David Waitzman and Craig Partridge to list of original authors
+after being contacted by Mr Waitzman :)</li>
+<li>Change to use <code>stdint.h</code> types instead of type unsafe homegrown types</li>
+</ul>
+
+
+<h2>Bug Fixes</h2>
+
+<ul>
+<li>Fix issue with older BSD kernels, mainly for current FreeBSD 10 and
+older, that don&rsquo;t really give RAW sockets but byte swap <code>ip_len</code>
+field, Olivier Cochard-Labbé (@ocochard)</li>
+<li>Build fixes for FreeBSD, should make maintaining ports easier :)</li>
+<li>Change from <code>select()</code> to <code>poll()</code> due to descriptor limits, e.g.,
+on BSD.</li>
+<li>UNIX 2038 first audit, inspired by OpenBSD.  Cleanup type confusion
+<code>int/u_long</code> where it should be <code>time_t</code>.  Also, clarify that <code>genid</code>
+is OK, since it&rsquo;s used and stored as unsigned 32-bit integer.</li>
+<li>Lots of minor fixes detected by Coverity Scan and Clang scan-build
+<a href="https://scan.coverity.com/projects/3320">https://scan.coverity.com/projects/3320</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[pimd v2.2.0 -- The last release of pimd?]]></title>
+    <link href="http://troglobit.github.io/blog/2014/12/28/last-release-of-pimd/"/>
+    <updated>2014-12-28T13:42:18+01:00</updated>
+    <id>http://troglobit.github.io/blog/2014/12/28/last-release-of-pimd</id>
+    <content type="html"><![CDATA[<p>On one of the last days of 2014 I release <a href="http://troglobit.github.io/pimd.html">pimd</a>
+<a href="https://github.com/troglobit/pimd/releases/tag/2.2.0">v2.2.0</a>, which
+is an awesome release with a lot of new features and bug fixes!</p>
+
+<p>However, it could very well be the last release I do.  Even though its
+one of my most popular projects on
+<a href="https://github.com/troglobit">GitHub</a> I have not had enough time to
+dedicate to it over the years.  I will continue to do fixes and merge
+pull requests until someone else steps up to take over.  There is also
+the distinct possibility that the
+<a href="https://github.com/greearb/xorp.ct">Xorp PIM-SM</a> or the new
+<a href="https://github.com/udhos/qpimd">Quagga PIM-SSM</a> implementations will
+(finally) make good old pimd completely redundant.</p>
+
+<p>At <a href="http://www.westermo.com">work</a> we will likely start using the
+Quagga PIM rather than pimd in WeOS.</p>
+
+<p>For now though, enjoy pimd v2.2.0.  It&rsquo;s been tested in both my Qemu
+based virtual testbed and a few setups using Linux&#8217; <code>netns</code> feature in
+<a href="http://www.nrl.navy.mil/itd/ncs/products/core">CORE</a> &ndash; awesome
+little proggy! :-)</p>
+
+<h3>Changes &amp; New Features</h3>
+
+<ul>
+<li>Add IP fragmentation support for PIM register messages,
+by Michael Fine of Cumulus Networks</li>
+<li>Support <code>/LEN</code> syntax in <code>phyint</code> to complement <code>masklen LEN</code>, issue #12</li>
+<li>Add support for /31 networks, point-to-point, thanks to Apollon Oikonomopoulos</li>
+<li>Remove old broken SNMP support</li>
+<li>OpenBSD inspired cleanup (deregister)
+<a href="http://cvsweb.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/">http://cvsweb.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/</a></li>
+<li>General code cleanup, shorten local variable names, func decl. etc.</li>
+<li>Support for router alert IP option in IGMP queries</li>
+<li>Support for reading IGMPv3 membership reports</li>
+<li>Update IGMP code to support FreeBSD >= 8.x</li>
+<li>Retry read of routing tables on FreeBSD</li>
+<li>Fix join/leve of ALL PIM Routers for FreeBSD and other UNIX kernels</li>
+<li>Tested on FreeBSD, NetBSD and OpenBSD</li>
+<li>Add very simple homegrown configure script</li>
+<li>Update and document support for <code>rp_address</code>, <code>cand_rp</code>, and <code>cand_bootstrap_router</code></li>
+<li>Add new <code>spt_threshold</code> to replace existing <code>switch_register_threshold</code>
+and <code>switch_data_threshold</code> settings.  Cisco like and easier to understand</li>
+</ul>
+
+
+<h3>Bug Fixes</h3>
+
+<ul>
+<li>Fix to avoid infinite loop during unicast send failure, by Alex Tessmer</li>
+<li>Fix bug in bootstrap when configured as candidate RP, issue #15</li>
+<li>Fix segfault in <code>accept_igmp()</code>, issue #29</li>
+<li>Fix default source preference, should be 101 (not 1024!)</li>
+<li>Fix <code>ip_len</code> handling on older BSD&rsquo;s, thanks to Olivier Cochard-Labbé, issue #23</li>
+<li>Fix default prefix len in static RP example in <code>pimd.conf</code>, should be /4</li>
+<li>Fix issue #31: Make IGMP query interval and querier timeout configurable</li>
+<li>Fix issue #33: pimd does not work in background under FreeBSD</li>
+<li>Fix issue #35: support for timing out other queriers from mrouted</li>
+<li>Hopefully fix issue #22: Crash in (S,G) state when neighbor is lost</li>
+<li>Misc. bug fixes thanks to Coverity Scan, static code analysis tool
+<a href="https://scan.coverity.com/projects/3319">https://scan.coverity.com/projects/3319</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[TFTP blocksize negotiation in uftpd v1.7]]></title>
+    <link href="http://troglobit.github.io/blog/2014/12/21/tftp-blocksize-negotiation-in-uftpd-v1-dot-7/"/>
+    <updated>2014-12-21T19:42:17+01:00</updated>
+    <id>http://troglobit.github.io/blog/2014/12/21/tftp-blocksize-negotiation-in-uftpd-v1-dot-7</id>
+    <content type="html"><![CDATA[<p>New release of uftpd, this time with TFTP blocksize negotiation,
+<a href="http://tools.ietf.org/html/rfc2348">RFC 2348</a>.  Making it a lot
+faster to transfer files over TFTP.</p>
+
+<p><a href="http://troglobit.github.io/uftpd.html">Try it out!</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[HowTo Add Multicast Routing Support to the FreeBSD kernel]]></title>
+    <link href="http://troglobit.github.io/blog/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/"/>
+    <updated>2014-09-23T01:55:19+02:00</updated>
+    <id>http://troglobit.github.io/blog/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel</id>
+    <content type="html"><![CDATA[<p>This is a very short blog post, mostly intended as a reminder to
+myself.  Assumes the <code>src.txz</code> was installed previously.  Here goes:</p>
+
+<pre><code>cd /usr/src
+cd sys/amd64/conf
+cat GENERIC | sed 's/GENERIC$/MULTICAST/' &gt; MULTICAST
+echo 'options   MROUTING         # Multicast routing' &gt;&gt; MULTICAST
+cd -
+make kernel KERNCONF=MULTICAST
+reboot
+</code></pre>
+
+<p>That&rsquo;s it.  Remember to make sure your Qemu VM has enough RAM or it
+will probably page fault on you.  I use 1,0 GB RAM.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[GnuTLS support in Inadyn and fixes to uftpd]]></title>
+    <link href="http://troglobit.github.io/blog/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/"/>
+    <updated>2014-09-13T19:18:56+02:00</updated>
+    <id>http://troglobit.github.io/blog/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd</id>
+    <content type="html"><![CDATA[<p>Quite a few changes lately.  I finally got around to adding support
+for <a href="http://www.gnutls.org">GnuTLS</a> to <a href="http://troglobit.github.io/inadyn.html">Inadyn</a>,
+hopefully this will get into Debian &hellip; unless the Jessie freeze
+prevents that.</p>
+
+<p>Also, thanks to a friend of mine trying out <a href="http://troglobit.github.io/uftpd.html">uftpd</a>
+recently I discovered that libuev has been missing from the tarball
+since the release of the TFTP support.  Fixed.</p>
+
+<p>Another great piece of news is that
+<a href="http://www.coverity.com/">Coverity</a> accepted uftpd as an Open Source
+project, I&rsquo;ve been hard at work fixing nasty bugs uncovered by the
+<a href="https://scan.coverity.com/">Coverity Scan</a>.  Great stuff! :)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Bugfix release of uftpd]]></title>
+    <link href="http://troglobit.github.io/blog/2014/09/04/bugfix-release-of-uftpd/"/>
+    <updated>2014-09-04T22:22:09+02:00</updated>
+    <id>http://troglobit.github.io/blog/2014/09/04/bugfix-release-of-uftpd</id>
+    <content type="html"><![CDATA[<blockquote><p>So them pesky details of `/etc/inetd.conf` really are important?</p></blockquote>
+
+
+<p>This is a small bugfix release of <a href="http://troglobit.github.io/uftpd.html">uftpd</a>.  Version 1.4
+is basically just to change <code>nowait</code> to <code>wait</code> for the TFTP service in
+<code>/etc/inetd.conf</code>, but there&rsquo;s also a minor man page update.</p>
+
+<p>Enjoy! :)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The awesome uftpd, now with TFTP support! :)]]></title>
+    <link href="http://troglobit.github.io/blog/2014/09/02/new-release-of-the-awesome-uftpd/"/>
+    <updated>2014-09-02T10:47:35+02:00</updated>
+    <id>http://troglobit.github.io/blog/2014/09/02/new-release-of-the-awesome-uftpd</id>
+    <content type="html"><![CDATA[<p>Today sees the release of v1.3 of the awesome little uftpd. The main
+news is the new TFTP support!  Just like before you don&rsquo;t need any
+configuration file, just build and install &ndash; or build a .deb file and
+install.</p>
+
+<p>This release completes the main purpose of uftpd for me, I can now use
+it as my daily driver and fully replace vsftpd and tftpd-hpa, which to
+me are the next best.</p>
+
+<p>What&rsquo;s left then, you ask?  Well, TFTP upload support, TFTP segment
+size negotiation and possibly multiple user support in FTP.  As
+always, patches are most welcome.  See the
+<a href="http://troglobit.github.io/uftpd.html">uftpd homepage</a> and my
+<a href="https://github.com/troglobit/uftpd/">GitHub project</a> for details.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[HowTo Rebase without an origin]]></title>
+    <link href="http://troglobit.github.io/blog/2014/08/27/howto-rebase-without-an-origin/"/>
+    <updated>2014-08-27T10:00:13+02:00</updated>
+    <id>http://troglobit.github.io/blog/2014/08/27/howto-rebase-without-an-origin</id>
+    <content type="html"><![CDATA[<p>OK, so you&rsquo;ve just been handed the task to integrate a big piece of
+corporate software and it&rsquo;s nowhere near as done and ready as project
+management thinks.  Of course you&rsquo;ve already started chugging away at
+it, fixing bugs, refactoring code and wrapping it in neat containers
+to keep the changeset against the base SW small &ndash; you already know
+you&rsquo;ll get another drop of the same stinking pieace of code in another
+six months, so you keep the changes small and track them in GIT with
+neatly formatted commit messages.</p>
+
+<p>About ten commits in it dawns on you that you have several commits
+that would need to be squashed and some commit messages that needs to
+be edited &hellip; you start typing in <code>git rebase -i origin/...</code> wait, you
+haven&rsquo;t pushed anything yet.  So how do you rebase something that&rsquo;s
+not been pushed yet?</p>
+
+<p>Well:</p>
+
+<pre><code>git rebase --interactive --root master
+</code></pre>
+
+<p>Tip courtesy of my friend and collegue <a href="https://github.com/wkz">wkz</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[On the demise of free(code) ...]]></title>
+    <link href="http://troglobit.github.io/blog/2014/06/29/on-the-demise-of-free-code-dot-dot-dot/"/>
+    <updated>2014-06-29T14:52:39+02:00</updated>
+    <id>http://troglobit.github.io/blog/2014/06/29/on-the-demise-of-free-code-dot-dot-dot</id>
+    <content type="html"><![CDATA[<p>I feel I have to write something about the demise of
+<a href="http://freecode.com">free(code)</a>.
+<a href="http://esr.ibiblio.org/?p=5936">Others</a> have written about it too,
+and its been covered on <a href="http://lwn.net/Articles/603403/">lwn.net</a> as
+well.</p>
+
+<p>It&rsquo;s actually a rather depressing development.  They claim it&rsquo;s due to
+the low traffic and decline in updates, but it&rsquo;s evident that&rsquo;s not
+the whole truth.  The owners recommend their other site, SourceForge,
+but anyone having been in the loop for the last decade or two knows
+that SourceForge has been in a slow decline for a long time, more so
+than free(code) in my opinion.  Also, SourceForge only lists its own
+projects, and only the most active or &ldquo;top&rdquo; projects.</p>
+
+<p>I never used free(code) to find the &ldquo;top&rdquo; projects or the most active
+ones.  That&rsquo;s completely useless to me.  I went there to dig for small
+unknown projects, small gems that are usually unlisted on GitHub or
+SourceForge.  I went there to publicize my own small creations, learn
+about other similar projects and get a quick feedback on recent
+changes of new releases to projects I was interested in.</p>
+
+<p>There exist no real replacement to free(code), except perhaps for
+<a href="https://www.openhub.net/">Open Hub</a>, previously known as
+<a href="http://www.ohloh.net">Ohloh</a>.  The
+<a href="http://directory.fsf.org">Free Software Directory</a> could perhaps have
+become something over time, but unfortunately feels like yet another
+<a href="http://www.catb.org/esr/writings/cathedral-bazaar/">Cathedral Style</a>
+project from the FSF.  Don&rsquo;t get me wrong, I love the FSF and almost
+everything they do, but they often get lost in their old tradition of
+big closed off idealistic projects.  Eric S. Raymond has
+<a href="http://esr.ibiblio.org/?p=5948">a proposal</a> for replacing free(code)
+and he is that sort of pragmatic person that could get something off
+the ground.  In any case it&rsquo;ll be interesting, I&rsquo;m sure.</p>
+
+<p>Some people say all the action is on GitHub these days, but that&rsquo;s
+just like an echo of the glory days of CVS, Subversion and the start
+of the new millenia when we should all use SourceForge.  Been there,
+done that, and yes I do use GitHub, but again it doesn&rsquo;t list anything
+but GitHub projects &hellip;</p>
+
+<p>Other people say that to promote your small projects you need to
+become active in a Linux distro, or write about them in magazines or
+on <a href="http://hackerne.ws">Hacker News</a> &hellip; well, I&rsquo;d like very much to
+become a Debian developer one day, but the process to become one seems
+so increadibly daunting!  Also, I&rsquo;m not a writer, nor am I a native
+English speaker, I&rsquo;m
+<a href="http://c2.com/cgi/wiki?JustaProgrammer">just a programmer</a> and I
+really miss free(code)!</p>
+
+<p>I don&rsquo;t expect this blog to have any readers at all, so using it as
+the sole platform for announcing new releases is rather pointless.  So
+I&rsquo;ve started playing around with
+<a href="https://www.openhub.net/accounts/troglobit">Open Hub</a> for my own most
+relevant projects.  It has some nice stats and other useful features
+that I can use.  Hopefully it can serve as a replacement for my most
+basic needs.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[New releases of uftpd and inadyn ...]]></title>
+    <link href="http://troglobit.github.io/blog/2014/05/20/new-release-of-uftpd-and-inadyn-dot-dot-dot/"/>
+    <updated>2014-05-20T21:08:25+02:00</updated>
+    <id>http://troglobit.github.io/blog/2014/05/20/new-release-of-uftpd-and-inadyn-dot-dot-dot</id>
+    <content type="html"><![CDATA[<p>The last couple of weeks have both seen the birth of the fabulous
+<a href="http://troglobit.github.io/uftpd.html">uftpd</a> and a reignited <a href="http://troglobit.github.io/inadyn.html">inadyn</a> project!
+Yesterday v1.2 of uftpd was released and today Inadyn saw the first
+working HTTPS support being released as v1.99.8!  This is likely the
+last release of Inadyn before the big 2.0, which will introduce the
+new .conf file format based on
+<a href="http://www.nongnu.org/confuse/">libConfuse</a>.  A .conf file
+feasibility study was
+<a href="http://troglobit.github.io/blog/2014/02/23/weekend-hack-json-vs-conf/">presented earlier</a> &hellip;</p>
+
+<p>The uftpd project is completely based on user input, currently mostly
+mine.  I will add features and bug fixes when I need them, unless I
+get more input.  So I welcome anyone to clone it on GitHub and hack
+away.  As usual, I will accept any sane patches that adhere to the
+coding style and is well written.  The same goes for Inadyn, only with
+the added request that the changes are thoroughly tested first, since
+I cannot maintain multiple accounts on various DDNS providers myself.</p>
+
+<p>Patches to support flavors of UNIX other than GNU/Linux, including
+GNU/Hurd, or even other operating systems are also welcome, as long as
+it&rsquo;s not Windows.  I will not maintain any Windows support since I
+don&rsquo;t use it myself.  If you want Windows support you will have to
+take a very active co-maintainer role in the respective project.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[New release of the DDNS client Inadyn]]></title>
+    <link href="http://troglobit.github.io/blog/2014/05/14/new-release-of-the-ddns-client-inadyn/"/>
+    <updated>2014-05-14T08:29:48+02:00</updated>
+    <id>http://troglobit.github.io/blog/2014/05/14/new-release-of-the-ddns-client-inadyn</id>
+    <content type="html"><![CDATA[<p>Looking for a Dynamic DNS, DDNS, client?  Well you&rsquo;re in luck, the
+<a href="http://en.wikipedia.org/wiki/Alternative_terms_for_free_software" title="FLOSS">FLOSS</a> market space is flooded with dedicated clients and various
+wget scripts.  So why bother with an old C implementation?  Well, this
+is admittedly one of the old timers in the game and is likely packaged
+for your GNU/Linux distribution of choice already.  It&rsquo;s tried and
+tested with many DDNS service providers and even comes bundled in a
+few embedded router distributions as well.</p>
+
+<p>Today I&rsquo;ve released <a href="http://troglobit.github.io/inadyn.html">Inadyn</a> v1.99.7 as an XZ compressed
+tarball.  The release announcement should be up on <a href="https://freecode.com/projects/inadyn">free(code)</a>
+now.  It&rsquo;s a small incremental release containing mainly code cleanup
+and a few new features that you likely won&rsquo;t notice: support for
+multiple cache files and DDNS providers as separate plugins, for easy
+addition of new ones as well as maintenance of existing.  This further
+separates the internal logic from the provider specific parts and also
+helps reduce clutter to ease maintenance.</p>
+
+<p>This is a small incremental release building up to the long awaited
+v2.0, which will include the long-awaited HTTPS support and also a new
+.conf file format.  The latter is not really welcomed with open arms
+by users, but is a necessary step since the current parser is heavily
+affected by bit rot and must be put down.  I will attempt to make the
+transition as easy as possible, but you will need to change you .conf
+files.</p>
+
+<p>Maybe a preview of the HTTPS support will make it into a release that
+still has the old .conf file format, but just maybe.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Why write your own FTP server?]]></title>
+    <link href="http://troglobit.github.io/blog/2014/05/04/why-write-your-own-ftp-server/"/>
+    <updated>2014-05-04T11:25:09+02:00</updated>
+    <id>http://troglobit.github.io/blog/2014/05/04/why-write-your-own-ftp-server</id>
+    <content type="html"><![CDATA[<p>So, I finally got fed up with all other FTP servers and wrote
+<a href="http://troglobit.github.io/uftpd.html">my own</a>.  Why would someone in their right mind do
+something like this 2014?</p>
+
+<p>As a developer the answer to most such questions is usually; to
+scratch an itch.  For a very long time I&rsquo;ve looked for a really simple
+FTP server that just works, out of the box!</p>
+
+<p>My alternatives on GNU/Linux distributions have been: several variants
+of the original <a href="https://github.com/mit-athena/ftpd">MIT/Athena ftpd</a>,
+<a href="http://www.proftpd.org/">ProFTPD</a>,
+<a href="http://www.pureftpd.org/project/pure-ftpd">Pure-FTPd</a>, and
+<a href="https://security.appspot.com/vsftpd.html">vstfptd</a>.  Most of them are
+too damn difficult to configure, have ugly configuration files or are
+plainly just too confusing.  With one exception, vsftpd.  I really
+like vsftpd!  It&rsquo;s got a simple and well documented configuration file
+(inline as comments) and always worked almost painlessly for me.</p>
+
+<p>However, over the past couple of Ubuntu LTS installations it&rsquo;s been
+starting to act up on me.  Not allowing me to have a group-writable
+root directory, and not even an ability to disable that security
+feature.</p>
+
+<p>It&rsquo;s simple really.  I&rsquo;m a developer.  I have colleagues.  We share
+servers at work.  We bootstrap and upgrade our embedded devices using
+TFTP/FTP.  We have one directory, usually <code>/srv/ftp</code>, which is group
+writable and all developers are members of that group.  Anyone can
+upload a file there and the file servers &hellip; would you know &hellip; are
+supposed to <em>serve</em> that file, as TFTP or anonymous FTP.</p>
+
+<p>Maybe I&rsquo;m a fringe user?  Maybe secured local area networks, or laptop
+to embedded device crossed-cables networks, are no longer the &ldquo;fad&rdquo;?
+Maybe a sane built-in default is no longer cool or hipster enough?</p>
+
+<p>I don&rsquo;t know anymore, and this time I was so fed up chasing around for
+answers to &ldquo;How to setup your &lsquo;favorite&rsquo; FTP Server&rdquo;, that I just sat
+down and fixed it once and for all.  I figured I&rsquo;d otherwise be doing
+this waltz over and over again, just like I already have, for the next
+10 years &hellip;</p>
+
+<p>I trawled the net once more for good candidates, this time for
+adoption and holy cow sacrifices.  I wanted a very simple base to
+start from, which I could cut up into pieces, iteratively refactor and
+improve upon until I was happy.  That took a while.</p>
+
+<p>I&rsquo;m a big fan of both the Free Software and the Open Source cultures.
+(They are slightly different you know.)  I routinely work on software
+with GNU GPL, MIT/X11, Apache, and ISC licenses, but for most of my
+own creations I usually lean towards the very permissive
+<a href="http://en.wikipedia.org/wiki/ISC_license">ISC license</a>.  Maybe
+because most of my hobby work these days are quick and dirty hacks I
+don&rsquo;t really care enough about.  It&rsquo;s a question of both taste and
+appropriateness &ndash; like software patents, I don&rsquo;t like them either,
+but for anything which I have a great investment in, or has a great
+<a href="http://en.wikipedia.org/wiki/Threshold_of_originality">threshold of originality</a>,
+I&rsquo;d use a more restrictive license to make sure the software is kept
+in the open.</p>
+
+<p>Anyway, I read much code, discarded several projects that were too
+big, too unreadable code or simply didn&rsquo;t feel right.  I tested so
+many small &ldquo;FTP&rdquo; servers that turned out to be unusable homegrown
+variants or school projects.  There&rsquo;s a lot of code out there &hellip;  I
+finally settled on <a href="https://github.com/xu-wang11/FtpServer">FtpServer</a>
+by <a href="https://github.com/xu-wang11">Xu Wang</a> as a base for my little
+project.  I suspect it too is a school project, but this one actually
+worked, right off the bat!</p>
+
+<p>I got so excited that I immediately started improving it, cleaning up
+the source code, reindenting it (KNF) and fixing small bugs here and
+there.  It was a perfect fit!  This is where I made my big mistake,
+which I hope will not eventually kill this project in the end &ndash; the
+FtpServer project did not have a license &hellip; so
+<a href="https://github.com/xu-wang11/FtpServer/issues/1">I filed a bug</a> to
+the GitHub issue tracker, added the ISC license to
+<a href="https://github.com/troglobit/uftpd">my fork</a> and continued hacking
+away.  The changes I&rsquo;ve made are so substantial that there isn&rsquo;t much
+left of the original code, so uftpd should be safe.  Yes, I named it
+uftpd, the micro ftp server &ndash; the no nonsense file transfer protocol
+daemon.</p>
+
+<p>The whole hack took about three days and I&rsquo;ve learned a lot during
+this time!  It was fun, inspiring and gave me a lot of creative energy
+that I can use in other projects: at work as well as at home :)</p>
+
+<p>See the <a href="http://troglobit.github.io/uftpd.html">uftpd project home</a> for download links.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Release of Finit v1.9]]></title>
+    <link href="http://troglobit.github.io/blog/2014/04/21/release-of-finit-v1-dot-9/"/>
+    <updated>2014-04-21T16:08:30+02:00</updated>
+    <id>http://troglobit.github.io/blog/2014/04/21/release-of-finit-v1-dot-9</id>
+    <content type="html"><![CDATA[<p>Just made it!  Here&rsquo;s the result of #Easterhack14 &ndash;
+<a href="http://troglobit.github.io/finit.html">Finit</a> v1.9 :-)</p>
+
+<p>Nothing fancy this time, just collecting some bug fixes, playing with
+cppcheck a bit and adding support for including .conf files.  Quite
+useful if you want to partition your configuration, or if you share
+major pieces of configuration between different platforms.</p>
+
+<p>Enjoy!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Finally -- Google Movies &amp; Music in Sweden]]></title>
+    <link href="http://troglobit.github.io/blog/2014/03/18/finally-google-movies-and-music-in-sweden/"/>
+    <updated>2014-03-18T18:13:00+01:00</updated>
+    <id>http://troglobit.github.io/blog/2014/03/18/finally-google-movies-and-music-in-sweden</id>
+    <content type="html"><![CDATA[<p><img class="right" src="http://troglobit.github.io/images/play-movies.png" width="364"></p>
+
+<p>So, we finally got Google Music &amp; Movies services in Sweden!  The
+prices seem a bit on the steep side, apart from maybe the Music
+service, which is slightly cheaper than Spotify.  Will try it out for
+a month or so to see which one I like better.</p>
+
+<p>For some reason I chose Gravity as my first rental, at 39 Skr.  I&rsquo;ve
+heard so many bad reviews of it but for better or worse it&rsquo;ll now be
+my introduction to Google Movies :-)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Weekend Hack: JSON vs CONF]]></title>
+    <link href="http://troglobit.github.io/blog/2014/02/23/weekend-hack-json-vs-conf/"/>
+    <updated>2014-02-23T21:59:00+01:00</updated>
+    <id>http://troglobit.github.io/blog/2014/02/23/weekend-hack-json-vs-conf</id>
+    <content type="html"><![CDATA[<p>It was time.  I had been putting it off for far too long &ndash; learning
+about JSON and deciding on a new .conf file format for
+<a href="http://troglobit.github.io/inadyn.shtml">Inadyn</a>.  So this weekend I sat myself down to read up
+on <a href="http://en.wikipedia.org/wiki/JSON">JSON</a> and the multitude of
+parser libraries for both JSON and traditional .conf file parsers.  I
+was looking for a human readable file format that a user could easily
+and reliably edit by themselves without it being too error prone or
+sensitive to mistyping.</p>
+
+<div><script src='https://gist.github.com/9177645.js'></script>
+<noscript><pre><code>&lt;html&gt;&lt;body&gt;You are being &lt;a href=&quot;https://github.com/gist/9177645&quot;&gt;redirected&lt;/a&gt;.&lt;/body&gt;&lt;/html&gt;</code></pre></noscript></div>
+
+
+<p>I quickly narrowed down my scope of investigation to
+<a href="http://www.digip.org/jansson/">Jansson</a> for JSON and and
+<a href="http://www.nongnu.org/confuse/">Confuse</a> for &ldquo;standard&rdquo; UNIX .conf
+files.  Both have very liberal licenses, extensive test suites, very
+good documentation and are extremely well written!  In fact, I will
+probably use them as prime examples of well maintained Open Source
+projects in the future :-)</p>
+
+<p>The resulting code is in my
+<a href="https://github.com/troglobit/toolbox/tree/master/conf">toolbox</a> on
+GitHub.</p>
+
+<div><script src='https://gist.github.com/9177620.js'></script>
+<noscript><pre><code>&lt;html&gt;&lt;body&gt;You are being &lt;a href=&quot;https://github.com/gist/9177620&quot;&gt;redirected&lt;/a&gt;.&lt;/body&gt;&lt;/html&gt;</code></pre></noscript></div>
+
+
+<p>In my opinion the .conf file is a lot easier to read, write and edit
+by Joe User, so that&rsquo;s what I&rsquo;ll be using for many of my own projects,
+starting with <a href="http://troglobit.github.io/inadyn.shtml">Inadyn</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[On commit messages ...]]></title>
+    <link href="http://troglobit.github.io/blog/2013/08/13/on-commit-messages-dot-dot-dot/"/>
+    <updated>2013-08-13T14:18:00+02:00</updated>
+    <id>http://troglobit.github.io/blog/2013/08/13/on-commit-messages-dot-dot-dot</id>
+    <content type="html"><![CDATA[<p>There&rsquo;s just one thing to say on the topic of commit messages:
+<a href="http://stopwritingramblingcommitmessages.com/">ur doin it wrong if &hellip;</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Just a Programmer]]></title>
+    <link href="http://troglobit.github.io/blog/2013/08/13/just-a-programmer/"/>
+    <updated>2013-08-13T13:46:00+02:00</updated>
+    <id>http://troglobit.github.io/blog/2013/08/13/just-a-programmer</id>
+    <content type="html"><![CDATA[<p>Sometimes people ask me what I do for a living.  Usually I tend to
+pause and think, real hard, becuase the people asking me this aren&rsquo;t
+programmers.  They use computers, but are mostly limited to a Windows
+machine, writing in MS Word and browsing the Internet, mostly for
+Facebook.</p>
+
+<p>I often start off with: &ldquo;It&rsquo;s a bit complicated to explain &hellip; &rdquo;, by
+which time I&rsquo;ve lost most of the people in the room listening to me.
+Sometimes I say: &ldquo;I&rsquo;m a software architect.&rdquo;, because people seem to
+know what architects do for a living, they draw houses, design stuff
+and drive SAAB&rsquo;s.  Much like dentists.  The prefix &ldquo;software&rdquo; however
+does confuse people.</p>
+
+<p><img class="right" src="http://troglobit.github.io/images/programming-in-a-nutshell.gif"></p>
+
+<p>In reality I&rsquo;m
+<a href="http://c2.com/cgi/wiki?JustaProgrammer">just a programmer</a> with a
+little bit more responsibility.  A day starts with coming in to the
+office, or sitting down in my home office, connecting to the company
+VPN, meanwhile planning loosely the day and my goals.  All while
+checking status of e-mail, our IRC channel and the issue tracker for
+any recently reported/updated issues in my fields of responsibility.
+Somewhere around there I have a pretty good idea about what must be
+done and in what order.  So I write it down, in no particular order,
+on folded A4 sheets I use for TODO lists and start working.  About 20
+minutes into that, when I&rsquo;ve just reached
+<a href="http://c2.com/cgi/wiki?InTheZone">The Zone</a>, I get interrupted for an
+impromptu meeting, or
+<a href="https://en.wikipedia.org/wiki/Conference_call">telco</a>, which in turn
+always leads to another meeting, which in turn runs over and suddenly
+it&rsquo;s 16:00 (4 pm) and I have 45 minutes to complete a days work before
+picking up the kids from school.</p>
+
+<p>Or &hellip; you can apply that same crazy to a day when trying to fix a
+simple bug, finding another horrbile bug and fixing that first,
+leading to a minor redesign in need of a refactor, which in turn gives
+me a pain to merge since during the time I tried fixing that minor bug
+my collegues have done multiple changes to the same files I&rsquo;ve been
+working on.</p>
+
+<p>That&rsquo;s what I do for a living.  And yes, I know it&rsquo;s not sustainable
+work conditions.  I&rsquo;m working on that, it&rsquo;s on the TODO list &hellip;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[On the Linearity of Time]]></title>
+    <link href="http://troglobit.github.io/blog/2013/08/09/on-the-linearity-of-time/"/>
+    <updated>2013-08-09T04:25:00+02:00</updated>
+    <id>http://troglobit.github.io/blog/2013/08/09/on-the-linearity-of-time</id>
+    <content type="html"><![CDATA[<p>Don&rsquo;t try this at home kids. (Disclaimer: I live in Sweden :)</p>
+
+<div><script src='https://gist.github.com/6168031.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+
+
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Threads vs Events]]></title>
+    <link href="http://troglobit.github.io/blog/2013/08/06/event-handling/"/>
+    <updated>2013-08-06T14:20:00+02:00</updated>
+    <id>http://troglobit.github.io/blog/2013/08/06/event-handling</id>
+    <content type="html"><![CDATA[<p>This is a rant about something I recently found to be a long standing
+battle line in the world of programming,
+<a href="http://cgi.di.uoa.gr/~mema/courses/mde518/papers/lauer78.pdf">Lau78</a>.
+The event vs thread based approach to programming.  As rants go I do
+not aspire to deliver a clear or logical message, what so ever.  It&rsquo;s
+basically just something I need to get off my chest.</p>
+
+<p>It was not until 2007 I first learned about the event based approach
+to programming and event libraries like
+<a href="http://libevent.org/">libevent</a> and
+<a href="http://software.schmorp.de/pkg/libev.html">libev</a>.  Up until that
+point the silver bullet everyone was using was &hellip; Threads.</p>
+
+<p>I don&rsquo;t really know when it all started, maybe it was the Linux
+revolution, the first NPTL release with GLIBC, Java or Solaris.
+Nevertheless, from my point of view it was sometime in the mid 90&rsquo;s
+during my time at university that the use of threads was starting to
+become prevalent.</p>
+
+<p><span class='pullquote-right' data-pullquote='With the rise of the thread based model of programming we now had a
+hammer, and every problem looked like a nail.'>
+With the rise of the thread based model of programming we now had a
+hammer, and every problem looked like a nail.  I had a gut feeling
+there was something really wrong with using threads for every
+conceivable program, but I could not find a way to express it, so I
+chugged away with my threads, semaphores and condition variables.  I
+convinced myself I was happy like this.
+</span></p>
+
+<p>Of course I knew about the event based approach, but it was more or
+less dismissed as a thing of the past, a while(1) loop to mimic the
+behavior of PLC&rsquo;s.  So almost every program I wrote, and every program
+I took over from others, were like Indiana Jones types of mazes full
+of deadlocks and race conditions.</p>
+
+<p>I thought I did something wrong, and so did many others like me.  I
+spent days and nights trying to understand, refactor, and redesign
+threaded programs.  What I found was a doubt that the thread based
+model actually didn&rsquo;t suit every problem,
+<a href="http://www.cc.gatech.edu/classes/AY2009/cs4210_fall/papers/ousterhout-threads.pdf">Ous96</a>.
+There are quite a few domains, however, where thread based models
+shine. Usually in languages that come with thread support built-in,
+like Erlang.</p>
+
+<p>Most of the programs I work with today are network daemons.  Meaning
+they are essentially message based applications that spend a lot of
+time waiting for an event to occur: receiving a data frame, waiting
+for a timer to expire, a signal to be raised, etc.  Of course threads
+can be used for this, but it is a lot simpler to employ an event based
+framework instead.  Also, they are all written in C for speed and
+portability between different UNIX systems.  For that domain, where I
+currently make my living, it will be difficult to convince me to ever
+look at threads again.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[New Open Source Releases]]></title>
+    <link href="http://troglobit.github.io/blog/2013/07/12/new-open-source-releases/"/>
+    <updated>2013-07-12T16:30:00+02:00</updated>
+    <id>http://troglobit.github.io/blog/2013/07/12/new-open-source-releases</id>
+    <content type="html"><![CDATA[<p>Vacation time means catching up on my Open Source projects! :)</p>
+
+<p>Currently I&rsquo;m shaping up the home pages and this blog to improve the
+easy access and overview of all the packages I maintain.  The
+following packages have new releases, or can expect new releases soon:</p>
+
+<ul>
+<li> <a href="http://troglobit.github.io/editline.html">Minix Editline</a> v1.14.1</li>
+<li> <a href="http://troglobit.github.io/smcroute.html">SMCRoute</a> v1.99.1 &ndash; There&rsquo;s even a v2.0.0 being
+ planned, with the core of SMCRoute available as a library</li>
+<li> <a href="http://troglobit.github.io/mrouted.html">mrouted</a> minor cleanup an sync with
+ <a href="http://www.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/">OpenBSD</a></li>
+<li> <a href="http://troglobit.github.io/pimd.html">pimd</a> cleanups and bug fixes, needs testing</li>
+<li> <a href="http://troglobit.github.io/inadyn.html">inadyn</a> is in dire need of a release, but needs more testing and fixes</li>
+</ul>
+
+
+<p>As usual, see my <a href="http://github.com/troglobit">GitHub</a> for the latest
+commits if you want to try anything out, file an issue report, or if
+you want to contribute.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,845 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Troglobit</title>
+  <meta name="author" content="Joachim Nilsson">
+
+  
+  <meta name="description" content="Looking for a Dynamic DNS, DDNS, client? Well you&rsquo;re in luck, the
+FLOSS market space is flooded with dedicated clients and various
+wget scripts &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://troglobit.github.io/posts/2/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Troglobit" type="application/atom+xml">
+  <link href="/favicon.png" rel="icon">
+<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Troglobit</a></h1>
+  
+    <h2>&#8220;Elegance is not a dispensable luxury&#8221; &mdash; Edsger Wybe Dijkstra</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:troglobit.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/about">About</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/finit.html">Finit</a></li>
+  <li><a href="/inadyn.html">Inadyn</a></li>
+  <li><a href="/smcroute.html">SMCRoute</a></li>
+  <li><a href="/mrouted.html">mrouted</a></li>
+  <li><a href="/pimd.html">pimd</a></li>
+  <li><a href="/uftpd.html">uftpd</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/14/new-release-of-the-ddns-client-inadyn/">New Release of the DDNS Client Inadyn</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-14T08:29:48+02:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Looking for a Dynamic DNS, DDNS, client?  Well you&rsquo;re in luck, the
+<a href="http://en.wikipedia.org/wiki/Alternative_terms_for_free_software" title="FLOSS">FLOSS</a> market space is flooded with dedicated clients and various
+wget scripts.  So why bother with an old C implementation?  Well, this
+is admittedly one of the old timers in the game and is likely packaged
+for your GNU/Linux distribution of choice already.  It&rsquo;s tried and
+tested with many DDNS service providers and even comes bundled in a
+few embedded router distributions as well.</p>
+
+<p>Today I&rsquo;ve released <a href="/inadyn.html">Inadyn</a> v1.99.7 as an XZ compressed
+tarball.  The release announcement should be up on <a href="https://freecode.com/projects/inadyn">free(code)</a>
+now.  It&rsquo;s a small incremental release containing mainly code cleanup
+and a few new features that you likely won&rsquo;t notice: support for
+multiple cache files and DDNS providers as separate plugins, for easy
+addition of new ones as well as maintenance of existing.  This further
+separates the internal logic from the provider specific parts and also
+helps reduce clutter to ease maintenance.</p>
+
+<p>This is a small incremental release building up to the long awaited
+v2.0, which will include the long-awaited HTTPS support and also a new
+.conf file format.  The latter is not really welcomed with open arms
+by users, but is a necessary step since the current parser is heavily
+affected by bit rot and must be put down.  I will attempt to make the
+transition as easy as possible, but you will need to change you .conf
+files.</p>
+
+<p>Maybe a preview of the HTTPS support will make it into a release that
+still has the old .conf file format, but just maybe.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/04/why-write-your-own-ftp-server/">Why Write Your Own FTP Server?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-04T11:25:09+02:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>So, I finally got fed up with all other FTP servers and wrote
+<a href="/uftpd.html">my own</a>.  Why would someone in their right mind do
+something like this 2014?</p>
+
+<p>As a developer the answer to most such questions is usually; to
+scratch an itch.  For a very long time I&rsquo;ve looked for a really simple
+FTP server that just works, out of the box!</p>
+
+<p>My alternatives on GNU/Linux distributions have been: several variants
+of the original <a href="https://github.com/mit-athena/ftpd">MIT/Athena ftpd</a>,
+<a href="http://www.proftpd.org/">ProFTPD</a>,
+<a href="http://www.pureftpd.org/project/pure-ftpd">Pure-FTPd</a>, and
+<a href="https://security.appspot.com/vsftpd.html">vstfptd</a>.  Most of them are
+too damn difficult to configure, have ugly configuration files or are
+plainly just too confusing.  With one exception, vsftpd.  I really
+like vsftpd!  It&rsquo;s got a simple and well documented configuration file
+(inline as comments) and always worked almost painlessly for me.</p>
+
+<p>However, over the past couple of Ubuntu LTS installations it&rsquo;s been
+starting to act up on me.  Not allowing me to have a group-writable
+root directory, and not even an ability to disable that security
+feature.</p>
+
+<p>It&rsquo;s simple really.  I&rsquo;m a developer.  I have colleagues.  We share
+servers at work.  We bootstrap and upgrade our embedded devices using
+TFTP/FTP.  We have one directory, usually <code>/srv/ftp</code>, which is group
+writable and all developers are members of that group.  Anyone can
+upload a file there and the file servers &hellip; would you know &hellip; are
+supposed to <em>serve</em> that file, as TFTP or anonymous FTP.</p>
+
+<p>Maybe I&rsquo;m a fringe user?  Maybe secured local area networks, or laptop
+to embedded device crossed-cables networks, are no longer the &ldquo;fad&rdquo;?
+Maybe a sane built-in default is no longer cool or hipster enough?</p>
+
+<p>I don&rsquo;t know anymore, and this time I was so fed up chasing around for
+answers to &ldquo;How to setup your &lsquo;favorite&rsquo; FTP Server&rdquo;, that I just sat
+down and fixed it once and for all.  I figured I&rsquo;d otherwise be doing
+this waltz over and over again, just like I already have, for the next
+10 years &hellip;</p>
+
+<p>I trawled the net once more for good candidates, this time for
+adoption and holy cow sacrifices.  I wanted a very simple base to
+start from, which I could cut up into pieces, iteratively refactor and
+improve upon until I was happy.  That took a while.</p>
+
+<p>I&rsquo;m a big fan of both the Free Software and the Open Source cultures.
+(They are slightly different you know.)  I routinely work on software
+with GNU GPL, MIT/X11, Apache, and ISC licenses, but for most of my
+own creations I usually lean towards the very permissive
+<a href="http://en.wikipedia.org/wiki/ISC_license">ISC license</a>.  Maybe
+because most of my hobby work these days are quick and dirty hacks I
+don&rsquo;t really care enough about.  It&rsquo;s a question of both taste and
+appropriateness &ndash; like software patents, I don&rsquo;t like them either,
+but for anything which I have a great investment in, or has a great
+<a href="http://en.wikipedia.org/wiki/Threshold_of_originality">threshold of originality</a>,
+I&rsquo;d use a more restrictive license to make sure the software is kept
+in the open.</p>
+
+<p>Anyway, I read much code, discarded several projects that were too
+big, too unreadable code or simply didn&rsquo;t feel right.  I tested so
+many small &ldquo;FTP&rdquo; servers that turned out to be unusable homegrown
+variants or school projects.  There&rsquo;s a lot of code out there &hellip;  I
+finally settled on <a href="https://github.com/xu-wang11/FtpServer">FtpServer</a>
+by <a href="https://github.com/xu-wang11">Xu Wang</a> as a base for my little
+project.  I suspect it too is a school project, but this one actually
+worked, right off the bat!</p>
+
+<p>I got so excited that I immediately started improving it, cleaning up
+the source code, reindenting it (KNF) and fixing small bugs here and
+there.  It was a perfect fit!  This is where I made my big mistake,
+which I hope will not eventually kill this project in the end &ndash; the
+FtpServer project did not have a license &hellip; so
+<a href="https://github.com/xu-wang11/FtpServer/issues/1">I filed a bug</a> to
+the GitHub issue tracker, added the ISC license to
+<a href="https://github.com/troglobit/uftpd">my fork</a> and continued hacking
+away.  The changes I&rsquo;ve made are so substantial that there isn&rsquo;t much
+left of the original code, so uftpd should be safe.  Yes, I named it
+uftpd, the micro ftp server &ndash; the no nonsense file transfer protocol
+daemon.</p>
+
+<p>The whole hack took about three days and I&rsquo;ve learned a lot during
+this time!  It was fun, inspiring and gave me a lot of creative energy
+that I can use in other projects: at work as well as at home :)</p>
+
+<p>See the <a href="/uftpd.html">uftpd project home</a> for download links.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/04/21/release-of-finit-v1-dot-9/">Release of Finit v1.9</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-21T16:08:30+02:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Just made it!  Here&rsquo;s the result of #Easterhack14 &ndash;
+<a href="/finit.html">Finit</a> v1.9 :-)</p>
+
+<p>Nothing fancy this time, just collecting some bug fixes, playing with
+cppcheck a bit and adding support for including .conf files.  Quite
+useful if you want to partition your configuration, or if you share
+major pieces of configuration between different platforms.</p>
+
+<p>Enjoy!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/03/18/finally-google-movies-and-music-in-sweden/">Finally &#8211; Google Movies &amp; Music in Sweden</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-18T18:13:00+01:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="right" src="/images/play-movies.png" width="364"></p>
+
+<p>So, we finally got Google Music &amp; Movies services in Sweden!  The
+prices seem a bit on the steep side, apart from maybe the Music
+service, which is slightly cheaper than Spotify.  Will try it out for
+a month or so to see which one I like better.</p>
+
+<p>For some reason I chose Gravity as my first rental, at 39 Skr.  I&rsquo;ve
+heard so many bad reviews of it but for better or worse it&rsquo;ll now be
+my introduction to Google Movies :-)</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/23/weekend-hack-json-vs-conf/">Weekend Hack: JSON vs CONF</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-23T21:59:00+01:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>It was time.  I had been putting it off for far too long &ndash; learning
+about JSON and deciding on a new .conf file format for
+<a href="/inadyn.shtml">Inadyn</a>.  So this weekend I sat myself down to read up
+on <a href="http://en.wikipedia.org/wiki/JSON">JSON</a> and the multitude of
+parser libraries for both JSON and traditional .conf file parsers.  I
+was looking for a human readable file format that a user could easily
+and reliably edit by themselves without it being too error prone or
+sensitive to mistyping.</p>
+
+<div><script src='https://gist.github.com/9177645.js'></script>
+<noscript><pre><code>&lt;html&gt;&lt;body&gt;You are being &lt;a href=&quot;https://github.com/gist/9177645&quot;&gt;redirected&lt;/a&gt;.&lt;/body&gt;&lt;/html&gt;</code></pre></noscript></div>
+
+
+<p>I quickly narrowed down my scope of investigation to
+<a href="http://www.digip.org/jansson/">Jansson</a> for JSON and and
+<a href="http://www.nongnu.org/confuse/">Confuse</a> for &ldquo;standard&rdquo; UNIX .conf
+files.  Both have very liberal licenses, extensive test suites, very
+good documentation and are extremely well written!  In fact, I will
+probably use them as prime examples of well maintained Open Source
+projects in the future :-)</p>
+
+<p>The resulting code is in my
+<a href="https://github.com/troglobit/toolbox/tree/master/conf">toolbox</a> on
+GitHub.</p>
+
+<div><script src='https://gist.github.com/9177620.js'></script>
+<noscript><pre><code>&lt;html&gt;&lt;body&gt;You are being &lt;a href=&quot;https://github.com/gist/9177620&quot;&gt;redirected&lt;/a&gt;.&lt;/body&gt;&lt;/html&gt;</code></pre></noscript></div>
+
+
+<p>In my opinion the .conf file is a lot easier to read, write and edit
+by Joe User, so that&rsquo;s what I&rsquo;ll be using for many of my own projects,
+starting with <a href="/inadyn.shtml">Inadyn</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/13/on-commit-messages-dot-dot-dot/">On Commit Messages &#8230;</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-13T14:18:00+02:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>There&rsquo;s just one thing to say on the topic of commit messages:
+<a href="http://stopwritingramblingcommitmessages.com/">ur doin it wrong if &hellip;</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/13/just-a-programmer/">Just a Programmer</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-13T13:46:00+02:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Sometimes people ask me what I do for a living.  Usually I tend to
+pause and think, real hard, becuase the people asking me this aren&rsquo;t
+programmers.  They use computers, but are mostly limited to a Windows
+machine, writing in MS Word and browsing the Internet, mostly for
+Facebook.</p>
+
+<p>I often start off with: &ldquo;It&rsquo;s a bit complicated to explain &hellip; &rdquo;, by
+which time I&rsquo;ve lost most of the people in the room listening to me.
+Sometimes I say: &ldquo;I&rsquo;m a software architect.&rdquo;, because people seem to
+know what architects do for a living, they draw houses, design stuff
+and drive SAAB&rsquo;s.  Much like dentists.  The prefix &ldquo;software&rdquo; however
+does confuse people.</p>
+
+<p><img class="right" src="/images/programming-in-a-nutshell.gif"></p>
+
+<p>In reality I&rsquo;m
+<a href="http://c2.com/cgi/wiki?JustaProgrammer">just a programmer</a> with a
+little bit more responsibility.  A day starts with coming in to the
+office, or sitting down in my home office, connecting to the company
+VPN, meanwhile planning loosely the day and my goals.  All while
+checking status of e-mail, our IRC channel and the issue tracker for
+any recently reported/updated issues in my fields of responsibility.
+Somewhere around there I have a pretty good idea about what must be
+done and in what order.  So I write it down, in no particular order,
+on folded A4 sheets I use for TODO lists and start working.  About 20
+minutes into that, when I&rsquo;ve just reached
+<a href="http://c2.com/cgi/wiki?InTheZone">The Zone</a>, I get interrupted for an
+impromptu meeting, or
+<a href="https://en.wikipedia.org/wiki/Conference_call">telco</a>, which in turn
+always leads to another meeting, which in turn runs over and suddenly
+it&rsquo;s 16:00 (4 pm) and I have 45 minutes to complete a days work before
+picking up the kids from school.</p>
+
+<p>Or &hellip; you can apply that same crazy to a day when trying to fix a
+simple bug, finding another horrbile bug and fixing that first,
+leading to a minor redesign in need of a refactor, which in turn gives
+me a pain to merge since during the time I tried fixing that minor bug
+my collegues have done multiple changes to the same files I&rsquo;ve been
+working on.</p>
+
+<p>That&rsquo;s what I do for a living.  And yes, I know it&rsquo;s not sustainable
+work conditions.  I&rsquo;m working on that, it&rsquo;s on the TODO list &hellip;</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/09/on-the-linearity-of-time/">On the Linearity of Time</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-09T04:25:00+02:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Don&rsquo;t try this at home kids. (Disclaimer: I live in Sweden :)</p>
+
+<div><script src='https://gist.github.com/6168031.js'></script>
+<noscript><pre><code></code></pre></noscript></div>
+
+
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/08/06/event-handling/">Threads vs Events</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-06T14:20:00+02:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This is a rant about something I recently found to be a long standing
+battle line in the world of programming,
+<a href="http://cgi.di.uoa.gr/~mema/courses/mde518/papers/lauer78.pdf">Lau78</a>.
+The event vs thread based approach to programming.  As rants go I do
+not aspire to deliver a clear or logical message, what so ever.  It&rsquo;s
+basically just something I need to get off my chest.</p>
+
+<p>It was not until 2007 I first learned about the event based approach
+to programming and event libraries like
+<a href="http://libevent.org/">libevent</a> and
+<a href="http://software.schmorp.de/pkg/libev.html">libev</a>.  Up until that
+point the silver bullet everyone was using was &hellip; Threads.</p>
+
+<p>I don&rsquo;t really know when it all started, maybe it was the Linux
+revolution, the first NPTL release with GLIBC, Java or Solaris.
+Nevertheless, from my point of view it was sometime in the mid 90&rsquo;s
+during my time at university that the use of threads was starting to
+become prevalent.</p>
+
+<p><span class='pullquote-right' data-pullquote='With the rise of the thread based model of programming we now had a
+hammer, and every problem looked like a nail.'>
+With the rise of the thread based model of programming we now had a
+hammer, and every problem looked like a nail.  I had a gut feeling
+there was something really wrong with using threads for every
+conceivable program, but I could not find a way to express it, so I
+chugged away with my threads, semaphores and condition variables.  I
+convinced myself I was happy like this.
+</span></p>
+
+<p>Of course I knew about the event based approach, but it was more or
+less dismissed as a thing of the past, a while(1) loop to mimic the
+behavior of PLC&rsquo;s.  So almost every program I wrote, and every program
+I took over from others, were like Indiana Jones types of mazes full
+of deadlocks and race conditions.</p>
+
+<p>I thought I did something wrong, and so did many others like me.  I
+spent days and nights trying to understand, refactor, and redesign
+threaded programs.  What I found was a doubt that the thread based
+model actually didn&rsquo;t suit every problem,
+<a href="http://www.cc.gatech.edu/classes/AY2009/cs4210_fall/papers/ousterhout-threads.pdf">Ous96</a>.
+There are quite a few domains, however, where thread based models
+shine. Usually in languages that come with thread support built-in,
+like Erlang.</p>
+
+<p>Most of the programs I work with today are network daemons.  Meaning
+they are essentially message based applications that spend a lot of
+time waiting for an event to occur: receiving a data frame, waiting
+for a timer to expire, a signal to be raised, etc.  Of course threads
+can be used for this, but it is a lot simpler to employ an event based
+framework instead.  Also, they are all written in C for speed and
+portability between different UNIX systems.  For that domain, where I
+currently make my living, it will be difficult to convince me to ever
+look at threads again.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/12/new-open-source-releases/">New Open Source Releases</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-12T16:30:00+02:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Vacation time means catching up on my Open Source projects! :)</p>
+
+<p>Currently I&rsquo;m shaping up the home pages and this blog to improve the
+easy access and overview of all the packages I maintain.  The
+following packages have new releases, or can expect new releases soon:</p>
+
+<ul>
+<li> <a href="/editline.html">Minix Editline</a> v1.14.1</li>
+<li> <a href="/smcroute.html">SMCRoute</a> v1.99.1 &ndash; There&rsquo;s even a v2.0.0 being
+ planned, with the core of SMCRoute available as a library</li>
+<li> <a href="/mrouted.html">mrouted</a> minor cleanup an sync with
+ <a href="http://www.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/">OpenBSD</a></li>
+<li> <a href="/pimd.html">pimd</a> cleanups and bug fixes, needs testing</li>
+<li> <a href="/inadyn.html">inadyn</a> is in dire need of a release, but needs more testing and fixes</li>
+</ul>
+
+
+<p>As usual, see my <a href="http://github.com/troglobit">GitHub</a> for the latest
+commits if you want to try anything out, file an issue report, or if
+you want to contribute.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="3">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="1">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Projects</h1>
+  <ul>
+    <li><a href="/finit.html">Fast Init Replacement</a></li>
+    <li><a href="/uftpd.html">Micro TFTP/FTP Daemon</a></li>
+    <li><a href="/tetris.html">Micro Tetris&trade;</a></li>
+    <li><a href="/snake.html">Micro Snake</a></li>
+    <li><a href="/editline.html">Minix Editline</a></li>
+    <li><a href="/inadyn.html">Inadyn DDNS Client</a></li>
+    <li><a href="/multicast-howto.html">Multicast HowTo</a></li>
+    <li><a href="/mrouted.html">The Original Multicast Routing Daemon</a></li>
+    <li><a href="/pimd.html">The Original PIM-SM Daemon</a></li>
+    <li><a href="/smcroute.html">SMCRoute Static Multicast Routing</a></li>
+  </ul>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/12/28/mrouted-v3-dot-9-7/">mrouted v3.9.7</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/28/last-release-of-pimd/">pimd v2.2.0 &#8211; The last release of pimd?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/21/tftp-blocksize-negotiation-in-uftpd-v1-dot-7/">TFTP blocksize negotiation in uftpd v1.7</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/">HowTo Add Multicast Routing Support to the FreeBSD kernel</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/">GnuTLS support in Inadyn and fixes to uftpd</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/troglobit">@troglobit</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'troglobit',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+<section>
+  <h1>Latest Tweets</h1>
+
+  <a class="twitter-timeline" data-dnt="true"
+     href="https://twitter.com/troglobit"
+     data-widget-id="365667052100415488">Tweets by @troglobit</a>
+  <script>!function(d,s,id){var
+    js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</section>
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Joachim Nilsson -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: administration | Troglobit]]></title>
+  <link href="http://troglobit.github.io/blog/categories/administration/atom.xml" rel="self"/>
+  <link href="http://troglobit.github.io/"/>
+  <updated>2015-01-02T12:13:29+01:00</updated>
+  <id>http://troglobit.github.io/</id>
+  <author>
+    <name><![CDATA[Joachim Nilsson]]></name>
+    <email><![CDATA[troglobit@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Net Install CentOS]]></title>
+    <link href="http://troglobit.github.io/blog/2013/07/10/net-install-centos/"/>
+    <updated>2013-07-10T15:01:00+02:00</updated>
+    <id>http://troglobit.github.io/blog/2013/07/10/net-install-centos</id>
+    <content type="html"><![CDATA[<p>I usually run Debian or Ubuntu on my machines.  However, having
+recently found some time to work on my various projects again, I&rsquo;ve
+now suddenly found myself in need of a CentOS machine.</p>
+
+<p>The <a href="http://www.centos.org/">CentOS home page</a> invited me to download
+an installation ISO, so I went for the small
+<a href="http://ftp.funet.fi/pub/mirrors/centos.org/5.9/isos/x86_64/CentOS-5.9-x86_64-netinstall.iso">Net Install</a>
+which started perfectly with my virt-manager in Ubuntu.</p>
+
+<p>All I had to provide was an FTP server and directory:</p>
+
+<ul>
+<li>mirrors.kernel.org</li>
+<li>/centos/5.9/os/x86_64</li>
+<li>Anonymous FTP</li>
+</ul>
+
+
+<p>That&rsquo;s it, the graphical installer started and I had to start
+selecting various packages. Must say it&rsquo;s a bit confusing since the
+package naming is not the same in RedHat/CentOS as in Debian.</p>
+
+<p>Oh, and if the installations seems to have gotten stuck, just wait it
+out.  It&rsquo;ll get there :)</p>
+
+<p>Read the following to get
+<a href="http://prefetch.net/blog/index.php/2009/06/17/redirecting-the-centos-and-fedora-linux-console-to-a-serial-port-virsh-console-edition/">console in virsh working with CentOS guest</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[File System Pass-Through in KVM/Qemu/libvirt]]></title>
+    <link href="http://troglobit.github.io/blog/2013/07/05/file-system-pass-through-in-kvm-slash-qemu-slash-libvirt/"/>
+    <updated>2013-07-05T23:56:00+02:00</updated>
+    <id>http://troglobit.github.io/blog/2013/07/05/file-system-pass-through-in-kvm-slash-qemu-slash-libvirt</id>
+    <content type="html"><![CDATA[<p>This post doesn&rsquo;t cover fully setting up KVM/Qemu with virt-manager
+and creating virtual machine guests.  See the Ubuntu
+<a href="https://help.ubuntu.com/community/KVM/Installation">KVM Installtion</a>,
+<a href="https://help.ubuntu.com/community/KVM/VirtManager">VirtManager Guide</a>,
+the
+<a href="https://help.ubuntu.com/13.04/serverguide/libvirt.html">Ubuntu Server Guide on libvirt</a>,
+or
+<a href="http://www.howtoforge.com/virtualization-with-kvm-on-ubuntu-12.04-lts-p3">HowtoForge</a>
+for that.</p>
+
+<p>Instead this blog post details the most relevant steps to get file
+system pass-through between a Linux host and Qemu guest working.  The
+upstream <a href="http://wiki.qemu.org/Documentation/9psetup">Qemu docs</a>
+provide a good starting point, as is the original
+<a href="https://www.kernel.org/doc/ols/2010/ols2010-pages-109-120.pdf">IBM paper on VirtFS</a>.
+For users of Ubuntu &lt;= 13.04, watch out for the
+<a href="https://bugs.launchpad.net/ubuntu/+source/libvirt/+bug/943680">libvirt bug</a>
+that I know many people run into, myself included.</p>
+
+<p>First of all, I could never really master the beast called AppArmor in
+Ubuntu.  Once I got the hang of the files to edit, the order to make
+changes and the syntax of its profile files I think I tried every
+possible permutation without any success.  So I ended up disabling the
+profile(s) of my VM guests.  The UUID in the filename can be found in
+the details of your VM, or in the process listing on the host: <code>ps fax
+| grep guestname</code>.  Here is an example of how to disable one guest:</p>
+
+<pre><code>aa-complain /etc/apparmor.d/libvirt/libvirt-20b8c6c6-440c-bd76-254e-42fd475e6770
+</code></pre>
+
+<p>You need to install <a href="apt://apparmor-utils">apparmor-utils</a> to get the
+<code>aa-complain</code> tool.  Where <em>complain</em> basically means ignore any hits
+from the given profile and just complain in the log.  The default is
+<code>aa-enforce</code>.  For more info on AppArmor, see the
+<a href="http://wiki.apparmor.net/index.php/Documentation">excellent upstream docs</a></p>
+
+<p><img class="right" src="/images/filesystem-pass-through.png" width="500"></p>
+
+<p>Now, how to do it.  I like virsh, but for most of the time the vmware
+like
+<a href="http://virt-manager.org/">virt-manager is a lot more user friendly</a>.
+In the VM&rsquo;s Detailed view, click the &ldquo;Add Hardware&rdquo; button and select
+&ldquo;Filesystem&rdquo;.  This is where the action happens.</p>
+
+<ul>
+<li><strong>Type:</strong> preset to Passthrough</li>
+<li><strong>Mode:</strong> change to <code>Mapped</code> <em>This is the most important step in
+this blog, or you will not get read/write support!</em></li>
+<li><strong>Source path:</strong> select the path on your host that will be shared
+with this guest.  I use <code>/var/lib/libvirt/share</code> but you can use any
+directory you want</li>
+<li><strong>Target path:</strong> enter magic string that you&rsquo;ll use in the mount
+command in the guest.  I use <code>share</code>, no slashes or anything.  In
+reality this isn&rsquo;t a path per se, it&rsquo;s a tag that the guest sends to
+the kernel 9p driver via the mount command</li>
+</ul>
+
+
+<p>Please note that 9P file systems simply pass-through the owner UID/GID
+and directory permissions from the host to the guest.  This can be a
+bit confusing, but just make sure to use the same for all guests that
+share the same directory.  I chowned it to my account on the host:</p>
+
+<pre><code>host# chown jocke:users /var/lib/libvirt/share
+</code></pre>
+
+<p>In my <code>guest:/etc/modules</code> I added the following modules, even though
+the kernel can probably load them itself on demand:</p>
+
+<pre><code>9p
+9pnet
+9pnet_virtio
+</code></pre>
+
+<p>The actual command to get the ball rolling on the guest:</p>
+
+<pre><code>guest# mount -t 9p -o trans=virtio,version=9p2000.L,rw share /mnt
+</code></pre>
+
+<p>To automatically mount this every time at boot, add the following
+to your <code>guest:/etc/fstab</code>:</p>
+
+<pre><code>share   /mnt    9p  trans=virtio,version=9p2000.L,rw    0   0
+</code></pre>
+
+<p>That&rsquo;s it. Good Luck!</p>
+]]></content>
+  </entry>
+  
+</feed>
