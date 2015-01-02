@@ -3,15 +3,19 @@ layout: page
 title: "SMCRoute &mdash; Static Multicast Routing Daemon"
 sharing: true
 footer: true
-date: 2013-07-11 16:47
+date: 2014-09-30 23:15
 comments: false
 ---
 
+<a href="https://github.com/troglobit/smcroute"><img style="position: absolute; top: 0; right: 0; border: none; box-shadow: none;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+
 SMCRoute is a daemon and command line tool to manipulate the multicast
-routing table in a UNIX kernel.  It can be used as an alternative to
-dynamic multicast routers like [mrouted](/mrouted.html) or
-[pimd](/pimd.html) in situations where (only) static multicast routes
-should be maintained and/or no proper IGMP signaling exists.
+routing table in the UNIX kernel.  Both FreeBSD and Linux kernels are
+supported, but it may work on other systems as well.  SMCRoute can be
+used as an alternative to dynamic multicast routing daemons like
+[mrouted](/mrouted.html) or [pimd](/pimd.html) in situations where
+(only) static multicast routes should be maintained and/or no proper
+IGMP signaling exists.
 
     #
     # smcroute.conf example
@@ -65,12 +69,14 @@ on-demand (*,G) routing.
 Issue tracker and GIT repository available at GitHub:
 
    * [Repository](http://github.com/troglobit/smcroute)
-   * [smcroute-1.99.2.tar.bz2](ftp://troglobit.com/smcroute/smcroute-1.99.2.tar.bz2),
-     [MD5](ftp://troglobit.com/smcroute/smcroute-1.99.2.tar.bz2.md5)
-   * [Issue Tracker](http://github.com/troglobit/smroute/issues)
+   * [smcroute-2.0.0.tar.xz](ftp://troglobit.com/smcroute/smcroute-2.0.0.tar.xz),
+     [MD5](ftp://troglobit.com/smcroute/smcroute-2.0.0.tar.xz.md5)
+     [GPG Sign](ftp://troglobit.com/smcroute/smcroute-2.0.0.tar.xz.asc)
+   * [Issue Tracker](http://github.com/troglobit/smcroute/issues)
    * [Debian packages](http://packages.debian.org/smcroute)
    * [Ubuntu packages](http://packages.ubuntu.com/smcroute)
    * [Google Group](https://groups.google.com/forum/?fromgroups#!forum/smcroute)
 
-See also the [Free(code) page](http://freecode.com/projects/smcoute).
+See also the [OpenHub page](https://www.openhub.net/p/smcroute/), or the
+now dormant [Free(code) page](http://freecode.com/projects/smcroute).
 

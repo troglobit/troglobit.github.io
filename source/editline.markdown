@@ -3,14 +3,16 @@ layout: page
 title: "Minix Editline"
 sharing: true
 footer: true
-date: 2013-07-07 01:41
+date: 2014-09-14 04:34
 comments: false
 ---
 
-This is a line editing library.  It can be linked into almost any
-program to provide command-line editing and history.  It is
-call-compatible with the FSF readline library, but is a fraction of
-the size (and offers fewer features).
+<a href="https://github.com/troglobit/editline"><img style="position: absolute; top: 0; right: 0; border: none; box-shadow: none;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+
+This is a line editing library for UNIX, with a focus on GNU/Linux.
+It can be linked into almost any program to provide command line
+editing and history.  It is call compatible with the FSF readline
+library, but is a fraction of the size (and offers fewer features).
 
 {% img center /images/peeking.gif 468 52 %}
 
@@ -52,9 +54,10 @@ Issue tracker and GIT repository available at GitHub:
 
    * [Repository](http://github.com/troglobit/editline)
    * [Issue Tracker](http://github.com/troglobit/editline/issues)
-   * [editline-1.14.1.tar.xz](ftp://troglobit.com/editline/editline-1.14.1.tar.xz),
-     [MD5](ftp://troglobit.com/editline/editline-1.14.1.tar.xz.md5)
+   * [editline-1.14.2.tar.xz](ftp://troglobit.com/editline/editline-1.14.2.tar.xz),
+     [MD5](ftp://troglobit.com/editline/editline-1.14.2.tar.xz.md5)
 
-See also the [Free(code) page](http://freecode.com/projects/minix-editline).
+See also the [OpenHub page](https://www.openhub.net/p/editline), or
+the old [Free(code) page](http://freecode.com/projects/minix-editline).
 
 

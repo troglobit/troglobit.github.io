@@ -1,11 +1,13 @@
 ---
 layout: page
-title: "pimd | The original PIM-SM daemon"
+title: pimd | The original PIM-SM daemon
 sharing: true
 footer: true
-date: 2013-02-18 08:19
+date: 2014-12-28 13:37
 comments: false
 ---
+
+<a href="https://github.com/troglobit/pimd"><img style="position: absolute; top: 0; right: 0; border: none; box-shadow: none;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
 
 {% img right /images/pim-sm.gif 222 155 %}
 
@@ -16,7 +18,7 @@ implementation of the protocol, according to
 
 Thanks to OpenBSD freeing [mrouted](/mrouted.shtml), pimd is now also
 fully free to use under the 3-clause
-[BSD license](http://git.vmlinux.org/pimd.git/blob/HEAD:/LICENSE).
+[BSD license](https://github.com/troglobit/pimd/blob/master/LICENSE).
 
 Protocol Independent Multicast, PIM, allows existing networks to route
 IP multicast, regardless of what unicast routing protocol is in use.
@@ -32,14 +34,15 @@ Pavlin Ivanov Radoslavov. With contributions by many others.
 Issue tracker and GIT repository available at GitHub:
 
    * [Repository](http://github.com/troglobit/pimd)
-   * [ChangeLog](https://github.com/troglobit/pimd/blob/master/ChangeLog)
-   * [pimd-2.1.8.tar.bz2](ftp://troglobit.com/pimd/pimd-2.1.8.tar.bz2),
-     [MD5](ftp://troglobit.com/pimd/pimd-2.1.8.tar.bz2.md5)
+   * [ChangeLog](https://github.com/troglobit/pimd/releases/tag/2.2.0)
+   * [pimd-2.2.0.tar.bz2](ftp://troglobit.com/pimd/pimd-2.2.0.tar.bz2),
+     [MD5](ftp://troglobit.com/pimd/pimd-2.2.0.tar.bz2.md5)
    * [Issue Tracker](http://github.com/troglobit/pimd/issues)
    * [Debian packages](http://packages.debian.org/pimd)
    * [Ubuntu packages](http://packages.ubuntu.com/pimd)
 
-See also the [Free(code) page](http://freecode.com/projects/pimd).
+See also the [OpenHub page](https://www.openhub.net/p/pimd/), or the
+(sadly) dormant [Free(code) page](http://freecode.com/projects/pimd),
 
 Problems?  See the [multicast howto](/multicast-howto.html)
 
