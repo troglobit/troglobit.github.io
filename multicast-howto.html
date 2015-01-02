@@ -110,16 +110,17 @@ readily available i Debian/Ubuntu as simple as</p>
 <p>CORE is extremely simple to get started with.</p>
 
 <ol>
-<li>. Fire up the GUI</li>
-<li>. Drag and drop a few router icons to the grid</li>
-<li>. Connect them</li>
-<li>. <em>BOOM</em> you now have IP addresses automatically assigned!</li>
-<li>. Press the Play button &ndash; routers are now starting up</li>
+<li>.  Fire up the GUI</li>
+<li>.  Drag and drop a few router icons to the grid</li>
+<li>.  Connect them</li>
+<li>.  <em>BOOM</em> you now have IP addresses automatically assigned!</li>
+<li>.  Press the Play button &ndash; routers are now starting up</li>
 </ol>
 
 
 <p>Play around a bit to try it out, it&rsquo;s awesome!  I usually start pimd,
-mrouted, and smcroute manually with a script.  The host file system is
+mrouted, and smcroute manually with a script.  (You can access the shell
+of each router by right-clicking on them.)  The host file system is
 reachable from each router in CORE, even though they are isolated and
 have their own
 <a href="http://blog.scottlowe.org/2013/09/04/introducing-linux-network-namespaces/">network namespaces</a>.</p>
@@ -166,9 +167,9 @@ same setup in other test cases as well.</p>
 one multicast routing socket, so you have to choose one of:</p>
 
 <ol>
-<li>. pimd -c pimd.conf</li>
-<li>. mrouted -c mrouted.conf</li>
-<li>. smcroute -f smcroute.conf</li>
+<li>.  pimd -c pimd.conf</li>
+<li>.  mrouted -c mrouted.conf</li>
+<li>.  smcroute -f smcroute.conf</li>
 </ol>
 
 
@@ -258,15 +259,15 @@ as with <code>mrouted</code> and <code>pimd</code>.</p>
 <h2>FAQ</h2>
 
 <ul>
-<li>It doesn&rsquo;t work? &ndash; Check the TTL.</li>
-<li>Why does the TTL in multicast default to 1? &ndash; Because multicast is
-classified as broadcast, which inherently is dangerous.  Without
-proper limitation, like switches with support for IGMP Snooping,
-multicast IS broadcast.</li>
-<li>It doesn&rsquo;t work? &ndash; Check your network topology, maybe a switch
-between the sender and the receiver doesn&rsquo;t properly support IGMP
-snooping.  For virtual/cloud setups, see above for disabling IGMP
-snooping entirely in the Linux kernel.</li>
+<li> It doesn&rsquo;t work? &ndash; Check the TTL.</li>
+<li> Why does the TTL in multicast default to 1? &ndash; Because multicast is
+ classified as broadcast, which inherently is dangerous.  Without
+ proper limitation, like switches with support for IGMP Snooping,
+ multicast IS broadcast.</li>
+<li> It doesn&rsquo;t work? &ndash; Check your network topology, maybe a switch
+ between the sender and the receiver doesn&rsquo;t properly support IGMP
+ snooping.  For virtual/cloud setups, see above for disabling IGMP
+ snooping entirely in the Linux kernel.</li>
 </ul>
 
 </div>
