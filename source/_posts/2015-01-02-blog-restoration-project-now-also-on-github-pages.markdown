@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Blog Restoration Project now also on GitHub Pages"
+title: "Blog Restoration Project"
 date: 2015-01-02 14:12:59 +0100
 comments: true
 categories:
