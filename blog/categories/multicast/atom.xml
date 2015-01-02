@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: multicast | Troglobit]]></title>
+  <link href="http://troglobit.github.io/blog/categories/multicast/atom.xml" rel="self"/>
+  <link href="http://troglobit.github.io/"/>
+  <updated>2015-01-02T14:57:50+01:00</updated>
+  <id>http://troglobit.github.io/</id>
+  <author>
+    <name><![CDATA[Joachim Nilsson]]></name>
+    <email><![CDATA[troglobit@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[mrouted v3.9.7]]></title>
+    <link href="http://troglobit.github.io/blog/2014/12/28/mrouted-v3-dot-9-7/"/>
+    <updated>2014-12-28T19:38:06+01:00</updated>
+    <id>http://troglobit.github.io/blog/2014/12/28/mrouted-v3-dot-9-7</id>
+    <content type="html"><![CDATA[<p>Another release today is the venerable <a href="/mrouted.html">mrouted</a>, now
+available as
+<a href="https://github.com/troglobit/mrouted/releases/tag/3.9.7">v3.9.7 on GitHub</a>.</p>
+
+<!-- more -->
+
+
+<h2>Changes &amp; New Features</h2>
+
+<ul>
+<li>SNMP Support removed.  It never compiled and would have likely
+needed a complete refactor to support modern AgentX.</li>
+<li>Replaced static <code>config.mk</code> with configure script from pimd</li>
+<li>RSRR Support now disabled by default, use <code>--enable-rsrr</code> to configure
+script to re-enable</li>
+<li>Possible to start with <code>mrouted</code> disabled on all interfaces by
+default.  Use <code>enable</code> to .conf <code>phyint</code> directive and <code>-M/-N</code> command
+line options to control behavior, default is same as before.  Thanks
+to Joseph Gooch (<a href="https://github.com/goochjj">@goochjj</a>) for this feature!</li>
+<li>Add David Waitzman and Craig Partridge to list of original authors
+of <code>mrouted</code>, after being by Mr Waitzman :)</li>
+<li>Change to use <code>stdint.h</code> types instead of unsafe homegrown types</li>
+</ul>
+
+
+<h2>Bug Fixes</h2>
+
+<ul>
+<li>Fix issue with older BSD kernels, mainly for current FreeBSD 10 and
+older, that don&rsquo;t really give RAW sockets but byte swap <code>ip_len</code>
+field, Olivier Cochard-Labbé (<a href="https://github.com/ocochard">@ocochard</a>)</li>
+<li>Build fixes for FreeBSD, should make maintaining ports easier :)</li>
+<li>Change from <code>select()</code> to <code>poll()</code> due to descriptor limits, e.g.,
+on BSD.</li>
+<li>UNIX 2038 first audit, inspired by OpenBSD.  Cleanup type confusion
+<code>int/u_long</code> where it should be <code>time_t</code>.  Also, clarify that <code>genid</code>
+is OK, since it&rsquo;s used and stored as unsigned 32-bit integer.</li>
+<li>Lots of minor fixes detected by Coverity Scan and Clang scan-build
+<a href="https://scan.coverity.com/projects/3320">https://scan.coverity.com/projects/3320</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

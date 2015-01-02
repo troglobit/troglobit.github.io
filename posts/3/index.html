@@ -9,9 +9,8 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="I usually run Debian or Ubuntu on my machines. However, having
-recently found some time to work on my various projects again, I&rsquo;ve
-now suddenly &hellip;">
+  <meta name="description" content="Vacation time means catching up on my Open Source projects! :) Currently I&rsquo;m shaping up the home pages and this blog to improve the
+easy access &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -74,6 +73,61 @@ now suddenly &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/12/new-open-source-releases/">New Open Source Releases</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-12T16:30:00+02:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Vacation time means catching up on my Open Source projects! :)</p>
+
+<p>Currently I&rsquo;m shaping up the home pages and this blog to improve the
+easy access and overview of all the packages I maintain.  The
+following packages have new releases, or can expect new releases soon:</p>
+
+<ul>
+<li> <a href="/editline.html">Minix Editline</a> v1.14.1</li>
+<li> <a href="/smcroute.html">SMCRoute</a> v1.99.1 &ndash; There&rsquo;s even a v2.0.0 being
+ planned, with the core of SMCRoute available as a library</li>
+<li> <a href="/mrouted.html">mrouted</a> minor cleanup an sync with
+ <a href="http://www.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/">OpenBSD</a></li>
+<li> <a href="/pimd.html">pimd</a> cleanups and bug fixes, needs testing</li>
+<li> <a href="/inadyn.html">inadyn</a> is in dire need of a release, but needs more testing and fixes</li>
+</ul>
+
+
+<p>As usual, see my <a href="http://github.com/troglobit">GitHub</a> for the latest
+commits if you want to try anything out, file an issue report, or if
+you want to contribute.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -184,75 +238,12 @@ For users of Ubuntu &lt;= 13.04, watch out for the
 <a href="https://bugs.launchpad.net/ubuntu/+source/libvirt/+bug/943680">libvirt bug</a>
 that I know many people run into, myself included.</p>
 
-<p>First of all, I could never really master the beast called AppArmor in
-Ubuntu.  Once I got the hang of the files to edit, the order to make
-changes and the syntax of its profile files I think I tried every
-possible permutation without any success.  So I ended up disabling the
-profile(s) of my VM guests.  The UUID in the filename can be found in
-the details of your VM, or in the process listing on the host: <code>ps fax
-| grep guestname</code>.  Here is an example of how to disable one guest:</p>
-
-<pre><code>aa-complain /etc/apparmor.d/libvirt/libvirt-20b8c6c6-440c-bd76-254e-42fd475e6770
-</code></pre>
-
-<p>You need to install <a href="apt://apparmor-utils">apparmor-utils</a> to get the
-<code>aa-complain</code> tool.  Where <em>complain</em> basically means ignore any hits
-from the given profile and just complain in the log.  The default is
-<code>aa-enforce</code>.  For more info on AppArmor, see the
-<a href="http://wiki.apparmor.net/index.php/Documentation">excellent upstream docs</a></p>
-
-<p><img class="right" src="/images/filesystem-pass-through.png" width="500"></p>
-
-<p>Now, how to do it.  I like virsh, but for most of the time the vmware
-like
-<a href="http://virt-manager.org/">virt-manager is a lot more user friendly</a>.
-In the VM&rsquo;s Detailed view, click the &ldquo;Add Hardware&rdquo; button and select
-&ldquo;Filesystem&rdquo;.  This is where the action happens.</p>
-
-<ul>
-<li><strong>Type:</strong> preset to Passthrough</li>
-<li><strong>Mode:</strong> change to <code>Mapped</code> <em>This is the most important step in
-this blog, or you will not get read/write support!</em></li>
-<li><strong>Source path:</strong> select the path on your host that will be shared
-with this guest.  I use <code>/var/lib/libvirt/share</code> but you can use any
-directory you want</li>
-<li><strong>Target path:</strong> enter magic string that you&rsquo;ll use in the mount
-command in the guest.  I use <code>share</code>, no slashes or anything.  In
-reality this isn&rsquo;t a path per se, it&rsquo;s a tag that the guest sends to
-the kernel 9p driver via the mount command</li>
-</ul>
-
-
-<p>Please note that 9P file systems simply pass-through the owner UID/GID
-and directory permissions from the host to the guest.  This can be a
-bit confusing, but just make sure to use the same for all guests that
-share the same directory.  I chowned it to my account on the host:</p>
-
-<pre><code>host# chown jocke:users /var/lib/libvirt/share
-</code></pre>
-
-<p>In my <code>guest:/etc/modules</code> I added the following modules, even though
-the kernel can probably load them itself on demand:</p>
-
-<pre><code>9p
-9pnet
-9pnet_virtio
-</code></pre>
-
-<p>The actual command to get the ball rolling on the guest:</p>
-
-<pre><code>guest# mount -t 9p -o trans=virtio,version=9p2000.L,rw share /mnt
-</code></pre>
-
-<p>To automatically mount this every time at boot, add the following
-to your <code>guest:/etc/fstab</code>:</p>
-
-<pre><code>share   /mnt    9p  trans=virtio,version=9p2000.L,rw    0   0
-</code></pre>
-
-<p>That&rsquo;s it. Good Luck!</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/07/05/file-system-pass-through-in-kvm-slash-qemu-slash-libvirt/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -300,43 +291,12 @@ today I am more concerned with the overall structure and how
 components interact.  Even though I can still get very annoyed at
 people naming their local variables obtrusively.</p>
 
-<p><a href="http://www.amazon.com/Practice-Programming-Addison-Wesley-Professional-Computing/dp/020161586X"><img class="right" src="/images/Practice_of_Programming.jpeg" width="222" height="155"></a></p>
-
-<p>I still do most of my work, professional and hobby, using plain old C.
-I&rsquo;ve read many books and style guides on the subject and the one that
-really stood out as being extremely helpful, apart from reading a LOT
-of code, is
-<a href="http://www.amazon.com/Practice-Programming-Addison-Wesley-Professional-Computing/dp/020161586X">The Practice of Programming</a>
-by Kernighan and Pike!  The book is crammed full with tons of neat
-advice and best practises that simly just make sense.  Stuff like
-&ldquo;name your local variables i, j, k for counters and loop variables&rdquo;,
-which is basically what most of us do already.  Just read it and
-you&rsquo;ll see what I mean &ndash; spot on!</p>
-
-<p>Spot on? I hear you say, why should you read something that seemingly
-doesn&rsquo;t tell you anything you already know?  Well, even the most
-evident practises often come under scrutiny when programmers from the
-most different schools meet.  At my job we have Microsoft, Bombardier,
-and ABB programmers which have little to no experience with UNIX,
-Linux or any Free/Open Source software development.  They are used to
-more cumbersome practises, &ldquo;Hungarian Style Notation&rdquo;, inflexible
-corporate styles which nobody can explain anymore, and so on.</p>
-
-<p>It is difficult to explain the way of Free/Open Source software, but I
-think the most important message is: keep it simple, maintain the same
-style as used in the rest of the project, and if you comment then
-write what you mean with a piece of code, not what it does.  And, in
-the true style of UNIX, write one program that does its job well.</p>
-
-<p>The beuty in software comes from the structure, the flow, the
-similarities and how the modules fit together.  The absence of
-duplication, and the readability.</p>
-
-<p>Visit the
-<a href="http://www.informit.com/store/practice-of-programming-9780201615869">homepage for the book</a>
-and download the source code to have a look for yourself.  Enjoy!</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/06/22/programming-as-an-artform/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -666,6 +626,10 @@ with the 2-clause BSD license, which according to Wikipedia is
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/01/02/blog-restoration-project-now-also-on-github-pages/">Blog Restoration Project now also on GitHub Pages</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/12/28/mrouted-v3-dot-9-7/">mrouted v3.9.7</a>
       </li>
     
@@ -679,10 +643,6 @@ with the 2-clause BSD license, which according to Wikipedia is
     
       <li class="post">
         <a href="/blog/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/">HowTo Add Multicast Routing Support to the FreeBSD kernel</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/">GnuTLS support in Inadyn and fixes to uftpd</a>
       </li>
     
   </ul>

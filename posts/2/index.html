@@ -9,9 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="Looking for a Dynamic DNS, DDNS, client? Well you&rsquo;re in luck, the
-FLOSS market space is flooded with dedicated clients and various
-wget scripts &hellip;">
+  <meta name="description" content="The last couple of weeks have both seen the birth of the fabulous
+uftpd and a reignited inadyn project!
+Yesterday v1.2 of uftpd was released and &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -74,6 +74,64 @@ wget scripts &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/20/new-release-of-uftpd-and-inadyn-dot-dot-dot/">New Releases of Uftpd and Inadyn &#8230;</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-20T21:08:25+02:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>The last couple of weeks have both seen the birth of the fabulous
+<a href="/uftpd.html">uftpd</a> and a reignited <a href="/inadyn.html">inadyn</a> project!
+Yesterday v1.2 of uftpd was released and today Inadyn saw the first
+working HTTPS support being released as v1.99.8!  This is likely the
+last release of Inadyn before the big 2.0, which will introduce the
+new .conf file format based on
+<a href="http://www.nongnu.org/confuse/">libConfuse</a>.  A .conf file
+feasibility study was
+<a href="/blog/2014/02/23/weekend-hack-json-vs-conf/">presented earlier</a> &hellip;</p>
+
+<p>The uftpd project is completely based on user input, currently mostly
+mine.  I will add features and bug fixes when I need them, unless I
+get more input.  So I welcome anyone to clone it on GitHub and hack
+away.  As usual, I will accept any sane patches that adhere to the
+coding style and is well written.  The same goes for Inadyn, only with
+the added request that the changes are thoroughly tested first, since
+I cannot maintain multiple accounts on various DDNS providers myself.</p>
+
+<p>Patches to support flavors of UNIX other than GNU/Linux, including
+GNU/Hurd, or even other operating systems are also welcome, as long as
+it&rsquo;s not Windows.  I will not maintain any Windows support since I
+don&rsquo;t use it myself.  If you want Windows support you will have to
+take a very active co-maintainer role in the respective project.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -173,85 +231,12 @@ something like this 2014?</p>
 scratch an itch.  For a very long time I&rsquo;ve looked for a really simple
 FTP server that just works, out of the box!</p>
 
-<p>My alternatives on GNU/Linux distributions have been: several variants
-of the original <a href="https://github.com/mit-athena/ftpd">MIT/Athena ftpd</a>,
-<a href="http://www.proftpd.org/">ProFTPD</a>,
-<a href="http://www.pureftpd.org/project/pure-ftpd">Pure-FTPd</a>, and
-<a href="https://security.appspot.com/vsftpd.html">vstfptd</a>.  Most of them are
-too damn difficult to configure, have ugly configuration files or are
-plainly just too confusing.  With one exception, vsftpd.  I really
-like vsftpd!  It&rsquo;s got a simple and well documented configuration file
-(inline as comments) and always worked almost painlessly for me.</p>
-
-<p>However, over the past couple of Ubuntu LTS installations it&rsquo;s been
-starting to act up on me.  Not allowing me to have a group-writable
-root directory, and not even an ability to disable that security
-feature.</p>
-
-<p>It&rsquo;s simple really.  I&rsquo;m a developer.  I have colleagues.  We share
-servers at work.  We bootstrap and upgrade our embedded devices using
-TFTP/FTP.  We have one directory, usually <code>/srv/ftp</code>, which is group
-writable and all developers are members of that group.  Anyone can
-upload a file there and the file servers &hellip; would you know &hellip; are
-supposed to <em>serve</em> that file, as TFTP or anonymous FTP.</p>
-
-<p>Maybe I&rsquo;m a fringe user?  Maybe secured local area networks, or laptop
-to embedded device crossed-cables networks, are no longer the &ldquo;fad&rdquo;?
-Maybe a sane built-in default is no longer cool or hipster enough?</p>
-
-<p>I don&rsquo;t know anymore, and this time I was so fed up chasing around for
-answers to &ldquo;How to setup your &lsquo;favorite&rsquo; FTP Server&rdquo;, that I just sat
-down and fixed it once and for all.  I figured I&rsquo;d otherwise be doing
-this waltz over and over again, just like I already have, for the next
-10 years &hellip;</p>
-
-<p>I trawled the net once more for good candidates, this time for
-adoption and holy cow sacrifices.  I wanted a very simple base to
-start from, which I could cut up into pieces, iteratively refactor and
-improve upon until I was happy.  That took a while.</p>
-
-<p>I&rsquo;m a big fan of both the Free Software and the Open Source cultures.
-(They are slightly different you know.)  I routinely work on software
-with GNU GPL, MIT/X11, Apache, and ISC licenses, but for most of my
-own creations I usually lean towards the very permissive
-<a href="http://en.wikipedia.org/wiki/ISC_license">ISC license</a>.  Maybe
-because most of my hobby work these days are quick and dirty hacks I
-don&rsquo;t really care enough about.  It&rsquo;s a question of both taste and
-appropriateness &ndash; like software patents, I don&rsquo;t like them either,
-but for anything which I have a great investment in, or has a great
-<a href="http://en.wikipedia.org/wiki/Threshold_of_originality">threshold of originality</a>,
-I&rsquo;d use a more restrictive license to make sure the software is kept
-in the open.</p>
-
-<p>Anyway, I read much code, discarded several projects that were too
-big, too unreadable code or simply didn&rsquo;t feel right.  I tested so
-many small &ldquo;FTP&rdquo; servers that turned out to be unusable homegrown
-variants or school projects.  There&rsquo;s a lot of code out there &hellip;  I
-finally settled on <a href="https://github.com/xu-wang11/FtpServer">FtpServer</a>
-by <a href="https://github.com/xu-wang11">Xu Wang</a> as a base for my little
-project.  I suspect it too is a school project, but this one actually
-worked, right off the bat!</p>
-
-<p>I got so excited that I immediately started improving it, cleaning up
-the source code, reindenting it (KNF) and fixing small bugs here and
-there.  It was a perfect fit!  This is where I made my big mistake,
-which I hope will not eventually kill this project in the end &ndash; the
-FtpServer project did not have a license &hellip; so
-<a href="https://github.com/xu-wang11/FtpServer/issues/1">I filed a bug</a> to
-the GitHub issue tracker, added the ISC license to
-<a href="https://github.com/troglobit/uftpd">my fork</a> and continued hacking
-away.  The changes I&rsquo;ve made are so substantial that there isn&rsquo;t much
-left of the original code, so uftpd should be safe.  Yes, I named it
-uftpd, the micro ftp server &ndash; the no nonsense file transfer protocol
-daemon.</p>
-
-<p>The whole hack took about three days and I&rsquo;ve learned a lot during
-this time!  It was fun, inspiring and gave me a lot of creative energy
-that I can use in other projects: at work as well as at home :)</p>
-
-<p>See the <a href="/uftpd.html">uftpd project home</a> for download links.</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/05/04/why-write-your-own-ftp-server/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -491,37 +476,12 @@ know what architects do for a living, they draw houses, design stuff
 and drive SAAB&rsquo;s.  Much like dentists.  The prefix &ldquo;software&rdquo; however
 does confuse people.</p>
 
-<p><img class="right" src="/images/programming-in-a-nutshell.gif"></p>
-
-<p>In reality I&rsquo;m
-<a href="http://c2.com/cgi/wiki?JustaProgrammer">just a programmer</a> with a
-little bit more responsibility.  A day starts with coming in to the
-office, or sitting down in my home office, connecting to the company
-VPN, meanwhile planning loosely the day and my goals.  All while
-checking status of e-mail, our IRC channel and the issue tracker for
-any recently reported/updated issues in my fields of responsibility.
-Somewhere around there I have a pretty good idea about what must be
-done and in what order.  So I write it down, in no particular order,
-on folded A4 sheets I use for TODO lists and start working.  About 20
-minutes into that, when I&rsquo;ve just reached
-<a href="http://c2.com/cgi/wiki?InTheZone">The Zone</a>, I get interrupted for an
-impromptu meeting, or
-<a href="https://en.wikipedia.org/wiki/Conference_call">telco</a>, which in turn
-always leads to another meeting, which in turn runs over and suddenly
-it&rsquo;s 16:00 (4 pm) and I have 45 minutes to complete a days work before
-picking up the kids from school.</p>
-
-<p>Or &hellip; you can apply that same crazy to a day when trying to fix a
-simple bug, finding another horrbile bug and fixing that first,
-leading to a minor redesign in need of a refactor, which in turn gives
-me a pain to merge since during the time I tried fixing that minor bug
-my collegues have done multiple changes to the same files I&rsquo;ve been
-working on.</p>
-
-<p>That&rsquo;s what I do for a living.  And yes, I know it&rsquo;s not sustainable
-work conditions.  I&rsquo;m working on that, it&rsquo;s on the TODO list &hellip;</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/08/13/just-a-programmer/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -557,13 +517,12 @@ work conditions.  I&rsquo;m working on that, it&rsquo;s on the TODO list &hellip
 
   <div class="entry-content"><p>Don&rsquo;t try this at home kids. (Disclaimer: I live in Sweden :)</p>
 
-<div><script src='https://gist.github.com/6168031.js'></script>
-<noscript><pre><code></code></pre></noscript></div>
-
-
-
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/08/09/on-the-linearity-of-time/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -610,103 +569,12 @@ to programming and event libraries like
 <a href="http://software.schmorp.de/pkg/libev.html">libev</a>.  Up until that
 point the silver bullet everyone was using was &hellip; Threads.</p>
 
-<p>I don&rsquo;t really know when it all started, maybe it was the Linux
-revolution, the first NPTL release with GLIBC, Java or Solaris.
-Nevertheless, from my point of view it was sometime in the mid 90&rsquo;s
-during my time at university that the use of threads was starting to
-become prevalent.</p>
-
-<p><span class='pullquote-right' data-pullquote='With the rise of the thread based model of programming we now had a
-hammer, and every problem looked like a nail.'>
-With the rise of the thread based model of programming we now had a
-hammer, and every problem looked like a nail.  I had a gut feeling
-there was something really wrong with using threads for every
-conceivable program, but I could not find a way to express it, so I
-chugged away with my threads, semaphores and condition variables.  I
-convinced myself I was happy like this.
-</span></p>
-
-<p>Of course I knew about the event based approach, but it was more or
-less dismissed as a thing of the past, a while(1) loop to mimic the
-behavior of PLC&rsquo;s.  So almost every program I wrote, and every program
-I took over from others, were like Indiana Jones types of mazes full
-of deadlocks and race conditions.</p>
-
-<p>I thought I did something wrong, and so did many others like me.  I
-spent days and nights trying to understand, refactor, and redesign
-threaded programs.  What I found was a doubt that the thread based
-model actually didn&rsquo;t suit every problem,
-<a href="http://www.cc.gatech.edu/classes/AY2009/cs4210_fall/papers/ousterhout-threads.pdf">Ous96</a>.
-There are quite a few domains, however, where thread based models
-shine. Usually in languages that come with thread support built-in,
-like Erlang.</p>
-
-<p>Most of the programs I work with today are network daemons.  Meaning
-they are essentially message based applications that spend a lot of
-time waiting for an event to occur: receiving a data frame, waiting
-for a timer to expire, a signal to be raised, etc.  Of course threads
-can be used for this, but it is a lot simpler to employ an event based
-framework instead.  Also, they are all written in C for speed and
-portability between different UNIX systems.  For that domain, where I
-currently make my living, it will be difficult to convince me to ever
-look at threads again.</p>
 </div>
   
   
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/12/new-open-source-releases/">New Open Source Releases</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-07-12T16:30:00+02:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Vacation time means catching up on my Open Source projects! :)</p>
-
-<p>Currently I&rsquo;m shaping up the home pages and this blog to improve the
-easy access and overview of all the packages I maintain.  The
-following packages have new releases, or can expect new releases soon:</p>
-
-<ul>
-<li> <a href="/editline.html">Minix Editline</a> v1.14.1</li>
-<li> <a href="/smcroute.html">SMCRoute</a> v1.99.1 &ndash; There&rsquo;s even a v2.0.0 being
- planned, with the core of SMCRoute available as a library</li>
-<li> <a href="/mrouted.html">mrouted</a> minor cleanup an sync with
- <a href="http://www.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/">OpenBSD</a></li>
-<li> <a href="/pimd.html">pimd</a> cleanups and bug fixes, needs testing</li>
-<li> <a href="/inadyn.html">inadyn</a> is in dire need of a release, but needs more testing and fixes</li>
-</ul>
-
-
-<p>As usual, see my <a href="http://github.com/troglobit">GitHub</a> for the latest
-commits if you want to try anything out, file an issue report, or if
-you want to contribute.</p>
-</div>
-  
+    <footer>
+      <a rel="full-article" href="/blog/2013/08/06/event-handling/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -744,6 +612,10 @@ you want to contribute.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/01/02/blog-restoration-project-now-also-on-github-pages/">Blog Restoration Project now also on GitHub Pages</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/12/28/mrouted-v3-dot-9-7/">mrouted v3.9.7</a>
       </li>
     
@@ -757,10 +629,6 @@ you want to contribute.</p>
     
       <li class="post">
         <a href="/blog/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/">HowTo Add Multicast Routing Support to the FreeBSD kernel</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/">GnuTLS support in Inadyn and fixes to uftpd</a>
       </li>
     
   </ul>

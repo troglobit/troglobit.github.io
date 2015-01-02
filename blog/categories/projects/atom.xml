@@ -4,7 +4,7 @@
   <title><![CDATA[Category: projects | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/projects/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-01-02T13:10:38+01:00</updated>
+  <updated>2015-01-02T14:57:50+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -30,6 +30,9 @@ to programming and event libraries like
 <a href="http://libevent.org/">libevent</a> and
 <a href="http://software.schmorp.de/pkg/libev.html">libev</a>.  Up until that
 point the silver bullet everyone was using was &hellip; Threads.</p>
+
+<!-- more -->
+
 
 <p>I don&rsquo;t really know when it all started, maybe it was the Linux
 revolution, the first NPTL release with GLIBC, Java or Solaris.

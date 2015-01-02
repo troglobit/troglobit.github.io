@@ -5,13 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Why write your own FTP server? - Troglobit</title>
+  <title>Blog Restoration Project now also on GitHub Pages - Troglobit</title>
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="So, I finally got fed up with all other FTP servers and wrote
-my own. Why would someone in their right mind do
-something like this 2014? As a &hellip;">
+  <meta name="description" content="I&rsquo;ve had this long-standing issue with backups. It&rsquo;s deadly boring to
+set up and maintain, so I don&rsquo;t do any. Until today! Today I &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +19,7 @@ something like this 2014? As a &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://troglobit.github.io/blog/2014/05/04/why-write-your-own-ftp-server/">
+  <link rel="canonical" href="http://troglobit.github.io/blog/2015/01/02/blog-restoration-project-now-also-on-github-pages/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -77,7 +76,7 @@ something like this 2014? As a &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Why Write Your Own FTP Server?</h1>
+      <h1 class="entry-title">Blog Restoration Project Now Also on GitHub Pages</h1>
     
     
       <p class="meta">
@@ -93,101 +92,61 @@ something like this 2014? As a &hellip;">
   
 
 
-<time datetime="2014-05-04T11:25:09+02:00" pubdate data-updated="true"></time>
+<time datetime="2015-01-02T14:12:59+01:00" pubdate data-updated="true"></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>So, I finally got fed up with all other FTP servers and wrote
-<a href="/uftpd.html">my own</a>.  Why would someone in their right mind do
-something like this 2014?</p>
+<div class="entry-content"><p>I&rsquo;ve had this long-standing issue with backups.  It&rsquo;s deadly boring to
+set up and maintain, so I don&rsquo;t do any.  Until today!</p>
 
-<p>As a developer the answer to most such questions is usually; to
-scratch an itch.  For a very long time I&rsquo;ve looked for a really simple
-FTP server that just works, out of the box!</p>
+<p>Today I moved the sources for my <a href="http://troglobit.com">Octopress blag</a>
+to GitHub, which also prompted me to set up
+<a href="http://troglobit.github.io">a mirror</a> on
+<a href="http://pages.github.io">GitHub Pages</a>.  As usual, reading up on the
+subject and muster enough motivation took me about three months, whereas
+the actual work took about 4h.</p>
 
 <!-- more -->
 
 
-<p>My alternatives on GNU/Linux distributions have been: several variants
-of the original <a href="https://github.com/mit-athena/ftpd">MIT/Athena ftpd</a>,
-<a href="http://www.proftpd.org/">ProFTPD</a>,
-<a href="http://www.pureftpd.org/project/pure-ftpd">Pure-FTPd</a>, and
-<a href="https://security.appspot.com/vsftpd.html">vstfptd</a>.  Most of them are
-too damn difficult to configure, have ugly configuration files or are
-plainly just too confusing.  With one exception, vsftpd.  I really
-like vsftpd!  It&rsquo;s got a simple and well documented configuration file
-(inline as comments) and always worked almost painlessly for me.</p>
+<p>I now have a concoction of mixed remotes, multiple branches and some
+Ruby magic to administer it all with!  Here are some links I used to
+get where I am:</p>
 
-<p>However, over the past couple of Ubuntu LTS installations it&rsquo;s been
-starting to act up on me.  Not allowing me to have a group-writable
-root directory, and not even an ability to disable that security
-feature.</p>
+<ul>
+<li><a href="http://octopress.org/docs/setup/">http://octopress.org/docs/setup/</a></li>
+<li><a href="https://help.github.com/articles/creating-project-pages-manually/">https://help.github.com/articles/creating-project-pages-manually/</a></li>
+<li><a href="https://help.github.com/articles/user-organization-and-project-pages/">https://help.github.com/articles/user-organization-and-project-pages/</a></li>
+<li><a href="http://www.tomordonez.com/blog/2012/06/04/creating-a-github-blog-using-octopress/">http://www.tomordonez.com/blog/2012/06/04/creating-a-github-blog-using-octopress/</a></li>
+<li><a href="http://miguelcamba.com/blog/2013/04/22/tutorial-create-a-blog-with-octopress-and-host-it-in-github-pages/">http://miguelcamba.com/blog/2013/04/22/tutorial-create-a-blog-with-octopress-and-host-it-in-github-pages/</a></li>
+<li><a href="http://octopress.org/docs/deploying/github/">http://octopress.org/docs/deploying/github/</a></li>
+</ul>
 
-<p>It&rsquo;s simple really.  I&rsquo;m a developer.  I have colleagues.  We share
-servers at work.  We bootstrap and upgrade our embedded devices using
-TFTP/FTP.  We have one directory, usually <code>/srv/ftp</code>, which is group
-writable and all developers are members of that group.  Anyone can
-upload a file there and the file servers &hellip; would you know &hellip; are
-supposed to <em>serve</em> that file, as TFTP or anonymous FTP.</p>
 
-<p>Maybe I&rsquo;m a fringe user?  Maybe secured local area networks, or laptop
-to embedded device crossed-cables networks, are no longer the &ldquo;fad&rdquo;?
-Maybe a sane built-in default is no longer cool or hipster enough?</p>
+<p>With some added <code>apt-get intall ruby ruby-bundler</code> magic in Ubuntu
+everything started to look normal &ndash; now I could even do <code>rake preview</code>
+before deploying!  Only a minor problem I had before getting everything
+working was this:</p>
 
-<p>I don&rsquo;t know anymore, and this time I was so fed up chasing around for
-answers to &ldquo;How to setup your &lsquo;favorite&rsquo; FTP Server&rdquo;, that I just sat
-down and fixed it once and for all.  I figured I&rsquo;d otherwise be doing
-this waltz over and over again, just like I already have, for the next
-10 years &hellip;</p>
+<blockquote><p>/usr/local/rvm/gems/ruby-2.1.2/gems/execjs-2.2.0/lib/execjs/runtimes.rb:51:in `autodetect&#8217;:
+Could not find a JavaScript runtime. See <a href="https://github.com/sstephenson/execjs">https://github.com/sstephenson/execjs</a>
+for a list of available runtimes. (ExecJS::RuntimeUnavailable)</p></blockquote>
 
-<p>I trawled the net once more for good candidates, this time for
-adoption and holy cow sacrifices.  I wanted a very simple base to
-start from, which I could cut up into pieces, iteratively refactor and
-improve upon until I was happy.  That took a while.</p>
+<p>Turns out I had to install nodejs as well, dunno why.</p>
 
-<p>I&rsquo;m a big fan of both the Free Software and the Open Source cultures.
-(They are slightly different you know.)  I routinely work on software
-with GNU GPL, MIT/X11, Apache, and ISC licenses, but for most of my
-own creations I usually lean towards the very permissive
-<a href="http://en.wikipedia.org/wiki/ISC_license">ISC license</a>.  Maybe
-because most of my hobby work these days are quick and dirty hacks I
-don&rsquo;t really care enough about.  It&rsquo;s a question of both taste and
-appropriateness &ndash; like software patents, I don&rsquo;t like them either,
-but for anything which I have a great investment in, or has a great
-<a href="http://en.wikipedia.org/wiki/Threshold_of_originality">threshold of originality</a>,
-I&rsquo;d use a more restrictive license to make sure the software is kept
-in the open.</p>
+<pre><code>sudo apt install nodejs
+</code></pre>
 
-<p>Anyway, I read much code, discarded several projects that were too
-big, too unreadable code or simply didn&rsquo;t feel right.  I tested so
-many small &ldquo;FTP&rdquo; servers that turned out to be unusable homegrown
-variants or school projects.  There&rsquo;s a lot of code out there &hellip;  I
-finally settled on <a href="https://github.com/xu-wang11/FtpServer">FtpServer</a>
-by <a href="https://github.com/xu-wang11">Xu Wang</a> as a base for my little
-project.  I suspect it too is a school project, but this one actually
-worked, right off the bat!</p>
+<p>Since I wanted a mirrored setup I chose to have Octopress setup default
+to deploy to GitHub Pages.  Then I simply rsync the whole shebang to my
+own server.</p>
 
-<p>I got so excited that I immediately started improving it, cleaning up
-the source code, reindenting it (KNF) and fixing small bugs here and
-there.  It was a perfect fit!  This is where I made my big mistake,
-which I hope will not eventually kill this project in the end &ndash; the
-FtpServer project did not have a license &hellip; so
-<a href="https://github.com/xu-wang11/FtpServer/issues/1">I filed a bug</a> to
-the GitHub issue tracker, added the ISC license to
-<a href="https://github.com/troglobit/uftpd">my fork</a> and continued hacking
-away.  The changes I&rsquo;ve made are so substantial that there isn&rsquo;t much
-left of the original code, so uftpd should be safe.  Yes, I named it
-uftpd, the micro ftp server &ndash; the no nonsense file transfer protocol
-daemon.</p>
-
-<p>The whole hack took about three days and I&rsquo;ve learned a lot during
-this time!  It was fun, inspiring and gave me a lot of creative energy
-that I can use in other projects: at work as well as at home :)</p>
-
-<p>See the <a href="/uftpd.html">uftpd project home</a> for download links.</p>
+<p>All this means I can now finally begin restoring more content from
+<a href="/blog/2013/02/17/resurrection/">my old blog</a> thanks to partial backups
+I&rsquo;ve found at the <a href="https://archive.org/">Wayback Machine</a> :-)</p>
 </div>
 
 
@@ -210,7 +169,7 @@ that I can use in other projects: at work as well as at home :)</p>
   
 
 
-<time datetime="2014-05-04T11:25:09+02:00" pubdate data-updated="true"></time>
+<time datetime="2015-01-02T14:12:59+01:00" pubdate data-updated="true"></time>
       
 
 
@@ -218,7 +177,7 @@ that I can use in other projects: at work as well as at home :)</p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://troglobit.github.io/blog/2014/05/04/why-write-your-own-ftp-server/" data-via="troglobit" data-counturl="http://troglobit.github.io/blog/2014/05/04/why-write-your-own-ftp-server/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://troglobit.github.io/blog/2015/01/02/blog-restoration-project-now-also-on-github-pages/" data-via="troglobit" data-counturl="http://troglobit.github.io/blog/2015/01/02/blog-restoration-project-now-also-on-github-pages/" >Tweet</a>
   
   
   
@@ -227,10 +186,8 @@ that I can use in other projects: at work as well as at home :)</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/04/21/release-of-finit-v1-dot-9/" title="Previous Post: Release of Finit v1.9">&laquo; Release of Finit v1.9</a>
+        <a class="basic-alignment left" href="/blog/2014/12/28/mrouted-v3-dot-9-7/" title="Previous Post: mrouted v3.9.7">&laquo; mrouted v3.9.7</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/05/14/new-release-of-the-ddns-client-inadyn/" title="Next Post: New release of the DDNS client Inadyn">New release of the DDNS client Inadyn &raquo;</a>
       
     </p>
   </footer>

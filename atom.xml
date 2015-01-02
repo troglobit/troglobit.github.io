@@ -4,7 +4,7 @@
   <title><![CDATA[Troglobit]]></title>
   <link href="http://troglobit.github.io/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-01-02T13:10:38+01:00</updated>
+  <updated>2015-01-02T14:57:50+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -12,6 +12,62 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Blog Restoration Project now also on GitHub Pages]]></title>
+    <link href="http://troglobit.github.io/blog/2015/01/02/blog-restoration-project-now-also-on-github-pages/"/>
+    <updated>2015-01-02T14:12:59+01:00</updated>
+    <id>http://troglobit.github.io/blog/2015/01/02/blog-restoration-project-now-also-on-github-pages</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve had this long-standing issue with backups.  It&rsquo;s deadly boring to
+set up and maintain, so I don&rsquo;t do any.  Until today!</p>
+
+<p>Today I moved the sources for my <a href="http://troglobit.com">Octopress blag</a>
+to GitHub, which also prompted me to set up
+<a href="http://troglobit.github.io">a mirror</a> on
+<a href="http://pages.github.io">GitHub Pages</a>.  As usual, reading up on the
+subject and muster enough motivation took me about three months, whereas
+the actual work took about 4h.</p>
+
+<!-- more -->
+
+
+<p>I now have a concoction of mixed remotes, multiple branches and some
+Ruby magic to administer it all with!  Here are some links I used to
+get where I am:</p>
+
+<ul>
+<li><a href="http://octopress.org/docs/setup/">http://octopress.org/docs/setup/</a></li>
+<li><a href="https://help.github.com/articles/creating-project-pages-manually/">https://help.github.com/articles/creating-project-pages-manually/</a></li>
+<li><a href="https://help.github.com/articles/user-organization-and-project-pages/">https://help.github.com/articles/user-organization-and-project-pages/</a></li>
+<li><a href="http://www.tomordonez.com/blog/2012/06/04/creating-a-github-blog-using-octopress/">http://www.tomordonez.com/blog/2012/06/04/creating-a-github-blog-using-octopress/</a></li>
+<li><a href="http://miguelcamba.com/blog/2013/04/22/tutorial-create-a-blog-with-octopress-and-host-it-in-github-pages/">http://miguelcamba.com/blog/2013/04/22/tutorial-create-a-blog-with-octopress-and-host-it-in-github-pages/</a></li>
+<li><a href="http://octopress.org/docs/deploying/github/">http://octopress.org/docs/deploying/github/</a></li>
+</ul>
+
+
+<p>With some added <code>apt-get intall ruby ruby-bundler</code> magic in Ubuntu
+everything started to look normal &ndash; now I could even do <code>rake preview</code>
+before deploying!  Only a minor problem I had before getting everything
+working was this:</p>
+
+<blockquote><p>/usr/local/rvm/gems/ruby-2.1.2/gems/execjs-2.2.0/lib/execjs/runtimes.rb:51:in `autodetect&#8217;:
+Could not find a JavaScript runtime. See <a href="https://github.com/sstephenson/execjs">https://github.com/sstephenson/execjs</a>
+for a list of available runtimes. (ExecJS::RuntimeUnavailable)</p></blockquote>
+
+<p>Turns out I had to install nodejs as well, dunno why.</p>
+
+<pre><code>sudo apt install nodejs
+</code></pre>
+
+<p>Since I wanted a mirrored setup I chose to have Octopress setup default
+to deploy to GitHub Pages.  Then I simply rsync the whole shebang to my
+own server.</p>
+
+<p>All this means I can now finally begin restoring more content from
+<a href="http://troglobit.github.io/blog/2013/02/17/resurrection/">my old blog</a> thanks to partial backups
+I&rsquo;ve found at the <a href="https://archive.org/">Wayback Machine</a> :-)</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[mrouted v3.9.7]]></title>
@@ -22,18 +78,24 @@
 available as
 <a href="https://github.com/troglobit/mrouted/releases/tag/3.9.7">v3.9.7 on GitHub</a>.</p>
 
+<!-- more -->
+
+
 <h2>Changes &amp; New Features</h2>
 
 <ul>
 <li>SNMP Support removed.  It never compiled and would have likely
 needed a complete refactor to support modern AgentX.</li>
 <li>Replaced static <code>config.mk</code> with configure script from pimd</li>
-<li>RSRR Support disabled by default, use <code>--enable-rsrr</code> to configure script</li>
-<li>Add <code>'enable'</code> to <code>phyint</code> directive and <code>-M/-N</code> command line options,
-thanks to Joseph Gooch (@goochjj)</li>
+<li>RSRR Support now disabled by default, use <code>--enable-rsrr</code> to configure
+script to re-enable</li>
+<li>Possible to start with <code>mrouted</code> disabled on all interfaces by
+default.  Use <code>enable</code> to .conf <code>phyint</code> directive and <code>-M/-N</code> command
+line options to control behavior, default is same as before.  Thanks
+to Joseph Gooch (<a href="https://github.com/goochjj">@goochjj</a>) for this feature!</li>
 <li>Add David Waitzman and Craig Partridge to list of original authors
-after being contacted by Mr Waitzman :)</li>
-<li>Change to use <code>stdint.h</code> types instead of type unsafe homegrown types</li>
+of <code>mrouted</code>, after being by Mr Waitzman :)</li>
+<li>Change to use <code>stdint.h</code> types instead of unsafe homegrown types</li>
 </ul>
 
 
@@ -42,7 +104,7 @@ after being contacted by Mr Waitzman :)</li>
 <ul>
 <li>Fix issue with older BSD kernels, mainly for current FreeBSD 10 and
 older, that don&rsquo;t really give RAW sockets but byte swap <code>ip_len</code>
-field, Olivier Cochard-Labbé (@ocochard)</li>
+field, Olivier Cochard-Labbé (<a href="https://github.com/ocochard">@ocochard</a>)</li>
 <li>Build fixes for FreeBSD, should make maintaining ports easier :)</li>
 <li>Change from <code>select()</code> to <code>poll()</code> due to descriptor limits, e.g.,
 on BSD.</li>
@@ -82,6 +144,9 @@ Quagga PIM rather than pimd in WeOS.</p>
 based virtual testbed and a few setups using Linux&#8217; <code>netns</code> feature in
 <a href="http://www.nrl.navy.mil/itd/ncs/products/core">CORE</a> &ndash; awesome
 little proggy! :-)</p>
+
+<!-- more -->
+
 
 <h3>Changes &amp; New Features</h3>
 
@@ -276,6 +341,9 @@ SourceForge.  I went there to publicize my own small creations, learn
 about other similar projects and get a quick feedback on recent
 changes of new releases to projects I was interested in.</p>
 
+<!-- more -->
+
+
 <p>There exist no real replacement to free(code), except perhaps for
 <a href="https://www.openhub.net/">Open Hub</a>, previously known as
 <a href="http://www.ohloh.net">Ohloh</a>.  The
@@ -392,6 +460,9 @@ something like this 2014?</p>
 <p>As a developer the answer to most such questions is usually; to
 scratch an itch.  For a very long time I&rsquo;ve looked for a really simple
 FTP server that just works, out of the box!</p>
+
+<!-- more -->
+
 
 <p>My alternatives on GNU/Linux distributions have been: several variants
 of the original <a href="https://github.com/mit-athena/ftpd">MIT/Athena ftpd</a>,
@@ -576,6 +647,9 @@ know what architects do for a living, they draw houses, design stuff
 and drive SAAB&rsquo;s.  Much like dentists.  The prefix &ldquo;software&rdquo; however
 does confuse people.</p>
 
+<!-- more -->
+
+
 <p><img class="right" src="http://troglobit.github.io/images/programming-in-a-nutshell.gif"></p>
 
 <p>In reality I&rsquo;m
@@ -615,6 +689,11 @@ work conditions.  I&rsquo;m working on that, it&rsquo;s on the TODO list &hellip
     <id>http://troglobit.github.io/blog/2013/08/09/on-the-linearity-of-time</id>
     <content type="html"><![CDATA[<p>Don&rsquo;t try this at home kids. (Disclaimer: I live in Sweden :)</p>
 
+<!-- more -->
+
+
+
+
 <div><script src='https://gist.github.com/6168031.js'></script>
 <noscript><pre><code></code></pre></noscript></div>
 
@@ -640,6 +719,9 @@ to programming and event libraries like
 <a href="http://libevent.org/">libevent</a> and
 <a href="http://software.schmorp.de/pkg/libev.html">libev</a>.  Up until that
 point the silver bullet everyone was using was &hellip; Threads.</p>
+
+<!-- more -->
+
 
 <p>I don&rsquo;t really know when it all started, maybe it was the Linux
 revolution, the first NPTL release with GLIBC, Java or Solaris.
@@ -681,34 +763,6 @@ framework instead.  Also, they are all written in C for speed and
 portability between different UNIX systems.  For that domain, where I
 currently make my living, it will be difficult to convince me to ever
 look at threads again.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[New Open Source Releases]]></title>
-    <link href="http://troglobit.github.io/blog/2013/07/12/new-open-source-releases/"/>
-    <updated>2013-07-12T16:30:00+02:00</updated>
-    <id>http://troglobit.github.io/blog/2013/07/12/new-open-source-releases</id>
-    <content type="html"><![CDATA[<p>Vacation time means catching up on my Open Source projects! :)</p>
-
-<p>Currently I&rsquo;m shaping up the home pages and this blog to improve the
-easy access and overview of all the packages I maintain.  The
-following packages have new releases, or can expect new releases soon:</p>
-
-<ul>
-<li> <a href="http://troglobit.github.io/editline.html">Minix Editline</a> v1.14.1</li>
-<li> <a href="http://troglobit.github.io/smcroute.html">SMCRoute</a> v1.99.1 &ndash; There&rsquo;s even a v2.0.0 being
- planned, with the core of SMCRoute available as a library</li>
-<li> <a href="http://troglobit.github.io/mrouted.html">mrouted</a> minor cleanup an sync with
- <a href="http://www.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/">OpenBSD</a></li>
-<li> <a href="http://troglobit.github.io/pimd.html">pimd</a> cleanups and bug fixes, needs testing</li>
-<li> <a href="http://troglobit.github.io/inadyn.html">inadyn</a> is in dire need of a release, but needs more testing and fixes</li>
-</ul>
-
-
-<p>As usual, see my <a href="http://github.com/troglobit">GitHub</a> for the latest
-commits if you want to try anything out, file an issue report, or if
-you want to contribute.</p>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: programming | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-01-02T13:10:38+01:00</updated>
+  <updated>2015-01-02T14:57:50+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -31,6 +31,9 @@ while a bit of an obsession of mine, and it sort of is still.  But
 today I am more concerned with the overall structure and how
 components interact.  Even though I can still get very annoyed at
 people naming their local variables obtrusively.</p>
+
+<!-- more -->
+
 
 <p><a href="http://www.amazon.com/Practice-Programming-Addison-Wesley-Professional-Computing/dp/020161586X"><img class="right" src="/images/Practice_of_Programming.jpeg" width="222" height="155"></a></p>
 

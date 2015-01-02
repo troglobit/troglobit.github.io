@@ -4,7 +4,7 @@
   <title><![CDATA[Category: linux | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-01-02T13:10:38+01:00</updated>
+  <updated>2015-01-02T14:57:50+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -71,6 +71,9 @@ provide a good starting point, as is the original
 For users of Ubuntu &lt;= 13.04, watch out for the
 <a href="https://bugs.launchpad.net/ubuntu/+source/libvirt/+bug/943680">libvirt bug</a>
 that I know many people run into, myself included.</p>
+
+<!-- more -->
+
 
 <p>First of all, I could never really master the beast called AppArmor in
 Ubuntu.  Once I got the hang of the files to edit, the order to make
