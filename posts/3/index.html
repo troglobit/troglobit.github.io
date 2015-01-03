@@ -503,7 +503,197 @@ like!  :-)</p>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2009/03/28/repost-the-marvellous-libev/">The Marvellous Libev</a></h1>
+      <h1 class="entry-title"><a href="/blog/2009/05/18/howto-setup-and-run-xen/">Howto Setup and Run Xen</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-05-18T01:51:42+02:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This is an extremly brief and quick <a href="http://www.xenproject.org/">Xen</a>
+tutorial. There are lots of them already, see your <DISTRIBUTION> wiki,
+HowtoForge or other places for a starter guide. This particular HowTo
+deals with setting up Xen as easy as possible using Ubuntu 8.04 LTS as
+host operating system (dom0 in Xen terms) and Ubuntu 9.04 as guest
+operating systems (domU in Xen lingo).</p>
+
+<p>Ubuntu 8.04 LTS comes with a Xen kernel that can run as dom0. This is
+quite important, so pay attention to setting that up correctly. For this
+I recommend the
+<a href="http://howtoforge.org/high-performance-xen-on-ubuntu-8.04-amd64">HowtoForge Tutorial</a>.</p>
+
+<p><em>Note:</em> you will need to upgrade the default Xen 3.2 to 3.3 to be able
+to run the latest distributions as guest OS. See this
+<a href="https://answers.launchpad.net/ubuntu/+question/50326">Ubuntu question</a>
+for more insight. To get Xen 3.3, simply activate the Hardy backports
+repository in your <code>/etc/apt/sources.list</code> and, as usual, pay attention
+to your <code>/boot/grub/menu.lst</code> so that it points out the Xen 3.3 image in
+the <code>defaults=</code> option.</p>
+
+<p>When done with the basic setup you should install pygrub on your host,
+this is a truly magic piece of software that makes it possible to boot
+all guests using their own kernel and modules.  See the
+<a href="http://wiki.debian.org/PyGrub">Debian wiki</a> for some details on install
+and setup.  Then ignore what you read and do like this:</p>
+
+<pre><code># /var/lib/xend/domains/example/config.sxp - Xen domU example.
+# Note the order of partitions in disk=[], the first listed partition
+# is the partition where your /boot (grub) resides. 
+bootloader  = '/usr/bin/pygrub'
+
+builder     = 'linux'
+memory      = '2048'
+root        = '/dev/xvda1 ro'
+
+disk        = [
+  'phy:/dev/disk/by-uuid/df3418f5-2fc3-443c-8e64-4395828dc678,xvda1,w',
+  'phy:/dev/disk/by-uuid/acecf01e-c4d9-4a7b-b18a-681c69f71173,xvda2,w',
+]
+
+name        = 'example'
+
+vif         = [ 'bridge=eth1' ]
+dhcp        = "off"
+ip          = "12.34.56.78"
+netmask     = "255.255.255.252"
+gateway     = "12.34.56.77"
+hostname    = "example"
+
+on_poweroff = 'destroy'
+on_reboot   = 'restart'
+on_crash    = 'restart'
+vcpus       = 1
+extra       = 'xencons=tty1'
+</code></pre>
+
+<p>When installing grub on your guest, don&rsquo;t pay any attention to Grub
+complaining about not being able to map <code>/dev/xvda1</code> to a BIOS disk.
+pyGrub doesn&rsquo;t care about such wordly things as physical disks.  Just
+make sure the <code>/boot</code> directory&rsquo;s partition (often <code>/</code>) is the first
+listed in the <code>disk=[]</code> array above.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/04/10/learning-about-git/">Learning About GIT</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-04-10T17:23:42+02:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>It has been a long time coming, but now I&rsquo;m seriously starting to look
+at <a href="http://git-scm.com/">Git</a>.  Git is the content tracker used by the
+<a href="http://www.kernel.org">Linux kernel</a> folks, initially developed by
+Torvalds.</p>
+
+<p>At <a href="http://www.westermo.com">Westermo R&amp;D</a> we use Subversion for our
+daily operations and today I started migrating the software to Git.
+Mainly just to get a comparison of performance, storage size and to
+explore how we can use Git on top of svn to become more productive when
+working in parallel in different teams.  We&rsquo;ve tried this quite
+extensively before, using Subversion branches and even though it&rsquo;s a
+heck of a lot easier to use compared to CVS its strength is not in
+merging.</p>
+
+<p>The new
+<a href="http://subversion.tigris.org/merge-tracking/func-spec.html">merge tracking</a>
+feature in Subversion 1.5 and features like
+<a href="http://subversion.tigris.org/svn_1.6_releasenotes.html#tree-conflicts">detection of tree conflicts</a>
+in, the recently released, 1.6 helps.  However, working in small teams,
+disconnected from a centralised server is still not possible with svn,
+OK sure there is <a href="http://svk.bestpractical.com/">svk</a>, but honestly,
+doesn&rsquo;t that make you think of CVS and bolting on features after the
+fact, similar to <a href="http://www.cvsnt.org/">CVSNT</a> or
+<a href="http://opencvs.org/">OpenCVS</a>.  Intriguingly bizarre projects. :-)</p>
+
+<p>The reasons for trying out Git are not only related to any short comings
+of Subversion, Git has lot of strong points on its own.  See
+<a href="http://www.vijedi.net/2009/reasons-for-using-the-git-svn-bridge/">here</a>
+for instance:</p>
+
+<ul>
+<li>SHA-1 hashes for each commit, makes it possible to easier detect history corruptions</li>
+<li>Local developer branches</li>
+<li>Fast branch switching</li>
+<li>Cherry picking commits from other branches, easily</li>
+<li>Stashing/Shelving, i.e. put aside things you&rsquo;re working on for later</li>
+</ul>
+
+
+<p>I&rsquo;ve started collecting a set of links that seem to be useful:</p>
+
+<ul>
+<li><a href="http://tsunanet.blogspot.com/2007/07/learning-git-svn-in-5min.html">Learning git-svn in five minutes</a></li>
+<li><a href="http://www.kernel.org/pub/software/scm/git/docs/git-svn.html">The git-svn(1) man page</a></li>
+<li><a href="http://git.or.cz/course/svn.html">Git - SVN Crash Course</a></li>
+<li><a href="http://utsl.gen.nz/talks/git-svn/intro.html">An introduction to git-svn for Subversion users and deserters</a></li>
+<li><a href="http://flavio.castelli.name/howto_use_git_with_svn">How to use Git and SVN together</a></li>
+<li><a href="http://tsgates.cafe24.com/git/git-emacs.html">A guided tour of emacs-git</a></li>
+<li><a href="http://xtalk.msk.su/~ott/en/writings/emacs-vcs/EmacsGit.html">Work with Git from Emacs</a></li>
+<li><a href="http://www.emacswiki.org/emacs/Git">EmacsWiki:Git</a></li>
+</ul>
+
+
+<p>I&rsquo;ll conclude this post with two YouTube entries, first is the, now
+classic, presentation by
+<a href="http://www.youtube.com/watch?v=4XpnKHJAok8">Linus Torvalds on what Git isn&rsquo;t</a>
+&hellip; and then
+<a href="http://www.youtube.com/watch?v=8dhZ9BXQgc4">Randal Schwartz on what Git is</a>
+&hellip;</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/28/the-marvellous-libev/">The Marvellous Libev</a></h1>
     
     
       <p class="meta">
@@ -597,6 +787,8 @@ with the 2-clause BSD license, which according to Wikipedia is
     </article>
   
   <div class="pagination">
+    
+      <a class="prev" href="4">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
