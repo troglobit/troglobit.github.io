@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: opensource | Troglobit]]></title>
+  <link href="http://troglobit.github.io/blog/categories/opensource/atom.xml" rel="self"/>
+  <link href="http://troglobit.github.io/"/>
+  <updated>2015-01-08T02:17:48+01:00</updated>
+  <id>http://troglobit.github.io/</id>
+  <author>
+    <name><![CDATA[Joachim Nilsson]]></name>
+    <email><![CDATA[troglobit@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Recent Open Source Work]]></title>
+    <link href="http://troglobit.github.io/blog/2015/01/08/recent-open-source-work/"/>
+    <updated>2015-01-08T01:57:14+01:00</updated>
+    <id>http://troglobit.github.io/blog/2015/01/08/recent-open-source-work</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m a coder, not a writer.  Here&rsquo;s what I&rsquo;ve been working on during the
+winter holidays:</p>
+
+<ul>
+<li>A new feature release of <a href="/finit.html">Finit</a> is coming shortly, which
+will use <a href="https://github.com/troglobit/libuev">libuEv</a> and feature
+inetd support built-in!</li>
+<li>Another minor release of my own take on event loops,
+<a href="https://github.com/troglobit/libuev">libuEv</a>
+<a href="https://github.com/troglobit/libuev/releases/tag/v1.0.3">v1.0.3</a>.
+This time with a heavy focus on documentation and Q&amp;A, extensive
+validation testing have been done on this release.</li>
+<li>Released another minor release of <a href="/mrouted.html">mrouted</a>,
+<a href="https://github.com/troglobit/mrouted/releases/tag/3.9.7">v3.9.7</a>,
+which despite its age, and all other obvious limitations of
+<a href="http://en.wikipedia.org/wiki/Distance_Vector_Multicast_Routing_Protocol">DVMRP</a>,
+is still one of the best options for <em>dynamic</em> multicast routing
+available today.</li>
+<li><p>Major new release of <a href="/pimd.html">pimd</a>,
+<a href="https://github.com/troglobit/pimd/releases/tag/2.2.0">v2.2.0</a>, which
+is likely the last release ever of the old pimd, unless someone starts
+paying me to work on it.</p>
+
+<p>&hellip; or more people step up to help.  Both the Xorp PIM-SM and the
+upcoming Quagga PIM-SSM implementations are in better shape.  The only
+thing old pimd has got going for it is the license.  It&rsquo;s 3-clause
+BSD, so very liberal.</p></li>
+</ul>
+
+
+<p>If you&rsquo;re interested in pitching in, on any of my projects, just send me
+an email or connect with me on GitHub!</p>
+]]></content>
+  </entry>
+  
+</feed>
