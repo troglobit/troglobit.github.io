@@ -3,7 +3,7 @@ layout: page
 title: "Micro Tetris&trade;"
 sharing: true
 footer: true
-date: 2013-07-07 00:23
+date: 2015-01-08 01:50
 comments: false
 ---
 
@@ -18,9 +18,9 @@ external library dependencys other than a standard C-library, like
 [musl libc](http://www.musl-libc.org/).  Hence, it is very suitable
 for small embedded devices in need of an easter egg ;-)
 
-The game is based on an [entry](http://www.ioccc.org/1989/tromp.hint)
-by [John Tromp](http://homepages.cwi.nl/~tromp/tetris.html) for the
-1989 *International Obfuscated C Code Contest*.
+The game is based on a 1989 *International Obfuscated C Code Contest*
+(IOCCC) [entry](http://www.ioccc.org/1989/tromp.hint) made by
+[John Tromp](http://tromp.github.io/tetris.html).
 
 Issue tracker and GIT repository available at GitHub:
 
