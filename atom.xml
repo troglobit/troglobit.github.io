@@ -4,7 +4,7 @@
   <title><![CDATA[Troglobit]]></title>
   <link href="http://troglobit.github.io/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-01-08T02:17:48+01:00</updated>
+  <updated>2015-01-09T18:05:02+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -110,7 +110,7 @@ I&rsquo;ve found at the <a href="https://archive.org/">Wayback Machine</a> :-)</
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[mrouted v3.9.7]]></title>
+    <title type="html"><![CDATA[Mrouted v3.9.7]]></title>
     <link href="http://troglobit.github.io/blog/2014/12/28/mrouted-v3-dot-9-7/"/>
     <updated>2014-12-28T19:38:06+01:00</updated>
     <id>http://troglobit.github.io/blog/2014/12/28/mrouted-v3-dot-9-7</id>
@@ -159,7 +159,7 @@ is OK, since it&rsquo;s used and stored as unsigned 32-bit integer.</li>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[pimd v2.2.0 -- The last release of pimd?]]></title>
+    <title type="html"><![CDATA[Pimd v2.2.0 -- the Last Release of Pimd?]]></title>
     <link href="http://troglobit.github.io/blog/2014/12/28/last-release-of-pimd/"/>
     <updated>2014-12-28T13:42:18+01:00</updated>
     <id>http://troglobit.github.io/blog/2014/12/28/last-release-of-pimd</id>
@@ -233,7 +233,7 @@ and <code>switch_data_threshold</code> settings.  Cisco like and easier to under
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[TFTP blocksize negotiation in uftpd v1.7]]></title>
+    <title type="html"><![CDATA[TFTP Blocksize Negotiation in Uftpd v1.7]]></title>
     <link href="http://troglobit.github.io/blog/2014/12/21/tftp-blocksize-negotiation-in-uftpd-v1-dot-7/"/>
     <updated>2014-12-21T19:42:17+01:00</updated>
     <id>http://troglobit.github.io/blog/2014/12/21/tftp-blocksize-negotiation-in-uftpd-v1-dot-7</id>
@@ -246,7 +246,7 @@ faster to transfer files over TFTP.</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[HowTo Add Multicast Routing Support to the FreeBSD kernel]]></title>
+    <title type="html"><![CDATA[HowTo Add Multicast Routing Support to the FreeBSD Kernel]]></title>
     <link href="http://troglobit.github.io/blog/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/"/>
     <updated>2014-09-23T01:55:19+02:00</updated>
     <id>http://troglobit.github.io/blog/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel</id>
@@ -268,7 +268,7 @@ will probably page fault on you.  I use 1,0 GB RAM.</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[GnuTLS support in Inadyn and fixes to uftpd]]></title>
+    <title type="html"><![CDATA[GnuTLS Support in Inadyn and Fixes to Uftpd]]></title>
     <link href="http://troglobit.github.io/blog/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/"/>
     <updated>2014-09-13T19:18:56+02:00</updated>
     <id>http://troglobit.github.io/blog/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd</id>
@@ -289,7 +289,7 @@ project, I&rsquo;ve been hard at work fixing nasty bugs uncovered by the
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Bugfix release of uftpd]]></title>
+    <title type="html"><![CDATA[Bugfix Release of Uftpd]]></title>
     <link href="http://troglobit.github.io/blog/2014/09/04/bugfix-release-of-uftpd/"/>
     <updated>2014-09-04T22:22:09+02:00</updated>
     <id>http://troglobit.github.io/blog/2014/09/04/bugfix-release-of-uftpd</id>
@@ -305,7 +305,7 @@ is basically just to change <code>nowait</code> to <code>wait</code> for the TFT
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[The awesome uftpd, now with TFTP support! :)]]></title>
+    <title type="html"><![CDATA[The Awesome Uftpd, Now With TFTP Support! :)]]></title>
     <link href="http://troglobit.github.io/blog/2014/09/02/new-release-of-the-awesome-uftpd/"/>
     <updated>2014-09-02T10:47:35+02:00</updated>
     <id>http://troglobit.github.io/blog/2014/09/02/new-release-of-the-awesome-uftpd</id>
@@ -327,7 +327,7 @@ always, patches are most welcome.  See the
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[HowTo Rebase without an origin]]></title>
+    <title type="html"><![CDATA[HowTo Rebase Without an Origin]]></title>
     <link href="http://troglobit.github.io/blog/2014/08/27/howto-rebase-without-an-origin/"/>
     <updated>2014-08-27T10:00:13+02:00</updated>
     <id>http://troglobit.github.io/blog/2014/08/27/howto-rebase-without-an-origin</id>
@@ -356,7 +356,7 @@ not been pushed yet?</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[On the demise of free(code) ...]]></title>
+    <title type="html"><![CDATA[On the Demise of Free(code) ...]]></title>
     <link href="http://troglobit.github.io/blog/2014/06/29/on-the-demise-of-free-code-dot-dot-dot/"/>
     <updated>2014-06-29T14:52:39+02:00</updated>
     <id>http://troglobit.github.io/blog/2014/06/29/on-the-demise-of-free-code-dot-dot-dot</id>
@@ -423,7 +423,7 @@ basic needs.</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[New releases of uftpd and inadyn ...]]></title>
+    <title type="html"><![CDATA[New Releases of Uftpd and Inadyn ...]]></title>
     <link href="http://troglobit.github.io/blog/2014/05/20/new-release-of-uftpd-and-inadyn-dot-dot-dot/"/>
     <updated>2014-05-20T21:08:25+02:00</updated>
     <id>http://troglobit.github.io/blog/2014/05/20/new-release-of-uftpd-and-inadyn-dot-dot-dot</id>
@@ -454,7 +454,7 @@ take a very active co-maintainer role in the respective project.</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[New release of the DDNS client Inadyn]]></title>
+    <title type="html"><![CDATA[New Release of the DDNS Client Inadyn]]></title>
     <link href="http://troglobit.github.io/blog/2014/05/14/new-release-of-the-ddns-client-inadyn/"/>
     <updated>2014-05-14T08:29:48+02:00</updated>
     <id>http://troglobit.github.io/blog/2014/05/14/new-release-of-the-ddns-client-inadyn</id>
@@ -489,7 +489,7 @@ still has the old .conf file format, but just maybe.</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Why write your own FTP server?]]></title>
+    <title type="html"><![CDATA[Why Write Your Own FTP Server?]]></title>
     <link href="http://troglobit.github.io/blog/2014/05/04/why-write-your-own-ftp-server/"/>
     <updated>2014-05-04T11:25:09+02:00</updated>
     <id>http://troglobit.github.io/blog/2014/05/04/why-write-your-own-ftp-server</id>
@@ -660,7 +660,7 @@ starting with <a href="http://troglobit.github.io/inadyn.shtml">Inadyn</a></p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[On commit messages ...]]></title>
+    <title type="html"><![CDATA[On Commit Messages ...]]></title>
     <link href="http://troglobit.github.io/blog/2013/08/13/on-commit-messages-dot-dot-dot/"/>
     <updated>2013-08-13T14:18:00+02:00</updated>
     <id>http://troglobit.github.io/blog/2013/08/13/on-commit-messages-dot-dot-dot</id>
