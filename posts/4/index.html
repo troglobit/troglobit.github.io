@@ -9,9 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="A very good friend mine recently told me about a neat event library,
-libev. Usually when he drops me
-links like that it takes me a couple of years to &hellip;">
+  <meta name="description" content="It has been a long time coming, but now I&rsquo;m seriously starting to look
+at Git. Git is the content tracker used by the
+Linux kernel folks, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -75,6 +75,93 @@ links like that it takes me a couple of years to &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/04/10/learning-about-git/">Learning About GIT</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-04-10T17:23:42+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>5:23 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>It has been a long time coming, but now I&rsquo;m seriously starting to look
+at <a href="http://git-scm.com/">Git</a>.  Git is the content tracker used by the
+<a href="http://www.kernel.org">Linux kernel</a> folks, initially developed by
+Torvalds.</p>
+
+<p>At <a href="http://www.westermo.com">Westermo R&amp;D</a> we use Subversion for our
+daily operations and today I started migrating the software to Git.
+Mainly just to get a comparison of performance, storage size and to
+explore how we can use Git on top of svn to become more productive when
+working in parallel in different teams.  We&rsquo;ve tried this quite
+extensively before, using Subversion branches and even though it&rsquo;s a
+heck of a lot easier to use compared to CVS its strength is not in
+merging.</p>
+
+<p>The new
+<a href="http://subversion.tigris.org/merge-tracking/func-spec.html">merge tracking</a>
+feature in Subversion 1.5 and features like
+<a href="http://subversion.tigris.org/svn_1.6_releasenotes.html#tree-conflicts">detection of tree conflicts</a>
+in, the recently released, 1.6 helps.  However, working in small teams,
+disconnected from a centralised server is still not possible with svn,
+OK sure there is <a href="http://svk.bestpractical.com/">svk</a>, but honestly,
+doesn&rsquo;t that make you think of CVS and bolting on features after the
+fact, similar to <a href="http://www.cvsnt.org/">CVSNT</a> or
+<a href="http://opencvs.org/">OpenCVS</a>.  Intriguingly bizarre projects. :-)</p>
+
+<p>The reasons for trying out Git are not only related to any short comings
+of Subversion, Git has lot of strong points on its own.  See
+<a href="http://www.vijedi.net/2009/reasons-for-using-the-git-svn-bridge/">here</a>
+for instance:</p>
+
+<ul>
+<li>SHA-1 hashes for each commit, makes it possible to easier detect history corruptions</li>
+<li>Local developer branches</li>
+<li>Fast branch switching</li>
+<li>Cherry picking commits from other branches, easily</li>
+<li>Stashing/Shelving, i.e. put aside things you&rsquo;re working on for later</li>
+</ul>
+
+
+<p>I&rsquo;ve started collecting a set of links that seem to be useful:</p>
+
+<ul>
+<li><a href="http://tsunanet.blogspot.com/2007/07/learning-git-svn-in-5min.html">Learning git-svn in five minutes</a></li>
+<li><a href="http://www.kernel.org/pub/software/scm/git/docs/git-svn.html">The git-svn(1) man page</a></li>
+<li><a href="http://git.or.cz/course/svn.html">Git - SVN Crash Course</a></li>
+<li><a href="http://utsl.gen.nz/talks/git-svn/intro.html">An introduction to git-svn for Subversion users and deserters</a></li>
+<li><a href="http://flavio.castelli.name/howto_use_git_with_svn">How to use Git and SVN together</a></li>
+<li><a href="http://tsgates.cafe24.com/git/git-emacs.html">A guided tour of emacs-git</a></li>
+<li><a href="http://xtalk.msk.su/~ott/en/writings/emacs-vcs/EmacsGit.html">Work with Git from Emacs</a></li>
+<li><a href="http://www.emacswiki.org/emacs/Git">EmacsWiki:Git</a></li>
+</ul>
+
+
+<p>I&rsquo;ll conclude this post with two YouTube entries, first is the, now
+classic, presentation by
+<a href="http://www.youtube.com/watch?v=4XpnKHJAok8">Linus Torvalds on what Git isn&rsquo;t</a>
+&hellip; and then
+<a href="http://www.youtube.com/watch?v=8dhZ9BXQgc4">Randal Schwartz on what Git is</a>
+&hellip;</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -462,6 +549,10 @@ thrive in our lives.  Life finds a way, I guess.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/">Rant: All the C Compiler Warnings &#8230;</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/01/08/recent-open-source-work/">Recent Open Source Work</a>
       </li>
     
@@ -475,10 +566,6 @@ thrive in our lives.  Life finds a way, I guess.</p>
     
       <li class="post">
         <a href="/blog/2014/12/28/last-release-of-pimd/">Pimd v2.2.0 &#8211; the Last Release of Pimd?</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/12/21/tftp-blocksize-negotiation-in-uftpd-v1-dot-7/">TFTP Blocksize Negotiation in Uftpd v1.7</a>
       </li>
     
   </ul>

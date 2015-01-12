@@ -4,7 +4,7 @@
   <title><![CDATA[Troglobit]]></title>
   <link href="http://troglobit.github.io/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-01-09T18:05:02+01:00</updated>
+  <updated>2015-01-12T02:31:46+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -12,6 +12,100 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Rant: All the C Compiler Warnings ...]]></title>
+    <link href="http://troglobit.github.io/blog/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/"/>
+    <updated>2015-01-12T01:57:40+01:00</updated>
+    <id>http://troglobit.github.io/blog/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot</id>
+    <content type="html"><![CDATA[<blockquote><p>&ldquo;Enable <em>all</em> the warnings!&rdquo;</p></blockquote>
+
+<p>This is one of the truths you learn when you start working with C.  Most
+of the time adding <code>CPPFLAGS="-W -Wall -Werror"</code> is all you need to find
+all the nasty bugs.  And if that&rsquo;s not enough, there are tons of tools
+for static code analysis, like <code>scan-build</code> in
+<a href="http://clang-analyzer.llvm.org/scan-build.html">Clang</a>, and
+<a href="https://scan.coverity.com/">Coverity Scan</a>, to help you <em>find all the
+bugs</em>!</p>
+
+<p>However, these pesky warnings (some of which cannot even be disabled!)
+are sometimes more of a nuisance than help.  Sometimes you <em>know</em> that
+some parameters to a function will remain unused &ndash; it&rsquo;s a callback, and
+you don&rsquo;t need all the data given to you.  So you start adding all kinds
+of voodoo, like <code>__attribite__ ((unused))</code> &hellip; seriously?</p>
+
+<!-- more -->
+
+
+<p>Imagine this now sprinkled all over the code base.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='C'><span class='line'><span class="k">static</span> <span class="kt">void</span> <span class="nf">callback</span><span class="p">(</span><span class="kt">uev_ctx_t</span> <span class="o">*</span><span class="n">ctx</span> <span class="n">__attribute__</span><span class="p">((</span><span class="n">unused</span><span class="p">)),</span>
+</span><span class='line'>                     <span class="kt">uev_t</span> <span class="o">*</span><span class="n">w</span> <span class="n">__attribute__</span><span class="p">((</span><span class="n">unused</span><span class="p">)),</span>
+</span><span class='line'>                     <span class="kt">void</span> <span class="o">*</span><span class="n">arg</span> <span class="n">__attribute__</span><span class="p">((</span><span class="n">unused</span><span class="p">)),</span>
+</span><span class='line'>                     <span class="kt">int</span> <span class="n">events</span> <span class="n">__attribute__</span><span class="p">((</span><span class="n">unused</span><span class="p">)))</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>        <span class="p">...</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So you make small macros to help out:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='C'><span class='line'><span class="cp">#define UNUSED(arg) arg __attribite__ ((unused))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>We now have this instead:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='C'><span class='line'><span class="k">static</span> <span class="kt">void</span> <span class="nf">callback</span><span class="p">(</span><span class="kt">uev_ctx_t</span> <span class="o">*</span><span class="n">UNUSED</span><span class="p">(</span><span class="n">ctx</span><span class="p">),</span> <span class="kt">uev_t</span> <span class="o">*</span><span class="n">UNUSED</span><span class="p">(</span><span class="n">w</span><span class="p">),</span>
+</span><span class='line'>                     <span class="kt">void</span> <span class="o">*</span><span class="n">UNUSED</span><span class="p">(</span><span class="n">arg</span><span class="p">),</span> <span class="kt">int</span> <span class="n">UNUSED</span><span class="p">(</span><span class="n">events</span><span class="p">))</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>        <span class="p">...</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Admittedly, using the macro is much cleaner, but still.  Why not just
+allow this <em>much more readable</em> version?</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='C'><span class='line'><span class="k">static</span> <span class="kt">void</span> <span class="nf">callback</span><span class="p">(</span><span class="kt">uev_ctx_t</span> <span class="o">*</span><span class="n">ctx</span><span class="p">,</span> <span class="kt">uev_t</span> <span class="o">*</span><span class="n">w</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">arg</span><span class="p">,</span> <span class="kt">int</span> <span class="n">events</span><span class="p">)</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>        <span class="p">...</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The human eye is marvellous at finding little things that stick out,
+but when there&rsquo;s nothing but annoying things on the screen we can no
+longer see the most obvious pointer casting bugs, and we get sloppy.</p>
+
+<p>I&rsquo;m seriously considering adding some kind of <code>--developer-mode</code> to my
+own projects which will warn like crazy, as usual, and as soon as I turn
+it off (default) complete silence will arrive.  That&rsquo;s how sick and
+tired I am of <em>all the warnings</em> and the resulting almost completely
+unreadable code.</p>
+
+<p><a href="http://blog.codinghorror.com/when-understanding-means-rewriting/">We spend a lot of time reading code</a>,
+so it should be enjoyable and easy.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Recent Open Source Work]]></title>
@@ -719,26 +813,6 @@ working on.</p>
 
 <p>That&rsquo;s what I do for a living.  And yes, I know it&rsquo;s not sustainable
 work conditions.  I&rsquo;m working on that, it&rsquo;s on the TODO list &hellip;</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[On the Linearity of Time]]></title>
-    <link href="http://troglobit.github.io/blog/2013/08/09/on-the-linearity-of-time/"/>
-    <updated>2013-08-09T04:25:00+02:00</updated>
-    <id>http://troglobit.github.io/blog/2013/08/09/on-the-linearity-of-time</id>
-    <content type="html"><![CDATA[<p>Don&rsquo;t try this at home kids. (Disclaimer: I live in Sweden :)</p>
-
-<!-- more -->
-
-
-
-
-<div><script src='https://gist.github.com/6168031.js'></script>
-<noscript><pre><code></code></pre></noscript></div>
-
-
-
 ]]></content>
   </entry>
   
