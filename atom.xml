@@ -4,7 +4,7 @@
   <title><![CDATA[Troglobit]]></title>
   <link href="http://troglobit.github.io/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-01-12T02:31:46+01:00</updated>
+  <updated>2015-01-24T17:02:32+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -12,6 +12,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Finit v1.11 Released!]]></title>
+    <link href="http://troglobit.github.io/blog/2015/01/24/finit-v1-dot-11-released/"/>
+    <updated>2015-01-24T16:54:23+01:00</updated>
+    <id>http://troglobit.github.io/blog/2015/01/24/finit-v1-dot-11-released</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m very pleased to announce <a href="http://troglobit.github.io/finit.html">Finit v1.11</a> — this is the
+episode where two of my projects finally get married! ツ</p>
+
+<p>Finit, the <a href="https://github.com/troglobit/libuev">libuEv</a> release.</p>
+
+<!-- more -->
+
+
+<h3>Changes</h3>
+
+<ul>
+<li>Now using the asynchronous <a href="https://github.com/troglobit/libuev">libuEv</a> library for handling all events:
+signals, timers and listening to sockets or file descriptors.</li>
+<li>Rename NEWS.md &ndash;> CHANGELOG.md, with symlinks for <code>make install</code></li>
+<li>Attempt to align with <a href="http://keepachangelog.com">http://keepachangelog.com</a> for the ChangeLog</li>
+<li><a href="https://travis-ci.org/troglobit/finit">Travis CI</a> now only invokes <a href="https://scan.coverity.com/projects/3545">Coverity Scan</a> from the &lsquo;dev&rsquo; branch.  This
+means that all development, except documentation updates, must go into
+that branch.</li>
+</ul>
+
+
+<h3>Fixes</h3>
+
+<ul>
+<li>Fix bug with finit dying when no <code>tty</code> is defined in <code>finit.conf</code>, now
+even the fallback shell has control over its TTY, see fix in GIT
+commit <a href="https://github.com/troglobit/finit/commit/dea3ae8">dea3ae8</a> for this.</li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Rant: All the C Compiler Warnings ...]]></title>
@@ -760,59 +797,6 @@ starting with <a href="http://troglobit.github.io/inadyn.shtml">Inadyn</a></p>
     <id>http://troglobit.github.io/blog/2013/08/13/on-commit-messages-dot-dot-dot</id>
     <content type="html"><![CDATA[<p>There&rsquo;s just one thing to say on the topic of commit messages:
 <a href="http://stopwritingramblingcommitmessages.com/">ur doin it wrong if &hellip;</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Just a Programmer]]></title>
-    <link href="http://troglobit.github.io/blog/2013/08/13/just-a-programmer/"/>
-    <updated>2013-08-13T13:46:00+02:00</updated>
-    <id>http://troglobit.github.io/blog/2013/08/13/just-a-programmer</id>
-    <content type="html"><![CDATA[<p>Sometimes people ask me what I do for a living.  Usually I tend to
-pause and think, real hard, becuase the people asking me this aren&rsquo;t
-programmers.  They use computers, but are mostly limited to a Windows
-machine, writing in MS Word and browsing the Internet, mostly for
-Facebook.</p>
-
-<p>I often start off with: &ldquo;It&rsquo;s a bit complicated to explain &hellip; &rdquo;, by
-which time I&rsquo;ve lost most of the people in the room listening to me.
-Sometimes I say: &ldquo;I&rsquo;m a software architect.&rdquo;, because people seem to
-know what architects do for a living, they draw houses, design stuff
-and drive SAAB&rsquo;s.  Much like dentists.  The prefix &ldquo;software&rdquo; however
-does confuse people.</p>
-
-<!-- more -->
-
-
-<p><img class="right" src="http://troglobit.github.io/images/programming-in-a-nutshell.gif"></p>
-
-<p>In reality I&rsquo;m
-<a href="http://c2.com/cgi/wiki?JustaProgrammer">just a programmer</a> with a
-little bit more responsibility.  A day starts with coming in to the
-office, or sitting down in my home office, connecting to the company
-VPN, meanwhile planning loosely the day and my goals.  All while
-checking status of e-mail, our IRC channel and the issue tracker for
-any recently reported/updated issues in my fields of responsibility.
-Somewhere around there I have a pretty good idea about what must be
-done and in what order.  So I write it down, in no particular order,
-on folded A4 sheets I use for TODO lists and start working.  About 20
-minutes into that, when I&rsquo;ve just reached
-<a href="http://c2.com/cgi/wiki?InTheZone">The Zone</a>, I get interrupted for an
-impromptu meeting, or
-<a href="https://en.wikipedia.org/wiki/Conference_call">telco</a>, which in turn
-always leads to another meeting, which in turn runs over and suddenly
-it&rsquo;s 16:00 (4 pm) and I have 45 minutes to complete a days work before
-picking up the kids from school.</p>
-
-<p>Or &hellip; you can apply that same crazy to a day when trying to fix a
-simple bug, finding another horrbile bug and fixing that first,
-leading to a minor redesign in need of a refactor, which in turn gives
-me a pain to merge since during the time I tried fixing that minor bug
-my collegues have done multiple changes to the same files I&rsquo;ve been
-working on.</p>
-
-<p>That&rsquo;s what I do for a living.  And yes, I know it&rsquo;s not sustainable
-work conditions.  I&rsquo;m working on that, it&rsquo;s on the TODO list &hellip;</p>
 ]]></content>
   </entry>
   

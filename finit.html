@@ -5,14 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Finit | Fast Init Replacement - Troglobit</title>
+  <title>Finit | Fast & Extensible Init for Linux - Troglobit</title>
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="Finit | Fast Init Replacement Nov 27th, 2014 10:36 pm Finit is a small SysV init
-replacement with
-process supervision
-similar to that of daemontools &hellip;">
+  <meta name="description" content="Finit | Fast & Extensible Init for Linux Nov 27th, 2014 10:36 pm Finit is a SysV init replacement with process supervision
+similar to that of &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,7 +76,7 @@ similar to that of daemontools &hellip;">
 <article role="article">
   
   <header>
-    <h1 class="entry-title">Finit | Fast Init Replacement</h1>
+    <h1 class="entry-title">Finit | Fast & Extensible Init for Linux</h1>
     <p class="meta">
 
 
@@ -91,23 +89,18 @@ similar to that of daemontools &hellip;">
 
 <p><img class="right" src="/images/finit.jpg" width="456" height="120"></p>
 
-<p>Finit is a small <a href="https://en.wikipedia.org/wiki/Init">SysV init</a>
-replacement with
-<a href="https://en.wikipedia.org/wiki/Process_supervision">process supervision</a>
-similar to that of <a href="http://cr.yp.to/daemontools.html">daemontools</a> and
-<a href="http://smarden.org/runit/">runit</a>.  Its focus is on small and
-embedded GNU/Linux systems, although fully functional on standard
+<p>Finit is a <a href="https://en.wikipedia.org/wiki/Init">SysV init</a> replacement with <a href="https://en.wikipedia.org/wiki/Process_supervision">process supervision</a>
+similar to that of <a href="http://cr.yp.to/daemontools.html">daemontools</a> and <a href="http://smarden.org/runit/">runit</a>.  Its focus is on
+small and embedded GNU/Linux systems, yet fully functional on standard
 server and desktop installations.</p>
 
-<p>Finit is fast because it starts services in parallel, it then
-<em>supervises and automatically restarts them if they fail</em>.  This can
-be extended upon with custom callbacks for all services, hooks into
-the boot process, or plugins to extend the functionality and adapt
-Finit to your needs.</p>
+<p>Finit is optimized for small embedded systems by heavily reducing the
+amount of context switches, forks, and calls needed to external tools.
+Services are <em>supervised and automatically restarted if they fail</em>.</p>
 
-<p>Finit is not only fast, it&rsquo;s arguably one of the easiest to get started
-with.  A complete system can be booted with one simple configuration
-file, <code>/etc/finit.conf</code>, see below for an example.</p>
+<p>Finit can be extended with custom callbacks for all services, hooks into
+the boot process, or plugins to extend the functionality and adapt your
+boot process to fit your needs.</p>
 
 <div><script src='https://gist.github.com/10648685.js'></script>
 <noscript><pre><code># Sample Debian finit.conf
@@ -150,23 +143,20 @@ service [3] /usr/sbin/gdm -- GNOME Display Manager
 
 <p><img src="/images/finit-screenshot.jpg" width="615" height="398" title="Finit Screenshot" alt="Finit starting a Debian 6.0 system"></p>
 
-<p>This is the continuation of the
-<a href="http://helllabs.org/finit/">original finit</a> by Claudio Matsuoka,
-which in turn was reverse engineered from syscalls of the ground
-breaking
-<a href="http://wiki.eeeuser.com/boot_process:the_boot_process">EeePC fastinit</a>
-daemon &ndash; &ldquo;gaps filled with frog DNA &hellip;&rdquo;</p>
+<p>This project is the continuation of the <a href="http://helllabs.org/finit/">original finit</a> by Claudio
+Matsuoka, which was reverse engineered from syscalls of the ground
+breaking <a href="http://wiki.eeeuser.com/boot_process:the_boot_process">EeePC fastinit</a> daemon &ndash; &ldquo;gaps filled with frog DNA &hellip;&rdquo;</p>
 
 <p>Issue tracker and GIT repository available at GitHub:</p>
 
 <ul>
 <li><a href="http://github.com/troglobit/finit">Repository</a></li>
-<li><a href="https://github.com/troglobit/finit/blob/master/NEWS.md">NEWS</a></li>
+<li><a href="https://github.com/troglobit/finit/blob/master/CHANGELOG.md">CHANGELOG</a></li>
 <li><a href="https://github.com/troglobit/finit/blob/master/README.md">README</a></li>
 <li><a href="https://github.com/troglobit/finit/blob/master/TODO.md">TODO</a></li>
 <li><a href="http://github.com/troglobit/finit/issues">Issue Tracker</a></li>
-<li><a href="ftp://troglobit.com/finit/finit-1.10.tar.xz">finit-1.10.tar.xz</a>,
-<a href="ftp://troglobit.com/finit/finit-1.10.tar.xz.md5">MD5</a></li>
+<li><a href="ftp://troglobit.com/finit/finit-1.11.tar.xz">finit-1.11.tar.xz</a>,
+<a href="ftp://troglobit.com/finit/finit-1.11.tar.xz.md5">MD5</a></li>
 </ul>
 
 
@@ -222,6 +212,10 @@ daemon &ndash; &ldquo;gaps filled with frog DNA &hellip;&rdquo;</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/01/24/finit-v1-dot-11-released/">Finit v1.11 Released!</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/">Rant: All the C Compiler Warnings &#8230;</a>
       </li>
     
@@ -235,10 +229,6 @@ daemon &ndash; &ldquo;gaps filled with frog DNA &hellip;&rdquo;</p>
     
       <li class="post">
         <a href="/blog/2014/12/28/mrouted-v3-dot-9-7/">Mrouted v3.9.7</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/12/28/last-release-of-pimd/">Pimd v2.2.0 &#8211; the Last Release of Pimd?</a>
       </li>
     
   </ul>
