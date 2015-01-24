@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Finit | Fast init replacement"
+title: "Finit | Fast & Extensible init for Linux"
 sharing: true
 footer: true
 date: 2014-11-27 22:36
@@ -11,45 +11,43 @@ comments: false
 
 {% img right /images/finit.jpg 456 120 %}
 
-Finit is a small [SysV init](https://en.wikipedia.org/wiki/Init)
-replacement with
-[process supervision](https://en.wikipedia.org/wiki/Process_supervision)
-similar to that of [daemontools](http://cr.yp.to/daemontools.html) and
-[runit](http://smarden.org/runit/).  Its focus is on small and
-embedded GNU/Linux systems, although fully functional on standard
+Finit is a [SysV init][1] replacement with [process supervision][2]
+similar to that of [daemontools][3] and [runit][4].  Its focus is on
+small and embedded GNU/Linux systems, yet fully functional on standard
 server and desktop installations.
 
-Finit is fast because it starts services in parallel, it then
-*supervises and automatically restarts them if they fail*.  This can
-be extended upon with custom callbacks for all services, hooks into
-the boot process, or plugins to extend the functionality and adapt
-Finit to your needs.
+Finit is optimized for small embedded systems by heavily reducing the
+amount of context switches, forks, and calls needed to external tools.
+Services are *supervised and automatically restarted if they fail*.
 
-Finit is not only fast, it's arguably one of the easiest to get started
-with.  A complete system can be booted with one simple configuration
-file, ``/etc/finit.conf``, see below for an example.
+Finit can be extended with custom callbacks for all services, hooks into
+the boot process, or plugins to extend the functionality and adapt your
+boot process to fit your needs.
 
 {% gist 10648685 %}
 
 {% img /images/finit-screenshot.jpg 615 398 'Finit Screenshot' 'Finit starting a Debian 6.0 system' %}
 
-This is the continuation of the
-[original finit](http://helllabs.org/finit/) by Claudio Matsuoka,
-which in turn was reverse engineered from syscalls of the ground
-breaking
-[EeePC fastinit](http://wiki.eeeuser.com/boot_process:the_boot_process)
-daemon -- "gaps filled with frog DNA ..."
+This project is the continuation of the [original finit][5] by Claudio
+Matsuoka, which was reverse engineered from syscalls of the ground
+breaking [EeePC fastinit][6] daemon -- "gaps filled with frog DNA ..."
 
 Issue tracker and GIT repository available at GitHub:
 
 * [Repository](http://github.com/troglobit/finit)
-* [NEWS](https://github.com/troglobit/finit/blob/master/NEWS.md)
+* [CHANGELOG](https://github.com/troglobit/finit/blob/master/CHANGELOG.md)
 * [README](https://github.com/troglobit/finit/blob/master/README.md)
 * [TODO](https://github.com/troglobit/finit/blob/master/TODO.md)
 * [Issue Tracker](http://github.com/troglobit/finit/issues)
-* [finit-1.10.tar.xz](ftp://troglobit.com/finit/finit-1.10.tar.xz),
-  [MD5](ftp://troglobit.com/finit/finit-1.10.tar.xz.md5)
+* [finit-1.11.tar.xz](ftp://troglobit.com/finit/finit-1.11.tar.xz),
+  [MD5](ftp://troglobit.com/finit/finit-1.11.tar.xz.md5)
 
 See also the [Free(code) page](http://freecode.com/projects/finit).
 
+[1]: https://en.wikipedia.org/wiki/Init
+[2]: https://en.wikipedia.org/wiki/Process_supervision
+[3]: http://cr.yp.to/daemontools.html
+[4]: http://smarden.org/runit/
+[5]: http://helllabs.org/finit/
+[6]: http://wiki.eeeuser.com/boot_process:the_boot_process
 
