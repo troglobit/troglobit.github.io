@@ -3,7 +3,7 @@ layout: page
 title: "Finit | Fast & Extensible init for Linux"
 sharing: true
 footer: true
-date: 2014-11-27 22:36
+date: 2015-01-24 17:00 +0100
 comments: false
 ---
 
