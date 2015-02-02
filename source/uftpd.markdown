@@ -19,6 +19,8 @@ Tired of confusing configuration files and security features you don't need?
 * Can run as root, with chroot and privsep, or as a regular user
 * Supports TFTP blocksize negotiation, [RFC 2348](http://tools.ietf.org/html/rfc2348)
 
+It just works!
+
 **Disclaimer:** *uftpd was never made for the Internet, it may work
   and it may even be secure.  The developer has employed some of the
   most common techniques, but avoided others in an effort to keep
@@ -36,10 +38,10 @@ background and context :)
 * [README](https://github.com/troglobit/uftpd/blob/master/README.md)
 * [TODO](https://github.com/troglobit/uftpd/blob/master/TODO.md)
 * [Issue Tracker](http://github.com/troglobit/uftpd/issues)
-* [uftpd-1.7.tar.xz](ftp://troglobit.com/uftpd/uftpd-1.7.tar.xz),
-  [MD5](ftp://troglobit.com/uftpd/uftpd-1.7.tar.xz.md5)
-* [uftpd_1.7-1_amd64.deb](ftp://troglobit.com/uftpd/uftpd_1.7-1_amd64.deb),
-  [changes](ftp://troglobit.com/uftpd/uftpd_1.7-1_amd64.changes)
+* [uftpd-1.8.tar.xz](ftp://troglobit.com/uftpd/uftpd-1.8.tar.xz),
+  [MD5](ftp://troglobit.com/uftpd/uftpd-1.8.tar.xz.md5)
+* [uftpd_1.8-1_amd64.deb](ftp://troglobit.com/uftpd/uftpd_1.8-1_amd64.deb),
+  [changes](ftp://troglobit.com/uftpd/uftpd_1.8-1_amd64.changes)
 
 See also the [OpenHub page](https://www.openhub.net/p/uftpd/), or the
 (sadly) dormant [Free(code) page](http://freecode.com/projects/uftpd).
