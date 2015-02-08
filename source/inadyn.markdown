@@ -3,7 +3,7 @@ layout: page
 title: "Inadyn | Small and Simple DDNS Client"
 sharing: true
 footer: true
-date: 2014-10-15 22:04
+date: 2015-02-08 08:36 +0100
 comments: false
 ---
 
@@ -20,11 +20,15 @@ record up to date with any IP address changes from your
 [ISP](http://en.wikipedia.org/wiki/ISP).  It can also be used in
 installations with redundant (backup) connections to the Internet.
 
+
+Supported Providers
+-------------------
+
 The following DDNS providers are supported natively, other providers,
 like http://twoDNS.de for instance, can be supported using the generic
 DDNS plugin.  See the
-[README](https://github.com/troglobit/inadyn/blob/master/README.md),
-or inadyn.conf(5) found in the tarball, for configuration examples.
+[README](https://github.com/troglobit/inadyn/blob/master/README.md), or
+`inadyn.conf(5)` found in the tarball, for configuration examples.
 
 * http://www.dyndns.org
 * http://freedns.afraid.org
@@ -46,23 +50,31 @@ or inadyn.conf(5) found in the tarball, for configuration examples.
 * http://duckdns.org
 * https://www.loopia.com
 * https://www.namecheap.com
+* https://domains.google.com
+* https://www.ovh.com
+* https://www.dtdns.com
+
+
+Download
+--------
 
 Issue tracker and GIT repository available at GitHub:
 
-* [Repository](http://github.com/troglobit/inadyn)
-* [NEWS](https://github.com/troglobit/inadyn/blob/master/NEWS.md)
 * [README](https://github.com/troglobit/inadyn/blob/master/README.md)
+* [CHANGELOG](https://github.com/troglobit/inadyn/blob/master/CHANGELOG.md)
+* [Repository](http://github.com/troglobit/inadyn)
 * [Issue Tracker](http://github.com/troglobit/inadyn/issues)
-* [inadyn-1.99.12.tar.xz](ftp://troglobit.com/inadyn/inadyn-1.99.12.tar.xz),
-  [MD5](ftp://troglobit.com/inadyn/inadyn-1.99.12.tar.xz.md5)
-  [GPG Sign](ftp://troglobit.com/inadyn/inadyn-1.99.12.tar.xz.asc)
+* [inadyn-1.99.13.tar.xz](ftp://troglobit.com/inadyn/inadyn-1.99.13.tar.xz),
+  [MD5](ftp://troglobit.com/inadyn/inadyn-1.99.13.tar.xz.md5)
+  [GPG Sign](ftp://troglobit.com/inadyn/inadyn-1.99.13.tar.xz.asc)
 
-See also the [OpenHub page](https://www.openhub.net/p/inadyn/), or the
-dormant [Free(code) page](http://freecode.com/projects/inadyn).
+See also the [OpenHub page](https://www.openhub.net/p/inadyn/), the
+[Freshcode page](http://freshcode.club/projects/inadyn), or the dormant
+[Free(code) page](http://freecode.com/projects/inadyn).
 
 
-Background
-----------
+Origin & References
+-------------------
 
 This is the continuation of the
 [original INADYN](http://www.inatech.eu/inadyn/) project by Narcis
