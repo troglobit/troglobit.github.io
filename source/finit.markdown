@@ -17,12 +17,14 @@ small and embedded GNU/Linux systems, yet fully functional on standard
 server and desktop installations.
 
 Finit is optimized for small embedded systems by heavily reducing the
-amount of context switches, forks, and calls needed to external tools.
+amount of context switches, forks, and calls to external tools.
 Services are *supervised and automatically restarted if they fail*.
 
-Finit can be extended with custom callbacks for all services, hooks into
-the boot process, or plugins to extend the functionality and adapt your
-boot process to fit your needs.
+Finit supports basic runlevels, basic process monitoring of daemons, can
+launch services on demand (built-in inetd support). It can be extended
+with custom callbacks for all services, hooks into the boot process, or
+plugins to extend the functionality and adapt your boot process to fit
+your needs.
 
 {% gist 10648685 %}
 
@@ -39,8 +41,8 @@ Issue tracker and GIT repository available at GitHub:
 * [README](https://github.com/troglobit/finit/blob/master/README.md)
 * [TODO](https://github.com/troglobit/finit/blob/master/TODO.md)
 * [Issue Tracker](http://github.com/troglobit/finit/issues)
-* [finit-1.11.tar.xz](ftp://troglobit.com/finit/finit-1.11.tar.xz),
-  [MD5](ftp://troglobit.com/finit/finit-1.11.tar.xz.md5)
+* [finit-1.12.tar.xz](ftp://troglobit.com/finit/finit-1.12.tar.xz),
+  [MD5](ftp://troglobit.com/finit/finit-1.12.tar.xz.md5)
 
 See also the [Free(code) page](http://freecode.com/projects/finit).
 
