@@ -95,12 +95,14 @@ small and embedded GNU/Linux systems, yet fully functional on standard
 server and desktop installations.</p>
 
 <p>Finit is optimized for small embedded systems by heavily reducing the
-amount of context switches, forks, and calls needed to external tools.
+amount of context switches, forks, and calls to external tools.
 Services are <em>supervised and automatically restarted if they fail</em>.</p>
 
-<p>Finit can be extended with custom callbacks for all services, hooks into
-the boot process, or plugins to extend the functionality and adapt your
-boot process to fit your needs.</p>
+<p>Finit supports basic runlevels, basic process monitoring of daemons, can
+launch services on demand (built-in inetd support). It can be extended
+with custom callbacks for all services, hooks into the boot process, or
+plugins to extend the functionality and adapt your boot process to fit
+your needs.</p>
 
 <div><script src='https://gist.github.com/10648685.js'></script>
 <noscript><pre><code># Sample Debian finit.conf
@@ -155,8 +157,8 @@ breaking <a href="http://wiki.eeeuser.com/boot_process:the_boot_process">EeePC f
 <li><a href="https://github.com/troglobit/finit/blob/master/README.md">README</a></li>
 <li><a href="https://github.com/troglobit/finit/blob/master/TODO.md">TODO</a></li>
 <li><a href="http://github.com/troglobit/finit/issues">Issue Tracker</a></li>
-<li><a href="ftp://troglobit.com/finit/finit-1.11.tar.xz">finit-1.11.tar.xz</a>,
-<a href="ftp://troglobit.com/finit/finit-1.11.tar.xz.md5">MD5</a></li>
+<li><a href="ftp://troglobit.com/finit/finit-1.12.tar.xz">finit-1.12.tar.xz</a>,
+<a href="ftp://troglobit.com/finit/finit-1.12.tar.xz.md5">MD5</a></li>
 </ul>
 
 
