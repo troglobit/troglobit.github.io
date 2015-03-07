@@ -6,14 +6,14 @@ comments: true
 categories:
 - finit
 - inetd
-- UNIX
+- opensource
 ---
 
 A steady flow of features, and releases, is key to keeping any project
 alive.  Recently I ticked off another item in the [Finit](/finit.html)
 TODO list.
 
-Finit v1.12 now comes with a built-in inetd!.  You no longer need an
+Finit v1.12 now comes with a built-in inetd!  You no longer need an
 external inetd daemon to launch services on demand.
 
 The good news doesn't stop there, this little inetd actually supports a
