@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Inetd | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/inetd/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-03-07T08:59:02+01:00</updated>
+  <updated>2015-03-07T09:01:45+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -22,7 +22,7 @@
 alive.  Recently I ticked off another item in the <a href="/finit.html">Finit</a>
 TODO list.</p>
 
-<p>Finit v1.12 now comes with a built-in inetd!.  You no longer need an
+<p>Finit v1.12 now comes with a built-in inetd!  You no longer need an
 external inetd daemon to launch services on demand.</p>
 
 <p>The good news doesn&rsquo;t stop there, this little inetd actually supports a
