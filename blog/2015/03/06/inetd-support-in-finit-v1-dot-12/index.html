@@ -1,0 +1,378 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Inetd Support in Finit v1.12 - Troglobit</title>
+  <meta name="author" content="Joachim Nilsson">
+
+  
+  <meta name="description" content="A steady flow of features, and releases, is key to keeping any project
+alive. Recently I ticked off another item in the Finit
+TODO list. Finit v1.12 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://troglobit.github.io/blog/2015/03/06/inetd-support-in-finit-v1-dot-12">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Troglobit" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/favicon.png" rel="icon">
+<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Troglobit</a></h1>
+  
+    <h2>&#8220;Elegance is not a dispensable luxury&#8221; &mdash; Edsger Wybe Dijkstra</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="troglobit.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/about">About</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/finit.html">Finit</a></li>
+  <li><a href="/inadyn.html">Inadyn</a></li>
+  <li><a href="/smcroute.html">SMCRoute</a></li>
+  <li><a href="/mrouted.html">mrouted</a></li>
+  <li><a href="/pimd.html">pimd</a></li>
+  <li><a href="/uftpd.html">uftpd</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Inetd Support in Finit v1.12</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-03-06T22:34:45+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>6</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>10:34 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>A steady flow of features, and releases, is key to keeping any project
+alive.  Recently I ticked off another item in the <a href="/finit.html">Finit</a>
+TODO list.</p>
+
+<p>Finit v1.12 now comes with a built-in inetd!.  You no longer need an
+external inetd daemon to launch services on demand.</p>
+
+<p>The good news doesn&rsquo;t stop there, this little inetd actually supports a
+poor man&rsquo;s tcpwrappers!</p>
+
+<pre><code>inetd ssh/tcp          nowait [2345] /sbin/dropbear -i -R -F
+inetd ssh@eth0:222/tcp nowait [2345] /sbin/dropbear -i -R -F
+</code></pre>
+
+<p>With these two lines in your <code>/etc/finit.conf</code> you tell finit to launch
+the <a href="https://matt.ucc.asn.au/dropbear/dropbear.html">Dropbear SSH</a>
+server on demand on port 22 (default ssh/tcp port in <code>/etc/services</code>) on
+<em>all</em> interfaces except on <code>eth0</code>, which in your case is the Internet
+(WAN) interface, here you want SSH to run on port 222.  Actually, you
+don&rsquo;t want port 22 open at all on <code>eth0</code> &hellip; so finit takes care of this
+for you!  Seriously, it just works!  No need for messing about with that
+nasty old <code>iptables</code> &hellip;</p>
+
+<p>The original UNIX inetd super server supported many protocols
+internally, some of which may seem a bit odd today, and some have been
+superseded by more modern protocols.</p>
+
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Echo_Protocol">echo</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Character_Generator_Protocol">chargen</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Time_Protocol">time</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Daytime_Protocol">daytime</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Discard_Protocol">discard</a></li>
+</ul>
+
+
+<p>Finit currently only supports one, <code>time</code>.  It is built as a plugin in
+Finit to serve as an example of how you can extend it yourself.  The
+time service can be called either as UDP or TCP.  To prevent security
+issues, the <code>time</code> protocol is disabled by default.  To enable it you
+need two things:</p>
+
+<ol>
+<li>The <code>time.so</code> plugin (built by default)</li>
+<li>An <code>inetd time ...</code> line in <code>/etc/finit.conf</code></li>
+</ol>
+
+
+<p>Assuming you&rsquo;ve installed the default set of plugins, the following two
+lines can be added:</p>
+
+<pre><code>inetd time/udp   wait [2345] internal
+inetd time/tcp nowait [2345] internal
+</code></pre>
+
+<p>This can be very useful for testing the inetd capabilities, your network
+connection, or simply to get the time to a client where NTP for some
+reason does not work, or is blocked.  For instance, you could have a GPS
+setup on your server and distribute time to clients with the <code>time</code>
+protocol.</p>
+
+<p>To use it you need an <a href="http://www.aelius.com/njh/rdate/"><code>rdate</code></a>
+client.  Users of <code>rdate</code> in BusyBox may need to be reminded that it
+only supports TCP.</p>
+
+<pre><code>$ rdate -pu 198.51.100.42
+Sat Mar  7 08:48:58 CET 2015
+</code></pre>
+
+<p>For more info on Finit and its features, see the <a href="https://github.com/troglobit/finit/blob/master/README.md">README</a>.</p>
+
+<p>Enjoy! ツ</p>
+
+<!-- more -->
+
+
+<h3>Changes</h3>
+
+<ul>
+<li>Add support for built-in inetd super server &ndash; launch services on
+demand.  Supports filtering per interface and custom Inet ports.</li>
+<li>Upgrade to <a href="https://github.com/troglobit/libuev">libuEv</a> v1.1.0 to better handle error conditions.</li>
+<li>Allow mixed case config directives in <code>finit.conf</code></li>
+<li>Add support for RFC 868 (rdate) time plugin, start as inetd service.</li>
+<li>Load plugins before parsing <code>finit.conf</code>, this makes it possible to
+extend finit even with configuration commands.  E.g., the <code>time.so</code>
+plugin must be loaded for the <code>inetd time/tcp internal</code> service to be
+accepted when parsing <code>finit.conf</code>.</li>
+<li>Slight change in TTY fallback behavior, if no TTY is listed in the
+system <code>finit.conf</code> first inspect the <code>console</code> setting and only if
+that too is unset fall back to <code>/bin/sh</code></li>
+<li>When falling back to the <code>console</code> TTY or <code>/bin/sh</code>, finit now marks
+this fallback as console.  Should improve usability in some use cases.</li>
+</ul>
+
+
+<h3>Fixes</h3>
+
+<ul>
+<li>Revert &ldquo;Use vfork() instead of fork() before exec()&rdquo; from v1.11.  It
+turned out to not work so well after all.  For instance, launching
+TTYs in a background process completely blocked inetd services from
+even starting up listening sockets &hellip; proper fork seems to work fine
+though.  This is the casue for <em>yanking</em> the <a href="https://github.com/troglobit/finit/compare/1.10...1.11">1.11</a> release, below.</li>
+<li>Trap segfaults caused by external plugins/callbacks in a sub-process.
+This prevents a single programming mistake in by a 3rd party developer
+from taking down the entire system.</li>
+<li>Fix Coverity CID 56281: dlopen() resource leak by storing the pointer.
+For the time being we do not support unloading plugins.</li>
+<li>Set hostname early, so bootstrap processes like syslog can use it.</li>
+<li>Only restart <em>lost daemons</em> when recovering from a SIGSTOP/norespawn.</li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Joachim Nilsson</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2015-03-06T22:34:45+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>6</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>10:34 pm</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/finit/'>finit</a>, <a class='category' href='/blog/categories/inetd/'>inetd</a>, <a class='category' href='/blog/categories/unix/'>unix</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://troglobit.github.io/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/" data-via="troglobit" data-counturl="http://troglobit.github.io/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2015/01/24/finit-v1-dot-11-released/" title="Previous Post: Finit v1.11 released!">&laquo; Finit v1.11 released!</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Projects</h1>
+  <ul>
+    <li><a href="/finit.html">Fast Init Replacement</a></li>
+    <li><a href="/uftpd.html">Micro TFTP/FTP Daemon</a></li>
+    <li><a href="/tetris.html">Micro Tetris&trade;</a></li>
+    <li><a href="/snake.html">Micro Snake</a></li>
+    <li><a href="/editline.html">Minix Editline</a></li>
+    <li><a href="/inadyn.html">Inadyn DDNS Client</a></li>
+    <li><a href="/multicast-howto.html">Multicast HowTo</a></li>
+    <li><a href="/mrouted.html">The Original Multicast Routing Daemon</a></li>
+    <li><a href="/pimd.html">The Original PIM-SM Daemon</a></li>
+    <li><a href="/smcroute.html">SMCRoute Static Multicast Routing</a></li>
+  </ul>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/">Inetd Support in Finit v1.12</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/01/24/finit-v1-dot-11-released/">Finit v1.11 Released!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/">Rant: All the C Compiler Warnings &#8230;</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/01/08/recent-open-source-work/">Recent Open Source Work</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/01/02/blog-restoration-project-now-also-on-github-pages/">Blog Restoration Project</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/troglobit">@troglobit</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'troglobit',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+<section>
+  <h1>Latest Tweets</h1>
+
+  <a class="twitter-timeline" data-dnt="true"
+     href="https://twitter.com/troglobit"
+     data-widget-id="365667052100415488">Tweets by @troglobit</a>
+  <script>!function(d,s,id){var
+    js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</section>
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Joachim Nilsson -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

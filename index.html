@@ -9,8 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="I&rsquo;m very pleased to announce Finit v1.11 — this is the
-episode where two of my projects finally get married! ツ Finit, the libuEv release. ">
+  <meta name="description" content="A steady flow of features, and releases, is key to keeping any project
+alive. Recently I ticked off another item in the Finit
+TODO list. Finit v1.12 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -74,6 +75,111 @@ episode where two of my projects finally get married! ツ Finit, the libuEv rele
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/">Inetd Support in Finit v1.12</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-03-06T22:34:45+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>6</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>10:34 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>A steady flow of features, and releases, is key to keeping any project
+alive.  Recently I ticked off another item in the <a href="/finit.html">Finit</a>
+TODO list.</p>
+
+<p>Finit v1.12 now comes with a built-in inetd!.  You no longer need an
+external inetd daemon to launch services on demand.</p>
+
+<p>The good news doesn&rsquo;t stop there, this little inetd actually supports a
+poor man&rsquo;s tcpwrappers!</p>
+
+<pre><code>inetd ssh/tcp          nowait [2345] /sbin/dropbear -i -R -F
+inetd ssh@eth0:222/tcp nowait [2345] /sbin/dropbear -i -R -F
+</code></pre>
+
+<p>With these two lines in your <code>/etc/finit.conf</code> you tell finit to launch
+the <a href="https://matt.ucc.asn.au/dropbear/dropbear.html">Dropbear SSH</a>
+server on demand on port 22 (default ssh/tcp port in <code>/etc/services</code>) on
+<em>all</em> interfaces except on <code>eth0</code>, which in your case is the Internet
+(WAN) interface, here you want SSH to run on port 222.  Actually, you
+don&rsquo;t want port 22 open at all on <code>eth0</code> &hellip; so finit takes care of this
+for you!  Seriously, it just works!  No need for messing about with that
+nasty old <code>iptables</code> &hellip;</p>
+
+<p>The original UNIX inetd super server supported many protocols
+internally, some of which may seem a bit odd today, and some have been
+superseded by more modern protocols.</p>
+
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Echo_Protocol">echo</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Character_Generator_Protocol">chargen</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Time_Protocol">time</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Daytime_Protocol">daytime</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Discard_Protocol">discard</a></li>
+</ul>
+
+
+<p>Finit currently only supports one, <code>time</code>.  It is built as a plugin in
+Finit to serve as an example of how you can extend it yourself.  The
+time service can be called either as UDP or TCP.  To prevent security
+issues, the <code>time</code> protocol is disabled by default.  To enable it you
+need two things:</p>
+
+<ol>
+<li>The <code>time.so</code> plugin (built by default)</li>
+<li>An <code>inetd time ...</code> line in <code>/etc/finit.conf</code></li>
+</ol>
+
+
+<p>Assuming you&rsquo;ve installed the default set of plugins, the following two
+lines can be added:</p>
+
+<pre><code>inetd time/udp   wait [2345] internal
+inetd time/tcp nowait [2345] internal
+</code></pre>
+
+<p>This can be very useful for testing the inetd capabilities, your network
+connection, or simply to get the time to a client where NTP for some
+reason does not work, or is blocked.  For instance, you could have a GPS
+setup on your server and distribute time to clients with the <code>time</code>
+protocol.</p>
+
+<p>To use it you need an <a href="http://www.aelius.com/njh/rdate/"><code>rdate</code></a>
+client.  Users of <code>rdate</code> in BusyBox may need to be reminded that it
+only supports TCP.</p>
+
+<pre><code>$ rdate -pu 198.51.100.42
+Sat Mar  7 08:48:58 CET 2015
+</code></pre>
+
+<p>For more info on Finit and its features, see the <a href="https://github.com/troglobit/finit/blob/master/README.md">README</a>.</p>
+
+<p>Enjoy! ツ</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -468,42 +574,6 @@ project, I&rsquo;ve been hard at work fixing nasty bugs uncovered by the
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/09/04/bugfix-release-of-uftpd/">Bugfix Release of Uftpd</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-09-04T22:22:09+02:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>10:22 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><blockquote><p>So them pesky details of `/etc/inetd.conf` really are important?</p></blockquote>
-
-
-<p>This is a small bugfix release of <a href="/uftpd.html">uftpd</a>.  Version 1.4
-is basically just to change <code>nowait</code> to <code>wait</code> for the TFTP service in
-<code>/etc/inetd.conf</code>, but there&rsquo;s also a minor man page update.</p>
-
-<p>Enjoy! :)</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -534,6 +604,10 @@ is basically just to change <code>nowait</code> to <code>wait</code> for the TFT
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/">Inetd Support in Finit v1.12</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/01/24/finit-v1-dot-11-released/">Finit v1.11 Released!</a>
       </li>
     
@@ -547,10 +621,6 @@ is basically just to change <code>nowait</code> to <code>wait</code> for the TFT
     
       <li class="post">
         <a href="/blog/2015/01/02/blog-restoration-project-now-also-on-github-pages/">Blog Restoration Project</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/12/28/mrouted-v3-dot-9-7/">Mrouted v3.9.7</a>
       </li>
     
   </ul>
