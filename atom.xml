@@ -4,7 +4,7 @@
   <title><![CDATA[Troglobit]]></title>
   <link href="http://troglobit.github.io/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-03-07T09:01:45+01:00</updated>
+  <updated>2015-03-09T00:14:31+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -20,7 +20,7 @@
     <id>http://troglobit.github.io/blog/2015/03/06/inetd-support-in-finit-v1-dot-12</id>
     <content type="html"><![CDATA[<p>A steady flow of features, and releases, is key to keeping any project
 alive.  Recently I ticked off another item in the <a href="http://troglobit.github.io/finit.html">Finit</a>
-TODO list.</p>
+TODO list &hellip;</p>
 
 <p>Finit v1.12 now comes with a built-in inetd!  You no longer need an
 external inetd daemon to launch services on demand.</p>
@@ -38,8 +38,8 @@ server on demand on port 22 (default ssh/tcp port in <code>/etc/services</code>)
 <em>all</em> interfaces except on <code>eth0</code>, which in your case is the Internet
 (WAN) interface, here you want SSH to run on port 222.  Actually, you
 don&rsquo;t want port 22 open at all on <code>eth0</code> &hellip; so finit takes care of this
-for you!  Seriously, it just works!  No need for messing about with that
-nasty old <code>iptables</code> &hellip;</p>
+for you!  Seriously, it just works, no need for messing about with that
+nasty old <code>iptables</code> anymore!</p>
 
 <p>The original UNIX inetd super server supported many protocols
 internally, some of which may seem a bit odd today, and some have been
@@ -54,11 +54,11 @@ superseded by more modern protocols.</p>
 </ul>
 
 
-<p>Finit currently only supports one, <code>time</code>.  It is built as a plugin in
-Finit to serve as an example of how you can extend it yourself.  The
-time service can be called either as UDP or TCP.  To prevent security
-issues, the <code>time</code> protocol is disabled by default.  To enable it you
-need two things:</p>
+<p>Finit currently only supports one internal/built-in standard service,
+<code>time</code>.  It is built as a plugin to serve as an example of how you can
+extend Finit yourself.  The time service can be called either as UDP or
+TCP.  To prevent security issues, the <code>time</code> protocol is disabled by
+default.  To enable it you need two things:</p>
 
 <ol>
 <li>The <code>time.so</code> plugin (built by default)</li>
@@ -121,14 +121,14 @@ this fallback as console.  Should improve usability in some use cases.</li>
 turned out to not work so well after all.  For instance, launching
 TTYs in a background process completely blocked inetd services from
 even starting up listening sockets &hellip; proper fork seems to work fine
-though.  This is the casue for <em>yanking</em> the <a href="https://github.com/troglobit/finit/compare/1.10...1.11">1.11</a> release, below.</li>
+though.  This is the casue for <em>yanking</em> the <a href="https://github.com/troglobit/finit/compare/1.10...1.11">1.11</a> release.</li>
 <li>Trap segfaults caused by external plugins/callbacks in a sub-process.
 This prevents a single programming mistake in by a 3rd party developer
 from taking down the entire system.</li>
-<li>Fix Coverity CID 56281: dlopen() resource leak by storing the pointer.
-For the time being we do not support unloading plugins.</li>
+<li>Fix Coverity CID 56281: <code>dlopen()</code> resource leak by storing the
+pointer.  For the time being we do not support unloading plugins.</li>
 <li>Set hostname early, so bootstrap processes like syslog can use it.</li>
-<li>Only restart <em>lost daemons</em> when recovering from a SIGSTOP/norespawn.</li>
+<li>Only restart <em>lost daemons</em> when recovering from a <code>SIGSTOP</code>/norespawn.</li>
 </ul>
 
 ]]></content>
@@ -139,13 +139,15 @@ For the time being we do not support unloading plugins.</li>
     <link href="http://troglobit.github.io/blog/2015/01/24/finit-v1-dot-11-released/"/>
     <updated>2015-01-24T16:54:23+01:00</updated>
     <id>http://troglobit.github.io/blog/2015/01/24/finit-v1-dot-11-released</id>
-    <content type="html"><![CDATA[<p>I&rsquo;m very pleased to announce <a href="http://troglobit.github.io/finit.html">Finit v1.11</a> — this is the
-episode where two of my projects finally get married! ツ</p>
-
-<p>Finit, the <a href="https://github.com/troglobit/libuev">libuEv</a> release.</p>
+    <content type="html"><![CDATA[<p><strong>Update 2015-03-09</strong>: This release has unfortunately been <em>yanked</em> due
+to serious regressions in launching background processes.  It has been
+replaced by <a href="http://troglobit.github.io/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/">v1.12</a></p>
 
 <!-- more -->
 
+
+<p>I&rsquo;m very pleased to announce <a href="http://troglobit.github.io/finit.html">Finit v1.11</a> — this is the
+episode where two of my projects finally get married! ツ</p>
 
 <h3>Changes</h3>
 
