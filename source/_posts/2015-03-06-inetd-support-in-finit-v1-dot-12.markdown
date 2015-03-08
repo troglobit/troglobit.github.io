@@ -11,7 +11,7 @@ categories:
 
 A steady flow of features, and releases, is key to keeping any project
 alive.  Recently I ticked off another item in the [Finit](/finit.html)
-TODO list.
+TODO list ...
 
 Finit v1.12 now comes with a built-in inetd!  You no longer need an
 external inetd daemon to launch services on demand.
@@ -28,8 +28,8 @@ server on demand on port 22 (default ssh/tcp port in `/etc/services`) on
 *all* interfaces except on `eth0`, which in your case is the Internet
 (WAN) interface, here you want SSH to run on port 222.  Actually, you
 don't want port 22 open at all on `eth0` ... so finit takes care of this
-for you!  Seriously, it just works!  No need for messing about with that
-nasty old `iptables` ...
+for you!  Seriously, it just works, no need for messing about with that
+nasty old `iptables` anymore!
 
 The original UNIX inetd super server supported many protocols
 internally, some of which may seem a bit odd today, and some have been
@@ -41,11 +41,11 @@ superseded by more modern protocols.
 * [daytime](http://en.wikipedia.org/wiki/Daytime_Protocol)
 * [discard](http://en.wikipedia.org/wiki/Discard_Protocol)
 
-Finit currently only supports one, `time`.  It is built as a plugin in
-Finit to serve as an example of how you can extend it yourself.  The
-time service can be called either as UDP or TCP.  To prevent security
-issues, the `time` protocol is disabled by default.  To enable it you
-need two things:
+Finit currently only supports one internal/built-in standard service,
+`time`.  It is built as a plugin to serve as an example of how you can
+extend Finit yourself.  The time service can be called either as UDP or
+TCP.  To prevent security issues, the `time` protocol is disabled by
+default.  To enable it you need two things:
 
 1. The `time.so` plugin (built by default)
 2. An `inetd time ...` line in `/etc/finit.conf`
@@ -96,14 +96,14 @@ Enjoy! ツ
   turned out to not work so well after all.  For instance, launching
   TTYs in a background process completely blocked inetd services from
   even starting up listening sockets ... proper fork seems to work fine
-  though.  This is the casue for *yanking* the [1.11] release, below.
+  though.  This is the casue for *yanking* the [1.11] release.
 * Trap segfaults caused by external plugins/callbacks in a sub-process.
   This prevents a single programming mistake in by a 3rd party developer
   from taking down the entire system.
-* Fix Coverity CID 56281: dlopen() resource leak by storing the pointer.
-  For the time being we do not support unloading plugins.
+* Fix Coverity CID 56281: `dlopen()` resource leak by storing the
+  pointer.  For the time being we do not support unloading plugins.
 * Set hostname early, so bootstrap processes like syslog can use it.
-* Only restart *lost daemons* when recovering from a SIGSTOP/norespawn.
+* Only restart *lost daemons* when recovering from a `SIGSTOP`/norespawn.
 
 [libuEv]: https://github.com/troglobit/libuev
 [1.11]:   https://github.com/troglobit/finit/compare/1.10...1.11

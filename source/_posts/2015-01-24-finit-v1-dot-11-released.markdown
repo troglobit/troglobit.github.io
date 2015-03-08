@@ -3,15 +3,19 @@ layout: post
 title: "Finit v1.11 released!"
 date: 2015-01-24 16:54:23 +0100
 comments: true
-categories: 
+categories:
+- finit
+- opensource
 ---
+
+**Update 2015-03-09**: This release has unfortunately been *yanked* due
+to serious regressions in launching background processes.  It has been
+replaced by [v1.12]
+
+<!-- more -->
 
 I'm very pleased to announce [Finit v1.11](/finit.html) — this is the
 episode where two of my projects finally get married! ツ
-
-Finit, the [libuEv] release.
-
-<!-- more -->
 
 ### Changes
 * Now using the asynchronous [libuEv] library for handling all events:
@@ -27,6 +31,7 @@ Finit, the [libuEv] release.
   even the fallback shell has control over its TTY, see fix in GIT
   commit [dea3ae8] for this.
 
+[v1.12]: /blog/2015/03/06/inetd-support-in-finit-v1-dot-12/
 [libuEv]: https://github.com/troglobit/libuev
 [Travis CI]: https://travis-ci.org/troglobit/finit
 [Coverity Scan]: https://scan.coverity.com/projects/3545
