@@ -8,7 +8,7 @@ categories:
 
 I'm posting this in case anyone else gets stuck setting up Apache with
 Gitweb.  Also as a reminder to myself in case I ever need to set up this
-again.
+all over again.
 
 1. You have all your eggs in one basket (GitHub), and
 2. You really like that shiny basket, but
@@ -29,17 +29,19 @@ have a domain already you should go ahead and edit the master file for
 that:
 
     editor /etc/apache2/sites-available/000-default.conf
+    service apache2 reload
 
 If you want to use that for your gitweb needs, then you're done!
 
 <!-- more -->
 
-Personally I wanted to setup http://git.troglobit.com and also to make
+For me, running http://troglobit.com/gitweb out of the box was not
+enough.  I wanted to setup http://git.troglobit.com and also to make
 sure to keep really short and pretty URLs to projects I host.  So the
 next part of this post is about how to set that up.
 
 My `000-default.conf` is for http://troglobit.com, so I created a new
-one for the sub-domain, `git.conf`:
+one for the sub-domain:
 
     editor /etc/apache2/sites-available/git.conf
 
@@ -77,6 +79,11 @@ one for the sub-domain, `git.conf`:
             /usr/lib/git-core/git-http-backend/$1
     </VirtualHost>
 ```
+
+Remember to enable the new sub-domain in Apache and restart the daemon:
+
+    a2ensite git
+    service apache2 restart
 
 I'm not using the default Debian GIT repo location, `/var/lib/git`, so I
 need to set the project root for both the Apache and the GitWeb config:
