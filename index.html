@@ -9,9 +9,8 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="A steady flow of features, and releases, is key to keeping any project
-alive. Recently I ticked off another item in the Finit
-TODO list &hellip; &hellip;">
+  <meta name="description" content="I&rsquo;m posting this in case anyone else gets stuck setting up Apache with
+Gitweb. Also as a reminder to myself in case I ever need to set up this &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -75,6 +74,65 @@ TODO list &hellip; &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/">HowTo: Apache With Gitweb on Debian 8.1</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-06-30T23:13:48+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:13 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&rsquo;m posting this in case anyone else gets stuck setting up Apache with
+Gitweb.  Also as a reminder to myself in case I ever need to set up this
+again.</p>
+
+<ol>
+<li>You have all your eggs in one basket (GitHub), and</li>
+<li>You really like that shiny basket, but</li>
+<li>You know you&rsquo;re clumsy and usually drop baskets yourself.</li>
+<li>You are wise (yes you are!) and realize you need another basket, so</li>
+<li>You set up a server and a domain yourself &hellip;</li>
+</ol>
+
+
+<p>OK.  Let&rsquo;s start simple, since you are already running the latest Debian
+you fire up the command line and install the basics:</p>
+
+<pre><code>sudo apt-get install gitweb apache2
+</code></pre>
+
+<p>So it&rsquo;ll complain, you&rsquo;ll clarify your request and soon all required
+packages are on your server.  Now what?</p>
+
+<p>Debian has already set up <a href="http://localhost/gitweb">http://localhost/gitweb</a> for you, and if you
+have a domain already you should go ahead and edit the master file for
+that: <code>editor /etc/apache2/sites-available/000-default.conf</code>.  If you
+want to use that for your gitweb needs, then you&rsquo;re done!</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -532,47 +590,6 @@ will probably page fault on you.  I use 1,0 GB RAM.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/">GnuTLS Support in Inadyn and Fixes to Uftpd</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-09-13T19:18:56+02:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>7:18 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Quite a few changes lately.  I finally got around to adding support
-for <a href="http://www.gnutls.org">GnuTLS</a> to <a href="/inadyn.html">Inadyn</a>,
-hopefully this will get into Debian &hellip; unless the Jessie freeze
-prevents that.</p>
-
-<p>Also, thanks to a friend of mine trying out <a href="/uftpd.html">uftpd</a>
-recently I discovered that libuev has been missing from the tarball
-since the release of the TFTP support.  Fixed.</p>
-
-<p>Another great piece of news is that
-<a href="http://www.coverity.com/">Coverity</a> accepted uftpd as an Open Source
-project, I&rsquo;ve been hard at work fixing nasty bugs uncovered by the
-<a href="https://scan.coverity.com/">Coverity Scan</a>.  Great stuff! :)</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -603,6 +620,10 @@ project, I&rsquo;ve been hard at work fixing nasty bugs uncovered by the
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/">HowTo: Apache With Gitweb on Debian 8.1</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/">Inetd Support in Finit v1.12</a>
       </li>
     
@@ -616,10 +637,6 @@ project, I&rsquo;ve been hard at work fixing nasty bugs uncovered by the
     
       <li class="post">
         <a href="/blog/2015/01/08/recent-open-source-work/">Recent Open Source Work</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/01/02/blog-restoration-project-now-also-on-github-pages/">Blog Restoration Project</a>
       </li>
     
   </ul>

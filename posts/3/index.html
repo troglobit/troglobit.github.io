@@ -9,9 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="There&rsquo;s just one thing to say on the topic of commit messages:
-ur doin it wrong if &hellip;
-">
+  <meta name="description" content="It was time. I had been putting it off for far too long &ndash; learning
+about JSON and deciding on a new .conf file format for
+Inadyn. So this &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -75,6 +75,66 @@ ur doin it wrong if &hellip;
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/02/23/weekend-hack-json-vs-conf/">Weekend Hack: JSON vs CONF</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-02-23T21:59:00+01:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2014</span></span> <span class='time'>9:59 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>It was time.  I had been putting it off for far too long &ndash; learning
+about JSON and deciding on a new .conf file format for
+<a href="/inadyn.shtml">Inadyn</a>.  So this weekend I sat myself down to read up
+on <a href="http://en.wikipedia.org/wiki/JSON">JSON</a> and the multitude of
+parser libraries for both JSON and traditional .conf file parsers.  I
+was looking for a human readable file format that a user could easily
+and reliably edit by themselves without it being too error prone or
+sensitive to mistyping.</p>
+
+<div><script src='https://gist.github.com/9177645.js'></script>
+<noscript><pre><code>&lt;html&gt;&lt;body&gt;You are being &lt;a href=&quot;https://github.com/gist/9177645&quot;&gt;redirected&lt;/a&gt;.&lt;/body&gt;&lt;/html&gt;</code></pre></noscript></div>
+
+
+<p>I quickly narrowed down my scope of investigation to
+<a href="http://www.digip.org/jansson/">Jansson</a> for JSON and and
+<a href="http://www.nongnu.org/confuse/">Confuse</a> for &ldquo;standard&rdquo; UNIX .conf
+files.  Both have very liberal licenses, extensive test suites, very
+good documentation and are extremely well written!  In fact, I will
+probably use them as prime examples of well maintained Open Source
+projects in the future :-)</p>
+
+<p>The resulting code is in my
+<a href="https://github.com/troglobit/toolbox/tree/master/conf">toolbox</a> on
+GitHub.</p>
+
+<div><script src='https://gist.github.com/9177620.js'></script>
+<noscript><pre><code>&lt;html&gt;&lt;body&gt;You are being &lt;a href=&quot;https://github.com/gist/9177620&quot;&gt;redirected&lt;/a&gt;.&lt;/body&gt;&lt;/html&gt;</code></pre></noscript></div>
+
+
+<p>In my opinion the .conf file is a lot easier to read, write and edit
+by Joe User, so that&rsquo;s what I&rsquo;ll be using for many of my own projects,
+starting with <a href="/inadyn.shtml">Inadyn</a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -507,49 +567,6 @@ for more information, or the code for the full details.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/06/07/proof-of-life/">Proof of Life</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2013-06-07T22:31:00+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>7</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>10:31 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>There is a certain &ldquo;burstyness&rdquo; to the way I work on my open source
-projects.  It seems it often coincides with intense work loads during
-new release cycles at <a href="http://www.westermo.com">work</a>.</p>
-
-<p>However, I&rsquo;ve just finished restoring two pages that got lost in the
-big server crash:</p>
-
-<ul>
-<li> <a href="/mrouted.shtml">mrouted</a></li>
-<li> <a href="/pimd.shtml">pimd</a></li>
-</ul>
-
-
-<p>Big thanks goes to the <a href="http://www.archive.org">Wayback Machine</a> for
-maintaining records of the original pages I lost!</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/4">&larr; Older</a>
@@ -582,6 +599,10 @@ maintaining records of the original pages I lost!</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/">HowTo: Apache With Gitweb on Debian 8.1</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/">Inetd Support in Finit v1.12</a>
       </li>
     
@@ -595,10 +616,6 @@ maintaining records of the original pages I lost!</p>
     
       <li class="post">
         <a href="/blog/2015/01/08/recent-open-source-work/">Recent Open Source Work</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/01/02/blog-restoration-project-now-also-on-github-pages/">Blog Restoration Project</a>
       </li>
     
   </ul>
