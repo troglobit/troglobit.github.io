@@ -9,8 +9,10 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="There is a certain &ldquo;burstyness&rdquo; to the way I work on my open source
-projects. It seems it often coincides with intense work loads during &hellip;">
+  <meta name="description" content="It&rsquo;s been a long time coming, but here it finally is,
+Finit
+v1.8! The goodies we&rsquo;ve
+been waiting for are: Runlevels Multiple TTYs One- &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -74,6 +76,83 @@ projects. It seems it often coincides with intense work loads during &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/08/finit-v1-dot-8/">Finit v1.8</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-06-08T00:04:00+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>8</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>12:04 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>It&rsquo;s been a long time coming, but here it finally is,
+<a href="/finit.html">Finit</a>
+<a href="ftp://troglobit.com/finit/finit-1.8.tar.xz">v1.8</a>!  The goodies we&rsquo;ve
+been waiting for are:</p>
+
+<ul>
+<li> Runlevels</li>
+<li> Multiple TTYs</li>
+<li> One-shot tasks</li>
+</ul>
+
+
+<p>Let&rsquo;s start off with tasks.  Tasks are one-shot commands, with a
+syntax like service directives, but are not monitored and respawned
+like services.  Tasks are started in parallel, just like services.
+For some cases, like the system bootstrap phase, some tasks may need
+to be executed in sequence, and for that purpose there also exists a
+run command.  Run commands are executed in the order listed in
+finit.conf and will run until completion before continuing with the
+next task or service.</p>
+
+<p>Multiple TTYs is another neat feature.  Similar to services many TTYs
+can be started and automatically be respawned when a user logs out.
+For embedded targets wanting to save CPU cycles usually one TTY is the
+system console.  Use the console command to point to a defined TTY to
+activate &ldquo;Press any key to activate this console.&rdquo;</p>
+
+<p>Finally, runlevels!  This is the key feature in this release of Finit.
+Adding the flexibility from SysV init, without the complexity.  This
+is one of the key points of Finit &ndash; it should be simple!</p>
+
+<p>   finit.conf:
+     service [2345] /usr/sbin/sshd -D &ndash; OpenSSH Daemon</p>
+
+<p>This command tells Finit that the OpenSSH daemon should only run in
+runlevel 2-5.  Finit will also respawn sshd if it should crash, just
+like before.</p>
+
+<p>Runlevels are needed in use-cases in many embedded devices.  E.g.,
+bootstrap, upgrading, and regular operation.  It is completely up to
+the system administrator to setup the runlevels of the product or
+installation.  At boot runlevel &rsquo;S&#8217; runs, well before any networking
+is up.  This is used to to one-time probing and setup of the
+system. When done the runlevel defined in finit.conf, or the default
+2, is started.</p>
+
+<p>See the
+<a href="https://github.com/troglobit/finit/blob/master/README.rst">README</a>
+for more information, or the code for the full details.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -668,44 +747,9 @@ libpcap.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/06/06/swedish-national-day-deep-thoughts-dot-dot-dot/">Swedish National Day: Deep Thoughts &#8230;</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2006-06-06T23:10:42+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>6</span><span class='date-suffix'>th</span>, <span class='date-year'>2006</span></span> <span class='time'>11:10 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>From time to time, even though it seems to occur more frequently these
-days, I think about the persistence of things.  How development is
-continuously accelerating in the modern world.  To me this is like a
-double edged sword, it&rsquo;s both comforting and unsettling.  Comforting
-that we as humans continuously improve and develop our methods and
-technologies.  Unsettling because I know much of the development is in
-directions that I don&rsquo;t approve of: more intricate and capable weapons
-and methods of surveillance.  Yet somehow we manage to survive and
-thrive in our lives.  Life finds a way, I guess.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
+    
+      <a class="prev" href="/posts/5">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -735,6 +779,10 @@ thrive in our lives.  Life finds a way, I guess.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/">HowTo: Push to Multiple GIT Repos With One Command</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/">HowTo: Apache With Gitweb on Debian 8.1</a>
       </li>
     
@@ -748,10 +796,6 @@ thrive in our lives.  Life finds a way, I guess.</p>
     
       <li class="post">
         <a href="/blog/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/">Rant: All the C Compiler Warnings &#8230;</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/01/08/recent-open-source-work/">Recent Open Source Work</a>
       </li>
     
   </ul>

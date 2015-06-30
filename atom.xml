@@ -4,7 +4,7 @@
   <title><![CDATA[Troglobit]]></title>
   <link href="http://troglobit.github.io/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-07-01T00:31:41+02:00</updated>
+  <updated>2015-07-01T00:55:38+02:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -12,6 +12,32 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[HowTo: Push to Multiple GIT Repos With One Command]]></title>
+    <link href="http://troglobit.github.io/blog/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/"/>
+    <updated>2015-07-01T00:42:17+02:00</updated>
+    <id>http://troglobit.github.io/blog/2015/07/01/howto-push-to-multiple-git-repos-with-one-command</id>
+    <content type="html"><![CDATA[<p>So, now that I have <a href="http://git.troglobit.com">http://git.troglobit.com</a> setup as a backup GIT repo
+to <a href="https://github.com/troglobit,">https://github.com/troglobit,</a> I needed as <em>simple</em> way of always
+pushing to both repos &ndash; best way for me is to always hook into my
+regular work flow, otherwise I&rsquo;d forget.  The <code>git-remote(1)</code> man page
+describes the new <code>set-url --add</code> sub-command:</p>
+
+<pre><code>git remote set-url --add origin troglobit.com:/srv/git/watchdogd.git
+</code></pre>
+
+<p>Now, with a simple <code>git push</code> followed by <code>git push --tags</code> I had now
+pushed to both the GitHub repo as well as my own server!</p>
+
+<p>To inspect your current push/pull repos, issue <code>git remote -v</code>:</p>
+
+<pre><code>origin  git@github.com:troglobit/watchdogd.git (fetch)
+origin  git@github.com:troglobit/watchdogd.git (push)
+origin  troglobit.com:/srv/git/watchdogd.git (push)
+</code></pre>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[HowTo: Apache With Gitweb on Debian 8.1]]></title>
@@ -1116,24 +1142,6 @@ useful if you want to partition your configuration, or if you share
 major pieces of configuration between different platforms.</p>
 
 <p>Enjoy!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Finally -- Google Movies &amp; Music in Sweden]]></title>
-    <link href="http://troglobit.github.io/blog/2014/03/18/finally-google-movies-and-music-in-sweden/"/>
-    <updated>2014-03-18T18:13:00+01:00</updated>
-    <id>http://troglobit.github.io/blog/2014/03/18/finally-google-movies-and-music-in-sweden</id>
-    <content type="html"><![CDATA[<p><img class="right" src="http://troglobit.github.io/images/play-movies.png" width="364"></p>
-
-<p>So, we finally got Google Music &amp; Movies services in Sweden!  The
-prices seem a bit on the steep side, apart from maybe the Music
-service, which is slightly cheaper than Spotify.  Will try it out for
-a month or so to see which one I like better.</p>
-
-<p>For some reason I chose Gravity as my first rental, at 39 Skr.  I&rsquo;ve
-heard so many bad reviews of it but for better or worse it&rsquo;ll now be
-my introduction to Google Movies :-)</p>
 ]]></content>
   </entry>
   

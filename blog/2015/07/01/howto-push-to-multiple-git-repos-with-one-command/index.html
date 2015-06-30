@@ -5,13 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Finally &#8211; Google Movies &amp; Music in Sweden - Troglobit</title>
+  <title>HowTo: Push to Multiple GIT Repos With One Command - Troglobit</title>
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="So, we finally got Google Music &amp; Movies services in Sweden! The
-prices seem a bit on the steep side, apart from maybe the Music
-service, which &hellip;">
+  <meta name="description" content="So, now that I have http://git.troglobit.com setup as a backup GIT repo
+to https://github.com/troglobit, I needed as simple way of always
+pushing to &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +20,7 @@ service, which &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://troglobit.github.io/blog/2014/03/18/finally-google-movies-and-music-in-sweden">
+  <link rel="canonical" href="http://troglobit.github.io/blog/2015/07/01/howto-push-to-multiple-git-repos-with-one-command">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Troglobit" type="application/atom+xml">
@@ -78,7 +78,7 @@ service, which &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Finally &#8211; Google Movies &amp; Music in Sweden</h1>
+      <h1 class="entry-title">HowTo: Push to Multiple GIT Repos With One Command</h1>
     
     
       <p class="meta">
@@ -87,23 +87,31 @@ service, which &hellip;">
 
 
 
-<time class='entry-date' datetime='2014-03-18T18:13:00+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>6:13 pm</span></time>
+<time class='entry-date' datetime='2015-07-01T00:42:17+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2015</span></span> <span class='time'>12:42 am</span></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p><img class="right" src="/images/play-movies.png" width="364"></p>
+<div class="entry-content"><p>So, now that I have <a href="http://git.troglobit.com">http://git.troglobit.com</a> setup as a backup GIT repo
+to <a href="https://github.com/troglobit,">https://github.com/troglobit,</a> I needed as <em>simple</em> way of always
+pushing to both repos &ndash; best way for me is to always hook into my
+regular work flow, otherwise I&rsquo;d forget.  The <code>git-remote(1)</code> man page
+describes the new <code>set-url --add</code> sub-command:</p>
 
-<p>So, we finally got Google Music &amp; Movies services in Sweden!  The
-prices seem a bit on the steep side, apart from maybe the Music
-service, which is slightly cheaper than Spotify.  Will try it out for
-a month or so to see which one I like better.</p>
+<pre><code>git remote set-url --add origin troglobit.com:/srv/git/watchdogd.git
+</code></pre>
 
-<p>For some reason I chose Gravity as my first rental, at 39 Skr.  I&rsquo;ve
-heard so many bad reviews of it but for better or worse it&rsquo;ll now be
-my introduction to Google Movies :-)</p>
+<p>Now, with a simple <code>git push</code> followed by <code>git push --tags</code> I had now
+pushed to both the GitHub repo as well as my own server!</p>
+
+<p>To inspect your current push/pull repos, issue <code>git remote -v</code>:</p>
+
+<pre><code>origin  git@github.com:troglobit/watchdogd.git (fetch)
+origin  git@github.com:troglobit/watchdogd.git (push)
+origin  troglobit.com:/srv/git/watchdogd.git (push)
+</code></pre>
 </div>
 
 
@@ -119,7 +127,7 @@ my introduction to Google Movies :-)</p>
 
 
 
-<time class='entry-date' datetime='2014-03-18T18:13:00+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>6:13 pm</span></time>
+<time class='entry-date' datetime='2015-07-01T00:42:17+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2015</span></span> <span class='time'>12:42 am</span></time>
       
 
 
@@ -127,7 +135,7 @@ my introduction to Google Movies :-)</p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://troglobit.github.io/blog/2014/03/18/finally-google-movies-and-music-in-sweden/" data-via="troglobit" data-counturl="http://troglobit.github.io/blog/2014/03/18/finally-google-movies-and-music-in-sweden/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://troglobit.github.io/blog/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/" data-via="troglobit" data-counturl="http://troglobit.github.io/blog/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/" >Tweet</a>
   
   
   
@@ -136,10 +144,8 @@ my introduction to Google Movies :-)</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2014/02/23/weekend-hack-json-vs-conf/" title="Previous Post: Weekend Hack: JSON vs CONF">&laquo; Weekend Hack: JSON vs CONF</a>
+        <a class="basic-alignment left" href="/blog/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/" title="Previous Post: HowTo: Apache with Gitweb on Debian 8.1">&laquo; HowTo: Apache with Gitweb on Debian 8.1</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/04/21/release-of-finit-v1-dot-9/" title="Next Post: Release of Finit v1.9">Release of Finit v1.9 &raquo;</a>
       
     </p>
   </footer>
