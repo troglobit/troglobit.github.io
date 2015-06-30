@@ -4,7 +4,7 @@
   <title><![CDATA[Troglobit]]></title>
   <link href="http://troglobit.github.io/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-06-30T23:46:42+02:00</updated>
+  <updated>2015-07-01T00:00:47+02:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -42,8 +42,12 @@ packages are on your server.  Now what?</p>
 
 <p>Debian has already set up <a href="http://localhost/gitweb">http://localhost/gitweb</a> for you, and if you
 have a domain already you should go ahead and edit the master file for
-that: <code>editor /etc/apache2/sites-available/000-default.conf</code>.  If you
-want to use that for your gitweb needs, then you&rsquo;re done!</p>
+that:</p>
+
+<pre><code>editor /etc/apache2/sites-available/000-default.conf
+</code></pre>
+
+<p>If you want to use that for your gitweb needs, then you&rsquo;re done!</p>
 
 <!-- more -->
 
@@ -52,117 +56,216 @@ want to use that for your gitweb needs, then you&rsquo;re done!</p>
 sure to keep really short and pretty URLs to projects I host.  So the
 next part of this post is about how to set that up.</p>
 
-<p>My <code>000-default.conf</code> is for <a href="http://troglobit.com,">http://troglobit.com,</a> so I edited the file
-<code>editor /etc/apache2/sites-available/git.conf</code> and added the following:</p>
+<p>My <code>000-default.conf</code> is for <a href="http://troglobit.com,">http://troglobit.com,</a> so I created a new
+one for the sub-domain, <code>git.conf</code>:</p>
 
-<pre><code>&lt;VirtualHost *:80&gt;
-    ServerName git.troglobit.com
-    DocumentRoot /usr/share/gitweb
-
-    SetEnv GITWEB_CONFIG    /etc/gitweb.conf
-    SetEnv GIT_PROJECT_ROOT /srv/git
-
-    &lt;Directory /usr/share/gitweb&gt;
-        Options FollowSymLinks ExecCGI
-        AddHandler cgi-script .cgi
-
-        DirectoryIndex gitweb.cgi
-
-        # Pretty gitweb URLs + pathinfo feature in gitweb.conf
-        RewriteEngine On
-        RewriteCond %{REQUEST_FILENAME} !-f
-        RewriteCond %{REQUEST_FILENAME} !-d
-        RewriteRule ^.* /gitweb.cgi/$0 [L,PT]
-    &lt;/Directory&gt;
-
-    # Enable git clone over HTTP
-    ScriptAliasMatch \
-        "(?x)^/(.*/(HEAD | \
-        info/refs | \
-        objects/(info/[^/]+ | \
-        [0-9a-f]{2}/[0-9a-f]{38} | \
-        pack/pack-[0-9a-f]{40}\.(pack|idx)) | \
-        git-(upload|receive)-pack))$" \
-        /usr/lib/git-core/git-http-backend/$1
-&lt;/VirtualHost&gt;
+<pre><code>editor /etc/apache2/sites-available/git.conf
 </code></pre>
 
-<p>Since I&rsquo;m not using the default Debian GIT repo location,
-<code>/var/lib/git</code>, I need to set the project root for both the Apache and
-the Gitweb config:</p>
+<p>&hellip; and added the following:</p>
 
-<pre><code># path to git projects (&lt;project&gt;.git)
-$projectroot = "/srv/git";
+<figure class='code'><figcaption><span>/etc/apache2/sites-available/git.conf</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+</pre></td><td class='code'><pre><code class='apache'><span class='line'><span class="nt">&lt;VirtualHost</span> <span class="s">*:80</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nb">ServerName</span> git.troglobit.com
+</span><span class='line'>    <span class="nb">DocumentRoot</span> <span class="sx">/usr/share/gitweb</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nb">SetEnv</span> GITWEB_CONFIG    <span class="sx">/etc/gitweb.conf</span>
+</span><span class='line'>    <span class="nb">SetEnv</span> GIT_PROJECT_ROOT <span class="sx">/srv/git</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nt">&lt;Directory</span> <span class="s">/usr/share/gitweb</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nb">Options</span> FollowSymLinks ExecCGI
+</span><span class='line'>        <span class="nb">AddHandler</span> cgi-script .cgi
+</span><span class='line'>
+</span><span class='line'>        <span class="nb">DirectoryIndex</span> gitweb.cgi
+</span><span class='line'>
+</span><span class='line'>        <span class="c"># Pretty gitweb URLs + pathinfo feature in gitweb.conf</span>
+</span><span class='line'>        <span class="nb">RewriteEngine</span> <span class="k">On</span>
+</span><span class='line'>        <span class="nb">RewriteCond</span> %{REQUEST_FILENAME} !-f
+</span><span class='line'>        <span class="nb">RewriteCond</span> %{REQUEST_FILENAME} !-d
+</span><span class='line'>        <span class="nb">RewriteRule</span> ^.* <span class="sx">/gitweb.cgi/</span>$0 [L,PT]
+</span><span class='line'>    <span class="nt">&lt;/Directory&gt;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c"># Enable git clone over HTTP</span>
+</span><span class='line'>    <span class="nb">ScriptAliasMatch</span> \
+</span><span class='line'>        <span class="err">&quot;(?x)^/(</span>.<span class="err">*/(</span><span class="nb">HEAD</span> | \
+</span><span class='line'>        <span class="err">info/</span><span class="nb">refs</span> | \
+</span><span class='line'>        <span class="err">objects/(info/[^/]+</span> <span class="err">|</span> <span class="err">\</span>
+</span><span class='line'>        <span class="err">[0-9a-f]{2}/[0-9a-f]{38}</span> <span class="err">|</span> <span class="err">\</span>
+</span><span class='line'>        <span class="err">pack/pack-[0-9a-f]{40}\</span>.<span class="err">(pack|idx))</span> <span class="err">|</span> <span class="err">\</span>
+</span><span class='line'>        <span class="err">git-(upload|receive)-pack))$&quot;</span> <span class="err">\</span>
+</span><span class='line'>        <span class="err">/usr/lib/git-core/git-http-backend/$1</span>
+</span><span class='line'><span class="nt">&lt;/VirtualHost&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
 
-@git_base_url_list = ("git://git.troglobit.com", "http://git.troglobit.com");
 
-# directory to use for temp files
-$git_temp = "/tmp";
+<p>I&rsquo;m not using the default Debian GIT repo location, <code>/var/lib/git</code>, so I
+need to set the project root for both the Apache and the GitWeb config:</p>
 
-$site_name = "git.troglobit.com";
+<figure class='code'><figcaption><span>/etc/gitweb.conf</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="c1"># path to git projects (&lt;project&gt;.git)</span>
+</span><span class='line'><span class="nv">$projectroot</span> <span class="o">=</span> <span class="s">&quot;/srv/git&quot;</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">@git_base_url_list</span> <span class="o">=</span> <span class="p">(</span><span class="s">&quot;git://git.troglobit.com&quot;</span><span class="p">,</span> <span class="s">&quot;http://git.troglobit.com&quot;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># directory to use for temp files</span>
+</span><span class='line'><span class="nv">$git_temp</span> <span class="o">=</span> <span class="s">&quot;/tmp&quot;</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$site_name</span> <span class="o">=</span> <span class="s">&quot;git.troglobit.com&quot;</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># target of the home link on top of all pages</span>
+</span><span class='line'><span class="nv">$home_link</span> <span class="o">=</span> <span class="nv">$my_uri</span> <span class="o">||</span> <span class="s">&quot;/&quot;</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># html text to include at home page</span>
+</span><span class='line'><span class="c1">#$home_text = &quot;indextext.html&quot;;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># file with project list; by default, simply scan the projectroot dir.</span>
+</span><span class='line'><span class="c1">#$projects_list = $projectroot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># stylesheet to use</span>
+</span><span class='line'><span class="nv">@stylesheets</span> <span class="o">=</span> <span class="p">(</span><span class="s">&quot;static/gitweb.css&quot;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># javascript code for gitweb</span>
+</span><span class='line'><span class="nv">$javascript</span> <span class="o">=</span> <span class="s">&quot;static/gitweb.js&quot;</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># logo to use</span>
+</span><span class='line'><span class="nv">$logo</span> <span class="o">=</span> <span class="s">&quot;static/git-logo.png&quot;</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># the &#39;favicon&#39;</span>
+</span><span class='line'><span class="nv">$favicon</span> <span class="o">=</span> <span class="s">&quot;static/git-favicon.png&quot;</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># git-diff-tree(1) options to use for generated patches</span>
+</span><span class='line'><span class="c1">#@diff_opts = (&quot;-M&quot;);</span>
+</span><span class='line'><span class="nv">@diff_opts</span> <span class="o">=</span> <span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># Enable PATH_INFO so the server can produce URLs of the</span>
+</span><span class='line'><span class="c1"># form: http://git.hokietux.net/project.git/xxx/xxx</span>
+</span><span class='line'><span class="c1"># This allows for pretty URLs *within* the Git repository,</span>
+</span><span class='line'><span class="c1"># also needs the Apache rewrite rules for full effect.</span>
+</span><span class='line'><span class="nv">$feature</span><span class="p">{</span><span class="s">&#39;pathinfo&#39;</span><span class="p">}{</span><span class="s">&#39;default&#39;</span><span class="p">}</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># Enable blame, pickaxe search, snapshop, search, and grep</span>
+</span><span class='line'><span class="c1"># support, but still allow individual projects to turn them off.</span>
+</span><span class='line'><span class="c1"># These are features that users can use to interact with your Git trees. They</span>
+</span><span class='line'><span class="c1"># consume some CPU whenever a user uses them, so you can turn them off if you</span>
+</span><span class='line'><span class="c1"># need to.  Note that the &#39;override&#39; option means that you can override the</span>
+</span><span class='line'><span class="c1"># setting on a per-repository basis.</span>
+</span><span class='line'><span class="nv">$feature</span><span class="p">{</span><span class="s">&#39;blame&#39;</span><span class="p">}{</span><span class="s">&#39;default&#39;</span><span class="p">}</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</span><span class='line'><span class="nv">$feature</span><span class="p">{</span><span class="s">&#39;blame&#39;</span><span class="p">}{</span><span class="s">&#39;override&#39;</span><span class="p">}</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$feature</span><span class="p">{</span><span class="s">&#39;pickaxe&#39;</span><span class="p">}{</span><span class="s">&#39;default&#39;</span><span class="p">}</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</span><span class='line'><span class="nv">$feature</span><span class="p">{</span><span class="s">&#39;pickaxe&#39;</span><span class="p">}{</span><span class="s">&#39;override&#39;</span><span class="p">}</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$feature</span><span class="p">{</span><span class="s">&#39;snapshot&#39;</span><span class="p">}{</span><span class="s">&#39;default&#39;</span><span class="p">}</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</span><span class='line'><span class="nv">$feature</span><span class="p">{</span><span class="s">&#39;snapshot&#39;</span><span class="p">}{</span><span class="s">&#39;override&#39;</span><span class="p">}</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$feature</span><span class="p">{</span><span class="s">&#39;search&#39;</span><span class="p">}{</span><span class="s">&#39;default&#39;</span><span class="p">}</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$feature</span><span class="p">{</span><span class="s">&#39;grep&#39;</span><span class="p">}{</span><span class="s">&#39;default&#39;</span><span class="p">}</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</span><span class='line'><span class="nv">$feature</span><span class="p">{</span><span class="s">&#39;grep&#39;</span><span class="p">}{</span><span class="s">&#39;override&#39;</span><span class="p">}</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$feature</span><span class="p">{</span><span class="s">&#39;highlight&#39;</span><span class="p">}{</span><span class="s">&#39;default&#39;</span><span class="p">}</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</span></code></pre></td></tr></table></div></figure>
 
-# target of the home link on top of all pages
-$home_link = $my_uri || "/";
 
-# html text to include at home page
-#$home_text = "indextext.html";
-
-# file with project list; by default, simply scan the projectroot dir.
-#$projects_list = $projectroot;
-
-# stylesheet to use
-@stylesheets = ("static/gitweb.css");
-
-# javascript code for gitweb
-$javascript = "static/gitweb.js";
-
-# logo to use
-$logo = "static/git-logo.png";
-
-# the 'favicon'
-$favicon = "static/git-favicon.png";
-
-# git-diff-tree(1) options to use for generated patches
-#@diff_opts = ("-M");
-@diff_opts = ();
-
-# Enable PATH_INFO so the server can produce URLs of the
-# form: http://git.hokietux.net/project.git/xxx/xxx
-# This allows for pretty URLs *within* the Git repository,
-# also needs the Apache rewrite rules for full effect.
-$feature{'pathinfo'}{'default'} = [1];
-
-# Enable blame, pickaxe search, snapshop, search, and grep
-# support, but still allow individual projects to turn them off.
-# These are features that users can use to interact with your Git trees. They
-# consume some CPU whenever a user uses them, so you can turn them off if you
-# need to.  Note that the 'override' option means that you can override the
-# setting on a per-repository basis.
-$feature{'blame'}{'default'} = [1];
-$feature{'blame'}{'override'} = [1];
-
-$feature{'pickaxe'}{'default'} = [1];
-$feature{'pickaxe'}{'override'} = [1];
-
-$feature{'snapshot'}{'default'} = [1];
-$feature{'snapshot'}{'override'} = [1];
-
-$feature{'search'}{'default'} = [1];
-
-$feature{'grep'}{'default'} = [1];
-$feature{'grep'}{'override'} = [1];
-
-$feature{'highlight'}{'default'} = [1];
-</code></pre>
-
-<p>Both of these are blatantly ripped from the intro by
+<p>Both of these files have been blatantly ripped from the intro by
 <a href="http://dereenigne.org/debian/debian-gitweb-server">Jonathan McCrohan</a>,
 with only minor adjustments to my own setup.</p>
 
-<p>The magic with the pretty URLs is in both files, the <code>RewriteRule</code> and
-the <code>$feature{'pathinfo'}{'default'} = [1];</code></p>
+<p>The magic with the pretty URLs is in both files, all <code>RewriteRule</code> lines
+in the Apache <code>.conf</code> and the <code>$feature{'pathinfo'}{'default'} = [1];</code>
+setting in <code>gitweb.conf</code>.</p>
 
-<p>Good Luck!</p>
+<p>Happy coding!</p>
 ]]></content>
   </entry>
   
