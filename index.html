@@ -98,7 +98,7 @@ Gitweb. Also as a reminder to myself in case I ever need to set up this &hellip;
 
   <div class="entry-content"><p>I&rsquo;m posting this in case anyone else gets stuck setting up Apache with
 Gitweb.  Also as a reminder to myself in case I ever need to set up this
-again.</p>
+all over again.</p>
 
 <ol>
 <li>You have all your eggs in one basket (GitHub), and</li>
@@ -123,6 +123,7 @@ have a domain already you should go ahead and edit the master file for
 that:</p>
 
 <pre><code>editor /etc/apache2/sites-available/000-default.conf
+service apache2 reload
 </code></pre>
 
 <p>If you want to use that for your gitweb needs, then you&rsquo;re done!</p>
