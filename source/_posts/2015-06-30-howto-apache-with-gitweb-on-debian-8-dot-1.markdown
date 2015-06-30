@@ -26,8 +26,11 @@ packages are on your server.  Now what?
 
 Debian has already set up http://localhost/gitweb for you, and if you
 have a domain already you should go ahead and edit the master file for
-that: `editor /etc/apache2/sites-available/000-default.conf`.  If you
-want to use that for your gitweb needs, then you're done!
+that:
+
+    editor /etc/apache2/sites-available/000-default.conf
+
+If you want to use that for your gitweb needs, then you're done!
 
 <!-- more -->
 
@@ -35,9 +38,14 @@ Personally I wanted to setup http://git.troglobit.com and also to make
 sure to keep really short and pretty URLs to projects I host.  So the
 next part of this post is about how to set that up.
 
-My `000-default.conf` is for http://troglobit.com, so I edited the file
-`editor /etc/apache2/sites-available/git.conf` and added the following:
+My `000-default.conf` is for http://troglobit.com, so I created a new
+one for the sub-domain, `git.conf`:
 
+    editor /etc/apache2/sites-available/git.conf
+
+... and added the following:
+
+``` apache /etc/apache2/sites-available/git.conf
     <VirtualHost *:80>
         ServerName git.troglobit.com
         DocumentRoot /usr/share/gitweb
@@ -68,11 +76,12 @@ My `000-default.conf` is for http://troglobit.com, so I edited the file
             git-(upload|receive)-pack))$" \
             /usr/lib/git-core/git-http-backend/$1
     </VirtualHost>
+```
 
-Since I'm not using the default Debian GIT repo location,
-`/var/lib/git`, I need to set the project root for both the Apache and
-the Gitweb config:
+I'm not using the default Debian GIT repo location, `/var/lib/git`, so I
+need to set the project root for both the Apache and the GitWeb config:
 
+``` perl /etc/gitweb.conf
     # path to git projects (<project>.git)
     $projectroot = "/srv/git";
     
@@ -135,12 +144,14 @@ the Gitweb config:
     $feature{'grep'}{'override'} = [1];
     
     $feature{'highlight'}{'default'} = [1];
+```
 
-Both of these are blatantly ripped from the intro by
+Both of these files have been blatantly ripped from the intro by
 [Jonathan McCrohan](http://dereenigne.org/debian/debian-gitweb-server),
 with only minor adjustments to my own setup.
 
-The magic with the pretty URLs is in both files, the `RewriteRule` and
-the `$feature{'pathinfo'}{'default'} = [1];`
+The magic with the pretty URLs is in both files, all `RewriteRule` lines
+in the Apache `.conf` and the `$feature{'pathinfo'}{'default'} = [1];`
+setting in `gitweb.conf`.
 
-Good Luck!
+Happy coding!
