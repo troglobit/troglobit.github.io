@@ -6,9 +6,9 @@ comments: true
 categories: 
 ---
 
-I'm posting this in case anyone else gets stuck setting up Apache with
-Gitweb.  Also as a reminder to myself in case I ever need to set up this
-all over again.
+I'm posting this in case anyone else gets stuck setting up [Apache](1)
+with [Gitweb](2).  Also as a reminder to myself in case I ever need to
+set up this all over again.
 
 1. You have all your eggs in one basket (GitHub), and
 2. You really like that shiny basket, but
@@ -178,7 +178,11 @@ The magic with the pretty URLs is in both files, all `RewriteRule` lines
 in the Apache `.conf` and the `$feature{'pathinfo'}{'default'} = [1];`
 setting in `gitweb.conf`.
 
-Also, try out the the [theme](https://github.com/kogakure/gitweb-theme)
-I use, looks a lot better than the default.
+Also, try out the cool [theme](https://github.com/kogakure/gitweb-theme)
+I use, it looks a lot better than the default.
 
 Happy coding!
+
+[1]: http://www.apache.org
+[2]: http://git-scm.com/docs/gitweb
+
