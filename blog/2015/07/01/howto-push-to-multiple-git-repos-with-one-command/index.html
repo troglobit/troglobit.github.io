@@ -10,7 +10,7 @@
 
   
   <meta name="description" content="So, now that I have http://git.troglobit.com setup as a backup GIT repo
-to https://github.com/troglobit, I needed as simple way of always
+to https://github.com/troglobit, I needed a simple way of always
 pushing to &hellip;">
   
 
@@ -95,16 +95,23 @@ pushing to &hellip;">
 
 
 <div class="entry-content"><p>So, now that I have <a href="http://git.troglobit.com">http://git.troglobit.com</a> setup as a backup GIT repo
-to <a href="https://github.com/troglobit,">https://github.com/troglobit,</a> I needed as <em>simple</em> way of always
+to <a href="https://github.com/troglobit,">https://github.com/troglobit,</a> I needed a <em>simple</em> way of always
 pushing to both repos &ndash; best way for me is to always hook into my
-regular work flow, otherwise I&rsquo;d forget.  The <code>git-remote(1)</code> man page
-describes the new <code>set-url --add</code> sub-command:</p>
+regular work flow, otherwise I&rsquo;d just forget.  The <code>git-remote(1)</code> man
+page describes the new <code>set-url --add</code> sub-command:</p>
 
 <pre><code>git remote set-url --add origin troglobit.com:/srv/git/watchdogd.git
 </code></pre>
 
 <p>Now, with a simple <code>git push</code> followed by <code>git push --tags</code> I had now
 pushed to both the GitHub repo as well as my own server!</p>
+
+<p>Of course I first had to create the empty <code>watchdogd.git</code> on the server:</p>
+
+<pre><code>cd /srv/git
+git init --bare watchdogd.git
+echo "Refurbished watchdog daemon from uClinux-dist" &gt;watchdogd.git/description
+</code></pre>
 
 <p>To inspect your current push/pull repos, issue <code>git remote -v</code>:</p>
 

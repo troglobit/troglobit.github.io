@@ -4,7 +4,7 @@
   <title><![CDATA[Troglobit]]></title>
   <link href="http://troglobit.github.io/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-07-01T00:55:38+02:00</updated>
+  <updated>2015-07-01T03:01:07+02:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -19,16 +19,23 @@
     <updated>2015-07-01T00:42:17+02:00</updated>
     <id>http://troglobit.github.io/blog/2015/07/01/howto-push-to-multiple-git-repos-with-one-command</id>
     <content type="html"><![CDATA[<p>So, now that I have <a href="http://git.troglobit.com">http://git.troglobit.com</a> setup as a backup GIT repo
-to <a href="https://github.com/troglobit,">https://github.com/troglobit,</a> I needed as <em>simple</em> way of always
+to <a href="https://github.com/troglobit,">https://github.com/troglobit,</a> I needed a <em>simple</em> way of always
 pushing to both repos &ndash; best way for me is to always hook into my
-regular work flow, otherwise I&rsquo;d forget.  The <code>git-remote(1)</code> man page
-describes the new <code>set-url --add</code> sub-command:</p>
+regular work flow, otherwise I&rsquo;d just forget.  The <code>git-remote(1)</code> man
+page describes the new <code>set-url --add</code> sub-command:</p>
 
 <pre><code>git remote set-url --add origin troglobit.com:/srv/git/watchdogd.git
 </code></pre>
 
 <p>Now, with a simple <code>git push</code> followed by <code>git push --tags</code> I had now
 pushed to both the GitHub repo as well as my own server!</p>
+
+<p>Of course I first had to create the empty <code>watchdogd.git</code> on the server:</p>
+
+<pre><code>cd /srv/git
+git init --bare watchdogd.git
+echo "Refurbished watchdog daemon from uClinux-dist" &gt;watchdogd.git/description
+</code></pre>
 
 <p>To inspect your current push/pull repos, issue <code>git remote -v</code>:</p>
 
@@ -226,7 +233,25 @@ need to set the project root for both the Apache and the GitWeb config:</p>
 <span class='line-number'>60</span>
 <span class='line-number'>61</span>
 <span class='line-number'>62</span>
-</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="c1"># path to git projects (&lt;project&gt;.git)</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+</pre></td><td class='code'><pre><code class='perl'><span class='line'><span class="c1"># See https://github.com/kogakure/gitweb-theme for more help and pointers</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># path to git projects (&lt;project&gt;.git)</span>
 </span><span class='line'><span class="nv">$projectroot</span> <span class="o">=</span> <span class="s">&quot;/srv/git&quot;</span><span class="p">;</span>
 </span><span class='line'>
 </span><span class='line'><span class="nv">@git_base_url_list</span> <span class="o">=</span> <span class="p">(</span><span class="s">&quot;git://git.troglobit.com&quot;</span><span class="p">,</span> <span class="s">&quot;http://git.troglobit.com&quot;</span><span class="p">);</span>
@@ -267,6 +292,20 @@ need to set the project root for both the Apache and the GitWeb config:</p>
 </span><span class='line'><span class="c1"># also needs the Apache rewrite rules for full effect.</span>
 </span><span class='line'><span class="nv">$feature</span><span class="p">{</span><span class="s">&#39;pathinfo&#39;</span><span class="p">}{</span><span class="s">&#39;default&#39;</span><span class="p">}</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">];</span>
 </span><span class='line'>
+</span><span class='line'><span class="c1"># Neat way of prefixing the top URL listing</span>
+</span><span class='line'><span class="k">our</span> <span class="nv">@extra_breadcrumbs</span> <span class="o">=</span> <span class="p">(</span>
+</span><span class='line'>      <span class="p">[</span> <span class="s">&#39;Troglobit Software&#39;</span> <span class="o">=&gt;</span> <span class="s">&#39;http://troglobit.com/&#39;</span> <span class="p">],</span>
+</span><span class='line'>    <span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># List avatars next to committers</span>
+</span><span class='line'><span class="nv">$feature</span><span class="p">{</span><span class="s">&#39;avatar&#39;</span><span class="p">}{</span><span class="s">&#39;default&#39;</span><span class="p">}</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;gravatar&#39;</span><span class="p">];</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># The category name is read from .git/category, in the same manner as .git/description.</span>
+</span><span class='line'><span class="nv">$projects_list_group_categories</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span><span class='line'><span class="nv">$project_list_default_category</span> <span class="o">=</span> <span class="s">&quot;misc&quot;</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$projects_list_description_width</span> <span class="o">=</span> <span class="mi">80</span><span class="p">;</span>
+</span><span class='line'>
 </span><span class='line'><span class="c1"># Enable blame, pickaxe search, snapshop, search, and grep</span>
 </span><span class='line'><span class="c1"># support, but still allow individual projects to turn them off.</span>
 </span><span class='line'><span class="c1"># These are features that users can use to interact with your Git trees. They</span>
@@ -291,13 +330,17 @@ need to set the project root for both the Apache and the GitWeb config:</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Both of these files have been blatantly ripped from the intro by
+<p>The impossibly simple Apache config has been ripped from the intro by
 <a href="http://dereenigne.org/debian/debian-gitweb-server">Jonathan McCrohan</a>,
-with only minor adjustments to my own setup.</p>
+the GitWeb config is a mixture of findings on the Internets.  Notice the
+breadcrumbs and the grouping settings, very useful.</p>
 
 <p>The magic with the pretty URLs is in both files, all <code>RewriteRule</code> lines
 in the Apache <code>.conf</code> and the <code>$feature{'pathinfo'}{'default'} = [1];</code>
 setting in <code>gitweb.conf</code>.</p>
+
+<p>Also, try out the the <a href="https://github.com/kogakure/gitweb-theme">theme</a>
+I use, looks a lot better than the default.</p>
 
 <p>Happy coding!</p>
 ]]></content>
