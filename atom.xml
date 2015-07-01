@@ -4,7 +4,7 @@
   <title><![CDATA[Troglobit]]></title>
   <link href="http://troglobit.github.io/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-07-01T03:01:07+02:00</updated>
+  <updated>2015-07-01T12:14:36+02:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -21,8 +21,8 @@
     <content type="html"><![CDATA[<p>So, now that I have <a href="http://git.troglobit.com">http://git.troglobit.com</a> setup as a backup GIT repo
 to <a href="https://github.com/troglobit,">https://github.com/troglobit,</a> I needed a <em>simple</em> way of always
 pushing to both repos &ndash; best way for me is to always hook into my
-regular work flow, otherwise I&rsquo;d just forget.  The <code>git-remote(1)</code> man
-page describes the new <code>set-url --add</code> sub-command:</p>
+regular work flow, otherwise I&rsquo;d just forget.  The <a href="1">git-remote(1)</a>
+man page describes the new <code>set-url --add</code> sub-command:</p>
 
 <pre><code>git remote set-url --add origin troglobit.com:/srv/git/watchdogd.git
 </code></pre>
@@ -51,9 +51,9 @@ origin  troglobit.com:/srv/git/watchdogd.git (push)
     <link href="http://troglobit.github.io/blog/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/"/>
     <updated>2015-06-30T23:13:48+02:00</updated>
     <id>http://troglobit.github.io/blog/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1</id>
-    <content type="html"><![CDATA[<p>I&rsquo;m posting this in case anyone else gets stuck setting up Apache with
-Gitweb.  Also as a reminder to myself in case I ever need to set up this
-all over again.</p>
+    <content type="html"><![CDATA[<p>I&rsquo;m posting this in case anyone else gets stuck setting up <a href="1">Apache</a>
+with <a href="2">Gitweb</a>.  Also as a reminder to myself in case I ever need to
+set up this all over again.</p>
 
 <ol>
 <li>You have all your eggs in one basket (GitHub), and</li>
@@ -339,8 +339,8 @@ breadcrumbs and the grouping settings, very useful.</p>
 in the Apache <code>.conf</code> and the <code>$feature{'pathinfo'}{'default'} = [1];</code>
 setting in <code>gitweb.conf</code>.</p>
 
-<p>Also, try out the the <a href="https://github.com/kogakure/gitweb-theme">theme</a>
-I use, looks a lot better than the default.</p>
+<p>Also, try out the cool <a href="https://github.com/kogakure/gitweb-theme">theme</a>
+I use, it looks a lot better than the default.</p>
 
 <p>Happy coding!</p>
 ]]></content>
