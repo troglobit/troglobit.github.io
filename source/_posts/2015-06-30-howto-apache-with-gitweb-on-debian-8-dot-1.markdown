@@ -89,6 +89,8 @@ I'm not using the default Debian GIT repo location, `/var/lib/git`, so I
 need to set the project root for both the Apache and the GitWeb config:
 
 ``` perl /etc/gitweb.conf
+    # See https://github.com/kogakure/gitweb-theme for more help and pointers
+
     # path to git projects (<project>.git)
     $projectroot = "/srv/git";
     
@@ -130,6 +132,20 @@ need to set the project root for both the Apache and the GitWeb config:
     # also needs the Apache rewrite rules for full effect.
     $feature{'pathinfo'}{'default'} = [1];
     
+    # Neat way of prefixing the top URL listing
+    our @extra_breadcrumbs = (
+          [ 'Troglobit Software' => 'http://troglobit.com/' ],
+        );
+    
+    # List avatars next to committers
+    $feature{'avatar'}{'default'} = ['gravatar'];
+    
+    # The category name is read from .git/category, in the same manner as .git/description.
+    $projects_list_group_categories = 1;
+    $project_list_default_category = "misc";
+    
+    $projects_list_description_width = 80;
+    
     # Enable blame, pickaxe search, snapshop, search, and grep
     # support, but still allow individual projects to turn them off.
     # These are features that users can use to interact with your Git trees. They
@@ -153,12 +169,16 @@ need to set the project root for both the Apache and the GitWeb config:
     $feature{'highlight'}{'default'} = [1];
 ```
 
-Both of these files have been blatantly ripped from the intro by
+The impossibly simple Apache config has been ripped from the intro by
 [Jonathan McCrohan](http://dereenigne.org/debian/debian-gitweb-server),
-with only minor adjustments to my own setup.
+the GitWeb config is a mixture of findings on the Internets.  Notice the
+breadcrumbs and the grouping settings, very useful.
 
 The magic with the pretty URLs is in both files, all `RewriteRule` lines
 in the Apache `.conf` and the `$feature{'pathinfo'}{'default'} = [1];`
 setting in `gitweb.conf`.
+
+Also, try out the the [theme](https://github.com/kogakure/gitweb-theme)
+I use, looks a lot better than the default.
 
 Happy coding!
