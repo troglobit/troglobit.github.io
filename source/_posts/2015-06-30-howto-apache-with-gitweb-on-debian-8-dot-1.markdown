@@ -6,8 +6,8 @@ comments: true
 categories: 
 ---
 
-I'm posting this in case anyone else gets stuck setting up [Apache](1)
-with [Gitweb](2).  Also as a reminder to myself in case I ever need to
+I'm posting this in case anyone else gets stuck setting up [Apache][1]
+with [Gitweb][2].  Also as a reminder to myself in case I ever need to
 set up this all over again.
 
 1. You have all your eggs in one basket (GitHub), and
