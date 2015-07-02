@@ -9,9 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="So, now that I have http://git.troglobit.com setup as a backup GIT repo
-to https://github.com/troglobit, I needed a simple way of always
-pushing to &hellip;">
+  <meta name="description" content="Many years ago now I was looking for a faster init for work.
+I found Finit and since then I&rsquo;ve been working on improving upon
+it. My version of &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -75,6 +75,81 @@ pushing to &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/07/02/howto-using-lite-with-a-git-based-application/">HowTo: Using -lite With a GIT-based Application</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-07-02T17:11:55+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2015</span></span> <span class='time'>5:11 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Many years ago now I was looking for a faster <a href="https://en.wikipedia.org/wiki/Init">init</a> for <a href="http://westermo.com/">work</a>.
+I found <a href="http://helllabs.org/finit/">Finit</a> and since then I&rsquo;ve been working on improving upon
+it.  <a href="https://github.com/troglobit/finit">My version of Finit</a> is available on GitHub.</p>
+
+<p>Finit was initially written by <a href="https://github.com/cmatsuoka">Claudio Matsuoka</a> to act as a drop-in
+replacement for the <a href="https://en.wikipedia.org/wiki/Asus_Eee_PC">Asus EeePC</a> <a href="http://wiki.eeeuser.com/boot_process:the_boot_process">fastinit</a>, &ldquo;gaps filled with
+frog DNA&rdquo; &hellip;  Until I found Finit I had always been in awe of people
+venturing into the realm of <a href="http://0pointer.net/blog/">PID 1</a>, but learning from the simplicity
+of Claudio&rsquo;s code I slowly began understanding what it was all about.</p>
+
+<p>Finit is open sourced under the very liberal <a href="http://opensource.org/licenses/MIT">MIT/X11 license</a>.
+Much of the code has proven extremely useful to me in other projects
+over the years.  It takes a while to realize, but there are actually a
+lot of APIs missing in the C library and Finit has helped me bridge that
+gap in a lot of projects.</p>
+
+<p>Recently I broke out the most generic pieces from Finit into a separate
+library, which I call <a href="https://github.com/troglobit/libite">libite</a>, (because it looks fun when linking
+with it: <code>-lite</code>), and complemented it with a few pieces of my own and
+some from the <a href="http://www.openbsd.org/">OpenBSD</a> project, most notably their famous string
+functions: <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=strlcpy">strlcpy(3)</a> and <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=strlcpy">strlcat(3)</a>.  It also holds the
+very useful *BSD linked list API <a href="http://www.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man3/LIST_EMPTY.3">sys/queue.h</a>, which is a much more
+up to date version than GLIBC carries!  GLIBC does not have the <code>_SAFE</code>
+macros for traversing lists while deleting/freeing nodes.</p>
+
+<p>To make use of <code>-lite</code> and its APIs you can add <code>libite</code> as a GIT
+submodule to your project:</p>
+
+<pre><code>git submodule add https://github.com/troglobit/libite.git
+</code></pre>
+
+<p>You then need to add <code>#include "libite/lite.h"</code> to the source and adapt
+your Makefile slightly to call the <code>libite/Makefile</code> before linking the
+static <code>.a</code> library:</p>
+
+<pre><code>all: $(EXEC) libite/libite.a
+
+libite/libite.a: Makefile
+        @$(MAKE) STATIC=1 -C libite
+
+$(EXEC): $(OBJS) libite/libite.a
+        @gcc -o $@ $^
+</code></pre>
+
+<p>For an example of how this can look, see my project <a href="https://github.com/troglobit/uftpd">uftpd</a>, which
+uses both <code>-lite</code> and <code>-luev</code>.  The latter is my small event library,
+<a href="https://github.com/troglobit/libuev">libuEv</a>.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -150,8 +225,8 @@ origin  troglobit.com:/srv/git/watchdogd.git (push)
   </header>
 
 
-  <div class="entry-content"><p>I&rsquo;m posting this in case anyone else gets stuck setting up <a href="1">Apache</a>
-with <a href="2">Gitweb</a>.  Also as a reminder to myself in case I ever need to
+  <div class="entry-content"><p>I&rsquo;m posting this in case anyone else gets stuck setting up <a href="http://www.apache.org">Apache</a>
+with <a href="http://git-scm.com/docs/gitweb">Gitweb</a>.  Also as a reminder to myself in case I ever need to
 set up this all over again.</p>
 
 <ol>
@@ -574,39 +649,6 @@ little proggy! :-)</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/12/21/tftp-blocksize-negotiation-in-uftpd-v1-dot-7/">TFTP Blocksize Negotiation in Uftpd v1.7</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-12-21T19:42:17+01:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>7:42 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>New release of uftpd, this time with TFTP blocksize negotiation,
-<a href="http://tools.ietf.org/html/rfc2348">RFC 2348</a>.  Making it a lot
-faster to transfer files over TFTP.</p>
-
-<p><a href="/uftpd.html">Try it out!</a></p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -637,6 +679,10 @@ faster to transfer files over TFTP.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/07/02/howto-using-lite-with-a-git-based-application/">HowTo: Using -lite With a GIT-based Application</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/">HowTo: Push to Multiple GIT Repos With One Command</a>
       </li>
     
@@ -650,10 +696,6 @@ faster to transfer files over TFTP.</p>
     
       <li class="post">
         <a href="/blog/2015/01/24/finit-v1-dot-11-released/">Finit v1.11 Released!</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/">Rant: All the C Compiler Warnings &#8230;</a>
       </li>
     
   </ul>

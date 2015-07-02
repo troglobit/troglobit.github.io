@@ -9,10 +9,8 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="It&rsquo;s been a long time coming, but here it finally is,
-Finit
-v1.8! The goodies we&rsquo;ve
-been waiting for are: Runlevels Multiple TTYs One- &hellip;">
+  <meta name="description" content="This is a response to the excellent post by Jani Gorše, titled
+Why is Programming an Art? Ever since I began studying Computer Engineering at &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +74,52 @@ been waiting for are: Runlevels Multiple TTYs One- &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/22/programming-as-an-artform/">Programming as an Artform</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-06-22T18:25:00+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2013</span></span> <span class='time'>6:25 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This is a response to the excellent post by Jani Gorše, titled
+<a href="https://blooki.st/BlookElement/ShowTextPhoto?blookElementId=1962">Why is Programming an Art?</a></p>
+
+<p>Ever since I began studying Computer Engineering at
+<a href="http://www.mdh.se">university</a> back in 1995 I have struggled to find
+the &ldquo;proper&rdquo; ways to format my code, name functions and variables
+appropriately, structure functions into files and files into
+directories with Makefiles and Makefile snippets, using both recursive
+and non-recursive make.  Formatting of code, for instance, was for a
+while a bit of an obsession of mine, and it sort of is still.  But
+today I am more concerned with the overall structure and how
+components interact.  Even though I can still get very annoyed at
+people naming their local variables obtrusively.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/06/22/programming-as-an-artform/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -646,107 +690,6 @@ find interesting.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/09/24/top-ten-unix-shell-commands/">Top Ten UNIX Shell Commands</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2006-09-24T00:02:42+02:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2006</span></span> <span class='time'>12:02 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Current trend is to run the following
-<a href="http://www-128.ibm.com/developerworks/aix/library/au-productivitytips.html?ca=dgr-lnxw07UNIX-Office-Tips">one-liner from IBM</a>.
-I&rsquo;m usually logged in to the following three systems, with very
-different results.</p>
-
-<h2>vmlinux.org</h2>
-
-<pre><code>$ history |awk '{print $2}'|sort|uniq -c|sort -nr|head -10
-144 ls
- 61 cd
- 58 sudo
- 29 less
- 23 emacs
- 19 bzr
- 16 vim
- 11 rm
- 10 wget
- 10 mv
-</code></pre>
-
-<p>My personal life.  Not much different from my professional dito.  Most
-visible difference maybe is my use of bzr instead of svn.  At the time
-we decided on svn at work bzr had not matured enough and darcs didn&rsquo;t
-(still doesn&rsquo;t) have a Windows client as good as TortoiseSVN.</p>
-
-<h2>Build server @work</h2>
-
-<pre><code>$ history |awk '{print $2}'|sort|uniq -c|sort -nr|head -10
-108 cd
- 63 svn
- 44 search
- 41 ls
- 25 sudo
- 23 less
- 23 ./build.sh
- 21 make
- 17 ./netprobe
- 16 man
-</code></pre>
-
-<p>Mostly work stuff,
-<a href="https://github.com/troglobit/toolbox/blob/master/search">&lsquo;search&rsquo;</a> is a
-small wrapper around find that skips .svn dirs and semantic.cache files
-and other annoying things you constantly run in to when looking for
-something.  The build script is a small wrapper around make for our
-Snapgear and uClinux-dist trees. Netprobe was one of the last prototypes
-I wrote to investigate some UNIX peculiarities involving libnet and
-libpcap.</p>
-
-<h2>troglobit (my laptop)</h2>
-
-<pre><code>$ history |awk '{print $2}'|sort|uniq -c|sort -nr|head -10
-140 sudo
- 47 ifconfig
- 45 less
- 27 ps
- 26 ssh
- 25 iwconfig
- 21 ping
- 21 man
- 15 ls
- 15 cd
-</code></pre>
-
-<p>Well, I&rsquo;m having trouble with my laptop network. The wlan
-(wpa_supplicant) doesn&rsquo;t like suspend/resume on my ThinkPad T43.</p>
-
-<p><em>Update:</em> I had to make an update to this, even at first I had my doubts
- about the first script. It didn&rsquo;t feel right, now after revising it,
- and reading
- <a href="https://web.archive.org/web/20090601001529/http://planet.debian.org/">Planet Debian</a>,
- I noticed Erich Schuberts entry.  There it was, the working script,
- which I only had to bashify!  Thanks Erich!</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/5">&larr; Older</a>
@@ -779,6 +722,10 @@ libpcap.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/07/02/howto-using-lite-with-a-git-based-application/">HowTo: Using -lite With a GIT-based Application</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/">HowTo: Push to Multiple GIT Repos With One Command</a>
       </li>
     
@@ -792,10 +739,6 @@ libpcap.</p>
     
       <li class="post">
         <a href="/blog/2015/01/24/finit-v1-dot-11-released/">Finit v1.11 Released!</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/">Rant: All the C Compiler Warnings &#8230;</a>
       </li>
     
   </ul>

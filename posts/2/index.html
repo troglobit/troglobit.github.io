@@ -9,9 +9,10 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="This is a very short blog post, mostly intended as a reminder to
-myself. Assumes the src.txz was installed previously. Here goes: cd /usr/src
-cd sys/ &hellip;">
+  <meta name="description" content="New release of uftpd, this time with TFTP blocksize negotiation,
+RFC 2348. Making it a lot
+faster to transfer files over TFTP. Try it out!
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -75,6 +76,39 @@ cd sys/ &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/12/21/tftp-blocksize-negotiation-in-uftpd-v1-dot-7/">TFTP Blocksize Negotiation in Uftpd v1.7</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-12-21T19:42:17+01:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>7:42 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>New release of uftpd, this time with TFTP blocksize negotiation,
+<a href="http://tools.ietf.org/html/rfc2348">RFC 2348</a>.  Making it a lot
+faster to transfer files over TFTP.</p>
+
+<p><a href="/uftpd.html">Try it out!</a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -485,43 +519,6 @@ FTP server that just works, out of the box!</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/04/21/release-of-finit-v1-dot-9/">Release of Finit v1.9</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-04-21T16:08:30+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>4:08 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Just made it!  Here&rsquo;s the result of #Easterhack14 &ndash;
-<a href="/finit.html">Finit</a> v1.9 :-)</p>
-
-<p>Nothing fancy this time, just collecting some bug fixes, playing with
-cppcheck a bit and adding support for including .conf files.  Quite
-useful if you want to partition your configuration, or if you share
-major pieces of configuration between different platforms.</p>
-
-<p>Enjoy!</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/3">&larr; Older</a>
@@ -554,6 +551,10 @@ major pieces of configuration between different platforms.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/07/02/howto-using-lite-with-a-git-based-application/">HowTo: Using -lite With a GIT-based Application</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/">HowTo: Push to Multiple GIT Repos With One Command</a>
       </li>
     
@@ -567,10 +568,6 @@ major pieces of configuration between different platforms.</p>
     
       <li class="post">
         <a href="/blog/2015/01/24/finit-v1-dot-11-released/">Finit v1.11 Released!</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/">Rant: All the C Compiler Warnings &#8230;</a>
       </li>
     
   </ul>
