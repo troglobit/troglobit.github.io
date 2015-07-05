@@ -11,7 +11,7 @@
   
   <meta name="description" content="Many years ago now I was looking for a faster init for work.
 I found Finit and since then I&rsquo;ve been working on improving upon
-it. My version of &hellip;">
+it. My extended &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -99,7 +99,7 @@ it. My version of &hellip;">
 
   <div class="entry-content"><p>Many years ago now I was looking for a faster <a href="https://en.wikipedia.org/wiki/Init">init</a> for <a href="http://westermo.com/">work</a>.
 I found <a href="http://helllabs.org/finit/">Finit</a> and since then I&rsquo;ve been working on improving upon
-it.  <a href="https://github.com/troglobit/finit">My version of Finit</a> is available on GitHub.</p>
+it.  My <a href="https://github.com/troglobit/finit">extended version of Finit</a> is available on GitHub.</p>
 
 <p>Finit was initially written by <a href="https://github.com/cmatsuoka">Claudio Matsuoka</a> to act as a drop-in
 replacement for the <a href="https://en.wikipedia.org/wiki/Asus_Eee_PC">Asus EeePC</a> <a href="http://wiki.eeeuser.com/boot_process:the_boot_process">fastinit</a>, &ldquo;gaps filled with
@@ -135,15 +135,19 @@ static <code>.a</code> library:</p>
 <pre><code>all: $(EXEC) libite/libite.a
 
 libite/libite.a: Makefile
-        @$(MAKE) STATIC=1 -C libite
+        @$(MAKE) -C libite
 
 $(EXEC): $(OBJS) libite/libite.a
         @gcc -o $@ $^
 </code></pre>
 
-<p>For an example of how this can look, see my project <a href="https://github.com/troglobit/uftpd">uftpd</a>, which
+<p>For an example of how this can look, see the <a href="https://github.com/troglobit/uftpd">uftpd</a> project, which
 uses both <code>-lite</code> and <code>-luev</code>.  The latter is my small event library,
-<a href="https://github.com/troglobit/libuev">libuEv</a>.</p>
+<a href="https://github.com/troglobit/libuev">libuEv</a>.  For help using <code>-lite</code> with the GNU configure and build
+system, see <a href="https://github.com/troglobit/inadyn">inadyn</a>.</p>
+
+<p>Libite builds in &ldquo;silent mode&rdquo; by default, use <code>make V=1</code> (like the
+kernel) to get a more verbose output, usable for autobuilders etc.</p>
 </div>
   
   
