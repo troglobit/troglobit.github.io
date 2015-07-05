@@ -8,7 +8,7 @@ categories:
 
 Many years ago now I was looking for a faster [init][1] for [work][2].
 I found [Finit][3] and since then I've been working on improving upon
-it.
+it.  My [extended version of Finit][14] is available on GitHub.
 
 Finit was initially written by [Claudio Matsuoka][4] to act as a drop-in
 replacement for the [Asus EeePC][5] [fastinit][6], "gaps filled with
@@ -43,14 +43,18 @@ static `.a` library:
     all: $(EXEC) libite/libite.a
     
     libite/libite.a: Makefile
-            @$(MAKE) STATIC=1 -C libite
+            @$(MAKE) -C libite
     
     $(EXEC): $(OBJS) libite/libite.a
             @gcc -o $@ $^
 
-For an example of how this can look, see my project [uftpd][12], which
+For an example of how this can look, see the [uftpd][12] project, which
 uses both `-lite` and `-luev`.  The latter is my small event library,
-[libuEv][13].
+[libuEv][13].  For help using `-lite` with the GNU configure and build
+system, see [inadyn][15].
+
+Libite builds in "silent mode" by default, use `make V=1` (like the
+kernel) to get a more verbose output, usable for autobuilders etc.
 
 [1]: https://en.wikipedia.org/wiki/Init
 [2]: http://westermo.com/
@@ -65,4 +69,6 @@ uses both `-lite` and `-luev`.  The latter is my small event library,
 [11]: http://www.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man3/LIST_EMPTY.3
 [12]: https://github.com/troglobit/uftpd
 [13]: https://github.com/troglobit/libuev
+[14]: https://github.com/troglobit/finit
+[15]: https://github.com/troglobit/inadyn
 [MIT]: http://opensource.org/licenses/MIT
