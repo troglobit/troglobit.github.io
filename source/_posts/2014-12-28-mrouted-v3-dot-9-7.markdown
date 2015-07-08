@@ -3,7 +3,9 @@ layout: post
 title: "mrouted v3.9.7"
 date: 2014-12-28 19:38:06 +0100
 comments: true
-categories: multicast
+categories:
+- multicast
+- opensource
 ---
 
 Another release today is the venerable [mrouted](/mrouted.html), now

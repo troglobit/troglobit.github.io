@@ -4,6 +4,8 @@ title: "Ubuntu 8.10rc1 &mdash; NetworkManager WTF?!"
 date: 2008-10-27 19:50:03 +0200
 comments: true
 categories: 
+- networking
+- ubuntu
 ---
 
 I tried upgrading from Hardy Heron to Intrepid Ibex this weekend.  Big

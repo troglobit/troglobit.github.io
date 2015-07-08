@@ -4,6 +4,10 @@ title: "Learning About GIT"
 date: 2009-04-10 16:23:42 +0100
 comments: true
 categories: 
+- git
+- svn
+- subversion
+- cvs
 ---
 
 It has been a long time coming, but now I'm seriously starting to look

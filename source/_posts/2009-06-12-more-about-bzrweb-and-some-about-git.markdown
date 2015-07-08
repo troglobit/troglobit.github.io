@@ -4,6 +4,9 @@ title: "More about Bzrweb and some about Git"
 date: 2009-06-12 19:50:27 +0200
 comments: true
 categories: 
+- git
+- bzr
+- bazaar
 ---
 
 OK, I admit it.  I cannot decide what version control system (VCS) to

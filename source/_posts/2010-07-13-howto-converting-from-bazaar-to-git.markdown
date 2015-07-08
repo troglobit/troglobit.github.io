@@ -6,6 +6,7 @@ comments: true
 categories: 
 - Bzr
 - Git
+- HowTo
 ---
 
 You need git, and bazaar obviously.  Also install bzr-fastimport, it

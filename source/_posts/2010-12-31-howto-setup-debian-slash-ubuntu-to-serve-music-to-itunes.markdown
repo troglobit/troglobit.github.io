@@ -7,6 +7,7 @@ categories:
 - Debian
 - Ubuntu
 - iTunes
+- HowTo
 ---
 
 OK, so we finally got an iPad.  The effective marketing droids of Apple

@@ -4,6 +4,7 @@ title: "On commit messages ..."
 date: 2013-08-13 14:18
 comments: true
 categories: 
+- git
 ---
 
 There's just one thing to say on the topic of commit messages:

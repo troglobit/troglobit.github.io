@@ -3,7 +3,8 @@ layout: post
 title: "Recent Open Source Work"
 date: 2015-01-08 01:57:14 +0100
 comments: true
-categories: opensource
+categories:
+- opensource
 ---
 
 I'm a coder, not a writer.  Here's what I've been working on during the

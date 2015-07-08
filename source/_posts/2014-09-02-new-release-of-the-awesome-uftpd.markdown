@@ -4,6 +4,9 @@ title: "The awesome uftpd, now with TFTP support! :)"
 date: 2014-09-02 10:47:35 +0200
 comments: true
 categories: 
+- opensource
+- ftp
+- tftp
 ---
 
 Today sees the release of v1.3 of the awesome little uftpd. The main

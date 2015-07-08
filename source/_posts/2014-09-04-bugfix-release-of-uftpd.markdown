@@ -4,6 +4,9 @@ title: "Bugfix release of uftpd"
 date: 2014-09-04 22:22:09 +0200
 comments: true
 categories: 
+- opensource
+- ftp
+- tftp
 ---
 
 {% blockquote %}

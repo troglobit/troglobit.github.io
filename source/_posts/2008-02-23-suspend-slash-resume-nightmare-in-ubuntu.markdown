@@ -4,6 +4,7 @@ title: "Suspend/Resume Nightmare in Ubuntu"
 date: 2008-02-23 21:34:44 +0200
 comments: true
 categories: 
+- ubuntu
 ---
 
 I've had my ThinkPad T43 for a while now and I'm really pleased with it,

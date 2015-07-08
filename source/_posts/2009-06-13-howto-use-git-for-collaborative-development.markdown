@@ -4,6 +4,10 @@ title: "HowTo use Git for Collaborative Development"
 date: 2009-06-13 00:36:07 +0200
 comments: true
 categories: 
+- git
+- bzr
+- Bazaar
+- HowTo
 ---
 
 This is mainly some notes for myself so I don't forget.  Having worked

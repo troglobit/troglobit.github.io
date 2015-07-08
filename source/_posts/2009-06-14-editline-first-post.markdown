@@ -6,7 +6,7 @@ comments: true
 categories:
 - Projects
 - Editline
-- Open Source
+- opensource
 ---
 
 For a while now I've been maintaining a port of the [Minix][1] editline

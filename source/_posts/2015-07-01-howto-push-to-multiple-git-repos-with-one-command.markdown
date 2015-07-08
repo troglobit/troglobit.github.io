@@ -4,6 +4,8 @@ title: "HowTo: Push to multiple GIT repos with one command"
 date: 2015-07-01 00:42:17 +0200
 comments: true
 categories: 
+- HowTo
+- Git
 ---
 
 So, now that I have http://git.troglobit.com setup as a backup GIT repo

@@ -5,6 +5,7 @@ date: 2010-10-11 23:44:28 +0200
 comments: true
 categories: 
 - multicast
+- opensource
 ---
 
 Here is another bug-fix release of [mrouted](/mrouted.html).  This time

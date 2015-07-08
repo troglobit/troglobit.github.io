@@ -4,7 +4,7 @@ title: "Inetd Support in Finit v1.12"
 date: 2015-03-06 22:34:45 +0100
 comments: true
 categories:
-- finit
+- Finit
 - inetd
 - opensource
 ---

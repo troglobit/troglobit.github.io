@@ -4,6 +4,10 @@ title: "HowTo: Building Debian/Ubuntu Kernels"
 date: 2007-02-03 11:00:45 +0200
 comments: true
 categories: 
+- kernel
+- ubuntu
+- debian
+- HowTo
 ---
 
 I have been over this topic so many times now, strangely enough I've

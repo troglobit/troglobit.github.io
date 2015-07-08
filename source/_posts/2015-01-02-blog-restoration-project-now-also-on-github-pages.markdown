@@ -4,6 +4,10 @@ title: "Blog Restoration Project"
 date: 2015-01-02 14:12:59 +0100
 comments: true
 categories:
+- git
+- backup
+- github
+- octopress
 ---
 
 I've had this long-standing issue with backups.  It's deadly boring to

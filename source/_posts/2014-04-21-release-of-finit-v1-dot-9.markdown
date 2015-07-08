@@ -4,6 +4,8 @@ title: "Release of Finit v1.9"
 date: 2014-04-21 16:08:30 +0200
 comments: true
 categories: 
+- Finit
+- opensource
 ---
 
 Just made it!  Here's the result of #Easterhack14 --

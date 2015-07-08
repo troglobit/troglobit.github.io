@@ -4,6 +4,9 @@ title: "TFTP blocksize negotiation in uftpd v1.7"
 date: 2014-12-21 19:42:17 +0100
 comments: true
 categories: 
+- opensource
+- ftp
+- tftp
 ---
 
 New release of uftpd, this time with TFTP blocksize negotiation,

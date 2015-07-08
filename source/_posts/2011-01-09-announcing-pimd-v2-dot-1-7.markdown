@@ -5,6 +5,7 @@ date: 2011-01-09 20:20:57 +0200
 comments: true
 categories: 
 - multicast
+- opensource
 ---
 
 This is a followup release to the [security fix][CVE] in [pimd][1],

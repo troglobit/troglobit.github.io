@@ -4,6 +4,8 @@ title: "New release of the DDNS client Inadyn"
 date: 2014-05-14 08:29:48 +0200
 comments: true
 categories: 
+- opensource
+- ddns
 ---
 
 Looking for a Dynamic DNS, DDNS, client?  Well you're in luck, the

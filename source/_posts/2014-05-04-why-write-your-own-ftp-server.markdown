@@ -4,6 +4,8 @@ title: "Why write your own FTP server?"
 date: 2014-05-04 11:25:09 +0200
 comments: true
 categories: 
+- opensource
+- ftp
 ---
 
 So, I finally got fed up with all other FTP servers and wrote

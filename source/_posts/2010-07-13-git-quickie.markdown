@@ -4,6 +4,7 @@ title: "Git Quickie"
 date: 2010-07-13 20:45:49 +0200
 comments: true
 categories: 
+- git
 ---
 
 This is a document I intend to maintain for my own purposes.  It serves

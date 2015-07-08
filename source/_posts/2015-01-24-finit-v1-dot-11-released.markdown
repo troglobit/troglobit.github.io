@@ -4,7 +4,7 @@ title: "Finit v1.11 released!"
 date: 2015-01-24 16:54:23 +0100
 comments: true
 categories:
-- finit
+- Finit
 - opensource
 ---
 

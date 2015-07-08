@@ -5,6 +5,7 @@ date: 2010-09-08 23:44:49 +0200
 comments: true
 categories: 
 - multicast
+- opensource
 ---
 
 I'm very pleased to present the next bug-fix release of [pimd][1], v2.1.3.

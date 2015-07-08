@@ -4,6 +4,8 @@ title: "HowTo: Build GNU Emacs from CVS"
 date: 2008-07-28 01:38:13 +0200
 comments: true
 categories: 
+- Emacs
+- HowTo
 ---
 
 Why would you want to do this?  Well, considering all the [neat new things][1]

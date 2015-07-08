@@ -4,6 +4,10 @@ title: "New releases of uftpd and inadyn ..."
 date: 2014-05-20 21:08:25 +0200
 comments: true
 categories: 
+- opensource
+- ftp
+- tftp
+- ddns
 ---
 
 The last couple of weeks have both seen the birth of the fabulous

@@ -3,7 +3,12 @@ layout: post
 title: "HowTo: Apache with Gitweb on Debian 8.1"
 date: 2015-06-30 23:13:48 +0200
 comments: true
-categories: 
+categories:
+- HowTo
+- git
+- gitweb
+- Apache
+- Debian
 ---
 
 I'm posting this in case anyone else gets stuck setting up [Apache][1]

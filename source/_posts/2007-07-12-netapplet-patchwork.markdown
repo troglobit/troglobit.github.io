@@ -4,6 +4,9 @@ title: "Netapplet Patchwork"
 date: 2007-07-12 11:37:38 +0200
 comments: true
 categories: 
+- networking
+- ubuntu
+- debian
 ---
 
 I think I've finally done it &mdash; achieved my ultimate goal of

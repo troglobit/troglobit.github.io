@@ -4,6 +4,9 @@ title: "Howto Setup and Run Xen"
 date: 2009-06-08 22:05:42 +0100
 comments: true
 categories: 
+- xen
+- virtualization
+- HowTo
 ---
 
 This is an extremly brief and quick [Xen][1] tutorial. There are lots of

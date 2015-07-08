@@ -4,6 +4,10 @@ title: "make-kpkg and dirty modules"
 date: 2006-07-17 22:10:24 +0200
 comments: true
 categories: 
+- HowTo
+- kernel
+- Debian
+- Ubuntu
 ---
 
 Dammit, tonight I spent too many hours chasing down a "feature" in the

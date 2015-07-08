@@ -4,6 +4,8 @@ title: "pimd v2.2.0 -- The last release of pimd?"
 date: 2014-12-28 13:42:18 +0100
 comments: true
 categories: 
+- multicast
+- opensource
 ---
 
 On one of the last days of 2014 I release [pimd](/pimd.html)

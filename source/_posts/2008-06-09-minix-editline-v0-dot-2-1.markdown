@@ -4,7 +4,7 @@ title: "Minix editline v0.2.1"
 date: 2008-06-09 23:02:22 +0200
 comments: true
 categories: 
-- Open Source
+- opensource
 - Editline
 ---
 

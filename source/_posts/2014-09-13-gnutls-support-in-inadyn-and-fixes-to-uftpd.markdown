@@ -4,6 +4,10 @@ title: "GnuTLS support in Inadyn and fixes to uftpd"
 date: 2014-09-13 19:18:56 +0200
 comments: true
 categories: 
+- opensource
+- ftp
+- tftp
+- ddns
 ---
 
 Quite a few changes lately.  I finally got around to adding support

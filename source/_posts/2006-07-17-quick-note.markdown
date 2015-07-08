@@ -4,6 +4,9 @@ title: "Quick Note"
 date: 2006-07-17 21:10:45 +0200
 comments: true
 categories: 
+- networking
+- ubuntu
+- debian
 ---
 
 About that `/etc/network/interface` autoconfig thingy: it's almost done.

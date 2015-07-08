@@ -5,6 +5,7 @@ date: 2011-01-08 23:40:22 +0200
 comments: true
 categories: 
 - multicast
+- opensource
 ---
 
 This is a security release of [pimd][1], v2.1.6.  The following fixes

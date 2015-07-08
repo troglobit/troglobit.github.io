@@ -4,6 +4,10 @@ title: "HowTo: Using -lite with a GIT-based application"
 date: 2015-07-02 17:11:55 +0200
 comments: true
 categories: 
+- HowTo
+- opensource
+- Git
+- submodules
 ---
 
 Many years ago now I was looking for a faster [init][1] for [work][2].

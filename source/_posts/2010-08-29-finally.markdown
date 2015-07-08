@@ -4,6 +4,9 @@ title: "Finally, NetBSD Boots in KVM!"
 date: 2010-08-29 20:44:34 +0200
 comments: true
 categories: 
+- NetBSD
+- KVM
+- virtualization
 ---
 
 Compared to OpenBSD and FreeBSD the NetBSD install was hard, really

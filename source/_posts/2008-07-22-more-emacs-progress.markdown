@@ -4,6 +4,7 @@ title: "More Emacs Progress!"
 date: 2008-07-22 23:56:55 +0200
 comments: true
 categories: 
+- Emacs
 ---
 
 Wow, I'm almost starting to feel like a Windows user.  The latest CVS
