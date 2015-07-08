@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Gnome | Troglobit]]></title>
+  <link href="http://troglobit.github.io/blog/categories/gnome/atom.xml" rel="self"/>
+  <link href="http://troglobit.github.io/"/>
+  <updated>2015-07-08T22:32:17+02:00</updated>
+  <id>http://troglobit.github.io/</id>
+  <author>
+    <name><![CDATA[Joachim Nilsson]]></name>
+    <email><![CDATA[troglobit@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Buggy Gnome Main Menu]]></title>
+    <link href="http://troglobit.github.io/blog/2007/07/07/buggy-gnome-main-menu/"/>
+    <updated>2007-07-07T09:52:17+02:00</updated>
+    <id>http://troglobit.github.io/blog/2007/07/07/buggy-gnome-main-menu</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve been living with the new Gnome Main Menu for a while now.  Like many
+others I run Ubuntu these days and I&rsquo;ve found the version in Feisty Fawn
+to be extremely slow and buggy.</p>
+
+<p>I tried manually installing (<code>dpkg -i</code>) the latest version in Gutsy, but
+it had too many dependencies.  So I decided to try and backport it, and
+it worked!</p>
+
+<p>I haven&rsquo;t set up any repository, so just download the below two <code>.deb</code>
+files and install them with <code>sudo dpkg -i *.deb</code> in a terminal window:</p>
+
+<ul>
+<li><a href="http://vmlinux.org/jocke/debian/libslab0_0.9.8.svn.20070430-1ubuntu1_i386.deb">libslab-0.9.8.deb</a></li>
+<li><a href="http://vmlinux.org/jocke/debian/gnome-main-menu_0.9.8.svn.20070430-1ubuntu1_i386.deb">gnome-main-menu-0.9.8.deb</a></li>
+</ul>
+
+
+<p>The <code>md5sums</code> for these files are:</p>
+
+<pre><code>3f0a962ffdd2974663f2f425eed5f541   libslab0_0.9.8.svn.20070430-1ubuntu1_i386.deb
+1d11fcace33bab707e28c230c85ea1ba   gnome-main-menu_0.9.8.svn.20070430-1ubuntu1_i386.deb
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Aaaah, the Fish Got a Facelift! :)]]></title>
+    <link href="http://troglobit.github.io/blog/2006/08/13/aaaah/"/>
+    <updated>2006-08-13T10:43:13+02:00</updated>
+    <id>http://troglobit.github.io/blog/2006/08/13/aaaah</id>
+    <content type="html"><![CDATA[<p>This is just great!  Wanda the fortune telling fish of the Gnome desktop
+got herself a face lift.  Take a look at this:</p>
+
+<p><img src="/images/newwanda.png" width="288"></p>
+
+<p>Add her new look to your applet by copying the file to
+<code>/usr/share/gnome/panel/pixmaps/</code>.  Select it in the applet preferences
+and use 8 frames and 0.3 seconds per frame.</p>
+]]></content>
+  </entry>
+  
+</feed>

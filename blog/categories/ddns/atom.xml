@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ddns | Troglobit]]></title>
+  <link href="http://troglobit.github.io/blog/categories/ddns/atom.xml" rel="self"/>
+  <link href="http://troglobit.github.io/"/>
+  <updated>2015-07-08T22:32:17+02:00</updated>
+  <id>http://troglobit.github.io/</id>
+  <author>
+    <name><![CDATA[Joachim Nilsson]]></name>
+    <email><![CDATA[troglobit@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[GnuTLS Support in Inadyn and Fixes to Uftpd]]></title>
+    <link href="http://troglobit.github.io/blog/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/"/>
+    <updated>2014-09-13T19:18:56+02:00</updated>
+    <id>http://troglobit.github.io/blog/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd</id>
+    <content type="html"><![CDATA[<p>Quite a few changes lately.  I finally got around to adding support
+for <a href="http://www.gnutls.org">GnuTLS</a> to <a href="/inadyn.html">Inadyn</a>,
+hopefully this will get into Debian &hellip; unless the Jessie freeze
+prevents that.</p>
+
+<p>Also, thanks to a friend of mine trying out <a href="/uftpd.html">uftpd</a>
+recently I discovered that libuev has been missing from the tarball
+since the release of the TFTP support.  Fixed.</p>
+
+<p>Another great piece of news is that
+<a href="http://www.coverity.com/">Coverity</a> accepted uftpd as an Open Source
+project, I&rsquo;ve been hard at work fixing nasty bugs uncovered by the
+<a href="https://scan.coverity.com/">Coverity Scan</a>.  Great stuff! :)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[New Releases of Uftpd and Inadyn ...]]></title>
+    <link href="http://troglobit.github.io/blog/2014/05/20/new-release-of-uftpd-and-inadyn-dot-dot-dot/"/>
+    <updated>2014-05-20T21:08:25+02:00</updated>
+    <id>http://troglobit.github.io/blog/2014/05/20/new-release-of-uftpd-and-inadyn-dot-dot-dot</id>
+    <content type="html"><![CDATA[<p>The last couple of weeks have both seen the birth of the fabulous
+<a href="/uftpd.html">uftpd</a> and a reignited <a href="/inadyn.html">inadyn</a> project!
+Yesterday v1.2 of uftpd was released and today Inadyn saw the first
+working HTTPS support being released as v1.99.8!  This is likely the
+last release of Inadyn before the big 2.0, which will introduce the
+new .conf file format based on
+<a href="http://www.nongnu.org/confuse/">libConfuse</a>.  A .conf file
+feasibility study was
+<a href="/blog/2014/02/23/weekend-hack-json-vs-conf/">presented earlier</a> &hellip;</p>
+
+<p>The uftpd project is completely based on user input, currently mostly
+mine.  I will add features and bug fixes when I need them, unless I
+get more input.  So I welcome anyone to clone it on GitHub and hack
+away.  As usual, I will accept any sane patches that adhere to the
+coding style and is well written.  The same goes for Inadyn, only with
+the added request that the changes are thoroughly tested first, since
+I cannot maintain multiple accounts on various DDNS providers myself.</p>
+
+<p>Patches to support flavors of UNIX other than GNU/Linux, including
+GNU/Hurd, or even other operating systems are also welcome, as long as
+it&rsquo;s not Windows.  I will not maintain any Windows support since I
+don&rsquo;t use it myself.  If you want Windows support you will have to
+take a very active co-maintainer role in the respective project.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[New Release of the DDNS Client Inadyn]]></title>
+    <link href="http://troglobit.github.io/blog/2014/05/14/new-release-of-the-ddns-client-inadyn/"/>
+    <updated>2014-05-14T08:29:48+02:00</updated>
+    <id>http://troglobit.github.io/blog/2014/05/14/new-release-of-the-ddns-client-inadyn</id>
+    <content type="html"><![CDATA[<p>Looking for a Dynamic DNS, DDNS, client?  Well you&rsquo;re in luck, the
+<a href="http://en.wikipedia.org/wiki/Alternative_terms_for_free_software" title="FLOSS">FLOSS</a> market space is flooded with dedicated clients and various
+wget scripts.  So why bother with an old C implementation?  Well, this
+is admittedly one of the old timers in the game and is likely packaged
+for your GNU/Linux distribution of choice already.  It&rsquo;s tried and
+tested with many DDNS service providers and even comes bundled in a
+few embedded router distributions as well.</p>
+
+<p>Today I&rsquo;ve released <a href="/inadyn.html">Inadyn</a> v1.99.7 as an XZ compressed
+tarball.  The release announcement should be up on <a href="https://freecode.com/projects/inadyn">free(code)</a>
+now.  It&rsquo;s a small incremental release containing mainly code cleanup
+and a few new features that you likely won&rsquo;t notice: support for
+multiple cache files and DDNS providers as separate plugins, for easy
+addition of new ones as well as maintenance of existing.  This further
+separates the internal logic from the provider specific parts and also
+helps reduce clutter to ease maintenance.</p>
+
+<p>This is a small incremental release building up to the long awaited
+v2.0, which will include the long-awaited HTTPS support and also a new
+.conf file format.  The latter is not really welcomed with open arms
+by users, but is a necessary step since the current parser is heavily
+affected by bit rot and must be put down.  I will attempt to make the
+transition as easy as possible, but you will need to change you .conf
+files.</p>
+
+<p>Maybe a preview of the HTTPS support will make it into a release that
+still has the old .conf file format, but just maybe.</p>
+]]></content>
+  </entry>
+  
+</feed>

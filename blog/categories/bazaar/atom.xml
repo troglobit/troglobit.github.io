@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Bazaar | Troglobit]]></title>
+  <link href="http://troglobit.github.io/blog/categories/bazaar/atom.xml" rel="self"/>
+  <link href="http://troglobit.github.io/"/>
+  <updated>2015-07-08T22:32:17+02:00</updated>
+  <id>http://troglobit.github.io/</id>
+  <author>
+    <name><![CDATA[Joachim Nilsson]]></name>
+    <email><![CDATA[troglobit@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[HowTo Use Git for Collaborative Development]]></title>
+    <link href="http://troglobit.github.io/blog/2009/06/13/howto-use-git-for-collaborative-development/"/>
+    <updated>2009-06-13T00:36:07+02:00</updated>
+    <id>http://troglobit.github.io/blog/2009/06/13/howto-use-git-for-collaborative-development</id>
+    <content type="html"><![CDATA[<p>This is mainly some notes for myself so I don&rsquo;t forget.  Having worked
+with <a href="http://bazaar-vcs.org/">GNU Bazaar</a> before much of Git is still alien to me.</p>
+
+<p>This HowTo is divided into two parts:</p>
+
+<ol>
+<li>what happens on your laptop, and</li>
+<li>what you must do on a remote server where you publish your changes</li>
+</ol>
+
+
+<p>So, let&rsquo;s start stimple:</p>
+
+<pre><code>laptop&gt; mkdir projectX; cd projectX
+laptop&gt; git init
+laptop&gt; emacs file1.txt
+laptop&gt; git add file1.txt
+laptop&gt; git commit -m "Initial commit"
+</code></pre>
+
+<p>Thus far no suprises, right?  Now, some nasty git bits:</p>
+
+<pre><code>laptop&gt; emacs file1.txt
+laptop&gt; git commit
+</code></pre>
+
+<p>Yep, doesn&rsquo;t work. You have to add -a to the command line for &ldquo;all&rdquo;.</p>
+
+<pre><code>laptop&gt; git commit -a
+</code></pre>
+
+<p>OK, so next item.  How to publish this so others can see? Well, I have a
+shell account on a remote server, so I naturally try:</p>
+
+<pre><code>laptop&gt; git push sftp://login@example.com/pub/git/projectX.git
+fatal: I don't handle protocol 'sftp'
+</code></pre>
+
+<p>Does not work. OK, next obvious choice:</p>
+
+<pre><code>laptop&gt; git push ssh://login@example.com/pub/git/projectX.git
+fatal: '/pub/git/projectX.git': unable to chdir or not a git archive
+fatal: The remote end hung up unexpectedly
+</code></pre>
+
+<p>Wow, not a clue as to how I should proceed.  After some Google-Foo I
+found <a href="http://toolmantim.com/articles/setting_up_a_new_remote_git_repository">this article</a> detail the steps for remote repos.  Very messy,
+compared to Bazaar.</p>
+
+<pre><code>laptop&gt; ssh login@example.com
+server&gt; cd /pub/git
+server&gt; mkdir projectX.git; cd projectX.git
+server&gt; git --bare init
+server&gt; logout
+laptop&gt; git remote add origin ssh://crash@vmlinux.org/pub/git/tetris.git
+laptop&gt; git push
+No refs in common and none specified; doing nothing.
+Perhaps you should specify a branch such as 'master'.
+fatal: The remote end hung up unexpectedly
+error: failed to push some refs to 'ssh://login@example.com/pub/git/projectX.git'
+laptop&gt; git push origin master
+Counting objects: 29, done.
+Compressing objects: 100% (26/26), done.
+Writing objects: 100% (29/29), 9.54 KiB, done.
+Total 29 (delta 10), reused 0 (delta 0)
+To ssh://login@example.com/pub/git/projectX.git
+* [new branch]      master -&gt; master
+</code></pre>
+
+<p>Eventually I made it sing.  The first <code>git push</code> must use the references
+to origin and master.  At least you don&rsquo;t have to care about that later,
+after the first push command git remembers what you want.</p>
+
+<p>Only one thing left, in the gitweb project overview projectX is listed
+as having no description.  Of course, since I&rsquo;m starting to get to know
+git by now, I realised early this is probably not something that is
+propagated through push — yep, I was right.  You have to change that on
+the server.</p>
+
+<pre><code>laptop&gt; ssh login@example.com
+server&gt; cd /pub/git/projectX.git
+server&gt; echo "Secret Project-X use ROT13 to decode all source files" &gt;description
+server&gt; logout
+</code></pre>
+
+<p>All done! <em>phew</em></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[More About Bzrweb and Some About Git]]></title>
+    <link href="http://troglobit.github.io/blog/2009/06/12/more-about-bzrweb-and-some-about-git/"/>
+    <updated>2009-06-12T19:50:27+02:00</updated>
+    <id>http://troglobit.github.io/blog/2009/06/12/more-about-bzrweb-and-some-about-git</id>
+    <content type="html"><![CDATA[<p>OK, I admit it.  I cannot decide what version control system (VCS) to
+use.  I&rsquo;m stuck between the speed and massive snow ball effect of
+<a href="http://git-scm.com/">Git</a> and the ease of use and emotional attachment I have to
+<a href="http://bazaar-vcs.org/">Bazaar</a>.</p>
+
+<p>I&rsquo;ve been &ldquo;maintaining&rdquo; bzrweb for a while now, not doing a very good
+job of it though.  It&rsquo;s lagging behind considerably to the bzr API.
+After the upgrade of vmlinux.org to the latest Ubuntu server release
+bzrweb actually didn&rsquo;t work at all.  If it hadn&rsquo;t been for
+<a href="https://code.launchpad.net/~halfdan/bzrweb">the fixes</a> by <a href="http://halfdans.net/">Rasmus Toftdahl Olesen</a> I would probably have
+abandoned it entirely.  Thank you Rasmus!  Anyway, I&rsquo;ve been gleaning at
+other Bazaar web frontends for a while.  The only real option is
+Loggerhead, but even though I consider myself a computer pro I just
+cannot seem to wrap my head around how to set it up.  I just wanted to
+setup a local browser for my user, without the need for root access.
+Like bzrweb supports, after having abandoned that, seemingly radical
+idea, I tried setting up a site wide shared installation &hellip; no luck so
+far. :-/</p>
+
+<p>In comparison to Loggerhead I easily managed to setup a Git repository
+browser, using a <code>/pub/git</code> structure, see <a href="http://git.troglobit.com/">git.vmlinux.org</a>.  The
+gitweb package in Ubuntu was very easy to setup, the one only thing I
+had problem with was the Apache VirtualHost setup.  Some sleep cured
+that, but I should post the conf here, in case someone else experiences
+trouble.</p>
+
+<p>I&rsquo;ll have another go at setting up Loggerhead later, or perhaps try to
+fixup bzrweb.  I&rsquo;m currently leaning towards fixing up bzrweb.  Fix bugs
+viewing tree files, refactor tarball export and a new project summary
+page, are some of the most interesting things I can come up with.  If
+only things could settle down at work for a while — oh well, vacation is
+coming up. Soon, my precious, soon&nbsp;&hellip;</p>
+
+<p>First, however, I will publish the micro vt100/ansi tetris version I
+found last week.  It will be the second project where I use Git, the
+first one was <code>cons</code>, which is a Xen xm wrapper for non privileged
+users.</p>
+
+<p>Some Git and Bazaar links:</p>
+
+<ul>
+<li><a href="http://www.spheredev.org/wiki/Git_for_the_lazy">Git for the Lazy</a> :-)</li>
+<li><a href="http://appletree.or.kr/quick_reference_cards/CVS-Subversion-Git/">CVS, Subversion &amp; Git Refcards</a></li>
+<li><a href="http://www.fthieme.net/drupal6/node/77">Converting Bzr to Git</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

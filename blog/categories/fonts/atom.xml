@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Fonts | Troglobit]]></title>
+  <link href="http://troglobit.github.io/blog/categories/fonts/atom.xml" rel="self"/>
+  <link href="http://troglobit.github.io/"/>
+  <updated>2015-07-08T22:32:17+02:00</updated>
+  <id>http://troglobit.github.io/</id>
+  <author>
+    <name><![CDATA[Joachim Nilsson]]></name>
+    <email><![CDATA[troglobit@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Best. Programming. Font. Ever.]]></title>
+    <link href="http://troglobit.github.io/blog/2010/04/26/best-programming-font-ever/"/>
+    <updated>2010-04-26T22:44:19+02:00</updated>
+    <id>http://troglobit.github.io/blog/2010/04/26/best-programming-font-ever</id>
+    <content type="html"><![CDATA[<p>This is not only a reminder to myself, it is appraisal to the probably
+best programming font ever: <a href="http://levien.com/type/myfonts/inconsolata.html">Inconsolata</a>.  Thank you so much, Mr
+<a href="http://levien.com">Raph Levien</a>!</p>
+
+<p>On the previous laptop I used <a href="http://www.tobiasjung.net/profont/">ProFont</a> quite extensively, but its screen
+was only 1280x800, on the new laptop I have 1680x1050 and ProFont just
+got too small for my aging eyes.</p>
+
+<p>For more tips on fonts, see <a href="http://hivelogic.com/articles/top-10-programming-fonts">Top-10 Programming Fonts</a> and
+<a href="http://keithdevens.com/wiki/ProgrammerFonts">KeithDevens.com</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>

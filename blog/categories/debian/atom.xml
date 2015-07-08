@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Debian | Troglobit]]></title>
+  <link href="http://troglobit.github.io/blog/categories/debian/atom.xml" rel="self"/>
+  <link href="http://troglobit.github.io/"/>
+  <updated>2015-07-08T22:32:17+02:00</updated>
+  <id>http://troglobit.github.io/</id>
+  <author>
+    <name><![CDATA[Joachim Nilsson]]></name>
+    <email><![CDATA[troglobit@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[HowTo: Apache With Gitweb on Debian 8.1]]></title>
+    <link href="http://troglobit.github.io/blog/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/"/>
+    <updated>2015-06-30T23:13:48+02:00</updated>
+    <id>http://troglobit.github.io/blog/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m posting this in case anyone else gets stuck setting up <a href="http://www.apache.org">Apache</a>
+with <a href="http://git-scm.com/docs/gitweb">Gitweb</a>.  Also as a reminder to myself in case I ever need to
+set up this all over again.</p>
+
+<ol>
+<li>You have all your eggs in one basket (GitHub), and</li>
+<li>You really like that shiny basket, but</li>
+<li>You know you&rsquo;re clumsy and usually drop baskets yourself.</li>
+<li>You are wise (yes you are!) and realize you need another basket, so</li>
+<li>You set up a server and a domain yourself &hellip;</li>
+</ol>
+
+
+<p>OK.  Let&rsquo;s start simple, since you are already running the latest Debian
+you fire up the command line and install the basics:</p>
+
+<pre><code>sudo apt-get install gitweb apache2
+</code></pre>
+
+<p>So it&rsquo;ll complain, you&rsquo;ll clarify your request and soon all required
+packages are on your server.  Now what?</p>
+
+<p>Debian has already set up <a href="http://localhost/gitweb">http://localhost/gitweb</a> for you, and if you
+have a domain already you should go ahead and edit the master file for
+that:</p>
+
+<pre><code>editor /etc/apache2/sites-available/000-default.conf
+service apache2 reload
+</code></pre>
+
+<p>If you want to use that for your gitweb needs, then you&rsquo;re done!</p>
+
+<!-- more -->
+
+
+<p>For me, running <a href="http://troglobit.com/gitweb">http://troglobit.com/gitweb</a> out of the box was not
+enough.  I wanted to setup <a href="http://git.troglobit.com">http://git.troglobit.com</a> and also to make
+sure to keep really short and pretty URLs to projects I host.  So the
+next part of this post is about how to set that up.</p>
+
+<p>My <code>000-default.conf</code> is for <a href="http://troglobit.com,">http://troglobit.com,</a> so I created a new
+one for the sub-domain:</p>
+
+<pre><code>editor /etc/apache2/sites-available/git.conf
+</code></pre>
+
+<p>&hellip; and added the following:</p>
+
+<pre><code class="apache /etc/apache2/sites-available/git.conf">    &lt;VirtualHost *:80&gt;
+        ServerName git.troglobit.com
+        DocumentRoot /usr/share/gitweb
+
+        SetEnv GITWEB_CONFIG    /etc/gitweb.conf
+        SetEnv GIT_PROJECT_ROOT /srv/git
+
+        &lt;Directory /usr/share/gitweb&gt;
+            Options FollowSymLinks ExecCGI
+            AddHandler cgi-script .cgi
+
+            DirectoryIndex gitweb.cgi
+
+            # Pretty gitweb URLs + pathinfo feature in gitweb.conf
+            RewriteEngine On
+            RewriteCond %{REQUEST_FILENAME} !-f
+            RewriteCond %{REQUEST_FILENAME} !-d
+            RewriteRule ^.* /gitweb.cgi/$0 [L,PT]
+        &lt;/Directory&gt;
+
+        # Enable git clone over HTTP
+        ScriptAliasMatch \
+            "(?x)^/(.*/(HEAD | \
+            info/refs | \
+            objects/(info/[^/]+ | \
+            [0-9a-f]{2}/[0-9a-f]{38} | \
+            pack/pack-[0-9a-f]{40}\.(pack|idx)) | \
+            git-(upload|receive)-pack))$" \
+            /usr/lib/git-core/git-http-backend/$1
+    &lt;/VirtualHost&gt;
+</code></pre>
+
+<p>Remember to enable the new sub-domain in Apache and restart the daemon:</p>
+
+<pre><code>a2ensite git
+service apache2 restart
+</code></pre>
+
+<p>I&rsquo;m not using the default Debian GIT repo location, <code>/var/lib/git</code>, so I
+need to set the project root for both the Apache and the GitWeb config:</p>
+
+<pre><code class="perl /etc/gitweb.conf">    # See https://github.com/kogakure/gitweb-theme for more help and pointers
+
+    # path to git projects (&lt;project&gt;.git)
+    $projectroot = "/srv/git";
+
+    @git_base_url_list = ("git://git.troglobit.com", "http://git.troglobit.com");
+
+    # directory to use for temp files
+    $git_temp = "/tmp";
+
+    $site_name = "git.troglobit.com";
+
+    # target of the home link on top of all pages
+    $home_link = $my_uri || "/";
+
+    # html text to include at home page
+    #$home_text = "indextext.html";
+
+    # file with project list; by default, simply scan the projectroot dir.
+    #$projects_list = $projectroot;
+
+    # stylesheet to use
+    @stylesheets = ("static/gitweb.css");
+
+    # javascript code for gitweb
+    $javascript = "static/gitweb.js";
+
+    # logo to use
+    $logo = "static/git-logo.png";
+
+    # the 'favicon'
+    $favicon = "static/git-favicon.png";
+
+    # git-diff-tree(1) options to use for generated patches
+    #@diff_opts = ("-M");
+    @diff_opts = ();
+
+    # Enable PATH_INFO so the server can produce URLs of the
+    # form: http://git.hokietux.net/project.git/xxx/xxx
+    # This allows for pretty URLs *within* the Git repository,
+    # also needs the Apache rewrite rules for full effect.
+    $feature{'pathinfo'}{'default'} = [1];
+
+    # Neat way of prefixing the top URL listing
+    our @extra_breadcrumbs = (
+          [ 'Troglobit Software' =&gt; 'http://troglobit.com/' ],
+        );
+
+    # List avatars next to committers
+    $feature{'avatar'}{'default'} = ['gravatar'];
+
+    # The category name is read from .git/category, in the same manner as .git/description.
+    $projects_list_group_categories = 1;
+    $project_list_default_category = "misc";
+
+    $projects_list_description_width = 80;
+
+    # Enable blame, pickaxe search, snapshop, search, and grep
+    # support, but still allow individual projects to turn them off.
+    # These are features that users can use to interact with your Git trees. They
+    # consume some CPU whenever a user uses them, so you can turn them off if you
+    # need to.  Note that the 'override' option means that you can override the
+    # setting on a per-repository basis.
+    $feature{'blame'}{'default'} = [1];
+    $feature{'blame'}{'override'} = [1];
+
+    $feature{'pickaxe'}{'default'} = [1];
+    $feature{'pickaxe'}{'override'} = [1];
+
+    $feature{'snapshot'}{'default'} = [1];
+    $feature{'snapshot'}{'override'} = [1];
+
+    $feature{'search'}{'default'} = [1];
+
+    $feature{'grep'}{'default'} = [1];
+    $feature{'grep'}{'override'} = [1];
+
+    $feature{'highlight'}{'default'} = [1];
+</code></pre>
+
+<p>The impossibly simple Apache config has been ripped from the intro by
+<a href="http://dereenigne.org/debian/debian-gitweb-server">Jonathan McCrohan</a>,
+the GitWeb config is a mixture of findings on the Internets.  Notice the
+breadcrumbs and the grouping settings, very useful.</p>
+
+<p>The magic with the pretty URLs is in both files, all <code>RewriteRule</code> lines
+in the Apache <code>.conf</code> and the <code>$feature{'pathinfo'}{'default'} = [1];</code>
+setting in <code>gitweb.conf</code>.</p>
+
+<p>Also, try out the cool <a href="https://github.com/kogakure/gitweb-theme">theme</a>
+I use, it looks a lot better than the default.</p>
+
+<p>Happy coding!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[HowTo: Use Ubuntu to Serve Music to iTunes]]></title>
+    <link href="http://troglobit.github.io/blog/2010/12/31/howto-setup-debian-slash-ubuntu-to-serve-music-to-itunes/"/>
+    <updated>2010-12-31T19:26:37+01:00</updated>
+    <id>http://troglobit.github.io/blog/2010/12/31/howto-setup-debian-slash-ubuntu-to-serve-music-to-itunes</id>
+    <content type="html"><![CDATA[<p>OK, so we finally got an iPad.  The effective marketing droids of Apple
+are doing a good job, even the Linux zealots are starting to use their
+products :-)</p>
+
+<p>So, how to serve the immense music collection of our family to the iPad?
+Well, it seems the magic integration with iTunes is not enough (yet), so
+you need a <a href="http://itunes.apple.com/app/simple-daap-client/id369605270">Simple Daap Client</a> app on your iPad to get the most out
+of this HowTo. I hope DAAP sharing for iPad will be added soon, that
+would be really cool!</p>
+
+<p>I used the <a href="http://www.fireflymediaserver.org/">Firefly Media Server</a>, which in Debian/Ubuntu is known as
+<a href="apt://mt-daapd">mt-daapd</a>.  It needs som minor setting up to play nice with the
+Avahi multicast DNS (mDNS) services that we will use to let iTunes
+discover our new service.</p>
+
+<p>First go ahead and install mt-daapd</p>
+
+<pre><code>sudo apt-get install mt-daapd
+</code></pre>
+
+<p>Then make sure to edit the file <code>/etc/default/mt-daapd</code> file, it usually
+does not exist in the default setup, so create it and add the following
+contents to disable the built-in mDNS server:</p>
+
+<pre><code># -m Disables the built-in mDNS server, useful if you already run Avahi
+DAEMON_OPTS="-m"
+</code></pre>
+
+<p>The default configuration of must be updated with the location of your
+music library.  On my system it is <code>/pub/Music</code>, so I edit the file
+<code>/etc/mt-daapd.conf</code> and change:</p>
+
+<pre><code># Location of the mp3 files to share.  Note that because the
+# files are stored in the database by inode, these must be
+# in the same physical filesystem.
+mp3_dir = /pub/Music
+</code></pre>
+
+<p>If you like, you can change the <code>admin_pw</code> (mt-daapd) and default port
+to something other than the defaults.  After changing the settings you
+need to restart the service:</p>
+
+<pre><code>sudo service mt-daapd restart
+</code></pre>
+
+<p>Now enter <code>localhost:3689</code> in your browser window, leave the username
+field empty and set password to mt-daapd.  Unless you changed any of the
+defaults above.</p>
+
+<p>Time for multicast!  The Avahi service on GNU/Linux systems is what
+Bonjour/Rendez-Vous is to Apple systems.  It provides seamless
+interaction between clients and servers on a LAN.  My HP printer, for
+instance, pops up automatically in Windows, OS X and Linux these days
+because these operating systems listen in on network mDNS servers that
+broadcast (or rather multicast) available services.  Very neat.</p>
+
+<p>However, as usual there are a few snags you might need to work around to
+get everything to work.  Thanks to my ISP (Telia, Sweden), I need to tell
+Avahi the following nasty things in <code>/etc/default/avahi-daemon</code></p>
+
+<pre><code># 1 = Try to detect unicast dns servers that serve .local and disable avahi in
+# that case, 0 = Don't try to detect .local unicast dns servers, can cause
+# troubles on misconfigured networks
+AVAHI_DAEMON_DETECT_LOCAL=0
+</code></pre>
+
+<p>And also edit the file <code>/etc/avahi/avahi-daemon.conf</code>, the following is
+not the entire contents of the file, only the sections I&rsquo;ve changed:</p>
+
+<pre><code>[server]
+# Comment out any current/previous work arounds
+#domain-name=local
+#domain-name=.alocal
+disallow-other-stacks=yes
+
+[publish]
+publish-workstation=no
+publish-domain=no
+</code></pre>
+
+<p>Also, in the directory <code>/etc/avahi/services/</code> we need to add an entry for
+DAAP.  Create the file <code>/etc/avahi/services/daap.service</code>:</p>
+
+<pre><code>&lt;!DOCTYPE service-group SYSTEM "avahi-service.dtd"&gt;
+&lt;!-- iTunes DAAP, music streaming, for mt-daapd or Firefly Media Server
+     See avahi.service(5) for more information about this configuration file --&gt;
+
+&lt;service-group&gt;
+    &lt;name replace-wildcards="yes"&gt;%h&lt;/name&gt;
+
+    &lt;service&gt;
+        &lt;type&gt;_daap._tcp&lt;/type&gt;
+        &lt;port&gt;3689&lt;/port&gt;
+        &lt;txt-record&gt;txtvers=1&lt;/txt-record&gt;
+        &lt;txt-record&gt;iTSh Version=131073&lt;/txt-record&gt;
+        &lt;txt-record&gt;Version=196610&lt;/txt-record&gt;
+    &lt;/service&gt;
+
+    &lt;service&gt;
+        &lt;type&gt;_rsp._tcp&lt;/type&gt;
+        &lt;port&gt;3689&lt;/port&gt;
+    &lt;/service&gt;
+&lt;/service-group&gt;
+</code></pre>
+
+<p>Now, restart avahi and see your music server pop up automatically as a
+Share in iTunes:</p>
+
+<pre><code>sudo service avahi-daemon restart
+</code></pre>
+
+<p>Good Luck!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Netapplet Patchwork]]></title>
+    <link href="http://troglobit.github.io/blog/2007/07/12/netapplet-patchwork/"/>
+    <updated>2007-07-12T11:37:38+02:00</updated>
+    <id>http://troglobit.github.io/blog/2007/07/12/netapplet-patchwork</id>
+    <content type="html"><![CDATA[<p>I think I&rsquo;ve finally done it &mdash; achieved my ultimate goal of
+combining the awesome powers of the Debian <code>/etc/network/interfaces</code>
+file with <code>guessnet</code>, <code>wpa_supplicant</code>, <code>ifplugd</code> and now also with
+netapplet!</p>
+
+<p>I&rsquo;ve been looking for a way to just point-and-click to select a
+different access point, both at home and at work.  To that end I have a
+pretty advanced interfaces file that automatically detects where I am,
+what I am connected with (cable/wireless) and then, like magic, sets it
+all up.</p>
+
+<p>Several times now I have tried, really hard, to get used to and live my
+life with <a href="http://www.gnome.org/projects/NetworkManager/">Network Manager</a>, but it&rsquo;s just plain impossible.  It
+still doesn&rsquo;t integrate well with Debian ifupdown et consortes and until
+now I&rsquo;ve been using <code>ifup</code> to select different wireless mappings:</p>
+
+<pre><code>$ sudo ifdown eth2; sudo ifup eth2=WLAN
+Password: ***********
+[Use crappy work AP to access VPN tunnel]
+$ sudo ifdown eth2; sudo ifup eth2=NETLET
+Password: ***********
+[Use family WRT54GL access point]
+</code></pre>
+
+<p>For the last couple of days I&rsquo;ve been looking into getting the old
+(obsoleted?) Netapplet from Novell.  Since I&rsquo;m a Ubuntu user I&rsquo;m using
+the Debian patched-up version by <a href="http://mjg59.livejournal.com/">Matthew Garrett</a> (thanks!).  I
+remember using it a couple of years back, at that time I think it worked
+but now it didn&rsquo;t &mdash; not well at least.  I found several bugs and
+quirks that I have now fixed and published in my own &ldquo;repository&rdquo;.</p>
+
+<p>I have published everything as a Bazaar branch, one changeset per patch
+(small patches), at <a href="https://web.archive.org/web/20090528101921/http://vmlinux.org/jocke/bzr/netapplet-1.0.8/">http://vmlinux.org/jocke/bzr/netapplet-1.0.8</a>,
+which can be viewed <a href="https://web.archive.org/web/20090528101921/http://vmlinux.org/jocke/bzr/">here</a> using bzrweb.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[HowTo: Building Debian/Ubuntu Kernels]]></title>
+    <link href="http://troglobit.github.io/blog/2007/02/03/building-debian-slash-ubuntu-kernels/"/>
+    <updated>2007-02-03T10:00:45+01:00</updated>
+    <id>http://troglobit.github.io/blog/2007/02/03/building-debian-slash-ubuntu-kernels</id>
+    <content type="html"><![CDATA[<p>I have been over this topic so many times now, strangely enough I&rsquo;ve
+managed to make things more complicated than they need to be.  It&rsquo;s
+really this simple:</p>
+
+<pre><code>$ wget ftp://ftp.sunet.se/pub/Linux/kernels/v2.6/linux-2.6.19.2.tar.bz2
+$ tar xfj linux-2.6.19.2.tar.bz2
+$ cd linux-2.6.19.2/
+$ zcat /proc/config.gz &gt;.config
+$ make menuconfig
+[Tweak to your hearts desire]
+$ fakeroot make-kpkg --initrd kernel_image
+$ dpkg -i ../linux-image-2.6.19.2_2.6.19.2-10.00.Custom_i386.deb
+[DONE!]
+</code></pre>
+
+<p>You may, of course, need to tweak the file <code>/etc/kernel-pkg.conf</code>, but
+there are man pages for that.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Make-kpkg and Dirty Modules]]></title>
+    <link href="http://troglobit.github.io/blog/2006/07/17/make-kpkg-and-dirty-modules/"/>
+    <updated>2006-07-17T22:10:24+02:00</updated>
+    <id>http://troglobit.github.io/blog/2006/07/17/make-kpkg-and-dirty-modules</id>
+    <content type="html"><![CDATA[<p>Dammit, tonight I spent too many hours chasing down a &ldquo;feature&rdquo; in the
+Debian kernel build process or the Linux-2.6 kernel.  I haven&rsquo;t yet
+deciced who to blame ;-)</p>
+
+<p>Here goes: when you build the latest Linux 2.6 kernel, checked out from
+the git repository, with <code>make-kpkg</code> you should make sure to uncheck the
+<code>CONFIG_LOCALVERSION_AUTO</code> option in the kernel config before hand.
+It&rsquo;s under &ldquo;General setup&rdquo; &rarr; &ldquo;Automatically append version
+information &hellip;&rdquo;.  If you don&rsquo;t disable it, then your <code>utsrelease.h</code>
+will contain some annoying extra git version string and your modules
+directory will look something like this: <code>/lib/modules/2.6.18-dirty</code></p>
+
+<p>All this due to the <code>LOCALVERSION</code> config, your git checkout, and the
+tiny little fact that <code>make-kpkg</code> modifies (moves away) the two files
+<code>scripts/packages/{builddeb,Makefile}</code> which leads to the modification
+of the checkout and the scripts/setlocalversion will tell this to the
+top Makefile which in turn will create this whole mess.</p>
+
+<p>Take my advice, untick the <code>CONFIG_LOCALVERSION_AUTO</code> option.  It&rsquo;s the
+easiest one to get away with.</p>
+]]></content>
+  </entry>
+  
+</feed>

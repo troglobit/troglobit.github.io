@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Multicast | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/multicast/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-07-05T12:53:27+02:00</updated>
+  <updated>2015-07-08T22:32:17+02:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -59,6 +59,138 @@ is OK, since it&rsquo;s used and stored as unsigned 32-bit integer.</li>
 <a href="https://scan.coverity.com/projects/3320">https://scan.coverity.com/projects/3320</a></li>
 </ul>
 
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Pimd v2.2.0 -- the Last Release of Pimd?]]></title>
+    <link href="http://troglobit.github.io/blog/2014/12/28/last-release-of-pimd/"/>
+    <updated>2014-12-28T13:42:18+01:00</updated>
+    <id>http://troglobit.github.io/blog/2014/12/28/last-release-of-pimd</id>
+    <content type="html"><![CDATA[<p>On one of the last days of 2014 I release <a href="/pimd.html">pimd</a>
+<a href="https://github.com/troglobit/pimd/releases/tag/2.2.0">v2.2.0</a>, which
+is an awesome release with a lot of new features and bug fixes!</p>
+
+<p>However, it could very well be the last release I do.  Even though its
+one of my most popular projects on
+<a href="https://github.com/troglobit">GitHub</a> I have not had enough time to
+dedicate to it over the years.  I will continue to do fixes and merge
+pull requests until someone else steps up to take over.  There is also
+the distinct possibility that the
+<a href="https://github.com/greearb/xorp.ct">Xorp PIM-SM</a> or the new
+<a href="https://github.com/udhos/qpimd">Quagga PIM-SSM</a> implementations will
+(finally) make good old pimd completely redundant.</p>
+
+<p>At <a href="http://www.westermo.com">work</a> we will likely start using the
+Quagga PIM rather than pimd in WeOS.</p>
+
+<p>For now though, enjoy pimd v2.2.0.  It&rsquo;s been tested in both my Qemu
+based virtual testbed and a few setups using Linux&#8217; <code>netns</code> feature in
+<a href="http://www.nrl.navy.mil/itd/ncs/products/core">CORE</a> &ndash; awesome
+little proggy! :-)</p>
+
+<!-- more -->
+
+
+<h3>Changes &amp; New Features</h3>
+
+<ul>
+<li>Add IP fragmentation support for PIM register messages,
+by Michael Fine of Cumulus Networks</li>
+<li>Support <code>/LEN</code> syntax in <code>phyint</code> to complement <code>masklen LEN</code>, issue #12</li>
+<li>Add support for /31 networks, point-to-point, thanks to Apollon Oikonomopoulos</li>
+<li>Remove old broken SNMP support</li>
+<li>OpenBSD inspired cleanup (deregister)
+<a href="http://cvsweb.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/">http://cvsweb.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/</a></li>
+<li>General code cleanup, shorten local variable names, func decl. etc.</li>
+<li>Support for router alert IP option in IGMP queries</li>
+<li>Support for reading IGMPv3 membership reports</li>
+<li>Update IGMP code to support FreeBSD >= 8.x</li>
+<li>Retry read of routing tables on FreeBSD</li>
+<li>Fix join/leve of ALL PIM Routers for FreeBSD and other UNIX kernels</li>
+<li>Tested on FreeBSD, NetBSD and OpenBSD</li>
+<li>Add very simple homegrown configure script</li>
+<li>Update and document support for <code>rp_address</code>, <code>cand_rp</code>, and <code>cand_bootstrap_router</code></li>
+<li>Add new <code>spt_threshold</code> to replace existing <code>switch_register_threshold</code>
+and <code>switch_data_threshold</code> settings.  Cisco like and easier to understand</li>
+</ul>
+
+
+<h3>Bug Fixes</h3>
+
+<ul>
+<li>Fix to avoid infinite loop during unicast send failure, by Alex Tessmer</li>
+<li>Fix bug in bootstrap when configured as candidate RP, issue #15</li>
+<li>Fix segfault in <code>accept_igmp()</code>, issue #29</li>
+<li>Fix default source preference, should be 101 (not 1024!)</li>
+<li>Fix <code>ip_len</code> handling on older BSD&rsquo;s, thanks to Olivier Cochard-Labbé, issue #23</li>
+<li>Fix default prefix len in static RP example in <code>pimd.conf</code>, should be /4</li>
+<li>Fix issue #31: Make IGMP query interval and querier timeout configurable</li>
+<li>Fix issue #33: pimd does not work in background under FreeBSD</li>
+<li>Fix issue #35: support for timing out other queriers from mrouted</li>
+<li>Hopefully fix issue #22: Crash in (S,G) state when neighbor is lost</li>
+<li>Misc. bug fixes thanks to Coverity Scan, static code analysis tool
+<a href="https://scan.coverity.com/projects/3319">https://scan.coverity.com/projects/3319</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[HowTo: Add Multicast Routing to FreeBSD Kernel]]></title>
+    <link href="http://troglobit.github.io/blog/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/"/>
+    <updated>2014-09-23T01:55:19+02:00</updated>
+    <id>http://troglobit.github.io/blog/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel</id>
+    <content type="html"><![CDATA[<p>This is a very short blog post, mostly intended as a reminder to
+myself.  Assumes the <code>src.txz</code> was installed previously.  Here goes:</p>
+
+<pre><code>cd /usr/src
+cd sys/amd64/conf
+cat GENERIC | sed 's/GENERIC$/MULTICAST/' &gt; MULTICAST
+echo 'options   MROUTING         # Multicast routing' &gt;&gt; MULTICAST
+cd -
+make kernel KERNCONF=MULTICAST
+reboot
+</code></pre>
+
+<p>That&rsquo;s it.  Remember to make sure your Qemu VM has enough RAM or it
+will probably page fault on you.  I use 1,0 GB RAM.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Announcing Pimd v2.1.7]]></title>
+    <link href="http://troglobit.github.io/blog/2011/01/09/announcing-pimd-v2-dot-1-7/"/>
+    <updated>2011-01-09T19:20:57+01:00</updated>
+    <id>http://troglobit.github.io/blog/2011/01/09/announcing-pimd-v2-dot-1-7</id>
+    <content type="html"><![CDATA[<p>This is a followup release to the <a href="https://security-tracker.debian.org/tracker/CVE-2011-0007">security fix</a> in <a href="/pimd.html">pimd</a>,
+v2.1.6.  The change to use <code>/var/lib/misc/</code>, instead of the insecure
+<code>/var/tmp/</code>, has now been refactored into using the proper <a href="http://www.pathname.com/fhs/pub/fhs-2.3.html#VARRUNRUNTIMEVARIABLEDATA">FHS</a>
+recommended <code>/var/run/pimd/</code> instead.</p>
+
+<p>As always, check the <a href="/pimd.html">homepage</a>, the <a href="https://github.com/troglobit/pimd/blob/master/ChangeLog">ChangeLog</a> and the
+<a href="https://github.com/troglobit/pimd/commits/2.1.7">GIT log</a> for more details.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Announcing Pimd v2.1.6]]></title>
+    <link href="http://troglobit.github.io/blog/2011/01/08/announcing-pimd-v2-dot-1-6/"/>
+    <updated>2011-01-08T22:40:22+01:00</updated>
+    <id>http://troglobit.github.io/blog/2011/01/08/announcing-pimd-v2-dot-1-6</id>
+    <content type="html"><![CDATA[<p>This is a security release of <a href="/pimd.html">pimd</a>, v2.1.6.  The following fixes
+are included:</p>
+
+<ul>
+<li><a href="https://security-tracker.debian.org/tracker/CVE-2011-0007">CVE-2011-0007</a>: <em>&ldquo;Insecure file creation in /var/tmp&rdquo;</em></li>
+<li>Build error on GNU/kFreeBSD</li>
+</ul>
+
+
+<p>Thanks to <a href="http://www.luffy.cx/">Vincent Bernat</a> this time for the CVE fix!</p>
+
+<p>As always, check the <a href="/pimd.html">homepage</a>, the <a href="https://github.com/troglobit/pimd/blob/master/ChangeLog">ChangeLog</a> and the
+<a href="https://github.com/troglobit/pimd/commits/2.1.6">GIT log</a> for more details.</p>
 ]]></content>
   </entry>
   

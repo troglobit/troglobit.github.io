@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Projects | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/projects/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-07-05T12:53:27+02:00</updated>
+  <updated>2015-07-08T22:32:17+02:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -102,15 +102,13 @@ you want to contribute.</p>
     <link href="http://troglobit.github.io/blog/2013/06/08/finit-v1-dot-8/"/>
     <updated>2013-06-08T00:04:00+02:00</updated>
     <id>http://troglobit.github.io/blog/2013/06/08/finit-v1-dot-8</id>
-    <content type="html"><![CDATA[<p>It&rsquo;s been a long time coming, but here it finally is,
-<a href="/finit.html">Finit</a>
-<a href="ftp://troglobit.com/finit/finit-1.8.tar.xz">v1.8</a>!  The goodies we&rsquo;ve
-been waiting for are:</p>
+    <content type="html"><![CDATA[<p>It&rsquo;s been a long time coming, but here it finally is, <a href="/finit.html">Finit</a>
+<a href="ftp://troglobit.com/finit/finit-1.8.tar.xz">v1.8</a>!  The goodies we&rsquo;ve been waiting for are:</p>
 
 <ul>
-<li> Runlevels</li>
-<li> Multiple TTYs</li>
-<li> One-shot tasks</li>
+<li>Runlevels</li>
+<li>Multiple TTYs</li>
+<li>One-shot tasks</li>
 </ul>
 
 
@@ -133,8 +131,9 @@ activate &ldquo;Press any key to activate this console.&rdquo;</p>
 Adding the flexibility from SysV init, without the complexity.  This
 is one of the key points of Finit &ndash; it should be simple!</p>
 
-<p>   finit.conf:
-     service [2345] /usr/sbin/sshd -D &ndash; OpenSSH Daemon</p>
+<pre><code>finit.conf:
+    service [2345] /usr/sbin/sshd -D -- OpenSSH Daemon
+</code></pre>
 
 <p>This command tells Finit that the OpenSSH daemon should only run in
 runlevel 2-5.  Finit will also respawn sshd if it should crash, just
@@ -148,9 +147,41 @@ is up.  This is used to to one-time probing and setup of the
 system. When done the runlevel defined in finit.conf, or the default
 2, is started.</p>
 
-<p>See the
-<a href="https://github.com/troglobit/finit/blob/master/README.rst">README</a>
-for more information, or the code for the full details.</p>
+<p>See the <a href="https://github.com/troglobit/finit/blob/master/README.md">README</a> for more information, or the code for the full
+details.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Editline First Post]]></title>
+    <link href="http://troglobit.github.io/blog/2009/06/14/editline-first-post/"/>
+    <updated>2009-06-14T20:44:45+02:00</updated>
+    <id>http://troglobit.github.io/blog/2009/06/14/editline-first-post</id>
+    <content type="html"><![CDATA[<p>For a while now I&rsquo;ve been maintaining a port of the <a href="http://www.cise.ufl.edu/~cop4600/cgi-bin/lxr/http/source.cgi/lib/editline/">Minix</a> editline
+library libedit.  Mainly for my own purposes, or rather on behalf of
+<a href="http://www.westermo.com">Westermo WeOS</a>, where it is used in the CLI.  This library is the
+same as the <a href="https://packages.qa.debian.org/e/editline.html">Debian editline</a> package, even though the origin of that
+package is <a href="https://lists.debian.org/debian-devel/2000/05/msg00548.html">somewhat unclear</a> to me.</p>
+
+<p>Today I decided to adjust the package name and bump the version number
+to indicate that my port is the same, and now slightly more advanced,
+than the Debian version.  To that end I&rsquo;ve now changed the repository
+name and prepared for merging with Debian. Getting this work accepted
+back into Debian is a completely different issue.</p>
+
+<p>Get the code as a <a href="http://www.bazaar-vcs.org">Bazaar</a> branch, or view its change log through the
+<a href="https://launchpad.net/loggerhead">Loggerhead</a> web interface:</p>
+
+<ul>
+<li>bzr branch <a href="http://git.troglobit.com/editline.git">http://bzr.vmlinux.org/editline</a></li>
+<li><a href="http://git.troglobit.com/editline.git">Loggerhead web interface</a></li>
+<li><a href="http://troglobit.com/editline.html">New homepage</a></li>
+</ul>
+
+
+<p>I now intend to do some further integration work, adapting the <code>debian/</code>
+directory from editline-1.12-5 and smoothing out any remaining issues
+before I release 1.13.0.</p>
 ]]></content>
   </entry>
   

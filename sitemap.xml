@@ -171,13 +171,113 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://troglobit.github.io/blog/2009/05/18/howto-setup-and-run-xen/</loc>
-    <lastmod>2009-05-18T01:51:42+02:00</lastmod>
+    <loc>http://troglobit.github.io/blog/2011/01/09/announcing-pimd-v2-dot-1-7/</loc>
+    <lastmod>2011-01-09T19:20:57+01:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2011/01/08/announcing-pimd-v2-dot-1-6/</loc>
+    <lastmod>2011-01-08T22:40:22+01:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2010/12/31/howto-setup-debian-slash-ubuntu-to-serve-music-to-itunes/</loc>
+    <lastmod>2010-12-31T19:26:37+01:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2010/10/11/announcing-mrouted-v3-dot-9-3/</loc>
+    <lastmod>2010-10-11T23:44:28+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2010/09/08/announcing-pimd-v2-dot-1-3/</loc>
+    <lastmod>2010-09-08T23:44:49+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2010/08/29/finally/</loc>
+    <lastmod>2010-08-29T20:44:34+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2010/08/12/announcing-minix-editline-1-dot-14-dot-0/</loc>
+    <lastmod>2010-08-12T18:17:40+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2010/08/02/announcing-micro-tetris-1-dot-2-0/</loc>
+    <lastmod>2010-08-02T00:56:35+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2010/07/19/minix-editline-moves-to-git/</loc>
+    <lastmod>2010-07-19T02:40:36+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2010/07/13/git-quickie/</loc>
+    <lastmod>2010-07-13T20:45:49+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2010/07/13/howto-converting-from-bazaar-to-git/</loc>
+    <lastmod>2010-07-13T01:56:11+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2010/05/09/syntax-highlighting-in-less/</loc>
+    <lastmod>2010-05-09T19:53:19+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2010/05/01/howto-move-window-buttons-back-to-the-right-hand-side/</loc>
+    <lastmod>2010-05-01T16:46:57+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2010/04/26/best-programming-font-ever/</loc>
+    <lastmod>2010-04-26T22:44:19+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2009/06/14/oona-6-years-old/</loc>
+    <lastmod>2009-06-14T21:04:34+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2009/06/14/editline-first-post/</loc>
+    <lastmod>2009-06-14T20:44:45+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2009/06/13/howto-use-git-for-collaborative-development/</loc>
+    <lastmod>2009-06-13T00:36:07+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2009/06/13/micro-tetris/</loc>
+    <lastmod>2009-06-13T00:04:30+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2009/06/12/more-about-bzrweb-and-some-about-git/</loc>
+    <lastmod>2009-06-12T19:50:27+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2009/06/08/howto-setup-and-run-xen/</loc>
+    <lastmod>2009-06-08T23:05:42+02:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://troglobit.github.io/blog/2009/04/10/learning-about-git/</loc>
     <lastmod>2009-04-10T17:23:42+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2009/04/05/brief-libev-update/</loc>
+    <lastmod>2009-04-05T23:53:47+02:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -191,8 +291,43 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>http://troglobit.github.io/blog/2009/02/28/link-collection-2009-02-28/</loc>
+    <lastmod>2009-02-28T22:36:37+01:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2009/02/14/reminder-to-self/</loc>
+    <lastmod>2009-02-14T20:13:41+01:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>http://troglobit.github.io/blog/2009/02/10/network-programming-link-collection/</loc>
     <lastmod>2009-02-10T21:56:42+01:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2009/02/08/minix-editline-v0-dot-3-0/</loc>
+    <lastmod>2009-02-08T21:35:22+01:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2008/11/08/the-joy-of-colors/</loc>
+    <lastmod>2008-11-08T23:39:27+01:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2008/11/08/minix-editline-v0-dot-2-2/</loc>
+    <lastmod>2008-11-08T19:24:22+01:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2008/10/27/ubuntu-8-dot-10rc1-networkmanager-wtf/</loc>
+    <lastmod>2008-10-27T18:50:03+01:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2008/08/20/cross-compiler-foo/</loc>
+    <lastmod>2008-08-20T20:14:42+02:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -201,8 +336,143 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>http://troglobit.github.io/blog/2008/07/30/link-collection-w31-2008/</loc>
+    <lastmod>2008-07-30T16:22:36+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2008/07/28/howto-build-gnu-emacs-from-cvs/</loc>
+    <lastmod>2008-07-28T01:38:13+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2008/07/22/more-emacs-progress/</loc>
+    <lastmod>2008-07-22T23:56:55+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2008/07/19/no-wireless-led-on-thinkpad-t61/</loc>
+    <lastmod>2008-07-19T11:09:25+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2008/07/17/suddenly-compiz-is-not-working-anymore-dot-dot-dot/</loc>
+    <lastmod>2008-07-17T01:48:05+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2008/07/14/missing-sound-in-firefox/</loc>
+    <lastmod>2008-07-14T10:30:48+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2008/07/13/regexp-replace-in-many-files/</loc>
+    <lastmod>2008-07-13T21:38:33+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2008/06/09/minix-editline-v0-dot-2-1/</loc>
+    <lastmod>2008-06-09T23:02:22+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2008/06/09/minix-editline-v0-dot-1-4/</loc>
+    <lastmod>2008-06-09T00:49:22+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2008/06/08/minix-editline-v0-dot-1-1/</loc>
+    <lastmod>2008-06-08T00:56:22+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2008/06/07/minix-editline-v0-dot-1-0/</loc>
+    <lastmod>2008-06-07T21:45:05+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2008/02/24/enterprise-emacs/</loc>
+    <lastmod>2008-02-24T09:59:19+01:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2008/02/23/suspend-slash-resume-nightmare-in-ubuntu/</loc>
+    <lastmod>2008-02-23T20:34:44+01:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2007/07/31/bzrweb-0-dot-1-2-released/</loc>
+    <lastmod>2007-07-31T23:33:01+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2007/07/12/netapplet-patchwork/</loc>
+    <lastmod>2007-07-12T11:37:38+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2007/07/11/making-bzrweb-work-again/</loc>
+    <lastmod>2007-07-11T10:35:00+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2007/07/07/buggy-gnome-main-menu/</loc>
+    <lastmod>2007-07-07T09:52:17+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2007/03/25/vmware-kernel-modules-for-your-new-kernel/</loc>
+    <lastmod>2007-03-25T23:59:57+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2007/02/03/building-debian-slash-ubuntu-kernels/</loc>
+    <lastmod>2007-02-03T10:00:45+01:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2007/02/03/moved/</loc>
+    <lastmod>2007-02-03T09:52:15+01:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>http://troglobit.github.io/blog/2006/09/24/top-ten-unix-shell-commands/</loc>
     <lastmod>2006-09-24T00:02:42+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2006/08/13/aaaah/</loc>
+    <lastmod>2006-08-13T10:43:13+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2006/08/05/test-posting-using-blosxom/</loc>
+    <lastmod>2006-08-05T22:35:49+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2006/07/24/besiktning/</loc>
+    <lastmod>2006-07-24T22:10:27+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2006/07/23/atari-st-e-emulation-with-steem/</loc>
+    <lastmod>2006-07-23T22:10:50+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2006/07/21/bromsbyte-passat/</loc>
+    <lastmod>2006-07-21T22:10:48+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2006/07/17/make-kpkg-and-dirty-modules/</loc>
+    <lastmod>2006-07-17T22:10:24+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2006/07/17/quick-note/</loc>
+    <lastmod>2006-07-17T21:10:45+02:00</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -211,80 +481,90 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>http://troglobit.github.io/blog/2006/06/06/laptop-network-configuration-in-debian-slash-ubuntu/</loc>
+    <lastmod>2006-06-06T21:10:24+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://troglobit.github.io/blog/2006/05/26/no-news-are-good-news/</loc>
+    <lastmod>2006-05-26T21:10:42+02:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>http://troglobit.github.io/editline.html</loc>
-    <lastmod>2015-07-05T12:53:27+02:00</lastmod>
+    <lastmod>2015-07-08T22:32:17+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://troglobit.github.io/finit.html</loc>
-    <lastmod>2015-07-05T12:53:27+02:00</lastmod>
+    <lastmod>2015-07-08T22:32:17+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://troglobit.github.io/inadyn.html</loc>
-    <lastmod>2015-07-05T12:53:27+02:00</lastmod>
+    <lastmod>2015-07-08T22:32:17+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://troglobit.github.io/blog/archives/</loc>
-    <lastmod>2015-07-05T12:53:27+02:00</lastmod>
+    <lastmod>2015-07-08T22:32:17+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://troglobit.github.io/</loc>
-    <lastmod>2015-07-05T12:53:27+02:00</lastmod>
+    <lastmod>2015-07-08T22:32:17+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://troglobit.github.io/about/</loc>
-    <lastmod>2015-07-05T12:53:27+02:00</lastmod>
+    <lastmod>2015-07-08T22:32:17+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://troglobit.github.io/mrouted.html</loc>
-    <lastmod>2015-07-05T12:53:27+02:00</lastmod>
+    <lastmod>2015-07-08T22:32:17+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://troglobit.github.io/multicast-howto.html</loc>
-    <lastmod>2015-07-05T12:53:27+02:00</lastmod>
+    <lastmod>2015-07-08T22:32:17+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://troglobit.github.io/pimd.html</loc>
-    <lastmod>2015-07-05T12:53:27+02:00</lastmod>
+    <lastmod>2015-07-08T22:32:17+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://troglobit.github.io/smcroute.html</loc>
-    <lastmod>2015-07-05T12:53:27+02:00</lastmod>
+    <lastmod>2015-07-08T22:32:17+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://troglobit.github.io/snake.html</loc>
-    <lastmod>2015-07-05T12:53:27+02:00</lastmod>
+    <lastmod>2015-07-08T22:32:17+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://troglobit.github.io/tetris.html</loc>
-    <lastmod>2015-07-05T12:53:27+02:00</lastmod>
+    <lastmod>2015-07-08T22:32:17+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://troglobit.github.io/uftpd.html</loc>
-    <lastmod>2015-07-05T12:53:27+02:00</lastmod>
+    <lastmod>2015-07-08T22:32:17+02:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

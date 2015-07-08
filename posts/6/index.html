@@ -1,0 +1,913 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Troglobit</title>
+  <meta name="author" content="Joachim Nilsson">
+
+  
+  <meta name="description" content="This is mainly some notes for myself so I don&rsquo;t forget. Having worked
+with GNU Bazaar before much of Git is still alien to me. This HowTo is &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://troglobit.github.io/posts/6">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Troglobit" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/favicon.png" rel="icon">
+<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Troglobit</a></h1>
+  
+    <h2>&#8220;Elegance is not a dispensable luxury&#8221; &mdash; Edsger Wybe Dijkstra</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="troglobit.github.io">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/about">About</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="http://git.troglobit.com">GIT</a></li>
+  <li><a href="/finit.html">Finit</a></li>
+  <li><a href="/inadyn.html">Inadyn</a></li>
+  <li><a href="/smcroute.html">SMCRoute</a></li>
+  <li><a href="/mrouted.html">mrouted</a></li>
+  <li><a href="/pimd.html">pimd</a></li>
+  <li><a href="/uftpd.html">uftpd</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/06/13/howto-use-git-for-collaborative-development/">HowTo Use Git for Collaborative Development</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-06-13T00:36:07+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>12:36 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This is mainly some notes for myself so I don&rsquo;t forget.  Having worked
+with <a href="http://bazaar-vcs.org/">GNU Bazaar</a> before much of Git is still alien to me.</p>
+
+<p>This HowTo is divided into two parts:</p>
+
+<ol>
+<li>what happens on your laptop, and</li>
+<li>what you must do on a remote server where you publish your changes</li>
+</ol>
+
+
+<p>So, let&rsquo;s start stimple:</p>
+
+<pre><code>laptop&gt; mkdir projectX; cd projectX
+laptop&gt; git init
+laptop&gt; emacs file1.txt
+laptop&gt; git add file1.txt
+laptop&gt; git commit -m "Initial commit"
+</code></pre>
+
+<p>Thus far no suprises, right?  Now, some nasty git bits:</p>
+
+<pre><code>laptop&gt; emacs file1.txt
+laptop&gt; git commit
+</code></pre>
+
+<p>Yep, doesn&rsquo;t work. You have to add -a to the command line for &ldquo;all&rdquo;.</p>
+
+<pre><code>laptop&gt; git commit -a
+</code></pre>
+
+<p>OK, so next item.  How to publish this so others can see? Well, I have a
+shell account on a remote server, so I naturally try:</p>
+
+<pre><code>laptop&gt; git push sftp://login@example.com/pub/git/projectX.git
+fatal: I don't handle protocol 'sftp'
+</code></pre>
+
+<p>Does not work. OK, next obvious choice:</p>
+
+<pre><code>laptop&gt; git push ssh://login@example.com/pub/git/projectX.git
+fatal: '/pub/git/projectX.git': unable to chdir or not a git archive
+fatal: The remote end hung up unexpectedly
+</code></pre>
+
+<p>Wow, not a clue as to how I should proceed.  After some Google-Foo I
+found <a href="http://toolmantim.com/articles/setting_up_a_new_remote_git_repository">this article</a> detail the steps for remote repos.  Very messy,
+compared to Bazaar.</p>
+
+<pre><code>laptop&gt; ssh login@example.com
+server&gt; cd /pub/git
+server&gt; mkdir projectX.git; cd projectX.git
+server&gt; git --bare init
+server&gt; logout
+laptop&gt; git remote add origin ssh://crash@vmlinux.org/pub/git/tetris.git
+laptop&gt; git push
+No refs in common and none specified; doing nothing.
+Perhaps you should specify a branch such as 'master'.
+fatal: The remote end hung up unexpectedly
+error: failed to push some refs to 'ssh://login@example.com/pub/git/projectX.git'
+laptop&gt; git push origin master
+Counting objects: 29, done.
+Compressing objects: 100% (26/26), done.
+Writing objects: 100% (29/29), 9.54 KiB, done.
+Total 29 (delta 10), reused 0 (delta 0)
+To ssh://login@example.com/pub/git/projectX.git
+* [new branch]      master -&gt; master
+</code></pre>
+
+<p>Eventually I made it sing.  The first <code>git push</code> must use the references
+to origin and master.  At least you don&rsquo;t have to care about that later,
+after the first push command git remembers what you want.</p>
+
+<p>Only one thing left, in the gitweb project overview projectX is listed
+as having no description.  Of course, since I&rsquo;m starting to get to know
+git by now, I realised early this is probably not something that is
+propagated through push — yep, I was right.  You have to change that on
+the server.</p>
+
+<pre><code>laptop&gt; ssh login@example.com
+server&gt; cd /pub/git/projectX.git
+server&gt; echo "Secret Project-X use ROT13 to decode all source files" &gt;description
+server&gt; logout
+</code></pre>
+
+<p>All done! <em>phew</em></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/06/13/micro-tetris/">Micro Tetris™</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-06-13T00:04:30+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>12:04 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I just published the <a href="http://git.troglobit.com/tetris.git">unobfuscated version</a> of the
+<a href="http://www.ioccc.org/1989/tromp.hint">1989 IOCCC Best Game</a> entry, Tetris™.  See the original author&rsquo;s,
+<a href="http://tromp.github.io/tetris.html">John Tromp</a>, home page for the game for details.  But suffice it to
+say, this is an extremely bare bones version of the classic game and
+very similar to the <a href="http://www.ibiblio.org/pub/linux/games/bsd-games-2.17.tar.gz">BSD games&#8217;</a> version.</p>
+
+<p>Actually, this similarity in board layout, key combinations and feel led
+me to do some archaeological digging.  I dowloaded the classic BSD games
+collection and, after having called <a href="http://www.gnu.org/software/indent/">GNU Indent</a> on the obfuscated
+code, I started noticing such extreme similarities that just could not
+be coincidental.  The layout and constructs of the code are virtually
+the same, so I can only conclude that they must share the same ancestor.
+Maybe this code is that ancestor, considering that the BSD Tetris is
+copyrighted in 1992 and this version stems from 1989, it is maybe not a
+completly illogical conclusion.</p>
+
+<p>See for yourself.</p>
+
+<ul>
+<li><a href="http://git.troglobit.com/tetris.git">tetris.git</a></li>
+<li><a href="http://www.ibiblio.org/pub/linux/games/bsd-games-2.17.tar.gz">BSD Games</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/06/12/more-about-bzrweb-and-some-about-git/">More About Bzrweb and Some About Git</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-06-12T19:50:27+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>7:50 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>OK, I admit it.  I cannot decide what version control system (VCS) to
+use.  I&rsquo;m stuck between the speed and massive snow ball effect of
+<a href="http://git-scm.com/">Git</a> and the ease of use and emotional attachment I have to
+<a href="http://bazaar-vcs.org/">Bazaar</a>.</p>
+
+<p>I&rsquo;ve been &ldquo;maintaining&rdquo; bzrweb for a while now, not doing a very good
+job of it though.  It&rsquo;s lagging behind considerably to the bzr API.
+After the upgrade of vmlinux.org to the latest Ubuntu server release
+bzrweb actually didn&rsquo;t work at all.  If it hadn&rsquo;t been for
+<a href="https://code.launchpad.net/~halfdan/bzrweb">the fixes</a> by <a href="http://halfdans.net/">Rasmus Toftdahl Olesen</a> I would probably have
+abandoned it entirely.  Thank you Rasmus!  Anyway, I&rsquo;ve been gleaning at
+other Bazaar web frontends for a while.  The only real option is
+Loggerhead, but even though I consider myself a computer pro I just
+cannot seem to wrap my head around how to set it up.  I just wanted to
+setup a local browser for my user, without the need for root access.
+Like bzrweb supports, after having abandoned that, seemingly radical
+idea, I tried setting up a site wide shared installation &hellip; no luck so
+far. :-/</p>
+
+<p>In comparison to Loggerhead I easily managed to setup a Git repository
+browser, using a <code>/pub/git</code> structure, see <a href="http://git.troglobit.com/">git.vmlinux.org</a>.  The
+gitweb package in Ubuntu was very easy to setup, the one only thing I
+had problem with was the Apache VirtualHost setup.  Some sleep cured
+that, but I should post the conf here, in case someone else experiences
+trouble.</p>
+
+<p>I&rsquo;ll have another go at setting up Loggerhead later, or perhaps try to
+fixup bzrweb.  I&rsquo;m currently leaning towards fixing up bzrweb.  Fix bugs
+viewing tree files, refactor tarball export and a new project summary
+page, are some of the most interesting things I can come up with.  If
+only things could settle down at work for a while — oh well, vacation is
+coming up. Soon, my precious, soon&nbsp;&hellip;</p>
+
+<p>First, however, I will publish the micro vt100/ansi tetris version I
+found last week.  It will be the second project where I use Git, the
+first one was <code>cons</code>, which is a Xen xm wrapper for non privileged
+users.</p>
+
+<p>Some Git and Bazaar links:</p>
+
+<ul>
+<li><a href="http://www.spheredev.org/wiki/Git_for_the_lazy">Git for the Lazy</a> :-)</li>
+<li><a href="http://appletree.or.kr/quick_reference_cards/CVS-Subversion-Git/">CVS, Subversion &amp; Git Refcards</a></li>
+<li><a href="http://www.fthieme.net/drupal6/node/77">Converting Bzr to Git</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/06/08/howto-setup-and-run-xen/">Howto Setup and Run Xen</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-06-08T23:05:42+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>8</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>11:05 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This is an extremly brief and quick <a href="http://www.xenproject.org/">Xen</a> tutorial. There are lots of
+them already, see your GNU/Linux distribution&rsquo;s wiki, HowtoForge or
+other places for a starter guide. This particular HowTo deals with
+setting up Xen as easy as possible using Ubuntu 8.04 LTS as host
+operating system (dom0 in Xen terms) and Ubuntu 9.04 as guest operating
+systems (domU in Xen lingo).</p>
+
+<p>Ubuntu 8.04 LTS comes with a Xen kernel that can run as dom0. This is
+quite important, so pay attention to setting that up correctly. For this
+I recommend the <a href="http://howtoforge.org/high-performance-xen-on-ubuntu-8.04-amd64">HowtoForge Tutorial</a>.</p>
+
+<p><strong>Note:</strong> you will need to upgrade the default Xen 3.2 to 3.3 to be able
+to run the latest distributions as guest OS.  See this
+<a href="https://answers.launchpad.net/ubuntu/+question/50326">Ubuntu question</a> for more insight.  To get Xen 3.3, simply activate
+the Hardy backports repository in your <code>/etc/apt/sources.list</code> and, as
+usual, pay attention to your <code>/boot/grub/menu.lst</code> so that it points out
+the Xen 3.3 image in the <code>defaults=</code> option.</p>
+
+<p>When done with the basic setup you should install pygrub on your host,
+this is a truly magic piece of software that makes it possible to boot
+all guests using their own kernel and modules.  See the <a href="http://wiki.debian.org/PyGrub">Debian wiki</a>
+for some details on install and setup.  Then ignore what you read and do
+like this:</p>
+
+<pre><code># /var/lib/xend/domains/example/config.sxp - Xen domU example.
+# Note the order of partitions in disk=[], the first listed partition
+# is the partition where your /boot (grub) resides. 
+bootloader  = '/usr/bin/pygrub'
+
+builder     = 'linux'
+memory      = '2048'
+root        = '/dev/xvda1 ro'
+
+disk        = [
+  'phy:/dev/disk/by-uuid/df3418f5-2fc3-443c-8e64-4395828dc678,xvda1,w',
+  'phy:/dev/disk/by-uuid/acecf01e-c4d9-4a7b-b18a-681c69f71173,xvda2,w',
+]
+
+name        = 'example'
+
+vif         = [ 'bridge=eth1' ]
+dhcp        = "off"
+ip          = "12.34.56.78"
+netmask     = "255.255.255.252"
+gateway     = "12.34.56.77"
+hostname    = "example"
+
+on_poweroff = 'destroy'
+on_reboot   = 'restart'
+on_crash    = 'restart'
+vcpus       = 1
+extra       = 'xencons=tty1'
+</code></pre>
+
+<p>When installing grub on your guest, don&rsquo;t pay any attention to Grub
+complaining about not being able to map <code>/dev/xvda1</code> to a BIOS disk.
+pyGrub doesn&rsquo;t care about such wordly things as physical disks.  Just
+make sure the <code>/boot</code> directory&rsquo;s partition (often <code>/</code>) is the first
+listed in the <code>disk=[]</code> array above.</p>
+
+<p>You may need to edit the <code>update-grub</code> script before you install grub,
+it is located at <code>/usr/sbin/update-grub</code>.  Search for <code>in_xen</code>, a fairly
+long way down.  Make sure it&rsquo;s set to <code>in_xen=1</code> before the big
+<code>if[]</code>-clause that depends on it.  Without this fix the Xen able kernels
+in Ubuntu 9.04, and later, are not detected.</p>
+
+<p>Now run <code>update-grub</code> and answer yes to the questions. Take good care to
+verify that the script actually finds one active (server) kernel and
+adds it properly to your <code>/boot/grub/menu.lst</code> file.</p>
+
+<p>Another common problem is the lack of a console login.  Usually you
+don&rsquo;t need one, but if you&rsquo;d like to check your domU from within your
+dom0 you need to add the file &ldquo;console&rdquo; to <code>/etc/event.d</code></p>
+
+<pre><code># console - getty
+#
+# This service maintains a getty on the Xen serial console
+# from the point the system is started until it is shut
+# down again.
+
+start on stopped rc2
+start on stopped rc3
+start on stopped rc4
+start on stopped rc5
+
+stop on runlevel 0
+stop on runlevel 1
+stop on runlevel 6
+
+respawn
+exec /sbin/getty 38400 console
+</code></pre>
+
+<p>That should do the trick!  If it doesn&rsquo;t, then there&rsquo;s plenty of help to
+find in the Debian and Ubuntu wikis, see links above. Good luck!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/04/10/learning-about-git/">Learning About GIT</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-04-10T17:23:42+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>5:23 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>It has been a long time coming, but now I&rsquo;m seriously starting to look
+at <a href="http://git-scm.com/">Git</a>.  Git is the content tracker used by the
+<a href="http://www.kernel.org">Linux kernel</a> folks, initially developed by
+Torvalds.</p>
+
+<p>At <a href="http://www.westermo.com">Westermo R&amp;D</a> we use Subversion for our
+daily operations and today I started migrating the software to Git.
+Mainly just to get a comparison of performance, storage size and to
+explore how we can use Git on top of svn to become more productive when
+working in parallel in different teams.  We&rsquo;ve tried this quite
+extensively before, using Subversion branches and even though it&rsquo;s a
+heck of a lot easier to use compared to CVS its strength is not in
+merging.</p>
+
+<p>The new
+<a href="http://subversion.tigris.org/merge-tracking/func-spec.html">merge tracking</a>
+feature in Subversion 1.5 and features like
+<a href="http://subversion.tigris.org/svn_1.6_releasenotes.html#tree-conflicts">detection of tree conflicts</a>
+in, the recently released, 1.6 helps.  However, working in small teams,
+disconnected from a centralised server is still not possible with svn,
+OK sure there is <a href="http://svk.bestpractical.com/">svk</a>, but honestly,
+doesn&rsquo;t that make you think of CVS and bolting on features after the
+fact, similar to <a href="http://www.cvsnt.org/">CVSNT</a> or
+<a href="http://opencvs.org/">OpenCVS</a>.  Intriguingly bizarre projects. :-)</p>
+
+<p>The reasons for trying out Git are not only related to any short comings
+of Subversion, Git has lot of strong points on its own.  See
+<a href="http://www.vijedi.net/2009/reasons-for-using-the-git-svn-bridge/">here</a>
+for instance:</p>
+
+<ul>
+<li>SHA-1 hashes for each commit, makes it possible to easier detect history corruptions</li>
+<li>Local developer branches</li>
+<li>Fast branch switching</li>
+<li>Cherry picking commits from other branches, easily</li>
+<li>Stashing/Shelving, i.e. put aside things you&rsquo;re working on for later</li>
+</ul>
+
+
+<p>I&rsquo;ve started collecting a set of links that seem to be useful:</p>
+
+<ul>
+<li><a href="http://tsunanet.blogspot.com/2007/07/learning-git-svn-in-5min.html">Learning git-svn in five minutes</a></li>
+<li><a href="http://www.kernel.org/pub/software/scm/git/docs/git-svn.html">The git-svn(1) man page</a></li>
+<li><a href="http://git.or.cz/course/svn.html">Git - SVN Crash Course</a></li>
+<li><a href="http://utsl.gen.nz/talks/git-svn/intro.html">An introduction to git-svn for Subversion users and deserters</a></li>
+<li><a href="http://flavio.castelli.name/howto_use_git_with_svn">How to use Git and SVN together</a></li>
+<li><a href="http://tsgates.cafe24.com/git/git-emacs.html">A guided tour of emacs-git</a></li>
+<li><a href="http://xtalk.msk.su/~ott/en/writings/emacs-vcs/EmacsGit.html">Work with Git from Emacs</a></li>
+<li><a href="http://www.emacswiki.org/emacs/Git">EmacsWiki:Git</a></li>
+</ul>
+
+
+<p>I&rsquo;ll conclude this post with two YouTube entries, first is the, now
+classic, presentation by
+<a href="http://www.youtube.com/watch?v=4XpnKHJAok8">Linus Torvalds on what Git isn&rsquo;t</a>
+&hellip; and then
+<a href="http://www.youtube.com/watch?v=8dhZ9BXQgc4">Randal Schwartz on what Git is</a>
+&hellip;</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/04/05/brief-libev-update/">Brief Libev Update</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-04-05T23:53:47+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>5</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>11:53 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I have now updated the <a href="https://github.com/troglobit/toolbox/tree/master/libev-examples">libev examples</a>.  It took me a while, but
+during that time I have been hard at work converting two of our network
+daemons to use <a href="http://software.schmorp.de/pkg/libev.html">libev</a>.  As of today the upcoming <a href="http://www.westermo.com">Westermo</a> WeOS
+uses libev in both its rstpd and igmpd implementations.</p>
+
+<p>Updated example code:</p>
+
+<ul>
+<li><a href="https://github.com/troglobit/toolbox/blob/master/libev-examples/event-demo.c">timer test</a></li>
+<li><a href="https://github.com/troglobit/toolbox/blob/master/libev-examples/event-demo2.c">message queue test</a></li>
+</ul>
+
+
+<p>Enjoy, and feel free to <a href="Joachim">contact me</a> if you have any questions or
+comments on the code.  For libev specific help I can really recommend
+their <a href="http://lists.schmorp.de/mailman/listinfo/libev">mailing list</a>!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/28/the-marvellous-libev/">The Marvellous Libev</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-03-28T23:00:00+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>11:00 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>A very good friend mine recently told me about a neat event library,
+<a href="http://software.schmorp.de/pkg/libev">libev</a>.  Usually when he drops me
+links like that it takes me a couple of years to react and finally
+adopt.</p>
+
+<p>This time it only took me about a month.</p>
+
+<p>He has actually showed me lots of very useful stuff throughout the
+years, and even though we used GNU/Linux at university, he was one
+those hard core people who showed me the path into a successful
+full-time career as a Linux developer. I don&rsquo;t think I have ever
+thanked you properly for that, Jakob!</p>
+
+<p>As it turns out libev was exactly what I have been looking for, for
+years!  Way back in 2005 when I switched jobs I started working with a
+scary home brew code base ported to Linux from VxWorks.  From the
+original code only the basic state machine, basic election algorithms
+and some other minor glue code remains.  I have slowly refactored the
+code base into something, hopefully, more maintainable.</p>
+
+<p>The one missing piece was the timer implementation.  The old code used
+to create a new pthread for each new timeout.  I tried replacing it with
+code of
+<a href="https://github.com/troglobit/toolbox/blob/master/timer/timer.c">my own</a>,
+based on Don Libes
+<a href="http://www.kohala.com/start/libes.timers.txt">&ldquo;Implementing Software Timers&rdquo;</a>.
+As it turns out libev already has (working) timers, in fact, it has
+taken an even more complete approach and made almost everything into
+events with callbacks, perfect for state machines!</p>
+
+<p>After having done
+<a href="https://github.com/troglobit/toolbox/blob/master/event-demo.c">some initial testing</a>
+of the libev timers I put on a big smile and fired up Emacs to
+investigate what other parts of that home brew code base were eligible
+for replacement, when i suddenly hit me: the state machine consists of a
+couple of threads that pass messages between them using <code>msgsnd()</code> and
+<code>msgrcv()</code>, bad old XSI IPC primitives.  Bad guys that don&rsquo;t use
+standard file descriptors.  A quick and dirty hack confirms it. I
+started looking around and I had a vague recollection of some message
+primitives that actually used file descriptors.  On the mailing list
+Marc (Lehman) was as always extremely quick to answer my questions and
+with his help I eventually found the <code>mq_overview(7)</code> man page:</p>
+
+<blockquote><p>Polling message queue descriptors
+    On Linux, a message queue descriptor is actually a file descriptor,
+    and can be monitored using select(2), poll(2), or epoll(7). This
+    is not portable.</p></blockquote>
+
+<p>Wow, I could hardly wait until I, later that day, could get my hands on
+the keyboard again and try it out!  Yes, the POSIX message queue
+primitives work!  Here is my
+<a href="https://github.com/troglobit/toolbox/blob/master/event-demo2.c">sample message queue code</a>.
+Compile it in Emacs with <code>M-x compile</code> (I have that bound to F9 in my
+.emacs, Borland IDE style :)</p>
+
+<p>Thus far I must say I can really recommend libev!  Even though it isn&rsquo;t
+<a href="http://www.openbsd.org/policy.html">ISC licensed</a>, it&rsquo;s dual licensed
+under the
+<a href="http://en.wikipedia.org/wiki/BSD_licenses">2-clause BSD license</a> and
+the <a href="http://www.gnu.org/copyleft/gpl.html">GNU GPL</a>.  In my case I&rsquo;ll go
+with the 2-clause BSD license, which according to Wikipedia is
+&ldquo;functionally equivalent&rdquo; to the
+<a href="http://en.wikipedia.org/wiki/MIT_License">MIT license</a>.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/03/27/why-i-like-c/">Why I Like C</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-03-27T00:37:42+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>12:37 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I thought I was alone, but it turns out I&rsquo;m not.
+<a href="http://netsplit.com">Scott James Remnant</a> describes exactly what I&rsquo;ve
+been feeling the last couple of years.  Read his
+<a href="https://web.archive.org/web/20121019061557/http://netsplit.com/2009/03/26/the-fallacy-of-high-level-languages/">blog entry</a>
+on the subject.  I couldn&rsquo;t agree more.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/02/28/link-collection-2009-02-28/">Link Collection 2009-02-28</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-02-28T22:36:37+01:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>10:36 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.linuxinsight.com/proc_sys_vm_block_dump.html">This makes it possible</a> to debug why a disk needs to spin up, and to
+increase battery life even more.</p>
+
+<p>Dislike NetworkManager? Try <a href="http://wicd.sourceforge.net/">wicd</a>&nbsp;&hellip;</p>
+
+<p>Minimalistic distro <a href="http://crunchbanglinux.org/">Crush Bang Linux 8.10</a></p>
+
+<p>Ah, what every <a href="https://en.wikipedia.org/wiki/Free_and_open-source_software">FLOSS</a> dad is looking for, a way to make your kids
+interested in <a href="http://www.kernel.org/">your world</a> instead of the dark side, and what is
+better than to trick them into it with a cool Linux game?
+<a href="http://www.hermann-uwe.de/blog/teeworlds--a-fun-fast-paced-open-source-online-multiplayer-shooter">Read Uwe Hermann&rsquo;s blog about Teeworlds</a>, or visit the
+<a href="http://www.teeworlds.com/">home page</a>.</p>
+
+<p>OK, so my kids are five and three years old, maybe <a href="http://www.worldofgoo.com/">World of Goo</a> is
+more to their liking? ;-)  Try the <a href="http://www.worldofgoo.com/dl2.php?lk=demo">demo here</a>!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/02/14/reminder-to-self/">Reminder to Self</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-02-14T20:13:41+01:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>8:13 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>How to recode AVI-files to be able to write them to a <a href="http://en.wikipedia.org/wiki/Video_CD">Video CD</a>.</p>
+
+<pre><code>ffmpeg -i original.avi -target pal-vcd copy.mpg
+vcdimager -t vcd1 -l "Title" -c vcd.cue -b vcd.bin copy.mpg
+cdrdao write --device /dev/cdrw vcd.cue
+</code></pre>
+
+<p><strong>Note:</strong> <code>vcdimager</code> is able to take multiple .mpg files as argument,
+very useful when burning multiple family videos to the same disc!</p>
+
+<hr />
+
+<p>Tip from <a href="http://nummerfem.se/">Johan Risberg</a> on how to be able to reattach a UTF-8 Linux
+screen session from Cygwin.  First, start irssi in a screen from a
+Linux login with <code>LANG=LANG en_US.utf8</code>.  Then reattach to the screen,
+preferably using <code>-xRR</code>, with <code>LANG=C</code> from <a href="http://www.cygwin.org/cygwin">Cygwin</a>.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/posts/7">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/posts/5">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Projects</h1>
+  <ul>
+    <li><a href="/finit.html">Fast Init Replacement</a></li>
+    <li><a href="/uftpd.html">Micro TFTP/FTP Daemon</a></li>
+    <li><a href="/tetris.html">Micro Tetris&trade;</a></li>
+    <li><a href="/snake.html">Micro Snake</a></li>
+    <li><a href="/editline.html">Minix Editline</a></li>
+    <li><a href="/inadyn.html">Inadyn DDNS Client</a></li>
+    <li><a href="/multicast-howto.html">Multicast HowTo</a></li>
+    <li><a href="/mrouted.html">The Original Multicast Routing Daemon</a></li>
+    <li><a href="/pimd.html">The Original PIM-SM Daemon</a></li>
+    <li><a href="/smcroute.html">SMCRoute Static Multicast Routing</a></li>
+  </ul>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/07/02/howto-using-lite-with-a-git-based-application/">HowTo: Using -lite With a GIT-based Application</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/">HowTo: Push to Multiple GIT Repos With One Command</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/">HowTo: Apache With Gitweb on Debian 8.1</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/">Inetd Support in Finit v1.12</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/01/24/finit-v1-dot-11-released/">Finit v1.11 Released!</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/troglobit">@troglobit</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'troglobit',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+<section>
+  <h1>Latest Tweets</h1>
+
+  <a class="twitter-timeline" data-dnt="true"
+     href="https://twitter.com/troglobit"
+     data-widget-id="365667052100415488">Tweets by @troglobit</a>
+  <script>!function(d,s,id){var
+    js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</section>
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Joachim Nilsson -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

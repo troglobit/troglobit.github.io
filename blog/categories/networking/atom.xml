@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Networking | Troglobit]]></title>
+  <link href="http://troglobit.github.io/blog/categories/networking/atom.xml" rel="self"/>
+  <link href="http://troglobit.github.io/"/>
+  <updated>2015-07-08T22:32:17+02:00</updated>
+  <id>http://troglobit.github.io/</id>
+  <author>
+    <name><![CDATA[Joachim Nilsson]]></name>
+    <email><![CDATA[troglobit@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu 8.10rc1 &mdash; NetworkManager WTF?!]]></title>
+    <link href="http://troglobit.github.io/blog/2008/10/27/ubuntu-8-dot-10rc1-networkmanager-wtf/"/>
+    <updated>2008-10-27T18:50:03+01:00</updated>
+    <id>http://troglobit.github.io/blog/2008/10/27/ubuntu-8-dot-10rc1-networkmanager-wtf</id>
+    <content type="html"><![CDATA[<p>I tried upgrading from Hardy Heron to Intrepid Ibex this weekend.  Big
+mistake.  If I disregard the total dpkg meltdown that I, as usually, had
+to resolve manually there still remains this recurring madness called
+Network Manager.</p>
+
+<p>I&rsquo;m an engineer.  I have a masters degree in computer engineering.  I
+have worked professionally with GNU/Linux since 2000 and been a die hard
+user of it since I left OS/2 behind in 1996.  But come on!  Why does it
+take a software engineer to perform a simple upgrade?  Even worse, why
+do I have to be a network engineering specialist to figure out why
+simple wired ethernet doesn&rsquo;t work out of the box?</p>
+
+<p>Network Manager fails completely to:</p>
+
+<ol>
+<li>Select wired network over an open Telia hotspot</li>
+<li>Distinguish between my primary and secondary wired interfaces</li>
+<li>Completely loses my <code>/etc/resolv.conf</code> all the time</li>
+</ol>
+
+
+<p>Sorry, but that is completely inexcusable!  <a href="http://www.gnome.org/projects/NetworkManager/">Network Manager</a>, you
+suck!  &ldquo;Pain-Free Networking&rdquo;, my ass! :-P</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Netapplet Patchwork]]></title>
+    <link href="http://troglobit.github.io/blog/2007/07/12/netapplet-patchwork/"/>
+    <updated>2007-07-12T11:37:38+02:00</updated>
+    <id>http://troglobit.github.io/blog/2007/07/12/netapplet-patchwork</id>
+    <content type="html"><![CDATA[<p>I think I&rsquo;ve finally done it &mdash; achieved my ultimate goal of
+combining the awesome powers of the Debian <code>/etc/network/interfaces</code>
+file with <code>guessnet</code>, <code>wpa_supplicant</code>, <code>ifplugd</code> and now also with
+netapplet!</p>
+
+<p>I&rsquo;ve been looking for a way to just point-and-click to select a
+different access point, both at home and at work.  To that end I have a
+pretty advanced interfaces file that automatically detects where I am,
+what I am connected with (cable/wireless) and then, like magic, sets it
+all up.</p>
+
+<p>Several times now I have tried, really hard, to get used to and live my
+life with <a href="http://www.gnome.org/projects/NetworkManager/">Network Manager</a>, but it&rsquo;s just plain impossible.  It
+still doesn&rsquo;t integrate well with Debian ifupdown et consortes and until
+now I&rsquo;ve been using <code>ifup</code> to select different wireless mappings:</p>
+
+<pre><code>$ sudo ifdown eth2; sudo ifup eth2=WLAN
+Password: ***********
+[Use crappy work AP to access VPN tunnel]
+$ sudo ifdown eth2; sudo ifup eth2=NETLET
+Password: ***********
+[Use family WRT54GL access point]
+</code></pre>
+
+<p>For the last couple of days I&rsquo;ve been looking into getting the old
+(obsoleted?) Netapplet from Novell.  Since I&rsquo;m a Ubuntu user I&rsquo;m using
+the Debian patched-up version by <a href="http://mjg59.livejournal.com/">Matthew Garrett</a> (thanks!).  I
+remember using it a couple of years back, at that time I think it worked
+but now it didn&rsquo;t &mdash; not well at least.  I found several bugs and
+quirks that I have now fixed and published in my own &ldquo;repository&rdquo;.</p>
+
+<p>I have published everything as a Bazaar branch, one changeset per patch
+(small patches), at <a href="https://web.archive.org/web/20090528101921/http://vmlinux.org/jocke/bzr/netapplet-1.0.8/">http://vmlinux.org/jocke/bzr/netapplet-1.0.8</a>,
+which can be viewed <a href="https://web.archive.org/web/20090528101921/http://vmlinux.org/jocke/bzr/">here</a> using bzrweb.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Quick Note]]></title>
+    <link href="http://troglobit.github.io/blog/2006/07/17/quick-note/"/>
+    <updated>2006-07-17T21:10:45+02:00</updated>
+    <id>http://troglobit.github.io/blog/2006/07/17/quick-note</id>
+    <content type="html"><![CDATA[<p>About that <code>/etc/network/interface</code> autoconfig thingy: it&rsquo;s almost done.
+Works perfect &hellip; at work (connected) and at home (wireless).  I need to
+fine tune the tests, I think, to get the connected stuff to work at home
+too.  The problem seems to be that the test to see if the machine is
+connected at home is that the MAC it looks for to ID the office network
+also is available from home, via the VPN.  I&rsquo;ll get back on the subject
+as soon as I&rsquo;ve done some more tests.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Laptop Network Configuration in Debian/Ubuntu]]></title>
+    <link href="http://troglobit.github.io/blog/2006/06/06/laptop-network-configuration-in-debian-slash-ubuntu/"/>
+    <updated>2006-06-06T21:10:24+02:00</updated>
+    <id>http://troglobit.github.io/blog/2006/06/06/laptop-network-configuration-in-debian-slash-ubuntu</id>
+    <content type="html"><![CDATA[<p>I have three network cards in my laptop.  Two built-in and one PCMCIA
+card.  I&rsquo;m currently investigating how I can migrate from using the slow
+and tedious gnome-network &amp; C:o tools to the more integrated
+Debian/Ubuntu tools <code>ifupdown</code>, <code>guessnet</code>, <code>ifplugd</code> and <code>waproamd</code>
+instead.  As usual Debian has a fine and clever way of handling all this
+with their <code>/etc/network/interface</code> file.  To learn more about this
+<a href="http://www.debian.org/doc/manuals/reference/ch-gateway.en.html">fine management interface</a> I&rsquo;m reading the well written book
+<a href="http://debiansystem.info/">The Debian System</a> by <a href="http://madduck.net/blog/">Martin F. Krafft</a>.  I highly recommend it
+to others wanting to learn the essentials of their Debian (based)
+system.</p>
+
+<p>What I wanted to do is quite simple actually: the built-in wired
+interface, named <code>eth0</code>, should on link-up default to a specific IP
+address if ARP reveals a certain MAC on the network.  If plugged in to
+an unknown net <code>eth0</code> should go up with DHCP.  If <code>eth0</code> is not up then
+the built-in wlan card, <code>eth1</code>, should be tried with two different
+ESSID&rsquo;s, work and home, in that order.  If none of the ESSID&rsquo;s could be
+found any open WiFi access point should be the tried with DHCP.  The
+last interface, <code>eth2</code>, is the PCMCIA card and is only used for the lab
+net and always have the same IP address if plugged in completely
+ignoring link status.</p>
+
+<p>When I&rsquo;ve implemented the above I&rsquo;ll post the result here.</p>
+]]></content>
+  </entry>
+  
+</feed>

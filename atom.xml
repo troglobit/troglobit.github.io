@@ -4,7 +4,7 @@
   <title><![CDATA[Troglobit]]></title>
   <link href="http://troglobit.github.io/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-07-05T12:53:27+02:00</updated>
+  <updated>2015-07-08T22:32:17+02:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -892,7 +892,7 @@ faster to transfer files over TFTP.</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[HowTo Add Multicast Routing Support to the FreeBSD Kernel]]></title>
+    <title type="html"><![CDATA[HowTo: Add Multicast Routing to FreeBSD Kernel]]></title>
     <link href="http://troglobit.github.io/blog/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/"/>
     <updated>2014-09-23T01:55:19+02:00</updated>
     <id>http://troglobit.github.io/blog/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel</id>

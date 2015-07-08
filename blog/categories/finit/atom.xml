@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Finit | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/finit/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-07-05T12:53:27+02:00</updated>
+  <updated>2015-07-08T22:32:17+02:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -174,19 +174,34 @@ commit <a href="https://github.com/troglobit/finit/commit/dea3ae8">dea3ae8</a> f
   </entry>
   
   <entry>
+    <title type="html"><![CDATA[Release of Finit v1.9]]></title>
+    <link href="http://troglobit.github.io/blog/2014/04/21/release-of-finit-v1-dot-9/"/>
+    <updated>2014-04-21T16:08:30+02:00</updated>
+    <id>http://troglobit.github.io/blog/2014/04/21/release-of-finit-v1-dot-9</id>
+    <content type="html"><![CDATA[<p>Just made it!  Here&rsquo;s the result of #Easterhack14 &ndash;
+<a href="/finit.html">Finit</a> v1.9 :-)</p>
+
+<p>Nothing fancy this time, just collecting some bug fixes, playing with
+cppcheck a bit and adding support for including .conf files.  Quite
+useful if you want to partition your configuration, or if you share
+major pieces of configuration between different platforms.</p>
+
+<p>Enjoy!</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Finit v1.8]]></title>
     <link href="http://troglobit.github.io/blog/2013/06/08/finit-v1-dot-8/"/>
     <updated>2013-06-08T00:04:00+02:00</updated>
     <id>http://troglobit.github.io/blog/2013/06/08/finit-v1-dot-8</id>
-    <content type="html"><![CDATA[<p>It&rsquo;s been a long time coming, but here it finally is,
-<a href="/finit.html">Finit</a>
-<a href="ftp://troglobit.com/finit/finit-1.8.tar.xz">v1.8</a>!  The goodies we&rsquo;ve
-been waiting for are:</p>
+    <content type="html"><![CDATA[<p>It&rsquo;s been a long time coming, but here it finally is, <a href="/finit.html">Finit</a>
+<a href="ftp://troglobit.com/finit/finit-1.8.tar.xz">v1.8</a>!  The goodies we&rsquo;ve been waiting for are:</p>
 
 <ul>
-<li> Runlevels</li>
-<li> Multiple TTYs</li>
-<li> One-shot tasks</li>
+<li>Runlevels</li>
+<li>Multiple TTYs</li>
+<li>One-shot tasks</li>
 </ul>
 
 
@@ -209,8 +224,9 @@ activate &ldquo;Press any key to activate this console.&rdquo;</p>
 Adding the flexibility from SysV init, without the complexity.  This
 is one of the key points of Finit &ndash; it should be simple!</p>
 
-<p>   finit.conf:
-     service [2345] /usr/sbin/sshd -D &ndash; OpenSSH Daemon</p>
+<pre><code>finit.conf:
+    service [2345] /usr/sbin/sshd -D -- OpenSSH Daemon
+</code></pre>
 
 <p>This command tells Finit that the OpenSSH daemon should only run in
 runlevel 2-5.  Finit will also respawn sshd if it should crash, just
@@ -224,9 +240,8 @@ is up.  This is used to to one-time probing and setup of the
 system. When done the runlevel defined in finit.conf, or the default
 2, is started.</p>
 
-<p>See the
-<a href="https://github.com/troglobit/finit/blob/master/README.rst">README</a>
-for more information, or the code for the full details.</p>
+<p>See the <a href="https://github.com/troglobit/finit/blob/master/README.md">README</a> for more information, or the code for the full
+details.</p>
 ]]></content>
   </entry>
   

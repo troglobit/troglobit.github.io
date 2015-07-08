@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Emacs | Troglobit]]></title>
+  <link href="http://troglobit.github.io/blog/categories/emacs/atom.xml" rel="self"/>
+  <link href="http://troglobit.github.io/"/>
+  <updated>2015-07-08T22:32:17+02:00</updated>
+  <id>http://troglobit.github.io/</id>
+  <author>
+    <name><![CDATA[Joachim Nilsson]]></name>
+    <email><![CDATA[troglobit@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[HowTo: Build GNU Emacs From CVS]]></title>
+    <link href="http://troglobit.github.io/blog/2008/07/28/howto-build-gnu-emacs-from-cvs/"/>
+    <updated>2008-07-28T01:38:13+02:00</updated>
+    <id>http://troglobit.github.io/blog/2008/07/28/howto-build-gnu-emacs-from-cvs</id>
+    <content type="html"><![CDATA[<p>Why would you want to do this?  Well, considering all the <a href="http://blog.orebokech.com/2008/07/emacs-snapshot-20080727-1.html">neat new things</a>
+that have been added lately it should be tempting for any old Emacs fan.</p>
+
+<p>The <a href="http://www.emacswiki.org">Emacs Wiki</a> has all the info you need, but here is a quick run-down of
+the bare necessities.  Start by <a href="http://www.emacswiki.org/cgi-bin/emacs-en/EmacsFromCVS">checking out your working copy</a>:</p>
+
+<pre><code>cvs -z3 -d:pserver:anonymous@cvs.savannah.gnu.org:/cvsroot/emacs co emacs
+cd emacs/
+./configure
+make bootstrap
+</code></pre>
+
+<p>Start with <code>./src/emacs</code> or symlink the binary to your <code>~/bin/</code> directory.
+I.e. you don&rsquo;t have to run <code>make install</code> to use it.  Users of <code>emacsclient</code>
+should symlink that to their <code>~/bin</code> as well.</p>
+
+<p>Assumptions made:</p>
+
+<ol>
+<li>you have the appropriate -dev packages installed in Debian/Ubuntu, and</li>
+<li>your <code>.bashrc</code> does indeed add <code>~/bin</code> to your search <code>$PATH</code> environment variable</li>
+</ol>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[More Emacs Progress!]]></title>
+    <link href="http://troglobit.github.io/blog/2008/07/22/more-emacs-progress/"/>
+    <updated>2008-07-22T23:56:55+02:00</updated>
+    <id>http://troglobit.github.io/blog/2008/07/22/more-emacs-progress</id>
+    <content type="html"><![CDATA[<p>Wow, I&rsquo;m almost starting to feel like a Windows user.  The latest CVS
+builds of <a href="http://www.gnu.org/software/emacs/">GNU Emacs</a> has a lot of new features:</p>
+
+<ul>
+<li>XFT Support (font anti-aliasing)</li>
+<li>Better GTK integration (desktop)</li>
+<li>A font selector!</li>
+</ul>
+
+
+<p>I use the CVS version now as my daily driver in Ubuntu 8.10.  It&rsquo;s
+really useful, and I love the improved support for debugging programs
+inside Emacs!</p>
+
+<p>I think it is quite impressive how far this little editor has come.  OK,
+so it is perhaps not just an editor anymore.  Some people claim it is a
+fully sufficient operating system and other refer to it as a kitchen
+sink.  Nevertheless, today you do not need to know any Lisp to configure
+it or grab the scroll bar with the middle mouse button or any other
+archaic method to get around.</p>
+
+<p>Still interested?  Be sure to <a href="http://www.gnu.org/software/emacs/tour/">take the tour</a> and then proceed to
+explore the wonderful world of Emacs! :)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Enterprise Emacs]]></title>
+    <link href="http://troglobit.github.io/blog/2008/02/24/enterprise-emacs/"/>
+    <updated>2008-02-24T09:59:19+01:00</updated>
+    <id>http://troglobit.github.io/blog/2008/02/24/enterprise-emacs</id>
+    <content type="html"><![CDATA[<p>Many years ago I discovered the beauty in a beast called <a href="http://www.gnu.org/software/emacs/">Emacs</a>.  I
+am actually a frequent user of both Emacs and <a href="http://www.vim.org">Vim</a>, but I firmly
+belive in the notion of <a href="http://pragmaticprogrammer.com/the-pragmatic-programmer/extracts/tips">learning one editor well</a>:</p>
+
+<blockquote><p>&ldquo;The editor should be an extension of your hand; make sure your editor
+is configurable, extensible, and programmable.&rdquo; &mdash;&nbsp;<a href="http://pragmaticprogrammer.com/the-pragmatic-programmer/extracts/tips">The Pragmatic Programmer</a></p></blockquote>
+
+<p>At the many jobs I have had, colleagues often glanced over my shoulder
+and said; &ldquo;Oh, Emacs&nbsp;&hellip; Yeah I used that ages ago when I was
+working on UNIX&nbsp;&hellip;&rdquo;, often they remember it fondly, sometimes for
+all the quirky keyboard shortcuts.  Very few know that it is still being
+actively developed.</p>
+
+<p>Emacs can be quite counter intuitive and sometimes even an outright pain
+to use.  I find it a shame that still today, after (literally) decades
+there are no sane defaults.  Once, when I was still forced to use
+Windows, I saw a setup wizard in <a href="http://ntemacs.sourceforge.net/">Win32-Emacs</a> that resembled what I
+would like to have — a sort of use cases possible to chose from.  It may
+have been some extension that was maintained in some non-official
+version, because now when I look for it I cannot find it.  But why not
+have a setup wizard in the upstream distribution of Emacs as well?</p>
+
+<p>Well, this is my gripe, the pieces of Emacs that are still unfriendly to
+users, and mostly new users, coming from Windows or MAC.  I will use
+this blog to present ideas and small things I have done to make Emacs
+more user friendly.  I call this <em>Enterprise Emacs</em>.</p>
+
+<!-- more -->
+
+
+<p>Many of the following, really obvious, settings are today available in a
+menu called &ldquo;Options&rdquo;, some are still buried deep within the scriptable
+innards and go by unfamiliar names.</p>
+
+<pre><code>;; Enterprise Emacs -- save this as your ~/.emacs
+; Scrollbar on the *right*, or none (use 'nil for none)
+(set-scroll-bar-mode 'right)
+
+; A visible marked region
+(transient-mark-mode t)
+
+; Marking text with shift + arrow keys
+(pc-selection-mode t)
+(delete-selection-mode t)
+
+; Syntax highlighting
+(global-font-lock-mode t)
+
+; A cursor that blinks so I can find it
+(blink-cursor-mode t)
+
+; A status line displaying both line *and column* of my cursor
+(column-number-mode t)
+
+; Continue at the file and position where I left off when I closed Emacs
+(desktop-save-mode t)
+</code></pre>
+
+<p>In the coming months I will present some useful tips from my bag of
+tricks.  Including, but not limited to:</p>
+
+<ul>
+<li>Auto-adjust as you type</li>
+<li>Auto-spell as you type, text and code</li>
+<li>Auto-complete words and function/method names</li>
+<li>A solution to: &ldquo;Where the h-ll is that function?&rdquo;</li>
+<li>Debugging from inside Emacs, like an IDE!</li>
+<li>Windows-like marking, with Ctrl-x, Ctrl-v and Ctrl-v</li>
+</ul>
+
+
+<p>Plus the usual Emacs features that users of Microsoft products may not
+have ever known.  To mention a few: complete indentation engine, with
+several predefined indentation modes.  Built-in calculator (converts
+between bases!)</p>
+
+<p>The first tip is Emacs-23 with (grab on to something!)  anti-aliasing of
+fonts!  Yes, it&rsquo;s still an experimental feature, and if you did not
+already know this, &ldquo;experimental&rdquo; in free/open source is often quite
+stable.  I have used it daily for >6 months and it has crashed on me
+only once.</p>
+
+<ul>
+<li><a href="http://peadrop.com/blog/2007/01/06/pretty-emacs/">Ubuntu</a></li>
+<li><a href="http://emacs.orebokech.com/">Debian</a></li>
+</ul>
+
+
+<p>Start off by installing it and discover the Options menu.  Then return to
+this blog and I will have the next installment ready.</p>
+]]></content>
+  </entry>
+  
+</feed>

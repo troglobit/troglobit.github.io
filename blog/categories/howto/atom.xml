@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Howto | Troglobit]]></title>
+  <link href="http://troglobit.github.io/blog/categories/howto/atom.xml" rel="self"/>
+  <link href="http://troglobit.github.io/"/>
+  <updated>2015-07-08T22:32:17+02:00</updated>
+  <id>http://troglobit.github.io/</id>
+  <author>
+    <name><![CDATA[Joachim Nilsson]]></name>
+    <email><![CDATA[troglobit@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[HowTo: Using -lite With a GIT-based Application]]></title>
+    <link href="http://troglobit.github.io/blog/2015/07/02/howto-using-lite-with-a-git-based-application/"/>
+    <updated>2015-07-02T17:11:55+02:00</updated>
+    <id>http://troglobit.github.io/blog/2015/07/02/howto-using-lite-with-a-git-based-application</id>
+    <content type="html"><![CDATA[<p>Many years ago now I was looking for a faster <a href="https://en.wikipedia.org/wiki/Init">init</a> for <a href="http://westermo.com/">work</a>.
+I found <a href="http://helllabs.org/finit/">Finit</a> and since then I&rsquo;ve been working on improving upon
+it.  My <a href="https://github.com/troglobit/finit">extended version of Finit</a> is available on GitHub.</p>
+
+<p>Finit was initially written by <a href="https://github.com/cmatsuoka">Claudio Matsuoka</a> to act as a drop-in
+replacement for the <a href="https://en.wikipedia.org/wiki/Asus_Eee_PC">Asus EeePC</a> <a href="http://wiki.eeeuser.com/boot_process:the_boot_process">fastinit</a>, &ldquo;gaps filled with
+frog DNA&rdquo; &hellip;  Until I found Finit I had always been in awe of people
+venturing into the realm of <a href="http://0pointer.net/blog/">PID 1</a>, but learning from the simplicity
+of Claudio&rsquo;s code I slowly began understanding what it was all about.</p>
+
+<p>Finit is open sourced under the very liberal <a href="http://opensource.org/licenses/MIT">MIT/X11 license</a>.
+Much of the code has proven extremely useful to me in other projects
+over the years.  It takes a while to realize, but there are actually a
+lot of APIs missing in the C library and Finit has helped me bridge that
+gap in a lot of projects.</p>
+
+<p>Recently I broke out the most generic pieces from Finit into a separate
+library, which I call <a href="https://github.com/troglobit/libite">libite</a>, (because it looks fun when linking
+with it: <code>-lite</code>), and complemented it with a few pieces of my own and
+some from the <a href="http://www.openbsd.org/">OpenBSD</a> project, most notably their famous string
+functions: <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=strlcpy">strlcpy(3)</a> and <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=strlcpy">strlcat(3)</a>.  It also holds the
+very useful *BSD linked list API <a href="http://www.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man3/LIST_EMPTY.3">sys/queue.h</a>, which is a much more
+up to date version than GLIBC carries!  GLIBC does not have the <code>_SAFE</code>
+macros for traversing lists while deleting/freeing nodes.</p>
+
+<p>To make use of <code>-lite</code> and its APIs you can add <code>libite</code> as a GIT
+submodule to your project:</p>
+
+<pre><code>git submodule add https://github.com/troglobit/libite.git
+</code></pre>
+
+<p>You then need to add <code>#include "libite/lite.h"</code> to the source and adapt
+your Makefile slightly to call the <code>libite/Makefile</code> before linking the
+static <code>.a</code> library:</p>
+
+<pre><code>all: $(EXEC) libite/libite.a
+
+libite/libite.a: Makefile
+        @$(MAKE) -C libite
+
+$(EXEC): $(OBJS) libite/libite.a
+        @gcc -o $@ $^
+</code></pre>
+
+<p>For an example of how this can look, see the <a href="https://github.com/troglobit/uftpd">uftpd</a> project, which
+uses both <code>-lite</code> and <code>-luev</code>.  The latter is my small event library,
+<a href="https://github.com/troglobit/libuev">libuEv</a>.  For help using <code>-lite</code> with the GNU configure and build
+system, see <a href="https://github.com/troglobit/inadyn">inadyn</a>.</p>
+
+<p>Libite builds in &ldquo;silent mode&rdquo; by default, use <code>make V=1</code> (like the
+kernel) to get a more verbose output, usable for autobuilders etc.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[HowTo: Push to Multiple GIT Repos With One Command]]></title>
+    <link href="http://troglobit.github.io/blog/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/"/>
+    <updated>2015-07-01T00:42:17+02:00</updated>
+    <id>http://troglobit.github.io/blog/2015/07/01/howto-push-to-multiple-git-repos-with-one-command</id>
+    <content type="html"><![CDATA[<p>So, now that I have <a href="http://git.troglobit.com">http://git.troglobit.com</a> setup as a backup GIT repo
+to <a href="https://github.com/troglobit,">https://github.com/troglobit,</a> I needed a <em>simple</em> way of always
+pushing to both repos &ndash; best way for me is to always hook into my
+regular work flow, otherwise I&rsquo;d just forget.  The <a href="1">git-remote(1)</a>
+man page describes the new <code>set-url --add</code> sub-command:</p>
+
+<pre><code>git remote set-url --add origin troglobit.com:/srv/git/watchdogd.git
+</code></pre>
+
+<p>Now, with a simple <code>git push</code> followed by <code>git push --tags</code> I had now
+pushed to both the GitHub repo as well as my own server!</p>
+
+<p>Of course I first had to create the empty <code>watchdogd.git</code> on the server:</p>
+
+<pre><code>cd /srv/git
+git init --bare watchdogd.git
+echo "Refurbished watchdog daemon from uClinux-dist" &gt;watchdogd.git/description
+</code></pre>
+
+<p>To inspect your current push/pull repos, issue <code>git remote -v</code>:</p>
+
+<pre><code>origin  git@github.com:troglobit/watchdogd.git (fetch)
+origin  git@github.com:troglobit/watchdogd.git (push)
+origin  troglobit.com:/srv/git/watchdogd.git (push)
+</code></pre>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[HowTo: Apache With Gitweb on Debian 8.1]]></title>
+    <link href="http://troglobit.github.io/blog/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/"/>
+    <updated>2015-06-30T23:13:48+02:00</updated>
+    <id>http://troglobit.github.io/blog/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m posting this in case anyone else gets stuck setting up <a href="http://www.apache.org">Apache</a>
+with <a href="http://git-scm.com/docs/gitweb">Gitweb</a>.  Also as a reminder to myself in case I ever need to
+set up this all over again.</p>
+
+<ol>
+<li>You have all your eggs in one basket (GitHub), and</li>
+<li>You really like that shiny basket, but</li>
+<li>You know you&rsquo;re clumsy and usually drop baskets yourself.</li>
+<li>You are wise (yes you are!) and realize you need another basket, so</li>
+<li>You set up a server and a domain yourself &hellip;</li>
+</ol>
+
+
+<p>OK.  Let&rsquo;s start simple, since you are already running the latest Debian
+you fire up the command line and install the basics:</p>
+
+<pre><code>sudo apt-get install gitweb apache2
+</code></pre>
+
+<p>So it&rsquo;ll complain, you&rsquo;ll clarify your request and soon all required
+packages are on your server.  Now what?</p>
+
+<p>Debian has already set up <a href="http://localhost/gitweb">http://localhost/gitweb</a> for you, and if you
+have a domain already you should go ahead and edit the master file for
+that:</p>
+
+<pre><code>editor /etc/apache2/sites-available/000-default.conf
+service apache2 reload
+</code></pre>
+
+<p>If you want to use that for your gitweb needs, then you&rsquo;re done!</p>
+
+<!-- more -->
+
+
+<p>For me, running <a href="http://troglobit.com/gitweb">http://troglobit.com/gitweb</a> out of the box was not
+enough.  I wanted to setup <a href="http://git.troglobit.com">http://git.troglobit.com</a> and also to make
+sure to keep really short and pretty URLs to projects I host.  So the
+next part of this post is about how to set that up.</p>
+
+<p>My <code>000-default.conf</code> is for <a href="http://troglobit.com,">http://troglobit.com,</a> so I created a new
+one for the sub-domain:</p>
+
+<pre><code>editor /etc/apache2/sites-available/git.conf
+</code></pre>
+
+<p>&hellip; and added the following:</p>
+
+<pre><code class="apache /etc/apache2/sites-available/git.conf">    &lt;VirtualHost *:80&gt;
+        ServerName git.troglobit.com
+        DocumentRoot /usr/share/gitweb
+
+        SetEnv GITWEB_CONFIG    /etc/gitweb.conf
+        SetEnv GIT_PROJECT_ROOT /srv/git
+
+        &lt;Directory /usr/share/gitweb&gt;
+            Options FollowSymLinks ExecCGI
+            AddHandler cgi-script .cgi
+
+            DirectoryIndex gitweb.cgi
+
+            # Pretty gitweb URLs + pathinfo feature in gitweb.conf
+            RewriteEngine On
+            RewriteCond %{REQUEST_FILENAME} !-f
+            RewriteCond %{REQUEST_FILENAME} !-d
+            RewriteRule ^.* /gitweb.cgi/$0 [L,PT]
+        &lt;/Directory&gt;
+
+        # Enable git clone over HTTP
+        ScriptAliasMatch \
+            "(?x)^/(.*/(HEAD | \
+            info/refs | \
+            objects/(info/[^/]+ | \
+            [0-9a-f]{2}/[0-9a-f]{38} | \
+            pack/pack-[0-9a-f]{40}\.(pack|idx)) | \
+            git-(upload|receive)-pack))$" \
+            /usr/lib/git-core/git-http-backend/$1
+    &lt;/VirtualHost&gt;
+</code></pre>
+
+<p>Remember to enable the new sub-domain in Apache and restart the daemon:</p>
+
+<pre><code>a2ensite git
+service apache2 restart
+</code></pre>
+
+<p>I&rsquo;m not using the default Debian GIT repo location, <code>/var/lib/git</code>, so I
+need to set the project root for both the Apache and the GitWeb config:</p>
+
+<pre><code class="perl /etc/gitweb.conf">    # See https://github.com/kogakure/gitweb-theme for more help and pointers
+
+    # path to git projects (&lt;project&gt;.git)
+    $projectroot = "/srv/git";
+
+    @git_base_url_list = ("git://git.troglobit.com", "http://git.troglobit.com");
+
+    # directory to use for temp files
+    $git_temp = "/tmp";
+
+    $site_name = "git.troglobit.com";
+
+    # target of the home link on top of all pages
+    $home_link = $my_uri || "/";
+
+    # html text to include at home page
+    #$home_text = "indextext.html";
+
+    # file with project list; by default, simply scan the projectroot dir.
+    #$projects_list = $projectroot;
+
+    # stylesheet to use
+    @stylesheets = ("static/gitweb.css");
+
+    # javascript code for gitweb
+    $javascript = "static/gitweb.js";
+
+    # logo to use
+    $logo = "static/git-logo.png";
+
+    # the 'favicon'
+    $favicon = "static/git-favicon.png";
+
+    # git-diff-tree(1) options to use for generated patches
+    #@diff_opts = ("-M");
+    @diff_opts = ();
+
+    # Enable PATH_INFO so the server can produce URLs of the
+    # form: http://git.hokietux.net/project.git/xxx/xxx
+    # This allows for pretty URLs *within* the Git repository,
+    # also needs the Apache rewrite rules for full effect.
+    $feature{'pathinfo'}{'default'} = [1];
+
+    # Neat way of prefixing the top URL listing
+    our @extra_breadcrumbs = (
+          [ 'Troglobit Software' =&gt; 'http://troglobit.com/' ],
+        );
+
+    # List avatars next to committers
+    $feature{'avatar'}{'default'} = ['gravatar'];
+
+    # The category name is read from .git/category, in the same manner as .git/description.
+    $projects_list_group_categories = 1;
+    $project_list_default_category = "misc";
+
+    $projects_list_description_width = 80;
+
+    # Enable blame, pickaxe search, snapshop, search, and grep
+    # support, but still allow individual projects to turn them off.
+    # These are features that users can use to interact with your Git trees. They
+    # consume some CPU whenever a user uses them, so you can turn them off if you
+    # need to.  Note that the 'override' option means that you can override the
+    # setting on a per-repository basis.
+    $feature{'blame'}{'default'} = [1];
+    $feature{'blame'}{'override'} = [1];
+
+    $feature{'pickaxe'}{'default'} = [1];
+    $feature{'pickaxe'}{'override'} = [1];
+
+    $feature{'snapshot'}{'default'} = [1];
+    $feature{'snapshot'}{'override'} = [1];
+
+    $feature{'search'}{'default'} = [1];
+
+    $feature{'grep'}{'default'} = [1];
+    $feature{'grep'}{'override'} = [1];
+
+    $feature{'highlight'}{'default'} = [1];
+</code></pre>
+
+<p>The impossibly simple Apache config has been ripped from the intro by
+<a href="http://dereenigne.org/debian/debian-gitweb-server">Jonathan McCrohan</a>,
+the GitWeb config is a mixture of findings on the Internets.  Notice the
+breadcrumbs and the grouping settings, very useful.</p>
+
+<p>The magic with the pretty URLs is in both files, all <code>RewriteRule</code> lines
+in the Apache <code>.conf</code> and the <code>$feature{'pathinfo'}{'default'} = [1];</code>
+setting in <code>gitweb.conf</code>.</p>
+
+<p>Also, try out the cool <a href="https://github.com/kogakure/gitweb-theme">theme</a>
+I use, it looks a lot better than the default.</p>
+
+<p>Happy coding!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[HowTo: Add Multicast Routing to FreeBSD Kernel]]></title>
+    <link href="http://troglobit.github.io/blog/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/"/>
+    <updated>2014-09-23T01:55:19+02:00</updated>
+    <id>http://troglobit.github.io/blog/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel</id>
+    <content type="html"><![CDATA[<p>This is a very short blog post, mostly intended as a reminder to
+myself.  Assumes the <code>src.txz</code> was installed previously.  Here goes:</p>
+
+<pre><code>cd /usr/src
+cd sys/amd64/conf
+cat GENERIC | sed 's/GENERIC$/MULTICAST/' &gt; MULTICAST
+echo 'options   MROUTING         # Multicast routing' &gt;&gt; MULTICAST
+cd -
+make kernel KERNCONF=MULTICAST
+reboot
+</code></pre>
+
+<p>That&rsquo;s it.  Remember to make sure your Qemu VM has enough RAM or it
+will probably page fault on you.  I use 1,0 GB RAM.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[HowTo Rebase Without an Origin]]></title>
+    <link href="http://troglobit.github.io/blog/2014/08/27/howto-rebase-without-an-origin/"/>
+    <updated>2014-08-27T10:00:13+02:00</updated>
+    <id>http://troglobit.github.io/blog/2014/08/27/howto-rebase-without-an-origin</id>
+    <content type="html"><![CDATA[<p>OK, so you&rsquo;ve just been handed the task to integrate a big piece of
+corporate software and it&rsquo;s nowhere near as done and ready as project
+management thinks.  Of course you&rsquo;ve already started chugging away at
+it, fixing bugs, refactoring code and wrapping it in neat containers
+to keep the changeset against the base SW small &ndash; you already know
+you&rsquo;ll get another drop of the same stinking pieace of code in another
+six months, so you keep the changes small and track them in GIT with
+neatly formatted commit messages.</p>
+
+<p>About ten commits in it dawns on you that you have several commits
+that would need to be squashed and some commit messages that needs to
+be edited &hellip; you start typing in <code>git rebase -i origin/...</code> wait, you
+haven&rsquo;t pushed anything yet.  So how do you rebase something that&rsquo;s
+not been pushed yet?</p>
+
+<p>Well:</p>
+
+<pre><code>git rebase --interactive --root master
+</code></pre>
+
+<p>Tip courtesy of my friend and collegue <a href="https://github.com/wkz">wkz</a></p>
+]]></content>
+  </entry>
+  
+</feed>

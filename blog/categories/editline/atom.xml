@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Editline | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/editline/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-07-05T12:53:27+02:00</updated>
+  <updated>2015-07-08T22:32:17+02:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -38,6 +38,137 @@ following packages have new releases, or can expect new releases soon:</p>
 <p>As usual, see my <a href="http://github.com/troglobit">GitHub</a> for the latest
 commits if you want to try anything out, file an issue report, or if
 you want to contribute.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Announcing Minix Editline 1.14.0]]></title>
+    <link href="http://troglobit.github.io/blog/2010/08/12/announcing-minix-editline-1-dot-14-dot-0/"/>
+    <updated>2010-08-12T18:17:40+02:00</updated>
+    <id>http://troglobit.github.io/blog/2010/08/12/announcing-minix-editline-1-dot-14-dot-0</id>
+    <content type="html"><![CDATA[<p>It is with great pleasure I announce the next release of the
+<a href="/editline.html">editline</a> library by Simmule Turner and Rich Salz!  This is a
+popular library, it exists in several forked versions.  This release
+marks the end of a huge effort where archaeological methods have been
+applied to recover fixes and improvements developed independently over
+several decades by the following projects: <a href="http://www.h5l.org">Heimdal</a>,
+<a href="http://festvox.org/festival/">Festival speech-tools</a>, <a href="http://packages.qa.debian.org/e/editline.html">Debian</a>, as well as patches by
+Mr. <a href="http://www.cs.unc.edu/~tell/dist.html">Steve Tell</a>.</p>
+
+<p><img class="center" src="/images/peeking.gif" width="468" height="52"></p>
+
+<p>Noteworthy changes and additions:</p>
+
+<ul>
+<li>The symbols <code>rl_complete()</code> and <code>rl_list_possib()</code> are no longer
+possible to overload as function pointers.  Instead the FSF
+libreadline <code>rl_set_complete_func()</code> and <code>rl_set_list_possib_func()</code>
+API has been added for implementing custom completion handlers.</li>
+<li>8-bit handling now work correctly on non-UTF8 terminals, including
+meta characters and key bindings.  This is actually a revert of an old
+broken Debian patch.</li>
+<li>The functions <code>el_bind_key()</code> and <code>el_bind_key_in_metamap()</code> have been
+added thanks to the efforts of Festival speech-tools hacker Mr. Alan
+
+<ol type="a">
+<li>Black.</li>
+</ol>
+</li>
+<li>Support for capitalizing words (M-c), also from Mr. Alan W Black.</li>
+<li>Improved FSF libreadline compatibility and signal safety fixes by
+Mr. Steve Tell.</li>
+<li>The HUGE code cleanups are mostly courtesy of the Heimdal Project.</li>
+<li>Several more APIs for increased compatibility with FSF libreadline
+have also been added. See the file <code>include/editline.h</code> for details.</li>
+</ul>
+
+
+<p><img class="center" src="/images/peeking.gif" width="468" height="52"></p>
+
+<p>Online GIT repository and release tarball available at the usual places:</p>
+
+<ul>
+<li><a href="http://github.com/troglobit/editline">github:editline.git</a>  (Main GIT)</li>
+<li><a href="http://git.troglobit.com/editline.git">vmlinux:editline.git</a> (Backup)</li>
+<li><a href="ftp://troglobit.com/editline/editline-1.14.0.tar.bz2">editline-1.14.0.tar.bz2</a>, <a href="ftp://troglobit.com/editline/editline-1.14.0.tar.bz2.md5">MD5</a> (FTP)</li>
+</ul>
+
+
+<p>Report bugs using the GitHub <a href="http://freshmeat.net/projects/minix-editline">issue tracker</a>.  See also the
+<a href="http://github.com/troglobit/editline/issues">Freshmeat page</a> for a more consistent updates.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Minix Editline Moves to GIT]]></title>
+    <link href="http://troglobit.github.io/blog/2010/07/19/minix-editline-moves-to-git/"/>
+    <updated>2010-07-19T02:40:36+02:00</updated>
+    <id>http://troglobit.github.io/blog/2010/07/19/minix-editline-moves-to-git</id>
+    <content type="html"><![CDATA[<p>A small heads-up, I&rsquo;ve migrated the Minix editline project from Bazaar
+to GIT.  The new URL for keeping tabs on your favourite free
+<code>readline()</code> clone is:</p>
+
+<blockquote><p><a href="http://git.troglobit.com/editline.git">http://git.vmlinux.org/editline.git/</a></p></blockquote>
+
+<p>I&rsquo;m currently working on fixing up the tree and doing some house
+cleaning &mdash; including making more stuff configurable &mdash; before
+releasing a 1.14.0 later on.</p>
+
+<p>One such item is the integration of libtool with our autoconf friends.
+This should make it lot more portable (again) and also help smooth a
+merge with other sources for this library.  More on that as well later,
+hopefully.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Editline First Post]]></title>
+    <link href="http://troglobit.github.io/blog/2009/06/14/editline-first-post/"/>
+    <updated>2009-06-14T20:44:45+02:00</updated>
+    <id>http://troglobit.github.io/blog/2009/06/14/editline-first-post</id>
+    <content type="html"><![CDATA[<p>For a while now I&rsquo;ve been maintaining a port of the <a href="http://www.cise.ufl.edu/~cop4600/cgi-bin/lxr/http/source.cgi/lib/editline/">Minix</a> editline
+library libedit.  Mainly for my own purposes, or rather on behalf of
+<a href="http://www.westermo.com">Westermo WeOS</a>, where it is used in the CLI.  This library is the
+same as the <a href="https://packages.qa.debian.org/e/editline.html">Debian editline</a> package, even though the origin of that
+package is <a href="https://lists.debian.org/debian-devel/2000/05/msg00548.html">somewhat unclear</a> to me.</p>
+
+<p>Today I decided to adjust the package name and bump the version number
+to indicate that my port is the same, and now slightly more advanced,
+than the Debian version.  To that end I&rsquo;ve now changed the repository
+name and prepared for merging with Debian. Getting this work accepted
+back into Debian is a completely different issue.</p>
+
+<p>Get the code as a <a href="http://www.bazaar-vcs.org">Bazaar</a> branch, or view its change log through the
+<a href="https://launchpad.net/loggerhead">Loggerhead</a> web interface:</p>
+
+<ul>
+<li>bzr branch <a href="http://git.troglobit.com/editline.git">http://bzr.vmlinux.org/editline</a></li>
+<li><a href="http://git.troglobit.com/editline.git">Loggerhead web interface</a></li>
+<li><a href="http://troglobit.com/editline.html">New homepage</a></li>
+</ul>
+
+
+<p>I now intend to do some further integration work, adapting the <code>debian/</code>
+directory from editline-1.12-5 and smoothing out any remaining issues
+before I release 1.13.0.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Minix Editline v0.3.0]]></title>
+    <link href="http://troglobit.github.io/blog/2009/02/08/minix-editline-v0-dot-3-0/"/>
+    <updated>2009-02-08T21:35:22+01:00</updated>
+    <id>http://troglobit.github.io/blog/2009/02/08/minix-editline-v0-dot-3-0</id>
+    <content type="html"><![CDATA[<p>It&rsquo;s here!  Fresh, new and packed with new features!  Well, really just
+one new major feature — support for ANSI arrow keys.  A good enough
+reason to bump the minor version number :-)</p>
+
+<p>Get it from the usual FTP location:</p>
+
+<ul>
+<li><a href="http://ftp.vmlinux.org/pub/People/jocke/minix-editline/">http://ftp.vmlinux.org/pub/People/jocke/minix-editline/</a></li>
+</ul>
+
 ]]></content>
   </entry>
   

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Tftp | Troglobit]]></title>
+  <link href="http://troglobit.github.io/blog/categories/tftp/atom.xml" rel="self"/>
+  <link href="http://troglobit.github.io/"/>
+  <updated>2015-07-08T22:32:17+02:00</updated>
+  <id>http://troglobit.github.io/</id>
+  <author>
+    <name><![CDATA[Joachim Nilsson]]></name>
+    <email><![CDATA[troglobit@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[TFTP Blocksize Negotiation in Uftpd v1.7]]></title>
+    <link href="http://troglobit.github.io/blog/2014/12/21/tftp-blocksize-negotiation-in-uftpd-v1-dot-7/"/>
+    <updated>2014-12-21T19:42:17+01:00</updated>
+    <id>http://troglobit.github.io/blog/2014/12/21/tftp-blocksize-negotiation-in-uftpd-v1-dot-7</id>
+    <content type="html"><![CDATA[<p>New release of uftpd, this time with TFTP blocksize negotiation,
+<a href="http://tools.ietf.org/html/rfc2348">RFC 2348</a>.  Making it a lot
+faster to transfer files over TFTP.</p>
+
+<p><a href="/uftpd.html">Try it out!</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[GnuTLS Support in Inadyn and Fixes to Uftpd]]></title>
+    <link href="http://troglobit.github.io/blog/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/"/>
+    <updated>2014-09-13T19:18:56+02:00</updated>
+    <id>http://troglobit.github.io/blog/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd</id>
+    <content type="html"><![CDATA[<p>Quite a few changes lately.  I finally got around to adding support
+for <a href="http://www.gnutls.org">GnuTLS</a> to <a href="/inadyn.html">Inadyn</a>,
+hopefully this will get into Debian &hellip; unless the Jessie freeze
+prevents that.</p>
+
+<p>Also, thanks to a friend of mine trying out <a href="/uftpd.html">uftpd</a>
+recently I discovered that libuev has been missing from the tarball
+since the release of the TFTP support.  Fixed.</p>
+
+<p>Another great piece of news is that
+<a href="http://www.coverity.com/">Coverity</a> accepted uftpd as an Open Source
+project, I&rsquo;ve been hard at work fixing nasty bugs uncovered by the
+<a href="https://scan.coverity.com/">Coverity Scan</a>.  Great stuff! :)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Bugfix Release of Uftpd]]></title>
+    <link href="http://troglobit.github.io/blog/2014/09/04/bugfix-release-of-uftpd/"/>
+    <updated>2014-09-04T22:22:09+02:00</updated>
+    <id>http://troglobit.github.io/blog/2014/09/04/bugfix-release-of-uftpd</id>
+    <content type="html"><![CDATA[<p><blockquote><p>So them pesky details of <code>/etc/inetd.conf</code> really are important?</p></blockquote></p>
+
+<p>This is a small bugfix release of <a href="/uftpd.html">uftpd</a>.  Version 1.4
+is basically just to change <code>nowait</code> to <code>wait</code> for the TFTP service in
+<code>/etc/inetd.conf</code>, but there&rsquo;s also a minor man page update.</p>
+
+<p>Enjoy! :)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Awesome Uftpd, Now With TFTP Support! :)]]></title>
+    <link href="http://troglobit.github.io/blog/2014/09/02/new-release-of-the-awesome-uftpd/"/>
+    <updated>2014-09-02T10:47:35+02:00</updated>
+    <id>http://troglobit.github.io/blog/2014/09/02/new-release-of-the-awesome-uftpd</id>
+    <content type="html"><![CDATA[<p>Today sees the release of v1.3 of the awesome little uftpd. The main
+news is the new TFTP support!  Just like before you don&rsquo;t need any
+configuration file, just build and install &ndash; or build a .deb file and
+install.</p>
+
+<p>This release completes the main purpose of uftpd for me, I can now use
+it as my daily driver and fully replace vsftpd and tftpd-hpa, which to
+me are the next best.</p>
+
+<p>What&rsquo;s left then, you ask?  Well, TFTP upload support, TFTP segment
+size negotiation and possibly multiple user support in FTP.  As
+always, patches are most welcome.  See the
+<a href="/uftpd.html">uftpd homepage</a> and my
+<a href="https://github.com/troglobit/uftpd/">GitHub project</a> for details.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[New Releases of Uftpd and Inadyn ...]]></title>
+    <link href="http://troglobit.github.io/blog/2014/05/20/new-release-of-uftpd-and-inadyn-dot-dot-dot/"/>
+    <updated>2014-05-20T21:08:25+02:00</updated>
+    <id>http://troglobit.github.io/blog/2014/05/20/new-release-of-uftpd-and-inadyn-dot-dot-dot</id>
+    <content type="html"><![CDATA[<p>The last couple of weeks have both seen the birth of the fabulous
+<a href="/uftpd.html">uftpd</a> and a reignited <a href="/inadyn.html">inadyn</a> project!
+Yesterday v1.2 of uftpd was released and today Inadyn saw the first
+working HTTPS support being released as v1.99.8!  This is likely the
+last release of Inadyn before the big 2.0, which will introduce the
+new .conf file format based on
+<a href="http://www.nongnu.org/confuse/">libConfuse</a>.  A .conf file
+feasibility study was
+<a href="/blog/2014/02/23/weekend-hack-json-vs-conf/">presented earlier</a> &hellip;</p>
+
+<p>The uftpd project is completely based on user input, currently mostly
+mine.  I will add features and bug fixes when I need them, unless I
+get more input.  So I welcome anyone to clone it on GitHub and hack
+away.  As usual, I will accept any sane patches that adhere to the
+coding style and is well written.  The same goes for Inadyn, only with
+the added request that the changes are thoroughly tested first, since
+I cannot maintain multiple accounts on various DDNS providers myself.</p>
+
+<p>Patches to support flavors of UNIX other than GNU/Linux, including
+GNU/Hurd, or even other operating systems are also welcome, as long as
+it&rsquo;s not Windows.  I will not maintain any Windows support since I
+don&rsquo;t use it myself.  If you want Windows support you will have to
+take a very active co-maintainer role in the respective project.</p>
+]]></content>
+  </entry>
+  
+</feed>
