@@ -6,6 +6,8 @@ comments: true
 categories: 
 ---
 
+[{% img right /images/TetrisConstruction.jpg 175 %}](http://erikjohanssonphoto.com/work/tetris/)
+
 New release of [Micro Tetris™](/tetris.html), v1.2.0, available for
 download now!  Noteworthy changes and additions:
 
