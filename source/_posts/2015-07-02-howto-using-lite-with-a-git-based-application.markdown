@@ -16,9 +16,10 @@ as a drop-in replacement for the [Asus EeePC][5] [fastinit][6], *"gaps
 filled with frog DNA &hellip;"*
 
 Until I found Finit I had always been in awe of those venturing into the
-realm of [PID 1][7], however, learning from the simplicity of Claudio's
-code I realized that although indistinguishable from magic, it was not
-too hard to master.  My version of Finit is [available on GitHub][14].
+realm of [PID 1][7].  However, learning from the simplicity of Claudio's
+code I realized that although PID 1 at times is indistinguishable from
+magic, it is really not that hard to master.  [My version of Finit][14]
+is available on GitHub.
 
 The code is open sourced under the very liberal [MIT/X11 license][MIT],
 and much of its frog DNA has proven very useful to me over the years.
