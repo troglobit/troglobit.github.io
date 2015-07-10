@@ -9,9 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="Many years ago now I was looking for a faster init for work.
-I found Finit and since then I&rsquo;ve been working on improving upon
-it. My extended &hellip;">
+  <meta name="description" content="Years ago while looking for a fast init replacement for work,
+I found Finit. Originally written by Claudio Matsuoka to act
+as a drop-in replacement &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -98,59 +98,27 @@ it. My extended &hellip;">
   </header>
 
 
-  <div class="entry-content"><p>Many years ago now I was looking for a faster <a href="https://en.wikipedia.org/wiki/Init">init</a> for <a href="http://westermo.com/">work</a>.
-I found <a href="http://helllabs.org/finit/">Finit</a> and since then I&rsquo;ve been working on improving upon
-it.  My <a href="https://github.com/troglobit/finit">extended version of Finit</a> is available on GitHub.</p>
+  <div class="entry-content"><p>Years ago while looking for a fast <a href="https://en.wikipedia.org/wiki/Init">init</a> replacement for <a href="http://westermo.com/">work</a>,
+I found <a href="http://helllabs.org/finit/">Finit</a>.  Originally written by <a href="https://github.com/cmatsuoka">Claudio Matsuoka</a> to act
+as a drop-in replacement for the <a href="https://en.wikipedia.org/wiki/Asus_Eee_PC">Asus EeePC</a> <a href="http://wiki.eeeuser.com/boot_process:the_boot_process">fastinit</a>, <em>&ldquo;gaps
+filled with frog DNA &hellip;&rdquo;</em></p>
 
-<p>Finit was initially written by <a href="https://github.com/cmatsuoka">Claudio Matsuoka</a> to act as a drop-in
-replacement for the <a href="https://en.wikipedia.org/wiki/Asus_Eee_PC">Asus EeePC</a> <a href="http://wiki.eeeuser.com/boot_process:the_boot_process">fastinit</a>, &ldquo;gaps filled with
-frog DNA&rdquo; &hellip;  Until I found Finit I had always been in awe of people
-venturing into the realm of <a href="http://0pointer.net/blog/">PID 1</a>, but learning from the simplicity
-of Claudio&rsquo;s code I slowly began understanding what it was all about.</p>
+<p>Until I found Finit I had always been in awe of those venturing into the
+realm of <a href="http://0pointer.net/blog/">PID 1</a>, however, learning from the simplicity of Claudio&rsquo;s
+code I realized that although indistinguishable from magic, it was not
+too hard to master.  My version of Finit is <a href="https://github.com/troglobit/finit">available on GitHub</a>.</p>
 
-<p>Finit is open sourced under the very liberal <a href="http://opensource.org/licenses/MIT">MIT/X11 license</a>.
-Much of the code has proven extremely useful to me in other projects
-over the years.  It takes a while to realize, but there are actually a
-lot of APIs missing in the C library and Finit has helped me bridge that
-gap in a lot of projects.</p>
+<p>The code is open sourced under the very liberal <a href="http://opensource.org/licenses/MIT">MIT/X11 license</a>,
+and much of its frog DNA has proven very useful to me over the years.
+This blog post is about how that frog DNA can help you fill gaps in your
+projects &hellip;</p>
 
-<p>Recently I broke out the most generic pieces from Finit into a separate
-library, which I call <a href="https://github.com/troglobit/libite">libite</a>, (because it looks fun when linking
-with it: <code>-lite</code>), and complemented it with a few pieces of my own and
-some from the <a href="http://www.openbsd.org/">OpenBSD</a> project, most notably their famous string
-functions: <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=strlcpy">strlcpy(3)</a> and <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=strlcpy">strlcat(3)</a>.  It also holds the
-very useful *BSD linked list API <a href="http://www.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man3/LIST_EMPTY.3">sys/queue.h</a>, which is a much more
-up to date version than GLIBC carries!  GLIBC does not have the <code>_SAFE</code>
-macros for traversing lists while deleting/freeing nodes.</p>
-
-<p>To make use of <code>-lite</code> and its APIs you can add <code>libite</code> as a GIT
-submodule to your project:</p>
-
-<pre><code>git submodule add https://github.com/troglobit/libite.git
-</code></pre>
-
-<p>You then need to add <code>#include "libite/lite.h"</code> to the source and adapt
-your Makefile slightly to call the <code>libite/Makefile</code> before linking the
-static <code>.a</code> library:</p>
-
-<pre><code>all: $(EXEC) libite/libite.a
-
-libite/libite.a: Makefile
-        @$(MAKE) -C libite
-
-$(EXEC): $(OBJS) libite/libite.a
-        @gcc -o $@ $^
-</code></pre>
-
-<p>For an example of how this can look, see the <a href="https://github.com/troglobit/uftpd">uftpd</a> project, which
-uses both <code>-lite</code> and <code>-luev</code>.  The latter is my small event library,
-<a href="https://github.com/troglobit/libuev">libuEv</a>.  For help using <code>-lite</code> with the GNU configure and build
-system, see <a href="https://github.com/troglobit/inadyn">inadyn</a>.</p>
-
-<p>Libite builds in &ldquo;silent mode&rdquo; by default, use <code>make V=1</code> (like the
-kernel) to get a more verbose output, usable for autobuilders etc.</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2015/07/02/howto-using-lite-with-a-git-based-application/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -189,21 +157,12 @@ man page describes the new <code>set-url --add</code> sub-command:</p>
 <p>Now, with a simple <code>git push</code> followed by <code>git push --tags</code> I had now
 pushed to both the GitHub repo as well as my own server!</p>
 
-<p>Of course I first had to create the empty <code>watchdogd.git</code> on the server:</p>
-
-<pre><code>cd /srv/git
-git init --bare watchdogd.git
-echo "Refurbished watchdog daemon from uClinux-dist" &gt;watchdogd.git/description
-</code></pre>
-
-<p>To inspect your current push/pull repos, issue <code>git remote -v</code>:</p>
-
-<pre><code>origin  git@github.com:troglobit/watchdogd.git (fetch)
-origin  git@github.com:troglobit/watchdogd.git (push)
-origin  troglobit.com:/srv/git/watchdogd.git (push)
-</code></pre>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/">Read on &rarr;</a>
+    </footer>
   
 
 

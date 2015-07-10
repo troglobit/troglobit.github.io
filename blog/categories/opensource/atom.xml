@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Opensource | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/opensource/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-07-08T22:32:17+02:00</updated>
+  <updated>2015-07-10T22:36:33+02:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -18,40 +18,45 @@
     <link href="http://troglobit.github.io/blog/2015/07/02/howto-using-lite-with-a-git-based-application/"/>
     <updated>2015-07-02T17:11:55+02:00</updated>
     <id>http://troglobit.github.io/blog/2015/07/02/howto-using-lite-with-a-git-based-application</id>
-    <content type="html"><![CDATA[<p>Many years ago now I was looking for a faster <a href="https://en.wikipedia.org/wiki/Init">init</a> for <a href="http://westermo.com/">work</a>.
-I found <a href="http://helllabs.org/finit/">Finit</a> and since then I&rsquo;ve been working on improving upon
-it.  My <a href="https://github.com/troglobit/finit">extended version of Finit</a> is available on GitHub.</p>
+    <content type="html"><![CDATA[<p>Years ago while looking for a fast <a href="https://en.wikipedia.org/wiki/Init">init</a> replacement for <a href="http://westermo.com/">work</a>,
+I found <a href="http://helllabs.org/finit/">Finit</a>.  Originally written by <a href="https://github.com/cmatsuoka">Claudio Matsuoka</a> to act
+as a drop-in replacement for the <a href="https://en.wikipedia.org/wiki/Asus_Eee_PC">Asus EeePC</a> <a href="http://wiki.eeeuser.com/boot_process:the_boot_process">fastinit</a>, <em>&ldquo;gaps
+filled with frog DNA &hellip;&rdquo;</em></p>
 
-<p>Finit was initially written by <a href="https://github.com/cmatsuoka">Claudio Matsuoka</a> to act as a drop-in
-replacement for the <a href="https://en.wikipedia.org/wiki/Asus_Eee_PC">Asus EeePC</a> <a href="http://wiki.eeeuser.com/boot_process:the_boot_process">fastinit</a>, &ldquo;gaps filled with
-frog DNA&rdquo; &hellip;  Until I found Finit I had always been in awe of people
-venturing into the realm of <a href="http://0pointer.net/blog/">PID 1</a>, but learning from the simplicity
-of Claudio&rsquo;s code I slowly began understanding what it was all about.</p>
+<p>Until I found Finit I had always been in awe of those venturing into the
+realm of <a href="http://0pointer.net/blog/">PID 1</a>, however, learning from the simplicity of Claudio&rsquo;s
+code I realized that although indistinguishable from magic, it was not
+too hard to master.  My version of Finit is <a href="https://github.com/troglobit/finit">available on GitHub</a>.</p>
 
-<p>Finit is open sourced under the very liberal <a href="http://opensource.org/licenses/MIT">MIT/X11 license</a>.
-Much of the code has proven extremely useful to me in other projects
-over the years.  It takes a while to realize, but there are actually a
-lot of APIs missing in the C library and Finit has helped me bridge that
-gap in a lot of projects.</p>
+<p>The code is open sourced under the very liberal <a href="http://opensource.org/licenses/MIT">MIT/X11 license</a>,
+and much of its frog DNA has proven very useful to me over the years.
+This blog post is about how that frog DNA can help you fill gaps in your
+projects &hellip;</p>
+
+<!-- more -->
+
 
 <p>Recently I broke out the most generic pieces from Finit into a separate
-library, which I call <a href="https://github.com/troglobit/libite">libite</a>, (because it looks fun when linking
-with it: <code>-lite</code>), and complemented it with a few pieces of my own and
-some from the <a href="http://www.openbsd.org/">OpenBSD</a> project, most notably their famous string
-functions: <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=strlcpy">strlcpy(3)</a> and <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=strlcpy">strlcat(3)</a>.  It also holds the
-very useful *BSD linked list API <a href="http://www.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man3/LIST_EMPTY.3">sys/queue.h</a>, which is a much more
-up to date version than GLIBC carries!  GLIBC does not have the <code>_SAFE</code>
-macros for traversing lists while deleting/freeing nodes.</p>
+library, which I call <a href="https://github.com/troglobit/libite">libite</a> (because it looks awesome linking to
+it: <code>-lite</code> :) I complemented it with a few pieces of my own and some
+from the <a href="http://www.openbsd.org/">OpenBSD</a> project, most notably their famous string API:
+<a href="http://www.openbsd.org/cgi-bin/man.cgi?query=strlcpy">strlcpy(3)</a> and <a href="http://www.openbsd.org/cgi-bin/man.cgi?query=strlcpy">strlcat(3)</a>.  Also included is the very useful
+*BSD linked list API <a href="http://www.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man3/LIST_EMPTY.3">sys/queue.h</a>, which is a much more up to date
+version than GLIBC carries.  For example, the new <code>_SAFE</code> macros are
+missing, which you want to use while traversing lists to delete/free
+nodes.</p>
 
-<p>To make use of <code>-lite</code> and its APIs you can add <code>libite</code> as a GIT
-submodule to your project:</p>
+<p>To make use of <code>-lite</code> and its APIs you can either build it as a
+separate library and install <code>lite.h</code> and <code>libite.so.1</code> to your system,
+or add <code>libite</code> as a GIT submodule to your project and use only the
+parts you need from the archive:</p>
 
 <pre><code>git submodule add https://github.com/troglobit/libite.git
 </code></pre>
 
 <p>You then need to add <code>#include "libite/lite.h"</code> to the source and adapt
-your Makefile slightly to call the <code>libite/Makefile</code> before linking the
-static <code>.a</code> library:</p>
+your Makefile slightly to call the <code>libite/Makefile</code> before linking your
+application to the <code>libite.a</code> archive:</p>
 
 <pre><code>all: $(EXEC) libite/libite.a
 
