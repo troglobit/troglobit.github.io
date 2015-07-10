@@ -10,39 +10,43 @@ categories:
 - submodules
 ---
 
-Many years ago now I was looking for a faster [init][1] for [work][2].
-I found [Finit][3] and since then I've been working on improving upon
-it.  My [extended version of Finit][14] is available on GitHub.
+Years ago while looking for a fast [init][1] replacement for [work][2],
+I found [Finit][3].  Originally written by [Claudio Matsuoka][4] to act
+as a drop-in replacement for the [Asus EeePC][5] [fastinit][6], *"gaps
+filled with frog DNA &hellip;"*
 
-Finit was initially written by [Claudio Matsuoka][4] to act as a drop-in
-replacement for the [Asus EeePC][5] [fastinit][6], "gaps filled with
-frog DNA" ...  Until I found Finit I had always been in awe of people
-venturing into the realm of [PID 1][7], but learning from the simplicity
-of Claudio's code I slowly began understanding what it was all about.
+Until I found Finit I had always been in awe of those venturing into the
+realm of [PID 1][7], however, learning from the simplicity of Claudio's
+code I realized that although indistinguishable from magic, it was not
+too hard to master.  My version of Finit is [available on GitHub][14].
 
-Finit is open sourced under the very liberal [MIT/X11 license][MIT].
-Much of the code has proven extremely useful to me in other projects
-over the years.  It takes a while to realize, but there are actually a
-lot of APIs missing in the C library and Finit has helped me bridge that
-gap in a lot of projects.
+The code is open sourced under the very liberal [MIT/X11 license][MIT],
+and much of its frog DNA has proven very useful to me over the years.
+This blog post is about how that frog DNA can help you fill gaps in your
+projects &hellip;
+
+<!-- more -->
 
 Recently I broke out the most generic pieces from Finit into a separate
-library, which I call [libite][8], (because it looks fun when linking
-with it: `-lite`), and complemented it with a few pieces of my own and
-some from the [OpenBSD][9] project, most notably their famous string
-functions: [strlcpy(3)][10] and [strlcat(3)][10].  It also holds the
-very useful *BSD linked list API [sys/queue.h][11], which is a much more
-up to date version than GLIBC carries!  GLIBC does not have the `_SAFE`
-macros for traversing lists while deleting/freeing nodes.
+library, which I call [libite][8] (because it looks awesome linking to
+it: `-lite` :) I complemented it with a few pieces of my own and some
+from the [OpenBSD][9] project, most notably their famous string API:
+[strlcpy(3)][10] and [strlcat(3)][10].  Also included is the very useful
+*BSD linked list API [sys/queue.h][11], which is a much more up to date
+version than GLIBC carries.  For example, the new `_SAFE` macros are
+missing, which you want to use while traversing lists to delete/free
+nodes.
 
-To make use of `-lite` and its APIs you can add `libite` as a GIT
-submodule to your project:
+To make use of `-lite` and its APIs you can either build it as a
+separate library and install `lite.h` and `libite.so.1` to your system,
+or add `libite` as a GIT submodule to your project and use only the
+parts you need from the archive:
 
     git submodule add https://github.com/troglobit/libite.git
 
 You then need to add `#include "libite/lite.h"` to the source and adapt
-your Makefile slightly to call the `libite/Makefile` before linking the
-static `.a` library:
+your Makefile slightly to call the `libite/Makefile` before linking your
+application to the `libite.a` archive:
 
     all: $(EXEC) libite/libite.a
     
