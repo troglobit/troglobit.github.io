@@ -19,6 +19,8 @@ man page describes the new `set-url --add` sub-command:
 Now, with a simple `git push` followed by `git push --tags` I had now
 pushed to both the GitHub repo as well as my own server!
 
+<!-- more -->
+
 Of course I first had to create the empty `watchdogd.git` on the server:
 
     cd /srv/git
