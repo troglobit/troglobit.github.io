@@ -25,34 +25,36 @@ Supported Providers
 -------------------
 
 The following DDNS providers are supported natively, other providers,
-like http://twoDNS.de for instance, can be supported using the generic
+like <http://twoDNS.de> for instance, can be supported using the generic
 DDNS plugin.  See the
 [README](https://github.com/troglobit/inadyn/blob/master/README.md), or
 `inadyn.conf(5)` found in the tarball, for configuration examples.
 
-* http://www.dyndns.org
-* http://freedns.afraid.org
-* http://www.zoneedit.com
-* http://www.no-ip.com
-* http://www.easydns.com
-* http://www.tzo.com
-* http://www.3322.org
-* http://www.dnsomatic.com
-* http://www.tunnelbroker.net
-* http://dns.he.net/
-* http://www.dynsip.org
-* http://www.sitelutions.com
-* http://www.dnsexit.com
-* http://www.changeip.com
-* http://www.zerigo.com
-* http://www.dhis.org
-* https://nsupdate.info
-* http://duckdns.org
-* https://www.loopia.com
-* https://www.namecheap.com
-* https://domains.google.com
-* https://www.ovh.com
-* https://www.dtdns.com
+* <http://www.dyndns.org>
+* <http://freedns.afraid.org>
+* <http://www.zoneedit.com>
+* <http://www.no-ip.com>
+* <http://www.easydns.com>
+* <http://www.tzo.com>
+* <http://www.3322.org>
+* <http://www.dnsomatic.com>
+* <http://www.tunnelbroker.net>
+* <http://dns.he.net/>
+* <http://www.dynsip.org>
+* <http://www.sitelutions.com>
+* <http://www.dnsexit.com>
+* <http://www.changeip.com>
+* <http://www.zerigo.com>
+* <http://www.dhis.org>
+* <https://nsupdate.info>
+* <http://duckdns.org>
+* <https://www.loopia.com>
+* <https://www.namecheap.com>
+* <https://domains.google.com>
+* <https://www.ovh.com>
+* <https://www.dtdns.com>
+* <http://giradns.com>
+* <https://www.duiadns.net>
 
 
 Download
@@ -64,9 +66,9 @@ Issue tracker and GIT repository available at GitHub:
 * [CHANGELOG](https://github.com/troglobit/inadyn/blob/master/CHANGELOG.md)
 * [Repository](http://github.com/troglobit/inadyn)
 * [Issue Tracker](http://github.com/troglobit/inadyn/issues)
-* [inadyn-1.99.13.tar.xz](ftp://troglobit.com/inadyn/inadyn-1.99.13.tar.xz),
-  [MD5](ftp://troglobit.com/inadyn/inadyn-1.99.13.tar.xz.md5)
-  [GPG Sign](ftp://troglobit.com/inadyn/inadyn-1.99.13.tar.xz.asc)
+* [inadyn-1.99.14.tar.xz](ftp://troglobit.com/inadyn/inadyn-1.99.14.tar.xz),
+  [MD5](ftp://troglobit.com/inadyn/inadyn-1.99.14.tar.xz.md5)
+  [GPG Sign](ftp://troglobit.com/inadyn/inadyn-1.99.14.tar.xz.asc)
 
 See also the [OpenHub page](https://www.openhub.net/p/inadyn/), the
 [Freshcode page](http://freshcode.club/projects/inadyn), or the dormant
@@ -78,7 +80,11 @@ Origin & References
 
 This is the continuation of the
 [original INADYN](http://www.inatech.eu/inadyn/) project by Narcis
-Ilisei.  Included are relavant fixes and additions from the following
+Ilisei.  The goal of this project is to focus on \*BSD and various
+embedded Linux platforms, but *Cygwin is also supported*.  All sane
+patches addressing this target audience are welcome!
+
+Included so far are relavant fixes and additions from the following
 forks:
 
 * ["New" upstream](https://sourceforge.net/projects/inadyn/) by
@@ -91,8 +97,4 @@ forks:
 The [inadyn-mt](http://sourceforge.net/projects/inadyn-mt/) project is
 another fork from the original INADYN.  It maintains support for
 Windows and adds many new features and fixes, not just for Windows.
-
-The goal of this project is to entirely focus on *BSD and various
-embedded Linux platforms.  All sane patches addressing this target
-audience are welcome!
 
