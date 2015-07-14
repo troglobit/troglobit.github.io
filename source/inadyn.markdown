@@ -3,7 +3,7 @@ layout: page
 title: "Inadyn | Small and Simple DDNS Client"
 sharing: true
 footer: true
-date: 2015-02-08 08:36 +0100
+date: 2015-07-14 18:22 +0100
 comments: false
 ---
 
