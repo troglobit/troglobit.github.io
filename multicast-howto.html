@@ -9,9 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="These days I do most of my multicast testing with
-CORE, which is
-readily available i Debian/Ubuntu as simple as sudo apt-get install core-gui CORE is &hellip;">
+  <meta name="description" content="This HowTo attempts to give some insight into the basics of setting up
+multicast routing. Both static multicast routing, with SMCRoute,
+and dynamic &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -88,21 +88,40 @@ readily available i Debian/Ubuntu as simple as sudo apt-get install core-gui COR
 
 
 
-<time class='entry-date' datetime='2015-01-02T12:38:00+01:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2015</span></span> <span class='time'>12:38 pm</span></time>
+<time class='entry-date' datetime='2015-07-16T15:42:00+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>3:42 pm</span></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>These days I do most of my multicast testing with
-<a href="http://www.nrl.navy.mil/itd/ncs/products/core">CORE</a>, which is
-readily available i Debian/Ubuntu as simple as</p>
+<div class="entry-content"><p>This HowTo attempts to give some insight into the basics of setting up
+multicast routing.  Both static multicast routing, with <a href="https://github.com/troglobit/smcroute/">SMCRoute</a>,
+and dynamic multicast routing, with <a href="https://github.com/troglobit/mrouted/">mrouted</a> and <a href="https://github.com/troglobit/pimd/">pimd</a>.</p>
+
+<p>For some use-cases it may not be possible to use multicast routing, then
+I recommend trying out:</p>
+
+<ul>
+<li><a href="http://sourceforge.net/projects/igmpproxy/">igmproxy</a>, <a href="https://github.com/mcproxy/mcproxy">mcproxy</a>, or</li>
+<li>OpenVPN in Layer-2, <a href="https://community.openvpn.net/openvpn/wiki/OpenVPNBridging">bridged mode</a></li>
+</ul>
+
+
+<p>Make sure to check out the <a href="#faq">FAQ</a> for the most common problems.</p>
+
+<p>Good Luck! <br />
+&ndash; Joachim</p>
+
+<h2>CORE</h2>
+
+<p>These days I do most of my multicast testing with <a href="http://www.nrl.navy.mil/itd/ncs/products/core">CORE</a>, which is
+readily available i Debian/Ubuntu as simple as:</p>
 
 <pre><code>sudo apt-get install core-gui
 </code></pre>
 
-<p>CORE is extremely simple to get started with.</p>
+<p>CORE is very simple to get started with:</p>
 
 <ol>
 <li>Fire up the GUI</li>
@@ -113,18 +132,16 @@ readily available i Debian/Ubuntu as simple as</p>
 </ol>
 
 
-<p>Play around a bit to try it out, it&rsquo;s awesome!  I usually start pimd,
-mrouted, and smcroute manually with a script.  (You can access the shell
-of each router by right-clicking on them.)  The host file system is
-reachable from each router in CORE, even though they are isolated and
-have their own
-<a href="http://blog.scottlowe.org/2013/09/04/introducing-linux-network-namespaces/">network namespaces</a>.</p>
+<p>Play around a bit to try it out, it&rsquo;s awesome!  I usually start <code>pimd</code>,
+<code>mrouted</code>, and <code>smcroute</code> manually with a script.  (You can access the
+shell of each router by right-clicking on them.)  The host file system
+is reachable from each router in CORE, even though they are isolated and
+have their own <a href="http://blog.scottlowe.org/2013/09/04/introducing-linux-network-namespaces/">network namespaces</a>.</p>
 
-<p>For more info on network simulation, like the equally awesome
-<a href="http://www.gns3.com/">GNS3</a> for instance, see
-<a href="http://www.brianlinkletter.com/open-source-network-simulators/">Brian Linkletter&rsquo;s Reviews</a></p>
+<p>For more info on network simulation, like the equally awesome <a href="http://www.gns3.com/">GNS3</a>
+for instance, see <a href="http://www.brianlinkletter.com/open-source-network-simulators/">Brian Linkletter&rsquo;s Reviews</a>.</p>
 
-<h2>Roll Your Own Cloud</h2>
+<h2>Roll your own Cloud</h2>
 
 <p>The below setup is done using four Ubuntu 12.04 LTS virtual machines
 running the linux-virtual kernel package.  In the HowTo I mention both
@@ -146,7 +163,7 @@ host# echo 0 &gt; /sys/devices/virtual/net/virbr2/bridge/multicast_snooping
 host# echo 0 &gt; /sys/devices/virtual/net/virbr3/bridge/multicast_snooping
 </code></pre>
 
-<p>Disabling IGMP snooping on the hosts&#8217; virbr3 is not really necessary,
+<p>Disabling IGMP snooping on the hosts&#8217; <code>virbr3</code> is not really necessary,
 but is done anyway for completeness, and also because I re-use the
 same setup in other test cases as well.</p>
 
@@ -162,41 +179,46 @@ same setup in other test cases as well.</p>
 one multicast routing socket, so you have to choose one of:</p>
 
 <ol>
-<li>pimd -c pimd.conf</li>
-<li>mrouted -c mrouted.conf</li>
-<li>smcroute -f smcroute.conf</li>
+<li><code>pimd -c pimd.conf</code></li>
+<li><code>mrouted -c mrouted.conf</code></li>
+<li><code>smcroute -f smcroute.conf</code></li>
 </ol>
 
 
-<p>The default configuration files delivered with pimd and mrouted usually
-suffice, see their respective manual pages or the comments in each .conf
-file for help.</p>
+<p>The default configuration files delivered with <code>pimd</code> and <code>mrouted</code>
+usually suffice, see their respective manual pages or the comments in
+each <code>.conf</code> file for help.</p>
 
-<p>When you start mrouted, you&rsquo;re usually ready to go immediately.  But
-in the case of pimd, wait for routers to peer.  Then you can test your
-setup using ping from R1 to a tcpdump on R4:</p>
+<p>When you start <code>mrouted</code>, you&rsquo;re usually ready to go immediately.  But
+in the case of <code>pimd</code>, wait for routers to peer.  Then you can test your
+setup using multicast <code>ping</code> from R1 to a <code>tcpdump</code> on R4:</p>
 
 <pre><code>R1# ping -I eth1 -t 3 225.1.2.3
 R4# tcpdump -i eth0
 </code></pre>
 
 <p>As soon as the PIM routers R2 and R3 have peered you should start seeing
-ICMP traffic reaching R4.</p>
+ICMP traffic reaching R4.  If you don&rsquo;t, then check the underlying
+routing protocol, e.g. RIP or OSPF, to make sure the <em>reverse path</em> is
+known &ndash; this is required for PIM since, unlike DVMRP (<code>mrouted</code>) which
+sort of has RIP built-in, PIM relies on a unicast routing protocol to
+have populated the routing table.</p>
 
 <p>Now, to the actual test case.  The first command for R1 adds a route for
 all multicast packets, that is necessary for all tools where you cannot
-set the outbound interface for the multicast stream, in our case iperf.</p>
+set the outbound interface for the multicast stream, in our case
+<code>iperf</code>.</p>
 
 <pre><code>R1# ip route add 224.0.0.0/4 dev eth1
 R1# iperf -u -c 225.1.2.3 -T 3
 R4# iperf -s -u -B 225.1.2.3
 </code></pre>
 
-<p>The -T option is important since it tells iperf to raise the TTL to 3,
-the default TTL for multicast is otherwise 1 due to its broadcast like
-nature.</p>
+<p>The <code>-T</code> option is important since it tells <code>iperf</code> to raise the TTL to
+3, the default TTL for multicast is otherwise 1 due to its broadcast
+like nature.</p>
 
-<p>The desired output from iperf is as follows:</p>
+<p>The desired output from <code>iperf</code> is as follows:</p>
 
 <pre><code>R1# iperf -u -c 225.1.2.3 -T 3
 ------------------------------------------------------------
@@ -224,14 +246,14 @@ UDP buffer size:  160 KByte (default)
 </code></pre>
 
 <p>To achieve the same using <a href="/smcroute.html">SMCRoute</a> you need to setup
-the multicast routing rules manually.  The by far easiest way to do
-this is to update <code>/etc/smcroute.conf</code> and and start/restart smcroute,
-or send <code>SIGHUP</code> to an already running daemon.  The below example makes
-use of the source-less (*,G) approach, since we in our limited setup
-have full control over all multicast senders.  There is a slight setup
-cost associated with this: the time it takes the kernel to notify
-SMCRoute about a new source and before the the actual multicast route
-is written to the kernel.  In most cases this is acceptable.</p>
+the multicast routing rules manually.  The easiest way to do this is to
+update <code>/etc/smcroute.conf</code> and and start/restart <code>smcroute</code>, or send
+<code>SIGHUP</code> to an already running daemon.  The below example makes use of
+the source-less (*,G) approach, since we in our limited setup have full
+control over all multicast senders.  There is a slight setup cost
+associated with this: the time it takes the kernel to notify SMCRoute
+about a new source and before the the actual multicast route is written
+to the kernel.  In most cases this is acceptable.</p>
 
 <p>In <code>smcroute.conf</code> on R2:</p>
 
@@ -253,17 +275,44 @@ as with <code>mrouted</code> and <code>pimd</code>.</p>
 
 <h2>FAQ</h2>
 
-<ul>
-<li>It doesn&rsquo;t work? &ndash; Check the TTL.</li>
-<li>Why does the TTL in multicast default to 1? &ndash; Because multicast is
-classified as broadcast, which inherently is dangerous.  Without
-proper limitation, like switches with support for IGMP Snooping,
-multicast IS broadcast.</li>
-<li>It doesn&rsquo;t work? &ndash; Check your network topology, maybe a switch
-between the sender and the receiver doesn&rsquo;t properly support IGMP
-snooping.  For virtual/cloud setups, see above for disabling IGMP
-snooping entirely in the Linux kernel.</li>
-</ul>
+<ol>
+<li><p>It doesn&rsquo;t work?</p>
+
+<p>Check the TTL.</p></li>
+<li><p>Why does the TTL in multicast default to 1?</p>
+
+<p>Because multicast is classified as broadcast, which inherently is
+dangerous.  Without proper limitation, like switches with support for
+IGMP Snooping, multicast IS broadcast.</p></li>
+<li><p>I want to use the loopback interface, but it doesn&rsquo;t show in <code>pimd</code>?</p>
+
+<p>Some interfaces, like <code>lo</code> or <code>tunN</code>, do not have the <code>MULTICAST</code>
+interface flag set by default.  It should work if you enable it:</p>
+
+<pre><code> ip link set lo multicast on
+ ip link set tun1 multicast on
+</code></pre></li>
+<li><p>It doesn&rsquo;t work?</p>
+
+<p>Check your network topology, maybe a switch between the sender and
+the receiver doesn&rsquo;t properly support IGMP snooping.</p>
+
+<p>For virtual/cloud setups, see above for disabling IGMP snooping
+entirely in the Linux kernel.</p></li>
+<li><p>The PIM routers seem to have peered, and they list the multicast
+groups I want to forward, the TTL is OK, but I see no traffic?</p>
+
+<p>Could be your underlying routing protocol (RIP/OSPF) does not know
+the reverse path to the source.  Make sure the sender&rsquo;s network is
+listed in the routing table on the receiving sides routing table.</p></li>
+<li><p>What&rsquo;s the routing performance of <code>pimd</code>/<code>mrouted</code>/<code>smcroute</code>?</p>
+
+<p>N/A.  Neither of them take active part in the actual forwarding of
+multicast frames.  This is what the kernel, or dedicated routing HW,
+does.  The routing daemons <code>pimd</code>/<code>mrouted</code>/<code>smcroute</code> only
+manipulate the multicast routing table(s) of the operaring system&rsquo;s
+kernel.</p></li>
+</ol>
 
 </div>
 
@@ -280,12 +329,12 @@ snooping entirely in the Linux kernel.</li>
 
 
 
-<time class='entry-date' datetime='2015-01-02T12:38:00+01:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2015</span></span> <span class='time'>12:38 pm</span></time>
+<time class='entry-date' datetime='2015-07-16T15:42:00+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>3:42 pm</span></time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/multicast/'>Multicast</a>, <a class='category' href='/blog/categories/smcroute/'>SMCRoute</a>, <a class='category' href='/blog/categories/mrouted/'>mrouted</a>, <a class='category' href='/blog/categories/pimd/'>pimd</a>
+    <a class='category' href='/blog/categories/igmp/'>IGMP</a>, <a class='category' href='/blog/categories/multicast/'>Multicast</a>, <a class='category' href='/blog/categories/smcroute/'>SMCRoute</a>, <a class='category' href='/blog/categories/igmpproxy/'>igmpproxy</a>, <a class='category' href='/blog/categories/mcproxy/'>mcproxy</a>, <a class='category' href='/blog/categories/mrouted/'>mrouted</a>, <a class='category' href='/blog/categories/pimd/'>pimd</a>
   
 </span>
 
