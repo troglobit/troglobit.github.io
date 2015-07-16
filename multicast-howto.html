@@ -284,6 +284,16 @@ as with <code>mrouted</code> and <code>pimd</code>.</p>
 <p>Because multicast is classified as broadcast, which inherently is
 dangerous.  Without proper limitation, like switches with support for
 IGMP Snooping, multicast IS broadcast.</p></li>
+<li><p>I cannot change the TTL of the multicast sender, what can I do?!</p>
+
+<p>Ouch, then you may have to use some firewall mangling technique.
+Here is how you could do it on Linux with iptables:</p>
+
+<pre><code> iptables -t mangle -A OUTPUT -d &lt;group&gt; -j TTL --ttl-set 128
+</code></pre>
+
+<p>Where <code>group</code> is the multicast group address of the stream you want
+to change the TTL of.  From this <a href="http://www.redhat.com/archives/linux-cluster/2007-September/msg00150.html">RedHat mailing list entry</a>.</p></li>
 <li><p>I want to use the loopback interface, but it doesn&rsquo;t show in <code>pimd</code>?</p>
 
 <p>Some interfaces, like <code>lo</code> or <code>tunN</code>, do not have the <code>MULTICAST</code>
