@@ -192,7 +192,17 @@ FAQ
    dangerous.  Without proper limitation, like switches with support for
    IGMP Snooping, multicast IS broadcast.
 
-3. I want to use the loopback interface, but it doesn't show in `pimd`?
+3. I cannot change the TTL of the multicast sender, what can I do?!
+
+   Ouch, then you may have to use some firewall mangling technique.
+   Here is how you could do it on Linux with iptables:
+
+        iptables -t mangle -A OUTPUT -d <group> -j TTL --ttl-set 128
+
+   Where `group` is the multicast group address of the stream you want
+   to change the TTL of.  From this [RedHat mailing list entry][11].
+
+4. I want to use the loopback interface, but it doesn't show in `pimd`?
 
    Some interfaces, like `lo` or `tunN`, do not have the `MULTICAST`
    interface flag set by default.  It should work if you enable it:
@@ -200,7 +210,7 @@ FAQ
         ip link set lo multicast on
         ip link set tun1 multicast on
 
-4. It doesn't work?
+5. It doesn't work?
 
    Check your network topology, maybe a switch between the sender and
    the receiver doesn't properly support IGMP snooping.
@@ -208,14 +218,14 @@ FAQ
    For virtual/cloud setups, see above for disabling IGMP snooping
    entirely in the Linux kernel.
 
-5. The PIM routers seem to have peered, and they list the multicast
+6. The PIM routers seem to have peered, and they list the multicast
    groups I want to forward, the TTL is OK, but I see no traffic?
 
    Could be your underlying routing protocol (RIP/OSPF) does not know
    the reverse path to the source.  Make sure the sender's network is
    listed in the routing table on the receiving sides routing table.
 
-6. What's the routing performance of `pimd`/`mrouted`/`smcroute`?
+7. What's the routing performance of `pimd`/`mrouted`/`smcroute`?
 
    N/A.  Neither of them take active part in the actual forwarding of
    multicast frames.  This is what the kernel, or dedicated routing HW,
@@ -234,3 +244,4 @@ FAQ
 [8]: http://blog.scottlowe.org/2013/09/04/introducing-linux-network-namespaces/
 [9]: http://www.gns3.com/
 [10]: http://www.brianlinkletter.com/open-source-network-simulators/
+[11]: http://www.redhat.com/archives/linux-cluster/2007-September/msg00150.html
