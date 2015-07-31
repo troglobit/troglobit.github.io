@@ -3,7 +3,7 @@ layout: page
 title: pimd | The original PIM-SM daemon
 sharing: true
 footer: true
-date: 2014-12-28 13:37
+date: 2014-12-31 13:37
 comments: false
 ---
 
@@ -11,32 +11,37 @@ comments: false
 
 {% img right /images/pim-sm.gif 222 155 %}
 
-pimd is a lightweight stand-alone PIM-SM v2 multicast routing
-daemon. It is the original USC (netweb/catarina.usc.edu)
-implementation of the protocol, according to
-[RFC 2362](http://tools.ietf.org/html/rfc2362).
+pimd is a lightweight standalone PIM-SM/SSM v2 multicast routing daemon.
+It is the original USC (netweb/catarina.usc.edu) implementation of the
+protocol, [RFC 2362][1].  Today pimd strives for [RFC 4601][2]
+compliance, with the v2.3.0 release supporting both PIM-SSM and IGMPv3.
 
-Thanks to OpenBSD freeing [mrouted](/mrouted.shtml), pimd is now also
-fully free to use under the 3-clause
-[BSD license](https://github.com/troglobit/pimd/blob/master/LICENSE).
+In 2003 the OpenBSD project [managed to convince Stanford][stanford] in
+to change the license of [mrouted](/mrouted.shtml).  This in turn also
+freed pimd, since it is built with DNA strands from mrouted.  pimd is
+fully free to use under the simplified 3-clause [BSD license][license].
+
+------
 
 Protocol Independent Multicast, PIM, allows existing networks to route
-IP multicast, regardless of what unicast routing protocol is in use.
-It is designed to use the existing routing tables to make its
-multicast routing decisions.  PIM-SM is suitable for sparsely located
-multicast subscribers, for dense mode operation
-[mrouted](/mrouted.html) is recommended, and for static multicast
-routing [smcroute](/smcroute.html) may be used.
+IP multicast, regardless of what unicast routing protocol is in use.  It
+is designed to use existing routing tables to make its multicast routing
+decisions.  PIM-SM is suitable for sparsely located multicast
+subscribers, for dense mode operation [mrouted](/mrouted.html) is
+recommended, and for static multicast routing [smcroute](/smcroute.html)
+may be used.
 
 pimd was written by Ahmed Helmy, George Edmond "Rusty" Eddy, and
 Pavlin Ivanov Radoslavov. With contributions by many others.
 
+------
+
 Issue tracker and GIT repository available at GitHub:
 
    * [Repository](http://github.com/troglobit/pimd)
-   * [ChangeLog](https://github.com/troglobit/pimd/releases/tag/2.2.0)
-   * [pimd-2.2.0.tar.bz2](ftp://troglobit.com/pimd/pimd-2.2.0.tar.bz2),
-     [MD5](ftp://troglobit.com/pimd/pimd-2.2.0.tar.bz2.md5)
+   * [ChangeLog](https://github.com/troglobit/pimd/releases/tag/2.3.0)
+   * [pimd-2.3.0.tar.gz](ftp://troglobit.com/pimd/pimd-2.3.0.tar.gz),
+     [MD5](ftp://troglobit.com/pimd/pimd-2.3.0.tar.gz.md5)
    * [Issue Tracker](http://github.com/troglobit/pimd/issues)
    * [Debian packages](http://packages.debian.org/pimd)
    * [Ubuntu packages](http://packages.ubuntu.com/pimd)
@@ -50,34 +55,36 @@ Problems?  See the [multicast howto](/multicast-howto.html)
 References
 ----------
 
-The PIM-SM protocol was first defined in
-[RFC 2362](http://tools.ietf.org/html/rfc2362) and later updated in
-[RFC 4601](http://tools.ietf.org/html/rfc4601), with additions in
-[RFC 5059](http://tools.ietf.org/html/rfc5059) and
-[RFC 5796](http://tools.ietf.org/html/rfc5796).
+The PIM-SM protocol was first defined in [RFC 2362][1] and later updated
+in [RFC 4601][2], with additions in [RFC 5059][3] and [RFC 5796][4].
 
    * The PIM-SM GateD implementation from ISI. (defunct)
    * The PIM-DM GateD implementation from the University of Oregon. (defunct)
-   * The [pimd-dense](http://antc.uoregon.edu/PIMDM/pimd-dense.html)
+   * The [pimd-dense][dense]
      University of Oregon standalone implementation, based on the USC
      pimd.
    * The PIM-SM implementation from [the XORP project](http://www.xorp.org/)
-   * The PIM IPv6
-     [pim6sd](http://clarinet.u-strasbg.fr/~hoerdt/dev/pim6sd_linux/)
-     by Mickael Hoerdt at LSIIT Laboratory, based on the USC pimd.
+   * The PIM IPv6 [pim6sd][] by Mickael Hoerdt at LSIIT Laboratory,
+     based on USC pimd.
    * [MRD6](http://fivebits.net/proj/mrd6/), an IPv6 Multicast Router
    * The upcoming [Quagga](http://www.quagga.net/) PIM-SSM,
-     [qpimpd](https://savannah.nongnu.org/projects/qpimd)
+     [qpimpd](https://savannah.nongnu.org/projects/qpimd) -- Now merged!
+
 
 Mailing Lists
 -------------
 
 The following mailing list is directly related to PIM:
 
-   * pim@ietf.org: the IETF PIM Working Group mailing list.
-   * To subscribe/unsubscribe,
-     [https://www.ietf.org/mailman/listinfo/pim/](https://www.ietf.org/mailman/listinfo/pim/)
-   * Archives available at
-     [http://www.ietf.org/mail-archive/web/pim/current/maillist.html](http://www.ietf.org/mail-archive/web/pim/current/maillist.html)
+   * <mailto:pim@ietf.org>: the IETF PIM Working Group mailing list.
+   * To subscribe/unsubscribe, <https://www.ietf.org/mailman/listinfo/pim/>
+   * Archives available at <http://www.ietf.org/mail-archive/web/pim/current/maillist.html>
 
-
+[1]: http://tools.ietf.org/html/rfc2362
+[2]: http://tools.ietf.org/html/rfc4601
+[3]: http://tools.ietf.org/html/rfc5059
+[4]: http://tools.ietf.org/html/rfc5796
+[dense]: http://antc.uoregon.edu/PIMDM/pimd-dense.html
+[pim6sd]: http://clarinet.u-strasbg.fr/~hoerdt/dev/pim6sd_linux/
+[stanford]: http://www.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/LICENSE
+[license]: https://github.com/troglobit/pimd/blob/master/LICENSE
