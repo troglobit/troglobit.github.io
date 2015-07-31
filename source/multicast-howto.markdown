@@ -88,8 +88,11 @@ same setup in other test cases as well.
     |   eth1|     virbr1     |   eth1|     virbr2     |   eth1|    virbr3      |       |
     +-------+                +-------+                +-------+                +-------+
 
-This setup can be used in two separate use cases, remember there is only
-one multicast routing socket, so you have to choose one of:
+This setup, or
+[another more advanced](ftp://ftp.troglobit.com/pimd/lab-network.svg),
+can be used for trying out SMCRoute, pimd and mrouted.  Remember there
+is only one multicast routing socket, so for each router (Rn) you have
+to choose one of:
 
 1.  `pimd -c pimd.conf`
 2.  `mrouted -c mrouted.conf`
