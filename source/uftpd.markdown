@@ -3,7 +3,7 @@ layout: page
 title: "uftpd -- the no nonsense (T)FTP server"
 sharing: true
 footer: true
-date: 2015-02-02 07:00 +0100
+date: 2015-07-23 02:07 +0100
 comments: false
 ---
 
@@ -38,10 +38,10 @@ background and context :)
 * [README](https://github.com/troglobit/uftpd/blob/master/README.md)
 * [TODO](https://github.com/troglobit/uftpd/blob/master/TODO.md)
 * [Issue Tracker](http://github.com/troglobit/uftpd/issues)
-* [uftpd-1.8.tar.xz](ftp://troglobit.com/uftpd/uftpd-1.8.tar.xz),
-  [MD5](ftp://troglobit.com/uftpd/uftpd-1.8.tar.xz.md5)
-* [uftpd_1.8-1_amd64.deb](ftp://troglobit.com/uftpd/uftpd_1.8-1_amd64.deb),
-  [changes](ftp://troglobit.com/uftpd/uftpd_1.8-1_amd64.changes)
+* [uftpd-1.9.tar.xz](ftp://troglobit.com/uftpd/uftpd-1.9.tar.xz),
+  [MD5](ftp://troglobit.com/uftpd/uftpd-1.9.tar.xz.md5)
+* [uftpd_1.9-1_amd64.deb](ftp://troglobit.com/uftpd/uftpd_1.9-1_amd64.deb),
+  [changes](ftp://troglobit.com/uftpd/uftpd_1.9-1_amd64.changes)
 
 See also the [OpenHub page](https://www.openhub.net/p/uftpd/), or the
 (sadly) dormant [Free(code) page](http://freecode.com/projects/uftpd).
