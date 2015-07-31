@@ -9,8 +9,8 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="Pimd | the Original PIM-SM Daemon Dec 28th, 2014 1:37 pm pimd is a lightweight stand-alone PIM-SM v2 multicast routing
-daemon. It is the original &hellip;">
+  <meta name="description" content="Pimd | the Original PIM-SM Daemon Dec 31st, 2014 1:37 pm pimd is a lightweight standalone PIM-SM/SSM v2 multicast routing daemon.
+It is the original &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,40 +83,45 @@ daemon. It is the original &hellip;">
 
 
 
-<time class='entry-date' datetime='2014-12-28T13:37:00+01:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>1:37 pm</span></time></p>
+<time class='entry-date' datetime='2014-12-31T13:37:00+01:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>31</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>1:37 pm</span></time></p>
   </header>
   
   <p><a href="https://github.com/troglobit/pimd"><img style="position: absolute; top: 0; right: 0; border: none; box-shadow: none;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a></p>
 
 <p><img class="right" src="/images/pim-sm.gif" width="222" height="155"></p>
 
-<p>pimd is a lightweight stand-alone PIM-SM v2 multicast routing
-daemon. It is the original USC (netweb/catarina.usc.edu)
-implementation of the protocol, according to
-<a href="http://tools.ietf.org/html/rfc2362">RFC 2362</a>.</p>
+<p>pimd is a lightweight standalone PIM-SM/SSM v2 multicast routing daemon.
+It is the original USC (netweb/catarina.usc.edu) implementation of the
+protocol, <a href="http://tools.ietf.org/html/rfc2362">RFC 2362</a>.  Today pimd strives for <a href="http://tools.ietf.org/html/rfc4601">RFC 4601</a>
+compliance, with the v2.3.0 release supporting both PIM-SSM and IGMPv3.</p>
 
-<p>Thanks to OpenBSD freeing <a href="/mrouted.shtml">mrouted</a>, pimd is now also
-fully free to use under the 3-clause
-<a href="https://github.com/troglobit/pimd/blob/master/LICENSE">BSD license</a>.</p>
+<p>In 2003 the OpenBSD project <a href="http://www.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/LICENSE">managed to convince Stanford</a> in
+to change the license of <a href="/mrouted.shtml">mrouted</a>.  This in turn also
+freed pimd, since it is built with DNA strands from mrouted.  pimd is
+fully free to use under the simplified 3-clause <a href="https://github.com/troglobit/pimd/blob/master/LICENSE">BSD license</a>.</p>
+
+<hr />
 
 <p>Protocol Independent Multicast, PIM, allows existing networks to route
-IP multicast, regardless of what unicast routing protocol is in use.
-It is designed to use the existing routing tables to make its
-multicast routing decisions.  PIM-SM is suitable for sparsely located
-multicast subscribers, for dense mode operation
-<a href="/mrouted.html">mrouted</a> is recommended, and for static multicast
-routing <a href="/smcroute.html">smcroute</a> may be used.</p>
+IP multicast, regardless of what unicast routing protocol is in use.  It
+is designed to use existing routing tables to make its multicast routing
+decisions.  PIM-SM is suitable for sparsely located multicast
+subscribers, for dense mode operation <a href="/mrouted.html">mrouted</a> is
+recommended, and for static multicast routing <a href="/smcroute.html">smcroute</a>
+may be used.</p>
 
 <p>pimd was written by Ahmed Helmy, George Edmond &ldquo;Rusty&rdquo; Eddy, and
 Pavlin Ivanov Radoslavov. With contributions by many others.</p>
+
+<hr />
 
 <p>Issue tracker and GIT repository available at GitHub:</p>
 
 <ul>
 <li> <a href="http://github.com/troglobit/pimd">Repository</a></li>
-<li> <a href="https://github.com/troglobit/pimd/releases/tag/2.2.0">ChangeLog</a></li>
-<li> <a href="ftp://troglobit.com/pimd/pimd-2.2.0.tar.bz2">pimd-2.2.0.tar.bz2</a>,
- <a href="ftp://troglobit.com/pimd/pimd-2.2.0.tar.bz2.md5">MD5</a></li>
+<li> <a href="https://github.com/troglobit/pimd/releases/tag/2.3.0">ChangeLog</a></li>
+<li> <a href="ftp://troglobit.com/pimd/pimd-2.3.0.tar.gz">pimd-2.3.0.tar.gz</a>,
+ <a href="ftp://troglobit.com/pimd/pimd-2.3.0.tar.gz.md5">MD5</a></li>
 <li> <a href="http://github.com/troglobit/pimd/issues">Issue Tracker</a></li>
 <li> <a href="http://packages.debian.org/pimd">Debian packages</a></li>
 <li> <a href="http://packages.ubuntu.com/pimd">Ubuntu packages</a></li>
@@ -130,11 +135,8 @@ Pavlin Ivanov Radoslavov. With contributions by many others.</p>
 
 <h2>References</h2>
 
-<p>The PIM-SM protocol was first defined in
-<a href="http://tools.ietf.org/html/rfc2362">RFC 2362</a> and later updated in
-<a href="http://tools.ietf.org/html/rfc4601">RFC 4601</a>, with additions in
-<a href="http://tools.ietf.org/html/rfc5059">RFC 5059</a> and
-<a href="http://tools.ietf.org/html/rfc5796">RFC 5796</a>.</p>
+<p>The PIM-SM protocol was first defined in <a href="http://tools.ietf.org/html/rfc2362">RFC 2362</a> and later updated
+in <a href="http://tools.ietf.org/html/rfc4601">RFC 4601</a>, with additions in <a href="http://tools.ietf.org/html/rfc5059">RFC 5059</a> and <a href="http://tools.ietf.org/html/rfc5796">RFC 5796</a>.</p>
 
 <ul>
 <li> The PIM-SM GateD implementation from ISI. (defunct)</li>
@@ -143,12 +145,11 @@ Pavlin Ivanov Radoslavov. With contributions by many others.</p>
  University of Oregon standalone implementation, based on the USC
  pimd.</li>
 <li> The PIM-SM implementation from <a href="http://www.xorp.org/">the XORP project</a></li>
-<li> The PIM IPv6
- <a href="http://clarinet.u-strasbg.fr/~hoerdt/dev/pim6sd_linux/">pim6sd</a>
- by Mickael Hoerdt at LSIIT Laboratory, based on the USC pimd.</li>
+<li> The PIM IPv6 <a href="http://clarinet.u-strasbg.fr/~hoerdt/dev/pim6sd_linux/">pim6sd</a> by Mickael Hoerdt at LSIIT Laboratory,
+ based on USC pimd.</li>
 <li> <a href="http://fivebits.net/proj/mrd6/">MRD6</a>, an IPv6 Multicast Router</li>
 <li> The upcoming <a href="http://www.quagga.net/">Quagga</a> PIM-SSM,
- <a href="https://savannah.nongnu.org/projects/qpimd">qpimpd</a></li>
+ <a href="https://savannah.nongnu.org/projects/qpimd">qpimpd</a> &ndash; Now merged!</li>
 </ul>
 
 
@@ -157,11 +158,9 @@ Pavlin Ivanov Radoslavov. With contributions by many others.</p>
 <p>The following mailing list is directly related to PIM:</p>
 
 <ul>
-<li> pim@ietf.org: the IETF PIM Working Group mailing list.</li>
-<li> To subscribe/unsubscribe,
- <a href="https://www.ietf.org/mailman/listinfo/pim/">https://www.ietf.org/mailman/listinfo/pim/</a></li>
-<li> Archives available at
- <a href="http://www.ietf.org/mail-archive/web/pim/current/maillist.html">http://www.ietf.org/mail-archive/web/pim/current/maillist.html</a></li>
+<li> <a href="&#x6d;&#97;&#105;&#108;&#x74;&#111;&#x3a;&#112;&#105;&#x6d;&#64;&#105;&#101;&#116;&#102;&#x2e;&#x6f;&#x72;&#x67;">&#112;&#x69;&#x6d;&#x40;&#x69;&#x65;&#x74;&#102;&#x2e;&#111;&#114;&#x67;</a>: the IETF PIM Working Group mailing list.</li>
+<li> To subscribe/unsubscribe, <a href="https://www.ietf.org/mailman/listinfo/pim/">https://www.ietf.org/mailman/listinfo/pim/</a></li>
+<li> Archives available at <a href="http://www.ietf.org/mail-archive/web/pim/current/maillist.html">http://www.ietf.org/mail-archive/web/pim/current/maillist.html</a></li>
 </ul>
 
 
@@ -174,7 +173,7 @@ Pavlin Ivanov Radoslavov. With contributions by many others.</p>
 
 
 
-<time class='entry-date' datetime='2014-12-28T13:37:00+01:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>1:37 pm</span></time>
+<time class='entry-date' datetime='2014-12-31T13:37:00+01:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>31</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>1:37 pm</span></time>
         
       </p>
       
@@ -204,10 +203,16 @@ Pavlin Ivanov Radoslavov. With contributions by many others.</p>
     <li><a href="/snake.html">Micro Snake</a></li>
     <li><a href="/editline.html">Minix Editline</a></li>
     <li><a href="/inadyn.html">Inadyn DDNS Client</a></li>
-    <li><a href="/multicast-howto.html">Multicast HowTo</a></li>
     <li><a href="/mrouted.html">The Original Multicast Routing Daemon</a></li>
     <li><a href="/pimd.html">The Original PIM-SM Daemon</a></li>
     <li><a href="/smcroute.html">SMCRoute Static Multicast Routing</a></li>
+  </ul>
+</section>
+<section>
+  <h1>HowTos</h1>
+  <ul>
+    <li><a href="/multicast-howto.html">Multicast</a></li>
+    <li><a href="/howto-run-pimd-on-openbsd.html">Run pimd on OpenBSD</a></li>
   </ul>
 </section>
 <section>
