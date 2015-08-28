@@ -27,6 +27,8 @@ My [GPG key][] fingerprint is `DE09 3183 2DBF 8339 191F B2B2 2C2A B0A9
 
 Contact me as 'troglobit' at the Google mailing system.
 
+You can find my [online resume here][resume], or download the [PDF][].
+
 [Finit]:    /finit.html
 [Inadyn]:   /inadyn.html
 [pimd]:     /pimd.html
@@ -38,3 +40,5 @@ Contact me as 'troglobit' at the Google mailing system.
 [FLOSS]:    http://en.wikipedia.org/wiki/Free_and_open-source_software
 [GitHub]:   http://github.com/troglobit/
 [GPG key]:  http://pgp.mit.edu:11371/pks/lookup?op=get&search=0x6E0C4758
+[resume]:   http://resume.troglobit.com
+[PDF]:      http://resume.troglobit.com/resume.pdf
