@@ -45,3 +45,9 @@ background and context :)
 
 See also the [OpenHub page](https://www.openhub.net/p/uftpd/), or the
 (sadly) dormant [Free(code) page](http://freecode.com/projects/uftpd).
+
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->
