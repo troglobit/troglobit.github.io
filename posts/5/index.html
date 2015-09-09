@@ -9,9 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="It is with great pleasure I announce the next release of the
-editline library by Simmule Turner and Rich Salz! This is a
-popular library, it exists &hellip;">
+  <meta name="description" content="Compared to OpenBSD and FreeBSD the NetBSD install was hard, really
+hard. It wasn&rsquo;t until I stumbled across this that I managed to
+convince &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,57 @@ popular library, it exists &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/08/29/finally/">Finally, NetBSD Boots in KVM!</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2010-08-29T20:44:34+02:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>29</span><span class='date-suffix'>th</span>, <span class='date-year'>2010</span></span> <span class='time'>8:44 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Compared to OpenBSD and FreeBSD the NetBSD install was hard, really
+hard.  It wasn&rsquo;t until I stumbled across <a href="https://ezunix.org/index.php?title=NetBSD_5_on_KVM">this</a> that I managed to
+convince myself to try it again.</p>
+
+<p>The trick seems to be to ignore as much as you can from other Internet
+tips.  NetBSD runs fine in KVM, so if someone says you need to run it in
+Qemu mode &mdash; don&rsquo;t believe the hype.  OK, in <code>virt-manager</code> there
+is no preset defaults for NetBSD, so I went with a generic OS and tried
+starting the install from there.  The kernel hangs before it probes USB,
+or it segfaults.</p>
+
+<p>What I did was to stop the guest, and in the details view I disabled
+ACPI and selected the pcnet NIC instead of the default <code>ne2k-pci</code>.
+Running the default options in the NetBSD 5.0.2 installer, and the
+bootloader after install, works fine.</p>
+
+<p>If you still don&rsquo;t manage to get it running check the KVM home page for
+<a href="http://www.linux-kvm.org/page/Bugs">known bugs</a> and workarounds.  Sometimes it helps adding
+<code>-no-kvm-irqchip</code> or <code>-no-kvm-pit</code>. However, <code>virt-manager</code> does not
+seem to support these options yet, so you must run from the command
+line.</p>
+
+<p>Good Luck!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -526,59 +577,6 @@ about it, as are we, your proud parents. :-)</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/06/14/editline-first-post/">Editline First Post</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2009-06-14T20:44:45+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>8:44 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>For a while now I&rsquo;ve been maintaining a port of the <a href="http://www.cise.ufl.edu/~cop4600/cgi-bin/lxr/http/source.cgi/lib/editline/">Minix</a> editline
-library libedit.  Mainly for my own purposes, or rather on behalf of
-<a href="http://www.westermo.com">Westermo WeOS</a>, where it is used in the CLI.  This library is the
-same as the <a href="https://packages.qa.debian.org/e/editline.html">Debian editline</a> package, even though the origin of that
-package is <a href="https://lists.debian.org/debian-devel/2000/05/msg00548.html">somewhat unclear</a> to me.</p>
-
-<p>Today I decided to adjust the package name and bump the version number
-to indicate that my port is the same, and now slightly more advanced,
-than the Debian version.  To that end I&rsquo;ve now changed the repository
-name and prepared for merging with Debian. Getting this work accepted
-back into Debian is a completely different issue.</p>
-
-<p>Get the code as a <a href="http://www.bazaar-vcs.org">Bazaar</a> branch, or view its change log through the
-<a href="https://launchpad.net/loggerhead">Loggerhead</a> web interface:</p>
-
-<ul>
-<li>bzr branch <a href="http://git.troglobit.com/editline.git">http://bzr.vmlinux.org/editline</a></li>
-<li><a href="http://git.troglobit.com/editline.git">Loggerhead web interface</a></li>
-<li><a href="http://troglobit.com/editline.html">New homepage</a></li>
-</ul>
-
-
-<p>I now intend to do some further integration work, adapting the <code>debian/</code>
-directory from editline-1.12-5 and smoothing out any remaining issues
-before I release 1.13.0.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/6">&larr; Older</a>
@@ -618,6 +616,10 @@ before I release 1.13.0.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/09/09/summer-of-code-2015/">Summer of Code 2015</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/07/02/howto-using-lite-with-a-git-based-application/">HowTo: Using -lite With a GIT-based Application</a>
       </li>
     
@@ -631,10 +633,6 @@ before I release 1.13.0.</p>
     
       <li class="post">
         <a href="/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/">Inetd Support in Finit v1.12</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/01/24/finit-v1-dot-11-released/">Finit v1.11 Released!</a>
       </li>
     
   </ul>

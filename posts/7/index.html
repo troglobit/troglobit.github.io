@@ -9,9 +9,8 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="This is a first effort at collecting information about network
-programming structs and APIs available in UNIX. I plan on updating this
-as I find more &hellip;">
+  <meta name="description" content="How to recode AVI-files to be able to write them to a Video CD. ffmpeg -i original.avi -target pal-vcd copy.mpg
+vcdimager -t vcd1 -l "Title" -c vcd. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +75,50 @@ as I find more &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/02/14/reminder-to-self/">Reminder to Self</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-02-14T20:13:41+01:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>8:13 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>How to recode AVI-files to be able to write them to a <a href="http://en.wikipedia.org/wiki/Video_CD">Video CD</a>.</p>
+
+<pre><code>ffmpeg -i original.avi -target pal-vcd copy.mpg
+vcdimager -t vcd1 -l "Title" -c vcd.cue -b vcd.bin copy.mpg
+cdrdao write --device /dev/cdrw vcd.cue
+</code></pre>
+
+<p><strong>Note:</strong> <code>vcdimager</code> is able to take multiple .mpg files as argument,
+very useful when burning multiple family videos to the same disc!</p>
+
+<hr />
+
+<p>Tip from <a href="http://nummerfem.se/">Johan Risberg</a> on how to be able to reattach a UTF-8 Linux
+screen session from Cygwin.  First, start irssi in a screen from a
+Linux login with <code>LANG=LANG en_US.utf8</code>.  Then reattach to the screen,
+preferably using <code>-xRR</code>, with <code>LANG=C</code> from <a href="http://www.cygwin.org/cygwin">Cygwin</a>.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -535,57 +578,6 @@ should symlink that to their <code>~/bin</code> as well.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/07/22/more-emacs-progress/">More Emacs Progress!</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2008-07-22T23:56:55+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2008</span></span> <span class='time'>11:56 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Wow, I&rsquo;m almost starting to feel like a Windows user.  The latest CVS
-builds of <a href="http://www.gnu.org/software/emacs/">GNU Emacs</a> has a lot of new features:</p>
-
-<ul>
-<li>XFT Support (font anti-aliasing)</li>
-<li>Better GTK integration (desktop)</li>
-<li>A font selector!</li>
-</ul>
-
-
-<p>I use the CVS version now as my daily driver in Ubuntu 8.10.  It&rsquo;s
-really useful, and I love the improved support for debugging programs
-inside Emacs!</p>
-
-<p>I think it is quite impressive how far this little editor has come.  OK,
-so it is perhaps not just an editor anymore.  Some people claim it is a
-fully sufficient operating system and other refer to it as a kitchen
-sink.  Nevertheless, today you do not need to know any Lisp to configure
-it or grab the scroll bar with the middle mouse button or any other
-archaic method to get around.</p>
-
-<p>Still interested?  Be sure to <a href="http://www.gnu.org/software/emacs/tour/">take the tour</a> and then proceed to
-explore the wonderful world of Emacs! :)</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/8">&larr; Older</a>
@@ -625,6 +617,10 @@ explore the wonderful world of Emacs! :)</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/09/09/summer-of-code-2015/">Summer of Code 2015</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/07/02/howto-using-lite-with-a-git-based-application/">HowTo: Using -lite With a GIT-based Application</a>
       </li>
     
@@ -638,10 +634,6 @@ explore the wonderful world of Emacs! :)</p>
     
       <li class="post">
         <a href="/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/">Inetd Support in Finit v1.12</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/01/24/finit-v1-dot-11-released/">Finit v1.11 Released!</a>
       </li>
     
   </ul>

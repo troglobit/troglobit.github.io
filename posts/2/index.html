@@ -9,10 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="New release of uftpd, this time with TFTP blocksize negotiation,
-RFC 2348. Making it a lot
-faster to transfer files over TFTP. Try it out!
-">
+  <meta name="description" content="On one of the last days of 2014 I release pimd
+v2.2.0, which
+is an awesome release with a lot of new features and bug fixes! However, it could very &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +76,60 @@ faster to transfer files over TFTP. Try it out!
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/12/28/last-release-of-pimd/">Pimd v2.2.0 &#8211; the Last Release of Pimd?</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-12-28T13:42:18+01:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>1:42 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>On one of the last days of 2014 I release <a href="/pimd.html">pimd</a>
+<a href="https://github.com/troglobit/pimd/releases/tag/2.2.0">v2.2.0</a>, which
+is an awesome release with a lot of new features and bug fixes!</p>
+
+<p>However, it could very well be the last release I do.  Even though its
+one of my most popular projects on
+<a href="https://github.com/troglobit">GitHub</a> I have not had enough time to
+dedicate to it over the years.  I will continue to do fixes and merge
+pull requests until someone else steps up to take over.  There is also
+the distinct possibility that the
+<a href="https://github.com/greearb/xorp.ct">Xorp PIM-SM</a> or the new
+<a href="https://github.com/udhos/qpimd">Quagga PIM-SSM</a> implementations will
+(finally) make good old pimd completely redundant.</p>
+
+<p>At <a href="http://www.westermo.com">work</a> we will likely start using the
+Quagga PIM rather than pimd in WeOS.</p>
+
+<p>For now though, enjoy pimd v2.2.0.  It&rsquo;s been tested in both my Qemu
+based virtual testbed and a few setups using Linux&#8217; <code>netns</code> feature in
+<a href="http://www.nrl.navy.mil/itd/ncs/products/core">CORE</a> &ndash; awesome
+little proggy! :-)</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/12/28/last-release-of-pimd/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -496,46 +549,6 @@ still has the old .conf file format, but just maybe.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/05/04/why-write-your-own-ftp-server/">Why Write Your Own FTP Server?</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-05-04T11:25:09+02:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>11:25 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>So, I finally got fed up with all other FTP servers and wrote
-<a href="/uftpd.html">my own</a>.  Why would someone in their right mind do
-something like this 2014?</p>
-
-<p>As a developer the answer to most such questions is usually; to
-scratch an itch.  For a very long time I&rsquo;ve looked for a really simple
-FTP server that just works, out of the box!</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/05/04/why-write-your-own-ftp-server/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/3">&larr; Older</a>
@@ -575,6 +588,10 @@ FTP server that just works, out of the box!</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/09/09/summer-of-code-2015/">Summer of Code 2015</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/07/02/howto-using-lite-with-a-git-based-application/">HowTo: Using -lite With a GIT-based Application</a>
       </li>
     
@@ -588,10 +605,6 @@ FTP server that just works, out of the box!</p>
     
       <li class="post">
         <a href="/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/">Inetd Support in Finit v1.12</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/01/24/finit-v1-dot-11-released/">Finit v1.11 Released!</a>
       </li>
     
   </ul>

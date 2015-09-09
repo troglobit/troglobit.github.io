@@ -9,8 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="This is mainly some notes for myself so I don&rsquo;t forget. Having worked
-with GNU Bazaar before much of Git is still alien to me. This HowTo is &hellip;">
+  <meta name="description" content="For a while now I&rsquo;ve been maintaining a port of the Minix editline
+library libedit. Mainly for my own purposes, or rather on behalf of
+Westermo &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -75,6 +76,59 @@ with GNU Bazaar before much of Git is still alien to me. This HowTo is &hellip;"
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/06/14/editline-first-post/">Editline First Post</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-06-14T20:44:45+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>8:44 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>For a while now I&rsquo;ve been maintaining a port of the <a href="http://www.cise.ufl.edu/~cop4600/cgi-bin/lxr/http/source.cgi/lib/editline/">Minix</a> editline
+library libedit.  Mainly for my own purposes, or rather on behalf of
+<a href="http://www.westermo.com">Westermo WeOS</a>, where it is used in the CLI.  This library is the
+same as the <a href="https://packages.qa.debian.org/e/editline.html">Debian editline</a> package, even though the origin of that
+package is <a href="https://lists.debian.org/debian-devel/2000/05/msg00548.html">somewhat unclear</a> to me.</p>
+
+<p>Today I decided to adjust the package name and bump the version number
+to indicate that my port is the same, and now slightly more advanced,
+than the Debian version.  To that end I&rsquo;ve now changed the repository
+name and prepared for merging with Debian. Getting this work accepted
+back into Debian is a completely different issue.</p>
+
+<p>Get the code as a <a href="http://www.bazaar-vcs.org">Bazaar</a> branch, or view its change log through the
+<a href="https://launchpad.net/loggerhead">Loggerhead</a> web interface:</p>
+
+<ul>
+<li>bzr branch <a href="http://git.troglobit.com/editline.git">http://bzr.vmlinux.org/editline</a></li>
+<li><a href="http://git.troglobit.com/editline.git">Loggerhead web interface</a></li>
+<li><a href="http://troglobit.com/editline.html">New homepage</a></li>
+</ul>
+
+
+<p>I now intend to do some further integration work, adapting the <code>debian/</code>
+directory from editline-1.12-5 and smoothing out any remaining issues
+before I release 1.13.0.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -736,50 +790,6 @@ more to their liking? ;-)  Try the <a href="http://www.worldofgoo.com/dl2.php?lk
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/02/14/reminder-to-self/">Reminder to Self</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2009-02-14T20:13:41+01:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>8:13 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>How to recode AVI-files to be able to write them to a <a href="http://en.wikipedia.org/wiki/Video_CD">Video CD</a>.</p>
-
-<pre><code>ffmpeg -i original.avi -target pal-vcd copy.mpg
-vcdimager -t vcd1 -l "Title" -c vcd.cue -b vcd.bin copy.mpg
-cdrdao write --device /dev/cdrw vcd.cue
-</code></pre>
-
-<p><strong>Note:</strong> <code>vcdimager</code> is able to take multiple .mpg files as argument,
-very useful when burning multiple family videos to the same disc!</p>
-
-<hr />
-
-<p>Tip from <a href="http://nummerfem.se/">Johan Risberg</a> on how to be able to reattach a UTF-8 Linux
-screen session from Cygwin.  First, start irssi in a screen from a
-Linux login with <code>LANG=LANG en_US.utf8</code>.  Then reattach to the screen,
-preferably using <code>-xRR</code>, with <code>LANG=C</code> from <a href="http://www.cygwin.org/cygwin">Cygwin</a>.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/7">&larr; Older</a>
@@ -819,6 +829,10 @@ preferably using <code>-xRR</code>, with <code>LANG=C</code> from <a href="http:
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/09/09/summer-of-code-2015/">Summer of Code 2015</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/07/02/howto-using-lite-with-a-git-based-application/">HowTo: Using -lite With a GIT-based Application</a>
       </li>
     
@@ -832,10 +846,6 @@ preferably using <code>-xRR</code>, with <code>LANG=C</code> from <a href="http:
     
       <li class="post">
         <a href="/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/">Inetd Support in Finit v1.12</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/01/24/finit-v1-dot-11-released/">Finit v1.11 Released!</a>
       </li>
     
   </ul>
