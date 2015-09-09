@@ -3,7 +3,7 @@ layout: page
 title: "Inadyn | Small and Simple DDNS Client"
 sharing: true
 footer: true
-date: 2015-07-14 18:22 +0100
+date: 2015-09-09 21:29 +0100
 comments: false
 ---
 
@@ -11,13 +11,11 @@ comments: false
 
 {% img right /images/dyndns-multiple-sites.png 500 300 %}
 
-Inadyn is a small and simple
-[DDNS](http://en.wikipedia.org/wiki/Dynamic_DNS) client with HTTPS
-support, both GnuTLS and OpenSSL are supported.  Inadyn is commonly
-available in many GNU/Linux distributions, used in off-the-shelf
-routers and Internet gateways to automate the task of keeping your DNS
-record up to date with any IP address changes from your
-[ISP](http://en.wikipedia.org/wiki/ISP).  It can also be used in
+Inadyn is a small and simple [DDNS][1] client with HTTPS support, both
+GnuTLS and OpenSSL are supported.  Inadyn is commonly available in many
+GNU/Linux distributions, used in off-the-shelf routers and Internet
+gateways to automate the task of keeping your DNS record up to date with
+any IP address changes from your [ISP][2].  It can also be used in
 installations with redundant (backup) connections to the Internet.
 
 
@@ -26,9 +24,8 @@ Supported Providers
 
 The following DDNS providers are supported natively, other providers,
 like <http://twoDNS.de> for instance, can be supported using the generic
-DDNS plugin.  See the
-[README](https://github.com/troglobit/inadyn/blob/master/README.md), or
-`inadyn.conf(5)` found in the tarball, for configuration examples.
+DDNS plugin.  See the [README][], or `inadyn.conf(5)` found in the
+tarball, for configuration examples.
 
 * <http://www.dyndns.org>
 * <http://freedns.afraid.org>
@@ -56,6 +53,16 @@ DDNS plugin.  See the
 * <http://giradns.com>
 * <https://www.duiadns.net>
 
+Some of these services are free of charge for non-commercial use, others
+take a small fee, but also provide more domains to choose from.
+
+Inadyn v1.99.8 and later support HTTPS (v1.99.11 and later also support
+SNI), for DDNS providers that support this (you must check this
+yourself).  Tested are DynDNS, FreeDNS, nsupdate.info, and Loopia.
+
+Using HTTPS is recommended since it protects your credentials from being
+snooped and further reduces the risk of someone hijacking your account!
+
 
 Download
 --------
@@ -66,9 +73,9 @@ Issue tracker and GIT repository available at GitHub:
 * [CHANGELOG](https://github.com/troglobit/inadyn/blob/master/CHANGELOG.md)
 * [Repository](http://github.com/troglobit/inadyn)
 * [Issue Tracker](http://github.com/troglobit/inadyn/issues)
-* [inadyn-1.99.14.tar.xz](ftp://troglobit.com/inadyn/inadyn-1.99.14.tar.xz),
-  [MD5](ftp://troglobit.com/inadyn/inadyn-1.99.14.tar.xz.md5)
-  [GPG Sign](ftp://troglobit.com/inadyn/inadyn-1.99.14.tar.xz.asc)
+* [inadyn-1.99.15.tar.xz](ftp://troglobit.com/inadyn/inadyn-1.99.15.tar.xz),
+  [MD5](ftp://troglobit.com/inadyn/inadyn-1.99.15.tar.xz.md5)
+  [GPG Sign](ftp://troglobit.com/inadyn/inadyn-1.99.15.tar.xz.asc)
 
 See also the [OpenHub page](https://www.openhub.net/p/inadyn/), the
 [Freshcode page](http://freshcode.club/projects/inadyn), or the dormant
@@ -78,11 +85,10 @@ See also the [OpenHub page](https://www.openhub.net/p/inadyn/), the
 Origin & References
 -------------------
 
-This is the continuation of the
-[original INADYN](http://www.inatech.eu/inadyn/) project by Narcis
-Ilisei.  The goal of this project is to focus on \*BSD and various
-embedded Linux platforms, but *Cygwin is also supported*.  All sane
-patches addressing this target audience are welcome!
+This is the continuation of the [original INADYN][origin] project by
+Narcis Ilisei.  The goal of this project is to focus on \*BSD and
+various embedded Linux platforms, but *Cygwin is also supported*.  All
+sane patches addressing this target audience are welcome!
 
 Included so far are relavant fixes and additions from the following
 forks:
@@ -94,7 +100,18 @@ forks:
   [Vampik.ru](http://vampik.ru/), maintained by
   [Andrey Tikhomirov](https://github.com/vampik/inadyn)
 
-The [inadyn-mt](http://sourceforge.net/projects/inadyn-mt/) project is
-another fork from the original INADYN.  It maintains support for
-Windows and adds many new features and fixes, not just for Windows.
+The [inadyn-mt][] project is another fork from the original INADYN.  It
+maintains support for Windows and adds many new features and fixes, not
+just for Windows.
 
+[1]: http://en.wikipedia.org/wiki/Dynamic_DNS
+[2]: http://en.wikipedia.org/wiki/ISP
+[README]: https://github.com/troglobit/inadyn/blob/master/README.md
+[origin]: http://www.inatech.eu/inadyn/
+[inadyn-mt]: http://sourceforge.net/projects/inadyn-mt/
+
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->
