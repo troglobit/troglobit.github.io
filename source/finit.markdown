@@ -39,7 +39,7 @@ Issue tracker and GIT repository available at GitHub:
 
 * [Repository](http://github.com/troglobit/finit)
 * [CHANGELOG](https://github.com/troglobit/finit/blob/master/CHANGELOG.md)
-* [README](https://github.com/troglobit/finit/blob/master/README.md)
+* [README][]
 * [TODO](https://github.com/troglobit/finit/blob/master/TODO.md)
 * [Issue Tracker](http://github.com/troglobit/finit/issues)
 * [finit-2.0.tar.xz](ftp://troglobit.com/finit/finit-2.0.tar.xz),
@@ -53,4 +53,4 @@ See also the [Free(code) page](http://freecode.com/projects/finit).
 [4]: http://smarden.org/runit/
 [5]: http://helllabs.org/finit/
 [6]: http://wiki.eeeuser.com/boot_process:the_boot_process
-
+[README]: https://github.com/troglobit/finit/blob/master/README.md
