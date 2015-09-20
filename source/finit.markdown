@@ -3,7 +3,7 @@ layout: page
 title: "Finit | Fast & Extensible init for Linux"
 sharing: true
 footer: true
-date: 2015-01-24 17:00 +0100
+date: 2015-09-20 13:57 +0100
 comments: false
 ---
 
@@ -21,10 +21,11 @@ amount of context switches, forks, and calls to external tools.
 Services are *supervised and automatically restarted if they fail*.
 
 Finit supports basic runlevels, basic process monitoring of daemons, can
-launch services on demand (built-in inetd support). It can be extended
-with custom callbacks for all services, hooks into the boot process, or
-plugins to extend the functionality and adapt your boot process to fit
-your needs.
+launch services on demand, either with the built-in inetd support, or
+from Linux Netlink events like `IFUP`, `IFDN` or `GW` being installed.
+Finit can also be extended with custom callbacks for all services, hooks
+into the boot process, or plugins to extend the functionality and adapt
+your boot process to fit your needs.  See the [README][] for details.
 
 {% gist 10648685 %}
 
@@ -41,8 +42,8 @@ Issue tracker and GIT repository available at GitHub:
 * [README](https://github.com/troglobit/finit/blob/master/README.md)
 * [TODO](https://github.com/troglobit/finit/blob/master/TODO.md)
 * [Issue Tracker](http://github.com/troglobit/finit/issues)
-* [finit-1.12.tar.xz](ftp://troglobit.com/finit/finit-1.12.tar.xz),
-  [MD5](ftp://troglobit.com/finit/finit-1.12.tar.xz.md5)
+* [finit-2.0.tar.xz](ftp://troglobit.com/finit/finit-2.0.tar.xz),
+  [MD5](ftp://troglobit.com/finit/finit-2.0.tar.xz.md5)
 
 See also the [Free(code) page](http://freecode.com/projects/finit).
 
