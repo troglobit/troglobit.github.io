@@ -9,8 +9,8 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="Howto Run Pimd on Freebsd Sep 27th, 2015 6:45 pm This is not a proper HowTo, but more of a &ldquo;note to self&rdquo;. For these
-notes the following &hellip;">
+  <meta name="description" content="Howto Run Pimd on Freebsd Sep 27th, 2015 6:45 pm This is not a proper HowTo, more of a &ldquo;note to self&rdquo; after having
+created a setup to &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,20 +86,23 @@ notes the following &hellip;">
 <time class='entry-date' datetime='2015-09-27T18:45:00+02:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>6:45 pm</span></time></p>
   </header>
   
-  <p>This is not a proper HowTo, but more of a &ldquo;note to self&rdquo;.  For these
-notes the following virtual topology, running on Ubuntu 15.10 with
-Linux 4.2.</p>
+  <p>This is not a proper HowTo, more of a &ldquo;note to self&rdquo; after having
+created a setup to test pimd <a href="https://github.com/troglobit/pimd/issues/57">issue #57</a>.  For these notes the
+following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and
+Qemu 2.3.0, is used:</p>
 
 <pre><code>.--------.    .----.    .----.    .----------.
 | Sender |----| R2 |----| R3 |----| Receiver |
 '--------'    '----'    '----'    '----------'
 </code></pre>
 
-<p>Here only R2 and R3 run FreeBSD v10.2, 64-bit.  The <code>Sender&lt;--&gt;R2</code> and
-<code>R3-Receiver</code> networks are both setup using DHCP on the Linux bridges.
-Only the <code>R2&lt;--&gt;R3</code> network is setup statically, using <code>20.30.0.0/24</code>.</p>
+<p>The lines connecting the boxes are actually Linux bridge devices (br).
+Only R2 and R3 run FreeBSD v10.2, 64-bit.  The <code>Sender&lt;--&gt;R2</code> and the
+<code>R3-Receiver</code> networks are both setup using DHCP client, DHCP server
+runs on the Linux bridges.  Only the <code>R2&lt;--&gt;R3</code> network is static, using
+<code>20.30.0.0/24</code>.</p>
 
-<h2>Setup</h2>
+<h2>FreeBSD Setup</h2>
 
 <p>You need a few things set up in FreeBSD before starting <code>pimd</code>.</p>
 
@@ -127,7 +130,7 @@ following line to <code>/etc/gateways</code>:</p>
 <pre><code>ripv2
 </code></pre>
 
-<h2>Download</h2>
+<h2>Download pimd</h2>
 
 <p>Next we need to download and build <code>pimd</code>.  It is available on GitHub if
 you want the latest bleeding edge stuff, or use the latest tarball:</p>
@@ -139,9 +142,9 @@ cd pimd-2.3.0/
 make
 </code></pre>
 
-<h2>Running</h2>
+<h2>Running pimd</h2>
 
-<p>Now we can start it on both routers:</p>
+<p>Now we can start pimd on both routers:</p>
 
 <pre><code>./pimd -c pimd.conf
 </code></pre>
@@ -157,7 +160,7 @@ make
 </code></pre>
 
 <p>See the <a href="/howto-run-pimd-on-openbsd.html">OpenBSD HowTo</a> for example
-output.</p>
+output and troubleshooting.</p>
 
   
     <footer>
