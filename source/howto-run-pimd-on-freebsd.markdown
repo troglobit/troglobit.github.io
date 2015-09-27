@@ -7,19 +7,22 @@ sharing: true
 footer: true
 ---
 
-This is not a proper HowTo, but more of a "note to self".  For these
-notes the following virtual topology, running on Ubuntu 15.10 with
-Linux 4.2.
+This is not a proper HowTo, more of a "note to self" after having
+created a setup to test pimd [issue #57][issue].  For these notes the
+following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and
+Qemu 2.3.0, is used:
 
     .--------.    .----.    .----.    .----------.
     | Sender |----| R2 |----| R3 |----| Receiver |
     '--------'    '----'    '----'    '----------'
 
-Here only R2 and R3 run FreeBSD v10.2, 64-bit.  The `Sender<-->R2` and
-`R3-Receiver` networks are both setup using DHCP on the Linux bridges.
-Only the `R2<-->R3` network is setup statically, using `20.30.0.0/24`.
+The lines connecting the boxes are actually Linux bridge devices (br).
+Only R2 and R3 run FreeBSD v10.2, 64-bit.  The `Sender<-->R2` and the
+`R3-Receiver` networks are both setup using DHCP client, DHCP server
+runs on the Linux bridges.  Only the `R2<-->R3` network is static, using
+`20.30.0.0/24`.
 
-## Setup
+## FreeBSD Setup
 
 You need a few things set up in FreeBSD before starting `pimd`.
 
@@ -44,7 +47,7 @@ following line to `/etc/gateways`:
 
     ripv2
 
-## Download
+## Download pimd
 
 Next we need to download and build `pimd`.  It is available on GitHub if
 you want the latest bleeding edge stuff, or use the latest tarball:
@@ -55,9 +58,9 @@ you want the latest bleeding edge stuff, or use the latest tarball:
 	./configure
 	make
 
-## Running
+## Running pimd
 
-Now we can start it on both routers:
+Now we can start pimd on both routers:
 
     ./pimd -c pimd.conf
 
@@ -70,4 +73,6 @@ and
     netstat -rn
 
 See the [OpenBSD HowTo](/howto-run-pimd-on-openbsd.html) for example
-output.
+output and troubleshooting.
+
+[issue]: https://github.com/troglobit/pimd/issues/57
