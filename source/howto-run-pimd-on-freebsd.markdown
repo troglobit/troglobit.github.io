@@ -44,7 +44,7 @@ following line to `/etc/gateways`:
 
     ripv2
 
-## Download pimd
+## Download
 
 Next we need to download and build `pimd`.  It is available on GitHub if
 you want the latest bleeding edge stuff, or use the latest tarball:
@@ -54,6 +54,8 @@ you want the latest bleeding edge stuff, or use the latest tarball:
 	cd pimd-2.3.0/
 	./configure
 	make
+
+## Running
 
 Now we can start it on both routers:
 
