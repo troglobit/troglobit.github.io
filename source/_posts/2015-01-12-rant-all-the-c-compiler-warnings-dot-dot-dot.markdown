@@ -20,7 +20,7 @@ However, these pesky warnings (some of which cannot even be disabled!)
 are sometimes more of a nuisance than help.  Sometimes you *know* that
 some parameters to a function will remain unused -- it's a callback, and
 you don't need all the data given to you.  So you start adding all kinds
-of voodoo, like `__attribite__ ((unused))` ... seriously?
+of voodoo, like `__attribute__ ((unused))` ... seriously?
 
 <!-- more -->
 
@@ -39,7 +39,7 @@ Imagine this now sprinkled all over the code base.
 So you make small macros to help out:
 
 ```C
-    #define UNUSED(arg) arg __attribite__ ((unused))
+    #define UNUSED(arg) arg __attribute__ ((unused))
 ```
 
 We now have this instead:
