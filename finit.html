@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Finit | Fast & Extensible Init for Linux - Troglobit</title>
+  <title>Fast, Extensible Init for Linux Systems - Troglobit</title>
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="Finit | Fast & Extensible Init for Linux Sep 20th, 2015 2:57 pm Finit is a SysV init replacement with process supervision
-similar to that of &hellip;">
+  <meta name="description" content="Fast, Extensible Init for Linux Systems Oct 5th, 2015 11:43 am Finit is a small event based SysV init replacement with built-in
+process supervision &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,34 +77,35 @@ similar to that of &hellip;">
 <article role="article">
   
   <header>
-    <h1 class="entry-title">Finit | Fast & Extensible Init for Linux</h1>
+    <h1 class="entry-title">Fast, Extensible Init for Linux Systems</h1>
     <p class="meta">
 
 
 
 
-<time class='entry-date' datetime='2015-09-20T14:57:00+02:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>2:57 pm</span></time></p>
+<time class='entry-date' datetime='2015-10-05T11:43:00+02:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>5</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:43 am</span></time></p>
   </header>
   
   <p><a href="https://github.com/troglobit/finit"><img style="position: absolute; top: 0; right: 0; border: none; box-shadow: none;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a></p>
 
 <p><img class="right" src="/images/finit.jpg" width="456" height="120"></p>
 
-<p>Finit is a <a href="https://en.wikipedia.org/wiki/Init">SysV init</a> replacement with <a href="https://en.wikipedia.org/wiki/Process_supervision">process supervision</a>
-similar to that of <a href="http://cr.yp.to/daemontools.html">daemontools</a> and <a href="http://smarden.org/runit/">runit</a>.  Its focus is on
-small and embedded GNU/Linux systems, yet fully functional on standard
-server and desktop installations.</p>
+<p>Finit is a small event based <a href="https://en.wikipedia.org/wiki/Init">SysV init</a> replacement with built-in
+<a href="https://en.wikipedia.org/wiki/Process_supervision">process supervision</a> similar to that of its more famous cousins
+<a href="http://cr.yp.to/daemontools.html">daemontools</a> and <a href="http://smarden.org/runit/">runit</a>.  <em>Services are supervised and
+automatically restarted if they fail</em>.</p>
 
-<p>Finit is optimized for small embedded systems by heavily reducing the
-amount of context switches, forks, and calls to external tools.
-Services are <em>supervised and automatically restarted if they fail</em>.</p>
+<p>Finit targets small and embedded Linux systems by heavily reducing the
+amount of context switches, forks, and calls to external tools that most
+other init daemons suffer from.</p>
 
-<p>Finit supports basic runlevels, basic process monitoring of daemons, can
-launch services on demand, either with the built-in inetd support, or
-from Linux Netlink events like <code>IFUP</code>, <code>IFDN</code> or <code>GW</code> being installed.
-Finit can also be extended with custom callbacks for all services, hooks
+<p>Finit supports basic runlevels, process monitoring, and can launch
+services on demand &ndash; either with the built-in inetd support, or by
+triggering on Linux Netlink events like <code>IFUP</code>, <code>IFDN</code> or <code>GW</code>.</p>
+
+<p>Finit can also be extended with custom callbacks for all services, hooks
 into the boot process, or plugins to extend the functionality and adapt
-your boot process to fit your needs.  See the <a href="https://github.com/troglobit/finit/blob/master/README.md">README</a> for details.</p>
+the boot process to fit your needs.  See the <a href="https://github.com/troglobit/finit/blob/master/README.md">README</a> for details.</p>
 
 <div><script src='https://gist.github.com/10648685.js'></script>
 <noscript><pre><code># Sample Debian finit.conf
@@ -147,9 +148,15 @@ service [3] /usr/sbin/gdm -- GNOME Display Manager
 
 <p><img src="/images/finit-screenshot.jpg" width="615" height="398" title="Finit Screenshot" alt="Finit starting a Debian 6.0 system"></p>
 
+<p>See <a href="https://github.com/troglobit/troglos">TroglOS</a> for an example of how to boot a small embedded system
+with Finit.</p>
+
+<hr />
+
 <p>This project is the continuation of the <a href="http://helllabs.org/finit/">original finit</a> by Claudio
-Matsuoka, which was reverse engineered from syscalls of the ground
-breaking <a href="http://wiki.eeeuser.com/boot_process:the_boot_process">EeePC fastinit</a> daemon &ndash; &ldquo;gaps filled with frog DNA &hellip;&rdquo;</p>
+Matsuoka, which was reverse engineered from syscalls of the
+groundbreaking <a href="http://wiki.eeeuser.com/boot_process:the_boot_process">EeePC fastinit</a> daemon &ndash; &ldquo;gaps filled with frog DNA
+&hellip;&rdquo;</p>
 
 <p>Issue tracker and GIT repository available at GitHub:</p>
 
@@ -175,7 +182,7 @@ breaking <a href="http://wiki.eeeuser.com/boot_process:the_boot_process">EeePC f
 
 
 
-<time class='entry-date' datetime='2015-09-20T14:57:00+02:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>2:57 pm</span></time>
+<time class='entry-date' datetime='2015-10-05T11:43:00+02:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>5</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:43 am</span></time>
         
       </p>
       

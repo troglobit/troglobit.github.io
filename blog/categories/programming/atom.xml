@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Programming | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-09-27T20:20:22+02:00</updated>
+  <updated>2015-10-05T21:31:35+02:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -32,7 +32,7 @@ bugs</em>!</p>
 are sometimes more of a nuisance than help.  Sometimes you <em>know</em> that
 some parameters to a function will remain unused &ndash; it&rsquo;s a callback, and
 you don&rsquo;t need all the data given to you.  So you start adding all kinds
-of voodoo, like <code>__attribite__ ((unused))</code> &hellip; seriously?</p>
+of voodoo, like <code>__attribute__ ((unused))</code> &hellip; seriously?</p>
 
 <!-- more -->
 
@@ -50,7 +50,7 @@ of voodoo, like <code>__attribite__ ((unused))</code> &hellip; seriously?</p>
 
 <p>So you make small macros to help out:</p>
 
-<pre><code class="C">    #define UNUSED(arg) arg __attribite__ ((unused))
+<pre><code class="C">    #define UNUSED(arg) arg __attribute__ ((unused))
 </code></pre>
 
 <p>We now have this instead:</p>

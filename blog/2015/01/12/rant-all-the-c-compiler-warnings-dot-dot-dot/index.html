@@ -108,7 +108,7 @@ bugs</em>!</p>
 are sometimes more of a nuisance than help.  Sometimes you <em>know</em> that
 some parameters to a function will remain unused &ndash; it&rsquo;s a callback, and
 you don&rsquo;t need all the data given to you.  So you start adding all kinds
-of voodoo, like <code>__attribite__ ((unused))</code> &hellip; seriously?</p>
+of voodoo, like <code>__attribute__ ((unused))</code> &hellip; seriously?</p>
 
 <!-- more -->
 
@@ -135,7 +135,7 @@ of voodoo, like <code>__attribite__ ((unused))</code> &hellip; seriously?</p>
 <p>So you make small macros to help out:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='C'><span class='line'><span class="cp">#define UNUSED(arg) arg __attribite__ ((unused))</span>
+</pre></td><td class='code'><pre><code class='C'><span class='line'><span class="cp">#define UNUSED(arg) arg __attribute__ ((unused))</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
