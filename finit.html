@@ -9,7 +9,7 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="Fast, Extensible Init for Linux Systems Oct 16th, 2015 10:26 pm Finit is a small event based SysV init replacement with built-in
+  <meta name="description" content="Fast, Extensible Init for Linux Systems Oct 16th, 2015 11:42 pm Finit is a small event based SysV init replacement with built-in
 process supervision &hellip;">
   
 
@@ -83,7 +83,7 @@ process supervision &hellip;">
 
 
 
-<time class='entry-date' datetime='2015-10-16T22:26:00+02:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>10:26 pm</span></time></p>
+<time class='entry-date' datetime='2015-10-16T23:42:00+02:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:42 pm</span></time></p>
   </header>
   
   <p><a href="https://github.com/troglobit/finit"><img style="position: absolute; top: 0; right: 0; border: none; box-shadow: none;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a></p>
@@ -107,7 +107,7 @@ triggering on Linux Netlink events like <code>IFUP</code>, <code>IFDN</code> or 
 into the boot process, or plugins to extend the functionality and adapt
 the boot process to fit your needs.  See the <a href="https://github.com/troglobit/finit/blob/master/README.md">README</a> for details.</p>
 
-<div><script src='https://gist.github.com/10648685.js'></script>
+<!-- <div><script src='https://gist.github.com/10648685.js'></script>
 <noscript><pre><code># Sample Debian finit.conf
 user admin
 host testbed
@@ -144,9 +144,93 @@ service [2345] /sbin/syslogd -n -- Syslog server
 service [2345] /usr/sbin/sshd -D -- SSH Daemon
 service [3] /usr/sbin/gdm -- GNOME Display Manager
 </code></pre></noscript></div>
+ &#8211;>
 
 
-<p><img src="/images/finit-screenshot.jpg" width="615" height="398" title="Finit Screenshot" alt="Finit starting a Debian 6.0 system"></p>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+</pre></td><td class='code'><pre><code class='apache'><span class='line'><span class="c"># /etc/finit.conf - System bootstrap for TroglOS</span>
+</span><span class='line'><span class="nb">user</span> root
+</span><span class='line'><span class="nb">host</span> default
+</span><span class='line'>
+</span><span class='line'><span class="c"># Default runlevel</span>
+</span><span class='line'><span class="nb">runlevel</span> <span class="m">2</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Launch bootstrap services</span>
+</span><span class='line'><span class="nb">service</span> [S12345] <span class="sx">/sbin/watchdogd</span> -L -f                      -- System watchdog daemon
+</span><span class='line'><span class="nb">service</span> [S12345] <span class="sx">/sbin/syslogd</span> -n -b <span class="m">3</span> -D                   -- System log daemon
+</span><span class='line'><span class="nb">service</span> [S12345] <span class="sx">/sbin/klogd</span> -n                             -- Kernel log daemon
+</span><span class='line'>
+</span><span class='line'><span class="c"># Services must not daemonize themselves, look for --foreground or</span>
+</span><span class='line'><span class="c"># similar switches to standard services.</span>
+</span><span class='line'><span class="c">#service [2345] /sbin/inetd -f                               -- Internet super daemon</span>
+</span><span class='line'><span class="nb">service</span> :1 [2345] &lt;!IFUP:eth0,GW&gt; <span class="sx">/sbin/dropbear</span> -R -F -p <span class="m">22</span> -- SSH daemon
+</span><span class='line'><span class="c">#service :2 [345] /sbin/dropbear -R -F -p 222                -- SSH daemon</span>
+</span><span class='line'><span class="c">#service [2345] /sbin/telnetd -F                             -- Telnet daemon</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Network bringup script</span>
+</span><span class='line'><span class="nb">network</span> <span class="sx">/etc/init.d/networking</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># System patch or extension scripts, see run-parts(8).</span>
+</span><span class='line'><span class="nb">runparts</span> <span class="sx">/mnt/start.d</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Inetd services</span>
+</span><span class='line'><span class="nb">inetd</span> ftp/tcp                   nowait [2345] <span class="sx">/sbin/uftpd</span> -i -f       -- FTP daemon
+</span><span class='line'><span class="nb">inetd</span> tftp/udp                    wait [2345] <span class="sx">/sbin/uftpd</span> -i -y       -- TFTP daemon
+</span><span class='line'><span class="nb">inetd</span> time/udp                    wait [2345] internal                -- UNIX rdate service
+</span><span class='line'><span class="nb">inetd</span> time/tcp                  nowait [2345] internal                -- UNIX rdate service
+</span><span class='line'><span class="nb">inetd</span> <span class="m">3737</span><span class="sx">/tcp</span>                  nowait [2345] internal.time           -- UNIX rdate service
+</span><span class='line'><span class="nb">inetd</span> telnet/tcp@*,!eth1,!eth0, nowait [2345] <span class="sx">/sbin/telnetd</span> -i -F     -- Telnet daemon
+</span><span class='line'><span class="nb">inetd</span> <span class="m">2323</span><span class="sx">/tcp</span>@eth1,eth2,eth0   nowait [2345] <span class="sx">/sbin/telnetd</span> -i -F     -- Telnet daemon
+</span><span class='line'><span class="c">#inetd 222/tcp@eth0              nowait [2345] /sbin/dropbear -i -R -F -- SSH service</span>
+</span><span class='line'><span class="c">#inetd ssh/tcp@*,!eth0           nowait [2345] /sbin/dropbear -i -R -F -- SSH service</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Allow login on ttyUSB0, for systems with no dedicated console port</span>
+</span><span class='line'><span class="nb">tty</span> [12345] <span class="sx">/dev/ttyAMA0</span> <span class="m">115200</span> vt100
+</span><span class='line'><span class="nb">tty</span> [12345] <span class="sx">/dev/ttyUSB0</span> <span class="m">115200</span> vt100
+</span><span class='line'><span class="nb">console</span> <span class="sx">/dev/ttyAMA0</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/images/finit-screenshot.jpg" width="676" height="709" title="'Finit Screenshot'" ></p>
 
 <p>See <a href="https://github.com/troglobit/troglos">TroglOS</a> for an example of how to boot a small embedded system
 with Finit.</p>
@@ -182,7 +266,7 @@ groundbreaking <a href="http://wiki.eeeuser.com/boot_process:the_boot_process">E
 
 
 
-<time class='entry-date' datetime='2015-10-16T22:26:00+02:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>10:26 pm</span></time>
+<time class='entry-date' datetime='2015-10-16T23:42:00+02:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:42 pm</span></time>
         
       </p>
       
