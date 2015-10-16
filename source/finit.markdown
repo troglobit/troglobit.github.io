@@ -28,7 +28,6 @@ Finit can also be extended with custom callbacks for all services, hooks
 into the boot process, or plugins to extend the functionality and adapt
 the boot process to fit your needs.  See the [README][] for details.
 
-<!-- {% gist 10648685 %} -->
 ``` apache
     # /etc/finit.conf - System bootstrap for TroglOS
     user root
