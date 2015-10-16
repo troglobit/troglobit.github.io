@@ -3,7 +3,7 @@ layout: page
 title: "Fast, extensible init for Linux systems"
 sharing: true
 footer: true
-date: 2015-10-16 21:26 +0100
+date: 2015-10-16 22:42 +0100
 comments: false
 ---
 
@@ -28,9 +28,51 @@ Finit can also be extended with custom callbacks for all services, hooks
 into the boot process, or plugins to extend the functionality and adapt
 the boot process to fit your needs.  See the [README][] for details.
 
-{% gist 10648685 %}
+<!-- {% gist 10648685 %} -->
+``` apache
+    # /etc/finit.conf - System bootstrap for TroglOS
+    user root
+    host default
+    
+    # Default runlevel
+    runlevel 2
 
-{% img /images/finit-screenshot.jpg 615 398 'Finit Screenshot' 'Finit starting a Debian 6.0 system' %}
+    # Launch bootstrap services
+    service [S12345] /sbin/watchdogd -L -f                      -- System watchdog daemon
+    service [S12345] /sbin/syslogd -n -b 3 -D                   -- System log daemon
+    service [S12345] /sbin/klogd -n                             -- Kernel log daemon
+    
+    # Services must not daemonize themselves, look for --foreground or
+    # similar switches to standard services.
+    #service [2345] /sbin/inetd -f                               -- Internet super daemon
+    service :1 [2345] <!IFUP:eth0,GW> /sbin/dropbear -R -F -p 22 -- SSH daemon
+    #service :2 [345] /sbin/dropbear -R -F -p 222                -- SSH daemon
+    #service [2345] /sbin/telnetd -F                             -- Telnet daemon
+    
+    # Network bringup script
+    network /etc/init.d/networking
+    
+    # System patch or extension scripts, see run-parts(8).
+    runparts /mnt/start.d
+    
+    # Inetd services
+    inetd ftp/tcp                   nowait [2345] /sbin/uftpd -i -f       -- FTP daemon
+    inetd tftp/udp                    wait [2345] /sbin/uftpd -i -y       -- TFTP daemon
+    inetd time/udp                    wait [2345] internal                -- UNIX rdate service
+    inetd time/tcp                  nowait [2345] internal                -- UNIX rdate service
+    inetd 3737/tcp                  nowait [2345] internal.time           -- UNIX rdate service
+    inetd telnet/tcp@*,!eth1,!eth0, nowait [2345] /sbin/telnetd -i -F     -- Telnet daemon
+    inetd 2323/tcp@eth1,eth2,eth0   nowait [2345] /sbin/telnetd -i -F     -- Telnet daemon
+    #inetd 222/tcp@eth0              nowait [2345] /sbin/dropbear -i -R -F -- SSH service
+    #inetd ssh/tcp@*,!eth0           nowait [2345] /sbin/dropbear -i -R -F -- SSH service
+    
+    # Allow login on ttyUSB0, for systems with no dedicated console port
+    tty [12345] /dev/ttyAMA0 115200 vt100
+    tty [12345] /dev/ttyUSB0 115200 vt100
+    console /dev/ttyAMA0
+```
+
+{% img /images/finit-screenshot.jpg 676 709 'Finit Screenshot' %}
 
 See [TroglOS][9] for an example of how to boot a small embedded system
 with Finit.
