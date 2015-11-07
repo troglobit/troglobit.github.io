@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: Linux - Troglobit</title>
+  <title>HowTo: Play With SNMP - Troglobit</title>
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="Category: linux">
+  <meta name="description" content="HowTo: Play With SNMP Nov 7th, 2015 12:49 pm This mini HowTo is about how you can use SNMP client tools to retrieve
+human readable information from &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://troglobit.github.io/blog/categories/linux">
+  <link rel="canonical" href="http://troglobit.github.io/howto-play-with-snmp.html">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Troglobit" type="application/atom+xml">
@@ -76,45 +77,111 @@
 <article role="article">
   
   <header>
-    <h1 class="entry-title">Category: Linux</h1>
-    
+    <h1 class="entry-title">HowTo: Play With SNMP</h1>
+    <p class="meta">
+
+
+
+
+<time class='entry-date' datetime='2015-11-07T12:49:00+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>7</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>12:49 pm</span></time></p>
   </header>
   
-  <div id="blog-archives" class="category">
+  <p>This mini HowTo is about how you can use SNMP client tools to retrieve
+<em>human readable</em> information from devices running an SNMP daemon.  In
+the examples below <a href="/mini-snmpd.html">mini-snmpd</a> is used as the daemon
+and as client both the command line <a href="http://www.net-snmp.org">net-snmp</a>
+tool and the <a href="http://sourceforge.net/projects/snmpb/">snmpB</a> GUI are
+used.</p>
 
+<p>Personally I use both Ubuntu and Debian, so the tools I use to download
+the clients will reflect that.  See your respective UNIX distro&rsquo;s help
+pages for how to install these client tools in your operating system.</p>
 
+<h2>Installing SNMP in Ubuntu</h2>
+
+<p>The following command installs snmpset/get/walk, base MIBs and all
+standard MIBs needed.</p>
+
+<pre><code>sudo apt-get install snmp libsnmp-base snmp-mibs-downloader
+</code></pre>
+
+<p>Assuming you have already started <code>mini_snmpd</code> on your client, you
+should be able to do the following:</p>
+
+<pre><code>snmpwalk -v2c -c public 127.0.0.1
+snmpget -c public -v 2c 127.0.0.1 system.sysUpTime.0
+</code></pre>
+
+<p>If you experience problems, see Debian <a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=561578">bug #561578</a> for details on
+how to edit and fix your system default <code>/etc/snmp/snmp.conf</code></p>
+
+<p>On my system I&rsquo;ve had trouble getting net-snmp to use the UCD-SNMP-MIB,
+so I&rsquo;ve added it explicitly to my <code>~/snmp/snmp.conf</code>:</p>
+
+<pre><code>mibs +UCD-SNMP-MIB
+</code></pre>
+
+<p>This MIB is in <code>/usr/share/snmp/mibs/</code> on my system &hellip;</p>
+
+<h2>Installing Private MIB files</h2>
+
+<p>If you want to access a router/switch which uses private MIBs you can do
+the same as I did for the UCD-SNMP-MIB:</p>
+
+<pre><code>mkdir -p ~/.snmp/mibs
+cp ALL-PRIVATE-MIBS ~/.snmp/mibs/`basename $file .my`
+cat &lt;&lt; EOF &gt; ~/.snmp/snmp.conf
+mibdirs /usr/share/snmp/mibs:/usr/share/mibs/ietf:/usr/share/mibs/iana:/usr/share/mibs/irtf:/usr/share/mibs/tubs:$HOME/.snmp/mibs
+mibs +COMPANY-SOME-MIB
+mibs +COMPANY-OID-MIB
+EOF
+</code></pre>
+
+<p>Now you should be able to do this:</p>
+
+<pre><code>snmpset -c private -v 2c 192.168.2.200 COMPANY-SOME-MIB::reboot.0 i 1
+</code></pre>
+
+<p>which is quite an improvement over:</p>
+
+<pre><code>snmpset -c private -v 2c 192.168.2.200 1.3.6.1.4.1.16177.2.1.1.1.0 i 1
+</code></pre>
+
+<h2>Useful Tests</h2>
+
+<p>Walk all IP addresses</p>
+
+<pre><code>snmpwalk -v2c -c public 192.168.2.20 1.3.6.1.2.1.4.20 
+</code></pre>
+
+<p>Get loadavg</p>
+
+<pre><code>snmpwalk -v2c -c public 127.0.0.1 UCD-SNMP-MIB::laLoad
+</code></pre>
 
   
-  <h2>2013</h2>
+    <footer>
+      <p class="meta">
+        
+        
 
-<article>
+
+
+
+<time class='entry-date' datetime='2015-11-07T12:49:00+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>7</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>12:49 pm</span></time>
+        
+      </p>
+      
+        <div class="sharing">
   
-<h1><a href="/blog/2013/07/10/net-install-centos/">Net Install CentOS</a></h1>
-<time datetime="2013-07-10T15:01:00+02:00" pubdate><span class='month'>Jul</span> <span class='day'>10</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/administration/'>administration</a>, <a class='category' href='/blog/categories/linux/'>linux</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://troglobit.github.io/howto-play-with-snmp.html" data-via="troglobit" data-counturl="http://troglobit.github.io/howto-play-with-snmp.html" >Tweet</a>
   
-<h1><a href="/blog/2013/07/05/file-system-pass-through-in-kvm-slash-qemu-slash-libvirt/">File System Pass-Through in KVM/Qemu/libvirt</a></h1>
-<time datetime="2013-07-05T23:56:00+02:00" pubdate><span class='month'>Jul</span> <span class='day'>05</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/administration/'>administration</a>, <a class='category' href='/blog/categories/linux/'>linux</a></span>
-</footer>
-
-
-</article>
-
+  
+  
 </div>
 
+      
+    </footer>
   
 </article>
 
