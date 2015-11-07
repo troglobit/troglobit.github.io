@@ -9,8 +9,8 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="Summer is now slowly fading away, and what a summer it has been here in
-Sweden! For someone who isn&rsquo;t a fan of the summer heat it has been an &hellip;">
+  <meta name="description" content="Sometimes I just cannot help myself. It&rsquo;s like finding a stray puppy,
+or abandonded kitten &hellip; &hellip; I recently decided to adopt mini- &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -75,6 +75,63 @@ Sweden! For someone who isn&rsquo;t a fan of the summer heat it has been an &hel
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/11/07/stray-puppies/">Stray Puppies</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-11-07T02:32:12+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>7</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>2:32 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Sometimes I just cannot help myself.  It&rsquo;s like finding a stray puppy,
+or abandonded kitten &hellip;</p>
+
+<p>&hellip; I recently decided to adopt <a href="/mini-snmpd.html">mini-snmpd</a> since the
+<a href="http://members.aon.at/linuxfreak/linux/mini_snmpd.html">original upstream</a> site had passed into the great beyond.  At this
+point in my life almost everyone I know can tell you I have no warm
+fuzzy feels for SNMP, at all.  So why did I even consider this to begin
+with?!</p>
+
+<p>Well, I have to confess that there are certain things that SNMP can be
+really useful for.  Most of it is remote monitoring, and since I work
+with embedded systems a lot, SNMP can be quite a handy tool.</p>
+
+<p>I first ran into mini-snmpd when I created <a href="https://github.com/troglobit/troglos">TroglOS</a>, by forking
+<a href="https://github.com/hno/miniroot">miniroot</a>, and what struck me immediately was how small and simple
+it was.  The code was also in reasonably good shape, so it had passed my
+initial quality control.  Suddenly one day I could no longer download it
+when building TroglOS, so I had to do something!</p>
+
+<p>My plans for mini-snmpd are quite humble.  I&rsquo;m currently cleaning it up
+a bit, adding configure script for all optional features, testing
+portability to FreeBSD and <a href="https://github.com/javiplx/mini-snmpd">integrating (good) patches</a> from various
+sources scattered around the web.</p>
+
+<p>I will not add lots of new features, but as always I&rsquo;m your humble patch
+monkey, so if you <a href="https://github.com/troglobit/mini-snmpd">submit a pull reqeust</a> at GitHub it&rsquo;ll probably be
+merged and put into a release.</p>
+
+<p>Cheers</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -590,42 +647,6 @@ the actual work took about 4h.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/12/28/mrouted-v3-dot-9-7/">Mrouted v3.9.7</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-12-28T19:38:06+01:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>7:38 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Another release today is the venerable <a href="/mrouted.html">mrouted</a>, now
-available as
-<a href="https://github.com/troglobit/mrouted/releases/tag/3.9.7">v3.9.7 on GitHub</a>.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/12/28/mrouted-v3-dot-9-7/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -665,6 +686,10 @@ available as
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/11/07/stray-puppies/">Stray Puppies</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/09/09/summer-of-code-2015/">Summer of Code 2015</a>
       </li>
     
@@ -678,10 +703,6 @@ available as
     
       <li class="post">
         <a href="/blog/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/">HowTo: Apache With Gitweb on Debian 8.1</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/">Inetd Support in Finit v1.12</a>
       </li>
     
   </ul>

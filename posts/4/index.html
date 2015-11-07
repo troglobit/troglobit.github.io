@@ -9,9 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="This post doesn&rsquo;t cover fully setting up KVM/Qemu with virt-manager
-and creating virtual machine guests. See the Ubuntu
-KVM Installtion, &hellip;">
+  <meta name="description" content="I usually run Debian or Ubuntu on my machines. However, having
+recently found some time to work on my various projects again, I&rsquo;ve
+now suddenly &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,61 @@ KVM Installtion, &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/07/10/net-install-centos/">Net Install CentOS</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-07-10T15:01:00+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>3:01 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I usually run Debian or Ubuntu on my machines.  However, having
+recently found some time to work on my various projects again, I&rsquo;ve
+now suddenly found myself in need of a CentOS machine.</p>
+
+<p>The <a href="http://www.centos.org/">CentOS home page</a> invited me to download
+an installation ISO, so I went for the small
+<a href="http://ftp.funet.fi/pub/mirrors/centos.org/5.9/isos/x86_64/CentOS-5.9-x86_64-netinstall.iso">Net Install</a>
+which started perfectly with my virt-manager in Ubuntu.</p>
+
+<p>All I had to provide was an FTP server and directory:</p>
+
+<ul>
+<li>mirrors.kernel.org</li>
+<li>/centos/5.9/os/x86_64</li>
+<li>Anonymous FTP</li>
+</ul>
+
+
+<p>That&rsquo;s it, the graphical installer started and I had to start
+selecting various packages. Must say it&rsquo;s a bit confusing since the
+package naming is not the same in RedHat/CentOS as in Debian.</p>
+
+<p>Oh, and if the installations seems to have gotten stuck, just wait it
+out.  It&rsquo;ll get there :)</p>
+
+<p>Read the following to get
+<a href="http://prefetch.net/blog/index.php/2009/06/17/redirecting-the-centos-and-fedora-linux-console-to-a-serial-port-virsh-console-edition/">console in virsh working with CentOS guest</a>.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -597,42 +652,6 @@ See the <a href="https://github.com/troglobit/mrouted/blob/master/ChangeLog">Cha
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/09/08/announcing-pimd-v2-dot-1-3/">Announcing Pimd v2.1.3</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2010-09-08T23:44:49+02:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>8</span><span class='date-suffix'>th</span>, <span class='date-year'>2010</span></span> <span class='time'>11:44 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&rsquo;m very pleased to present the next bug-fix release of <a href="/pimd.html">pimd</a>, v2.1.3.
-The real announcement for v2.1.2 I never really got around to write because
-the diligent <a href="http://packages.debian.org/source/pimd">Debian maintainer</a>, <a href="http://www.bobek.cz/">Antonin Kral</a> alerted me to some
-problems.  Which is great!  I do not have the resources to test the build on
-all those platforms.  I sure appreciate all the help I can get.  Thank you
-Antonin!</p>
-
-<p>As always, check the <a href="/pimd.html">homepage</a>, the changelog and the GIT log for details.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/5">&larr; Older</a>
@@ -674,6 +693,10 @@ Antonin!</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/11/07/stray-puppies/">Stray Puppies</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/09/09/summer-of-code-2015/">Summer of Code 2015</a>
       </li>
     
@@ -687,10 +710,6 @@ Antonin!</p>
     
       <li class="post">
         <a href="/blog/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/">HowTo: Apache With Gitweb on Debian 8.1</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/">Inetd Support in Finit v1.12</a>
       </li>
     
   </ul>

@@ -9,8 +9,8 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="How to recode AVI-files to be able to write them to a Video CD. ffmpeg -i original.avi -target pal-vcd copy.mpg
-vcdimager -t vcd1 -l "Title" -c vcd. &hellip;">
+  <meta name="description" content="This makes it possible to debug why a disk needs to spin up, and to
+increase battery life even more. Dislike NetworkManager? Try wicd&nbsp;&hellip; &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -75,6 +75,49 @@ vcdimager -t vcd1 -l "Title" -c vcd. &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/02/28/link-collection-2009-02-28/">Link Collection 2009-02-28</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-02-28T22:36:37+01:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>10:36 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><a href="http://www.linuxinsight.com/proc_sys_vm_block_dump.html">This makes it possible</a> to debug why a disk needs to spin up, and to
+increase battery life even more.</p>
+
+<p>Dislike NetworkManager? Try <a href="http://wicd.sourceforge.net/">wicd</a>&nbsp;&hellip;</p>
+
+<p>Minimalistic distro <a href="http://crunchbanglinux.org/">Crush Bang Linux 8.10</a></p>
+
+<p>Ah, what every <a href="https://en.wikipedia.org/wiki/Free_and_open-source_software">FLOSS</a> dad is looking for, a way to make your kids
+interested in <a href="http://www.kernel.org/">your world</a> instead of the dark side, and what is
+better than to trick them into it with a cool Linux game?
+<a href="http://www.hermann-uwe.de/blog/teeworlds--a-fun-fast-paced-open-source-online-multiplayer-shooter">Read Uwe Hermann&rsquo;s blog about Teeworlds</a>, or visit the
+<a href="http://www.teeworlds.com/">home page</a>.</p>
+
+<p>OK, so my kids are five and three years old, maybe <a href="http://www.worldofgoo.com/">World of Goo</a> is
+more to their liking? ;-)  Try the <a href="http://www.worldofgoo.com/dl2.php?lk=demo">demo here</a>!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -523,61 +566,6 @@ changes necessary&nbsp;&hellip;</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/07/28/howto-build-gnu-emacs-from-cvs/">HowTo: Build GNU Emacs From CVS</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2008-07-28T01:38:13+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2008</span></span> <span class='time'>1:38 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Why would you want to do this?  Well, considering all the <a href="http://blog.orebokech.com/2008/07/emacs-snapshot-20080727-1.html">neat new things</a>
-that have been added lately it should be tempting for any old Emacs fan.</p>
-
-<p>The <a href="http://www.emacswiki.org">Emacs Wiki</a> has all the info you need, but here is a quick run-down of
-the bare necessities.  Start by <a href="http://www.emacswiki.org/cgi-bin/emacs-en/EmacsFromCVS">checking out your working copy</a>:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>cvs -z3 -d:pserver:anonymous@cvs.savannah.gnu.org:/cvsroot/emacs co emacs
-</span><span class='line'>cd emacs/
-</span><span class='line'>./configure
-</span><span class='line'>make bootstrap</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Start with <code>./src/emacs</code> or symlink the binary to your <code>~/bin/</code> directory.
-I.e. you don&rsquo;t have to run <code>make install</code> to use it.  Users of <code>emacsclient</code>
-should symlink that to their <code>~/bin</code> as well.</p>
-
-<p>Assumptions made:</p>
-
-<ol>
-<li>you have the appropriate -dev packages installed in Debian/Ubuntu, and</li>
-<li>your <code>.bashrc</code> does indeed add <code>~/bin</code> to your search <code>$PATH</code> environment variable</li>
-</ol>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/8">&larr; Older</a>
@@ -619,6 +607,10 @@ should symlink that to their <code>~/bin</code> as well.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/11/07/stray-puppies/">Stray Puppies</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/09/09/summer-of-code-2015/">Summer of Code 2015</a>
       </li>
     
@@ -632,10 +624,6 @@ should symlink that to their <code>~/bin</code> as well.</p>
     
       <li class="post">
         <a href="/blog/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/">HowTo: Apache With Gitweb on Debian 8.1</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/">Inetd Support in Finit v1.12</a>
       </li>
     
   </ul>

@@ -9,9 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="So, I finally got fed up with all other FTP servers and wrote
-my own. Why would someone in their right mind do
-something like this 2014? As a &hellip;">
+  <meta name="description" content="Looking for a Dynamic DNS, DDNS, client? Well you&rsquo;re in luck, the
+FLOSS market space is flooded with dedicated clients and various
+wget scripts &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,61 @@ something like this 2014? As a &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/05/14/new-release-of-the-ddns-client-inadyn/">New Release of the DDNS Client Inadyn</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-05-14T08:29:48+02:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>8:29 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Looking for a Dynamic DNS, DDNS, client?  Well you&rsquo;re in luck, the
+<a href="http://en.wikipedia.org/wiki/Alternative_terms_for_free_software" title="FLOSS">FLOSS</a> market space is flooded with dedicated clients and various
+wget scripts.  So why bother with an old C implementation?  Well, this
+is admittedly one of the old timers in the game and is likely packaged
+for your GNU/Linux distribution of choice already.  It&rsquo;s tried and
+tested with many DDNS service providers and even comes bundled in a
+few embedded router distributions as well.</p>
+
+<p>Today I&rsquo;ve released <a href="/inadyn.html">Inadyn</a> v1.99.7 as an XZ compressed
+tarball.  The release announcement should be up on <a href="https://freecode.com/projects/inadyn">free(code)</a>
+now.  It&rsquo;s a small incremental release containing mainly code cleanup
+and a few new features that you likely won&rsquo;t notice: support for
+multiple cache files and DDNS providers as separate plugins, for easy
+addition of new ones as well as maintenance of existing.  This further
+separates the internal logic from the provider specific parts and also
+helps reduce clutter to ease maintenance.</p>
+
+<p>This is a small incremental release building up to the long awaited
+v2.0, which will include the long-awaited HTTPS support and also a new
+.conf file format.  The latter is not really welcomed with open arms
+by users, but is a necessary step since the current parser is heavily
+affected by bit rot and must be put down.  I will attempt to make the
+transition as easy as possible, but you will need to change you .conf
+files.</p>
+
+<p>Maybe a preview of the HTTPS support will make it into a release that
+still has the old .conf file format, but just maybe.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -454,61 +509,6 @@ you want to contribute.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/07/10/net-install-centos/">Net Install CentOS</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2013-07-10T15:01:00+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>3:01 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I usually run Debian or Ubuntu on my machines.  However, having
-recently found some time to work on my various projects again, I&rsquo;ve
-now suddenly found myself in need of a CentOS machine.</p>
-
-<p>The <a href="http://www.centos.org/">CentOS home page</a> invited me to download
-an installation ISO, so I went for the small
-<a href="http://ftp.funet.fi/pub/mirrors/centos.org/5.9/isos/x86_64/CentOS-5.9-x86_64-netinstall.iso">Net Install</a>
-which started perfectly with my virt-manager in Ubuntu.</p>
-
-<p>All I had to provide was an FTP server and directory:</p>
-
-<ul>
-<li>mirrors.kernel.org</li>
-<li>/centos/5.9/os/x86_64</li>
-<li>Anonymous FTP</li>
-</ul>
-
-
-<p>That&rsquo;s it, the graphical installer started and I had to start
-selecting various packages. Must say it&rsquo;s a bit confusing since the
-package naming is not the same in RedHat/CentOS as in Debian.</p>
-
-<p>Oh, and if the installations seems to have gotten stuck, just wait it
-out.  It&rsquo;ll get there :)</p>
-
-<p>Read the following to get
-<a href="http://prefetch.net/blog/index.php/2009/06/17/redirecting-the-centos-and-fedora-linux-console-to-a-serial-port-virsh-console-edition/">console in virsh working with CentOS guest</a>.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/4">&larr; Older</a>
@@ -550,6 +550,10 @@ out.  It&rsquo;ll get there :)</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/11/07/stray-puppies/">Stray Puppies</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/09/09/summer-of-code-2015/">Summer of Code 2015</a>
       </li>
     
@@ -563,10 +567,6 @@ out.  It&rsquo;ll get there :)</p>
     
       <li class="post">
         <a href="/blog/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/">HowTo: Apache With Gitweb on Debian 8.1</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/">Inetd Support in Finit v1.12</a>
       </li>
     
   </ul>

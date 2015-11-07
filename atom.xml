@@ -4,7 +4,7 @@
   <title><![CDATA[Troglobit]]></title>
   <link href="http://troglobit.github.io/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-10-16T22:52:11+02:00</updated>
+  <updated>2015-11-07T02:54:49+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -12,6 +12,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Stray Puppies]]></title>
+    <link href="http://troglobit.github.io/blog/2015/11/07/stray-puppies/"/>
+    <updated>2015-11-07T02:32:12+01:00</updated>
+    <id>http://troglobit.github.io/blog/2015/11/07/stray-puppies</id>
+    <content type="html"><![CDATA[<p>Sometimes I just cannot help myself.  It&rsquo;s like finding a stray puppy,
+or abandonded kitten &hellip;</p>
+
+<p>&hellip; I recently decided to adopt <a href="http://troglobit.github.io/mini-snmpd.html">mini-snmpd</a> since the
+<a href="http://members.aon.at/linuxfreak/linux/mini_snmpd.html">original upstream</a> site had passed into the great beyond.  At this
+point in my life almost everyone I know can tell you I have no warm
+fuzzy feels for SNMP, at all.  So why did I even consider this to begin
+with?!</p>
+
+<p>Well, I have to confess that there are certain things that SNMP can be
+really useful for.  Most of it is remote monitoring, and since I work
+with embedded systems a lot, SNMP can be quite a handy tool.</p>
+
+<p>I first ran into mini-snmpd when I created <a href="https://github.com/troglobit/troglos">TroglOS</a>, by forking
+<a href="https://github.com/hno/miniroot">miniroot</a>, and what struck me immediately was how small and simple
+it was.  The code was also in reasonably good shape, so it had passed my
+initial quality control.  Suddenly one day I could no longer download it
+when building TroglOS, so I had to do something!</p>
+
+<p>My plans for mini-snmpd are quite humble.  I&rsquo;m currently cleaning it up
+a bit, adding configure script for all optional features, testing
+portability to FreeBSD and <a href="https://github.com/javiplx/mini-snmpd">integrating (good) patches</a> from various
+sources scattered around the web.</p>
+
+<p>I will not add lots of new features, but as always I&rsquo;m your humble patch
+monkey, so if you <a href="https://github.com/troglobit/mini-snmpd">submit a pull reqeust</a> at GitHub it&rsquo;ll probably be
+merged and put into a release.</p>
+
+<p>Cheers</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Summer of Code 2015]]></title>
@@ -1168,41 +1205,6 @@ GNU/Hurd, or even other operating systems are also welcome, as long as
 it&rsquo;s not Windows.  I will not maintain any Windows support since I
 don&rsquo;t use it myself.  If you want Windows support you will have to
 take a very active co-maintainer role in the respective project.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[New Release of the DDNS Client Inadyn]]></title>
-    <link href="http://troglobit.github.io/blog/2014/05/14/new-release-of-the-ddns-client-inadyn/"/>
-    <updated>2014-05-14T08:29:48+02:00</updated>
-    <id>http://troglobit.github.io/blog/2014/05/14/new-release-of-the-ddns-client-inadyn</id>
-    <content type="html"><![CDATA[<p>Looking for a Dynamic DNS, DDNS, client?  Well you&rsquo;re in luck, the
-<a href="http://en.wikipedia.org/wiki/Alternative_terms_for_free_software" title="FLOSS">FLOSS</a> market space is flooded with dedicated clients and various
-wget scripts.  So why bother with an old C implementation?  Well, this
-is admittedly one of the old timers in the game and is likely packaged
-for your GNU/Linux distribution of choice already.  It&rsquo;s tried and
-tested with many DDNS service providers and even comes bundled in a
-few embedded router distributions as well.</p>
-
-<p>Today I&rsquo;ve released <a href="http://troglobit.github.io/inadyn.html">Inadyn</a> v1.99.7 as an XZ compressed
-tarball.  The release announcement should be up on <a href="https://freecode.com/projects/inadyn">free(code)</a>
-now.  It&rsquo;s a small incremental release containing mainly code cleanup
-and a few new features that you likely won&rsquo;t notice: support for
-multiple cache files and DDNS providers as separate plugins, for easy
-addition of new ones as well as maintenance of existing.  This further
-separates the internal logic from the provider specific parts and also
-helps reduce clutter to ease maintenance.</p>
-
-<p>This is a small incremental release building up to the long awaited
-v2.0, which will include the long-awaited HTTPS support and also a new
-.conf file format.  The latter is not really welcomed with open arms
-by users, but is a necessary step since the current parser is heavily
-affected by bit rot and must be put down.  I will attempt to make the
-transition as easy as possible, but you will need to change you .conf
-files.</p>
-
-<p>Maybe a preview of the HTTPS support will make it into a release that
-still has the old .conf file format, but just maybe.</p>
 ]]></content>
   </entry>
   
