@@ -28,9 +28,9 @@ The main features of `mini-snmpd` are:
 
 This version of mini-snmpd is the continuation of the hard work by
 Robert Ernst.  Unfortunately his [original homepage for mini-snmpd][3]
-has gone offline, which is what initially prompted my setting up my
-GitHub project to act as a focal point for future development.  The
-software is licensed under the [GNU GPL v2][LICENSE].
+has gone offline, which is what initially prompted my setting up
+[this GitHub project][Repository] to act as a focal point for future
+development.  The software is licensed under the [GNU GPL v2][LICENSE].
 
 Issue tracker and GIT repository available at GitHub:
 
