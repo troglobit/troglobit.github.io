@@ -13,7 +13,7 @@ This is an SNMP server for embedded UNIX systems.  It is written in C
 and easily portable to other UNIX systems, currently Linux and FreeBSD
 kernels are supported.  The daemon is very small (~40 kiB) and does not
 have nowhere near the feature set of [Net-SNMP][1], but has therefore a
-very impact on system resources.
+very low impact on system resources.
 
 The main features of `mini-snmpd` are:
 
@@ -38,6 +38,7 @@ Issue tracker and GIT repository available at GitHub:
    * [Issue Tracker](http://github.com/troglobit/mini-snmpd/issues)
    * [FTP](ftp://ftp.troglobit/pub/mini-snmpd/)
    * [TODO][]
+   * Man page [mini-snmpd.8](http://ftp.troglobit.com/mini-snmpd/mini-snmpd.html)
 
 See also the old [Free(code) page](http://freecode.com/projects/minisnmpd).
 
