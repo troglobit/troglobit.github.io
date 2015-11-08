@@ -26,7 +26,7 @@ The main features are:
 - Supports the most important disk data (disk space/inodes available/used/free)
 - Tested with [net-snmp][1] and [cacti][2]
 
-
+<a id="example"></a>
 Example
 -------
 
@@ -113,7 +113,7 @@ Then do an SNMP walk:
 	UCD-SNMP-MIB::ssRawContexts.0 = Counter32: 243678129
 	UCD-SNMP-MIB::ssRawContexts.0 = No more variables left in this MIB View (It is past the end of the MIB tree)
 
-
+<a id="small"></a>
 Building Really Small Binaries
 ------------------------------
 
@@ -165,7 +165,7 @@ to embedded I always recommend playing it safe and going with `-O2` and
 no further optimizations, unless you want to spend a lot of time looking
 for weird bugs!
 
-
+<a id="info"></a>
 Project Info
 ------------
 
