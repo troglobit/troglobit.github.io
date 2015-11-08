@@ -114,6 +114,58 @@ Then do an SNMP walk:
 	UCD-SNMP-MIB::ssRawContexts.0 = No more variables left in this MIB View (It is past the end of the MIB tree)
 
 
+Building Really Small Binaries
+------------------------------
+
+By simply calling `./configure && make` you don't really get a small
+mini-snmpd binary.  Sure, most people know about setting `CFLAGS=-Os`
+before calling the configure script -- that's how you reach the ~40 kiB
+mentioned above.
+
+	CFLAGS="-Os" ./configure && make clean all && strip mini_snmpd && ll mini_snmpd && size mini_snmpd
+	-rwxrwxr-x 1 jocke jocke 39520 nov  8 21:35 mini_snmpd*
+	   text	   data	    bss	    dec	    hex	 filename
+	  32766	   1028	  16032	  49826	   c2a2	 mini_snmpd
+
+To get really crazy with things you can try this, it works for me but
+YMMV as usual:
+
+	CFLAGS="-W -Wall -Os -U_FORTIFY_SOURCE -fno-stack-protector -fomit-frame-pointer -ffunction-sections -fdata-sections -Wl,--gc-sections -fno-asynchronous-unwind-tables -fmerge-all-constants -fno-ident -Wl,-z,norelro -Wl,--hash-style=gnu -Wl,--build-id=none " ./configure --disable-ipv6
+	make clean all && strip -S --strip-unneeded --remove-section=.note.gnu.gold-version --remove-section=.comment --remove-section=.note --remove-section=.note.gnu.build-id --remove-section=.note.ABI-tag mini_snmpd && ll mini_snmpd && size mini_snmpd
+    -rwxrwxr-x 1 jocke jocke 30696 nov  8 21:37 mini_snmpd*
+       text	   data	    bss	    dec	    hex	 filename
+      27305	    964	  15968	  44237	   accd	 mini_snmpd
+
+This insane amount of arguments to GCC saves you ~9kiB.  Which begs the
+question, is there anything else you can do, how low can we go?!  Let me
+introduce you to [upx](http://upx.sourceforge.net/):
+
+	upx --ultra-brute mini_snmpd && ll mini_snmpd && size mini_snmpd
+                           Ultimate Packer for eXecutables
+                              Copyright (C) 1996 - 2013
+	UPX 3.91        Markus Oberhumer, Laszlo Molnar & John Reiser   Sep 30th 2013
+	
+            File size         Ratio      Format      Name
+       --------------------   ------   -----------   -----------
+         30696 ->     15604   50.83%  linux/ElfAMD   mini_snmpd                    
+    
+    Packed 1 file.
+    -rwxrwxr-x 1 jocke jocke 15604 nov  8 21:37 mini_snmpd*
+       text	   data	    bss	    dec	    hex	 filename
+          0	      0	      0	      0	      0	 mini_snmpd
+
+Yeah, running `size` on the binary afterwards is kinda useless, but
+*WOW*!  Using upx actually cut the size down to almost half of what we
+got with the insane arguments above -- saved ~15kiB on a 30kiB binary!
+
+On embedded targets some of these tricks may just about save you if
+you're running out of flash.  However, there are often nasty compiler
+bugs to be found just by changing optimization to `-Os`.  When it comes
+to embedded I always recommend playing it safe and going with `-O2` and
+no further optimizations, unless you want to spend a lot of time looking
+for weird bugs!
+
+
 Project Info
 ------------
 
