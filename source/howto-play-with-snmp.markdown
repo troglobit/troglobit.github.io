@@ -78,5 +78,7 @@ Get loadavg
 
 	snmpwalk -v2c -c public 127.0.0.1 UCD-SNMP-MIB::laLoad
 
+For more tips on using `snmpwalk`, see the
+[Net-SNMP wiki](http://www.net-snmp.org/wiki/index.php/TUT:snmpwalk)
 
 [bug]: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=561578
