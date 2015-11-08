@@ -160,10 +160,10 @@ got with the insane arguments above -- saved ~15kiB on a 30kiB binary!
 
 On embedded targets some of these tricks may just about save you if
 you're running out of flash.  However, there are often nasty compiler
-bugs to be found just by changing optimization to `-Os`.  When it comes
-to embedded I always recommend playing it safe and going with `-O2` and
-no further optimizations, unless you want to spend a lot of time looking
-for weird bugs!
+bugs to be found just by changing optimization level to `-Os`.  So when
+it comes to embedded I always recommend playing it safe and going with
+`-O2` and no further optimizations, unless you want to spend a lot of
+time looking for weird bugs!
 
 <a id="info"></a>
 Project Info
