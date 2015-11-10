@@ -4,7 +4,7 @@
   <title><![CDATA[Troglobit]]></title>
   <link href="http://troglobit.github.io/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-11-08T21:59:56+01:00</updated>
+  <updated>2015-11-10T12:22:36+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -12,6 +12,33 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Awesome: Changing Next/Prev Tune in Spotify]]></title>
+    <link href="http://troglobit.github.io/blog/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/"/>
+    <updated>2015-11-10T12:14:09+01:00</updated>
+    <id>http://troglobit.github.io/blog/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify</id>
+    <content type="html"><![CDATA[<p>Back to using the <a href="http://awesome.naquadah.org/">Awesome WM</a> in Ubuntu.
+This time I&rsquo;m setting up everything from scratch and first up is fixing
+keybindings to control my main music player: Spotify!</p>
+
+<p>Edit your <code>~/.config/awesome/rc.lua</code> with Emacs (obviously).  If you do
+not have an rc file, simply copy the system <code>/etc/xdb/awesome/rc.lua</code>:</p>
+
+<pre><code>globalkeys = awful.util.table.join(globalkeys,
+           awful.key({}, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer -D pulse sset Master 5%+", false) end),
+       awful.key({}, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -D pulse sset Master 5%-", false) end),
+       awful.key({}, "XF86AudioMute", function() awful.util.spawn('amixer -D pulse sset Master 1+ toggle') end),
+       awful.key({ }, "XF86AudioNext", function () awful.util.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next")end),
+       awful.key({ }, "XF86AudioPrev", function () awful.util.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous")end),
+       awful.key({ }, "XF86AudioPlay", function () awful.util.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause")end),
+       awful.key({ }, "XF86AudioStop", function () awful.util.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop")end))
+root.keys(globalkeys)
+</code></pre>
+
+<p>That&rsquo;s it.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Stray Puppies]]></title>
@@ -1174,37 +1201,6 @@ I&rsquo;ve started playing around with
 relevant projects.  It has some nice stats and other useful features
 that I can use.  Hopefully it can serve as a replacement for my most
 basic needs.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[New Releases of Uftpd and Inadyn ...]]></title>
-    <link href="http://troglobit.github.io/blog/2014/05/20/new-release-of-uftpd-and-inadyn-dot-dot-dot/"/>
-    <updated>2014-05-20T21:08:25+02:00</updated>
-    <id>http://troglobit.github.io/blog/2014/05/20/new-release-of-uftpd-and-inadyn-dot-dot-dot</id>
-    <content type="html"><![CDATA[<p>The last couple of weeks have both seen the birth of the fabulous
-<a href="http://troglobit.github.io/uftpd.html">uftpd</a> and a reignited <a href="http://troglobit.github.io/inadyn.html">inadyn</a> project!
-Yesterday v1.2 of uftpd was released and today Inadyn saw the first
-working HTTPS support being released as v1.99.8!  This is likely the
-last release of Inadyn before the big 2.0, which will introduce the
-new .conf file format based on
-<a href="http://www.nongnu.org/confuse/">libConfuse</a>.  A .conf file
-feasibility study was
-<a href="http://troglobit.github.io/blog/2014/02/23/weekend-hack-json-vs-conf/">presented earlier</a> &hellip;</p>
-
-<p>The uftpd project is completely based on user input, currently mostly
-mine.  I will add features and bug fixes when I need them, unless I
-get more input.  So I welcome anyone to clone it on GitHub and hack
-away.  As usual, I will accept any sane patches that adhere to the
-coding style and is well written.  The same goes for Inadyn, only with
-the added request that the changes are thoroughly tested first, since
-I cannot maintain multiple accounts on various DDNS providers myself.</p>
-
-<p>Patches to support flavors of UNIX other than GNU/Linux, including
-GNU/Hurd, or even other operating systems are also welcome, as long as
-it&rsquo;s not Windows.  I will not maintain any Windows support since I
-don&rsquo;t use it myself.  If you want Windows support you will have to
-take a very active co-maintainer role in the respective project.</p>
 ]]></content>
   </entry>
   

@@ -9,8 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="Sometimes I just cannot help myself. It&rsquo;s like finding a stray puppy,
-or abandonded kitten &hellip; &hellip; I recently decided to adopt mini- &hellip;">
+  <meta name="description" content="Back to using the Awesome WM in Ubuntu.
+This time I&rsquo;m setting up everything from scratch and first up is fixing
+keybindings to control my main &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -75,6 +76,53 @@ or abandonded kitten &hellip; &hellip; I recently decided to adopt mini- &hellip
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/">Awesome: Changing Next/Prev Tune in Spotify</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-11-10T12:14:09+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>12:14 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Back to using the <a href="http://awesome.naquadah.org/">Awesome WM</a> in Ubuntu.
+This time I&rsquo;m setting up everything from scratch and first up is fixing
+keybindings to control my main music player: Spotify!</p>
+
+<p>Edit your <code>~/.config/awesome/rc.lua</code> with Emacs (obviously).  If you do
+not have an rc file, simply copy the system <code>/etc/xdb/awesome/rc.lua</code>:</p>
+
+<pre><code>globalkeys = awful.util.table.join(globalkeys,
+           awful.key({}, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer -D pulse sset Master 5%+", false) end),
+       awful.key({}, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -D pulse sset Master 5%-", false) end),
+       awful.key({}, "XF86AudioMute", function() awful.util.spawn('amixer -D pulse sset Master 1+ toggle') end),
+       awful.key({ }, "XF86AudioNext", function () awful.util.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next")end),
+       awful.key({ }, "XF86AudioPrev", function () awful.util.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous")end),
+       awful.key({ }, "XF86AudioPlay", function () awful.util.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause")end),
+       awful.key({ }, "XF86AudioStop", function () awful.util.spawn("dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop")end))
+root.keys(globalkeys)
+</code></pre>
+
+<p>That&rsquo;s it.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -605,48 +653,6 @@ an email or connect with me on GitHub!</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/01/02/blog-restoration-project-now-also-on-github-pages/">Blog Restoration Project</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-01-02T14:12:59+01:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2015</span></span> <span class='time'>2:12 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&rsquo;ve had this long-standing issue with backups.  It&rsquo;s deadly boring to
-set up and maintain, so I don&rsquo;t do any.  Until today!</p>
-
-<p>Today I moved the sources for my <a href="http://troglobit.com">Octopress blag</a>
-to GitHub, which also prompted me to set up
-<a href="http://troglobit.github.io">a mirror</a> on
-<a href="http://pages.github.io">GitHub Pages</a>.  As usual, reading up on the
-subject and muster enough motivation took me about three months, whereas
-the actual work took about 4h.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2015/01/02/blog-restoration-project-now-also-on-github-pages/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -688,6 +694,10 @@ the actual work took about 4h.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/">Awesome: Changing Next/Prev Tune in Spotify</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/11/07/stray-puppies/">Stray Puppies</a>
       </li>
     
@@ -701,10 +711,6 @@ the actual work took about 4h.</p>
     
       <li class="post">
         <a href="/blog/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/">HowTo: Push to Multiple GIT Repos With One Command</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/">HowTo: Apache With Gitweb on Debian 8.1</a>
       </li>
     
   </ul>

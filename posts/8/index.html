@@ -9,8 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="Why would you want to do this? Well, considering all the neat new things
-that have been added lately it should be tempting for any old Emacs fan. The &hellip;">
+  <meta name="description" content="George Dyson, son of legendary Freeman Dyson, talks about
+the first computer, the first software bugs (both physical and
+logical) and the initial &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -75,6 +76,78 @@ that have been added lately it should be tempting for any old Emacs fan. The &he
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/07/30/link-collection-w31-2008/">Link Collection W31 2008</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2008-07-30T16:22:36+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2008</span></span> <span class='time'>4:22 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>George Dyson, son of legendary <a href="http://en.wikipedia.org/wiki/Freeman_Dyson">Freeman Dyson</a>, talks about
+<a href="http://www.ted.com/index.php/talks/george_dyson_at_the_birth_of_the_computer.html">the first computer</a>, the first software bugs (both physical and
+logical) and the initial struggles of hackers.  Fun history lesson for
+computer engineers and programmers alike.  (Now, go crawl the web for
+&ldquo;Dyson Sphere&rdquo; and &ldquo;Star Trek&rdquo;! :-)</p>
+
+<p>Is Ubuntu 8.04 really that buggy as everyone suggest?  My guess is that
+we&rsquo;ve reached a breaking point where beginner users (&lt; 1 year) are
+starting to outnumber the older &ldquo;hard core&rdquo; users.  Or have the top 20%
+moved on to other distros?  <a href="http://xkcd.com/456/">Even XKCD has picked up on it&nbsp;&hellip;</a></p>
+
+<p><a href="http://www.gnome.org/~michael/">Michael Meeks</a> of Novell was interviewed recently by the Austrian
+paper <a href="http://derstandard.at/?url=/?id=1216917892794">derStandard.at</a>, and one of the things he mentioned was the
+<a href="http://go-oo.org/discover/">OpenOffice fork</a> they maintain, very interesting new features, not
+(yet) included in OpenOffice.org, e.g. .docx and VBA support!</p>
+
+<p>A couple of days ago I managed to convince <a href="http://vmlinux.org/mwik/">a friend</a> of mine to try
+running bleeding edge GNU Emacs from CVS.  He almost gave up, kicking
+and screaming, due to his Bitstream Vera fonts becoming totally screwed
+up compared to <a href="http://peadrop.com/blog/category/computers/emacs/">Alexandre Vassalottis snapshot build</a> from January.
+It turned out to be caused by the Emacs font back-end
+<a href="http://lists.gnu.org/archive/html/emacs-devel/2008-06/msg01224.html">defaulting to the old X font renderer</a> rather than the new XFT one.</p>
+
+<p>Here is <a href="http://vmlinux.org/jocke/myblog/entries/misc/my.Xresources">my ~/.Xresources</a> file that seems to fix the problem.  Run
+<code>xrdb -merge ~/.Xresources</code> to merge in the new settings without logging
+out/in again.</p>
+
+<p>The <a href="http://www.canonical.com/">Canonical</a> <a href="http://www.sf.net/">SourceForge</a> equivalent, <a href="http://www.launchpad.net/">Launchpad</a>, is
+slowly turning into something really cool.  <a href="https://launchpad.net/+tour/index">Take the tour</a> if you
+are curious and want to know more.</p>
+
+<p>I cannot believe I haven&rsquo;t heard of <a href="http://www.pastebin.com/">pastebin</a> before.  Thanks
+<a href="http://kalkig.nu/">Rooth</a>!</p>
+
+<p>My <a href="http://vmlinux.org/ilse/">dear wife</a> is a <a href="http://www.nano-editor.org/">GNU Nano</a> user.  Here are a
+<a href="http://nullcortex.com/2008/07/28/nano-nano/">couple of tips</a> for her, and other die-hard Nano users.</p>
+
+<p>Are you an electronics or computer engineer?  Then you&rsquo;ve probably had
+trouble explaining boolean logic to people.
+<a href="http://www.youtube.com/watch?v=SudixyugiX4">This dude explains it all using dominoes.</a></p>
+
+<p>Finishing off with this, unbeatable, hardware hacker.  He&rsquo;s transformed
+his <a href="http://en.wikipedia.org/wiki/Asus_Eee_PC">EeePC</a> into a veritable monster!  <a href="http://beta.ivancover.com/wiki/index.php/Eee_PC_Internal_Upgrades">See his guide</a> for the
+changes necessary&nbsp;&hellip;</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -447,69 +520,6 @@ file and man page into the given <code>--prefix</code>.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/06/07/minix-editline-v0-dot-1-0/">Minix Editline v0.1.0</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2008-06-07T21:45:05+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>7</span><span class='date-suffix'>th</span>, <span class='date-year'>2008</span></span> <span class='time'>9:45 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&rsquo;ve been looking long and hard for a small and useful <a href="http://www.gnu.org/software/readline/">GNU readline</a>
-replacement.  Oddly enough, all the time I was looking for one I never
-even once considered looking at the <a href="http://www.minix3.org/">Minix</a> sources!</p>
-
-<p>Currently I&rsquo;m using the NetBSD <a href="http://thrysoee.dk/editline/">editline derivative</a> (readline
-compatible) from <a href="http://thrysoee.dk/">Jess Thrysoee</a>, but it requires ncurses, which is
-huge!</p>
-
-<p>All I really wanted was a bare bones <code>readline()</code> suitable for small
-embedded systems.  One which could record history and preferably, but
-not required to, support completion.</p>
-
-<p>OK, so yesterday I found the Minix editline implementation, written
-years ago by Simmule Turner and Rich Salz. My hat is off to you guys,
-you rock!</p>
-
-<p>Here&rsquo;s my first packaged version for Linux:</p>
-
-<ul>
-<li><a href="http://ftp.vmlinux.org/pub/People/jocke/minix-editline/">http://ftp.vmlinux.org/pub/People/jocke/minix-editline/</a></li>
-</ul>
-
-
-<p>All I have done, so far, is to move around the files a bit and add the
-standard <a href="http://mij.oltrelinux.com/devel/autoconf-automake/">GNU configure and build system</a>.  It now builds and runs
-perfectly on my laptop, next step is to cross-build it for a couple of
-embedded ARM targets.</p>
-
-<p>I do all development using <a href="http://www.bazaar-vcs.org/">GNU Bazaar</a>. If you want to join in, then
-branch from the following public URL:</p>
-
-<pre><code> bzr branch http://vmlinux.org/jocke/bzr/minix-editline 
-</code></pre>
-
-<p>Patches and ideas are welcome!</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/9">&larr; Older</a>
@@ -553,6 +563,10 @@ branch from the following public URL:</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/">Awesome: Changing Next/Prev Tune in Spotify</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/11/07/stray-puppies/">Stray Puppies</a>
       </li>
     
@@ -566,10 +580,6 @@ branch from the following public URL:</p>
     
       <li class="post">
         <a href="/blog/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/">HowTo: Push to Multiple GIT Repos With One Command</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/">HowTo: Apache With Gitweb on Debian 8.1</a>
       </li>
     
   </ul>
