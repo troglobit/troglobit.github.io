@@ -9,9 +9,8 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="Here is another bug-fix release of mrouted. This time
-with a couple of really nasty bugs fixed. A big thanks to Dan Kruchinin
-for tracking down a &hellip;">
+  <meta name="description" content="OK, so we finally got an iPad. The effective marketing droids of Apple
+are doing a good job, even the Linux zealots are starting to use their &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +75,146 @@ for tracking down a &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/12/31/howto-setup-debian-slash-ubuntu-to-serve-music-to-itunes/">HowTo: Use Ubuntu to Serve Music to iTunes</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2010-12-31T19:26:37+01:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>31</span><span class='date-suffix'>st</span>, <span class='date-year'>2010</span></span> <span class='time'>7:26 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>OK, so we finally got an iPad.  The effective marketing droids of Apple
+are doing a good job, even the Linux zealots are starting to use their
+products :-)</p>
+
+<p>So, how to serve the immense music collection of our family to the iPad?
+Well, it seems the magic integration with iTunes is not enough (yet), so
+you need a <a href="http://itunes.apple.com/app/simple-daap-client/id369605270">Simple Daap Client</a> app on your iPad to get the most out
+of this HowTo. I hope DAAP sharing for iPad will be added soon, that
+would be really cool!</p>
+
+<p>I used the <a href="http://www.fireflymediaserver.org/">Firefly Media Server</a>, which in Debian/Ubuntu is known as
+<a href="apt://mt-daapd">mt-daapd</a>.  It needs som minor setting up to play nice with the
+Avahi multicast DNS (mDNS) services that we will use to let iTunes
+discover our new service.</p>
+
+<p>First go ahead and install mt-daapd</p>
+
+<pre><code>sudo apt-get install mt-daapd
+</code></pre>
+
+<p>Then make sure to edit the file <code>/etc/default/mt-daapd</code> file, it usually
+does not exist in the default setup, so create it and add the following
+contents to disable the built-in mDNS server:</p>
+
+<pre><code># -m Disables the built-in mDNS server, useful if you already run Avahi
+DAEMON_OPTS="-m"
+</code></pre>
+
+<p>The default configuration of must be updated with the location of your
+music library.  On my system it is <code>/pub/Music</code>, so I edit the file
+<code>/etc/mt-daapd.conf</code> and change:</p>
+
+<pre><code># Location of the mp3 files to share.  Note that because the
+# files are stored in the database by inode, these must be
+# in the same physical filesystem.
+mp3_dir = /pub/Music
+</code></pre>
+
+<p>If you like, you can change the <code>admin_pw</code> (mt-daapd) and default port
+to something other than the defaults.  After changing the settings you
+need to restart the service:</p>
+
+<pre><code>sudo service mt-daapd restart
+</code></pre>
+
+<p>Now enter <code>localhost:3689</code> in your browser window, leave the username
+field empty and set password to mt-daapd.  Unless you changed any of the
+defaults above.</p>
+
+<p>Time for multicast!  The Avahi service on GNU/Linux systems is what
+Bonjour/Rendez-Vous is to Apple systems.  It provides seamless
+interaction between clients and servers on a LAN.  My HP printer, for
+instance, pops up automatically in Windows, OS X and Linux these days
+because these operating systems listen in on network mDNS servers that
+broadcast (or rather multicast) available services.  Very neat.</p>
+
+<p>However, as usual there are a few snags you might need to work around to
+get everything to work.  Thanks to my ISP (Telia, Sweden), I need to tell
+Avahi the following nasty things in <code>/etc/default/avahi-daemon</code></p>
+
+<pre><code># 1 = Try to detect unicast dns servers that serve .local and disable avahi in
+# that case, 0 = Don't try to detect .local unicast dns servers, can cause
+# troubles on misconfigured networks
+AVAHI_DAEMON_DETECT_LOCAL=0
+</code></pre>
+
+<p>And also edit the file <code>/etc/avahi/avahi-daemon.conf</code>, the following is
+not the entire contents of the file, only the sections I&rsquo;ve changed:</p>
+
+<pre><code>[server]
+# Comment out any current/previous work arounds
+#domain-name=local
+#domain-name=.alocal
+disallow-other-stacks=yes
+
+[publish]
+publish-workstation=no
+publish-domain=no
+</code></pre>
+
+<p>Also, in the directory <code>/etc/avahi/services/</code> we need to add an entry for
+DAAP.  Create the file <code>/etc/avahi/services/daap.service</code>:</p>
+
+<pre><code>&lt;!DOCTYPE service-group SYSTEM "avahi-service.dtd"&gt;
+&lt;!-- iTunes DAAP, music streaming, for mt-daapd or Firefly Media Server
+     See avahi.service(5) for more information about this configuration file --&gt;
+
+&lt;service-group&gt;
+    &lt;name replace-wildcards="yes"&gt;%h&lt;/name&gt;
+
+    &lt;service&gt;
+        &lt;type&gt;_daap._tcp&lt;/type&gt;
+        &lt;port&gt;3689&lt;/port&gt;
+        &lt;txt-record&gt;txtvers=1&lt;/txt-record&gt;
+        &lt;txt-record&gt;iTSh Version=131073&lt;/txt-record&gt;
+        &lt;txt-record&gt;Version=196610&lt;/txt-record&gt;
+    &lt;/service&gt;
+
+    &lt;service&gt;
+        &lt;type&gt;_rsp._tcp&lt;/type&gt;
+        &lt;port&gt;3689&lt;/port&gt;
+    &lt;/service&gt;
+&lt;/service-group&gt;
+</code></pre>
+
+<p>Now, restart avahi and see your music server pop up automatically as a
+Share in iTunes:</p>
+
+<pre><code>sudo service avahi-daemon restart
+</code></pre>
+
+<p>Good Luck!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -539,40 +678,6 @@ read.  Try it out by <a href="https://github.com/troglobit/toolbox/blob/master/d
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/05/01/howto-move-window-buttons-back-to-the-right-hand-side/">HowTo: Move Window Buttons Back to the Right</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2010-05-01T16:46:57+02:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2010</span></span> <span class='time'>4:46 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>When you&rsquo;ve installed Ubuntu 10.04 you might want to have the window
-controls back to the right side, where you&rsquo;re used to having them.  Use
-the following simple command:</p>
-
-<pre><code>gconftool-2 --set /apps/metacity/general/button_layout --type string "menu:minimize,maximize,close"
-</code></pre>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/6">&larr; Older</a>
@@ -616,6 +721,10 @@ the following simple command:</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/">En Vanlig Dag På Jobbet (SWEDISH)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/">Awesome: Changing Next/Prev Tune in Spotify</a>
       </li>
     
@@ -629,10 +738,6 @@ the following simple command:</p>
     
       <li class="post">
         <a href="/blog/2015/07/02/howto-using-lite-with-a-git-based-application/">HowTo: Using -lite With a GIT-based Application</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/">HowTo: Push to Multiple GIT Repos With One Command</a>
       </li>
     
   </ul>

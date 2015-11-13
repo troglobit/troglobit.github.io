@@ -9,9 +9,8 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="This is not only a reminder to myself, it is appraisal to the probably
-best programming font ever: Inconsolata. Thank you so much, Mr
-Raph Levien! On &hellip;">
+  <meta name="description" content="When you&rsquo;ve installed Ubuntu 10.04 you might want to have the window
+controls back to the right side, where you&rsquo;re used to having them. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +75,40 @@ Raph Levien! On &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/05/01/howto-move-window-buttons-back-to-the-right-hand-side/">HowTo: Move Window Buttons Back to the Right</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2010-05-01T16:46:57+02:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2010</span></span> <span class='time'>4:46 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>When you&rsquo;ve installed Ubuntu 10.04 you might want to have the window
+controls back to the right side, where you&rsquo;re used to having them.  Use
+the following simple command:</p>
+
+<pre><code>gconftool-2 --set /apps/metacity/general/button_layout --type string "menu:minimize,maximize,close"
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -697,97 +730,6 @@ their <a href="http://lists.schmorp.de/mailman/listinfo/libev">mailing list</a>!
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/03/28/the-marvellous-libev/">The Marvellous Libev</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2009-03-28T23:00:00+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>28</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>11:00 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>A very good friend mine recently told me about a neat event library,
-<a href="http://software.schmorp.de/pkg/libev">libev</a>.  Usually when he drops me
-links like that it takes me a couple of years to react and finally
-adopt.</p>
-
-<p>This time it only took me about a month.</p>
-
-<p>He has actually showed me lots of very useful stuff throughout the
-years, and even though we used GNU/Linux at university, he was one
-those hard core people who showed me the path into a successful
-full-time career as a Linux developer. I don&rsquo;t think I have ever
-thanked you properly for that, Jakob!</p>
-
-<p>As it turns out libev was exactly what I have been looking for, for
-years!  Way back in 2005 when I switched jobs I started working with a
-scary home brew code base ported to Linux from VxWorks.  From the
-original code only the basic state machine, basic election algorithms
-and some other minor glue code remains.  I have slowly refactored the
-code base into something, hopefully, more maintainable.</p>
-
-<p>The one missing piece was the timer implementation.  The old code used
-to create a new pthread for each new timeout.  I tried replacing it with
-code of
-<a href="https://github.com/troglobit/toolbox/blob/master/timer/timer.c">my own</a>,
-based on Don Libes
-<a href="http://www.kohala.com/start/libes.timers.txt">&ldquo;Implementing Software Timers&rdquo;</a>.
-As it turns out libev already has (working) timers, in fact, it has
-taken an even more complete approach and made almost everything into
-events with callbacks, perfect for state machines!</p>
-
-<p>After having done
-<a href="https://github.com/troglobit/toolbox/blob/master/event-demo.c">some initial testing</a>
-of the libev timers I put on a big smile and fired up Emacs to
-investigate what other parts of that home brew code base were eligible
-for replacement, when i suddenly hit me: the state machine consists of a
-couple of threads that pass messages between them using <code>msgsnd()</code> and
-<code>msgrcv()</code>, bad old XSI IPC primitives.  Bad guys that don&rsquo;t use
-standard file descriptors.  A quick and dirty hack confirms it. I
-started looking around and I had a vague recollection of some message
-primitives that actually used file descriptors.  On the mailing list
-Marc (Lehman) was as always extremely quick to answer my questions and
-with his help I eventually found the <code>mq_overview(7)</code> man page:</p>
-
-<blockquote><p>Polling message queue descriptors
-    On Linux, a message queue descriptor is actually a file descriptor,
-    and can be monitored using select(2), poll(2), or epoll(7). This
-    is not portable.</p></blockquote>
-
-<p>Wow, I could hardly wait until I, later that day, could get my hands on
-the keyboard again and try it out!  Yes, the POSIX message queue
-primitives work!  Here is my
-<a href="https://github.com/troglobit/toolbox/blob/master/event-demo2.c">sample message queue code</a>.
-Compile it in Emacs with <code>M-x compile</code> (I have that bound to F9 in my
-.emacs, Borland IDE style :)</p>
-
-<p>Thus far I must say I can really recommend libev!  Even though it isn&rsquo;t
-<a href="http://www.openbsd.org/policy.html">ISC licensed</a>, it&rsquo;s dual licensed
-under the
-<a href="http://en.wikipedia.org/wiki/BSD_licenses">2-clause BSD license</a> and
-the <a href="http://www.gnu.org/copyleft/gpl.html">GNU GPL</a>.  In my case I&rsquo;ll go
-with the 2-clause BSD license, which according to Wikipedia is
-&ldquo;functionally equivalent&rdquo; to the
-<a href="http://en.wikipedia.org/wiki/MIT_License">MIT license</a>.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/7">&larr; Older</a>
@@ -831,6 +773,10 @@ with the 2-clause BSD license, which according to Wikipedia is
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/">En Vanlig Dag På Jobbet (SWEDISH)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/">Awesome: Changing Next/Prev Tune in Spotify</a>
       </li>
     
@@ -844,10 +790,6 @@ with the 2-clause BSD license, which according to Wikipedia is
     
       <li class="post">
         <a href="/blog/2015/07/02/howto-using-lite-with-a-git-based-application/">HowTo: Using -lite With a GIT-based Application</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/">HowTo: Push to Multiple GIT Repos With One Command</a>
       </li>
     
   </ul>
