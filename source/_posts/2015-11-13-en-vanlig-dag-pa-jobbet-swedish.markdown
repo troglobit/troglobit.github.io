@@ -45,7 +45,7 @@ använda något ur gamla testamentet.) Här följer ett utdrag från vår IRC:
 	15:40 < lazzer> troglobit: bra val ;-=
 	15:44 < rooth> troglobit: Jag tyckte det var dags =)
 	16:00 < moggen> troglobit: upptäckte när jag jobbade hemma att man får "fel" IP på
-					web.beijer.se om man inte sitter på kontors-IP... hosts ftw.
+					web.example.com om man inte sitter på kontors-IP... hosts ftw.
 	16:22 < troglobit> moggen: Härligt att se att du sållat dig till den enda sanna läran ;)
 	16:59 < rooth> =)
 	17:06 < wkz> moggen,troglobit : another one bites the dust... :)
