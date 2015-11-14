@@ -4,7 +4,7 @@
   <title><![CDATA[Troglobit]]></title>
   <link href="http://troglobit.github.io/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-11-14T15:09:42+01:00</updated>
+  <updated>2015-11-14T15:54:50+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -23,6 +23,9 @@ as a shift-reduce problem with Bison and ended up a ping-pong of useful
 UNIX API:s.  We concluded that despite having worked professionally with
 UNIX for over a decade, it is still very satisfying finding gems like
 these.</p>
+
+<p>Most people are unaware they existing and therefore often end up rolling
+their own (buggy) implementations.</p>
 
 <h2>SysV <code>search.h</code></h2>
 
@@ -97,6 +100,16 @@ in some tricky cases, e.g. when removing entries while iterating.</p>
 
 
 <p>See <a href="https://www.freebsd.org/cgi/man.cgi?query=queue&amp;sektion=3">this FreeBSD man page</a> for more info on <code>sys/queue.h</code></p>
+
+<h2><code>stdlib.h</code></h2>
+
+<p>Other functions worthy of mentioning here are:</p>
+
+<ul>
+<li><code>bsearch()</code></li>
+<li><code>qsort()</code></li>
+</ul>
+
 ]]></content>
   </entry>
   
