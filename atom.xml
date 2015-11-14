@@ -4,7 +4,7 @@
   <title><![CDATA[Troglobit]]></title>
   <link href="http://troglobit.github.io/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-11-14T15:54:50+01:00</updated>
+  <updated>2015-11-14T21:15:58+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -67,9 +67,9 @@ their own (buggy) implementations.</p>
 
 <h2>BSD <code>sys/queue.h</code></h2>
 
-<p>This header has lots of macros for handling various forms of linked
-lists.  The version in GLIBC is a bit behind the BSD&rsquo;s, because the
-latter also have <code>_safe()</code> versions of some macros to aid the user
+<p><a href="https://www.freebsd.org/cgi/man.cgi?query=queue&amp;sektion=3">This header</a> has lots of macros for handling various forms of
+linked lists.  The version in GLIBC is a bit behind the BSD&rsquo;s, because
+the latter also have <code>_safe()</code> versions of some macros to aid the user
 in some tricky cases, e.g. when removing entries while iterating.</p>
 
 <p>Several types of lists are supported:</p>
@@ -99,7 +99,7 @@ in some tricky cases, e.g. when removing entries while iterating.</p>
 </ul>
 
 
-<p>See <a href="https://www.freebsd.org/cgi/man.cgi?query=queue&amp;sektion=3">this FreeBSD man page</a> for more info on <code>sys/queue.h</code></p>
+<p>I wrote a <a href="https://github.com/troglobit/toolbox/blob/master/tailq-demo.c">demo of the TAILQ API</a> a couple of years ago.</p>
 
 <h2><code>stdlib.h</code></h2>
 
