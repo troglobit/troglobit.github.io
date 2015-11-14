@@ -9,11 +9,8 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="I feel I have to write something about the demise of
-free(code).
-Others have written about it too,
-and its been covered on lwn.net as
-well. It&rsquo; &hellip;">
+  <meta name="description" content="OK, so you&rsquo;ve just been handed the task to integrate a big piece of
+corporate software and it&rsquo;s nowhere near as done and ready as project &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +75,55 @@ well. It&rsquo; &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/08/27/howto-rebase-without-an-origin/">HowTo Rebase Without an Origin</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-08-27T10:00:13+02:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>10:00 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>OK, so you&rsquo;ve just been handed the task to integrate a big piece of
+corporate software and it&rsquo;s nowhere near as done and ready as project
+management thinks.  Of course you&rsquo;ve already started chugging away at
+it, fixing bugs, refactoring code and wrapping it in neat containers
+to keep the changeset against the base SW small &ndash; you already know
+you&rsquo;ll get another drop of the same stinking pieace of code in another
+six months, so you keep the changes small and track them in GIT with
+neatly formatted commit messages.</p>
+
+<p>About ten commits in it dawns on you that you have several commits
+that would need to be squashed and some commit messages that needs to
+be edited &hellip; you start typing in <code>git rebase -i origin/...</code> wait, you
+haven&rsquo;t pushed anything yet.  So how do you rebase something that&rsquo;s
+not been pushed yet?</p>
+
+<p>Well:</p>
+
+<pre><code>git rebase --interactive --root master
+</code></pre>
+
+<p>Tip courtesy of my friend and collegue <a href="https://github.com/wkz">wkz</a></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -488,40 +534,6 @@ does confuse people.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/08/09/on-the-linearity-of-time/">On the Linearity of Time</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2013-08-09T04:25:00+02:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>4:25 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Don&rsquo;t try this at home kids. (Disclaimer: I live in Sweden :)</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/08/09/on-the-linearity-of-time/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/4">&larr; Older</a>
@@ -565,6 +577,10 @@ does confuse people.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/11/14/useful-unix-api-s/">Useful UNIX API:s</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/">En Vanlig Dag På Jobbet (SWEDISH)</a>
       </li>
     
@@ -578,10 +594,6 @@ does confuse people.</p>
     
       <li class="post">
         <a href="/blog/2015/09/09/summer-of-code-2015/">Summer of Code 2015</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/07/02/howto-using-lite-with-a-git-based-application/">HowTo: Using -lite With a GIT-based Application</a>
       </li>
     
   </ul>

@@ -5,13 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>On Commit Messages &#8230; - Troglobit</title>
+  <title>Useful UNIX API:s - Troglobit</title>
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="There&rsquo;s just one thing to say on the topic of commit messages:
-ur doin it wrong if &hellip;
-">
+  <meta name="description" content="Had an interesting conversation with a buddy last night. It started out
+as a shift-reduce problem with Bison and ended up a ping-pong of useful
+UNIX &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +20,7 @@ ur doin it wrong if &hellip;
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://troglobit.github.io/blog/2013/08/13/on-commit-messages-dot-dot-dot">
+  <link rel="canonical" href="http://troglobit.github.io/blog/2015/11/14/useful-unix-api-s">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Troglobit" type="application/atom+xml">
@@ -79,7 +79,7 @@ ur doin it wrong if &hellip;
   
   <header>
     
-      <h1 class="entry-title">On Commit Messages &#8230;</h1>
+      <h1 class="entry-title">Useful UNIX API:s</h1>
     
     
       <p class="meta">
@@ -88,15 +88,92 @@ ur doin it wrong if &hellip;
 
 
 
-<time class='entry-date' datetime='2013-08-13T14:18:00+02:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>2:18 pm</span></time>
+<time class='entry-date' datetime='2015-11-14T11:45:49+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:45 am</span></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>There&rsquo;s just one thing to say on the topic of commit messages:
-<a href="http://stopwritingramblingcommitmessages.com/">ur doin it wrong if &hellip;</a></p>
+<div class="entry-content"><p>Had an interesting conversation with a buddy last night.  It started out
+as a shift-reduce problem with Bison and ended up a ping-pong of useful
+UNIX API:s.  We concluded that despite having worked professionally with
+UNIX for over a decade, it is still very satisfying finding gems like
+these.</p>
+
+<h2>SysV <code>search.h</code></h2>
+
+<p>Mangage a <a href="http://pubs.opengroup.org/onlinepubs/009695399/functions/insque.html">simple queue</a>:</p>
+
+<ul>
+<li><code>insque()</code></li>
+<li><code>remque()</code></li>
+</ul>
+
+
+<p>Manage <a href="http://pubs.opengroup.org/onlinepubs/009695399/functions/hcreate.html">hash search table</a>:</p>
+
+<ul>
+<li><code>hsearch()</code></li>
+<li><code>hcreate()</code></li>
+<li><code>hdestroy()</code></li>
+</ul>
+
+
+<p>Manage a <a href="http://pubs.opengroup.org/onlinepubs/009695399/functions/tsearch.html">binary search tree</a>:</p>
+
+<ul>
+<li><code>tsearch()</code></li>
+<li><code>tfind()</code></li>
+<li><code>tdelete()</code></li>
+<li><code>twalk()</code></li>
+<li><code>tdestroy()</code></li>
+</ul>
+
+
+<p><a href="http://pubs.opengroup.org/onlinepubs/009695399/functions/lsearch.html">Linear search</a> and update:</p>
+
+<ul>
+<li><code>lfind()</code></li>
+<li><code>lsearch()</code></li>
+</ul>
+
+
+<h2>BSD <code>sys/queue.h</code></h2>
+
+<p>This header has lots of macros for handling various forms of linked
+lists.  The version in GLIBC is a bit behind the BSD&rsquo;s, because the
+latter also have <code>_safe()</code> versions of some macros to aid the user
+in some tricky cases, e.g. when removing entries while iterating.</p>
+
+<p>Several types of lists are supported:</p>
+
+<ul>
+<li>LIST: Doubly linked list</li>
+<li>SLIST: Single linked list</li>
+<li>STAILQ: Single linked tail queue</li>
+<li>SIMPLEQ: Simple queue</li>
+<li>TAILQ: Tail queue</li>
+<li>CIRCLEQ: Circular queue</li>
+</ul>
+
+
+<p>Here&rsquo;s a few of them:</p>
+
+<ul>
+<li><code>LIST_INIT()</code></li>
+<li><code>LIST_EMPTY()</code></li>
+<li><code>LIST_FIRST()</code></li>
+<li><code>LIST_NEXT()</code></li>
+<li><code>LIST_REMOVE()</code></li>
+<li><code>LIST_FOREACH()</code></li>
+<li><code>LIST_INSERT_AFTER()</code></li>
+<li><code>LIST_INSERT_BEFORE()</code></li>
+<li><code>LIST_INSERT_HEAD()</code></li>
+</ul>
+
+
+<p>See <a href="https://www.freebsd.org/cgi/man.cgi?query=queue&amp;sektion=3">this FreeBSD man page</a> for more info on <code>sys/queue.h</code></p>
 </div>
 
 
@@ -112,21 +189,15 @@ ur doin it wrong if &hellip;
 
 
 
-<time class='entry-date' datetime='2013-08-13T14:18:00+02:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>2:18 pm</span></time>
+<time class='entry-date' datetime='2015-11-14T11:45:49+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:45 am</span></time>
       
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/git/'>git</a>
-  
-</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://troglobit.github.io/blog/2013/08/13/on-commit-messages-dot-dot-dot/" data-via="troglobit" data-counturl="http://troglobit.github.io/blog/2013/08/13/on-commit-messages-dot-dot-dot/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://troglobit.github.io/blog/2015/11/14/useful-unix-api-s/" data-via="troglobit" data-counturl="http://troglobit.github.io/blog/2015/11/14/useful-unix-api-s/" >Tweet</a>
   
   
   
@@ -135,10 +206,8 @@ ur doin it wrong if &hellip;
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/08/13/just-a-programmer/" title="Previous Post: Just a Programmer">&laquo; Just a Programmer</a>
+        <a class="basic-alignment left" href="/blog/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/" title="Previous Post: En vanlig dag på jobbet (SWEDISH)">&laquo; En vanlig dag på jobbet (SWEDISH)</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2014/02/23/weekend-hack-json-vs-conf/" title="Next Post: Weekend Hack: JSON vs CONF">Weekend Hack: JSON vs CONF &raquo;</a>
       
     </p>
   </footer>

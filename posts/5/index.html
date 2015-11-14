@@ -9,8 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="OK, so we finally got an iPad. The effective marketing droids of Apple
-are doing a good job, even the Linux zealots are starting to use their &hellip;">
+  <meta name="description" content="This is a security release of pimd, v2.1.6. The following fixes
+are included: CVE-2011-0007: &ldquo;Insecure file creation in /var/tmp&rdquo;
+Build &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -75,6 +76,47 @@ are doing a good job, even the Linux zealots are starting to use their &hellip;"
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/01/08/announcing-pimd-v2-dot-1-6/">Announcing Pimd v2.1.6</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2011-01-08T22:40:22+01:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>8</span><span class='date-suffix'>th</span>, <span class='date-year'>2011</span></span> <span class='time'>10:40 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This is a security release of <a href="/pimd.html">pimd</a>, v2.1.6.  The following fixes
+are included:</p>
+
+<ul>
+<li><a href="https://security-tracker.debian.org/tracker/CVE-2011-0007">CVE-2011-0007</a>: <em>&ldquo;Insecure file creation in /var/tmp&rdquo;</em></li>
+<li>Build error on GNU/kFreeBSD</li>
+</ul>
+
+
+<p>Thanks to <a href="http://www.luffy.cx/">Vincent Bernat</a> this time for the CVE fix!</p>
+
+<p>As always, check the <a href="/pimd.html">homepage</a>, the <a href="https://github.com/troglobit/pimd/blob/master/ChangeLog">ChangeLog</a> and the
+<a href="https://github.com/troglobit/pimd/commits/2.1.6">GIT log</a> for more details.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -643,41 +685,6 @@ pack_report: pack_mapped              =     977484 /     977484
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/05/09/syntax-highlighting-in-less/">Syntax Highlighting in Less</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2010-05-09T19:53:19+02:00'><span class='date'><span class='date-month'>May</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2010</span></span> <span class='time'>7:53 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img class="right" src="/images/lessfilter.png"></p>
-
-<p>Yes, it&rsquo;s certainly possible and source code becomes so much easier to
-read.  Try it out by <a href="https://github.com/troglobit/toolbox/blob/master/dot.lessfilter">downloading my .lessfilter</a>: save it as
-<code>~/.lessfilter</code> in your <code>$HOME</code>.</p>
-
-<p>Then try it out on a C source file: <code>less -R myfile.c</code> :-)</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/6">&larr; Older</a>
@@ -721,6 +728,10 @@ read.  Try it out by <a href="https://github.com/troglobit/toolbox/blob/master/d
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/11/14/useful-unix-api-s/">Useful UNIX API:s</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/">En Vanlig Dag På Jobbet (SWEDISH)</a>
       </li>
     
@@ -734,10 +745,6 @@ read.  Try it out by <a href="https://github.com/troglobit/toolbox/blob/master/d
     
       <li class="post">
         <a href="/blog/2015/09/09/summer-of-code-2015/">Summer of Code 2015</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/07/02/howto-using-lite-with-a-git-based-application/">HowTo: Using -lite With a GIT-based Application</a>
       </li>
     
   </ul>

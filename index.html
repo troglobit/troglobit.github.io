@@ -9,9 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="I vanlig ordning bashar vi DNS på jobbet, pga ofungerar hårt över VPN
-för de flesta. (Ja vi kör alla Linux, utom cheferna som envisas med att
-använda &hellip;">
+  <meta name="description" content="Had an interesting conversation with a buddy last night. It started out
+as a shift-reduce problem with Bison and ended up a ping-pong of useful
+UNIX &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,113 @@ använda &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/11/14/useful-unix-api-s/">Useful UNIX API:s</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-11-14T11:45:49+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>14</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:45 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Had an interesting conversation with a buddy last night.  It started out
+as a shift-reduce problem with Bison and ended up a ping-pong of useful
+UNIX API:s.  We concluded that despite having worked professionally with
+UNIX for over a decade, it is still very satisfying finding gems like
+these.</p>
+
+<h2>SysV <code>search.h</code></h2>
+
+<p>Mangage a <a href="http://pubs.opengroup.org/onlinepubs/009695399/functions/insque.html">simple queue</a>:</p>
+
+<ul>
+<li><code>insque()</code></li>
+<li><code>remque()</code></li>
+</ul>
+
+
+<p>Manage <a href="http://pubs.opengroup.org/onlinepubs/009695399/functions/hcreate.html">hash search table</a>:</p>
+
+<ul>
+<li><code>hsearch()</code></li>
+<li><code>hcreate()</code></li>
+<li><code>hdestroy()</code></li>
+</ul>
+
+
+<p>Manage a <a href="http://pubs.opengroup.org/onlinepubs/009695399/functions/tsearch.html">binary search tree</a>:</p>
+
+<ul>
+<li><code>tsearch()</code></li>
+<li><code>tfind()</code></li>
+<li><code>tdelete()</code></li>
+<li><code>twalk()</code></li>
+<li><code>tdestroy()</code></li>
+</ul>
+
+
+<p><a href="http://pubs.opengroup.org/onlinepubs/009695399/functions/lsearch.html">Linear search</a> and update:</p>
+
+<ul>
+<li><code>lfind()</code></li>
+<li><code>lsearch()</code></li>
+</ul>
+
+
+<h2>BSD <code>sys/queue.h</code></h2>
+
+<p>This header has lots of macros for handling various forms of linked
+lists.  The version in GLIBC is a bit behind the BSD&rsquo;s, because the
+latter also have <code>_safe()</code> versions of some macros to aid the user
+in some tricky cases, e.g. when removing entries while iterating.</p>
+
+<p>Several types of lists are supported:</p>
+
+<ul>
+<li>LIST: Doubly linked list</li>
+<li>SLIST: Single linked list</li>
+<li>STAILQ: Single linked tail queue</li>
+<li>SIMPLEQ: Simple queue</li>
+<li>TAILQ: Tail queue</li>
+<li>CIRCLEQ: Circular queue</li>
+</ul>
+
+
+<p>Here&rsquo;s a few of them:</p>
+
+<ul>
+<li><code>LIST_INIT()</code></li>
+<li><code>LIST_EMPTY()</code></li>
+<li><code>LIST_FIRST()</code></li>
+<li><code>LIST_NEXT()</code></li>
+<li><code>LIST_REMOVE()</code></li>
+<li><code>LIST_FOREACH()</code></li>
+<li><code>LIST_INSERT_AFTER()</code></li>
+<li><code>LIST_INSERT_BEFORE()</code></li>
+<li><code>LIST_INSERT_HEAD()</code></li>
+</ul>
+
+
+<p>See <a href="https://www.freebsd.org/cgi/man.cgi?query=queue&amp;sektion=3">this FreeBSD man page</a> for more info on <code>sys/queue.h</code></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -622,54 +729,6 @@ replaced by <a href="/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/">v1.12</
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/">Rant: All the C Compiler Warnings &#8230;</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-01-12T01:57:40+01:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>1:57 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><blockquote><p>&ldquo;Enable <em>all</em> the warnings!&rdquo;</p></blockquote>
-
-<p>This is one of the truths you learn when you start working with C.  Most
-of the time adding <code>CPPFLAGS="-W -Wall -Werror"</code> is all you need to find
-all the nasty bugs.  And if that&rsquo;s not enough, there are tons of tools
-for static code analysis, like <code>scan-build</code> in
-<a href="http://clang-analyzer.llvm.org/scan-build.html">Clang</a>, and
-<a href="https://scan.coverity.com/">Coverity Scan</a>, to help you <em>find all the
-bugs</em>!</p>
-
-<p>However, these pesky warnings (some of which cannot even be disabled!)
-are sometimes more of a nuisance than help.  Sometimes you <em>know</em> that
-some parameters to a function will remain unused &ndash; it&rsquo;s a callback, and
-you don&rsquo;t need all the data given to you.  So you start adding all kinds
-of voodoo, like <code>__attribute__ ((unused))</code> &hellip; seriously?</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -711,6 +770,10 @@ of voodoo, like <code>__attribute__ ((unused))</code> &hellip; seriously?</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/11/14/useful-unix-api-s/">Useful UNIX API:s</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/">En Vanlig Dag På Jobbet (SWEDISH)</a>
       </li>
     
@@ -724,10 +787,6 @@ of voodoo, like <code>__attribute__ ((unused))</code> &hellip; seriously?</p>
     
       <li class="post">
         <a href="/blog/2015/09/09/summer-of-code-2015/">Summer of Code 2015</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/07/02/howto-using-lite-with-a-git-based-application/">HowTo: Using -lite With a GIT-based Application</a>
       </li>
     
   </ul>

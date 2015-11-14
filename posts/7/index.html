@@ -9,9 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="A very good friend mine recently told me about a neat event library,
-libev. Usually when he drops me
-links like that it takes me a couple of years to &hellip;">
+  <meta name="description" content="I have now updated the libev examples. It took me a while, but
+during that time I have been hard at work converting two of our network
+daemons to use &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,50 @@ links like that it takes me a couple of years to &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/04/05/brief-libev-update/">Brief Libev Update</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-04-05T23:53:47+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>5</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>11:53 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I have now updated the <a href="https://github.com/troglobit/toolbox/tree/master/libev-examples">libev examples</a>.  It took me a while, but
+during that time I have been hard at work converting two of our network
+daemons to use <a href="http://software.schmorp.de/pkg/libev.html">libev</a>.  As of today the upcoming <a href="http://www.westermo.com">Westermo</a> WeOS
+uses libev in both its rstpd and igmpd implementations.</p>
+
+<p>Updated example code:</p>
+
+<ul>
+<li><a href="https://github.com/troglobit/toolbox/blob/master/libev-examples/event-demo.c">timer test</a></li>
+<li><a href="https://github.com/troglobit/toolbox/blob/master/libev-examples/event-demo2.c">message queue test</a></li>
+</ul>
+
+
+<p>Enjoy, and feel free to <a href="Joachim">contact me</a> if you have any questions or
+comments on the code.  For libev specific help I can really recommend
+their <a href="http://lists.schmorp.de/mailman/listinfo/libev">mailing list</a>!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -517,66 +561,6 @@ suck!  &ldquo;Pain-Free Networking&rdquo;, my ass! :-P</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/08/20/cross-compiler-foo/">Cross Compiler Foo</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2008-08-20T20:14:42+02:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>20</span><span class='date-suffix'>th</span>, <span class='date-year'>2008</span></span> <span class='time'>8:14 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>There is a certain magic surrounding cross compilers and the people that
-know how to build one.  Not unlike that of (Linux/BSD) kernel
-developers.  At work we today support two embedded Linux targets, both
-are ARM based, and in neither of the two have we built the cross
-compiler ourselves.  The first was ye&#8217; old 2.95 based from
-<a href="http://www.uclinux.org/">uClinux.org</a> and the second we had a consultant build for us.  Lame!</p>
-
-<p>Ever since I was appointed software architect I&rsquo;ve had this nagging
-sensation about our cross-compiler situation.  We do everything else:
-roll our own archs for Linux, patch BusyBox, design our own L2/L3
-network daemons, and what-not.  Very annoying that we have such poor
-control of the mantle piece of our build environment.</p>
-
-<p>Sure, it&rsquo;s almost indistinguishable from magic, but it&rsquo;s not hard.
-There are fine helpers such as <a href="http://buildroot.uclibc.org/">buildroot</a>, ptxdist and the aging
-crosstool scripts by Dan Kegel.  I used to do some work with Dan&rsquo;s
-scripts in a couple of previous jobs, so it was a pleasant surprise to
-find that the project had found a new maintainer!</p>
-
-<p>I can highly recommend the <a href="http://crosstool-ng.org/">crosstool-NG</a> project!  It makes building
-a toolchain really easy.  In a snap had I copied our uClibc <code>.config</code>
-into the work dir of my configuration, issued the &ldquo;build&rdquo; command and
-wham, there it was a coffee break later.  A working GCC v4.2.4 cross
-compiler for Arm Xscale (big-endian) with built-in uClibc (no more GLIBC
-madness and separate uClibc builds in our tree), not to mention an all
-you can eat buffe of extra tools for the target: <code>strace</code>, <code>gdb</code> &amp;
-<code>gdbserver</code>, <code>libdmalloc</code>, <code>ncurses</code>&nbsp;&hellip; crazy.</p>
-
-<p>I&rsquo;ll start rolling it out on monday in our department and keep close
-tabs on the development of crosstool-NG to be able to grab the
-latest 4.3.2, or later GCC when it enters the ct-ng Subversion
-repository.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/8">&larr; Older</a>
@@ -620,6 +604,10 @@ repository.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/11/14/useful-unix-api-s/">Useful UNIX API:s</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/">En Vanlig Dag På Jobbet (SWEDISH)</a>
       </li>
     
@@ -633,10 +621,6 @@ repository.</p>
     
       <li class="post">
         <a href="/blog/2015/09/09/summer-of-code-2015/">Summer of Code 2015</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/07/02/howto-using-lite-with-a-git-based-application/">HowTo: Using -lite With a GIT-based Application</a>
       </li>
     
   </ul>
