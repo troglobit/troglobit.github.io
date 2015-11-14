@@ -12,6 +12,10 @@ UNIX API:s.  We concluded that despite having worked professionally with
 UNIX for over a decade, it is still very satisfying finding gems like
 these.
 
+Most people are unaware they existing and therefore often end up rolling
+their own (buggy) implementations.
+
+
 SysV `search.h`
 ---------------
 
@@ -70,6 +74,16 @@ Here's a few of them:
 - `LIST_INSERT_HEAD()`
 
 See [this FreeBSD man page][BSD] for more info on `sys/queue.h`
+
+
+`stdlib.h`
+---------
+
+Other functions worthy of mentioning here are:
+
+- `bsearch()`
+- `qsort()`
+
 
 [sysvque]:  http://pubs.opengroup.org/onlinepubs/009695399/functions/insque.html
 [sysvlin]:  http://pubs.opengroup.org/onlinepubs/009695399/functions/lsearch.html
