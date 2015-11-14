@@ -47,9 +47,9 @@ Manage a [binary search tree][sysvtree]:
 BSD `sys/queue.h`
 -----------------
 
-This header has lots of macros for handling various forms of linked
-lists.  The version in GLIBC is a bit behind the BSD's, because the
-latter also have `_safe()` versions of some macros to aid the user
+[This header][BSD] has lots of macros for handling various forms of
+linked lists.  The version in GLIBC is a bit behind the BSD's, because
+the latter also have `_safe()` versions of some macros to aid the user
 in some tricky cases, e.g. when removing entries while iterating.
 
 Several types of lists are supported:
@@ -73,7 +73,7 @@ Here's a few of them:
 - `LIST_INSERT_BEFORE()`
 - `LIST_INSERT_HEAD()`
 
-See [this FreeBSD man page][BSD] for more info on `sys/queue.h`
+I wrote a [demo of the TAILQ API][DEMO] a couple of years ago.
 
 
 `stdlib.h`
@@ -90,3 +90,4 @@ Other functions worthy of mentioning here are:
 [sysvtree]: http://pubs.opengroup.org/onlinepubs/009695399/functions/tsearch.html
 [sysvhash]: http://pubs.opengroup.org/onlinepubs/009695399/functions/hcreate.html
 [BSD]:      https://www.freebsd.org/cgi/man.cgi?query=queue&sektion=3
+[DEMO]:     https://github.com/troglobit/toolbox/blob/master/tailq-demo.c
