@@ -4,7 +4,7 @@
   <title><![CDATA[Troglobit]]></title>
   <link href="http://troglobit.github.io/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-11-15T19:27:48+01:00</updated>
+  <updated>2015-11-15T19:55:01+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -101,13 +101,22 @@ in some tricky cases, e.g. when removing entries while iterating.</p>
 
 <p>I wrote a <a href="https://github.com/troglobit/toolbox/blob/master/tailq-demo.c">demo of the TAILQ API</a> a couple of years ago.</p>
 
-<h2><code>stdlib.h</code></h2>
+<h2>Other Noteworthy API&rsquo;s</h2>
 
 <p>Other functions worthy of mentioning here are:</p>
+
+<h3><code>stdlib.h</code></h3>
 
 <ul>
 <li><code>bsearch()</code></li>
 <li><code>qsort()</code></li>
+</ul>
+
+
+<h3><code>glob.h</code></h3>
+
+<ul>
+<li><code>glob()</code></li>
 </ul>
 
 ]]></content>
