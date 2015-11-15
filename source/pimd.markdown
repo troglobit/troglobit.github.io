@@ -3,7 +3,7 @@ layout: page
 title: pimd | The original PIM-SM daemon
 sharing: true
 footer: true
-date: 2014-12-31 13:37
+date: 2015-11-15 19:26 +01:00
 comments: false
 ---
 
@@ -39,9 +39,9 @@ Pavlin Ivanov Radoslavov. With contributions by many others.
 Issue tracker and GIT repository available at GitHub:
 
    * [Repository](http://github.com/troglobit/pimd)
-   * [ChangeLog](https://github.com/troglobit/pimd/releases/tag/2.3.0)
-   * [pimd-2.3.0.tar.gz](ftp://troglobit.com/pimd/pimd-2.3.0.tar.gz),
-     [MD5](ftp://troglobit.com/pimd/pimd-2.3.0.tar.gz.md5)
+   * [ChangeLog](https://github.com/troglobit/pimd/releases/tag/2.3.1)
+   * [pimd-2.3.1.tar.gz](ftp://troglobit.com/pimd/pimd-2.3.1.tar.gz),
+     [MD5](ftp://troglobit.com/pimd/pimd-2.3.1.tar.gz.md5)
    * [Issue Tracker](http://github.com/troglobit/pimd/issues)
    * [Debian packages](http://packages.debian.org/pimd)
    * [Ubuntu packages](http://packages.ubuntu.com/pimd)
