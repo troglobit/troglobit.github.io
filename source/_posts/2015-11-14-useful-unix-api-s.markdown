@@ -76,13 +76,19 @@ Here's a few of them:
 I wrote a [demo of the TAILQ API][DEMO] a couple of years ago.
 
 
-`stdlib.h`
----------
+Other Noteworthy API's
+----------------------
 
 Other functions worthy of mentioning here are:
 
+### `stdlib.h`
+
 - `bsearch()`
 - `qsort()`
+
+### `glob.h`
+
+- `glob()`
 
 
 [sysvque]:  http://pubs.opengroup.org/onlinepubs/009695399/functions/insque.html
