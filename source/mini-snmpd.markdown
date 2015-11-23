@@ -3,7 +3,7 @@ layout: page
 title: "Mini SNMPd"
 sharing: true
 footer: true
-date: 2015-11-07 02:12
+date: 2015-11-23 18:31 +01:00
 comments: false
 ---
 
@@ -169,21 +169,21 @@ time looking for weird bugs!
 Project Info
 ------------
 
-Thisis the continuation of the hard work on mini-snmpd by Robert Ernst.
+This is the continuation of the hard work on mini-snmpd by Robert Ernst.
 Unfortunately his [mini-snmpd homepage][3] has gone offline, so that and
 the lack of updates over the last couple of years is what prompted my
 setting up a [GitHub project][repo] to act as a focal point for future
 development.  I've also taken the liberty of setting up an
-[FTP mirror][ftp] of any previous releases I could find.  If happen to
-come by any older version(s), send me an email! :)
+[FTP mirror][ftp] of any previous releases I could find.  If you happen
+to come by any older version(s), send me an email! :)
 
 mini-snmpd is licensed under the [GNU GPL v2][LICENSE].
 
    * [Repository][repo]
    * [Issue Tracker](http://github.com/troglobit/mini-snmpd/issues)
-   * [FTP][ftp]
+   * New releases are made available both on the [FTP][ftp] and at [GitHub][repo]
    * [TODO][]
-   * Man page [mini-snmpd.8](http://ftp.troglobit.com/mini-snmpd/mini-snmpd.html)
+   * Man page [mini-snmpd.8](http://ftp.troglobit.com/mini-snmpd/mini-snmpd.html) (outdated)
 
 See also the old [Free(code) page](http://freecode.com/projects/minisnmpd).
 
