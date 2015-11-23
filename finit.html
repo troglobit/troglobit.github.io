@@ -9,7 +9,7 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="Fast, Extensible Init for Linux Systems Oct 16th, 2015 11:42 pm Finit is a small event based SysV init replacement with built-in
+  <meta name="description" content="Fast, Extensible Init for Linux Systems Nov 23rd, 2015 1:23 pm Finit is a small event based SysV init replacement with built-in
 process supervision &hellip;">
   
 
@@ -83,7 +83,7 @@ process supervision &hellip;">
 
 
 
-<time class='entry-date' datetime='2015-10-16T23:42:00+02:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:42 pm</span></time></p>
+<time class='entry-date' datetime='2015-11-23T13:23:00+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2015</span></span> <span class='time'>1:23 pm</span></time></p>
   </header>
   
   <p><a href="https://github.com/troglobit/finit"><img style="position: absolute; top: 0; right: 0; border: none; box-shadow: none;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a></p>
@@ -101,7 +101,7 @@ other init daemons suffer from.</p>
 
 <p>Finit supports basic runlevels, process monitoring, and can launch
 services on demand &ndash; either with the built-in inetd support, or by
-triggering on Linux Netlink events like <code>IFUP</code>, <code>IFDN</code> or <code>GW</code>.</p>
+triggering on Linux Netlink events like <code>IFUP</code>, <code>IFDN</code> or <code>GW:UP</code>.</p>
 
 <p>Finit can also be extended with custom callbacks for all services, hooks
 into the boot process, or plugins to extend the functionality and adapt
@@ -162,7 +162,7 @@ the boot process to fit your needs.  See the <a href="https://github.com/troglob
 </span><span class='line'><span class="c"># Services must not daemonize themselves, look for --foreground or</span>
 </span><span class='line'><span class="c"># similar switches to standard services.</span>
 </span><span class='line'><span class="c">#service [2345] /sbin/inetd -f                               -- Internet super daemon</span>
-</span><span class='line'><span class="nb">service</span> :1 [2345] &lt;!IFUP:eth0,GW&gt; <span class="sx">/sbin/dropbear</span> -R -F -p <span class="m">22</span> -- SSH daemon
+</span><span class='line'><span class="nb">service</span> :1 [2345] &lt;!IFUP:eth0,GW:UP&gt; <span class="sx">/sbin/dropbear</span> -R -F -p <span class="m">22</span> -- SSH daemon
 </span><span class='line'><span class="c">#service :2 [345] /sbin/dropbear -R -F -p 222                -- SSH daemon</span>
 </span><span class='line'><span class="c">#service [2345] /sbin/telnetd -F                             -- Telnet daemon</span>
 </span><span class='line'>
@@ -210,8 +210,8 @@ groundbreaking <a href="http://wiki.eeeuser.com/boot_process:the_boot_process">E
 <li><a href="https://github.com/troglobit/finit/blob/master/README.md">README</a></li>
 <li><a href="https://github.com/troglobit/finit/blob/master/TODO.md">TODO</a></li>
 <li><a href="http://github.com/troglobit/finit/issues">Issue Tracker</a></li>
-<li><a href="ftp://troglobit.com/finit/finit-2.1.tar.xz">finit-2.1.tar.xz</a>,
-<a href="ftp://troglobit.com/finit/finit-2.1.tar.xz.md5">MD5</a></li>
+<li><a href="ftp://troglobit.com/finit/finit-2.2.tar.xz">finit-2.2.tar.xz</a>,
+<a href="ftp://troglobit.com/finit/finit-2.2.tar.xz.md5">MD5</a></li>
 </ul>
 
 
@@ -226,7 +226,7 @@ groundbreaking <a href="http://wiki.eeeuser.com/boot_process:the_boot_process">E
 
 
 
-<time class='entry-date' datetime='2015-10-16T23:42:00+02:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>16</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:42 pm</span></time>
+<time class='entry-date' datetime='2015-11-23T13:23:00+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2015</span></span> <span class='time'>1:23 pm</span></time>
         
       </p>
       
