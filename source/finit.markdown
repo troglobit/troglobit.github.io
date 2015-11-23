@@ -3,7 +3,7 @@ layout: page
 title: "Fast, extensible init for Linux systems"
 sharing: true
 footer: true
-date: 2015-10-16 22:42 +0100
+date: 2015-11-23 13:23 +0100
 comments: false
 ---
 
@@ -22,7 +22,7 @@ other init daemons suffer from.
 
 Finit supports basic runlevels, process monitoring, and can launch
 services on demand -- either with the built-in inetd support, or by
-triggering on Linux Netlink events like `IFUP`, `IFDN` or `GW`.
+triggering on Linux Netlink events like `IFUP`, `IFDN` or `GW:UP`.
 
 Finit can also be extended with custom callbacks for all services, hooks
 into the boot process, or plugins to extend the functionality and adapt
@@ -44,7 +44,7 @@ the boot process to fit your needs.  See the [README][] for details.
     # Services must not daemonize themselves, look for --foreground or
     # similar switches to standard services.
     #service [2345] /sbin/inetd -f                               -- Internet super daemon
-    service :1 [2345] <!IFUP:eth0,GW> /sbin/dropbear -R -F -p 22 -- SSH daemon
+    service :1 [2345] <!IFUP:eth0,GW:UP> /sbin/dropbear -R -F -p 22 -- SSH daemon
     #service :2 [345] /sbin/dropbear -R -F -p 222                -- SSH daemon
     #service [2345] /sbin/telnetd -F                             -- Telnet daemon
     
@@ -90,8 +90,8 @@ Issue tracker and GIT repository available at GitHub:
 * [README][]
 * [TODO](https://github.com/troglobit/finit/blob/master/TODO.md)
 * [Issue Tracker](http://github.com/troglobit/finit/issues)
-* [finit-2.1.tar.xz](ftp://troglobit.com/finit/finit-2.1.tar.xz),
-  [MD5](ftp://troglobit.com/finit/finit-2.1.tar.xz.md5)
+* [finit-2.2.tar.xz](ftp://troglobit.com/finit/finit-2.2.tar.xz),
+  [MD5](ftp://troglobit.com/finit/finit-2.2.tar.xz.md5)
 
 See also the [Free(code) page](http://freecode.com/projects/finit).
 
