@@ -9,8 +9,8 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="Howto Run Pimd on Freebsd Sep 27th, 2015 6:45 pm This is not a proper HowTo, more of a &ldquo;note to self&rdquo; after having
-created a setup to &hellip;">
+  <meta name="description" content="Howto Run Pimd on Freebsd Sep 27th, 2015 6:45 pm This is not a proper HowTo, more of a "note to self" after having
+created a setup to test pimd &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -86,7 +86,7 @@ created a setup to &hellip;">
 <time class='entry-date' datetime='2015-09-27T18:45:00+02:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>6:45 pm</span></time></p>
   </header>
   
-  <p>This is not a proper HowTo, more of a &ldquo;note to self&rdquo; after having
+  <p>This is not a proper HowTo, more of a &#8220;note to self&#8221; after having
 created a setup to test pimd <a href="https://github.com/troglobit/pimd/issues/57">issue #57</a>.  For these notes the
 following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and
 Qemu 2.3.0, is used:</p>
@@ -116,7 +116,7 @@ kernel module:</p>
 enable router/gateway mode and to enable RIP to resolve the unicast
 forwarding table.  The <code>Sender</code> and <code>Recieiver</code> nodes, which run
 Ubuntu 14.04, employ Quagga <code>ripd</code> for this, but on FreeBSD we employ
-the god &lsquo;ol <code>routed</code> :-)</p>
+the god &#8216;ol <code>routed</code> :-)</p>
 
 <pre><code>gateway_enable="YES"
 routed_enable="YES"

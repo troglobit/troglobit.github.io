@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Backup | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/backup/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-11-28T20:17:42+01:00</updated>
+  <updated>2015-12-05T00:29:05+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -18,8 +18,8 @@
     <link href="http://troglobit.github.io/blog/2015/01/02/blog-restoration-project-now-also-on-github-pages/"/>
     <updated>2015-01-02T14:12:59+01:00</updated>
     <id>http://troglobit.github.io/blog/2015/01/02/blog-restoration-project-now-also-on-github-pages</id>
-    <content type="html"><![CDATA[<p>I&rsquo;ve had this long-standing issue with backups.  It&rsquo;s deadly boring to
-set up and maintain, so I don&rsquo;t do any.  Until today!</p>
+    <content type="html"><![CDATA[<p>I&#8217;ve had this long-standing issue with backups.  It&#8217;s deadly boring to
+set up and maintain, so I don&#8217;t do any.  Until today!</p>
 
 <p>Today I moved the sources for my <a href="http://troglobit.com">Octopress blag</a>
 to GitHub, which also prompted me to set up
@@ -36,22 +36,22 @@ Ruby magic to administer it all with!  Here are some links I used to
 get where I am:</p>
 
 <ul>
-<li><a href="http://octopress.org/docs/setup/">http://octopress.org/docs/setup/</a></li>
-<li><a href="https://help.github.com/articles/creating-project-pages-manually/">https://help.github.com/articles/creating-project-pages-manually/</a></li>
-<li><a href="https://help.github.com/articles/user-organization-and-project-pages/">https://help.github.com/articles/user-organization-and-project-pages/</a></li>
-<li><a href="http://www.tomordonez.com/blog/2012/06/04/creating-a-github-blog-using-octopress/">http://www.tomordonez.com/blog/2012/06/04/creating-a-github-blog-using-octopress/</a></li>
-<li><a href="http://miguelcamba.com/blog/2013/04/22/tutorial-create-a-blog-with-octopress-and-host-it-in-github-pages/">http://miguelcamba.com/blog/2013/04/22/tutorial-create-a-blog-with-octopress-and-host-it-in-github-pages/</a></li>
-<li><a href="http://octopress.org/docs/deploying/github/">http://octopress.org/docs/deploying/github/</a></li>
+<li>http://octopress.org/docs/setup/</li>
+<li>https://help.github.com/articles/creating-project-pages-manually/</li>
+<li>https://help.github.com/articles/user-organization-and-project-pages/</li>
+<li>http://www.tomordonez.com/blog/2012/06/04/creating-a-github-blog-using-octopress/</li>
+<li>http://miguelcamba.com/blog/2013/04/22/tutorial-create-a-blog-with-octopress-and-host-it-in-github-pages/</li>
+<li>http://octopress.org/docs/deploying/github/</li>
 </ul>
 
 
 <p>With some added <code>apt-get intall ruby ruby-bundler</code> magic in Ubuntu
-everything started to look normal &ndash; now I could even do <code>rake preview</code>
+everything started to look normal &#8211; now I could even do <code>rake preview</code>
 before deploying!  Only a minor problem I had before getting everything
 working was this:</p>
 
 <blockquote><p>/usr/local/rvm/gems/ruby-2.1.2/gems/execjs-2.2.0/lib/execjs/runtimes.rb:51:in `autodetect&#8217;:
-Could not find a JavaScript runtime. See <a href="https://github.com/sstephenson/execjs">https://github.com/sstephenson/execjs</a>
+Could not find a JavaScript runtime. See https://github.com/sstephenson/execjs
 for a list of available runtimes. (ExecJS::RuntimeUnavailable)</p></blockquote>
 
 <p>Turns out I had to install nodejs as well, dunno why.</p>
@@ -65,7 +65,7 @@ own server.</p>
 
 <p>All this means I can now finally begin restoring more content from
 <a href="/blog/2013/02/17/resurrection/">my old blog</a> thanks to partial backups
-I&rsquo;ve found at the <a href="https://archive.org/">Wayback Machine</a> :-)</p>
+I&#8217;ve found at the <a href="https://archive.org/">Wayback Machine</a> :-)</p>
 ]]></content>
   </entry>
   

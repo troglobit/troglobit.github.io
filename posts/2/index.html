@@ -9,8 +9,8 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="&ldquo;Enable all the warnings!&rdquo; This is one of the truths you learn when you start working with C. Most
-of the time adding CPPFLAGS="-W -Wall &hellip;">
+  <meta name="description" content="``Enable all the warnings!'' This is one of the truths you learn when you start working with C. Most
+of the time adding CPPFLAGS="-W -Wall -Werror" &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -97,11 +97,11 @@ of the time adding CPPFLAGS="-W -Wall &hellip;">
   </header>
 
 
-  <div class="entry-content"><blockquote><p>&ldquo;Enable <em>all</em> the warnings!&rdquo;</p></blockquote>
+  <div class="entry-content"><blockquote><p>&#8220;Enable <em>all</em> the warnings!&#8221;</p></blockquote>
 
 <p>This is one of the truths you learn when you start working with C.  Most
 of the time adding <code>CPPFLAGS="-W -Wall -Werror"</code> is all you need to find
-all the nasty bugs.  And if that&rsquo;s not enough, there are tons of tools
+all the nasty bugs.  And if that&#8217;s not enough, there are tons of tools
 for static code analysis, like <code>scan-build</code> in
 <a href="http://clang-analyzer.llvm.org/scan-build.html">Clang</a>, and
 <a href="https://scan.coverity.com/">Coverity Scan</a>, to help you <em>find all the
@@ -109,9 +109,9 @@ bugs</em>!</p>
 
 <p>However, these pesky warnings (some of which cannot even be disabled!)
 are sometimes more of a nuisance than help.  Sometimes you <em>know</em> that
-some parameters to a function will remain unused &ndash; it&rsquo;s a callback, and
-you don&rsquo;t need all the data given to you.  So you start adding all kinds
-of voodoo, like <code>__attribute__ ((unused))</code> &hellip; seriously?</p>
+some parameters to a function will remain unused &#8211; it&#8217;s a callback, and
+you don&#8217;t need all the data given to you.  So you start adding all kinds
+of voodoo, like <code>__attribute__ ((unused))</code> &#8230; seriously?</p>
 
 </div>
   
@@ -145,7 +145,7 @@ of voodoo, like <code>__attribute__ ((unused))</code> &hellip; seriously?</p>
   </header>
 
 
-  <div class="entry-content"><p>I&rsquo;m a coder, not a writer.  Here&rsquo;s what I&rsquo;ve been working on during the
+  <div class="entry-content"><p>I&#8217;m a coder, not a writer.  Here&#8217;s what I&#8217;ve been working on during the
 winter holidays:</p>
 
 <ul>
@@ -168,14 +168,14 @@ available today.</li>
 is likely the last release ever of the old pimd, unless someone starts
 paying me to work on it.</p>
 
-<p>&hellip; or more people step up to help.  Both the Xorp PIM-SM and the
+<p>&#8230; or more people step up to help.  Both the Xorp PIM-SM and the
 upcoming Quagga PIM-SSM implementations are in better shape.  The only
-thing old pimd has got going for it is the license.  It&rsquo;s 3-clause
+thing old pimd has got going for it is the license.  It&#8217;s 3-clause
 BSD, so very liberal.</p></li>
 </ul>
 
 
-<p>If you&rsquo;re interested in pitching in, on any of my projects, just send me
+<p>If you&#8217;re interested in pitching in, on any of my projects, just send me
 an email or connect with me on GitHub!</p>
 </div>
   
@@ -205,8 +205,8 @@ an email or connect with me on GitHub!</p>
   </header>
 
 
-  <div class="entry-content"><p>I&rsquo;ve had this long-standing issue with backups.  It&rsquo;s deadly boring to
-set up and maintain, so I don&rsquo;t do any.  Until today!</p>
+  <div class="entry-content"><p>I&#8217;ve had this long-standing issue with backups.  It&#8217;s deadly boring to
+set up and maintain, so I don&#8217;t do any.  Until today!</p>
 
 <p>Today I moved the sources for my <a href="http://troglobit.com">Octopress blag</a>
 to GitHub, which also prompted me to set up
@@ -300,9 +300,9 @@ the distinct possibility that the
 <p>At <a href="http://www.westermo.com">work</a> we will likely start using the
 Quagga PIM rather than pimd in WeOS.</p>
 
-<p>For now though, enjoy pimd v2.2.0.  It&rsquo;s been tested in both my Qemu
+<p>For now though, enjoy pimd v2.2.0.  It&#8217;s been tested in both my Qemu
 based virtual testbed and a few setups using Linux&#8217; <code>netns</code> feature in
-<a href="http://www.nrl.navy.mil/itd/ncs/products/core">CORE</a> &ndash; awesome
+<a href="http://www.nrl.navy.mil/itd/ncs/products/core">CORE</a> &#8211; awesome
 little proggy! :-)</p>
 
 </div>
@@ -392,7 +392,7 @@ make kernel KERNCONF=MULTICAST
 reboot
 </code></pre>
 
-<p>That&rsquo;s it.  Remember to make sure your Qemu VM has enough RAM or it
+<p>That&#8217;s it.  Remember to make sure your Qemu VM has enough RAM or it
 will probably page fault on you.  I use 1,0 GB RAM.</p>
 
 <p>The other option, to load the ready made module, is likely better.  But
@@ -430,7 +430,7 @@ you want it to load at boot.  So add this to <code>/boot/loader.conf</code>:</p>
 
   <div class="entry-content"><p>Quite a few changes lately.  I finally got around to adding support
 for <a href="http://www.gnutls.org">GnuTLS</a> to <a href="/inadyn.html">Inadyn</a>,
-hopefully this will get into Debian &hellip; unless the Jessie freeze
+hopefully this will get into Debian &#8230; unless the Jessie freeze
 prevents that.</p>
 
 <p>Also, thanks to a friend of mine trying out <a href="/uftpd.html">uftpd</a>
@@ -439,7 +439,7 @@ since the release of the TFTP support.  Fixed.</p>
 
 <p>Another great piece of news is that
 <a href="http://www.coverity.com/">Coverity</a> accepted uftpd as an Open Source
-project, I&rsquo;ve been hard at work fixing nasty bugs uncovered by the
+project, I&#8217;ve been hard at work fixing nasty bugs uncovered by the
 <a href="https://scan.coverity.com/">Coverity Scan</a>.  Great stuff! :)</p>
 </div>
   
@@ -474,7 +474,7 @@ project, I&rsquo;ve been hard at work fixing nasty bugs uncovered by the
 
 <p>This is a small bugfix release of <a href="/uftpd.html">uftpd</a>.  Version 1.4
 is basically just to change <code>nowait</code> to <code>wait</code> for the TFTP service in
-<code>/etc/inetd.conf</code>, but there&rsquo;s also a minor man page update.</p>
+<code>/etc/inetd.conf</code>, but there&#8217;s also a minor man page update.</p>
 
 <p>Enjoy! :)</p>
 </div>
@@ -506,15 +506,15 @@ is basically just to change <code>nowait</code> to <code>wait</code> for the TFT
 
 
   <div class="entry-content"><p>Today sees the release of v1.3 of the awesome little uftpd. The main
-news is the new TFTP support!  Just like before you don&rsquo;t need any
-configuration file, just build and install &ndash; or build a .deb file and
+news is the new TFTP support!  Just like before you don&#8217;t need any
+configuration file, just build and install &#8211; or build a .deb file and
 install.</p>
 
 <p>This release completes the main purpose of uftpd for me, I can now use
 it as my daily driver and fully replace vsftpd and tftpd-hpa, which to
 me are the next best.</p>
 
-<p>What&rsquo;s left then, you ask?  Well, TFTP upload support, TFTP segment
+<p>What&#8217;s left then, you ask?  Well, TFTP upload support, TFTP segment
 size negotiation and possibly multiple user support in FTP.  As
 always, patches are most welcome.  See the
 <a href="/uftpd.html">uftpd homepage</a> and my

@@ -201,9 +201,9 @@ UCD-SNMP-MIB::ssRawContexts.0 = No more variables left in this MIB View (It is p
 
 <h2>Building Really Small Binaries</h2>
 
-<p>By simply calling <code>./configure &amp;&amp; make</code> you don&rsquo;t really get a small
+<p>By simply calling <code>./configure &amp;&amp; make</code> you don&#8217;t really get a small
 mini-snmpd binary.  Sure, most people know about setting <code>CFLAGS=-Os</code>
-before calling the configure script &ndash; that&rsquo;s how you reach the ~40 kiB
+before calling the configure script &#8211; that&#8217;s how you reach the ~40 kiB
 mentioned above.</p>
 
 <pre><code>CFLAGS="-Os" ./configure &amp;&amp; make clean all &amp;&amp; strip mini_snmpd &amp;&amp; ll mini_snmpd &amp;&amp; size mini_snmpd
@@ -243,10 +243,10 @@ Packed 1 file.
 
 <p>Yeah, running <code>size</code> on the binary afterwards is kinda useless, but
 <em>WOW</em>!  Using upx actually cut the size down to almost half of what we
-got with the insane arguments above &ndash; saved ~15kiB on a 30kiB binary!</p>
+got with the insane arguments above &#8211; saved ~15kiB on a 30kiB binary!</p>
 
 <p>On embedded targets some of these tricks may just about save you if
-you&rsquo;re running out of flash.  However, there are often nasty compiler
+you&#8217;re running out of flash.  However, there are often nasty compiler
 bugs to be found just by changing optimization level to <code>-Os</code>.  So when
 it comes to embedded I always recommend playing it safe and going with
 <code>-O2</code> and no further optimizations, unless you want to spend a lot of
@@ -260,7 +260,7 @@ time looking for weird bugs!</p>
 Unfortunately his <a href="https://web.archive.org/web/20150522170054/http://members.aon.at/linuxfreak/linux/mini_snmpd.html">mini-snmpd homepage</a> has gone offline, so that and
 the lack of updates over the last couple of years is what prompted my
 setting up a <a href="http://github.com/troglobit/mini-snmpd">GitHub project</a> to act as a focal point for future
-development.  I&rsquo;ve also taken the liberty of setting up an
+development.  I&#8217;ve also taken the liberty of setting up an
 <a href="ftp://troglobit.com/mini-snmpd/">FTP mirror</a> of any previous releases I could find.  If you happen
 to come by any older version(s), send me an email! :)</p>
 

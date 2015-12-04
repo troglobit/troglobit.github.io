@@ -111,7 +111,7 @@ I recommend trying out:</p>
 <p>Make sure to check out the <a href="#faq">FAQ</a> for the most common problems.</p>
 
 <p>Good Luck! <br />
-&ndash; Joachim</p>
+&#8211; Joachim</p>
 
 <h2>CORE</h2>
 
@@ -128,18 +128,18 @@ readily available i Debian/Ubuntu as simple as:</p>
 <li>Drag and drop a few router icons to the grid</li>
 <li>Connect them</li>
 <li><em>BOOM</em> you now have IP addresses automatically assigned!</li>
-<li>Press the Play button &ndash; routers are now starting up</li>
+<li>Press the Play button &#8211; routers are now starting up</li>
 </ol>
 
 
-<p>Play around a bit to try it out, it&rsquo;s awesome!  I usually start <code>pimd</code>,
+<p>Play around a bit to try it out, it&#8217;s awesome!  I usually start <code>pimd</code>,
 <code>mrouted</code>, and <code>smcroute</code> manually with a script.  (You can access the
 shell of each router by right-clicking on them.)  The host file system
 is reachable from each router in CORE, even though they are isolated and
 have their own <a href="http://blog.scottlowe.org/2013/09/04/introducing-linux-network-namespaces/">network namespaces</a>.</p>
 
 <p>For more info on network simulation, like the equally awesome <a href="http://www.gns3.com/">GNS3</a>
-for instance, see <a href="http://www.brianlinkletter.com/open-source-network-simulators/">Brian Linkletter&rsquo;s Reviews</a>.</p>
+for instance, see <a href="http://www.brianlinkletter.com/open-source-network-simulators/">Brian Linkletter&#8217;s Reviews</a>.</p>
 
 <h2>Roll your own Cloud</h2>
 
@@ -192,7 +192,7 @@ to choose one of:</p>
 usually suffice, see their respective manual pages or the comments in
 each <code>.conf</code> file for help.</p>
 
-<p>When you start <code>mrouted</code>, you&rsquo;re usually ready to go immediately.  But
+<p>When you start <code>mrouted</code>, you&#8217;re usually ready to go immediately.  But
 in the case of <code>pimd</code>, wait for routers to peer.  Then you can test your
 setup using multicast <code>ping</code> from R1 to a <code>tcpdump</code> on R4:</p>
 
@@ -201,9 +201,9 @@ R4# tcpdump -i eth0
 </code></pre>
 
 <p>As soon as the PIM routers R2 and R3 have peered you should start seeing
-ICMP traffic reaching R4.  If you don&rsquo;t, then check the underlying
+ICMP traffic reaching R4.  If you don&#8217;t, then check the underlying
 routing protocol, e.g. RIP or OSPF, to make sure the <em>reverse path</em> is
-known &ndash; this is required for PIM since, unlike DVMRP (<code>mrouted</code>) which
+known &#8211; this is required for PIM since, unlike DVMRP (<code>mrouted</code>) which
 sort of has RIP built-in, PIM relies on a unicast routing protocol to
 have populated the routing table.</p>
 
@@ -274,12 +274,12 @@ mroute from eth0 group 225.1.2.3 to eth1
 iperf on R4 and R1, as described above. You should get the same result
 as with <code>mrouted</code> and <code>pimd</code>.</p>
 
-<p>That&rsquo;s it. Have fun!</p>
+<p>That&#8217;s it. Have fun!</p>
 
 <h2>FAQ</h2>
 
 <ol>
-<li><p>It doesn&rsquo;t work?</p>
+<li><p>It doesn&#8217;t work?</p>
 
 <p>Check the TTL.</p></li>
 <li><p>Why does the TTL in multicast default to 1?</p>
@@ -297,7 +297,7 @@ Here is how you could do it on Linux with iptables:</p>
 
 <p>Where <code>group</code> is the multicast group address of the stream you want
 to change the TTL of.  From this <a href="http://www.redhat.com/archives/linux-cluster/2007-September/msg00150.html">RedHat mailing list entry</a>.</p></li>
-<li><p>I want to use the loopback interface, but it doesn&rsquo;t show in <code>pimd</code>?</p>
+<li><p>I want to use the loopback interface, but it doesn&#8217;t show in <code>pimd</code>?</p>
 
 <p>Some interfaces, like <code>lo</code> or <code>tunN</code>, do not have the <code>MULTICAST</code>
 interface flag set by default.  It should work if you enable it:</p>
@@ -305,10 +305,10 @@ interface flag set by default.  It should work if you enable it:</p>
 <pre><code> ip link set lo multicast on
  ip link set tun1 multicast on
 </code></pre></li>
-<li><p>It doesn&rsquo;t work?</p>
+<li><p>It doesn&#8217;t work?</p>
 
 <p>Check your network topology, maybe a switch between the sender and
-the receiver doesn&rsquo;t properly support IGMP snooping.</p>
+the receiver doesn&#8217;t properly support IGMP snooping.</p>
 
 <p>For virtual/cloud setups, see above for disabling IGMP snooping
 entirely in the Linux kernel.</p></li>
@@ -316,14 +316,14 @@ entirely in the Linux kernel.</p></li>
 groups I want to forward, the TTL is OK, but I see no traffic?</p>
 
 <p>Could be your underlying routing protocol (RIP/OSPF) does not know
-the reverse path to the source.  Make sure the sender&rsquo;s network is
+the reverse path to the source.  Make sure the sender&#8217;s network is
 listed in the routing table on the receiving sides routing table.</p></li>
-<li><p>What&rsquo;s the routing performance of <code>pimd</code>/<code>mrouted</code>/<code>smcroute</code>?</p>
+<li><p>What&#8217;s the routing performance of <code>pimd</code>/<code>mrouted</code>/<code>smcroute</code>?</p>
 
 <p>N/A.  Neither of them take active part in the actual forwarding of
 multicast frames.  This is what the kernel, or dedicated routing HW,
 does.  The routing daemons <code>pimd</code>/<code>mrouted</code>/<code>smcroute</code> only
-manipulate the multicast routing table(s) of the operaring system&rsquo;s
+manipulate the multicast routing table(s) of the operaring system&#8217;s
 kernel.</p></li>
 </ol>
 

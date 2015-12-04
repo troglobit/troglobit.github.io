@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Howto | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/howto/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-11-28T20:17:42+01:00</updated>
+  <updated>2015-12-05T00:29:05+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -20,11 +20,11 @@
     <id>http://troglobit.github.io/blog/2015/07/02/howto-using-lite-with-a-git-based-application</id>
     <content type="html"><![CDATA[<p>Years ago while looking for a fast <a href="https://en.wikipedia.org/wiki/Init">init</a> replacement for <a href="http://westermo.com/">work</a>,
 I found <a href="http://helllabs.org/finit/">Finit</a>.  Originally written by <a href="https://github.com/cmatsuoka">Claudio Matsuoka</a> to act
-as a drop-in replacement for the <a href="https://en.wikipedia.org/wiki/Asus_Eee_PC">Asus EeePC</a> <a href="http://wiki.eeeuser.com/boot_process:the_boot_process">fastinit</a>, <em>&ldquo;gaps
-filled with frog DNA &hellip;&rdquo;</em></p>
+as a drop-in replacement for the <a href="https://en.wikipedia.org/wiki/Asus_Eee_PC">Asus EeePC</a> <a href="http://wiki.eeeuser.com/boot_process:the_boot_process">fastinit</a>, <em>&#8220;gaps
+filled with frog DNA &hellip;&#8221;</em></p>
 
 <p>Until I found Finit I had always been in awe of those venturing into the
-realm of <a href="http://0pointer.net/blog/">PID 1</a>.  However, learning from the simplicity of Claudio&rsquo;s
+realm of <a href="http://0pointer.net/blog/">PID 1</a>.  However, learning from the simplicity of Claudio&#8217;s
 code I realized that although PID 1 at times is indistinguishable from
 magic, it is really not that hard to master.  <a href="https://github.com/troglobit/finit">My version of Finit</a>
 is available on GitHub.</p>
@@ -73,7 +73,7 @@ uses both <code>-lite</code> and <code>-luev</code>.  The latter is my small eve
 <a href="https://github.com/troglobit/libuev">libuEv</a>.  For help using <code>-lite</code> with the GNU configure and build
 system, see <a href="https://github.com/troglobit/inadyn">inadyn</a>.</p>
 
-<p>Libite builds in &ldquo;silent mode&rdquo; by default, use <code>make V=1</code> (like the
+<p>Libite builds in &#8220;silent mode&#8221; by default, use <code>make V=1</code> (like the
 kernel) to get a more verbose output, usable for autobuilders etc.</p>
 ]]></content>
   </entry>
@@ -83,10 +83,10 @@ kernel) to get a more verbose output, usable for autobuilders etc.</p>
     <link href="http://troglobit.github.io/blog/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/"/>
     <updated>2015-07-01T00:42:17+02:00</updated>
     <id>http://troglobit.github.io/blog/2015/07/01/howto-push-to-multiple-git-repos-with-one-command</id>
-    <content type="html"><![CDATA[<p>So, now that I have <a href="http://git.troglobit.com">http://git.troglobit.com</a> setup as a backup GIT repo
-to <a href="https://github.com/troglobit,">https://github.com/troglobit,</a> I needed a <em>simple</em> way of always
-pushing to both repos &ndash; best way for me is to always hook into my
-regular work flow, otherwise I&rsquo;d just forget.  The <a href="1">git-remote(1)</a>
+    <content type="html"><![CDATA[<p>So, now that I have http://git.troglobit.com setup as a backup GIT repo
+to https://github.com/troglobit, I needed a <em>simple</em> way of always
+pushing to both repos &#8211; best way for me is to always hook into my
+regular work flow, otherwise I&#8217;d just forget.  The <a href="1">git-remote(1)</a>
 man page describes the new <code>set-url --add</code> sub-command:</p>
 
 <pre><code>git remote set-url --add origin troglobit.com:/srv/git/watchdogd.git
@@ -119,29 +119,29 @@ origin  troglobit.com:/srv/git/watchdogd.git (push)
     <link href="http://troglobit.github.io/blog/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/"/>
     <updated>2015-06-30T23:13:48+02:00</updated>
     <id>http://troglobit.github.io/blog/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1</id>
-    <content type="html"><![CDATA[<p>I&rsquo;m posting this in case anyone else gets stuck setting up <a href="http://www.apache.org">Apache</a>
+    <content type="html"><![CDATA[<p>I&#8217;m posting this in case anyone else gets stuck setting up <a href="http://www.apache.org">Apache</a>
 with <a href="http://git-scm.com/docs/gitweb">Gitweb</a>.  Also as a reminder to myself in case I ever need to
 set up this all over again.</p>
 
 <ol>
 <li>You have all your eggs in one basket (GitHub), and</li>
 <li>You really like that shiny basket, but</li>
-<li>You know you&rsquo;re clumsy and usually drop baskets yourself.</li>
+<li>You know you&#8217;re clumsy and usually drop baskets yourself.</li>
 <li>You are wise (yes you are!) and realize you need another basket, so</li>
-<li>You set up a server and a domain yourself &hellip;</li>
+<li>You set up a server and a domain yourself &#8230;</li>
 </ol>
 
 
-<p>OK.  Let&rsquo;s start simple, since you are already running the latest Debian
+<p>OK.  Let&#8217;s start simple, since you are already running the latest Debian
 you fire up the command line and install the basics:</p>
 
 <pre><code>sudo apt-get install gitweb apache2
 </code></pre>
 
-<p>So it&rsquo;ll complain, you&rsquo;ll clarify your request and soon all required
+<p>So it&#8217;ll complain, you&#8217;ll clarify your request and soon all required
 packages are on your server.  Now what?</p>
 
-<p>Debian has already set up <a href="http://localhost/gitweb">http://localhost/gitweb</a> for you, and if you
+<p>Debian has already set up http://localhost/gitweb for you, and if you
 have a domain already you should go ahead and edit the master file for
 that:</p>
 
@@ -149,23 +149,23 @@ that:</p>
 service apache2 reload
 </code></pre>
 
-<p>If you want to use that for your gitweb needs, then you&rsquo;re done!</p>
+<p>If you want to use that for your gitweb needs, then you&#8217;re done!</p>
 
 <!-- more -->
 
 
-<p>For me, running <a href="http://troglobit.com/gitweb">http://troglobit.com/gitweb</a> out of the box was not
-enough.  I wanted to setup <a href="http://git.troglobit.com">http://git.troglobit.com</a> and also to make
+<p>For me, running http://troglobit.com/gitweb out of the box was not
+enough.  I wanted to setup http://git.troglobit.com and also to make
 sure to keep really short and pretty URLs to projects I host.  So the
 next part of this post is about how to set that up.</p>
 
-<p>My <code>000-default.conf</code> is for <a href="http://troglobit.com,">http://troglobit.com,</a> so I created a new
+<p>My <code>000-default.conf</code> is for http://troglobit.com, so I created a new
 one for the sub-domain:</p>
 
 <pre><code>editor /etc/apache2/sites-available/git.conf
 </code></pre>
 
-<p>&hellip; and added the following:</p>
+<p>&#8230; and added the following:</p>
 
 <pre><code class="apache /etc/apache2/sites-available/git.conf">    &lt;VirtualHost *:80&gt;
         ServerName git.troglobit.com
@@ -205,7 +205,7 @@ one for the sub-domain:</p>
 service apache2 restart
 </code></pre>
 
-<p>I&rsquo;m not using the default Debian GIT repo location, <code>/var/lib/git</code>, so I
+<p>I&#8217;m not using the default Debian GIT repo location, <code>/var/lib/git</code>, so I
 need to set the project root for both the Apache and the GitWeb config:</p>
 
 <pre><code class="perl /etc/gitweb.conf">    # See https://github.com/kogakure/gitweb-theme for more help and pointers
@@ -331,7 +331,7 @@ make kernel KERNCONF=MULTICAST
 reboot
 </code></pre>
 
-<p>That&rsquo;s it.  Remember to make sure your Qemu VM has enough RAM or it
+<p>That&#8217;s it.  Remember to make sure your Qemu VM has enough RAM or it
 will probably page fault on you.  I use 1,0 GB RAM.</p>
 
 <p>The other option, to load the ready made module, is likely better.  But
@@ -347,19 +347,19 @@ you want it to load at boot.  So add this to <code>/boot/loader.conf</code>:</p>
     <link href="http://troglobit.github.io/blog/2014/08/27/howto-rebase-without-an-origin/"/>
     <updated>2014-08-27T10:00:13+02:00</updated>
     <id>http://troglobit.github.io/blog/2014/08/27/howto-rebase-without-an-origin</id>
-    <content type="html"><![CDATA[<p>OK, so you&rsquo;ve just been handed the task to integrate a big piece of
-corporate software and it&rsquo;s nowhere near as done and ready as project
-management thinks.  Of course you&rsquo;ve already started chugging away at
+    <content type="html"><![CDATA[<p>OK, so you&#8217;ve just been handed the task to integrate a big piece of
+corporate software and it&#8217;s nowhere near as done and ready as project
+management thinks.  Of course you&#8217;ve already started chugging away at
 it, fixing bugs, refactoring code and wrapping it in neat containers
-to keep the changeset against the base SW small &ndash; you already know
-you&rsquo;ll get another drop of the same stinking pieace of code in another
+to keep the changeset against the base SW small &#8211; you already know
+you&#8217;ll get another drop of the same stinking pieace of code in another
 six months, so you keep the changes small and track them in GIT with
 neatly formatted commit messages.</p>
 
 <p>About ten commits in it dawns on you that you have several commits
 that would need to be squashed and some commit messages that needs to
-be edited &hellip; you start typing in <code>git rebase -i origin/...</code> wait, you
-haven&rsquo;t pushed anything yet.  So how do you rebase something that&rsquo;s
+be edited &#8230; you start typing in <code>git rebase -i origin/...</code> wait, you
+haven&#8217;t pushed anything yet.  So how do you rebase something that&#8217;s
 not been pushed yet?</p>
 
 <p>Well:</p>

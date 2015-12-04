@@ -112,9 +112,9 @@ the distinct possibility that the
 <p>At <a href="http://www.westermo.com">work</a> we will likely start using the
 Quagga PIM rather than pimd in WeOS.</p>
 
-<p>For now though, enjoy pimd v2.2.0.  It&rsquo;s been tested in both my Qemu
+<p>For now though, enjoy pimd v2.2.0.  It&#8217;s been tested in both my Qemu
 based virtual testbed and a few setups using Linux&#8217; <code>netns</code> feature in
-<a href="http://www.nrl.navy.mil/itd/ncs/products/core">CORE</a> &ndash; awesome
+<a href="http://www.nrl.navy.mil/itd/ncs/products/core">CORE</a> &#8211; awesome
 little proggy! :-)</p>
 
 <!-- more -->
@@ -129,7 +129,7 @@ by Michael Fine of Cumulus Networks</li>
 <li>Add support for /31 networks, point-to-point, thanks to Apollon Oikonomopoulos</li>
 <li>Remove old broken SNMP support</li>
 <li>OpenBSD inspired cleanup (deregister)
-<a href="http://cvsweb.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/">http://cvsweb.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/</a></li>
+http://cvsweb.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/</li>
 <li>General code cleanup, shorten local variable names, func decl. etc.</li>
 <li>Support for router alert IP option in IGMP queries</li>
 <li>Support for reading IGMPv3 membership reports</li>
@@ -151,14 +151,14 @@ and <code>switch_data_threshold</code> settings.  Cisco like and easier to under
 <li>Fix bug in bootstrap when configured as candidate RP, issue #15</li>
 <li>Fix segfault in <code>accept_igmp()</code>, issue #29</li>
 <li>Fix default source preference, should be 101 (not 1024!)</li>
-<li>Fix <code>ip_len</code> handling on older BSD&rsquo;s, thanks to Olivier Cochard-Labbé, issue #23</li>
+<li>Fix <code>ip_len</code> handling on older BSD&#8217;s, thanks to Olivier Cochard-Labbé, issue #23</li>
 <li>Fix default prefix len in static RP example in <code>pimd.conf</code>, should be /4</li>
 <li>Fix issue #31: Make IGMP query interval and querier timeout configurable</li>
 <li>Fix issue #33: pimd does not work in background under FreeBSD</li>
 <li>Fix issue #35: support for timing out other queriers from mrouted</li>
 <li>Hopefully fix issue #22: Crash in (S,G) state when neighbor is lost</li>
 <li>Misc. bug fixes thanks to Coverity Scan, static code analysis tool
-<a href="https://scan.coverity.com/projects/3319">https://scan.coverity.com/projects/3319</a></li>
+https://scan.coverity.com/projects/3319</li>
 </ul>
 
 </div>

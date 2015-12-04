@@ -105,28 +105,28 @@ are ARM based, and in neither of the two have we built the cross
 compiler ourselves.  The first was ye&#8217; old 2.95 based from
 <a href="http://www.uclinux.org/">uClinux.org</a> and the second we had a consultant build for us.  Lame!</p>
 
-<p>Ever since I was appointed software architect I&rsquo;ve had this nagging
+<p>Ever since I was appointed software architect I&#8217;ve had this nagging
 sensation about our cross-compiler situation.  We do everything else:
 roll our own archs for Linux, patch BusyBox, design our own L2/L3
 network daemons, and what-not.  Very annoying that we have such poor
 control of the mantle piece of our build environment.</p>
 
-<p>Sure, it&rsquo;s almost indistinguishable from magic, but it&rsquo;s not hard.
+<p>Sure, it&#8217;s almost indistinguishable from magic, but it&#8217;s not hard.
 There are fine helpers such as <a href="http://buildroot.uclibc.org/">buildroot</a>, ptxdist and the aging
-crosstool scripts by Dan Kegel.  I used to do some work with Dan&rsquo;s
+crosstool scripts by Dan Kegel.  I used to do some work with Dan&#8217;s
 scripts in a couple of previous jobs, so it was a pleasant surprise to
 find that the project had found a new maintainer!</p>
 
 <p>I can highly recommend the <a href="http://crosstool-ng.org/">crosstool-NG</a> project!  It makes building
 a toolchain really easy.  In a snap had I copied our uClibc <code>.config</code>
-into the work dir of my configuration, issued the &ldquo;build&rdquo; command and
+into the work dir of my configuration, issued the &#8220;build&#8221; command and
 wham, there it was a coffee break later.  A working GCC v4.2.4 cross
 compiler for Arm Xscale (big-endian) with built-in uClibc (no more GLIBC
 madness and separate uClibc builds in our tree), not to mention an all
 you can eat buffe of extra tools for the target: <code>strace</code>, <code>gdb</code> &amp;
-<code>gdbserver</code>, <code>libdmalloc</code>, <code>ncurses</code>&nbsp;&hellip; crazy.</p>
+<code>gdbserver</code>, <code>libdmalloc</code>, <code>ncurses</code>&nbsp;&#8230; crazy.</p>
 
-<p>I&rsquo;ll start rolling it out on monday in our department and keep close
+<p>I&#8217;ll start rolling it out on monday in our department and keep close
 tabs on the development of crosstool-NG to be able to grab the
 latest 4.3.2, or later GCC when it enters the ct-ng Subversion
 repository.</p>
@@ -160,12 +160,12 @@ repository.</p>
 
   <div class="entry-content"><p>I hereby announce that all of the code I produce from now on will use
 the <a href="http://en.wikipedia.org/wiki/ISC_license">ISC license</a>.  Previously
-I&rsquo;ve used the <a href="http://en.wikipedia.org/wiki/MIT_License">MIT license</a>
+I&#8217;ve used the <a href="http://en.wikipedia.org/wiki/MIT_License">MIT license</a>
 and the GNU GPL, or LGPL where applicable.</p>
 
 <p>The reason for changing this is two-fold.  First, I like to be able to
-reuse much of what I do in proprietary settings. Yes, I&rsquo;m one of those
-people who look upon the world with &ldquo;grey&rdquo; eyes rather than black &amp;
+reuse much of what I do in proprietary settings. Yes, I&#8217;m one of those
+people who look upon the world with &#8220;grey&#8221; eyes rather than black &amp;
 white.  Second, the ISC license is a lot more clear on the wording but
 is still GPL compatible.</p>
 
@@ -204,12 +204,12 @@ find interesting.</p>
 <a href="http://www.ted.com/index.php/talks/george_dyson_at_the_birth_of_the_computer.html">the first computer</a>, the first software bugs (both physical and
 logical) and the initial struggles of hackers.  Fun history lesson for
 computer engineers and programmers alike.  (Now, go crawl the web for
-&ldquo;Dyson Sphere&rdquo; and &ldquo;Star Trek&rdquo;! :-)</p>
+&#8220;Dyson Sphere&#8221; and &#8220;Star Trek&#8221;! :-)</p>
 
 <p>Is Ubuntu 8.04 really that buggy as everyone suggest?  My guess is that
-we&rsquo;ve reached a breaking point where beginner users (&lt; 1 year) are
-starting to outnumber the older &ldquo;hard core&rdquo; users.  Or have the top 20%
-moved on to other distros?  <a href="http://xkcd.com/456/">Even XKCD has picked up on it&nbsp;&hellip;</a></p>
+we&#8217;ve reached a breaking point where beginner users (&lt; 1 year) are
+starting to outnumber the older &#8220;hard core&#8221; users.  Or have the top 20%
+moved on to other distros?  <a href="http://xkcd.com/456/">Even XKCD has picked up on it&nbsp;&#8230;</a></p>
 
 <p><a href="http://www.gnome.org/~michael/">Michael Meeks</a> of Novell was interviewed recently by the Austrian
 paper <a href="http://derstandard.at/?url=/?id=1216917892794">derStandard.at</a>, and one of the things he mentioned was the
@@ -231,19 +231,19 @@ out/in again.</p>
 slowly turning into something really cool.  <a href="https://launchpad.net/+tour/index">Take the tour</a> if you
 are curious and want to know more.</p>
 
-<p>I cannot believe I haven&rsquo;t heard of <a href="http://www.pastebin.com/">pastebin</a> before.  Thanks
+<p>I cannot believe I haven&#8217;t heard of <a href="http://www.pastebin.com/">pastebin</a> before.  Thanks
 <a href="http://kalkig.nu/">Rooth</a>!</p>
 
 <p>My <a href="http://vmlinux.org/ilse/">dear wife</a> is a <a href="http://www.nano-editor.org/">GNU Nano</a> user.  Here are a
 <a href="http://nullcortex.com/2008/07/28/nano-nano/">couple of tips</a> for her, and other die-hard Nano users.</p>
 
-<p>Are you an electronics or computer engineer?  Then you&rsquo;ve probably had
+<p>Are you an electronics or computer engineer?  Then you&#8217;ve probably had
 trouble explaining boolean logic to people.
 <a href="http://www.youtube.com/watch?v=SudixyugiX4">This dude explains it all using dominoes.</a></p>
 
-<p>Finishing off with this, unbeatable, hardware hacker.  He&rsquo;s transformed
+<p>Finishing off with this, unbeatable, hardware hacker.  He&#8217;s transformed
 his <a href="http://en.wikipedia.org/wiki/Asus_Eee_PC">EeePC</a> into a veritable monster!  <a href="http://beta.ivancover.com/wiki/index.php/Eee_PC_Internal_Upgrades">See his guide</a> for the
-changes necessary&nbsp;&hellip;</p>
+changes necessary&nbsp;&#8230;</p>
 </div>
   
   
@@ -289,7 +289,7 @@ the bare necessities.  Start by <a href="http://www.emacswiki.org/cgi-bin/emacs-
 
 
 <p>Start with <code>./src/emacs</code> or symlink the binary to your <code>~/bin/</code> directory.
-I.e. you don&rsquo;t have to run <code>make install</code> to use it.  Users of <code>emacsclient</code>
+I.e. you don&#8217;t have to run <code>make install</code> to use it.  Users of <code>emacsclient</code>
 should symlink that to their <code>~/bin</code> as well.</p>
 
 <p>Assumptions made:</p>
@@ -327,7 +327,7 @@ should symlink that to their <code>~/bin</code> as well.</p>
   </header>
 
 
-  <div class="entry-content"><p>Wow, I&rsquo;m almost starting to feel like a Windows user.  The latest CVS
+  <div class="entry-content"><p>Wow, I&#8217;m almost starting to feel like a Windows user.  The latest CVS
 builds of <a href="http://www.gnu.org/software/emacs/">GNU Emacs</a> has a lot of new features:</p>
 
 <ul>
@@ -337,7 +337,7 @@ builds of <a href="http://www.gnu.org/software/emacs/">GNU Emacs</a> has a lot o
 </ul>
 
 
-<p>I use the CVS version now as my daily driver in Ubuntu 8.10.  It&rsquo;s
+<p>I use the CVS version now as my daily driver in Ubuntu 8.10.  It&#8217;s
 really useful, and I love the improved support for debugging programs
 inside Emacs!</p>
 
@@ -378,17 +378,17 @@ explore the wonderful world of Emacs! :)</p>
   </header>
 
 
-  <div class="entry-content"><p>I&rsquo;ve got a ThinkPad T61 with Intel iwl3945 wireless chipset that I
+  <div class="entry-content"><p>I&#8217;ve got a ThinkPad T61 with Intel iwl3945 wireless chipset that I
 installed fresh with Ubuntu 8.04.  Everything worked flawlessly
 out-of-the-box, except for the useless fingerprint scanner and the
-wireless LED.  Don&rsquo;t get me wrong, the wireless network worked fine, but
-the LED wasn&rsquo;t on.</p>
+wireless LED.  Don&#8217;t get me wrong, the wireless network worked fine, but
+the LED wasn&#8217;t on.</p>
 
 <p>At first I thought there was something wrong with the LED itself, but a
 couple of searches later I found that it was a known limitation of the
 2.6.24 kernel included in 8.04.  A driver upgrade was scheduled for
 8.04.1 and after a couple of months it was shipped.  Silly me thought
-I&rsquo;d get the upgrade automatically, but it turns out that both the
+I&#8217;d get the upgrade automatically, but it turns out that both the
 iwl3945 and the iwl4965, as well as a bunch of other wireless drivers,
 are tucked away in <a href="apt://linux-backports-modules-hardy">linux-backports-modules-hardy</a>, which will not be
 installed by default.</p>
@@ -429,16 +429,16 @@ am bored.  Sometimes I want a quick lean, smallish desktop and other
 times I want the whole shebang, all possible animations, SVG icons,
 mouse gestures — you name it and I will already have tons of it!</p>
 
-<p>Today I wanted to enable Compiz again and it just wouldn&rsquo;t start.  After
+<p>Today I wanted to enable Compiz again and it just wouldn&#8217;t start.  After
 a couple of tries that turned out to be dead ends I finally got this:</p>
 
 <pre><code>/usr/bin/compiz.real (core) - Error: Could not acquire compositing manager selection on screen 0 display ":0.0" 
 </code></pre>
 
 <p>Some more digging around Google gave me the answer: Metacity and Compiz
-fight to be &ldquo;compositing manager&rdquo; &hellip;</p>
+fight to be &#8220;compositing manager&#8221; &#8230;</p>
 
-<p>&hellip; as soon as I disabled <code>/apps/metacity/general/compositing_manager</code> I
+<p>&#8230; as soon as I disabled <code>/apps/metacity/general/compositing_manager</code> I
 could enable Compiz again!</p>
 </div>
   
@@ -471,7 +471,7 @@ could enable Compiz again!</p>
   <div class="entry-content"><p>In Ubuntu 8.04 I recently discovered that you need to install the
 <a href="apt://libflashsupport">libflashsupport</a> package if you get no sound in
 Firefox while running flash application/video.  Oddly enough this is not
-a &ldquo;required&rdquo; or &ldquo;supported&rdquo; package in Ubuntu proper.</p>
+a &#8220;required&#8221; or &#8220;supported&#8221; package in Ubuntu proper.</p>
 </div>
   
   
@@ -539,7 +539,7 @@ bug in the Debian patch that caused the batch mode version of
 <p>Get it from the usual FTP location:</p>
 
 <ul>
-<li><a href="http://ftp.vmlinux.org/pub/People/jocke/minix-editline/">http://ftp.vmlinux.org/pub/People/jocke/minix-editline/</a></li>
+<li>http://ftp.vmlinux.org/pub/People/jocke/minix-editline/</li>
 </ul>
 
 </div>

@@ -94,7 +94,7 @@ tool and the <a href="http://sourceforge.net/projects/snmpb/">snmpB</a> GUI are
 used.</p>
 
 <p>Personally I use both Ubuntu and Debian, so the tools I use to download
-the clients will reflect that.  See your respective UNIX distro&rsquo;s help
+the clients will reflect that.  See your respective UNIX distro&#8217;s help
 pages for how to install these client tools in your operating system.</p>
 
 <h2>Installing SNMP in Ubuntu</h2>
@@ -115,13 +115,13 @@ snmpget -c public -v 2c 127.0.0.1 system.sysUpTime.0
 <p>If you experience problems, see Debian <a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=561578">bug #561578</a> for details on
 how to edit and fix your system default <code>/etc/snmp/snmp.conf</code></p>
 
-<p>On my system I&rsquo;ve had trouble getting net-snmp to use the UCD-SNMP-MIB,
-so I&rsquo;ve added it explicitly to my <code>~/snmp/snmp.conf</code>:</p>
+<p>On my system I&#8217;ve had trouble getting net-snmp to use the UCD-SNMP-MIB,
+so I&#8217;ve added it explicitly to my <code>~/snmp/snmp.conf</code>:</p>
 
 <pre><code>mibs +UCD-SNMP-MIB
 </code></pre>
 
-<p>This MIB is in <code>/usr/share/snmp/mibs/</code> on my system &hellip;</p>
+<p>This MIB is in <code>/usr/share/snmp/mibs/</code> on my system &#8230;</p>
 
 <h2>Installing Private MIB files</h2>
 

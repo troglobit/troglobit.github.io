@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Programming | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/programming/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-11-28T20:17:42+01:00</updated>
+  <updated>2015-12-05T00:29:05+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -18,11 +18,11 @@
     <link href="http://troglobit.github.io/blog/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/"/>
     <updated>2015-01-12T01:57:40+01:00</updated>
     <id>http://troglobit.github.io/blog/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot</id>
-    <content type="html"><![CDATA[<blockquote><p>&ldquo;Enable <em>all</em> the warnings!&rdquo;</p></blockquote>
+    <content type="html"><![CDATA[<blockquote><p>&#8220;Enable <em>all</em> the warnings!&#8221;</p></blockquote>
 
 <p>This is one of the truths you learn when you start working with C.  Most
 of the time adding <code>CPPFLAGS="-W -Wall -Werror"</code> is all you need to find
-all the nasty bugs.  And if that&rsquo;s not enough, there are tons of tools
+all the nasty bugs.  And if that&#8217;s not enough, there are tons of tools
 for static code analysis, like <code>scan-build</code> in
 <a href="http://clang-analyzer.llvm.org/scan-build.html">Clang</a>, and
 <a href="https://scan.coverity.com/">Coverity Scan</a>, to help you <em>find all the
@@ -30,9 +30,9 @@ bugs</em>!</p>
 
 <p>However, these pesky warnings (some of which cannot even be disabled!)
 are sometimes more of a nuisance than help.  Sometimes you <em>know</em> that
-some parameters to a function will remain unused &ndash; it&rsquo;s a callback, and
-you don&rsquo;t need all the data given to you.  So you start adding all kinds
-of voodoo, like <code>__attribute__ ((unused))</code> &hellip; seriously?</p>
+some parameters to a function will remain unused &#8211; it&#8217;s a callback, and
+you don&#8217;t need all the data given to you.  So you start adding all kinds
+of voodoo, like <code>__attribute__ ((unused))</code> &#8230; seriously?</p>
 
 <!-- more -->
 
@@ -72,12 +72,12 @@ allow this <em>much more readable</em> version?</p>
 </code></pre>
 
 <p>The human eye is marvellous at finding little things that stick out,
-but when there&rsquo;s nothing but annoying things on the screen we can no
+but when there&#8217;s nothing but annoying things on the screen we can no
 longer see the most obvious pointer casting bugs, and we get sloppy.</p>
 
-<p>I&rsquo;m seriously considering adding some kind of <code>--developer-mode</code> to my
+<p>I&#8217;m seriously considering adding some kind of <code>--developer-mode</code> to my
 own projects which will warn like crazy, as usual, and as soon as I turn
-it off (default) complete silence will arrive.  That&rsquo;s how sick and
+it off (default) complete silence will arrive.  That&#8217;s how sick and
 tired I am of <em>all the warnings</em> and the resulting almost completely
 unreadable code.</p>
 
@@ -96,7 +96,7 @@ so it should be enjoyable and easy.</p>
 
 <p>Ever since I began studying Computer Engineering at
 <a href="http://www.mdh.se">university</a> back in 1995 I have struggled to find
-the &ldquo;proper&rdquo; ways to format my code, name functions and variables
+the &#8220;proper&#8221; ways to format my code, name functions and variables
 appropriately, structure functions into files and files into
 directories with Makefiles and Makefile snippets, using both recursive
 and non-recursive make.  Formatting of code, for instance, was for a
@@ -111,23 +111,23 @@ people naming their local variables obtrusively.</p>
 <p><a href="http://www.amazon.com/Practice-Programming-Addison-Wesley-Professional-Computing/dp/020161586X"><img class="right" src="/images/Practice_of_Programming.jpeg" width="222" height="155"></a></p>
 
 <p>I still do most of my work, professional and hobby, using plain old C.
-I&rsquo;ve read many books and style guides on the subject and the one that
+I&#8217;ve read many books and style guides on the subject and the one that
 really stood out as being extremely helpful, apart from reading a LOT
 of code, is
 <a href="http://www.amazon.com/Practice-Programming-Addison-Wesley-Professional-Computing/dp/020161586X">The Practice of Programming</a>
 by Kernighan and Pike!  The book is crammed full with tons of neat
 advice and best practises that simly just make sense.  Stuff like
-&ldquo;name your local variables i, j, k for counters and loop variables&rdquo;,
+&#8220;name your local variables i, j, k for counters and loop variables&#8221;,
 which is basically what most of us do already.  Just read it and
-you&rsquo;ll see what I mean &ndash; spot on!</p>
+you&#8217;ll see what I mean &#8211; spot on!</p>
 
 <p>Spot on? I hear you say, why should you read something that seemingly
-doesn&rsquo;t tell you anything you already know?  Well, even the most
+doesn&#8217;t tell you anything you already know?  Well, even the most
 evident practises often come under scrutiny when programmers from the
 most different schools meet.  At my job we have Microsoft, Bombardier,
 and ABB programmers which have little to no experience with UNIX,
 Linux or any Free/Open Source software development.  They are used to
-more cumbersome practises, &ldquo;Hungarian Style Notation&rdquo;, inflexible
+more cumbersome practises, &#8220;Hungarian Style Notation&#8221;, inflexible
 corporate styles which nobody can explain anymore, and so on.</p>
 
 <p>It is difficult to explain the way of Free/Open Source software, but I

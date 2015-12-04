@@ -100,7 +100,7 @@ something like this 2014? As a &hellip;">
 something like this 2014?</p>
 
 <p>As a developer the answer to most such questions is usually; to
-scratch an itch.  For a very long time I&rsquo;ve looked for a really simple
+scratch an itch.  For a very long time I&#8217;ve looked for a really simple
 FTP server that just works, out of the box!</p>
 
 <!-- more -->
@@ -113,53 +113,53 @@ of the original <a href="https://github.com/mit-athena/ftpd">MIT/Athena ftpd</a>
 <a href="https://security.appspot.com/vsftpd.html">vstfptd</a>.  Most of them are
 too damn difficult to configure, have ugly configuration files or are
 plainly just too confusing.  With one exception, vsftpd.  I really
-like vsftpd!  It&rsquo;s got a simple and well documented configuration file
+like vsftpd!  It&#8217;s got a simple and well documented configuration file
 (inline as comments) and always worked almost painlessly for me.</p>
 
-<p>However, over the past couple of Ubuntu LTS installations it&rsquo;s been
+<p>However, over the past couple of Ubuntu LTS installations it&#8217;s been
 starting to act up on me.  Not allowing me to have a group-writable
 root directory, and not even an ability to disable that security
 feature.</p>
 
-<p>It&rsquo;s simple really.  I&rsquo;m a developer.  I have colleagues.  We share
+<p>It&#8217;s simple really.  I&#8217;m a developer.  I have colleagues.  We share
 servers at work.  We bootstrap and upgrade our embedded devices using
 TFTP/FTP.  We have one directory, usually <code>/srv/ftp</code>, which is group
 writable and all developers are members of that group.  Anyone can
-upload a file there and the file servers &hellip; would you know &hellip; are
+upload a file there and the file servers &#8230; would you know &#8230; are
 supposed to <em>serve</em> that file, as TFTP or anonymous FTP.</p>
 
-<p>Maybe I&rsquo;m a fringe user?  Maybe secured local area networks, or laptop
-to embedded device crossed-cables networks, are no longer the &ldquo;fad&rdquo;?
+<p>Maybe I&#8217;m a fringe user?  Maybe secured local area networks, or laptop
+to embedded device crossed-cables networks, are no longer the &#8220;fad&#8221;?
 Maybe a sane built-in default is no longer cool or hipster enough?</p>
 
-<p>I don&rsquo;t know anymore, and this time I was so fed up chasing around for
-answers to &ldquo;How to setup your &lsquo;favorite&rsquo; FTP Server&rdquo;, that I just sat
-down and fixed it once and for all.  I figured I&rsquo;d otherwise be doing
+<p>I don&#8217;t know anymore, and this time I was so fed up chasing around for
+answers to &#8220;How to setup your &#8216;favorite&#8217; FTP Server&#8221;, that I just sat
+down and fixed it once and for all.  I figured I&#8217;d otherwise be doing
 this waltz over and over again, just like I already have, for the next
-10 years &hellip;</p>
+10 years &#8230;</p>
 
 <p>I trawled the net once more for good candidates, this time for
 adoption and holy cow sacrifices.  I wanted a very simple base to
 start from, which I could cut up into pieces, iteratively refactor and
 improve upon until I was happy.  That took a while.</p>
 
-<p>I&rsquo;m a big fan of both the Free Software and the Open Source cultures.
+<p>I&#8217;m a big fan of both the Free Software and the Open Source cultures.
 (They are slightly different you know.)  I routinely work on software
 with GNU GPL, MIT/X11, Apache, and ISC licenses, but for most of my
 own creations I usually lean towards the very permissive
 <a href="http://en.wikipedia.org/wiki/ISC_license">ISC license</a>.  Maybe
 because most of my hobby work these days are quick and dirty hacks I
-don&rsquo;t really care enough about.  It&rsquo;s a question of both taste and
-appropriateness &ndash; like software patents, I don&rsquo;t like them either,
+don&#8217;t really care enough about.  It&#8217;s a question of both taste and
+appropriateness &#8211; like software patents, I don&#8217;t like them either,
 but for anything which I have a great investment in, or has a great
 <a href="http://en.wikipedia.org/wiki/Threshold_of_originality">threshold of originality</a>,
-I&rsquo;d use a more restrictive license to make sure the software is kept
+I&#8217;d use a more restrictive license to make sure the software is kept
 in the open.</p>
 
 <p>Anyway, I read much code, discarded several projects that were too
-big, too unreadable code or simply didn&rsquo;t feel right.  I tested so
-many small &ldquo;FTP&rdquo; servers that turned out to be unusable homegrown
-variants or school projects.  There&rsquo;s a lot of code out there &hellip;  I
+big, too unreadable code or simply didn&#8217;t feel right.  I tested so
+many small &#8220;FTP&#8221; servers that turned out to be unusable homegrown
+variants or school projects.  There&#8217;s a lot of code out there &#8230;  I
 finally settled on <a href="https://github.com/xu-wang11/FtpServer">FtpServer</a>
 by <a href="https://github.com/xu-wang11">Xu Wang</a> as a base for my little
 project.  I suspect it too is a school project, but this one actually
@@ -168,17 +168,17 @@ worked, right off the bat!</p>
 <p>I got so excited that I immediately started improving it, cleaning up
 the source code, reindenting it (KNF) and fixing small bugs here and
 there.  It was a perfect fit!  This is where I made my big mistake,
-which I hope will not eventually kill this project in the end &ndash; the
-FtpServer project did not have a license &hellip; so
+which I hope will not eventually kill this project in the end &#8211; the
+FtpServer project did not have a license &#8230; so
 <a href="https://github.com/xu-wang11/FtpServer/issues/1">I filed a bug</a> to
 the GitHub issue tracker, added the ISC license to
 <a href="https://github.com/troglobit/uftpd">my fork</a> and continued hacking
-away.  The changes I&rsquo;ve made are so substantial that there isn&rsquo;t much
+away.  The changes I&#8217;ve made are so substantial that there isn&#8217;t much
 left of the original code, so uftpd should be safe.  Yes, I named it
-uftpd, the micro ftp server &ndash; the no nonsense file transfer protocol
+uftpd, the micro ftp server &#8211; the no nonsense file transfer protocol
 daemon.</p>
 
-<p>The whole hack took about three days and I&rsquo;ve learned a lot during
+<p>The whole hack took about three days and I&#8217;ve learned a lot during
 this time!  It was fun, inspiring and gave me a lot of creative energy
 that I can use in other projects: at work as well as at home :)</p>
 

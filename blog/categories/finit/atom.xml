@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Finit | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/finit/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-11-28T20:17:42+01:00</updated>
+  <updated>2015-12-05T00:29:05+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -20,13 +20,13 @@
     <id>http://troglobit.github.io/blog/2015/03/06/inetd-support-in-finit-v1-dot-12</id>
     <content type="html"><![CDATA[<p>A steady flow of features, and releases, is key to keeping any project
 alive.  Recently I ticked off another item in the <a href="/finit.html">Finit</a>
-TODO list &hellip;</p>
+TODO list &#8230;</p>
 
 <p>Finit v1.12 now comes with a built-in inetd!  You no longer need an
 external inetd daemon to launch services on demand.</p>
 
-<p>The good news doesn&rsquo;t stop there, this little inetd actually supports a
-poor man&rsquo;s tcpwrappers!</p>
+<p>The good news doesn&#8217;t stop there, this little inetd actually supports a
+poor man&#8217;s tcpwrappers!</p>
 
 <pre><code>inetd ssh/tcp          nowait [2345] /sbin/dropbear -i -R -F
 inetd ssh@eth0:222/tcp nowait [2345] /sbin/dropbear -i -R -F
@@ -37,7 +37,7 @@ the <a href="https://matt.ucc.asn.au/dropbear/dropbear.html">Dropbear SSH</a>
 server on demand on port 22 (default ssh/tcp port in <code>/etc/services</code>) on
 <em>all</em> interfaces except on <code>eth0</code>, which in your case is the Internet
 (WAN) interface, here you want SSH to run on port 222.  Actually, you
-don&rsquo;t want port 22 open at all on <code>eth0</code> &hellip; so finit takes care of this
+don&#8217;t want port 22 open at all on <code>eth0</code> &#8230; so finit takes care of this
 for you!  Seriously, it just works, no need for messing about with that
 nasty old <code>iptables</code> anymore!</p>
 
@@ -66,7 +66,7 @@ default.  To enable it you need two things:</p>
 </ol>
 
 
-<p>Assuming you&rsquo;ve installed the default set of plugins, the following two
+<p>Assuming you&#8217;ve installed the default set of plugins, the following two
 lines can be added:</p>
 
 <pre><code>inetd time/udp   wait [2345] internal
@@ -97,7 +97,7 @@ Sat Mar  7 08:48:58 CET 2015
 <h3>Changes</h3>
 
 <ul>
-<li>Add support for built-in inetd super server &ndash; launch services on
+<li>Add support for built-in inetd super server &#8211; launch services on
 demand.  Supports filtering per interface and custom Inet ports.</li>
 <li>Upgrade to <a href="https://github.com/troglobit/libuev">libuEv</a> v1.1.0 to better handle error conditions.</li>
 <li>Allow mixed case config directives in <code>finit.conf</code></li>
@@ -117,10 +117,10 @@ this fallback as console.  Should improve usability in some use cases.</li>
 <h3>Fixes</h3>
 
 <ul>
-<li>Revert &ldquo;Use vfork() instead of fork() before exec()&rdquo; from v1.11.  It
+<li>Revert &#8220;Use vfork() instead of fork() before exec()&#8221; from v1.11.  It
 turned out to not work so well after all.  For instance, launching
 TTYs in a background process completely blocked inetd services from
-even starting up listening sockets &hellip; proper fork seems to work fine
+even starting up listening sockets &#8230; proper fork seems to work fine
 though.  This is the casue for <em>yanking</em> the <a href="https://github.com/troglobit/finit/compare/1.10...1.11">1.11</a> release.</li>
 <li>Trap segfaults caused by external plugins/callbacks in a sub-process.
 This prevents a single programming mistake in by a 3rd party developer
@@ -146,7 +146,7 @@ replaced by <a href="/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/">v1.12</
 <!-- more -->
 
 
-<p>I&rsquo;m very pleased to announce <a href="/finit.html">Finit v1.11</a> — this is the
+<p>I&#8217;m very pleased to announce <a href="/finit.html">Finit v1.11</a> — this is the
 episode where two of my projects finally get married! ツ</p>
 
 <h3>Changes</h3>
@@ -154,9 +154,9 @@ episode where two of my projects finally get married! ツ</p>
 <ul>
 <li>Now using the asynchronous <a href="https://github.com/troglobit/libuev">libuEv</a> library for handling all events:
 signals, timers and listening to sockets or file descriptors.</li>
-<li>Rename NEWS.md &ndash;> CHANGELOG.md, with symlinks for <code>make install</code></li>
-<li>Attempt to align with <a href="http://keepachangelog.com">http://keepachangelog.com</a> for the ChangeLog</li>
-<li><a href="https://travis-ci.org/troglobit/finit">Travis CI</a> now only invokes <a href="https://scan.coverity.com/projects/3545">Coverity Scan</a> from the &lsquo;dev&rsquo; branch.  This
+<li>Rename NEWS.md &#8211;> CHANGELOG.md, with symlinks for <code>make install</code></li>
+<li>Attempt to align with http://keepachangelog.com for the ChangeLog</li>
+<li><a href="https://travis-ci.org/troglobit/finit">Travis CI</a> now only invokes <a href="https://scan.coverity.com/projects/3545">Coverity Scan</a> from the &#8216;dev&#8217; branch.  This
 means that all development, except documentation updates, must go into
 that branch.</li>
 </ul>
@@ -178,7 +178,7 @@ commit <a href="https://github.com/troglobit/finit/commit/dea3ae8">dea3ae8</a> f
     <link href="http://troglobit.github.io/blog/2014/04/21/release-of-finit-v1-dot-9/"/>
     <updated>2014-04-21T16:08:30+02:00</updated>
     <id>http://troglobit.github.io/blog/2014/04/21/release-of-finit-v1-dot-9</id>
-    <content type="html"><![CDATA[<p>Just made it!  Here&rsquo;s the result of #Easterhack14 &ndash;
+    <content type="html"><![CDATA[<p>Just made it!  Here&#8217;s the result of #Easterhack14 &#8211;
 <a href="/finit.html">Finit</a> v1.9 :-)</p>
 
 <p>Nothing fancy this time, just collecting some bug fixes, playing with
@@ -195,8 +195,8 @@ major pieces of configuration between different platforms.</p>
     <link href="http://troglobit.github.io/blog/2013/06/08/finit-v1-dot-8/"/>
     <updated>2013-06-08T00:04:00+02:00</updated>
     <id>http://troglobit.github.io/blog/2013/06/08/finit-v1-dot-8</id>
-    <content type="html"><![CDATA[<p>It&rsquo;s been a long time coming, but here it finally is, <a href="/finit.html">Finit</a>
-<a href="ftp://troglobit.com/finit/finit-1.8.tar.xz">v1.8</a>!  The goodies we&rsquo;ve been waiting for are:</p>
+    <content type="html"><![CDATA[<p>It&#8217;s been a long time coming, but here it finally is, <a href="/finit.html">Finit</a>
+<a href="ftp://troglobit.com/finit/finit-1.8.tar.xz">v1.8</a>!  The goodies we&#8217;ve been waiting for are:</p>
 
 <ul>
 <li>Runlevels</li>
@@ -205,7 +205,7 @@ major pieces of configuration between different platforms.</p>
 </ul>
 
 
-<p>Let&rsquo;s start off with tasks.  Tasks are one-shot commands, with a
+<p>Let&#8217;s start off with tasks.  Tasks are one-shot commands, with a
 syntax like service directives, but are not monitored and respawned
 like services.  Tasks are started in parallel, just like services.
 For some cases, like the system bootstrap phase, some tasks may need
@@ -218,11 +218,11 @@ next task or service.</p>
 can be started and automatically be respawned when a user logs out.
 For embedded targets wanting to save CPU cycles usually one TTY is the
 system console.  Use the console command to point to a defined TTY to
-activate &ldquo;Press any key to activate this console.&rdquo;</p>
+activate &#8220;Press any key to activate this console.&#8221;</p>
 
 <p>Finally, runlevels!  This is the key feature in this release of Finit.
 Adding the flexibility from SysV init, without the complexity.  This
-is one of the key points of Finit &ndash; it should be simple!</p>
+is one of the key points of Finit &#8211; it should be simple!</p>
 
 <pre><code>finit.conf:
     service [2345] /usr/sbin/sshd -D -- OpenSSH Daemon
@@ -235,7 +235,7 @@ like before.</p>
 <p>Runlevels are needed in use-cases in many embedded devices.  E.g.,
 bootstrap, upgrading, and regular operation.  It is completely up to
 the system administrator to setup the runlevels of the product or
-installation.  At boot runlevel &rsquo;S&#8217; runs, well before any networking
+installation.  At boot runlevel &#8216;S&#8217; runs, well before any networking
 is up.  This is used to to one-time probing and setup of the
 system. When done the runlevel defined in finit.conf, or the default
 2, is started.</p>

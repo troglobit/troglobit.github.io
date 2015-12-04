@@ -9,10 +9,10 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="It&rsquo;s been a long time coming, but here it finally is, Finit
-v1.8! The goodies we&rsquo;ve been waiting for are: Runlevels
+  <meta name="description" content="It's been a long time coming, but here it finally is, Finit
+v1.8! The goodies we've been waiting for are: Runlevels
 Multiple TTYs
-One- &hellip;">
+One-shot tasks Let' &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -96,8 +96,8 @@ One- &hellip;">
   </header>
 
 
-<div class="entry-content"><p>It&rsquo;s been a long time coming, but here it finally is, <a href="/finit.html">Finit</a>
-<a href="ftp://troglobit.com/finit/finit-1.8.tar.xz">v1.8</a>!  The goodies we&rsquo;ve been waiting for are:</p>
+<div class="entry-content"><p>It&#8217;s been a long time coming, but here it finally is, <a href="/finit.html">Finit</a>
+<a href="ftp://troglobit.com/finit/finit-1.8.tar.xz">v1.8</a>!  The goodies we&#8217;ve been waiting for are:</p>
 
 <ul>
 <li>Runlevels</li>
@@ -106,7 +106,7 @@ One- &hellip;">
 </ul>
 
 
-<p>Let&rsquo;s start off with tasks.  Tasks are one-shot commands, with a
+<p>Let&#8217;s start off with tasks.  Tasks are one-shot commands, with a
 syntax like service directives, but are not monitored and respawned
 like services.  Tasks are started in parallel, just like services.
 For some cases, like the system bootstrap phase, some tasks may need
@@ -119,11 +119,11 @@ next task or service.</p>
 can be started and automatically be respawned when a user logs out.
 For embedded targets wanting to save CPU cycles usually one TTY is the
 system console.  Use the console command to point to a defined TTY to
-activate &ldquo;Press any key to activate this console.&rdquo;</p>
+activate &#8220;Press any key to activate this console.&#8221;</p>
 
 <p>Finally, runlevels!  This is the key feature in this release of Finit.
 Adding the flexibility from SysV init, without the complexity.  This
-is one of the key points of Finit &ndash; it should be simple!</p>
+is one of the key points of Finit &#8211; it should be simple!</p>
 
 <pre><code>finit.conf:
     service [2345] /usr/sbin/sshd -D -- OpenSSH Daemon
@@ -136,7 +136,7 @@ like before.</p>
 <p>Runlevels are needed in use-cases in many embedded devices.  E.g.,
 bootstrap, upgrading, and regular operation.  It is completely up to
 the system administrator to setup the runlevels of the product or
-installation.  At boot runlevel &rsquo;S&#8217; runs, well before any networking
+installation.  At boot runlevel &#8216;S&#8217; runs, well before any networking
 is up.  This is used to to one-time probing and setup of the
 system. When done the runlevel defined in finit.conf, or the default
 2, is started.</p>

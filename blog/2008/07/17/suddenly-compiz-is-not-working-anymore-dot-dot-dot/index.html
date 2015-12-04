@@ -100,16 +100,16 @@ am bored.  Sometimes I want a quick lean, smallish desktop and other
 times I want the whole shebang, all possible animations, SVG icons,
 mouse gestures — you name it and I will already have tons of it!</p>
 
-<p>Today I wanted to enable Compiz again and it just wouldn&rsquo;t start.  After
+<p>Today I wanted to enable Compiz again and it just wouldn&#8217;t start.  After
 a couple of tries that turned out to be dead ends I finally got this:</p>
 
 <pre><code>/usr/bin/compiz.real (core) - Error: Could not acquire compositing manager selection on screen 0 display ":0.0" 
 </code></pre>
 
 <p>Some more digging around Google gave me the answer: Metacity and Compiz
-fight to be &ldquo;compositing manager&rdquo; &hellip;</p>
+fight to be &#8220;compositing manager&#8221; &#8230;</p>
 
-<p>&hellip; as soon as I disabled <code>/apps/metacity/general/compositing_manager</code> I
+<p>&#8230; as soon as I disabled <code>/apps/metacity/general/compositing_manager</code> I
 could enable Compiz again!</p>
 </div>
 

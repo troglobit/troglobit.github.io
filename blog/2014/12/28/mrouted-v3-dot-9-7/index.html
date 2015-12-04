@@ -124,16 +124,16 @@ of <code>mrouted</code>, after being by Mr Waitzman :)</li>
 
 <ul>
 <li>Fix issue with older BSD kernels, mainly for current FreeBSD 10 and
-older, that don&rsquo;t really give RAW sockets but byte swap <code>ip_len</code>
+older, that don&#8217;t really give RAW sockets but byte swap <code>ip_len</code>
 field, Olivier Cochard-Labbé (<a href="https://github.com/ocochard">@ocochard</a>)</li>
 <li>Build fixes for FreeBSD, should make maintaining ports easier :)</li>
 <li>Change from <code>select()</code> to <code>poll()</code> due to descriptor limits, e.g.,
 on BSD.</li>
 <li>UNIX 2038 first audit, inspired by OpenBSD.  Cleanup type confusion
 <code>int/u_long</code> where it should be <code>time_t</code>.  Also, clarify that <code>genid</code>
-is OK, since it&rsquo;s used and stored as unsigned 32-bit integer.</li>
+is OK, since it&#8217;s used and stored as unsigned 32-bit integer.</li>
 <li>Lots of minor fixes detected by Coverity Scan and Clang scan-build
-<a href="https://scan.coverity.com/projects/3320">https://scan.coverity.com/projects/3320</a></li>
+https://scan.coverity.com/projects/3320</li>
 </ul>
 
 </div>

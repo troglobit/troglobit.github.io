@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Embedded | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/embedded/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-11-28T20:17:42+01:00</updated>
+  <updated>2015-12-05T00:29:05+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -25,28 +25,28 @@ are ARM based, and in neither of the two have we built the cross
 compiler ourselves.  The first was ye&#8217; old 2.95 based from
 <a href="http://www.uclinux.org/">uClinux.org</a> and the second we had a consultant build for us.  Lame!</p>
 
-<p>Ever since I was appointed software architect I&rsquo;ve had this nagging
+<p>Ever since I was appointed software architect I&#8217;ve had this nagging
 sensation about our cross-compiler situation.  We do everything else:
 roll our own archs for Linux, patch BusyBox, design our own L2/L3
 network daemons, and what-not.  Very annoying that we have such poor
 control of the mantle piece of our build environment.</p>
 
-<p>Sure, it&rsquo;s almost indistinguishable from magic, but it&rsquo;s not hard.
+<p>Sure, it&#8217;s almost indistinguishable from magic, but it&#8217;s not hard.
 There are fine helpers such as <a href="http://buildroot.uclibc.org/">buildroot</a>, ptxdist and the aging
-crosstool scripts by Dan Kegel.  I used to do some work with Dan&rsquo;s
+crosstool scripts by Dan Kegel.  I used to do some work with Dan&#8217;s
 scripts in a couple of previous jobs, so it was a pleasant surprise to
 find that the project had found a new maintainer!</p>
 
 <p>I can highly recommend the <a href="http://crosstool-ng.org/">crosstool-NG</a> project!  It makes building
 a toolchain really easy.  In a snap had I copied our uClibc <code>.config</code>
-into the work dir of my configuration, issued the &ldquo;build&rdquo; command and
+into the work dir of my configuration, issued the &#8220;build&#8221; command and
 wham, there it was a coffee break later.  A working GCC v4.2.4 cross
 compiler for Arm Xscale (big-endian) with built-in uClibc (no more GLIBC
 madness and separate uClibc builds in our tree), not to mention an all
 you can eat buffe of extra tools for the target: <code>strace</code>, <code>gdb</code> &amp;
-<code>gdbserver</code>, <code>libdmalloc</code>, <code>ncurses</code>&nbsp;&hellip; crazy.</p>
+<code>gdbserver</code>, <code>libdmalloc</code>, <code>ncurses</code>&nbsp;&#8230; crazy.</p>
 
-<p>I&rsquo;ll start rolling it out on monday in our department and keep close
+<p>I&#8217;ll start rolling it out on monday in our department and keep close
 tabs on the development of crosstool-NG to be able to grab the
 latest 4.3.2, or later GCC when it enters the ct-ng Subversion
 repository.</p>

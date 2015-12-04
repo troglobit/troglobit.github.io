@@ -4,7 +4,7 @@
   <title><![CDATA[Troglobit]]></title>
   <link href="http://troglobit.github.io/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-11-28T20:17:42+01:00</updated>
+  <updated>2015-12-05T00:29:05+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -68,7 +68,7 @@ their own (buggy) implementations.</p>
 <h2>BSD <code>sys/queue.h</code></h2>
 
 <p><a href="https://www.freebsd.org/cgi/man.cgi?query=queue&amp;sektion=3">This header</a> has lots of macros for handling various forms of
-linked lists.  The version in GLIBC is a bit behind the BSD&rsquo;s, because
+linked lists.  The version in GLIBC is a bit behind the BSD&#8217;s, because
 the latter also have <code>_safe()</code> versions of some macros to aid the user
 in some tricky cases, e.g. when removing entries while iterating.</p>
 
@@ -84,7 +84,7 @@ in some tricky cases, e.g. when removing entries while iterating.</p>
 </ul>
 
 
-<p>Here&rsquo;s a few of them:</p>
+<p>Here&#8217;s a few of them:</p>
 
 <ul>
 <li><code>LIST_INIT()</code></li>
@@ -101,7 +101,7 @@ in some tricky cases, e.g. when removing entries while iterating.</p>
 
 <p>I wrote a <a href="https://github.com/troglobit/toolbox/blob/master/tailq-demo.c">demo of the TAILQ API</a> a couple of years ago.</p>
 
-<h2>Other Noteworthy API&rsquo;s</h2>
+<h2>Other Noteworthy API&#8217;s</h2>
 
 <p>Other functions worthy of mentioning here are:</p>
 
@@ -185,7 +185,7 @@ Lords or Jedi Knights.</p>
     <updated>2015-11-10T12:14:09+01:00</updated>
     <id>http://troglobit.github.io/blog/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify</id>
     <content type="html"><![CDATA[<p>Back to using the <a href="http://awesome.naquadah.org/">Awesome WM</a> in Ubuntu.
-This time I&rsquo;m setting up everything from scratch and first up is fixing
+This time I&#8217;m setting up everything from scratch and first up is fixing
 keybindings to control my main music player: Spotify!</p>
 
 <p>Edit your <code>~/.config/awesome/rc.lua</code> with Emacs (obviously).  If you do
@@ -202,7 +202,7 @@ not have an rc file, simply copy the system <code>/etc/xdb/awesome/rc.lua</code>
 root.keys(globalkeys)
 </code></pre>
 
-<p>That&rsquo;s it.</p>
+<p>That&#8217;s it.</p>
 ]]></content>
   </entry>
   
@@ -211,10 +211,10 @@ root.keys(globalkeys)
     <link href="http://troglobit.github.io/blog/2015/11/07/stray-puppies/"/>
     <updated>2015-11-07T02:32:12+01:00</updated>
     <id>http://troglobit.github.io/blog/2015/11/07/stray-puppies</id>
-    <content type="html"><![CDATA[<p>Sometimes I just cannot help myself.  It&rsquo;s like finding a stray puppy,
-or abandonded kitten &hellip;</p>
+    <content type="html"><![CDATA[<p>Sometimes I just cannot help myself.  It&#8217;s like finding a stray puppy,
+or abandonded kitten &#8230;</p>
 
-<p>&hellip; I recently decided to adopt <a href="http://troglobit.github.io/mini-snmpd.html">mini-snmpd</a> since the
+<p>&#8230; I recently decided to adopt <a href="http://troglobit.github.io/mini-snmpd.html">mini-snmpd</a> since the
 <a href="http://members.aon.at/linuxfreak/linux/mini_snmpd.html">original upstream</a> site had passed into the great beyond.  At this
 point in my life almost everyone I know can tell you I have no warm
 fuzzy feels for SNMP, at all.  So why did I even consider this to begin
@@ -230,13 +230,13 @@ it was.  The code was also in reasonably good shape, so it had passed my
 initial quality control.  Suddenly one day I could no longer download it
 when building TroglOS, so I had to do something!</p>
 
-<p>My plans for mini-snmpd are quite humble.  I&rsquo;m currently cleaning it up
+<p>My plans for mini-snmpd are quite humble.  I&#8217;m currently cleaning it up
 a bit, adding configure script for all optional features, testing
 portability to FreeBSD and <a href="https://github.com/javiplx/mini-snmpd">integrating (good) patches</a> from various
 sources scattered around the web.</p>
 
-<p>I will not add lots of new features, but as always I&rsquo;m your humble patch
-monkey, so if you <a href="https://github.com/troglobit/mini-snmpd">submit a pull reqeust</a> at GitHub it&rsquo;ll probably be
+<p>I will not add lots of new features, but as always I&#8217;m your humble patch
+monkey, so if you <a href="https://github.com/troglobit/mini-snmpd">submit a pull reqeust</a> at GitHub it&#8217;ll probably be
 merged and put into a release.</p>
 
 <p>Cheers</p>
@@ -249,7 +249,7 @@ merged and put into a release.</p>
     <updated>2015-09-09T21:49:13+02:00</updated>
     <id>http://troglobit.github.io/blog/2015/09/09/summer-of-code-2015</id>
     <content type="html"><![CDATA[<p>Summer is now slowly fading away, and what a summer it has been here in
-Sweden!  For someone who isn&rsquo;t a fan of the summer heat it has been an
+Sweden!  For someone who isn&#8217;t a fan of the summer heat it has been an
 awesome time for brain work, and in my case work on my open source
 projects! :-)</p>
 
@@ -257,16 +257,16 @@ projects! :-)</p>
 for ten weeks (10) this year!  It was really worth it, and for the first
 time in many years I actually feel rested.</p>
 
-<p>So what&rsquo;s new?  Well, this summer I&rsquo;ve released a <strong>major</strong> upgrade to
+<p>So what&#8217;s new?  Well, this summer I&#8217;ve released a <strong>major</strong> upgrade to
 <a href="http://troglobit.github.io/pimd.html">pimd</a>, which received <em>PIM-SSM</em> and full <em>IGMPv3</em> support!
 <a href="http://troglobit.github.io/inadyn.html">Inadyn</a> has seen two releases, one feature release with
 support for Windows and improved support for custom DDNS providers, and
 one bugfix release (today).  My own FTP/TFTP server <a href="http://troglobit.github.io/uftpd.html">uftpd</a>
 has also got a bit of an overhaul to improve both concurrency and
-improved support for various popular clients (Firefox and wget) &ndash; I
+improved support for various popular clients (Firefox and wget) &#8211; I
 released v1.9 of uftpd as a birthday present to myself! ;-)</p>
 
-<p>I&rsquo;ve done some other minor work as well, on the &ldquo;new&rdquo; <a href="https://github.com/troglobit/netcalc">netcalc</a>, IPv6
+<p>I&#8217;ve done some other minor work as well, on the &#8220;new&#8221; <a href="https://github.com/troglobit/netcalc">netcalc</a>, IPv6
 and IPv4 subnet calculator, as well as <a href="https://github.com/troglobit/watchdogd">watchdogd</a> and <a href="http://troglobit.github.io/finit.html">finit</a>.  The
 latter two have however not seen any releases yet, but both have <em>major</em>
 v2.0 releases with lots of very interesting features that are going to
@@ -276,9 +276,9 @@ be revealed soon!</p>
 file descriptors, RAM) as well as a very advanced process monitoring
 (instrumentation) API is being added.  Finit however is the crown in
 making, it is being converted to support multiple instances of services
-and to be a fully event driven.  I&rsquo;m extremely excited about Finit!</p>
+and to be a fully event driven.  I&#8217;m extremely excited about Finit!</p>
 
-<p>Oh, and don&rsquo;t worry &hellip; I did manage to get some actual real downtime on
+<p>Oh, and don&#8217;t worry &#8230; I did manage to get some actual real downtime on
 the beach as well! ;-)</p>
 
 <!--
@@ -297,11 +297,11 @@ the beach as well! ;-)</p>
     <id>http://troglobit.github.io/blog/2015/07/02/howto-using-lite-with-a-git-based-application</id>
     <content type="html"><![CDATA[<p>Years ago while looking for a fast <a href="https://en.wikipedia.org/wiki/Init">init</a> replacement for <a href="http://westermo.com/">work</a>,
 I found <a href="http://helllabs.org/finit/">Finit</a>.  Originally written by <a href="https://github.com/cmatsuoka">Claudio Matsuoka</a> to act
-as a drop-in replacement for the <a href="https://en.wikipedia.org/wiki/Asus_Eee_PC">Asus EeePC</a> <a href="http://wiki.eeeuser.com/boot_process:the_boot_process">fastinit</a>, <em>&ldquo;gaps
-filled with frog DNA &hellip;&rdquo;</em></p>
+as a drop-in replacement for the <a href="https://en.wikipedia.org/wiki/Asus_Eee_PC">Asus EeePC</a> <a href="http://wiki.eeeuser.com/boot_process:the_boot_process">fastinit</a>, <em>&#8220;gaps
+filled with frog DNA &hellip;&#8221;</em></p>
 
 <p>Until I found Finit I had always been in awe of those venturing into the
-realm of <a href="http://0pointer.net/blog/">PID 1</a>.  However, learning from the simplicity of Claudio&rsquo;s
+realm of <a href="http://0pointer.net/blog/">PID 1</a>.  However, learning from the simplicity of Claudio&#8217;s
 code I realized that although PID 1 at times is indistinguishable from
 magic, it is really not that hard to master.  <a href="https://github.com/troglobit/finit">My version of Finit</a>
 is available on GitHub.</p>
@@ -350,7 +350,7 @@ uses both <code>-lite</code> and <code>-luev</code>.  The latter is my small eve
 <a href="https://github.com/troglobit/libuev">libuEv</a>.  For help using <code>-lite</code> with the GNU configure and build
 system, see <a href="https://github.com/troglobit/inadyn">inadyn</a>.</p>
 
-<p>Libite builds in &ldquo;silent mode&rdquo; by default, use <code>make V=1</code> (like the
+<p>Libite builds in &#8220;silent mode&#8221; by default, use <code>make V=1</code> (like the
 kernel) to get a more verbose output, usable for autobuilders etc.</p>
 ]]></content>
   </entry>
@@ -360,10 +360,10 @@ kernel) to get a more verbose output, usable for autobuilders etc.</p>
     <link href="http://troglobit.github.io/blog/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/"/>
     <updated>2015-07-01T00:42:17+02:00</updated>
     <id>http://troglobit.github.io/blog/2015/07/01/howto-push-to-multiple-git-repos-with-one-command</id>
-    <content type="html"><![CDATA[<p>So, now that I have <a href="http://git.troglobit.com">http://git.troglobit.com</a> setup as a backup GIT repo
-to <a href="https://github.com/troglobit,">https://github.com/troglobit,</a> I needed a <em>simple</em> way of always
-pushing to both repos &ndash; best way for me is to always hook into my
-regular work flow, otherwise I&rsquo;d just forget.  The <a href="1">git-remote(1)</a>
+    <content type="html"><![CDATA[<p>So, now that I have http://git.troglobit.com setup as a backup GIT repo
+to https://github.com/troglobit, I needed a <em>simple</em> way of always
+pushing to both repos &#8211; best way for me is to always hook into my
+regular work flow, otherwise I&#8217;d just forget.  The <a href="1">git-remote(1)</a>
 man page describes the new <code>set-url --add</code> sub-command:</p>
 
 <pre><code>git remote set-url --add origin troglobit.com:/srv/git/watchdogd.git
@@ -396,29 +396,29 @@ origin  troglobit.com:/srv/git/watchdogd.git (push)
     <link href="http://troglobit.github.io/blog/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/"/>
     <updated>2015-06-30T23:13:48+02:00</updated>
     <id>http://troglobit.github.io/blog/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1</id>
-    <content type="html"><![CDATA[<p>I&rsquo;m posting this in case anyone else gets stuck setting up <a href="http://www.apache.org">Apache</a>
+    <content type="html"><![CDATA[<p>I&#8217;m posting this in case anyone else gets stuck setting up <a href="http://www.apache.org">Apache</a>
 with <a href="http://git-scm.com/docs/gitweb">Gitweb</a>.  Also as a reminder to myself in case I ever need to
 set up this all over again.</p>
 
 <ol>
 <li>You have all your eggs in one basket (GitHub), and</li>
 <li>You really like that shiny basket, but</li>
-<li>You know you&rsquo;re clumsy and usually drop baskets yourself.</li>
+<li>You know you&#8217;re clumsy and usually drop baskets yourself.</li>
 <li>You are wise (yes you are!) and realize you need another basket, so</li>
-<li>You set up a server and a domain yourself &hellip;</li>
+<li>You set up a server and a domain yourself &#8230;</li>
 </ol>
 
 
-<p>OK.  Let&rsquo;s start simple, since you are already running the latest Debian
+<p>OK.  Let&#8217;s start simple, since you are already running the latest Debian
 you fire up the command line and install the basics:</p>
 
 <pre><code>sudo apt-get install gitweb apache2
 </code></pre>
 
-<p>So it&rsquo;ll complain, you&rsquo;ll clarify your request and soon all required
+<p>So it&#8217;ll complain, you&#8217;ll clarify your request and soon all required
 packages are on your server.  Now what?</p>
 
-<p>Debian has already set up <a href="http://localhost/gitweb">http://localhost/gitweb</a> for you, and if you
+<p>Debian has already set up http://localhost/gitweb for you, and if you
 have a domain already you should go ahead and edit the master file for
 that:</p>
 
@@ -426,23 +426,23 @@ that:</p>
 service apache2 reload
 </code></pre>
 
-<p>If you want to use that for your gitweb needs, then you&rsquo;re done!</p>
+<p>If you want to use that for your gitweb needs, then you&#8217;re done!</p>
 
 <!-- more -->
 
 
-<p>For me, running <a href="http://troglobit.com/gitweb">http://troglobit.com/gitweb</a> out of the box was not
-enough.  I wanted to setup <a href="http://git.troglobit.com">http://git.troglobit.com</a> and also to make
+<p>For me, running http://troglobit.com/gitweb out of the box was not
+enough.  I wanted to setup http://git.troglobit.com and also to make
 sure to keep really short and pretty URLs to projects I host.  So the
 next part of this post is about how to set that up.</p>
 
-<p>My <code>000-default.conf</code> is for <a href="http://troglobit.com,">http://troglobit.com,</a> so I created a new
+<p>My <code>000-default.conf</code> is for http://troglobit.com, so I created a new
 one for the sub-domain:</p>
 
 <pre><code>editor /etc/apache2/sites-available/git.conf
 </code></pre>
 
-<p>&hellip; and added the following:</p>
+<p>&#8230; and added the following:</p>
 
 <figure class='code'><figcaption><span>/etc/apache2/sites-available/git.conf</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -513,7 +513,7 @@ one for the sub-domain:</p>
 service apache2 restart
 </code></pre>
 
-<p>I&rsquo;m not using the default Debian GIT repo location, <code>/var/lib/git</code>, so I
+<p>I&#8217;m not using the default Debian GIT repo location, <code>/var/lib/git</code>, so I
 need to set the project root for both the Apache and the GitWeb config:</p>
 
 <figure class='code'><figcaption><span>/etc/gitweb.conf</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -698,13 +698,13 @@ I use, it looks a lot better than the default.</p>
     <id>http://troglobit.github.io/blog/2015/03/06/inetd-support-in-finit-v1-dot-12</id>
     <content type="html"><![CDATA[<p>A steady flow of features, and releases, is key to keeping any project
 alive.  Recently I ticked off another item in the <a href="http://troglobit.github.io/finit.html">Finit</a>
-TODO list &hellip;</p>
+TODO list &#8230;</p>
 
 <p>Finit v1.12 now comes with a built-in inetd!  You no longer need an
 external inetd daemon to launch services on demand.</p>
 
-<p>The good news doesn&rsquo;t stop there, this little inetd actually supports a
-poor man&rsquo;s tcpwrappers!</p>
+<p>The good news doesn&#8217;t stop there, this little inetd actually supports a
+poor man&#8217;s tcpwrappers!</p>
 
 <pre><code>inetd ssh/tcp          nowait [2345] /sbin/dropbear -i -R -F
 inetd ssh@eth0:222/tcp nowait [2345] /sbin/dropbear -i -R -F
@@ -715,7 +715,7 @@ the <a href="https://matt.ucc.asn.au/dropbear/dropbear.html">Dropbear SSH</a>
 server on demand on port 22 (default ssh/tcp port in <code>/etc/services</code>) on
 <em>all</em> interfaces except on <code>eth0</code>, which in your case is the Internet
 (WAN) interface, here you want SSH to run on port 222.  Actually, you
-don&rsquo;t want port 22 open at all on <code>eth0</code> &hellip; so finit takes care of this
+don&#8217;t want port 22 open at all on <code>eth0</code> &#8230; so finit takes care of this
 for you!  Seriously, it just works, no need for messing about with that
 nasty old <code>iptables</code> anymore!</p>
 
@@ -744,7 +744,7 @@ default.  To enable it you need two things:</p>
 </ol>
 
 
-<p>Assuming you&rsquo;ve installed the default set of plugins, the following two
+<p>Assuming you&#8217;ve installed the default set of plugins, the following two
 lines can be added:</p>
 
 <pre><code>inetd time/udp   wait [2345] internal
@@ -775,7 +775,7 @@ Sat Mar  7 08:48:58 CET 2015
 <h3>Changes</h3>
 
 <ul>
-<li>Add support for built-in inetd super server &ndash; launch services on
+<li>Add support for built-in inetd super server &#8211; launch services on
 demand.  Supports filtering per interface and custom Inet ports.</li>
 <li>Upgrade to <a href="https://github.com/troglobit/libuev">libuEv</a> v1.1.0 to better handle error conditions.</li>
 <li>Allow mixed case config directives in <code>finit.conf</code></li>
@@ -795,10 +795,10 @@ this fallback as console.  Should improve usability in some use cases.</li>
 <h3>Fixes</h3>
 
 <ul>
-<li>Revert &ldquo;Use vfork() instead of fork() before exec()&rdquo; from v1.11.  It
+<li>Revert &#8220;Use vfork() instead of fork() before exec()&#8221; from v1.11.  It
 turned out to not work so well after all.  For instance, launching
 TTYs in a background process completely blocked inetd services from
-even starting up listening sockets &hellip; proper fork seems to work fine
+even starting up listening sockets &#8230; proper fork seems to work fine
 though.  This is the casue for <em>yanking</em> the <a href="https://github.com/troglobit/finit/compare/1.10...1.11">1.11</a> release.</li>
 <li>Trap segfaults caused by external plugins/callbacks in a sub-process.
 This prevents a single programming mistake in by a 3rd party developer
@@ -824,7 +824,7 @@ replaced by <a href="http://troglobit.github.io/blog/2015/03/06/inetd-support-in
 <!-- more -->
 
 
-<p>I&rsquo;m very pleased to announce <a href="http://troglobit.github.io/finit.html">Finit v1.11</a> — this is the
+<p>I&#8217;m very pleased to announce <a href="http://troglobit.github.io/finit.html">Finit v1.11</a> — this is the
 episode where two of my projects finally get married! ツ</p>
 
 <h3>Changes</h3>
@@ -832,9 +832,9 @@ episode where two of my projects finally get married! ツ</p>
 <ul>
 <li>Now using the asynchronous <a href="https://github.com/troglobit/libuev">libuEv</a> library for handling all events:
 signals, timers and listening to sockets or file descriptors.</li>
-<li>Rename NEWS.md &ndash;> CHANGELOG.md, with symlinks for <code>make install</code></li>
-<li>Attempt to align with <a href="http://keepachangelog.com">http://keepachangelog.com</a> for the ChangeLog</li>
-<li><a href="https://travis-ci.org/troglobit/finit">Travis CI</a> now only invokes <a href="https://scan.coverity.com/projects/3545">Coverity Scan</a> from the &lsquo;dev&rsquo; branch.  This
+<li>Rename NEWS.md &#8211;> CHANGELOG.md, with symlinks for <code>make install</code></li>
+<li>Attempt to align with http://keepachangelog.com for the ChangeLog</li>
+<li><a href="https://travis-ci.org/troglobit/finit">Travis CI</a> now only invokes <a href="https://scan.coverity.com/projects/3545">Coverity Scan</a> from the &#8216;dev&#8217; branch.  This
 means that all development, except documentation updates, must go into
 that branch.</li>
 </ul>
@@ -856,11 +856,11 @@ commit <a href="https://github.com/troglobit/finit/commit/dea3ae8">dea3ae8</a> f
     <link href="http://troglobit.github.io/blog/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/"/>
     <updated>2015-01-12T01:57:40+01:00</updated>
     <id>http://troglobit.github.io/blog/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot</id>
-    <content type="html"><![CDATA[<blockquote><p>&ldquo;Enable <em>all</em> the warnings!&rdquo;</p></blockquote>
+    <content type="html"><![CDATA[<blockquote><p>&#8220;Enable <em>all</em> the warnings!&#8221;</p></blockquote>
 
 <p>This is one of the truths you learn when you start working with C.  Most
 of the time adding <code>CPPFLAGS="-W -Wall -Werror"</code> is all you need to find
-all the nasty bugs.  And if that&rsquo;s not enough, there are tons of tools
+all the nasty bugs.  And if that&#8217;s not enough, there are tons of tools
 for static code analysis, like <code>scan-build</code> in
 <a href="http://clang-analyzer.llvm.org/scan-build.html">Clang</a>, and
 <a href="https://scan.coverity.com/">Coverity Scan</a>, to help you <em>find all the
@@ -868,9 +868,9 @@ bugs</em>!</p>
 
 <p>However, these pesky warnings (some of which cannot even be disabled!)
 are sometimes more of a nuisance than help.  Sometimes you <em>know</em> that
-some parameters to a function will remain unused &ndash; it&rsquo;s a callback, and
-you don&rsquo;t need all the data given to you.  So you start adding all kinds
-of voodoo, like <code>__attribute__ ((unused))</code> &hellip; seriously?</p>
+some parameters to a function will remain unused &#8211; it&#8217;s a callback, and
+you don&#8217;t need all the data given to you.  So you start adding all kinds
+of voodoo, like <code>__attribute__ ((unused))</code> &#8230; seriously?</p>
 
 <!-- more -->
 
@@ -931,12 +931,12 @@ allow this <em>much more readable</em> version?</p>
 
 
 <p>The human eye is marvellous at finding little things that stick out,
-but when there&rsquo;s nothing but annoying things on the screen we can no
+but when there&#8217;s nothing but annoying things on the screen we can no
 longer see the most obvious pointer casting bugs, and we get sloppy.</p>
 
-<p>I&rsquo;m seriously considering adding some kind of <code>--developer-mode</code> to my
+<p>I&#8217;m seriously considering adding some kind of <code>--developer-mode</code> to my
 own projects which will warn like crazy, as usual, and as soon as I turn
-it off (default) complete silence will arrive.  That&rsquo;s how sick and
+it off (default) complete silence will arrive.  That&#8217;s how sick and
 tired I am of <em>all the warnings</em> and the resulting almost completely
 unreadable code.</p>
 
@@ -950,7 +950,7 @@ so it should be enjoyable and easy.</p>
     <link href="http://troglobit.github.io/blog/2015/01/08/recent-open-source-work/"/>
     <updated>2015-01-08T01:57:14+01:00</updated>
     <id>http://troglobit.github.io/blog/2015/01/08/recent-open-source-work</id>
-    <content type="html"><![CDATA[<p>I&rsquo;m a coder, not a writer.  Here&rsquo;s what I&rsquo;ve been working on during the
+    <content type="html"><![CDATA[<p>I&#8217;m a coder, not a writer.  Here&#8217;s what I&#8217;ve been working on during the
 winter holidays:</p>
 
 <ul>
@@ -973,14 +973,14 @@ available today.</li>
 is likely the last release ever of the old pimd, unless someone starts
 paying me to work on it.</p>
 
-<p>&hellip; or more people step up to help.  Both the Xorp PIM-SM and the
+<p>&#8230; or more people step up to help.  Both the Xorp PIM-SM and the
 upcoming Quagga PIM-SSM implementations are in better shape.  The only
-thing old pimd has got going for it is the license.  It&rsquo;s 3-clause
+thing old pimd has got going for it is the license.  It&#8217;s 3-clause
 BSD, so very liberal.</p></li>
 </ul>
 
 
-<p>If you&rsquo;re interested in pitching in, on any of my projects, just send me
+<p>If you&#8217;re interested in pitching in, on any of my projects, just send me
 an email or connect with me on GitHub!</p>
 ]]></content>
   </entry>
@@ -990,8 +990,8 @@ an email or connect with me on GitHub!</p>
     <link href="http://troglobit.github.io/blog/2015/01/02/blog-restoration-project-now-also-on-github-pages/"/>
     <updated>2015-01-02T14:12:59+01:00</updated>
     <id>http://troglobit.github.io/blog/2015/01/02/blog-restoration-project-now-also-on-github-pages</id>
-    <content type="html"><![CDATA[<p>I&rsquo;ve had this long-standing issue with backups.  It&rsquo;s deadly boring to
-set up and maintain, so I don&rsquo;t do any.  Until today!</p>
+    <content type="html"><![CDATA[<p>I&#8217;ve had this long-standing issue with backups.  It&#8217;s deadly boring to
+set up and maintain, so I don&#8217;t do any.  Until today!</p>
 
 <p>Today I moved the sources for my <a href="http://troglobit.com">Octopress blag</a>
 to GitHub, which also prompted me to set up
@@ -1008,22 +1008,22 @@ Ruby magic to administer it all with!  Here are some links I used to
 get where I am:</p>
 
 <ul>
-<li><a href="http://octopress.org/docs/setup/">http://octopress.org/docs/setup/</a></li>
-<li><a href="https://help.github.com/articles/creating-project-pages-manually/">https://help.github.com/articles/creating-project-pages-manually/</a></li>
-<li><a href="https://help.github.com/articles/user-organization-and-project-pages/">https://help.github.com/articles/user-organization-and-project-pages/</a></li>
-<li><a href="http://www.tomordonez.com/blog/2012/06/04/creating-a-github-blog-using-octopress/">http://www.tomordonez.com/blog/2012/06/04/creating-a-github-blog-using-octopress/</a></li>
-<li><a href="http://miguelcamba.com/blog/2013/04/22/tutorial-create-a-blog-with-octopress-and-host-it-in-github-pages/">http://miguelcamba.com/blog/2013/04/22/tutorial-create-a-blog-with-octopress-and-host-it-in-github-pages/</a></li>
-<li><a href="http://octopress.org/docs/deploying/github/">http://octopress.org/docs/deploying/github/</a></li>
+<li>http://octopress.org/docs/setup/</li>
+<li>https://help.github.com/articles/creating-project-pages-manually/</li>
+<li>https://help.github.com/articles/user-organization-and-project-pages/</li>
+<li>http://www.tomordonez.com/blog/2012/06/04/creating-a-github-blog-using-octopress/</li>
+<li>http://miguelcamba.com/blog/2013/04/22/tutorial-create-a-blog-with-octopress-and-host-it-in-github-pages/</li>
+<li>http://octopress.org/docs/deploying/github/</li>
 </ul>
 
 
 <p>With some added <code>apt-get intall ruby ruby-bundler</code> magic in Ubuntu
-everything started to look normal &ndash; now I could even do <code>rake preview</code>
+everything started to look normal &#8211; now I could even do <code>rake preview</code>
 before deploying!  Only a minor problem I had before getting everything
 working was this:</p>
 
 <blockquote><p>/usr/local/rvm/gems/ruby-2.1.2/gems/execjs-2.2.0/lib/execjs/runtimes.rb:51:in `autodetect&#8217;:
-Could not find a JavaScript runtime. See <a href="https://github.com/sstephenson/execjs">https://github.com/sstephenson/execjs</a>
+Could not find a JavaScript runtime. See https://github.com/sstephenson/execjs
 for a list of available runtimes. (ExecJS::RuntimeUnavailable)</p></blockquote>
 
 <p>Turns out I had to install nodejs as well, dunno why.</p>
@@ -1037,7 +1037,7 @@ own server.</p>
 
 <p>All this means I can now finally begin restoring more content from
 <a href="http://troglobit.github.io/blog/2013/02/17/resurrection/">my old blog</a> thanks to partial backups
-I&rsquo;ve found at the <a href="https://archive.org/">Wayback Machine</a> :-)</p>
+I&#8217;ve found at the <a href="https://archive.org/">Wayback Machine</a> :-)</p>
 ]]></content>
   </entry>
   
@@ -1075,16 +1075,16 @@ of <code>mrouted</code>, after being by Mr Waitzman :)</li>
 
 <ul>
 <li>Fix issue with older BSD kernels, mainly for current FreeBSD 10 and
-older, that don&rsquo;t really give RAW sockets but byte swap <code>ip_len</code>
+older, that don&#8217;t really give RAW sockets but byte swap <code>ip_len</code>
 field, Olivier Cochard-Labbé (<a href="https://github.com/ocochard">@ocochard</a>)</li>
 <li>Build fixes for FreeBSD, should make maintaining ports easier :)</li>
 <li>Change from <code>select()</code> to <code>poll()</code> due to descriptor limits, e.g.,
 on BSD.</li>
 <li>UNIX 2038 first audit, inspired by OpenBSD.  Cleanup type confusion
 <code>int/u_long</code> where it should be <code>time_t</code>.  Also, clarify that <code>genid</code>
-is OK, since it&rsquo;s used and stored as unsigned 32-bit integer.</li>
+is OK, since it&#8217;s used and stored as unsigned 32-bit integer.</li>
 <li>Lots of minor fixes detected by Coverity Scan and Clang scan-build
-<a href="https://scan.coverity.com/projects/3320">https://scan.coverity.com/projects/3320</a></li>
+https://scan.coverity.com/projects/3320</li>
 </ul>
 
 ]]></content>
@@ -1112,9 +1112,9 @@ the distinct possibility that the
 <p>At <a href="http://www.westermo.com">work</a> we will likely start using the
 Quagga PIM rather than pimd in WeOS.</p>
 
-<p>For now though, enjoy pimd v2.2.0.  It&rsquo;s been tested in both my Qemu
+<p>For now though, enjoy pimd v2.2.0.  It&#8217;s been tested in both my Qemu
 based virtual testbed and a few setups using Linux&#8217; <code>netns</code> feature in
-<a href="http://www.nrl.navy.mil/itd/ncs/products/core">CORE</a> &ndash; awesome
+<a href="http://www.nrl.navy.mil/itd/ncs/products/core">CORE</a> &#8211; awesome
 little proggy! :-)</p>
 
 <!-- more -->
@@ -1129,7 +1129,7 @@ by Michael Fine of Cumulus Networks</li>
 <li>Add support for /31 networks, point-to-point, thanks to Apollon Oikonomopoulos</li>
 <li>Remove old broken SNMP support</li>
 <li>OpenBSD inspired cleanup (deregister)
-<a href="http://cvsweb.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/">http://cvsweb.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/</a></li>
+http://cvsweb.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/</li>
 <li>General code cleanup, shorten local variable names, func decl. etc.</li>
 <li>Support for router alert IP option in IGMP queries</li>
 <li>Support for reading IGMPv3 membership reports</li>
@@ -1151,14 +1151,14 @@ and <code>switch_data_threshold</code> settings.  Cisco like and easier to under
 <li>Fix bug in bootstrap when configured as candidate RP, issue #15</li>
 <li>Fix segfault in <code>accept_igmp()</code>, issue #29</li>
 <li>Fix default source preference, should be 101 (not 1024!)</li>
-<li>Fix <code>ip_len</code> handling on older BSD&rsquo;s, thanks to Olivier Cochard-Labbé, issue #23</li>
+<li>Fix <code>ip_len</code> handling on older BSD&#8217;s, thanks to Olivier Cochard-Labbé, issue #23</li>
 <li>Fix default prefix len in static RP example in <code>pimd.conf</code>, should be /4</li>
 <li>Fix issue #31: Make IGMP query interval and querier timeout configurable</li>
 <li>Fix issue #33: pimd does not work in background under FreeBSD</li>
 <li>Fix issue #35: support for timing out other queriers from mrouted</li>
 <li>Hopefully fix issue #22: Crash in (S,G) state when neighbor is lost</li>
 <li>Misc. bug fixes thanks to Coverity Scan, static code analysis tool
-<a href="https://scan.coverity.com/projects/3319">https://scan.coverity.com/projects/3319</a></li>
+https://scan.coverity.com/projects/3319</li>
 </ul>
 
 ]]></content>
@@ -1204,7 +1204,7 @@ make kernel KERNCONF=MULTICAST
 reboot
 </code></pre>
 
-<p>That&rsquo;s it.  Remember to make sure your Qemu VM has enough RAM or it
+<p>That&#8217;s it.  Remember to make sure your Qemu VM has enough RAM or it
 will probably page fault on you.  I use 1,0 GB RAM.</p>
 
 <p>The other option, to load the ready made module, is likely better.  But
@@ -1222,7 +1222,7 @@ you want it to load at boot.  So add this to <code>/boot/loader.conf</code>:</p>
     <id>http://troglobit.github.io/blog/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd</id>
     <content type="html"><![CDATA[<p>Quite a few changes lately.  I finally got around to adding support
 for <a href="http://www.gnutls.org">GnuTLS</a> to <a href="http://troglobit.github.io/inadyn.html">Inadyn</a>,
-hopefully this will get into Debian &hellip; unless the Jessie freeze
+hopefully this will get into Debian &#8230; unless the Jessie freeze
 prevents that.</p>
 
 <p>Also, thanks to a friend of mine trying out <a href="http://troglobit.github.io/uftpd.html">uftpd</a>
@@ -1231,7 +1231,7 @@ since the release of the TFTP support.  Fixed.</p>
 
 <p>Another great piece of news is that
 <a href="http://www.coverity.com/">Coverity</a> accepted uftpd as an Open Source
-project, I&rsquo;ve been hard at work fixing nasty bugs uncovered by the
+project, I&#8217;ve been hard at work fixing nasty bugs uncovered by the
 <a href="https://scan.coverity.com/">Coverity Scan</a>.  Great stuff! :)</p>
 ]]></content>
   </entry>
@@ -1246,7 +1246,7 @@ project, I&rsquo;ve been hard at work fixing nasty bugs uncovered by the
 
 <p>This is a small bugfix release of <a href="http://troglobit.github.io/uftpd.html">uftpd</a>.  Version 1.4
 is basically just to change <code>nowait</code> to <code>wait</code> for the TFTP service in
-<code>/etc/inetd.conf</code>, but there&rsquo;s also a minor man page update.</p>
+<code>/etc/inetd.conf</code>, but there&#8217;s also a minor man page update.</p>
 
 <p>Enjoy! :)</p>
 ]]></content>
@@ -1258,15 +1258,15 @@ is basically just to change <code>nowait</code> to <code>wait</code> for the TFT
     <updated>2014-09-02T10:47:35+02:00</updated>
     <id>http://troglobit.github.io/blog/2014/09/02/new-release-of-the-awesome-uftpd</id>
     <content type="html"><![CDATA[<p>Today sees the release of v1.3 of the awesome little uftpd. The main
-news is the new TFTP support!  Just like before you don&rsquo;t need any
-configuration file, just build and install &ndash; or build a .deb file and
+news is the new TFTP support!  Just like before you don&#8217;t need any
+configuration file, just build and install &#8211; or build a .deb file and
 install.</p>
 
 <p>This release completes the main purpose of uftpd for me, I can now use
 it as my daily driver and fully replace vsftpd and tftpd-hpa, which to
 me are the next best.</p>
 
-<p>What&rsquo;s left then, you ask?  Well, TFTP upload support, TFTP segment
+<p>What&#8217;s left then, you ask?  Well, TFTP upload support, TFTP segment
 size negotiation and possibly multiple user support in FTP.  As
 always, patches are most welcome.  See the
 <a href="http://troglobit.github.io/uftpd.html">uftpd homepage</a> and my

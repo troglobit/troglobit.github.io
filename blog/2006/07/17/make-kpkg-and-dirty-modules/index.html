@@ -9,8 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="Dammit, tonight I spent too many hours chasing down a &ldquo;feature&rdquo; in the
-Debian kernel build process or the Linux-2.6 kernel. I haven&rsquo &hellip;">
+  <meta name="description" content="Dammit, tonight I spent too many hours chasing down a "feature" in the
+Debian kernel build process or the Linux-2.6 kernel. I haven't yet
+deciced who &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -94,15 +95,15 @@ Debian kernel build process or the Linux-2.6 kernel. I haven&rsquo &hellip;">
   </header>
 
 
-<div class="entry-content"><p>Dammit, tonight I spent too many hours chasing down a &ldquo;feature&rdquo; in the
-Debian kernel build process or the Linux-2.6 kernel.  I haven&rsquo;t yet
+<div class="entry-content"><p>Dammit, tonight I spent too many hours chasing down a &#8220;feature&#8221; in the
+Debian kernel build process or the Linux-2.6 kernel.  I haven&#8217;t yet
 deciced who to blame ;-)</p>
 
 <p>Here goes: when you build the latest Linux 2.6 kernel, checked out from
 the git repository, with <code>make-kpkg</code> you should make sure to uncheck the
 <code>CONFIG_LOCALVERSION_AUTO</code> option in the kernel config before hand.
-It&rsquo;s under &ldquo;General setup&rdquo; &rarr; &ldquo;Automatically append version
-information &hellip;&rdquo;.  If you don&rsquo;t disable it, then your <code>utsrelease.h</code>
+It&#8217;s under &#8220;General setup&#8221; &rarr; &#8220;Automatically append version
+information &#8230;&#8221;.  If you don&#8217;t disable it, then your <code>utsrelease.h</code>
 will contain some annoying extra git version string and your modules
 directory will look something like this: <code>/lib/modules/2.6.18-dirty</code></p>
 
@@ -112,7 +113,7 @@ tiny little fact that <code>make-kpkg</code> modifies (moves away) the two files
 of the checkout and the scripts/setlocalversion will tell this to the
 top Makefile which in turn will create this whole mess.</p>
 
-<p>Take my advice, untick the <code>CONFIG_LOCALVERSION_AUTO</code> option.  It&rsquo;s the
+<p>Take my advice, untick the <code>CONFIG_LOCALVERSION_AUTO</code> option.  It&#8217;s the
 easiest one to get away with.</p>
 </div>
 

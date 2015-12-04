@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Xen | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/xen/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-11-28T20:17:42+01:00</updated>
+  <updated>2015-12-05T00:29:05+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -19,7 +19,7 @@
     <updated>2009-06-08T23:05:42+02:00</updated>
     <id>http://troglobit.github.io/blog/2009/06/08/howto-setup-and-run-xen</id>
     <content type="html"><![CDATA[<p>This is an extremly brief and quick <a href="http://www.xenproject.org/">Xen</a> tutorial. There are lots of
-them already, see your GNU/Linux distribution&rsquo;s wiki, HowtoForge or
+them already, see your GNU/Linux distribution&#8217;s wiki, HowtoForge or
 other places for a starter guide. This particular HowTo deals with
 setting up Xen as easy as possible using Ubuntu 8.04 LTS as host
 operating system (dom0 in Xen terms) and Ubuntu 9.04 as guest operating
@@ -72,15 +72,15 @@ vcpus       = 1
 extra       = 'xencons=tty1'
 </code></pre>
 
-<p>When installing grub on your guest, don&rsquo;t pay any attention to Grub
+<p>When installing grub on your guest, don&#8217;t pay any attention to Grub
 complaining about not being able to map <code>/dev/xvda1</code> to a BIOS disk.
-pyGrub doesn&rsquo;t care about such wordly things as physical disks.  Just
-make sure the <code>/boot</code> directory&rsquo;s partition (often <code>/</code>) is the first
+pyGrub doesn&#8217;t care about such wordly things as physical disks.  Just
+make sure the <code>/boot</code> directory&#8217;s partition (often <code>/</code>) is the first
 listed in the <code>disk=[]</code> array above.</p>
 
 <p>You may need to edit the <code>update-grub</code> script before you install grub,
 it is located at <code>/usr/sbin/update-grub</code>.  Search for <code>in_xen</code>, a fairly
-long way down.  Make sure it&rsquo;s set to <code>in_xen=1</code> before the big
+long way down.  Make sure it&#8217;s set to <code>in_xen=1</code> before the big
 <code>if[]</code>-clause that depends on it.  Without this fix the Xen able kernels
 in Ubuntu 9.04, and later, are not detected.</p>
 
@@ -89,8 +89,8 @@ verify that the script actually finds one active (server) kernel and
 adds it properly to your <code>/boot/grub/menu.lst</code> file.</p>
 
 <p>Another common problem is the lack of a console login.  Usually you
-don&rsquo;t need one, but if you&rsquo;d like to check your domU from within your
-dom0 you need to add the file &ldquo;console&rdquo; to <code>/etc/event.d</code></p>
+don&#8217;t need one, but if you&#8217;d like to check your domU from within your
+dom0 you need to add the file &#8220;console&#8221; to <code>/etc/event.d</code></p>
 
 <pre><code># console - getty
 #
@@ -111,7 +111,7 @@ respawn
 exec /sbin/getty 38400 console
 </code></pre>
 
-<p>That should do the trick!  If it doesn&rsquo;t, then there&rsquo;s plenty of help to
+<p>That should do the trick!  If it doesn&#8217;t, then there&#8217;s plenty of help to
 find in the Debian and Ubuntu wikis, see links above. Good luck!</p>
 ]]></content>
   </entry>

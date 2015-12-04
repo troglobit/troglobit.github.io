@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Smcroute | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/smcroute/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-11-28T20:17:42+01:00</updated>
+  <updated>2015-12-05T00:29:05+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -22,36 +22,44 @@
 battle line in the world of programming,
 <a href="http://cgi.di.uoa.gr/~mema/courses/mde518/papers/lauer78.pdf">Lau78</a>.
 The event vs thread based approach to programming.  As rants go I do
-not aspire to deliver a clear or logical message, what so ever.  It&rsquo;s
+not aspire to deliver a clear or logical message, what so ever.  It&#8217;s
 basically just something I need to get off my chest.</p>
 
 <p>It was not until 2007 I first learned about the event based approach
 to programming and event libraries like
 <a href="http://libevent.org/">libevent</a> and
 <a href="http://software.schmorp.de/pkg/libev.html">libev</a>.  Up until that
-point the silver bullet everyone was using was &hellip; Threads.</p>
+point the silver bullet everyone was using was &#8230; Threads.</p>
 
 <!-- more -->
 
 
-<p>I don&rsquo;t really know when it all started, maybe it was the Linux
+<p>I don&#8217;t really know when it all started, maybe it was the Linux
 revolution, the first NPTL release with GLIBC, Java or Solaris.
-Nevertheless, from my point of view it was sometime in the mid 90&rsquo;s
+Nevertheless, from my point of view it was sometime in the mid 90&#8217;s
 during my time at university that the use of threads was starting to
 become prevalent.</p>
 
-<p>Surround your pullquote like this {&#8221; text to be quoted &#8220;}</p>
+<p><span class='pullquote-right' data-pullquote='With the rise of the thread based model of programming we now had a
+hammer, and every problem looked like a nail.'>
+With the rise of the thread based model of programming we now had a
+hammer, and every problem looked like a nail.  I had a gut feeling
+there was something really wrong with using threads for every
+conceivable program, but I could not find a way to express it, so I
+chugged away with my threads, semaphores and condition variables.  I
+convinced myself I was happy like this.
+</span></p>
 
 <p>Of course I knew about the event based approach, but it was more or
 less dismissed as a thing of the past, a while(1) loop to mimic the
-behavior of PLC&rsquo;s.  So almost every program I wrote, and every program
+behavior of PLC&#8217;s.  So almost every program I wrote, and every program
 I took over from others, were like Indiana Jones types of mazes full
 of deadlocks and race conditions.</p>
 
 <p>I thought I did something wrong, and so did many others like me.  I
 spent days and nights trying to understand, refactor, and redesign
 threaded programs.  What I found was a doubt that the thread based
-model actually didn&rsquo;t suit every problem,
+model actually didn&#8217;t suit every problem,
 <a href="http://www.cc.gatech.edu/classes/AY2009/cs4210_fall/papers/ousterhout-threads.pdf">Ous96</a>.
 There are quite a few domains, however, where thread based models
 shine. Usually in languages that come with thread support built-in,
@@ -76,13 +84,13 @@ look at threads again.</p>
     <id>http://troglobit.github.io/blog/2013/07/12/new-open-source-releases</id>
     <content type="html"><![CDATA[<p>Vacation time means catching up on my Open Source projects! :)</p>
 
-<p>Currently I&rsquo;m shaping up the home pages and this blog to improve the
+<p>Currently I&#8217;m shaping up the home pages and this blog to improve the
 easy access and overview of all the packages I maintain.  The
 following packages have new releases, or can expect new releases soon:</p>
 
 <ul>
 <li> <a href="/editline.html">Minix Editline</a> v1.14.1</li>
-<li> <a href="/smcroute.html">SMCRoute</a> v1.99.1 &ndash; There&rsquo;s even a v2.0.0 being
+<li> <a href="/smcroute.html">SMCRoute</a> v1.99.1 &#8211; There&#8217;s even a v2.0.0 being
  planned, with the core of SMCRoute available as a library</li>
 <li> <a href="/mrouted.html">mrouted</a> minor cleanup an sync with
  <a href="http://www.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/">OpenBSD</a></li>

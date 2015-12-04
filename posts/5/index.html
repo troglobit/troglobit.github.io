@@ -10,8 +10,8 @@
 
   
   <meta name="description" content="This is a security release of pimd, v2.1.6. The following fixes
-are included: CVE-2011-0007: &ldquo;Insecure file creation in /var/tmp&rdquo;
-Build &hellip;">
+are included: CVE-2011-0007: "Insecure file creation in /var/tmp"
+Build error on GNU/ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -102,7 +102,7 @@ Build &hellip;">
 are included:</p>
 
 <ul>
-<li><a href="https://security-tracker.debian.org/tracker/CVE-2011-0007">CVE-2011-0007</a>: <em>&ldquo;Insecure file creation in /var/tmp&rdquo;</em></li>
+<li><a href="https://security-tracker.debian.org/tracker/CVE-2011-0007">CVE-2011-0007</a>: <em>&#8220;Insecure file creation in /var/tmp&#8221;</em></li>
 <li>Build error on GNU/kFreeBSD</li>
 </ul>
 
@@ -206,7 +206,7 @@ AVAHI_DAEMON_DETECT_LOCAL=0
 </code></pre>
 
 <p>And also edit the file <code>/etc/avahi/avahi-daemon.conf</code>, the following is
-not the entire contents of the file, only the sections I&rsquo;ve changed:</p>
+not the entire contents of the file, only the sections I&#8217;ve changed:</p>
 
 <pre><code>[server]
 # Comment out any current/previous work arounds
@@ -313,7 +313,7 @@ See the <a href="https://github.com/troglobit/mrouted/blob/master/ChangeLog">Cha
   </header>
 
 
-  <div class="entry-content"><p>I&rsquo;m very pleased to present the next bug-fix release of <a href="/pimd.html">pimd</a>, v2.1.3.
+  <div class="entry-content"><p>I&#8217;m very pleased to present the next bug-fix release of <a href="/pimd.html">pimd</a>, v2.1.3.
 The real announcement for v2.1.2 I never really got around to write because
 the diligent <a href="http://packages.debian.org/source/pimd">Debian maintainer</a>, <a href="http://www.bobek.cz/">Antonin Kral</a> alerted me to some
 problems.  Which is great!  I do not have the resources to test the build on
@@ -350,12 +350,12 @@ Antonin!</p>
 
 
   <div class="entry-content"><p>Compared to OpenBSD and FreeBSD the NetBSD install was hard, really
-hard.  It wasn&rsquo;t until I stumbled across <a href="https://ezunix.org/index.php?title=NetBSD_5_on_KVM">this</a> that I managed to
+hard.  It wasn&#8217;t until I stumbled across <a href="https://ezunix.org/index.php?title=NetBSD_5_on_KVM">this</a> that I managed to
 convince myself to try it again.</p>
 
 <p>The trick seems to be to ignore as much as you can from other Internet
 tips.  NetBSD runs fine in KVM, so if someone says you need to run it in
-Qemu mode &mdash; don&rsquo;t believe the hype.  OK, in <code>virt-manager</code> there
+Qemu mode &mdash; don&#8217;t believe the hype.  OK, in <code>virt-manager</code> there
 is no preset defaults for NetBSD, so I went with a generic OS and tried
 starting the install from there.  The kernel hangs before it probes USB,
 or it segfaults.</p>
@@ -365,7 +365,7 @@ ACPI and selected the pcnet NIC instead of the default <code>ne2k-pci</code>.
 Running the default options in the NetBSD 5.0.2 installer, and the
 bootloader after install, works fine.</p>
 
-<p>If you still don&rsquo;t manage to get it running check the KVM home page for
+<p>If you still don&#8217;t manage to get it running check the KVM home page for
 <a href="http://www.linux-kvm.org/page/Bugs">known bugs</a> and workarounds.  Sometimes it helps adding
 <code>-no-kvm-irqchip</code> or <code>-no-kvm-pit</code>. However, <code>virt-manager</code> does not
 seem to support these options yet, so you must run from the command
@@ -531,13 +531,13 @@ download now!  Noteworthy changes and additions:</p>
   </header>
 
 
-  <div class="entry-content"><p>A small heads-up, I&rsquo;ve migrated the Minix editline project from Bazaar
+  <div class="entry-content"><p>A small heads-up, I&#8217;ve migrated the Minix editline project from Bazaar
 to GIT.  The new URL for keeping tabs on your favourite free
 <code>readline()</code> clone is:</p>
 
 <blockquote><p><a href="http://git.troglobit.com/editline.git">http://git.vmlinux.org/editline.git/</a></p></blockquote>
 
-<p>I&rsquo;m currently working on fixing up the tree and doing some house
+<p>I&#8217;m currently working on fixing up the tree and doing some house
 cleaning &mdash; including making more stuff configurable &mdash; before
 releasing a 1.14.0 later on.</p>
 
@@ -594,7 +594,7 @@ automatically when you push to it.</p>
 <pre><code>$ cp ~/public_html/programming/post-update projectX.git/hooks/
 </code></pre>
 
-<p>Change how the &ldquo;Owner&rdquo; field in gitweb is displayed to include an
+<p>Change how the &#8220;Owner&#8221; field in gitweb is displayed to include an
 obfuscated email address.</p>
 
 <pre><code>$ vi projectX.git/config
@@ -602,7 +602,7 @@ obfuscated email address.</p>
     owner = "Joachim Nilsson &lt;troglobit()vmlinux!org&gt;"
 </code></pre>
 
-<p>These steps have become so common to me that I&rsquo;ve setup a script to
+<p>These steps have become so common to me that I&#8217;ve setup a script to
 create server side git repositories.  You can now push to the server,
 after having setup remote location on the client.</p>
 
@@ -640,7 +640,7 @@ $ git push --tags
 
   <div class="entry-content"><p>You need git, and bazaar obviously.  Also install bzr-fastimport, it
 contains the export plugin as well. The rest is a rip off from the
-folloing URL: <a href="http://fthieme.net/en/drupal6/node/77">http://fthieme.net/en/drupal6/node/77</a></p>
+folloing URL: http://fthieme.net/en/drupal6/node/77</p>
 
 <pre><code>git init project.git
 cd project.git

@@ -9,8 +9,8 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="&ldquo;Enable all the warnings!&rdquo; This is one of the truths you learn when you start working with C. Most
-of the time adding CPPFLAGS="-W -Wall &hellip;">
+  <meta name="description" content="``Enable all the warnings!'' This is one of the truths you learn when you start working with C. Most
+of the time adding CPPFLAGS="-W -Wall -Werror" &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -94,11 +94,11 @@ of the time adding CPPFLAGS="-W -Wall &hellip;">
   </header>
 
 
-<div class="entry-content"><blockquote><p>&ldquo;Enable <em>all</em> the warnings!&rdquo;</p></blockquote>
+<div class="entry-content"><blockquote><p>&#8220;Enable <em>all</em> the warnings!&#8221;</p></blockquote>
 
 <p>This is one of the truths you learn when you start working with C.  Most
 of the time adding <code>CPPFLAGS="-W -Wall -Werror"</code> is all you need to find
-all the nasty bugs.  And if that&rsquo;s not enough, there are tons of tools
+all the nasty bugs.  And if that&#8217;s not enough, there are tons of tools
 for static code analysis, like <code>scan-build</code> in
 <a href="http://clang-analyzer.llvm.org/scan-build.html">Clang</a>, and
 <a href="https://scan.coverity.com/">Coverity Scan</a>, to help you <em>find all the
@@ -106,9 +106,9 @@ bugs</em>!</p>
 
 <p>However, these pesky warnings (some of which cannot even be disabled!)
 are sometimes more of a nuisance than help.  Sometimes you <em>know</em> that
-some parameters to a function will remain unused &ndash; it&rsquo;s a callback, and
-you don&rsquo;t need all the data given to you.  So you start adding all kinds
-of voodoo, like <code>__attribute__ ((unused))</code> &hellip; seriously?</p>
+some parameters to a function will remain unused &#8211; it&#8217;s a callback, and
+you don&#8217;t need all the data given to you.  So you start adding all kinds
+of voodoo, like <code>__attribute__ ((unused))</code> &#8230; seriously?</p>
 
 <!-- more -->
 
@@ -169,12 +169,12 @@ allow this <em>much more readable</em> version?</p>
 
 
 <p>The human eye is marvellous at finding little things that stick out,
-but when there&rsquo;s nothing but annoying things on the screen we can no
+but when there&#8217;s nothing but annoying things on the screen we can no
 longer see the most obvious pointer casting bugs, and we get sloppy.</p>
 
-<p>I&rsquo;m seriously considering adding some kind of <code>--developer-mode</code> to my
+<p>I&#8217;m seriously considering adding some kind of <code>--developer-mode</code> to my
 own projects which will warn like crazy, as usual, and as soon as I turn
-it off (default) complete silence will arrive.  That&rsquo;s how sick and
+it off (default) complete silence will arrive.  That&#8217;s how sick and
 tired I am of <em>all the warnings</em> and the resulting almost completely
 unreadable code.</p>
 

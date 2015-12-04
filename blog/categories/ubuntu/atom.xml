@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ubuntu | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/ubuntu/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-11-28T20:17:42+01:00</updated>
+  <updated>2015-12-05T00:29:05+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -85,7 +85,7 @@ AVAHI_DAEMON_DETECT_LOCAL=0
 </code></pre>
 
 <p>And also edit the file <code>/etc/avahi/avahi-daemon.conf</code>, the following is
-not the entire contents of the file, only the sections I&rsquo;ve changed:</p>
+not the entire contents of the file, only the sections I&#8217;ve changed:</p>
 
 <pre><code>[server]
 # Comment out any current/previous work arounds
@@ -138,8 +138,8 @@ Share in iTunes:</p>
     <link href="http://troglobit.github.io/blog/2010/05/01/howto-move-window-buttons-back-to-the-right-hand-side/"/>
     <updated>2010-05-01T16:46:57+02:00</updated>
     <id>http://troglobit.github.io/blog/2010/05/01/howto-move-window-buttons-back-to-the-right-hand-side</id>
-    <content type="html"><![CDATA[<p>When you&rsquo;ve installed Ubuntu 10.04 you might want to have the window
-controls back to the right side, where you&rsquo;re used to having them.  Use
+    <content type="html"><![CDATA[<p>When you&#8217;ve installed Ubuntu 10.04 you might want to have the window
+controls back to the right side, where you&#8217;re used to having them.  Use
 the following simple command:</p>
 
 <pre><code>gconftool-2 --set /apps/metacity/general/button_layout --type string "menu:minimize,maximize,close"
@@ -157,12 +157,12 @@ mistake.  If I disregard the total dpkg meltdown that I, as usually, had
 to resolve manually there still remains this recurring madness called
 Network Manager.</p>
 
-<p>I&rsquo;m an engineer.  I have a masters degree in computer engineering.  I
+<p>I&#8217;m an engineer.  I have a masters degree in computer engineering.  I
 have worked professionally with GNU/Linux since 2000 and been a die hard
 user of it since I left OS/2 behind in 1996.  But come on!  Why does it
 take a software engineer to perform a simple upgrade?  Even worse, why
 do I have to be a network engineering specialist to figure out why
-simple wired ethernet doesn&rsquo;t work out of the box?</p>
+simple wired ethernet doesn&#8217;t work out of the box?</p>
 
 <p>Network Manager fails completely to:</p>
 
@@ -174,7 +174,7 @@ simple wired ethernet doesn&rsquo;t work out of the box?</p>
 
 
 <p>Sorry, but that is completely inexcusable!  <a href="http://www.gnome.org/projects/NetworkManager/">Network Manager</a>, you
-suck!  &ldquo;Pain-Free Networking&rdquo;, my ass! :-P</p>
+suck!  &#8220;Pain-Free Networking&#8221;, my ass! :-P</p>
 ]]></content>
   </entry>
   
@@ -183,7 +183,7 @@ suck!  &ldquo;Pain-Free Networking&rdquo;, my ass! :-P</p>
     <link href="http://troglobit.github.io/blog/2008/02/23/suspend-slash-resume-nightmare-in-ubuntu/"/>
     <updated>2008-02-23T20:34:44+01:00</updated>
     <id>http://troglobit.github.io/blog/2008/02/23/suspend-slash-resume-nightmare-in-ubuntu</id>
-    <content type="html"><![CDATA[<p>I&rsquo;ve had my ThinkPad T43 for a while now and I&rsquo;m really pleased with it,
+    <content type="html"><![CDATA[<p>I&#8217;ve had my ThinkPad T43 for a while now and I&#8217;m really pleased with it,
 everything just works!  It took some pleading and, I admit, begging to
 persuade my boss and the IT department to buy it since they usually only
 buy from Dell or HP.  This was mainly due to care packs and payment plans
@@ -192,7 +192,7 @@ pay for straight up.  So if I were a Lenovo sales person, that was
 something I would fix to boost my sales.</p>
 
 <p>This post is however not about sales, brands of laptops or how the cat
-ate my homework &hellip; well, OK, almost.  Ubuntu/Gnome ate my resume!</p>
+ate my homework &#8230; well, OK, almost.  Ubuntu/Gnome ate my resume!</p>
 
 <p>When I initially installed the laptop, early 2006, I went with
 Ubuntu 5.10.  Ubuntu is great Linux dist!  Ubuntu is to Debian what
@@ -215,13 +215,13 @@ have been working on fixing it all again.</p>
 
 <p>It turns out that if I run the script <code>/etc/acpi/suspend.sh</code> manually
 from the prompt suspend and resume works fine, even with X.  But when I
-press Fn-F4 from within X or select &ldquo;Suspend&rdquo; from the Gnome &ldquo;logout&rdquo;
+press Fn-F4 from within X or select &#8220;Suspend&#8221; from the Gnome &#8220;logout&#8221;
 menu the machine happily goes to sleep but always fails at resume.  I
 always get a black screen!</p>
 
-<p>Why is it so complicated?  I really don&rsquo;t understand.  What is it doing?</p>
+<p>Why is it so complicated?  I really don&#8217;t understand.  What is it doing?</p>
 
-<p>OK, so I started digging.  The Fn-F4 button didn&rsquo;t work in the console
+<p>OK, so I started digging.  The Fn-F4 button didn&#8217;t work in the console
 so that seemed like a first thing to investigate.  I started
 <code>acpi_listen</code> and pressed Fn-F4, bingo!  It returned a key press.  A
 grep later and I had found it in <code>/etc/acpi/events/ibm-sleepbtn</code>,
@@ -233,7 +233,7 @@ stuff and, yes it works!  At least from the console, not from X/Gnome.
 Aha, so we have a Gnome app that does magic things, HAL +
 gnome-power-manager.</p>
 
-<p>I didn&rsquo;t get any further.  Removing gnome-power-manager fixed my
+<p>I didn&#8217;t get any further.  Removing gnome-power-manager fixed my
 problem, I can now press Fn-F4 from Gnome, close the lid, come back the
 next morning and sucessfully resume when opening the lid again.</p>
 
@@ -247,21 +247,21 @@ to learn this stuff all over again every time I upgrade?</p>
     <link href="http://troglobit.github.io/blog/2007/07/12/netapplet-patchwork/"/>
     <updated>2007-07-12T11:37:38+02:00</updated>
     <id>http://troglobit.github.io/blog/2007/07/12/netapplet-patchwork</id>
-    <content type="html"><![CDATA[<p>I think I&rsquo;ve finally done it &mdash; achieved my ultimate goal of
+    <content type="html"><![CDATA[<p>I think I&#8217;ve finally done it &mdash; achieved my ultimate goal of
 combining the awesome powers of the Debian <code>/etc/network/interfaces</code>
 file with <code>guessnet</code>, <code>wpa_supplicant</code>, <code>ifplugd</code> and now also with
 netapplet!</p>
 
-<p>I&rsquo;ve been looking for a way to just point-and-click to select a
+<p>I&#8217;ve been looking for a way to just point-and-click to select a
 different access point, both at home and at work.  To that end I have a
 pretty advanced interfaces file that automatically detects where I am,
 what I am connected with (cable/wireless) and then, like magic, sets it
 all up.</p>
 
 <p>Several times now I have tried, really hard, to get used to and live my
-life with <a href="http://www.gnome.org/projects/NetworkManager/">Network Manager</a>, but it&rsquo;s just plain impossible.  It
-still doesn&rsquo;t integrate well with Debian ifupdown et consortes and until
-now I&rsquo;ve been using <code>ifup</code> to select different wireless mappings:</p>
+life with <a href="http://www.gnome.org/projects/NetworkManager/">Network Manager</a>, but it&#8217;s just plain impossible.  It
+still doesn&#8217;t integrate well with Debian ifupdown et consortes and until
+now I&#8217;ve been using <code>ifup</code> to select different wireless mappings:</p>
 
 <pre><code>$ sudo ifdown eth2; sudo ifup eth2=WLAN
 Password: ***********
@@ -271,12 +271,12 @@ Password: ***********
 [Use family WRT54GL access point]
 </code></pre>
 
-<p>For the last couple of days I&rsquo;ve been looking into getting the old
-(obsoleted?) Netapplet from Novell.  Since I&rsquo;m a Ubuntu user I&rsquo;m using
+<p>For the last couple of days I&#8217;ve been looking into getting the old
+(obsoleted?) Netapplet from Novell.  Since I&#8217;m a Ubuntu user I&#8217;m using
 the Debian patched-up version by <a href="http://mjg59.livejournal.com/">Matthew Garrett</a> (thanks!).  I
 remember using it a couple of years back, at that time I think it worked
-but now it didn&rsquo;t &mdash; not well at least.  I found several bugs and
-quirks that I have now fixed and published in my own &ldquo;repository&rdquo;.</p>
+but now it didn&#8217;t &mdash; not well at least.  I found several bugs and
+quirks that I have now fixed and published in my own &#8220;repository&#8221;.</p>
 
 <p>I have published everything as a Bazaar branch, one changeset per patch
 (small patches), at <a href="https://web.archive.org/web/20090528101921/http://vmlinux.org/jocke/bzr/netapplet-1.0.8/">http://vmlinux.org/jocke/bzr/netapplet-1.0.8</a>,

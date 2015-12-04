@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Misc | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/misc/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-11-28T20:17:42+01:00</updated>
+  <updated>2015-12-05T00:29:05+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -18,11 +18,11 @@
     <link href="http://troglobit.github.io/blog/2013/06/07/proof-of-life/"/>
     <updated>2013-06-07T22:31:00+02:00</updated>
     <id>http://troglobit.github.io/blog/2013/06/07/proof-of-life</id>
-    <content type="html"><![CDATA[<p>There is a certain &ldquo;burstyness&rdquo; to the way I work on my open source
+    <content type="html"><![CDATA[<p>There is a certain &#8220;burstyness&#8221; to the way I work on my open source
 projects.  It seems it often coincides with intense work loads during
 new release cycles at <a href="http://www.westermo.com">work</a>.</p>
 
-<p>However, I&rsquo;ve just finished restoring two pages that got lost in the
+<p>However, I&#8217;ve just finished restoring two pages that got lost in the
 big server crash:</p>
 
 <ul>
@@ -41,7 +41,7 @@ maintaining records of the original pages I lost!</p>
     <link href="http://troglobit.github.io/blog/2013/02/17/resurrection/"/>
     <updated>2013-02-17T13:37:00+01:00</updated>
     <id>http://troglobit.github.io/blog/2013/02/17/resurrection</id>
-    <content type="html"><![CDATA[<p>Quite some time has passed now since our old site, <a href="http://vmlinux.org,">http://vmlinux.org,</a>
+    <content type="html"><![CDATA[<p>Quite some time has passed now since our old site, http://vmlinux.org,
 crashed and burned, and with it much of my previous Open Source work
 and blogs.  Tech blog entries, archives for the projects I maintain,
 lost.</p>
@@ -62,7 +62,7 @@ serving generated tarballs and the like.  See <a href="ftp://troglobit.com">my
 FTP</a> for project downloads.</p>
 
 <p>I had also started missing blogging for some reason. So it started to
-make sense to roll something on my own again.  Well, here&rsquo;s me
+make sense to roll something on my own again.  Well, here&#8217;s me
 starting over.</p>
 
 <p>See you soon with more posts about open source projects, releases of

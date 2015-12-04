@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Opensource | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/opensource/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2015-11-28T20:17:42+01:00</updated>
+  <updated>2015-12-05T00:29:05+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -20,11 +20,11 @@
     <id>http://troglobit.github.io/blog/2015/07/02/howto-using-lite-with-a-git-based-application</id>
     <content type="html"><![CDATA[<p>Years ago while looking for a fast <a href="https://en.wikipedia.org/wiki/Init">init</a> replacement for <a href="http://westermo.com/">work</a>,
 I found <a href="http://helllabs.org/finit/">Finit</a>.  Originally written by <a href="https://github.com/cmatsuoka">Claudio Matsuoka</a> to act
-as a drop-in replacement for the <a href="https://en.wikipedia.org/wiki/Asus_Eee_PC">Asus EeePC</a> <a href="http://wiki.eeeuser.com/boot_process:the_boot_process">fastinit</a>, <em>&ldquo;gaps
-filled with frog DNA &hellip;&rdquo;</em></p>
+as a drop-in replacement for the <a href="https://en.wikipedia.org/wiki/Asus_Eee_PC">Asus EeePC</a> <a href="http://wiki.eeeuser.com/boot_process:the_boot_process">fastinit</a>, <em>&#8220;gaps
+filled with frog DNA &hellip;&#8221;</em></p>
 
 <p>Until I found Finit I had always been in awe of those venturing into the
-realm of <a href="http://0pointer.net/blog/">PID 1</a>.  However, learning from the simplicity of Claudio&rsquo;s
+realm of <a href="http://0pointer.net/blog/">PID 1</a>.  However, learning from the simplicity of Claudio&#8217;s
 code I realized that although PID 1 at times is indistinguishable from
 magic, it is really not that hard to master.  <a href="https://github.com/troglobit/finit">My version of Finit</a>
 is available on GitHub.</p>
@@ -73,7 +73,7 @@ uses both <code>-lite</code> and <code>-luev</code>.  The latter is my small eve
 <a href="https://github.com/troglobit/libuev">libuEv</a>.  For help using <code>-lite</code> with the GNU configure and build
 system, see <a href="https://github.com/troglobit/inadyn">inadyn</a>.</p>
 
-<p>Libite builds in &ldquo;silent mode&rdquo; by default, use <code>make V=1</code> (like the
+<p>Libite builds in &#8220;silent mode&#8221; by default, use <code>make V=1</code> (like the
 kernel) to get a more verbose output, usable for autobuilders etc.</p>
 ]]></content>
   </entry>
@@ -85,13 +85,13 @@ kernel) to get a more verbose output, usable for autobuilders etc.</p>
     <id>http://troglobit.github.io/blog/2015/03/06/inetd-support-in-finit-v1-dot-12</id>
     <content type="html"><![CDATA[<p>A steady flow of features, and releases, is key to keeping any project
 alive.  Recently I ticked off another item in the <a href="/finit.html">Finit</a>
-TODO list &hellip;</p>
+TODO list &#8230;</p>
 
 <p>Finit v1.12 now comes with a built-in inetd!  You no longer need an
 external inetd daemon to launch services on demand.</p>
 
-<p>The good news doesn&rsquo;t stop there, this little inetd actually supports a
-poor man&rsquo;s tcpwrappers!</p>
+<p>The good news doesn&#8217;t stop there, this little inetd actually supports a
+poor man&#8217;s tcpwrappers!</p>
 
 <pre><code>inetd ssh/tcp          nowait [2345] /sbin/dropbear -i -R -F
 inetd ssh@eth0:222/tcp nowait [2345] /sbin/dropbear -i -R -F
@@ -102,7 +102,7 @@ the <a href="https://matt.ucc.asn.au/dropbear/dropbear.html">Dropbear SSH</a>
 server on demand on port 22 (default ssh/tcp port in <code>/etc/services</code>) on
 <em>all</em> interfaces except on <code>eth0</code>, which in your case is the Internet
 (WAN) interface, here you want SSH to run on port 222.  Actually, you
-don&rsquo;t want port 22 open at all on <code>eth0</code> &hellip; so finit takes care of this
+don&#8217;t want port 22 open at all on <code>eth0</code> &#8230; so finit takes care of this
 for you!  Seriously, it just works, no need for messing about with that
 nasty old <code>iptables</code> anymore!</p>
 
@@ -131,7 +131,7 @@ default.  To enable it you need two things:</p>
 </ol>
 
 
-<p>Assuming you&rsquo;ve installed the default set of plugins, the following two
+<p>Assuming you&#8217;ve installed the default set of plugins, the following two
 lines can be added:</p>
 
 <pre><code>inetd time/udp   wait [2345] internal
@@ -162,7 +162,7 @@ Sat Mar  7 08:48:58 CET 2015
 <h3>Changes</h3>
 
 <ul>
-<li>Add support for built-in inetd super server &ndash; launch services on
+<li>Add support for built-in inetd super server &#8211; launch services on
 demand.  Supports filtering per interface and custom Inet ports.</li>
 <li>Upgrade to <a href="https://github.com/troglobit/libuev">libuEv</a> v1.1.0 to better handle error conditions.</li>
 <li>Allow mixed case config directives in <code>finit.conf</code></li>
@@ -182,10 +182,10 @@ this fallback as console.  Should improve usability in some use cases.</li>
 <h3>Fixes</h3>
 
 <ul>
-<li>Revert &ldquo;Use vfork() instead of fork() before exec()&rdquo; from v1.11.  It
+<li>Revert &#8220;Use vfork() instead of fork() before exec()&#8221; from v1.11.  It
 turned out to not work so well after all.  For instance, launching
 TTYs in a background process completely blocked inetd services from
-even starting up listening sockets &hellip; proper fork seems to work fine
+even starting up listening sockets &#8230; proper fork seems to work fine
 though.  This is the casue for <em>yanking</em> the <a href="https://github.com/troglobit/finit/compare/1.10...1.11">1.11</a> release.</li>
 <li>Trap segfaults caused by external plugins/callbacks in a sub-process.
 This prevents a single programming mistake in by a 3rd party developer
@@ -211,7 +211,7 @@ replaced by <a href="/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/">v1.12</
 <!-- more -->
 
 
-<p>I&rsquo;m very pleased to announce <a href="/finit.html">Finit v1.11</a> — this is the
+<p>I&#8217;m very pleased to announce <a href="/finit.html">Finit v1.11</a> — this is the
 episode where two of my projects finally get married! ツ</p>
 
 <h3>Changes</h3>
@@ -219,9 +219,9 @@ episode where two of my projects finally get married! ツ</p>
 <ul>
 <li>Now using the asynchronous <a href="https://github.com/troglobit/libuev">libuEv</a> library for handling all events:
 signals, timers and listening to sockets or file descriptors.</li>
-<li>Rename NEWS.md &ndash;> CHANGELOG.md, with symlinks for <code>make install</code></li>
-<li>Attempt to align with <a href="http://keepachangelog.com">http://keepachangelog.com</a> for the ChangeLog</li>
-<li><a href="https://travis-ci.org/troglobit/finit">Travis CI</a> now only invokes <a href="https://scan.coverity.com/projects/3545">Coverity Scan</a> from the &lsquo;dev&rsquo; branch.  This
+<li>Rename NEWS.md &#8211;> CHANGELOG.md, with symlinks for <code>make install</code></li>
+<li>Attempt to align with http://keepachangelog.com for the ChangeLog</li>
+<li><a href="https://travis-ci.org/troglobit/finit">Travis CI</a> now only invokes <a href="https://scan.coverity.com/projects/3545">Coverity Scan</a> from the &#8216;dev&#8217; branch.  This
 means that all development, except documentation updates, must go into
 that branch.</li>
 </ul>
@@ -243,7 +243,7 @@ commit <a href="https://github.com/troglobit/finit/commit/dea3ae8">dea3ae8</a> f
     <link href="http://troglobit.github.io/blog/2015/01/08/recent-open-source-work/"/>
     <updated>2015-01-08T01:57:14+01:00</updated>
     <id>http://troglobit.github.io/blog/2015/01/08/recent-open-source-work</id>
-    <content type="html"><![CDATA[<p>I&rsquo;m a coder, not a writer.  Here&rsquo;s what I&rsquo;ve been working on during the
+    <content type="html"><![CDATA[<p>I&#8217;m a coder, not a writer.  Here&#8217;s what I&#8217;ve been working on during the
 winter holidays:</p>
 
 <ul>
@@ -266,14 +266,14 @@ available today.</li>
 is likely the last release ever of the old pimd, unless someone starts
 paying me to work on it.</p>
 
-<p>&hellip; or more people step up to help.  Both the Xorp PIM-SM and the
+<p>&#8230; or more people step up to help.  Both the Xorp PIM-SM and the
 upcoming Quagga PIM-SSM implementations are in better shape.  The only
-thing old pimd has got going for it is the license.  It&rsquo;s 3-clause
+thing old pimd has got going for it is the license.  It&#8217;s 3-clause
 BSD, so very liberal.</p></li>
 </ul>
 
 
-<p>If you&rsquo;re interested in pitching in, on any of my projects, just send me
+<p>If you&#8217;re interested in pitching in, on any of my projects, just send me
 an email or connect with me on GitHub!</p>
 ]]></content>
   </entry>
@@ -312,16 +312,16 @@ of <code>mrouted</code>, after being by Mr Waitzman :)</li>
 
 <ul>
 <li>Fix issue with older BSD kernels, mainly for current FreeBSD 10 and
-older, that don&rsquo;t really give RAW sockets but byte swap <code>ip_len</code>
+older, that don&#8217;t really give RAW sockets but byte swap <code>ip_len</code>
 field, Olivier Cochard-Labbé (<a href="https://github.com/ocochard">@ocochard</a>)</li>
 <li>Build fixes for FreeBSD, should make maintaining ports easier :)</li>
 <li>Change from <code>select()</code> to <code>poll()</code> due to descriptor limits, e.g.,
 on BSD.</li>
 <li>UNIX 2038 first audit, inspired by OpenBSD.  Cleanup type confusion
 <code>int/u_long</code> where it should be <code>time_t</code>.  Also, clarify that <code>genid</code>
-is OK, since it&rsquo;s used and stored as unsigned 32-bit integer.</li>
+is OK, since it&#8217;s used and stored as unsigned 32-bit integer.</li>
 <li>Lots of minor fixes detected by Coverity Scan and Clang scan-build
-<a href="https://scan.coverity.com/projects/3320">https://scan.coverity.com/projects/3320</a></li>
+https://scan.coverity.com/projects/3320</li>
 </ul>
 
 ]]></content>
