@@ -3,7 +3,7 @@ layout: page
 title: "Fast, extensible init for Linux systems"
 sharing: true
 footer: true
-date: 2015-11-28 14:02 +0100
+date: 2015-12-04 19:39 +0100
 comments: false
 ---
 
@@ -90,8 +90,8 @@ Issue tracker and GIT repository available at GitHub:
 * [README][]
 * [TODO](https://github.com/troglobit/finit/blob/master/TODO.md)
 * [Issue Tracker](http://github.com/troglobit/finit/issues)
-* [finit-2.3.tar.xz](ftp://troglobit.com/finit/finit-2.3.tar.xz),
-  [MD5](ftp://troglobit.com/finit/finit-2.3.tar.xz.md5)
+* [finit-2.4.tar.xz](ftp://troglobit.com/finit/finit-2.4.tar.xz),
+  [MD5](ftp://troglobit.com/finit/finit-2.4.tar.xz.md5)
 
 See also the [Free(code) page](http://freecode.com/projects/finit).
 
