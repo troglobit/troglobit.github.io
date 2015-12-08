@@ -5,7 +5,8 @@
 url: http://troglobit.github.io
 title: Troglobit
 #subtitle: En bit av universum ...
-subtitle: '"Elegance is not a dispensable luxury" &mdash; Edsger Wybe Dijkstra'
+#subtitle: '"Elegance is not a dispensable luxury" &mdash; Edsger Wybe Dijkstra'
+subtitle: 'Embedded network systems hacker. Multicast maniac.'
 author: Joachim Nilsson
 simple_search: https://www.google.com/search
 description: UNIX, Linux, Networking, Multicast, Open Source, Tech, Tools & Trivia
