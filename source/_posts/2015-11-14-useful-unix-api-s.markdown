@@ -12,8 +12,8 @@ UNIX API:s.  We concluded that despite having worked professionally with
 UNIX for over a decade, it is still very satisfying finding gems like
 these.
 
-Most people are unaware they existing and therefore often end up rolling
-their own (buggy) implementations.
+Most people are completely unaware they exist and end up rolling their
+own (buggy) implementations.
 
 
 SysV `search.h`
