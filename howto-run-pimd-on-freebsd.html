@@ -91,15 +91,17 @@ created a setup to test pimd <a href="https://github.com/troglobit/pimd/issues/5
 following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and
 Qemu 2.3.0, is used:</p>
 
-<pre><code>.--------.    .----.    .----.    .----------.
-| Sender |----| R2 |----| R3 |----| Receiver |
-'--------'    '----'    '----'    '----------'
+<pre><code>.--------. net1 .----. net2 .----. net3 .----------.
+| Sender |------| R2 |------| R3 |------| Receiver |
+'--------'      '----'      '----'      '----------'
 </code></pre>
 
-<p>The lines connecting the boxes are actually Linux bridge devices (br).
-Only R2 and R3 run FreeBSD v10.2, 64-bit.  The <code>Sender&lt;--&gt;R2</code> and the
-<code>R3-Receiver</code> networks are both setup using DHCP client, DHCP server
-runs on the Linux bridges.  Only the <code>R2&lt;--&gt;R3</code> network is static, using
+<p>The networks between the boxes are actually Linux bridge devices (br),
+on which you may have to <a href="/multicast-howto.html#roll-your-own">disable IGMP/MLD snooping</a> to get <code>pimd</code>
+to run smoothly.  Only R2 and R3 run FreeBSD v10.2, 64-bit.  The <code>net1</code>,
+between sender and <code>R2</code>, and <code>net3</code>, between <code>R3</code> and the receiver, are
+both setup using simple DHCP client.  The Linux bridges have a DHCP
+server running.  Only <code>net2</code> between the two routers is static, using
 <code>20.30.0.0/24</code>.</p>
 
 <h2>FreeBSD Setup</h2>
@@ -110,6 +112,16 @@ runs on the Linux bridges.  Only the <code>R2&lt;--&gt;R3</code> network is stat
 kernel module:</p>
 
 <pre><code>ip_mroute_load="yes"
+</code></pre>
+
+<p>If you want to serial console access to your FreeBSD, or run FreeBSD in
+Qemu (virt-manager), you may want to add the following lines as well to
+<code>/boot/loader.conf</code>:</p>
+
+<pre><code>boot_multicons="YES"
+boot_serial="YES"
+comconsole_speed="115200"
+console="comconsole,vidconsole"
 </code></pre>
 
 <p>In <code>/etc/rc.conf</code> there are several lines that need to be added, both to
