@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "HowTo: Use pre-build packages on NetBSD"
+title: "HowTo: Use NetBSD pre-built packages"
 date: 2015-07-30 11:13
 comments: true
 sharing: true
