@@ -1,9 +1,9 @@
 ---
 layout: page
-title: "uftpd -- the no nonsense (T)FTP server"
+title: "uftpd -- no nonsense TFTP/FTP server"
 sharing: true
 footer: true
-date: 2015-07-23 02:07 +0100
+date: 2016-01-09 18:37 +0100
 comments: false
 ---
 
@@ -11,26 +11,17 @@ comments: false
 
 Tired of confusing configuration files and security features you don't need?
 
-* uftpd supports both FTP and TFTP,
-* Has no confusing configuration file,
-* Listens to port ftp/tcp and tftp/udp found in `/etc/services`
-* Serves files from the ftp user's home directory, as specified in `/etc/passwd`
-* Can run from inetd or as a standalone daemon
+* uftpd supports both FTP and TFTP
+* Has no confusing configuration file
+* Listens to port `ftp/tcp` and `tftp/udp` found in `/etc/services`
+* Serves files from the ftp user's $HOME, as specified in `/etc/passwd`
+* Can run from `inetd` or as a standalone daemon
 * Can run as root, with chroot and privsep, or as a regular user
 * Supports TFTP blocksize negotiation, [RFC 2348](http://tools.ietf.org/html/rfc2348)
 
-It just works!
+Basically, it just works!
 
-**Disclaimer:** *uftpd was never made for the Internet, it may work
-  and it may even be secure.  The developer has employed some of the
-  most common techniques, but avoided others in an effort to keep
-  uftpd user friendly.  Nevertheless, uftpd is intended for home
-  users, developers of embedded systems (me), or other users inside an
-  already secured local area network.  If you want something really
-  secure, you should probably try
-  [vsftpd](https://security.appspot.com/vsftpd.html)*
-
-Want to know why this exists?  If you're really interested, read
+Curious to know why uftpd exists?  If you really are interested, read
 [my rant](/blog/2014/05/04/why-write-your-own-ftp-server/) for
 background and context :)
 
@@ -38,13 +29,20 @@ background and context :)
 * [README](https://github.com/troglobit/uftpd/blob/master/README.md)
 * [TODO](https://github.com/troglobit/uftpd/blob/master/TODO.md)
 * [Issue Tracker](http://github.com/troglobit/uftpd/issues)
-* [uftpd-1.9.tar.xz](ftp://troglobit.com/uftpd/uftpd-1.9.tar.xz),
-  [MD5](ftp://troglobit.com/uftpd/uftpd-1.9.tar.xz.md5)
+* [uftpd-1.9.1.tar.xz](ftp://troglobit.com/uftpd/uftpd-1.9.1.tar.xz),
+  [MD5](ftp://troglobit.com/uftpd/uftpd-1.9.1.tar.xz.md5)
 * [uftpd_1.9-1_amd64.deb](ftp://troglobit.com/uftpd/uftpd_1.9-1_amd64.deb),
   [changes](ftp://troglobit.com/uftpd/uftpd_1.9-1_amd64.changes)
 
-See also the [OpenHub page](https://www.openhub.net/p/uftpd/), or the
-(sadly) dormant [Free(code) page](http://freecode.com/projects/uftpd).
+See also the [OpenHub page](https://www.openhub.net/p/uftpd/), the cool
+[Fresh(code) page](http://freshcode.club/projects/uftpd), or the (sadly)
+dormant [Free(code) page](http://freecode.com/projects/uftpd).
+
+**Disclaimer:** uftpd was not made for the Internet, it may work and it
+  may even be secure.  Some of the most common security best practises
+  have been employed, while some have been avoided in an effort to keep
+  uftpd user friendly.  If you want something really secure, you should
+  probably try [vsftpd](https://security.appspot.com/vsftpd.html).
 
 <!--
   -- Local Variables:
