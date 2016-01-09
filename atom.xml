@@ -4,7 +4,7 @@
   <title><![CDATA[Troglobit]]></title>
   <link href="http://troglobit.github.io/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2016-01-09T19:13:09+01:00</updated>
+  <updated>2016-01-09T19:44:27+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -80,11 +80,10 @@ in some tricky cases, e.g. when removing entries while iterating.</p>
 <li>STAILQ: Single linked tail queue</li>
 <li>SIMPLEQ: Simple queue</li>
 <li>TAILQ: Tail queue</li>
-<li>CIRCLEQ: Circular queue</li>
 </ul>
 
 
-<p>Here&#8217;s a few of them:</p>
+<p>Here&#8217;s a few of them, this example for doubly linked lists:</p>
 
 <ul>
 <li><code>LIST_INIT()</code></li>
