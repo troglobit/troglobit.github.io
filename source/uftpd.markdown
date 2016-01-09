@@ -1,9 +1,9 @@
 ---
 layout: page
-title: "uftpd -- no nonsense TFTP/FTP server"
+title: "uftpd -- no nonsense FTP/TFTP server"
 sharing: true
 footer: true
-date: 2016-01-09 18:37 +0100
+date: 2016-01-09 18:44 +0100
 comments: false
 ---
 
@@ -21,10 +21,6 @@ Tired of confusing configuration files and security features you don't need?
 
 Basically, it just works!
 
-Curious to know why uftpd exists?  If you really are interested, read
-[my rant](/blog/2014/05/04/why-write-your-own-ftp-server/) for
-background and context :)
-
 * [Repository](http://github.com/troglobit/uftpd)
 * [README](https://github.com/troglobit/uftpd/blob/master/README.md)
 * [TODO](https://github.com/troglobit/uftpd/blob/master/TODO.md)
@@ -37,6 +33,10 @@ background and context :)
 See also the [OpenHub page](https://www.openhub.net/p/uftpd/), the cool
 [Fresh(code) page](http://freshcode.club/projects/uftpd), or the (sadly)
 dormant [Free(code) page](http://freecode.com/projects/uftpd).
+
+Curious to know why uftpd exists?  If you really are interested, read
+[my rant](/blog/2014/05/04/why-write-your-own-ftp-server/) for
+background and context :)
 
 **Disclaimer:** uftpd was not made for the Internet, it may work and it
   may even be secure.  Some of the most common security best practises
