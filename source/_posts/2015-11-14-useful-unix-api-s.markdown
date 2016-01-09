@@ -59,9 +59,8 @@ Several types of lists are supported:
 - STAILQ: Single linked tail queue
 - SIMPLEQ: Simple queue
 - TAILQ: Tail queue
-- CIRCLEQ: Circular queue
 
-Here's a few of them:
+Here's a few of them, this example for doubly linked lists:
 
 - `LIST_INIT()`
 - `LIST_EMPTY()`
