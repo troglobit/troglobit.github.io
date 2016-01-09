@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Uftpd &#8211; the No Nonsense (T)FTP Server - Troglobit</title>
+  <title>Uftpd &#8211; No Nonsense TFTP/FTP Server - Troglobit</title>
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="Uftpd -- the No Nonsense (T)FTP Server Jul 23rd, 2015 3:07 am Tired of confusing configuration files and security features you don't need? uftpd &hellip;">
+  <meta name="description" content="Uftpd -- No Nonsense TFTP/FTP Server Jan 9th, 2016 6:37 pm Tired of confusing configuration files and security features you don't need? uftpd &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,13 +76,13 @@
 <article role="article">
   
   <header>
-    <h1 class="entry-title">Uftpd &#8211; the No Nonsense (T)FTP Server</h1>
+    <h1 class="entry-title">Uftpd &#8211; No Nonsense TFTP/FTP Server</h1>
     <p class="meta">
 
 
 
 
-<time class='entry-date' datetime='2015-07-23T03:07:00+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2015</span></span> <span class='time'>3:07 am</span></time></p>
+<time class='entry-date' datetime='2016-01-09T18:37:00+01:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>6:37 pm</span></time></p>
   </header>
   
   <p><a href="https://github.com/troglobit/uftpd"><img style="position: absolute; top: 0; right: 0; border: none; box-shadow: none;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a></p>
@@ -90,28 +90,19 @@
 <p>Tired of confusing configuration files and security features you don&#8217;t need?</p>
 
 <ul>
-<li>uftpd supports both FTP and TFTP,</li>
-<li>Has no confusing configuration file,</li>
-<li>Listens to port ftp/tcp and tftp/udp found in <code>/etc/services</code></li>
-<li>Serves files from the ftp user&#8217;s home directory, as specified in <code>/etc/passwd</code></li>
-<li>Can run from inetd or as a standalone daemon</li>
+<li>uftpd supports both FTP and TFTP</li>
+<li>Has no confusing configuration file</li>
+<li>Listens to port <code>ftp/tcp</code> and <code>tftp/udp</code> found in <code>/etc/services</code></li>
+<li>Serves files from the ftp user&#8217;s $HOME, as specified in <code>/etc/passwd</code></li>
+<li>Can run from <code>inetd</code> or as a standalone daemon</li>
 <li>Can run as root, with chroot and privsep, or as a regular user</li>
 <li>Supports TFTP blocksize negotiation, <a href="http://tools.ietf.org/html/rfc2348">RFC 2348</a></li>
 </ul>
 
 
-<p>It just works!</p>
+<p>Basically, it just works!</p>
 
-<p><strong>Disclaimer:</strong> <em>uftpd was never made for the Internet, it may work
-  and it may even be secure.  The developer has employed some of the
-  most common techniques, but avoided others in an effort to keep
-  uftpd user friendly.  Nevertheless, uftpd is intended for home
-  users, developers of embedded systems (me), or other users inside an
-  already secured local area network.  If you want something really
-  secure, you should probably try
-  <a href="https://security.appspot.com/vsftpd.html">vsftpd</a></em></p>
-
-<p>Want to know why this exists?  If you&#8217;re really interested, read
+<p>Curious to know why uftpd exists?  If you really are interested, read
 <a href="/blog/2014/05/04/why-write-your-own-ftp-server/">my rant</a> for
 background and context :)</p>
 
@@ -120,15 +111,22 @@ background and context :)</p>
 <li><a href="https://github.com/troglobit/uftpd/blob/master/README.md">README</a></li>
 <li><a href="https://github.com/troglobit/uftpd/blob/master/TODO.md">TODO</a></li>
 <li><a href="http://github.com/troglobit/uftpd/issues">Issue Tracker</a></li>
-<li><a href="ftp://troglobit.com/uftpd/uftpd-1.9.tar.xz">uftpd-1.9.tar.xz</a>,
-<a href="ftp://troglobit.com/uftpd/uftpd-1.9.tar.xz.md5">MD5</a></li>
+<li><a href="ftp://troglobit.com/uftpd/uftpd-1.9.1.tar.xz">uftpd-1.9.1.tar.xz</a>,
+<a href="ftp://troglobit.com/uftpd/uftpd-1.9.1.tar.xz.md5">MD5</a></li>
 <li><a href="ftp://troglobit.com/uftpd/uftpd_1.9-1_amd64.deb">uftpd_1.9-1_amd64.deb</a>,
 <a href="ftp://troglobit.com/uftpd/uftpd_1.9-1_amd64.changes">changes</a></li>
 </ul>
 
 
-<p>See also the <a href="https://www.openhub.net/p/uftpd/">OpenHub page</a>, or the
-(sadly) dormant <a href="http://freecode.com/projects/uftpd">Free(code) page</a>.</p>
+<p>See also the <a href="https://www.openhub.net/p/uftpd/">OpenHub page</a>, the cool
+<a href="http://freshcode.club/projects/uftpd">Fresh(code) page</a>, or the (sadly)
+dormant <a href="http://freecode.com/projects/uftpd">Free(code) page</a>.</p>
+
+<p><strong>Disclaimer:</strong> uftpd was not made for the Internet, it may work and it
+  may even be secure.  Some of the most common security best practises
+  have been employed, while some have been avoided in an effort to keep
+  uftpd user friendly.  If you want something really secure, you should
+  probably try <a href="https://security.appspot.com/vsftpd.html">vsftpd</a>.</p>
 
 <!--
   -- Local Variables:
@@ -146,7 +144,7 @@ background and context :)</p>
 
 
 
-<time class='entry-date' datetime='2015-07-23T03:07:00+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2015</span></span> <span class='time'>3:07 am</span></time>
+<time class='entry-date' datetime='2016-01-09T18:37:00+01:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>6:37 pm</span></time>
         
       </p>
       
@@ -269,7 +267,7 @@ background and context :)</p>
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2015 - Joachim Nilsson -
+  Copyright &copy; 2016 - Joachim Nilsson -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
