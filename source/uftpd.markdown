@@ -3,7 +3,7 @@ layout: page
 title: "uftpd -- no nonsense FTP/TFTP server"
 sharing: true
 footer: true
-date: 2016-01-09 18:44 +0100
+date: 2016-01-22 14:09 +0100
 comments: false
 ---
 
@@ -25,10 +25,10 @@ Basically, it just works!
 * [README](https://github.com/troglobit/uftpd/blob/master/README.md)
 * [TODO](https://github.com/troglobit/uftpd/blob/master/TODO.md)
 * [Issue Tracker](http://github.com/troglobit/uftpd/issues)
-* [uftpd-1.9.1.tar.xz](ftp://troglobit.com/uftpd/uftpd-1.9.1.tar.xz),
-  [MD5](ftp://troglobit.com/uftpd/uftpd-1.9.1.tar.xz.md5)
-* [uftpd_1.9-1_amd64.deb](ftp://troglobit.com/uftpd/uftpd_1.9-1_amd64.deb),
-  [changes](ftp://troglobit.com/uftpd/uftpd_1.9-1_amd64.changes)
+* [uftpd-2.0.tar.xz](ftp://troglobit.com/uftpd/uftpd-2.0.tar.xz),
+  [MD5](ftp://troglobit.com/uftpd/uftpd-2.0.tar.xz.md5)
+* [uftpd_2.0-1_amd64.deb](ftp://troglobit.com/uftpd/uftpd_2.0-1_amd64.deb),
+  [changes](ftp://troglobit.com/uftpd/uftpd_2.0-1_amd64.changes)
 
 See also the [OpenHub page](https://www.openhub.net/p/uftpd/), the cool
 [Fresh(code) page](http://freshcode.club/projects/uftpd), or the (sadly)
