@@ -3,7 +3,7 @@ layout: page
 title: "SMCRoute &mdash; Static Multicast Routing Daemon"
 sharing: true
 footer: true
-date: 2014-09-30 23:15
+date: 2016-02-17 22:42 +01:00
 comments: false
 ---
 
@@ -25,13 +25,32 @@ IGMP signaling exists.
     # traffic to your interfaces.  Leave is not supported, remove the
     # mgroup and SIGHUP your daemon, or send a specific leave command.
     #
+    # NOTE: Use of mgroup should really not be needed!  It is only available
+    #       to aid a user in figuring out problems in multicast forwarding.
+    #       Only 20 mgroup lines can be configured, this is a HARD kernel
+    #       maximum.  If you need more, you probably need to find another
+    #       way of forwarding multicast to your router.
+    #
     # Similarily supported is setting mroutes. Removing mroutes is not
     # supported, remove/comment out the mroute or send a remove command.
     #
     # Syntax:
+    #   phyint IFNAME <disable|enable> [ttl-threshold <1-255>]
     #   mgroup from IFNAME group MCGROUP
     #   mroute from IFNAME [source ADDRESS] group MCGROUP to IFNAME [IFNAME ...]
-    #
+    
+    # This example disables the creation of a multicast VIF for WiFi
+    # interface wlan0.  The kernel (at least Linux) sets the ALLMULTI
+    # flag for all interfaces that have a VIF enabled.  Hence, it can
+    # cause quite a bit of unnecessary traffic to reach the CPU if too
+    # many interfaces have a VIF (or MIF in IPv6 lingo).  Only enable
+    # interfaces required for inbound and outbound traffic.
+    # phyint wlan0 disable
+    phyint eth0 enable ttl-threshold 11
+    phyint eth1 enable ttl-threshold 3
+    phyint eth2 enable ttl-threshold 5
+    phyint virbr0 enable ttl-threshold 5
+    
     # The following example instructs the kernel to join the multicast
     # group 225.1.2.3 on interface eth0.  Followed by setting up an
     # mroute of the same multicast stream, but from the explicit sender
@@ -39,6 +58,9 @@ IGMP signaling exists.
     #
     mgroup from eth0 group 225.1.2.3
     mroute from eth0 group 225.1.2.3 source 192.168.1.42 to eth1 eth2
+        
+    mgroup from virbr0 group 225.1.2.4
+    mroute from virbr0 group 225.1.2.4 source 192.168.123.110 to eth0
     
     # Here we allow routing of multicast to group 225.3.2.1 from ANY
     # source coming in from interface eth0 and forward to eth1 and eth2.
@@ -63,20 +85,21 @@ SMCRoute was originally written by
 Blache, Todd Hayton and Micha Lenk picked up development for
 [Debian](http://alioth.debian.org/projects/smcroute/).  Since 2011
 Joachim Nilsson heads development at GitHub.  New features include
-config file support, reloading config on SIGHUP, and source-less
-on-demand (*,G) routing.
+config file support, reloading config on SIGHUP, source-less on-demand
+(*,G) routing, TTL scoping and support for disabling ALL interfaces
+except the few used for multicast routing.
 
 Issue tracker and GIT repository available at GitHub:
 
    * [Repository](http://github.com/troglobit/smcroute)
-   * [smcroute-2.0.0.tar.xz](ftp://troglobit.com/smcroute/smcroute-2.0.0.tar.xz),
-     [MD5](ftp://troglobit.com/smcroute/smcroute-2.0.0.tar.xz.md5)
-     [GPG Sign](ftp://troglobit.com/smcroute/smcroute-2.0.0.tar.xz.asc)
+   * [smcroute-2.1.0.tar.xz](ftp://troglobit.com/smcroute/smcroute-2.1.0.tar.xz),
+     [MD5](ftp://troglobit.com/smcroute/smcroute-2.1.0.tar.xz.md5)
+     [GPG Sign](ftp://troglobit.com/smcroute/smcroute-2.1.0.tar.xz.asc)
    * [Issue Tracker](http://github.com/troglobit/smcroute/issues)
    * [Debian packages](http://packages.debian.org/smcroute)
    * [Ubuntu packages](http://packages.ubuntu.com/smcroute)
    * [Google Group](https://groups.google.com/forum/?fromgroups#!forum/smcroute)
 
-See also the [OpenHub page](https://www.openhub.net/p/smcroute/), or the
-now dormant [Free(code) page](http://freecode.com/projects/smcroute).
-
+See also the [OpenHub page](https://www.openhub.net/p/smcroute/), the
+[Freshcode page](http://freshcode.club/projects/smcroute), or the now
+dormant [Free(code) page](http://freecode.com/projects/smcroute).
