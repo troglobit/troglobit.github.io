@@ -9,7 +9,7 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="SMCRoute &mdash; Static Multicast Routing Daemon Sep 30th, 2014 11:15 pm SMCRoute is a daemon and command line tool to manipulate the multicast &hellip;">
+  <meta name="description" content="SMCRoute &mdash; Static Multicast Routing Daemon Feb 17th, 2016 10:42 pm SMCRoute is a daemon and command line tool to manipulate the multicast &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -82,7 +82,7 @@
 
 
 
-<time class='entry-date' datetime='2014-09-30T23:15:00+02:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>11:15 pm</span></time></p>
+<time class='entry-date' datetime='2016-02-17T22:42:00+01:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>10:42 pm</span></time></p>
   </header>
   
   <p><a href="https://github.com/troglobit/smcroute"><img style="position: absolute; top: 0; right: 0; border: none; box-shadow: none;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a></p>
@@ -103,13 +103,32 @@ IGMP signaling exists.</p>
 # traffic to your interfaces.  Leave is not supported, remove the
 # mgroup and SIGHUP your daemon, or send a specific leave command.
 #
+# NOTE: Use of mgroup should really not be needed!  It is only available
+#       to aid a user in figuring out problems in multicast forwarding.
+#       Only 20 mgroup lines can be configured, this is a HARD kernel
+#       maximum.  If you need more, you probably need to find another
+#       way of forwarding multicast to your router.
+#
 # Similarily supported is setting mroutes. Removing mroutes is not
 # supported, remove/comment out the mroute or send a remove command.
 #
 # Syntax:
+#   phyint IFNAME &lt;disable|enable&gt; [ttl-threshold &lt;1-255&gt;]
 #   mgroup from IFNAME group MCGROUP
 #   mroute from IFNAME [source ADDRESS] group MCGROUP to IFNAME [IFNAME ...]
-#
+
+# This example disables the creation of a multicast VIF for WiFi
+# interface wlan0.  The kernel (at least Linux) sets the ALLMULTI
+# flag for all interfaces that have a VIF enabled.  Hence, it can
+# cause quite a bit of unnecessary traffic to reach the CPU if too
+# many interfaces have a VIF (or MIF in IPv6 lingo).  Only enable
+# interfaces required for inbound and outbound traffic.
+# phyint wlan0 disable
+phyint eth0 enable ttl-threshold 11
+phyint eth1 enable ttl-threshold 3
+phyint eth2 enable ttl-threshold 5
+phyint virbr0 enable ttl-threshold 5
+
 # The following example instructs the kernel to join the multicast
 # group 225.1.2.3 on interface eth0.  Followed by setting up an
 # mroute of the same multicast stream, but from the explicit sender
@@ -117,6 +136,9 @@ IGMP signaling exists.</p>
 #
 mgroup from eth0 group 225.1.2.3
 mroute from eth0 group 225.1.2.3 source 192.168.1.42 to eth1 eth2
+
+mgroup from virbr0 group 225.1.2.4
+mroute from virbr0 group 225.1.2.4 source 192.168.123.110 to eth0
 
 # Here we allow routing of multicast to group 225.3.2.1 from ANY
 # source coming in from interface eth0 and forward to eth1 and eth2.
@@ -142,16 +164,17 @@ for all your multicast routing needs.</p>
 Blache, Todd Hayton and Micha Lenk picked up development for
 <a href="http://alioth.debian.org/projects/smcroute/">Debian</a>.  Since 2011
 Joachim Nilsson heads development at GitHub.  New features include
-config file support, reloading config on SIGHUP, and source-less
-on-demand (*,G) routing.</p>
+config file support, reloading config on SIGHUP, source-less on-demand
+(*,G) routing, TTL scoping and support for disabling ALL interfaces
+except the few used for multicast routing.</p>
 
 <p>Issue tracker and GIT repository available at GitHub:</p>
 
 <ul>
 <li> <a href="http://github.com/troglobit/smcroute">Repository</a></li>
-<li> <a href="ftp://troglobit.com/smcroute/smcroute-2.0.0.tar.xz">smcroute-2.0.0.tar.xz</a>,
- <a href="ftp://troglobit.com/smcroute/smcroute-2.0.0.tar.xz.md5">MD5</a>
- <a href="ftp://troglobit.com/smcroute/smcroute-2.0.0.tar.xz.asc">GPG Sign</a></li>
+<li> <a href="ftp://troglobit.com/smcroute/smcroute-2.1.0.tar.xz">smcroute-2.1.0.tar.xz</a>,
+ <a href="ftp://troglobit.com/smcroute/smcroute-2.1.0.tar.xz.md5">MD5</a>
+ <a href="ftp://troglobit.com/smcroute/smcroute-2.1.0.tar.xz.asc">GPG Sign</a></li>
 <li> <a href="http://github.com/troglobit/smcroute/issues">Issue Tracker</a></li>
 <li> <a href="http://packages.debian.org/smcroute">Debian packages</a></li>
 <li> <a href="http://packages.ubuntu.com/smcroute">Ubuntu packages</a></li>
@@ -159,8 +182,9 @@ on-demand (*,G) routing.</p>
 </ul>
 
 
-<p>See also the <a href="https://www.openhub.net/p/smcroute/">OpenHub page</a>, or the
-now dormant <a href="http://freecode.com/projects/smcroute">Free(code) page</a>.</p>
+<p>See also the <a href="https://www.openhub.net/p/smcroute/">OpenHub page</a>, the
+<a href="http://freshcode.club/projects/smcroute">Freshcode page</a>, or the now
+dormant <a href="http://freecode.com/projects/smcroute">Free(code) page</a>.</p>
 
   
     <footer>
@@ -171,7 +195,7 @@ now dormant <a href="http://freecode.com/projects/smcroute">Free(code) page</a>.
 
 
 
-<time class='entry-date' datetime='2014-09-30T23:15:00+02:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>11:15 pm</span></time>
+<time class='entry-date' datetime='2016-02-17T22:42:00+01:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>10:42 pm</span></time>
         
       </p>
       
