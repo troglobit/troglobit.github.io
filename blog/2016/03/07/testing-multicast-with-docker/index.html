@@ -10,9 +10,9 @@
 
   
   <meta name="description" content="Recently issue #70 was
-reported to pimd. This is cool in
-itself, but this was a question about Docker
-and pimd. Up until that point I had only read &hellip;">
+reported to pimd. That number of
+issues reported is cool in itself, but this was a question about
+Docker and pimd. Up until &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -97,9 +97,9 @@ and pimd. Up until that point I had only read &hellip;">
 
 
 <div class="entry-content"><p>Recently <a href="https://github.com/troglobit/pimd/issues/70">issue #70</a> was
-reported to <a href="https://github.com/troglobit/pimd/">pimd</a>.  This is cool in
-itself, but this was a question about <a href="https://www.docker.com">Docker</a>
-and <code>pimd</code>.</p>
+reported to <a href="https://github.com/troglobit/pimd/">pimd</a>.  That number of
+issues reported is cool in itself, but this was a question about
+<a href="https://www.docker.com">Docker</a> and <code>pimd</code>.</p>
 
 <p>Up until that point I had only read about this new fad, and played
 around with it a bit <a href="http://www.westermo.com">at work</a> for use as a
@@ -107,20 +107,20 @@ stable build environment for cross-compiling.  I had no idea people
 would want to use a Docker container as a multicast sink.  Basically I
 was baffled.</p>
 
-<p>The reported used a Java based tool but simply couldn&#8217;t get things to
+<p>The reporter used a Java based tool but simply couldn&#8217;t get things to
 work properly with <code>pimd</code> running on the host:</p>
 
-<pre><code>                    eth0
-&gt;--- MC sender ----&gt; [ Server host ]    &lt;--- router
-                           |
-                   ________|________
-                  /     docker0     \   &lt;--- bridge    ______
-                 /         |         \                |      |   &lt;--- MC receiver
-      __________/          |          \_______________|______|_____
-     \                     |                            /         /
-      \                     `------------------&gt;-------'         /
-       \________________________________________________________/
-          Container ship
+<pre><code>                eth0
+ MC sender ---&gt; [ Server host ]    &lt;--- router running pimd
+                       |
+               ________|________
+              /     docker0     \   &lt;--- bridge    ______
+             /         |         \                |      |   &lt;--- MC receiver
+  __________/          |          \_______________|______|_____
+ \                     |                            /         /
+  \                     `------------------&gt;-------'         /
+   \________________________________________________________/
+      Container ship
 </code></pre>
 
 <p>We tried several approaches, but nothing seemed to help.  This became a
@@ -133,24 +133,26 @@ until now.</p>
 <p>Running docker v1.5 in Ubuntu 15.10 I ran this, with <code>pimd</code> on the host
 and <code>mcjoin</code> as a multicast sink for 250 groups in a container:</p>
 
-<pre><code>docker run -t -i -u `id -u`:`id -g` -v $HOME:$HOME -w $PWD troglobit/toolchain:latest mcjoin 225.1.2.3+250
+<pre><code>cd ~/Troglobit/mcjoin
+docker run -t -i -u `id -u`:`id -g` -v $HOME:$HOME -w $PWD troglobit/toolchain:latest ./mcjoin 225.1.2.3+250
 ^C
 Received total: 2500 packets
 </code></pre>
 
 <p>The <code>pimd</code> and the multicast sender runs on my host, which should not
 matter since Linux still has to route the traffic to the <code>docker0</code>
-interface.  Also, without a TTL of 2 (or greater) the container
-receives no traffic at all:</p>
+interface.  Also, without setting the TTL to 2 (or greater) the
+container receives no traffic at all.  Here&#8217;s what I run in another
+terminal on my host:</p>
 
-<pre><code>mcjoin -s -t 2 -c 10 225.1.2.3+250
+<pre><code>./mcjoin -s -t 2 -c 10 225.1.2.3+250
 </code></pre>
 
 <p>Although <code>pimd</code> is a little slow to register and install the forwarding
 rules in the kernel, it sure enough worked on the first attempt! \o/</p>
 
 <p>This is my first real application level experience with Docker, but it
-is sure not the last.  A truly revolutionary new tool!</p>
+is sure not the last.  Docker is a truly revolutionary new tool!</p>
 </div>
 
 
