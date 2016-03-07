@@ -4,7 +4,7 @@
   <title><![CDATA[Troglobit]]></title>
   <link href="http://troglobit.github.io/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2016-03-07T01:14:46+01:00</updated>
+  <updated>2016-03-07T01:36:17+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -18,22 +18,56 @@
     <link href="http://troglobit.github.io/blog/2016/03/07/multicast-testing/"/>
     <updated>2016-03-07T01:06:02+01:00</updated>
     <id>http://troglobit.github.io/blog/2016/03/07/multicast-testing</id>
-    <content type="html"><![CDATA[<p>Spent the better part of the weekend fixing up my old mcjoin tool.  Been
-meaning to get around to it for ages, and now it seems I had finally
-worked up a huge need for it.  So here it is, v2.0</p>
+    <content type="html"><![CDATA[<p>For the better part of the last ten years I&#8217;ve been working with
+multicast in one way or another.  I&#8217;ve used many different tools for
+testing, but usually simply using <code>ping(1)</code> and <code>tcpdump(1)</code> is quite
+sufficient.  However, you often need to tell bridges (switches) to open
+up multicast in your general direction for your pings to get through, so
+you need to send an IGMP &#8220;join&#8221; first.  I found mcjoin, written by David
+Stevens, in <a href="https://lkml.org/lkml/2004/8/5/143">this posting to LKML</a>
+back in 2006, and started improving it and adding features to it over
+the years.</p>
 
-<p><a href="https://github.com/troglobit/mcjoin/releases/tag/v2.0">https://github.com/troglobit/mcjoin/releases/tag/v2.0</a></p>
+<p>Now, my interest and fascination with multicast only grew with time,
+and despite elegant tools like <code>mgen(1)</code> and <code>omping(1)</code> I was never
+quite happy.</p>
+
+<p>When releasing SMCRoute v2.1.0 recently, and currently working on the
+pimd v2.3.2 release, I was so tired of having to do so many manual steps
+just to verify correct operation of a routing daemon.  Therefore I spent
+the better part of the weekend fixing up my old mcjoin tool.</p>
 
 <p>I wanted a reliable, simple, and UNIX-y tool to just test things for me.
 So I cleaned up the old mcjoin project, first by migrating it from the
-toolbox repo, and then added send/receive capabilities.</p>
+toolbox repo, then remove confusing command line options, improve and
+simplify the syntax, and then added send/receive capabilities.  Been
+meaning to get around to this for ages, and now it seems I had finally
+had enough.  So here it is, v2.0:</p>
 
-<p>Most of the time I simply want to see a resulting IGMP join in
-Wireshark, and see it bite in a switch or routing daemon.  So join is
-the default, and also the name of the tool.  My favourite testing group
-is the default, 225.1.2.3, so you only need to start the tool and you&#8217;re
-off.  To send to the same default group (225.1.2.3), simply add <code>-s</code> to
-the sender side.</p>
+<ul>
+<li><strong>Project</strong>: <a href="https://github.com/troglobit/mcjoin/">https://github.com/troglobit/mcjoin/</a></li>
+<li><strong>ChangeLog</strong>: <a href="https://github.com/troglobit/mcjoin/releases/tag/v2.0">https://github.com/troglobit/mcjoin/releases/tag/v2.0</a></li>
+</ul>
+
+
+<p>Most of the time I simply want to see a resulting IGMP join message in
+Wireshark, see it bite in a switch&#8217;s FDB or a routing daemon&#8217;s
+forwarding table.  So, join is the default operation, and also continues
+to be the name of the tool.  My favourite testing group is set as the
+default, 225.1.2.3, so you only need to start the tool and you&#8217;re off.
+To send to the same default group (225.1.2.3), simply add <code>-s</code> to the
+sender side.</p>
+
+<pre><code>sender$ mcjoin -s
+^C
+sender$
+
+receiver$ mcjoin
+joined group 225.1.2.3 on eth0 ...
+..................................................................^C
+Received total: 66 packets
+receiver$
+</code></pre>
 
 <p>If you ever need anything else, e.g. routing multicast, there&#8217;s even a
 man page.  It mentions setting the TTL and other such nastiness :)</p>
