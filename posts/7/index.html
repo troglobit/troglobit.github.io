@@ -9,9 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="It has been a long time coming, but now I'm seriously starting to look
-at Git. Git is the content tracker used by the
-Linux kernel folks, initially &hellip;">
+  <meta name="description" content="This is an extremly brief and quick Xen tutorial. There are lots of
+them already, see your GNU/Linux distribution's wiki, HowtoForge or
+other places &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,129 @@ Linux kernel folks, initially &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/06/08/howto-setup-and-run-xen/">Howto Setup and Run Xen</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-06-08T23:05:42+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>8</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>11:05 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This is an extremly brief and quick <a href="http://www.xenproject.org/">Xen</a> tutorial. There are lots of
+them already, see your GNU/Linux distribution&#8217;s wiki, HowtoForge or
+other places for a starter guide. This particular HowTo deals with
+setting up Xen as easy as possible using Ubuntu 8.04 LTS as host
+operating system (dom0 in Xen terms) and Ubuntu 9.04 as guest operating
+systems (domU in Xen lingo).</p>
+
+<p>Ubuntu 8.04 LTS comes with a Xen kernel that can run as dom0. This is
+quite important, so pay attention to setting that up correctly. For this
+I recommend the <a href="http://howtoforge.org/high-performance-xen-on-ubuntu-8.04-amd64">HowtoForge Tutorial</a>.</p>
+
+<p><strong>Note:</strong> you will need to upgrade the default Xen 3.2 to 3.3 to be able
+to run the latest distributions as guest OS.  See this
+<a href="https://answers.launchpad.net/ubuntu/+question/50326">Ubuntu question</a> for more insight.  To get Xen 3.3, simply activate
+the Hardy backports repository in your <code>/etc/apt/sources.list</code> and, as
+usual, pay attention to your <code>/boot/grub/menu.lst</code> so that it points out
+the Xen 3.3 image in the <code>defaults=</code> option.</p>
+
+<p>When done with the basic setup you should install pygrub on your host,
+this is a truly magic piece of software that makes it possible to boot
+all guests using their own kernel and modules.  See the <a href="http://wiki.debian.org/PyGrub">Debian wiki</a>
+for some details on install and setup.  Then ignore what you read and do
+like this:</p>
+
+<pre><code># /var/lib/xend/domains/example/config.sxp - Xen domU example.
+# Note the order of partitions in disk=[], the first listed partition
+# is the partition where your /boot (grub) resides. 
+bootloader  = '/usr/bin/pygrub'
+
+builder     = 'linux'
+memory      = '2048'
+root        = '/dev/xvda1 ro'
+
+disk        = [
+  'phy:/dev/disk/by-uuid/df3418f5-2fc3-443c-8e64-4395828dc678,xvda1,w',
+  'phy:/dev/disk/by-uuid/acecf01e-c4d9-4a7b-b18a-681c69f71173,xvda2,w',
+]
+
+name        = 'example'
+
+vif         = [ 'bridge=eth1' ]
+dhcp        = "off"
+ip          = "12.34.56.78"
+netmask     = "255.255.255.252"
+gateway     = "12.34.56.77"
+hostname    = "example"
+
+on_poweroff = 'destroy'
+on_reboot   = 'restart'
+on_crash    = 'restart'
+vcpus       = 1
+extra       = 'xencons=tty1'
+</code></pre>
+
+<p>When installing grub on your guest, don&#8217;t pay any attention to Grub
+complaining about not being able to map <code>/dev/xvda1</code> to a BIOS disk.
+pyGrub doesn&#8217;t care about such wordly things as physical disks.  Just
+make sure the <code>/boot</code> directory&#8217;s partition (often <code>/</code>) is the first
+listed in the <code>disk=[]</code> array above.</p>
+
+<p>You may need to edit the <code>update-grub</code> script before you install grub,
+it is located at <code>/usr/sbin/update-grub</code>.  Search for <code>in_xen</code>, a fairly
+long way down.  Make sure it&#8217;s set to <code>in_xen=1</code> before the big
+<code>if[]</code>-clause that depends on it.  Without this fix the Xen able kernels
+in Ubuntu 9.04, and later, are not detected.</p>
+
+<p>Now run <code>update-grub</code> and answer yes to the questions. Take good care to
+verify that the script actually finds one active (server) kernel and
+adds it properly to your <code>/boot/grub/menu.lst</code> file.</p>
+
+<p>Another common problem is the lack of a console login.  Usually you
+don&#8217;t need one, but if you&#8217;d like to check your domU from within your
+dom0 you need to add the file &#8220;console&#8221; to <code>/etc/event.d</code></p>
+
+<pre><code># console - getty
+#
+# This service maintains a getty on the Xen serial console
+# from the point the system is started until it is shut
+# down again.
+
+start on stopped rc2
+start on stopped rc3
+start on stopped rc4
+start on stopped rc5
+
+stop on runlevel 0
+stop on runlevel 1
+stop on runlevel 6
+
+respawn
+exec /sbin/getty 38400 console
+</code></pre>
+
+<p>That should do the trick!  If it doesn&#8217;t, then there&#8217;s plenty of help to
+find in the Debian and Ubuntu wikis, see links above. Good luck!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -553,50 +676,6 @@ vim and type <code>:colorscheme advantage</code> to activate it.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/11/08/minix-editline-v0-dot-2-2/">Minix Editline v0.2.2</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2008-11-08T19:24:22+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>8</span><span class='date-suffix'>th</span>, <span class='date-year'>2008</span></span> <span class='time'>7:24 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Oups, it seems I forgot to announce the v0.2.2 release of the Minix
-editline library!  It was made official in Bazaar over a month ago,
-2008-10-02, but it was not until today that the tarball was created and
-uploaded to the FTP.</p>
-
-<p>The most noteworthy in this release is support for command completion
-with the addition of <code>rl_complete()</code> and <code>rl_list_possib()</code>.  Two
-function pointers that easily can be overloaded by the user.  See the
-examples section of the tree for example usage.</p>
-
-<p>Get it from the usual FTP location:</p>
-
-<ul>
-<li>http://ftp.vmlinux.org/pub/People/jocke/minix-editline/</li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/8">&larr; Older</a>
@@ -640,6 +719,10 @@ examples section of the tree for example usage.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/03/07/testing-multicast-with-docker/">Testing Multicast With Docker</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/03/07/multicast-testing/">Multicast Testing, Made Easy!</a>
       </li>
     
@@ -653,10 +736,6 @@ examples section of the tree for example usage.</p>
     
       <li class="post">
         <a href="/blog/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/">Awesome: Changing Next/Prev Tune in Spotify</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/11/07/stray-puppies/">Stray Puppies</a>
       </li>
     
   </ul>

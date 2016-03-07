@@ -9,9 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="This is a followup release to the security fix in pimd,
-v2.1.6. The change to use /var/lib/misc/, instead of the insecure
-/var/tmp/, has now been &hellip;">
+  <meta name="description" content="Quite some time has passed now since our old site, http://vmlinux.org,
+crashed and burned, and with it much of my previous Open Source work
+and blogs &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,61 @@ v2.1.6. The change to use /var/lib/misc/, instead of the insecure
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/17/resurrection/">Resurrection</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-02-17T13:37:00+01:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>1:37 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Quite some time has passed now since our old site, http://vmlinux.org,
+crashed and burned, and with it much of my previous Open Source work
+and blogs.  Tech blog entries, archives for the projects I maintain,
+lost.</p>
+
+<p>Backups? Of course not.</p>
+
+<p>This all happened in 2011.  Since then we also managed to lose the
+domain and I kind of lost myself for a while, including my motivation.</p>
+
+<p>Fortunately, at this point in time I had migrated most of my projects
+from CVS and Subversion to DVCS&#8217; like Bzr and GIT, so I could easily
+setup new homes for most of my Open Source projects at
+<a href="https://github.com/troglobit">GitHub</a>.</p>
+
+<p>Recently however GitHub stopped serving downloads, so even though I
+can continue using it for version control, I had to find a new way of
+serving generated tarballs and the like.  See <a href="ftp://troglobit.com">my
+FTP</a> for project downloads.</p>
+
+<p>I had also started missing blogging for some reason. So it started to
+make sense to roll something on my own again.  Well, here&#8217;s me
+starting over.</p>
+
+<p>See you soon with more posts about open source projects, releases of
+projects I maintain, Emacs tips, and ramblings about techie stuff I
+like!  :-)</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -587,71 +642,6 @@ hopefully.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/07/13/git-quickie/">Git Quickie</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2010-07-13T20:45:49+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2010</span></span> <span class='time'>8:45 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>This is a document I intend to maintain for my own purposes.  It serves
-as a quick reminder for the steps needed when creating and working with
-git repositories.</p>
-
-<p>First setup a bare repository on the server.</p>
-
-<pre><code>$ git --bare init projectX.git
-Initialized empty Git repository in /pub/git/projectX.git/
-</code></pre>
-
-<p>Set one-liner description, visible in gitweb.</p>
-
-<pre><code>$ echo "Secret project, use ROT13 to decode source code" &gt;projectX.git/description
-</code></pre>
-
-<p>Set up a <code>post-update</code> hook so that the server repo is update
-automatically when you push to it.</p>
-
-<pre><code>$ cp ~/public_html/programming/post-update projectX.git/hooks/
-</code></pre>
-
-<p>Change how the &#8220;Owner&#8221; field in gitweb is displayed to include an
-obfuscated email address.</p>
-
-<pre><code>$ vi projectX.git/config
-[gitweb]
-    owner = "Joachim Nilsson &lt;troglobit()vmlinux!org&gt;"
-</code></pre>
-
-<p>These steps have become so common to me that I&#8217;ve setup a script to
-create server side git repositories.  You can now push to the server,
-after having setup remote location on the client.</p>
-
-<pre><code>$ git remote add origin ssh://login@example.com/pub/git/projextX.git
-$ git push origin master
-$ git push --tags
-</code></pre>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/6">&larr; Older</a>
@@ -695,6 +685,10 @@ $ git push --tags
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/03/07/testing-multicast-with-docker/">Testing Multicast With Docker</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/03/07/multicast-testing/">Multicast Testing, Made Easy!</a>
       </li>
     
@@ -708,10 +702,6 @@ $ git push --tags
     
       <li class="post">
         <a href="/blog/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/">Awesome: Changing Next/Prev Tune in Spotify</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/11/07/stray-puppies/">Stray Puppies</a>
       </li>
     
   </ul>

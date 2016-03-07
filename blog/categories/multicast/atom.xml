@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Multicast | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/multicast/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2016-03-07T01:36:17+01:00</updated>
+  <updated>2016-03-07T02:13:15+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -12,6 +12,69 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Testing Multicast With Docker]]></title>
+    <link href="http://troglobit.github.io/blog/2016/03/07/testing-multicast-with-docker/"/>
+    <updated>2016-03-07T01:37:04+01:00</updated>
+    <id>http://troglobit.github.io/blog/2016/03/07/testing-multicast-with-docker</id>
+    <content type="html"><![CDATA[<p>Recently <a href="https://github.com/troglobit/pimd/issues/70">issue #70</a> was
+reported to <a href="https://github.com/troglobit/pimd/">pimd</a>.  This is cool in
+itself, but this was a question about <a href="https://www.docker.com">Docker</a>
+and <code>pimd</code>.</p>
+
+<p>Up until that point I had only read about this new fad, and played
+around with it a bit <a href="http://www.westermo.com">at work</a> for use as a
+stable build environment for cross-compiling.  I had no idea people
+would want to use a Docker container as a multicast sink.  Basically I
+was baffled.</p>
+
+<p>The reported used a Java based tool but simply couldn&#8217;t get things to
+work properly with <code>pimd</code> running on the host:</p>
+
+<pre><code>                    eth0
+&gt;--- MC sender ----&gt; [ Server host ]    &lt;--- router
+                           |
+                   ________|________
+                  /     docker0     \   &lt;--- bridge    ______
+                 /         |         \                |      |   &lt;--- MC receiver
+      __________/          |          \_______________|______|_____
+     \                     |                            /         /
+      \                     `------------------&gt;-------'         /
+       \________________________________________________________/
+          Container ship
+</code></pre>
+
+<p>We tried several approaches, but nothing seemed to help.  This became a
+bit of blocker for the <code>pimd</code> v2.3.2 release and I admittedly lost a bit
+of sleep over this.  So finally this weekend, I sat down and whipped my
+old <a href="https://github.com/troglobit/mcjoin/">mcjoin</a> tool up into shape.
+I&#8217;ve relied on it for years, but it couldn&#8217;t send or receive packets,
+until now.</p>
+
+<p>Running docker v1.5 in Ubuntu 15.10 I ran this, with <code>pimd</code> on the host
+and <code>mcjoin</code> as a multicast sink for 250 groups in a container:</p>
+
+<pre><code>docker run -t -i -u `id -u`:`id -g` -v $HOME:$HOME -w $PWD troglobit/toolchain:latest mcjoin 225.1.2.3+250
+^C
+Received total: 2500 packets
+</code></pre>
+
+<p>The <code>pimd</code> and the multicast sender runs on my host, which should not
+matter since Linux still has to route the traffic to the <code>docker0</code>
+interface.  Also, without a TTL of 2 (or greater) the container
+receives no traffic at all:</p>
+
+<pre><code>mcjoin -s -t 2 -c 10 225.1.2.3+250
+</code></pre>
+
+<p>Although <code>pimd</code> is a little slow to register and install the forwarding
+rules in the kernel, it sure enough worked on the first attempt! \o/</p>
+
+<p>This is my first real application level experience with Docker, but it
+is sure not the last.  A truly revolutionary new tool!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Multicast Testing, Made Easy!]]></title>
@@ -232,21 +295,6 @@ you want it to load at boot.  So add this to <code>/boot/loader.conf</code>:</p>
 
 <pre><code>ip_mroute_load="yes"
 </code></pre>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Announcing Pimd v2.1.7]]></title>
-    <link href="http://troglobit.github.io/blog/2011/01/09/announcing-pimd-v2-dot-1-7/"/>
-    <updated>2011-01-09T19:20:57+01:00</updated>
-    <id>http://troglobit.github.io/blog/2011/01/09/announcing-pimd-v2-dot-1-7</id>
-    <content type="html"><![CDATA[<p>This is a followup release to the <a href="https://security-tracker.debian.org/tracker/CVE-2011-0007">security fix</a> in <a href="/pimd.html">pimd</a>,
-v2.1.6.  The change to use <code>/var/lib/misc/</code>, instead of the insecure
-<code>/var/tmp/</code>, has now been refactored into using the proper <a href="http://www.pathname.com/fhs/pub/fhs-2.3.html#VARRUNRUNTIMEVARIABLEDATA">FHS</a>
-recommended <code>/var/run/pimd/</code> instead.</p>
-
-<p>As always, check the <a href="/pimd.html">homepage</a>, the <a href="https://github.com/troglobit/pimd/blob/master/ChangeLog">ChangeLog</a> and the
-<a href="https://github.com/troglobit/pimd/commits/2.1.7">GIT log</a> for more details.</p>
 ]]></content>
   </entry>
   

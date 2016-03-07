@@ -9,9 +9,10 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="For the better part of the last ten years I've been working with
-multicast in one way or another. I've used many different tools for
-testing, but &hellip;">
+  <meta name="description" content="Recently issue #70 was
+reported to pimd. This is cool in
+itself, but this was a question about Docker
+and pimd. Up until that point I had only read &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +77,89 @@ testing, but &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2016/03/07/testing-multicast-with-docker/">Testing Multicast With Docker</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-03-07T01:37:04+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>7</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>1:37 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Recently <a href="https://github.com/troglobit/pimd/issues/70">issue #70</a> was
+reported to <a href="https://github.com/troglobit/pimd/">pimd</a>.  This is cool in
+itself, but this was a question about <a href="https://www.docker.com">Docker</a>
+and <code>pimd</code>.</p>
+
+<p>Up until that point I had only read about this new fad, and played
+around with it a bit <a href="http://www.westermo.com">at work</a> for use as a
+stable build environment for cross-compiling.  I had no idea people
+would want to use a Docker container as a multicast sink.  Basically I
+was baffled.</p>
+
+<p>The reported used a Java based tool but simply couldn&#8217;t get things to
+work properly with <code>pimd</code> running on the host:</p>
+
+<pre><code>                    eth0
+&gt;--- MC sender ----&gt; [ Server host ]    &lt;--- router
+                           |
+                   ________|________
+                  /     docker0     \   &lt;--- bridge    ______
+                 /         |         \                |      |   &lt;--- MC receiver
+      __________/          |          \_______________|______|_____
+     \                     |                            /         /
+      \                     `------------------&gt;-------'         /
+       \________________________________________________________/
+          Container ship
+</code></pre>
+
+<p>We tried several approaches, but nothing seemed to help.  This became a
+bit of blocker for the <code>pimd</code> v2.3.2 release and I admittedly lost a bit
+of sleep over this.  So finally this weekend, I sat down and whipped my
+old <a href="https://github.com/troglobit/mcjoin/">mcjoin</a> tool up into shape.
+I&#8217;ve relied on it for years, but it couldn&#8217;t send or receive packets,
+until now.</p>
+
+<p>Running docker v1.5 in Ubuntu 15.10 I ran this, with <code>pimd</code> on the host
+and <code>mcjoin</code> as a multicast sink for 250 groups in a container:</p>
+
+<pre><code>docker run -t -i -u `id -u`:`id -g` -v $HOME:$HOME -w $PWD troglobit/toolchain:latest mcjoin 225.1.2.3+250
+^C
+Received total: 2500 packets
+</code></pre>
+
+<p>The <code>pimd</code> and the multicast sender runs on my host, which should not
+matter since Linux still has to route the traffic to the <code>docker0</code>
+interface.  Also, without a TTL of 2 (or greater) the container
+receives no traffic at all:</p>
+
+<pre><code>mcjoin -s -t 2 -c 10 225.1.2.3+250
+</code></pre>
+
+<p>Although <code>pimd</code> is a little slow to register and install the forwarding
+rules in the kernel, it sure enough worked on the first attempt! \o/</p>
+
+<p>This is my first real application level experience with Docker, but it
+is sure not the last.  A truly revolutionary new tool!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -690,111 +774,6 @@ service apache2 reload
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/">Inetd Support in Finit v1.12</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-03-06T22:34:45+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>6</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>10:34 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>A steady flow of features, and releases, is key to keeping any project
-alive.  Recently I ticked off another item in the <a href="/finit.html">Finit</a>
-TODO list &#8230;</p>
-
-<p>Finit v1.12 now comes with a built-in inetd!  You no longer need an
-external inetd daemon to launch services on demand.</p>
-
-<p>The good news doesn&#8217;t stop there, this little inetd actually supports a
-poor man&#8217;s tcpwrappers!</p>
-
-<pre><code>inetd ssh/tcp          nowait [2345] /sbin/dropbear -i -R -F
-inetd ssh@eth0:222/tcp nowait [2345] /sbin/dropbear -i -R -F
-</code></pre>
-
-<p>With these two lines in your <code>/etc/finit.conf</code> you tell finit to launch
-the <a href="https://matt.ucc.asn.au/dropbear/dropbear.html">Dropbear SSH</a>
-server on demand on port 22 (default ssh/tcp port in <code>/etc/services</code>) on
-<em>all</em> interfaces except on <code>eth0</code>, which in your case is the Internet
-(WAN) interface, here you want SSH to run on port 222.  Actually, you
-don&#8217;t want port 22 open at all on <code>eth0</code> &#8230; so finit takes care of this
-for you!  Seriously, it just works, no need for messing about with that
-nasty old <code>iptables</code> anymore!</p>
-
-<p>The original UNIX inetd super server supported many protocols
-internally, some of which may seem a bit odd today, and some have been
-superseded by more modern protocols.</p>
-
-<ul>
-<li><a href="http://en.wikipedia.org/wiki/Echo_Protocol">echo</a></li>
-<li><a href="http://en.wikipedia.org/wiki/Character_Generator_Protocol">chargen</a></li>
-<li><a href="http://en.wikipedia.org/wiki/Time_Protocol">time</a></li>
-<li><a href="http://en.wikipedia.org/wiki/Daytime_Protocol">daytime</a></li>
-<li><a href="http://en.wikipedia.org/wiki/Discard_Protocol">discard</a></li>
-</ul>
-
-
-<p>Finit currently only supports one internal/built-in standard service,
-<code>time</code>.  It is built as a plugin to serve as an example of how you can
-extend Finit yourself.  The time service can be called either as UDP or
-TCP.  To prevent security issues, the <code>time</code> protocol is disabled by
-default.  To enable it you need two things:</p>
-
-<ol>
-<li>The <code>time.so</code> plugin (built by default)</li>
-<li>An <code>inetd time ...</code> line in <code>/etc/finit.conf</code></li>
-</ol>
-
-
-<p>Assuming you&#8217;ve installed the default set of plugins, the following two
-lines can be added:</p>
-
-<pre><code>inetd time/udp   wait [2345] internal
-inetd time/tcp nowait [2345] internal
-</code></pre>
-
-<p>This can be very useful for testing the inetd capabilities, your network
-connection, or simply to get the time to a client where NTP for some
-reason does not work, or is blocked.  For instance, you could have a GPS
-setup on your server and distribute time to clients with the <code>time</code>
-protocol.</p>
-
-<p>To use it you need an <a href="http://www.aelius.com/njh/rdate/"><code>rdate</code></a>
-client.  Users of <code>rdate</code> in BusyBox may need to be reminded that it
-only supports TCP.</p>
-
-<pre><code>$ rdate -pu 198.51.100.42
-Sat Mar  7 08:48:58 CET 2015
-</code></pre>
-
-<p>For more info on Finit and its features, see the <a href="https://github.com/troglobit/finit/blob/master/README.md">README</a>.</p>
-
-<p>Enjoy! ツ</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -836,6 +815,10 @@ Sat Mar  7 08:48:58 CET 2015
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/03/07/testing-multicast-with-docker/">Testing Multicast With Docker</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/03/07/multicast-testing/">Multicast Testing, Made Easy!</a>
       </li>
     
@@ -849,10 +832,6 @@ Sat Mar  7 08:48:58 CET 2015
     
       <li class="post">
         <a href="/blog/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/">Awesome: Changing Next/Prev Tune in Spotify</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/11/07/stray-puppies/">Stray Puppies</a>
       </li>
     
   </ul>

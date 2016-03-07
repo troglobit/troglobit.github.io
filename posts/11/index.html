@@ -9,9 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="About that /etc/network/interface autoconfig thingy: it's almost done.
-Works perfect ... at work (connected) and at home (wireless). I need to
-fine &hellip;">
+  <meta name="description" content="Dammit, tonight I spent too many hours chasing down a "feature" in the
+Debian kernel build process or the Linux-2.6 kernel. I haven't yet
+deciced who &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,54 @@ fine &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2006/07/17/make-kpkg-and-dirty-modules/">Make-kpkg and Dirty Modules</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2006-07-17T22:10:24+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2006</span></span> <span class='time'>10:10 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Dammit, tonight I spent too many hours chasing down a &#8220;feature&#8221; in the
+Debian kernel build process or the Linux-2.6 kernel.  I haven&#8217;t yet
+deciced who to blame ;-)</p>
+
+<p>Here goes: when you build the latest Linux 2.6 kernel, checked out from
+the git repository, with <code>make-kpkg</code> you should make sure to uncheck the
+<code>CONFIG_LOCALVERSION_AUTO</code> option in the kernel config before hand.
+It&#8217;s under &#8220;General setup&#8221; &rarr; &#8220;Automatically append version
+information &#8230;&#8221;.  If you don&#8217;t disable it, then your <code>utsrelease.h</code>
+will contain some annoying extra git version string and your modules
+directory will look something like this: <code>/lib/modules/2.6.18-dirty</code></p>
+
+<p>All this due to the <code>LOCALVERSION</code> config, your git checkout, and the
+tiny little fact that <code>make-kpkg</code> modifies (moves away) the two files
+<code>scripts/packages/{builddeb,Makefile}</code> which leads to the modification
+of the checkout and the scripts/setlocalversion will tell this to the
+top Makefile which in turn will create this whole mess.</p>
+
+<p>Take my advice, untick the <code>CONFIG_LOCALVERSION_AUTO</code> option.  It&#8217;s the
+easiest one to get away with.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -281,6 +329,10 @@ son one year.  Still feels like yesterday they both were born.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/03/07/testing-multicast-with-docker/">Testing Multicast With Docker</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/03/07/multicast-testing/">Multicast Testing, Made Easy!</a>
       </li>
     
@@ -294,10 +346,6 @@ son one year.  Still feels like yesterday they both were born.</p>
     
       <li class="post">
         <a href="/blog/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/">Awesome: Changing Next/Prev Tune in Spotify</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/11/07/stray-puppies/">Stray Puppies</a>
       </li>
     
   </ul>
