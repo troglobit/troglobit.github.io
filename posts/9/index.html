@@ -9,8 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="Another day another release, I guess. :-) Lots of small fixes &mdash; it can now be cross-built for Arm (Xscale)
-without any serious warnings. Get it &hellip;">
+  <meta name="description" content="The v0.2.0 release included some Debian patches, tcgetattr() and a
+batch mode (when reading from file) line reader. This release fixes a
+bug in the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -75,6 +76,45 @@ without any serious warnings. Get it &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/06/09/minix-editline-v0-dot-2-1/">Minix Editline v0.2.1</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2008-06-09T23:02:22+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2008</span></span> <span class='time'>11:02 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>The v0.2.0 release included some Debian patches, <code>tcgetattr()</code> and a
+batch mode (when reading from file) line reader.  This release fixes a
+bug in the Debian patch that caused the batch mode version of
+<code>readline()</code> to actually truncate lines longer than 64 chars.</p>
+
+<p>Get it from the usual FTP location:</p>
+
+<ul>
+<li>http://ftp.vmlinux.org/pub/People/jocke/minix-editline/</li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -581,86 +621,6 @@ files and install them with <code>sudo dpkg -i *.deb</code> in a terminal window
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2007/03/25/vmware-kernel-modules-for-your-new-kernel/">VMWare Kernel Modules for Your New Kernel</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2007-03-25T23:59:57+02:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>25</span><span class='date-suffix'>th</span>, <span class='date-year'>2007</span></span> <span class='time'>11:59 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>My recent post on building Debian kernels misses a subtle but useful
-point.  Namely that of building Debian kernel modules alongside your new
-kernel.  I wanted to run a new kernel with the Ubuntu
-vmware-player-kernel-source package.  I was fumbling around wanting to
-use <code>module-assistant</code> to do this for me when I stumbled upon on the
-solution, <a href="http://ubuntuforums.org/showthread.php?p=1266060#post1266060">presented so eloquently by my friend Albert Veli</a>.  This
-gives us a small update to the previous post:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ wget ftp://ftp.sunet.se/pub/Linux/kernels/v2.6/patch-2.6.20.4.bz2
-</span><span class='line'>$ cd linux-2.6.20/
-</span><span class='line'>$ bzcat ../patch-2.6.20.4.bz2 | patch -p1
-</span><span class='line'>$ cd ../
-</span><span class='line'>$ mv linux-2.6.20 linux-2.6.20.4
-</span><span class='line'>$ cd linux-2.6.20.4
-</span><span class='line'>$ make oldconfig
-</span><span class='line'>$ fakeroot make-kpkg clean
-</span><span class='line'>$ fakeroot make-kpkg --initrd kernel_image
-</span><span class='line'>$ sudo dpkg -i ../linux-image-2.6.20.4_2.6.20.4-7.troglobit_i386.deb</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Next up is installing and building the vmware-player-kernel-source:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get install vmware-player-kernel-source
-</span><span class='line'>$ cd /usr/src
-</span><span class='line'>$ sudo tar xvfj vmware-player-kernel-source.tar.bz2
-</span><span class='line'>$ cd -
-</span><span class='line'>$ cd linux-2.6.20.4
-</span><span class='line'>$ fakeroot make-kpkg modules_clean
-</span><span class='line'>$ fakeroot make-kpkg modules_image
-</span><span class='line'>$ sudo dpkg -i  ../vmware-player-kernel-modules-2.6.20.4_2.6.20.4-7.troglobit_i386.deb</span></code></pre></td></tr></table></div></figure>
-
-
-<p>You may, of course, need to tweak the file <code>/etc/kernel-pkg.conf</code>, but
-there are man pages for that.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/10">&larr; Older</a>
@@ -704,6 +664,10 @@ there are man pages for that.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/03/07/multicast-testing/">Multicast Testing, Made Easy!</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/11/14/useful-unix-api-s/">Useful UNIX API:s</a>
       </li>
     
@@ -717,10 +681,6 @@ there are man pages for that.</p>
     
       <li class="post">
         <a href="/blog/2015/11/07/stray-puppies/">Stray Puppies</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/09/09/summer-of-code-2015/">Summer of Code 2015</a>
       </li>
     
   </ul>

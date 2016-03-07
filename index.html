@@ -9,9 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="Had an interesting conversation with a buddy last night. It started out
-as a shift-reduce problem with Bison and ended up a ping-pong of useful
-UNIX &hellip;">
+  <meta name="description" content="Spent the better part of the weekend fixing up my old mcjoin tool. Been
+meaning to get around to it for ages, and now it seems I had finally
+worked &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,53 @@ UNIX &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2016/03/07/multicast-testing/">Multicast Testing, Made Easy!</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-03-07T01:06:02+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>7</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>1:06 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Spent the better part of the weekend fixing up my old mcjoin tool.  Been
+meaning to get around to it for ages, and now it seems I had finally
+worked up a huge need for it.  So here it is, v2.0</p>
+
+<p><a href="https://github.com/troglobit/mcjoin/releases/tag/v2.0">https://github.com/troglobit/mcjoin/releases/tag/v2.0</a></p>
+
+<p>I wanted a reliable, simple, and UNIX-y tool to just test things for me.
+So I cleaned up the old mcjoin project, first by migrating it from the
+toolbox repo, and then added send/receive capabilities.</p>
+
+<p>Most of the time I simply want to see a resulting IGMP join in
+Wireshark, and see it bite in a switch or routing daemon.  So join is
+the default, and also the name of the tool.  My favourite testing group
+is the default, 225.1.2.3, so you only need to start the tool and you&#8217;re
+off.  To send to the same default group (225.1.2.3), simply add <code>-s</code> to
+the sender side.</p>
+
+<p>If you ever need anything else, e.g. routing multicast, there&#8217;s even a
+man page.  It mentions setting the TTL and other such nastiness :)</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -714,42 +761,6 @@ Sat Mar  7 08:48:58 CET 2015
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/01/24/finit-v1-dot-11-released/">Finit v1.11 Released!</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-01-24T16:54:23+01:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>4:54 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><strong>Update 2015-03-09</strong>: This release has unfortunately been <em>yanked</em> due
-to serious regressions in launching background processes.  It has been
-replaced by <a href="/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/">v1.12</a></p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2015/01/24/finit-v1-dot-11-released/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -791,6 +802,10 @@ replaced by <a href="/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/">v1.12</
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/03/07/multicast-testing/">Multicast Testing, Made Easy!</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/11/14/useful-unix-api-s/">Useful UNIX API:s</a>
       </li>
     
@@ -804,10 +819,6 @@ replaced by <a href="/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/">v1.12</
     
       <li class="post">
         <a href="/blog/2015/11/07/stray-puppies/">Stray Puppies</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/09/09/summer-of-code-2015/">Summer of Code 2015</a>
       </li>
     
   </ul>

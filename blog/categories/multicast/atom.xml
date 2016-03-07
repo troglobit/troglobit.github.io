@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Multicast | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/multicast/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2016-02-18T19:47:52+01:00</updated>
+  <updated>2016-03-07T01:14:46+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -12,6 +12,33 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Multicast Testing, Made Easy!]]></title>
+    <link href="http://troglobit.github.io/blog/2016/03/07/multicast-testing/"/>
+    <updated>2016-03-07T01:06:02+01:00</updated>
+    <id>http://troglobit.github.io/blog/2016/03/07/multicast-testing</id>
+    <content type="html"><![CDATA[<p>Spent the better part of the weekend fixing up my old mcjoin tool.  Been
+meaning to get around to it for ages, and now it seems I had finally
+worked up a huge need for it.  So here it is, v2.0</p>
+
+<p><a href="https://github.com/troglobit/mcjoin/releases/tag/v2.0">https://github.com/troglobit/mcjoin/releases/tag/v2.0</a></p>
+
+<p>I wanted a reliable, simple, and UNIX-y tool to just test things for me.
+So I cleaned up the old mcjoin project, first by migrating it from the
+toolbox repo, and then added send/receive capabilities.</p>
+
+<p>Most of the time I simply want to see a resulting IGMP join in
+Wireshark, and see it bite in a switch or routing daemon.  So join is
+the default, and also the name of the tool.  My favourite testing group
+is the default, 225.1.2.3, so you only need to start the tool and you&#8217;re
+off.  To send to the same default group (225.1.2.3), simply add <code>-s</code> to
+the sender side.</p>
+
+<p>If you ever need anything else, e.g. routing multicast, there&#8217;s even a
+man page.  It mentions setting the TTL and other such nastiness :)</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Mrouted v3.9.7]]></title>
@@ -186,27 +213,6 @@ recommended <code>/var/run/pimd/</code> instead.</p>
 
 <p>As always, check the <a href="/pimd.html">homepage</a>, the <a href="https://github.com/troglobit/pimd/blob/master/ChangeLog">ChangeLog</a> and the
 <a href="https://github.com/troglobit/pimd/commits/2.1.7">GIT log</a> for more details.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Announcing Pimd v2.1.6]]></title>
-    <link href="http://troglobit.github.io/blog/2011/01/08/announcing-pimd-v2-dot-1-6/"/>
-    <updated>2011-01-08T22:40:22+01:00</updated>
-    <id>http://troglobit.github.io/blog/2011/01/08/announcing-pimd-v2-dot-1-6</id>
-    <content type="html"><![CDATA[<p>This is a security release of <a href="/pimd.html">pimd</a>, v2.1.6.  The following fixes
-are included:</p>
-
-<ul>
-<li><a href="https://security-tracker.debian.org/tracker/CVE-2011-0007">CVE-2011-0007</a>: <em>&#8220;Insecure file creation in /var/tmp&#8221;</em></li>
-<li>Build error on GNU/kFreeBSD</li>
-</ul>
-
-
-<p>Thanks to <a href="http://www.luffy.cx/">Vincent Bernat</a> this time for the CVE fix!</p>
-
-<p>As always, check the <a href="/pimd.html">homepage</a>, the <a href="https://github.com/troglobit/pimd/blob/master/ChangeLog">ChangeLog</a> and the
-<a href="https://github.com/troglobit/pimd/commits/2.1.6">GIT log</a> for more details.</p>
 ]]></content>
   </entry>
   

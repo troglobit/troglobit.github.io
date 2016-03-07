@@ -4,7 +4,7 @@
   <title><![CDATA[Troglobit]]></title>
   <link href="http://troglobit.github.io/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2016-02-18T19:47:52+01:00</updated>
+  <updated>2016-03-07T01:14:46+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -12,6 +12,33 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Multicast Testing, Made Easy!]]></title>
+    <link href="http://troglobit.github.io/blog/2016/03/07/multicast-testing/"/>
+    <updated>2016-03-07T01:06:02+01:00</updated>
+    <id>http://troglobit.github.io/blog/2016/03/07/multicast-testing</id>
+    <content type="html"><![CDATA[<p>Spent the better part of the weekend fixing up my old mcjoin tool.  Been
+meaning to get around to it for ages, and now it seems I had finally
+worked up a huge need for it.  So here it is, v2.0</p>
+
+<p><a href="https://github.com/troglobit/mcjoin/releases/tag/v2.0">https://github.com/troglobit/mcjoin/releases/tag/v2.0</a></p>
+
+<p>I wanted a reliable, simple, and UNIX-y tool to just test things for me.
+So I cleaned up the old mcjoin project, first by migrating it from the
+toolbox repo, and then added send/receive capabilities.</p>
+
+<p>Most of the time I simply want to see a resulting IGMP join in
+Wireshark, and see it bite in a switch or routing daemon.  So join is
+the default, and also the name of the tool.  My favourite testing group
+is the default, 225.1.2.3, so you only need to start the tool and you&#8217;re
+off.  To send to the same default group (225.1.2.3), simply add <code>-s</code> to
+the sender side.</p>
+
+<p>If you ever need anything else, e.g. routing multicast, there&#8217;s even a
+man page.  It mentions setting the TTL and other such nastiness :)</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Useful UNIX API:s]]></title>
@@ -1248,28 +1275,6 @@ is basically just to change <code>nowait</code> to <code>wait</code> for the TFT
 <code>/etc/inetd.conf</code>, but there&#8217;s also a minor man page update.</p>
 
 <p>Enjoy! :)</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The Awesome Uftpd, Now With TFTP Support! :)]]></title>
-    <link href="http://troglobit.github.io/blog/2014/09/02/new-release-of-the-awesome-uftpd/"/>
-    <updated>2014-09-02T10:47:35+02:00</updated>
-    <id>http://troglobit.github.io/blog/2014/09/02/new-release-of-the-awesome-uftpd</id>
-    <content type="html"><![CDATA[<p>Today sees the release of v1.3 of the awesome little uftpd. The main
-news is the new TFTP support!  Just like before you don&#8217;t need any
-configuration file, just build and install &#8211; or build a .deb file and
-install.</p>
-
-<p>This release completes the main purpose of uftpd for me, I can now use
-it as my daily driver and fully replace vsftpd and tftpd-hpa, which to
-me are the next best.</p>
-
-<p>What&#8217;s left then, you ask?  Well, TFTP upload support, TFTP segment
-size negotiation and possibly multiple user support in FTP.  As
-always, patches are most welcome.  See the
-<a href="http://troglobit.github.io/uftpd.html">uftpd homepage</a> and my
-<a href="https://github.com/troglobit/uftpd/">GitHub project</a> for details.</p>
 ]]></content>
   </entry>
   

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Unix | Troglobit]]></title>
+  <link href="http://troglobit.github.io/blog/categories/unix/atom.xml" rel="self"/>
+  <link href="http://troglobit.github.io/"/>
+  <updated>2016-03-07T01:14:46+01:00</updated>
+  <id>http://troglobit.github.io/</id>
+  <author>
+    <name><![CDATA[Joachim Nilsson]]></name>
+    <email><![CDATA[troglobit@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Multicast Testing, Made Easy!]]></title>
+    <link href="http://troglobit.github.io/blog/2016/03/07/multicast-testing/"/>
+    <updated>2016-03-07T01:06:02+01:00</updated>
+    <id>http://troglobit.github.io/blog/2016/03/07/multicast-testing</id>
+    <content type="html"><![CDATA[<p>Spent the better part of the weekend fixing up my old mcjoin tool.  Been
+meaning to get around to it for ages, and now it seems I had finally
+worked up a huge need for it.  So here it is, v2.0</p>
+
+<p><a href="https://github.com/troglobit/mcjoin/releases/tag/v2.0">https://github.com/troglobit/mcjoin/releases/tag/v2.0</a></p>
+
+<p>I wanted a reliable, simple, and UNIX-y tool to just test things for me.
+So I cleaned up the old mcjoin project, first by migrating it from the
+toolbox repo, and then added send/receive capabilities.</p>
+
+<p>Most of the time I simply want to see a resulting IGMP join in
+Wireshark, and see it bite in a switch or routing daemon.  So join is
+the default, and also the name of the tool.  My favourite testing group
+is the default, 225.1.2.3, so you only need to start the tool and you&#8217;re
+off.  To send to the same default group (225.1.2.3), simply add <code>-s</code> to
+the sender side.</p>
+
+<p>If you ever need anything else, e.g. routing multicast, there&#8217;s even a
+man page.  It mentions setting the TTL and other such nastiness :)</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -9,9 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="This is a security release of pimd, v2.1.6. The following fixes
-are included: CVE-2011-0007: "Insecure file creation in /var/tmp"
-Build error on GNU/ &hellip;">
+  <meta name="description" content="This is a followup release to the security fix in pimd,
+v2.1.6. The change to use /var/lib/misc/, instead of the insecure
+/var/tmp/, has now been &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,41 @@ Build error on GNU/ &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2011/01/09/announcing-pimd-v2-dot-1-7/">Announcing Pimd v2.1.7</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2011-01-09T19:20:57+01:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>9</span><span class='date-suffix'>th</span>, <span class='date-year'>2011</span></span> <span class='time'>7:20 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This is a followup release to the <a href="https://security-tracker.debian.org/tracker/CVE-2011-0007">security fix</a> in <a href="/pimd.html">pimd</a>,
+v2.1.6.  The change to use <code>/var/lib/misc/</code>, instead of the insecure
+<code>/var/tmp/</code>, has now been refactored into using the proper <a href="http://www.pathname.com/fhs/pub/fhs-2.3.html#VARRUNRUNTIMEVARIABLEDATA">FHS</a>
+recommended <code>/var/run/pimd/</code> instead.</p>
+
+<p>As always, check the <a href="/pimd.html">homepage</a>, the <a href="https://github.com/troglobit/pimd/blob/master/ChangeLog">ChangeLog</a> and the
+<a href="https://github.com/troglobit/pimd/commits/2.1.7">GIT log</a> for more details.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -617,74 +652,6 @@ $ git push --tags
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/07/13/howto-converting-from-bazaar-to-git/">HowTo: Converting From Bazaar to GIT</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2010-07-13T01:56:11+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2010</span></span> <span class='time'>1:56 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>You need git, and bazaar obviously.  Also install bzr-fastimport, it
-contains the export plugin as well. The rest is a rip off from the
-folloing URL: http://fthieme.net/en/drupal6/node/77</p>
-
-<pre><code>git init project.git
-cd project.git
-bzr fast-export --export-marks=.git/bzr.mark ~/project.bzr | git fast-import --export-marks=.git/git.mark
-</code></pre>
-
-<p>That worked for me. The output will likely be something like this:</p>
-
-<pre><code>01:41:19 Calculating the revisions to include ...
-01:41:19 Starting export of 33 revisions ...
-01:41:20 Exported 33 revisions in 0:00:01
-git-fast-import statistics:
----------------------------------------------------------------------
-Alloc'd objects:         5000
-Total objects  :          267 (         0 duplicates                  )
-        blobs  :          158 (         0 duplicates         57 deltas)
-        trees  :           76 (         0 duplicates         55 deltas)
-        commits:           33 (         0 duplicates          0 deltas)
-        tags   :            0 (         0 duplicates          0 deltas)
-Total branches :           10 (         1 loads     )
-        marks  :         1024 (        33 unique    )
-        atoms  :           38
-Memory total   :         2344 KiB
-        pools  :         2110 KiB
-        objects:          234 KiB
----------------------------------------------------------------------
-pack_report: getpagesize()            =       4096
-pack_report: core.packedGitWindowSize = 1073741824
-pack_report: core.packedGitLimit      = 8589934592
-pack_report: pack_used_ctr            =        267
-pack_report: pack_mmap_calls          =         73
-pack_report: pack_open_windows        =          1 /          1
-pack_report: pack_mapped              =     977484 /     977484
----------------------------------------------------------------------
-</code></pre>
-
-<p>Now just do a simple <code>git checkout master</code> to get started working again.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/6">&larr; Older</a>
@@ -728,6 +695,10 @@ pack_report: pack_mapped              =     977484 /     977484
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/03/07/multicast-testing/">Multicast Testing, Made Easy!</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/11/14/useful-unix-api-s/">Useful UNIX API:s</a>
       </li>
     
@@ -741,10 +712,6 @@ pack_report: pack_mapped              =     977484 /     977484
     
       <li class="post">
         <a href="/blog/2015/11/07/stray-puppies/">Stray Puppies</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/09/09/summer-of-code-2015/">Summer of Code 2015</a>
       </li>
     
   </ul>
