@@ -31,23 +31,25 @@ subscribers, for dense mode operation [mrouted](/mrouted.html) is
 recommended, and for static multicast routing [smcroute](/smcroute.html)
 may be used.
 
-pimd was written by Ahmed Helmy, George Edmond "Rusty" Eddy, and
-Pavlin Ivanov Radoslavov. With contributions by many others.
+pimd was written by Ahmed Helmy, George Edmond "Rusty" Eddy, and Pavlin
+Ivanov Radoslavov.  With contributions by many others, lately the most
+notable contributions have been by Markus Veranen and Mika Joutsenvirta.
 
 ------
 
 Issue tracker and GIT repository available at GitHub:
 
    * [Repository](http://github.com/troglobit/pimd)
-   * [ChangeLog](https://github.com/troglobit/pimd/releases/tag/2.3.1)
-   * [pimd-2.3.1.tar.gz](ftp://troglobit.com/pimd/pimd-2.3.1.tar.gz),
-     [MD5](ftp://troglobit.com/pimd/pimd-2.3.1.tar.gz.md5)
+   * [ChangeLog](https://github.com/troglobit/pimd/releases/tag/2.3.2)
+   * [pimd-2.3.2.tar.gz](ftp://troglobit.com/pimd/pimd-2.3.2.tar.gz),
+     [MD5](ftp://troglobit.com/pimd/pimd-2.3.2.tar.gz.md5)
    * [Issue Tracker](http://github.com/troglobit/pimd/issues)
    * [Debian packages](http://packages.debian.org/pimd)
    * [Ubuntu packages](http://packages.ubuntu.com/pimd)
 
-See also the [OpenHub page](https://www.openhub.net/p/pimd/), or the
-(sadly) dormant [Free(code) page](http://freecode.com/projects/pimd),
+See also the [OpenHub page](https://www.openhub.net/p/pimd/), the
+[Fresh(code) page](http://freshcode.club/projects/pimd), or the now
+now dormant [Free(code) page](http://freecode.com/projects/pimd).
 
 Problems?  See the [multicast howto](/multicast-howto.html)
 
