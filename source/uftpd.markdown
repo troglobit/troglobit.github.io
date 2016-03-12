@@ -11,7 +11,7 @@ comments: false
 
 Tired of confusing configuration files and security features you don't need?
 
-* uftpd supports both FTP and TFTP
+* `uftpd` supports both FTP and TFTP
 * Has no confusing configuration file
 * Listens to port `ftp/tcp` and `tftp/udp` found in `/etc/services`
 * Serves files from the ftp user's $HOME, as specified in `/etc/passwd`
@@ -34,15 +34,18 @@ See also the [OpenHub page](https://www.openhub.net/p/uftpd/), the cool
 [Fresh(code) page](http://freshcode.club/projects/uftpd), or the (sadly)
 dormant [Free(code) page](http://freecode.com/projects/uftpd).
 
-Curious to know why uftpd exists?  If you really are interested, read
+Curious to know why `uftpd` exists?  If you really are interested, read
 [my rant](/blog/2014/05/04/why-write-your-own-ftp-server/) for
 background and context :)
 
-**Disclaimer:** uftpd was not made for the Internet, it may work and it
-  may even be secure.  Some of the most common security best practises
-  have been employed, while some have been avoided in an effort to keep
-  uftpd user friendly.  If you want something really secure, you should
-  probably try [vsftpd](https://security.appspot.com/vsftpd.html).
+**Disclaimer:** `uftpd` supports both FTP and TFTP, but the latter is
+  [not safe to use on the Internet](http://researchrepository.napier.ac.uk/8746/).
+  FTP is safer and the `uftpd` implementation may even be secure.  Some
+  of the most common security best practises have been employed, while
+  others have been avoided in an effort to keep `uftpd` user friendly.
+  If you want something really secure, you should probably try
+  [vsftpd](https://security.appspot.com/vsftpd.html).
+
 
 <!--
   -- Local Variables:
