@@ -90,7 +90,7 @@
 <p>Tired of confusing configuration files and security features you don&#8217;t need?</p>
 
 <ul>
-<li>uftpd supports both FTP and TFTP</li>
+<li><code>uftpd</code> supports both FTP and TFTP</li>
 <li>Has no confusing configuration file</li>
 <li>Listens to port <code>ftp/tcp</code> and <code>tftp/udp</code> found in <code>/etc/services</code></li>
 <li>Serves files from the ftp user&#8217;s $HOME, as specified in <code>/etc/passwd</code></li>
@@ -118,15 +118,17 @@
 <a href="http://freshcode.club/projects/uftpd">Fresh(code) page</a>, or the (sadly)
 dormant <a href="http://freecode.com/projects/uftpd">Free(code) page</a>.</p>
 
-<p>Curious to know why uftpd exists?  If you really are interested, read
+<p>Curious to know why <code>uftpd</code> exists?  If you really are interested, read
 <a href="/blog/2014/05/04/why-write-your-own-ftp-server/">my rant</a> for
 background and context :)</p>
 
-<p><strong>Disclaimer:</strong> uftpd was not made for the Internet, it may work and it
-  may even be secure.  Some of the most common security best practises
-  have been employed, while some have been avoided in an effort to keep
-  uftpd user friendly.  If you want something really secure, you should
-  probably try <a href="https://security.appspot.com/vsftpd.html">vsftpd</a>.</p>
+<p><strong>Disclaimer:</strong> <code>uftpd</code> supports both FTP and TFTP, but the latter is
+  <a href="http://researchrepository.napier.ac.uk/8746/">not safe to use on the Internet</a>.
+  FTP is safer and the <code>uftpd</code> implementation may even be secure.  Some
+  of the most common security best practises have been employed, while
+  others have been avoided in an effort to keep <code>uftpd</code> user friendly.
+  If you want something really secure, you should probably try
+  <a href="https://security.appspot.com/vsftpd.html">vsftpd</a>.</p>
 
 <!--
   -- Local Variables:
