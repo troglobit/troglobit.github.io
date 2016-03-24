@@ -9,9 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="This is an extremly brief and quick Xen tutorial. There are lots of
-them already, see your GNU/Linux distribution's wiki, HowtoForge or
-other places &hellip;">
+  <meta name="description" content="OK, I admit it. I cannot decide what version control system (VCS) to
+use. I&rsquo;m stuck between the speed and massive snow ball effect of
+Git and &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -82,6 +82,80 @@ other places &hellip;">
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2009/06/12/more-about-bzrweb-and-some-about-git/">More About Bzrweb and Some About Git</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-06-12T19:50:27+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>7:50 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>OK, I admit it.  I cannot decide what version control system (VCS) to
+use.  I&rsquo;m stuck between the speed and massive snow ball effect of
+<a href="http://git-scm.com/">Git</a> and the ease of use and emotional attachment I have to
+<a href="http://bazaar-vcs.org/">Bazaar</a>.</p>
+
+<p>I&rsquo;ve been &ldquo;maintaining&rdquo; bzrweb for a while now, not doing a very good
+job of it though.  It&rsquo;s lagging behind considerably to the bzr API.
+After the upgrade of vmlinux.org to the latest Ubuntu server release
+bzrweb actually didn&rsquo;t work at all.  If it hadn&rsquo;t been for
+<a href="https://code.launchpad.net/~halfdan/bzrweb">the fixes</a> by <a href="http://halfdans.net/">Rasmus Toftdahl Olesen</a> I would probably have
+abandoned it entirely.  Thank you Rasmus!  Anyway, I&rsquo;ve been gleaning at
+other Bazaar web frontends for a while.  The only real option is
+Loggerhead, but even though I consider myself a computer pro I just
+cannot seem to wrap my head around how to set it up.  I just wanted to
+setup a local browser for my user, without the need for root access.
+Like bzrweb supports, after having abandoned that, seemingly radical
+idea, I tried setting up a site wide shared installation &hellip; no luck so
+far. :-/</p>
+
+<p>In comparison to Loggerhead I easily managed to setup a Git repository
+browser, using a <code>/pub/git</code> structure, see <a href="http://git.troglobit.com/">git.vmlinux.org</a>.  The
+gitweb package in Ubuntu was very easy to setup, the one only thing I
+had problem with was the Apache VirtualHost setup.  Some sleep cured
+that, but I should post the conf here, in case someone else experiences
+trouble.</p>
+
+<p>I&rsquo;ll have another go at setting up Loggerhead later, or perhaps try to
+fixup bzrweb.  I&rsquo;m currently leaning towards fixing up bzrweb.  Fix bugs
+viewing tree files, refactor tarball export and a new project summary
+page, are some of the most interesting things I can come up with.  If
+only things could settle down at work for a while — oh well, vacation is
+coming up. Soon, my precious, soon&nbsp;&hellip;</p>
+
+<p>First, however, I will publish the micro vt100/ansi tetris version I
+found last week.  It will be the second project where I use Git, the
+first one was <code>cons</code>, which is a Xen xm wrapper for non privileged
+users.</p>
+
+<p>Some Git and Bazaar links:</p>
+
+<ul>
+<li><a href="http://www.spheredev.org/wiki/Git_for_the_lazy">Git for the Lazy</a> :-)</li>
+<li><a href="http://appletree.or.kr/quick_reference_cards/CVS-Subversion-Git/">CVS, Subversion &amp; Git Refcards</a></li>
+<li><a href="http://www.fthieme.net/drupal6/node/77">Converting Bzr to Git</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2009/06/08/howto-setup-and-run-xen/">Howto Setup and Run Xen</a></h1>
     
     
@@ -99,7 +173,7 @@ other places &hellip;">
 
 
   <div class="entry-content"><p>This is an extremly brief and quick <a href="http://www.xenproject.org/">Xen</a> tutorial. There are lots of
-them already, see your GNU/Linux distribution&#8217;s wiki, HowtoForge or
+them already, see your GNU/Linux distribution&rsquo;s wiki, HowtoForge or
 other places for a starter guide. This particular HowTo deals with
 setting up Xen as easy as possible using Ubuntu 8.04 LTS as host
 operating system (dom0 in Xen terms) and Ubuntu 9.04 as guest operating
@@ -152,15 +226,15 @@ vcpus       = 1
 extra       = 'xencons=tty1'
 </code></pre>
 
-<p>When installing grub on your guest, don&#8217;t pay any attention to Grub
+<p>When installing grub on your guest, don&rsquo;t pay any attention to Grub
 complaining about not being able to map <code>/dev/xvda1</code> to a BIOS disk.
-pyGrub doesn&#8217;t care about such wordly things as physical disks.  Just
-make sure the <code>/boot</code> directory&#8217;s partition (often <code>/</code>) is the first
+pyGrub doesn&rsquo;t care about such wordly things as physical disks.  Just
+make sure the <code>/boot</code> directory&rsquo;s partition (often <code>/</code>) is the first
 listed in the <code>disk=[]</code> array above.</p>
 
 <p>You may need to edit the <code>update-grub</code> script before you install grub,
 it is located at <code>/usr/sbin/update-grub</code>.  Search for <code>in_xen</code>, a fairly
-long way down.  Make sure it&#8217;s set to <code>in_xen=1</code> before the big
+long way down.  Make sure it&rsquo;s set to <code>in_xen=1</code> before the big
 <code>if[]</code>-clause that depends on it.  Without this fix the Xen able kernels
 in Ubuntu 9.04, and later, are not detected.</p>
 
@@ -169,8 +243,8 @@ verify that the script actually finds one active (server) kernel and
 adds it properly to your <code>/boot/grub/menu.lst</code> file.</p>
 
 <p>Another common problem is the lack of a console login.  Usually you
-don&#8217;t need one, but if you&#8217;d like to check your domU from within your
-dom0 you need to add the file &#8220;console&#8221; to <code>/etc/event.d</code></p>
+don&rsquo;t need one, but if you&rsquo;d like to check your domU from within your
+dom0 you need to add the file &ldquo;console&rdquo; to <code>/etc/event.d</code></p>
 
 <pre><code># console - getty
 #
@@ -191,7 +265,7 @@ respawn
 exec /sbin/getty 38400 console
 </code></pre>
 
-<p>That should do the trick!  If it doesn&#8217;t, then there&#8217;s plenty of help to
+<p>That should do the trick!  If it doesn&rsquo;t, then there&rsquo;s plenty of help to
 find in the Debian and Ubuntu wikis, see links above. Good luck!</p>
 </div>
   
@@ -221,7 +295,7 @@ find in the Debian and Ubuntu wikis, see links above. Good luck!</p>
   </header>
 
 
-  <div class="entry-content"><p>It has been a long time coming, but now I&#8217;m seriously starting to look
+  <div class="entry-content"><p>It has been a long time coming, but now I&rsquo;m seriously starting to look
 at <a href="http://git-scm.com/">Git</a>.  Git is the content tracker used by the
 <a href="http://www.kernel.org">Linux kernel</a> folks, initially developed by
 Torvalds.</p>
@@ -230,8 +304,8 @@ Torvalds.</p>
 daily operations and today I started migrating the software to Git.
 Mainly just to get a comparison of performance, storage size and to
 explore how we can use Git on top of svn to become more productive when
-working in parallel in different teams.  We&#8217;ve tried this quite
-extensively before, using Subversion branches and even though it&#8217;s a
+working in parallel in different teams.  We&rsquo;ve tried this quite
+extensively before, using Subversion branches and even though it&rsquo;s a
 heck of a lot easier to use compared to CVS its strength is not in
 merging.</p>
 
@@ -242,7 +316,7 @@ feature in Subversion 1.5 and features like
 in, the recently released, 1.6 helps.  However, working in small teams,
 disconnected from a centralised server is still not possible with svn,
 OK sure there is <a href="http://svk.bestpractical.com/">svk</a>, but honestly,
-doesn&#8217;t that make you think of CVS and bolting on features after the
+doesn&rsquo;t that make you think of CVS and bolting on features after the
 fact, similar to <a href="http://www.cvsnt.org/">CVSNT</a> or
 <a href="http://opencvs.org/">OpenCVS</a>.  Intriguingly bizarre projects. :-)</p>
 
@@ -256,11 +330,11 @@ for instance:</p>
 <li>Local developer branches</li>
 <li>Fast branch switching</li>
 <li>Cherry picking commits from other branches, easily</li>
-<li>Stashing/Shelving, i.e. put aside things you&#8217;re working on for later</li>
+<li>Stashing/Shelving, i.e. put aside things you&rsquo;re working on for later</li>
 </ul>
 
 
-<p>I&#8217;ve started collecting a set of links that seem to be useful:</p>
+<p>I&rsquo;ve started collecting a set of links that seem to be useful:</p>
 
 <ul>
 <li><a href="http://tsunanet.blogspot.com/2007/07/learning-git-svn-in-5min.html">Learning git-svn in five minutes</a></li>
@@ -274,12 +348,12 @@ for instance:</p>
 </ul>
 
 
-<p>I&#8217;ll conclude this post with two YouTube entries, first is the, now
+<p>I&rsquo;ll conclude this post with two YouTube entries, first is the, now
 classic, presentation by
-<a href="http://www.youtube.com/watch?v=4XpnKHJAok8">Linus Torvalds on what Git isn&#8217;t</a>
-&#8230; and then
+<a href="http://www.youtube.com/watch?v=4XpnKHJAok8">Linus Torvalds on what Git isn&rsquo;t</a>
+&hellip; and then
 <a href="http://www.youtube.com/watch?v=8dhZ9BXQgc4">Randal Schwartz on what Git is</a>
-&#8230;</p>
+&hellip;</p>
 </div>
   
   
@@ -362,7 +436,7 @@ adopt.</p>
 <p>He has actually showed me lots of very useful stuff throughout the
 years, and even though we used GNU/Linux at university, he was one
 those hard core people who showed me the path into a successful
-full-time career as a Linux developer. I don&#8217;t think I have ever
+full-time career as a Linux developer. I don&rsquo;t think I have ever
 thanked you properly for that, Jakob!</p>
 
 <p>As it turns out libev was exactly what I have been looking for, for
@@ -377,7 +451,7 @@ to create a new pthread for each new timeout.  I tried replacing it with
 code of
 <a href="https://github.com/troglobit/toolbox/blob/master/timer/timer.c">my own</a>,
 based on Don Libes
-<a href="http://www.kohala.com/start/libes.timers.txt">&#8220;Implementing Software Timers&#8221;</a>.
+<a href="http://www.kohala.com/start/libes.timers.txt">&ldquo;Implementing Software Timers&rdquo;</a>.
 As it turns out libev already has (working) timers, in fact, it has
 taken an even more complete approach and made almost everything into
 events with callbacks, perfect for state machines!</p>
@@ -388,7 +462,7 @@ of the libev timers I put on a big smile and fired up Emacs to
 investigate what other parts of that home brew code base were eligible
 for replacement, when i suddenly hit me: the state machine consists of a
 couple of threads that pass messages between them using <code>msgsnd()</code> and
-<code>msgrcv()</code>, bad old XSI IPC primitives.  Bad guys that don&#8217;t use
+<code>msgrcv()</code>, bad old XSI IPC primitives.  Bad guys that don&rsquo;t use
 standard file descriptors.  A quick and dirty hack confirms it. I
 started looking around and I had a vague recollection of some message
 primitives that actually used file descriptors.  On the mailing list
@@ -407,13 +481,13 @@ primitives work!  Here is my
 Compile it in Emacs with <code>M-x compile</code> (I have that bound to F9 in my
 .emacs, Borland IDE style :)</p>
 
-<p>Thus far I must say I can really recommend libev!  Even though it isn&#8217;t
-<a href="http://www.openbsd.org/policy.html">ISC licensed</a>, it&#8217;s dual licensed
+<p>Thus far I must say I can really recommend libev!  Even though it isn&rsquo;t
+<a href="http://www.openbsd.org/policy.html">ISC licensed</a>, it&rsquo;s dual licensed
 under the
 <a href="http://en.wikipedia.org/wiki/BSD_licenses">2-clause BSD license</a> and
-the <a href="http://www.gnu.org/copyleft/gpl.html">GNU GPL</a>.  In my case I&#8217;ll go
+the <a href="http://www.gnu.org/copyleft/gpl.html">GNU GPL</a>.  In my case I&rsquo;ll go
 with the 2-clause BSD license, which according to Wikipedia is
-&#8220;functionally equivalent&#8221; to the
+&ldquo;functionally equivalent&rdquo; to the
 <a href="http://en.wikipedia.org/wiki/MIT_License">MIT license</a>.</p>
 </div>
   
@@ -443,11 +517,11 @@ with the 2-clause BSD license, which according to Wikipedia is
   </header>
 
 
-  <div class="entry-content"><p>I thought I was alone, but it turns out I&#8217;m not.
-<a href="http://netsplit.com">Scott James Remnant</a> describes exactly what I&#8217;ve
+  <div class="entry-content"><p>I thought I was alone, but it turns out I&rsquo;m not.
+<a href="http://netsplit.com">Scott James Remnant</a> describes exactly what I&rsquo;ve
 been feeling the last couple of years.  Read his
 <a href="https://web.archive.org/web/20121019061557/http://netsplit.com/2009/03/26/the-fallacy-of-high-level-languages/">blog entry</a>
-on the subject.  I couldn&#8217;t agree more.</p>
+on the subject.  I couldn&rsquo;t agree more.</p>
 </div>
   
   
@@ -479,14 +553,14 @@ on the subject.  I couldn&#8217;t agree more.</p>
   <div class="entry-content"><p><a href="http://www.linuxinsight.com/proc_sys_vm_block_dump.html">This makes it possible</a> to debug why a disk needs to spin up, and to
 increase battery life even more.</p>
 
-<p>Dislike NetworkManager? Try <a href="http://wicd.sourceforge.net/">wicd</a>&nbsp;&#8230;</p>
+<p>Dislike NetworkManager? Try <a href="http://wicd.sourceforge.net/">wicd</a>&nbsp;&hellip;</p>
 
 <p>Minimalistic distro <a href="http://crunchbanglinux.org/">Crush Bang Linux 8.10</a></p>
 
 <p>Ah, what every <a href="https://en.wikipedia.org/wiki/Free_and_open-source_software">FLOSS</a> dad is looking for, a way to make your kids
 interested in <a href="http://www.kernel.org/">your world</a> instead of the dark side, and what is
 better than to trick them into it with a cool Linux game?
-<a href="http://www.hermann-uwe.de/blog/teeworlds--a-fun-fast-paced-open-source-online-multiplayer-shooter">Read Uwe Hermann&#8217;s blog about Teeworlds</a>, or visit the
+<a href="http://www.hermann-uwe.de/blog/teeworlds--a-fun-fast-paced-open-source-online-multiplayer-shooter">Read Uwe Hermann&rsquo;s blog about Teeworlds</a>, or visit the
 <a href="http://www.teeworlds.com/">home page</a>.</p>
 
 <p>OK, so my kids are five and three years old, maybe <a href="http://www.worldofgoo.com/">World of Goo</a> is
@@ -615,60 +689,16 @@ litterature on this subject, see for instance the
   </header>
 
 
-  <div class="entry-content"><p>It&#8217;s here!  Fresh, new and packed with new features!  Well, really just
+  <div class="entry-content"><p>It&rsquo;s here!  Fresh, new and packed with new features!  Well, really just
 one new major feature — support for ANSI arrow keys.  A good enough
 reason to bump the minor version number :-)</p>
 
 <p>Get it from the usual FTP location:</p>
 
 <ul>
-<li>http://ftp.vmlinux.org/pub/People/jocke/minix-editline/</li>
+<li><a href="http://ftp.vmlinux.org/pub/People/jocke/minix-editline/">http://ftp.vmlinux.org/pub/People/jocke/minix-editline/</a></li>
 </ul>
 
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/11/08/the-joy-of-colors/">The Joy of Colors</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2008-11-08T23:39:27+01:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>8</span><span class='date-suffix'>th</span>, <span class='date-year'>2008</span></span> <span class='time'>11:39 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Ever so often, as I have mentioned before, I lose myself in trying to
-find new ways of working and doing my daily tasks.  One such digression
-is the topic of editors.  I mainly use GNU Emacs for development and
-other major tasks, for everything else I use Vim.</p>
-
-<p>Vim is quick to start, capable, good looking and easy to use, contrary
-to other vi implementations. (Most notably nvi, which I hate with a
-passion!) Today I found a neat colorscheme that works well on terminals
-with a black background. It&#8217;s called &#8216;advantage&#8217; and is available from
-the <a href="https://web.archive.org/web/20090601001529/http://www.cs.cmu.edu/~maverick/VimColorSchemeTest/">Vim Color Scheme Test</a>.</p>
-
-<p>To install, download <code>advantage.vim</code> and copy it to your
-<code>/usr/share/vim/vim71/colors/</code> directory.  Then open a C source file in
-vim and type <code>:colorscheme advantage</code> to activate it.</p>
-
-<p>Thank you <a href="https://web.archive.org/web/20090601001529/http://www.cs.cmu.edu/~maverick/">Shan Leung Maverick Woo</a>! :-)</p>
 </div>
   
   
@@ -719,6 +749,10 @@ vim and type <code>:colorscheme advantage</code> to activate it.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/03/24/disaster-recovery/">Disaster Recovery</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/03/07/testing-multicast-with-docker/">Testing Multicast With Docker</a>
       </li>
     
@@ -732,10 +766,6 @@ vim and type <code>:colorscheme advantage</code> to activate it.</p>
     
       <li class="post">
         <a href="/blog/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/">En Vanlig Dag På Jobbet (SWEDISH)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/">Awesome: Changing Next/Prev Tune in Spotify</a>
       </li>
     
   </ul>

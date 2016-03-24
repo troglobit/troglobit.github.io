@@ -9,9 +9,8 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="For the better part of the last ten years I've been working with
-multicast in one way or another. I've used many different tools for
-testing, but &hellip;">
+  <meta name="description" content="For the better part of the last ten years I&rsquo;ve been working with
+multicast in one way or another. I&rsquo;ve used many different tools for &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -95,12 +94,12 @@ testing, but &hellip;">
   </header>
 
 
-<div class="entry-content"><p>For the better part of the last ten years I&#8217;ve been working with
-multicast in one way or another.  I&#8217;ve used many different tools for
+<div class="entry-content"><p>For the better part of the last ten years I&rsquo;ve been working with
+multicast in one way or another.  I&rsquo;ve used many different tools for
 testing, but usually simply using <code>ping(1)</code> and <code>tcpdump(1)</code> is quite
 sufficient.  However, you often need to tell bridges (switches) to open
 up multicast in your general direction for your pings to get through, so
-you need to send an IGMP &#8220;join&#8221; first.  I found mcjoin, written by David
+you need to send an IGMP &ldquo;join&rdquo; first.  I found mcjoin, written by David
 Stevens, in <a href="https://lkml.org/lkml/2004/8/5/143">this posting to LKML</a>
 back in 2006, and started improving it and adding features to it over
 the years.</p>
@@ -128,10 +127,10 @@ had enough.  So here it is, v2.0:</p>
 
 
 <p>Most of the time I simply want to see a resulting IGMP join message in
-Wireshark, see it bite in a switch&#8217;s FDB or a routing daemon&#8217;s
+Wireshark, see it bite in a switch&rsquo;s FDB or a routing daemon&rsquo;s
 forwarding table.  So, join is the default operation, and also continues
 to be the name of the tool.  My favourite testing group is set as the
-default, 225.1.2.3, so you only need to start the tool and you&#8217;re off.
+default, 225.1.2.3, so you only need to start the tool and you&rsquo;re off.
 To send to the same default group (225.1.2.3), simply add <code>-s</code> to the
 sender side.</p>
 
@@ -146,7 +145,7 @@ Received total: 66 packets
 receiver$
 </code></pre>
 
-<p>If you ever need anything else, e.g. routing multicast, there&#8217;s even a
+<p>If you ever need anything else, e.g. routing multicast, there&rsquo;s even a
 man page.  It mentions setting the TTL and other such nastiness :)</p>
 </div>
 
@@ -230,6 +229,10 @@ man page.  It mentions setting the TTL and other such nastiness :)</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/03/24/disaster-recovery/">Disaster Recovery</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/03/07/testing-multicast-with-docker/">Testing Multicast With Docker</a>
       </li>
     
@@ -243,10 +246,6 @@ man page.  It mentions setting the TTL and other such nastiness :)</p>
     
       <li class="post">
         <a href="/blog/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/">En Vanlig Dag På Jobbet (SWEDISH)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/">Awesome: Changing Next/Prev Tune in Spotify</a>
       </li>
     
   </ul>

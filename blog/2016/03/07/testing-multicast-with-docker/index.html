@@ -107,7 +107,7 @@ stable build environment for cross-compiling.  I had no idea people
 would want to use a Docker container as a multicast sink.  Basically I
 was baffled.</p>
 
-<p>The reporter used a Java based tool but simply couldn&#8217;t get things to
+<p>The reporter used a Java based tool but simply couldn&rsquo;t get things to
 work properly with <code>pimd</code> running on the host:</p>
 
 <pre><code>                eth0
@@ -127,7 +127,7 @@ work properly with <code>pimd</code> running on the host:</p>
 bit of blocker for the <code>pimd</code> v2.3.2 release and I admittedly lost a bit
 of sleep over this.  So finally this weekend, I sat down and whipped my
 old <a href="https://github.com/troglobit/mcjoin/">mcjoin</a> tool up into shape.
-I&#8217;ve relied on it for years, but it couldn&#8217;t send or receive packets,
+I&rsquo;ve relied on it for years, but it couldn&rsquo;t send or receive packets,
 until now.</p>
 
 <p>Running docker v1.5 in Ubuntu 15.10 I ran this, with <code>pimd</code> on the host
@@ -142,7 +142,7 @@ Received total: 2500 packets
 <p>The <code>pimd</code> and the multicast sender runs on my host, which should not
 matter since Linux still has to route the traffic to the <code>docker0</code>
 interface.  Also, without setting the TTL to 2 (or greater) the
-container receives no traffic at all.  Here&#8217;s what I run in another
+container receives no traffic at all.  Here&rsquo;s what I run in another
 terminal on my host:</p>
 
 <pre><code>./mcjoin -s -t 2 -c 10 225.1.2.3+250
@@ -194,6 +194,8 @@ is sure not the last.  Docker is a truly revolutionary new tool!</p>
         <a class="basic-alignment left" href="/blog/2016/03/07/multicast-testing/" title="Previous Post: Multicast testing, made easy!">&laquo; Multicast testing, made easy!</a>
       
       
+        <a class="basic-alignment right" href="/blog/2016/03/24/disaster-recovery/" title="Next Post: Disaster Recovery">Disaster Recovery &raquo;</a>
+      
     </p>
   </footer>
 </article>
@@ -233,6 +235,10 @@ is sure not the last.  Docker is a truly revolutionary new tool!</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/03/24/disaster-recovery/">Disaster Recovery</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/03/07/testing-multicast-with-docker/">Testing Multicast With Docker</a>
       </li>
     
@@ -246,10 +252,6 @@ is sure not the last.  Docker is a truly revolutionary new tool!</p>
     
       <li class="post">
         <a href="/blog/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/">En Vanlig Dag På Jobbet (SWEDISH)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/">Awesome: Changing Next/Prev Tune in Spotify</a>
       </li>
     
   </ul>

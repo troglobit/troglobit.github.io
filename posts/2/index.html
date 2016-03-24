@@ -9,9 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="A steady flow of features, and releases, is key to keeping any project
-alive. Recently I ticked off another item in the Finit
-TODO list ... Finit v1. &hellip;">
+  <meta name="description" content="I&rsquo;m posting this in case anyone else gets stuck setting up Apache
+with Gitweb. Also as a reminder to myself in case I ever need to
+set up this &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -82,6 +82,70 @@ TODO list ... Finit v1. &hellip;">
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/">HowTo: Apache With Gitweb on Debian 8.1</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-06-30T23:13:48+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:13 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&rsquo;m posting this in case anyone else gets stuck setting up <a href="http://www.apache.org">Apache</a>
+with <a href="http://git-scm.com/docs/gitweb">Gitweb</a>.  Also as a reminder to myself in case I ever need to
+set up this all over again.</p>
+
+<ol>
+<li>You have all your eggs in one basket (GitHub), and</li>
+<li>You really like that shiny basket, but</li>
+<li>You know you&rsquo;re clumsy and usually drop baskets yourself.</li>
+<li>You are wise (yes you are!) and realize you need another basket, so</li>
+<li>You set up a server and a domain yourself &hellip;</li>
+</ol>
+
+
+<p>OK.  Let&rsquo;s start simple, since you are already running the latest Debian
+you fire up the command line and install the basics:</p>
+
+<pre><code>sudo apt-get install gitweb apache2
+</code></pre>
+
+<p>So it&rsquo;ll complain, you&rsquo;ll clarify your request and soon all required
+packages are on your server.  Now what?</p>
+
+<p>Debian has already set up <a href="http://localhost/gitweb">http://localhost/gitweb</a> for you, and if you
+have a domain already you should go ahead and edit the master file for
+that:</p>
+
+<pre><code>editor /etc/apache2/sites-available/000-default.conf
+service apache2 reload
+</code></pre>
+
+<p>If you want to use that for your gitweb needs, then you&rsquo;re done!</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/">Inetd Support in Finit v1.12</a></h1>
     
     
@@ -100,13 +164,13 @@ TODO list ... Finit v1. &hellip;">
 
   <div class="entry-content"><p>A steady flow of features, and releases, is key to keeping any project
 alive.  Recently I ticked off another item in the <a href="/finit.html">Finit</a>
-TODO list &#8230;</p>
+TODO list &hellip;</p>
 
 <p>Finit v1.12 now comes with a built-in inetd!  You no longer need an
 external inetd daemon to launch services on demand.</p>
 
-<p>The good news doesn&#8217;t stop there, this little inetd actually supports a
-poor man&#8217;s tcpwrappers!</p>
+<p>The good news doesn&rsquo;t stop there, this little inetd actually supports a
+poor man&rsquo;s tcpwrappers!</p>
 
 <pre><code>inetd ssh/tcp          nowait [2345] /sbin/dropbear -i -R -F
 inetd ssh@eth0:222/tcp nowait [2345] /sbin/dropbear -i -R -F
@@ -117,7 +181,7 @@ the <a href="https://matt.ucc.asn.au/dropbear/dropbear.html">Dropbear SSH</a>
 server on demand on port 22 (default ssh/tcp port in <code>/etc/services</code>) on
 <em>all</em> interfaces except on <code>eth0</code>, which in your case is the Internet
 (WAN) interface, here you want SSH to run on port 222.  Actually, you
-don&#8217;t want port 22 open at all on <code>eth0</code> &#8230; so finit takes care of this
+don&rsquo;t want port 22 open at all on <code>eth0</code> &hellip; so finit takes care of this
 for you!  Seriously, it just works, no need for messing about with that
 nasty old <code>iptables</code> anymore!</p>
 
@@ -146,7 +210,7 @@ default.  To enable it you need two things:</p>
 </ol>
 
 
-<p>Assuming you&#8217;ve installed the default set of plugins, the following two
+<p>Assuming you&rsquo;ve installed the default set of plugins, the following two
 lines can be added:</p>
 
 <pre><code>inetd time/udp   wait [2345] internal
@@ -239,11 +303,11 @@ replaced by <a href="/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/">v1.12</
   </header>
 
 
-  <div class="entry-content"><blockquote><p>&#8220;Enable <em>all</em> the warnings!&#8221;</p></blockquote>
+  <div class="entry-content"><blockquote><p>&ldquo;Enable <em>all</em> the warnings!&rdquo;</p></blockquote>
 
 <p>This is one of the truths you learn when you start working with C.  Most
 of the time adding <code>CPPFLAGS="-W -Wall -Werror"</code> is all you need to find
-all the nasty bugs.  And if that&#8217;s not enough, there are tons of tools
+all the nasty bugs.  And if that&rsquo;s not enough, there are tons of tools
 for static code analysis, like <code>scan-build</code> in
 <a href="http://clang-analyzer.llvm.org/scan-build.html">Clang</a>, and
 <a href="https://scan.coverity.com/">Coverity Scan</a>, to help you <em>find all the
@@ -251,9 +315,9 @@ bugs</em>!</p>
 
 <p>However, these pesky warnings (some of which cannot even be disabled!)
 are sometimes more of a nuisance than help.  Sometimes you <em>know</em> that
-some parameters to a function will remain unused &#8211; it&#8217;s a callback, and
-you don&#8217;t need all the data given to you.  So you start adding all kinds
-of voodoo, like <code>__attribute__ ((unused))</code> &#8230; seriously?</p>
+some parameters to a function will remain unused &ndash; it&rsquo;s a callback, and
+you don&rsquo;t need all the data given to you.  So you start adding all kinds
+of voodoo, like <code>__attribute__ ((unused))</code> &hellip; seriously?</p>
 
 </div>
   
@@ -287,7 +351,7 @@ of voodoo, like <code>__attribute__ ((unused))</code> &#8230; seriously?</p>
   </header>
 
 
-  <div class="entry-content"><p>I&#8217;m a coder, not a writer.  Here&#8217;s what I&#8217;ve been working on during the
+  <div class="entry-content"><p>I&rsquo;m a coder, not a writer.  Here&rsquo;s what I&rsquo;ve been working on during the
 winter holidays:</p>
 
 <ul>
@@ -310,14 +374,14 @@ available today.</li>
 is likely the last release ever of the old pimd, unless someone starts
 paying me to work on it.</p>
 
-<p>&#8230; or more people step up to help.  Both the Xorp PIM-SM and the
+<p>&hellip; or more people step up to help.  Both the Xorp PIM-SM and the
 upcoming Quagga PIM-SSM implementations are in better shape.  The only
-thing old pimd has got going for it is the license.  It&#8217;s 3-clause
+thing old pimd has got going for it is the license.  It&rsquo;s 3-clause
 BSD, so very liberal.</p></li>
 </ul>
 
 
-<p>If you&#8217;re interested in pitching in, on any of my projects, just send me
+<p>If you&rsquo;re interested in pitching in, on any of my projects, just send me
 an email or connect with me on GitHub!</p>
 </div>
   
@@ -347,8 +411,8 @@ an email or connect with me on GitHub!</p>
   </header>
 
 
-  <div class="entry-content"><p>I&#8217;ve had this long-standing issue with backups.  It&#8217;s deadly boring to
-set up and maintain, so I don&#8217;t do any.  Until today!</p>
+  <div class="entry-content"><p>I&rsquo;ve had this long-standing issue with backups.  It&rsquo;s deadly boring to
+set up and maintain, so I don&rsquo;t do any.  Until today!</p>
 
 <p>Today I moved the sources for my <a href="http://troglobit.com">Octopress blag</a>
 to GitHub, which also prompted me to set up
@@ -442,9 +506,9 @@ the distinct possibility that the
 <p>At <a href="http://www.westermo.com">work</a> we will likely start using the
 Quagga PIM rather than pimd in WeOS.</p>
 
-<p>For now though, enjoy pimd v2.2.0.  It&#8217;s been tested in both my Qemu
+<p>For now though, enjoy pimd v2.2.0.  It&rsquo;s been tested in both my Qemu
 based virtual testbed and a few setups using Linux&#8217; <code>netns</code> feature in
-<a href="http://www.nrl.navy.mil/itd/ncs/products/core">CORE</a> &#8211; awesome
+<a href="http://www.nrl.navy.mil/itd/ncs/products/core">CORE</a> &ndash; awesome
 little proggy! :-)</p>
 
 </div>
@@ -534,7 +598,7 @@ make kernel KERNCONF=MULTICAST
 reboot
 </code></pre>
 
-<p>That&#8217;s it.  Remember to make sure your Qemu VM has enough RAM or it
+<p>That&rsquo;s it.  Remember to make sure your Qemu VM has enough RAM or it
 will probably page fault on you.  I use 1,0 GB RAM.</p>
 
 <p>The other option, to load the ready made module, is likely better.  But
@@ -542,47 +606,6 @@ you want it to load at boot.  So add this to <code>/boot/loader.conf</code>:</p>
 
 <pre><code>ip_mroute_load="yes"
 </code></pre>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/">GnuTLS Support in Inadyn and Fixes to Uftpd</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-09-13T19:18:56+02:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>7:18 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Quite a few changes lately.  I finally got around to adding support
-for <a href="http://www.gnutls.org">GnuTLS</a> to <a href="/inadyn.html">Inadyn</a>,
-hopefully this will get into Debian &#8230; unless the Jessie freeze
-prevents that.</p>
-
-<p>Also, thanks to a friend of mine trying out <a href="/uftpd.html">uftpd</a>
-recently I discovered that libuev has been missing from the tarball
-since the release of the TFTP support.  Fixed.</p>
-
-<p>Another great piece of news is that
-<a href="http://www.coverity.com/">Coverity</a> accepted uftpd as an Open Source
-project, I&#8217;ve been hard at work fixing nasty bugs uncovered by the
-<a href="https://scan.coverity.com/">Coverity Scan</a>.  Great stuff! :)</p>
 </div>
   
   
@@ -633,6 +656,10 @@ project, I&#8217;ve been hard at work fixing nasty bugs uncovered by the
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/03/24/disaster-recovery/">Disaster Recovery</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/03/07/testing-multicast-with-docker/">Testing Multicast With Docker</a>
       </li>
     
@@ -646,10 +673,6 @@ project, I&#8217;ve been hard at work fixing nasty bugs uncovered by the
     
       <li class="post">
         <a href="/blog/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/">En Vanlig Dag På Jobbet (SWEDISH)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/">Awesome: Changing Next/Prev Tune in Spotify</a>
       </li>
     
   </ul>

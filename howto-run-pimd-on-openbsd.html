@@ -108,7 +108,7 @@ creating PIM.</p>
 or OSPF (or BGP or IS-IS) or whatever <em>unicast</em> routing protocol first
 so that regular traffic works.  Which is kind of useful since you can
 test the network with simple <code>ping</code> before trying to get any multicast
-routing to work &#8230;</p>
+routing to work &hellip;</p>
 
 <!-- more -->
 
@@ -212,7 +212,7 @@ path is <code>/usr/local/sbin/pimd</code> and <code>/etc/pimd.conf</code>.  Use 
 and <code>--sysconfdir</code> command line options to the configure script to set
 other install directories.  See the file <a href="https://github.com/troglobit/pimd/blob/master/INSTALL.md">INSTALL.md</a> for more info.</p>
 
-<p>That&#8217;s it!</p>
+<p>That&rsquo;s it!</p>
 
 <h2>Run pimd</h2>
 
@@ -328,11 +328,11 @@ bridge.  On a Linux <em>host system</em> this is done by:</p>
 </code></pre>
 
 <p>The third most common problem is actually the firewall in your system.
-On Linux systems you get <code>EPERM</code> &#8211; &#8220;Operation not permitted&#8221;, and on
-OpenBSD you likely get <code>EHOSTUNREACH</code> &#8211; &#8220;No route to host&#8221; all over the
+On Linux systems you get <code>EPERM</code> &ndash; &ldquo;Operation not permitted&rdquo;, and on
+OpenBSD you likely get <code>EHOSTUNREACH</code> &ndash; &ldquo;No route to host&rdquo; all over the
 logs, usually for the IGMP traffic that pimd generates.  On OpenBSD this
 is due to <code>pf</code> by default filtering all frames with IP options set.  I
-added support for the &#8220;Router Alert&#8221; IP option to IGMP frames in v2.2.0,
+added support for the &ldquo;Router Alert&rdquo; IP option to IGMP frames in v2.2.0,
 this is recommended per RFC.   Add this to your <code>/etc/pf.conf</code> to allow
 IGMP frames to be sent by pimd:</p>
 
@@ -401,6 +401,10 @@ pass proto igmp allow-opts
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/03/24/disaster-recovery/">Disaster Recovery</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/03/07/testing-multicast-with-docker/">Testing Multicast With Docker</a>
       </li>
     
@@ -414,10 +418,6 @@ pass proto igmp allow-opts
     
       <li class="post">
         <a href="/blog/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/">En Vanlig Dag På Jobbet (SWEDISH)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/">Awesome: Changing Next/Prev Tune in Spotify</a>
       </li>
     
   </ul>

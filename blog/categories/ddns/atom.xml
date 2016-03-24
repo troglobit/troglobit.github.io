@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ddns | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/ddns/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2016-03-12T17:21:22+01:00</updated>
+  <updated>2016-03-25T00:14:54+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -20,7 +20,7 @@
     <id>http://troglobit.github.io/blog/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd</id>
     <content type="html"><![CDATA[<p>Quite a few changes lately.  I finally got around to adding support
 for <a href="http://www.gnutls.org">GnuTLS</a> to <a href="/inadyn.html">Inadyn</a>,
-hopefully this will get into Debian &#8230; unless the Jessie freeze
+hopefully this will get into Debian &hellip; unless the Jessie freeze
 prevents that.</p>
 
 <p>Also, thanks to a friend of mine trying out <a href="/uftpd.html">uftpd</a>
@@ -29,7 +29,7 @@ since the release of the TFTP support.  Fixed.</p>
 
 <p>Another great piece of news is that
 <a href="http://www.coverity.com/">Coverity</a> accepted uftpd as an Open Source
-project, I&#8217;ve been hard at work fixing nasty bugs uncovered by the
+project, I&rsquo;ve been hard at work fixing nasty bugs uncovered by the
 <a href="https://scan.coverity.com/">Coverity Scan</a>.  Great stuff! :)</p>
 ]]></content>
   </entry>
@@ -47,7 +47,7 @@ last release of Inadyn before the big 2.0, which will introduce the
 new .conf file format based on
 <a href="http://www.nongnu.org/confuse/">libConfuse</a>.  A .conf file
 feasibility study was
-<a href="/blog/2014/02/23/weekend-hack-json-vs-conf/">presented earlier</a> &#8230;</p>
+<a href="/blog/2014/02/23/weekend-hack-json-vs-conf/">presented earlier</a> &hellip;</p>
 
 <p>The uftpd project is completely based on user input, currently mostly
 mine.  I will add features and bug fixes when I need them, unless I
@@ -59,8 +59,8 @@ I cannot maintain multiple accounts on various DDNS providers myself.</p>
 
 <p>Patches to support flavors of UNIX other than GNU/Linux, including
 GNU/Hurd, or even other operating systems are also welcome, as long as
-it&#8217;s not Windows.  I will not maintain any Windows support since I
-don&#8217;t use it myself.  If you want Windows support you will have to
+it&rsquo;s not Windows.  I will not maintain any Windows support since I
+don&rsquo;t use it myself.  If you want Windows support you will have to
 take a very active co-maintainer role in the respective project.</p>
 ]]></content>
   </entry>
@@ -70,18 +70,18 @@ take a very active co-maintainer role in the respective project.</p>
     <link href="http://troglobit.github.io/blog/2014/05/14/new-release-of-the-ddns-client-inadyn/"/>
     <updated>2014-05-14T08:29:48+02:00</updated>
     <id>http://troglobit.github.io/blog/2014/05/14/new-release-of-the-ddns-client-inadyn</id>
-    <content type="html"><![CDATA[<p>Looking for a Dynamic DNS, DDNS, client?  Well you&#8217;re in luck, the
+    <content type="html"><![CDATA[<p>Looking for a Dynamic DNS, DDNS, client?  Well you&rsquo;re in luck, the
 <a href="http://en.wikipedia.org/wiki/Alternative_terms_for_free_software" title="FLOSS">FLOSS</a> market space is flooded with dedicated clients and various
 wget scripts.  So why bother with an old C implementation?  Well, this
 is admittedly one of the old timers in the game and is likely packaged
-for your GNU/Linux distribution of choice already.  It&#8217;s tried and
+for your GNU/Linux distribution of choice already.  It&rsquo;s tried and
 tested with many DDNS service providers and even comes bundled in a
 few embedded router distributions as well.</p>
 
-<p>Today I&#8217;ve released <a href="/inadyn.html">Inadyn</a> v1.99.7 as an XZ compressed
+<p>Today I&rsquo;ve released <a href="/inadyn.html">Inadyn</a> v1.99.7 as an XZ compressed
 tarball.  The release announcement should be up on <a href="https://freecode.com/projects/inadyn">free(code)</a>
-now.  It&#8217;s a small incremental release containing mainly code cleanup
-and a few new features that you likely won&#8217;t notice: support for
+now.  It&rsquo;s a small incremental release containing mainly code cleanup
+and a few new features that you likely won&rsquo;t notice: support for
 multiple cache files and DDNS providers as separate plugins, for easy
 addition of new ones as well as maintenance of existing.  This further
 separates the internal logic from the provider specific parts and also

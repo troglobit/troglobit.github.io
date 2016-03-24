@@ -9,7 +9,8 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="Don't try this at home kids. (Disclaimer: I live in Sweden :) ">
+  <meta name="description" content="Don&rsquo;t try this at home kids. (Disclaimer: I live in Sweden :) After spending the better part of the month implementing date support
+in &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -93,7 +94,7 @@
   </header>
 
 
-<div class="entry-content"><p>Don&#8217;t try this at home kids. (Disclaimer: I live in Sweden :)</p>
+<div class="entry-content"><p>Don&rsquo;t try this at home kids. (Disclaimer: I live in Sweden :)</p>
 
 <!-- more -->
 
@@ -101,7 +102,96 @@
 
 
 <div><script src='https://gist.github.com/6168031.js'></script>
-<noscript><pre><code></code></pre></noscript></div>
+<noscript><pre><code>After spending the better part of the month implementing date support
+in RethinkDB, Mike Lucy sent the team the following e-mail. It would
+have been funny, if it didn&#39;t cause thousands of programmers so much
+pain. Read it, laugh, and weep!
+
+-----
+
+So, it turns out that we&#39;re only going to support dates between the
+year 1400 and the year 10000 (inclusive), because that&#39;s what boost
+supports.
+
+Now, I know all you date-time fans out there have the same question --
+&quot;1400?  How does that make any sense?  Wasn&#39;t the Gregorian calendar
+established some time in the 1500s?&quot;
+
+Great question!  It turns out that it&#39;s the wrong one, though.  See,
+they didn&#39;t really have standards bodies or anything back in the day
+-- there was nobody to &quot;establish&quot; a calendar.  The Catholic church
+came up with the Gregorian calendar in 1582 because the Julian date of
+Easter as decreed by the first council of Nicaea had drifted from the
+actual date of the Spring equinox.  (The Julian calendar loses about
+18 hours every century.)
+
+So Catholic countries switched to the Gregorian calendar in 1582, by
+just picking a day and skipping about 10 days forward.  (Of course,
+they all picked different days to skip forward, so there&#39;s a period of
+time toward the end of 1582 where if you pick a random day there&#39;s a
+pretty good chance that that day doesn&#39;t exist in at least one major
+European country.)
+
+The Protestant countries took just a tad longer -- about 120 years.
+Most of them switched over around 1700, with varying degrees of
+Hijinks.
+
+Sweden deserves a special mention here, because they apparently
+decided that rather than skipping so many days, it would be easier to
+just not have leap years for a while until they caught up with the
+Gregorian calendar.  That sounds reasonable, until you think about it
+and realize that they planned to spend 40 YEARS where their own notion
+of the current date didn&#39;t line up with either calendar.
+
+And then, best of all, they didn&#39;t even do it.  They skipped the first
+leap year, then got into some war or another and just didn&#39;t bother
+skipping the next two.
+
+They finally realized that the whole idea was sort of silly (after 12
+years, 8 of which were spent not doing it).  However, instead of just
+jumping forward like everyone else, they moved BACK to the Julian
+calendar by introducing February 30th for the year 1712.  (This is the
+only year where February 30th is a legal Julian date, and only in
+Sweden.)
+
+50 years later, they finally jumped forward to Gregorian like
+everybody else (at approximately the same time as Britain).
+
+Lest you think that this is all a relic of history, Alaska didn&#39;t move
+onto the Gregorian calendar until we bought it from Russia in the late
+1800s, and Russia itself didn&#39;t move onto the Gregorian calendar until
+1918.
+
+China actually moved onto the Gregorian calendar TWICE -- once in
+1912, and once in 1928.  (In between there was a brief period of chaos
+where several warlords rejected the Gregorian calendar in favor of
+whatever one they liked best.)
+
+Now, though, everyone is basically settled on the Gregorian calendar,
+except for a few countries (like Iran) that reject it, or (like
+Israel) use it alongside another calendar, or (like Taiwan) use it but
+with minor edits.
+
+But let&#39;s ignore those.  Let&#39;s say we&#39;re in a country X that&#39;s on the
+Gregorian calendar, and we have a date that we know was recorded
+*after* the last time X moved to the Gregorian calendar (we need &quot;the
+last time&quot; for cases like China).  Then we should be safe, right?
+
+Not quite.  You see, while we take it for granted now, the year didn&#39;t
+always start on January 1st.  Many European countries started the year
+on some major holy day (like Christmas).  Some, like England, even had
+multiple starts of the year; one that was in common use, and one that
+was the legal standard.
+
+Now most countries switched to starting their years on January 1st
+before adopting the Gregorian calendar, but some didn&#39;t.  Holland, for
+example (then the Republic of the Seven United Netherlands -- don&#39;t
+even get me STARTED on all the cases where groups with different
+calendars conquered each other, or merged with each other, or began or
+ceased to exist).  They apparently didn&#39;t move to January 1st until a
+year after they&#39;d moved to the Gregorian calendar.
+
+Anyway, that&#39;s all I&#39;ve got for you.  No moral.</code></pre></noscript></div>
 
 
 
@@ -181,6 +271,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/03/24/disaster-recovery/">Disaster Recovery</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/03/07/testing-multicast-with-docker/">Testing Multicast With Docker</a>
       </li>
     
@@ -194,10 +288,6 @@
     
       <li class="post">
         <a href="/blog/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/">En Vanlig Dag På Jobbet (SWEDISH)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/">Awesome: Changing Next/Prev Tune in Spotify</a>
       </li>
     
   </ul>

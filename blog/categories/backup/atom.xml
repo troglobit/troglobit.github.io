@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Backup | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/backup/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2016-03-12T17:21:22+01:00</updated>
+  <updated>2016-03-25T00:14:54+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -14,12 +14,119 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Disaster Recovery]]></title>
+    <link href="http://troglobit.github.io/blog/2016/03/24/disaster-recovery/"/>
+    <updated>2016-03-24T22:39:00+01:00</updated>
+    <id>http://troglobit.github.io/blog/2016/03/24/disaster-recovery</id>
+    <content type="html"><![CDATA[<p>Days like these inconspicuously start out just like any other day,
+except on days like these you accidentally manage to erase <code>$HOME</code> and
+have no real backup to rely on &hellip; Maundy Thursday will forever be Black
+Thursday for me, for now on.</p>
+
+<p>Best thing your can do, after cursing at yourself constantly for a
+couple of hours, is to:</p>
+
+<ol>
+<li>Come up with a useful backup and <em>restore</em> strategy</li>
+<li>Read up on undeletion tools for Ext4</li>
+<li>Blog about it, naturally</li>
+</ol>
+
+
+<p>BUT FIRST &ndash; QUICK &ndash; UNMOUNT OR POWER-OFF YOUR COMPUTER &ndash; PULL OUT THE
+BATTERY &ndash; AND STEP AWAY FROM THE COMPUTER!  Must protect the partition
+from being accidentally written to &ndash; I completely fumbled this step, so
+take heed young people!</p>
+
+<p>Now calm down and behave like an engineer again.</p>
+
+<p>There exist two neat tools, three if you count the more hard core
+<code>debugfs</code>:</p>
+
+<ul>
+<li><a href="http://extundelete.sourceforge.net/">extundelete</a></li>
+<li><a href="http://ext4magic.sourceforge.net/ext4magic_en.html">ext4magic</a></li>
+</ul>
+
+
+<p>Both have been around a while, and both are capable of restoring all
+files.  See their respective home pages for details.</p>
+
+<p>My system used LVM, of course, to make things a bit harder.  That&rsquo;s why
+I&rsquo;m documenting my steps here:</p>
+
+<ol>
+<li>Remove disk from lappy</li>
+<li>Prepare to connect using USB cradle to workstation, <em>prepare</em> don&rsquo;t
+do it yet!  I did the next few steps as root on my workstation,
+that&rsquo;s right, I didn&rsquo;t care anymore at this point.  The world may as well burn!</li>
+<li>You haven&rsquo;t connected the disk yet, right stupid?  Most systems today
+have cool features like automount that would cause the journal to be
+replayed &ndash; WE DO NOT WANT THAT OK? OK!</li>
+</ol>
+
+
+<p>You need the lvm tools:</p>
+
+<pre><code>apt-get install lvm2
+vgscan
+vgchange -ay ubuntu-vg
+lvs
+</code></pre>
+
+<p>The last command should list your partition, in my case labled
+<code>ubuntu-vg</code>.  To be able to run <code>extundelete</code> or <code>ext4magic</code> on the
+partition you have to mount the partition, <em>read-only</em> needless to say:</p>
+
+<pre><code>mkdir /rescue
+mount -o ro /dev/ubuntu-vg/root /rescue
+</code></pre>
+
+<p>Now we try some fairy dust:</p>
+
+<pre><code>ext4magic /dev/ubuntu-vg/root -r
+</code></pre>
+
+<p>OK, so let&rsquo;s see:</p>
+
+<pre><code>ls -l RECOVERDIR/
+</code></pre>
+
+<p>The results between <code>ext4magic</code> and <code>extundelete</code> may vary, so try them
+both out, test different options, and maybe even look at <code>debugfs</code>,
+we&rsquo;re desperate after all.</p>
+
+<pre><code>extundelete /dev/ubuntu-vg/root --restore-all
+ls -l RECOVERED_FILES
+</code></pre>
+
+<p>If there&rsquo;s a LOT of files you may have some luck narrowing down the
+result using the <code>--after DATE</code> option &hellip; where <code>DATE</code> is the number
+of seconds since the UNX epoch:</p>
+
+<pre><code>extundelete /dev/ubuntu-vg/root --restore-all --after 1458802800
+ls -l RECOVERED_FILES
+</code></pre>
+
+<p>I found my magic number using</p>
+
+<pre><code>date -d "Mar 24 8:00 2016" +%s
+</code></pre>
+
+<p>Well, as I said, I didn&rsquo;t turn off my computer in time. Instead I took
+the braindead option of starting to google for solutions.  So all my
+files (with proper filenames) turned out to contain only cached files
+from the browser &ndash; reclaiming the blocks goes quick, so watch out kids.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Blog Restoration Project]]></title>
     <link href="http://troglobit.github.io/blog/2015/01/02/blog-restoration-project-now-also-on-github-pages/"/>
     <updated>2015-01-02T14:12:59+01:00</updated>
     <id>http://troglobit.github.io/blog/2015/01/02/blog-restoration-project-now-also-on-github-pages</id>
-    <content type="html"><![CDATA[<p>I&#8217;ve had this long-standing issue with backups.  It&#8217;s deadly boring to
-set up and maintain, so I don&#8217;t do any.  Until today!</p>
+    <content type="html"><![CDATA[<p>I&rsquo;ve had this long-standing issue with backups.  It&rsquo;s deadly boring to
+set up and maintain, so I don&rsquo;t do any.  Until today!</p>
 
 <p>Today I moved the sources for my <a href="http://troglobit.com">Octopress blag</a>
 to GitHub, which also prompted me to set up
@@ -36,22 +143,22 @@ Ruby magic to administer it all with!  Here are some links I used to
 get where I am:</p>
 
 <ul>
-<li>http://octopress.org/docs/setup/</li>
-<li>https://help.github.com/articles/creating-project-pages-manually/</li>
-<li>https://help.github.com/articles/user-organization-and-project-pages/</li>
-<li>http://www.tomordonez.com/blog/2012/06/04/creating-a-github-blog-using-octopress/</li>
-<li>http://miguelcamba.com/blog/2013/04/22/tutorial-create-a-blog-with-octopress-and-host-it-in-github-pages/</li>
-<li>http://octopress.org/docs/deploying/github/</li>
+<li><a href="http://octopress.org/docs/setup/">http://octopress.org/docs/setup/</a></li>
+<li><a href="https://help.github.com/articles/creating-project-pages-manually/">https://help.github.com/articles/creating-project-pages-manually/</a></li>
+<li><a href="https://help.github.com/articles/user-organization-and-project-pages/">https://help.github.com/articles/user-organization-and-project-pages/</a></li>
+<li><a href="http://www.tomordonez.com/blog/2012/06/04/creating-a-github-blog-using-octopress/">http://www.tomordonez.com/blog/2012/06/04/creating-a-github-blog-using-octopress/</a></li>
+<li><a href="http://miguelcamba.com/blog/2013/04/22/tutorial-create-a-blog-with-octopress-and-host-it-in-github-pages/">http://miguelcamba.com/blog/2013/04/22/tutorial-create-a-blog-with-octopress-and-host-it-in-github-pages/</a></li>
+<li><a href="http://octopress.org/docs/deploying/github/">http://octopress.org/docs/deploying/github/</a></li>
 </ul>
 
 
 <p>With some added <code>apt-get intall ruby ruby-bundler</code> magic in Ubuntu
-everything started to look normal &#8211; now I could even do <code>rake preview</code>
+everything started to look normal &ndash; now I could even do <code>rake preview</code>
 before deploying!  Only a minor problem I had before getting everything
 working was this:</p>
 
 <blockquote><p>/usr/local/rvm/gems/ruby-2.1.2/gems/execjs-2.2.0/lib/execjs/runtimes.rb:51:in `autodetect&#8217;:
-Could not find a JavaScript runtime. See https://github.com/sstephenson/execjs
+Could not find a JavaScript runtime. See <a href="https://github.com/sstephenson/execjs">https://github.com/sstephenson/execjs</a>
 for a list of available runtimes. (ExecJS::RuntimeUnavailable)</p></blockquote>
 
 <p>Turns out I had to install nodejs as well, dunno why.</p>
@@ -65,7 +172,7 @@ own server.</p>
 
 <p>All this means I can now finally begin restoring more content from
 <a href="/blog/2013/02/17/resurrection/">my old blog</a> thanks to partial backups
-I&#8217;ve found at the <a href="https://archive.org/">Wayback Machine</a> :-)</p>
+I&rsquo;ve found at the <a href="https://archive.org/">Wayback Machine</a> :-)</p>
 ]]></content>
   </entry>
   

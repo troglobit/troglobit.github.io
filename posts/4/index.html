@@ -9,9 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="There's just one thing to say on the topic of commit messages:
-ur doin it wrong if ...
-">
+  <meta name="description" content="It was time. I had been putting it off for far too long &ndash; learning
+about JSON and deciding on a new .conf file format for
+Inadyn. So this &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -82,6 +82,109 @@ ur doin it wrong if ...
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2014/02/23/weekend-hack-json-vs-conf/">Weekend Hack: JSON vs CONF</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-02-23T21:59:00+01:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2014</span></span> <span class='time'>9:59 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>It was time.  I had been putting it off for far too long &ndash; learning
+about JSON and deciding on a new .conf file format for
+<a href="/inadyn.shtml">Inadyn</a>.  So this weekend I sat myself down to read up
+on <a href="http://en.wikipedia.org/wiki/JSON">JSON</a> and the multitude of
+parser libraries for both JSON and traditional .conf file parsers.  I
+was looking for a human readable file format that a user could easily
+and reliably edit by themselves without it being too error prone or
+sensitive to mistyping.</p>
+
+<div><script src='https://gist.github.com/9177645.js'></script>
+<noscript><pre><code>{
+    &quot;syslog&quot;: true,
+    &quot;period&quot;: 600,
+    &quot;startup-delay&quot;: 30,
+    &quot;forced-update&quot;: 604800,
+    &quot;wildcard&quot;: true,
+    &quot;bind&quot;: &quot;eth0&quot;,
+    &quot;system&quot;: [
+        {
+            &quot;type&quot;:     &quot;default@freedns.afraid.org&quot;,
+            &quot;username&quot;: &quot;example&quot;,
+            &quot;password&quot;: &quot;secret&quot;,
+            &quot;alias&quot;: [  &quot;example.homenet.org&quot; ]
+        },
+        {
+            &quot;type&quot;:     &quot;default@dyndns.org&quot;,
+            &quot;username&quot;: &quot;admin&quot;,
+            &quot;password&quot;: &quot;supersecret&quot;,
+            &quot;alias&quot;: [  &quot;example.dyndns.org&quot; ]
+        }
+    ]
+}
+</code></pre></noscript></div>
+
+
+<p>I quickly narrowed down my scope of investigation to
+<a href="http://www.digip.org/jansson/">Jansson</a> for JSON and and
+<a href="http://www.nongnu.org/confuse/">Confuse</a> for &ldquo;standard&rdquo; UNIX .conf
+files.  Both have very liberal licenses, extensive test suites, very
+good documentation and are extremely well written!  In fact, I will
+probably use them as prime examples of well maintained Open Source
+projects in the future :-)</p>
+
+<p>The resulting code is in my
+<a href="https://github.com/troglobit/toolbox/tree/master/conf">toolbox</a> on
+GitHub.</p>
+
+<div><script src='https://gist.github.com/9177620.js'></script>
+<noscript><pre><code># Example inadyn.conf
+syslog        = true
+period        = 600
+startup-delay = 30
+forced-update = 604800
+wildcard      = false
+bind          = eth0
+
+provider default@freedns.afraid.org
+{
+  username = example
+  password = secret
+  alias    = { &quot;example.homenet.org&quot;, &quot;example.afraid.org&quot; }
+}
+
+provider default@dyndns.org
+{
+  username = admin
+  password = supersecret
+  alias    = example.dyndns.org
+}
+</code></pre></noscript></div>
+
+
+<p>In my opinion the .conf file is a lot easier to read, write and edit
+by Joe User, so that&rsquo;s what I&rsquo;ll be using for many of my own projects,
+starting with <a href="/inadyn.shtml">Inadyn</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/08/13/on-commit-messages-dot-dot-dot/">On Commit Messages &#8230;</a></h1>
     
     
@@ -98,8 +201,8 @@ ur doin it wrong if ...
   </header>
 
 
-  <div class="entry-content"><p>There&#8217;s just one thing to say on the topic of commit messages:
-<a href="http://stopwritingramblingcommitmessages.com/">ur doin it wrong if &#8230;</a></p>
+  <div class="entry-content"><p>There&rsquo;s just one thing to say on the topic of commit messages:
+<a href="http://stopwritingramblingcommitmessages.com/">ur doin it wrong if &hellip;</a></p>
 </div>
   
   
@@ -129,16 +232,16 @@ ur doin it wrong if ...
 
 
   <div class="entry-content"><p>Sometimes people ask me what I do for a living.  Usually I tend to
-pause and think, real hard, becuase the people asking me this aren&#8217;t
+pause and think, real hard, becuase the people asking me this aren&rsquo;t
 programmers.  They use computers, but are mostly limited to a Windows
 machine, writing in MS Word and browsing the Internet, mostly for
 Facebook.</p>
 
-<p>I often start off with: &#8220;It&#8217;s a bit complicated to explain &#8230; &#8220;, by
-which time I&#8217;ve lost most of the people in the room listening to me.
-Sometimes I say: &#8220;I&#8217;m a software architect.&#8221;, because people seem to
+<p>I often start off with: &ldquo;It&rsquo;s a bit complicated to explain &hellip; &rdquo;, by
+which time I&rsquo;ve lost most of the people in the room listening to me.
+Sometimes I say: &ldquo;I&rsquo;m a software architect.&rdquo;, because people seem to
 know what architects do for a living, they draw houses, design stuff
-and drive SAAB&#8217;s.  Much like dentists.  The prefix &#8220;software&#8221; however
+and drive SAAB&rsquo;s.  Much like dentists.  The prefix &ldquo;software&rdquo; however
 does confuse people.</p>
 
 </div>
@@ -173,7 +276,7 @@ does confuse people.</p>
   </header>
 
 
-  <div class="entry-content"><p>Don&#8217;t try this at home kids. (Disclaimer: I live in Sweden :)</p>
+  <div class="entry-content"><p>Don&rsquo;t try this at home kids. (Disclaimer: I live in Sweden :)</p>
 
 </div>
   
@@ -211,14 +314,14 @@ does confuse people.</p>
 battle line in the world of programming,
 <a href="http://cgi.di.uoa.gr/~mema/courses/mde518/papers/lauer78.pdf">Lau78</a>.
 The event vs thread based approach to programming.  As rants go I do
-not aspire to deliver a clear or logical message, what so ever.  It&#8217;s
+not aspire to deliver a clear or logical message, what so ever.  It&rsquo;s
 basically just something I need to get off my chest.</p>
 
 <p>It was not until 2007 I first learned about the event based approach
 to programming and event libraries like
 <a href="http://libevent.org/">libevent</a> and
 <a href="http://software.schmorp.de/pkg/libev.html">libev</a>.  Up until that
-point the silver bullet everyone was using was &#8230; Threads.</p>
+point the silver bullet everyone was using was &hellip; Threads.</p>
 
 </div>
   
@@ -254,13 +357,13 @@ point the silver bullet everyone was using was &#8230; Threads.</p>
 
   <div class="entry-content"><p>Vacation time means catching up on my Open Source projects! :)</p>
 
-<p>Currently I&#8217;m shaping up the home pages and this blog to improve the
+<p>Currently I&rsquo;m shaping up the home pages and this blog to improve the
 easy access and overview of all the packages I maintain.  The
 following packages have new releases, or can expect new releases soon:</p>
 
 <ul>
 <li> <a href="/editline.html">Minix Editline</a> v1.14.1</li>
-<li> <a href="/smcroute.html">SMCRoute</a> v1.99.1 &#8211; There&#8217;s even a v2.0.0 being
+<li> <a href="/smcroute.html">SMCRoute</a> v1.99.1 &ndash; There&rsquo;s even a v2.0.0 being
  planned, with the core of SMCRoute available as a library</li>
 <li> <a href="/mrouted.html">mrouted</a> minor cleanup an sync with
  <a href="http://www.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/">OpenBSD</a></li>
@@ -301,7 +404,7 @@ you want to contribute.</p>
 
 
   <div class="entry-content"><p>I usually run Debian or Ubuntu on my machines.  However, having
-recently found some time to work on my various projects again, I&#8217;ve
+recently found some time to work on my various projects again, I&rsquo;ve
 now suddenly found myself in need of a CentOS machine.</p>
 
 <p>The <a href="http://www.centos.org/">CentOS home page</a> invited me to download
@@ -318,12 +421,12 @@ which started perfectly with my virt-manager in Ubuntu.</p>
 </ul>
 
 
-<p>That&#8217;s it, the graphical installer started and I had to start
-selecting various packages. Must say it&#8217;s a bit confusing since the
+<p>That&rsquo;s it, the graphical installer started and I had to start
+selecting various packages. Must say it&rsquo;s a bit confusing since the
 package naming is not the same in RedHat/CentOS as in Debian.</p>
 
 <p>Oh, and if the installations seems to have gotten stuck, just wait it
-out.  It&#8217;ll get there :)</p>
+out.  It&rsquo;ll get there :)</p>
 
 <p>Read the following to get
 <a href="http://prefetch.net/blog/index.php/2009/06/17/redirecting-the-centos-and-fedora-linux-console-to-a-serial-port-virsh-console-edition/">console in virsh working with CentOS guest</a>.</p>
@@ -355,7 +458,7 @@ out.  It&#8217;ll get there :)</p>
   </header>
 
 
-  <div class="entry-content"><p>This post doesn&#8217;t cover fully setting up KVM/Qemu with virt-manager
+  <div class="entry-content"><p>This post doesn&rsquo;t cover fully setting up KVM/Qemu with virt-manager
 and creating virtual machine guests.  See the Ubuntu
 <a href="https://help.ubuntu.com/community/KVM/Installation">KVM Installtion</a>,
 <a href="https://help.ubuntu.com/community/KVM/VirtManager">VirtManager Guide</a>,
@@ -411,7 +514,7 @@ that I know many people run into, myself included.</p>
 
 <p>Ever since I began studying Computer Engineering at
 <a href="http://www.mdh.se">university</a> back in 1995 I have struggled to find
-the &#8220;proper&#8221; ways to format my code, name functions and variables
+the &ldquo;proper&rdquo; ways to format my code, name functions and variables
 appropriately, structure functions into files and files into
 directories with Makefiles and Makefile snippets, using both recursive
 and non-recursive make.  Formatting of code, for instance, was for a
@@ -452,8 +555,8 @@ people naming their local variables obtrusively.</p>
   </header>
 
 
-  <div class="entry-content"><p>It&#8217;s been a long time coming, but here it finally is, <a href="/finit.html">Finit</a>
-<a href="ftp://troglobit.com/finit/finit-1.8.tar.xz">v1.8</a>!  The goodies we&#8217;ve been waiting for are:</p>
+  <div class="entry-content"><p>It&rsquo;s been a long time coming, but here it finally is, <a href="/finit.html">Finit</a>
+<a href="ftp://troglobit.com/finit/finit-1.8.tar.xz">v1.8</a>!  The goodies we&rsquo;ve been waiting for are:</p>
 
 <ul>
 <li>Runlevels</li>
@@ -462,7 +565,7 @@ people naming their local variables obtrusively.</p>
 </ul>
 
 
-<p>Let&#8217;s start off with tasks.  Tasks are one-shot commands, with a
+<p>Let&rsquo;s start off with tasks.  Tasks are one-shot commands, with a
 syntax like service directives, but are not monitored and respawned
 like services.  Tasks are started in parallel, just like services.
 For some cases, like the system bootstrap phase, some tasks may need
@@ -475,11 +578,11 @@ next task or service.</p>
 can be started and automatically be respawned when a user logs out.
 For embedded targets wanting to save CPU cycles usually one TTY is the
 system console.  Use the console command to point to a defined TTY to
-activate &#8220;Press any key to activate this console.&#8221;</p>
+activate &ldquo;Press any key to activate this console.&rdquo;</p>
 
 <p>Finally, runlevels!  This is the key feature in this release of Finit.
 Adding the flexibility from SysV init, without the complexity.  This
-is one of the key points of Finit &#8211; it should be simple!</p>
+is one of the key points of Finit &ndash; it should be simple!</p>
 
 <pre><code>finit.conf:
     service [2345] /usr/sbin/sshd -D -- OpenSSH Daemon
@@ -492,56 +595,13 @@ like before.</p>
 <p>Runlevels are needed in use-cases in many embedded devices.  E.g.,
 bootstrap, upgrading, and regular operation.  It is completely up to
 the system administrator to setup the runlevels of the product or
-installation.  At boot runlevel &#8216;S&#8217; runs, well before any networking
+installation.  At boot runlevel &rsquo;S&#8217; runs, well before any networking
 is up.  This is used to to one-time probing and setup of the
 system. When done the runlevel defined in finit.conf, or the default
 2, is started.</p>
 
 <p>See the <a href="https://github.com/troglobit/finit/blob/master/README.md">README</a> for more information, or the code for the full
 details.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/06/07/proof-of-life/">Proof of Life</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2013-06-07T22:31:00+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>7</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>10:31 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>There is a certain &#8220;burstyness&#8221; to the way I work on my open source
-projects.  It seems it often coincides with intense work loads during
-new release cycles at <a href="http://www.westermo.com">work</a>.</p>
-
-<p>However, I&#8217;ve just finished restoring two pages that got lost in the
-big server crash:</p>
-
-<ul>
-<li> <a href="/mrouted.shtml">mrouted</a></li>
-<li> <a href="/pimd.shtml">pimd</a></li>
-</ul>
-
-
-<p>Big thanks goes to the <a href="http://www.archive.org">Wayback Machine</a> for
-maintaining records of the original pages I lost!</p>
 </div>
   
   
@@ -592,6 +652,10 @@ maintaining records of the original pages I lost!</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/03/24/disaster-recovery/">Disaster Recovery</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/03/07/testing-multicast-with-docker/">Testing Multicast With Docker</a>
       </li>
     
@@ -605,10 +669,6 @@ maintaining records of the original pages I lost!</p>
     
       <li class="post">
         <a href="/blog/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/">En Vanlig Dag På Jobbet (SWEDISH)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/">Awesome: Changing Next/Prev Tune in Spotify</a>
       </li>
     
   </ul>

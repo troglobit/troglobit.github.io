@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Unix | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/unix/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2016-03-12T17:21:22+01:00</updated>
+  <updated>2016-03-25T00:14:54+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -29,7 +29,7 @@ stable build environment for cross-compiling.  I had no idea people
 would want to use a Docker container as a multicast sink.  Basically I
 was baffled.</p>
 
-<p>The reporter used a Java based tool but simply couldn&#8217;t get things to
+<p>The reporter used a Java based tool but simply couldn&rsquo;t get things to
 work properly with <code>pimd</code> running on the host:</p>
 
 <pre><code>                eth0
@@ -49,7 +49,7 @@ work properly with <code>pimd</code> running on the host:</p>
 bit of blocker for the <code>pimd</code> v2.3.2 release and I admittedly lost a bit
 of sleep over this.  So finally this weekend, I sat down and whipped my
 old <a href="https://github.com/troglobit/mcjoin/">mcjoin</a> tool up into shape.
-I&#8217;ve relied on it for years, but it couldn&#8217;t send or receive packets,
+I&rsquo;ve relied on it for years, but it couldn&rsquo;t send or receive packets,
 until now.</p>
 
 <p>Running docker v1.5 in Ubuntu 15.10 I ran this, with <code>pimd</code> on the host
@@ -64,7 +64,7 @@ Received total: 2500 packets
 <p>The <code>pimd</code> and the multicast sender runs on my host, which should not
 matter since Linux still has to route the traffic to the <code>docker0</code>
 interface.  Also, without setting the TTL to 2 (or greater) the
-container receives no traffic at all.  Here&#8217;s what I run in another
+container receives no traffic at all.  Here&rsquo;s what I run in another
 terminal on my host:</p>
 
 <pre><code>./mcjoin -s -t 2 -c 10 225.1.2.3+250
@@ -83,12 +83,12 @@ is sure not the last.  Docker is a truly revolutionary new tool!</p>
     <link href="http://troglobit.github.io/blog/2016/03/07/multicast-testing/"/>
     <updated>2016-03-07T01:06:02+01:00</updated>
     <id>http://troglobit.github.io/blog/2016/03/07/multicast-testing</id>
-    <content type="html"><![CDATA[<p>For the better part of the last ten years I&#8217;ve been working with
-multicast in one way or another.  I&#8217;ve used many different tools for
+    <content type="html"><![CDATA[<p>For the better part of the last ten years I&rsquo;ve been working with
+multicast in one way or another.  I&rsquo;ve used many different tools for
 testing, but usually simply using <code>ping(1)</code> and <code>tcpdump(1)</code> is quite
 sufficient.  However, you often need to tell bridges (switches) to open
 up multicast in your general direction for your pings to get through, so
-you need to send an IGMP &#8220;join&#8221; first.  I found mcjoin, written by David
+you need to send an IGMP &ldquo;join&rdquo; first.  I found mcjoin, written by David
 Stevens, in <a href="https://lkml.org/lkml/2004/8/5/143">this posting to LKML</a>
 back in 2006, and started improving it and adding features to it over
 the years.</p>
@@ -116,10 +116,10 @@ had enough.  So here it is, v2.0:</p>
 
 
 <p>Most of the time I simply want to see a resulting IGMP join message in
-Wireshark, see it bite in a switch&#8217;s FDB or a routing daemon&#8217;s
+Wireshark, see it bite in a switch&rsquo;s FDB or a routing daemon&rsquo;s
 forwarding table.  So, join is the default operation, and also continues
 to be the name of the tool.  My favourite testing group is set as the
-default, 225.1.2.3, so you only need to start the tool and you&#8217;re off.
+default, 225.1.2.3, so you only need to start the tool and you&rsquo;re off.
 To send to the same default group (225.1.2.3), simply add <code>-s</code> to the
 sender side.</p>
 
@@ -134,7 +134,7 @@ Received total: 66 packets
 receiver$
 </code></pre>
 
-<p>If you ever need anything else, e.g. routing multicast, there&#8217;s even a
+<p>If you ever need anything else, e.g. routing multicast, there&rsquo;s even a
 man page.  It mentions setting the TTL and other such nastiness :)</p>
 ]]></content>
   </entry>

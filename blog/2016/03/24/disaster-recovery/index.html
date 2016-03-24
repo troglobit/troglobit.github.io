@@ -5,12 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Bzrweb 0.1.2 Released - Troglobit</title>
+  <title>Disaster Recovery - Troglobit</title>
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="The end of my own &ldquo;summer of code&rdquo; is here. Seriously, this summer I
-took it upon myself to clean up my act and move whole heartedly to &hellip;">
+  <meta name="description" content="Days like these inconspicuously start out just like any other day,
+except on days like these you accidentally manage to erase $HOME and
+have no real &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +20,7 @@ took it upon myself to clean up my act and move whole heartedly to &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://troglobit.github.io/blog/2007/07/31/bzrweb-0-dot-1-2-released">
+  <link rel="canonical" href="http://troglobit.github.io/blog/2016/03/24/disaster-recovery">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Troglobit" type="application/atom+xml">
@@ -78,7 +79,7 @@ took it upon myself to clean up my act and move whole heartedly to &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Bzrweb 0.1.2 Released</h1>
+      <h1 class="entry-title">Disaster Recovery</h1>
     
     
       <p class="meta">
@@ -87,46 +88,112 @@ took it upon myself to clean up my act and move whole heartedly to &hellip;">
 
 
 
-<time class='entry-date' datetime='2007-07-31T23:33:01+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>31</span><span class='date-suffix'>st</span>, <span class='date-year'>2007</span></span> <span class='time'>11:33 pm</span></time>
+<time class='entry-date' datetime='2016-03-24T22:39:00+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>10:39 pm</span></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>The end of my own &ldquo;summer of code&rdquo; is here.  Seriously, this summer I
-took it upon myself to clean up my act and move whole heartedly to the
-<a href="http://www.bazaar-vcs.org/">Bazaar</a> version control system for <a href="https://web.archive.org/web/20090601005547/http://vmlinux.org/jocke/bzr/">my private projects</a>.
-Needless to say, I didn&rsquo;t get far.</p>
+<div class="entry-content"><p>Days like these inconspicuously start out just like any other day,
+except on days like these you accidentally manage to erase <code>$HOME</code> and
+have no real backup to rely on &hellip; Maundy Thursday will forever be Black
+Thursday for me, for now on.</p>
 
-<p>Being quite lazy I haven&rsquo;t upgraded this server yet to the latest shiny
-Debian 4.0.  This made it a bit hard to setup the new shiny
-<a href="https://web.archive.org/web/20090601005547/http://www.lag.net/loggerhead/">Loggerhead web gui</a> (see it in action <a href="https://web.archive.org/web/20090601005547/http://codebrowse.launchpad.net/~mwhudson/loggerhead/production/changes">here</a>) for Bazaar &mdash;
-so instead I started fixing up the <a href="https://web.archive.org/web/20090601005547/http://mccormick.cx/dev/bzrweb/">old bzrweb</a> that I already had
-setup a few years ago.</p>
+<p>Best thing your can do, after cursing at yourself constantly for a
+couple of hours, is to:</p>
 
-<p>I&rsquo;m new to Python, but, as I said, I&rsquo;m quite lazy and Python seemed to
-suit me perfectly.  Whipping up Bzrweb to support the bzr 0.15 I had on
-my laptop (Ubuntu 7.04) was just enough to fiddle with in the warm
-summer evenings of my vacation.  Now I find myself really enjoying
-Python. :-)</p>
+<ol>
+<li>Come up with a useful backup and <em>restore</em> strategy</li>
+<li>Read up on undeletion tools for Ext4</li>
+<li>Blog about it, naturally</li>
+</ol>
 
-<p>So I decided to try and take up maintainership of Bzrweb.  I like it for
-its simplicity and small list of dependencies (only Python 2.4).  Which
-is something I will honor and continue to evolve.</p>
 
-<p>Oh well, <a href="ftp://vmlinux.org/pub/bzrweb/">here it is</a>:</p>
+<p>BUT FIRST &ndash; QUICK &ndash; UNMOUNT OR POWER-OFF YOUR COMPUTER &ndash; PULL OUT THE
+BATTERY &ndash; AND STEP AWAY FROM THE COMPUTER!  Must protect the partition
+from being accidentally written to &ndash; I completely fumbled this step, so
+take heed young people!</p>
+
+<p>Now calm down and behave like an engineer again.</p>
+
+<p>There exist two neat tools, three if you count the more hard core
+<code>debugfs</code>:</p>
 
 <ul>
-<li><a href="ftp://vmlinux.org/pub/bzrweb/bzrweb-0.1.2.tar.gz">bzrweb-0.1.2.tar.gz</a> (<a href="ftp://vmlinux.org/pub/bzrweb/bzrweb-0.1.2.tar.gz.md5sum">md5sum</a>)</li>
-<li>Release Notes: <a href="ftp://vmlinux.org/pub/bzrweb/ReleaseNotes-0.1.2.txt">[TXT]</a> <a href="ftp://vmlinux.org/pub/bzrweb/ReleaseNotes-0.1.2.pdf">[PDF]</a></li>
+<li><a href="http://extundelete.sourceforge.net/">extundelete</a></li>
+<li><a href="http://ext4magic.sourceforge.net/ext4magic_en.html">ext4magic</a></li>
 </ul>
 
 
-<p>No GPG signing yet, I&rsquo;ve yet to figure out how GPG works, again.</p>
+<p>Both have been around a while, and both are capable of restoring all
+files.  See their respective home pages for details.</p>
 
-<p>Bug reports can be sent to me directly, see my address in the tarball or
-<a href="https://web.archive.org/web/20090601005547/http://vmlinux.org/jocke/bzr/">online</a>.</p>
+<p>My system used LVM, of course, to make things a bit harder.  That&rsquo;s why
+I&rsquo;m documenting my steps here:</p>
+
+<ol>
+<li>Remove disk from lappy</li>
+<li>Prepare to connect using USB cradle to workstation, <em>prepare</em> don&rsquo;t
+do it yet!  I did the next few steps as root on my workstation,
+that&rsquo;s right, I didn&rsquo;t care anymore at this point.  The world may as well burn!</li>
+<li>You haven&rsquo;t connected the disk yet, right stupid?  Most systems today
+have cool features like automount that would cause the journal to be
+replayed &ndash; WE DO NOT WANT THAT OK? OK!</li>
+</ol>
+
+
+<p>You need the lvm tools:</p>
+
+<pre><code>apt-get install lvm2
+vgscan
+vgchange -ay ubuntu-vg
+lvs
+</code></pre>
+
+<p>The last command should list your partition, in my case labled
+<code>ubuntu-vg</code>.  To be able to run <code>extundelete</code> or <code>ext4magic</code> on the
+partition you have to mount the partition, <em>read-only</em> needless to say:</p>
+
+<pre><code>mkdir /rescue
+mount -o ro /dev/ubuntu-vg/root /rescue
+</code></pre>
+
+<p>Now we try some fairy dust:</p>
+
+<pre><code>ext4magic /dev/ubuntu-vg/root -r
+</code></pre>
+
+<p>OK, so let&rsquo;s see:</p>
+
+<pre><code>ls -l RECOVERDIR/
+</code></pre>
+
+<p>The results between <code>ext4magic</code> and <code>extundelete</code> may vary, so try them
+both out, test different options, and maybe even look at <code>debugfs</code>,
+we&rsquo;re desperate after all.</p>
+
+<pre><code>extundelete /dev/ubuntu-vg/root --restore-all
+ls -l RECOVERED_FILES
+</code></pre>
+
+<p>If there&rsquo;s a LOT of files you may have some luck narrowing down the
+result using the <code>--after DATE</code> option &hellip; where <code>DATE</code> is the number
+of seconds since the UNX epoch:</p>
+
+<pre><code>extundelete /dev/ubuntu-vg/root --restore-all --after 1458802800
+ls -l RECOVERED_FILES
+</code></pre>
+
+<p>I found my magic number using</p>
+
+<pre><code>date -d "Mar 24 8:00 2016" +%s
+</code></pre>
+
+<p>Well, as I said, I didn&rsquo;t turn off my computer in time. Instead I took
+the braindead option of starting to google for solutions.  So all my
+files (with proper filenames) turned out to contain only cached files
+from the browser &ndash; reclaiming the blocks goes quick, so watch out kids.</p>
 </div>
 
 
@@ -142,15 +209,21 @@ is something I will honor and continue to evolve.</p>
 
 
 
-<time class='entry-date' datetime='2007-07-31T23:33:01+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>31</span><span class='date-suffix'>st</span>, <span class='date-year'>2007</span></span> <span class='time'>11:33 pm</span></time>
+<time class='entry-date' datetime='2016-03-24T22:39:00+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>10:39 pm</span></time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/backup/'>backup</a>
+  
+</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://troglobit.github.io/blog/2007/07/31/bzrweb-0-dot-1-2-released/" data-via="troglobit" data-counturl="http://troglobit.github.io/blog/2007/07/31/bzrweb-0-dot-1-2-released/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://troglobit.github.io/blog/2016/03/24/disaster-recovery/" data-via="troglobit" data-counturl="http://troglobit.github.io/blog/2016/03/24/disaster-recovery/" >Tweet</a>
   
   
   
@@ -159,10 +232,8 @@ is something I will honor and continue to evolve.</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2007/07/12/netapplet-patchwork/" title="Previous Post: Netapplet Patchwork">&laquo; Netapplet Patchwork</a>
+        <a class="basic-alignment left" href="/blog/2016/03/07/testing-multicast-with-docker/" title="Previous Post: Testing multicast with Docker">&laquo; Testing multicast with Docker</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2008/02/23/suspend-slash-resume-nightmare-in-ubuntu/" title="Next Post: Suspend/Resume Nightmare in Ubuntu">Suspend/Resume Nightmare in Ubuntu &raquo;</a>
       
     </p>
   </footer>

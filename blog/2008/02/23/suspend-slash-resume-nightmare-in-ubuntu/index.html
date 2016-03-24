@@ -9,8 +9,8 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="I've had my ThinkPad T43 for a while now and I'm really pleased with it,
-everything just works! It took some pleading and, I admit, begging to &hellip;">
+  <meta name="description" content="I&rsquo;ve had my ThinkPad T43 for a while now and I&rsquo;m really pleased with it,
+everything just works! It took some pleading and, I admit, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -94,7 +94,7 @@ everything just works! It took some pleading and, I admit, begging to &hellip;">
   </header>
 
 
-<div class="entry-content"><p>I&#8217;ve had my ThinkPad T43 for a while now and I&#8217;m really pleased with it,
+<div class="entry-content"><p>I&rsquo;ve had my ThinkPad T43 for a while now and I&rsquo;m really pleased with it,
 everything just works!  It took some pleading and, I admit, begging to
 persuade my boss and the IT department to buy it since they usually only
 buy from Dell or HP.  This was mainly due to care packs and payment plans
@@ -103,7 +103,7 @@ pay for straight up.  So if I were a Lenovo sales person, that was
 something I would fix to boost my sales.</p>
 
 <p>This post is however not about sales, brands of laptops or how the cat
-ate my homework &#8230; well, OK, almost.  Ubuntu/Gnome ate my resume!</p>
+ate my homework &hellip; well, OK, almost.  Ubuntu/Gnome ate my resume!</p>
 
 <p>When I initially installed the laptop, early 2006, I went with
 Ubuntu 5.10.  Ubuntu is great Linux dist!  Ubuntu is to Debian what
@@ -126,13 +126,13 @@ have been working on fixing it all again.</p>
 
 <p>It turns out that if I run the script <code>/etc/acpi/suspend.sh</code> manually
 from the prompt suspend and resume works fine, even with X.  But when I
-press Fn-F4 from within X or select &#8220;Suspend&#8221; from the Gnome &#8220;logout&#8221;
+press Fn-F4 from within X or select &ldquo;Suspend&rdquo; from the Gnome &ldquo;logout&rdquo;
 menu the machine happily goes to sleep but always fails at resume.  I
 always get a black screen!</p>
 
-<p>Why is it so complicated?  I really don&#8217;t understand.  What is it doing?</p>
+<p>Why is it so complicated?  I really don&rsquo;t understand.  What is it doing?</p>
 
-<p>OK, so I started digging.  The Fn-F4 button didn&#8217;t work in the console
+<p>OK, so I started digging.  The Fn-F4 button didn&rsquo;t work in the console
 so that seemed like a first thing to investigate.  I started
 <code>acpi_listen</code> and pressed Fn-F4, bingo!  It returned a key press.  A
 grep later and I had found it in <code>/etc/acpi/events/ibm-sleepbtn</code>,
@@ -144,7 +144,7 @@ stuff and, yes it works!  At least from the console, not from X/Gnome.
 Aha, so we have a Gnome app that does magic things, HAL +
 gnome-power-manager.</p>
 
-<p>I didn&#8217;t get any further.  Removing gnome-power-manager fixed my
+<p>I didn&rsquo;t get any further.  Removing gnome-power-manager fixed my
 problem, I can now press Fn-F4 from Gnome, close the lid, come back the
 next morning and sucessfully resume when opening the lid again.</p>
 
@@ -232,6 +232,10 @@ to learn this stuff all over again every time I upgrade?</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/03/24/disaster-recovery/">Disaster Recovery</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/03/07/testing-multicast-with-docker/">Testing Multicast With Docker</a>
       </li>
     
@@ -245,10 +249,6 @@ to learn this stuff all over again every time I upgrade?</p>
     
       <li class="post">
         <a href="/blog/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/">En Vanlig Dag På Jobbet (SWEDISH)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/">Awesome: Changing Next/Prev Tune in Spotify</a>
       </li>
     
   </ul>

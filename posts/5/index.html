@@ -9,9 +9,8 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="Quite some time has passed now since our old site, http://vmlinux.org,
-crashed and burned, and with it much of my previous Open Source work
-and blogs &hellip;">
+  <meta name="description" content="There is a certain &ldquo;burstyness&rdquo; to the way I work on my open source
+projects. It seems it often coincides with intense work loads during &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -82,6 +81,49 @@ and blogs &hellip;">
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/06/07/proof-of-life/">Proof of Life</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-06-07T22:31:00+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>7</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>10:31 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>There is a certain &ldquo;burstyness&rdquo; to the way I work on my open source
+projects.  It seems it often coincides with intense work loads during
+new release cycles at <a href="http://www.westermo.com">work</a>.</p>
+
+<p>However, I&rsquo;ve just finished restoring two pages that got lost in the
+big server crash:</p>
+
+<ul>
+<li> <a href="/mrouted.shtml">mrouted</a></li>
+<li> <a href="/pimd.shtml">pimd</a></li>
+</ul>
+
+
+<p>Big thanks goes to the <a href="http://www.archive.org">Wayback Machine</a> for
+maintaining records of the original pages I lost!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/02/17/resurrection/">Resurrection</a></h1>
     
     
@@ -98,7 +140,7 @@ and blogs &hellip;">
   </header>
 
 
-  <div class="entry-content"><p>Quite some time has passed now since our old site, http://vmlinux.org,
+  <div class="entry-content"><p>Quite some time has passed now since our old site, <a href="http://vmlinux.org,">http://vmlinux.org,</a>
 crashed and burned, and with it much of my previous Open Source work
 and blogs.  Tech blog entries, archives for the projects I maintain,
 lost.</p>
@@ -119,7 +161,7 @@ serving generated tarballs and the like.  See <a href="ftp://troglobit.com">my
 FTP</a> for project downloads.</p>
 
 <p>I had also started missing blogging for some reason. So it started to
-make sense to roll something on my own again.  Well, here&#8217;s me
+make sense to roll something on my own again.  Well, here&rsquo;s me
 starting over.</p>
 
 <p>See you soon with more posts about open source projects, releases of
@@ -192,7 +234,7 @@ recommended <code>/var/run/pimd/</code> instead.</p>
 are included:</p>
 
 <ul>
-<li><a href="https://security-tracker.debian.org/tracker/CVE-2011-0007">CVE-2011-0007</a>: <em>&#8220;Insecure file creation in /var/tmp&#8221;</em></li>
+<li><a href="https://security-tracker.debian.org/tracker/CVE-2011-0007">CVE-2011-0007</a>: <em>&ldquo;Insecure file creation in /var/tmp&rdquo;</em></li>
 <li>Build error on GNU/kFreeBSD</li>
 </ul>
 
@@ -296,7 +338,7 @@ AVAHI_DAEMON_DETECT_LOCAL=0
 </code></pre>
 
 <p>And also edit the file <code>/etc/avahi/avahi-daemon.conf</code>, the following is
-not the entire contents of the file, only the sections I&#8217;ve changed:</p>
+not the entire contents of the file, only the sections I&rsquo;ve changed:</p>
 
 <pre><code>[server]
 # Comment out any current/previous work arounds
@@ -403,7 +445,7 @@ See the <a href="https://github.com/troglobit/mrouted/blob/master/ChangeLog">Cha
   </header>
 
 
-  <div class="entry-content"><p>I&#8217;m very pleased to present the next bug-fix release of <a href="/pimd.html">pimd</a>, v2.1.3.
+  <div class="entry-content"><p>I&rsquo;m very pleased to present the next bug-fix release of <a href="/pimd.html">pimd</a>, v2.1.3.
 The real announcement for v2.1.2 I never really got around to write because
 the diligent <a href="http://packages.debian.org/source/pimd">Debian maintainer</a>, <a href="http://www.bobek.cz/">Antonin Kral</a> alerted me to some
 problems.  Which is great!  I do not have the resources to test the build on
@@ -440,12 +482,12 @@ Antonin!</p>
 
 
   <div class="entry-content"><p>Compared to OpenBSD and FreeBSD the NetBSD install was hard, really
-hard.  It wasn&#8217;t until I stumbled across <a href="https://ezunix.org/index.php?title=NetBSD_5_on_KVM">this</a> that I managed to
+hard.  It wasn&rsquo;t until I stumbled across <a href="https://ezunix.org/index.php?title=NetBSD_5_on_KVM">this</a> that I managed to
 convince myself to try it again.</p>
 
 <p>The trick seems to be to ignore as much as you can from other Internet
 tips.  NetBSD runs fine in KVM, so if someone says you need to run it in
-Qemu mode &mdash; don&#8217;t believe the hype.  OK, in <code>virt-manager</code> there
+Qemu mode &mdash; don&rsquo;t believe the hype.  OK, in <code>virt-manager</code> there
 is no preset defaults for NetBSD, so I went with a generic OS and tried
 starting the install from there.  The kernel hangs before it probes USB,
 or it segfaults.</p>
@@ -455,7 +497,7 @@ ACPI and selected the pcnet NIC instead of the default <code>ne2k-pci</code>.
 Running the default options in the NetBSD 5.0.2 installer, and the
 bootloader after install, works fine.</p>
 
-<p>If you still don&#8217;t manage to get it running check the KVM home page for
+<p>If you still don&rsquo;t manage to get it running check the KVM home page for
 <a href="http://www.linux-kvm.org/page/Bugs">known bugs</a> and workarounds.  Sometimes it helps adding
 <code>-no-kvm-irqchip</code> or <code>-no-kvm-pit</code>. However, <code>virt-manager</code> does not
 seem to support these options yet, so you must run from the command
@@ -600,48 +642,6 @@ download now!  Noteworthy changes and additions:</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/07/19/minix-editline-moves-to-git/">Minix Editline Moves to GIT</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2010-07-19T02:40:36+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>19</span><span class='date-suffix'>th</span>, <span class='date-year'>2010</span></span> <span class='time'>2:40 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>A small heads-up, I&#8217;ve migrated the Minix editline project from Bazaar
-to GIT.  The new URL for keeping tabs on your favourite free
-<code>readline()</code> clone is:</p>
-
-<blockquote><p><a href="http://git.troglobit.com/editline.git">http://git.vmlinux.org/editline.git/</a></p></blockquote>
-
-<p>I&#8217;m currently working on fixing up the tree and doing some house
-cleaning &mdash; including making more stuff configurable &mdash; before
-releasing a 1.14.0 later on.</p>
-
-<p>One such item is the integration of libtool with our autoconf friends.
-This should make it lot more portable (again) and also help smooth a
-merge with other sources for this library.  More on that as well later,
-hopefully.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/6">&larr; Older</a>
@@ -685,6 +685,10 @@ hopefully.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/03/24/disaster-recovery/">Disaster Recovery</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/03/07/testing-multicast-with-docker/">Testing Multicast With Docker</a>
       </li>
     
@@ -698,10 +702,6 @@ hopefully.</p>
     
       <li class="post">
         <a href="/blog/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/">En Vanlig Dag På Jobbet (SWEDISH)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/">Awesome: Changing Next/Prev Tune in Spotify</a>
       </li>
     
   </ul>

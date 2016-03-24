@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2016-03-12T17:21:22+01:00</updated>
+  <updated>2016-03-25T00:14:54+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -19,7 +19,7 @@
     <updated>2013-07-10T15:01:00+02:00</updated>
     <id>http://troglobit.github.io/blog/2013/07/10/net-install-centos</id>
     <content type="html"><![CDATA[<p>I usually run Debian or Ubuntu on my machines.  However, having
-recently found some time to work on my various projects again, I&#8217;ve
+recently found some time to work on my various projects again, I&rsquo;ve
 now suddenly found myself in need of a CentOS machine.</p>
 
 <p>The <a href="http://www.centos.org/">CentOS home page</a> invited me to download
@@ -36,12 +36,12 @@ which started perfectly with my virt-manager in Ubuntu.</p>
 </ul>
 
 
-<p>That&#8217;s it, the graphical installer started and I had to start
-selecting various packages. Must say it&#8217;s a bit confusing since the
+<p>That&rsquo;s it, the graphical installer started and I had to start
+selecting various packages. Must say it&rsquo;s a bit confusing since the
 package naming is not the same in RedHat/CentOS as in Debian.</p>
 
 <p>Oh, and if the installations seems to have gotten stuck, just wait it
-out.  It&#8217;ll get there :)</p>
+out.  It&rsquo;ll get there :)</p>
 
 <p>Read the following to get
 <a href="http://prefetch.net/blog/index.php/2009/06/17/redirecting-the-centos-and-fedora-linux-console-to-a-serial-port-virsh-console-edition/">console in virsh working with CentOS guest</a>.</p>
@@ -53,7 +53,7 @@ out.  It&#8217;ll get there :)</p>
     <link href="http://troglobit.github.io/blog/2013/07/05/file-system-pass-through-in-kvm-slash-qemu-slash-libvirt/"/>
     <updated>2013-07-05T23:56:00+02:00</updated>
     <id>http://troglobit.github.io/blog/2013/07/05/file-system-pass-through-in-kvm-slash-qemu-slash-libvirt</id>
-    <content type="html"><![CDATA[<p>This post doesn&#8217;t cover fully setting up KVM/Qemu with virt-manager
+    <content type="html"><![CDATA[<p>This post doesn&rsquo;t cover fully setting up KVM/Qemu with virt-manager
 and creating virtual machine guests.  See the Ubuntu
 <a href="https://help.ubuntu.com/community/KVM/Installation">KVM Installtion</a>,
 <a href="https://help.ubuntu.com/community/KVM/VirtManager">VirtManager Guide</a>,
@@ -97,8 +97,8 @@ from the given profile and just complain in the log.  The default is
 <p>Now, how to do it.  I like virsh, but for most of the time the vmware
 like
 <a href="http://virt-manager.org/">virt-manager is a lot more user friendly</a>.
-In the VM&#8217;s Detailed view, click the &#8220;Add Hardware&#8221; button and select
-&#8220;Filesystem&#8221;.  This is where the action happens.</p>
+In the VM&rsquo;s Detailed view, click the &ldquo;Add Hardware&rdquo; button and select
+&ldquo;Filesystem&rdquo;.  This is where the action happens.</p>
 
 <ul>
 <li><strong>Type:</strong> preset to Passthrough</li>
@@ -107,9 +107,9 @@ this blog, or you will not get read/write support!</em></li>
 <li><strong>Source path:</strong> select the path on your host that will be shared
 with this guest.  I use <code>/var/lib/libvirt/share</code> but you can use any
 directory you want</li>
-<li><strong>Target path:</strong> enter magic string that you&#8217;ll use in the mount
+<li><strong>Target path:</strong> enter magic string that you&rsquo;ll use in the mount
 command in the guest.  I use <code>share</code>, no slashes or anything.  In
-reality this isn&#8217;t a path per se, it&#8217;s a tag that the guest sends to
+reality this isn&rsquo;t a path per se, it&rsquo;s a tag that the guest sends to
 the kernel 9p driver via the mount command</li>
 </ul>
 
@@ -141,7 +141,7 @@ to your <code>guest:/etc/fstab</code>:</p>
 <pre><code>share   /mnt    9p  trans=virtio,version=9p2000.L,rw    0   0
 </code></pre>
 
-<p>That&#8217;s it. Good Luck!</p>
+<p>That&rsquo;s it. Good Luck!</p>
 ]]></content>
   </entry>
   

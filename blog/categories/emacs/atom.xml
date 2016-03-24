@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Emacs | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/emacs/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2016-03-12T17:21:22+01:00</updated>
+  <updated>2016-03-25T00:14:54+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -31,7 +31,7 @@ make bootstrap
 </code></pre>
 
 <p>Start with <code>./src/emacs</code> or symlink the binary to your <code>~/bin/</code> directory.
-I.e. you don&#8217;t have to run <code>make install</code> to use it.  Users of <code>emacsclient</code>
+I.e. you don&rsquo;t have to run <code>make install</code> to use it.  Users of <code>emacsclient</code>
 should symlink that to their <code>~/bin</code> as well.</p>
 
 <p>Assumptions made:</p>
@@ -49,7 +49,7 @@ should symlink that to their <code>~/bin</code> as well.</p>
     <link href="http://troglobit.github.io/blog/2008/07/22/more-emacs-progress/"/>
     <updated>2008-07-22T23:56:55+02:00</updated>
     <id>http://troglobit.github.io/blog/2008/07/22/more-emacs-progress</id>
-    <content type="html"><![CDATA[<p>Wow, I&#8217;m almost starting to feel like a Windows user.  The latest CVS
+    <content type="html"><![CDATA[<p>Wow, I&rsquo;m almost starting to feel like a Windows user.  The latest CVS
 builds of <a href="http://www.gnu.org/software/emacs/">GNU Emacs</a> has a lot of new features:</p>
 
 <ul>
@@ -59,7 +59,7 @@ builds of <a href="http://www.gnu.org/software/emacs/">GNU Emacs</a> has a lot o
 </ul>
 
 
-<p>I use the CVS version now as my daily driver in Ubuntu 8.10.  It&#8217;s
+<p>I use the CVS version now as my daily driver in Ubuntu 8.10.  It&rsquo;s
 really useful, and I love the improved support for debugging programs
 inside Emacs!</p>
 
@@ -84,12 +84,12 @@ explore the wonderful world of Emacs! :)</p>
 am actually a frequent user of both Emacs and <a href="http://www.vim.org">Vim</a>, but I firmly
 belive in the notion of <a href="http://pragmaticprogrammer.com/the-pragmatic-programmer/extracts/tips">learning one editor well</a>:</p>
 
-<blockquote><p>&#8220;The editor should be an extension of your hand; make sure your editor
-is configurable, extensible, and programmable.&#8221; &mdash;&nbsp;<a href="http://pragmaticprogrammer.com/the-pragmatic-programmer/extracts/tips">The Pragmatic Programmer</a></p></blockquote>
+<blockquote><p>&ldquo;The editor should be an extension of your hand; make sure your editor
+is configurable, extensible, and programmable.&rdquo; &mdash;&nbsp;<a href="http://pragmaticprogrammer.com/the-pragmatic-programmer/extracts/tips">The Pragmatic Programmer</a></p></blockquote>
 
 <p>At the many jobs I have had, colleagues often glanced over my shoulder
-and said; &#8220;Oh, Emacs&nbsp;&#8230; Yeah I used that ages ago when I was
-working on UNIX&nbsp;&#8230;&#8221;, often they remember it fondly, sometimes for
+and said; &ldquo;Oh, Emacs&nbsp;&hellip; Yeah I used that ages ago when I was
+working on UNIX&nbsp;&hellip;&rdquo;, often they remember it fondly, sometimes for
 all the quirky keyboard shortcuts.  Very few know that it is still being
 actively developed.</p>
 
@@ -111,7 +111,7 @@ more user friendly.  I call this <em>Enterprise Emacs</em>.</p>
 
 
 <p>Many of the following, really obvious, settings are today available in a
-menu called &#8220;Options&#8221;, some are still buried deep within the scriptable
+menu called &ldquo;Options&rdquo;, some are still buried deep within the scriptable
 innards and go by unfamiliar names.</p>
 
 <pre><code>;; Enterprise Emacs -- save this as your ~/.emacs
@@ -145,7 +145,7 @@ tricks.  Including, but not limited to:</p>
 <li>Auto-adjust as you type</li>
 <li>Auto-spell as you type, text and code</li>
 <li>Auto-complete words and function/method names</li>
-<li>A solution to: &#8220;Where the h-ll is that function?&#8221;</li>
+<li>A solution to: &ldquo;Where the h-ll is that function?&rdquo;</li>
 <li>Debugging from inside Emacs, like an IDE!</li>
 <li>Windows-like marking, with Ctrl-x, Ctrl-v and Ctrl-v</li>
 </ul>
@@ -157,8 +157,8 @@ several predefined indentation modes.  Built-in calculator (converts
 between bases!)</p>
 
 <p>The first tip is Emacs-23 with (grab on to something!)  anti-aliasing of
-fonts!  Yes, it&#8217;s still an experimental feature, and if you did not
-already know this, &#8220;experimental&#8221; in free/open source is often quite
+fonts!  Yes, it&rsquo;s still an experimental feature, and if you did not
+already know this, &ldquo;experimental&rdquo; in free/open source is often quite
 stable.  I have used it daily for >6 months and it has crashed on me
 only once.</p>
 

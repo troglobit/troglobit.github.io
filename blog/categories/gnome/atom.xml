@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Gnome | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/gnome/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2016-03-12T17:21:22+01:00</updated>
+  <updated>2016-03-25T00:14:54+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -18,15 +18,15 @@
     <link href="http://troglobit.github.io/blog/2007/07/07/buggy-gnome-main-menu/"/>
     <updated>2007-07-07T09:52:17+02:00</updated>
     <id>http://troglobit.github.io/blog/2007/07/07/buggy-gnome-main-menu</id>
-    <content type="html"><![CDATA[<p>I&#8217;ve been living with the new Gnome Main Menu for a while now.  Like many
-others I run Ubuntu these days and I&#8217;ve found the version in Feisty Fawn
+    <content type="html"><![CDATA[<p>I&rsquo;ve been living with the new Gnome Main Menu for a while now.  Like many
+others I run Ubuntu these days and I&rsquo;ve found the version in Feisty Fawn
 to be extremely slow and buggy.</p>
 
 <p>I tried manually installing (<code>dpkg -i</code>) the latest version in Gutsy, but
 it had too many dependencies.  So I decided to try and backport it, and
 it worked!</p>
 
-<p>I haven&#8217;t set up any repository, so just download the below two <code>.deb</code>
+<p>I haven&rsquo;t set up any repository, so just download the below two <code>.deb</code>
 files and install them with <code>sudo dpkg -i *.deb</code> in a terminal window:</p>
 
 <ul>

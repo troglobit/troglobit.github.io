@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Minix | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/minix/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2016-03-12T17:21:22+01:00</updated>
+  <updated>2016-03-25T00:14:54+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -76,13 +76,13 @@ have also been added. See the file <code>include/editline.h</code> for details.<
     <link href="http://troglobit.github.io/blog/2010/07/19/minix-editline-moves-to-git/"/>
     <updated>2010-07-19T02:40:36+02:00</updated>
     <id>http://troglobit.github.io/blog/2010/07/19/minix-editline-moves-to-git</id>
-    <content type="html"><![CDATA[<p>A small heads-up, I&#8217;ve migrated the Minix editline project from Bazaar
+    <content type="html"><![CDATA[<p>A small heads-up, I&rsquo;ve migrated the Minix editline project from Bazaar
 to GIT.  The new URL for keeping tabs on your favourite free
 <code>readline()</code> clone is:</p>
 
 <blockquote><p><a href="http://git.troglobit.com/editline.git">http://git.vmlinux.org/editline.git/</a></p></blockquote>
 
-<p>I&#8217;m currently working on fixing up the tree and doing some house
+<p>I&rsquo;m currently working on fixing up the tree and doing some house
 cleaning &mdash; including making more stuff configurable &mdash; before
 releasing a 1.14.0 later on.</p>
 
@@ -98,11 +98,11 @@ hopefully.</p>
     <link href="http://troglobit.github.io/blog/2008/06/07/minix-editline-v0-dot-1-0/"/>
     <updated>2008-06-07T21:45:05+02:00</updated>
     <id>http://troglobit.github.io/blog/2008/06/07/minix-editline-v0-dot-1-0</id>
-    <content type="html"><![CDATA[<p>I&#8217;ve been looking long and hard for a small and useful <a href="http://www.gnu.org/software/readline/">GNU readline</a>
+    <content type="html"><![CDATA[<p>I&rsquo;ve been looking long and hard for a small and useful <a href="http://www.gnu.org/software/readline/">GNU readline</a>
 replacement.  Oddly enough, all the time I was looking for one I never
 even once considered looking at the <a href="http://www.minix3.org/">Minix</a> sources!</p>
 
-<p>Currently I&#8217;m using the NetBSD <a href="http://thrysoee.dk/editline/">editline derivative</a> (readline
+<p>Currently I&rsquo;m using the NetBSD <a href="http://thrysoee.dk/editline/">editline derivative</a> (readline
 compatible) from <a href="http://thrysoee.dk/">Jess Thrysoee</a>, but it requires ncurses, which is
 huge!</p>
 
@@ -114,10 +114,10 @@ not required to, support completion.</p>
 years ago by Simmule Turner and Rich Salz. My hat is off to you guys,
 you rock!</p>
 
-<p>Here&#8217;s my first packaged version for Linux:</p>
+<p>Here&rsquo;s my first packaged version for Linux:</p>
 
 <ul>
-<li>http://ftp.vmlinux.org/pub/People/jocke/minix-editline/</li>
+<li><a href="http://ftp.vmlinux.org/pub/People/jocke/minix-editline/">http://ftp.vmlinux.org/pub/People/jocke/minix-editline/</a></li>
 </ul>
 
 

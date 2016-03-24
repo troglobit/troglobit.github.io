@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Apache | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/apache/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2016-03-12T17:21:22+01:00</updated>
+  <updated>2016-03-25T00:14:54+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -18,29 +18,29 @@
     <link href="http://troglobit.github.io/blog/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/"/>
     <updated>2015-06-30T23:13:48+02:00</updated>
     <id>http://troglobit.github.io/blog/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1</id>
-    <content type="html"><![CDATA[<p>I&#8217;m posting this in case anyone else gets stuck setting up <a href="http://www.apache.org">Apache</a>
+    <content type="html"><![CDATA[<p>I&rsquo;m posting this in case anyone else gets stuck setting up <a href="http://www.apache.org">Apache</a>
 with <a href="http://git-scm.com/docs/gitweb">Gitweb</a>.  Also as a reminder to myself in case I ever need to
 set up this all over again.</p>
 
 <ol>
 <li>You have all your eggs in one basket (GitHub), and</li>
 <li>You really like that shiny basket, but</li>
-<li>You know you&#8217;re clumsy and usually drop baskets yourself.</li>
+<li>You know you&rsquo;re clumsy and usually drop baskets yourself.</li>
 <li>You are wise (yes you are!) and realize you need another basket, so</li>
-<li>You set up a server and a domain yourself &#8230;</li>
+<li>You set up a server and a domain yourself &hellip;</li>
 </ol>
 
 
-<p>OK.  Let&#8217;s start simple, since you are already running the latest Debian
+<p>OK.  Let&rsquo;s start simple, since you are already running the latest Debian
 you fire up the command line and install the basics:</p>
 
 <pre><code>sudo apt-get install gitweb apache2
 </code></pre>
 
-<p>So it&#8217;ll complain, you&#8217;ll clarify your request and soon all required
+<p>So it&rsquo;ll complain, you&rsquo;ll clarify your request and soon all required
 packages are on your server.  Now what?</p>
 
-<p>Debian has already set up http://localhost/gitweb for you, and if you
+<p>Debian has already set up <a href="http://localhost/gitweb">http://localhost/gitweb</a> for you, and if you
 have a domain already you should go ahead and edit the master file for
 that:</p>
 
@@ -48,23 +48,23 @@ that:</p>
 service apache2 reload
 </code></pre>
 
-<p>If you want to use that for your gitweb needs, then you&#8217;re done!</p>
+<p>If you want to use that for your gitweb needs, then you&rsquo;re done!</p>
 
 <!-- more -->
 
 
-<p>For me, running http://troglobit.com/gitweb out of the box was not
-enough.  I wanted to setup http://git.troglobit.com and also to make
+<p>For me, running <a href="http://troglobit.com/gitweb">http://troglobit.com/gitweb</a> out of the box was not
+enough.  I wanted to setup <a href="http://git.troglobit.com">http://git.troglobit.com</a> and also to make
 sure to keep really short and pretty URLs to projects I host.  So the
 next part of this post is about how to set that up.</p>
 
-<p>My <code>000-default.conf</code> is for http://troglobit.com, so I created a new
+<p>My <code>000-default.conf</code> is for <a href="http://troglobit.com,">http://troglobit.com,</a> so I created a new
 one for the sub-domain:</p>
 
 <pre><code>editor /etc/apache2/sites-available/git.conf
 </code></pre>
 
-<p>&#8230; and added the following:</p>
+<p>&hellip; and added the following:</p>
 
 <pre><code class="apache /etc/apache2/sites-available/git.conf">    &lt;VirtualHost *:80&gt;
         ServerName git.troglobit.com
@@ -104,7 +104,7 @@ one for the sub-domain:</p>
 service apache2 restart
 </code></pre>
 
-<p>I&#8217;m not using the default Debian GIT repo location, <code>/var/lib/git</code>, so I
+<p>I&rsquo;m not using the default Debian GIT repo location, <code>/var/lib/git</code>, so I
 need to set the project root for both the Apache and the GitWeb config:</p>
 
 <pre><code class="perl /etc/gitweb.conf">    # See https://github.com/kogakure/gitweb-theme for more help and pointers

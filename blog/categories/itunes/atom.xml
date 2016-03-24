@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Itunes | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/itunes/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2016-03-12T17:21:22+01:00</updated>
+  <updated>2016-03-25T00:14:54+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -85,7 +85,7 @@ AVAHI_DAEMON_DETECT_LOCAL=0
 </code></pre>
 
 <p>And also edit the file <code>/etc/avahi/avahi-daemon.conf</code>, the following is
-not the entire contents of the file, only the sections I&#8217;ve changed:</p>
+not the entire contents of the file, only the sections I&rsquo;ve changed:</p>
 
 <pre><code>[server]
 # Comment out any current/previous work arounds

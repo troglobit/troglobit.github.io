@@ -9,9 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="This is a document I intend to maintain for my own purposes. It serves
-as a quick reminder for the steps needed when creating and working with
-git &hellip;">
+  <meta name="description" content="A small heads-up, I&rsquo;ve migrated the Minix editline project from Bazaar
+to GIT. The new URL for keeping tabs on your favourite free
+readline() &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -82,6 +82,48 @@ git &hellip;">
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2010/07/19/minix-editline-moves-to-git/">Minix Editline Moves to GIT</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2010-07-19T02:40:36+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>19</span><span class='date-suffix'>th</span>, <span class='date-year'>2010</span></span> <span class='time'>2:40 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>A small heads-up, I&rsquo;ve migrated the Minix editline project from Bazaar
+to GIT.  The new URL for keeping tabs on your favourite free
+<code>readline()</code> clone is:</p>
+
+<blockquote><p><a href="http://git.troglobit.com/editline.git">http://git.vmlinux.org/editline.git/</a></p></blockquote>
+
+<p>I&rsquo;m currently working on fixing up the tree and doing some house
+cleaning &mdash; including making more stuff configurable &mdash; before
+releasing a 1.14.0 later on.</p>
+
+<p>One such item is the integration of libtool with our autoconf friends.
+This should make it lot more portable (again) and also help smooth a
+merge with other sources for this library.  More on that as well later,
+hopefully.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2010/07/13/git-quickie/">Git Quickie</a></h1>
     
     
@@ -119,7 +161,7 @@ automatically when you push to it.</p>
 <pre><code>$ cp ~/public_html/programming/post-update projectX.git/hooks/
 </code></pre>
 
-<p>Change how the &#8220;Owner&#8221; field in gitweb is displayed to include an
+<p>Change how the &ldquo;Owner&rdquo; field in gitweb is displayed to include an
 obfuscated email address.</p>
 
 <pre><code>$ vi projectX.git/config
@@ -127,7 +169,7 @@ obfuscated email address.</p>
     owner = "Joachim Nilsson &lt;troglobit()vmlinux!org&gt;"
 </code></pre>
 
-<p>These steps have become so common to me that I&#8217;ve setup a script to
+<p>These steps have become so common to me that I&rsquo;ve setup a script to
 create server side git repositories.  You can now push to the server,
 after having setup remote location on the client.</p>
 
@@ -165,7 +207,7 @@ $ git push --tags
 
   <div class="entry-content"><p>You need git, and bazaar obviously.  Also install bzr-fastimport, it
 contains the export plugin as well. The rest is a rip off from the
-folloing URL: http://fthieme.net/en/drupal6/node/77</p>
+folloing URL: <a href="http://fthieme.net/en/drupal6/node/77">http://fthieme.net/en/drupal6/node/77</a></p>
 
 <pre><code>git init project.git
 cd project.git
@@ -233,7 +275,7 @@ pack_report: pack_mapped              =     977484 /     977484
 
   <div class="entry-content"><p><img class="right" src="/images/lessfilter.png"></p>
 
-<p>Yes, it&#8217;s certainly possible and source code becomes so much easier to
+<p>Yes, it&rsquo;s certainly possible and source code becomes so much easier to
 read.  Try it out by <a href="https://github.com/troglobit/toolbox/blob/master/dot.lessfilter">downloading my .lessfilter</a>: save it as
 <code>~/.lessfilter</code> in your <code>$HOME</code>.</p>
 
@@ -266,8 +308,8 @@ read.  Try it out by <a href="https://github.com/troglobit/toolbox/blob/master/d
   </header>
 
 
-  <div class="entry-content"><p>When you&#8217;ve installed Ubuntu 10.04 you might want to have the window
-controls back to the right side, where you&#8217;re used to having them.  Use
+  <div class="entry-content"><p>When you&rsquo;ve installed Ubuntu 10.04 you might want to have the window
+controls back to the right side, where you&rsquo;re used to having them.  Use
 the following simple command:</p>
 
 <pre><code>gconftool-2 --set /apps/metacity/general/button_layout --type string "menu:minimize,maximize,close"
@@ -340,11 +382,11 @@ got too small for my aging eyes.</p>
 
   <div class="entry-content"><p>Wow, this friday (June 12th) my daughter turned six!  I can hardly
 believe it is six years since she came into our lives, time has gone by
-so quick &#8230; when she was born we still lived in <a href="http://www.vasteras.se">Västerås</a>, now she
+so quick &hellip; when she was born we still lived in <a href="http://www.vasteras.se">Västerås</a>, now she
 has a younger brother and we live in a great house in <a href="https://sv.wikipedia.org/wiki/Skultuna">Skultuna</a>.</p>
 
-<p>Happy birthday, Oona! I wish you all the best now that you&#8217;re starting
-first year of school after the summer vacation.  I know you&#8217;re thrilled
+<p>Happy birthday, Oona! I wish you all the best now that you&rsquo;re starting
+first year of school after the summer vacation.  I know you&rsquo;re thrilled
 about it, as are we, your proud parents. :-)</p>
 </div>
   
@@ -374,7 +416,7 @@ about it, as are we, your proud parents. :-)</p>
   </header>
 
 
-  <div class="entry-content"><p>For a while now I&#8217;ve been maintaining a port of the <a href="http://www.cise.ufl.edu/~cop4600/cgi-bin/lxr/http/source.cgi/lib/editline/">Minix</a> editline
+  <div class="entry-content"><p>For a while now I&rsquo;ve been maintaining a port of the <a href="http://www.cise.ufl.edu/~cop4600/cgi-bin/lxr/http/source.cgi/lib/editline/">Minix</a> editline
 library libedit.  Mainly for my own purposes, or rather on behalf of
 <a href="http://www.westermo.com">Westermo WeOS</a>, where it is used in the CLI.  This library is the
 same as the <a href="https://packages.qa.debian.org/e/editline.html">Debian editline</a> package, even though the origin of that
@@ -382,7 +424,7 @@ package is <a href="https://lists.debian.org/debian-devel/2000/05/msg00548.html"
 
 <p>Today I decided to adjust the package name and bump the version number
 to indicate that my port is the same, and now slightly more advanced,
-than the Debian version.  To that end I&#8217;ve now changed the repository
+than the Debian version.  To that end I&rsquo;ve now changed the repository
 name and prepared for merging with Debian. Getting this work accepted
 back into Debian is a completely different issue.</p>
 
@@ -427,7 +469,7 @@ before I release 1.13.0.</p>
   </header>
 
 
-  <div class="entry-content"><p>This is mainly some notes for myself so I don&#8217;t forget.  Having worked
+  <div class="entry-content"><p>This is mainly some notes for myself so I don&rsquo;t forget.  Having worked
 with <a href="http://bazaar-vcs.org/">GNU Bazaar</a> before much of Git is still alien to me.</p>
 
 <p>This HowTo is divided into two parts:</p>
@@ -438,7 +480,7 @@ with <a href="http://bazaar-vcs.org/">GNU Bazaar</a> before much of Git is still
 </ol>
 
 
-<p>So, let&#8217;s start stimple:</p>
+<p>So, let&rsquo;s start stimple:</p>
 
 <pre><code>laptop&gt; mkdir projectX; cd projectX
 laptop&gt; git init
@@ -453,7 +495,7 @@ laptop&gt; git commit -m "Initial commit"
 laptop&gt; git commit
 </code></pre>
 
-<p>Yep, doesn&#8217;t work. You have to add -a to the command line for &#8220;all&#8221;.</p>
+<p>Yep, doesn&rsquo;t work. You have to add -a to the command line for &ldquo;all&rdquo;.</p>
 
 <pre><code>laptop&gt; git commit -a
 </code></pre>
@@ -497,11 +539,11 @@ To ssh://login@example.com/pub/git/projectX.git
 </code></pre>
 
 <p>Eventually I made it sing.  The first <code>git push</code> must use the references
-to origin and master.  At least you don&#8217;t have to care about that later,
+to origin and master.  At least you don&rsquo;t have to care about that later,
 after the first push command git remembers what you want.</p>
 
 <p>Only one thing left, in the gitweb project overview projectX is listed
-as having no description.  Of course, since I&#8217;m starting to get to know
+as having no description.  Of course, since I&rsquo;m starting to get to know
 git by now, I realised early this is probably not something that is
 propagated through push — yep, I was right.  You have to change that on
 the server.</p>
@@ -542,7 +584,7 @@ server&gt; logout
 
 
   <div class="entry-content"><p>I just published the <a href="http://git.troglobit.com/tetris.git">unobfuscated version</a> of the
-<a href="http://www.ioccc.org/1989/tromp.hint">1989 IOCCC Best Game</a> entry, Tetris™.  See the original author&#8217;s,
+<a href="http://www.ioccc.org/1989/tromp.hint">1989 IOCCC Best Game</a> entry, Tetris™.  See the original author&rsquo;s,
 <a href="http://tromp.github.io/tetris.html">John Tromp</a>, home page for the game for details.  But suffice it to
 say, this is an extremely bare bones version of the classic game and
 very similar to the <a href="http://www.ibiblio.org/pub/linux/games/bsd-games-2.17.tar.gz">BSD games&#8217;</a> version.</p>
@@ -562,80 +604,6 @@ completly illogical conclusion.</p>
 <ul>
 <li><a href="http://git.troglobit.com/tetris.git">tetris.git</a></li>
 <li><a href="http://www.ibiblio.org/pub/linux/games/bsd-games-2.17.tar.gz">BSD Games</a></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/06/12/more-about-bzrweb-and-some-about-git/">More About Bzrweb and Some About Git</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2009-06-12T19:50:27+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>7:50 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>OK, I admit it.  I cannot decide what version control system (VCS) to
-use.  I&#8217;m stuck between the speed and massive snow ball effect of
-<a href="http://git-scm.com/">Git</a> and the ease of use and emotional attachment I have to
-<a href="http://bazaar-vcs.org/">Bazaar</a>.</p>
-
-<p>I&#8217;ve been &#8220;maintaining&#8221; bzrweb for a while now, not doing a very good
-job of it though.  It&#8217;s lagging behind considerably to the bzr API.
-After the upgrade of vmlinux.org to the latest Ubuntu server release
-bzrweb actually didn&#8217;t work at all.  If it hadn&#8217;t been for
-<a href="https://code.launchpad.net/~halfdan/bzrweb">the fixes</a> by <a href="http://halfdans.net/">Rasmus Toftdahl Olesen</a> I would probably have
-abandoned it entirely.  Thank you Rasmus!  Anyway, I&#8217;ve been gleaning at
-other Bazaar web frontends for a while.  The only real option is
-Loggerhead, but even though I consider myself a computer pro I just
-cannot seem to wrap my head around how to set it up.  I just wanted to
-setup a local browser for my user, without the need for root access.
-Like bzrweb supports, after having abandoned that, seemingly radical
-idea, I tried setting up a site wide shared installation &#8230; no luck so
-far. :-/</p>
-
-<p>In comparison to Loggerhead I easily managed to setup a Git repository
-browser, using a <code>/pub/git</code> structure, see <a href="http://git.troglobit.com/">git.vmlinux.org</a>.  The
-gitweb package in Ubuntu was very easy to setup, the one only thing I
-had problem with was the Apache VirtualHost setup.  Some sleep cured
-that, but I should post the conf here, in case someone else experiences
-trouble.</p>
-
-<p>I&#8217;ll have another go at setting up Loggerhead later, or perhaps try to
-fixup bzrweb.  I&#8217;m currently leaning towards fixing up bzrweb.  Fix bugs
-viewing tree files, refactor tarball export and a new project summary
-page, are some of the most interesting things I can come up with.  If
-only things could settle down at work for a while — oh well, vacation is
-coming up. Soon, my precious, soon&nbsp;&#8230;</p>
-
-<p>First, however, I will publish the micro vt100/ansi tetris version I
-found last week.  It will be the second project where I use Git, the
-first one was <code>cons</code>, which is a Xen xm wrapper for non privileged
-users.</p>
-
-<p>Some Git and Bazaar links:</p>
-
-<ul>
-<li><a href="http://www.spheredev.org/wiki/Git_for_the_lazy">Git for the Lazy</a> :-)</li>
-<li><a href="http://appletree.or.kr/quick_reference_cards/CVS-Subversion-Git/">CVS, Subversion &amp; Git Refcards</a></li>
-<li><a href="http://www.fthieme.net/drupal6/node/77">Converting Bzr to Git</a></li>
 </ul>
 
 </div>
@@ -688,6 +656,10 @@ users.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/03/24/disaster-recovery/">Disaster Recovery</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/03/07/testing-multicast-with-docker/">Testing Multicast With Docker</a>
       </li>
     
@@ -701,10 +673,6 @@ users.</p>
     
       <li class="post">
         <a href="/blog/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/">En Vanlig Dag På Jobbet (SWEDISH)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/">Awesome: Changing Next/Prev Tune in Spotify</a>
       </li>
     
   </ul>

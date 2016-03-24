@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Kernel | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/kernel/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2016-03-12T17:21:22+01:00</updated>
+  <updated>2016-03-25T00:14:54+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -40,7 +40,7 @@ make kernel KERNCONF=MULTICAST
 reboot
 </code></pre>
 
-<p>That&#8217;s it.  Remember to make sure your Qemu VM has enough RAM or it
+<p>That&rsquo;s it.  Remember to make sure your Qemu VM has enough RAM or it
 will probably page fault on you.  I use 1,0 GB RAM.</p>
 
 <p>The other option, to load the ready made module, is likely better.  But
@@ -56,8 +56,8 @@ you want it to load at boot.  So add this to <code>/boot/loader.conf</code>:</p>
     <link href="http://troglobit.github.io/blog/2007/02/03/building-debian-slash-ubuntu-kernels/"/>
     <updated>2007-02-03T10:00:45+01:00</updated>
     <id>http://troglobit.github.io/blog/2007/02/03/building-debian-slash-ubuntu-kernels</id>
-    <content type="html"><![CDATA[<p>I have been over this topic so many times now, strangely enough I&#8217;ve
-managed to make things more complicated than they need to be.  It&#8217;s
+    <content type="html"><![CDATA[<p>I have been over this topic so many times now, strangely enough I&rsquo;ve
+managed to make things more complicated than they need to be.  It&rsquo;s
 really this simple:</p>
 
 <pre><code>$ wget ftp://ftp.sunet.se/pub/Linux/kernels/v2.6/linux-2.6.19.2.tar.bz2
@@ -81,15 +81,15 @@ there are man pages for that.</p>
     <link href="http://troglobit.github.io/blog/2006/07/17/make-kpkg-and-dirty-modules/"/>
     <updated>2006-07-17T22:10:24+02:00</updated>
     <id>http://troglobit.github.io/blog/2006/07/17/make-kpkg-and-dirty-modules</id>
-    <content type="html"><![CDATA[<p>Dammit, tonight I spent too many hours chasing down a &#8220;feature&#8221; in the
-Debian kernel build process or the Linux-2.6 kernel.  I haven&#8217;t yet
+    <content type="html"><![CDATA[<p>Dammit, tonight I spent too many hours chasing down a &ldquo;feature&rdquo; in the
+Debian kernel build process or the Linux-2.6 kernel.  I haven&rsquo;t yet
 deciced who to blame ;-)</p>
 
 <p>Here goes: when you build the latest Linux 2.6 kernel, checked out from
 the git repository, with <code>make-kpkg</code> you should make sure to uncheck the
 <code>CONFIG_LOCALVERSION_AUTO</code> option in the kernel config before hand.
-It&#8217;s under &#8220;General setup&#8221; &rarr; &#8220;Automatically append version
-information &#8230;&#8221;.  If you don&#8217;t disable it, then your <code>utsrelease.h</code>
+It&rsquo;s under &ldquo;General setup&rdquo; &rarr; &ldquo;Automatically append version
+information &hellip;&rdquo;.  If you don&rsquo;t disable it, then your <code>utsrelease.h</code>
 will contain some annoying extra git version string and your modules
 directory will look something like this: <code>/lib/modules/2.6.18-dirty</code></p>
 
@@ -99,7 +99,7 @@ tiny little fact that <code>make-kpkg</code> modifies (moves away) the two files
 of the checkout and the scripts/setlocalversion will tell this to the
 top Makefile which in turn will create this whole mess.</p>
 
-<p>Take my advice, untick the <code>CONFIG_LOCALVERSION_AUTO</code> option.  It&#8217;s the
+<p>Take my advice, untick the <code>CONFIG_LOCALVERSION_AUTO</code> option.  It&rsquo;s the
 easiest one to get away with.</p>
 ]]></content>
   </entry>

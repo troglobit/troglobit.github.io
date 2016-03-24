@@ -9,10 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="Recently issue #70 was
-reported to pimd. That number of
-issues reported is cool in itself, but this was a question about
-Docker and pimd. Up until &hellip;">
+  <meta name="description" content="Days like these inconspicuously start out just like any other day,
+except on days like these you accidentally manage to erase $HOME and
+have no real &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -83,6 +82,133 @@ Docker and pimd. Up until &hellip;">
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2016/03/24/disaster-recovery/">Disaster Recovery</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-03-24T22:39:00+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>10:39 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Days like these inconspicuously start out just like any other day,
+except on days like these you accidentally manage to erase <code>$HOME</code> and
+have no real backup to rely on &hellip; Maundy Thursday will forever be Black
+Thursday for me, for now on.</p>
+
+<p>Best thing your can do, after cursing at yourself constantly for a
+couple of hours, is to:</p>
+
+<ol>
+<li>Come up with a useful backup and <em>restore</em> strategy</li>
+<li>Read up on undeletion tools for Ext4</li>
+<li>Blog about it, naturally</li>
+</ol>
+
+
+<p>BUT FIRST &ndash; QUICK &ndash; UNMOUNT OR POWER-OFF YOUR COMPUTER &ndash; PULL OUT THE
+BATTERY &ndash; AND STEP AWAY FROM THE COMPUTER!  Must protect the partition
+from being accidentally written to &ndash; I completely fumbled this step, so
+take heed young people!</p>
+
+<p>Now calm down and behave like an engineer again.</p>
+
+<p>There exist two neat tools, three if you count the more hard core
+<code>debugfs</code>:</p>
+
+<ul>
+<li><a href="http://extundelete.sourceforge.net/">extundelete</a></li>
+<li><a href="http://ext4magic.sourceforge.net/ext4magic_en.html">ext4magic</a></li>
+</ul>
+
+
+<p>Both have been around a while, and both are capable of restoring all
+files.  See their respective home pages for details.</p>
+
+<p>My system used LVM, of course, to make things a bit harder.  That&rsquo;s why
+I&rsquo;m documenting my steps here:</p>
+
+<ol>
+<li>Remove disk from lappy</li>
+<li>Prepare to connect using USB cradle to workstation, <em>prepare</em> don&rsquo;t
+do it yet!  I did the next few steps as root on my workstation,
+that&rsquo;s right, I didn&rsquo;t care anymore at this point.  The world may as well burn!</li>
+<li>You haven&rsquo;t connected the disk yet, right stupid?  Most systems today
+have cool features like automount that would cause the journal to be
+replayed &ndash; WE DO NOT WANT THAT OK? OK!</li>
+</ol>
+
+
+<p>You need the lvm tools:</p>
+
+<pre><code>apt-get install lvm2
+vgscan
+vgchange -ay ubuntu-vg
+lvs
+</code></pre>
+
+<p>The last command should list your partition, in my case labled
+<code>ubuntu-vg</code>.  To be able to run <code>extundelete</code> or <code>ext4magic</code> on the
+partition you have to mount the partition, <em>read-only</em> needless to say:</p>
+
+<pre><code>mkdir /rescue
+mount -o ro /dev/ubuntu-vg/root /rescue
+</code></pre>
+
+<p>Now we try some fairy dust:</p>
+
+<pre><code>ext4magic /dev/ubuntu-vg/root -r
+</code></pre>
+
+<p>OK, so let&rsquo;s see:</p>
+
+<pre><code>ls -l RECOVERDIR/
+</code></pre>
+
+<p>The results between <code>ext4magic</code> and <code>extundelete</code> may vary, so try them
+both out, test different options, and maybe even look at <code>debugfs</code>,
+we&rsquo;re desperate after all.</p>
+
+<pre><code>extundelete /dev/ubuntu-vg/root --restore-all
+ls -l RECOVERED_FILES
+</code></pre>
+
+<p>If there&rsquo;s a LOT of files you may have some luck narrowing down the
+result using the <code>--after DATE</code> option &hellip; where <code>DATE</code> is the number
+of seconds since the UNX epoch:</p>
+
+<pre><code>extundelete /dev/ubuntu-vg/root --restore-all --after 1458802800
+ls -l RECOVERED_FILES
+</code></pre>
+
+<p>I found my magic number using</p>
+
+<pre><code>date -d "Mar 24 8:00 2016" +%s
+</code></pre>
+
+<p>Well, as I said, I didn&rsquo;t turn off my computer in time. Instead I took
+the braindead option of starting to google for solutions.  So all my
+files (with proper filenames) turned out to contain only cached files
+from the browser &ndash; reclaiming the blocks goes quick, so watch out kids.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2016/03/07/testing-multicast-with-docker/">Testing Multicast With Docker</a></h1>
     
     
@@ -110,7 +236,7 @@ stable build environment for cross-compiling.  I had no idea people
 would want to use a Docker container as a multicast sink.  Basically I
 was baffled.</p>
 
-<p>The reporter used a Java based tool but simply couldn&#8217;t get things to
+<p>The reporter used a Java based tool but simply couldn&rsquo;t get things to
 work properly with <code>pimd</code> running on the host:</p>
 
 <pre><code>                eth0
@@ -130,7 +256,7 @@ work properly with <code>pimd</code> running on the host:</p>
 bit of blocker for the <code>pimd</code> v2.3.2 release and I admittedly lost a bit
 of sleep over this.  So finally this weekend, I sat down and whipped my
 old <a href="https://github.com/troglobit/mcjoin/">mcjoin</a> tool up into shape.
-I&#8217;ve relied on it for years, but it couldn&#8217;t send or receive packets,
+I&rsquo;ve relied on it for years, but it couldn&rsquo;t send or receive packets,
 until now.</p>
 
 <p>Running docker v1.5 in Ubuntu 15.10 I ran this, with <code>pimd</code> on the host
@@ -145,7 +271,7 @@ Received total: 2500 packets
 <p>The <code>pimd</code> and the multicast sender runs on my host, which should not
 matter since Linux still has to route the traffic to the <code>docker0</code>
 interface.  Also, without setting the TTL to 2 (or greater) the
-container receives no traffic at all.  Here&#8217;s what I run in another
+container receives no traffic at all.  Here&rsquo;s what I run in another
 terminal on my host:</p>
 
 <pre><code>./mcjoin -s -t 2 -c 10 225.1.2.3+250
@@ -184,12 +310,12 @@ is sure not the last.  Docker is a truly revolutionary new tool!</p>
   </header>
 
 
-  <div class="entry-content"><p>For the better part of the last ten years I&#8217;ve been working with
-multicast in one way or another.  I&#8217;ve used many different tools for
+  <div class="entry-content"><p>For the better part of the last ten years I&rsquo;ve been working with
+multicast in one way or another.  I&rsquo;ve used many different tools for
 testing, but usually simply using <code>ping(1)</code> and <code>tcpdump(1)</code> is quite
 sufficient.  However, you often need to tell bridges (switches) to open
 up multicast in your general direction for your pings to get through, so
-you need to send an IGMP &#8220;join&#8221; first.  I found mcjoin, written by David
+you need to send an IGMP &ldquo;join&rdquo; first.  I found mcjoin, written by David
 Stevens, in <a href="https://lkml.org/lkml/2004/8/5/143">this posting to LKML</a>
 back in 2006, and started improving it and adding features to it over
 the years.</p>
@@ -217,10 +343,10 @@ had enough.  So here it is, v2.0:</p>
 
 
 <p>Most of the time I simply want to see a resulting IGMP join message in
-Wireshark, see it bite in a switch&#8217;s FDB or a routing daemon&#8217;s
+Wireshark, see it bite in a switch&rsquo;s FDB or a routing daemon&rsquo;s
 forwarding table.  So, join is the default operation, and also continues
 to be the name of the tool.  My favourite testing group is set as the
-default, 225.1.2.3, so you only need to start the tool and you&#8217;re off.
+default, 225.1.2.3, so you only need to start the tool and you&rsquo;re off.
 To send to the same default group (225.1.2.3), simply add <code>-s</code> to the
 sender side.</p>
 
@@ -235,7 +361,7 @@ Received total: 66 packets
 receiver$
 </code></pre>
 
-<p>If you ever need anything else, e.g. routing multicast, there&#8217;s even a
+<p>If you ever need anything else, e.g. routing multicast, there&rsquo;s even a
 man page.  It mentions setting the TTL and other such nastiness :)</p>
 </div>
   
@@ -315,7 +441,7 @@ own (buggy) implementations.</p>
 <h2>BSD <code>sys/queue.h</code></h2>
 
 <p><a href="https://www.freebsd.org/cgi/man.cgi?query=queue&amp;sektion=3">This header</a> has lots of macros for handling various forms of
-linked lists.  The version in GLIBC is a bit behind the BSD&#8217;s, because
+linked lists.  The version in GLIBC is a bit behind the BSD&rsquo;s, because
 the latter also have <code>_safe()</code> versions of some macros to aid the user
 in some tricky cases, e.g. when removing entries while iterating.</p>
 
@@ -330,7 +456,7 @@ in some tricky cases, e.g. when removing entries while iterating.</p>
 </ul>
 
 
-<p>Here&#8217;s a few of them, this example for doubly linked lists:</p>
+<p>Here&rsquo;s a few of them, this example for doubly linked lists:</p>
 
 <ul>
 <li><code>LIST_INIT()</code></li>
@@ -347,7 +473,7 @@ in some tricky cases, e.g. when removing entries while iterating.</p>
 
 <p>I wrote a <a href="https://github.com/troglobit/toolbox/blob/master/tailq-demo.c">demo of the TAILQ API</a> a couple of years ago.</p>
 
-<h2>Other Noteworthy API&#8217;s</h2>
+<h2>Other Noteworthy API&rsquo;s</h2>
 
 <p>Other functions worthy of mentioning here are:</p>
 
@@ -471,7 +597,7 @@ Lords or Jedi Knights.</p>
 
 
   <div class="entry-content"><p>Back to using the <a href="http://awesome.naquadah.org/">Awesome WM</a> in Ubuntu.
-This time I&#8217;m setting up everything from scratch and first up is fixing
+This time I&rsquo;m setting up everything from scratch and first up is fixing
 keybindings to control my main music player: Spotify!</p>
 
 <p>Edit your <code>~/.config/awesome/rc.lua</code> with Emacs (obviously).  If you do
@@ -488,7 +614,7 @@ not have an rc file, simply copy the system <code>/etc/xdb/awesome/rc.lua</code>
 root.keys(globalkeys)
 </code></pre>
 
-<p>That&#8217;s it.</p>
+<p>That&rsquo;s it.</p>
 </div>
   
   
@@ -517,10 +643,10 @@ root.keys(globalkeys)
   </header>
 
 
-  <div class="entry-content"><p>Sometimes I just cannot help myself.  It&#8217;s like finding a stray puppy,
-or abandonded kitten &#8230;</p>
+  <div class="entry-content"><p>Sometimes I just cannot help myself.  It&rsquo;s like finding a stray puppy,
+or abandonded kitten &hellip;</p>
 
-<p>&#8230; I recently decided to adopt <a href="/mini-snmpd.html">mini-snmpd</a> since the
+<p>&hellip; I recently decided to adopt <a href="/mini-snmpd.html">mini-snmpd</a> since the
 <a href="http://members.aon.at/linuxfreak/linux/mini_snmpd.html">original upstream</a> site had passed into the great beyond.  At this
 point in my life almost everyone I know can tell you I have no warm
 fuzzy feels for SNMP, at all.  So why did I even consider this to begin
@@ -536,13 +662,13 @@ it was.  The code was also in reasonably good shape, so it had passed my
 initial quality control.  Suddenly one day I could no longer download it
 when building TroglOS, so I had to do something!</p>
 
-<p>My plans for mini-snmpd are quite humble.  I&#8217;m currently cleaning it up
+<p>My plans for mini-snmpd are quite humble.  I&rsquo;m currently cleaning it up
 a bit, adding configure script for all optional features, testing
 portability to FreeBSD and <a href="https://github.com/javiplx/mini-snmpd">integrating (good) patches</a> from various
 sources scattered around the web.</p>
 
-<p>I will not add lots of new features, but as always I&#8217;m your humble patch
-monkey, so if you <a href="https://github.com/troglobit/mini-snmpd">submit a pull reqeust</a> at GitHub it&#8217;ll probably be
+<p>I will not add lots of new features, but as always I&rsquo;m your humble patch
+monkey, so if you <a href="https://github.com/troglobit/mini-snmpd">submit a pull reqeust</a> at GitHub it&rsquo;ll probably be
 merged and put into a release.</p>
 
 <p>Cheers</p>
@@ -575,7 +701,7 @@ merged and put into a release.</p>
 
 
   <div class="entry-content"><p>Summer is now slowly fading away, and what a summer it has been here in
-Sweden!  For someone who isn&#8217;t a fan of the summer heat it has been an
+Sweden!  For someone who isn&rsquo;t a fan of the summer heat it has been an
 awesome time for brain work, and in my case work on my open source
 projects! :-)</p>
 
@@ -583,16 +709,16 @@ projects! :-)</p>
 for ten weeks (10) this year!  It was really worth it, and for the first
 time in many years I actually feel rested.</p>
 
-<p>So what&#8217;s new?  Well, this summer I&#8217;ve released a <strong>major</strong> upgrade to
+<p>So what&rsquo;s new?  Well, this summer I&rsquo;ve released a <strong>major</strong> upgrade to
 <a href="/pimd.html">pimd</a>, which received <em>PIM-SSM</em> and full <em>IGMPv3</em> support!
 <a href="/inadyn.html">Inadyn</a> has seen two releases, one feature release with
 support for Windows and improved support for custom DDNS providers, and
 one bugfix release (today).  My own FTP/TFTP server <a href="/uftpd.html">uftpd</a>
 has also got a bit of an overhaul to improve both concurrency and
-improved support for various popular clients (Firefox and wget) &#8211; I
+improved support for various popular clients (Firefox and wget) &ndash; I
 released v1.9 of uftpd as a birthday present to myself! ;-)</p>
 
-<p>I&#8217;ve done some other minor work as well, on the &#8220;new&#8221; <a href="https://github.com/troglobit/netcalc">netcalc</a>, IPv6
+<p>I&rsquo;ve done some other minor work as well, on the &ldquo;new&rdquo; <a href="https://github.com/troglobit/netcalc">netcalc</a>, IPv6
 and IPv4 subnet calculator, as well as <a href="https://github.com/troglobit/watchdogd">watchdogd</a> and <a href="/finit.html">finit</a>.  The
 latter two have however not seen any releases yet, but both have <em>major</em>
 v2.0 releases with lots of very interesting features that are going to
@@ -602,9 +728,9 @@ be revealed soon!</p>
 file descriptors, RAM) as well as a very advanced process monitoring
 (instrumentation) API is being added.  Finit however is the crown in
 making, it is being converted to support multiple instances of services
-and to be a fully event driven.  I&#8217;m extremely excited about Finit!</p>
+and to be a fully event driven.  I&rsquo;m extremely excited about Finit!</p>
 
-<p>Oh, and don&#8217;t worry &#8230; I did manage to get some actual real downtime on
+<p>Oh, and don&rsquo;t worry &hellip; I did manage to get some actual real downtime on
 the beach as well! ;-)</p>
 
 <!--
@@ -643,11 +769,11 @@ the beach as well! ;-)</p>
 
   <div class="entry-content"><p>Years ago while looking for a fast <a href="https://en.wikipedia.org/wiki/Init">init</a> replacement for <a href="http://westermo.com/">work</a>,
 I found <a href="http://helllabs.org/finit/">Finit</a>.  Originally written by <a href="https://github.com/cmatsuoka">Claudio Matsuoka</a> to act
-as a drop-in replacement for the <a href="https://en.wikipedia.org/wiki/Asus_Eee_PC">Asus EeePC</a> <a href="http://wiki.eeeuser.com/boot_process:the_boot_process">fastinit</a>, <em>&#8220;gaps
-filled with frog DNA &hellip;&#8221;</em></p>
+as a drop-in replacement for the <a href="https://en.wikipedia.org/wiki/Asus_Eee_PC">Asus EeePC</a> <a href="http://wiki.eeeuser.com/boot_process:the_boot_process">fastinit</a>, <em>&ldquo;gaps
+filled with frog DNA &hellip;&rdquo;</em></p>
 
 <p>Until I found Finit I had always been in awe of those venturing into the
-realm of <a href="http://0pointer.net/blog/">PID 1</a>.  However, learning from the simplicity of Claudio&#8217;s
+realm of <a href="http://0pointer.net/blog/">PID 1</a>.  However, learning from the simplicity of Claudio&rsquo;s
 code I realized that although PID 1 at times is indistinguishable from
 magic, it is really not that hard to master.  <a href="https://github.com/troglobit/finit">My version of Finit</a>
 is available on GitHub.</p>
@@ -689,10 +815,10 @@ projects &hellip;</p>
   </header>
 
 
-  <div class="entry-content"><p>So, now that I have http://git.troglobit.com setup as a backup GIT repo
-to https://github.com/troglobit, I needed a <em>simple</em> way of always
-pushing to both repos &#8211; best way for me is to always hook into my
-regular work flow, otherwise I&#8217;d just forget.  The <a href="1">git-remote(1)</a>
+  <div class="entry-content"><p>So, now that I have <a href="http://git.troglobit.com">http://git.troglobit.com</a> setup as a backup GIT repo
+to <a href="https://github.com/troglobit,">https://github.com/troglobit,</a> I needed a <em>simple</em> way of always
+pushing to both repos &ndash; best way for me is to always hook into my
+regular work flow, otherwise I&rsquo;d just forget.  The <a href="1">git-remote(1)</a>
 man page describes the new <code>set-url --add</code> sub-command:</p>
 
 <pre><code>git remote set-url --add origin troglobit.com:/srv/git/watchdogd.git
@@ -706,70 +832,6 @@ pushed to both the GitHub repo as well as my own server!</p>
   
     <footer>
       <a rel="full-article" href="/blog/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/">HowTo: Apache With Gitweb on Debian 8.1</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-06-30T23:13:48+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>30</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>11:13 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&#8217;m posting this in case anyone else gets stuck setting up <a href="http://www.apache.org">Apache</a>
-with <a href="http://git-scm.com/docs/gitweb">Gitweb</a>.  Also as a reminder to myself in case I ever need to
-set up this all over again.</p>
-
-<ol>
-<li>You have all your eggs in one basket (GitHub), and</li>
-<li>You really like that shiny basket, but</li>
-<li>You know you&#8217;re clumsy and usually drop baskets yourself.</li>
-<li>You are wise (yes you are!) and realize you need another basket, so</li>
-<li>You set up a server and a domain yourself &#8230;</li>
-</ol>
-
-
-<p>OK.  Let&#8217;s start simple, since you are already running the latest Debian
-you fire up the command line and install the basics:</p>
-
-<pre><code>sudo apt-get install gitweb apache2
-</code></pre>
-
-<p>So it&#8217;ll complain, you&#8217;ll clarify your request and soon all required
-packages are on your server.  Now what?</p>
-
-<p>Debian has already set up http://localhost/gitweb for you, and if you
-have a domain already you should go ahead and edit the master file for
-that:</p>
-
-<pre><code>editor /etc/apache2/sites-available/000-default.conf
-service apache2 reload
-</code></pre>
-
-<p>If you want to use that for your gitweb needs, then you&#8217;re done!</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/">Read on &rarr;</a>
     </footer>
   
 
@@ -817,6 +879,10 @@ service apache2 reload
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/03/24/disaster-recovery/">Disaster Recovery</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/03/07/testing-multicast-with-docker/">Testing Multicast With Docker</a>
       </li>
     
@@ -830,10 +896,6 @@ service apache2 reload
     
       <li class="post">
         <a href="/blog/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/">En Vanlig Dag På Jobbet (SWEDISH)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/">Awesome: Changing Next/Prev Tune in Spotify</a>
       </li>
     
   </ul>

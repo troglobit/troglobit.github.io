@@ -9,8 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="So them pesky details of `/etc/inetd.conf` really are important? This is a small bugfix release of uftpd. Version 1.4
-is basically just to change &hellip;">
+  <meta name="description" content="Quite a few changes lately. I finally got around to adding support
+for GnuTLS to Inadyn,
+hopefully this will get into Debian &hellip; unless the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -81,6 +82,47 @@ is basically just to change &hellip;">
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/">GnuTLS Support in Inadyn and Fixes to Uftpd</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-09-13T19:18:56+02:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>7:18 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Quite a few changes lately.  I finally got around to adding support
+for <a href="http://www.gnutls.org">GnuTLS</a> to <a href="/inadyn.html">Inadyn</a>,
+hopefully this will get into Debian &hellip; unless the Jessie freeze
+prevents that.</p>
+
+<p>Also, thanks to a friend of mine trying out <a href="/uftpd.html">uftpd</a>
+recently I discovered that libuev has been missing from the tarball
+since the release of the TFTP support.  Fixed.</p>
+
+<p>Another great piece of news is that
+<a href="http://www.coverity.com/">Coverity</a> accepted uftpd as an Open Source
+project, I&rsquo;ve been hard at work fixing nasty bugs uncovered by the
+<a href="https://scan.coverity.com/">Coverity Scan</a>.  Great stuff! :)</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2014/09/04/bugfix-release-of-uftpd/">Bugfix Release of Uftpd</a></h1>
     
     
@@ -102,7 +144,7 @@ is basically just to change &hellip;">
 
 <p>This is a small bugfix release of <a href="/uftpd.html">uftpd</a>.  Version 1.4
 is basically just to change <code>nowait</code> to <code>wait</code> for the TFTP service in
-<code>/etc/inetd.conf</code>, but there&#8217;s also a minor man page update.</p>
+<code>/etc/inetd.conf</code>, but there&rsquo;s also a minor man page update.</p>
 
 <p>Enjoy! :)</p>
 </div>
@@ -134,15 +176,15 @@ is basically just to change <code>nowait</code> to <code>wait</code> for the TFT
 
 
   <div class="entry-content"><p>Today sees the release of v1.3 of the awesome little uftpd. The main
-news is the new TFTP support!  Just like before you don&#8217;t need any
-configuration file, just build and install &#8211; or build a .deb file and
+news is the new TFTP support!  Just like before you don&rsquo;t need any
+configuration file, just build and install &ndash; or build a .deb file and
 install.</p>
 
 <p>This release completes the main purpose of uftpd for me, I can now use
 it as my daily driver and fully replace vsftpd and tftpd-hpa, which to
 me are the next best.</p>
 
-<p>What&#8217;s left then, you ask?  Well, TFTP upload support, TFTP segment
+<p>What&rsquo;s left then, you ask?  Well, TFTP upload support, TFTP segment
 size negotiation and possibly multiple user support in FTP.  As
 always, patches are most welcome.  See the
 <a href="/uftpd.html">uftpd homepage</a> and my
@@ -175,19 +217,19 @@ always, patches are most welcome.  See the
   </header>
 
 
-  <div class="entry-content"><p>OK, so you&#8217;ve just been handed the task to integrate a big piece of
-corporate software and it&#8217;s nowhere near as done and ready as project
-management thinks.  Of course you&#8217;ve already started chugging away at
+  <div class="entry-content"><p>OK, so you&rsquo;ve just been handed the task to integrate a big piece of
+corporate software and it&rsquo;s nowhere near as done and ready as project
+management thinks.  Of course you&rsquo;ve already started chugging away at
 it, fixing bugs, refactoring code and wrapping it in neat containers
-to keep the changeset against the base SW small &#8211; you already know
-you&#8217;ll get another drop of the same stinking pieace of code in another
+to keep the changeset against the base SW small &ndash; you already know
+you&rsquo;ll get another drop of the same stinking pieace of code in another
 six months, so you keep the changes small and track them in GIT with
 neatly formatted commit messages.</p>
 
 <p>About ten commits in it dawns on you that you have several commits
 that would need to be squashed and some commit messages that needs to
-be edited &#8230; you start typing in <code>git rebase -i origin/...</code> wait, you
-haven&#8217;t pushed anything yet.  So how do you rebase something that&#8217;s
+be edited &hellip; you start typing in <code>git rebase -i origin/...</code> wait, you
+haven&rsquo;t pushed anything yet.  So how do you rebase something that&rsquo;s
 not been pushed yet?</p>
 
 <p>Well:</p>
@@ -230,16 +272,16 @@ not been pushed yet?</p>
 and its been covered on <a href="http://lwn.net/Articles/603403/">lwn.net</a> as
 well.</p>
 
-<p>It&#8217;s actually a rather depressing development.  They claim it&#8217;s due to
-the low traffic and decline in updates, but it&#8217;s evident that&#8217;s not
+<p>It&rsquo;s actually a rather depressing development.  They claim it&rsquo;s due to
+the low traffic and decline in updates, but it&rsquo;s evident that&rsquo;s not
 the whole truth.  The owners recommend their other site, SourceForge,
 but anyone having been in the loop for the last decade or two knows
 that SourceForge has been in a slow decline for a long time, more so
 than free(code) in my opinion.  Also, SourceForge only lists its own
-projects, and only the most active or &#8220;top&#8221; projects.</p>
+projects, and only the most active or &ldquo;top&rdquo; projects.</p>
 
-<p>I never used free(code) to find the &#8220;top&#8221; projects or the most active
-ones.  That&#8217;s completely useless to me.  I went there to dig for small
+<p>I never used free(code) to find the &ldquo;top&rdquo; projects or the most active
+ones.  That&rsquo;s completely useless to me.  I went there to dig for small
 unknown projects, small gems that are usually unlisted on GitHub or
 SourceForge.  I went there to publicize my own small creations, learn
 about other similar projects and get a quick feedback on recent
@@ -285,7 +327,7 @@ last release of Inadyn before the big 2.0, which will introduce the
 new .conf file format based on
 <a href="http://www.nongnu.org/confuse/">libConfuse</a>.  A .conf file
 feasibility study was
-<a href="/blog/2014/02/23/weekend-hack-json-vs-conf/">presented earlier</a> &#8230;</p>
+<a href="/blog/2014/02/23/weekend-hack-json-vs-conf/">presented earlier</a> &hellip;</p>
 
 <p>The uftpd project is completely based on user input, currently mostly
 mine.  I will add features and bug fixes when I need them, unless I
@@ -297,8 +339,8 @@ I cannot maintain multiple accounts on various DDNS providers myself.</p>
 
 <p>Patches to support flavors of UNIX other than GNU/Linux, including
 GNU/Hurd, or even other operating systems are also welcome, as long as
-it&#8217;s not Windows.  I will not maintain any Windows support since I
-don&#8217;t use it myself.  If you want Windows support you will have to
+it&rsquo;s not Windows.  I will not maintain any Windows support since I
+don&rsquo;t use it myself.  If you want Windows support you will have to
 take a very active co-maintainer role in the respective project.</p>
 </div>
   
@@ -328,18 +370,18 @@ take a very active co-maintainer role in the respective project.</p>
   </header>
 
 
-  <div class="entry-content"><p>Looking for a Dynamic DNS, DDNS, client?  Well you&#8217;re in luck, the
+  <div class="entry-content"><p>Looking for a Dynamic DNS, DDNS, client?  Well you&rsquo;re in luck, the
 <a href="http://en.wikipedia.org/wiki/Alternative_terms_for_free_software" title="FLOSS">FLOSS</a> market space is flooded with dedicated clients and various
 wget scripts.  So why bother with an old C implementation?  Well, this
 is admittedly one of the old timers in the game and is likely packaged
-for your GNU/Linux distribution of choice already.  It&#8217;s tried and
+for your GNU/Linux distribution of choice already.  It&rsquo;s tried and
 tested with many DDNS service providers and even comes bundled in a
 few embedded router distributions as well.</p>
 
-<p>Today I&#8217;ve released <a href="/inadyn.html">Inadyn</a> v1.99.7 as an XZ compressed
+<p>Today I&rsquo;ve released <a href="/inadyn.html">Inadyn</a> v1.99.7 as an XZ compressed
 tarball.  The release announcement should be up on <a href="https://freecode.com/projects/inadyn">free(code)</a>
-now.  It&#8217;s a small incremental release containing mainly code cleanup
-and a few new features that you likely won&#8217;t notice: support for
+now.  It&rsquo;s a small incremental release containing mainly code cleanup
+and a few new features that you likely won&rsquo;t notice: support for
 multiple cache files and DDNS providers as separate plugins, for easy
 addition of new ones as well as maintenance of existing.  This further
 separates the internal logic from the provider specific parts and also
@@ -388,7 +430,7 @@ still has the old .conf file format, but just maybe.</p>
 something like this 2014?</p>
 
 <p>As a developer the answer to most such questions is usually; to
-scratch an itch.  For a very long time I&#8217;ve looked for a really simple
+scratch an itch.  For a very long time I&rsquo;ve looked for a really simple
 FTP server that just works, out of the box!</p>
 
 </div>
@@ -423,7 +465,7 @@ FTP server that just works, out of the box!</p>
   </header>
 
 
-  <div class="entry-content"><p>Just made it!  Here&#8217;s the result of #Easterhack14 &#8211;
+  <div class="entry-content"><p>Just made it!  Here&rsquo;s the result of #Easterhack14 &ndash;
 <a href="/finit.html">Finit</a> v1.9 :-)</p>
 
 <p>Nothing fancy this time, just collecting some bug fixes, playing with
@@ -467,69 +509,9 @@ prices seem a bit on the steep side, apart from maybe the Music
 service, which is slightly cheaper than Spotify.  Will try it out for
 a month or so to see which one I like better.</p>
 
-<p>For some reason I chose Gravity as my first rental, at 39 Skr.  I&#8217;ve
-heard so many bad reviews of it but for better or worse it&#8217;ll now be
+<p>For some reason I chose Gravity as my first rental, at 39 Skr.  I&rsquo;ve
+heard so many bad reviews of it but for better or worse it&rsquo;ll now be
 my introduction to Google Movies :-)</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/02/23/weekend-hack-json-vs-conf/">Weekend Hack: JSON vs CONF</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-02-23T21:59:00+01:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2014</span></span> <span class='time'>9:59 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>It was time.  I had been putting it off for far too long &#8211; learning
-about JSON and deciding on a new .conf file format for
-<a href="/inadyn.shtml">Inadyn</a>.  So this weekend I sat myself down to read up
-on <a href="http://en.wikipedia.org/wiki/JSON">JSON</a> and the multitude of
-parser libraries for both JSON and traditional .conf file parsers.  I
-was looking for a human readable file format that a user could easily
-and reliably edit by themselves without it being too error prone or
-sensitive to mistyping.</p>
-
-<div><script src='https://gist.github.com/9177645.js'></script>
-<noscript><pre><code>&lt;html&gt;&lt;body&gt;You are being &lt;a href=&quot;https://github.com/gist/9177645&quot;&gt;redirected&lt;/a&gt;.&lt;/body&gt;&lt;/html&gt;</code></pre></noscript></div>
-
-
-<p>I quickly narrowed down my scope of investigation to
-<a href="http://www.digip.org/jansson/">Jansson</a> for JSON and and
-<a href="http://www.nongnu.org/confuse/">Confuse</a> for &#8220;standard&#8221; UNIX .conf
-files.  Both have very liberal licenses, extensive test suites, very
-good documentation and are extremely well written!  In fact, I will
-probably use them as prime examples of well maintained Open Source
-projects in the future :-)</p>
-
-<p>The resulting code is in my
-<a href="https://github.com/troglobit/toolbox/tree/master/conf">toolbox</a> on
-GitHub.</p>
-
-<div><script src='https://gist.github.com/9177620.js'></script>
-<noscript><pre><code>&lt;html&gt;&lt;body&gt;You are being &lt;a href=&quot;https://github.com/gist/9177620&quot;&gt;redirected&lt;/a&gt;.&lt;/body&gt;&lt;/html&gt;</code></pre></noscript></div>
-
-
-<p>In my opinion the .conf file is a lot easier to read, write and edit
-by Joe User, so that&#8217;s what I&#8217;ll be using for many of my own projects,
-starting with <a href="/inadyn.shtml">Inadyn</a></p>
 </div>
   
   
@@ -580,6 +562,10 @@ starting with <a href="/inadyn.shtml">Inadyn</a></p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/03/24/disaster-recovery/">Disaster Recovery</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/03/07/testing-multicast-with-docker/">Testing Multicast With Docker</a>
       </li>
     
@@ -593,10 +579,6 @@ starting with <a href="/inadyn.shtml">Inadyn</a></p>
     
       <li class="post">
         <a href="/blog/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/">En Vanlig Dag På Jobbet (SWEDISH)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/">Awesome: Changing Next/Prev Tune in Spotify</a>
       </li>
     
   </ul>

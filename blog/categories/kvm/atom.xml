@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Kvm | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/kvm/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2016-03-12T17:21:22+01:00</updated>
+  <updated>2016-03-25T00:14:54+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -19,12 +19,12 @@
     <updated>2010-08-29T20:44:34+02:00</updated>
     <id>http://troglobit.github.io/blog/2010/08/29/finally</id>
     <content type="html"><![CDATA[<p>Compared to OpenBSD and FreeBSD the NetBSD install was hard, really
-hard.  It wasn&#8217;t until I stumbled across <a href="https://ezunix.org/index.php?title=NetBSD_5_on_KVM">this</a> that I managed to
+hard.  It wasn&rsquo;t until I stumbled across <a href="https://ezunix.org/index.php?title=NetBSD_5_on_KVM">this</a> that I managed to
 convince myself to try it again.</p>
 
 <p>The trick seems to be to ignore as much as you can from other Internet
 tips.  NetBSD runs fine in KVM, so if someone says you need to run it in
-Qemu mode &mdash; don&#8217;t believe the hype.  OK, in <code>virt-manager</code> there
+Qemu mode &mdash; don&rsquo;t believe the hype.  OK, in <code>virt-manager</code> there
 is no preset defaults for NetBSD, so I went with a generic OS and tried
 starting the install from there.  The kernel hangs before it probes USB,
 or it segfaults.</p>
@@ -34,7 +34,7 @@ ACPI and selected the pcnet NIC instead of the default <code>ne2k-pci</code>.
 Running the default options in the NetBSD 5.0.2 installer, and the
 bootloader after install, works fine.</p>
 
-<p>If you still don&#8217;t manage to get it running check the KVM home page for
+<p>If you still don&rsquo;t manage to get it running check the KVM home page for
 <a href="http://www.linux-kvm.org/page/Bugs">known bugs</a> and workarounds.  Sometimes it helps adding
 <code>-no-kvm-irqchip</code> or <code>-no-kvm-pit</code>. However, <code>virt-manager</code> does not
 seem to support these options yet, so you must run from the command

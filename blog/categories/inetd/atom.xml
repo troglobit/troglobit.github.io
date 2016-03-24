@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Inetd | Troglobit]]></title>
   <link href="http://troglobit.github.io/blog/categories/inetd/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2016-03-12T17:21:22+01:00</updated>
+  <updated>2016-03-25T00:14:54+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -20,13 +20,13 @@
     <id>http://troglobit.github.io/blog/2015/03/06/inetd-support-in-finit-v1-dot-12</id>
     <content type="html"><![CDATA[<p>A steady flow of features, and releases, is key to keeping any project
 alive.  Recently I ticked off another item in the <a href="/finit.html">Finit</a>
-TODO list &#8230;</p>
+TODO list &hellip;</p>
 
 <p>Finit v1.12 now comes with a built-in inetd!  You no longer need an
 external inetd daemon to launch services on demand.</p>
 
-<p>The good news doesn&#8217;t stop there, this little inetd actually supports a
-poor man&#8217;s tcpwrappers!</p>
+<p>The good news doesn&rsquo;t stop there, this little inetd actually supports a
+poor man&rsquo;s tcpwrappers!</p>
 
 <pre><code>inetd ssh/tcp          nowait [2345] /sbin/dropbear -i -R -F
 inetd ssh@eth0:222/tcp nowait [2345] /sbin/dropbear -i -R -F
@@ -37,7 +37,7 @@ the <a href="https://matt.ucc.asn.au/dropbear/dropbear.html">Dropbear SSH</a>
 server on demand on port 22 (default ssh/tcp port in <code>/etc/services</code>) on
 <em>all</em> interfaces except on <code>eth0</code>, which in your case is the Internet
 (WAN) interface, here you want SSH to run on port 222.  Actually, you
-don&#8217;t want port 22 open at all on <code>eth0</code> &#8230; so finit takes care of this
+don&rsquo;t want port 22 open at all on <code>eth0</code> &hellip; so finit takes care of this
 for you!  Seriously, it just works, no need for messing about with that
 nasty old <code>iptables</code> anymore!</p>
 
@@ -66,7 +66,7 @@ default.  To enable it you need two things:</p>
 </ol>
 
 
-<p>Assuming you&#8217;ve installed the default set of plugins, the following two
+<p>Assuming you&rsquo;ve installed the default set of plugins, the following two
 lines can be added:</p>
 
 <pre><code>inetd time/udp   wait [2345] internal
@@ -97,7 +97,7 @@ Sat Mar  7 08:48:58 CET 2015
 <h3>Changes</h3>
 
 <ul>
-<li>Add support for built-in inetd super server &#8211; launch services on
+<li>Add support for built-in inetd super server &ndash; launch services on
 demand.  Supports filtering per interface and custom Inet ports.</li>
 <li>Upgrade to <a href="https://github.com/troglobit/libuev">libuEv</a> v1.1.0 to better handle error conditions.</li>
 <li>Allow mixed case config directives in <code>finit.conf</code></li>
@@ -117,10 +117,10 @@ this fallback as console.  Should improve usability in some use cases.</li>
 <h3>Fixes</h3>
 
 <ul>
-<li>Revert &#8220;Use vfork() instead of fork() before exec()&#8221; from v1.11.  It
+<li>Revert &ldquo;Use vfork() instead of fork() before exec()&rdquo; from v1.11.  It
 turned out to not work so well after all.  For instance, launching
 TTYs in a background process completely blocked inetd services from
-even starting up listening sockets &#8230; proper fork seems to work fine
+even starting up listening sockets &hellip; proper fork seems to work fine
 though.  This is the casue for <em>yanking</em> the <a href="https://github.com/troglobit/finit/compare/1.10...1.11">1.11</a> release.</li>
 <li>Trap segfaults caused by external plugins/callbacks in a sub-process.
 This prevents a single programming mistake in by a 3rd party developer
