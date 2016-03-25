@@ -4,7 +4,7 @@
   <title><![CDATA[Troglobit]]></title>
   <link href="http://troglobit.github.io/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2016-03-25T00:17:59+01:00</updated>
+  <updated>2016-03-25T09:41:03+01:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -21,7 +21,7 @@
     <content type="html"><![CDATA[<p>Days like these inconspicuously start out just like any other day,
 except on days like these you accidentally manage to erase <code>$HOME</code> and
 have no real backup to rely on &hellip; Maundy Thursday will forever be Black
-Thursday for me, for now on.</p>
+Thursday for me, from now on.</p>
 
 <p>Best thing your can do, after cursing at yourself constantly for a
 couple of hours, is to:</p>
@@ -38,7 +38,7 @@ BATTERY &ndash; AND STEP AWAY FROM THE COMPUTER!  Must protect the partition
 from being accidentally written to &ndash; I completely fumbled this step, so
 take heed young people!</p>
 
-<p>Now calm down and behave like an engineer again.</p>
+<p>Now calm down and act like an engineer again.</p>
 
 <p>There exist two neat tools, three if you count the more hard core
 <code>debugfs</code>:</p>
@@ -59,7 +59,8 @@ I&rsquo;m documenting my steps here:</p>
 <li>Remove disk from lappy</li>
 <li>Prepare to connect using USB cradle to workstation, <em>prepare</em> don&rsquo;t
 do it yet!  I did the next few steps as root on my workstation,
-that&rsquo;s right, I didn&rsquo;t care anymore at this point.  The world may as well burn!</li>
+that&rsquo;s right, I didn&rsquo;t care anymore at this point.  The world may as
+well burn!</li>
 <li>You haven&rsquo;t connected the disk yet, right stupid?  Most systems today
 have cool features like automount that would cause the journal to be
 replayed &ndash; WE DO NOT WANT THAT OK? OK!</li>
@@ -74,9 +75,10 @@ vgchange -ay ubuntu-vg
 lvs
 </code></pre>
 
-<p>The last command should list your partition, in my case labled
-<code>ubuntu-vg</code>.  To be able to run <code>extundelete</code> or <code>ext4magic</code> on the
-partition you have to mount the partition, <em>read-only</em> needless to say:</p>
+<p>The last command should list your logical volume group(s), in my case
+labled <code>ubuntu-vg</code>.  To be able to run <code>extundelete</code> or <code>ext4magic</code> on
+the partition you have to mount the partition, <em>read-only</em> needless to
+say:</p>
 
 <pre><code>mkdir /rescue
 mount -o ro /dev/ubuntu-vg/root /rescue
