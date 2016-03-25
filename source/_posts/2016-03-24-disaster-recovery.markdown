@@ -9,7 +9,7 @@ categories: backup
 Days like these inconspicuously start out just like any other day,
 except on days like these you accidentally manage to erase `$HOME` and
 have no real backup to rely on ... Maundy Thursday will forever be Black
-Thursday for me, for now on.
+Thursday for me, from now on.
 
 Best thing your can do, after cursing at yourself constantly for a
 couple of hours, is to:
@@ -23,7 +23,7 @@ BATTERY -- AND STEP AWAY FROM THE COMPUTER!  Must protect the partition
 from being accidentally written to -- I completely fumbled this step, so
 take heed young people!
 
-Now calm down and behave like an engineer again.
+Now calm down and act like an engineer again.
 
 There exist two neat tools, three if you count the more hard core
 `debugfs`:
@@ -40,7 +40,8 @@ I'm documenting my steps here:
 1. Remove disk from lappy
 2. Prepare to connect using USB cradle to workstation, *prepare* don't
    do it yet!  I did the next few steps as root on my workstation,
-   that's right, I didn't care anymore at this point.  The world may as well burn!
+   that's right, I didn't care anymore at this point.  The world may as
+   well burn!
 3. You haven't connected the disk yet, right stupid?  Most systems today
    have cool features like automount that would cause the journal to be
    replayed -- WE DO NOT WANT THAT OK? OK!
@@ -52,9 +53,10 @@ You need the lvm tools:
     vgchange -ay ubuntu-vg
     lvs
 
-The last command should list your partition, in my case labled
-`ubuntu-vg`.  To be able to run `extundelete` or `ext4magic` on the
-partition you have to mount the partition, *read-only* needless to say:
+The last command should list your logical volume group(s), in my case
+labled `ubuntu-vg`.  To be able to run `extundelete` or `ext4magic` on
+the partition you have to mount the partition, *read-only* needless to
+say:
 
     mkdir /rescue
     mount -o ro /dev/ubuntu-vg/root /rescue
@@ -89,5 +91,3 @@ Well, as I said, I didn't turn off my computer in time. Instead I took
 the braindead option of starting to google for solutions.  So all my
 files (with proper filenames) turned out to contain only cached files
 from the browser -- reclaiming the blocks goes quick, so watch out kids.
-
-
