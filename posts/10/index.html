@@ -9,8 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="During the past weekend and the last couple of evenings I&rsquo;ve been
-studying the Python code in bzrweb &mdash; which I&rsquo;ve been using for &hellip;">
+  <meta name="description" content="I think I&rsquo;ve finally done it &mdash; achieved my ultimate goal of
+combining the awesome powers of the Debian /etc/network/interfaces
+file with &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -75,6 +76,74 @@ studying the Python code in bzrweb &mdash; which I&rsquo;ve been using for &hell
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2007/07/12/netapplet-patchwork/">Netapplet Patchwork</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2007-07-12T11:37:38+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2007</span></span> <span class='time'>11:37 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I think I&rsquo;ve finally done it &mdash; achieved my ultimate goal of
+combining the awesome powers of the Debian <code>/etc/network/interfaces</code>
+file with <code>guessnet</code>, <code>wpa_supplicant</code>, <code>ifplugd</code> and now also with
+netapplet!</p>
+
+<p>I&rsquo;ve been looking for a way to just point-and-click to select a
+different access point, both at home and at work.  To that end I have a
+pretty advanced interfaces file that automatically detects where I am,
+what I am connected with (cable/wireless) and then, like magic, sets it
+all up.</p>
+
+<p>Several times now I have tried, really hard, to get used to and live my
+life with <a href="http://www.gnome.org/projects/NetworkManager/">Network Manager</a>, but it&rsquo;s just plain impossible.  It
+still doesn&rsquo;t integrate well with Debian ifupdown et consortes and until
+now I&rsquo;ve been using <code>ifup</code> to select different wireless mappings:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo ifdown eth2; sudo ifup eth2=WLAN
+</span><span class='line'>Password: ***********
+</span><span class='line'>[Use crappy work AP to access VPN tunnel]
+</span><span class='line'>$ sudo ifdown eth2; sudo ifup eth2=NETLET
+</span><span class='line'>Password: ***********
+</span><span class='line'>[Use family WRT54GL access point]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>For the last couple of days I&rsquo;ve been looking into getting the old
+(obsoleted?) Netapplet from Novell.  Since I&rsquo;m a Ubuntu user I&rsquo;m using
+the Debian patched-up version by <a href="http://mjg59.livejournal.com/">Matthew Garrett</a> (thanks!).  I
+remember using it a couple of years back, at that time I think it worked
+but now it didn&rsquo;t &mdash; not well at least.  I found several bugs and
+quirks that I have now fixed and published in my own &ldquo;repository&rdquo;.</p>
+
+<p>I have published everything as a Bazaar branch, one changeset per patch
+(small patches), at <a href="https://web.archive.org/web/20090528101921/http://vmlinux.org/jocke/bzr/netapplet-1.0.8/">http://vmlinux.org/jocke/bzr/netapplet-1.0.8</a>,
+which can be viewed <a href="https://web.archive.org/web/20090528101921/http://vmlinux.org/jocke/bzr/">here</a> using bzrweb.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -541,46 +610,6 @@ remains now is to do some Emacs hacks to smooth things over a bit.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2006/07/23/atari-st-e-emulation-with-steem/">Atari ST(E) Emulation With Steem</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2006-07-23T22:10:50+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2006</span></span> <span class='time'>10:10 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>This is is really great!  Today, on my 32nd birthday I found a really
-golden piece of software - <a href="http://steem.atari.st/">Steem</a> - even though it&rsquo;s not
-<a href="http://fsf.org/">free software</a>, it has a Linux port which runs almost all of my
-alltime Atari ST classics: Thrust, Virus, Speedball I &amp; II, Xenon I &amp;
-II, Great Giana Sisters, The Union Demo, The &ldquo;Oh crikey what a scorcer&rdquo;
-demo, Nebulus and lots more!</p>
-
-<p>Since today is also my birthday I received a gift.  It was my <a href="http://vmlinux.org/ilse">wife</a>
-and my <a href="http://vmlinux.org/oona">daughter</a> who had bought a Black &amp; Decker grass trimmer. :-)
-My daughter had also selected a fine bunch of red carnations.  Now I can
-finally take care of all the weed and long grass at the back of the
-house.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/11">&larr; Older</a>
@@ -624,6 +653,10 @@ house.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/04/04/lecture-from-the-unix-beards/">Lecture From the UNIX Beards</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/03/24/disaster-recovery/">Disaster Recovery</a>
       </li>
     
@@ -637,10 +670,6 @@ house.</p>
     
       <li class="post">
         <a href="/blog/2015/11/14/useful-unix-api-s/">Useful UNIX API:s</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/">En Vanlig Dag På Jobbet (SWEDISH)</a>
       </li>
     
   </ul>

@@ -9,9 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="I&rsquo;m posting this in case anyone else gets stuck setting up Apache
-with Gitweb. Also as a reminder to myself in case I ever need to
-set up this &hellip;">
+  <meta name="description" content="So, now that I have http://git.troglobit.com setup as a backup GIT repo
+to https://github.com/troglobit, I needed a simple way of always
+pushing to &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,50 @@ set up this &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/">HowTo: Push to Multiple GIT Repos With One Command</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-07-01T00:42:17+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2015</span></span> <span class='time'>12:42 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>So, now that I have <a href="http://git.troglobit.com">http://git.troglobit.com</a> setup as a backup GIT repo
+to <a href="https://github.com/troglobit,">https://github.com/troglobit,</a> I needed a <em>simple</em> way of always
+pushing to both repos &ndash; best way for me is to always hook into my
+regular work flow, otherwise I&rsquo;d just forget.  The <a href="1">git-remote(1)</a>
+man page describes the new <code>set-url --add</code> sub-command:</p>
+
+<pre><code>git remote set-url --add origin troglobit.com:/srv/git/watchdogd.git
+</code></pre>
+
+<p>Now, with a simple <code>git push</code> followed by <code>git push --tags</code> I had now
+pushed to both the GitHub repo as well as my own server!</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -555,64 +599,6 @@ faster to transfer files over TFTP.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/">HowTo: Add Multicast Routing to FreeBSD Kernel</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-09-23T01:55:19+02:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2014</span></span> <span class='time'>1:55 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>This is a very short blog post, mostly intended as a reminder to myself.
-Basically, there are two methods of adding multicast routing support to
-the FreeBSD kernel:</p>
-
-<ol>
-<li>Rebuild the kernel with <code>options MROUTING</code></li>
-<li>Load the kernel module: <code>kldload ip_mroute</code></li>
-</ol>
-
-
-<p>The kernel rebuild assumes the <code>src.txz</code> set was installed previously.</p>
-
-<pre><code>cd /usr/src
-cd sys/amd64/conf
-cat GENERIC | sed 's/GENERIC$/MULTICAST/' &gt; MULTICAST
-echo 'options   MROUTING         # Multicast routing' &gt;&gt; MULTICAST
-echo 'options   PIM              # Enable for pimd'   &gt;&gt; MULTICAST
-cd -
-make kernel KERNCONF=MULTICAST
-reboot
-</code></pre>
-
-<p>That&rsquo;s it.  Remember to make sure your Qemu VM has enough RAM or it
-will probably page fault on you.  I use 1,0 GB RAM.</p>
-
-<p>The other option, to load the ready made module, is likely better.  But
-you want it to load at boot.  So add this to <code>/boot/loader.conf</code>:</p>
-
-<pre><code>ip_mroute_load="yes"
-</code></pre>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/3">&larr; Older</a>
@@ -656,6 +642,10 @@ you want it to load at boot.  So add this to <code>/boot/loader.conf</code>:</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/04/04/lecture-from-the-unix-beards/">Lecture From the UNIX Beards</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/03/24/disaster-recovery/">Disaster Recovery</a>
       </li>
     
@@ -669,10 +659,6 @@ you want it to load at boot.  So add this to <code>/boot/loader.conf</code>:</p>
     
       <li class="post">
         <a href="/blog/2015/11/14/useful-unix-api-s/">Useful UNIX API:s</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/">En Vanlig Dag På Jobbet (SWEDISH)</a>
       </li>
     
   </ul>

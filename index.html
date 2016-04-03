@@ -9,9 +9,8 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="Days like these inconspicuously start out just like any other day,
-except on days like these you accidentally manage to erase $HOME and
-have no real &hellip;">
+  <meta name="description" content="After the rm -rf /* disaster that hit me a couple of weeks ago I&rsquo;ve
+been rebuilding my setup, restoring the few files I&rsquo;ve had backed up &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +75,68 @@ have no real &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2016/04/04/lecture-from-the-unix-beards/">Lecture From the UNIX Beards</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-04-04T00:14:28+02:00'><span class='date'><span class='date-month'>Apr</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>12:14 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>After the <code>rm -rf /*</code> disaster that hit me a couple of weeks ago I&rsquo;ve
+been rebuilding my setup, restoring the few files I&rsquo;ve had backed up,
+and collecting advice from the elders.</p>
+
+<p>Turns out there are a few tricks that can save your home directory from
+accidents like mine.  The first one is rather obvious, but I&rsquo;m writing
+it down anyway:</p>
+
+<ol>
+<li>Keep separate accounts.  If possible, use separate accounts (with
+different permissions obviously) for different projects.  I had my
+private life and work life mixed up, so that&rsquo;s a big no-no to begin
+with.</li>
+<li>Create a file called <code>-t</code> in your <code>$HOME</code></li>
+</ol>
+
+
+<p>The last bit of advice I had heard about earlier, about fifteen years
+earlier, but completely forgotten about.  The trick is to create a file
+that will be interpreted by <code>rm</code> as an unknown option.  For GNU <code>rm</code> the
+<code>-t</code> is a good choice.</p>
+
+<p>Here are two ways of creating such a file:</p>
+
+<pre><code>cd
+touch ./-t
+</code></pre>
+
+<p>or, the perhaps easier to remember:</p>
+
+<pre><code>touch -- -t
+</code></pre>
+
+<p>Cheers!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -796,50 +857,6 @@ projects &hellip;</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/">HowTo: Push to Multiple GIT Repos With One Command</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-07-01T00:42:17+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>1</span><span class='date-suffix'>st</span>, <span class='date-year'>2015</span></span> <span class='time'>12:42 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>So, now that I have <a href="http://git.troglobit.com">http://git.troglobit.com</a> setup as a backup GIT repo
-to <a href="https://github.com/troglobit,">https://github.com/troglobit,</a> I needed a <em>simple</em> way of always
-pushing to both repos &ndash; best way for me is to always hook into my
-regular work flow, otherwise I&rsquo;d just forget.  The <a href="1">git-remote(1)</a>
-man page describes the new <code>set-url --add</code> sub-command:</p>
-
-<pre><code>git remote set-url --add origin troglobit.com:/srv/git/watchdogd.git
-</code></pre>
-
-<p>Now, with a simple <code>git push</code> followed by <code>git push --tags</code> I had now
-pushed to both the GitHub repo as well as my own server!</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -881,6 +898,10 @@ pushed to both the GitHub repo as well as my own server!</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/04/04/lecture-from-the-unix-beards/">Lecture From the UNIX Beards</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/03/24/disaster-recovery/">Disaster Recovery</a>
       </li>
     
@@ -894,10 +915,6 @@ pushed to both the GitHub repo as well as my own server!</p>
     
       <li class="post">
         <a href="/blog/2015/11/14/useful-unix-api-s/">Useful UNIX API:s</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/">En Vanlig Dag På Jobbet (SWEDISH)</a>
       </li>
     
   </ul>

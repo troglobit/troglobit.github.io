@@ -9,9 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="Quite a few changes lately. I finally got around to adding support
-for GnuTLS to Inadyn,
-hopefully this will get into Debian &hellip; unless the &hellip;">
+  <meta name="description" content="This is a very short blog post, mostly intended as a reminder to myself.
+Basically, there are two methods of adding multicast routing support to
+the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,64 @@ hopefully this will get into Debian &hellip; unless the &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/">HowTo: Add Multicast Routing to FreeBSD Kernel</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-09-23T01:55:19+02:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2014</span></span> <span class='time'>1:55 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This is a very short blog post, mostly intended as a reminder to myself.
+Basically, there are two methods of adding multicast routing support to
+the FreeBSD kernel:</p>
+
+<ol>
+<li>Rebuild the kernel with <code>options MROUTING</code></li>
+<li>Load the kernel module: <code>kldload ip_mroute</code></li>
+</ol>
+
+
+<p>The kernel rebuild assumes the <code>src.txz</code> set was installed previously.</p>
+
+<pre><code>cd /usr/src
+cd sys/amd64/conf
+cat GENERIC | sed 's/GENERIC$/MULTICAST/' &gt; MULTICAST
+echo 'options   MROUTING         # Multicast routing' &gt;&gt; MULTICAST
+echo 'options   PIM              # Enable for pimd'   &gt;&gt; MULTICAST
+cd -
+make kernel KERNCONF=MULTICAST
+reboot
+</code></pre>
+
+<p>That&rsquo;s it.  Remember to make sure your Qemu VM has enough RAM or it
+will probably page fault on you.  I use 1,0 GB RAM.</p>
+
+<p>The other option, to load the ready made module, is likely better.  But
+you want it to load at boot.  So add this to <code>/boot/loader.conf</code>:</p>
+
+<pre><code>ip_mroute_load="yes"
+</code></pre>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -481,44 +539,6 @@ major pieces of configuration between different platforms.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/03/18/finally-google-movies-and-music-in-sweden/">Finally &#8211; Google Movies &amp; Music in Sweden</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-03-18T18:13:00+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>6:13 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img class="right" src="/images/play-movies.png" width="364"></p>
-
-<p>So, we finally got Google Music &amp; Movies services in Sweden!  The
-prices seem a bit on the steep side, apart from maybe the Music
-service, which is slightly cheaper than Spotify.  Will try it out for
-a month or so to see which one I like better.</p>
-
-<p>For some reason I chose Gravity as my first rental, at 39 Skr.  I&rsquo;ve
-heard so many bad reviews of it but for better or worse it&rsquo;ll now be
-my introduction to Google Movies :-)</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/4">&larr; Older</a>
@@ -562,6 +582,10 @@ my introduction to Google Movies :-)</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/04/04/lecture-from-the-unix-beards/">Lecture From the UNIX Beards</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/03/24/disaster-recovery/">Disaster Recovery</a>
       </li>
     
@@ -575,10 +599,6 @@ my introduction to Google Movies :-)</p>
     
       <li class="post">
         <a href="/blog/2015/11/14/useful-unix-api-s/">Useful UNIX API:s</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/">En Vanlig Dag På Jobbet (SWEDISH)</a>
       </li>
     
   </ul>

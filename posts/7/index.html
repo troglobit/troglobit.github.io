@@ -9,9 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="OK, I admit it. I cannot decide what version control system (VCS) to
-use. I&rsquo;m stuck between the speed and massive snow ball effect of
-Git and &hellip;">
+  <meta name="description" content="I just published the unobfuscated version of the
+1989 IOCCC Best Game entry, Tetris™. See the original author&rsquo;s,
+John Tromp, home page for the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,57 @@ Git and &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/06/13/micro-tetris/">Micro Tetris™</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-06-13T00:04:30+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>12:04 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I just published the <a href="http://git.troglobit.com/tetris.git">unobfuscated version</a> of the
+<a href="http://www.ioccc.org/1989/tromp.hint">1989 IOCCC Best Game</a> entry, Tetris™.  See the original author&rsquo;s,
+<a href="http://tromp.github.io/tetris.html">John Tromp</a>, home page for the game for details.  But suffice it to
+say, this is an extremely bare bones version of the classic game and
+very similar to the <a href="http://www.ibiblio.org/pub/linux/games/bsd-games-2.17.tar.gz">BSD games&#8217;</a> version.</p>
+
+<p>Actually, this similarity in board layout, key combinations and feel led
+me to do some archaeological digging.  I dowloaded the classic BSD games
+collection and, after having called <a href="http://www.gnu.org/software/indent/">GNU Indent</a> on the obfuscated
+code, I started noticing such extreme similarities that just could not
+be coincidental.  The layout and constructs of the code are virtually
+the same, so I can only conclude that they must share the same ancestor.
+Maybe this code is that ancestor, considering that the BSD Tetris is
+copyrighted in 1992 and this version stems from 1989, it is maybe not a
+completly illogical conclusion.</p>
+
+<p>See for yourself.</p>
+
+<ul>
+<li><a href="http://git.troglobit.com/tetris.git">tetris.git</a></li>
+<li><a href="http://www.ibiblio.org/pub/linux/games/bsd-games-2.17.tar.gz">BSD Games</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -668,44 +719,6 @@ litterature on this subject, see for instance the
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/02/08/minix-editline-v0-dot-3-0/">Minix Editline v0.3.0</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2009-02-08T21:35:22+01:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>8</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>9:35 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>It&rsquo;s here!  Fresh, new and packed with new features!  Well, really just
-one new major feature — support for ANSI arrow keys.  A good enough
-reason to bump the minor version number :-)</p>
-
-<p>Get it from the usual FTP location:</p>
-
-<ul>
-<li><a href="http://ftp.vmlinux.org/pub/People/jocke/minix-editline/">http://ftp.vmlinux.org/pub/People/jocke/minix-editline/</a></li>
-</ul>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/8">&larr; Older</a>
@@ -749,6 +762,10 @@ reason to bump the minor version number :-)</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/04/04/lecture-from-the-unix-beards/">Lecture From the UNIX Beards</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/03/24/disaster-recovery/">Disaster Recovery</a>
       </li>
     
@@ -762,10 +779,6 @@ reason to bump the minor version number :-)</p>
     
       <li class="post">
         <a href="/blog/2015/11/14/useful-unix-api-s/">Useful UNIX API:s</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/">En Vanlig Dag På Jobbet (SWEDISH)</a>
       </li>
     
   </ul>

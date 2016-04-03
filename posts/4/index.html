@@ -9,9 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="It was time. I had been putting it off for far too long &ndash; learning
-about JSON and deciding on a new .conf file format for
-Inadyn. So this &hellip;">
+  <meta name="description" content="So, we finally got Google Music &amp; Movies services in Sweden! The
+prices seem a bit on the steep side, apart from maybe the Music
+service, which &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,44 @@ Inadyn. So this &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/03/18/finally-google-movies-and-music-in-sweden/">Finally &#8211; Google Movies &amp; Music in Sweden</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-03-18T18:13:00+01:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>6:13 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class="right" src="/images/play-movies.png" width="364"></p>
+
+<p>So, we finally got Google Music &amp; Movies services in Sweden!  The
+prices seem a bit on the steep side, apart from maybe the Music
+service, which is slightly cheaper than Spotify.  Will try it out for
+a month or so to see which one I like better.</p>
+
+<p>For some reason I chose Gravity as my first rental, at 39 Skr.  I&rsquo;ve
+heard so many bad reviews of it but for better or worse it&rsquo;ll now be
+my introduction to Google Movies :-)</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -534,81 +572,6 @@ people naming their local variables obtrusively.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/06/08/finit-v1-dot-8/">Finit v1.8</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2013-06-08T00:04:00+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>8</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>12:04 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>It&rsquo;s been a long time coming, but here it finally is, <a href="/finit.html">Finit</a>
-<a href="ftp://troglobit.com/finit/finit-1.8.tar.xz">v1.8</a>!  The goodies we&rsquo;ve been waiting for are:</p>
-
-<ul>
-<li>Runlevels</li>
-<li>Multiple TTYs</li>
-<li>One-shot tasks</li>
-</ul>
-
-
-<p>Let&rsquo;s start off with tasks.  Tasks are one-shot commands, with a
-syntax like service directives, but are not monitored and respawned
-like services.  Tasks are started in parallel, just like services.
-For some cases, like the system bootstrap phase, some tasks may need
-to be executed in sequence, and for that purpose there also exists a
-run command.  Run commands are executed in the order listed in
-finit.conf and will run until completion before continuing with the
-next task or service.</p>
-
-<p>Multiple TTYs is another neat feature.  Similar to services many TTYs
-can be started and automatically be respawned when a user logs out.
-For embedded targets wanting to save CPU cycles usually one TTY is the
-system console.  Use the console command to point to a defined TTY to
-activate &ldquo;Press any key to activate this console.&rdquo;</p>
-
-<p>Finally, runlevels!  This is the key feature in this release of Finit.
-Adding the flexibility from SysV init, without the complexity.  This
-is one of the key points of Finit &ndash; it should be simple!</p>
-
-<pre><code>finit.conf:
-    service [2345] /usr/sbin/sshd -D -- OpenSSH Daemon
-</code></pre>
-
-<p>This command tells Finit that the OpenSSH daemon should only run in
-runlevel 2-5.  Finit will also respawn sshd if it should crash, just
-like before.</p>
-
-<p>Runlevels are needed in use-cases in many embedded devices.  E.g.,
-bootstrap, upgrading, and regular operation.  It is completely up to
-the system administrator to setup the runlevels of the product or
-installation.  At boot runlevel &rsquo;S&#8217; runs, well before any networking
-is up.  This is used to to one-time probing and setup of the
-system. When done the runlevel defined in finit.conf, or the default
-2, is started.</p>
-
-<p>See the <a href="https://github.com/troglobit/finit/blob/master/README.md">README</a> for more information, or the code for the full
-details.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/5">&larr; Older</a>
@@ -652,6 +615,10 @@ details.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/04/04/lecture-from-the-unix-beards/">Lecture From the UNIX Beards</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/03/24/disaster-recovery/">Disaster Recovery</a>
       </li>
     
@@ -665,10 +632,6 @@ details.</p>
     
       <li class="post">
         <a href="/blog/2015/11/14/useful-unix-api-s/">Useful UNIX API:s</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/">En Vanlig Dag På Jobbet (SWEDISH)</a>
       </li>
     
   </ul>

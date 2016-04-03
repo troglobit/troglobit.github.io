@@ -4,7 +4,7 @@
   <title><![CDATA[Troglobit]]></title>
   <link href="http://troglobit.github.io/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2016-03-25T09:41:03+01:00</updated>
+  <updated>2016-04-04T00:23:09+02:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -12,6 +12,48 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Lecture From the UNIX Beards]]></title>
+    <link href="http://troglobit.github.io/blog/2016/04/04/lecture-from-the-unix-beards/"/>
+    <updated>2016-04-04T00:14:28+02:00</updated>
+    <id>http://troglobit.github.io/blog/2016/04/04/lecture-from-the-unix-beards</id>
+    <content type="html"><![CDATA[<p>After the <code>rm -rf /*</code> disaster that hit me a couple of weeks ago I&rsquo;ve
+been rebuilding my setup, restoring the few files I&rsquo;ve had backed up,
+and collecting advice from the elders.</p>
+
+<p>Turns out there are a few tricks that can save your home directory from
+accidents like mine.  The first one is rather obvious, but I&rsquo;m writing
+it down anyway:</p>
+
+<ol>
+<li>Keep separate accounts.  If possible, use separate accounts (with
+different permissions obviously) for different projects.  I had my
+private life and work life mixed up, so that&rsquo;s a big no-no to begin
+with.</li>
+<li>Create a file called <code>-t</code> in your <code>$HOME</code></li>
+</ol>
+
+
+<p>The last bit of advice I had heard about earlier, about fifteen years
+earlier, but completely forgotten about.  The trick is to create a file
+that will be interpreted by <code>rm</code> as an unknown option.  For GNU <code>rm</code> the
+<code>-t</code> is a good choice.</p>
+
+<p>Here are two ways of creating such a file:</p>
+
+<pre><code>cd
+touch ./-t
+</code></pre>
+
+<p>or, the perhaps easier to remember:</p>
+
+<pre><code>touch -- -t
+</code></pre>
+
+<p>Cheers!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Disaster Recovery]]></title>
@@ -1408,44 +1450,6 @@ and <code>switch_data_threshold</code> settings.  Cisco like and easier to under
 faster to transfer files over TFTP.</p>
 
 <p><a href="http://troglobit.github.io/uftpd.html">Try it out!</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[HowTo: Add Multicast Routing to FreeBSD Kernel]]></title>
-    <link href="http://troglobit.github.io/blog/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/"/>
-    <updated>2014-09-23T01:55:19+02:00</updated>
-    <id>http://troglobit.github.io/blog/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel</id>
-    <content type="html"><![CDATA[<p>This is a very short blog post, mostly intended as a reminder to myself.
-Basically, there are two methods of adding multicast routing support to
-the FreeBSD kernel:</p>
-
-<ol>
-<li>Rebuild the kernel with <code>options MROUTING</code></li>
-<li>Load the kernel module: <code>kldload ip_mroute</code></li>
-</ol>
-
-
-<p>The kernel rebuild assumes the <code>src.txz</code> set was installed previously.</p>
-
-<pre><code>cd /usr/src
-cd sys/amd64/conf
-cat GENERIC | sed 's/GENERIC$/MULTICAST/' &gt; MULTICAST
-echo 'options   MROUTING         # Multicast routing' &gt;&gt; MULTICAST
-echo 'options   PIM              # Enable for pimd'   &gt;&gt; MULTICAST
-cd -
-make kernel KERNCONF=MULTICAST
-reboot
-</code></pre>
-
-<p>That&rsquo;s it.  Remember to make sure your Qemu VM has enough RAM or it
-will probably page fault on you.  I use 1,0 GB RAM.</p>
-
-<p>The other option, to load the ready made module, is likely better.  But
-you want it to load at boot.  So add this to <code>/boot/loader.conf</code>:</p>
-
-<pre><code>ip_mroute_load="yes"
-</code></pre>
 ]]></content>
   </entry>
   

@@ -9,8 +9,10 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="There is a certain &ldquo;burstyness&rdquo; to the way I work on my open source
-projects. It seems it often coincides with intense work loads during &hellip;">
+  <meta name="description" content="It&rsquo;s been a long time coming, but here it finally is, Finit
+v1.8! The goodies we&rsquo;ve been waiting for are: Runlevels
+Multiple TTYs
+One- &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -75,6 +77,81 @@ projects. It seems it often coincides with intense work loads during &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/08/finit-v1-dot-8/">Finit v1.8</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2013-06-08T00:04:00+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>8</span><span class='date-suffix'>th</span>, <span class='date-year'>2013</span></span> <span class='time'>12:04 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>It&rsquo;s been a long time coming, but here it finally is, <a href="/finit.html">Finit</a>
+<a href="ftp://troglobit.com/finit/finit-1.8.tar.xz">v1.8</a>!  The goodies we&rsquo;ve been waiting for are:</p>
+
+<ul>
+<li>Runlevels</li>
+<li>Multiple TTYs</li>
+<li>One-shot tasks</li>
+</ul>
+
+
+<p>Let&rsquo;s start off with tasks.  Tasks are one-shot commands, with a
+syntax like service directives, but are not monitored and respawned
+like services.  Tasks are started in parallel, just like services.
+For some cases, like the system bootstrap phase, some tasks may need
+to be executed in sequence, and for that purpose there also exists a
+run command.  Run commands are executed in the order listed in
+finit.conf and will run until completion before continuing with the
+next task or service.</p>
+
+<p>Multiple TTYs is another neat feature.  Similar to services many TTYs
+can be started and automatically be respawned when a user logs out.
+For embedded targets wanting to save CPU cycles usually one TTY is the
+system console.  Use the console command to point to a defined TTY to
+activate &ldquo;Press any key to activate this console.&rdquo;</p>
+
+<p>Finally, runlevels!  This is the key feature in this release of Finit.
+Adding the flexibility from SysV init, without the complexity.  This
+is one of the key points of Finit &ndash; it should be simple!</p>
+
+<pre><code>finit.conf:
+    service [2345] /usr/sbin/sshd -D -- OpenSSH Daemon
+</code></pre>
+
+<p>This command tells Finit that the OpenSSH daemon should only run in
+runlevel 2-5.  Finit will also respawn sshd if it should crash, just
+like before.</p>
+
+<p>Runlevels are needed in use-cases in many embedded devices.  E.g.,
+bootstrap, upgrading, and regular operation.  It is completely up to
+the system administrator to setup the runlevels of the product or
+installation.  At boot runlevel &rsquo;S&#8217; runs, well before any networking
+is up.  This is used to to one-time probing and setup of the
+system. When done the runlevel defined in finit.conf, or the default
+2, is started.</p>
+
+<p>See the <a href="https://github.com/troglobit/finit/blob/master/README.md">README</a> for more information, or the code for the full
+details.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -589,59 +666,6 @@ have also been added. See the file <code>include/editline.h</code> for details.<
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/08/02/announcing-micro-tetris-1-dot-2-0/">Announcing Micro Tetris™ 1.2.0</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2010-08-02T00:56:35+02:00'><span class='date'><span class='date-month'>Aug</span> <span class='date-day'>2</span><span class='date-suffix'>nd</span>, <span class='date-year'>2010</span></span> <span class='time'>12:56 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://erikjohanssonphoto.com/work/tetris/"><img class="right" src="/images/TetrisConstruction.jpg" width="175"></a></p>
-
-<p>New release of <a href="/tetris.html">Micro Tetris™</a>, v1.2.0, available for
-download now!  Noteworthy changes and additions:</p>
-
-<ul>
-<li>Preview display fixes by <a href="https://github.com/lazzer">Mattias Walström</a></li>
-<li>Next level triggered after every 10 cleared lines</li>
-<li>Speed increase by each level</li>
-<li>Display high score at game over</li>
-<li>High score recorded to save file</li>
-<li>Pause key fixed, again by <a href="https://github.com/lazzer">Mattias Walström</a></li>
-</ul>
-
-
-<p>Online GIT repository and release tarball available at the usual places:</p>
-
-<ul>
-<li><a href="http://github.com/troglobit/tetris">github:tetris.git</a> (Main GIT)</li>
-<li><a href="http://git.troglobit.com/tetris.git">vmlinux:tetris.git</a> (Backup)</li>
-<li><a href="ftp://troglobit.com/tetris/tetris-1.2.0.tar.bz2">tetris-1.2.0.tar.bz2</a>, <a href="ftp://troglobit.com/tetris/tetris-1.2.0.tar.bz2.md5">MD5</a> (FTP)</li>
-</ul>
-
-
-<p>See also the <a href="http://freshmeat.net/projects/micro-tetris">Freshmeat page</a> for a more consistent updates.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/6">&larr; Older</a>
@@ -685,6 +709,10 @@ download now!  Noteworthy changes and additions:</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/04/04/lecture-from-the-unix-beards/">Lecture From the UNIX Beards</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/03/24/disaster-recovery/">Disaster Recovery</a>
       </li>
     
@@ -698,10 +726,6 @@ download now!  Noteworthy changes and additions:</p>
     
       <li class="post">
         <a href="/blog/2015/11/14/useful-unix-api-s/">Useful UNIX API:s</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/">En Vanlig Dag På Jobbet (SWEDISH)</a>
       </li>
     
   </ul>
