@@ -20,10 +20,10 @@ it down anyway:
    with.
 2. Create a file called `-t` in your `$HOME`
 
-The last bit of advice I had heard about earlier, about fifteen years
-earlier, but completely forgotten about.  The trick is to create a file
-that will be interpreted by `rm` as an unknown option.  For GNU `rm` the
-`-t` is a good choice.
+The last bit of advice I'd heard about earlier, about ten years earlier,
+but completely forgotten about.  The trick is to create a file that will
+be interpreted by `rm` as an unknown option.  For GNU `rm` the `-t` is a
+good choice.
 
 Here are two ways of creating such a file:
 
