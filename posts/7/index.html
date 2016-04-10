@@ -9,9 +9,8 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="I just published the unobfuscated version of the
-1989 IOCCC Best Game entry, Tetris™. See the original author&rsquo;s,
-John Tromp, home page for the &hellip;">
+  <meta name="description" content="This is mainly some notes for myself so I don&rsquo;t forget. Having worked
+with GNU Bazaar before much of Git is still alien to me. This HowTo is &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +75,120 @@ John Tromp, home page for the &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/06/13/howto-use-git-for-collaborative-development/">HowTo Use Git for Collaborative Development</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-06-13T00:36:07+02:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>13</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>12:36 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This is mainly some notes for myself so I don&rsquo;t forget.  Having worked
+with <a href="http://bazaar-vcs.org/">GNU Bazaar</a> before much of Git is still alien to me.</p>
+
+<p>This HowTo is divided into two parts:</p>
+
+<ol>
+<li>what happens on your laptop, and</li>
+<li>what you must do on a remote server where you publish your changes</li>
+</ol>
+
+
+<p>So, let&rsquo;s start stimple:</p>
+
+<pre><code>laptop&gt; mkdir projectX; cd projectX
+laptop&gt; git init
+laptop&gt; emacs file1.txt
+laptop&gt; git add file1.txt
+laptop&gt; git commit -m "Initial commit"
+</code></pre>
+
+<p>Thus far no suprises, right?  Now, some nasty git bits:</p>
+
+<pre><code>laptop&gt; emacs file1.txt
+laptop&gt; git commit
+</code></pre>
+
+<p>Yep, doesn&rsquo;t work. You have to add -a to the command line for &ldquo;all&rdquo;.</p>
+
+<pre><code>laptop&gt; git commit -a
+</code></pre>
+
+<p>OK, so next item.  How to publish this so others can see? Well, I have a
+shell account on a remote server, so I naturally try:</p>
+
+<pre><code>laptop&gt; git push sftp://login@example.com/pub/git/projectX.git
+fatal: I don't handle protocol 'sftp'
+</code></pre>
+
+<p>Does not work. OK, next obvious choice:</p>
+
+<pre><code>laptop&gt; git push ssh://login@example.com/pub/git/projectX.git
+fatal: '/pub/git/projectX.git': unable to chdir or not a git archive
+fatal: The remote end hung up unexpectedly
+</code></pre>
+
+<p>Wow, not a clue as to how I should proceed.  After some Google-Foo I
+found <a href="http://toolmantim.com/articles/setting_up_a_new_remote_git_repository">this article</a> detail the steps for remote repos.  Very messy,
+compared to Bazaar.</p>
+
+<pre><code>laptop&gt; ssh login@example.com
+server&gt; cd /pub/git
+server&gt; mkdir projectX.git; cd projectX.git
+server&gt; git --bare init
+server&gt; logout
+laptop&gt; git remote add origin ssh://crash@vmlinux.org/pub/git/tetris.git
+laptop&gt; git push
+No refs in common and none specified; doing nothing.
+Perhaps you should specify a branch such as 'master'.
+fatal: The remote end hung up unexpectedly
+error: failed to push some refs to 'ssh://login@example.com/pub/git/projectX.git'
+laptop&gt; git push origin master
+Counting objects: 29, done.
+Compressing objects: 100% (26/26), done.
+Writing objects: 100% (29/29), 9.54 KiB, done.
+Total 29 (delta 10), reused 0 (delta 0)
+To ssh://login@example.com/pub/git/projectX.git
+* [new branch]      master -&gt; master
+</code></pre>
+
+<p>Eventually I made it sing.  The first <code>git push</code> must use the references
+to origin and master.  At least you don&rsquo;t have to care about that later,
+after the first push command git remembers what you want.</p>
+
+<p>Only one thing left, in the gitweb project overview projectX is listed
+as having no description.  Of course, since I&rsquo;m starting to get to know
+git by now, I realised early this is probably not something that is
+propagated through push — yep, I was right.  You have to change that on
+the server.</p>
+
+<pre><code>laptop&gt; ssh login@example.com
+server&gt; cd /pub/git/projectX.git
+server&gt; echo "Secret Project-X use ROT13 to decode all source files" &gt;description
+server&gt; logout
+</code></pre>
+
+<p>All done! <em>phew</em></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -667,58 +780,6 @@ preferably using <code>-xRR</code>, with <code>LANG=C</code> from <a href="http:
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2009/02/10/network-programming-link-collection/">Netork Programming &#8211; Link Collection</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2009-02-10T21:56:42+01:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>9:56 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>This is a first effort at collecting information about network
-programming structs and APIs available in UNIX.  I plan on updating this
-as I find more.</p>
-
-<ul>
-<li>Linux Journal: Linux Network Programming, Part
-<a href="http://www.linuxjournal.com/article/2333">I</a>,
-<a href="http://www.linuxjournal.com/article/2335">II</a>,
-<a href="http://www.linuxjournal.com/article/2336">III</a>.</li>
-<li>Linux Journal:
-<a href="http://www.linuxjournal.com/article/6070">Multicast Routing Code in the Linux Kernel</a></li>
-<li>Linux Journal: Inside the Linux Packet Filter, Part
-<a href="http://www.linuxjournal.com/article/4852">I</a>,
-<a href="http://www.linuxjournal.com/article/5617">II</a></li>
-<li>/usr/include/netinet/in.h</li>
-</ul>
-
-
-<p>There are of course, in addition to these fine sources, the entire
-catalogue of work by <a href="http://kohala.com/start/">Richard M. Stevens</a>.
-May he rest in peace.  His works are considered <em>the</em> reference
-litterature on this subject, see for instance the
-<a href="http://www.unpbook.com">UNIX Network Programming</a>
-(<a href="http://www.linuxjournal.com/article/2656">review</a>).</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/8">&larr; Older</a>
@@ -762,6 +823,10 @@ litterature on this subject, see for instance the
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/04/11/the-key-to-successful-boot/">The Key to Successful Boot</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/04/04/lecture-from-the-unix-beards/">Lecture From the UNIX Beards</a>
       </li>
     
@@ -775,10 +840,6 @@ litterature on this subject, see for instance the
     
       <li class="post">
         <a href="/blog/2016/03/07/multicast-testing/">Multicast Testing, Made Easy!</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/11/14/useful-unix-api-s/">Useful UNIX API:s</a>
       </li>
     
   </ul>

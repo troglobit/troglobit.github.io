@@ -4,7 +4,7 @@
   <title><![CDATA[Troglobit]]></title>
   <link href="http://troglobit.github.io/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2016-04-04T01:09:19+02:00</updated>
+  <updated>2016-04-11T01:49:14+02:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -12,6 +12,62 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[The Key to Successful Boot]]></title>
+    <link href="http://troglobit.github.io/blog/2016/04/11/the-key-to-successful-boot/"/>
+    <updated>2016-04-11T01:28:27+02:00</updated>
+    <id>http://troglobit.github.io/blog/2016/04/11/the-key-to-successful-boot</id>
+    <content type="html"><![CDATA[<p>How do you know when your UNIX service (daemon) is ready?  Simple, it
+has created a PID file, signalling to you how to reach it.  Usually this
+file is created as <code>/var/run/daemon.pid</code>, or <code>/run/daemon.pid</code>, and has
+the PID of <code>daemon</code> as the first and only data in the file.  This data
+may or may not have a UNIX line ending.</p>
+
+<p>Only trouble is: most UNIX daemons do not re-assert that PID file
+properly on <code>SIGHUP</code> (if they support <code>SIGHUP</code> that is).  When I send
+<code>SIGHUP</code> to a daemon I expect it to re-read its <code>/etc/daemon.conf</code> and
+resume operation, basically a quicker way than stop/start.</p>
+
+<p>Annoyingly however, most daemons do not signal us back to tell us when
+they&rsquo;re done with the <code>SIGHUP</code>.  Naturally a new movement has risen that
+says we should all instrument our daemons with D-bus &hellip; I say no.
+Simply touch the PID file instead.</p>
+
+<p>Yeah, one could argue the natural (and pure) thing would be to add a
+UNIX domain socket and use a <code>daemonctl</code> client instead of <code>SIGHUP</code> +
+PID file &hellip; but for this little mechanism of signalling back to the
+user that a daemon is ready for business, it&rsquo;s too much overhead.</p>
+
+<p>My own Init replacement, <a href="http://troglobit.github.io/finit.html">Finit</a>, is being fitted with a
+system to synchronize services with events.  Eg. wait for one service to
+start, an interface to be created, or come up, or have an address set,
+or a gateway to be set &hellip; and so on.</p>
+
+<p>In the case where process B depends on process A you do not want to
+start process B before process A is actually up and running.  Simply
+starting process A is rarely sufficient &ndash; starting B too soon can
+lead to B terminating prematurely because it cannot yet connect to A.</p>
+
+<p>One may argue that B should try and reconnect, or that A and B should
+have some other means of synchronizing.  Sure, when dependencies are
+clear and developers create cooperating services this works great.  But
+this is rarely the case in real life.  Services are usually developed by
+multiple teams, scattered across both time and distance.  So what we&rsquo;re
+left with is finding the least common denominator and use that for our
+synchronization needs.</p>
+
+<p>Waiting for daemon A to create its PID file before we start process B is
+enough.  When the system is reconfigured &ndash; many services may need to be
+restarted &ndash; we can shake the dependency tree and send <code>SIGHUP</code> to all
+daemons in the correct order.  The only patching required is to ensure
+that all daemons re-assert their PID files after having reloaded their
+respective config files.</p>
+
+<p>More on the changes in Finit3 and the upcoming new dependency systems
+in a later article.  Hopefully this will have made you interested!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Lecture From the UNIX Beards]]></title>
@@ -1437,19 +1493,6 @@ and <code>switch_data_threshold</code> settings.  Cisco like and easier to under
 <a href="https://scan.coverity.com/projects/3319">https://scan.coverity.com/projects/3319</a></li>
 </ul>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[TFTP Blocksize Negotiation in Uftpd v1.7]]></title>
-    <link href="http://troglobit.github.io/blog/2014/12/21/tftp-blocksize-negotiation-in-uftpd-v1-dot-7/"/>
-    <updated>2014-12-21T19:42:17+01:00</updated>
-    <id>http://troglobit.github.io/blog/2014/12/21/tftp-blocksize-negotiation-in-uftpd-v1-dot-7</id>
-    <content type="html"><![CDATA[<p>New release of uftpd, this time with TFTP blocksize negotiation,
-<a href="http://tools.ietf.org/html/rfc2348">RFC 2348</a>.  Making it a lot
-faster to transfer files over TFTP.</p>
-
-<p><a href="http://troglobit.github.io/uftpd.html">Try it out!</a></p>
 ]]></content>
   </entry>
   

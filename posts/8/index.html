@@ -9,9 +9,9 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="It&rsquo;s here! Fresh, new and packed with new features! Well, really just
-one new major feature — support for ANSI arrow keys. A good enough
-reason &hellip;">
+  <meta name="description" content="This is a first effort at collecting information about network
+programming structs and APIs available in UNIX. I plan on updating this
+as I find more &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +76,58 @@ reason &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/02/10/network-programming-link-collection/">Netork Programming &#8211; Link Collection</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2009-02-10T21:56:42+01:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2009</span></span> <span class='time'>9:56 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This is a first effort at collecting information about network
+programming structs and APIs available in UNIX.  I plan on updating this
+as I find more.</p>
+
+<ul>
+<li>Linux Journal: Linux Network Programming, Part
+<a href="http://www.linuxjournal.com/article/2333">I</a>,
+<a href="http://www.linuxjournal.com/article/2335">II</a>,
+<a href="http://www.linuxjournal.com/article/2336">III</a>.</li>
+<li>Linux Journal:
+<a href="http://www.linuxjournal.com/article/6070">Multicast Routing Code in the Linux Kernel</a></li>
+<li>Linux Journal: Inside the Linux Packet Filter, Part
+<a href="http://www.linuxjournal.com/article/4852">I</a>,
+<a href="http://www.linuxjournal.com/article/5617">II</a></li>
+<li>/usr/include/netinet/in.h</li>
+</ul>
+
+
+<p>There are of course, in addition to these fine sources, the entire
+catalogue of work by <a href="http://kohala.com/start/">Richard M. Stevens</a>.
+May he rest in peace.  His works are considered <em>the</em> reference
+litterature on this subject, see for instance the
+<a href="http://www.unpbook.com">UNIX Network Programming</a>
+(<a href="http://www.linuxjournal.com/article/2656">review</a>).</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -534,52 +586,6 @@ explore the wonderful world of Emacs! :)</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/07/19/no-wireless-led-on-thinkpad-t61/">No Wireless LED on ThinkPad T61</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2008-07-19T11:09:25+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>19</span><span class='date-suffix'>th</span>, <span class='date-year'>2008</span></span> <span class='time'>11:09 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&rsquo;ve got a ThinkPad T61 with Intel iwl3945 wireless chipset that I
-installed fresh with Ubuntu 8.04.  Everything worked flawlessly
-out-of-the-box, except for the useless fingerprint scanner and the
-wireless LED.  Don&rsquo;t get me wrong, the wireless network worked fine, but
-the LED wasn&rsquo;t on.</p>
-
-<p>At first I thought there was something wrong with the LED itself, but a
-couple of searches later I found that it was a known limitation of the
-2.6.24 kernel included in 8.04.  A driver upgrade was scheduled for
-8.04.1 and after a couple of months it was shipped.  Silly me thought
-I&rsquo;d get the upgrade automatically, but it turns out that both the
-iwl3945 and the iwl4965, as well as a bunch of other wireless drivers,
-are tucked away in <a href="apt://linux-backports-modules-hardy">linux-backports-modules-hardy</a>, which will not be
-installed by default.</p>
-
-<p>So, if you have some wireless issues in Ubuntu 8.04, try installing this
-(meta) package (that depends on a suitable version specific kernel) and
-see if it helps.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/9">&larr; Older</a>
@@ -623,6 +629,10 @@ see if it helps.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/04/11/the-key-to-successful-boot/">The Key to Successful Boot</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/04/04/lecture-from-the-unix-beards/">Lecture From the UNIX Beards</a>
       </li>
     
@@ -636,10 +646,6 @@ see if it helps.</p>
     
       <li class="post">
         <a href="/blog/2016/03/07/multicast-testing/">Multicast Testing, Made Easy!</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/11/14/useful-unix-api-s/">Useful UNIX API:s</a>
       </li>
     
   </ul>

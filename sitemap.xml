@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://troglobit.github.io/blog/2016/04/11/the-key-to-successful-boot/</loc>
+<lastmod>2016-04-11T01:28:27+02:00</lastmod>
+</url>
+<url>
 <loc>http://troglobit.github.io/blog/2016/04/04/lecture-from-the-unix-beards/</loc>
 <lastmod>2016-04-04T00:14:28+02:00</lastmod>
 </url>
@@ -655,5 +659,35 @@
 </url>
 <url>
 <loc>http://troglobit.github.io/blog/categories/containers/</loc>
+</url>
+<url>
+<loc>http://troglobit.github.io/posts/2/</loc>
+</url>
+<url>
+<loc>http://troglobit.github.io/posts/3/</loc>
+</url>
+<url>
+<loc>http://troglobit.github.io/posts/4/</loc>
+</url>
+<url>
+<loc>http://troglobit.github.io/posts/5/</loc>
+</url>
+<url>
+<loc>http://troglobit.github.io/posts/6/</loc>
+</url>
+<url>
+<loc>http://troglobit.github.io/posts/7/</loc>
+</url>
+<url>
+<loc>http://troglobit.github.io/posts/8/</loc>
+</url>
+<url>
+<loc>http://troglobit.github.io/posts/9/</loc>
+</url>
+<url>
+<loc>http://troglobit.github.io/posts/10/</loc>
+</url>
+<url>
+<loc>http://troglobit.github.io/posts/11/</loc>
 </url>
 </urlset>
