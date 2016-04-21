@@ -4,7 +4,7 @@
   <title><![CDATA[Troglobit]]></title>
   <link href="http://troglobit.github.io/atom.xml" rel="self"/>
   <link href="http://troglobit.github.io/"/>
-  <updated>2016-04-11T01:49:14+02:00</updated>
+  <updated>2016-04-21T14:57:11+02:00</updated>
   <id>http://troglobit.github.io/</id>
   <author>
     <name><![CDATA[Joachim Nilsson]]></name>
@@ -12,6 +12,46 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Using Netcat to Test Your Internet Daemon]]></title>
+    <link href="http://troglobit.github.io/blog/2016/04/21/using-netcat-to-test-your-internet-daemon/"/>
+    <updated>2016-04-21T14:21:49+02:00</updated>
+    <id>http://troglobit.github.io/blog/2016/04/21/using-netcat-to-test-your-internet-daemon</id>
+    <content type="html"><![CDATA[<p>So you&rsquo;re having a problem with the Internet daemon you wrote.  You&rsquo;re
+convinced the firewall, or some other magic, in your modern Linux
+distribution is eating your packets.</p>
+
+<p>No.</p>
+
+<p>First, make sure your daemon is actually running and has successfully
+bound to the address and port in question:</p>
+
+<pre><code>sudo netstat -atnup
+</code></pre>
+
+<p>If your application is not listed there you have a problem with it
+binding its server socket.  Check the return values from <code>bind()</code>.</p>
+
+<p>If you&rsquo;re still suspecting the firewall, or some other magic, test your
+theory with netcat.  First start a server, with your relevant address
+and port, remember you need to be root, or have <code>CAP_NET_ADMIN</code>, to use
+ports &lt;= 4096:</p>
+
+<pre><code>nc -l -u -p 9999
+</code></pre>
+
+<p>Here we bind to 0.0.0.0:9999. Now, start a client to test if the
+server can receive any data:</p>
+
+<pre><code>nc -u 127.0.0.1 9999
+</code></pre>
+
+<p>Type something on the console and press enter to send it to the server.
+If you receive the data then there&rsquo;s no magic, execpt from bugs in you
+application, preventing your appplication from working.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[The Key to Successful Boot]]></title>
@@ -1417,80 +1457,6 @@ on BSD.</li>
 is OK, since it&rsquo;s used and stored as unsigned 32-bit integer.</li>
 <li>Lots of minor fixes detected by Coverity Scan and Clang scan-build
 <a href="https://scan.coverity.com/projects/3320">https://scan.coverity.com/projects/3320</a></li>
-</ul>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Pimd v2.2.0 -- the Last Release of Pimd?]]></title>
-    <link href="http://troglobit.github.io/blog/2014/12/28/last-release-of-pimd/"/>
-    <updated>2014-12-28T13:42:18+01:00</updated>
-    <id>http://troglobit.github.io/blog/2014/12/28/last-release-of-pimd</id>
-    <content type="html"><![CDATA[<p>On one of the last days of 2014 I release <a href="http://troglobit.github.io/pimd.html">pimd</a>
-<a href="https://github.com/troglobit/pimd/releases/tag/2.2.0">v2.2.0</a>, which
-is an awesome release with a lot of new features and bug fixes!</p>
-
-<p>However, it could very well be the last release I do.  Even though its
-one of my most popular projects on
-<a href="https://github.com/troglobit">GitHub</a> I have not had enough time to
-dedicate to it over the years.  I will continue to do fixes and merge
-pull requests until someone else steps up to take over.  There is also
-the distinct possibility that the
-<a href="https://github.com/greearb/xorp.ct">Xorp PIM-SM</a> or the new
-<a href="https://github.com/udhos/qpimd">Quagga PIM-SSM</a> implementations will
-(finally) make good old pimd completely redundant.</p>
-
-<p>At <a href="http://www.westermo.com">work</a> we will likely start using the
-Quagga PIM rather than pimd in WeOS.</p>
-
-<p>For now though, enjoy pimd v2.2.0.  It&rsquo;s been tested in both my Qemu
-based virtual testbed and a few setups using Linux&#8217; <code>netns</code> feature in
-<a href="http://www.nrl.navy.mil/itd/ncs/products/core">CORE</a> &ndash; awesome
-little proggy! :-)</p>
-
-<!-- more -->
-
-
-<h3>Changes &amp; New Features</h3>
-
-<ul>
-<li>Add IP fragmentation support for PIM register messages,
-by Michael Fine of Cumulus Networks</li>
-<li>Support <code>/LEN</code> syntax in <code>phyint</code> to complement <code>masklen LEN</code>, issue #12</li>
-<li>Add support for /31 networks, point-to-point, thanks to Apollon Oikonomopoulos</li>
-<li>Remove old broken SNMP support</li>
-<li>OpenBSD inspired cleanup (deregister)
-<a href="http://cvsweb.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/">http://cvsweb.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/</a></li>
-<li>General code cleanup, shorten local variable names, func decl. etc.</li>
-<li>Support for router alert IP option in IGMP queries</li>
-<li>Support for reading IGMPv3 membership reports</li>
-<li>Update IGMP code to support FreeBSD >= 8.x</li>
-<li>Retry read of routing tables on FreeBSD</li>
-<li>Fix join/leve of ALL PIM Routers for FreeBSD and other UNIX kernels</li>
-<li>Tested on FreeBSD, NetBSD and OpenBSD</li>
-<li>Add very simple homegrown configure script</li>
-<li>Update and document support for <code>rp_address</code>, <code>cand_rp</code>, and <code>cand_bootstrap_router</code></li>
-<li>Add new <code>spt_threshold</code> to replace existing <code>switch_register_threshold</code>
-and <code>switch_data_threshold</code> settings.  Cisco like and easier to understand</li>
-</ul>
-
-
-<h3>Bug Fixes</h3>
-
-<ul>
-<li>Fix to avoid infinite loop during unicast send failure, by Alex Tessmer</li>
-<li>Fix bug in bootstrap when configured as candidate RP, issue #15</li>
-<li>Fix segfault in <code>accept_igmp()</code>, issue #29</li>
-<li>Fix default source preference, should be 101 (not 1024!)</li>
-<li>Fix <code>ip_len</code> handling on older BSD&rsquo;s, thanks to Olivier Cochard-Labbé, issue #23</li>
-<li>Fix default prefix len in static RP example in <code>pimd.conf</code>, should be /4</li>
-<li>Fix issue #31: Make IGMP query interval and querier timeout configurable</li>
-<li>Fix issue #33: pimd does not work in background under FreeBSD</li>
-<li>Fix issue #35: support for timing out other queriers from mrouted</li>
-<li>Hopefully fix issue #22: Crash in (S,G) state when neighbor is lost</li>
-<li>Misc. bug fixes thanks to Coverity Scan, static code analysis tool
-<a href="https://scan.coverity.com/projects/3319">https://scan.coverity.com/projects/3319</a></li>
 </ul>
 
 ]]></content>

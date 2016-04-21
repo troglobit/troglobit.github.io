@@ -9,9 +9,8 @@
   <meta name="author" content="Joachim Nilsson">
 
   
-  <meta name="description" content="I&rsquo;ve got a ThinkPad T61 with Intel iwl3945 wireless chipset that I
-installed fresh with Ubuntu 8.04. Everything worked flawlessly
-out-of-the- &hellip;">
+  <meta name="description" content="Wow, I&rsquo;m almost starting to feel like a Windows user. The latest CVS
+builds of GNU Emacs has a lot of new features: XFT Support (font anti- &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -76,6 +75,57 @@ out-of-the- &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/07/22/more-emacs-progress/">More Emacs Progress!</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2008-07-22T23:56:55+02:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2008</span></span> <span class='time'>11:56 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Wow, I&rsquo;m almost starting to feel like a Windows user.  The latest CVS
+builds of <a href="http://www.gnu.org/software/emacs/">GNU Emacs</a> has a lot of new features:</p>
+
+<ul>
+<li>XFT Support (font anti-aliasing)</li>
+<li>Better GTK integration (desktop)</li>
+<li>A font selector!</li>
+</ul>
+
+
+<p>I use the CVS version now as my daily driver in Ubuntu 8.10.  It&rsquo;s
+really useful, and I love the improved support for debugging programs
+inside Emacs!</p>
+
+<p>I think it is quite impressive how far this little editor has come.  OK,
+so it is perhaps not just an editor anymore.  Some people claim it is a
+fully sufficient operating system and other refer to it as a kitchen
+sink.  Nevertheless, today you do not need to know any Lisp to configure
+it or grab the scroll bar with the middle mouse button or any other
+archaic method to get around.</p>
+
+<p>Still interested?  Be sure to <a href="http://www.gnu.org/software/emacs/tour/">take the tour</a> and then proceed to
+explore the wonderful world of Emacs! :)</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -464,90 +514,6 @@ more user friendly.  I call this <em>Enterprise Emacs</em>.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2008/02/23/suspend-slash-resume-nightmare-in-ubuntu/">Suspend/Resume Nightmare in Ubuntu</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2008-02-23T20:34:44+01:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>23</span><span class='date-suffix'>rd</span>, <span class='date-year'>2008</span></span> <span class='time'>8:34 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&rsquo;ve had my ThinkPad T43 for a while now and I&rsquo;m really pleased with it,
-everything just works!  It took some pleading and, I admit, begging to
-persuade my boss and the IT department to buy it since they usually only
-buy from Dell or HP.  This was mainly due to care packs and payment plans
-that these suppliers offer companies.  My ThinkPad they had to actually
-pay for straight up.  So if I were a Lenovo sales person, that was
-something I would fix to boost my sales.</p>
-
-<p>This post is however not about sales, brands of laptops or how the cat
-ate my homework &hellip; well, OK, almost.  Ubuntu/Gnome ate my resume!</p>
-
-<p>When I initially installed the laptop, early 2006, I went with
-Ubuntu 5.10.  Ubuntu is great Linux dist!  Ubuntu is to Debian what
-Mandrake was to RedHat in the beginning: RedHat + all the tweaks you
-usually had to apply.</p>
-
-<p>I remember the first install, it was a Breeze!  All features and extras
-of the laptop was of course not working.  After some digging I found a
-few pages detailing what to do to get things like susped, hibernate and
-such working.  A couple of hours later everything was working!  Cool,
-that had to be the first computer where I actually bothered setting it
-all up.</p>
-
-<p>Now, two years later I run 7.10 and I am less than happy.  All upgrades
-have made this laptop a complete mess.  Each upgrade has failed to
-integrate the necessary changes I made and simply installed the new
-default settings from each package.  OK, I can live with that.  But I was
-starting to really miss having no suspend, so the last four months I
-have been working on fixing it all again.</p>
-
-<p>It turns out that if I run the script <code>/etc/acpi/suspend.sh</code> manually
-from the prompt suspend and resume works fine, even with X.  But when I
-press Fn-F4 from within X or select &ldquo;Suspend&rdquo; from the Gnome &ldquo;logout&rdquo;
-menu the machine happily goes to sleep but always fails at resume.  I
-always get a black screen!</p>
-
-<p>Why is it so complicated?  I really don&rsquo;t understand.  What is it doing?</p>
-
-<p>OK, so I started digging.  The Fn-F4 button didn&rsquo;t work in the console
-so that seemed like a first thing to investigate.  I started
-<code>acpi_listen</code> and pressed Fn-F4, bingo!  It returned a key press.  A
-grep later and I had found it in <code>/etc/acpi/events/ibm-sleepbtn</code>,
-alright!  Simple syntax, seems it looks for the ThinkPad sleep button
-and then sends another new combination <code>$KEY_SLEEP</code>, wtf?</p>
-
-<p>I changed the action to call <code>/etc/acpi/sleep.sh</code>, restarted the ACPI
-stuff and, yes it works!  At least from the console, not from X/Gnome.
-Aha, so we have a Gnome app that does magic things, HAL +
-gnome-power-manager.</p>
-
-<p>I didn&rsquo;t get any further.  Removing gnome-power-manager fixed my
-problem, I can now press Fn-F4 from Gnome, close the lid, come back the
-next morning and sucessfully resume when opening the lid again.</p>
-
-<p>So, the question is, wtf is gnome-power-manager doing and why do I have
-to learn this stuff all over again every time I upgrade?</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/10">&larr; Older</a>
@@ -591,6 +557,10 @@ to learn this stuff all over again every time I upgrade?</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/04/21/using-netcat-to-test-your-internet-daemon/">Using Netcat to Test Your Internet Daemon</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/04/11/the-key-to-successful-boot/">The Key to Successful Boot</a>
       </li>
     
@@ -604,10 +574,6 @@ to learn this stuff all over again every time I upgrade?</p>
     
       <li class="post">
         <a href="/blog/2016/03/07/testing-multicast-with-docker/">Testing Multicast With Docker</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2016/03/07/multicast-testing/">Multicast Testing, Made Easy!</a>
       </li>
     
   </ul>
