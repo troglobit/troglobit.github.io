@@ -31,14 +31,12 @@ Nevertheless, from my point of view it was sometime in the mid 90's
 during my time at university that the use of threads was starting to
 become prevalent.
 
-{% pullquote %}
-{"With the rise of the thread based model of programming we now had a
-hammer, and every problem looked like a nail."}  I had a gut feeling
-there was something really wrong with using threads for every
-conceivable program, but I could not find a way to express it, so I
-chugged away with my threads, semaphores and condition variables.  I
-convinced myself I was happy like this.
-{% endpullquote %}
+<p data-pullquote='"With the rise of the thread based model of
+programming we now had a hammer, and every problem looked like a
+nail."'>I had a gut feeling there was something really wrong with using
+threads for every conceivable program, but I could not find a way to
+express it, so I chugged away with my threads, semaphores and condition
+variables.  I convinced myself I was happy like this.</p>
 
 Of course I knew about the event based approach, but it was more or
 less dismissed as a thing of the past, a while(1) loop to mimic the

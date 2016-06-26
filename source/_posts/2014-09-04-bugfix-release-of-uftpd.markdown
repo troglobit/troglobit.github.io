@@ -9,9 +9,7 @@ categories:
 - tftp
 ---
 
-{% blockquote %}
-So them pesky details of `/etc/inetd.conf` really are important?
-{% endblockquote %}
+> So them pesky details of `/etc/inetd.conf` really are important?
 
 This is a small bugfix release of [uftpd](/uftpd.html).  Version 1.4
 is basically just to change `nowait` to `wait` for the TFTP service in
