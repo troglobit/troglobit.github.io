@@ -125,7 +125,22 @@ blockquote {
     }
 }
 
+/**
+ * Pull quotes
+ */
+p[data-pullquote] {
+    display: block;
+}
 
+p[data-pullquote]:before {
+    content: attr(data-pullquote);
+    float: right;
+    width: 200px;
+    margin: 0 -5% 0.5em 30px;
+    padding: 0;
+    font-size: 22px;
+    font-style: italic;
+}
 
 /**
  * Code formatting
