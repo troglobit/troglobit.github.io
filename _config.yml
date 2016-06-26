@@ -6,16 +6,45 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Your awesome title
-email: your-email@domain.com
+title: Troglobit
+email: troglobit@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Help me Obi-Wan Troglobi, you're my only hope!
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "http://troglobit.github.io"
+twitter_username: troglobit
+github_username:  troglobit
+
+paginate: 5
+paginate_path: "/blog/page:num/"
+# excerpt_separator: "<!-- more -->"
+permalink: /blog/:year/:month/:day/:title/
 
 # Build settings
 markdown: kramdown
+#markdown: redcarpet
+
+# Default extension for new posts and pages
+post_ext: markdown
+page_ext: markdown
+
+# Default templates for posts and pages
+# Found in _templates/
+post_layout: post
+page_layout: page
+
+# Format titles with titlecase?
+titlecase: true
+
+# Change default template file (in _templates/)
+post_template: post
+page_template: page
+draft_template: draft
+
+# Activate plugins
+gems:
+  - jekyll-gist
+  - jekyll-paginate
+#  - jekyll-archives
+  - octopress-image-tag
+#  - octopress-pullquote-tag
