@@ -1,5 +1,6 @@
 ---
 layout: page
+permalink: /:basename:output_ext
 title: "Minix Editline"
 sharing: true
 footer: true

@@ -1,5 +1,6 @@
 ---
 layout: page
+permalink: /:basename:output_ext
 title: "Fast, extensible init for Linux systems"
 sharing: true
 footer: true

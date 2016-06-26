@@ -1,5 +1,6 @@
 ---
 layout: post
+permalink: /:basename:output_ext
 title: "Multicast HowTo"
 date: 2015-07-16 15:42
 comments: true

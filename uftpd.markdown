@@ -1,5 +1,6 @@
 ---
 layout: page
+permalink: /:basename:output_ext
 title: "uftpd -- no nonsense FTP/TFTP server"
 sharing: true
 footer: true

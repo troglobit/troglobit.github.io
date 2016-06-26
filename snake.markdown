@@ -1,5 +1,6 @@
 ---
 layout: page
+permalink: /:basename:output_ext
 title: "Micro Snake"
 sharing: true
 footer: true

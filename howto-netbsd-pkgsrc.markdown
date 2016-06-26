@@ -1,5 +1,6 @@
 ---
 layout: page
+permalink: /:basename:output_ext
 title: "HowTo: Use NetBSD pre-built packages"
 date: 2015-07-30 11:13
 comments: true

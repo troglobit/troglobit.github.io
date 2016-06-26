@@ -1,5 +1,6 @@
 ---
 layout: page
+permalink: /:basename:output_ext
 title: pimd | The original PIM-SM daemon
 sharing: true
 footer: true

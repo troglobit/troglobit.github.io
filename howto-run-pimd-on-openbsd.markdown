@@ -1,5 +1,6 @@
 ---
 layout: page
+permalink: /:basename:output_ext
 title: "HowTo run pimd on OpenBSD"
 date: 2015-07-19 00:32
 comments: true

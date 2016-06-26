@@ -1,5 +1,6 @@
 ---
 layout: page
+permalink: /:basename:output_ext
 title: "Micro Tetris&trade;"
 sharing: true
 footer: true

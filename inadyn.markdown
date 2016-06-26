@@ -1,5 +1,6 @@
 ---
 layout: page
+permalink: /:basename:output_ext
 title: "Inadyn | Small and Simple DDNS Client"
 sharing: true
 footer: true

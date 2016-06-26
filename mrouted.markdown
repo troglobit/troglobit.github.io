@@ -1,5 +1,6 @@
 ---
 layout: page
+permalink: /:basename:output_ext
 title: "mrouted | The original multicast routing daemon"
 sharing: true
 footer: true
