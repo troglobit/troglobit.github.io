@@ -27,6 +27,7 @@ The main features are:
 - Tested with [net-snmp][1] and [cacti][2]
 
 <a id="example"></a>
+
 Example
 -------
 
@@ -114,6 +115,7 @@ Then do an SNMP walk:
 	UCD-SNMP-MIB::ssRawContexts.0 = No more variables left in this MIB View (It is past the end of the MIB tree)
 
 <a id="small"></a>
+
 Building Really Small Binaries
 ------------------------------
 
@@ -166,6 +168,7 @@ it comes to embedded I always recommend playing it safe and going with
 time looking for weird bugs!
 
 <a id="info"></a>
+
 Project Info
 ------------
 
