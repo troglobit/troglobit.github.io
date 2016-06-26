@@ -10,7 +10,7 @@ comments: false
 
 <a href="https://github.com/troglobit/finit"><img style="position: absolute; top: 0; right: 0; border: none; box-shadow: none;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
 
-{% img right /images/finit.jpg 417 150 %}
+<img class="right" src="/images/finit.jpg" style="width: 417px; height: 150px;">
 
 Finit is a small event based [SysV init][1] replacement with built-in
 [process supervision][2] similar to that of its more famous cousins
@@ -29,7 +29,6 @@ Finit can also be extended with custom callbacks for all services, hooks
 into the boot process, or plugins to extend the functionality and adapt
 the boot process to fit your needs.  See the [README][] for details.
 
-``` apache
     # /etc/finit.conf - System bootstrap for TroglOS
     user root
     host default
@@ -70,12 +69,11 @@ the boot process to fit your needs.  See the [README][] for details.
     tty [12345] /dev/ttyAMA0 115200 vt100
     tty [12345] /dev/ttyUSB0 115200 vt100
     console /dev/ttyAMA0
-```
-
-{% img /images/finit-screenshot.jpg 676 709 'Finit Screenshot' %}
 
 See [TroglOS][9] for an example of how to boot a small embedded system
-with Finit.
+with Finit:
+
+<img class="center" src="/images/finit-screenshot.jpg" alt="Finit Screenshot" style="width: 676px; height: 709px;">
 
 ----
 

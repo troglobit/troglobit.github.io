@@ -21,7 +21,7 @@ does confuse people.
 
 <!-- more -->
 
-{% img right /images/programming-in-a-nutshell.gif %}
+<img class="right" src="/images/programming-in-a-nutshell.gif">
 
 In reality I'm
 [just a programmer](http://c2.com/cgi/wiki?JustaProgrammer) with a

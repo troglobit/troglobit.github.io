@@ -22,7 +22,7 @@ people naming their local variables obtrusively.
 
 <!-- more -->
 
-[{% img right /images/Practice_of_Programming.jpeg 222 155 %}](http://www.amazon.com/Practice-Programming-Addison-Wesley-Professional-Computing/dp/020161586X)
+[<img class="right" src="/images/Practice_of_Programming.jpeg" style="width: 300px">](http://www.amazon.com/Practice-Programming-Addison-Wesley-Professional-Computing/dp/020161586X)
 
 I still do most of my work, professional and hobby, using plain old C.
 I've read many books and style guides on the subject and the one that

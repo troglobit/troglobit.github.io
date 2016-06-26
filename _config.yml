@@ -46,5 +46,3 @@ gems:
   - jekyll-gist
   - jekyll-paginate
 #  - jekyll-archives
-  - octopress-image-tag
-#  - octopress-pullquote-tag

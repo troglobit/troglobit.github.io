@@ -6,7 +6,7 @@ comments: true
 categories: 
 ---
 
-{% img right /images/lessfilter.png %}
+<img class="right" src="/images/lessfilter.png">
 
 Yes, it's certainly possible and source code becomes so much easier to
 read.  Try it out by [downloading my .lessfilter][1]: save it as

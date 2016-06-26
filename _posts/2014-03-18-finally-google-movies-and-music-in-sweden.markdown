@@ -6,7 +6,7 @@ comments: true
 categories: 
 ---
 
-{% img right /images/play-movies.png 364 %}
+<img class="right" src="/images/play-movies.png" style="width: 364px;">
 
 So, we finally got Google Music & Movies services in Sweden!  The
 prices seem a bit on the steep side, apart from maybe the Music
