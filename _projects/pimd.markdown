@@ -1,7 +1,7 @@
 ---
 layout: page
-permalink: /:basename:output_ext
-title: pimd | The original PIM-SM daemon
+name: pimd
+title: The original PIM-SM daemon
 sharing: true
 footer: true
 date: 2015-11-15 19:26 +01:00

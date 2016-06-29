@@ -1,28 +1,63 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
+### Site info:
 title: Troglobit
-email: troglobit@gmail.com
+## tagline: Gentleman, Scholar, Hacker
+tagline: “Help me Obi-Wan Troglobi, you're my only hope!”
+author: "Joachim Nilsson"
+email: "troglobit@gmail.com"
 description: > # this means to ignore newlines until "baseurl:"
-  Help me Obi-Wan Troglobi, you're my only hope!
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://troglobit.github.io"
+  '"Elegance is not a dispensable luxury" &mdash; Edsger Wybe Dijkstra'
+keywords: "Multicast, Programming, C"
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://troglobit.github.io" # the base hostname & protocol for your site
+locale: en_US
+
+### Personal info and site tools info:
 twitter_username: troglobit
 github_username:  troglobit
+disqus_shortname: troglobit
+favicon:          /images/favicon.ico
+aboutme:          Hi, I'm Joachim and I'm a hacker
+aboutme_photo:    /images/profile.jpg
+google_analytics_key: # put YOUR key here to enable tracking! (blank to disable)
+
+
+collections:
+  projects:
+    output: true
+    permalink: /:title:output_ext
+  howtos:
+    output: true
+    permalink: /:title:output_ext
+
+### Site setting:
+ShowContactInfo: "True" # Personal Info (twitter,github,email) can be seen on aboutme-sidebar, those info only shown where ShowContactInfo == True
+default_column: "two" # blog style: two columns, if default_column != "two", you will see a one column blog.
+default_locale: "en"
+
+### your Blogroll info, only name can shown on the page.
+Blogroll:
+      - name: Freshman
+        href: http://yulijia.net/freshman
+        title: Another Jekyll blog theme
+      - name: author's website
+        href: http://yulijia.net/
+        title: Lijia Yu's website
+
+
+### Build settings
+markdown: kramdown
+#highlighter: pygments
+#kramdown:
+#        input: GFM
+#        syntax_highlighter: rouge
+# Activate plugins
+gems:
+  - jekyll-gist
+  - jekyll-paginate
 
 paginate: 5
-paginate_path: "/blog/page:num/"
-# excerpt_separator: "<!-- more -->"
+excerpt_separator: "<!-- more -->"
 permalink: /blog/:year/:month/:day/:title/
-
-# Build settings
-markdown: kramdown
-#markdown: redcarpet
 
 # Default extension for new posts and pages
 post_ext: markdown
@@ -41,8 +76,3 @@ post_template: post
 page_template: page
 draft_template: draft
 
-# Activate plugins
-gems:
-  - jekyll-gist
-  - jekyll-paginate
-#  - jekyll-archives

@@ -1,0 +1,14 @@
+<section class="pager">
+  <ul>
+    {% if page.previous %}
+    <li class="previous"><a href="{{ site.baseurl }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr;&nbsp;Older</a></li>
+    {% else %}
+    <li class="disabled"><a>&larr;&nbsp;Older</a></li>
+    {% endif %}
+    {% if page.next %}
+    <li class="next"><a href="{{ site.baseurl }}{{ page.next.url }}" title="{{ page.next.title }}">Newer&nbsp;&rarr;</a></li>
+    {% else %}
+    <li class="disabled"><a>Newer&nbsp;&rarr;</a>
+    {% endif %}
+  </ul>
+</section>

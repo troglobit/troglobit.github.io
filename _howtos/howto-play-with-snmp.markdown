@@ -1,7 +1,7 @@
 ---
 layout: page
-permalink: /:basename:output_ext
-title: "HowTo: Play with SNMP"
+name: snmpwalk
+title: "HowTo play with SNMP"
 date: 2015-11-07 12:49
 comments: true
 sharing: true

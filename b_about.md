@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "About Me ..."
+title: "About"
 permalink: /about/
 date: 2014-06-29 17:01
 comments: true

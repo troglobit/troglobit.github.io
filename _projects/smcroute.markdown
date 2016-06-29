@@ -1,7 +1,7 @@
 ---
 layout: page
-permalink: /:basename:output_ext
-title: "SMCRoute &mdash; Static Multicast Routing Daemon"
+name: SMCRoute
+title: "Static Multicast Routing Daemon"
 sharing: true
 footer: true
 date: 2016-02-17 22:42 +01:00

@@ -1,13 +1,12 @@
 ---
 layout: page
-permalink: /:basename:output_ext
+name: OpenBSD &amp; pimd
 title: "HowTo run pimd on OpenBSD"
 date: 2015-07-19 00:32
 comments: true
 sharing: true
 footer: true
 ---
-
 
 This is an introduction to HowTo run [pimd](/pimd.html) on OpenBSD.  I
 keep it around mostly as a reminder to myself when testing new pimd

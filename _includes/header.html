@@ -2,7 +2,8 @@
 
   <div class="wrapper">
 
-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+    <h3 class="site-meta">{{ site.tagline }}</h3>
+    <h1 class="site-title"><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -13,13 +14,11 @@
         </svg>
       </a>
       <div class="trigger">
-	<a class="page-link" href="/about">About</a>
-	<a class="page-link" href="/finit.html">Finit</a>
-	<a class="page-link" href="/inadyn.html">Inadyn</a>
-	<a class="page-link" href="/smcroute.html">SMCRoute</a>
-	<a class="page-link" href="/mrouted.html">mrouted</a>
-	<a class="page-link" href="/pimd.html">pimd</a>
-	<a class="page-link" href="/uftpd.html">uftpd</a>
+        {% for page in site.pages %}
+        {% if page.title %}
+        <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+        {% endif %}
+        {% endfor %}
       </div>
     </nav>
 

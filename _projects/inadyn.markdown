@@ -1,7 +1,7 @@
 ---
 layout: page
-permalink: /:basename:output_ext
-title: "Inadyn | Small and Simple DDNS Client"
+name: Inadyn
+title: "Small and Simple DDNS Client"
 sharing: true
 footer: true
 date: 2015-09-09 21:29 +0100

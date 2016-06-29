@@ -1,7 +1,7 @@
 ---
 layout: page
-permalink: /:basename:output_ext
-title: "howto run pimd on freebsd"
+name: FreeBSD &amp; pimd
+title: "HowTo run pimd on FreeBSD"
 date: 2015-09-27 18:45
 comments: true
 sharing: true

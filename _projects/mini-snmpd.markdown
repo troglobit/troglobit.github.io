@@ -1,6 +1,7 @@
 ---
 layout: page
-title: "Mini SNMPd"
+name: mini-snmpd
+title: "Mini SNMP daemon"
 sharing: true
 footer: true
 date: 2015-11-23 18:31 +01:00

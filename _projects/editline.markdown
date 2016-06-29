@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /:basename:output_ext
+name: libeditline
 title: "Minix Editline"
 sharing: true
 footer: true
