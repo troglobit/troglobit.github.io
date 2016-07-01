@@ -70,3 +70,9 @@ merged here.  Outstanding issues are listed in the [TODO][] file.
 [GNU readline]: http://directory.fsf.org/project/readline/
 [examples/]:    https://github.com/troglobit/editline/tree/master/examples
 [Minix3]:       http://www.minix3.org/
+
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->

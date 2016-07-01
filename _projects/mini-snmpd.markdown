@@ -198,3 +198,9 @@ See also the old [Free(code) page](http://freecode.com/projects/minisnmpd).
 [repo]: http://github.com/troglobit/mini-snmpd
 [TODO]: https://github.com/troglobit/mini-snmpd/blob/master/TODO
 [LICENSE]: https://github.com/troglobit/mini-snmpd/blob/master/COPYING
+
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->

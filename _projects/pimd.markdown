@@ -91,3 +91,9 @@ The following mailing list is directly related to PIM:
 [pim6sd]: http://clarinet.u-strasbg.fr/~hoerdt/dev/pim6sd_linux/
 [stanford]: http://www.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/LICENSE
 [license]: https://github.com/troglobit/pimd/blob/master/LICENSE
+
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->

@@ -102,3 +102,9 @@ See also the [Free(code) page](http://freecode.com/projects/finit).
 [6]: http://wiki.eeeuser.com/boot_process:the_boot_process
 [9]: https://github.com/troglobit/troglos
 [README]: https://github.com/troglobit/finit/blob/master/README.md
+
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->

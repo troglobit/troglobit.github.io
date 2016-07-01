@@ -109,3 +109,9 @@ Issue tracker and GIT repository available at GitHub:
 See also the [OpenHub page](https://www.openhub.net/p/smcroute/), the
 [Freshcode page](http://freshcode.club/projects/smcroute), or the now
 dormant [Free(code) page](http://freecode.com/projects/smcroute).
+
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->

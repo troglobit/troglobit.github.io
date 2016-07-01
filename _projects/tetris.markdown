@@ -41,3 +41,9 @@ See also the [Free(code) page](http://freecode.com/projects/micro-tetris).
     p    Pause
     q    Quit
 
+
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->

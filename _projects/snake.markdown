@@ -54,3 +54,9 @@ See also the [Free(code) page](http://freecode.com/projects/micro-snake).
     j    Right turn
     
     q    Quit
+
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->
