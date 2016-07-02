@@ -4,6 +4,7 @@ title: "Using netcat to test your Internet daemon"
 date: 2016-04-21 14:21:49 +0200
 comments: true
 categories:
+- UNIX
 ---
 
 So you're having a problem with the Internet daemon you wrote.  You're
