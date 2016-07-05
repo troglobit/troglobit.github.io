@@ -56,6 +56,7 @@ For more info on network simulation, like the equally awesome [GNS3][9]
 for instance, see [Brian Linkletter's Reviews][10].
    
 <a name="roll-your-own"></a>
+
 Roll your own Cloud
 -------------------
 
@@ -249,3 +250,9 @@ FAQ
 [9]: http://www.gns3.com/
 [10]: http://www.brianlinkletter.com/open-source-network-simulators/
 [11]: http://www.redhat.com/archives/linux-cluster/2007-September/msg00150.html
+
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->
