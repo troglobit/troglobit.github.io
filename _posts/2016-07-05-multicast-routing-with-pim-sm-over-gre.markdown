@@ -266,8 +266,6 @@ multicast routing table with:
     root@R2:~$ ip mroute
     (10.0.1.2, 225.1.2.3)        Iif: gre0       Oifs: eth0
 
-That's it, good luck!
-
 
 Caveats
 -------
@@ -288,6 +286,12 @@ Here are a few:
 6. As of this writing `pimd` is a bit sensitive to topology changes.
    See [issue #79](https://github.com/troglobit/pimd/issues/79) for
    details and possible future resolution.
+
+For other questions, ideas on setting up multicast routing, see the
+general [Multicast HowTo](/multicast-howto.html), or file a bug report
+at [GitHub](https://github.com/troglobit)
+
+That's it, good luck!
 
 <!--
   -- Local Variables:
