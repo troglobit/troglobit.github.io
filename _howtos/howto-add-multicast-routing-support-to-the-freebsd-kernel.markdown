@@ -1,5 +1,6 @@
 ---
 layout: post
+name:  "MROUTING support in FreeBSD"
 title: "HowTo: Add Multicast Routing to FreeBSD kernel"
 date: 2014-09-23 01:55:19 +0200
 comments: true
@@ -22,8 +23,8 @@ The kernel rebuild assumes the `src.txz` set was installed previously.
     cd /usr/src
     cd sys/amd64/conf
     cat GENERIC | sed 's/GENERIC$/MULTICAST/' > MULTICAST
-    echo 'options	MROUTING		 # Multicast routing' >> MULTICAST
-    echo 'options	PIM              # Enable for pimd'   >> MULTICAST
+    echo 'options   MROUTING         # Multicast routing' >> MULTICAST
+    echo 'options   PIM              # Enable for pimd'   >> MULTICAST
     cd -
     make kernel KERNCONF=MULTICAST
     reboot
@@ -34,5 +35,5 @@ will probably page fault on you.  I use 1,0 GB RAM.
 The other option, to load the ready made module, is likely better.  But
 you want it to load at boot.  So add this to `/boot/loader.conf`:
 
-	ip_mroute_load="yes"
+    ip_mroute_load="yes"
 
