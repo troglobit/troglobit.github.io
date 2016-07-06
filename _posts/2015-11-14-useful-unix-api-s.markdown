@@ -15,6 +15,7 @@ these.
 Most people are completely unaware they exist and end up rolling their
 own (buggy) implementations.
 
+<!-- more -->
 
 SysV `search.h`
 ---------------

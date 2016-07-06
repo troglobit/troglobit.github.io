@@ -23,6 +23,8 @@ BATTERY -- AND STEP AWAY FROM THE COMPUTER!  Must protect the partition
 from being accidentally written to -- I completely fumbled this step, so
 take heed young people!
 
+<!-- more -->
+
 Now calm down and act like an engineer again.
 
 There exist two neat tools, three if you count the more hard core

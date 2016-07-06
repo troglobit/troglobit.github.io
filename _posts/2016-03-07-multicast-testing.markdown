@@ -18,6 +18,8 @@ Stevens, in [this posting to LKML](https://lkml.org/lkml/2004/8/5/143)
 back in 2006, and started improving it and adding features to it over
 the years.
 
+<!-- more -->
+
 Now, my interest and fascination with multicast only grew with time,
 and despite elegant tools like `mgen(1)` and `omping(1)` I was never
 quite happy.

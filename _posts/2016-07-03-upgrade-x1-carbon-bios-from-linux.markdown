@@ -10,6 +10,8 @@ This is a very brief writeup of how to upgrade the BIOS on a X1 Carbon
 (G1) from Linux.  For more information on this topic there is always the
 excellent [ThinkWiki](http://www.thinkwiki.org/wiki/BIOS_Upgrade).
 
+<!-- more -->
+
 First, find your serial number, for querying Lenovo support (BIOS
 upgrade) pages.
 

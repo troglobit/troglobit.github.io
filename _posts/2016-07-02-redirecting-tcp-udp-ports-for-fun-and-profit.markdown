@@ -23,6 +23,11 @@ can be beneficial (small size), but I may in the future transplant the
 UDP functionality of `uredir` into `redir`.  We'll see, right now though
 I have several other [projects](/projects/) to attend to :-)
 
+<!-- more -->
+
+Examples
+--------
+
 To redirect port 80 to a webserver listening on loopback port 8080,
 remember to use sudo when using priviliged ports:
 

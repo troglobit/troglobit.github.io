@@ -36,6 +36,8 @@ work properly with `pimd` running on the host:
        \________________________________________________________/
           Container ship
 
+<!-- more -->
+
 We tried several approaches, but nothing seemed to help.  This became a
 bit of blocker for the `pimd` v2.3.2 release and I admittedly lost a bit
 of sleep over this.  So finally this weekend, I sat down and whipped my

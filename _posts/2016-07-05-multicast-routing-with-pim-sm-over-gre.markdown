@@ -36,6 +36,8 @@ Intranet with more routers between `R1` and `R2`.  As long as that IT
 department takes care of the unicast routing between `R1` and `R2` so
 that the GRE tunnel can be established.
 
+<!-- more -->
+
 Now, on router R1 we set up the first GRE tunnel endpoint:
 
     ip tunnel add gre0 mode gre remote 192.168.1.20 local 192.168.1.10 ttl 64

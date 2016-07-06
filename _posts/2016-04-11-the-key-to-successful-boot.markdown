@@ -23,6 +23,8 @@ they're done with the `SIGHUP`.  Naturally a new movement has risen that
 says we should all instrument our daemons with D-bus ... I say no.
 Simply touch the PID file instead.
 
+<!-- more -->
+
 Yeah, one could argue the natural (and pure) thing would be to add a
 UNIX domain socket and use a `daemonctl` client instead of `SIGHUP` +
 PID file ... but for this little mechanism of signalling back to the
