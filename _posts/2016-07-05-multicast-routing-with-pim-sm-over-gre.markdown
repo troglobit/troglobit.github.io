@@ -84,11 +84,13 @@ like this:
         network 172.16.16.0/30 area 0
 	
 When the routers have peered, the two clients `C1` and `C2` should be
-able to (unicast) ping each other.  (Telnet into the OSPF daemon using
+able to (unicast) ping each other.  Telnet into the OSPF daemon using
 `telnet localhost ospfd` and type `show ip ospf neigh` to see all OSPF
 neighbors and their status, should be `Full/...` when done exchanging
-routes.)  Use `traceroute` to confirm the traffic between clients do
-traverse the GRE tunnel and not over the Intranet.
+routes.  Use `show ip ospf route` to see the exchanged routes, also
+inspect the kernel routing table with `route -n`.  Use `traceroute` to
+confirm the traffic between clients do traverse the GRE tunnel and not
+over the Intranet.
 
 	root@C1:~$ traceroute 10.0.2.2
 	traceroute to 10.0.2.2 (10.0.2.2), 30 hops max, 60 byte packets
@@ -265,6 +267,27 @@ multicast routing table with:
     (10.0.1.2, 225.1.2.3)        Iif: gre0       Oifs: eth0
 
 That's it, good luck!
+
+
+Caveats
+-------
+
+There are quite a few caveats to watch out for with multicast routing.
+Here are a few:
+
+1. Check the TTL of the multicast stream, must be >1 to be routed.  Rule
+   of thumb: increase with each router in topology.
+2. Check the MTU of the interfaces in the path.
+3. Check the reverse path, make sure you have unicast connectivity
+   between end nodes -- PIM requires this to work!
+4. Check the multicast sender's source IP, verify that it's not a
+   unroutable link-local (169.254) address.
+5. Have the PIM routers peered?  Should list 'PIM' and a neighbor IP
+   in the output of `pimd -r`.  If NO-NBR or DISABLED is shown you
+   have a network or `pimd.conf` problem.
+6. As of this writing `pimd` is a bit sensitive to topology changes.
+   See [issue #79](https://github.com/troglobit/pimd/issues/79) for
+   details and possible future resolution.
 
 <!--
   -- Local Variables:
