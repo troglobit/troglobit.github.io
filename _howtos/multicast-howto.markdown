@@ -1,6 +1,5 @@
 ---
 layout: post
-name: Multicast
 title: "Multicast HowTo"
 date: 2015-07-16 15:42
 comments: true
@@ -235,7 +234,7 @@ FAQ
    N/A.  Neither of them take active part in the actual forwarding of
    multicast frames.  This is what the kernel, or dedicated routing HW,
    does.  The routing daemons `pimd`/`mrouted`/`smcroute` only
-   manipulate the multicast routing table(s) of the operaring system's
+   manipulate the multicast routing table(s) of the operating system's
    kernel.
 
 
