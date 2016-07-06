@@ -1,6 +1,6 @@
 ---
 layout: page
-name: snmpwalk
+name:  "Playing with SNMP"
 title: "HowTo play with SNMP"
 date: 2015-11-07 12:49
 comments: true

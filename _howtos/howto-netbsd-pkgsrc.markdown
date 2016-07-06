@@ -1,6 +1,6 @@
 ---
 layout: page
-name: pkg_add
+name:  "Use NetBSD pre-built packages"
 title: "HowTo use NetBSD pre-built packages"
 date: 2015-07-30 11:13
 comments: true
