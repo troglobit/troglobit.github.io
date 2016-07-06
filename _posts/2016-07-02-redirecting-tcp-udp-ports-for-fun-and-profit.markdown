@@ -14,9 +14,10 @@ without using `iptables`.
 There were several alternatives, but since my target was embedded with
 limited amount of RAM and flash I wanted something really small.  So the
 best fit turned out to be [redir][2], which unfortunately only could
-handle TCP connections.  This is what led med to write [uredir][3] to
-complement `redir`.  Eventually I ended up adoptiing `redir` as well
-and managed to give them about the same look and feel.
+handle TCP connections.  This is what led me to write [uredir][3] to
+complement `redir`.  Eventually I ended up adoptiing `redir` as well,
+which meant giving it a bit of a facelift and to give them both the same
+look and feel.
 
 Currently they are two separate applications, which in some use-cases
 can be beneficial (small size), but I may in the future transplant the
