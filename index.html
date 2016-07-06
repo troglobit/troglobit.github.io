@@ -30,7 +30,12 @@ layout: default
     </header>
 
     <article class="post-content" itemprop="articleBody">
-      {{ post.content }}
+      {{ post.excerpt }}
+      {% if post.excerpt != post.content %}
+      <section class="pager">
+	<li class="next"><a href="{{ site.baseurl }}{{ post.url }}">More&nbsp;&hellip;</a></li>
+      </section>
+      {% endif %}
     </article> <hr />
     
     {% endfor %}

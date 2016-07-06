@@ -278,12 +278,12 @@ dd {
  */
 
 .pager{
-  margin-bottom: 60px;
+  margin-bottom: 2em; //60px;
   text-align: center;
   ul { display: block; margin: 20px 0; }
   li{list-style: none;}
-  li.previous a{float:left;}
-  li.next a{float:right;}
+  li.previous a{float:left; border-bottom-style: none;}
+  li.next a{float:right; border-bottom-style: none;}
   li.disabled {display:none;}
 }
 
