@@ -237,6 +237,10 @@ FAQ
    manipulate the multicast routing table(s) of the operating system's
    kernel.
 
+8. Do you have any example of how to set up GRE and `pimd`?
+
+   Yes, for all the gory details see
+   [this howto](/blog/2016/07/05/multicast-routing-with-pim-sm-over-gre/)
 
 [1]: https://github.com/troglobit/smcroute/
 [2]: https://github.com/troglobit/mrouted/
