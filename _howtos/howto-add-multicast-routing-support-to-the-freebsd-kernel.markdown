@@ -1,6 +1,6 @@
 ---
 layout: post
-name:  "MROUTING support in FreeBSD"
+name:  "MROUTING in FreeBSD"
 title: "HowTo: Add Multicast Routing to FreeBSD kernel"
 date: 2014-09-23 01:55:19 +0200
 comments: true
