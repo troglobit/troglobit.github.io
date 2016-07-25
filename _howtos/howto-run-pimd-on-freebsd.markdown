@@ -66,7 +66,7 @@ following line to `/etc/gateways`:
 Next we need to download and build `pimd`.  It is available on GitHub if
 you want the latest bleeding edge stuff, or use the latest tarball:
 
-    ftp ftp://troglobit.com/pimd/pimd-2.3.0.tar.gz
+    ftp ftp://ftp.troglobit.com/pimd/pimd-2.3.0.tar.gz
 	tar xfz pimd-2.3.0.tar.gz
 	cd pimd-2.3.0/
 	./configure

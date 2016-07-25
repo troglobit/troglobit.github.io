@@ -54,5 +54,5 @@ See the [README][3] for more information, or the code for the full
 details.
 
 [1]: /finit.html
-[2]: ftp://troglobit.com/finit/finit-1.8.tar.xz
+[2]: ftp://ftp.troglobit.com/finit/finit-1.8.tar.xz
 [3]: https://github.com/troglobit/finit/blob/master/README.md

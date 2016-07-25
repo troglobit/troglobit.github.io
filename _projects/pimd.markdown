@@ -42,8 +42,8 @@ Issue tracker and GIT repository available at GitHub:
 
    * [Repository](http://github.com/troglobit/pimd)
    * [ChangeLog](https://github.com/troglobit/pimd/releases/tag/2.3.2)
-   * [pimd-2.3.2.tar.gz](ftp://troglobit.com/pimd/pimd-2.3.2.tar.gz),
-     [MD5](ftp://troglobit.com/pimd/pimd-2.3.2.tar.gz.md5)
+   * [pimd-2.3.2.tar.gz](ftp://ftp.troglobit.com/pimd/pimd-2.3.2.tar.gz),
+     [MD5](ftp://ftp.troglobit.com/pimd/pimd-2.3.2.tar.gz.md5)
    * [Issue Tracker](http://github.com/troglobit/pimd/issues)
    * [Debian packages](http://packages.debian.org/pimd)
    * [Ubuntu packages](http://packages.ubuntu.com/pimd)

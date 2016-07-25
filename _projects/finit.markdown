@@ -89,8 +89,8 @@ Issue tracker and GIT repository available at GitHub:
 * [README][]
 * [TODO](https://github.com/troglobit/finit/blob/master/TODO.md)
 * [Issue Tracker](http://github.com/troglobit/finit/issues)
-* [finit-2.4.tar.xz](ftp://troglobit.com/finit/finit-2.4.tar.xz),
-  [MD5](ftp://troglobit.com/finit/finit-2.4.tar.xz.md5)
+* [finit-2.4.tar.xz](ftp://ftp.troglobit.com/finit/finit-2.4.tar.xz),
+  [MD5](ftp://ftp.troglobit.com/finit/finit-2.4.tar.xz.md5)
 
 See also the [Free(code) page](http://freecode.com/projects/finit).
 

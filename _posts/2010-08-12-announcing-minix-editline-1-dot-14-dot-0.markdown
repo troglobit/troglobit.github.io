@@ -56,7 +56,7 @@ Report bugs using the GitHub [issue tracker][10].  See also the
 [5]: http://www.cs.unc.edu/~tell/dist.html
 [6]: http://github.com/troglobit/editline
 [7]: http://git.troglobit.com/editline.git
-[8]: ftp://troglobit.com/editline/editline-1.14.0.tar.bz2
-[9]: ftp://troglobit.com/editline/editline-1.14.0.tar.bz2.md5
+[8]: ftp://ftp.troglobit.com/editline/editline-1.14.0.tar.bz2
+[9]: ftp://ftp.troglobit.com/editline/editline-1.14.0.tar.bz2.md5
 [10]: http://freshmeat.net/projects/minix-editline
 [11]: http://github.com/troglobit/editline/issues

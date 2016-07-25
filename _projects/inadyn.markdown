@@ -74,9 +74,9 @@ Issue tracker and GIT repository available at GitHub:
 * [CHANGELOG](https://github.com/troglobit/inadyn/blob/master/CHANGELOG.md)
 * [Repository](http://github.com/troglobit/inadyn)
 * [Issue Tracker](http://github.com/troglobit/inadyn/issues)
-* [inadyn-1.99.15.tar.xz](ftp://troglobit.com/inadyn/inadyn-1.99.15.tar.xz),
-  [MD5](ftp://troglobit.com/inadyn/inadyn-1.99.15.tar.xz.md5)
-  [GPG Sign](ftp://troglobit.com/inadyn/inadyn-1.99.15.tar.xz.asc)
+* [inadyn-1.99.15.tar.xz](ftp://ftp.troglobit.com/inadyn/inadyn-1.99.15.tar.xz),
+  [MD5](ftp://ftp.troglobit.com/inadyn/inadyn-1.99.15.tar.xz.md5)
+  [GPG Sign](ftp://ftp.troglobit.com/inadyn/inadyn-1.99.15.tar.xz.asc)
 
 See also the [OpenHub page](https://www.openhub.net/p/inadyn/), the
 [Freshcode page](http://freshcode.club/projects/inadyn), or the dormant

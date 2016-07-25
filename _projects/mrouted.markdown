@@ -63,8 +63,8 @@ Issue tracker and GIT repository available at GitHub:
    * [Repository](http://github.com/troglobit/mrouted)
    * [ChangeLog](https://github.com/troglobit/mrouted/releases/tag/3.9.7)
    * [Issue Tracker](http://github.com/troglobit/mrouted/issues)
-   * [mrouted-3.9.7.tar.bz2](ftp://troglobit.com/mrouted/mrouted-3.9.7.tar.bz2),
-     [MD5](ftp://troglobit.com/mrouted/mrouted-3.9.7.tar.bz2.md5)
+   * [mrouted-3.9.7.tar.bz2](ftp://ftp.troglobit.com/mrouted/mrouted-3.9.7.tar.bz2),
+     [MD5](ftp://ftp.troglobit.com/mrouted/mrouted-3.9.7.tar.bz2.md5)
 
 See also the [OpenHub page](https://www.openhub.net/p/mrouted/), or the
 (sadly) dormant [Free(code) page](http://freecode.com/projects/mrouted).

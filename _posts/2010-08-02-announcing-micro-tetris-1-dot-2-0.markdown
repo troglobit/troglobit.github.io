@@ -29,6 +29,6 @@ See also the [Freshmeat page][6] for a more consistent updates.
 [1]: https://github.com/lazzer
 [2]: http://github.com/troglobit/tetris
 [3]: http://git.troglobit.com/tetris.git
-[4]: ftp://troglobit.com/tetris/tetris-1.2.0.tar.bz2
-[5]: ftp://troglobit.com/tetris/tetris-1.2.0.tar.bz2.md5
+[4]: ftp://ftp.troglobit.com/tetris/tetris-1.2.0.tar.bz2
+[5]: ftp://ftp.troglobit.com/tetris/tetris-1.2.0.tar.bz2.md5
 [6]: http://freshmeat.net/projects/micro-tetris

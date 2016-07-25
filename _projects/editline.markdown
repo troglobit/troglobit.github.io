@@ -30,8 +30,8 @@ Issue tracker and GIT repository available at GitHub:
    * [Repository](http://github.com/troglobit/editline)
    * [Issue Tracker](http://github.com/troglobit/editline/issues)
    * [ChangeLog](https://github.com/troglobit/editline/blob/master/ChangeLog.md)
-   * [editline-1.15.20tar.xz](ftp://troglobit.com/editline/editline-1.15.1.tar.xz),
-     [MD5](ftp://troglobit.com/editline/editline-1.15.1.tar.xz.md5)
+   * [editline-1.15.20tar.xz](ftp://ftp.troglobit.com/editline/editline-1.15.1.tar.xz),
+     [MD5](ftp://ftp.troglobit.com/editline/editline-1.15.1.tar.xz.md5)
 
 See also the [OpenHub page](https://www.openhub.net/p/editline), or
 the old [Free(code) page](http://freecode.com/projects/minix-editline).

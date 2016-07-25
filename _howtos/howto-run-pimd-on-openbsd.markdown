@@ -115,7 +115,7 @@ available on the [releases][1] page.  For convenience I also provide an
 [FTP][4], so it is simple enough to use OpenBSD without any additional
 tools.
 
-    $ ftp ftp://troglobit.com/pimd/pimd-2.3.0.tar.gz
+    $ ftp ftp://ftp.troglobit.com/pimd/pimd-2.3.0.tar.gz
     $ tar xfz pimd-2.3.0.tar.gz
     $ cd pimd-2.3.0/
     $ ./configure; make
@@ -252,4 +252,4 @@ IGMP frames to be sent by pimd:
 [1]: https://github.com/troglobit/pimd/releases
 [2]: /blog/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/
 [3]: https://github.com/troglobit/pimd/blob/master/INSTALL.md
-[4]: ftp://troglobit.com/pimd/
+[4]: ftp://ftp.troglobit.com/pimd/

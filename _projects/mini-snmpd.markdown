@@ -194,7 +194,7 @@ See also the old [Free(code) page](http://freecode.com/projects/minisnmpd).
 [1]: http://net-snmp.org
 [2]: http://net-snmp.net
 [3]: https://web.archive.org/web/20150522170054/http://members.aon.at/linuxfreak/linux/mini_snmpd.html
-[ftp]: ftp://troglobit.com/mini-snmpd/
+[ftp]: ftp://ftp.troglobit.com/mini-snmpd/
 [repo]: http://github.com/troglobit/mini-snmpd
 [TODO]: https://github.com/troglobit/mini-snmpd/blob/master/TODO
 [LICENSE]: https://github.com/troglobit/mini-snmpd/blob/master/COPYING

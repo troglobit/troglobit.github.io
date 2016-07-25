@@ -40,8 +40,8 @@ Issue tracker and GIT repository available at GitHub:
 
    * [Repository](http://github.com/troglobit/snake)
    * [Issue Tracker](http://github.com/troglobit/snake/issues)
-   * [snake-1.0.1.tar.bz2](ftp://troglobit.com/snake/snake-1.0.1.tar.bz2),
-     [MD5](ftp://troglobit.com/snake/snake-1.0.1.tar.bz2.md5)
+   * [snake-1.0.1.tar.bz2](ftp://ftp.troglobit.com/snake/snake-1.0.1.tar.bz2),
+     [MD5](ftp://ftp.troglobit.com/snake/snake-1.0.1.tar.bz2.md5)
 
 See also the [Free(code) page](http://freecode.com/projects/micro-snake).
 

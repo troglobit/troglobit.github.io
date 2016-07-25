@@ -27,8 +27,8 @@ Issue tracker and GIT repository available at GitHub:
 
    * [Repository](http://github.com/troglobit/tetris)
    * [Issue Tracker](http://github.com/troglobit/tetris/issues)
-   * [tetris-1.2.1.tar.bz2](ftp://troglobit.com/tetris/tetris-1.2.1.tar.bz2),
-     [MD5](ftp://troglobit.com/tetris/tetris-1.2.1.tar.bz2.md5)
+   * [tetris-1.2.1.tar.bz2](ftp://ftp.troglobit.com/tetris/tetris-1.2.1.tar.bz2),
+     [MD5](ftp://ftp.troglobit.com/tetris/tetris-1.2.1.tar.bz2.md5)
 
 See also the [Free(code) page](http://freecode.com/projects/micro-tetris).
 

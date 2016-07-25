@@ -98,9 +98,9 @@ except the few used for multicast routing.
 Issue tracker and GIT repository available at GitHub:
 
    * [Repository](http://github.com/troglobit/smcroute)
-   * [smcroute-2.1.0.tar.xz](ftp://troglobit.com/smcroute/smcroute-2.1.0.tar.xz),
-     [MD5](ftp://troglobit.com/smcroute/smcroute-2.1.0.tar.xz.md5)
-     [GPG Sign](ftp://troglobit.com/smcroute/smcroute-2.1.0.tar.xz.asc)
+   * [smcroute-2.1.0.tar.xz](ftp://ftp.troglobit.com/smcroute/smcroute-2.1.0.tar.xz),
+     [MD5](ftp://ftp.troglobit.com/smcroute/smcroute-2.1.0.tar.xz.md5)
+     [GPG Sign](ftp://ftp.troglobit.com/smcroute/smcroute-2.1.0.tar.xz.asc)
    * [Issue Tracker](http://github.com/troglobit/smcroute/issues)
    * [Debian packages](http://packages.debian.org/smcroute)
    * [Ubuntu packages](http://packages.ubuntu.com/smcroute)

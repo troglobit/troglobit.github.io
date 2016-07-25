@@ -24,7 +24,7 @@ setup new homes for most of my Open Source projects at
 Recently however GitHub stopped serving downloads, so even though I
 can continue using it for version control, I had to find a new way of
 serving generated tarballs and the like.  See [my
-FTP](ftp://troglobit.com) for project downloads.
+FTP](ftp://ftp.troglobit.com) for project downloads.
 
 I had also started missing blogging for some reason. So it started to
 make sense to roll something on my own again.  Well, here's me
