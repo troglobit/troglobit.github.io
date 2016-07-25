@@ -67,10 +67,10 @@ Next we need to download and build `pimd`.  It is available on GitHub if
 you want the latest bleeding edge stuff, or use the latest tarball:
 
     ftp ftp://ftp.troglobit.com/pimd/pimd-2.3.0.tar.gz
-	tar xfz pimd-2.3.0.tar.gz
-	cd pimd-2.3.0/
-	./configure
-	make
+    tar xfz pimd-2.3.0.tar.gz
+    cd pimd-2.3.0/
+    ./configure
+    make
 
 
 ## Running pimd

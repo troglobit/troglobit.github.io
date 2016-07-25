@@ -69,7 +69,7 @@ daemon:
 
     # Enable ripd, also edit /etc/ripd.conf
     ripd_flags=""           # for normal use: ""
-
+    
     # Multicast routing configuration
     # Please look at netstart(8) for a detailed description if you change these
     multicast_host=NO       # Route all multicast packets to a single interface
