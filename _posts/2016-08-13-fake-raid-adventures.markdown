@@ -11,7 +11,7 @@ servers.  I plan to use them as build and embedded target emulation
 servers for my [open source projects](https://github.com/troglobit)
 as well as Minecraft server for my kids :)
 
-<img class="right" src="http://eitc.in/yahoo_site_admin/assets/docs/Supermicro_SuperServer_SC512L_small.324203750.JPG">
+<img src="http://eitc.in/yahoo_site_admin/assets/docs/Supermicro_SuperServer_SC512L_small.324203750.JPG">
 
 <!-- more -->
 
