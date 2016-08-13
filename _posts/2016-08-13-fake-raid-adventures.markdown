@@ -13,6 +13,8 @@ as well as Minecraft server for my kids :)
 
 <img class="right" src="http://eitc.in/yahoo_site_admin/assets/docs/Supermicro_SuperServer_SC512L_small.324203750.JPG">
 
+<!-- more -->
+
 During the install of Ubuntu Server 16.04 I realized I wanted try to use
 the Intel PCH "Fake Raid" on the two 1 TB disks, RAID-1.  The support
 Intel has in Linux and `mdadm` for their southbridge RAID controller is
