@@ -62,9 +62,8 @@ This command details RAID (firmware) capabilities:
 
 ### Remove a disk from a container
 
-Say disk `/dev/sda` is unhealthy in any of the member volumes, try
-failing it in all volumes, removing it, zeroing out the superblock and
-re-add:
+Say disk `/dev/sda` is unhealthy in any of the member volumes, fail it
+in all volumes, remove it, and zero out the superblock to re-add:
 
     user@example:~$ sudo mdadm /dev/md/Boot -f /dev/sda
     user@example:~$ sudo mdadm /dev/md/Root -f /dev/sda
@@ -72,22 +71,19 @@ re-add:
 	user@example:~$ sudo mdadm --zero-superblock /dev/sda
     user@example:~$ sudo mdadm /dev/md/imsm0 -a /dev/sda
 
-Here `Root` and `Boot` are my member volumes in the `imsm0` container.
-I use a small `Boot` partition for `/boot` first on the array to be able
-to boot using GRUB from it.
+Here `Root` and `Boot` are my member volumes in the Intel PCH `imsm0`
+container.  I use a small `Boot` partition for `/boot`, first partition
+on the array, to be able to boot using GRUB from it.
 
 If the above doesn't work for you (it didn't for me), try zeroing out
-the complete device, which naturally will take a while:
-
-    user@example:~$ sudo dd if=/dev/zero of=/dev/sda bs=4096
-
-Or, if you know the controller can manage at least 100 MB/s try:
+the complete device, which naturally will take a while, try smaller
+blocksize (bs) if the following does not work:
 
     user@example:~$ sudo dd if=/dev/zero of=/dev/sda bs=100M
 
-Then reboot and tell the Intel firmware (Ctrl-I maybe) to add the "new"
-disk to the array, or rather then *container* to be correct.  When you
-boot up your system Linux should have started a background rebuild.
+Then reboot and tell the Intel firmware (Ctrl-I maybe) at POST to add
+the "new" disk to the array, or rather to the *container* to be correct.
+When booting up the system again, Linux starts a background rebuild.
 
 
 ### Check satus of RAID
