@@ -68,7 +68,7 @@ in all volumes, remove it, and zero out the superblock to re-add:
     user@example:~$ sudo mdadm /dev/md/Boot -f /dev/sda
     user@example:~$ sudo mdadm /dev/md/Root -f /dev/sda
     user@example:~$ sudo mdadm /dev/md/imsm0 -r /dev/sda
-	user@example:~$ sudo mdadm --zero-superblock /dev/sda
+	user@example:~$ sudo mdadm --zero-superblock --force /dev/sda
     user@example:~$ sudo mdadm /dev/md/imsm0 -a /dev/sda
 
 Here `Root` and `Boot` are my member volumes in the Intel PCH `imsm0`
