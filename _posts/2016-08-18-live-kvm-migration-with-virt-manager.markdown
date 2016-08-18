@@ -11,6 +11,7 @@ setting up ALL THE THINGS!  I just managed to set up live migration of
 the KVM virtual machines I use for testing my [FLOSS][1] projects.  Here
 is a short writeup of that, just as a reminder for myself.
 
+
 ## Checklist
 
 1. Make sure the libvirt/virt-manager versions are the same.
@@ -27,6 +28,7 @@ is a short writeup of that, just as a reminder for myself.
 Godd Luck! :)
 
 <!-- more -->
+
 
 ## Setting up NFS
 
@@ -53,6 +55,10 @@ For a more permanant setup, add the mount point to `/etc/fstab` and run
 To speed things up a bit you can install the `nfs-kernel-server` package
 on the server.
 
+To see what shares a server has, use `showmount -e server` -- useful for
+debugging.  Usually I forget running `exportfs` on the server.
+
+
 ## Setting up virt-manager
 
 In principle not much needs to be changed on the system you want to
@@ -71,6 +77,7 @@ Second, set CPU model to Hypervisor default:
     CPUs --> Configuration --> Model: Hypervisor Default
 
 <img class="center" src="/images/migrate-cpu-default.png">
+
 
 ## Profit!
 
