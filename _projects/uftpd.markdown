@@ -4,7 +4,7 @@ name: uftpd
 title: "No nonsense FTP/TFTP server"
 sharing: true
 footer: true
-date: 2016-02-02 00:11 +0100
+date: 2016-08-31 01:26 +0100
 comments: false
 ---
 
@@ -14,8 +14,8 @@ Tired of confusing configuration files and security features you don't need?
 
 * `uftpd` supports both FTP and TFTP
 * Has no confusing configuration file
-* Listens to port `ftp/tcp` and `tftp/udp` found in `/etc/services`
-* Serves files from the ftp user's $HOME, as specified in `/etc/passwd`
+* Listens to port `ftp/tcp` and `tftp/udp` found in `/etc/services`, or custom port(s)
+* Serves files from the ftp user's $HOME, as specified in `/etc/passwd`, or custom path
 * Can run from `inetd` or as a standalone daemon
 * Can run as root, with chroot and privsep, or as a regular user
 * Supports TFTP blocksize negotiation, [RFC 2348](http://tools.ietf.org/html/rfc2348)
@@ -26,10 +26,8 @@ Basically, it just works!
 * [README](https://github.com/troglobit/uftpd/blob/master/README.md)
 * [TODO](https://github.com/troglobit/uftpd/blob/master/TODO.md)
 * [Issue Tracker](http://github.com/troglobit/uftpd/issues)
-* [uftpd-2.0.1.tar.xz](ftp://ftp.troglobit.com/uftpd/uftpd-2.0.1.tar.xz),
-  [MD5](ftp://ftp.troglobit.com/uftpd/uftpd-2.0.1.tar.xz.md5)
-* [uftpd_2.0-1_amd64.deb](ftp://ftp.troglobit.com/uftpd/uftpd_2.0-1_amd64.deb),
-  [changes](ftp://ftp.troglobit.com/uftpd/uftpd_2.0-1_amd64.changes)
+* [uftpd-2.1.tar.xz](ftp://ftp.troglobit.com/uftpd/uftpd-2.1.tar.xz),
+  [MD5](ftp://ftp.troglobit.com/uftpd/uftpd-2.1.tar.xz.md5)
 
 See also the [OpenHub page](https://www.openhub.net/p/uftpd/), the cool
 [Fresh(code) page](http://freshcode.club/projects/uftpd), or the (sadly)
@@ -46,7 +44,6 @@ background and context :)
   others have been avoided in an effort to keep `uftpd` user friendly.
   If you want something really secure, you should probably try
   [vsftpd](https://security.appspot.com/vsftpd.html).
-
 
 <!--
   -- Local Variables:
