@@ -14,10 +14,10 @@ is a short writeup of that, just as a reminder for myself.
 
 ## Checklist
 
-1. Make sure the libvirt/virt-manager versions are the same.
-   I tried setting migration between CentOS 7.2 and and Ubuntu LTS 16.04
-   which turned out to be a mess of incompatibilities.  I now run Ubuntu
-   on the servers as well and everything interoperates fine.
+1. Make sure the libvirt versions are the same.  I tried setting up
+   migration between CentOS 7.2 and and Ubuntu LTS 16.04 which turned
+   out to be a mess of insurmountably incompatibilities.  I now run
+   Ubuntu on everything, including the servers, and now it works fine.
 2. Set up NFS for the backend store of `/var/lib/libvirt/images`.  Make
    sure to export the share properly, I tried first with my ReadyNAS, but
    couldn't set up root access (defaulted to nobody).
@@ -25,7 +25,7 @@ is a short writeup of that, just as a reminder for myself.
 4. Set up VM processor model=default
 5. Profit
 
-Godd Luck! :)
+Good Luck! :)
 
 <!-- more -->
 
