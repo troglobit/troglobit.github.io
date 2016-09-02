@@ -34,7 +34,7 @@ For watchdogd several big improvements to system monitoring (loadavg,
 file descriptors, RAM) as well as a very advanced process monitoring
 (instrumentation) API is being added.  Finit however is the crown in
 making, it is being converted to support multiple instances of services
-and to be a fully event driven.  I'm extremely excited about Finit!
+and to be fully event driven.  I'm extremely excited about Finit!
 
 Oh, and don't worry ... I did manage to get some actual real downtime on
 the beach as well! ;-)
