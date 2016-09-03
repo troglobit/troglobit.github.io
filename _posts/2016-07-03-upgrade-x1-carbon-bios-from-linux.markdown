@@ -10,6 +10,9 @@ This is a very brief writeup of how to upgrade the BIOS on a X1 Carbon
 (G1) from Linux.  For more information on this topic there is always the
 excellent [ThinkWiki](http://www.thinkwiki.org/wiki/BIOS_Upgrade).
 
+OK, this post is more about creating the bootable USB stick needed, was
+too much of a chicken to try [Flashrom](https://www.flashrom.org/Flashrom) ...
+
 <!-- more -->
 
 First, find your serial number, for querying Lenovo support (BIOS
@@ -48,6 +51,8 @@ file to be able to `dd` it to a USB stick:
     
     Image has been written to file "g6uj21us.img".
 
+The link to the Perl script is available on the ThinkWiki page, or from
+[GitHub](https://github.com/ksergey/thinkpad/blob/master/geteltorito.pl).
 Now, insert a USB stick and unmount it manually, not using Ubuntu/Gnome
 file manager's eject thingy!
 
