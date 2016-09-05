@@ -88,3 +88,9 @@ to your `guest:/etc/fstab`:
 	share	/mnt	9p	trans=virtio,version=9p2000.L,rw	0	0
 
 That's it. Good Luck!
+
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->
