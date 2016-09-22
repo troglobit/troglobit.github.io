@@ -1,6 +1,5 @@
 ---
 layout: page
-name: Finit
 sharing: true
 footer: true
 date: 2015-12-04 19:39 +0100
