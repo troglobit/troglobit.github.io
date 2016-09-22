@@ -1,6 +1,6 @@
 ---
 layout: page
-title:
+title: ""
 name: Finit
 sharing: true
 footer: true
