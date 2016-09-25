@@ -26,9 +26,9 @@ triggering on free-form conditions.  E.g., PID file created/modified,
 Netlink events like default route or interfaces coming up/down, similar
 to [systemd][7].
 
-Finit can also be extended with plugins to hook into the boot process,
-extend the functionality at runtime to fit your specific needs.  See the
-[documentation][README] for details.
+Finit can also be extended with plugins to hook into the boot process
+and extend its functionality to fit your specific needs.  For more
+details, see the [documentation][README].
 
 
 Example
@@ -59,17 +59,17 @@ reload the configuration at runtime.
     service [S12345] /sbin/syslogd -n -b 3 -D                   -- System log daemon
     service [S12345] /sbin/klogd -n                             -- Kernel log daemon
     
-    # Services must not daemonize themselves, look for --foreground or
-    # similar switches to standard services.
+    # Services must not daemonize themselves, look for -n, --foreground or
+    # similar switches to prevent them from forking to the background
     service :1 [2345] <net/eth1/up> /sbin/dropbear -R -F -p 22        -- SSH daemon (LAN)
     service :2  [345] <net/route/default> /sbin/dropbear -R -F -p 222 -- SSH daemon (WAN)
     #service    [2345] /sbin/telnetd -F                               -- Telnet daemon
     
-    # Optional network bringup script, automatic on Debian/BusyBox systems
+    # Finit understands /etc/network/interfaces on Debian/BusyBox systems
     #network /etc/init.d/networking
 
-    # System patch or extension scripts, see run-parts(8).
-    # Can also use /etc/rc.local for smaller things.
+    # System patch or extension scripts, see run-parts(8), built-in support in Finit.
+    # You can also use /etc/rc.local for smaller things.
     #runparts /mnt/start.d
     
     # Inetd services
