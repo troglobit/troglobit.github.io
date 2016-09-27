@@ -11,7 +11,15 @@ using [crosstool-NG][1] for Ubuntu 16.04 (x86_64) with musl support.
 
 - [arm-unknown-linux-gnueabi-6.1.0-1.tar.xz][2]
 
-The main purpose for my building this is [TroglOS][3], but it is useful
+Download, unpack into `/usr/local`, and add to your `$PATH`
+
+    export PATH=/usr/local/arm-unknown-linux-gnueabi-6.1.0-1/bin:$PATH
+
+There's lots of neat stuff included, both a `sysroot` and a `debug-root`
+with GDB and `gdbserver` for target.  For details on using it, see the
+[excellent docs][3].
+
+The main purpose for my building this is [TroglOS][4], but it is useful
 for other purposes as well of course.  To rebuild it on your system, see
 the included crosstool.config file and xthe encoded GIT hash.
 
@@ -19,7 +27,8 @@ Next up is a PowerPC (32-bit) toolchain, also with musl.
 
 [1]: https://github.com/crosstool-ng/crosstool-ng
 [2]: http://ftp.troglobit.com/pub/Toolchains/arm-unknown-linux-gnueabi-6.1.0-1.tar.xz
-[1]: https://github.com/troglobit/troglos
+[3]: https://github.com/crosstool-ng/crosstool-ng/blob/master/docs/5%20-%20Using%20the%20toolchain.txt
+[4]: https://github.com/troglobit/troglos
 
 <!--
   -- Local Variables:
