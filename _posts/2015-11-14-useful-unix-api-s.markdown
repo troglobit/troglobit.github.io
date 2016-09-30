@@ -90,6 +90,14 @@ Other functions worthy of mentioning here are:
 
 - `glob()`
 
+### `fnmatch.h`
+
+- `fnmatch()`
+
+### `ftw.h`
+
+- `ftw()`
+- `nftw()`
 
 [sysvque]:  http://pubs.opengroup.org/onlinepubs/009695399/functions/insque.html
 [sysvlin]:  http://pubs.opengroup.org/onlinepubs/009695399/functions/lsearch.html
