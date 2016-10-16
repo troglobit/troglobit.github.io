@@ -232,7 +232,7 @@ FAQ
 7. What's the routing performance of `pimd`/`mrouted`/`smcroute`?
 
    N/A.  Neither of them take active part in the actual forwarding of
-   multicast frames.  This is what the kernel, or dedicated routing HW,
+   multicast frames.  This is what the kernel or dedicated routing HW
    does.  The routing daemons `pimd`/`mrouted`/`smcroute` only
    manipulate the multicast routing table(s) of the operating system's
    kernel.
