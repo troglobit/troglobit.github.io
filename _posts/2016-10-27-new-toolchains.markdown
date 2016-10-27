@@ -19,7 +19,10 @@ Unpack into `/usr/local`, and add to your `$PATH`, e.g.
 
 The toolchains are built using [crosstool-NG][1] and are primarily for
 myself and users of [TroglOS][2], but are generic enough to be useful
-for other purposes as well.  Enjoy! :-)
+for other purposes as well.
+
+This first revision only contains C and C++, but the next revision will
+likely also include Go.  Enjoy! :-)
 
 [0]: http://ftp.troglobit.com/pub/Toolchains
 [1]: https://github.com/crosstool-ng/crosstool-ng
