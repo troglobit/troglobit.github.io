@@ -18,8 +18,8 @@ Unpack into `/usr/local`, and add to your `$PATH`, e.g.
     export PATH=/usr/local/arm-unknown-linux-gnueabi-6.1.0-2/bin:$PATH
 
 The toolchains are built using [crosstool-NG][1] on Ubuntu 16.04 64-bit,
-and are primarily for myself and users of [TroglOS][2], but are generic
-enough to be useful for other purposes as well.
+and are primarily intended for myself and users of [TroglOS][2], but are
+generic enough to be useful for other purposes as well.
 
 The `.config` for [crosstool-NG][1] can be retrieved using the `$CROSS`
 prefix followed by `-ct-ng.config`, e.g.:
