@@ -7,7 +7,7 @@ categories:
 ---
 
 I code for recreation as well as work.  Admittedly I've got a touch of
-the NIH flu, though most of the time I tinker around with my various
+the NIH virus, though most of the time I tinker around with my various
 [projects](https://github.com/troglobit) simply to learn.  Sometimes
 these little projects turn into something useful for other people as
 well, which is great!
