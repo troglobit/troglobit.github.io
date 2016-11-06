@@ -48,10 +48,13 @@ Blogroll:
 
 ### Build settings
 markdown: kramdown
+
 #highlighter: pygments
-#kramdown:
-#        input: GFM
-#        syntax_highlighter: rouge
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
 # Activate plugins
 gems:
   - jekyll-gist
