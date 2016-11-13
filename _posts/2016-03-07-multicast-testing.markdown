@@ -8,8 +8,6 @@ categories:
 - unix
 ---
 
-<a href="https://github.com/troglobit/mcjoin"><img style="position: absolute; top: 0; right: 0; border: none; box-shadow: none;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" /></a>
-
 For the better part of the last ten years I have been working with
 multicast in one way or another.  I've used many different tools for
 testing, but on most systems I usually resort to `ping(1)` and
@@ -41,8 +39,8 @@ simplifying the syntax, and then I added send/receive capabilities.
 I've been meaning to get around to this for ages, and now it seems I had
 finally had enough.  So here it is, v2.0:
 
-* **Project**: <https://github.com/troglobit/mcjoin/>
-* **ChangeLog**: <https://github.com/troglobit/mcjoin/releases/tag/v2.0>
+**Project**: <https://github.com/troglobit/mcjoin/>  
+**ChangeLog**: <https://github.com/troglobit/mcjoin/releases/tag/v2.0>  
 
 Most of the time I simply want to see a resulting IGMP join message in
 Wireshark, watch a group entry pop up in a switch's FDB or a routing
@@ -64,3 +62,9 @@ the sender side.
 
 If you ever need anything else, e.g. routing multicast, there's even a
 man page.  It mentions setting the TTL and other such nastiness :)
+
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->
