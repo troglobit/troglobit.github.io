@@ -15,6 +15,10 @@ permalink: /projects/
 <dd>
   {{ page.title }}
 </dd>
+{% else if page.description %}
+<dd>
+  {{ page.description }}
+</dd>
 {% endif %}
 {% endif %}
 
