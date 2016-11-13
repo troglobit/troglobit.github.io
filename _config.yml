@@ -48,15 +48,12 @@ Blogroll:
 
 ### Build settings
 markdown: kramdown
-
-highlighter: pygments
+highlighter: rouge
 
 kramdown:
   input: GFM
   hard_wrap: false
-#  syntax_highlighter: rouge
-#highlighter: rouge
-
+  syntax_highlighter: rouge
 
 # Activate plugins
 gems:
