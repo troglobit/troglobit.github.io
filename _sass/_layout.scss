@@ -181,6 +181,7 @@ dt {
 }
 dt:after {
     content: ":";
+    padding-right: 5px;
 }
 dd {
     margin: 0 0 0 15em;
