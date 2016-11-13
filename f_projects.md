@@ -23,4 +23,10 @@ permalink: /projects/
 {% endif %}
 
 {% endfor %}
+<dt>
+  <a class="page-lin" href="http://merecat.troglobit.com" title="Merecat httpd">Merecat</a>
+</dt>
+<dd>
+  Simple, small and fast HTTP server
+</dd>
 </dl>
