@@ -11,13 +11,13 @@ permalink: /projects/
 <dt>
   <a class="page-link" href="{{ site.baseurl }}{{ page.url }}" title="{{ page.title }}">{{ page.name }}</a>
 </dt>
-{% if page.title %}
-<dd>
-  {{ page.title }}
-</dd>
-{% else if page.description %}
+{% if page.description %}
 <dd>
   {{ page.description }}
+</dd>
+{% else if page.title %}
+<dd>
+  {{ page.title }}
 </dd>
 {% endif %}
 {% endif %}
