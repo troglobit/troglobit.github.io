@@ -34,8 +34,9 @@ details, see the [documentation][README].
 Example
 -------
 
-See [TroglOS][9] for an example of how to boot a small embedded system
-with Finit:
+See [TroglOS][9] for an example of both how to boot a small embedded
+system with Finit, as well as extend it with plugins.  TroglOS use an
+[mtd.so][10] plugin to handle uninitialized flash:
 
 <img class="left" src="/images/finit3-screenshot.png" alt="Finit Screenshot" style="width: 472px; height: 422px;">
 
@@ -142,6 +143,7 @@ See also the [Free(code) page](http://freecode.com/projects/finit).
 [6]: http://wiki.eeeuser.com/boot_process:the_boot_process
 [7]: https://www.freedesktop.org/wiki/Software/systemd/
 [9]: https://github.com/troglobit/troglos
+[10]: https://github.com/troglobit/troglos/blob/master/packages/finit/plugins/mtd.c
 [README]: https://github.com/troglobit/finit/blob/master/README.md
 
 <!--
