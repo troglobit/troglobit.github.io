@@ -36,8 +36,8 @@ tarball, for configuration examples.
 * <http://www.tzo.com>
 * <http://www.3322.org>
 * <http://www.dnsomatic.com>
-* <http://www.tunnelbroker.net>
 * <http://dns.he.net/>
+* <http://www.tunnelbroker.net>
 * <http://www.dynsip.org>
 * <http://www.sitelutions.com>
 * <http://www.dnsexit.com>
@@ -53,6 +53,11 @@ tarball, for configuration examples.
 * <https://www.dtdns.com>
 * <http://giradns.com>
 * <https://www.duiadns.net>
+* <https://ddnss.de>
+* <http://dynv6.com>
+* <http://ipv4.dynv6.com>
+* <https://spdyn.de>
+* <https://www.strato.com>
 
 Some of these services are free of charge for non-commercial use, others
 take a small fee, but also provide more domains to choose from.
