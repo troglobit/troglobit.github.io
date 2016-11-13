@@ -2,6 +2,7 @@
 layout: page
 name: uftpd
 title: "No nonsense FTP/TFTP server"
+description: "FTP/TFTP server for Linux that just works™"
 sharing: true
 footer: true
 date: 2016-08-31 01:26 +0100
