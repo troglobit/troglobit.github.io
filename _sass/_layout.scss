@@ -134,11 +134,20 @@
 .site-footer {
   clear: both;
   text-align: center;
-  background-color: #f9f9f9;
+  color: $grey-color-dark;
   border-top: 1px solid $grey-color-light;
   margin: $spacing-unit 0; 
   padding: $spacing-unit 0;
   font-size: 14px;
+
+  a{
+    &,
+    &:visited
+    &:hover {
+	color: $grey-color-dark;
+	text-decoration: none;
+    }
+  }
 }
 
 
