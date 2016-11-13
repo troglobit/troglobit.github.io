@@ -9,10 +9,8 @@ comments: false
 ---
 <img class="center" src="/images/finit3.png" style="width: 310px; height: 240px;" alt="Finit: A fast init for Linux" />
 
-<a href="https://github.com/troglobit/finit"><img style="position: absolute; top: 0; right: 0; border: none; box-shadow: none;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" /></a>
-
 Finit is a small event based [SysV init][1] replacement with built-in
-[process supervision][2] similar to that of its more famous cousins
+[process supervision][2], similar to that of its more famous cousins
 [daemontools][3] and [runit][4].  *Services are supervised and
 automatically restarted if they fail*.
 
@@ -38,7 +36,7 @@ See [TroglOS][9] for an example of both how to boot a small embedded
 system with Finit, as well as extend it with plugins.  TroglOS use an
 [mtd.so][10] plugin to handle uninitialized flash:
 
-<img class="left" src="/images/finit3-screenshot.png" alt="Finit Screenshot" style="width: 472px; height: 422px;">
+<img class="center" src="/images/finit3-screenshot.png" alt="Finit Screenshot" style="width: 472px; height: 422px;">
 
 
 Configuration
