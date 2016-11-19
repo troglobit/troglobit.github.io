@@ -57,6 +57,7 @@ kramdown:
 
 # Activate plugins
 gems:
+  - rouge
   - jemoji
   - jekyll-gist
   - jekyll-paginate
