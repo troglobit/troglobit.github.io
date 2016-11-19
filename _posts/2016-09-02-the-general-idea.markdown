@@ -16,7 +16,7 @@ some AlpineLinux and a custom kernel on top.  Enjoy!
 I have no clue if this will actually work, may even try porting my own
 little thing called [TroglOS](https://github.com/troglobit/troglos) to
 the ClearFog first, I don't know, but it will definitely be awesome!
-:-)
+:smiley:
 
 <!--
   -- Local Variables:

@@ -27,7 +27,7 @@ prefix followed by `-ct-ng.config`, e.g.:
     arm-unknown-linux-gnueabi-cg-ng.config
 
 This revision only contains C and C++ cross-toolchains, but the next
-revision will likely also include Go.  Enjoy! :-)
+revision will likely also include Go.  Enjoy! :smiley:
 
 [0]: http://ftp.troglobit.com/pub/Toolchains
 [1]: https://github.com/crosstool-ng/crosstool-ng
