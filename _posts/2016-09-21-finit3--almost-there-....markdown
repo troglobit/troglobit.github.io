@@ -11,11 +11,12 @@ Today the new logo for Finit3 was added to the GitHub repo and the
 
 ![Finit3 logo](/images/finit3.png)
 
-Gorgeous, isn't it?!
+Gorgeous, isn't it?! :sunglasses:
 
-This signals the very near end of a long and agonizing release process
-where a lot of the internals of Finit has been rewritten and new
-exciting features have been added!  More on this in an upcoming post :-)
+This fancy artwork means we're nearing the end of a long and agonizing
+release cycle where a lot of the internals of Finit have been rewritten
+and new exciting features have been added!  More on this in an upcoming
+post :smiley:
 
 <!--
   -- Local Variables:
