@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Finally -- Google Movies &amp; Music in Sweden"
+title: "Finally &mdash; Google Movies &amp; Music in Sweden"
 date: 2014-03-18 18:13
 comments: true
 categories: 
