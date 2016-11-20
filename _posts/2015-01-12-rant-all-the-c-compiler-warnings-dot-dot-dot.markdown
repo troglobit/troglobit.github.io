@@ -6,7 +6,7 @@ comments: true
 categories: programming
 ---
 
-> ``Enable *all* the warnings!''
+> Enable *all* the warnings!
 
 This is one of the truths you learn when you start working with C.  Most
 of the time adding `CPPFLAGS="-W -Wall -Werror"` is all you need to find
