@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The awesome uftpd, now with TFTP support! :)"
+title: "The awesome uftpd, now w/ TFTP support! :)"
 date: 2014-09-02 10:47:35 +0200
 comments: true
 categories: 
