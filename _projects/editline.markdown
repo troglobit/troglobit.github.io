@@ -13,7 +13,7 @@ any program to provide command line editing and history.  It is call
 compatible with the FSF readline library, but is a fraction of the size
 (and offers fewer features).
 
-<img class="center" src="/images/peeking.gif" style="width: 468 px; height: 52px;" />
+<img class="center noborder" src="/images/peeking.gif" />
 
 The small size (<30k), lack of dependencies (no ncurses needed!) and the
 free license should make this library interesting to many embedded

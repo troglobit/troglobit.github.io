@@ -17,7 +17,7 @@ several decades by the following projects: [Heimdal][2],
 [Festival speech-tools][3], [Debian][4], as well as patches by
 Mr. [Steve Tell][5].
 
-<img class="center" src="/images/peeking.gif" style="width: 468 px; height: 52px;">
+<img class="center noborder" src="/images/peeking.gif">
 
 Noteworthy changes and additions:
 
@@ -38,7 +38,7 @@ Noteworthy changes and additions:
 * Several more APIs for increased compatibility with FSF libreadline
   have also been added. See the file `include/editline.h` for details.
 
-<img class="center" src="/images/peeking.gif" style="width: 468 px; height: 52px;">
+<img class="center noborder" src="/images/peeking.gif">
 
 Online GIT repository and release tarball available at the usual places:
 

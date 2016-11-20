@@ -7,7 +7,7 @@ footer: true
 date: 2015-12-04 19:39 +0100
 comments: false
 ---
-<img class="center" src="/images/finit3.png" style="width: 310px; height: 240px;" alt="Finit: A fast init for Linux" />
+<img class="center noborder" src="/images/finit3.png" style="width: 310px; height: 240px;" alt="Finit: A fast init for Linux" />
 
 Finit is a small event based [SysV init][1] replacement with built-in
 [process supervision][2], similar to that of its more famous cousins
