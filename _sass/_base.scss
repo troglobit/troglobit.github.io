@@ -207,18 +207,29 @@ a {
 blockquote{
   padding: 0 1em;
   margin: 14px 0;
-  border: 2px dashed #d0dfda;
   border-radius: 5px;
-  color: $grey-color;
   font-size: 18px;
-  background: #f9f9f9;
 
   &:hover {
     color: #454545;
   }
 
+  quotes: '“' '”';
+  p:before {
+      content: '“';
+      content: open-quote;
+  }
+  p:after {
+      content: '';
+      content: no-close-quote;
+  }
+  p:last-child:after {
+      content: '”';
+      content: close-quote;
+  }
+
   > :last-child {
-    margin-bottom: 0;
+      margin-bottom: 0;
   }
 }
 
