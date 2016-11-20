@@ -91,7 +91,7 @@ changelog):
 - Include systemd unit file
 - Add `debian/` packaging, easy to rebuild and replace for others
 - Add `--enable-public-html` to enable `~user/public_html` dirs
-- Support for using shared `WEBROOT/cgi-bin` as fallback from vhosts
+- Support for shared `WEBROOT/cgi-bin` as fallback for vhosts
 - Update default landing page
 
 ### Fixes
