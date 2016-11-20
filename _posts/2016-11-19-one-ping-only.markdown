@@ -11,12 +11,12 @@ working on [libICMP][0].  It's now almost seven years since I first
 adopted Tim Lawless' public domain [version][1], and today I picked
 up where I left off and started refactoring and cleaning up.
 
-<img src="/images/one-ping-only.jpg" style="width:50%;height:auto;" class="center">
+<img src="/images/one-ping-only.jpg" style="width:50%;height:auto;" title="Sean Connery vs USS ICMP" class="center">
 
 **Example:**
 
 ```c
-    #include "icmp.h"
+    #include "icmp/icmp.h"
     
     int main(int argc, char *argv[])
     {
