@@ -111,10 +111,9 @@ ul, ol, dl, figure,
  * Images
  */
 img {
-  max-width: 100%;
-  vertical-align: middle;
-//  border: 1px solid #c0c0c0;
-  border-radius: 3px;
+    max-width: 100%;
+    vertical-align: middle;
+    border-radius: 3px;
 }
 
 img.right {
@@ -126,8 +125,16 @@ img.right {
 img.center {
     display: block;
     margin: 0 auto;
+    border: 1px solid #c0c0c0;
 }
 
+img.emoji {
+    border: none;
+}
+
+img.noborder {
+    border: none;
+}
 
 /**
  * Figures
