@@ -51,7 +51,7 @@ basics:
 * Run pimd
 * Troubleshooting
 
-## Enable Unicast & Multicast Routing in the Kernel
+### Enable Unicast & Multicast Routing in the Kernel
 
     cp /etc/examples/sysctl.conf /etc/
 
@@ -61,7 +61,7 @@ Uncomment the following two lines
     net.inet.ip.mforwarding=1       # 1=Permit forwarding (routing) of IPv4 multicast packets
 
 
-## Enable ripd and set System up as Multicast Router
+### Enable ripd and set System up as Multicast Router
 
 Create the file /etc/rc.conf.local, unless you already have it.  Add the
 following lines to enable ripd and enable the use of a multicast routing
@@ -76,7 +76,7 @@ daemon:
     multicast_router=YES    # A multicast routing daemon will be run, e.g. mrouted
 
 
-## Configure ripd
+### Configure ripd
 
 Create the file /etc/ripd.conf by using the template
 
@@ -108,7 +108,7 @@ ripd to operate on, or to not operate on.  Here is my `ripd.conf`:
 Notice how I have `redistribute connected` instead of the default.
 
 
-## Download & Build pimd
+### Download & Build pimd
 
 GitHub is the home for pimd development, the latest release is always
 available on the [releases][1] page.  For convenience I also provide an
@@ -129,7 +129,7 @@ other install directories.  See the file [INSTALL.md][3] for more info.
 That's it!
 
 
-## Run pimd
+### Run pimd
 
 The default settings in `/etc/pimd.conf` should work for almost all use
 cases, but it is good practise to at least disable PIM on interfaces out
@@ -217,7 +217,7 @@ situation when everything is working:
     IPv6 Multicast Routing Table is empty
 
 
-## Troubleshooting
+### Troubleshooting
 
 The number one problem in multicast routing is the TTL of the multicast
 stream from the sender.  In this example I use simple `ping`, but tweak
