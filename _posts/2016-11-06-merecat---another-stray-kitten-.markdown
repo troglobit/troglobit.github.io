@@ -6,43 +6,47 @@ comments: true
 categories:
 ---
 
-I code for recreation as well as work.  Admittedly I've got a touch of
-the NIH virus, though most of the time I tinker around with my various
-[projects](https://github.com/troglobit) simply to learn.  Sometimes
-these little projects turn into something useful for other people as
-well, which is great!
-
-Recently I discovered my method to get started: refactoring, or just
-simple code cleanup.  You see I've got this crazy idea that *all simple
-things are correct*.  Although things usually tend to require a certain
-balance -- not all things can be simplified, and not all simple things
-are correct.
-
-Anyway, I strive for this every day: learning and simplicity.  So when I
-recently had to migrate my personal website and some other misc. sites,
-I first set out to run everything from an old RasPi2 I had.  This put my
-private life in just about the same niche as my work life, embedded.
-
-So I set out to (re-)discover the glorious little web servers of my past
-I had almost forgotten: [Boa](http://www.boa.org/),
-[mini_httpd](http://acme.com/software/mini_httpd/), BusyBox httpd,
-[thttpd](http://www.acme.com/software/thttpd/), and more ... come to
-think of it, they are probably one of the many reasons that I started my
-career in embedded in the first place!
-
 This post is about my adoption, refactor, and rebranding of thttpd as
 [Merecat](http://merecat.troglobit.com).
 
+I code for recreation as well as work.  Most of the time I tinker around
+with my various [projects](https://github.com/troglobit) simply to learn
+and sometimes these little projects turn into something useful for other
+people as well, which is great!
+
+<p data-pullquote="not all things can be simplified, and not all simple
+things are correct"> Recently I discovered my method to get started:
+refactoring, or just simple code cleanup.  You see I've got this crazy
+idea that <em>all simple things are correct</em>.  Although things
+usually tend to require a certain balance &mdash; not all things can be
+simplified, and not all simple things are correct.</p>
+
+When I recently had to migrate my personal blog, FTP, and GIT server, I
+set out to run everything from an old RasPi2.  This put my private life
+in just about the same niche as my work life, embedded.  On a resource
+constrained platform like that running Apache is not the best idea.  So
+I set out to (re-)discover the web servers of my past, the late 90's, I
+had almost forgotten:
+
+- [mini_httpd](http://acme.com/software/mini_httpd/),
+- [Boa](http://www.boa.org/),
+- BusyBox httpd,
+- [thttpd](http://www.acme.com/software/thttpd/),
+- and more ...
+
+Come to think of it, they are probably one of the many reasons that I
+started my career in embedded in the first place!
+
 <!-- more -->
 
-With all the warm and fuzzy memories I had of thttpd I decided to give
-it a whirl.  And with my usual lack of insight (of how much time this
-would consume) I started fixing bugs and issues that nagged me.
+With all the warm feels and fuzzy memories I had of thttpd I decided to
+give it a whirl.  And with my usual lack of insight (of how much time
+this would consume) I started fixing bugs and issues that nagged me.
 
 Ten patches in I hesitated and set out on another archaeological
-expedition, surely I couldn't have seen all these problems myself?  The
-usual burial grounds for ancient software were visited: *BSD, Debian,
-Gentoo, SourceForge, Internet Archive ... that's when I found
+expedition, surely I couldn't have seen all these problems myself?  I
+visited the usual burial grounds for ancient software: *BSD, Debian,
+Gentoo, SourceForge, Internet Archive ... and that's when I found
 [sthttpd](https://github.com/blueness/sthttpd/) by Anthony G. Basile.
 
 Anthony had left sthttpd in great shape!  Not only had he merged all
@@ -53,7 +57,7 @@ simpy had to let it all out!
 
 The goal I had was a simple to use, good looking by default, bare bones
 web server.  My use-case was simple: serve gitweb, HTTP gateway for my
-FTP, serve my resume, and possibly even my Jekyll blog.  So I basically
+FTP, serve my resumé, and possibly even my Jekyll blog.  So I basically
 just needed to get virtual hosts and dir listings working.
 
 In the process, however, I had done a lot more. Lots of half baked ideas
@@ -85,9 +89,9 @@ changelog):
 
 - Sort directories first in dir listings
 - Include systemd unit file
-- Add `debian/` packaging
+- Add `debian/` packaging, easy to rebuild and replace for others
 - Add `--enable-public-html` to enable `~user/public_html` dirs
-- Add support for using top-level `/cgi-bin` as fallback from vhosts
+- Support for using shared `WEBROOT/cgi-bin` as fallback from vhosts
 - Update default landing page
 
 ### Fixes
