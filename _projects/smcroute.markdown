@@ -14,7 +14,7 @@ supported, but it may work on other systems as well.  SMCRoute can be
 used as an alternative to dynamic multicast routing daemons like
 [mrouted](/mrouted.html) or [pimd](/pimd.html) in situations where
 (only) static multicast routes should be maintained and/or no proper
-IGMP signaling exists.
+IGMP signalling exists.
 
     #
     # smcroute.conf example
@@ -31,11 +31,11 @@ IGMP signaling exists.
     #       such capabilities.  Usually MAC multicast filters exist.
     #
     #       The UNIX kernel usually limits the number of multicast groups
-    #       a socket/client can joint.  In Linux 20 mgroup lines can be
-    #       configured by default, but this can be configured using the
+    #       a socket/client can join.  Linux for instance supports only
+    #       20 groups by default, but this can be configured using the
     #       /proc/sys/net/ipv4/igmp_max_memberships file.
     #
-    # Similarily supported is setting mroutes. Removing mroutes is not
+    # Similarly supported is setting mroutes. Removing mroutes is not
     # supported, remove/comment out the mroute or send a remove command.
     #
     # Syntax:
@@ -78,14 +78,14 @@ IGMP signaling exists.
     # source 192.168.10.25.
     ssmgroup from eth0 group 225.2.1.3 source 192.168.10.25
 
-A very common question is why smcroute must be a daemon?  Why not just
-a simple tool, like ip route, for unicast routes?  The answer lies in
+A very common question is why smcroute must be a daemon?  Why not just a
+simple tool, like `ip route`, for unicast routes?  The answer lies in
 how multicast is implemented in the UNIX kernel.  To be able to setup
-multicast routes a program must connect to the multicast routing
-socket in the kernel, when that socket is closed, which is done
-automatically when a UNIX program ends, the kernel cleans up all
-routes.  So you have to chose *one* of the multicast routing daemons
-for all your multicast routing needs.
+multicast routes a program must connect to the multicast routing socket
+in the kernel, when that socket is closed, which is done automatically
+when a UNIX program ends, the kernel cleans up all routes.  So you have
+to chose *one* of the multicast routing daemons for all your multicast
+routing needs.
 
 Problems?  See the [multicast howto](/multicast-howto.html)
 
