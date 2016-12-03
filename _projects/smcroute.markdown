@@ -4,7 +4,7 @@ name: SMCRoute
 title: "Static Multicast Routing Daemon"
 sharing: true
 footer: true
-date: 2016-02-17 22:42 +01:00
+date: 2016-12-03 10:32 +01:00
 comments: false
 ---
 
@@ -72,6 +72,11 @@ IGMP signaling exists.
     #       multicast.
     mgroup from eth0 group 225.3.2.1
     mroute from eth0 group 225.3.2.1 to eth1 eth2
+    
+    # The following example instructs the kernel to join the source
+    # specific multicast group 225.2.1.3 on interface eth0 with
+    # source 192.168.10.25.
+    ssmgroup from eth0 group 225.2.1.3 source 192.168.10.25
 
 A very common question is why smcroute must be a daemon?  Why not just
 a simple tool, like ip route, for unicast routes?  The answer lies in
@@ -96,9 +101,9 @@ except the few used for multicast routing.
 Issue tracker and GIT repository available at GitHub:
 
    * [Repository](http://github.com/troglobit/smcroute)
-   * [smcroute-2.1.0.tar.xz](ftp://ftp.troglobit.com/smcroute/smcroute-2.1.0.tar.xz),
-     [MD5](ftp://ftp.troglobit.com/smcroute/smcroute-2.1.0.tar.xz.md5)
-     [GPG Sign](ftp://ftp.troglobit.com/smcroute/smcroute-2.1.0.tar.xz.asc)
+   * [smcroute-2.2.0.tar.xz](ftp://ftp.troglobit.com/smcroute/smcroute-2.2.0.tar.xz),
+     [MD5](ftp://ftp.troglobit.com/smcroute/smcroute-2.2.0.tar.xz.md5)
+     [GPG Sign](ftp://ftp.troglobit.com/smcroute/smcroute-2.2.0.tar.xz.asc)
    * [Issue Tracker](http://github.com/troglobit/smcroute/issues)
    * [Debian packages](http://packages.debian.org/smcroute)
    * [Ubuntu packages](http://packages.ubuntu.com/smcroute)
