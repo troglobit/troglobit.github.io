@@ -79,11 +79,17 @@ I wrote a [demo of the TAILQ API][DEMO] a couple of years ago.
 Other Noteworthy API's
 ----------------------
 
-Other functions worthy of mentioning here are:
+Other (standard/POSIX) functions worthy of mentioning here are:
+
+### `stdio.h`
+
+- `fmemopen()`
 
 ### `stdlib.h`
 
+- `atexit()`
 - `bsearch()`
+- `realpath()`
 - `qsort()`
 
 ### `glob.h`
@@ -98,6 +104,27 @@ Other functions worthy of mentioning here are:
 
 - `ftw()`
 - `nftw()`
+
+### `search.h`
+
+- `hsearch()`
+- `lsearch()`
+- `tsearch()`, `tfind()`, `twalk()`
+
+### `unistd.h`
+
+- `access()`
+- `alarm()`, `pause()`
+- `crypt()`
+- `daemon()`
+- `pipe()`
+- `profil()`
+
+**Note:** API's specific to GNU or *BSD are not included, but there
+exist *many* more useful functions on your specific OS, in case you
+do not need to write code that is portable across different UNIX
+platforms.  Examples can be `unhare()` and `clone()` on Linux and
+`pledge()` on OpenBSD, all highly useful but also very specific.
 
 [sysvque]:  http://pubs.opengroup.org/onlinepubs/009695399/functions/insque.html
 [sysvlin]:  http://pubs.opengroup.org/onlinepubs/009695399/functions/lsearch.html
