@@ -22,27 +22,27 @@ SysV `search.h`
 
 Mangage a [simple queue][sysvque]:
 
-- `insque()`
-- `remque()`
+- [`insque()`](http://man7.org/linux/man-pages/man3/insque.3.html),
+- [`remque()`](http://man7.org/linux/man-pages/man3/remque.3.html),
 
 Manage [hash search table][sysvhash]:
 
-- `hsearch()`
-- `hcreate()`
-- `hdestroy()`
+- [`hsearch()`](http://man7.org/linux/man-pages/man3/hsearch.3.html)
+- [`hcreate()`](http://man7.org/linux/man-pages/man3/hcreate.3.html)
+- [`hdestroy()`](http://man7.org/linux/man-pages/man3/hdestroy.3.html)
 
 Manage a [binary search tree][sysvtree]:
 
-- `tsearch()`
-- `tfind()`
-- `tdelete()`
-- `twalk()`
-- `tdestroy()`
+- [`tsearch()`](http://man7.org/linux/man-pages/man3/tsearch.3.html),
+- [`tfind()`](http://man7.org/linux/man-pages/man3/tfind.3.html),
+- [`tdelete()`](http://man7.org/linux/man-pages/man3/tdelete.3.html),
+- [`twalk()`](http://man7.org/linux/man-pages/man3/twalk.3.html)
+- [`tdestroy()`](http://man7.org/linux/man-pages/man3/tdestroy.3.html),
 
 [Linear search][sysvlin] and update:
 
-- `lfind()`
-- `lsearch()`
+- [`lfind()`](http://man7.org/linux/man-pages/man3/lfind.3.html)
+- [`lsearch()`](http://man7.org/linux/man-pages/man3/lsearch.3.html)
 
 
 BSD `sys/queue.h`
@@ -83,42 +83,37 @@ Other (standard/POSIX) functions worthy of mentioning here are:
 
 ### `stdio.h`
 
-- `fmemopen()`
+- [`fmemopen()`](http://man7.org/linux/man-pages/man3/fmemopen.3.html)
 
 ### `stdlib.h`
 
-- `atexit()`
-- `bsearch()`
-- `realpath()`
-- `qsort()`
+- [`atexit()`](http://man7.org/linux/man-pages/man3/atexit.3.html)
+- [`bsearch()`](http://man7.org/linux/man-pages/man3/bsearch.3.html)
+- [`realpath()`](http://man7.org/linux/man-pages/man3/realpath.3.html)
+- [`qsort()`](http://man7.org/linux/man-pages/man3/qsort.3.html)
 
 ### `glob.h`
 
-- `glob()`
+- [`glob()`](http://man7.org/linux/man-pages/man3/glob.3.html)
 
 ### `fnmatch.h`
 
-- `fnmatch()`
+- [`fnmatch()`](http://man7.org/linux/man-pages/man3/fnmatch.3.html)
 
 ### `ftw.h`
 
-- `ftw()`
-- `nftw()`
-
-### `search.h`
-
-- `hsearch()`
-- `lsearch()`
-- `tsearch()`, `tfind()`, `twalk()`
+- [`ftw()`](http://man7.org/linux/man-pages/man3/ftw.3.html)
+- [`nftw()`](http://man7.org/linux/man-pages/man3/nftw.3.html)
 
 ### `unistd.h`
 
-- `access()`
-- `alarm()`, `pause()`
-- `crypt()`
-- `daemon()`
-- `pipe()`
-- `profil()`
+- [`access()`](http://man7.org/linux/man-pages/man2/access.2.html)
+- [`alarm()`](http://man7.org/linux/man-pages/man2/alarm.2.html),
+  [`pause()`](http://man7.org/linux/man-pages/man2/pause.2.html)
+- [`crypt()`](http://man7.org/linux/man-pages/man3/crypt.3.html)
+- [`daemon()`](http://man7.org/linux/man-pages/man3/daemon.3.html)
+- [`pipe()`](http://man7.org/linux/man-pages/man2/pipe.2.html)
+- [`profil()`](http://man7.org/linux/man-pages/man3/profil.3.html)
 
 **Note:** API's specific to GNU or BSD are not included, but there are
   *many* more useful functions on your specific OS, in case you do not
