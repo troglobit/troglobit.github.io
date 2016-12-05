@@ -123,7 +123,7 @@ Other (standard/POSIX) functions worthy of mentioning here are:
 **Note:** API's specific to GNU or BSD are not included, but there are
   *many* more useful functions on your specific OS, in case you do not
 need to write code that is portable across different UNIX platforms.
-Examples can be `unhare()` and `clone()` on Linux and `pledge()` on
+Examples can be `unshare()` and `clone()` on Linux and `pledge()` on
 OpenBSD, all highly useful but also very specific.
 
 [sysvque]:  http://pubs.opengroup.org/onlinepubs/009695399/functions/insque.html
