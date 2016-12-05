@@ -17,8 +17,8 @@ own (buggy) implementations.
 
 <!-- more -->
 
-SysV search.h
--------------
+SysV `search.h`
+---------------
 
 Mangage a [simple queue][sysvque]:
 
@@ -45,8 +45,8 @@ Manage a [binary search tree][sysvtree]:
 - `lsearch()`
 
 
-BSD sys/queue.h
----------------
+BSD `sys/queue.h`
+-----------------
 
 [This header][BSD] has lots of macros for handling various forms of
 linked lists.  The version in GLIBC is a bit behind the BSD's, because
@@ -81,37 +81,37 @@ Other Noteworthy API's
 
 Other (standard/POSIX) functions worthy of mentioning here are:
 
-### stdio.h
+### `stdio.h`
 
 - `fmemopen()`
 
-### stdlib.h
+### `stdlib.h`
 
 - `atexit()`
 - `bsearch()`
 - `realpath()`
 - `qsort()`
 
-### glob.h
+### `glob.h`
 
 - `glob()`
 
-### fnmatch.h
+### `fnmatch.h`
 
 - `fnmatch()`
 
-### ftw.h
+### `ftw.h`
 
 - `ftw()`
 - `nftw()`
 
-### search.h
+### `search.h`
 
 - `hsearch()`
 - `lsearch()`
 - `tsearch()`, `tfind()`, `twalk()`
 
-### unistd.h
+### `unistd.h`
 
 - `access()`
 - `alarm()`, `pause()`
