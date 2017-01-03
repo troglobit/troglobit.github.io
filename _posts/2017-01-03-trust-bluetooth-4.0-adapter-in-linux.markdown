@@ -9,6 +9,8 @@ categories:
 This is a quick writeup of how to get the Trust Bluetooth 4.0 adapter
 (dongle) working in Linux, Ubuntu 16.04.
 
+<!-- more -->
+
 The Bluetooth adapter in my ThinkPad X1 Carbon has never worked, it was
 a heavily used laptop when I purchased it, so it may have been broken
 for some time.  I spent some time early on trying to get it to work, but
