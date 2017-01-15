@@ -18,16 +18,20 @@ Raspberry Pi running [RetroPie][2] ... in a [Picade][3] :-)
 
 <!-- more -->
 
-First, you need the original WAD files for the game.  It's really worth
+You need the original WAD files to play the game.  It's really worth
 investing the money if you don't already have a copy.  Mount the CD, or
-the CD image to `/mnt`, the files are located in:
+the CD image to `/mnt` on your Linux PC, the files are located in:
 
-    /mnt/Install/data/WOLF3D/
+    mkdir ~/wolf3d
+    cd /mnt/Install/data/WOLF3D/
+    cp *.WL6 ~/wolf3d/
 
-The `.wl6` files should be installed in `/usr/share/games/wolf3d/`, in
-*lower-case*.  Use the following command to rename them from upper-case:
+The `.wl6` files must be installed in `/usr/local/share/games/wolf3d/`
+on the Raspberry Pi, with names in *lower-case*.  Use the following
+command to rename them from upper-case:
 
-    rename 'y/A-Z/a-z/' *
+    cd
+    rename 'y/A-Z/a-z/' wolf3d/*
 
 Second, download the game source from GitHub:
 
