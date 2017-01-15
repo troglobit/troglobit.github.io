@@ -11,6 +11,8 @@ for MS-DOS, made by the now legendary id Software.  OK, admittedly I've
 played other games since then, but I've never again been so manic about
 a game since Wolfenstein.
 
+<img style="width:50%;height:auto;" class="center" src="/images/wolf3d.png">
+
 This post is about how to build, install and set up Wolfenstein 3D on a
 Raspberry Pi running RetroPie ... in a Picade :-)
 
