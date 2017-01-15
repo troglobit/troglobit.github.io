@@ -33,7 +33,15 @@ command to rename them from upper-case:
     cd
     rename 'y/A-Z/a-z/' wolf3d/*
 
-Second, download the game source from GitHub:
+Transfer the files to the Pi using scp, or similar:
+
+    scp -r wolf3d pi@raspberrypi.local:.
+
+On the Rasberry Pi:
+
+    sudo mv ~/wolf3d /usr/local/share/games/
+
+Now, download the game source from GitHub:
 
     git clone https://github.com/mozzwald/wolf4sdl.git
     cd wolf4sdl/
