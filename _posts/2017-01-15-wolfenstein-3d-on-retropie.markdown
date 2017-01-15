@@ -14,7 +14,7 @@ about a game since Wolfenstein.
 <img style="width:50%;height:auto;" class="center" src="/images/wolf3d.png">
 
 This post is about how to build, install and set up Wolfenstein 3D on a
-Raspberry Pi running [RetroPie][2] ... in a [Picade][3] :-)
+Raspberry Pi running [RetroPie][2] ... on a [Picade][3] :-)
 
 <!-- more -->
 
