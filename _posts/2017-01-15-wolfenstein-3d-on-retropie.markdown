@@ -74,7 +74,21 @@ Emulation Station GUI:
 
     chmod +x Wolfenstein-3D.sh
 
-Done.  Restart and enjoy the game on your Picade like I do :-)
+Done.
+
+Restart and enjoy the game on your Picade like I do :-)
+
+<blockquote class="twitter-tweet" data-lang="en">
+<p lang="en" dir="ltr">
+
+Wolfenstein 3D on the <a href="https://twitter.com/hashtag/Picade?src=hash">#Picade</a> 😍
+<a href="https://t.co/8RUY4gidSv">pic.twitter.com/8RUY4gidSv</a>
+
+</p>&mdash; Troglobit (@troglobit) <a href="https://twitter.com/troglobit/status/820614016498331648">January 15, 2017</a>
+
+</blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 
 [1]: https://en.wikipedia.org/wiki/Wolfenstein_3D
 [2]: https://retropie.org.uk/
