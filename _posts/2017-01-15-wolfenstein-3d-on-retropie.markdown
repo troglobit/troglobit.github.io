@@ -6,15 +6,15 @@ comments: true
 categories:
 ---
 
-The last game I ever played was Castle Wolfenstein 3D, released in 1992
-for MS-DOS, made by the now legendary id Software.  OK, admittedly I've
-played other games since then, but I've never again been so manic about
-a game since Wolfenstein.
+The last game I ever played was [Castle Wolfenstein 3D][1], released in
+1992 for MS-DOS, made by the now legendary id Software.  OK, admittedly
+I've played other games since then, but I've never again been so manic
+about a game since Wolfenstein.
 
 <img style="width:50%;height:auto;" class="center" src="/images/wolf3d.png">
 
 This post is about how to build, install and set up Wolfenstein 3D on a
-Raspberry Pi running RetroPie ... in a Picade :-)
+Raspberry Pi running [RetroPie][2] ... in a [Picade][3] :-)
 
 <!-- more -->
 
@@ -62,6 +62,10 @@ Emulation Station GUI:
     chmod +x Wolfenstein-3D.sh
 
 Done.  Restart and enjoy the game on your Picade like I do :-)
+
+[1]: https://en.wikipedia.org/wiki/Wolfenstein_3D
+[2]: https://retropie.org.uk/
+[3]: https://shop.pimoroni.com/products/picade
 
 <!--
   -- Local Variables:
