@@ -31,7 +31,6 @@ The `.wl6` files should be installed in `/usr/share/games/wolf3d/`, in
 
 Second, download the game source from GitHub:
 
-    mkdir Source && cd Source/
     git clone https://github.com/mozzwald/wolf4sdl.git
     cd wolf4sdl/
 
@@ -40,12 +39,14 @@ the `-dev` packages for both SDL and the SDL mixer:
 
     sudo apt install libsdl*-dev 
 
-Now, build the game:
+You may need to edit the file `version.h`, depending on what version of
+the original game you have.  When done, build the game:
 
-    PREFIX=/usr make
+    make
 
-To start the game in RetroPie (Emulation Station), create the following
-script:
+To start Wolfenstein in RetroPie (Emulation Station), create the
+following script and it will appear in the Ports section, like
+Minecraft:
 
     cd ~/RetroPie/roms/ports
     vim Wolfenstein-3D.sh
@@ -53,7 +54,7 @@ script:
 Copy and paste the following lines:
 
     #!/bin/bash
-    cd /home/pi/Source/wolf4sdl
+    cd /home/pi/wolf4sdl
     /opt/retropie/supplementary/runcommand/runcommand.sh 0 "./wolf3d --res 640 480"
 
 Remember to set the executable flag on the script before restarting the
