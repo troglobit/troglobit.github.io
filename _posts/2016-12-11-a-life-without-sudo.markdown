@@ -19,7 +19,7 @@ suid root binaries to get the job done.
 
 For the last ten years, however, I've been meaning to learn about Linux
 [capabilities(7)](http://man7.org/linux/man-pages/man7/capabilities.7.html)
-and thanks to a collegue of mine I now have :)
+and thanks to a colleague of mine I now have :)
 
 What you want is to grant capabilities per user *and* application.  Most
 tutorials only tell you how to do one or the other.
