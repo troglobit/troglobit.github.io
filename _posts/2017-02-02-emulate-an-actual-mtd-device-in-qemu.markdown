@@ -35,7 +35,7 @@ find and mount it just like it would an actual named MTD partition.
 
 Here's the `/etc/fstab` entry:
 
-    mtd:Config	/mnt	jffs2		sync,noatime,nodiratime					0	0
+    mtd:Config	/mnt	jffs2	sync,noatime,nodiratime		0	0
 
 And here's the patch:
 
