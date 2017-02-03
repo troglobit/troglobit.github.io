@@ -39,7 +39,7 @@ Here's the `/etc/fstab` entry:
 
     mtd:Config	/mnt	jffs2	sync,noatime,nodiratime		0	0
 
-And here's the patch:
+And here's [the patch](https://github.com/troglobit/troglos/blob/master/kernel/patches/4.2/mtd2block-custom-label.patch):
 
 ``` patch
 commit 69f0cbdcfa6a80fbebe206e2bc3e516342da3be8
