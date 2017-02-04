@@ -11,7 +11,7 @@ comments: false
 
 Finit is a small event based [SysV init][1] replacement with built-in
 [process supervision][2], similar to that of its more famous cousins
-[daemontools][3] and [runit][4].  *Services are supervised and
+[daemontools][3] and [runit][4] --  *Services are supervised and
 automatically restarted if they fail*.
 
 Finit primarily targets small and embedded Linux systems by heavily
