@@ -60,9 +60,9 @@ reload the configuration at runtime.
     
     # Services must not daemonize themselves, look for -n, --foreground or
     # similar switches to prevent them from forking to the background
-    service :1 [2345] <net/eth1/up> /sbin/dropbear -R -F -p 22        -- SSH daemon (LAN)
+    service :1 [2345] <net/eth1/up>       /sbin/dropbear -R -F -p 22  -- SSH daemon (LAN)
     service :2  [345] <net/route/default> /sbin/dropbear -R -F -p 222 -- SSH daemon (WAN)
-    #service    [2345] /sbin/telnetd -F                               -- Telnet daemon
+    #service    [2345]                    /sbin/telnetd -F            -- Telnet daemon
     
     # Finit understands /etc/network/interfaces on Debian/BusyBox systems
     #network /etc/init.d/networking
@@ -75,15 +75,15 @@ reload the configuration at runtime.
 	# Allow telnet on standard port only if not from WAN (eth0)
 	# Allow telnet onport 2323 from WAN (don't do this kids)
 	# Built-in rdate service also available on custom port 3737, notice internal.time
-    inetd ftp/tcp                   nowait [2345] /sbin/uftpd -i -f        -- FTP daemon
-    inetd tftp/udp                    wait [2345] /sbin/uftpd -i -y        -- TFTP daemon
-    inetd time/udp                    wait [2345] internal                 -- UNIX rdate service
-    inetd time/tcp                  nowait [2345] internal                 -- UNIX rdate service
-    inetd 3737/tcp                  nowait [2345] internal.time            -- UNIX rdate service
-    inetd telnet/tcp@*,!eth0,       nowait [2345] /sbin/telnetd -i -F      -- Telnet daemon
-    inetd 2323/tcp@eth0             nowait [2345] /sbin/telnetd -i -F      -- Telnet daemon
-    #inetd 222/tcp@eth0              nowait [2345] /sbin/dropbear -i -R -F -- SSH service
-    #inetd ssh/tcp@*,!eth0           nowait [2345] /sbin/dropbear -i -R -F -- SSH service
+    inetd ftp/tcp                   nowait [2345] /sbin/uftpd -i -f       -- FTP daemon
+    inetd tftp/udp                    wait [2345] /sbin/uftpd -i -y       -- TFTP daemon
+    inetd time/udp                    wait [2345] internal                -- UNIX rdate service
+    inetd time/tcp                  nowait [2345] internal                -- UNIX rdate service
+    inetd 3737/tcp                  nowait [2345] internal.time           -- UNIX rdate service
+    inetd telnet/tcp@*,!eth0,       nowait [2345] /sbin/telnetd -i -F     -- Telnet daemon
+    inetd 2323/tcp@eth0             nowait [2345] /sbin/telnetd -i -F     -- Telnet daemon
+    #inetd 222/tcp@eth0             nowait [2345] /sbin/dropbear -i -R -F -- SSH service
+    #inetd ssh/tcp@*,!eth0          nowait [2345] /sbin/dropbear -i -R -F -- SSH service
     
     # Allow login on ttyUSB0, for systems with no dedicated console port
     tty [12345] /dev/ttyAMA0 115200 vt100
