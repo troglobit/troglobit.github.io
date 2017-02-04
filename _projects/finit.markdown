@@ -1,6 +1,5 @@
 ---
 layout: page
-name: Finit
 description: "Fast, extensible init for Linux systems"
 sharing: true
 footer: true
