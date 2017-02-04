@@ -8,15 +8,14 @@ categories:
 
 Having worked with Linux for the last 20 years, and embedded for more
 than ten of them, I've become quite a fan of virtualization in general
-and Qemu in particular.
+and [Qemu](http://qemu.org) in particular.
 
-[Fabrice Bellard ?= Superhero](http://blog.smartbear.com/careers/fabrice-bellard-portrait-of-a-super-productive-programmer/)
-
-Qemu is a fantastic little tool that you can use to verify an embedded
-system without having to deal with the problems of actual HW until you
-really have to.  Don't get me wrong, HW excites me like any other nerd,
-but if the HW is new and shaky it can be quite a pain to develop higher
-level functions.
+Qemu is a fantastic little tool, created by the Open Source superhero
+[Fabrice Bellard](http://blog.smartbear.com/careers/fabrice-bellard-portrait-of-a-super-productive-programmer/).
+Qemu can be used to verify an embedded system without having to deal
+with the problems of actual HW until you really have to.  Don't get me
+wrong, HW excites me like any other nerd, but if the HW is new and shaky
+it can be quite a pain to develop higher level functions.
 
 My holy grail is to have a 100% complete and accurate virtualization
 target per architecture to test my various software projects on.  That's
