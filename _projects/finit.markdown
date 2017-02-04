@@ -32,9 +32,9 @@ details, see the [documentation][README].
 Example
 -------
 
-See [TroglOS][9] for an example of both how to boot a small embedded
-system with Finit, as well as extend it with plugins.  TroglOS use an
-[mtd.so][10] plugin to handle uninitialized flash:
+[TroglOS][9] provides an example of how to boot an embedded system with
+Finit, as well as extend it with plugins.  TroglOS use an [mtd.so][10]
+plugin to handle uninitialized flash:
 
 <img class="center" src="/images/finit3-screenshot.png" alt="Finit Screenshot" style="width: 472px; height: 422px;">
 
