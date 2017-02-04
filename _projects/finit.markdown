@@ -43,7 +43,7 @@ Configuration
 -------------
 
 The following is an example of `/etc/finit.conf`.  It can be split up in
-per-service `.conf` files in `/etc/finit.d` to be able to change and
+per-service `.conf` files in `/etc/finit.d/` to be able to change and
 reload the configuration at runtime.
 
     # /etc/finit.conf - System bootstrap for TroglOS
@@ -89,6 +89,12 @@ reload the configuration at runtime.
     tty [12345] /dev/ttyAMA0 115200 vt100
     tty  [2345] /dev/ttyUSB0 115200 vt100
     console /dev/ttyAMA0
+
+
+Finit configuration files in `/etc/finit.d/` are monitored for changes,
+if the `mtime` is changed on a file and the user calls `initctl reload`,
+that program is reloaded (`SIGHUP`:ed, or stop-started depending on the
+`<!>` in the service declaration.).
 
 
 Commands
