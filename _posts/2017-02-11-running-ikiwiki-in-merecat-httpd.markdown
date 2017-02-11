@@ -6,8 +6,8 @@ comments: true
 categories:
 ---
 
-This is a HowTo for setting up [ikiwiki](http://ikiwiki.info/) with
-[Merecat httpd](http://merecat.troglobit.com).
+This is a HowTo for setting up [ikiwiki][] with
+[Merecat httpd][merecat].
 
 First install ikiwiki
 
@@ -36,17 +36,17 @@ is for safety purposes.  To build from source, here from GIT, use:
     make
     sudo make install
 
-Now, to start playing with Ikiwiki, simply start the server:
+Now, to start playing with Ikiwiki, simply start the httpd as your user
+on a non-priviliged port:
 
-    merecat -c '**.cgi' -p 8080 /usr/lib/w3m
+    merecat -n -p 8080
 
 ... and open http://localhost:8080/~jocke/wiki/ in your browser :smiley:
 
-**NOTE:** Although Merecat httpd is a fork of
-[thttpd](http://acme.com/software/thttpd/).  Compared to its forefather
-Mercat is fully capable of running ikiwiki without any patches.  Problems
-with port not being included in `HTTP_HOST` or missing trailing slash in
-`PATH_INFO`, have all been fixed.
+**NOTE:** Although Merecat httpd is a fork of [thttpd][].  Compared to
+its forefather Mercat is fully capable of running ikiwiki without any
+patches.  Problems with port not being included in `HTTP_HOST` or
+missing trailing slash in `PATH_INFO`, have all been fixed.
 
 Cheers!
 
@@ -55,3 +55,7 @@ Cheers!
   -- mode: markdown
   -- End:
   -->
+
+[thttpd]:  http://acme.com/software/thttpd/
+[ikiwiki]: http://ikiwiki.info/
+[merecat]: http://merecat.troglobit.com
