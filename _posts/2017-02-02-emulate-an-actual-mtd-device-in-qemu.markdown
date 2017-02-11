@@ -12,10 +12,10 @@ and [Qemu](http://qemu.org) in particular.
 
 Qemu is a fantastic little tool, created by the Open Source superhero
 [Fabrice Bellard](http://blog.smartbear.com/careers/fabrice-bellard-portrait-of-a-super-productive-programmer/).
-Qemu can be used to verify an embedded system without having to deal
-with the problems of actual HW until you really have to.  Don't get me
-wrong, HW excites me like any other nerd, but if the HW is new and shaky
-it can be quite a pain to develop higher level functions.
+It can be used to verify an embedded system without having to deal with
+the problems of actual HW until you really have to.  Don't get me wrong,
+HW excites me like any other nerd, but if the HW is new and shaky it can
+be quite a pain to develop higher level functions.
 
 My holy grail is to have a 100% complete and accurate virtualization
 target per architecture to test my various software projects on.  That's
@@ -39,7 +39,7 @@ Here's the `/etc/fstab` entry:
 
     mtd:Config	/mnt	jffs2	sync,noatime,nodiratime		0	0
 
-And here's the patch:
+And here's [the patch](https://github.com/troglobit/troglos/blob/master/kernel/patches/4.2/mtd2block-custom-label.patch):
 
 ``` patch
 commit 69f0cbdcfa6a80fbebe206e2bc3e516342da3be8
