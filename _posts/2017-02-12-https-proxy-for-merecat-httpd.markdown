@@ -12,11 +12,11 @@ and OpenSSL.
 Pound is a reverse proxy, load balancer, and HTTPS front-end for Web
 servers.  It is available in Debian/Ubuntu and is very simple to set up:
 
-First install the package, including OpenSSL, or LibReSSL:
+First install the package, including OpenSSL, or LibreSSL:
 
     sudo apt install pound openssl
 
-We need OpenSSL to create a self-signed certificate:
+Use OpenSSL to create a self-signed certificate:
 
     mkdir ~/certs
     cd  ~/certs
