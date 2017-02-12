@@ -49,7 +49,9 @@ Now, edit the default `/etc/pound/pound.cfg` to include the following:
         End
     End
 
-Then enable pound by editing `/etc/default/pound`
+We make sure to remove any existing `X-Forwarded-For` header to prevent
+any malicious client from injecting them beforehand.  Then enable pound
+by editing `/etc/default/pound`
 
     startup=1
 
@@ -71,8 +73,6 @@ to be called with `-k` to skip certificate validation:
     <p>Hello, HTTP SPOKEN HERE</p>
     </body></html>
     
-    curl: (56) GnuTLS recv error (-110): The TLS connection was non-properly terminated.
-
 All done. Good Luck!
 
 [pound]:   http://www.apsis.ch/pound/
