@@ -4,6 +4,11 @@ title: "HTTPS proxy for Merecat httpd"
 date: 2017-02-12 00:07:44 +0100
 comments: true
 categories:
+- Merecat
+- thttpd
+- httpd
+- HTTPS
+- OpenSSL
 ---
 
 This is a HTTPS proxy HowTo for [Merecat httpd][merecat] using [pound][]

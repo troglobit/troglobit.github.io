@@ -4,6 +4,10 @@ title: "Merecat - another stray kitten?"
 date: 2016-11-06 01:34:18 +0100
 comments: true
 categories:
+- Merecat
+- thttpd
+- sthttpd
+- httpd
 ---
 
 This post is about my adoption, refactor, and rebranding of thttpd as

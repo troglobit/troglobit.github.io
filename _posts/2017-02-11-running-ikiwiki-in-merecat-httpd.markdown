@@ -4,6 +4,10 @@ title: "Running ikiwiki in Merecat httpd"
 date: 2017-02-11 16:03:39 +0100
 comments: true
 categories:
+- Merecat
+- thttpd
+- httpd
+- ikiwiki
 ---
 
 This is a HowTo for setting up [ikiwiki][] with
