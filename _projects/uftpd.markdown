@@ -5,7 +5,7 @@ title: "No nonsense FTP/TFTP server"
 description: "FTP/TFTP server for Linux that just works™"
 sharing: true
 footer: true
-date: 2016-08-31 01:26 +0100
+date: 2017-03-15 23:30 +0100
 comments: false
 ---
 
@@ -16,6 +16,7 @@ Tired of confusing configuration files and security features you don't need?
 * Listens to port `ftp/tcp` and `tftp/udp` found in `/etc/services`, or custom port(s)
 * Serves files from the ftp user's $HOME, as specified in `/etc/passwd`, or custom path
 * Can run from `inetd` or as a standalone daemon
+* Can be built and installed as a `.deb` file, with debconf support
 * Can run as root, with chroot and privsep, or as a regular user
 * Supports TFTP blocksize negotiation, [RFC 2348](http://tools.ietf.org/html/rfc2348)
 
@@ -25,16 +26,16 @@ Basically, it just works!
 * [README](https://github.com/troglobit/uftpd/blob/master/README.md)
 * [TODO](https://github.com/troglobit/uftpd/blob/master/TODO.md)
 * [Issue Tracker](http://github.com/troglobit/uftpd/issues)
-* [uftpd-2.1.tar.xz](ftp://ftp.troglobit.com/uftpd/uftpd-2.1.tar.xz),
-  [MD5](ftp://ftp.troglobit.com/uftpd/uftpd-2.1.tar.xz.md5)
+* [uftpd-2.2.tar.xz](ftp://ftp.troglobit.com/uftpd/uftpd-2.2.tar.xz),
+  [MD5](ftp://ftp.troglobit.com/uftpd/uftpd-2.2.tar.xz.md5)
 
 See also the [OpenHub page](https://www.openhub.net/p/uftpd/), the cool
 [Fresh(code) page](http://freshcode.club/projects/uftpd), or the (sadly)
 dormant [Free(code) page](http://freecode.com/projects/uftpd).
 
 Curious to know why `uftpd` exists?  If you really are interested, read
-[my rant](/blog/2014/05/04/why-write-your-own-ftp-server/) for
-background and context :)
+[my rant](/blog/2014/05/04/why-write-your-own-ftp-server/) for a bit of
+a background and context :)
 
 **Disclaimer:** `uftpd` supports both FTP and TFTP, but the latter is
   [not safe to use on the Internet](http://researchrepository.napier.ac.uk/8746/).
