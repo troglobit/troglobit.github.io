@@ -85,7 +85,7 @@ instead.
 > mapped to 01:00:5e:01:02:03.  For more on this, and the limitations
 > it brings, see [RFC1112](https://www.ietf.org/rfc/rfc1112.txt).
 
-### PIM-SM :: IGMP v2 <--> PIM-SSM :: IGMP v3
+### PIM-SM :: IGMP v2 vs. PIM-SSM :: IGMP v3
 
 In the beginning there was darkness and DVMRP conquered the earth.  The
 God of all multicast, which is Steve Deering, was pleased.  Then light
@@ -148,7 +148,7 @@ on layer-2.
 However, when you absolutely cannot change the TTL at the sender and
 bridging the two LANs is out of the question, then you can try using
 the firewall.  On Linux systems you can *mangle* matching frames with
-the following magic rule:
+the following magic rule(s):
 
     iptables -t mangle -A PREROUTING -d 225.1.2.3 -j TTL --ttl-inc 1
 
