@@ -29,6 +29,137 @@ Good Luck! <br />
 -- Joachim
 
 
+Basics
+------
+
+To understand multicast routing one needs to first understand how
+multicast on a LAN works.  In this HowTo the LAN is usually referred to
+as Layer-2 and routing (between LANs) as Layer-3.
+
+### Layer-2 vs Layer-3
+
+First, without any form of regulation multicast is broadcast, which is
+inherently bad.  We don't want to route broadcast, but even on a LAN we
+want to keep broadcast to a minimum.  Before switches we had hubs which
+caused *all* traffic to be broadcast.  We can do better, not just for
+the sake of security but also to increase bandwidth.
+
+Enter IGMP and MLD, the control protocol for multicast on a LAN, for
+IPv4 and IPv6 respectively.  Essentially they act as a subscription
+based protocol, every N seconds sending out a Query to all nodes on the
+LAN; "Anyone want multicast?", to which a node can reply; "Yes please,
+I'd like to have 225.1.2.3.".  MLD (IPv6) works in a similar way.
+
+Most managed switches today support *IGMP Snooping* which is just a
+fancy way of saying: this switch does not flood multicast like broadcast
+on all ports.  However, it also means that everyone on a LAN that want
+multicast have to be able to request it.
+
+### Multicast Distribution Point
+
+On a LAN with many IGMP Snooping capable switches a *Querier election*
+will take place.  The switch (or router) with the lowest IP address
+wins, unless that address is 0.0.0.0.  The elected IGMP querier on a LAN
+becomes the *distribution point* for all multicast.  All other switches
+on the LAN must forward both known and unknown multicast to the Querier.
+
+Usually the network IP plan (design) is set in such a way that the
+router has the lowest IP address on the LAN, so that it will always
+be the elected IGMP querier, hence receiving all multicast so it can
+route it as required.
+
+### Multicast Router Ports
+
+In a network with redundant/multiple multicast routers one cannot rely
+solely on the IGMP querier election.  Instead, most managed switches
+have a setting called *Multicast Router Ports* where you can configure
+on which ports to *also* flood all multicast.
+
+This feature can also be used to forward multicast to nodes that do not
+speak IGMP/MLD.  But since it will forward all multicast it is usually
+better to set up static FDB entries per multicast group on the switch
+instead.
+
+> Note: many switches are limited to filtering multicast based on the
+> *multicast MAC* equivalent.  In our case of 225.1.2.3 it would be
+> mapped to 01:00:5e:01:02:03.  For more on this, and the limitiations
+> it brings, see RFC1112.
+
+### PIM-SM :: IGMP v2 <--> PIM-SSM :: IGMP v3
+
+In the beginning there was darkness and DVMRP conquered the earth.  The
+God of all multicast, which is Steve Deering, was pleased.  Then light
+came upon us, gods were overthrown and PIM-SM was invented.
+
+The story continues but becomes a bit of a blur because so much happened
+in such a short timeframe.  There are RFCs that tell the tale better, go
+read up on them.  What eventually came out of it was this:
+
+IGMP v2 was an OK protocol, a client requested a group, 225.1.2.3, and
+it was ublocked by switches leading up to the Querier and multicast was
+received.
+
+PIM-SM was OK, many routers could agree on what groups each of them had,
+set up a distribution tree with magic disitribution point/routers,
+called rendez-vous points (RPs), for one or more, but not necessarily
+all multicast groups.  This could be tweaked by hand as well to optimize
+distribution.
+
+But what if we had multiple senders for the same group?  A ridiculus
+thought at first, but as deployments grew a need for optimizing also
+based on the sender (source) grew as well.  Enter PIM-SSM for layer-3
+and IGMP v3 on layer-2.  The biggest change is the ability to forward
+multicast based on source *and* group, called (S,G).  An end node on a
+LAN could now send an IGMP report requesting (192.168.10.1, 225.1.2.3).
+
+
+### What is TTL and Why Can't I Route Multicast?
+
+The single most common problem with routing multicast that everybody
+runs into is the TTL.
+
+The TTL is the the *Time To Live* field in the IP header of a frame.
+
+    $ tcpdump -i lo -vvv icmp
+    tcpdump: listening on lo, link-type EN10MB (Ethernet), capture size 262144 bytes
+    20:36:50.146377 IP (tos 0x0, ttl 1, id 0, offset 0, flags [DF], proto ICMP (1), length 84)
+        192.168.122.1 > 225.1.2.3: ICMP echo request, id 16746, seq 20, length 64
+    20:36:51.146380 IP (tos 0x0, ttl 1, id 0, offset 0, flags [DF], proto ICMP (1), length 84)
+        192.168.122.1 > 225.1.2.3: ICMP echo request, id 16746, seq 21, length 64
+
+The TTL for broadcast and multicast is by default 1, which means that a
+router should not forward the frame beyond the originating LAN.  Again,
+without any regulation multicast is broadcast and we do not want to
+route broadcast!
+
+The singular best way to fix this problem is for the sender to to set a
+higher TTL.  Set it only as high as the number of hops you want this to
+be forwarded!
+
+> Note: multicast is used for A LOT of protocols, many of which was only
+> ever intended to be either link-local or limited to the LAN.
+
+For such cases when you want to connect two remote sites and make them
+into one big LAN you might be better off using, e.g. a bridged SSL VPN
+on layer-2.
+
+However, when you absolutely cannot change the TTL at the sender and
+bridging the two LANs is out of the question, then you can try using
+the firewall.  On Linux systems you can *mangle* matching frames with
+the following magic rule:
+
+    iptables -t mangle -A PREROUTING -d 225.1.2.3 -j TTL --ttl-inc 1
+
+or, if the sender runs on a system with Linux you can change the frame
+as it egresses:
+
+    iptables -t mangle -A OUTPUT -d 225.1.2.3 -j TTL --ttl-set 128
+
+The group can also be a range, so `239.0.0.0/8` is possible to enter,
+and as is showm in these examples, either `--ttl-set` or `--ttl-inc` can
+be used to adjust the TTL value.
+
+
 CORE
 ----
 
@@ -65,14 +196,14 @@ running the linux-virtual kernel package.  In the HowTo I mention both
 out-of-the-box w/o any config changes, but you could just as easily
 use [SMCRoute](/smcroute.html) for the same purpose.
 
-When setting up virtual machines and virtual networking there are
-several requirements for the host.  The most important one, that needs
-pointing out, is a bug in the IGMP snooping code in the Linux bridging
-code: the bridge handles the special case 224.0.0.* well, but all
-unknown multicast streams outside of that segment should also be
-forwarded as-is to all multicast routers.  Since this does not work
-with the current IGMP snooping code in the Linux kernel bridge code
-you must disable snooping:
+When setting up virtual machines and virtual networking there are many
+pitfalls and several requirements for the host to consider.  The most
+important one, that needs pointing out, is a *bug in the IGMP snooping
+code* in the Linux bridging code: the bridge handles the special case
+`224.0.0.*` well, but all unknown multicast streams outside of that
+segment should also be forwarded as-is to all multicast routers.  Since
+this does not work with the current IGMP snooping code in the Linux 3.13
+kernel bridge code you must disable snooping:
 
     host# echo 0 > /sys/devices/virtual/net/virbr1/bridge/multicast_snooping
     host# echo 0 > /sys/devices/virtual/net/virbr2/bridge/multicast_snooping
@@ -81,6 +212,10 @@ you must disable snooping:
 Disabling IGMP snooping on the hosts' `virbr3` is not really necessary,
 but is done anyway for completeness, and also because I re-use the
 same setup in other test cases as well.
+
+> Note: it is of course not recommended to disable IGMP snooping on a
+> bridge, but if it's buggy you really don't have a choice.  Please do
+> check this for yourself since it depends on the kernel you run.
 
      R1                       R2                       R3                       R4
     +-------+                +-------+                +-------+                +-------+
