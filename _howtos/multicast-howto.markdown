@@ -336,10 +336,11 @@ FAQ
    Ouch, then you may have to use some firewall mangling technique.
    Here is how you could do it on Linux with iptables:
 
-        iptables -t mangle -A OUTPUT -d <group> -j TTL --ttl-set 128
+        iptables -t mangle -A PREROUTING -d GROUP[/LEN] -j TTL --ttl-set 64
 
-   Where `group` is the multicast group address of the stream you want
-   to change the TTL of.  From this [RedHat mailing list entry][11].
+   Where `GROUP` is the multicast group address of the stream you want
+   to change the TTL of, with an optional prefix length `LEN` if you want
+   to specify a range of groups.  From this [RedHat mailing list entry][11].
 
 4. I want to use the loopback interface, but it doesn't show in `pimd`?
 
