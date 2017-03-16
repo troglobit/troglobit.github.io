@@ -82,7 +82,7 @@ instead.
 
 > Many switches are limited to filtering multicast based on the
 > *multicast MAC* equivalent.  In our case of 225.1.2.3 it would be
-> mapped to 01:00:5e:01:02:03.  For more on this, and the limitiations
+> mapped to 01:00:5e:01:02:03.  For more on this, and the limitations
 > it brings, see [RFC1112](https://www.ietf.org/rfc/rfc1112.txt).
 
 ### PIM-SM :: IGMP v2 <--> PIM-SSM :: IGMP v3
@@ -92,20 +92,20 @@ God of all multicast, which is Steve Deering, was pleased.  Then light
 came upon us, gods were overthrown and PIM-SM was invented.
 
 The story continues but becomes a bit of a blur because so much happened
-in such a short timeframe.  There are RFCs that tell the tale better, go
+in such a short time frame.  There are RFCs that tell the tale better, go
 read up on them.  What eventually came out of it was this:
 
 IGMP v2 was an OK protocol, a client requested a group, 225.1.2.3, and
-it was ublocked by switches leading up to the Querier and multicast was
+it was unblocked by switches leading up to the Querier and multicast was
 received.
 
 PIM-SM was OK, many routers could agree on what groups each of them had,
-set up a distribution tree with magic disitribution point/routers,
+set up a distribution tree with magic distribution point/routers,
 called rendez-vous points (RPs), for one or more, but not necessarily
 all multicast groups.  This could be tweaked by hand as well to optimize
 distribution.
 
-But what if we had multiple senders for the same group?  A ridiculus
+But what if we had multiple senders for the same group?  A ridiculous
 thought at first, but as deployments grew a need for optimizing also
 based on the sender (source) grew as well.  Enter PIM-SSM for layer-3
 and IGMP v3 on layer-2.  The biggest change is the ability to forward
@@ -158,7 +158,7 @@ as it egresses:
     iptables -t mangle -A OUTPUT -d 225.1.2.3 -j TTL --ttl-set 128
 
 The group can also be a range, so `239.0.0.0/8` is possible to enter,
-and as is showm in these examples, either `--ttl-set` or `--ttl-inc` can
+and as is shown in these examples, either `--ttl-set` or `--ttl-inc` can
 be used to adjust the TTL value.
 
 
@@ -215,7 +215,7 @@ Disabling IGMP snooping on the hosts' `virbr3` is not really necessary,
 but is done anyway for completeness, and also because I re-use the
 same setup in other test cases as well.
 
-> Iit is of course not recommended to disable IGMP snooping on a bridge,
+> It is of course not recommended to disable IGMP snooping on a bridge,
 > but if it's buggy you really don't have a choice.  Please check this
 > for yourself since it depends on the kernel you run.
 
