@@ -80,7 +80,7 @@ speak IGMP/MLD.  But since it will forward all multicast it is usually
 better to set up static FDB entries per multicast group on the switch
 instead.
 
-> Note: many switches are limited to filtering multicast based on the
+> Mmany switches are limited to filtering multicast based on the
 > *multicast MAC* equivalent.  In our case of 225.1.2.3 it would be
 > mapped to 01:00:5e:01:02:03.  For more on this, and the limitiations
 > it brings, see RFC1112.
@@ -136,8 +136,10 @@ The singular best way to fix this problem is for the sender to to set a
 higher TTL.  Set it only as high as the number of hops you want this to
 be forwarded!
 
-> Note: multicast is used for A LOT of protocols, many of which was only
-> ever intended to be either link-local or limited to the LAN.
+> Multicast is used for A LOT of protocols, many of which was only ever
+> intended to be either link-local or limited to the LAN.  Check with
+> the appropriate standard (RFCs are freely available online) before
+> attempting something foolish that may cause unintended side effects.
 
 For such cases when you want to connect two remote sites and make them
 into one big LAN you might be better off using, e.g. a bridged SSL VPN
@@ -213,9 +215,9 @@ Disabling IGMP snooping on the hosts' `virbr3` is not really necessary,
 but is done anyway for completeness, and also because I re-use the
 same setup in other test cases as well.
 
-> Note: it is of course not recommended to disable IGMP snooping on a
-> bridge, but if it's buggy you really don't have a choice.  Please do
-> check this for yourself since it depends on the kernel you run.
+> Iit is of course not recommended to disable IGMP snooping on a bridge,
+> but if it's buggy you really don't have a choice.  Please check this
+> for yourself since it depends on the kernel you run.
 
      R1                       R2                       R3                       R4
     +-------+                +-------+                +-------+                +-------+
