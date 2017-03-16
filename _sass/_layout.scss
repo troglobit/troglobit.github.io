@@ -265,20 +265,20 @@ dd {
   }
 
   h3 {
-    font-size: 24px;
-    line-height:1em;
-
-    @include media-query($on-laptop) {
-      font-size: 22px;
-    }
-  }
-
-  h4 {
-    font-size: 22px;
+    font-size: 20px;
     line-height:1em;
 
     @include media-query($on-laptop) {
       font-size: 18px;
+    }
+  }
+
+  h4 {
+    font-size: 16px;
+    line-height:1em;
+
+    @include media-query($on-laptop) {
+      font-size: 14px;
     }
   }
 }
