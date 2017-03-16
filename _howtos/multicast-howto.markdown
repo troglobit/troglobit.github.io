@@ -80,10 +80,10 @@ speak IGMP/MLD.  But since it will forward all multicast it is usually
 better to set up static FDB entries per multicast group on the switch
 instead.
 
-> Mmany switches are limited to filtering multicast based on the
+> Many switches are limited to filtering multicast based on the
 > *multicast MAC* equivalent.  In our case of 225.1.2.3 it would be
 > mapped to 01:00:5e:01:02:03.  For more on this, and the limitiations
-> it brings, see RFC1112.
+> it brings, see [RFC1112](https://www.ietf.org/rfc/rfc1112.txt).
 
 ### PIM-SM :: IGMP v2 <--> PIM-SSM :: IGMP v3
 
