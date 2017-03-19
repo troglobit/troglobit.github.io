@@ -17,7 +17,7 @@ github_username:  troglobit
 github_repo_count: 10
 github_skip_forks: true
 disqus_shortname: troglobit
-favicon:          /images/favicon.ico
+favicon:          /favicon.ico
 aboutme:          "Hi, I'm Joachim and I'm a hacker!"
 aboutme_photo:    /images/profile.jpg
 google_analytics_key: # put YOUR key here to enable tracking! (blank to disable)
