@@ -24,7 +24,7 @@ Supported Providers
 The following is a list of *some* natively supported DDNS providers.
 Other providers, e.g. <http://twoDNS.de>, can be supported using the
 custom provider support.  See the [README][], or `inadyn.conf(5)`
-found in the tarball, for configuration examples.
+found in the tarball, for more providers and configuration examples.
 
 * <https://freedns.afraid.org>
 * <https://www.loopia.com>
