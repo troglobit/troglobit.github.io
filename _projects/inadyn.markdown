@@ -4,7 +4,7 @@ name: Inadyn
 title: "Small and Simple DDNS Client"
 sharing: true
 footer: true
-date: 2015-09-09 21:29 +0100
+date: 2017-03-19 10:11 +0100
 comments: false
 ---
 
@@ -26,36 +26,22 @@ Other providers, e.g. <http://twoDNS.de>, can be supported using the
 custom provider support.  See the [README][], or `inadyn.conf(5)`
 found in the tarball, for configuration examples.
 
-* <http://www.dyndns.org>
-* <http://freedns.afraid.org>
-* <http://www.zoneedit.com>
-* <http://www.no-ip.com>
-* <http://www.easydns.com>
-* <http://www.tzo.com>
-* <http://www.3322.org>
-* <http://www.dnsomatic.com>
-* <http://dns.he.net/>
-* <http://www.tunnelbroker.net>
-* <http://www.dynsip.org>
-* <http://www.sitelutions.com>
-* <http://www.dnsexit.com>
-* <http://www.changeip.com>
-* <http://www.zerigo.com>
-* <http://www.dhis.org>
-* <https://nsupdate.info>
-* <http://duckdns.org>
+* <https://freedns.afraid.org>
 * <https://www.loopia.com>
+* <https://www.dyndns.org>
+* <https://www.zoneedit.com>
+* <https://www.no-ip.com>
+* <https://www.3322.org>
+* <https://www.dnsomatic.com>
+* <https://www.tunnelbroker.net>
+* <https://www.changeip.com>
+* <https://nsupdate.info>
+* <https://duckdns.org>
 * <https://www.namecheap.com>
 * <https://domains.google.com>
 * <https://www.ovh.com>
 * <https://www.dtdns.com>
-* <http://giradns.com>
-* <https://www.duiadns.net>
-* <https://ddnss.de>
-* <http://dynv6.com>
-* <http://ipv4.dynv6.com>
-* <https://spdyn.de>
-* <https://www.strato.com>
+* <https://dynv6.com>
 
 Some of these services are free of charge for non-commercial use, others
 take a small fee, but also provide more domains to choose from.
