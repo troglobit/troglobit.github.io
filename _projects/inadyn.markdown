@@ -7,14 +7,13 @@ footer: true
 date: 2015-09-09 21:29 +0100
 comments: false
 ---
-<img class="center" src="/images/dyndns-multiple-sites.png" />
 
-Inadyn is a small and simple [DDNS][1] client with HTTPS support, both
-GnuTLS and OpenSSL are supported.  Inadyn is commonly available in many
-GNU/Linux distributions, used in off-the-shelf routers and Internet
-gateways to automate the task of keeping your DNS record up to date with
-any IP address changes from your [ISP][2].  It can also be used in
-installations with redundant (backup) connections to the Internet.
+Inadyn is a small and simple [DDNS][1] client with HTTPS support.  It
+is commonly available in many GNU/Linux distributions, used in
+off-the-shelf routers and Internet gateways to automate the task of
+keeping your DNS record up to date with any IP address changes from
+your [ISP][2].  It can also be used in installations with redundant
+(backup) connections to the Internet.
 
 **Note:** The `.conf` file format syntax changed in v2.0!
 
@@ -22,10 +21,10 @@ installations with redundant (backup) connections to the Internet.
 Supported Providers
 -------------------
 
-The following DDNS providers are supported natively, other providers,
-like <http://twoDNS.de> for instance, can be supported using the generic
-DDNS plugin.  See the [README][], or `inadyn.conf(5)` found in the
-tarball, for configuration examples.
+The following is a list of *some* natively supported DDNS providers.
+Other providers, e.g. <http://twoDNS.de>, can be supported using the
+custom provider support.  See the [README][], or `inadyn.conf(5)`
+found in the tarball, for configuration examples.
 
 * <http://www.dyndns.org>
 * <http://freedns.afraid.org>
@@ -60,13 +59,6 @@ tarball, for configuration examples.
 
 Some of these services are free of charge for non-commercial use, others
 take a small fee, but also provide more domains to choose from.
-
-Inadyn v1.99.8 and later support HTTPS (v1.99.11 and later also support
-SNI), for DDNS providers that support this (you must check this
-yourself).  Tested are DynDNS, FreeDNS, nsupdate.info, and Loopia.
-
-Using HTTPS is recommended since it protects your credentials from being
-snooped and further reduces the risk of someone hijacking your account!
 
 
 Download
