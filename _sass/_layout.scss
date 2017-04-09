@@ -156,8 +156,9 @@
  * Page content
  */
 .page-content {
-  padding: $spacing-unit 0;
-  strong { font-weight: bold; }
+    text-align: justify;
+    padding: $spacing-unit 0;
+    strong { font-weight: bold; }
 
 }
 
