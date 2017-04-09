@@ -253,8 +253,8 @@ Hence, the regular `./configure && make` is usually sufficient to build
 you may need to provide their paths:
 
 ```shell
-    PKG_CONFIG_PATH=/opt/lib/pkgconfig:/home/ian/lib/pkgconfig ./configure
-    make
+PKG_CONFIG_PATH=/opt/lib/pkgconfig:/home/ian/lib/pkgconfig ./configure
+make
 ```
 
 To build the source from GIT, see below.
