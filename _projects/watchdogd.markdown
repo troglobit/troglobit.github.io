@@ -62,25 +62,25 @@ Usage
 -----
 
 ```shell
-    watchdogd [-hnsVvx] [-a WARN,REBOOT] [-T SEC] [-t SEC] [/dev/watchdog]
-    
-    Options:
-      -n, --foreground         Start in foreground (background is default)
-      -s, --syslog             Use syslog, even if running in foreground
-      -l, --loglevel=LVL       Log level: none, err, info, notice*, debug
-      
-      -T, --timeout=SEC        HW watchdog timer (WDT) timeout in SEC seconds
-      -t, --interval=SEC       WDT kick interval in SEC seconds, default: 10
-      -x, --safe-exit          Disable watchdog on exit from SIGINT/SIGTERM
-      
-      -a, --load-average=W,R   Enable load average check WARN,REBOOT
-      -m, --meminfo=W,R        Enable memory leak check, WARN,REBOOT
-      -f, --filenr=W,R         Enable file descriptor leak check, WARN,REBOOT
-      -p, --pmon[=PRIO]        Enable process monitor, run at elevated RT prio
-                               Default RT prio when active: SCHED_RR @98
-      
-      -v, --version            Display version and exit
-      -h, --help               Display this help message and exit
+watchdogd [-hnsVvx] [-a WARN,REBOOT] [-T SEC] [-t SEC] [/dev/watchdog]
+
+Options:
+  -n, --foreground         Start in foreground (background is default)
+  -s, --syslog             Use syslog, even if running in foreground
+  -l, --loglevel=LVL       Log level: none, err, info, notice*, debug
+  
+  -T, --timeout=SEC        HW watchdog timer (WDT) timeout in SEC seconds
+  -t, --interval=SEC       WDT kick interval in SEC seconds, default: 10
+  -x, --safe-exit          Disable watchdog on exit from SIGINT/SIGTERM
+  
+  -a, --load-average=W,R   Enable load average check WARN,REBOOT
+  -m, --meminfo=W,R        Enable memory leak check, WARN,REBOOT
+  -f, --filenr=W,R         Enable file descriptor leak check, WARN,REBOOT
+  -p, --pmon[=PRIO]        Enable process monitor, run at elevated RT prio
+                           Default RT prio when active: SCHED_RR @98
+  
+  -v, --version            Display version and exit
+  -h, --help               Display this help message and exit
 ```
 
 By default, with any arguments given on the command line, `watchdogd`
@@ -91,7 +91,7 @@ Operation section, for more information.
 **Example**
 
 ```shell
-    watchdogd -a 0.8,0.9 -T 120 -t 30 /dev/watchdog2
+watchdogd -a 0.8,0.9 -T 120 -t 30 /dev/watchdog2
 ```
 
 Most WDT drivers only support 120 sec as lowest timeout, but `watchdogd`
@@ -295,9 +295,9 @@ If you find bugs or want to contribute fixes or features, check out the
 code from GitHub:
 
 ```shell
-    git clone https://github.com/troglobit/watchdogd
-    cd watchdogd
-    ./autogen.sh
+git clone https://github.com/troglobit/watchdogd
+cd watchdogd
+./autogen.sh
 ```
 
 The `autogen.sh` script runs `autoconf`, `automake`, et al to create the
