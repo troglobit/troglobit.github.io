@@ -55,13 +55,13 @@ other aspect of the system, such as:
 - Load average
 - Memory leaks
 - File descriptor leaks
-- Process live locks
+- Process live locks (PMON)
 
 
 Usage
 -----
 
-```shell
+```
 watchdogd [-hnsVvx] [-a WARN,REBOOT] [-T SEC] [-t SEC] [/dev/watchdog]
 
 Options:
@@ -148,8 +148,7 @@ All API calls, except `wdog_pmon_ping()`, return POSIX OK(0) or negative
 value with `errno` set on error.  The `wdog_pmon_subscribe()` call
 returns a positive integer (including zero) for the watchdog `id`.
 
-```C
-
+```c
     /*
      * Enable or disable watchdogd at runtime.
      */
@@ -169,7 +168,6 @@ returns a positive integer (including zero) for the watchdog `id`.
     int wdog_pmon_subscribe   (char *label, int timeout, int *ack);
     int wdog_pmon_unsubscribe (int id, int ack);
     int wdog_pmon_kick        (int id, int *ack);
-
 ```
 
 It is highly recommended to use an event loop like libev, [libuev][], or
@@ -182,8 +180,7 @@ kick to run periodically to monitor proper operation of the client.
 For other applications, identify your main loop, its max period time and
 instrument it like this:
 
-```C
-
+```c
     int ack, wid;
     
     /* Library will use process' name on NULL first arg. */
@@ -196,7 +193,6 @@ instrument it like this:
             wdog_pmon_kick(wid, &ack);
             ...
     }
-
 ```
 
 This simple example subscribes to the watchdog with a 10 sec timeout.
