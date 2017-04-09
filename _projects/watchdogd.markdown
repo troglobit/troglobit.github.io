@@ -1,6 +1,6 @@
 ---
 layout: page
-name: watchdog
+name: watchdogd
 title: "System & Process Supervisor, for Linux"
 sharing: true
 footer: true
