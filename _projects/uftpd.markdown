@@ -11,7 +11,7 @@ comments: false
 
 Tired of confusing configuration files and security features you don't need?
 
-`uftpd(8)`:
+Try `uftpd(8)`!
 
 * Supports both FTP and TFTP
 * Has no confusing configuration file
@@ -29,7 +29,8 @@ Basically, it just works!
 * [TODO](https://github.com/troglobit/uftpd/blob/master/TODO.md)
 * [Issue Tracker](http://github.com/troglobit/uftpd/issues)
 * [uftpd-2.3.tar.xz](ftp://ftp.troglobit.com/uftpd/uftpd-2.3.tar.xz),
-  [MD5](ftp://ftp.troglobit.com/uftpd/uftpd-2.3.tar.xz.md5)
+  [MD5](ftp://ftp.troglobit.com/uftpd/uftpd-2.3.tar.xz.md5),
+* [ChangeLog](https://github.com/troglobit/uftpd/releases/tag/v2.3)
 
 See also the [OpenHub page](https://www.openhub.net/p/uftpd/), the cool
 [Fresh(code) page](http://freshcode.club/projects/uftpd), or the (sadly)
