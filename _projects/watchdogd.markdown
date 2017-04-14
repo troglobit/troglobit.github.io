@@ -1,7 +1,7 @@
 ---
 layout: page
 name: watchdogd
-title: "System & Process Supervisor, for Linux"
+title: "System & Process Supervisor for Linux"
 sharing: true
 footer: true
 date: 2017-04-09 14:52
@@ -13,13 +13,14 @@ comments: false
 
 `watchdogd(8)` is an advanced system and process supervisor daemon.
 It can monitor critical system resources, supervise the heartbeat of
-processes, record deadline transgressions, and reset the system.
+processes, record deadline transgressions, and reset the system on
+software lockups.
 
 When a system comes back up after a reset, `watchdogd` determines the
 reset cause and records it in a logfile for later analysis by an
-operator or network management system (NMS).  This information can in
-turn then be used to put the system in an operational safe state, or
-non-operational safe state.
+operator or network management system (NMS).  This information can be
+used to put the system in an operational safe state, or non-operational
+safe state.
 
 
 ### What is a watchdog timer?
