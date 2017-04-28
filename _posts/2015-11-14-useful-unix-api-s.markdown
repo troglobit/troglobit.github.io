@@ -115,6 +115,10 @@ Other (standard/POSIX) functions worthy of mentioning here are:
 - [`pipe()`](http://man7.org/linux/man-pages/man2/pipe.2.html)
 - [`profil()`](http://man7.org/linux/man-pages/man3/profil.3.html)
 
+### `wordexp.h`
+
+- [`wordexp()`](http://man7.org/linux/man-pages/man3/wordexp.3.html)
+
 **Note:** API's specific to GNU or BSD are not included, but there are
   *many* more useful functions on your specific OS, in case you do not
 need to write code that is portable across different UNIX platforms.
