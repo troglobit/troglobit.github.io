@@ -10,15 +10,12 @@
   font-size: 48px;
   line-height: 56px;
   letter-spacing: -1px;
-//  margin-bottom: -27px;
-//  text-align:center;
   text-align:left;
   a{
     &,
     &:visited
     &:hover {
       color: $brand-top-color; //$grey-color-dark
-//      border-bottom: 1px dotted;
       text-decoration: none;
     }
   }
@@ -30,7 +27,6 @@
     letter-spacing: -1px;
     margin-right:  8px;
     margin-bottom: 8px;
-//    text-align:center;
     float: right;
     color: $grey-color;
 }
@@ -213,7 +209,7 @@ dd {
 .post-title {
   font-size: 32px; //38px;//42px;
   letter-spacing: -1px;
-  line-height: 1;
+//  line-height: 1;
 
   @include media-query($on-laptop) {
     font-size: 36px;
@@ -247,10 +243,8 @@ dd {
 
 .post-content {
   p { padding:$spacing-unit/5 0; } 
-  //margin-bottom: $spacing-unit;
   h1 { 
     font-size: 32px;
-    line-height:1em;
     @include media-query($on-laptop){
       font-size: 30px;
     }
@@ -258,8 +252,6 @@ dd {
   }
   h2 {
     font-size: 28px;
-    line-height:1em;
-    margin-top: 20px;
     @include media-query($on-laptop) {
       font-size: 26px;
     }
@@ -267,8 +259,6 @@ dd {
 
   h3 {
     font-size: 20px;
-    line-height:1em;
-
     @include media-query($on-laptop) {
       font-size: 18px;
     }
@@ -276,8 +266,6 @@ dd {
 
   h4 {
     font-size: 16px;
-    line-height:1em;
-
     @include media-query($on-laptop) {
       font-size: 14px;
     }
