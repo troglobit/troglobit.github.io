@@ -219,12 +219,14 @@ same setup in other test cases as well.
 > but if it's buggy you really don't have a choice.  Please check this
 > for yourself since it depends on the kernel you run.
 
-     R1                       R2                       R3                       R4
-    +-------+                +-------+                +-------+                +-------+
-    |eth0   | 172.16.12.0/24 |eth0   | 172.16.10.0/24 |eth0   |  10.1.0.0/24   |eth0   |
-    |     .1|----------------|.2   .1|----------------|.2   .1|----------------|.2     |
-    |   eth1|     virbr1     |   eth1|     virbr2     |   eth1|    virbr3      |       |
-    +-------+                +-------+                +-------+                +-------+
+```
+    R1                        R2                        R3                        R4
+.--------.                .--------.                .--------.                .--------.
+|eth0    | 172.16.12.0/24 |eth0    | 172.16.10.0/24 |eth0    |  10.1.0.0/24   |eth0    |
+|      .1|----------------|.2    .1|----------------|.2    .1|----------------|.2      |
+|    eth1|     virbr1     |    eth1|     virbr2     |    eth1|    virbr3      |        |
+'--------'                '--------'                '--------'                '--------'
+```
 
 This setup, or
 [another more advanced](ftp://ftp.troglobit.com/pimd/lab-network.svg),
