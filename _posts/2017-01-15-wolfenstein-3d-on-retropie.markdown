@@ -4,6 +4,8 @@ title: "Wolfenstein-3D on RetroPie"
 date: 2017-01-15 13:13:15 +0100
 comments: true
 categories:
+- retro
+- raspberry pi
 ---
 
 The last game I ever played was [Castle Wolfenstein 3D][1], released in
