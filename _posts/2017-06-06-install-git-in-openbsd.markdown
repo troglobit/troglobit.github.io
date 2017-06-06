@@ -10,7 +10,7 @@ Reminder to self:
 
 ```
     echo "https://ftp.eu.openbsd.org/pub/OpenBSD/" >/etc/installurl
-	pkg_add git
+    pkg_add git
 ```
 
 <!--
