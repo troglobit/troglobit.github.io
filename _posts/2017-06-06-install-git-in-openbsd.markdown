@@ -3,7 +3,7 @@ layout: post
 title: "GIT, Autoconf and Automake in OpenBSD"
 date: 2017-06-06 10:44:55 +0200
 comments: true
-categories:
+categories: openbsd
 ---
 
 Reminder to self:
