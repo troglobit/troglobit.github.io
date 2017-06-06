@@ -4,6 +4,9 @@ title: "Emulate an actual MTD device in Qemu"
 date: 2017-02-02 18:52:18 +0100
 comments: true
 categories:
+- linux
+- qemu
+- embedded
 ---
 
 Having worked with Linux for the last 20 years, and embedded for more
