@@ -8,7 +8,6 @@
 
 .site-title {
   font-size: 48px;
-  line-height: 56px;
   letter-spacing: -1px;
   text-align:left;
   a{
@@ -23,7 +22,6 @@
 
 .site-meta {
     font-size: 20px;
-    line-height: 56px;
     letter-spacing: -1px;
     margin-right:  8px;
     margin-bottom: 8px;
@@ -33,7 +31,6 @@
 
 .site-nav {
   /*float: right;*/
-//  line-height: 56px;
   border-top: 1px solid $grey-color-light;
   border-bottom: 1px solid $grey-color-light;
   .menu-icon {
@@ -209,7 +206,6 @@ dd {
 .post-title {
   font-size: 32px; //38px;//42px;
   letter-spacing: -1px;
-//  line-height: 1;
 
   @include media-query($on-laptop) {
     font-size: 36px;
