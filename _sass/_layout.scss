@@ -10,6 +10,8 @@
   font-size: 48px;
   letter-spacing: -2px;
   text-align:left;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
   a{
     &,
     &:visited
@@ -21,24 +23,24 @@
 }
 
 .site-meta {
-    font-size: 20px;
-    letter-spacing: -1px;
-    margin-top: 18px;
-    margin-right:  0px;
-    margin-bottom: 0px;
-    float: right;
-    color: $grey-color;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-right:  0px;
+  margin-bottom: 0px;
+  float: right;
+  color: $grey-color;
 }
 
 .site-nav {
   /*float: right;*/
   border-top: 1px solid $grey-color-light;
   border-bottom: 1px solid $grey-color-light;
+  padding: 2px;
   .menu-icon {
     display: none;
   }
 
-  margin-top: -13px;
+  margin-top: -10px;
   .page-link {
     color: $grey-color;
     line-height: $base-line-height;
