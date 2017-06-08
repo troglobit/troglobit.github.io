@@ -23,8 +23,9 @@
 .site-meta {
     font-size: 20px;
     letter-spacing: -1px;
-    margin-right:  8px;
-    margin-bottom: 8px;
+    margin-top: 18px;
+    margin-right:  0px;
+    margin-bottom: 0px;
     float: right;
     color: $grey-color;
 }
@@ -37,6 +38,7 @@
     display: none;
   }
 
+  margin-top: -13px;
   .page-link {
     color: $grey-color;
     line-height: $base-line-height;
@@ -162,6 +164,7 @@
 .post-meta {
   font-size: $small-font-size;
   color: $grey-color;
+  margin-top: 0px;
 }
 
 .post-link {
@@ -206,6 +209,7 @@ dd {
 .post-title {
   font-size: 32px; //38px;//42px;
   letter-spacing: -1px;
+  margin-bottom: 0px;
 
   @include media-query($on-laptop) {
     font-size: 36px;
