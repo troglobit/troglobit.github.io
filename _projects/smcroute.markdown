@@ -4,17 +4,33 @@ name: SMCRoute
 title: "Static Multicast Routing Daemon"
 sharing: true
 footer: true
-date: 2017-05-30 18:21
+date: 2017-06-13 23:15
 comments: false
 ---
 
 SMCRoute is a daemon and command line tool to manipulate the multicast
 routing table in the UNIX kernel.  Both FreeBSD and Linux kernels are
-supported, but it may work on other systems as well.  SMCRoute can be
-used as an alternative to dynamic multicast routing daemons like
-[mrouted](/mrouted.html) or [pimd](/pimd.html) in situations where
-(only) static multicast routes should be maintained and/or no proper
-IGMP signalling exists.
+supported, but it may work on other systems as well.
+
+SMCRoute can be used as an alternative to dynamic multicast routing
+daemons like [mrouted](/mrouted.html) or [pimd](/pimd.html) when (only)
+static multicast routes should be maintained and/or no proper IGMP
+signalling exists.
+
+
+Features
+--------
+
+- Configuration file support, `/etc/smcroute.conf`
+- Support for restarting and reloading the `.conf` on `SIGHUP`
+- Source-less on-demand routing, a.k.a. (*,G) based static routing
+- Optional built-in [mrdisc][] support, [RFC4286][]
+- Support for multiple routing tables on Linux
+- Client with built-in support to show routes and joined groups
+
+
+smcroute.conf
+-------------
 
     #
     # smcroute.conf example
@@ -27,8 +43,11 @@ IGMP signalling exists.
     # NOTE: Use of the mgroup command should be avoided if possible.
     #       Instead configure "router ports" or similar on the switches
     #       or bridges on your LAN.  This to have them direct all the
-    #       multicast to your router, or direct select groups they have
+    #       multicast to your router, or select groups if they have
     #       such capabilities.  Usually MAC multicast filters exist.
+	#
+	#       Some switches IGMP snooping implementations support mrdisc,
+	#       RFC4286, which SMCRoute use to advertise on source interfaces.
     #
     #       The UNIX kernel usually limits the number of multicast groups
     #       a socket/client can join.  Linux for instance supports only
@@ -101,12 +120,14 @@ config file support, reloading config on SIGHUP, source-less on-demand
 (*,G) routing, TTL scoping and support for disabling ALL interfaces
 except the few used for multicast routing.
 
-Issue tracker and GIT repository available at GitHub:
+Issue tracker and GIT repository available at GitHub, tarballs also
+available as `.tar.gz` for systems that do not have `xz` in the default
+install, like OpenBSD:
 
    * [Repository](http://github.com/troglobit/smcroute)
-   * [smcroute-2.3.0.tar.xz](ftp://ftp.troglobit.com/smcroute/smcroute-2.3.0.tar.xz),
-     [MD5](ftp://ftp.troglobit.com/smcroute/smcroute-2.3.0.tar.xz.md5)
-     [GPG Sign](ftp://ftp.troglobit.com/smcroute/smcroute-2.3.0.tar.xz.asc)
+   * [smcroute-2.3.1.tar.xz](ftp://ftp.troglobit.com/smcroute/smcroute-2.3.1.tar.xz),
+     [MD5](ftp://ftp.troglobit.com/smcroute/smcroute-2.3.1.tar.xz.md5)
+     [GPG Sign](ftp://ftp.troglobit.com/smcroute/smcroute-2.3.1.tar.xz.asc)
    * [Issue Tracker](http://github.com/troglobit/smcroute/issues)
    * [Debian packages](http://packages.debian.org/smcroute)
    * [Ubuntu packages](http://packages.ubuntu.com/smcroute)
@@ -115,6 +136,9 @@ Issue tracker and GIT repository available at GitHub:
 See also the [OpenHub page](https://www.openhub.net/p/smcroute/), the
 [Freshcode page](http://freshcode.club/projects/smcroute), or the now
 dormant [Free(code) page](http://freecode.com/projects/smcroute).
+
+[mrdisc]:          https://github.com/troglobit/mrdisc
+[RFC4286]:         https://tools.ietf.org/html/rfc4286
 
 <!--
   -- Local Variables:
