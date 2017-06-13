@@ -45,9 +45,9 @@ smcroute.conf
     #       or bridges on your LAN.  This to have them direct all the
     #       multicast to your router, or select groups if they have
     #       such capabilities.  Usually MAC multicast filters exist.
-	#
-	#       Some switches IGMP snooping implementations support mrdisc,
-	#       RFC4286, which SMCRoute use to advertise on source interfaces.
+    #
+    #       Some switches IGMP snooping implementations support mrdisc,
+    #       RFC4286, which SMCRoute use to advertise on source interfaces.
     #
     #       The UNIX kernel usually limits the number of multicast groups
     #       a socket/client can join.  Linux for instance supports only
@@ -100,16 +100,25 @@ smcroute.conf
     # source 192.168.10.25.
     mgroup from eth0 group 225.2.1.3 source 192.168.10.25
 
-A very common question is why smcroutes must be a daemon?  Why not just
-a simple tool, like `ip route`, for unicast routes?  The answer lies in
-how multicast is implemented in the UNIX kernel.  To be able to setup
-multicast routes a program must connect to the multicast routing socket
-in the kernel, when that socket is closed, which is done automatically
-when a UNIX program ends, the kernel cleans up all routes.  So you have
-to chose *one* of the multicast routing daemons for all your multicast
-routing needs.
+
+Why a Daemon?
+-------------
+
+A very common question is why smcroute must be a daemon?  Why not just a
+simple tool, like `ip route`, for unicast routes?
+
+The answer lies in how multicast is implemented in the UNIX kernel.
+
+To be able to setup multicast routes a program must connect to the
+multicast routing socket in the kernel, when that socket is closed,
+which is done automatically when a UNIX program ends, the kernel cleans
+up all routes.
 
 Problems?  See the [multicast howto](/multicast-howto.html)
+
+
+Origin & References
+-------------------
 
 SMCRoute was originally written by
 [Carsten Schill](http://www.cschill.de/smcroute/).  Later on Julien
