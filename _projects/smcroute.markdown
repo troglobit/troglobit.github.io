@@ -48,20 +48,19 @@ Problems?  See the [multicast howto](/multicast-howto.html)
 Origin & References
 -------------------
 
-SMCRoute was originally written by
-[Carsten Schill](http://www.cschill.de/smcroute/).  Later on Julien
-Blache, Todd Hayton and Micha Lenk picked up development for
-[Debian](http://alioth.debian.org/projects/smcroute/).  Since 2011
-Joachim Nilsson heads development at GitHub.  New features include
-config file support, reloading config on SIGHUP, source-less on-demand
-(*,G) routing, TTL scoping and support for disabling ALL interfaces
-except the few used for multicast routing.
+SMCRoute was originally written by [Carsten Schill][].  Later on Julien
+Blache, Todd Hayton and Micha Lenk picked up development for [Debian][].
 
-Issue tracker and GIT repository available at GitHub, tarballs also
+Since 2011 Joachim Nilsson heads development at [GitHub][].  New
+features include config file support, reloading config on `SIGHUP`,
+source-less on-demand (*,G) routing, TTL scoping and support for
+disabling ALL interfaces except the few used for multicast routing.
+
+Issue tracker and GIT repository available at [GitHub][], tarballs also
 available as `.tar.gz` for systems that do not have `xz` in the default
 install, like OpenBSD:
 
-   * [Repository](http://github.com/troglobit/smcroute)
+   * [Repository][GitHub]
    * [smcroute-2.3.1.tar.xz](ftp://ftp.troglobit.com/smcroute/smcroute-2.3.1.tar.xz),
      [MD5](ftp://ftp.troglobit.com/smcroute/smcroute-2.3.1.tar.xz.md5)
      [GPG Sign](ftp://ftp.troglobit.com/smcroute/smcroute-2.3.1.tar.xz.asc)
@@ -76,6 +75,9 @@ dormant [Free(code) page](http://freecode.com/projects/smcroute).
 
 [mrdisc]:          https://github.com/troglobit/mrdisc
 [RFC4286]:         https://tools.ietf.org/html/rfc4286
+[GitHub]:          http://github.com/troglobit/smcroute
+[Debian]:          http://alioth.debian.org/projects/smcroute/
+[Carsten Schill]:  http://www.cschill.de/smcroute/
 
 <!--
   -- Local Variables:
