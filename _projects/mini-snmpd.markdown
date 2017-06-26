@@ -4,7 +4,7 @@ name: mini-snmpd
 title: "Mini SNMP daemon"
 sharing: true
 footer: true
-date: 2015-11-23 18:31 +01:00
+date: 2017-06-26 14:00
 comments: false
 ---
 
@@ -183,7 +183,9 @@ mini-snmpd is licensed under the [GNU GPL v2][LICENSE].
 
    * [Repository][repo]
    * [Issue Tracker](http://github.com/troglobit/mini-snmpd/issues)
-   * New releases are made available both on the [FTP][ftp] and at [GitHub][repo]
+   * [mini-snmpd-1.4.tar.xz](ftp://ftp.troglobit.com/mini-snmpd/mini-snmpd-1.4.tar.xz),
+     [MD5](ftp://ftp.troglobit.com/mini-snmpd/mini-snmpd-1.4.tar.xz.md5),
+   * [ChangeLog](https://github.com/troglobit/mini-snmpd/releases/tag/v1.4)
    * [TODO][]
    * Man page [mini-snmpd.8](http://ftp.troglobit.com/mini-snmpd/mini-snmpd.html) (outdated)
 
