@@ -9,10 +9,10 @@ comments: false
 ---
 
 This is an SNMP server for small and embedded systems, currently Linux
-and FreeBSD are supported.  It is written in C, so it is easily portable
-to other UNIX systems.  The daemon is very small (~40 kiB) and does not
-have nowhere near the feature set of [Net-SNMP][1], therefore it has a
-very low impact on system resources.
+and FreeBSD are supported.  It is easily portable to other UNIX systems
+since it's written in C.  The daemon is very small (~40 kiB) and does
+not have nowhere near the feature set of [Net-SNMP][1], therefore it has
+a very low impact on system resources.
 
 Features:
 
