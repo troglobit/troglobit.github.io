@@ -4,7 +4,7 @@ name: mini-snmpd
 title: "Mini SNMP daemon"
 sharing: true
 footer: true
-date: 2017-06-26 14:00
+date: 2017-06-27 10:36
 comments: false
 ---
 
@@ -23,7 +23,7 @@ The main features are:
 - Supports the most important performance data (uptime, CPU load, memory usage)
 - Supports the most important network data (bytes/packets in/out, error counts)
 - Supports the most important disk data (disk space/inodes available/used/free)
-- Tested with [net-snmp][1] and [cacti][2]
+- Tested with [net-snmp][1], [cacti][2], and MRTG.
 
 <a id="example"></a>
 
@@ -183,8 +183,8 @@ mini-snmpd is licensed under the [GNU GPL v2][LICENSE].
 
    * [Repository][repo]
    * [Issue Tracker](http://github.com/troglobit/mini-snmpd/issues)
-   * [mini-snmpd-1.4.tar.xz](ftp://ftp.troglobit.com/mini-snmpd/mini-snmpd-1.4.tar.xz),
-     [MD5](ftp://ftp.troglobit.com/mini-snmpd/mini-snmpd-1.4.tar.xz.md5),
+   * [mini-snmpd-1.4.tar.gz](ftp://ftp.troglobit.com/mini-snmpd/mini-snmpd-1.4.tar.gz),
+     [MD5](ftp://ftp.troglobit.com/mini-snmpd/mini-snmpd-1.4.tar.gz.md5),
    * [ChangeLog](https://github.com/troglobit/mini-snmpd/releases/tag/v1.4)
    * [TODO][]
    * Man page [mini-snmpd.8](http://ftp.troglobit.com/mini-snmpd/mini-snmpd.html) (outdated)
