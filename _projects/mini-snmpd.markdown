@@ -23,7 +23,7 @@ Features:
 - Supports the most important performance data (uptime, CPU load, memory usage)
 - Supports the most important network data (bytes/packets in/out, error counts)
 - Supports the most important disk data (disk space/inodes available/used/free)
-- Tested with [net-snmp][1], [cacti][2], and MRTG.
+- Tested with [net-snmp][1], [cacti][2], and [MRTG][3]
 
 <a id="example"></a>
 
@@ -172,7 +172,7 @@ Project Info
 ------------
 
 This is the continuation of the hard work on mini-snmpd by Robert Ernst.
-Unfortunately his [mini-snmpd homepage][3] has gone offline, so that and
+Unfortunately his [mini-snmpd homepage][4] has gone offline, so that and
 the lack of updates over the last couple of years is what prompted my
 setting up a [GitHub project][repo] to act as a focal point for future
 development.  I've also taken the liberty of setting up an
@@ -193,7 +193,8 @@ See also the old [Free(code) page](http://freecode.com/projects/minisnmpd).
 
 [1]: http://net-snmp.org
 [2]: http://net-snmp.net
-[3]: https://web.archive.org/web/20150522170054/http://members.aon.at/linuxfreak/linux/mini_snmpd.html
+[3]: http://oss.oetiker.ch/mrtg/
+[4]: https://web.archive.org/web/20150522170054/http://members.aon.at/linuxfreak/linux/mini_snmpd.html
 [ftp]: ftp://ftp.troglobit.com/mini-snmpd/
 [repo]: http://github.com/troglobit/mini-snmpd
 [TODO]: https://github.com/troglobit/mini-snmpd/blob/master/TODO
