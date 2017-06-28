@@ -10,7 +10,7 @@ Reminder to self:
 
 ```
     echo "https://ftp.eu.openbsd.org/pub/OpenBSD/" >/etc/installurl
-    pkg_add git autoconf automake
+    pkg_add git autoconf automake libtool
 ```
 
 Select the latest versions, then add the following to `~/.profile`:
