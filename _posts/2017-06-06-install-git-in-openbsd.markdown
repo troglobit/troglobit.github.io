@@ -8,17 +8,17 @@ categories: openbsd
 
 Reminder to self:
 
-```
-    echo "https://ftp.eu.openbsd.org/pub/OpenBSD/" >/etc/installurl
-    pkg_add git autoconf automake libtool
+```sh
+echo "https://ftp.eu.openbsd.org/pub/OpenBSD/" >/etc/installurl
+pkg_add git autoconf automake libtool
 ```
 
 Select the latest versions, then add the following to `~/.profile`:
 
-```
-    AUTOCONF_VERSION=2.69
-    AUTOMAKE_VERSION=1.15
-    export AUTOCONF_VERSION AUTOMAKE_VERSION
+```sh
+AUTOCONF_VERSION=2.69
+AUTOMAKE_VERSION=1.15
+export AUTOCONF_VERSION AUTOMAKE_VERSION
 ```
 
 With your selected versions, of course.
