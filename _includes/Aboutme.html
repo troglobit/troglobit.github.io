@@ -2,12 +2,12 @@
   <h4>About Me</h4>
   <a href="{{ site.baseurl }}/about/"><img title="{{site.author}}" style="border: none;"
      src="{{site.aboutme_photo}}" alt="{{site.author}}"/></a>
+<!--
   <span>{{site.aboutme}}</span>
+-->
   <br />
 
   {% if site.ShowContactInfo == "True" %}
-
-  Contact:
 
   {% if site.email != empty %}
   <a href="mailto:{{site.author}} <{{site.email}}>" title="mailto:{{site.email}}">Email</a> /
