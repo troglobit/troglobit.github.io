@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Useful UNIX API:s"
-date: 2015-11-14 11:45:49 +0100
+date: 2017-07-02 11:45:49 +0100
 comments: true
 categories: 
 ---
@@ -14,6 +14,12 @@ these.
 
 Most people are completely unaware they exist and end up rolling their
 own (buggy) implementations.
+
+**Update:** This post was initially written Nov 14, 2015.  It was a
+Saturday and I remember being extremely inspired when I wrote it.  As it
+happens, I've continued adding to it over the years, and still do.  So,
+as of Jul 2, 2017 I'm now bumping the modification date each time I add
+something new :-)
 
 <!-- more -->
 
@@ -84,6 +90,8 @@ Other (standard/POSIX) functions worthy of mentioning here are:
 ### `stdio.h`
 
 - [`fmemopen()`](http://man7.org/linux/man-pages/man3/fmemopen.3.html)
+- [`getdelim()`](http://man7.org/linux/man-pages/man3/getdelim.3.html)
+- [`getline()`](http://man7.org/linux/man-pages/man3/getline.3.html)
 
 ### `stdlib.h`
 
