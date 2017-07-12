@@ -4,15 +4,16 @@ name: pimd
 title: The original PIM-SM daemon
 sharing: true
 footer: true
-date: 2015-11-15 19:26 +01:00
+date: 2017-07-12 20:17
 comments: false
 ---
 <img class="right" src="/images/pim-sm.gif" style="width: 222px; height: 155px;" />
 
 pimd is a lightweight standalone PIM-SM/SSM v2 multicast routing daemon.
 It is the original USC (netweb/catarina.usc.edu) implementation of the
-protocol, [RFC 2362][1].  Today pimd strives for [RFC 4601][2]
-compliance, with the v2.3.0 release supporting both PIM-SSM and IGMPv3.
+protocol, [RFC 2362][1].  Today pimd strives for full RFC compliance,
+including [RFC 4601][2], [RFC 5059][3], and [RFC 5796][4], with the
+v2.3.0 release supporting both PIM-SSM and IGMPv3.
 
 In 2003 the OpenBSD project [managed to convince Stanford][stanford] in
 to change the license of [mrouted](/mrouted.shtml).  This in turn also
@@ -29,9 +30,10 @@ subscribers, for dense mode operation [mrouted](/mrouted.html) is
 recommended, and for static multicast routing [smcroute](/smcroute.html)
 may be used.
 
-pimd was written by Ahmed Helmy, George Edmond "Rusty" Eddy, and Pavlin
-Ivanov Radoslavov.  With contributions by many others, lately the most
-notable contributions have been by Markus Veranen and Mika Joutsenvirta.
+pimd was originally written by Ahmed Helmy, George Edmond "Rusty" Eddy,
+and Pavlin Ivanov Radoslavov, with contributions by many others.  Lately
+the most notable contributors have been Markus Veranen, Joonas Ruohonen,
+and Mika Joutsenvirta.
 
 ------
 
