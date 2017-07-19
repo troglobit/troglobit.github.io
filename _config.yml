@@ -16,7 +16,6 @@ twitter_username: troglobit
 github_username:  troglobit
 github_repo_count: 10
 github_skip_forks: true
-disqus_shortname: troglobit
 favicon:          /favicon.ico
 aboutme:          "Hi, I'm Joachim and I'm a hacker!"
 aboutme_photo:    /images/profile.jpg
