@@ -15,8 +15,6 @@ keeping your DNS record up to date with any IP address changes from your
 [ISP][2].  It can also be used in installations with redundant (backup)
 connections to the Internet.
 
-**Note:** The `.conf` file format syntax changed in v2.0!
-
 
 Supported Providers
 -------------------
@@ -73,6 +71,8 @@ The configuration file on most systems is in `/etc/inadyn.conf`:
     }
 
 More examples in the `inadyn.conf(5)` man page and the [README][].
+
+**Note:** The `.conf` file format syntax changed in v2.0!
 
 
 Download
