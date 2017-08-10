@@ -21,27 +21,36 @@ your [ISP][2].  It can also be used in installations with redundant
 Supported Providers
 -------------------
 
-The following is a list of *some* natively supported DDNS providers.
-Other providers, e.g. <http://twoDNS.de>, can be supported using the
-custom provider support.  See the [README][], or `inadyn.conf(5)`
-found in the tarball, for more providers and configuration examples.
+The following is a curated list of *some* of the natively supported DDNS
+providers.  Other providers, e.g. <http://twoDNS.de>, can usually be
+supported using the custom provider support.  For the full details, see
+the [README][], or `inadyn.conf(5)` found in the tarball.
 
 * <https://freedns.afraid.org>
-* <https://www.loopia.com>
-* <https://www.dyndns.org>
-* <https://www.zoneedit.com>
-* <https://www.no-ip.com>
-* <https://www.3322.org>
-* <https://www.dnsomatic.com>
-* <https://www.tunnelbroker.net>
-* <https://www.changeip.com>
 * <https://nsupdate.info>
 * <https://duckdns.org>
+* <https://freemyip.com>
+* <https://www.loopia.com>
+* <https://www.dyndns.org>, <https://dyn.com>
+* <https://www.zoneedit.com>
+* <https://www.easydns.com>
+* <https://www.dnsomatic.com>
+* <https://www.tunnelbroker.net>
+* <https://dns.he.net>
+* <https://www.changeip.com>
+* <https://www.sitelutions.com>
+* <https://www.dnsexit.com>
 * <https://www.namecheap.com>
-* <https://domains.google.com>
+* <https://domains.google>
 * <https://www.ovh.com>
 * <https://www.dtdns.com>
+* <https://www.duiadns.net>
+* <https://ddnss.de>
 * <https://dynv6.com>
+* <https://spdyn.de>
+* <https://www.strato.com>
+* <https://www.cloudxns.net>
+* <https://www.dnspod.cn>
 
 Some of these services are free of charge for non-commercial use, others
 take a small fee, but also provide more domains to choose from.
