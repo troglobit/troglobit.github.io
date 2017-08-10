@@ -56,6 +56,25 @@ Some of these services are free of charge for non-commercial use, others
 take a small fee, but also provide more domains to choose from.
 
 
+Example Configuration
+---------------------
+
+The configuration file on most systems is in `/etc/inadyn.conf`:
+
+    # In-A-Dyn v2.0 configuration file format
+    period          = 300
+    
+    # The FreeDNS username must be in lower case, the
+    # password (max 16 chars) is case sensitive.
+    provider freedns.afraid.org {
+        username   = lower-case-username
+        password   = case-sensitive-pwd
+        hostname   = some.example.com
+    }
+
+More examples in the `inadyn.conf(5)` man page and the [README][].
+
+
 Download
 --------
 
