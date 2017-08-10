@@ -54,21 +54,27 @@ Some of these services are free of charge for non-commercial use, others
 take a small fee, but also provide more domains to choose from.
 
 
-Example Configuration
----------------------
+Example
+-------
 
 The configuration file on most systems is in `/etc/inadyn.conf`:
 
     # In-A-Dyn v2.0 configuration file format
-    period          = 300
+    period = 300
     
-    # The FreeDNS username must be in lower case, the
-    # password (max 16 chars) is case sensitive.
+    # The FreeDNS username must be in lower case and
+    # the password (max 16 chars) is case sensitive
     provider freedns.afraid.org {
-        username   = lower-case-username
-        password   = case-sensitive-pwd
-        hostname   = some.example.com
+        username = lower-case-username
+        password = case-sensitive-pwd
+        hostname = some.example.com
     }
+
+Inadyn comes with a systemd unit file, so simply restart the service or
+send `SIGHUP` to an already running inadyn to make it reload the `.conf`
+file.  If you've built Inadyn yourself from source, the `.conf` file may
+be located elsewhere.  See the `--prefix` argument to the `configure`
+script, use `--help` or see the [README][] for details on building.
 
 More examples in the `inadyn.conf(5)` man page and the [README][].
 
