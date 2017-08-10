@@ -4,16 +4,16 @@ name: Inadyn
 title: "Small and Simple DDNS Client"
 sharing: true
 footer: true
-date: 2017-03-19 10:11 +0100
+date: 2017-08-10 09:42
 comments: false
 ---
 
-Inadyn is a small and simple [DDNS][1] client with HTTPS support.  It
-is commonly available in many GNU/Linux distributions, used in
-off-the-shelf routers and Internet gateways to automate the task of
-keeping your DNS record up to date with any IP address changes from
-your [ISP][2].  It can also be used in installations with redundant
-(backup) connections to the Internet.
+Inadyn is a small and simple Dynamic DNS, [DDNS][1], client with HTTPS
+support.  It is commonly available in many GNU/Linux distributions, used
+in off-the-shelf routers and Internet gateways to automate the task of
+keeping your DNS record up to date with any IP address changes from your
+[ISP][2].  It can also be used in installations with redundant (backup)
+connections to the Internet.
 
 **Note:** The `.conf` file format syntax changed in v2.0!
 
