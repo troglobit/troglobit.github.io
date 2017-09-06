@@ -1,7 +1,7 @@
 ---
 layout: page
 name: smcroute.conf
-sharing: true
+sharing: false
 footer: true
 date: 2017-06-13 23:15
 comments: false
