@@ -4,7 +4,7 @@ name: libeditline
 title: "Minix Editline"
 sharing: true
 footer: true
-date: 2015-11-17 04:38
+date: 2017-09-07 01:32
 comments: false
 ---
 
@@ -28,8 +28,8 @@ Issue tracker and GIT repository available at GitHub:
    * [Repository](http://github.com/troglobit/editline)
    * [Issue Tracker](http://github.com/troglobit/editline/issues)
    * [ChangeLog](https://github.com/troglobit/editline/blob/master/ChangeLog.md)
-   * [editline-1.15.2.tar.xz](ftp://ftp.troglobit.com/editline/editline-1.15.2.tar.xz),
-     [MD5](ftp://ftp.troglobit.com/editline/editline-1.15.2.tar.xz.md5)
+   * [editline-1.15.3.tar.xz](ftp://ftp.troglobit.com/editline/editline-1.15.3.tar.xz),
+     [MD5](ftp://ftp.troglobit.com/editline/editline-1.15.3.tar.xz.md5)
 
 See also the [OpenHub page](https://www.openhub.net/p/editline), or
 the old [Free(code) page](http://freecode.com/projects/minix-editline).
