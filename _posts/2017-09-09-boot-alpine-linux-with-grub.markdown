@@ -3,7 +3,7 @@ layout: post
 title: "Boot Alpine Linux with GRUB"
 date: 2017-09-09 21:37:10 +0200
 comments: true
-categories:
+categories: alpine
 ---
 
 It's fairly easy to replace the slightly unfriendly syslinux with grub
