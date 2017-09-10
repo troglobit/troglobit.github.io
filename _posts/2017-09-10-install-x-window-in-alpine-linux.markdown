@@ -71,6 +71,8 @@ Find a commented row that says `sessions`, add a new one that is:
 session /usr/bin/startxfce4
 ```
 
+For more help with LXDM, see https://wiki.archlinux.org/index.php/LXDM
+
 <!--
   -- Local Variables:
   -- mode: markdown
