@@ -73,8 +73,9 @@ so we have to provide the full command, or write a new Dockerfile:
 You should now see the FTP server contents, provided of course your host
 has an `/srv/ftp` directory.
 
-[Boa]:     http://www.boa.org
-[Merecat]: https://github.com/troglobit/merecat
+[Boa]:        http://www.boa.org
+[Merecat]:    https://github.com/troglobit/merecat
+[Dockerfile]: https://github.com/troglobit/merecat/blob/master/Dockerfile
 
 <!--
   -- Local Variables:
