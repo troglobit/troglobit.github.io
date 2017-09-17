@@ -6,7 +6,15 @@ comments: true
 categories:
 ---
 
-This post details how to package and deploy software with Docker.
+This post details how to package and deploy software with Docker.  To
+try out the Alpine Linux packaged software, simply:
+
+    docker pull troglobit/merecat
+
+See https://hub.docker.com/r/troglobit/merecat/ for details on how to
+run it in production.
+
+<!-- more -->
 
 The software I've chosen for this exercise is [Merecat httpd][Merecat],
 and the reason is simple: we needed a *really* small web front-end to
