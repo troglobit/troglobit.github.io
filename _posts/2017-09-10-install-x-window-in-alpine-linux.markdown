@@ -9,6 +9,8 @@ categories: alpine
 How to install LXDM + XFCE4 in Alpine Linux 3.6 when testing with
 [Finit](https://github.com/troglobit/finit/tree/master/contrib/alpine).
 
+<!-- more -->
+
 The following sets up everything needed to run in KVM or virt-manager.
 The QXL driver is probably not needed for other environments, and there
 are other icon themes than Tango.
