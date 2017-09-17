@@ -9,6 +9,8 @@ categories: alpine
 It's fairly easy to replace the slightly unfriendly syslinux with grub
 (grub2) in Alpine Linux.  I use v3.6 but YMMV.
 
+<!-- more -->
+
 Notice how I use the tool `blkid` to find the Linux root device.  The
 *grub* root device, however, needs to be the first partition, which is
 a bit confusing.
