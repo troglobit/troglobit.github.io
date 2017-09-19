@@ -10,7 +10,7 @@ I still get asked this, from time to time.  Maybe it's because I only
 use event loops, maybe it's because I've written [libuEv][], or maybe
 people still don't understand:
 
-> “Why an event loop, why not use threads?”
+> Why an event loop, why not use threads?
 
 So here's my response, once more.
 
