@@ -6,13 +6,13 @@ comments: true
 categories:
 ---
 
-This post details how to package and deploy software with Docker.  To
-try out the Alpine Linux packaged software, simply:
+This post details how to package and deploy software with Docker.  The
+example uses [Merecat httpd][Merecat] on Alpine Linux.  Try it out with:
 
     docker pull troglobit/merecat
 
-See https://hub.docker.com/r/troglobit/merecat/ for details on how to
-run it in production.
+See <https://hub.docker.com/r/troglobit/merecat/> for details on how to
+run Merecat httpd in production.
 
 <!-- more -->
 
@@ -24,7 +24,7 @@ which also means it's missing from Ubuntu these days.
 If you've not yet installed Docker, do so now.
 
     sudo apt install docker.io
-	sudo adduser $LOGNAME docker
+    sudo adduser $LOGNAME docker
 
 **NOTE:** Remember to log out and in again to activate the new group
 settings before continuing below.
@@ -33,10 +33,10 @@ Merecat comes with a [Dockerfile][], so all we need to do to is build
 the image and flatten it before we deploy.  Start by cloning the repo:
 
     git clone https://github.com/troglobit/merecat.git
-	cd merecat/
-	docker build .
-	[..]
-	Successfully built c87dd09084a3
+    cd merecat/
+    docker build .
+    [..]
+    Successfully built c87dd09084a3
 
 Take note of the resulting image hash, here `c87dd09084a3`.  You can
 also find this with the `docker images` command.
@@ -45,8 +45,8 @@ Now, take it for a spin.  Allow your host's port 80 (HTTP) to be
 forwarded to the container's port 80:
 
     docker run -dit -p 80:80 c87dd09084a3
-	d98583cb31c9417c6e4117768245f1256e3003d44668e21e75589b63e0e03074
-	www-browser localhost
+    d98583cb31c9417c6e4117768245f1256e3003d44668e21e75589b63e0e03074
+    www-browser localhost
 
 Another hash is printed, this time for the running container, which can
 also be seen using the `docker ps` command.
@@ -69,14 +69,14 @@ We now have our production image.  Kill the currently running "template"
 container and remove its image before continuing:
 
     docker kill d98583cb31c9
-	docker rmi -f c87dd09084a3
+    docker rmi -f c87dd09084a3
 
 Let's check the production image, here I export my FTP directory to the
 container's WWW dir.  Notice how the entry point is lost after flattening,
 so we have to provide the full command, or write a new Dockerfile:
 
     docker run -dit -v /srv/ftp:/var/www -p 80:80 troglobit/merecat merecat -n /var/www
-	www-browser localhost
+    www-browser localhost
 
 You should now see the FTP server contents, provided of course your host
 has an `/srv/ftp` directory.
