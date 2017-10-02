@@ -17,6 +17,7 @@ This HowTo is based on [Bas Wijnen's excellent howto][1].
 
 <!-- more -->
 
+
 ### Install
 
 First set up the web server and its directories.  I obviously use
@@ -45,6 +46,7 @@ Now, create the basic archive directories, with symlinks for `stable`,
     $ sudo ln -s stretch stable
     $ sudo ln -s jessie oldstable
 
+
 ### Setup
 
 Now we can set up mini-dinstall, it needs an upload/incoming dir and a
@@ -55,6 +57,7 @@ config file:
 
 Add the following as contents:
 
+```ini
 	archivedir=/srv/deb
 	archive_style=simple-subdir
 	architectures=all, amd64
@@ -67,13 +70,16 @@ Add the following as contents:
 	release_codename=stretch
 	[unstable]
 	release_codename=sid
+```
 
 Notice the signing script, `/src/deb/sign.sh`, remember to add the
 executable flag using `chmod`:
 
+```sh
 	#!/bin/sh
 	rm -f Release.gpg
 	gpg --output Release.gpg --local-user archive@troglobit.com --detach-sign "$1"
+```
 
 To be able to actually sign `.deb` files you need to create (and also
 publish the public part of) a GPG signing key.  Answer the questions to
@@ -94,6 +100,7 @@ The public part of this GPG key also needs to be published on the new
     $ gpg --export archive@troglobit.com > troglobit-archive-keyring.gpg
 
 Done.
+
 
 ### Developer
 
@@ -117,7 +124,8 @@ Run an `sudo apt update` and remember to add the GPG key:
 
 There.  Packages can now be installed.
 
-_____
+
+### Footnotes
 
 ¹ To remove a GPG passphrase from a key, use `gpg --edit-key HASH`, and
 then `passwd` at the `gpg>` prompt.  Simply press enter when prompted
