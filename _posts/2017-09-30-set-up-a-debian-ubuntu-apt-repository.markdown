@@ -58,6 +58,7 @@ config file:
 Add the following as contents:
 
 ```ini
+[DEFAULT]
 archivedir=/srv/deb
 archive_style=simple-subdir
 architectures=all, amd64
