@@ -13,6 +13,8 @@ I've chosen to use `mini-dinstall` for this purpose, below are the major
 points and I've very likely missed a few steps that a beginner admin may
 run into. YMMV B-)
 
+This HowTo is based on [Bas Wijnen's excellent howto][1].
+
 <!-- more -->
 
 ### Install
@@ -120,6 +122,9 @@ _____
 ¹ To remove a GPG passphrase from a key, use `gpg --edit-key HASH`, and
 then `passwd` at the `gpg>` prompt.  Simply press enter when prompted
 for the new passphrase.
+
+
+[1]: https://debian-administration.org/article/717/Setting_up_a_personal_secure_apt_repository
 
 <!--
   -- Local Variables:
