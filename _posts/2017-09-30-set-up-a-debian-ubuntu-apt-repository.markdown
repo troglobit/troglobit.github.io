@@ -58,27 +58,27 @@ config file:
 Add the following as contents:
 
 ```ini
-	archivedir=/srv/deb
-	archive_style=simple-subdir
-	architectures=all, amd64
-	generate_release=1
-	mail_on_success=0
-	release_signscript=/srv/deb/sign.sh
-	[oldstable]
-	release_codename=jessie
-	[stable]
-	release_codename=stretch
-	[unstable]
-	release_codename=sid
+archivedir=/srv/deb
+archive_style=simple-subdir
+architectures=all, amd64
+generate_release=1
+mail_on_success=0
+release_signscript=/srv/deb/sign.sh
+[oldstable]
+release_codename=jessie
+[stable]
+release_codename=stretch
+[unstable]
+release_codename=sid
 ```
 
 Notice the signing script, `/src/deb/sign.sh`, remember to add the
 executable flag using `chmod`:
 
 ```sh
-	#!/bin/sh
-	rm -f Release.gpg
-	gpg --output Release.gpg --local-user archive@troglobit.com --detach-sign "$1"
+#!/bin/sh
+rm -f Release.gpg
+gpg --output Release.gpg --local-user archive@troglobit.com --detach-sign "$1"
 ```
 
 To be able to actually sign `.deb` files you need to create (and also
