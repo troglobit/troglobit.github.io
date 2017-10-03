@@ -115,9 +115,9 @@ follows from the command line, or start it in daemon mode:
 ### Users
 
 Add the `deb` line to `/etc/sources.list` or a dedicated file in the
-`/etc/sources.list.d/` directory, e.g.:
+`/etc/sources.list.d/` directory, e.g. `troglobit.list`:
 
-    deb http://deb.troglobit.com sid/all/'
+    deb http://deb.troglobit.com unstable/all/
 
 Run an `sudo apt update` and remember to add the GPG key:
 
