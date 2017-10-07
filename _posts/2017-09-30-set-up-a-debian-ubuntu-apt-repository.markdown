@@ -84,8 +84,8 @@ gpg --output Release.gpg --local-user archive@troglobit.com --detach-sign "$1"
 
 To be able to actually sign `.deb` files you need to create (and also
 publish the public part of) a GPG signing key.  Answer the questions to
-`--gen-key`, select type 4 RSA key for signing.  Make sure to set it up
-*without a passphrase¹* and then upload the resulting public key:
+`--gen-key` below, select type 4 RSA key for signing.  Make sure to set
+it up *without a passphrase¹* and then upload the resulting public key:
 
     $ gpg --gen-key
 	gpg: key 44D7FA0A marked as ultimately trusted
@@ -93,12 +93,21 @@ publish the public part of) a GPG signing key.  Answer the questions to
 	$ gpg --send-keys 44D7FA0A
 	gpg: sending key 44D7FA0A to hkp server keys.gnupg.net
 
-The public part of this GPG key also needs to be published on the new
-`.deb` server, like this:
 
-    $ mkdir troglobit-archive-keyring
-    $ cd troglobit-archive-keyring
-    $ gpg --export archive@troglobit.com > troglobit-archive-keyring.gpg
+### archive-keyring.deb
+
+The public part of the GPG key also needs to be published as a regular
+`.deb` package.  Clone my [GIT repo](https://github.com/troglobit/deb)
+and change the `active/archive.asc` key:
+
+    $ git clone https://github.com/troglobit/deb.git
+    $ cd deb/
+    $ gpg --export -a archive@troglobit.com >active/archive.asc
+
+Then edit the files in the `debian/` sub-directory to match your repo
+and build the package:
+
+    $ dpkg-buildpackage
 
 Done.
 
@@ -106,8 +115,12 @@ Done.
 ### Developer
 
 It's now time for the developer(s) to upload the(ir) package(s) to the
-`/srv/deb/mini-dinstall/incoming/` directory.  Run `mini-dinstall` as
-follows from the command line, or start it in daemon mode:
+`/srv/deb/mini-dinstall/incoming/` directory.
+
+    $ scp troglobit-archive-keyring_* server:/srv/deb/mini-dinstall/incoming/
+
+Then run `mini-dinstall` in batch mode from the command line, or start
+it in daemon mode:
 
     $ mini-dinstall --config /srv/deb/.mini-dinstall.conf --batch
 
