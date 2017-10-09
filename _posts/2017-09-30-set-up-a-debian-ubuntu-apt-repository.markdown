@@ -134,6 +134,7 @@ Add the `deb` line to `/etc/sources.list` or a dedicated file in the
 
 Run an `sudo apt update` and remember to add the GPG key:
 
+    sudo apt-key adv --recv 4B8786A6
     apt install --allow-unauthenticated troglobit-archive-keyring
 
 There.  Packages can now be installed.
