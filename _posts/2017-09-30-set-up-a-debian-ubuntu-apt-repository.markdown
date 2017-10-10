@@ -6,7 +6,7 @@ comments: true
 categories:
 ---
 
-Quick note, mostly to myself, on how to set up a Debian/Ubuntu APT
+Quick note, mostly to self, on how to set up a Debian/Ubuntu APT
 repository with GPG signing, http://deb.troglobit.com
 
 At first I tried to use [Bas Wijnen's mini-dinstall howto][1], but never
