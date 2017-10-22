@@ -2,6 +2,7 @@
 name:  "NetBSD pre-built packages"
 title: "HowTo use NetBSD pre-built packages"
 date: 2015-07-30 11:13:00 +02:00
+aliases: [/howto-netbsd-pkgsrc.html]
 categories: [ "netbsd", "bsd", "howto" ]
 ---
 
