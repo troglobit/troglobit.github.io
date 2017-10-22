@@ -26,10 +26,10 @@ cd /usr/src cd sys/amd64/conf cat GENERIC | sed &#39;s/GENERIC$/MULTICAST/&#39; 
     
     <item>
       <title>HowTo: Add Multicast Routing to FreeBSD kernel</title>
-      <link>/howto/howto-add-multicast-routing-support-to-the-freebsd-kernel/</link>
+      <link>/howto/mrouting-in-freebsd/</link>
       <pubDate>Tue, 23 Sep 2014 01:55:19 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/howto/howto-add-multicast-routing-support-to-the-freebsd-kernel/</guid>
+      <guid>/howto/mrouting-in-freebsd/</guid>
       <description>This is a very short blog post, mostly intended as a reminder to myself. Basically, there are two methods of adding multicast routing support to the FreeBSD kernel:
  Rebuild the kernel with options MROUTING Load the kernel module: kldload ip_mroute  The kernel rebuild assumes the src.txz set was installed previously.
 cd /usr/src cd sys/amd64/conf cat GENERIC | sed &#39;s/GENERIC$/MULTICAST/&#39; &amp;gt; MULTICAST echo &#39;options MROUTING # Multicast routing&#39; &amp;gt;&amp;gt; MULTICAST echo &#39;options PIM # Enable for pimd&#39; &amp;gt;&amp;gt; MULTICAST cd - make kernel KERNCONF=MULTICAST reboot  That&amp;rsquo;s it.</description>

@@ -182,7 +182,7 @@
         <div class="posts-list">
           
             <article class="post-preview">
-              <a href="/howto/howto-play-with-snmp/">
+              <a href="/howto/snmp/">
                 <h2 class="post-title">HowTo play with SNMP</h2>
 
                 
@@ -195,7 +195,7 @@
                 
                   This mini HowTo is about how you can use SNMP client tools to retrieve human readable information from devices running an SNMP daemon. In the examples below mini-snmpd is used as the daemon and as client both the command line net-snmp tool and the snmpB GUI are used.
 Personally I use both Ubuntu and Debian, so the tools I use to download the clients will reflect that. See your respective UNIX distro&rsquo;s help pages for how to install these client tools in your operating system.
-                  <a href="/howto/howto-play-with-snmp/" class="post-read-more">[Read More]</a>
+                  <a href="/howto/snmp/" class="post-read-more">[Read More]</a>
                 
               </div>
 
@@ -204,7 +204,7 @@ Personally I use both Ubuntu and Debian, so the tools I use to download the clie
             </article>
           
             <article class="post-preview">
-              <a href="/howto/howto-run-pimd-on-freebsd/">
+              <a href="/howto/pimd-on-freebsd/">
                 <h2 class="post-title">HowTo run pimd on FreeBSD</h2>
 
                 
@@ -217,7 +217,7 @@ Personally I use both Ubuntu and Debian, so the tools I use to download the clie
                 
                   This is not a proper HowTo, more of a &ldquo;note to self&rdquo; after having created a setup to test pimd issue #57. For these notes the following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and Qemu 2.3.0, is used:
 .--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | '--------' '----' '----' '----------'  The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP/MLD snooping to get pimd to run smoothly.
-                  <a href="/howto/howto-run-pimd-on-freebsd/" class="post-read-more">[Read More]</a>
+                  <a href="/howto/pimd-on-freebsd/" class="post-read-more">[Read More]</a>
                 
               </div>
 
@@ -226,7 +226,7 @@ Personally I use both Ubuntu and Debian, so the tools I use to download the clie
             </article>
           
             <article class="post-preview">
-              <a href="/howto/howto-netbsd-pkgsrc/">
+              <a href="/howto/netbsd-pkgsrc/">
                 <h2 class="post-title">HowTo use NetBSD pre-built packages</h2>
 
                 
@@ -241,7 +241,7 @@ Personally I use both Ubuntu and Debian, so the tools I use to download the clie
 Here it is, you&rsquo;d think this be something the installer could set up a default for &hellip;
 PKG_PATH=ftp://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/  The simply
 pkg_add -v git  Or so you might think! As this blog points out, you also need to install some root certificates to get HTTPS/SSL working.
-                  <a href="/howto/howto-netbsd-pkgsrc/" class="post-read-more">[Read More]</a>
+                  <a href="/howto/netbsd-pkgsrc/" class="post-read-more">[Read More]</a>
                 
               </div>
 
@@ -250,7 +250,7 @@ pkg_add -v git  Or so you might think! As this blog points out, you also need to
             </article>
           
             <article class="post-preview">
-              <a href="/howto/howto-run-pimd-on-openbsd/">
+              <a href="/howto/pimd-on-openbsd/">
                 <h2 class="post-title">HowTo run pimd on OpenBSD</h2>
 
                 
@@ -263,7 +263,7 @@ pkg_add -v git  Or so you might think! As this blog points out, you also need to
                 
                   This is an introduction to HowTo run pimd on OpenBSD. I keep it around mostly as a reminder to myself when testing new pimd releases, maybe someone else can make use of it as well.
 First of all, my sincere thanks to the OpenBSD team for, not just an awesome UNIX distribution, but also for their good taste in shipping a MULTICAST enabled kernel in the base distribution! On both NetBSD and FreeBSD there is a bit of work to get multicast support, which is one of the reasons for my not writing a HowTo for either of them atm.
-                  <a href="/howto/howto-run-pimd-on-openbsd/" class="post-read-more">[Read More]</a>
+                  <a href="/howto/pimd-on-openbsd/" class="post-read-more">[Read More]</a>
                 
               </div>
 
@@ -417,7 +417,7 @@ cd /usr/src cd sys/amd64/conf cat GENERIC | sed 's/GENERIC$/MULTICAST/' &gt; MUL
             </article>
           
             <article class="post-preview">
-              <a href="/howto/howto-add-multicast-routing-support-to-the-freebsd-kernel/">
+              <a href="/howto/mrouting-in-freebsd/">
                 <h2 class="post-title">HowTo: Add Multicast Routing to FreeBSD kernel</h2>
 
                 
@@ -431,7 +431,7 @@ cd /usr/src cd sys/amd64/conf cat GENERIC | sed 's/GENERIC$/MULTICAST/' &gt; MUL
                   This is a very short blog post, mostly intended as a reminder to myself. Basically, there are two methods of adding multicast routing support to the FreeBSD kernel:
  Rebuild the kernel with options MROUTING Load the kernel module: kldload ip_mroute  The kernel rebuild assumes the src.txz set was installed previously.
 cd /usr/src cd sys/amd64/conf cat GENERIC | sed 's/GENERIC$/MULTICAST/' &gt; MULTICAST echo 'options MROUTING # Multicast routing' &gt;&gt; MULTICAST echo 'options PIM # Enable for pimd' &gt;&gt; MULTICAST cd - make kernel KERNCONF=MULTICAST reboot  That&rsquo;s it.
-                  <a href="/howto/howto-add-multicast-routing-support-to-the-freebsd-kernel/" class="post-read-more">[Read More]</a>
+                  <a href="/howto/mrouting-in-freebsd/" class="post-read-more">[Read More]</a>
                 
               </div>
 

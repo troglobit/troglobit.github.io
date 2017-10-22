@@ -15,10 +15,10 @@
     
     <item>
       <title>HowTo use NetBSD pre-built packages</title>
-      <link>/howto/howto-netbsd-pkgsrc/</link>
+      <link>/howto/netbsd-pkgsrc/</link>
       <pubDate>Thu, 30 Jul 2015 11:13:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/howto/howto-netbsd-pkgsrc/</guid>
+      <guid>/howto/netbsd-pkgsrc/</guid>
       <description>Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.
 Here it is, you&amp;rsquo;d think this be something the installer could set up a default for &amp;hellip;
 PKG_PATH=ftp://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/  The simply

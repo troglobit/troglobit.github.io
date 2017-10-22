@@ -208,7 +208,7 @@
   </url>
   
   <url>
-    <loc>/howto/howto-play-with-snmp/</loc>
+    <loc>/howto/snmp/</loc>
     <lastmod>2015-11-07T12:49:00+02:00</lastmod>
   </url>
   
@@ -218,7 +218,7 @@
   </url>
   
   <url>
-    <loc>/howto/howto-run-pimd-on-freebsd/</loc>
+    <loc>/howto/pimd-on-freebsd/</loc>
     <lastmod>2015-09-27T18:45:00+02:00</lastmod>
   </url>
   
@@ -228,17 +228,17 @@
   </url>
   
   <url>
-    <loc>/howto/howto-netbsd-pkgsrc/</loc>
+    <loc>/howto/netbsd-pkgsrc/</loc>
     <lastmod>2015-07-30T11:13:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>/howto/howto-run-pimd-on-openbsd/</loc>
+    <loc>/howto/pimd-on-openbsd/</loc>
     <lastmod>2015-07-19T00:32:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>/howto/multicast-howto/</loc>
+    <loc>/howto/multicast/</loc>
     <lastmod>2015-07-16T15:42:00+02:00</lastmod>
   </url>
   
@@ -313,7 +313,7 @@
   </url>
   
   <url>
-    <loc>/howto/howto-add-multicast-routing-support-to-the-freebsd-kernel/</loc>
+    <loc>/howto/mrouting-in-freebsd/</loc>
     <lastmod>2014-09-23T01:55:19+02:00</lastmod>
   </url>
   
@@ -338,7 +338,7 @@
   </url>
   
   <url>
-    <loc>/howto/howto-rebase-without-an-origin/</loc>
+    <loc>/howto/rebase-without-an-origin/</loc>
     <lastmod>2014-08-27T10:00:13+02:00</lastmod>
   </url>
   

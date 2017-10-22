@@ -15,30 +15,30 @@
     
     <item>
       <title>HowTo play with SNMP</title>
-      <link>/howto/howto-play-with-snmp/</link>
+      <link>/howto/snmp/</link>
       <pubDate>Sat, 07 Nov 2015 12:49:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/howto/howto-play-with-snmp/</guid>
+      <guid>/howto/snmp/</guid>
       <description>This mini HowTo is about how you can use SNMP client tools to retrieve human readable information from devices running an SNMP daemon. In the examples below mini-snmpd is used as the daemon and as client both the command line net-snmp tool and the snmpB GUI are used.
 Personally I use both Ubuntu and Debian, so the tools I use to download the clients will reflect that. See your respective UNIX distro&amp;rsquo;s help pages for how to install these client tools in your operating system.</description>
     </item>
     
     <item>
       <title>HowTo run pimd on FreeBSD</title>
-      <link>/howto/howto-run-pimd-on-freebsd/</link>
+      <link>/howto/pimd-on-freebsd/</link>
       <pubDate>Sun, 27 Sep 2015 18:45:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/howto/howto-run-pimd-on-freebsd/</guid>
+      <guid>/howto/pimd-on-freebsd/</guid>
       <description>This is not a proper HowTo, more of a &amp;ldquo;note to self&amp;rdquo; after having created a setup to test pimd issue #57. For these notes the following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and Qemu 2.3.0, is used:
 .--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | &#39;--------&#39; &#39;----&#39; &#39;----&#39; &#39;----------&#39;  The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP/MLD snooping to get pimd to run smoothly.</description>
     </item>
     
     <item>
       <title>HowTo use NetBSD pre-built packages</title>
-      <link>/howto/howto-netbsd-pkgsrc/</link>
+      <link>/howto/netbsd-pkgsrc/</link>
       <pubDate>Thu, 30 Jul 2015 11:13:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/howto/howto-netbsd-pkgsrc/</guid>
+      <guid>/howto/netbsd-pkgsrc/</guid>
       <description>Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.
 Here it is, you&amp;rsquo;d think this be something the installer could set up a default for &amp;hellip;
 PKG_PATH=ftp://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/  The simply
@@ -47,20 +47,20 @@ pkg_add -v git  Or so you might think! As this blog points out, you also need to
     
     <item>
       <title>HowTo run pimd on OpenBSD</title>
-      <link>/howto/howto-run-pimd-on-openbsd/</link>
+      <link>/howto/pimd-on-openbsd/</link>
       <pubDate>Sun, 19 Jul 2015 00:32:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/howto/howto-run-pimd-on-openbsd/</guid>
+      <guid>/howto/pimd-on-openbsd/</guid>
       <description>This is an introduction to HowTo run pimd on OpenBSD. I keep it around mostly as a reminder to myself when testing new pimd releases, maybe someone else can make use of it as well.
 First of all, my sincere thanks to the OpenBSD team for, not just an awesome UNIX distribution, but also for their good taste in shipping a MULTICAST enabled kernel in the base distribution! On both NetBSD and FreeBSD there is a bit of work to get multicast support, which is one of the reasons for my not writing a HowTo for either of them atm.</description>
     </item>
     
     <item>
       <title>Multicast HowTo</title>
-      <link>/howto/multicast-howto/</link>
+      <link>/howto/multicast/</link>
       <pubDate>Thu, 16 Jul 2015 15:42:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/howto/multicast-howto/</guid>
+      <guid>/howto/multicast/</guid>
       <description>This HowTo attempts to give some insight into the basics of setting up multicast routing. Both static multicast routing, with SMCRoute, and dynamic multicast routing, with mrouted and pimd.
 For some use-cases it may not be possible to use multicast routing, then I recommend trying out:
  igmproxy, mcproxy, or OpenVPN in Layer-2, bridged mode  Make sure to check out the FAQ for the most common problems.
@@ -69,10 +69,10 @@ Good Luck!</description>
     
     <item>
       <title>HowTo: Add Multicast Routing to FreeBSD kernel</title>
-      <link>/howto/howto-add-multicast-routing-support-to-the-freebsd-kernel/</link>
+      <link>/howto/mrouting-in-freebsd/</link>
       <pubDate>Tue, 23 Sep 2014 01:55:19 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/howto/howto-add-multicast-routing-support-to-the-freebsd-kernel/</guid>
+      <guid>/howto/mrouting-in-freebsd/</guid>
       <description>This is a very short blog post, mostly intended as a reminder to myself. Basically, there are two methods of adding multicast routing support to the FreeBSD kernel:
  Rebuild the kernel with options MROUTING Load the kernel module: kldload ip_mroute  The kernel rebuild assumes the src.txz set was installed previously.
 cd /usr/src cd sys/amd64/conf cat GENERIC | sed &#39;s/GENERIC$/MULTICAST/&#39; &amp;gt; MULTICAST echo &#39;options MROUTING # Multicast routing&#39; &amp;gt;&amp;gt; MULTICAST echo &#39;options PIM # Enable for pimd&#39; &amp;gt;&amp;gt; MULTICAST cd - make kernel KERNCONF=MULTICAST reboot  That&amp;rsquo;s it.</description>
@@ -80,10 +80,10 @@ cd /usr/src cd sys/amd64/conf cat GENERIC | sed &#39;s/GENERIC$/MULTICAST/&#39; 
     
     <item>
       <title>HowTo Rebase without an origin</title>
-      <link>/howto/howto-rebase-without-an-origin/</link>
+      <link>/howto/rebase-without-an-origin/</link>
       <pubDate>Wed, 27 Aug 2014 10:00:13 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/howto/howto-rebase-without-an-origin/</guid>
+      <guid>/howto/rebase-without-an-origin/</guid>
       <description>OK, so you&amp;rsquo;ve just been handed the task to integrate a big piece of corporate software and it&amp;rsquo;s nowhere near as done and ready as project management thinks. Of course you&amp;rsquo;ve already started chugging away at it, fixing bugs, refactoring code and wrapping it in neat containers to keep the changeset against the base SW small &amp;ndash; you already know you&amp;rsquo;ll get another drop of the same stinking pieace of code in another six months, so you keep the changes small and track them in GIT with neatly formatted commit messages.</description>
     </item>
     
