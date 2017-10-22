@@ -199,7 +199,7 @@ When a system comes back up after a reset, watchdogd determines the reset cause 
       <article role="main" class="blog-post">
         
 
-<p><img class="right" src="/images/watchdog.png" alt="http://toonclips.com/design/788"
+<p><img style="float: right" src="/images/watchdog.png" alt="http://toonclips.com/design/788"
      title="Watch Dog Detective Taking Notes"></p>
 
 <p><code>watchdogd(8)</code> is an advanced system and process supervisor daemon.
@@ -251,7 +251,7 @@ other aspect of the system, such as:</p>
 
 <h2 id="usage">Usage</h2>
 
-<pre><code>watchdogd [-hnsVvx] [-a WARN,REBOOT] [-T SEC] [-t SEC] [/dev/watchdog]
+<pre><code>watchdogd [-hnsVvx] [-a WARN[,REBOOT]] [-T SEC] [-t SEC] [/dev/watchdog]
 
 Options:
   -n, --foreground         Start in foreground (background is default)
@@ -262,9 +262,9 @@ Options:
   -t, --interval=SEC       WDT kick interval in SEC seconds, default: 10
   -x, --safe-exit          Disable watchdog on exit from SIGINT/SIGTERM
   
-  -a, --load-average=W,R   Enable load average check WARN,REBOOT
-  -m, --meminfo=W,R        Enable memory leak check, WARN,REBOOT
-  -f, --filenr=W,R         Enable file descriptor leak check, WARN,REBOOT
+  -a, --load-average=W[,R] Enable load average check WARN,REBOOT
+  -m, --meminfo=W[,R]      Enable memory leak check, WARN,REBOOT
+  -f, --filenr=W[,R]       Enable file descriptor leak check, WARN,REBOOT
   -p, --pmon[=PRIO]        Enable process monitor, run at elevated RT prio
                            Default RT prio when active: SCHED_RR @98
   
@@ -332,25 +332,25 @@ adding the <code>wdog_pmon_kick()</code> call to the main event loop.</p>
 value with <code>errno</code> set on error.  The <code>wdog_pmon_subscribe()</code> call
 returns a positive integer (including zero) for the watchdog <code>id</code>.</p>
 
-<pre><code class="language-c">    /*
-     * Enable or disable watchdogd at runtime.
-     */
-    int wdog_enable           (int enable);
-    int wdog_status           (int *enabled);
-    
-    /*
-     * Check if watchdogd API is actively responding,
-     * returns %TRUE(1) or %FALSE(0)
-     */
-    int wdog_pmon_ping        (void);
+<pre><code class="language-c">/*
+ * Enable or disable watchdogd at runtime.
+ */
+int wdog_enable           (int enable);
+int wdog_status           (int *enabled);
 
-    /*
-     * Register with pmon, timeout in msec.  Return value is the `id`
-     * to be used with the `ack` in subsequent kick()/unsubscribe()
-     */
-    int wdog_pmon_subscribe   (char *label, int timeout, int *ack);
-    int wdog_pmon_unsubscribe (int id, int ack);
-    int wdog_pmon_kick        (int id, int *ack);
+/*
+ * Check if watchdogd API is actively responding,
+ * returns %TRUE(1) or %FALSE(0)
+ */
+int wdog_pmon_ping        (void);
+
+/*
+ * Register with pmon, timeout in msec.  Return value is the `id`
+ * to be used with the `ack` in subsequent kick()/unsubscribe()
+ */
+int wdog_pmon_subscribe   (char *label, int timeout, int *ack);
+int wdog_pmon_unsubscribe (int id, int ack);
+int wdog_pmon_kick        (int id, int *ack);
 </code></pre>
 
 <p>It is highly recommended to use an event loop like libev, <a href="https://github.com/troglobit/libuev/">libuev</a>, or
@@ -362,18 +362,18 @@ kick to run periodically to monitor proper operation of the client.</p>
 <p>For other applications, identify your main loop, its max period time and
 instrument it like this:</p>
 
-<pre><code class="language-c">    int ack, wid;
-    
-    /* Library will use process' name on NULL first arg. */
-    wid = wdog_pmon_subscribe(NULL, 10000, &amp;ack);
-    if (-1 == wid)
-            ;      /* Error handling */
-    
-    while (1) {
-            ...
-            wdog_pmon_kick(wid, &amp;ack);
-            ...
-    }
+<pre><code class="language-c">int ack, wid;
+
+/* Library will use process' name on NULL first arg. */
+wid = wdog_pmon_subscribe(NULL, 10000, &amp;ack);
+if (-1 == wid)
+        ;      /* Error handling */
+
+while (1) {
+        ...
+        wdog_pmon_kick(wid, &amp;ack);
+        ...
+}
 </code></pre>
 
 <p>This simple example subscribes to the watchdog with a 10 sec timeout.
