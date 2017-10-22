@@ -5,6 +5,7 @@ comments: true
 date: 2016-04-11T01:28:27Z
 title: The key to successful boot
 url: /2016/04/11/the-key-to-successful-boot/
+aliases: /blog/2016/04/11/the-key-to-successful-boot/
 ---
 
 How do you know when your UNIX service (daemon) is ready?  Simple, it

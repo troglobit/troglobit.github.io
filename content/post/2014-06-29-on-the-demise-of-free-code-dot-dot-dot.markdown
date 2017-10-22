@@ -4,6 +4,7 @@ comments: true
 date: 2014-06-29T14:52:39Z
 title: On the demise of free(code) ...
 url: /2014/06/29/on-the-demise-of-free-code-dot-dot-dot/
+aliases: /blog/2014/06/29/on-the-demise-of-free-code-dot-dot-dot/
 ---
 
 I feel I have to write something about the demise of

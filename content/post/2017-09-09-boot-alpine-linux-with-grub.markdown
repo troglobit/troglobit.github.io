@@ -4,6 +4,7 @@ comments: true
 date: 2017-09-09T21:37:10Z
 title: Boot Alpine Linux with GRUB
 url: /2017/09/09/boot-alpine-linux-with-grub/
+aliases: /blog/2017/09/09/boot-alpine-linux-with-grub/
 ---
 
 It's fairly easy to replace the slightly unfriendly syslinux with grub

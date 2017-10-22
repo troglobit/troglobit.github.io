@@ -5,6 +5,7 @@ comments: true
 date: 2007-07-07T09:52:17Z
 title: Buggy Gnome Main Menu
 url: /2007/07/07/buggy-gnome-main-menu/
+aliases: /blog/2007/07/07/buggy-gnome-main-menu/
 ---
 
 I've been living with the new Gnome Main Menu for a while now.  Like many

@@ -4,6 +4,7 @@ comments: true
 date: 2017-01-03T17:03:05Z
 title: Trust Bluetooth 4.0 Adapter in Linux
 url: /2017/01/03/trust-bluetooth-4.0-adapter-in-linux/
+aliases: /blog/2017/01/03/trust-bluetooth-4.0-adapter-in-linux/
 ---
 
 This is a quick writeup of how to get the Trust Bluetooth 4.0 adapter

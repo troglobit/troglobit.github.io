@@ -4,6 +4,7 @@ comments: true
 date: 2015-01-12T01:57:40Z
 title: 'Rant: All the C Compiler Warnings ...'
 url: /2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/
+aliases: /blog/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/
 ---
 
 > Enable *all* the warnings!

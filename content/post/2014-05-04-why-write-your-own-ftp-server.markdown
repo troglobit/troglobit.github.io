@@ -6,6 +6,7 @@ comments: true
 date: 2014-05-04T11:25:09Z
 title: Why write your own FTP server?
 url: /2014/05/04/why-write-your-own-ftp-server/
+aliases: /blog/2014/05/04/why-write-your-own-ftp-server/
 ---
 
 So, I finally got fed up with all other FTP servers and wrote

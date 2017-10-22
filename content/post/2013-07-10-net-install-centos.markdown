@@ -6,6 +6,7 @@ comments: true
 date: 2013-07-10T00:00:00Z
 title: Net Install CentOS
 url: /2013/07/10/net-install-centos/
+aliases: /blog/2013/07/10/net-install-centos/
 ---
 
 I usually run Debian or Ubuntu on my machines.  However, having

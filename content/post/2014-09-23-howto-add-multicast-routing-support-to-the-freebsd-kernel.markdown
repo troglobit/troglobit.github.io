@@ -9,6 +9,7 @@ date: 2014-09-23T01:55:19Z
 name: MROUTING in FreeBSD
 title: 'HowTo: Add Multicast Routing to FreeBSD kernel'
 url: /2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/
+aliases: /blog/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/
 ---
 
 This is a very short blog post, mostly intended as a reminder to myself.

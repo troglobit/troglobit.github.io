@@ -4,6 +4,7 @@ comments: true
 date: 2016-10-27T22:22:44Z
 title: New Toolchains
 url: /2016/10/27/new-toolchains/
+aliases: /blog/2016/10/27/new-toolchains/
 ---
 
 Finally, fresh from the oven, here are the remaining two toolchains I've

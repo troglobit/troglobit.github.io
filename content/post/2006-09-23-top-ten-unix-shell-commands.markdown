@@ -4,6 +4,7 @@ comments: true
 date: 2006-09-23T23:02:42Z
 title: Top Ten UNIX Shell Commands
 url: /2006/09/23/top-ten-unix-shell-commands/
+aliases: /blog/2006/09/23/top-ten-unix-shell-commands/
 ---
 
 Current trend is to run the following

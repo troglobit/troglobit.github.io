@@ -6,6 +6,7 @@ comments: true
 date: 2006-07-21T22:10:48Z
 title: Bromsbyte Passat
 url: /2006/07/21/bromsbyte-passat/
+aliases: /blog/2006/07/21/bromsbyte-passat/
 ---
 
 Igår bytte jag bromsskivor på vår gamla Passat Variant -00.  Det var

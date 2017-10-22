@@ -4,6 +4,7 @@ comments: true
 date: 2006-07-23T22:10:50Z
 title: Atari ST(E) Emulation with Steem
 url: /2006/07/23/atari-st-e-emulation-with-steem/
+aliases: /blog/2006/07/23/atari-st-e-emulation-with-steem/
 ---
 
 This is is really great!  Today, on my 32nd birthday I found a really

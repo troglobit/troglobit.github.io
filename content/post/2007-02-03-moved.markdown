@@ -5,6 +5,7 @@ comments: true
 date: 2007-02-03T10:52:15Z
 title: Moved
 url: /2007/02/03/moved/
+aliases: /blog/2007/02/03/moved/
 ---
 
 Yep, we finally did it, we bought ourselves a house.  Last year in

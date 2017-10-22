@@ -6,6 +6,7 @@ comments: true
 date: 2014-05-14T08:29:48Z
 title: New release of the DDNS client Inadyn
 url: /2014/05/14/new-release-of-the-ddns-client-inadyn/
+aliases: /blog/2014/05/14/new-release-of-the-ddns-client-inadyn/
 ---
 
 Looking for a Dynamic DNS, DDNS, client?  Well you're in luck, the

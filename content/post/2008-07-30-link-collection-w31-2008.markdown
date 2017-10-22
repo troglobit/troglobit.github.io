@@ -4,6 +4,7 @@ comments: true
 date: 2008-07-30T16:22:36Z
 title: Link Collection w31 2008
 url: /2008/07/30/link-collection-w31-2008/
+aliases: /blog/2008/07/30/link-collection-w31-2008/
 ---
 
 George Dyson, son of legendary [Freeman Dyson][1], talks about

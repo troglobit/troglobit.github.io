@@ -4,6 +4,7 @@ comments: true
 date: 2014-02-23T00:00:00Z
 title: 'Weekend Hack: JSON vs CONF'
 url: /2014/02/23/weekend-hack-json-vs-conf/
+aliases: /blog/2014/02/23/weekend-hack-json-vs-conf/
 ---
 
 It was time.  I had been putting it off for far too long -- learning

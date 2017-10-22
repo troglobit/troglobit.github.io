@@ -4,6 +4,7 @@ comments: true
 date: 2006-08-05T22:35:49Z
 title: Test posting using blosxom
 url: /2006/08/05/test-posting-using-blosxom/
+aliases: /blog/2006/08/05/test-posting-using-blosxom/
 ---
 
 First try to consolidate on using an already working implementation of a

@@ -4,6 +4,7 @@ comments: true
 date: 2015-09-09T21:49:13Z
 title: Summer of Code 2015
 url: /2015/09/09/summer-of-code-2015/
+aliases: /blog/2015/09/09/summer-of-code-2015/
 ---
 
 Summer is now slowly fading away, and what a summer it has been here in

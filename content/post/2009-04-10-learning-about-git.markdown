@@ -8,6 +8,7 @@ comments: true
 date: 2009-04-10T16:23:42Z
 title: Learning About GIT
 url: /2009/04/10/learning-about-git/
+aliases: /blog/2009/04/10/learning-about-git/
 ---
 
 It has been a long time coming, but now I'm seriously starting to look

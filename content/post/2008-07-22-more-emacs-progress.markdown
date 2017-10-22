@@ -5,6 +5,7 @@ comments: true
 date: 2008-07-22T23:56:55Z
 title: More Emacs Progress!
 url: /2008/07/22/more-emacs-progress/
+aliases: /blog/2008/07/22/more-emacs-progress/
 ---
 
 Wow, I'm almost starting to feel like a Windows user.  The latest CVS

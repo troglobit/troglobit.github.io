@@ -5,6 +5,7 @@ comments: true
 date: 2010-07-13T20:45:49Z
 title: Git Quickie
 url: /2010/07/13/git-quickie/
+aliases: /blog/2010/07/13/git-quickie/
 ---
 
 This is a document I intend to maintain for my own purposes.  It serves

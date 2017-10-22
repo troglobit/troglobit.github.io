@@ -6,6 +6,7 @@ comments: true
 date: 2010-10-11T23:44:28Z
 title: Announcing mrouted v3.9.3
 url: /2010/10/11/announcing-mrouted-v3-dot-9-3/
+aliases: /blog/2010/10/11/announcing-mrouted-v3-dot-9-3/
 ---
 
 Here is another bug-fix release of [mrouted](/mrouted.html).  This time

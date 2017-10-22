@@ -6,6 +6,7 @@ comments: true
 date: 2009-02-08T22:35:22Z
 title: Minix editline v0.3.0
 url: /2009/02/08/minix-editline-v0-dot-3-0/
+aliases: /blog/2009/02/08/minix-editline-v0-dot-3-0/
 ---
 
 It's here!  Fresh, new and packed with new features!  Well, really just

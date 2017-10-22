@@ -6,6 +6,7 @@ comments: true
 date: 2008-10-27T19:50:03Z
 title: Ubuntu 8.10rc1 &mdash; NetworkManager WTF?!
 url: /2008/10/27/ubuntu-8-dot-10rc1-networkmanager-wtf/
+aliases: /blog/2008/10/27/ubuntu-8-dot-10rc1-networkmanager-wtf/
 ---
 
 I tried upgrading from Hardy Heron to Intrepid Ibex this weekend.  Big

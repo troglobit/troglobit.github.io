@@ -5,6 +5,7 @@ comments: true
 date: 2013-06-07T00:00:00Z
 title: Proof of Life
 url: /2013/06/07/proof-of-life/
+aliases: /blog/2013/06/07/proof-of-life/
 ---
 
 There is a certain "burstyness" to the way I work on my open source

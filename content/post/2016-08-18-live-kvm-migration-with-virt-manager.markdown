@@ -4,6 +4,7 @@ comments: true
 date: 2016-08-18T20:07:17Z
 title: Live KVM migration with virt-manager
 url: /2016/08/18/live-kvm-migration-with-virt-manager/
+aliases: /blog/2016/08/18/live-kvm-migration-with-virt-manager/
 ---
 
 With the new servers and my server room shaping up, I've been working on

@@ -6,6 +6,7 @@ comments: true
 date: 2011-01-08T23:40:22Z
 title: Announcing pimd v2.1.6
 url: /2011/01/08/announcing-pimd-v2-dot-1-6/
+aliases: /blog/2011/01/08/announcing-pimd-v2-dot-1-6/
 ---
 
 This is a security release of [pimd][1], v2.1.6.  The following fixes

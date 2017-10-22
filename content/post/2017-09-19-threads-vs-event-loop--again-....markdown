@@ -4,6 +4,7 @@ comments: true
 date: 2017-09-19T08:51:38Z
 title: Threads vs Event Loop, Again ...
 url: /2017/09/19/threads-vs-event-loop--again-.../
+aliases: /blog/2017/09/19/threads-vs-event-loop--again-.../
 ---
 
 I still get asked this, from time to time.  Maybe it's because I only

@@ -4,6 +4,7 @@ comments: true
 date: 2015-11-10T12:14:09Z
 title: 'Awesome: Changing Next/Prev Tune in Spotify'
 url: /2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/
+aliases: /blog/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/
 ---
 
 Back to using the [Awesome WM](http://awesome.naquadah.org/) in Ubuntu.

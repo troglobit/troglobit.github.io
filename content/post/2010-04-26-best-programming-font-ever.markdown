@@ -6,6 +6,7 @@ comments: true
 date: 2010-04-26T22:44:19Z
 title: Best. Programming. Font. Ever.
 url: /2010/04/26/best-programming-font-ever/
+aliases: /blog/2010/04/26/best-programming-font-ever/
 ---
 
 This is not only a reminder to myself, it is appraisal to the probably

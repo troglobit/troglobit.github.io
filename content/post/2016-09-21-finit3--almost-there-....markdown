@@ -4,6 +4,7 @@ comments: true
 date: 2016-09-21T19:08:37Z
 title: 'Finit3: Almost there ...'
 url: /2016/09/21/finit3--almost-there-.../
+aliases: /blog/2016/09/21/finit3--almost-there-.../
 ---
 
 Today the new logo for Finit3 was added to the GitHub repo and the

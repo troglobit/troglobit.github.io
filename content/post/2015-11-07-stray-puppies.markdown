@@ -4,6 +4,7 @@ comments: true
 date: 2015-11-07T02:32:12Z
 title: Stray Puppies
 url: /2015/11/07/stray-puppies/
+aliases: /blog/2015/11/07/stray-puppies/
 ---
 
 Sometimes I just cannot help myself.  It's like finding a stray puppy,

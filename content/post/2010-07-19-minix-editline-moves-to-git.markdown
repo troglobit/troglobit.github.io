@@ -6,6 +6,7 @@ comments: true
 date: 2010-07-19T02:40:36Z
 title: Minix editline moves to GIT
 url: /2010/07/19/minix-editline-moves-to-git/
+aliases: /blog/2010/07/19/minix-editline-moves-to-git/
 ---
 
 A small heads-up, I've migrated the Minix editline project from Bazaar

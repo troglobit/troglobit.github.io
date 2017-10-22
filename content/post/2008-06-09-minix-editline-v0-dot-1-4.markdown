@@ -6,6 +6,7 @@ comments: true
 date: 2008-06-09T00:49:22Z
 title: Minix editline v0.1.4
 url: /2008/06/09/minix-editline-v0-dot-1-4/
+aliases: /blog/2008/06/09/minix-editline-v0-dot-1-4/
 ---
 
 Another day another release, I guess. :-)

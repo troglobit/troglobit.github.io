@@ -7,6 +7,7 @@ comments: true
 date: 2007-07-12T11:37:38Z
 title: Netapplet Patchwork
 url: /2007/07/12/netapplet-patchwork/
+aliases: /blog/2007/07/12/netapplet-patchwork/
 ---
 
 I think I've finally done it &mdash; achieved my ultimate goal of

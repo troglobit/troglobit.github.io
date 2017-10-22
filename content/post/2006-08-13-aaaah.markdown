@@ -5,6 +5,7 @@ comments: true
 date: 2006-08-13T10:43:13Z
 title: Aaaah, the fish got a facelift! :)
 url: /2006/08/13/aaaah/
+aliases: /blog/2006/08/13/aaaah/
 ---
 
 This is just great!  Wanda the fortune telling fish of the Gnome desktop

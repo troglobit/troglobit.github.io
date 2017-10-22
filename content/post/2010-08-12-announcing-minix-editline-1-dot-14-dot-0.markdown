@@ -6,6 +6,7 @@ comments: true
 date: 2010-08-12T18:17:40Z
 title: Announcing Minix editline 1.14.0
 url: /2010/08/12/announcing-minix-editline-1-dot-14-dot-0/
+aliases: /blog/2010/08/12/announcing-minix-editline-1-dot-14-dot-0/
 ---
 
 It is with great pleasure I announce the next release of the

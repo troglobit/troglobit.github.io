@@ -8,6 +8,7 @@ comments: true
 date: 2015-01-02T14:12:59Z
 title: Blog Restoration Project
 url: /2015/01/02/blog-restoration-project-now-also-on-github-pages/
+aliases: /blog/2015/01/02/blog-restoration-project-now-also-on-github-pages/
 ---
 
 I've had this long-standing issue with backups.  It's deadly boring to

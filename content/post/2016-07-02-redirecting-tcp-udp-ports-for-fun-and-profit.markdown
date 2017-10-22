@@ -5,6 +5,7 @@ comments: true
 date: 2016-07-02T12:54:37Z
 title: Redirecting Ports For Fun and Profit
 url: /2016/07/02/redirecting-tcp-udp-ports-for-fun-and-profit/
+aliases: /blog/2016/07/02/redirecting-tcp-udp-ports-for-fun-and-profit/
 ---
 
 Recently I needed a simple TCP/UDP port redirector and stumbled upon

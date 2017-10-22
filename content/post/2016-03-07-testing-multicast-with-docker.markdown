@@ -8,6 +8,7 @@ comments: true
 date: 2016-03-07T01:37:04Z
 title: Testing multicast with Docker
 url: /2016/03/07/testing-multicast-with-docker/
+aliases: /blog/2016/03/07/testing-multicast-with-docker/
 ---
 
 Recently [issue #70](https://github.com/troglobit/pimd/issues/70) was

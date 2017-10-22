@@ -4,6 +4,7 @@ comments: true
 date: 2016-07-05T22:04:36Z
 title: Multicast routing with PIM-SM over GRE
 url: /2016/07/05/multicast-routing-with-pim-sm-over-gre/
+aliases: /blog/2016/07/05/multicast-routing-with-pim-sm-over-gre/
 ---
 
 GRE tunnels are useful in many ways.  This blog post shows how to set up

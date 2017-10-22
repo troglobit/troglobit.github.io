@@ -8,6 +8,7 @@ comments: true
 date: 2013-08-06T00:00:00Z
 title: Threads vs Events
 url: /2013/08/06/event-handling/
+aliases: /blog/2013/08/06/event-handling/
 ---
 
 This is a rant about something I recently found to be a long standing

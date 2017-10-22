@@ -4,6 +4,7 @@ comments: false
 date: 2013-02-17T00:00:00Z
 title: Resurrection
 url: /2013/02/17/resurrection/
+aliases: /blog/2013/02/17/resurrection/
 ---
 
 Quite some time has passed now since our old site, http://vmlinux.org,

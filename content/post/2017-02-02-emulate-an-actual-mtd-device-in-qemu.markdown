@@ -7,6 +7,7 @@ comments: true
 date: 2017-02-02T18:52:18Z
 title: Emulate an actual MTD device in Qemu
 url: /2017/02/02/emulate-an-actual-mtd-device-in-qemu/
+aliases: /blog/2017/02/02/emulate-an-actual-mtd-device-in-qemu/
 ---
 
 Having worked with Linux for the last 20 years, and embedded for more

@@ -5,6 +5,7 @@ comments: true
 date: 2008-08-20T20:14:42Z
 title: Cross Compiler Foo
 url: /2008/08/20/cross-compiler-foo/
+aliases: /blog/2008/08/20/cross-compiler-foo/
 ---
 
 There is a certain magic surrounding cross compilers and the people that

@@ -4,6 +4,7 @@ comments: true
 date: 2009-02-28T23:36:37Z
 title: Link Collection 2009-02-28
 url: /2009/02/28/link-collection-2009-02-28/
+aliases: /blog/2009/02/28/link-collection-2009-02-28/
 ---
 
 [This makes it possible][1] to debug why a disk needs to spin up, and to

@@ -7,6 +7,7 @@ comments: true
 date: 2014-09-02T10:47:35Z
 title: The awesome uftpd, now w/ TFTP support! :)
 url: /2014/09/02/new-release-of-the-awesome-uftpd/
+aliases: /blog/2014/09/02/new-release-of-the-awesome-uftpd/
 ---
 
 Today sees the release of v1.3 of the awesome little uftpd. The main

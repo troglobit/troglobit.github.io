@@ -4,6 +4,7 @@ comments: true
 date: 2008-07-17T01:48:05Z
 title: Suddenly Compiz is not Working Anymore ...
 url: /2008/07/17/suddenly-compiz-is-not-working-anymore-dot-dot-dot/
+aliases: /blog/2008/07/17/suddenly-compiz-is-not-working-anymore-dot-dot-dot/
 ---
 
 So weird.  I usually rearrange my desktop every two weeks, often when I

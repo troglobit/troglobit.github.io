@@ -4,6 +4,7 @@ comments: true
 date: 2009-06-13T00:04:30Z
 title: Micro Tetris™
 url: /2009/06/13/micro-tetris/
+aliases: /blog/2009/06/13/micro-tetris/
 ---
 
 I just published the [unobfuscated version][1] of the

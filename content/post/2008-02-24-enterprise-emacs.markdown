@@ -5,6 +5,7 @@ comments: true
 date: 2008-02-24T10:59:19Z
 title: Enterprise Emacs
 url: /2008/02/24/enterprise-emacs/
+aliases: /blog/2008/02/24/enterprise-emacs/
 ---
 
 Many years ago I discovered the beauty in a beast called [Emacs][1].  I

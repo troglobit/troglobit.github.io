@@ -7,6 +7,7 @@ comments: true
 date: 2008-06-07T21:45:05Z
 title: Minix editline v0.1.0
 url: /2008/06/07/minix-editline-v0-dot-1-0/
+aliases: /blog/2008/06/07/minix-editline-v0-dot-1-0/
 ---
 
 I've been looking long and hard for a small and useful [GNU readline][1]

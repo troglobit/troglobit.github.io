@@ -4,6 +4,7 @@ comments: true
 date: 2016-08-13T15:59:36Z
 title: Fake RAID Adventures
 url: /2016/08/13/fake-raid-adventures/
+aliases: /blog/2016/08/13/fake-raid-adventures/
 ---
 
 The other day I got my geeky hands on two old SuperMicro X8STI-F 1U

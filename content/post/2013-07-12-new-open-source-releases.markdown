@@ -11,6 +11,7 @@ comments: true
 date: 2013-07-12T00:00:00Z
 title: New Open Source Releases
 url: /2013/07/12/new-open-source-releases/
+aliases: /blog/2013/07/12/new-open-source-releases/
 ---
 
 Vacation time means catching up on my Open Source projects! :)

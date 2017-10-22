@@ -4,6 +4,7 @@ comments: true
 date: 2016-09-26T22:43:53Z
 title: ARM Toolchain r1
 url: /2016/09/26/arm-toolchain-r1/
+aliases: /blog/2016/09/26/arm-toolchain-r1/
 ---
 
 First GCC 6.1 based ARM (32-bit) toolchain released on my FTP.  Built

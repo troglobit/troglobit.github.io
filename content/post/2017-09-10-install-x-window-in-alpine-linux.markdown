@@ -4,6 +4,7 @@ comments: true
 date: 2017-09-10T11:13:39Z
 title: Install X-Window in Alpine Linux
 url: /2017/09/10/install-x-window-in-alpine-linux/
+aliases: /blog/2017/09/10/install-x-window-in-alpine-linux/
 ---
 
 How to install LXDM + XFCE4 in Alpine Linux 3.6 when testing with

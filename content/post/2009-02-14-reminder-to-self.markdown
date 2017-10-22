@@ -4,6 +4,7 @@ comments: true
 date: 2009-02-14T21:13:41Z
 title: Reminder to Self
 url: /2009/02/14/reminder-to-self/
+aliases: /blog/2009/02/14/reminder-to-self/
 ---
 
 How to recode AVI-files to be able to write them to a [Video CD][1].

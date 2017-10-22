@@ -4,6 +4,7 @@ comments: true
 date: 2016-04-04T00:14:28Z
 title: Lecture from the UNIX beards
 url: /2016/04/04/lecture-from-the-unix-beards/
+aliases: /blog/2016/04/04/lecture-from-the-unix-beards/
 ---
 
 After the `rm -rf /*` disaster that hit me a couple of weeks ago I've

@@ -4,6 +4,7 @@ comments: true
 date: 2008-07-30T23:53:42Z
 title: Moving to ISC
 url: /2008/07/30/moving-to-isc/
+aliases: /blog/2008/07/30/moving-to-isc/
 ---
 
 I hereby announce that all of the code I produce from now on will use

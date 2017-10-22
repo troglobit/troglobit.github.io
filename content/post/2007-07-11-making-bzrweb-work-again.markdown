@@ -4,6 +4,7 @@ comments: true
 date: 2007-07-11T10:35:00Z
 title: Making bzrweb work again
 url: /2007/07/11/making-bzrweb-work-again/
+aliases: /blog/2007/07/11/making-bzrweb-work-again/
 ---
 
 During the past weekend and the last couple of evenings I've been

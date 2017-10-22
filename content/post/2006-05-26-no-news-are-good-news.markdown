@@ -5,6 +5,7 @@ comments: true
 date: 2006-05-26T21:10:42Z
 title: No news are good news?
 url: /2006/05/26/no-news-are-good-news/
+aliases: /blog//2006/05/26/no-news-are-good-news/
 ---
 
 Seriously, it's been one long winter and now finally summer is upon us

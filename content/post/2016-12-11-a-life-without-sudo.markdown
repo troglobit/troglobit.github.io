@@ -8,6 +8,7 @@ comments: true
 date: 2016-12-11T20:26:12Z
 title: A life without sudo
 url: /2016/12/11/a-life-without-sudo/
+aliases: /blog/2016/12/11/a-life-without-sudo/
 ---
 
 Ever since my first stumbling steps with Linux back in '96, I've been

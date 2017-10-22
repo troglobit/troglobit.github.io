@@ -8,6 +8,7 @@ comments: true
 date: 2016-11-06T01:34:18Z
 title: Merecat - another stray kitten?
 url: /2016/11/06/merecat---another-stray-kitten-/
+aliases: /blog/2016/11/06/merecat---another-stray-kitten-/
 ---
 
 This post is about my adoption, refactor, and rebranding of thttpd as

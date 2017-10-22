@@ -5,6 +5,7 @@ comments: true
 date: 2015-01-08T01:57:14Z
 title: Recent Open Source Work
 url: /2015/01/08/recent-open-source-work/
+aliases: /blog/2015/01/08/recent-open-source-work/
 ---
 
 I'm a coder, not a writer.  Here's what I've been working on during the

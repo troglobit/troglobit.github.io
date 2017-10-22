@@ -8,6 +8,7 @@ comments: true
 date: 2017-02-11T16:03:39Z
 title: Running ikiwiki in Merecat httpd
 url: /2017/02/11/running-ikiwiki-in-merecat-httpd/
+aliases: /blog/2017/02/11/running-ikiwiki-in-merecat-httpd/
 ---
 
 This is a HowTo for setting up [ikiwiki][] with

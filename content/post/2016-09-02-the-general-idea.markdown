@@ -4,6 +4,7 @@ comments: true
 date: 2016-09-02T23:30:00Z
 title: The General Idea
 url: /2016/09/02/the-general-idea/
+aliases: /blog/2016/09/02/the-general-idea/
 ---
 
 OK, so here's the general idea: take one teaspoon of a well equipped SBC

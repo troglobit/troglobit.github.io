@@ -7,6 +7,7 @@ comments: true
 date: 2006-07-17T21:10:45Z
 title: Quick Note
 url: /2006/07/17/quick-note/
+aliases: /blog/2006/07/17/quick-note/
 ---
 
 About that `/etc/network/interface` autoconfig thingy: it's almost done.

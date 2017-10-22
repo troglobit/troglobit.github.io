@@ -6,6 +6,7 @@ comments: true
 date: 2011-01-09T20:20:57Z
 title: Announcing pimd v2.1.7
 url: /2011/01/09/announcing-pimd-v2-dot-1-7/
+aliases: /blog/2011/01/09/announcing-pimd-v2-dot-1-7/
 ---
 
 This is a followup release to the [security fix][CVE] in [pimd][1],

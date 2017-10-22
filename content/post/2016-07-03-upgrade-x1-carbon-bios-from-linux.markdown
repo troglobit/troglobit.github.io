@@ -4,6 +4,7 @@ comments: true
 date: 2016-07-03T09:57:44Z
 title: Upgrade X1 Carbon BIOS from Linux
 url: /2016/07/03/upgrade-x1-carbon-bios-from-linux/
+aliases: /blog/2016/07/03/upgrade-x1-carbon-bios-from-linux/
 ---
 
 This is a very brief writeup of how to upgrade the BIOS on a X1 Carbon

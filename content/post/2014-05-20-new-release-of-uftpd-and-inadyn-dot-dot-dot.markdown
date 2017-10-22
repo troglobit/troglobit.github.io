@@ -8,6 +8,7 @@ comments: true
 date: 2014-05-20T21:08:25Z
 title: New releases of uftpd and inadyn ...
 url: /2014/05/20/new-release-of-uftpd-and-inadyn-dot-dot-dot/
+aliases: /blog/2014/05/20/new-release-of-uftpd-and-inadyn-dot-dot-dot/
 ---
 
 The last couple of weeks have both seen the birth of the fabulous

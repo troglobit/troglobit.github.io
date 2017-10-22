@@ -4,6 +4,7 @@ comments: true
 date: 2017-06-06T10:44:55Z
 title: GIT, Autoconf and Automake in OpenBSD
 url: /2017/06/06/install-git-in-openbsd/
+aliases: /blog/2017/06/06/install-git-in-openbsd/
 ---
 
 Reminder to self:

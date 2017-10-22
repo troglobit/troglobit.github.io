@@ -5,6 +5,7 @@ date: 2014-07-20T12:53:38Z
 published: false
 title: The Culinary Art of Software Development
 url: /2014/07/20/the-culinary-art-of-software-development/
+aliases: /blog/2014/07/20/the-culinary-art-of-software-development/
 ---
 
 I tend to return to this topic now and then, this time I postulate the

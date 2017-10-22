@@ -5,6 +5,7 @@ comments: true
 date: 2008-02-23T21:34:44Z
 title: Suspend/Resume Nightmare in Ubuntu
 url: /2008/02/23/suspend-slash-resume-nightmare-in-ubuntu/
+aliases: /blog/2008/02/23/suspend-slash-resume-nightmare-in-ubuntu/
 ---
 
 I've had my ThinkPad T43 for a while now and I'm really pleased with it,

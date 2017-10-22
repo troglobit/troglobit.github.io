@@ -5,6 +5,7 @@ comments: true
 date: 2009-06-14T21:04:34Z
 title: Oona 6 years old!
 url: /2009/06/14/oona-6-years-old/
+aliases: /blog/2009/06/14/oona-6-years-old/
 ---
 
 Wow, this friday (June 12th) my daughter turned six!  I can hardly

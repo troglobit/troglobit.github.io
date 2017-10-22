@@ -4,6 +4,7 @@ comments: true
 date: 2007-07-31T23:33:01Z
 title: Bzrweb 0.1.2 Released
 url: /2007/07/31/bzrweb-0-dot-1-2-released/
+aliases: /blog/2007/07/31/bzrweb-0-dot-1-2-released/
 ---
 
 The end of my own "summer of code" is here.  Seriously, this summer I

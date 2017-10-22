@@ -8,6 +8,7 @@ comments: true
 date: 2014-09-13T19:18:56Z
 title: GnuTLS support in Inadyn and fixes to uftpd
 url: /2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/
+aliases: /blog/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/
 ---
 
 Quite a few changes lately.  I finally got around to adding support

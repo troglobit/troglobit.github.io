@@ -6,6 +6,7 @@ comments: true
 date: 2014-04-21T16:08:30Z
 title: Release of Finit v1.9
 url: /2014/04/21/release-of-finit-v1-dot-9/
+aliases: /blog/2014/04/21/release-of-finit-v1-dot-9/
 ---
 
 Just made it!  Here's the result of #Easterhack14 --

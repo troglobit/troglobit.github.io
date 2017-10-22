@@ -4,6 +4,7 @@ comments: true
 date: 2009-04-05T23:53:47Z
 title: Brief libev update
 url: /2009/04/05/brief-libev-update/
+aliases: /blog/2009/04/05/brief-libev-update/
 ---
 
 I have now updated the [libev examples][1].  It took me a while, but

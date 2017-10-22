@@ -4,6 +4,7 @@ comments: true
 date: 2008-07-13T21:38:33Z
 title: Regexp replace in many files
 url: /2008/07/13/regexp-replace-in-many-files/
+aliases: /blog/2008/07/13/regexp-replace-in-many-files/
 ---
 
 I just have to blog about this exceptional tool I just found.  It is

@@ -4,6 +4,7 @@ comments: true
 date: 2016-11-19T23:37:20Z
 title: One ping only
 url: /2016/11/19/one-ping-only/
+aliases: /blog/2016/11/19/one-ping-only/
 ---
 
 For some odd reason, today was the day when I woke up and continued

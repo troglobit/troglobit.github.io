@@ -4,6 +4,7 @@ comments: true
 date: 2013-08-13T00:00:00Z
 title: Just a Programmer
 url: /2013/08/13/just-a-programmer/
+aliases: /blog/2013/08/13/just-a-programmer/
 ---
 
 Sometimes people ask me what I do for a living.  Usually I tend to

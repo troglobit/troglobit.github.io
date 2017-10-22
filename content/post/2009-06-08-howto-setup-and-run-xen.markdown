@@ -7,6 +7,7 @@ comments: true
 date: 2009-06-08T22:05:42Z
 title: Howto Setup and Run Xen
 url: /2009/06/08/howto-setup-and-run-xen/
+aliases: /blog/2009/06/08/howto-setup-and-run-xen/
 ---
 
 This is an extremly brief and quick [Xen][1] tutorial. There are lots of

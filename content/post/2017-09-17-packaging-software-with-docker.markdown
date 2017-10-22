@@ -4,6 +4,7 @@ comments: true
 date: 2017-09-17T10:45:37Z
 title: Packaging Software with Docker
 url: /2017/09/17/packaging-software-with-docker/
+aliases: /blog/2017/09/17/packaging-software-with-docker/
 ---
 
 This post details how to package and deploy software with Docker.  The

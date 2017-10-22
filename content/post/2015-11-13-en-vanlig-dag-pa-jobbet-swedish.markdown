@@ -10,6 +10,7 @@ comments: true
 date: 2015-11-13T20:57:29Z
 title: En vanlig dag på jobbet (SWEDISH)
 url: /2015/11/13/en-vanlig-dag-pa-jobbet-swedish/
+aliases: /blog/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/
 ---
 
 I vanlig ordning bashar vi DNS på jobbet, pga ofungerar *hårt* över VPN

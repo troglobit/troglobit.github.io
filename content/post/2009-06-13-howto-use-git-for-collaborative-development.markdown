@@ -8,6 +8,7 @@ comments: true
 date: 2009-06-13T00:36:07Z
 title: HowTo use Git for Collaborative Development
 url: /2009/06/13/howto-use-git-for-collaborative-development/
+aliases: /blog/2009/06/13/howto-use-git-for-collaborative-development/
 ---
 
 This is mainly some notes for myself so I don't forget.  Having worked

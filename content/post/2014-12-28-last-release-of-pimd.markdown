@@ -6,6 +6,7 @@ comments: true
 date: 2014-12-28T13:42:18Z
 title: pimd v2.2.0 -- The last release of pimd?
 url: /2014/12/28/last-release-of-pimd/
+aliases: /blog/2014/12/28/last-release-of-pimd/
 ---
 
 On one of the last days of 2014 I release [pimd](/pimd.html)

@@ -4,6 +4,7 @@ comments: true
 date: 2014-03-18T00:00:00Z
 title: Finally &mdash; Google Movies &amp; Music in Sweden
 url: /2014/03/18/finally-google-movies-and-music-in-sweden/
+aliases: /blog/2014/03/18/finally-google-movies-and-music-in-sweden/
 ---
 
 <img class="right" src="/images/play-movies.png" style="width: 364px;">

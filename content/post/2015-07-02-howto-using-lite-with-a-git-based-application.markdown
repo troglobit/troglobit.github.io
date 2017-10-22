@@ -8,6 +8,7 @@ comments: true
 date: 2015-07-02T17:11:55Z
 title: 'HowTo: Using -lite with a GIT-based application'
 url: /2015/07/02/howto-using-lite-with-a-git-based-application/
+aliases: /blog/2015/07/02/howto-using-lite-with-a-git-based-application/
 ---
 
 Years ago while looking for a fast [init][1] replacement for [work][2],

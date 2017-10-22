@@ -4,6 +4,7 @@ comments: true
 date: 2008-11-09T00:39:27Z
 title: The joy of colors
 url: /2008/11/09/the-joy-of-colors/
+aliases: /blog/2008/11/09/the-joy-of-colors/
 ---
 
 Ever so often, as I have mentioned before, I lose myself in trying to

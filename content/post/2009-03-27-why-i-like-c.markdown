@@ -4,6 +4,7 @@ comments: true
 date: 2009-03-27T00:37:42Z
 title: Why I Like C
 url: /2009/03/27/why-i-like-c/
+aliases: /blog/2009/03/27/why-i-like-c/
 ---
 
 I thought I was alone, but it turns out I'm not.

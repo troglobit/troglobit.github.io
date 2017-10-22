@@ -8,6 +8,7 @@ comments: true
 date: 2006-07-17T22:10:24Z
 title: make-kpkg and dirty modules
 url: /2006/07/17/make-kpkg-and-dirty-modules/
+aliases: /blog/2006/07/17/make-kpkg-and-dirty-modules/
 ---
 
 Dammit, tonight I spent too many hours chasing down a "feature" in the

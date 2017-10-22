@@ -4,6 +4,7 @@ comments: true
 date: 2013-06-22T00:00:00Z
 title: Programming as an Artform
 url: /2013/06/22/programming-as-an-artform/
+aliases: /blog/2013/06/22/programming-as-an-artform/
 ---
 
 This is a response to the excellent post by Jani Gorše, titled

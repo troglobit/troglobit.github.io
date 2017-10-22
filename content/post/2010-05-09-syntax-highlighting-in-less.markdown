@@ -4,6 +4,7 @@ comments: true
 date: 2010-05-09T19:53:19Z
 title: Syntax highlighting in less
 url: /2010/05/09/syntax-highlighting-in-less/
+aliases: /blog/2010/05/09/syntax-highlighting-in-less/
 ---
 
 <img class="right" src="/images/lessfilter.png">

@@ -5,6 +5,7 @@ comments: true
 date: 2016-04-21T14:21:49Z
 title: Using netcat to test your Internet daemon
 url: /2016/04/21/using-netcat-to-test-your-internet-daemon/
+aliases: /blog/2016/04/21/using-netcat-to-test-your-internet-daemon/
 ---
 
 So you're having a problem with the Internet daemon you wrote.  You're

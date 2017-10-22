@@ -7,6 +7,7 @@ comments: true
 date: 2014-12-21T19:42:17Z
 title: TFTP blocksize negotiation in uftpd v1.7
 url: /2014/12/21/tftp-blocksize-negotiation-in-uftpd-v1-dot-7/
+aliases: /blog/2014/12/21/tftp-blocksize-negotiation-in-uftpd-v1-dot-7/
 ---
 
 New release of uftpd, this time with TFTP blocksize negotiation,

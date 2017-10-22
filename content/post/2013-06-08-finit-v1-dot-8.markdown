@@ -7,6 +7,7 @@ comments: true
 date: 2013-06-08T00:00:00Z
 title: Finit v1.8
 url: /2013/06/08/finit-v1-dot-8/
+aliases: /blog/2013/06/08/finit-v1-dot-8/
 ---
 
 It's been a long time coming, but here it finally is, [Finit][1]

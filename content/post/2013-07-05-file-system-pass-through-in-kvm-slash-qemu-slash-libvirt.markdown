@@ -6,6 +6,7 @@ comments: true
 date: 2013-07-05T00:00:00Z
 title: File System Pass-Through in KVM/Qemu/libvirt
 url: /2013/07/05/file-system-pass-through-in-kvm-slash-qemu-slash-libvirt/
+aliases: /blog/2013/07/05/file-system-pass-through-in-kvm-slash-qemu-slash-libvirt/
 ---
 
 This post doesn't cover fully setting up KVM/Qemu with virt-manager

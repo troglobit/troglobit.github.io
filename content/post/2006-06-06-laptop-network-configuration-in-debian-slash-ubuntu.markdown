@@ -7,6 +7,7 @@ comments: true
 date: 2006-06-06T21:10:24Z
 title: Laptop Network Configuration in Debian/Ubuntu
 url: /2006/06/06/laptop-network-configuration-in-debian-slash-ubuntu/
+aliases: /blog/2006/06/06/laptop-network-configuration-in-debian-slash-ubuntu/
 ---
 
 I have three network cards in my laptop.  Two built-in and one PCMCIA

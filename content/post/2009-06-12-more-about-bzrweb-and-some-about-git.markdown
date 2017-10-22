@@ -7,6 +7,7 @@ comments: true
 date: 2009-06-12T19:50:27Z
 title: More about Bzrweb and some about Git
 url: /2009/06/12/more-about-bzrweb-and-some-about-git/
+aliases: /blog/2009/06/12/more-about-bzrweb-and-some-about-git/
 ---
 
 OK, I admit it.  I cannot decide what version control system (VCS) to

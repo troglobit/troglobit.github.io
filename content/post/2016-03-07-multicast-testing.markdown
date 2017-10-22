@@ -6,6 +6,7 @@ comments: true
 date: 2016-03-07T01:06:02Z
 title: Multicast testing, made easy!
 url: /2016/03/07/multicast-testing/
+aliases: /blog/2016/03/07/multicast-testing/
 ---
 
 For the better part of the last ten years I have been working with

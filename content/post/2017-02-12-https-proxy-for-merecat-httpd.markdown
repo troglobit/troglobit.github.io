@@ -9,6 +9,7 @@ comments: true
 date: 2017-02-12T00:07:44Z
 title: HTTPS proxy for Merecat httpd
 url: /2017/02/12/https-proxy-for-merecat-httpd/
+aliases: /blog/2017/02/12/https-proxy-for-merecat-httpd/
 ---
 
 This is a HTTPS proxy HowTo for [Merecat httpd][merecat] using [pound][]

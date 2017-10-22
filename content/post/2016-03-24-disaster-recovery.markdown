@@ -4,6 +4,7 @@ comments: true
 date: 2016-03-24T22:39:00Z
 title: Disaster Recovery
 url: /2016/03/24/disaster-recovery/
+aliases: /blog/2016/03/24/disaster-recovery/
 ---
 
 Days like these inconspicuously start out just like any other day,

@@ -7,6 +7,7 @@ comments: true
 date: 2009-06-14T20:44:45Z
 title: Editline First Post
 url: /2009/06/14/editline-first-post/
+aliases: /blog/2009/06/14/editline-first-post/
 ---
 
 For a while now I've been maintaining a port of the [Minix][1] editline

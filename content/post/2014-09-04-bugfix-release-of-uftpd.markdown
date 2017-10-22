@@ -7,6 +7,7 @@ comments: true
 date: 2014-09-04T22:22:09Z
 title: Bugfix release of uftpd
 url: /2014/09/04/bugfix-release-of-uftpd/
+aliases: /blog/2014/09/04/bugfix-release-of-uftpd/
 ---
 
 > So them pesky details of `/etc/inetd.conf` really are important?

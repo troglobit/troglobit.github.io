@@ -4,6 +4,7 @@ comments: true
 date: 2017-09-30T12:39:43Z
 title: Set up a Debian/Ubuntu APT Repository
 url: /2017/09/30/set-up-a-debian-ubuntu-apt-repository/
+aliases: /blog/2017/09/30/set-up-a-debian-ubuntu-apt-repository/
 ---
 
 How to set up a Debian/Ubuntu APT repository with GPG signing.

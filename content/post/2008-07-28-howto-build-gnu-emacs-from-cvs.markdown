@@ -6,6 +6,7 @@ comments: true
 date: 2008-07-28T01:38:13Z
 title: 'HowTo: Build GNU Emacs from CVS'
 url: /2008/07/28/howto-build-gnu-emacs-from-cvs/
+aliases: /blog/2008/07/28/howto-build-gnu-emacs-from-cvs/
 ---
 
 Why would you want to do this?  Well, considering all the [neat new things][1]

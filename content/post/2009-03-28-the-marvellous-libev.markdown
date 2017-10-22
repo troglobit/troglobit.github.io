@@ -4,6 +4,7 @@ comments: true
 date: 2009-03-28T23:00:00Z
 title: The Marvellous libev
 url: /2009/03/28/the-marvellous-libev/
+aliases: /blog/2009/03/28/the-marvellous-libev/
 ---
 
 A very good friend mine recently told me about a neat event library,

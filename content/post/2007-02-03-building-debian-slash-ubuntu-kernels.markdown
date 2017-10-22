@@ -8,6 +8,7 @@ comments: true
 date: 2007-02-03T11:00:45Z
 title: 'HowTo: Building Debian/Ubuntu Kernels'
 url: /2007/02/03/building-debian-slash-ubuntu-kernels/
+aliases: /blog/2007/02/03/building-debian-slash-ubuntu-kernels/
 ---
 
 I have been over this topic so many times now, strangely enough I've

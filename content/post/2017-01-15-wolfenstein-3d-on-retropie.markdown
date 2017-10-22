@@ -6,6 +6,7 @@ comments: true
 date: 2017-01-15T13:13:15Z
 title: Wolfenstein-3D on RetroPie
 url: /2017/01/15/wolfenstein-3d-on-retropie/
+aliases: /blog/2017/01/15/wolfenstein-3d-on-retropie/
 ---
 
 The last game I ever played was [Castle Wolfenstein 3D][1], released in

@@ -7,6 +7,7 @@ date: 2014-08-27T10:00:13Z
 name: GIT rebase w/o origin
 title: HowTo Rebase without an origin
 url: /2014/08/27/howto-rebase-without-an-origin/
+aliases: /blog/2014/08/27/howto-rebase-without-an-origin/
 ---
 
 OK, so you've just been handed the task to integrate a big piece of

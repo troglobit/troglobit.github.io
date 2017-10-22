@@ -4,6 +4,7 @@ comments: true
 date: 2007-03-25T23:59:57Z
 title: VMWare Kernel Modules for Your New Kernel
 url: /2007/03/25/vmware-kernel-modules-for-your-new-kernel/
+aliases: /blog/2007/03/25/vmware-kernel-modules-for-your-new-kernel/
 ---
 
 My recent post on building Debian kernels misses a subtle but useful

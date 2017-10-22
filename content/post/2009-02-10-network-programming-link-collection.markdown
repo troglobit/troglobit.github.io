@@ -4,6 +4,7 @@ comments: true
 date: 2009-02-10T21:56:42Z
 title: Netork Programming -- Link Collection
 url: /2009/02/10/network-programming-link-collection/
+aliases: /blog/2009/02/10/network-programming-link-collection/
 ---
 
 This is a first effort at collecting information about network

@@ -9,6 +9,7 @@ comments: true
 date: 2015-06-30T23:13:48Z
 title: 'HowTo: Apache with Gitweb on Debian 8.1'
 url: /2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/
+aliases: /blog/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/
 ---
 
 I'm posting this in case anyone else gets stuck setting up [Apache][1]

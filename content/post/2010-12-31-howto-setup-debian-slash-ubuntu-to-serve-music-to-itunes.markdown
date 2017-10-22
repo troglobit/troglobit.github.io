@@ -8,6 +8,7 @@ comments: true
 date: 2010-12-31T20:26:37Z
 title: 'HowTo: Use Ubuntu to Serve Music to iTunes'
 url: /2010/12/31/howto-setup-debian-slash-ubuntu-to-serve-music-to-itunes/
+aliases: /blog/2010/12/31/howto-setup-debian-slash-ubuntu-to-serve-music-to-itunes/
 ---
 
 OK, so we finally got an iPad.  The effective marketing droids of Apple
