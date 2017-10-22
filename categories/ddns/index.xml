@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ddns on Troglobit</title>
-    <link>http://127.0.0.1/categories/ddns/</link>
+    <link>http://troglobit.com/categories/ddns/</link>
     <description>Recent content in Ddns on Troglobit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,15 +10,15 @@
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
     <lastBuildDate>Sat, 13 Sep 2014 19:18:56 +0000</lastBuildDate>
     
-	<atom:link href="http://127.0.0.1/categories/ddns/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://troglobit.com/categories/ddns/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>GnuTLS support in Inadyn and fixes to uftpd</title>
-      <link>http://127.0.0.1/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/</link>
+      <link>http://troglobit.com/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/</link>
       <pubDate>Sat, 13 Sep 2014 19:18:56 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://127.0.0.1/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/</guid>
+      <guid>http://troglobit.com/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/</guid>
       <description>Quite a few changes lately. I finally got around to adding support for GnuTLS to Inadyn, hopefully this will get into Debian &amp;hellip; unless the Jessie freeze prevents that.
 Also, thanks to a friend of mine trying out uftpd recently I discovered that libuev has been missing from the tarball since the release of the TFTP support. Fixed.
 Another great piece of news is that Coverity accepted uftpd as an Open Source project, I&amp;rsquo;ve been hard at work fixing nasty bugs uncovered by the Coverity Scan.</description>
@@ -26,19 +26,19 @@ Another great piece of news is that Coverity accepted uftpd as an Open Source pr
     
     <item>
       <title>New releases of uftpd and inadyn ...</title>
-      <link>http://127.0.0.1/2014/05/20/new-release-of-uftpd-and-inadyn-dot-dot-dot/</link>
+      <link>http://troglobit.com/2014/05/20/new-release-of-uftpd-and-inadyn-dot-dot-dot/</link>
       <pubDate>Tue, 20 May 2014 21:08:25 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://127.0.0.1/2014/05/20/new-release-of-uftpd-and-inadyn-dot-dot-dot/</guid>
+      <guid>http://troglobit.com/2014/05/20/new-release-of-uftpd-and-inadyn-dot-dot-dot/</guid>
       <description>The last couple of weeks have both seen the birth of the fabulous uftpd and a reignited inadyn project! Yesterday v1.2 of uftpd was released and today Inadyn saw the first working HTTPS support being released as v1.99.8! This is likely the last release of Inadyn before the big 2.0, which will introduce the new .conf file format based on libConfuse. A .conf file feasibility study was presented earlier &amp;hellip;</description>
     </item>
     
     <item>
       <title>New release of the DDNS client Inadyn</title>
-      <link>http://127.0.0.1/2014/05/14/new-release-of-the-ddns-client-inadyn/</link>
+      <link>http://troglobit.com/2014/05/14/new-release-of-the-ddns-client-inadyn/</link>
       <pubDate>Wed, 14 May 2014 08:29:48 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://127.0.0.1/2014/05/14/new-release-of-the-ddns-client-inadyn/</guid>
+      <guid>http://troglobit.com/2014/05/14/new-release-of-the-ddns-client-inadyn/</guid>
       <description>Looking for a Dynamic DNS, DDNS, client? Well you&amp;rsquo;re in luck, the FLOSS market space is flooded with dedicated clients and various wget scripts. So why bother with an old C implementation? Well, this is admittedly one of the old timers in the game and is likely packaged for your GNU/Linux distribution of choice already. It&amp;rsquo;s tried and tested with many DDNS service providers and even comes bundled in a few embedded router distributions as well.</description>
     </item>
     

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Administration on Troglobit</title>
-    <link>http://127.0.0.1/categories/administration/</link>
+    <link>http://troglobit.com/categories/administration/</link>
     <description>Recent content in Administration on Troglobit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,15 +10,15 @@
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
     <lastBuildDate>Wed, 10 Jul 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://127.0.0.1/categories/administration/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://troglobit.com/categories/administration/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Net Install CentOS</title>
-      <link>http://127.0.0.1/2013/07/10/net-install-centos/</link>
+      <link>http://troglobit.com/2013/07/10/net-install-centos/</link>
       <pubDate>Wed, 10 Jul 2013 00:00:00 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://127.0.0.1/2013/07/10/net-install-centos/</guid>
+      <guid>http://troglobit.com/2013/07/10/net-install-centos/</guid>
       <description>I usually run Debian or Ubuntu on my machines. However, having recently found some time to work on my various projects again, I&amp;rsquo;ve now suddenly found myself in need of a CentOS machine.
 The CentOS home page invited me to download an installation ISO, so I went for the small Net Install which started perfectly with my virt-manager in Ubuntu.
 All I had to provide was an FTP server and directory:</description>
@@ -26,10 +26,10 @@ All I had to provide was an FTP server and directory:</description>
     
     <item>
       <title>File System Pass-Through in KVM/Qemu/libvirt</title>
-      <link>http://127.0.0.1/2013/07/05/file-system-pass-through-in-kvm-slash-qemu-slash-libvirt/</link>
+      <link>http://troglobit.com/2013/07/05/file-system-pass-through-in-kvm-slash-qemu-slash-libvirt/</link>
       <pubDate>Fri, 05 Jul 2013 00:00:00 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://127.0.0.1/2013/07/05/file-system-pass-through-in-kvm-slash-qemu-slash-libvirt/</guid>
+      <guid>http://troglobit.com/2013/07/05/file-system-pass-through-in-kvm-slash-qemu-slash-libvirt/</guid>
       <description>&lt;p&gt;This post doesn&amp;rsquo;t cover fully setting up KVM/Qemu with virt-manager
 and creating virtual machine guests.  See the Ubuntu
 &lt;a href=&#34;https://help.ubuntu.com/community/KVM/Installation&#34;&gt;KVM Installtion&lt;/a&gt;,

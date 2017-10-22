@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Openssl on Troglobit</title>
-    <link>http://127.0.0.1/categories/openssl/</link>
+    <link>http://troglobit.com/categories/openssl/</link>
     <description>Recent content in Openssl on Troglobit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,15 +10,15 @@
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
     <lastBuildDate>Sun, 12 Feb 2017 00:07:44 +0000</lastBuildDate>
     
-	<atom:link href="http://127.0.0.1/categories/openssl/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://troglobit.com/categories/openssl/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>HTTPS proxy for Merecat httpd</title>
-      <link>http://127.0.0.1/2017/02/12/https-proxy-for-merecat-httpd/</link>
+      <link>http://troglobit.com/2017/02/12/https-proxy-for-merecat-httpd/</link>
       <pubDate>Sun, 12 Feb 2017 00:07:44 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://127.0.0.1/2017/02/12/https-proxy-for-merecat-httpd/</guid>
+      <guid>http://troglobit.com/2017/02/12/https-proxy-for-merecat-httpd/</guid>
       <description>This is a HTTPS proxy HowTo for Merecat httpd using pound and OpenSSL.
 Pound is a reverse proxy, load balancer, and HTTPS front-end for Web servers. It is available in Debian/Ubuntu and is very simple to set up:
 First install the package, including OpenSSL, or LibreSSL:

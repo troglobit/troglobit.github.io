@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Multicast on Troglobit</title>
-    <link>http://127.0.0.1/categories/multicast/</link>
+    <link>http://troglobit.com/categories/multicast/</link>
     <description>Recent content in Multicast on Troglobit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,15 +10,15 @@
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
     <lastBuildDate>Mon, 07 Mar 2016 01:37:04 +0000</lastBuildDate>
     
-	<atom:link href="http://127.0.0.1/categories/multicast/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://troglobit.com/categories/multicast/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Testing multicast with Docker</title>
-      <link>http://127.0.0.1/2016/03/07/testing-multicast-with-docker/</link>
+      <link>http://troglobit.com/2016/03/07/testing-multicast-with-docker/</link>
       <pubDate>Mon, 07 Mar 2016 01:37:04 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://127.0.0.1/2016/03/07/testing-multicast-with-docker/</guid>
+      <guid>http://troglobit.com/2016/03/07/testing-multicast-with-docker/</guid>
       <description>&lt;p&gt;Recently &lt;a href=&#34;https://github.com/troglobit/pimd/issues/70&#34;&gt;issue #70&lt;/a&gt; was
 reported to &lt;a href=&#34;https://github.com/troglobit/pimd/&#34;&gt;pimd&lt;/a&gt;.  That number of
 issues reported is cool in itself, but this was a question about
@@ -51,10 +51,10 @@ work properly with &lt;code&gt;pimd&lt;/code&gt; running on the host:&lt;/p&gt;
     
     <item>
       <title>Multicast testing, made easy!</title>
-      <link>http://127.0.0.1/2016/03/07/multicast-testing/</link>
+      <link>http://troglobit.com/2016/03/07/multicast-testing/</link>
       <pubDate>Mon, 07 Mar 2016 01:06:02 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://127.0.0.1/2016/03/07/multicast-testing/</guid>
+      <guid>http://troglobit.com/2016/03/07/multicast-testing/</guid>
       <description>&lt;p&gt;For the better part of the last ten years I have been working with
 multicast in one way or another.  I&amp;rsquo;ve used many different tools for
 testing, but on most systems I usually resort to &lt;code&gt;ping(1)&lt;/code&gt; and
@@ -72,10 +72,10 @@ improving and adding features to it over the years.&lt;/p&gt;
     
     <item>
       <title>Multicast HowTo</title>
-      <link>http://127.0.0.1/howto/multicast-howto/</link>
+      <link>http://troglobit.com/howto/multicast-howto/</link>
       <pubDate>Thu, 16 Jul 2015 15:42:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://127.0.0.1/howto/multicast-howto/</guid>
+      <guid>http://troglobit.com/howto/multicast-howto/</guid>
       <description>This HowTo attempts to give some insight into the basics of setting up multicast routing. Both static multicast routing, with SMCRoute, and dynamic multicast routing, with mrouted and pimd.
 For some use-cases it may not be possible to use multicast routing, then I recommend trying out:
  igmproxy, mcproxy, or OpenVPN in Layer-2, bridged mode  Make sure to check out the FAQ for the most common problems.
@@ -84,11 +84,11 @@ Good Luck!</description>
     
     <item>
       <title>mrouted v3.9.7</title>
-      <link>http://127.0.0.1/2014/12/28/mrouted-v3-dot-9-7/</link>
+      <link>http://troglobit.com/2014/12/28/mrouted-v3-dot-9-7/</link>
       <pubDate>Sun, 28 Dec 2014 19:38:06 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://127.0.0.1/2014/12/28/mrouted-v3-dot-9-7/</guid>
-      <description>&lt;p&gt;Another release today is the venerable &lt;a href=&#34;http://127.0.0.1/mrouted.html&#34;&gt;mrouted&lt;/a&gt;, now
+      <guid>http://troglobit.com/2014/12/28/mrouted-v3-dot-9-7/</guid>
+      <description>&lt;p&gt;Another release today is the venerable &lt;a href=&#34;http://troglobit.com/mrouted.html&#34;&gt;mrouted&lt;/a&gt;, now
 available as
 &lt;a href=&#34;https://github.com/troglobit/mrouted/releases/tag/3.9.7&#34;&gt;v3.9.7 on GitHub&lt;/a&gt;.&lt;/p&gt;
 
@@ -97,11 +97,11 @@ available as
     
     <item>
       <title>pimd v2.2.0 -- The last release of pimd?</title>
-      <link>http://127.0.0.1/2014/12/28/last-release-of-pimd/</link>
+      <link>http://troglobit.com/2014/12/28/last-release-of-pimd/</link>
       <pubDate>Sun, 28 Dec 2014 13:42:18 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://127.0.0.1/2014/12/28/last-release-of-pimd/</guid>
-      <description>&lt;p&gt;On one of the last days of 2014 I release &lt;a href=&#34;http://127.0.0.1/pimd.html&#34;&gt;pimd&lt;/a&gt;
+      <guid>http://troglobit.com/2014/12/28/last-release-of-pimd/</guid>
+      <description>&lt;p&gt;On one of the last days of 2014 I release &lt;a href=&#34;http://troglobit.com/pimd.html&#34;&gt;pimd&lt;/a&gt;
 &lt;a href=&#34;https://github.com/troglobit/pimd/releases/tag/2.2.0&#34;&gt;v2.2.0&lt;/a&gt;, which
 is an awesome release with a lot of new features and bug fixes!&lt;/p&gt;
 
@@ -128,10 +128,10 @@ little proggy! :-)&lt;/p&gt;
     
     <item>
       <title>HowTo: Add Multicast Routing to FreeBSD kernel</title>
-      <link>http://127.0.0.1/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/</link>
+      <link>http://troglobit.com/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/</link>
       <pubDate>Tue, 23 Sep 2014 01:55:19 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://127.0.0.1/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/</guid>
+      <guid>http://troglobit.com/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/</guid>
       <description>This is a very short blog post, mostly intended as a reminder to myself. Basically, there are two methods of adding multicast routing support to the FreeBSD kernel:
  Rebuild the kernel with options MROUTING Load the kernel module: kldload ip_mroute  The kernel rebuild assumes the src.txz set was installed previously.
 cd /usr/src cd sys/amd64/conf cat GENERIC | sed &#39;s/GENERIC$/MULTICAST/&#39; &amp;gt; MULTICAST echo &#39;options MROUTING # Multicast routing&#39; &amp;gt;&amp;gt; MULTICAST echo &#39;options PIM # Enable for pimd&#39; &amp;gt;&amp;gt; MULTICAST cd - make kernel KERNCONF=MULTICAST reboot  That&amp;rsquo;s it.</description>
@@ -139,10 +139,10 @@ cd /usr/src cd sys/amd64/conf cat GENERIC | sed &#39;s/GENERIC$/MULTICAST/&#39; 
     
     <item>
       <title>HowTo: Add Multicast Routing to FreeBSD kernel</title>
-      <link>http://127.0.0.1/howto/howto-add-multicast-routing-support-to-the-freebsd-kernel/</link>
+      <link>http://troglobit.com/howto/howto-add-multicast-routing-support-to-the-freebsd-kernel/</link>
       <pubDate>Tue, 23 Sep 2014 01:55:19 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://127.0.0.1/howto/howto-add-multicast-routing-support-to-the-freebsd-kernel/</guid>
+      <guid>http://troglobit.com/howto/howto-add-multicast-routing-support-to-the-freebsd-kernel/</guid>
       <description>This is a very short blog post, mostly intended as a reminder to myself. Basically, there are two methods of adding multicast routing support to the FreeBSD kernel:
  Rebuild the kernel with options MROUTING Load the kernel module: kldload ip_mroute  The kernel rebuild assumes the src.txz set was installed previously.
 cd /usr/src cd sys/amd64/conf cat GENERIC | sed &#39;s/GENERIC$/MULTICAST/&#39; &amp;gt; MULTICAST echo &#39;options MROUTING # Multicast routing&#39; &amp;gt;&amp;gt; MULTICAST echo &#39;options PIM # Enable for pimd&#39; &amp;gt;&amp;gt; MULTICAST cd - make kernel KERNCONF=MULTICAST reboot  That&amp;rsquo;s it.</description>
@@ -150,20 +150,20 @@ cd /usr/src cd sys/amd64/conf cat GENERIC | sed &#39;s/GENERIC$/MULTICAST/&#39; 
     
     <item>
       <title>Announcing pimd v2.1.7</title>
-      <link>http://127.0.0.1/2011/01/09/announcing-pimd-v2-dot-1-7/</link>
+      <link>http://troglobit.com/2011/01/09/announcing-pimd-v2-dot-1-7/</link>
       <pubDate>Sun, 09 Jan 2011 20:20:57 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://127.0.0.1/2011/01/09/announcing-pimd-v2-dot-1-7/</guid>
+      <guid>http://troglobit.com/2011/01/09/announcing-pimd-v2-dot-1-7/</guid>
       <description>This is a followup release to the security fix in pimd, v2.1.6. The change to use /var/lib/misc/, instead of the insecure /var/tmp/, has now been refactored into using the proper FHS recommended /var/run/pimd/ instead.
 As always, check the homepage, the ChangeLog and the GIT log for more details.</description>
     </item>
     
     <item>
       <title>Announcing pimd v2.1.6</title>
-      <link>http://127.0.0.1/2011/01/08/announcing-pimd-v2-dot-1-6/</link>
+      <link>http://troglobit.com/2011/01/08/announcing-pimd-v2-dot-1-6/</link>
       <pubDate>Sat, 08 Jan 2011 23:40:22 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://127.0.0.1/2011/01/08/announcing-pimd-v2-dot-1-6/</guid>
+      <guid>http://troglobit.com/2011/01/08/announcing-pimd-v2-dot-1-6/</guid>
       <description>This is a security release of pimd, v2.1.6. The following fixes are included:
  CVE-2011-0007: &amp;ldquo;Insecure file creation in /var/tmp&amp;rdquo; Build error on GNU/kFreeBSD  Thanks to Vincent Bernat this time for the CVE fix!
 As always, check the homepage, the ChangeLog and the GIT log for more details.</description>
@@ -171,19 +171,19 @@ As always, check the homepage, the ChangeLog and the GIT log for more details.</
     
     <item>
       <title>Announcing mrouted v3.9.3</title>
-      <link>http://127.0.0.1/2010/10/11/announcing-mrouted-v3-dot-9-3/</link>
+      <link>http://troglobit.com/2010/10/11/announcing-mrouted-v3-dot-9-3/</link>
       <pubDate>Mon, 11 Oct 2010 23:44:28 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://127.0.0.1/2010/10/11/announcing-mrouted-v3-dot-9-3/</guid>
+      <guid>http://troglobit.com/2010/10/11/announcing-mrouted-v3-dot-9-3/</guid>
       <description>Here is another bug-fix release of mrouted. This time with a couple of really nasty bugs fixed. A big thanks to Dan Kruchinin for tracking down a NULL pointer dereference in the conf file parser and an overzealous check of netmask that made mrouted useless over tunnel interfaces or point-to-point links (OpenVPN, PPP, L2TP and PPTP). See the ChangeLog or the GIT log for details.</description>
     </item>
     
     <item>
       <title>Announcing pimd v2.1.3</title>
-      <link>http://127.0.0.1/2010/09/08/announcing-pimd-v2-dot-1-3/</link>
+      <link>http://troglobit.com/2010/09/08/announcing-pimd-v2-dot-1-3/</link>
       <pubDate>Wed, 08 Sep 2010 23:44:49 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://127.0.0.1/2010/09/08/announcing-pimd-v2-dot-1-3/</guid>
+      <guid>http://troglobit.com/2010/09/08/announcing-pimd-v2-dot-1-3/</guid>
       <description>I&amp;rsquo;m very pleased to present the next bug-fix release of pimd, v2.1.3. The real announcement for v2.1.2 I never really got around to write because the diligent Debian maintainer, Antonin Kral alerted me to some problems. Which is great! I do not have the resources to test the build on all those platforms. I sure appreciate all the help I can get. Thank you Antonin!
 As always, check the homepage, the changelog and the GIT log for details.</description>
     </item>

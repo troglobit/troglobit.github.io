@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Programming on Troglobit</title>
-    <link>http://127.0.0.1/categories/programming/</link>
+    <link>http://troglobit.com/categories/programming/</link>
     <description>Recent content in Programming on Troglobit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,15 +10,15 @@
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
     <lastBuildDate>Mon, 12 Jan 2015 01:57:40 +0000</lastBuildDate>
     
-	<atom:link href="http://127.0.0.1/categories/programming/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://troglobit.com/categories/programming/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Rant: All the C Compiler Warnings ...</title>
-      <link>http://127.0.0.1/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/</link>
+      <link>http://troglobit.com/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/</link>
       <pubDate>Mon, 12 Jan 2015 01:57:40 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://127.0.0.1/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/</guid>
+      <guid>http://troglobit.com/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;Enable &lt;em&gt;all&lt;/em&gt; the warnings!&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -42,10 +42,10 @@ of voodoo, like &lt;code&gt;__attribute__ ((unused))&lt;/code&gt; &amp;hellip; s
     
     <item>
       <title>Programming as an Artform</title>
-      <link>http://127.0.0.1/2013/06/22/programming-as-an-artform/</link>
+      <link>http://troglobit.com/2013/06/22/programming-as-an-artform/</link>
       <pubDate>Sat, 22 Jun 2013 00:00:00 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://127.0.0.1/2013/06/22/programming-as-an-artform/</guid>
+      <guid>http://troglobit.com/2013/06/22/programming-as-an-artform/</guid>
       <description>&lt;p&gt;This is a response to the excellent post by Jani Gorše, titled
 &lt;a href=&#34;https://blooki.st/BlookElement/ShowTextPhoto?blookElementId=1962&#34;&gt;Why is Programming an Art?&lt;/a&gt;&lt;/p&gt;
 

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Misc on Troglobit</title>
-    <link>http://127.0.0.1/categories/misc/</link>
+    <link>http://troglobit.com/categories/misc/</link>
     <description>Recent content in Misc on Troglobit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,15 +10,15 @@
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
     <lastBuildDate>Fri, 07 Jun 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://127.0.0.1/categories/misc/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://troglobit.com/categories/misc/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Proof of Life</title>
-      <link>http://127.0.0.1/2013/06/07/proof-of-life/</link>
+      <link>http://troglobit.com/2013/06/07/proof-of-life/</link>
       <pubDate>Fri, 07 Jun 2013 00:00:00 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://127.0.0.1/2013/06/07/proof-of-life/</guid>
+      <guid>http://troglobit.com/2013/06/07/proof-of-life/</guid>
       <description>There is a certain &amp;ldquo;burstyness&amp;rdquo; to the way I work on my open source projects. It seems it often coincides with intense work loads during new release cycles at work.
 However, I&amp;rsquo;ve just finished restoring two pages that got lost in the big server crash:
  mrouted pimd  Big thanks goes to the Wayback Machine for maintaining records of the original pages I lost!</description>
@@ -26,10 +26,10 @@ However, I&amp;rsquo;ve just finished restoring two pages that got lost in the b
     
     <item>
       <title>Resurrection</title>
-      <link>http://127.0.0.1/2013/02/17/resurrection/</link>
+      <link>http://troglobit.com/2013/02/17/resurrection/</link>
       <pubDate>Sun, 17 Feb 2013 00:00:00 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://127.0.0.1/2013/02/17/resurrection/</guid>
+      <guid>http://troglobit.com/2013/02/17/resurrection/</guid>
       <description>Quite some time has passed now since our old site, http://vmlinux.org, crashed and burned, and with it much of my previous Open Source work and blogs. Tech blog entries, archives for the projects I maintain, lost.
 Backups? Of course not.
 This all happened in 2011. Since then we also managed to lose the domain and I kind of lost myself for a while, including my motivation.

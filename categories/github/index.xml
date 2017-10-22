@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Github on Troglobit</title>
-    <link>http://127.0.0.1/categories/github/</link>
+    <link>http://troglobit.com/categories/github/</link>
     <description>Recent content in Github on Troglobit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,15 +10,15 @@
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
     <lastBuildDate>Fri, 02 Jan 2015 14:12:59 +0000</lastBuildDate>
     
-	<atom:link href="http://127.0.0.1/categories/github/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://troglobit.com/categories/github/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Blog Restoration Project</title>
-      <link>http://127.0.0.1/2015/01/02/blog-restoration-project-now-also-on-github-pages/</link>
+      <link>http://troglobit.com/2015/01/02/blog-restoration-project-now-also-on-github-pages/</link>
       <pubDate>Fri, 02 Jan 2015 14:12:59 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://127.0.0.1/2015/01/02/blog-restoration-project-now-also-on-github-pages/</guid>
+      <guid>http://troglobit.com/2015/01/02/blog-restoration-project-now-also-on-github-pages/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve had this long-standing issue with backups.  It&amp;rsquo;s deadly boring to
 set up and maintain, so I don&amp;rsquo;t do any.  Until today!&lt;/p&gt;
 

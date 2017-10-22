@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Xen on Troglobit</title>
-    <link>http://127.0.0.1/categories/xen/</link>
+    <link>http://troglobit.com/categories/xen/</link>
     <description>Recent content in Xen on Troglobit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,15 +10,15 @@
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
     <lastBuildDate>Mon, 08 Jun 2009 22:05:42 +0000</lastBuildDate>
     
-	<atom:link href="http://127.0.0.1/categories/xen/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://troglobit.com/categories/xen/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Howto Setup and Run Xen</title>
-      <link>http://127.0.0.1/2009/06/08/howto-setup-and-run-xen/</link>
+      <link>http://troglobit.com/2009/06/08/howto-setup-and-run-xen/</link>
       <pubDate>Mon, 08 Jun 2009 22:05:42 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://127.0.0.1/2009/06/08/howto-setup-and-run-xen/</guid>
+      <guid>http://troglobit.com/2009/06/08/howto-setup-and-run-xen/</guid>
       <description>This is an extremly brief and quick Xen tutorial. There are lots of them already, see your GNU/Linux distribution&amp;rsquo;s wiki, HowtoForge or other places for a starter guide. This particular HowTo deals with setting up Xen as easy as possible using Ubuntu 8.04 LTS as host operating system (dom0 in Xen terms) and Ubuntu 9.04 as guest operating systems (domU in Xen lingo).
 Ubuntu 8.04 LTS comes with a Xen kernel that can run as dom0.</description>
     </item>

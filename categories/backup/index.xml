@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Backup on Troglobit</title>
-    <link>http://127.0.0.1/categories/backup/</link>
+    <link>http://troglobit.com/categories/backup/</link>
     <description>Recent content in Backup on Troglobit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,15 +10,15 @@
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
     <lastBuildDate>Thu, 24 Mar 2016 22:39:00 +0000</lastBuildDate>
     
-	<atom:link href="http://127.0.0.1/categories/backup/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://troglobit.com/categories/backup/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Disaster Recovery</title>
-      <link>http://127.0.0.1/2016/03/24/disaster-recovery/</link>
+      <link>http://troglobit.com/2016/03/24/disaster-recovery/</link>
       <pubDate>Thu, 24 Mar 2016 22:39:00 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://127.0.0.1/2016/03/24/disaster-recovery/</guid>
+      <guid>http://troglobit.com/2016/03/24/disaster-recovery/</guid>
       <description>&lt;p&gt;Days like these inconspicuously start out just like any other day,
 except on days like these you accidentally manage to erase &lt;code&gt;$HOME&lt;/code&gt; and
 have no real backup to rely on &amp;hellip; Maundy Thursday will forever be Black
@@ -43,10 +43,10 @@ take heed young people!&lt;/p&gt;
     
     <item>
       <title>Blog Restoration Project</title>
-      <link>http://127.0.0.1/2015/01/02/blog-restoration-project-now-also-on-github-pages/</link>
+      <link>http://troglobit.com/2015/01/02/blog-restoration-project-now-also-on-github-pages/</link>
       <pubDate>Fri, 02 Jan 2015 14:12:59 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://127.0.0.1/2015/01/02/blog-restoration-project-now-also-on-github-pages/</guid>
+      <guid>http://troglobit.com/2015/01/02/blog-restoration-project-now-also-on-github-pages/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve had this long-standing issue with backups.  It&amp;rsquo;s deadly boring to
 set up and maintain, so I don&amp;rsquo;t do any.  Until today!&lt;/p&gt;
 

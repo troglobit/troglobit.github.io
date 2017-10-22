@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Containers on Troglobit</title>
-    <link>http://127.0.0.1/categories/containers/</link>
+    <link>http://troglobit.com/categories/containers/</link>
     <description>Recent content in Containers on Troglobit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,15 +10,15 @@
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
     <lastBuildDate>Mon, 07 Mar 2016 01:37:04 +0000</lastBuildDate>
     
-	<atom:link href="http://127.0.0.1/categories/containers/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://troglobit.com/categories/containers/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Testing multicast with Docker</title>
-      <link>http://127.0.0.1/2016/03/07/testing-multicast-with-docker/</link>
+      <link>http://troglobit.com/2016/03/07/testing-multicast-with-docker/</link>
       <pubDate>Mon, 07 Mar 2016 01:37:04 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://127.0.0.1/2016/03/07/testing-multicast-with-docker/</guid>
+      <guid>http://troglobit.com/2016/03/07/testing-multicast-with-docker/</guid>
       <description>&lt;p&gt;Recently &lt;a href=&#34;https://github.com/troglobit/pimd/issues/70&#34;&gt;issue #70&lt;/a&gt; was
 reported to &lt;a href=&#34;https://github.com/troglobit/pimd/&#34;&gt;pimd&lt;/a&gt;.  That number of
 issues reported is cool in itself, but this was a question about

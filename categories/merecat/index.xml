@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Merecat on Troglobit</title>
-    <link>http://127.0.0.1/categories/merecat/</link>
+    <link>http://troglobit.com/categories/merecat/</link>
     <description>Recent content in Merecat on Troglobit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,15 +10,15 @@
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
     <lastBuildDate>Sun, 12 Feb 2017 00:07:44 +0000</lastBuildDate>
     
-	<atom:link href="http://127.0.0.1/categories/merecat/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://troglobit.com/categories/merecat/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>HTTPS proxy for Merecat httpd</title>
-      <link>http://127.0.0.1/2017/02/12/https-proxy-for-merecat-httpd/</link>
+      <link>http://troglobit.com/2017/02/12/https-proxy-for-merecat-httpd/</link>
       <pubDate>Sun, 12 Feb 2017 00:07:44 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://127.0.0.1/2017/02/12/https-proxy-for-merecat-httpd/</guid>
+      <guid>http://troglobit.com/2017/02/12/https-proxy-for-merecat-httpd/</guid>
       <description>This is a HTTPS proxy HowTo for Merecat httpd using pound and OpenSSL.
 Pound is a reverse proxy, load balancer, and HTTPS front-end for Web servers. It is available in Debian/Ubuntu and is very simple to set up:
 First install the package, including OpenSSL, or LibreSSL:
@@ -28,10 +28,10 @@ mkdir ~/certs cd ~/certs openssl req -x509 -newkey rsa:4096 -keyout key.pem -out
     
     <item>
       <title>Running ikiwiki in Merecat httpd</title>
-      <link>http://127.0.0.1/2017/02/11/running-ikiwiki-in-merecat-httpd/</link>
+      <link>http://troglobit.com/2017/02/11/running-ikiwiki-in-merecat-httpd/</link>
       <pubDate>Sat, 11 Feb 2017 16:03:39 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://127.0.0.1/2017/02/11/running-ikiwiki-in-merecat-httpd/</guid>
+      <guid>http://troglobit.com/2017/02/11/running-ikiwiki-in-merecat-httpd/</guid>
       <description>This is a HowTo for setting up ikiwiki with Merecat httpd.
 First install ikiwiki
 sudo apt install ikiwiki libcgi-session-perl libcgi-formbuilder-perl  Follow the steps to setup a new Wiki or Blog. In this example we set up a wiki in our ~/public_html:
@@ -40,10 +40,10 @@ ikiwiki --setup /etc/ikiwiki/auto.setup ... Successfully set up wiki: url: http:
     
     <item>
       <title>Merecat - another stray kitten?</title>
-      <link>http://127.0.0.1/2016/11/06/merecat---another-stray-kitten-/</link>
+      <link>http://troglobit.com/2016/11/06/merecat---another-stray-kitten-/</link>
       <pubDate>Sun, 06 Nov 2016 01:34:18 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://127.0.0.1/2016/11/06/merecat---another-stray-kitten-/</guid>
+      <guid>http://troglobit.com/2016/11/06/merecat---another-stray-kitten-/</guid>
       <description>&lt;p&gt;This post is about my adoption, refactor, and rebranding of thttpd as
 &lt;a href=&#34;http://merecat.troglobit.com&#34;&gt;Merecat&lt;/a&gt;.&lt;/p&gt;
 
