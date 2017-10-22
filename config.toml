@@ -4,7 +4,7 @@ languageCode = "en-us"
 title = "Troglobit"
 theme = "beautifulhugo"
 contentDir = "content"
-publishDir = "public"
+publishDir = "docs"
 pygmentsUseClasses = true
 pygmentCodeFences = true
 
