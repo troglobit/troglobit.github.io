@@ -4,7 +4,7 @@ name: Finit
 description: "Fast, extensible init for Linux systems"
 sharing: true
 footer: true
-date: 2015-12-04 19:39 +0100
+date: 2015-12-04 19:39:00 +0200
 comments: false
 ---
 <img class="center noborder" src="/images/finit3.png" style="width: 310px; height: 240px;" alt="Finit: A fast init for Linux" />

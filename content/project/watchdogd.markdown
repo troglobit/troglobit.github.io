@@ -4,7 +4,7 @@ name: watchdogd
 title: "System & Process Supervisor for Linux"
 sharing: true
 footer: true
-date: 2017-04-09 14:52
+date: 2017-04-09 14:52:00 +02:00
 comments: false
 ---
 

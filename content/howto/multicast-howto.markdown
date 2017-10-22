@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Multicast HowTo"
-date: 2015-07-16 15:42
+date: 2015-07-16 15:42:00 +02:00
 comments: true
 categories:
 - Multicast

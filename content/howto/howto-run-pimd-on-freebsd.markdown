@@ -2,7 +2,7 @@
 layout: page
 name:  "Run pimd on FreeBSD"
 title: "HowTo run pimd on FreeBSD"
-date: 2015-09-27 18:45
+date: 2015-09-27 18:45:00 +02:00
 comments: true
 sharing: true
 footer: true

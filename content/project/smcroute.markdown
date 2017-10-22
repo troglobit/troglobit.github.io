@@ -4,7 +4,7 @@ name: SMCRoute
 title: "Static Multicast Routing Daemon"
 sharing: true
 footer: true
-date: 2017-06-13 23:15
+date: 2017-06-13 23:15:00 +02:00
 comments: false
 ---
 

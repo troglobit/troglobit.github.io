@@ -4,7 +4,7 @@ name: pimd
 title: The original PIM-SM daemon
 sharing: true
 footer: true
-date: 2017-07-12 20:17
+date: 2017-07-12 20:17:00 +02:00
 comments: false
 ---
 <img class="right" src="/images/pim-sm.gif" style="width: 222px; height: 155px;" />

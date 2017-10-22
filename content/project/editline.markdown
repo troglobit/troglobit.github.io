@@ -4,7 +4,7 @@ name: libeditline
 title: "Minix Editline"
 sharing: true
 footer: true
-date: 2017-09-07 01:32
+date: 2017-09-07 01:32:00 +02:00
 comments: false
 ---
 
