@@ -4,7 +4,7 @@ title: "The original multicast routing daemon"
 date: 2014-12-28 16:25:00 +02:00
 aliases: /mrouted.html
 ---
-<img class="right" src="/images/dvmrp.png" style="width: 300px; height: 229px;">
+<img src="/images/dvmrp.png" style="width: 300px; height: 229px; float: right">
 
 mrouted is an implementation of the IPv4 DVMRP multicast routing
 protocol, [RFC 1075](http://tools.ietf.org/html/rfc1075).  It is
