@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Emulate an actual MTD device in Qemu</title>
+  <meta property="og:title" content="Emulate an actual MTD device in Qemu" />
+  <meta name="twitter:title" content="Emulate an actual MTD device in Qemu" />
+  <meta name="description" content="Having worked with Linux for the last 20 years, and embedded for more
+than ten of them, I&rsquo;ve become quite a fan of virtualization in general
+and Qemu in particular.
+
+Qemu is a fantastic little tool, created by the Open Source superhero
+Fabrice Bellard.
+It can be used to verify an embedded system without having to deal with
+the problems of actual HW until you really have to.  Don&rsquo;t get me wrong,
+HW excites me like any other nerd, but if the HW is new and shaky it can
+be quite a pain to develop higher level functions.
+
+My holy grail is to have a 100% complete and accurate virtualization
+target per architecture to test my various software projects on.  That&rsquo;s
+why I created TroglOS.
+
+">
+  <meta property="og:description" content="Having worked with Linux for the last 20 years, and embedded for more
+than ten of them, I&rsquo;ve become quite a fan of virtualization in general
+and Qemu in particular.
+
+Qemu is a fantastic little tool, created by the Open Source superhero
+Fabrice Bellard.
+It can be used to verify an embedded system without having to deal with
+the problems of actual HW until you really have to.  Don&rsquo;t get me wrong,
+HW excites me like any other nerd, but if the HW is new and shaky it can
+be quite a pain to develop higher level functions.
+
+My holy grail is to have a 100% complete and accurate virtualization
+target per architecture to test my various software projects on.  That&rsquo;s
+why I created TroglOS.
+
+">
+  <meta name="twitter:description" content="Having worked with Linux for the last 20 years, and embedded for more
+than ten of them, I&rsquo;ve become quite a fan of virtualization in general
+and Qemu in particular.
+
+Qemu is a fantastic little …">
+  <meta name="author" content="Joachim Nilsson"/>
+  <link href='http://127.0.0.1/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="http://127.0.0.1/images/profile.jpg" />
+  <meta name="twitter:image" content="http://127.0.0.1/images/profile.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@troglobit" />
+  <meta name="twitter:creator" content="@troglobit" />
+  <meta property="og:url" content="http://127.0.0.1/2017/02/02/emulate-an-actual-mtd-device-in-qemu/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Troglobit" />
+
+  <meta name="generator" content="Hugo 0.25.1" />
+  <link rel="canonical" href="http://127.0.0.1/2017/02/02/emulate-an-actual-mtd-device-in-qemu/" />
+  <link rel="alternate" href="http://127.0.0.1/index.xml" type="application/rss+xml" title="Troglobit">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://127.0.0.1/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="http://127.0.0.1/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="http://127.0.0.1/css/highlight.min.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://127.0.0.1">Troglobit</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="HowTos" href="/howtos/">HowTos</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Projects" href="/projects/">Projects</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Troglobit" href="http://127.0.0.1">
+            <img class="avatar-img" src="http://127.0.0.1/images/profile.jpg" alt="Troglobit" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Emulate an actual MTD device in Qemu</h1>
+                
+                
+                  <span class="post-meta">
+  Posted on February 2, 2017
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Having worked with Linux for the last 20 years, and embedded for more
+than ten of them, I&rsquo;ve become quite a fan of virtualization in general
+and <a href="http://qemu.org">Qemu</a> in particular.</p>
+
+<p>Qemu is a fantastic little tool, created by the Open Source superhero
+<a href="http://blog.smartbear.com/careers/fabrice-bellard-portrait-of-a-super-productive-programmer/">Fabrice Bellard</a>.
+It can be used to verify an embedded system without having to deal with
+the problems of actual HW until you really have to.  Don&rsquo;t get me wrong,
+HW excites me like any other nerd, but if the HW is new and shaky it can
+be quite a pain to develop higher level functions.</p>
+
+<p>My holy grail is to have a 100% complete and accurate virtualization
+target per architecture to test my various software projects on.  That&rsquo;s
+why I created <a href="https://github.com/troglobit/troglos">TroglOS</a>.</p>
+
+<p></p>
+
+<p>Since most of the systems I&rsquo;ve engaged with have had built-in (NOR)
+flash, I wanted a similar enough emulated system.  However, many things
+like RTC or MTD did not really exist or work the way I wanted.  I can
+live without an emulated RTC, but mapping <em>named</em> MTD partitions to
+different mount points was a showstopper for me.  So one of the small
+fixes to Linux I&rsquo;ve made is an extension to the mtd2block driver.</p>
+
+<p>The mtd2block driver can take a device, provided by Qemu emulating a
+block device from a raw file on the host, and present as an MTD.  The
+following patch adds naming of that MTD so the below <code>/etc/fstab</code> can
+find and mount it just like it would an actual named MTD partition.</p>
+
+<p>Here&rsquo;s the <code>/etc/fstab</code> entry:</p>
+
+<pre><code>mtd:Config  /mnt    jffs2   sync,noatime,nodiratime     0   0
+</code></pre>
+
+<p>And here&rsquo;s <a href="https://github.com/troglobit/troglos/blob/master/kernel/patches/4.2/mtd2block-custom-label.patch">the patch</a>:</p>
+
+<pre><code class="language-patch">commit 69f0cbdcfa6a80fbebe206e2bc3e516342da3be8
+Author: Joachim Nilsson &lt;troglobit@gmail.com&gt;
+Date:   Wed Nov 18 16:38:13 2015 +0100
+
+    mtd2block: Add support for an optional custom MTD label
+    
+    This patch adds support for an optional MTD label for mtd2block emulated
+    MTD devices.  Useful when, e.g. testing device images using Qemu.  The
+    following /etc/fstab line in can then be used to mount a file system
+    regardless of the actual MTD partition number:
+    
+        mtd:Config	/mnt	jffs2	noatime,nodiratime	0    0
+    
+    Kernel command line syntax:
+    
+        block2mtd.block2mtd=/dev/sda,,Config
+    
+    The ',,' is the optional erase_size, which like before this patch,
+    defaults to PAGE_SIZE if left out.
+    
+    Signed-off-by: Joachim Nilsson &lt;troglobit@gmail.com&gt;
+
+diff --git a/drivers/mtd/devices/block2mtd.c b/drivers/mtd/devices/block2mtd.c
+index b16f3cd..309276c 100644
+--- a/drivers/mtd/devices/block2mtd.c
++++ b/drivers/mtd/devices/block2mtd.c
+@@ -218,7 +218,7 @@ static void block2mtd_free_device(struct block2mtd_dev *dev)
+ 
+ 
+ static struct block2mtd_dev *add_device(char *devname, int erase_size,
+-		int timeout)
++		char *label, int timeout)
+ {
+ #ifndef MODULE
+ 	int i;
+@@ -282,7 +282,10 @@ static struct block2mtd_dev *add_device(char *devname, int erase_size,
+ 
+ 	/* Setup the MTD structure */
+ 	/* make the name contain the block device in */
+-	name = kasprintf(GFP_KERNEL, &quot;block2mtd: %s&quot;, devname);
++	if (!label)
++		name = kasprintf(GFP_KERNEL, &quot;block2mtd: %s&quot;, devname);
++	else
++		name = kstrdup(label, GFP_KERNEL);
+ 	if (!name)
+ 		goto err_destroy_mutex;
+ 
+@@ -383,8 +386,8 @@ static int block2mtd_setup2(const char *val)
+ 	/* 80 for device, 12 for erase size, 80 for name, 8 for timeout */
+ 	char buf[80 + 12 + 80 + 8];
+ 	char *str = buf;
+-	char *token[2];
+-	char *name;
++	char *token[3];
++	char *name, *label = NULL;
+ 	size_t erase_size = PAGE_SIZE;
+ 	unsigned long timeout = MTD_DEFAULT_TIMEOUT;
+ 	int i, ret;
+@@ -397,7 +400,7 @@ static int block2mtd_setup2(const char *val)
+ 	strcpy(str, val);
+ 	kill_final_newline(str);
+ 
+-	for (i = 0; i &lt; 2; i++)
++	for (i = 0; i &lt; 3; i++)
+ 		token[i] = strsep(&amp;str, &quot;,&quot;);
+ 
+ 	if (str) {
+@@ -416,7 +419,7 @@ static int block2mtd_setup2(const char *val)
+ 		return 0;
+ 	}
+ 
+-	if (token[1]) {
++	if (token[1] &amp;&amp; strlen(token[1])) {
+ 		ret = parse_num(&amp;erase_size, token[1]);
+ 		if (ret) {
+ 			pr_err(&quot;illegal erase size\n&quot;);
+@@ -424,7 +427,12 @@ static int block2mtd_setup2(const char *val)
+ 		}
+ 	}
+ 
+-	add_device(name, erase_size, timeout);
++	if (token[2]) {
++		label = token[2];
++		pr_info(&quot;Using custom MTD label '%s' for dev %s\n&quot;, label, name);
++	}
++
++	add_device(name, erase_size, label, timeout);
+ 
+ 	return 0;
+ }
+@@ -458,7 +466,7 @@ static int block2mtd_setup(const char *val, struct kernel_param *kp)
+ 
+ 
+ module_param_call(block2mtd, block2mtd_setup, NULL, NULL, 0200);
+-MODULE_PARM_DESC(block2mtd, &quot;Device to use. \&quot;block2mtd=&lt;dev&gt;[,&lt;erasesize&gt;]\&quot;&quot;);
++MODULE_PARM_DESC(block2mtd, &quot;Device to use. \&quot;block2mtd=&lt;dev&gt;[,[&lt;erasesize&gt;][,&lt;name&gt;]]\&quot;&quot;);
+ 
+ static int __init block2mtd_init(void)
+ {
+</code></pre>
+
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="http://127.0.0.1/2017/01/15/wolfenstein-3d-on-retropie/" data-toggle="tooltip" data-placement="top" title="Wolfenstein-3D on RetroPie">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="http://127.0.0.1/2017/02/11/running-ikiwiki-in-merecat-httpd/" data-toggle="tooltip" data-placement="top" title="Running ikiwiki in Merecat httpd">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:troglobit@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;troglobit" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/troglobit" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/troglobit" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="http://127.0.0.1/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="http://troglobit.com">Joachim Nilsson</a>
+                      
+          
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://127.0.0.1">Troglobit</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.25.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="http://127.0.0.1/js/main.js"></script>
+<script src="http://127.0.0.1/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="http://127.0.0.1/js/load-photoswipe.js"></script>
+
+
+
+  </body>
+</html>
+

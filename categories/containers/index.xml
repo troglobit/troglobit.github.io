@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Containers on Troglobit</title>
+    <link>http://127.0.0.1/categories/containers/</link>
+    <description>Recent content in Containers on Troglobit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <lastBuildDate>Mon, 07 Mar 2016 01:37:04 +0000</lastBuildDate>
+    
+	<atom:link href="http://127.0.0.1/categories/containers/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Testing multicast with Docker</title>
+      <link>http://127.0.0.1/2016/03/07/testing-multicast-with-docker/</link>
+      <pubDate>Mon, 07 Mar 2016 01:37:04 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>http://127.0.0.1/2016/03/07/testing-multicast-with-docker/</guid>
+      <description>&lt;p&gt;Recently &lt;a href=&#34;https://github.com/troglobit/pimd/issues/70&#34;&gt;issue #70&lt;/a&gt; was
+reported to &lt;a href=&#34;https://github.com/troglobit/pimd/&#34;&gt;pimd&lt;/a&gt;.  That number of
+issues reported is cool in itself, but this was a question about
+&lt;a href=&#34;https://www.docker.com&#34;&gt;Docker&lt;/a&gt; and &lt;code&gt;pimd&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Up until that point I had only read about this new fad, and played
+around with it a bit &lt;a href=&#34;http://www.westermo.com&#34;&gt;at work&lt;/a&gt; for use as a
+stable build environment for cross-compiling.  I had no idea people
+would want to use a Docker container as a multicast sink.  Basically I
+was baffled.&lt;/p&gt;
+
+&lt;p&gt;The reporter used a Java based tool but simply couldn&amp;rsquo;t get things to
+work properly with &lt;code&gt;pimd&lt;/code&gt; running on the host:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;                eth0
+ MC sender ---&amp;gt; [ Server host ]    &amp;lt;--- router running pimd
+                       |
+               ________|________
+              /     docker0     \   &amp;lt;--- bridge    ______
+             /         |         \                |      |   &amp;lt;--- MC receiver
+  __________/          |          \_______________|______|_____
+ \                     |                            /         /
+  \                     `------------------&amp;gt;-------&#39;         /
+   \________________________________________________________/
+      Container ship
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

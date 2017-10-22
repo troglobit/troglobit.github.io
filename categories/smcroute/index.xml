@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Smcroute on Troglobit</title>
+    <link>http://127.0.0.1/categories/smcroute/</link>
+    <description>Recent content in Smcroute on Troglobit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <lastBuildDate>Thu, 16 Jul 2015 15:42:00 +0200</lastBuildDate>
+    
+	<atom:link href="http://127.0.0.1/categories/smcroute/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Multicast HowTo</title>
+      <link>http://127.0.0.1/howto/multicast-howto/</link>
+      <pubDate>Thu, 16 Jul 2015 15:42:00 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>http://127.0.0.1/howto/multicast-howto/</guid>
+      <description>This HowTo attempts to give some insight into the basics of setting up multicast routing. Both static multicast routing, with SMCRoute, and dynamic multicast routing, with mrouted and pimd.
+For some use-cases it may not be possible to use multicast routing, then I recommend trying out:
+ igmproxy, mcproxy, or OpenVPN in Layer-2, bridged mode  Make sure to check out the FAQ for the most common problems.
+Good Luck!</description>
+    </item>
+    
+    <item>
+      <title>Threads vs Events</title>
+      <link>http://127.0.0.1/2013/08/06/event-handling/</link>
+      <pubDate>Tue, 06 Aug 2013 00:00:00 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>http://127.0.0.1/2013/08/06/event-handling/</guid>
+      <description>&lt;p&gt;This is a rant about something I recently found to be a long standing
+battle line in the world of programming,
+&lt;a href=&#34;http://cgi.di.uoa.gr/~mema/courses/mde518/papers/lauer78.pdf&#34;&gt;Lau78&lt;/a&gt;.
+The event vs thread based approach to programming.  As rants go I do
+not aspire to deliver a clear or logical message, what so ever.  It&amp;rsquo;s
+basically just something I need to get off my chest.&lt;/p&gt;
+
+&lt;p&gt;It was not until 2007 I first learned about the event based approach
+to programming and event libraries like
+&lt;a href=&#34;http://libevent.org/&#34;&gt;libevent&lt;/a&gt; and
+&lt;a href=&#34;http://software.schmorp.de/pkg/libev.html&#34;&gt;libev&lt;/a&gt;.  Up until that
+point the silver bullet everyone was using was &amp;hellip; Threads.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>New Open Source Releases</title>
+      <link>http://127.0.0.1/2013/07/12/new-open-source-releases/</link>
+      <pubDate>Fri, 12 Jul 2013 00:00:00 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>http://127.0.0.1/2013/07/12/new-open-source-releases/</guid>
+      <description>Vacation time means catching up on my Open Source projects! :)
+Currently I&amp;rsquo;m shaping up the home pages and this blog to improve the easy access and overview of all the packages I maintain. The following packages have new releases, or can expect new releases soon:
+ Minix Editline v1.14.1 SMCRoute v1.99.1 &amp;ndash; There&amp;rsquo;s even a v2.0.0 being planned, with the core of SMCRoute available as a library mrouted minor cleanup an sync with OpenBSD pimd cleanups and bug fixes, needs testing inadyn is in dire need of a release, but needs more testing and fixes  As usual, see my GitHub for the latest commits if you want to try anything out, file an issue report, or if you want to contribute.</description>
+    </item>
+    
+  </channel>
+</rss>

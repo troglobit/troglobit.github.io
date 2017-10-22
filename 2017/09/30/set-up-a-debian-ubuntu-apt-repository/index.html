@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Set up a Debian/Ubuntu APT Repository</title>
+  <meta property="og:title" content="Set up a Debian/Ubuntu APT Repository" />
+  <meta name="twitter:title" content="Set up a Debian/Ubuntu APT Repository" />
+  <meta name="description" content="How to set up a Debian/Ubuntu APT repository with GPG signing.
+
+At first I tried to use Bas Wijnen&rsquo;s mini-dinstall howto, but never
+managed to get it working.  Probably due to problems with GPG.  Then I
+went down the tried and true path of using reprepro.
+
+I&rsquo;ve tried to document my steps here, but I&rsquo;ve very likely missed a few
+steps that a beginner admin may run into. YMMV B-)
+
+">
+  <meta property="og:description" content="How to set up a Debian/Ubuntu APT repository with GPG signing.
+
+At first I tried to use Bas Wijnen&rsquo;s mini-dinstall howto, but never
+managed to get it working.  Probably due to problems with GPG.  Then I
+went down the tried and true path of using reprepro.
+
+I&rsquo;ve tried to document my steps here, but I&rsquo;ve very likely missed a few
+steps that a beginner admin may run into. YMMV B-)
+
+">
+  <meta name="twitter:description" content="How to set up a Debian/Ubuntu APT repository with GPG signing.
+
+At first I tried to use Bas Wijnen&rsquo;s mini-dinstall howto, but never
+managed to get it working.  Probably due to problems with GPG. …">
+  <meta name="author" content="Joachim Nilsson"/>
+  <link href='http://127.0.0.1/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="http://127.0.0.1/images/profile.jpg" />
+  <meta name="twitter:image" content="http://127.0.0.1/images/profile.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@troglobit" />
+  <meta name="twitter:creator" content="@troglobit" />
+  <meta property="og:url" content="http://127.0.0.1/2017/09/30/set-up-a-debian-ubuntu-apt-repository/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Troglobit" />
+
+  <meta name="generator" content="Hugo 0.25.1" />
+  <link rel="canonical" href="http://127.0.0.1/2017/09/30/set-up-a-debian-ubuntu-apt-repository/" />
+  <link rel="alternate" href="http://127.0.0.1/index.xml" type="application/rss+xml" title="Troglobit">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://127.0.0.1/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="http://127.0.0.1/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="http://127.0.0.1/css/highlight.min.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://127.0.0.1">Troglobit</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="HowTos" href="/howtos/">HowTos</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Projects" href="/projects/">Projects</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Troglobit" href="http://127.0.0.1">
+            <img class="avatar-img" src="http://127.0.0.1/images/profile.jpg" alt="Troglobit" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Set up a Debian/Ubuntu APT Repository</h1>
+                
+                
+                  <span class="post-meta">
+  Posted on September 30, 2017
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>How to set up a Debian/Ubuntu APT repository with GPG signing.</p>
+
+<p>At first I tried to use <a href="https://debian-administration.org/article/717/Setting_up_a_personal_secure_apt_repository">Bas Wijnen&rsquo;s mini-dinstall howto</a>, but never
+managed to get it working.  Probably due to problems with GPG.  Then I
+went down the tried and true path of using <a href="https://debian-administration.org/article/286/Setting_up_your_own_APT_repository_with_upload_support">reprepro</a>.</p>
+
+<p>I&rsquo;ve tried to document my steps here, but I&rsquo;ve very likely missed a few
+steps that a beginner admin may run into. YMMV B-)</p>
+
+<p></p>
+
+<h3 id="install">Install</h3>
+
+<p>First set up the web server and its directories.  I obviously use
+<a href="https://github.com/troglobit/merecat">Merecat httpd</a>, but you can use just about any web server:</p>
+
+<pre><code>$ sudo mkdir /srv/deb
+$ sudo mkdir /var/www/deb.troglobit.com
+$ sudo echo &quot;/srv/deb  /var/www/deb.troglobit.com  none  defaults,bind  0 0&quot; &gt;&gt;/etc/fstab
+</code></pre>
+
+<p>Then install reprepro</p>
+
+<pre><code>$ sudo apt install reprepro
+</code></pre>
+
+<p>The man page and the documentation in <code>/usr/share/doc/reprepro/</code> is
+quite good, so I recommend at least skimming through it before you
+continue.</p>
+
+<h3 id="setup">Setup</h3>
+
+<p>The following steps create the necessary directories and configuration
+files:</p>
+
+<pre><code>$ sudo mkdir -p /srv/deb/{debian,ubuntu}/{conf,dists,incoming,indices,logs,pool,project,tmp}
+$ cd /srv/deb
+$ sudo chown -R `whoami` .
+</code></pre>
+
+<p>I&rsquo;ve created a set of directories for both Debian and Ubuntu, below I
+will continue with Debian only.  Notice the use of Debian code names
+which are different in the Ubuntu world.</p>
+
+<pre><code>$ cd debian/conf
+$ mg distributions
+</code></pre>
+
+<p>Notice the <code>Suite</code> and <code>Codename</code> for each entry in the <code>distributions</code>
+file below.  These are the official names and their current release
+state in Debian.  Below we will use <code>reprepro createsymlinks</code> to
+automatically create synmlinks based on this file.</p>
+
+<pre><code class="language-conf">Origin: Troglobit Software
+Label: deb.troglobit.com
+Suite: oldstable
+Codename: jessie
+Architectures: amd64
+Components: main
+Description: Unofficial Debian/Ubuntu Packages maintained by Joachim Nilsson
+SignWith: 4B8786A6
+
+Origin: Troglobit Software
+Label: deb.troglobit.com
+Suite: stable
+Codename: stretch
+Architectures: amd64
+Components: main
+Description: Unofficial Debian/Ubuntu Packages maintained by Joachim Nilsson
+SignWith: 4B8786A6
+
+Origin: Troglobit Software
+Label: deb.troglobit.com
+Suite: unstable
+Codename: sid
+Architectures: amd64
+Components: main
+Description: Unofficial Debian/Ubuntu Packages maintained by Joachim Nilsson
+SignWith: 4B8786A6
+</code></pre>
+
+<p>Next up is <code>conf/incoming</code>:</p>
+
+<pre><code>Name: default
+IncomingDir: incoming
+TempDir: tmp
+Allow: oldstable&gt;jessie stable&gt;stretch unstable&gt;sid
+Cleanup: on_deny on_error
+</code></pre>
+
+<p>We can now create the initial structure, symbolic links and initial
+Packages files:</p>
+
+<pre><code>$ cd /srv/deb/debian
+$ reprepro -Vb . createsymlinks
+$ reprepro -Vb . export
+</code></pre>
+
+<h3 id="signing">Signing</h3>
+
+<p>To be able to actually sign <code>.deb</code> files you need to create (and also
+publish the public part of) a GPG signing key.  Answer the questions to
+<code>--gen-key</code> below, select type 4 RSA key for signing.  Make sure to use
+a 4096 bit key.  I set it up <em>without a passphrase</em> for convenince¹ and
+then upload the resulting public key:</p>
+
+<pre><code>$ gpg --gen-key
+gpg: key 44D7FA0A marked as ultimately trusted
+public and secret key created and signed.
+$ gpg --send-keys 4B8786A6
+gpg: sending key 4B8786A6 to hkp server keys.gnupg.net
+</code></pre>
+
+<p>Add the fingerprint to the <code>SignWith:</code> in the <code>conf/distributions</code> file.</p>
+
+<h3 id="archive-keyring-deb">archive-keyring.deb</h3>
+
+<p>The public part of the GPG key also needs to be published as a regular
+<code>.deb</code> package.  Clone my <a href="https://github.com/troglobit/deb">GIT repo</a>
+and change the <code>active/archive.asc</code> key:</p>
+
+<pre><code>$ git clone https://github.com/troglobit/deb.git
+$ cd deb/
+$ gpg --export archive@troglobit.com &gt;active/archive.gpg
+</code></pre>
+
+<p>Then edit the files in the <code>debian/</code> sub-directory to match your repo
+and build the package:</p>
+
+<pre><code>$ dpkg-buildpackage
+</code></pre>
+
+<p>Done.</p>
+
+<h3 id="developer">Developer</h3>
+
+<p>It&rsquo;s now time for the developer(s) to upload the(ir) package(s) to the
+<code>/srv/deb/debian/incoming/</code> directory.</p>
+
+<pre><code>$ scp troglobit-archive-keyring_* server:/srv/deb/debian/incoming/
+</code></pre>
+
+<p>Then run <code>mini-dinstall</code> in batch mode from the command line, or start
+it in daemon mode:</p>
+
+<pre><code>$ cd /srv/deb/debian
+$ reprepro -Vb . processincoming default
+</code></pre>
+
+<h3 id="users">Users</h3>
+
+<p>Add a dedicated <code>.sources</code> file to the <code>/etc/sources.list.d/</code> directory,
+e.g. <code>troglobit.sources</code>:</p>
+
+<pre><code>Types: deb
+URIs: http://deb.troglobit.com/debian
+Suites: unstable
+Architectures: amd64
+Components: main
+Signed-By: /usr/share/keyrings/troglobit-archive-keyring.gpg
+</code></pre>
+
+<p>Run an <code>sudo apt update</code> and remember to add the GPG key:</p>
+
+<pre><code>sudo apt-key adv --recv 4B8786A6
+apt install --allow-unauthenticated troglobit-archive-keyring
+</code></pre>
+
+<p>There.  Packages can now be installed.</p>
+
+<h3 id="footnotes">Footnotes</h3>
+
+<p>¹ To remove a GPG passphrase from a key, use <code>gpg --edit-key HASH</code>, and
+then <code>passwd</code> at the <code>gpg&gt;</code> prompt.  Simply press enter when prompted
+for the new passphrase.</p>
+
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="http://127.0.0.1/2017/09/19/threads-vs-event-loop--again-.../" data-toggle="tooltip" data-placement="top" title="Threads vs Event Loop, Again ...">&larr; Previous Post</a>
+          </li>
+        
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:troglobit@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;troglobit" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/troglobit" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/troglobit" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="http://127.0.0.1/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="http://troglobit.com">Joachim Nilsson</a>
+                      
+          
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://127.0.0.1">Troglobit</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.25.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="http://127.0.0.1/js/main.js"></script>
+<script src="http://127.0.0.1/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="http://127.0.0.1/js/load-photoswipe.js"></script>
+
+
+
+  </body>
+</html>
+
