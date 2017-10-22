@@ -3,6 +3,7 @@ name: uftpd
 title: "No nonsense FTP/TFTP server"
 description: "FTP/TFTP server for Linux that just works™"
 date: 2017-03-22 08:00:00 +0200
+aliases: /uftpd.html
 ---
 
 Tired of confusing configuration files and security features you don't need?

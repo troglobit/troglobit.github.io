@@ -2,6 +2,7 @@
 name: Inadyn
 title: "Small and Simple DDNS Client"
 date: 2017-08-10 09:42:00 +02:00
+aliases: /inadyn.html
 ---
 
 Inadyn is a small and simple Dynamic DNS, [DDNS][1], client with HTTPS

@@ -2,6 +2,7 @@
 name: libeditline
 title: "Minix Editline"
 date: 2017-09-07 01:32:00 +02:00
+aliases: /editline.html
 ---
 
 This is a line editing library for UNIX.  It can be linked into almost

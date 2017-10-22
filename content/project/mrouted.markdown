@@ -2,6 +2,7 @@
 name: mrouted
 title: "The original multicast routing daemon"
 date: 2014-12-28 16:25:00 +02:00
+aliases: /mrouted.html
 ---
 <img class="right" src="/images/dvmrp.png" style="width: 300px; height: 229px;">
 

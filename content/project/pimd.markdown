@@ -2,6 +2,7 @@
 name: pimd
 title: The original PIM-SM daemon
 date: 2017-07-12 20:17:00 +02:00
+aliases: /pimd.html
 ---
 <img class="right" src="/images/pim-sm.gif" style="width: 222px; height: 155px;" />
 

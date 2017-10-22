@@ -2,6 +2,7 @@
 name: mini-snmpd
 title: "Mini SNMP daemon"
 date: 2017-06-27 10:36:00 +02:00
+aliases: /mini-snmpd.html
 ---
 
 This is an SNMP server for small and embedded systems, currently Linux

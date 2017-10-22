@@ -2,6 +2,7 @@
 name: watchdogd
 title: "System & Process Supervisor for Linux"
 date: 2017-04-09 14:52:00 +02:00
+aliases: /watchdogd.html
 ---
 
 <img class="right" src="/images/watchdog.png" alt="http://toonclips.com/design/788"

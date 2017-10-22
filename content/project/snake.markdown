@@ -2,6 +2,7 @@
 name: Snake
 title: "Micro Snake"
 date: 2013-07-07 10:28:00 +02:00
+aliases: /snake.html
 ---
 <img class="center" src="/images/micro-snake.png" />
 
