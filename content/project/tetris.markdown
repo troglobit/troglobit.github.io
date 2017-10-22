@@ -1,6 +1,6 @@
 ---
 name: Tetris&trade;
-title: "Micro Tetris&trade;"
+title: "Micro Tetris™"
 date: 2015-01-08 01:50:00 +02:00
 aliases: /tetris.html
 ---
@@ -26,17 +26,14 @@ Issue tracker and GIT repository available at GitHub:
 
 See also the [Free(code) page](http://freecode.com/projects/micro-tetris).
 
-<img class="right" src="/images/micro-tetris.png" />
+<img style="float: right" src="/images/micro-tetris.png" />
 
-    j    Left
-    k    Rotate
-    l    Right
-    SPC  Drop
-    p    Pause
-    q    Quit
-
-<!--
-  -- Local Variables:
-  -- mode: markdown
-  -- End:
-  -->
+```
+Legend:
+ j    Left
+ k    Rotate
+ l    Right
+ SPC  Drop
+ p    Pause
+ q    Quit
+```
