@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Useful UNIX API:s</title>
+  <meta property="og:title" content="Useful UNIX API:s" />
+  <meta name="twitter:title" content="Useful UNIX API:s" />
+  <meta name="description" content="Had an interesting conversation with a buddy last night.  It started out
+as a shift-reduce problem with Bison and ended up a ping-pong of useful
+UNIX API:s.  We concluded that despite having worked professionally with
+UNIX for over a decade, it is still very satisfying finding gems like
+these.
+
+Most people are completely unaware they exist and end up rolling their
+own (buggy) implementations.
+
+Update: This post was initially written Nov 14, 2015.  It was a
+Saturday and I remember being extremely inspired when I wrote it.  As it
+happens, I&rsquo;ve continued adding to it over the years, and still do.  So,
+as of Jul 2, 2017 I&rsquo;m now bumping the modification date each time I add
+something new :-)
+
+">
+  <meta property="og:description" content="Had an interesting conversation with a buddy last night.  It started out
+as a shift-reduce problem with Bison and ended up a ping-pong of useful
+UNIX API:s.  We concluded that despite having worked professionally with
+UNIX for over a decade, it is still very satisfying finding gems like
+these.
+
+Most people are completely unaware they exist and end up rolling their
+own (buggy) implementations.
+
+Update: This post was initially written Nov 14, 2015.  It was a
+Saturday and I remember being extremely inspired when I wrote it.  As it
+happens, I&rsquo;ve continued adding to it over the years, and still do.  So,
+as of Jul 2, 2017 I&rsquo;m now bumping the modification date each time I add
+something new :-)
+
+">
+  <meta name="twitter:description" content="Had an interesting conversation with a buddy last night.  It started out
+as a shift-reduce problem with Bison and ended up a ping-pong of useful
+UNIX API:s.  We concluded that despite having worked …">
+  <meta name="author" content="Joachim Nilsson"/>
+  <link href='http://127.0.0.1/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="http://127.0.0.1/images/profile.jpg" />
+  <meta name="twitter:image" content="http://127.0.0.1/images/profile.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@troglobit" />
+  <meta name="twitter:creator" content="@troglobit" />
+  <meta property="og:url" content="http://127.0.0.1/2015/11/14/useful-unix-api-s/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Troglobit" />
+
+  <meta name="generator" content="Hugo 0.25.1" />
+  <link rel="canonical" href="http://127.0.0.1/2015/11/14/useful-unix-api-s/" />
+  <link rel="alternate" href="http://127.0.0.1/index.xml" type="application/rss+xml" title="Troglobit">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://127.0.0.1/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="http://127.0.0.1/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="http://127.0.0.1/css/highlight.min.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://127.0.0.1">Troglobit</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="HowTos" href="/howtos/">HowTos</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Projects" href="/projects/">Projects</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Troglobit" href="http://127.0.0.1">
+            <img class="avatar-img" src="http://127.0.0.1/images/profile.jpg" alt="Troglobit" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Useful UNIX API:s</h1>
+                
+                
+                  <span class="post-meta">
+  Posted on November 14, 2015
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Had an interesting conversation with a buddy last night.  It started out
+as a shift-reduce problem with Bison and ended up a ping-pong of useful
+UNIX API:s.  We concluded that despite having worked professionally with
+UNIX for over a decade, it is still very satisfying finding gems like
+these.</p>
+
+<p>Most people are completely unaware they exist and end up rolling their
+own (buggy) implementations.</p>
+
+<p><strong>Update:</strong> This post was initially written Nov 14, 2015.  It was a
+Saturday and I remember being extremely inspired when I wrote it.  As it
+happens, I&rsquo;ve continued adding to it over the years, and still do.  So,
+as of Jul 2, 2017 I&rsquo;m now bumping the modification date each time I add
+something new :-)</p>
+
+<p></p>
+
+<h2 id="sysv-search-h">SysV <code>search.h</code></h2>
+
+<p>Mangage a <a href="http://pubs.opengroup.org/onlinepubs/009695399/functions/insque.html">simple queue</a>:</p>
+
+<ul>
+<li><a href="http://man7.org/linux/man-pages/man3/insque.3.html"><code>insque()</code></a>,</li>
+<li><a href="http://man7.org/linux/man-pages/man3/remque.3.html"><code>remque()</code></a>,</li>
+</ul>
+
+<p>Manage <a href="http://pubs.opengroup.org/onlinepubs/009695399/functions/hcreate.html">hash search table</a>:</p>
+
+<ul>
+<li><a href="http://man7.org/linux/man-pages/man3/hsearch.3.html"><code>hsearch()</code></a></li>
+<li><a href="http://man7.org/linux/man-pages/man3/hcreate.3.html"><code>hcreate()</code></a></li>
+<li><a href="http://man7.org/linux/man-pages/man3/hdestroy.3.html"><code>hdestroy()</code></a></li>
+</ul>
+
+<p>Manage a <a href="http://pubs.opengroup.org/onlinepubs/009695399/functions/tsearch.html">binary search tree</a>:</p>
+
+<ul>
+<li><a href="http://man7.org/linux/man-pages/man3/tsearch.3.html"><code>tsearch()</code></a>,</li>
+<li><a href="http://man7.org/linux/man-pages/man3/tfind.3.html"><code>tfind()</code></a>,</li>
+<li><a href="http://man7.org/linux/man-pages/man3/tdelete.3.html"><code>tdelete()</code></a>,</li>
+<li><a href="http://man7.org/linux/man-pages/man3/twalk.3.html"><code>twalk()</code></a></li>
+<li><a href="http://man7.org/linux/man-pages/man3/tdestroy.3.html"><code>tdestroy()</code></a>,</li>
+</ul>
+
+<p><a href="http://pubs.opengroup.org/onlinepubs/009695399/functions/lsearch.html">Linear search</a> and update:</p>
+
+<ul>
+<li><a href="http://man7.org/linux/man-pages/man3/lfind.3.html"><code>lfind()</code></a></li>
+<li><a href="http://man7.org/linux/man-pages/man3/lsearch.3.html"><code>lsearch()</code></a></li>
+</ul>
+
+<h2 id="bsd-sys-queue-h">BSD <code>sys/queue.h</code></h2>
+
+<p><a href="https://www.freebsd.org/cgi/man.cgi?query=queue&amp;sektion=3">This header</a> has lots of macros for handling various forms of
+linked lists.  The version in GLIBC is a bit behind the BSD&rsquo;s, because
+the latter also have <code>_safe()</code> versions of some macros to aid the user
+in some tricky cases, e.g. when removing entries while iterating.</p>
+
+<p>Several types of lists are supported:</p>
+
+<ul>
+<li>LIST: Doubly linked list</li>
+<li>SLIST: Single linked list</li>
+<li>STAILQ: Single linked tail queue</li>
+<li>SIMPLEQ: Simple queue</li>
+<li>TAILQ: Tail queue</li>
+</ul>
+
+<p>Here&rsquo;s a few of them, this example for doubly linked lists:</p>
+
+<ul>
+<li><code>LIST_INIT()</code></li>
+<li><code>LIST_EMPTY()</code></li>
+<li><code>LIST_FIRST()</code></li>
+<li><code>LIST_NEXT()</code></li>
+<li><code>LIST_REMOVE()</code></li>
+<li><code>LIST_FOREACH()</code></li>
+<li><code>LIST_INSERT_AFTER()</code></li>
+<li><code>LIST_INSERT_BEFORE()</code></li>
+<li><code>LIST_INSERT_HEAD()</code></li>
+</ul>
+
+<p>I wrote a <a href="https://github.com/troglobit/toolbox/blob/master/tailq-demo.c">demo of the TAILQ API</a> a couple of years ago.</p>
+
+<h2 id="other-noteworthy-api-s">Other Noteworthy API&rsquo;s</h2>
+
+<p>Other (standard/POSIX) functions worthy of mentioning here are:</p>
+
+<h3 id="stdio-h"><code>stdio.h</code></h3>
+
+<ul>
+<li><a href="http://man7.org/linux/man-pages/man3/fmemopen.3.html"><code>fmemopen()</code></a></li>
+<li><a href="http://man7.org/linux/man-pages/man3/getdelim.3.html"><code>getdelim()</code></a></li>
+<li><a href="http://man7.org/linux/man-pages/man3/getline.3.html"><code>getline()</code></a></li>
+</ul>
+
+<h3 id="stdlib-h"><code>stdlib.h</code></h3>
+
+<ul>
+<li><a href="http://man7.org/linux/man-pages/man3/atexit.3.html"><code>atexit()</code></a></li>
+<li><a href="http://man7.org/linux/man-pages/man3/bsearch.3.html"><code>bsearch()</code></a></li>
+<li><a href="http://man7.org/linux/man-pages/man3/realpath.3.html"><code>realpath()</code></a></li>
+<li><a href="http://man7.org/linux/man-pages/man3/qsort.3.html"><code>qsort()</code></a></li>
+</ul>
+
+<h3 id="glob-h"><code>glob.h</code></h3>
+
+<ul>
+<li><a href="http://man7.org/linux/man-pages/man3/glob.3.html"><code>glob()</code></a></li>
+</ul>
+
+<h3 id="fnmatch-h"><code>fnmatch.h</code></h3>
+
+<ul>
+<li><a href="http://man7.org/linux/man-pages/man3/fnmatch.3.html"><code>fnmatch()</code></a></li>
+</ul>
+
+<h3 id="ftw-h"><code>ftw.h</code></h3>
+
+<ul>
+<li><a href="http://man7.org/linux/man-pages/man3/ftw.3.html"><code>ftw()</code></a></li>
+<li><a href="http://man7.org/linux/man-pages/man3/nftw.3.html"><code>nftw()</code></a></li>
+</ul>
+
+<h3 id="unistd-h"><code>unistd.h</code></h3>
+
+<ul>
+<li><a href="http://man7.org/linux/man-pages/man2/access.2.html"><code>access()</code></a></li>
+<li><a href="http://man7.org/linux/man-pages/man2/alarm.2.html"><code>alarm()</code></a>,
+<a href="http://man7.org/linux/man-pages/man2/pause.2.html"><code>pause()</code></a></li>
+<li><a href="http://man7.org/linux/man-pages/man3/crypt.3.html"><code>crypt()</code></a></li>
+<li><a href="http://man7.org/linux/man-pages/man3/daemon.3.html"><code>daemon()</code></a></li>
+<li><a href="http://man7.org/linux/man-pages/man2/pipe.2.html"><code>pipe()</code></a></li>
+<li><a href="http://man7.org/linux/man-pages/man3/profil.3.html"><code>profil()</code></a></li>
+</ul>
+
+<h3 id="wordexp-h"><code>wordexp.h</code></h3>
+
+<ul>
+<li><a href="http://man7.org/linux/man-pages/man3/wordexp.3.html"><code>wordexp()</code></a></li>
+</ul>
+
+<p><strong>Note:</strong> API&rsquo;s specific to GNU or BSD are not included, but there are
+  <em>many</em> more useful functions on your specific OS, in case you do not
+need to write code that is portable across different UNIX platforms.
+Examples can be <code>unshare()</code> and <code>clone()</code> on Linux and <code>pledge()</code> on
+OpenBSD, all highly useful but also very specific.</p>
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="http://127.0.0.1/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/" data-toggle="tooltip" data-placement="top" title="En vanlig dag på jobbet (SWEDISH)">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="http://127.0.0.1/2016/03/07/multicast-testing/" data-toggle="tooltip" data-placement="top" title="Multicast testing, made easy!">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:troglobit@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;troglobit" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/troglobit" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/troglobit" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="http://127.0.0.1/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="http://troglobit.com">Joachim Nilsson</a>
+                      
+          
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://127.0.0.1">Troglobit</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.25.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="http://127.0.0.1/js/main.js"></script>
+<script src="http://127.0.0.1/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="http://127.0.0.1/js/load-photoswipe.js"></script>
+
+
+
+  </body>
+</html>
+

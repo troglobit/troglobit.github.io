@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Why write your own FTP server?</title>
+  <meta property="og:title" content="Why write your own FTP server?" />
+  <meta name="twitter:title" content="Why write your own FTP server?" />
+  <meta name="description" content="So, I finally got fed up with all other FTP servers and wrote
+my own.  Why would someone in their right mind do
+something like this 2014?
+
+As a developer the answer to most such questions is usually; to
+scratch an itch.  For a very long time I&rsquo;ve looked for a really simple
+FTP server that just works, out of the box!
+
+">
+  <meta property="og:description" content="So, I finally got fed up with all other FTP servers and wrote
+my own.  Why would someone in their right mind do
+something like this 2014?
+
+As a developer the answer to most such questions is usually; to
+scratch an itch.  For a very long time I&rsquo;ve looked for a really simple
+FTP server that just works, out of the box!
+
+">
+  <meta name="twitter:description" content="So, I finally got fed up with all other FTP servers and wrote
+my own.  Why would someone in their right mind do
+something like this 2014?
+
+As a developer the answer to most such questions is usually; …">
+  <meta name="author" content="Joachim Nilsson"/>
+  <link href='http://127.0.0.1/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="http://127.0.0.1/images/profile.jpg" />
+  <meta name="twitter:image" content="http://127.0.0.1/images/profile.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@troglobit" />
+  <meta name="twitter:creator" content="@troglobit" />
+  <meta property="og:url" content="http://127.0.0.1/2014/05/04/why-write-your-own-ftp-server/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Troglobit" />
+
+  <meta name="generator" content="Hugo 0.25.1" />
+  <link rel="canonical" href="http://127.0.0.1/2014/05/04/why-write-your-own-ftp-server/" />
+  <link rel="alternate" href="http://127.0.0.1/index.xml" type="application/rss+xml" title="Troglobit">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://127.0.0.1/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="http://127.0.0.1/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="http://127.0.0.1/css/highlight.min.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://127.0.0.1">Troglobit</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="HowTos" href="/howtos/">HowTos</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Projects" href="/projects/">Projects</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Troglobit" href="http://127.0.0.1">
+            <img class="avatar-img" src="http://127.0.0.1/images/profile.jpg" alt="Troglobit" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Why write your own FTP server?</h1>
+                
+                
+                  <span class="post-meta">
+  Posted on May 4, 2014
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>So, I finally got fed up with all other FTP servers and wrote
+<a href="/uftpd.html">my own</a>.  Why would someone in their right mind do
+something like this 2014?</p>
+
+<p>As a developer the answer to most such questions is usually; to
+scratch an itch.  For a very long time I&rsquo;ve looked for a really simple
+FTP server that just works, out of the box!</p>
+
+<p></p>
+
+<p>My alternatives on GNU/Linux distributions have been: several variants
+of the original <a href="https://github.com/mit-athena/ftpd">MIT/Athena ftpd</a>,
+<a href="http://www.proftpd.org/">ProFTPD</a>,
+<a href="http://www.pureftpd.org/project/pure-ftpd">Pure-FTPd</a>, and
+<a href="https://security.appspot.com/vsftpd.html">vstfptd</a>.  Most of them are
+too damn difficult to configure, have ugly configuration files or are
+plainly just too confusing.  With one exception, vsftpd.  I really
+like vsftpd!  It&rsquo;s got a simple and well documented configuration file
+(inline as comments) and always worked almost painlessly for me.</p>
+
+<p>However, over the past couple of Ubuntu LTS installations it&rsquo;s been
+starting to act up on me.  Not allowing me to have a group-writable
+root directory, and not even an ability to disable that security
+feature.</p>
+
+<p>It&rsquo;s simple really.  I&rsquo;m a developer.  I have colleagues.  We share
+servers at work.  We bootstrap and upgrade our embedded devices using
+TFTP/FTP.  We have one directory, usually <code>/srv/ftp</code>, which is group
+writable and all developers are members of that group.  Anyone can
+upload a file there and the file servers &hellip; would you know &hellip; are
+supposed to <em>serve</em> that file, as TFTP or anonymous FTP.</p>
+
+<p>Maybe I&rsquo;m a fringe user?  Maybe secured local area networks, or laptop
+to embedded device crossed-cables networks, are no longer the &ldquo;fad&rdquo;?
+Maybe a sane built-in default is no longer cool or hipster enough?</p>
+
+<p>I don&rsquo;t know anymore, and this time I was so fed up chasing around for
+answers to &ldquo;How to setup your &lsquo;favorite&rsquo; FTP Server&rdquo;, that I just sat
+down and fixed it once and for all.  I figured I&rsquo;d otherwise be doing
+this waltz over and over again, just like I already have, for the next
+10 years &hellip;</p>
+
+<p>I trawled the net once more for good candidates, this time for
+adoption and holy cow sacrifices.  I wanted a very simple base to
+start from, which I could cut up into pieces, iteratively refactor and
+improve upon until I was happy.  That took a while.</p>
+
+<p>I&rsquo;m a big fan of both the Free Software and the Open Source cultures.
+(They are slightly different you know.)  I routinely work on software
+with GNU GPL, MIT/X11, Apache, and ISC licenses, but for most of my
+own creations I usually lean towards the very permissive
+<a href="http://en.wikipedia.org/wiki/ISC_license">ISC license</a>.  Maybe
+because most of my hobby work these days are quick and dirty hacks I
+don&rsquo;t really care enough about.  It&rsquo;s a question of both taste and
+appropriateness &ndash; like software patents, I don&rsquo;t like them either,
+but for anything which I have a great investment in, or has a great
+<a href="http://en.wikipedia.org/wiki/Threshold_of_originality">threshold of originality</a>,
+I&rsquo;d use a more restrictive license to make sure the software is kept
+in the open.</p>
+
+<p>Anyway, I read much code, discarded several projects that were too
+big, too unreadable code or simply didn&rsquo;t feel right.  I tested so
+many small &ldquo;FTP&rdquo; servers that turned out to be unusable homegrown
+variants or school projects.  There&rsquo;s a lot of code out there &hellip;  I
+finally settled on <a href="https://github.com/xu-wang11/FtpServer">FtpServer</a>
+by <a href="https://github.com/xu-wang11">Xu Wang</a> as a base for my little
+project.  I suspect it too is a school project, but this one actually
+worked, right off the bat!</p>
+
+<p>I got so excited that I immediately started improving it, cleaning up
+the source code, reindenting it (KNF) and fixing small bugs here and
+there.  It was a perfect fit!  This is where I made my big mistake,
+which I hope will not eventually kill this project in the end &ndash; the
+FtpServer project did not have a license &hellip; so
+<a href="https://github.com/xu-wang11/FtpServer/issues/1">I filed a bug</a> to
+the GitHub issue tracker, added the ISC license to
+<a href="https://github.com/troglobit/uftpd">my fork</a> and continued hacking
+away.  The changes I&rsquo;ve made are so substantial that there isn&rsquo;t much
+left of the original code, so uftpd should be safe.  Yes, I named it
+uftpd, the micro ftp server &ndash; the no nonsense file transfer protocol
+daemon.</p>
+
+<p>The whole hack took about three days and I&rsquo;ve learned a lot during
+this time!  It was fun, inspiring and gave me a lot of creative energy
+that I can use in other projects: at work as well as at home :)</p>
+
+<p>See the <a href="/uftpd.html">uftpd project home</a> for download links.</p>
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="http://127.0.0.1/2014/04/21/release-of-finit-v1-dot-9/" data-toggle="tooltip" data-placement="top" title="Release of Finit v1.9">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="http://127.0.0.1/2014/05/14/new-release-of-the-ddns-client-inadyn/" data-toggle="tooltip" data-placement="top" title="New release of the DDNS client Inadyn">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:troglobit@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;troglobit" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/troglobit" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/troglobit" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="http://127.0.0.1/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="http://troglobit.com">Joachim Nilsson</a>
+                      
+          
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://127.0.0.1">Troglobit</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.25.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="http://127.0.0.1/js/main.js"></script>
+<script src="http://127.0.0.1/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="http://127.0.0.1/js/load-photoswipe.js"></script>
+
+
+
+  </body>
+</html>
+

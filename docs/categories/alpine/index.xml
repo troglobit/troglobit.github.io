@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Alpine on Troglobit</title>
+    <link>http://127.0.0.1/categories/alpine/</link>
+    <description>Recent content in Alpine on Troglobit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <lastBuildDate>Sun, 10 Sep 2017 11:13:39 +0000</lastBuildDate>
+    
+	<atom:link href="http://127.0.0.1/categories/alpine/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Install X-Window in Alpine Linux</title>
+      <link>http://127.0.0.1/2017/09/10/install-x-window-in-alpine-linux/</link>
+      <pubDate>Sun, 10 Sep 2017 11:13:39 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>http://127.0.0.1/2017/09/10/install-x-window-in-alpine-linux/</guid>
+      <description>&lt;p&gt;How to install LXDM + XFCE4 in Alpine Linux 3.6 when testing with
+&lt;a href=&#34;https://github.com/troglobit/finit/tree/master/contrib/alpine&#34;&gt;Finit&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Boot Alpine Linux with GRUB</title>
+      <link>http://127.0.0.1/2017/09/09/boot-alpine-linux-with-grub/</link>
+      <pubDate>Sat, 09 Sep 2017 21:37:10 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>http://127.0.0.1/2017/09/09/boot-alpine-linux-with-grub/</guid>
+      <description>&lt;p&gt;It&amp;rsquo;s fairly easy to replace the slightly unfriendly syslinux with grub
+(grub2) in Alpine Linux.  I use v3.6 but YMMV.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

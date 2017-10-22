@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Submodules on Troglobit</title>
+    <link>http://127.0.0.1/categories/submodules/</link>
+    <description>Recent content in Submodules on Troglobit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <lastBuildDate>Thu, 02 Jul 2015 17:11:55 +0000</lastBuildDate>
+    
+	<atom:link href="http://127.0.0.1/categories/submodules/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HowTo: Using -lite with a GIT-based application</title>
+      <link>http://127.0.0.1/2015/07/02/howto-using-lite-with-a-git-based-application/</link>
+      <pubDate>Thu, 02 Jul 2015 17:11:55 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>http://127.0.0.1/2015/07/02/howto-using-lite-with-a-git-based-application/</guid>
+      <description>&lt;p&gt;Years ago while looking for a fast &lt;a href=&#34;https://en.wikipedia.org/wiki/Init&#34;&gt;init&lt;/a&gt; replacement for &lt;a href=&#34;http://westermo.com/&#34;&gt;work&lt;/a&gt;,
+I found &lt;a href=&#34;http://helllabs.org/finit/&#34;&gt;Finit&lt;/a&gt;.  Originally written by &lt;a href=&#34;https://github.com/cmatsuoka&#34;&gt;Claudio Matsuoka&lt;/a&gt; to act
+as a drop-in replacement for the &lt;a href=&#34;https://en.wikipedia.org/wiki/Asus_Eee_PC&#34;&gt;Asus EeePC&lt;/a&gt; &lt;a href=&#34;http://wiki.eeeuser.com/boot_process:the_boot_process&#34;&gt;fastinit&lt;/a&gt;, &lt;em&gt;&amp;ldquo;gaps
+filled with frog DNA &amp;hellip;&amp;ldquo;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Until I found Finit I had always been in awe of those venturing into the
+realm of &lt;a href=&#34;http://0pointer.net/blog/&#34;&gt;PID 1&lt;/a&gt;.  However, learning from the simplicity of Claudio&amp;rsquo;s
+code I realized that although PID 1 at times is indistinguishable from
+magic, it is really not that hard to master.  &lt;a href=&#34;https://github.com/troglobit/finit&#34;&gt;My version of Finit&lt;/a&gt;
+is available on GitHub.&lt;/p&gt;
+
+&lt;p&gt;The code is open sourced under the very liberal &lt;a href=&#34;http://opensource.org/licenses/MIT&#34;&gt;MIT/X11 license&lt;/a&gt;,
+and much of its frog DNA has proven very useful to me over the years.
+This blog post is about how that frog DNA can help you fill gaps in your
+projects &amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

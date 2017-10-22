@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Threads Vs Events on Troglobit</title>
+    <link>http://127.0.0.1/categories/threads-vs-events/</link>
+    <description>Recent content in Threads Vs Events on Troglobit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <lastBuildDate>Tue, 06 Aug 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://127.0.0.1/categories/threads-vs-events/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Threads vs Events</title>
+      <link>http://127.0.0.1/2013/08/06/event-handling/</link>
+      <pubDate>Tue, 06 Aug 2013 00:00:00 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>http://127.0.0.1/2013/08/06/event-handling/</guid>
+      <description>&lt;p&gt;This is a rant about something I recently found to be a long standing
+battle line in the world of programming,
+&lt;a href=&#34;http://cgi.di.uoa.gr/~mema/courses/mde518/papers/lauer78.pdf&#34;&gt;Lau78&lt;/a&gt;.
+The event vs thread based approach to programming.  As rants go I do
+not aspire to deliver a clear or logical message, what so ever.  It&amp;rsquo;s
+basically just something I need to get off my chest.&lt;/p&gt;
+
+&lt;p&gt;It was not until 2007 I first learned about the event based approach
+to programming and event libraries like
+&lt;a href=&#34;http://libevent.org/&#34;&gt;libevent&lt;/a&gt; and
+&lt;a href=&#34;http://software.schmorp.de/pkg/libev.html&#34;&gt;libev&lt;/a&gt;.  Up until that
+point the silver bullet everyone was using was &amp;hellip; Threads.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

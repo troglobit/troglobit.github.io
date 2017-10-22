@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>HowTo: Apache with Gitweb on Debian 8.1</title>
+  <meta property="og:title" content="HowTo: Apache with Gitweb on Debian 8.1" />
+  <meta name="twitter:title" content="HowTo: Apache with Gitweb on Debian 8.1" />
+  <meta name="description" content="I&rsquo;m posting this in case anyone else gets stuck setting up Apache
+with Gitweb.  Also as a reminder to myself in case I ever need to
+set up this all over again.
+
+
+You have all your eggs in one basket (GitHub), and
+You really like that shiny basket, but
+You know you&rsquo;re clumsy and usually drop baskets yourself.
+You are wise (yes you are!) and realize you need another basket, so
+You set up a server and a domain yourself &hellip;
+
+
+OK.  Let&rsquo;s start simple, since you are already running the latest Debian
+you fire up the command line and install the basics:
+
+sudo apt-get install gitweb apache2
+
+
+So it&rsquo;ll complain, you&rsquo;ll clarify your request and soon all required
+packages are on your server.  Now what?
+
+Debian has already set up http://localhost/gitweb for you, and if you
+have a domain already you should go ahead and edit the master file for
+that:
+
+editor /etc/apache2/sites-available/000-default.conf
+service apache2 reload
+
+
+If you want to use that for your gitweb needs, then you&rsquo;re done!
+
+">
+  <meta property="og:description" content="I&rsquo;m posting this in case anyone else gets stuck setting up Apache
+with Gitweb.  Also as a reminder to myself in case I ever need to
+set up this all over again.
+
+
+You have all your eggs in one basket (GitHub), and
+You really like that shiny basket, but
+You know you&rsquo;re clumsy and usually drop baskets yourself.
+You are wise (yes you are!) and realize you need another basket, so
+You set up a server and a domain yourself &hellip;
+
+
+OK.  Let&rsquo;s start simple, since you are already running the latest Debian
+you fire up the command line and install the basics:
+
+sudo apt-get install gitweb apache2
+
+
+So it&rsquo;ll complain, you&rsquo;ll clarify your request and soon all required
+packages are on your server.  Now what?
+
+Debian has already set up http://localhost/gitweb for you, and if you
+have a domain already you should go ahead and edit the master file for
+that:
+
+editor /etc/apache2/sites-available/000-default.conf
+service apache2 reload
+
+
+If you want to use that for your gitweb needs, then you&rsquo;re done!
+
+">
+  <meta name="twitter:description" content="I&rsquo;m posting this in case anyone else gets stuck setting up Apache
+with Gitweb.  Also as a reminder to myself in case I ever need to
+set up this all over again.
+
+
+You have all your eggs in one …">
+  <meta name="author" content="Joachim Nilsson"/>
+  <link href='http://127.0.0.1/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="http://127.0.0.1/images/profile.jpg" />
+  <meta name="twitter:image" content="http://127.0.0.1/images/profile.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@troglobit" />
+  <meta name="twitter:creator" content="@troglobit" />
+  <meta property="og:url" content="http://127.0.0.1/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Troglobit" />
+
+  <meta name="generator" content="Hugo 0.25.1" />
+  <link rel="canonical" href="http://127.0.0.1/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/" />
+  <link rel="alternate" href="http://127.0.0.1/index.xml" type="application/rss+xml" title="Troglobit">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://127.0.0.1/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="http://127.0.0.1/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="http://127.0.0.1/css/highlight.min.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://127.0.0.1">Troglobit</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="HowTos" href="/howtos/">HowTos</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Projects" href="/projects/">Projects</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Troglobit" href="http://127.0.0.1">
+            <img class="avatar-img" src="http://127.0.0.1/images/profile.jpg" alt="Troglobit" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>HowTo: Apache with Gitweb on Debian 8.1</h1>
+                
+                
+                  <span class="post-meta">
+  Posted on June 30, 2015
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>I&rsquo;m posting this in case anyone else gets stuck setting up <a href="http://www.apache.org">Apache</a>
+with <a href="http://git-scm.com/docs/gitweb">Gitweb</a>.  Also as a reminder to myself in case I ever need to
+set up this all over again.</p>
+
+<ol>
+<li>You have all your eggs in one basket (GitHub), and</li>
+<li>You really like that shiny basket, but</li>
+<li>You know you&rsquo;re clumsy and usually drop baskets yourself.</li>
+<li>You are wise (yes you are!) and realize you need another basket, so</li>
+<li>You set up a server and a domain yourself &hellip;</li>
+</ol>
+
+<p>OK.  Let&rsquo;s start simple, since you are already running the latest Debian
+you fire up the command line and install the basics:</p>
+
+<pre><code>sudo apt-get install gitweb apache2
+</code></pre>
+
+<p>So it&rsquo;ll complain, you&rsquo;ll clarify your request and soon all required
+packages are on your server.  Now what?</p>
+
+<p>Debian has already set up <a href="http://localhost/gitweb">http://localhost/gitweb</a> for you, and if you
+have a domain already you should go ahead and edit the master file for
+that:</p>
+
+<pre><code>editor /etc/apache2/sites-available/000-default.conf
+service apache2 reload
+</code></pre>
+
+<p>If you want to use that for your gitweb needs, then you&rsquo;re done!</p>
+
+<p></p>
+
+<p>For me, running <a href="http://troglobit.com/gitweb">http://troglobit.com/gitweb</a> out of the box was not
+enough.  I wanted to setup <a href="http://git.troglobit.com">http://git.troglobit.com</a> and also to make
+sure to keep really short and pretty URLs to projects I host.  So the
+next part of this post is about how to set that up.</p>
+
+<p>My <code>000-default.conf</code> is for <a href="http://troglobit.com">http://troglobit.com</a>, so I created a new
+one for the sub-domain:</p>
+
+<pre><code>editor /etc/apache2/sites-available/git.conf
+</code></pre>
+
+<p>&hellip; and added the following:</p>
+
+<p>``` apache /etc/apache2/sites-available/git.conf
+    <VirtualHost *:80>
+        ServerName git.troglobit.com
+        DocumentRoot /usr/share/gitweb</p>
+
+<pre><code>    SetEnv GITWEB_CONFIG    /etc/gitweb.conf
+    SetEnv GIT_PROJECT_ROOT /srv/git
+
+    &lt;Directory /usr/share/gitweb&gt;
+        Options FollowSymLinks ExecCGI
+        AddHandler cgi-script .cgi
+
+        DirectoryIndex gitweb.cgi
+
+        # Pretty gitweb URLs + pathinfo feature in gitweb.conf
+        RewriteEngine On
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteCond %{REQUEST_FILENAME} !-d
+        RewriteRule ^.* /gitweb.cgi/$0 [L,PT]
+    &lt;/Directory&gt;
+
+    # Enable git clone over HTTP
+    ScriptAliasMatch \
+        &quot;(?x)^/(.*/(HEAD | \
+        info/refs | \
+        objects/(info/[^/]+ | \
+        [0-9a-f]{2}/[0-9a-f]{38} | \
+        pack/pack-[0-9a-f]{40}\.(pack|idx)) | \
+        git-(upload|receive)-pack))$&quot; \
+        /usr/lib/git-core/git-http-backend/$1
+&lt;/VirtualHost&gt;
+</code></pre>
+
+<pre><code>
+Remember to enable the new sub-domain in Apache and restart the daemon:
+
+    a2ensite git
+    service apache2 restart
+
+I'm not using the default Debian GIT repo location, `/var/lib/git`, so I
+need to set the project root for both the Apache and the GitWeb config:
+
+``` perl /etc/gitweb.conf
+    # See https://github.com/kogakure/gitweb-theme for more help and pointers
+
+    # path to git projects (&lt;project&gt;.git)
+    $projectroot = &quot;/srv/git&quot;;
+    
+    @git_base_url_list = (&quot;git://git.troglobit.com&quot;, &quot;http://git.troglobit.com&quot;);
+    
+    # directory to use for temp files
+    $git_temp = &quot;/tmp&quot;;
+    
+    $site_name = &quot;git.troglobit.com&quot;;
+    
+    # target of the home link on top of all pages
+    $home_link = $my_uri || &quot;/&quot;;
+    
+    # html text to include at home page
+    #$home_text = &quot;indextext.html&quot;;
+    
+    # file with project list; by default, simply scan the projectroot dir.
+    #$projects_list = $projectroot;
+    
+    # stylesheet to use
+    @stylesheets = (&quot;static/gitweb.css&quot;);
+    
+    # javascript code for gitweb
+    $javascript = &quot;static/gitweb.js&quot;;
+    
+    # logo to use
+    $logo = &quot;static/git-logo.png&quot;;
+    
+    # the 'favicon'
+    $favicon = &quot;static/git-favicon.png&quot;;
+    
+    # git-diff-tree(1) options to use for generated patches
+    #@diff_opts = (&quot;-M&quot;);
+    @diff_opts = ();
+        
+    # Enable PATH_INFO so the server can produce URLs of the
+    # form: http://git.hokietux.net/project.git/xxx/xxx
+    # This allows for pretty URLs *within* the Git repository,
+    # also needs the Apache rewrite rules for full effect.
+    $feature{'pathinfo'}{'default'} = [1];
+    
+    # Neat way of prefixing the top URL listing
+    our @extra_breadcrumbs = (
+          [ 'Troglobit Software' =&gt; 'http://troglobit.com/' ],
+        );
+    
+    # List avatars next to committers
+    $feature{'avatar'}{'default'} = ['gravatar'];
+    
+    # The category name is read from .git/category, in the same manner as .git/description.
+    $projects_list_group_categories = 1;
+    $project_list_default_category = &quot;misc&quot;;
+    
+    $projects_list_description_width = 80;
+    
+    # Enable blame, pickaxe search, snapshop, search, and grep
+    # support, but still allow individual projects to turn them off.
+    # These are features that users can use to interact with your Git trees. They
+    # consume some CPU whenever a user uses them, so you can turn them off if you
+    # need to.  Note that the 'override' option means that you can override the
+    # setting on a per-repository basis.
+    $feature{'blame'}{'default'} = [1];
+    $feature{'blame'}{'override'} = [1];
+    
+    $feature{'pickaxe'}{'default'} = [1];
+    $feature{'pickaxe'}{'override'} = [1];
+    
+    $feature{'snapshot'}{'default'} = [1];
+    $feature{'snapshot'}{'override'} = [1];
+    
+    $feature{'search'}{'default'} = [1];
+    
+    $feature{'grep'}{'default'} = [1];
+    $feature{'grep'}{'override'} = [1];
+    
+    $feature{'highlight'}{'default'} = [1];
+</code></pre>
+
+<p>The impossibly simple Apache config has been ripped from the intro by
+<a href="http://dereenigne.org/debian/debian-gitweb-server">Jonathan McCrohan</a>,
+the GitWeb config is a mixture of findings on the Internets.  Notice the
+breadcrumbs and the grouping settings, very useful.</p>
+
+<p>The magic with the pretty URLs is in both files, all <code>RewriteRule</code> lines
+in the Apache <code>.conf</code> and the <code>$feature{'pathinfo'}{'default'} = [1];</code>
+setting in <code>gitweb.conf</code>.</p>
+
+<p>Also, try out the cool <a href="https://github.com/kogakure/gitweb-theme">theme</a>
+I use, it looks a lot better than the default.</p>
+
+<p>Happy coding!</p>
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="http://127.0.0.1/2015/03/06/inetd-support-in-finit-v1-dot-12/" data-toggle="tooltip" data-placement="top" title="Inetd Support in Finit v1.12">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="http://127.0.0.1/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/" data-toggle="tooltip" data-placement="top" title="HowTo: Push to multiple GIT repos with one command">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:troglobit@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;troglobit" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/troglobit" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/troglobit" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="http://127.0.0.1/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="http://troglobit.com">Joachim Nilsson</a>
+                      
+          
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://127.0.0.1">Troglobit</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.25.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="http://127.0.0.1/js/main.js"></script>
+<script src="http://127.0.0.1/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="http://127.0.0.1/js/load-photoswipe.js"></script>
+
+
+
+  </body>
+</html>
+

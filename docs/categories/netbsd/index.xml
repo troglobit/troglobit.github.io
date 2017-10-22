@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Netbsd on Troglobit</title>
+    <link>http://127.0.0.1/categories/netbsd/</link>
+    <description>Recent content in Netbsd on Troglobit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <lastBuildDate>Sun, 29 Aug 2010 20:44:34 +0000</lastBuildDate>
+    
+	<atom:link href="http://127.0.0.1/categories/netbsd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Finally, NetBSD Boots in KVM!</title>
+      <link>http://127.0.0.1/2010/08/29/finally/</link>
+      <pubDate>Sun, 29 Aug 2010 20:44:34 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>http://127.0.0.1/2010/08/29/finally/</guid>
+      <description>Compared to OpenBSD and FreeBSD the NetBSD install was hard, really hard. It wasn&amp;rsquo;t until I stumbled across this that I managed to convince myself to try it again.
+The trick seems to be to ignore as much as you can from other Internet tips. NetBSD runs fine in KVM, so if someone says you need to run it in Qemu mode &amp;mdash; don&amp;rsquo;t believe the hype. OK, in virt-manager there is no preset defaults for NetBSD, so I went with a generic OS and tried starting the install from there.</description>
+    </item>
+    
+  </channel>
+</rss>

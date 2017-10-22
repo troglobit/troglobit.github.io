@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Administration on Troglobit</title>
+    <link>http://127.0.0.1/categories/administration/</link>
+    <description>Recent content in Administration on Troglobit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <lastBuildDate>Wed, 10 Jul 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://127.0.0.1/categories/administration/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Net Install CentOS</title>
+      <link>http://127.0.0.1/2013/07/10/net-install-centos/</link>
+      <pubDate>Wed, 10 Jul 2013 00:00:00 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>http://127.0.0.1/2013/07/10/net-install-centos/</guid>
+      <description>I usually run Debian or Ubuntu on my machines. However, having recently found some time to work on my various projects again, I&amp;rsquo;ve now suddenly found myself in need of a CentOS machine.
+The CentOS home page invited me to download an installation ISO, so I went for the small Net Install which started perfectly with my virt-manager in Ubuntu.
+All I had to provide was an FTP server and directory:</description>
+    </item>
+    
+    <item>
+      <title>File System Pass-Through in KVM/Qemu/libvirt</title>
+      <link>http://127.0.0.1/2013/07/05/file-system-pass-through-in-kvm-slash-qemu-slash-libvirt/</link>
+      <pubDate>Fri, 05 Jul 2013 00:00:00 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>http://127.0.0.1/2013/07/05/file-system-pass-through-in-kvm-slash-qemu-slash-libvirt/</guid>
+      <description>&lt;p&gt;This post doesn&amp;rsquo;t cover fully setting up KVM/Qemu with virt-manager
+and creating virtual machine guests.  See the Ubuntu
+&lt;a href=&#34;https://help.ubuntu.com/community/KVM/Installation&#34;&gt;KVM Installtion&lt;/a&gt;,
+&lt;a href=&#34;https://help.ubuntu.com/community/KVM/VirtManager&#34;&gt;VirtManager Guide&lt;/a&gt;,
+the
+&lt;a href=&#34;https://help.ubuntu.com/13.04/serverguide/libvirt.html&#34;&gt;Ubuntu Server Guide on libvirt&lt;/a&gt;,
+or
+&lt;a href=&#34;http://www.howtoforge.com/virtualization-with-kvm-on-ubuntu-12.04-lts-p3&#34;&gt;HowtoForge&lt;/a&gt;
+for that.&lt;/p&gt;
+
+&lt;p&gt;Instead this blog post details the most relevant steps to get file
+system pass-through between a Linux host and Qemu guest working.  The
+upstream &lt;a href=&#34;http://wiki.qemu.org/Documentation/9psetup&#34;&gt;Qemu docs&lt;/a&gt;
+provide a good starting point, as is the original
+&lt;a href=&#34;https://www.kernel.org/doc/ols/2010/ols2010-pages-109-120.pdf&#34;&gt;IBM paper on VirtFS&lt;/a&gt;.
+For users of Ubuntu &amp;lt;= 13.04, watch out for the
+&lt;a href=&#34;https://bugs.launchpad.net/ubuntu/+source/libvirt/+bug/943680&#34;&gt;libvirt bug&lt;/a&gt;
+that I know many people run into, myself included.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

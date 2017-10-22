@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Fake RAID Adventures</title>
+  <meta property="og:title" content="Fake RAID Adventures" />
+  <meta name="twitter:title" content="Fake RAID Adventures" />
+  <meta name="description" content="The other day I got my geeky hands on two old SuperMicro X8STI-F 1U
+servers.  I plan to use them as build and embedded target emulation
+servers for my open source projects
+as well as Minecraft server for my kids :)
+
+
+
+">
+  <meta property="og:description" content="The other day I got my geeky hands on two old SuperMicro X8STI-F 1U
+servers.  I plan to use them as build and embedded target emulation
+servers for my open source projects
+as well as Minecraft server for my kids :)
+
+
+
+">
+  <meta name="twitter:description" content="The other day I got my geeky hands on two old SuperMicro X8STI-F 1U
+servers.  I plan to use them as build and embedded target emulation
+servers for my open source projects
+as well as Minecraft server …">
+  <meta name="author" content="Joachim Nilsson"/>
+  <link href='http://127.0.0.1/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="http://127.0.0.1/images/profile.jpg" />
+  <meta name="twitter:image" content="http://127.0.0.1/images/profile.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@troglobit" />
+  <meta name="twitter:creator" content="@troglobit" />
+  <meta property="og:url" content="http://127.0.0.1/2016/08/13/fake-raid-adventures/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Troglobit" />
+
+  <meta name="generator" content="Hugo 0.25.1" />
+  <link rel="canonical" href="http://127.0.0.1/2016/08/13/fake-raid-adventures/" />
+  <link rel="alternate" href="http://127.0.0.1/index.xml" type="application/rss+xml" title="Troglobit">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://127.0.0.1/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="http://127.0.0.1/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="http://127.0.0.1/css/highlight.min.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://127.0.0.1">Troglobit</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="HowTos" href="/howtos/">HowTos</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Projects" href="/projects/">Projects</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Troglobit" href="http://127.0.0.1">
+            <img class="avatar-img" src="http://127.0.0.1/images/profile.jpg" alt="Troglobit" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Fake RAID Adventures</h1>
+                
+                
+                  <span class="post-meta">
+  Posted on August 13, 2016
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>The other day I got my geeky hands on two old SuperMicro X8STI-F 1U
+servers.  I plan to use them as build and embedded target emulation
+servers for my <a href="https://github.com/troglobit">open source projects</a>
+as well as Minecraft server for my kids :)</p>
+
+<p><img src="http://eitc.in/yahoo_site_admin/assets/docs/Supermicro_SuperServer_SC512L_small.324203750.JPG"></p>
+
+<p></p>
+
+<p>During the install of Ubuntu Server 16.04 I realized I wanted try to use
+the Intel PCH &ldquo;Fake Raid&rdquo; on the two 1 TB disks, RAID-1.  The support
+Intel has in Linux and <code>mdadm</code> for their southbridge RAID controller is
+really excellent!</p>
+
+<p>I&rsquo;m not so sure though about the level of support that Debian/Ubuntu and
+systemd have for RAID controllers though.  I&rsquo;ve run into problems with
+how to shutdown, reboot, and power-off the servers with the RAID.</p>
+
+<p>So far I&rsquo;ve made out that it is possible to power-off the servers with
+the power button, but only straight after boot!  To make matters worse
+it doesn&rsquo;t seem that Ubuntu sets the IMSM controller in &ldquo;idle&rdquo; state
+when rebooting, so unmount (remount ro) fails.  I <em>think</em> this is the
+recommended way:</p>
+
+<pre><code>echo idle &gt; /sys/block/md127/md/sync_action
+</code></pre>
+
+<p>&hellip; for all the <code>md</code> devices found by globbing <code>/sys/block/md*</code> &hellip;</p>
+
+<p>And then wait for state to become idle before unmounting and remounting
+<code>/</code> read-only, as you have to do, but that doesn&rsquo;t seem to be done, so
+when the system is booted again it always comes up in a degraded state
+:-/</p>
+
+<p>Anyhow, this little adventure taught me a few tricks worth remembering.</p>
+
+<h3 id="show-status-of-intel-container">Show status of Intel Container</h3>
+
+<p>This command lists member arrays and disks used in the container:</p>
+
+<pre><code>user@example:~$ sudo mdadm -D /dev/md/imsm0
+</code></pre>
+
+<p>This command details RAID (firmware) capabilities:</p>
+
+<pre><code>user@example:~$ sudo mdadm --detail-platform
+       Platform : Intel(R) Matrix Storage Manager
+        Version : 8.9.1.1002
+    RAID Levels : raid0 raid1 raid10 raid5
+    Chunk Sizes : 4k 8k 16k 32k 64k 128k
+    2TB volumes : supported
+      2TB disks : not supported
+      Max Disks : 6
+    Max Volumes : 2 per array, 4 per controller
+ I/O Controller : /sys/devices/pci0000:00/0000:00:1f.2 (SATA)
+</code></pre>
+
+<h3 id="remove-a-disk-from-a-container">Remove a disk from a container</h3>
+
+<p>Say disk <code>/dev/sda</code> is unhealthy in any of the member volumes, fail it
+in all volumes, remove it, and zero out the superblock to re-add:</p>
+
+<pre><code>user@example:~$ sudo mdadm /dev/md/Boot -f /dev/sda
+user@example:~$ sudo mdadm /dev/md/Root -f /dev/sda
+user@example:~$ sudo mdadm /dev/md/imsm0 -r /dev/sda
+user@example:~$ sudo mdadm --zero-superblock --force /dev/sda
+user@example:~$ sudo mdadm /dev/md/imsm0 -a /dev/sda
+</code></pre>
+
+<p>Here <code>Root</code> and <code>Boot</code> are my member volumes in the Intel PCH <code>imsm0</code>
+container.  I use a small <code>Boot</code> partition for <code>/boot</code>, first partition
+on the array, to be able to boot using GRUB from it.</p>
+
+<p>If the above doesn&rsquo;t work for you (it didn&rsquo;t for me), try zeroing out
+the complete device, which naturally will take a while, try smaller
+blocksize (bs) if the following does not work:</p>
+
+<pre><code>user@example:~$ sudo dd if=/dev/zero of=/dev/sda bs=100M
+</code></pre>
+
+<p>Then reboot and tell the Intel firmware (Ctrl-I maybe) at POST to add
+the &ldquo;new&rdquo; disk to the array, or rather to the <em>container</em> to be correct.
+When booting up the system again, Linux starts a background rebuild.</p>
+
+<h3 id="check-satus-of-raid">Check satus of RAID</h3>
+
+<p>Check progress of the rebuild with:</p>
+
+<pre><code>user@example:~$ cat /proc/mdstat
+Personalities : [raid1] [linear] [multipath] [raid0] [raid6] [raid5] [raid4] [raid10] 
+md125 : active raid1 sda[1] sdb[0]
+      2097152 blocks super external:/md127/0 [2/1] [_U]
+        resync=DELAYED
+
+md126 : active raid1 sda[1] sdb[0]
+      974660608 blocks super external:/md127/1 [2/1] [_U]
+  [===&gt;.................]  recovery = 17.5% (171137152/974660740) finish=103.4min speed=129396K/sec
+
+md127 : inactive sda[1](S) sdb[0](S)
+      5024 blocks super external:imsm
+
+unused devices: &lt;none&gt;
+</code></pre>
+
+<p>Which is very useful with the <code>watch</code> command!</p>
+
+<p>Good Luck!</p>
+
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="http://127.0.0.1/2016/07/05/multicast-routing-with-pim-sm-over-gre/" data-toggle="tooltip" data-placement="top" title="Multicast routing with PIM-SM over GRE">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="http://127.0.0.1/2016/08/18/live-kvm-migration-with-virt-manager/" data-toggle="tooltip" data-placement="top" title="Live KVM migration with virt-manager">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:troglobit@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;troglobit" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/troglobit" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/troglobit" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="http://127.0.0.1/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="http://troglobit.com">Joachim Nilsson</a>
+                      
+          
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="http://127.0.0.1">Troglobit</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.25.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="http://127.0.0.1/js/main.js"></script>
+<script src="http://127.0.0.1/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="http://127.0.0.1/js/load-photoswipe.js"></script>
+
+
+
+  </body>
+</html>
+
