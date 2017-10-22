@@ -4,6 +4,4 @@
 .sass-cache
 .gist-cache
 .pygments-cache
-_deploy
-source/stylesheets/screen.css
-_site
+old/*

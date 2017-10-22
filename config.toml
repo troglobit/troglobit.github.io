@@ -1,0 +1,40 @@
+baseURL = "http://127.0.0.1"
+disablePathToLower = true
+languageCode = "en-us"
+title = "Troglobit"
+theme = "beautifulhugo"
+contentDir = "content"
+publishDir = "public"
+pygmentsUseClasses = true
+pygmentCodeFences = true
+
+[Params]
+  subtitle = "Help me Obi-Wan Troglobi, you're my only hope!"
+  logo = "images/profile.jpg"
+  favicon = "favicon.ico"
+  commit = false
+  rss = true
+
+[Author]
+  name = "Joachim Nilsson"
+  website = "http://troglobit.com"
+  email = "troglobit@gmail.com"
+  googleplus = "+troglobit"
+  github = "troglobit"
+  twitter = "troglobit"
+
+[[menu.main]]
+    name = "Projects"
+    url = "/projects/"
+    weight = 1
+
+[[menu.main]]
+    name = "HowTos"
+    url = "/howtos/"
+    weight = 1
+
+[[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 3
+

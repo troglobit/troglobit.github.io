@@ -1,0 +1,17 @@
+---
+categories:
+- Gnome
+comments: true
+date: 2006-08-13T10:43:13Z
+title: Aaaah, the fish got a facelift! :)
+url: /2006/08/13/aaaah/
+---
+
+This is just great!  Wanda the fortune telling fish of the Gnome desktop
+got herself a face lift.  Take a look at this:
+
+<img class="center" src="/images/newwanda.png">
+
+Add her new look to your applet by copying the file to
+`/usr/share/gnome/panel/pixmaps/`.  Select it in the applet preferences
+and use 8 frames and 0.3 seconds per frame.
