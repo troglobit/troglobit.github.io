@@ -5,7 +5,7 @@ date: 2017-04-09 14:52:00 +02:00
 aliases: /watchdogd.html
 ---
 
-<img class="right" src="/images/watchdog.png" alt="http://toonclips.com/design/788"
+<img style="float: right" src="/images/watchdog.png" alt="http://toonclips.com/design/788"
      title="Watch Dog Detective Taking Notes">
 
 `watchdogd(8)` is an advanced system and process supervisor daemon.
@@ -60,7 +60,7 @@ Usage
 -----
 
 ```
-watchdogd [-hnsVvx] [-a WARN,REBOOT] [-T SEC] [-t SEC] [/dev/watchdog]
+watchdogd [-hnsVvx] [-a WARN[,REBOOT]] [-T SEC] [-t SEC] [/dev/watchdog]
 
 Options:
   -n, --foreground         Start in foreground (background is default)
@@ -71,9 +71,9 @@ Options:
   -t, --interval=SEC       WDT kick interval in SEC seconds, default: 10
   -x, --safe-exit          Disable watchdog on exit from SIGINT/SIGTERM
   
-  -a, --load-average=W,R   Enable load average check WARN,REBOOT
-  -m, --meminfo=W,R        Enable memory leak check, WARN,REBOOT
-  -f, --filenr=W,R         Enable file descriptor leak check, WARN,REBOOT
+  -a, --load-average=W[,R] Enable load average check WARN,REBOOT
+  -m, --meminfo=W[,R]      Enable memory leak check, WARN,REBOOT
+  -f, --filenr=W[,R]       Enable file descriptor leak check, WARN,REBOOT
   -p, --pmon[=PRIO]        Enable process monitor, run at elevated RT prio
                            Default RT prio when active: SCHED_RR @98
   
@@ -147,25 +147,25 @@ value with `errno` set on error.  The `wdog_pmon_subscribe()` call
 returns a positive integer (including zero) for the watchdog `id`.
 
 ```c
-    /*
-     * Enable or disable watchdogd at runtime.
-     */
-    int wdog_enable           (int enable);
-    int wdog_status           (int *enabled);
-    
-    /*
-     * Check if watchdogd API is actively responding,
-     * returns %TRUE(1) or %FALSE(0)
-     */
-    int wdog_pmon_ping        (void);
+/*
+ * Enable or disable watchdogd at runtime.
+ */
+int wdog_enable           (int enable);
+int wdog_status           (int *enabled);
 
-    /*
-     * Register with pmon, timeout in msec.  Return value is the `id`
-     * to be used with the `ack` in subsequent kick()/unsubscribe()
-     */
-    int wdog_pmon_subscribe   (char *label, int timeout, int *ack);
-    int wdog_pmon_unsubscribe (int id, int ack);
-    int wdog_pmon_kick        (int id, int *ack);
+/*
+ * Check if watchdogd API is actively responding,
+ * returns %TRUE(1) or %FALSE(0)
+ */
+int wdog_pmon_ping        (void);
+
+/*
+ * Register with pmon, timeout in msec.  Return value is the `id`
+ * to be used with the `ack` in subsequent kick()/unsubscribe()
+ */
+int wdog_pmon_subscribe   (char *label, int timeout, int *ack);
+int wdog_pmon_unsubscribe (int id, int ack);
+int wdog_pmon_kick        (int id, int *ack);
 ```
 
 It is highly recommended to use an event loop like libev, [libuev][], or
@@ -179,18 +179,18 @@ For other applications, identify your main loop, its max period time and
 instrument it like this:
 
 ```c
-    int ack, wid;
-    
-    /* Library will use process' name on NULL first arg. */
-    wid = wdog_pmon_subscribe(NULL, 10000, &ack);
-    if (-1 == wid)
-            ;      /* Error handling */
-    
-    while (1) {
-            ...
-            wdog_pmon_kick(wid, &ack);
-            ...
-    }
+int ack, wid;
+
+/* Library will use process' name on NULL first arg. */
+wid = wdog_pmon_subscribe(NULL, 10000, &ack);
+if (-1 == wid)
+        ;      /* Error handling */
+
+while (1) {
+        ...
+        wdog_pmon_kick(wid, &ack);
+        ...
+}
 ```
 
 This simple example subscribes to the watchdog with a 10 sec timeout.
