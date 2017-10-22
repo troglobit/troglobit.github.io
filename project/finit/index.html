@@ -214,7 +214,7 @@ plugin to handle uninitialized flash:</p>
 per-service <code>.conf</code> files in <code>/etc/finit.d/</code> to be able to change and
 reload the configuration at runtime.</p>
 
-<pre><code># /etc/finit.conf - System bootstrap for TroglOS
+<pre><code class="language-conf"># /etc/finit.conf - System bootstrap for TroglOS
 user root
 host default
 
@@ -254,8 +254,8 @@ inetd 2323/tcp@eth0             nowait [2345] /sbin/telnetd -i -F     -- Telnet 
 #inetd ssh/tcp@*,!eth0          nowait [2345] /sbin/dropbear -i -R -F -- SSH service
 
 # Allow login on ttyUSB0, for systems with no dedicated console port
-tty [12345] /dev/ttyAMA0 115200 vt100
-tty  [2345] /dev/ttyUSB0 115200 vt100
+tty [12345] /dev/ttyAMA0 115200 vt100 noclear
+tty  [2345] /dev/ttyUSB0 115200 vt100 noclear
 console /dev/ttyAMA0
 </code></pre>
 
@@ -270,17 +270,17 @@ that program is reloaded (<code>SIGHUP</code>:ed, or stop-started depending on t
 provided by Finit, as is the traditional <code>telinit</code> command.  In addition
 to that there is also the more modern <code>initctl</code> tool:</p>
 
-<pre><code>~ $ initctl status -v
-1       running  476     [S12345]   /sbin/watchdog -T 16 -t 2 -F /dev/watchdog
-2       running  477     [S12345]   /sbin/syslogd -n -b 3 -D
-3       running  478     [S12345]   /sbin/klogd -n
-4:1       inetd  0       [2345]     internal time allow *:37
-4:2       inetd  0       [2345]     internal time allow *:37
-4:3       inetd  0       [2345]     internal 3737 allow *:3737
-5:1       inetd  0       [2345]     /sbin/telnetd allow *:23 deny eth0,eth1
-5:2       inetd  0       [2345]     /sbin/telnetd allow eth0:2323,eth2:2323,eth1:2323
-6:1       inetd  0       [345]      /sbin/dropbear allow eth0:222
-6:2       inetd  0       [345]      /sbin/dropbear allow *:22 deny eth0
+<pre><code class="language-sh">~ $ initctl status -v
+1       running  476     [S12345----]  /sbin/watchdog -T 16 -t 2 -F /dev/watchdog
+2       running  477     [S12345----]  /sbin/syslogd -n -b 3 -D
+3       running  478     [S12345----]  /sbin/klogd -n
+4:1       inetd  0       [--2345----]  internal time allow *:37
+4:2       inetd  0       [--2345----]  internal time allow *:37
+4:3       inetd  0       [--2345----]  internal 3737 allow *:3737
+5:1       inetd  0       [--2345----]  /sbin/telnetd allow *:23 deny eth0,eth1
+5:2       inetd  0       [--2345----]  /sbin/telnetd allow eth0:2323,eth2:2323,eth1:2323
+6:1       inetd  0       [---345----]  /sbin/dropbear allow eth0:222
+6:2       inetd  0       [---345----]  /sbin/dropbear allow *:22 deny eth0
 </code></pre>
 
 <p>For details, see the <a href="https://github.com/troglobit/finit/blob/master/README.md">documentation</a> and the online help <code>-h</code> to
@@ -300,8 +300,8 @@ Matsuoka, which was reverse engineered from syscalls of the
 <li><a href="https://github.com/troglobit/finit/blob/master/README.md">README</a></li>
 <li><a href="https://github.com/troglobit/finit/blob/master/TODO.md">TODO</a></li>
 <li><a href="http://github.com/troglobit/finit/issues">Issue Tracker</a></li>
-<li><a href="ftp://ftp.troglobit.com/finit/finit-3.0-rc1.tar.xz">finit-3.0-rc1.tar.xz</a>,
-<a href="ftp://ftp.troglobit.com/finit/finit-3.0-rc1.tar.xz.md5">MD5</a></li>
+<li><a href="ftp://ftp.troglobit.com/finit/finit-3.0.tar.xz">finit-3.0.tar.xz</a>,
+<a href="ftp://ftp.troglobit.com/finit/finit-3.0.tar.xz.md5">MD5</a></li>
 </ul>
 
 <p>See also the <a href="http://freecode.com/projects/finit">Free(code) page</a>.</p>
