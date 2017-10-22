@@ -1,16 +1,7 @@
 ---
-layout: post
 title: "Multicast HowTo"
 date: 2015-07-16 15:42:00 +02:00
-comments: true
-categories:
-- Multicast
-- pimd
-- mrouted
-- SMCRoute
-- IGMP
-- igmpproxy
-- mcproxy
+-categories: [ "multicast", "pimd", "mrouted", "SMCRoute", "IGMP", "igmpproxy", "mcproxy" ]
 ---
 
 This HowTo attempts to give some insight into the basics of setting up

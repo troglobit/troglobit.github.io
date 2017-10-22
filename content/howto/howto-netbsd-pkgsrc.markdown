@@ -1,11 +1,8 @@
 ---
-layout: page
 name:  "NetBSD pre-built packages"
 title: "HowTo use NetBSD pre-built packages"
 date: 2015-07-30 11:13:00 +02:00
-comments: true
-sharing: true
-footer: true
+categories: [ "netbsd", "bsd", "howto" ]
 ---
 
 *Reminder to self:* you need to set up the `PKG_PATH` to the correct FTP

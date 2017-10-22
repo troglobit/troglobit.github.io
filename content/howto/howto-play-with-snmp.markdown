@@ -1,11 +1,8 @@
 ---
-layout: page
 name:  "Playing with SNMP"
 title: "HowTo play with SNMP"
 date: 2015-11-07 12:49:00 +02:00
-comments: true
-sharing: true
-footer: true
+categories: [ "snmp", "debian", "ubuntu", "howto" ]
 ---
 
 This mini HowTo is about how you can use SNMP client tools to retrieve

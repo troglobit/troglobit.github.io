@@ -1,12 +1,8 @@
 ---
-layout: post
 name:  "GIT rebase w/o origin"
 title: "HowTo Rebase without an origin"
 date: 2014-08-27 10:00:13 +0200
-comments: true
-categories: 
-- git
-- HowTo
+categories: [ "git", "howto" ]
 ---
 
 OK, so you've just been handed the task to integrate a big piece of

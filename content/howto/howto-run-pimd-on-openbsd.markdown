@@ -1,11 +1,8 @@
 ---
-layout: page
 name:  "Run pimd on OpenBSD"
 title: "HowTo run pimd on OpenBSD"
 date: 2015-07-19 00:32:00 +02:00
-comments: true
-sharing: true
-footer: true
+categories: [ "multicast", "pimd", "openbsd", "bsd", "howto" ]
 ---
 
 This is an introduction to HowTo run [pimd](/pimd.html) on OpenBSD.  I
