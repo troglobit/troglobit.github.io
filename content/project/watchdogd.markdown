@@ -1,11 +1,7 @@
 ---
-layout: page
 name: watchdogd
 title: "System & Process Supervisor for Linux"
-sharing: true
-footer: true
 date: 2017-04-09 14:52:00 +02:00
-comments: false
 ---
 
 <img class="right" src="/images/watchdog.png" alt="http://toonclips.com/design/788"

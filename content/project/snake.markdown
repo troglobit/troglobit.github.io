@@ -1,11 +1,7 @@
 ---
-layout: page
 name: Snake
 title: "Micro Snake"
-sharing: true
-footer: true
 date: 2013-07-07 10:28:00 +02:00
-comments: false
 ---
 <img class="center" src="/images/micro-snake.png" />
 

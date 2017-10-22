@@ -1,11 +1,7 @@
 ---
-layout: page
 name: mrouted
 title: "The original multicast routing daemon"
-sharing: true
-footer: true
 date: 2014-12-28 16:25:00 +02:00
-comments: false
 ---
 <img class="right" src="/images/dvmrp.png" style="width: 300px; height: 229px;">
 

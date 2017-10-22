@@ -1,11 +1,7 @@
 ---
-layout: page
 name: libeditline
 title: "Minix Editline"
-sharing: true
-footer: true
 date: 2017-09-07 01:32:00 +02:00
-comments: false
 ---
 
 This is a line editing library for UNIX.  It can be linked into almost

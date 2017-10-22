@@ -1,11 +1,7 @@
 ---
-layout: page
 name: Tetris&trade;
 title: "Micro Tetris&trade;"
-sharing: true
-footer: true
 date: 2015-01-08 01:50:00 +02:00
-comments: false
 ---
 [<img class="center" src="/images/TetrisConstruction.jpg" style="width: 300px;" />](http://erikjohanssonphoto.com/work/tetris/)
 

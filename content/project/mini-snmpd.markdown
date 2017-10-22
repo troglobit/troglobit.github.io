@@ -1,11 +1,7 @@
 ---
-layout: page
 name: mini-snmpd
 title: "Mini SNMP daemon"
-sharing: true
-footer: true
 date: 2017-06-27 10:36:00 +02:00
-comments: false
 ---
 
 This is an SNMP server for small and embedded systems, currently Linux
