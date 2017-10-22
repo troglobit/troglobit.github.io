@@ -1,6 +1,7 @@
 ---
 name: smcroute.conf
 date: 2017-06-13 23:15:00 +02:00
+url: /project/smcroute/smcroute-conf.html
 aliases: /smcroute-conf.html
 ---
 
