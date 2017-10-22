@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>HowTo run pimd on OpenBSD</title>
+  <meta property="og:title" content="HowTo run pimd on OpenBSD" />
+  <meta name="twitter:title" content="HowTo run pimd on OpenBSD" />
+  <meta name="description" content="This is an introduction to HowTo run pimd on OpenBSD. I keep it around mostly as a reminder to myself when testing new pimd releases, maybe someone else can make use of it as well.
+First of all, my sincere thanks to the OpenBSD team for, not just an awesome UNIX distribution, but also for their good taste in shipping a MULTICAST enabled kernel in the base distribution! On both NetBSD and FreeBSD there is a bit of work to get multicast support, which is one of the reasons for my not writing a HowTo for either of them atm.">
+  <meta property="og:description" content="This is an introduction to HowTo run pimd on OpenBSD. I keep it around mostly as a reminder to myself when testing new pimd releases, maybe someone else can make use of it as well.
+First of all, my sincere thanks to the OpenBSD team for, not just an awesome UNIX distribution, but also for their good taste in shipping a MULTICAST enabled kernel in the base distribution! On both NetBSD and FreeBSD there is a bit of work to get multicast support, which is one of the reasons for my not writing a HowTo for either of them atm.">
+  <meta name="twitter:description" content="This is an introduction to HowTo run pimd on OpenBSD. I keep it around mostly as a reminder to myself when testing new pimd releases, maybe someone else can make use of it as well.
+First of all, my …">
+  <meta name="author" content="Joachim Nilsson"/>
+  <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/images/profile.jpg" />
+  <meta name="twitter:image" content="/images/profile.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@troglobit" />
+  <meta name="twitter:creator" content="@troglobit" />
+  <meta property="og:url" content="/howto/howto-run-pimd-on-openbsd/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Troglobit" />
+
+  <meta name="generator" content="Hugo 0.25.1" />
+  <link rel="canonical" href="/howto/howto-run-pimd-on-openbsd/" />
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Troglobit">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="/css/pygment_highlights.css" />
+  <link rel="stylesheet" href="/css/highlight.min.css" />
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Troglobit</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="HowTos" href="/howto/">HowTos</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Projects" href="/project/">Projects</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Troglobit" href="/">
+            <img class="avatar-img" src="/images/profile.jpg" alt="Troglobit" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="howto-heading">
+              <h1>HowTo run pimd on OpenBSD</h1>
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p>This is an introduction to HowTo run <a href="/pimd.html">pimd</a> on OpenBSD.  I
+keep it around mostly as a reminder to myself when testing new pimd
+releases, maybe someone else can make use of it as well.</p>
+
+<p>First of all, my sincere thanks to the <a href="http://www.openbsd.org">OpenBSD</a>
+team for, not just an awesome UNIX distribution, but also for their good
+taste in shipping a MULTICAST enabled kernel in the base distribution!
+On both NetBSD and FreeBSD <a href="/blog/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/">there is a bit of work</a> to get multicast
+support, which is one of the reasons for my not writing a HowTo for
+either of them atm.</p>
+
+<p>Now, OpenBSD already ships mrouted, which is an older flood and prune based
+protocol called DVMRP.  Their version is a few years older than the
+<a href="/mrouted.html">mrouted</a> I maintain.  The DVMRP protocol in mrouted uses a
+sort of built-in RIP to figure out how to route multicast.  This was one of
+the first things <a href="http://tools.ietf.org/html/rfc2362">they</a> ripped out when
+creating PIM.</p>
+
+<p>PIM stands for <em>Protocol Independent Multicast</em>, so you need to run RIP
+or OSPF (or BGP or IS-IS) or whatever <em>unicast</em> routing protocol first
+so that regular traffic works.  Which is kind of useful since you can
+test the network with simple <code>ping</code> before trying to get any multicast
+routing to work &hellip;</p>
+
+<!-- more -->
+
+<p>My topology for testing <code>pimd</code> often looks something like the following.
+In this HowTo the OpenBSD router is R3:</p>
+
+<pre><code>.--------.    .----.    .----.    .----.    .----------.
+| Sender |----| R1 |----| R2 |----| R3 |----| Receiver |
+'--------'    '----'    '----'    '----'    '----------'
+</code></pre>
+
+<p>So, starting out with a clean OpenBSD install we begin by setting up the
+basics:</p>
+
+<ul>
+<li>Activate unicast &amp; multicast routing in the kernel</li>
+<li>Enable ripd and set system up as a multicast router</li>
+<li>Configure ripd</li>
+<li>Download &amp; build pimd</li>
+<li>Run pimd</li>
+<li>Troubleshooting</li>
+</ul>
+
+<h3 id="enable-unicast-multicast-routing-in-the-kernel">Enable Unicast &amp; Multicast Routing in the Kernel</h3>
+
+<pre><code>cp /etc/examples/sysctl.conf /etc/
+</code></pre>
+
+<p>Uncomment the following two lines</p>
+
+<pre><code>net.inet.ip.forwarding=1        # 1=Permit forwarding (routing) of IPv4 packets
+net.inet.ip.mforwarding=1       # 1=Permit forwarding (routing) of IPv4 multicast packets
+</code></pre>
+
+<h3 id="enable-ripd-and-set-system-up-as-multicast-router">Enable ripd and set System up as Multicast Router</h3>
+
+<p>Create the file /etc/rc.conf.local, unless you already have it.  Add the
+following lines to enable ripd and enable the use of a multicast routing
+daemon:</p>
+
+<pre><code># Enable ripd, also edit /etc/ripd.conf
+ripd_flags=&quot;&quot;           # for normal use: &quot;&quot;
+
+# Multicast routing configuration
+# Please look at netstart(8) for a detailed description if you change these
+multicast_host=NO       # Route all multicast packets to a single interface
+multicast_router=YES    # A multicast routing daemon will be run, e.g. mrouted
+</code></pre>
+
+<h3 id="configure-ripd">Configure ripd</h3>
+
+<p>Create the file /etc/ripd.conf by using the template</p>
+
+<pre><code>cp /etc/examples/ripd.conf /etc/
+</code></pre>
+
+<p>Edit the file and add interface sections to all the interfaces you want
+ripd to operate on, or to not operate on.  Here is my <code>ripd.conf</code>:</p>
+
+<pre><code>fib-update yes
+redistribute connected
+split-horizon poisoned
+triggered-updates yes
+
+# Do not use the WAN interface
+interface pcn0 {
+        passive
+}
+
+# This interface is connected to R2
+interface pcn1 {
+        cost 1
+}
+
+# This interface is connected to the client/receiver
+interface pcn2 {
+        cost 1
+}
+</code></pre>
+
+<p>Notice how I have <code>redistribute connected</code> instead of the default.</p>
+
+<h3 id="download-build-pimd">Download &amp; Build pimd</h3>
+
+<p>GitHub is the home for pimd development, the latest release is always
+available on the <a href="https://github.com/troglobit/pimd/releases">releases</a> page.  For convenience I also provide an
+<a href="ftp://ftp.troglobit.com/pimd/">FTP</a>, so it is simple enough to use OpenBSD without any additional
+tools.</p>
+
+<pre><code>$ ftp ftp://ftp.troglobit.com/pimd/pimd-2.3.0.tar.gz
+$ tar xfz pimd-2.3.0.tar.gz
+$ cd pimd-2.3.0/
+$ ./configure; make
+</code></pre>
+
+<p>You may want to install <code>pimd</code> to your system when done, but you can
+also run it from the build directory if you like.  The default install
+path is <code>/usr/local/sbin/pimd</code> and <code>/etc/pimd.conf</code>.  Use the <code>--prefix</code>
+and <code>--sysconfdir</code> command line options to the configure script to set
+other install directories.  See the file <a href="https://github.com/troglobit/pimd/blob/master/INSTALL.md">INSTALL.md</a> for more info.</p>
+
+<p>That&rsquo;s it!</p>
+
+<h3 id="run-pimd">Run pimd</h3>
+
+<p>The default settings in <code>/etc/pimd.conf</code> should work for almost all use
+cases, but it is good practise to at least disable PIM on interfaces out
+to the Internet, or your local office network.  In my case, like in the
+case with ripd above, it is <code>pcn0</code>.</p>
+
+<p>Uncomment and edit the line <code>#phyint eth0 disable</code> in <code>/etc/pimd.conf</code>:</p>
+
+<pre><code>phyint pcn0 disable
+</code></pre>
+
+<p>Then you can start pimd:</p>
+
+<pre><code>pimd
+</code></pre>
+
+<p>To see what it is doing you can run it in the foreground with the debug
+command:</p>
+
+<pre><code>pimd -d
+</code></pre>
+
+<p>or if you simply want to see the current state.  Notice how it says
+<code>DISABLED</code> on VIF 0, which is <code>pcn0</code>:</p>
+
+<pre><code>pimd -r
+Virtual Interface Table ======================================================
+Vif  Local Address    Subnet              Thresh  Flags      Neighbors
+---  ---------------  ------------------  ------  ---------  -----------------
+0  192.168.123.30   192.168.123              1  DISABLED
+1  20.30.0.2        20.30/24                 1  DR PIM     20.30.0.1      
+2  10.141.1.181     10.141.1/24              1  DR NO-NBR
+3  20.30.0.2        register_vif0            1 
+
+Vif  SSM Group        Sources             
+
+Multicast Routing Table ======================================================
+----------------------------------- (*,G) ------------------------------------
+Source           Group            RP Address       Flags
+---------------  ---------------  ---------------  ---------------------------
+INADDR_ANY       225.1.2.3        20.30.0.1        WC RP
+Joined   oifs: ....                
+Pruned   oifs: ....                
+Leaves   oifs: ..l.                
+Asserted oifs: ....                
+Outgoing oifs: ..o.                
+Incoming     : .I..                
+
+TIMERS:  Entry    JP    RS  Assert VIFS:  0  1  2  3
+0    40     0       0        0  0  0  0
+----------------------------------- (S,G) ------------------------------------
+Source           Group            RP Address       Flags
+---------------  ---------------  ---------------  ---------------------------
+10.142.0.145     225.1.2.3        20.30.0.1        CACHE SG
+Joined   oifs: ....                
+Pruned   oifs: ....                
+Leaves   oifs: ..l.                
+Asserted oifs: ....                
+Outgoing oifs: ..o.                
+Incoming     : .I..                
+
+TIMERS:  Entry    JP    RS  Assert VIFS:  0  1  2  3
+150     5     0       0        0  0  0  0
+--------------------------------- (*,*,G) ------------------------------------
+Number of Groups: 1
+Number of Cache MIRRORs: 1
+------------------------------------------------------------------------------
+</code></pre>
+
+<p>You may also want to see what the OpenBSD kernel thinks about the
+situation when everything is working:</p>
+
+<pre><code># netstat -g
+
+Virtual Interface Table
+Vif  Thresh  Limit  Local-Address    Remote-Address   Pkt_in  Pkt_out
+1       1  20.30.0.2                           8052        0
+2       1  10.141.1.181                           0     8052
+3       1  20.30.0.2                              0        0
+
+Multicast Forwarding Cache
+Hash  Origin           Mcastgroup       Traffic  In-Vif  Out-Vifs/Forw-ttl
+0  10.142.0.145     225.1.2.3             
+  1  2/1
+
+Total no. of entries in cache: 1
+
+IPv6 Multicast Interface Table is empty
+IPv6 Multicast Routing Table is empty
+</code></pre>
+
+<h3 id="troubleshooting">Troubleshooting</h3>
+
+<p>The number one problem in multicast routing is the TTL of the multicast
+stream from the sender.  In this example I use simple <code>ping</code>, but tweak
+the TTL and force the output interface:</p>
+
+<pre><code>root@sender:~# ping -I eth1 -t 10 225.1.2.3           # Linux
+</code></pre>
+
+<p>The second most common problem is with equipment between the sender or
+the receiver and the closes router.  Usually some infrastructure like a
+simple switch, or as in the case with virtual setups, a software bridge.
+Any one of these semi-intelligent devices can make a mess of your day.
+If you suspect trouble, use <code>ping</code> from the receiver (or the sender) and
+use <code>tcpdump</code> on the closest router.  You should be able to see the ICMP
+frames.  If not, try disabling <em>IGMP snooping</em> on the swithc or software
+bridge.  On a Linux <em>host system</em> this is done by:</p>
+
+<pre><code>echo 0 &gt; /sys/devices/virtual/net/virbr*/bridge/multicast_snooping
+</code></pre>
+
+<p>The third most common problem is actually the firewall in your system.
+On Linux systems you get <code>EPERM</code> &ndash; &ldquo;Operation not permitted&rdquo;, and on
+OpenBSD you likely get <code>EHOSTUNREACH</code> &ndash; &ldquo;No route to host&rdquo; all over the
+logs, usually for the IGMP traffic that pimd generates.  On OpenBSD this
+is due to <code>pf</code> by default filtering all frames with IP options set.  I
+added support for the &ldquo;Router Alert&rdquo; IP option to IGMP frames in v2.2.0,
+this is recommended per RFC.   Add this to your <code>/etc/pf.conf</code> to allow
+IGMP frames to be sent by pimd:</p>
+
+<pre><code># Enable IGMP with Router Alert IP option
+pass proto igmp allow-opts
+</code></pre>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="/howto/multicast-howto/" data-toggle="tooltip" data-placement="top" title="Multicast HowTo">&larr; Previous Post</a>
+          </li>
+        
+        
+          <li class="next">
+            <a href="/howto/howto-netbsd-pkgsrc/" data-toggle="tooltip" data-placement="top" title="HowTo use NetBSD pre-built packages">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:troglobit@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;JoachimNilsson" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/troglobit" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/troglobit" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="http://troglobit.com">Joachim Nilsson</a>
+                      
+          
+          
+          &nbsp;&bull;&nbsp;
+          2017
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="/">Troglobit</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.25.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="/js/main.js"></script>
+<script src="/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="/js/load-photoswipe.js"></script>
+
+
+
+  </body>
+</html>
+

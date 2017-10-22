@@ -5,9 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Pimd</title>
-  <meta property="og:title" content="Pimd" />
-  <meta name="twitter:title" content="Pimd" />
+  <title>HowTo Rebase without an origin</title>
+  <meta property="og:title" content="HowTo Rebase without an origin" />
+  <meta name="twitter:title" content="HowTo Rebase without an origin" />
+  <meta name="description" content="OK, so you&rsquo;ve just been handed the task to integrate a big piece of corporate software and it&rsquo;s nowhere near as done and ready as project management thinks. Of course you&rsquo;ve already started chugging away at it, fixing bugs, refactoring code and wrapping it in neat containers to keep the changeset against the base SW small &ndash; you already know you&rsquo;ll get another drop of the same stinking pieace of code in another six months, so you keep the changes small and track them in GIT with neatly formatted commit messages.">
+  <meta property="og:description" content="OK, so you&rsquo;ve just been handed the task to integrate a big piece of corporate software and it&rsquo;s nowhere near as done and ready as project management thinks. Of course you&rsquo;ve already started chugging away at it, fixing bugs, refactoring code and wrapping it in neat containers to keep the changeset against the base SW small &ndash; you already know you&rsquo;ll get another drop of the same stinking pieace of code in another six months, so you keep the changes small and track them in GIT with neatly formatted commit messages.">
+  <meta name="twitter:description" content="OK, so you&rsquo;ve just been handed the task to integrate a big piece of corporate software and it&rsquo;s nowhere near as done and ready as project management thinks. Of course you&rsquo;ve already …">
   <meta name="author" content="Joachim Nilsson"/>
   <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="/images/profile.jpg" />
@@ -15,12 +18,12 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@troglobit" />
   <meta name="twitter:creator" content="@troglobit" />
-  <meta property="og:url" content="/categories/pimd/" />
+  <meta property="og:url" content="/howto/howto-rebase-without-an-origin/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Troglobit" />
 
   <meta name="generator" content="Hugo 0.25.1" />
-  <link rel="canonical" href="/categories/pimd/" />
+  <link rel="canonical" href="/howto/howto-rebase-without-an-origin/" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Troglobit">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -141,14 +144,26 @@
 
 
     
+  
+  
+  
+
+
+
+
+  
+
   <header class="header-section ">
+    
     <div class="intro-header no-img">
+      
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="page-heading">
-              <h1>#Pimd</h1>
-              <hr class="small">
+            <div class="howto-heading">
+              <h1>HowTo Rebase without an origin</h1>
+                
+                
             </div>
           </div>
         </div>
@@ -156,85 +171,50 @@
     </div>
   </header>
 
+
     
-  <div class="container" role="main">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>OK, so you&rsquo;ve just been handed the task to integrate a big piece of
+corporate software and it&rsquo;s nowhere near as done and ready as project
+management thinks.  Of course you&rsquo;ve already started chugging away at
+it, fixing bugs, refactoring code and wrapping it in neat containers
+to keep the changeset against the base SW small &ndash; you already know
+you&rsquo;ll get another drop of the same stinking pieace of code in another
+six months, so you keep the changes small and track them in GIT with
+neatly formatted commit messages.</p>
+
+<p>About ten commits in it dawns on you that you have several commits
+that would need to be squashed and some commit messages that needs to
+be edited &hellip; you start typing in <code>git rebase -i origin/...</code> wait, you
+haven&rsquo;t pushed anything yet.  So how do you rebase something that&rsquo;s
+not been pushed yet?</p>
+
+<p>Well:</p>
+
+<pre><code>git rebase --interactive --root master
+</code></pre>
+
+<p>Tip courtesy of my friend and collegue <a href="https://github.com/wkz">wkz</a></p>
+
+      </article>
+
+      <ul class="pager blog-pager">
         
-        <div class="posts-list">
-          
-            <article class="post-preview">
-              <a href="/howto/howto-run-pimd-on-freebsd/">
-                <h2 class="post-title">HowTo run pimd on FreeBSD</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on September 27, 2015
-              </p>
-              <div class="post-entry">
-                
-                  This is not a proper HowTo, more of a &ldquo;note to self&rdquo; after having created a setup to test pimd issue #57. For these notes the following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and Qemu 2.3.0, is used:
-.--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | '--------' '----' '----' '----------'  The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP/MLD snooping to get pimd to run smoothly.
-                  <a href="/howto/howto-run-pimd-on-freebsd/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="/howto/howto-run-pimd-on-openbsd/">
-                <h2 class="post-title">HowTo run pimd on OpenBSD</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on July 19, 2015
-              </p>
-              <div class="post-entry">
-                
-                  This is an introduction to HowTo run pimd on OpenBSD. I keep it around mostly as a reminder to myself when testing new pimd releases, maybe someone else can make use of it as well.
-First of all, my sincere thanks to the OpenBSD team for, not just an awesome UNIX distribution, but also for their good taste in shipping a MULTICAST enabled kernel in the base distribution! On both NetBSD and FreeBSD there is a bit of work to get multicast support, which is one of the reasons for my not writing a HowTo for either of them atm.
-                  <a href="/howto/howto-run-pimd-on-openbsd/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2013/07/12/new-open-source-releases/">
-                <h2 class="post-title">New Open Source Releases</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on July 12, 2013
-              </p>
-              <div class="post-entry">
-                
-                  Vacation time means catching up on my Open Source projects! :)
-Currently I&rsquo;m shaping up the home pages and this blog to improve the easy access and overview of all the packages I maintain. The following packages have new releases, or can expect new releases soon:
- Minix Editline v1.14.1 SMCRoute v1.99.1 &ndash; There&rsquo;s even a v2.0.0 being planned, with the core of SMCRoute available as a library mrouted minor cleanup an sync with OpenBSD pimd cleanups and bug fixes, needs testing inadyn is in dire need of a release, but needs more testing and fixes  As usual, see my GitHub for the latest commits if you want to try anything out, file an issue report, or if you want to contribute.
-                  <a href="/2013/07/12/new-open-source-releases/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-        </div>
         
-      </div>
+          <li class="next">
+            <a href="/howto/howto-add-multicast-routing-support-to-the-freebsd-kernel/" data-toggle="tooltip" data-placement="top" title="HowTo: Add Multicast Routing to FreeBSD kernel">Next Post &rarr;</a>
+          </li>
+        
+      </ul>
+
+      
+
     </div>
   </div>
+</div>
 
     <footer>
   <div class="container">

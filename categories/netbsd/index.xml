@@ -8,10 +8,22 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Sun, 29 Aug 2010 20:44:34 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jul 2015 11:13:00 +0200</lastBuildDate>
     
 	<atom:link href="/categories/netbsd/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HowTo use NetBSD pre-built packages</title>
+      <link>/howto/howto-netbsd-pkgsrc/</link>
+      <pubDate>Thu, 30 Jul 2015 11:13:00 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/howto/howto-netbsd-pkgsrc/</guid>
+      <description>Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.
+Here it is, you&amp;rsquo;d think this be something the installer could set up a default for &amp;hellip;
+PKG_PATH=ftp://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/  The simply
+pkg_add -v git  Or so you might think! As this blog points out, you also need to install some root certificates to get HTTPS/SSL working.</description>
+    </item>
     
     <item>
       <title>Finally, NetBSD Boots in KVM!</title>

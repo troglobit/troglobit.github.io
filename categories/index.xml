@@ -59,6 +59,15 @@
     </item>
     
     <item>
+      <title>Bsd</title>
+      <link>/categories/bsd/</link>
+      <pubDate>Sun, 27 Sep 2015 18:45:00 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/bsd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Bzr</title>
       <link>/categories/bzr/</link>
       <pubDate>Tue, 13 Jul 2010 01:56:11 +0000</pubDate>
@@ -115,7 +124,7 @@
     <item>
       <title>Debian</title>
       <link>/categories/debian/</link>
-      <pubDate>Tue, 30 Jun 2015 23:13:48 +0000</pubDate>
+      <pubDate>Sat, 07 Nov 2015 12:49:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/debian/</guid>
       <description></description>
@@ -187,7 +196,7 @@
     <item>
       <title>Freebsd</title>
       <link>/categories/freebsd/</link>
-      <pubDate>Tue, 23 Sep 2014 01:55:19 +0000</pubDate>
+      <pubDate>Sun, 27 Sep 2015 18:45:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/freebsd/</guid>
       <description></description>
@@ -241,7 +250,7 @@
     <item>
       <title>Howto</title>
       <link>/categories/howto/</link>
-      <pubDate>Thu, 02 Jul 2015 17:11:55 +0000</pubDate>
+      <pubDate>Sat, 07 Nov 2015 12:49:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/howto/</guid>
       <description></description>
@@ -262,24 +271,6 @@
       <pubDate>Sun, 12 Feb 2017 00:07:44 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/https/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Igmp</title>
-      <link>/categories/igmp/</link>
-      <pubDate>Thu, 16 Jul 2015 15:42:00 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/categories/igmp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Igmpproxy</title>
-      <link>/categories/igmpproxy/</link>
-      <pubDate>Thu, 16 Jul 2015 15:42:00 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/categories/igmpproxy/</guid>
       <description></description>
     </item>
     
@@ -356,15 +347,6 @@
     </item>
     
     <item>
-      <title>Mcproxy</title>
-      <link>/categories/mcproxy/</link>
-      <pubDate>Thu, 16 Jul 2015 15:42:00 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/categories/mcproxy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Merecat</title>
       <link>/categories/merecat/</link>
       <pubDate>Sun, 12 Feb 2017 00:07:44 +0000</pubDate>
@@ -394,7 +376,7 @@
     <item>
       <title>Mrouted</title>
       <link>/categories/mrouted/</link>
-      <pubDate>Thu, 16 Jul 2015 15:42:00 +0200</pubDate>
+      <pubDate>Fri, 12 Jul 2013 00:00:00 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/mrouted/</guid>
       <description></description>
@@ -412,7 +394,7 @@
     <item>
       <title>Netbsd</title>
       <link>/categories/netbsd/</link>
-      <pubDate>Sun, 29 Aug 2010 20:44:34 +0000</pubDate>
+      <pubDate>Thu, 30 Jul 2015 11:13:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/netbsd/</guid>
       <description></description>
@@ -475,7 +457,7 @@
     <item>
       <title>Pimd</title>
       <link>/categories/pimd/</link>
-      <pubDate>Thu, 16 Jul 2015 15:42:00 +0200</pubDate>
+      <pubDate>Sun, 27 Sep 2015 18:45:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/pimd/</guid>
       <description></description>
@@ -547,9 +529,18 @@
     <item>
       <title>Smcroute</title>
       <link>/categories/smcroute/</link>
-      <pubDate>Thu, 16 Jul 2015 15:42:00 +0200</pubDate>
+      <pubDate>Tue, 06 Aug 2013 00:00:00 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/smcroute/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Snmp</title>
+      <link>/categories/snmp/</link>
+      <pubDate>Sat, 07 Nov 2015 12:49:00 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/snmp/</guid>
       <description></description>
     </item>
     
@@ -655,7 +646,7 @@
     <item>
       <title>Ubuntu</title>
       <link>/categories/ubuntu/</link>
-      <pubDate>Fri, 31 Dec 2010 20:26:37 +0000</pubDate>
+      <pubDate>Sat, 07 Nov 2015 12:49:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/ubuntu/</guid>
       <description></description>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Pimd on Troglobit</title>
-    <link>/categories/pimd/</link>
-    <description>Recent content in Pimd on Troglobit</description>
+    <title>Bsd on Troglobit</title>
+    <link>/categories/bsd/</link>
+    <description>Recent content in Bsd on Troglobit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
     <lastBuildDate>Sun, 27 Sep 2015 18:45:00 +0200</lastBuildDate>
     
-	<atom:link href="/categories/pimd/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/bsd/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -24,6 +24,18 @@
     </item>
     
     <item>
+      <title>HowTo use NetBSD pre-built packages</title>
+      <link>/howto/howto-netbsd-pkgsrc/</link>
+      <pubDate>Thu, 30 Jul 2015 11:13:00 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/howto/howto-netbsd-pkgsrc/</guid>
+      <description>Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.
+Here it is, you&amp;rsquo;d think this be something the installer could set up a default for &amp;hellip;
+PKG_PATH=ftp://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/  The simply
+pkg_add -v git  Or so you might think! As this blog points out, you also need to install some root certificates to get HTTPS/SSL working.</description>
+    </item>
+    
+    <item>
       <title>HowTo run pimd on OpenBSD</title>
       <link>/howto/howto-run-pimd-on-openbsd/</link>
       <pubDate>Sun, 19 Jul 2015 00:32:00 +0200</pubDate>
@@ -31,17 +43,6 @@
       <guid>/howto/howto-run-pimd-on-openbsd/</guid>
       <description>This is an introduction to HowTo run pimd on OpenBSD. I keep it around mostly as a reminder to myself when testing new pimd releases, maybe someone else can make use of it as well.
 First of all, my sincere thanks to the OpenBSD team for, not just an awesome UNIX distribution, but also for their good taste in shipping a MULTICAST enabled kernel in the base distribution! On both NetBSD and FreeBSD there is a bit of work to get multicast support, which is one of the reasons for my not writing a HowTo for either of them atm.</description>
-    </item>
-    
-    <item>
-      <title>New Open Source Releases</title>
-      <link>/2013/07/12/new-open-source-releases/</link>
-      <pubDate>Fri, 12 Jul 2013 00:00:00 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/2013/07/12/new-open-source-releases/</guid>
-      <description>Vacation time means catching up on my Open Source projects! :)
-Currently I&amp;rsquo;m shaping up the home pages and this blog to improve the easy access and overview of all the packages I maintain. The following packages have new releases, or can expect new releases soon:
- Minix Editline v1.14.1 SMCRoute v1.99.1 &amp;ndash; There&amp;rsquo;s even a v2.0.0 being planned, with the core of SMCRoute available as a library mrouted minor cleanup an sync with OpenBSD pimd cleanups and bug fixes, needs testing inadyn is in dire need of a release, but needs more testing and fixes  As usual, see my GitHub for the latest commits if you want to try anything out, file an issue report, or if you want to contribute.</description>
     </item>
     
   </channel>

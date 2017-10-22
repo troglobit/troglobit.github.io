@@ -245,22 +245,42 @@ improving and adding features to it over the years.</p>
             </article>
           
             <article class="post-preview">
-              <a href="/howto/multicast-howto/">
-                <h2 class="post-title">Multicast HowTo</h2>
+              <a href="/howto/howto-run-pimd-on-freebsd/">
+                <h2 class="post-title">HowTo run pimd on FreeBSD</h2>
 
                 
               </a>
 
               <p class="post-meta">
-                Posted on July 16, 2015
+                Posted on September 27, 2015
               </p>
               <div class="post-entry">
                 
-                  This HowTo attempts to give some insight into the basics of setting up multicast routing. Both static multicast routing, with SMCRoute, and dynamic multicast routing, with mrouted and pimd.
-For some use-cases it may not be possible to use multicast routing, then I recommend trying out:
- igmproxy, mcproxy, or OpenVPN in Layer-2, bridged mode  Make sure to check out the FAQ for the most common problems.
-Good Luck!
-                  <a href="/howto/multicast-howto/" class="post-read-more">[Read More]</a>
+                  This is not a proper HowTo, more of a &ldquo;note to self&rdquo; after having created a setup to test pimd issue #57. For these notes the following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and Qemu 2.3.0, is used:
+.--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | '--------' '----' '----' '----------'  The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP/MLD snooping to get pimd to run smoothly.
+                  <a href="/howto/howto-run-pimd-on-freebsd/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="/howto/howto-run-pimd-on-openbsd/">
+                <h2 class="post-title">HowTo run pimd on OpenBSD</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on July 19, 2015
+              </p>
+              <div class="post-entry">
+                
+                  This is an introduction to HowTo run pimd on OpenBSD. I keep it around mostly as a reminder to myself when testing new pimd releases, maybe someone else can make use of it as well.
+First of all, my sincere thanks to the OpenBSD team for, not just an awesome UNIX distribution, but also for their good taste in shipping a MULTICAST enabled kernel in the base distribution! On both NetBSD and FreeBSD there is a bit of work to get multicast support, which is one of the reasons for my not writing a HowTo for either of them atm.
+                  <a href="/howto/howto-run-pimd-on-openbsd/" class="post-read-more">[Read More]</a>
                 
               </div>
 
@@ -433,32 +453,6 @@ are included:</p>
 
 <p>As always, check the <a href="/pimd.html">homepage</a>, the <a href="https://github.com/troglobit/pimd/blob/master/ChangeLog">ChangeLog</a> and the
 <a href="https://github.com/troglobit/pimd/commits/2.1.6">GIT log</a> for more details.</p>
-
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2010/10/11/announcing-mrouted-v3-dot-9-3/">
-                <h2 class="post-title">Announcing mrouted v3.9.3</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on October 11, 2010
-              </p>
-              <div class="post-entry">
-                
-                  <p>Here is another bug-fix release of <a href="/mrouted.html">mrouted</a>.  This time
-with a couple of really nasty bugs fixed.  A big thanks to Dan Kruchinin
-for tracking down a <code>NULL</code> pointer dereference in the conf file parser
-and an overzealous check of netmask that made mrouted useless over
-tunnel interfaces or point-to-point links (OpenVPN, PPP, L2TP and PPTP).
-See the <a href="https://github.com/troglobit/mrouted/blob/master/ChangeLog">ChangeLog</a> or the <a href="http://git.troglobit.com/mrouted.git/">GIT log</a> for details.</p>
 
                 
               </div>

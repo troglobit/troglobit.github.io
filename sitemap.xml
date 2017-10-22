@@ -797,6 +797,12 @@
   </url>
   
   <url>
+    <loc>/categories/bsd/</loc>
+    <lastmod>2015-09-27T18:45:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/categories/bzr/</loc>
     <lastmod>2010-07-13T01:56:11+00:00</lastmod>
     <priority>0</priority>
@@ -844,7 +850,7 @@
   
   <url>
     <loc>/categories/debian/</loc>
-    <lastmod>2015-06-30T23:13:48+00:00</lastmod>
+    <lastmod>2015-11-07T12:49:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -892,7 +898,7 @@
   
   <url>
     <loc>/categories/freebsd/</loc>
-    <lastmod>2014-09-23T01:55:19+00:00</lastmod>
+    <lastmod>2015-09-27T18:45:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -932,7 +938,7 @@
   
   <url>
     <loc>/categories/howto/</loc>
-    <lastmod>2015-07-02T17:11:55+00:00</lastmod>
+    <lastmod>2015-11-07T12:49:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -951,18 +957,6 @@
   <url>
     <loc>/categories/https/</loc>
     <lastmod>2017-02-12T00:07:44+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/igmp/</loc>
-    <lastmod>2015-07-16T15:42:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/igmpproxy/</loc>
-    <lastmod>2015-07-16T15:42:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1015,12 +1009,6 @@
   </url>
   
   <url>
-    <loc>/categories/mcproxy/</loc>
-    <lastmod>2015-07-16T15:42:00+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/categories/merecat/</loc>
     <lastmod>2017-02-12T00:07:44+00:00</lastmod>
     <priority>0</priority>
@@ -1040,7 +1028,7 @@
   
   <url>
     <loc>/categories/mrouted/</loc>
-    <lastmod>2015-07-16T15:42:00+02:00</lastmod>
+    <lastmod>2013-07-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1052,7 +1040,7 @@
   
   <url>
     <loc>/categories/netbsd/</loc>
-    <lastmod>2010-08-29T20:44:34+00:00</lastmod>
+    <lastmod>2015-07-30T11:13:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1094,7 +1082,7 @@
   
   <url>
     <loc>/categories/pimd/</loc>
-    <lastmod>2015-07-16T15:42:00+02:00</lastmod>
+    <lastmod>2015-09-27T18:45:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1158,7 +1146,13 @@
   
   <url>
     <loc>/categories/smcroute/</loc>
-    <lastmod>2015-07-16T15:42:00+02:00</lastmod>
+    <lastmod>2013-08-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/snmp/</loc>
+    <lastmod>2015-11-07T12:49:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1241,7 +1235,7 @@
   
   <url>
     <loc>/categories/ubuntu/</loc>
-    <lastmod>2010-12-31T20:26:37+00:00</lastmod>
+    <lastmod>2015-11-07T12:49:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   

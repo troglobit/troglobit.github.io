@@ -5,9 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Pimd</title>
-  <meta property="og:title" content="Pimd" />
-  <meta name="twitter:title" content="Pimd" />
+  <title>HowTo play with SNMP</title>
+  <meta property="og:title" content="HowTo play with SNMP" />
+  <meta name="twitter:title" content="HowTo play with SNMP" />
+  <meta name="description" content="This mini HowTo is about how you can use SNMP client tools to retrieve human readable information from devices running an SNMP daemon. In the examples below mini-snmpd is used as the daemon and as client both the command line net-snmp tool and the snmpB GUI are used.
+Personally I use both Ubuntu and Debian, so the tools I use to download the clients will reflect that. See your respective UNIX distro&rsquo;s help pages for how to install these client tools in your operating system.">
+  <meta property="og:description" content="This mini HowTo is about how you can use SNMP client tools to retrieve human readable information from devices running an SNMP daemon. In the examples below mini-snmpd is used as the daemon and as client both the command line net-snmp tool and the snmpB GUI are used.
+Personally I use both Ubuntu and Debian, so the tools I use to download the clients will reflect that. See your respective UNIX distro&rsquo;s help pages for how to install these client tools in your operating system.">
+  <meta name="twitter:description" content="This mini HowTo is about how you can use SNMP client tools to retrieve human readable information from devices running an SNMP daemon. In the examples below mini-snmpd is used as the daemon and as …">
   <meta name="author" content="Joachim Nilsson"/>
   <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="/images/profile.jpg" />
@@ -15,12 +20,12 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@troglobit" />
   <meta name="twitter:creator" content="@troglobit" />
-  <meta property="og:url" content="/categories/pimd/" />
+  <meta property="og:url" content="/howto/howto-play-with-snmp/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Troglobit" />
 
   <meta name="generator" content="Hugo 0.25.1" />
-  <link rel="canonical" href="/categories/pimd/" />
+  <link rel="canonical" href="/howto/howto-play-with-snmp/" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Troglobit">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -141,14 +146,26 @@
 
 
     
+  
+  
+  
+
+
+
+
+  
+
   <header class="header-section ">
+    
     <div class="intro-header no-img">
+      
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="page-heading">
-              <h1>#Pimd</h1>
-              <hr class="small">
+            <div class="howto-heading">
+              <h1>HowTo play with SNMP</h1>
+                
+                
             </div>
           </div>
         </div>
@@ -156,85 +173,106 @@
     </div>
   </header>
 
+
     
-  <div class="container" role="main">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
         
-        <div class="posts-list">
-          
-            <article class="post-preview">
-              <a href="/howto/howto-run-pimd-on-freebsd/">
-                <h2 class="post-title">HowTo run pimd on FreeBSD</h2>
 
-                
-              </a>
+<p>This mini HowTo is about how you can use SNMP client tools to retrieve
+<em>human readable</em> information from devices running an SNMP daemon.  In
+the examples below <a href="/mini-snmpd.html">mini-snmpd</a> is used as the daemon
+and as client both the command line <a href="http://www.net-snmp.org">net-snmp</a>
+tool and the <a href="http://sourceforge.net/projects/snmpb/">snmpB</a> GUI are
+used.</p>
 
-              <p class="post-meta">
-                Posted on September 27, 2015
-              </p>
-              <div class="post-entry">
-                
-                  This is not a proper HowTo, more of a &ldquo;note to self&rdquo; after having created a setup to test pimd issue #57. For these notes the following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and Qemu 2.3.0, is used:
-.--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | '--------' '----' '----' '----------'  The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP/MLD snooping to get pimd to run smoothly.
-                  <a href="/howto/howto-run-pimd-on-freebsd/" class="post-read-more">[Read More]</a>
-                
-              </div>
+<p>Personally I use both Ubuntu and Debian, so the tools I use to download
+the clients will reflect that.  See your respective UNIX distro&rsquo;s help
+pages for how to install these client tools in your operating system.</p>
 
-              
+<h2 id="installing-snmp-in-ubuntu">Installing SNMP in Ubuntu</h2>
 
-            </article>
-          
-            <article class="post-preview">
-              <a href="/howto/howto-run-pimd-on-openbsd/">
-                <h2 class="post-title">HowTo run pimd on OpenBSD</h2>
+<p>The following command installs snmpset/get/walk, base MIBs and all
+standard MIBs needed.</p>
 
-                
-              </a>
+<pre><code>sudo apt-get install snmp libsnmp-base snmp-mibs-downloader
+</code></pre>
 
-              <p class="post-meta">
-                Posted on July 19, 2015
-              </p>
-              <div class="post-entry">
-                
-                  This is an introduction to HowTo run pimd on OpenBSD. I keep it around mostly as a reminder to myself when testing new pimd releases, maybe someone else can make use of it as well.
-First of all, my sincere thanks to the OpenBSD team for, not just an awesome UNIX distribution, but also for their good taste in shipping a MULTICAST enabled kernel in the base distribution! On both NetBSD and FreeBSD there is a bit of work to get multicast support, which is one of the reasons for my not writing a HowTo for either of them atm.
-                  <a href="/howto/howto-run-pimd-on-openbsd/" class="post-read-more">[Read More]</a>
-                
-              </div>
+<p>Assuming you have already started <code>mini_snmpd</code> on your client, you
+should be able to do the following:</p>
 
-              
+<pre><code>snmpwalk -v2c -c public 127.0.0.1
+snmpget -c public -v 2c 127.0.0.1 system.sysUpTime.0
+</code></pre>
 
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2013/07/12/new-open-source-releases/">
-                <h2 class="post-title">New Open Source Releases</h2>
+<p>If you experience problems, see Debian <a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=561578">bug #561578</a> for details on
+how to edit and fix your system default <code>/etc/snmp/snmp.conf</code></p>
 
-                
-              </a>
+<p>On my system I&rsquo;ve had trouble getting net-snmp to use the UCD-SNMP-MIB,
+so I&rsquo;ve added it explicitly to my <code>~/snmp/snmp.conf</code>:</p>
 
-              <p class="post-meta">
-                Posted on July 12, 2013
-              </p>
-              <div class="post-entry">
-                
-                  Vacation time means catching up on my Open Source projects! :)
-Currently I&rsquo;m shaping up the home pages and this blog to improve the easy access and overview of all the packages I maintain. The following packages have new releases, or can expect new releases soon:
- Minix Editline v1.14.1 SMCRoute v1.99.1 &ndash; There&rsquo;s even a v2.0.0 being planned, with the core of SMCRoute available as a library mrouted minor cleanup an sync with OpenBSD pimd cleanups and bug fixes, needs testing inadyn is in dire need of a release, but needs more testing and fixes  As usual, see my GitHub for the latest commits if you want to try anything out, file an issue report, or if you want to contribute.
-                  <a href="/2013/07/12/new-open-source-releases/" class="post-read-more">[Read More]</a>
-                
-              </div>
+<pre><code>mibs +UCD-SNMP-MIB
+</code></pre>
 
-              
+<p>This MIB is in <code>/usr/share/snmp/mibs/</code> on my system &hellip;</p>
 
-            </article>
-          
-        </div>
+<h2 id="installing-private-mib-files">Installing Private MIB files</h2>
+
+<p>If you want to access a router/switch which uses private MIBs you can do
+the same as I did for the UCD-SNMP-MIB:</p>
+
+<pre><code>mkdir -p ~/.snmp/mibs
+cp ALL-PRIVATE-MIBS ~/.snmp/mibs/`basename $file .my`
+cat &lt;&lt; EOF &gt; ~/.snmp/snmp.conf
+mibdirs /usr/share/snmp/mibs:/usr/share/mibs/ietf:/usr/share/mibs/iana:/usr/share/mibs/irtf:/usr/share/mibs/tubs:$HOME/.snmp/mibs
+mibs +COMPANY-SOME-MIB
+mibs +COMPANY-OID-MIB
+EOF
+</code></pre>
+
+<p>Now you should be able to do this:</p>
+
+<pre><code>snmpset -c private -v 2c 192.168.2.200 COMPANY-SOME-MIB::reboot.0 i 1
+</code></pre>
+
+<p>which is quite an improvement over:</p>
+
+<pre><code>snmpset -c private -v 2c 192.168.2.200 1.3.6.1.4.1.16177.2.1.1.1.0 i 1
+</code></pre>
+
+<h2 id="useful-tests">Useful Tests</h2>
+
+<p>Walk all IP addresses</p>
+
+<pre><code>snmpwalk -v2c -c public 192.168.2.20 1.3.6.1.2.1.4.20 
+</code></pre>
+
+<p>Get loadavg</p>
+
+<pre><code>snmpwalk -v2c -c public 127.0.0.1 UCD-SNMP-MIB::laLoad
+</code></pre>
+
+<p>For more tips on using <code>snmpwalk</code>, see the
+<a href="http://www.net-snmp.org/wiki/index.php/TUT:snmpwalk">Net-SNMP wiki</a></p>
+
+      </article>
+
+      <ul class="pager blog-pager">
         
-      </div>
+          <li class="previous">
+            <a href="/howto/howto-run-pimd-on-freebsd/" data-toggle="tooltip" data-placement="top" title="HowTo run pimd on FreeBSD">&larr; Previous Post</a>
+          </li>
+        
+        
+      </ul>
+
+      
+
     </div>
   </div>
+</div>
 
     <footer>
   <div class="container">
