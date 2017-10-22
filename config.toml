@@ -1,4 +1,4 @@
-baseURL = "http://127.0.0.1"
+baseURL = "http://troglobit.com"
 disablePathToLower = true
 languageCode = "en-us"
 title = "Troglobit"
@@ -25,12 +25,12 @@ pygmentCodeFences = true
 
 [[menu.main]]
     name = "Projects"
-    url = "/projects/"
+    url = "/project/"
     weight = 1
 
 [[menu.main]]
     name = "HowTos"
-    url = "/howtos/"
+    url = "/howto/"
     weight = 1
 
 [[menu.main]]
