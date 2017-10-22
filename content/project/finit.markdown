@@ -43,50 +43,51 @@ The following is an example of `/etc/finit.conf`.  It can be split up in
 per-service `.conf` files in `/etc/finit.d/` to be able to change and
 reload the configuration at runtime.
 
-    # /etc/finit.conf - System bootstrap for TroglOS
-    user root
-    host default
-    
-    # Default runlevel
-    runlevel 2
+```conf
+# /etc/finit.conf - System bootstrap for TroglOS
+user root
+host default
 
-    # Launch bootstrap services
-    service [S12345] /sbin/watchdogd -L -f                      -- System watchdog daemon
-    service [S12345] /sbin/syslogd -n -b 3 -D                   -- System log daemon
-    service [S12345] /sbin/klogd -n                             -- Kernel log daemon
-    
-    # Services must not daemonize themselves, look for -n, --foreground or
-    # similar switches to prevent them from forking to the background
-    service :1 [2345] <net/eth1/up>       /sbin/dropbear -R -F -p 22  -- SSH daemon (LAN)
-    service :2  [345] <net/route/default> /sbin/dropbear -R -F -p 222 -- SSH daemon (WAN)
-    #service    [2345]                    /sbin/telnetd -F            -- Telnet daemon
-    
-    # Finit understands /etc/network/interfaces on Debian/BusyBox systems
-    #network /etc/init.d/networking
+# Default runlevel
+runlevel 2
 
-    # System patch or extension scripts, see run-parts(8), built-in support in Finit.
-    # You can also use /etc/rc.local for smaller things.
-    #runparts /mnt/start.d
-    
-    # Inetd services
-	# Allow telnet on standard port only if not from WAN (eth0)
-	# Allow telnet onport 2323 from WAN (don't do this kids)
-	# Built-in rdate service also available on custom port 3737, notice internal.time
-    inetd ftp/tcp                   nowait [2345] /sbin/uftpd -i -f       -- FTP daemon
-    inetd tftp/udp                    wait [2345] /sbin/uftpd -i -y       -- TFTP daemon
-    inetd time/udp                    wait [2345] internal                -- UNIX rdate service
-    inetd time/tcp                  nowait [2345] internal                -- UNIX rdate service
-    inetd 3737/tcp                  nowait [2345] internal.time           -- UNIX rdate service
-    inetd telnet/tcp@*,!eth0,       nowait [2345] /sbin/telnetd -i -F     -- Telnet daemon
-    inetd 2323/tcp@eth0             nowait [2345] /sbin/telnetd -i -F     -- Telnet daemon
-    #inetd 222/tcp@eth0             nowait [2345] /sbin/dropbear -i -R -F -- SSH service
-    #inetd ssh/tcp@*,!eth0          nowait [2345] /sbin/dropbear -i -R -F -- SSH service
-    
-    # Allow login on ttyUSB0, for systems with no dedicated console port
-    tty [12345] /dev/ttyAMA0 115200 vt100
-    tty  [2345] /dev/ttyUSB0 115200 vt100
-    console /dev/ttyAMA0
+# Launch bootstrap services
+service [S12345] /sbin/watchdogd -L -f                      -- System watchdog daemon
+service [S12345] /sbin/syslogd -n -b 3 -D                   -- System log daemon
+service [S12345] /sbin/klogd -n                             -- Kernel log daemon
 
+# Services must not daemonize themselves, look for -n, --foreground or
+# similar switches to prevent them from forking to the background
+service :1 [2345] <net/eth1/up>       /sbin/dropbear -R -F -p 22  -- SSH daemon (LAN)
+service :2  [345] <net/route/default> /sbin/dropbear -R -F -p 222 -- SSH daemon (WAN)
+#service    [2345]                    /sbin/telnetd -F            -- Telnet daemon
+
+# Finit understands /etc/network/interfaces on Debian/BusyBox systems
+#network /etc/init.d/networking
+
+# System patch or extension scripts, see run-parts(8), built-in support in Finit.
+# You can also use /etc/rc.local for smaller things.
+#runparts /mnt/start.d
+
+# Inetd services
+# Allow telnet on standard port only if not from WAN (eth0)
+# Allow telnet onport 2323 from WAN (don't do this kids)
+# Built-in rdate service also available on custom port 3737, notice internal.time
+inetd ftp/tcp                   nowait [2345] /sbin/uftpd -i -f       -- FTP daemon
+inetd tftp/udp                    wait [2345] /sbin/uftpd -i -y       -- TFTP daemon
+inetd time/udp                    wait [2345] internal                -- UNIX rdate service
+inetd time/tcp                  nowait [2345] internal                -- UNIX rdate service
+inetd 3737/tcp                  nowait [2345] internal.time           -- UNIX rdate service
+inetd telnet/tcp@*,!eth0,       nowait [2345] /sbin/telnetd -i -F     -- Telnet daemon
+inetd 2323/tcp@eth0             nowait [2345] /sbin/telnetd -i -F     -- Telnet daemon
+#inetd 222/tcp@eth0             nowait [2345] /sbin/dropbear -i -R -F -- SSH service
+#inetd ssh/tcp@*,!eth0          nowait [2345] /sbin/dropbear -i -R -F -- SSH service
+
+# Allow login on ttyUSB0, for systems with no dedicated console port
+tty [12345] /dev/ttyAMA0 115200 vt100 noclear
+tty  [2345] /dev/ttyUSB0 115200 vt100 noclear
+console /dev/ttyAMA0
+```
 
 Finit configuration files in `/etc/finit.d/` are monitored for changes,
 if the `mtime` is changed on a file and the user calls `initctl reload`,
@@ -101,17 +102,19 @@ The familiar `shutdown`, `reboot`, `poweroff`, and `halt` commands are
 provided by Finit, as is the traditional `telinit` command.  In addition
 to that there is also the more modern `initctl` tool:
 
-    ~ $ initctl status -v
-    1       running  476     [S12345]   /sbin/watchdog -T 16 -t 2 -F /dev/watchdog
-    2       running  477     [S12345]   /sbin/syslogd -n -b 3 -D
-    3       running  478     [S12345]   /sbin/klogd -n
-    4:1       inetd  0       [2345]     internal time allow *:37
-    4:2       inetd  0       [2345]     internal time allow *:37
-    4:3       inetd  0       [2345]     internal 3737 allow *:3737
-    5:1       inetd  0       [2345]     /sbin/telnetd allow *:23 deny eth0,eth1
-    5:2       inetd  0       [2345]     /sbin/telnetd allow eth0:2323,eth2:2323,eth1:2323
-    6:1       inetd  0       [345]      /sbin/dropbear allow eth0:222
-    6:2       inetd  0       [345]      /sbin/dropbear allow *:22 deny eth0
+```sh
+~ $ initctl status -v
+1       running  476     [S12345----]  /sbin/watchdog -T 16 -t 2 -F /dev/watchdog
+2       running  477     [S12345----]  /sbin/syslogd -n -b 3 -D
+3       running  478     [S12345----]  /sbin/klogd -n
+4:1       inetd  0       [--2345----]  internal time allow *:37
+4:2       inetd  0       [--2345----]  internal time allow *:37
+4:3       inetd  0       [--2345----]  internal 3737 allow *:3737
+5:1       inetd  0       [--2345----]  /sbin/telnetd allow *:23 deny eth0,eth1
+5:2       inetd  0       [--2345----]  /sbin/telnetd allow eth0:2323,eth2:2323,eth1:2323
+6:1       inetd  0       [---345----]  /sbin/dropbear allow eth0:222
+6:2       inetd  0       [---345----]  /sbin/dropbear allow *:22 deny eth0
+```
 
 For details, see the [documentation][README] and the online help `-h` to
 each tool.
@@ -131,8 +134,8 @@ Issue tracker and GIT repository available at GitHub:
 * [README](https://github.com/troglobit/finit/blob/master/README.md)
 * [TODO](https://github.com/troglobit/finit/blob/master/TODO.md)
 * [Issue Tracker](http://github.com/troglobit/finit/issues)
-* [finit-3.0-rc1.tar.xz](ftp://ftp.troglobit.com/finit/finit-3.0-rc1.tar.xz),
-  [MD5](ftp://ftp.troglobit.com/finit/finit-3.0-rc1.tar.xz.md5)
+* [finit-3.0.tar.xz](ftp://ftp.troglobit.com/finit/finit-3.0.tar.xz),
+  [MD5](ftp://ftp.troglobit.com/finit/finit-3.0.tar.xz.md5)
 
 See also the [Free(code) page](http://freecode.com/projects/finit).
 
