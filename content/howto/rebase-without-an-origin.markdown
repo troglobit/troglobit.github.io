@@ -2,6 +2,9 @@
 name:  "GIT rebase w/o origin"
 title: "HowTo Rebase without an origin"
 date: 2014-08-27 10:00:13 +0200
+aliases:
+    - /howto-rebase-without-an-origin.html
+    - /blog/2014/08/27/howto-rebase-without-an-origin/index.html
 categories: [ "git", "howto" ]
 ---
 
