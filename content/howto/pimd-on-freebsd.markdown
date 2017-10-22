@@ -2,6 +2,7 @@
 name:  "Run pimd on FreeBSD"
 title: "HowTo run pimd on FreeBSD"
 date: 2015-09-27 18:45:00 +02:00
+aliases: [/howto-run-pimd-on-freebsd.html]
 categories: [ "multicast", "pimd", "freebsd", "bsd", "howto" ]
 ---
 
