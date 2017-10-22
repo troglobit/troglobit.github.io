@@ -7,12 +7,19 @@ url: /2010/05/09/syntax-highlighting-in-less/
 aliases: /blog/2010/05/09/syntax-highlighting-in-less/
 ---
 
-<img class="right" src="/images/lessfilter.png">
+<img style="float: right" src="/images/lessfilter.png">
 
 Yes, it's certainly possible and source code becomes so much easier to
-read.  Try it out by [downloading my .lessfilter][1]: save it as
-`~/.lessfilter` in your `$HOME`.
+read.  Try it out by:
 
-Then try it out on a C source file: `less -R myfile.c` :-)
+1. [downloading my .lessfilter][1]
+2. save it as `~/.lessfilter` in your `$HOME`
+3. Profit!
+
+Ahem ...
+
+Just try it out on a C source file :-)
+
+    less -R myfile.c
 
 [1]: https://github.com/troglobit/toolbox/blob/master/dot.lessfilter
