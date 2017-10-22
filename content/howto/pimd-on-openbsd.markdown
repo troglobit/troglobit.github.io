@@ -2,6 +2,7 @@
 name:  "Run pimd on OpenBSD"
 title: "HowTo run pimd on OpenBSD"
 date: 2015-07-19 00:32:00 +02:00
+aliases: [/howto-run-pimd-on-openbsd.html]
 categories: [ "multicast", "pimd", "openbsd", "bsd", "howto" ]
 ---
 
