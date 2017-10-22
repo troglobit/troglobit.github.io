@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Threads Vs Events on Troglobit</title>
-    <link>http://troglobit.com/categories/threads-vs-events/</link>
+    <link>/categories/threads-vs-events/</link>
     <description>Recent content in Threads Vs Events on Troglobit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,15 +10,15 @@
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
     <lastBuildDate>Tue, 06 Aug 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://troglobit.com/categories/threads-vs-events/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/threads-vs-events/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Threads vs Events</title>
-      <link>http://troglobit.com/2013/08/06/event-handling/</link>
+      <link>/2013/08/06/event-handling/</link>
       <pubDate>Tue, 06 Aug 2013 00:00:00 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://troglobit.com/2013/08/06/event-handling/</guid>
+      <guid>/2013/08/06/event-handling/</guid>
       <description>&lt;p&gt;This is a rant about something I recently found to be a long standing
 battle line in the world of programming,
 &lt;a href=&#34;http://cgi.di.uoa.gr/~mema/courses/mde518/papers/lauer78.pdf&#34;&gt;Lau78&lt;/a&gt;.

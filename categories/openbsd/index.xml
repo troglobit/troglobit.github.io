@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Openbsd on Troglobit</title>
-    <link>http://troglobit.com/categories/openbsd/</link>
+    <link>/categories/openbsd/</link>
     <description>Recent content in Openbsd on Troglobit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,15 +10,15 @@
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
     <lastBuildDate>Tue, 06 Jun 2017 10:44:55 +0000</lastBuildDate>
     
-	<atom:link href="http://troglobit.com/categories/openbsd/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/openbsd/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>GIT, Autoconf and Automake in OpenBSD</title>
-      <link>http://troglobit.com/2017/06/06/install-git-in-openbsd/</link>
+      <link>/2017/06/06/install-git-in-openbsd/</link>
       <pubDate>Tue, 06 Jun 2017 10:44:55 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://troglobit.com/2017/06/06/install-git-in-openbsd/</guid>
+      <guid>/2017/06/06/install-git-in-openbsd/</guid>
       <description>Reminder to self:
 echo &amp;quot;https://ftp.eu.openbsd.org/pub/OpenBSD/&amp;quot; &amp;gt;/etc/installurl pkg_add git autoconf automake libtool  Select the latest versions, then add the following to ~/.profile:
 AUTOCONF_VERSION=2.69 AUTOMAKE_VERSION=1.15 export AUTOCONF_VERSION AUTOMAKE_VERSION  With your selected versions, of course.</description>

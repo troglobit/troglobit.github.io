@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Capabilities on Troglobit</title>
-    <link>http://troglobit.com/categories/capabilities/</link>
+    <link>/categories/capabilities/</link>
     <description>Recent content in Capabilities on Troglobit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,15 +10,15 @@
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
     <lastBuildDate>Sun, 11 Dec 2016 20:26:12 +0000</lastBuildDate>
     
-	<atom:link href="http://troglobit.com/categories/capabilities/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/capabilities/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>A life without sudo</title>
-      <link>http://troglobit.com/2016/12/11/a-life-without-sudo/</link>
+      <link>/2016/12/11/a-life-without-sudo/</link>
       <pubDate>Sun, 11 Dec 2016 20:26:12 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://troglobit.com/2016/12/11/a-life-without-sudo/</guid>
+      <guid>/2016/12/11/a-life-without-sudo/</guid>
       <description>Ever since my first stumbling steps with Linux back in &amp;lsquo;96, I&amp;rsquo;ve been learning about UNIX. The first obvious lesson was to not use the root account. Since then I&amp;rsquo;ve been using a combination of sudo command and suid root binaries to get the job done.
 
 For the last ten years, however, I&amp;rsquo;ve been meaning to learn about Linux capabilities(7) and thanks to a colleague of mine I now have :)</description>

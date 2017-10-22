@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Embedded on Troglobit</title>
-    <link>http://troglobit.com/categories/embedded/</link>
+    <link>/categories/embedded/</link>
     <description>Recent content in Embedded on Troglobit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,15 +10,15 @@
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
     <lastBuildDate>Thu, 02 Feb 2017 18:52:18 +0000</lastBuildDate>
     
-	<atom:link href="http://troglobit.com/categories/embedded/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/embedded/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Emulate an actual MTD device in Qemu</title>
-      <link>http://troglobit.com/2017/02/02/emulate-an-actual-mtd-device-in-qemu/</link>
+      <link>/2017/02/02/emulate-an-actual-mtd-device-in-qemu/</link>
       <pubDate>Thu, 02 Feb 2017 18:52:18 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://troglobit.com/2017/02/02/emulate-an-actual-mtd-device-in-qemu/</guid>
+      <guid>/2017/02/02/emulate-an-actual-mtd-device-in-qemu/</guid>
       <description>&lt;p&gt;Having worked with Linux for the last 20 years, and embedded for more
 than ten of them, I&amp;rsquo;ve become quite a fan of virtualization in general
 and &lt;a href=&#34;http://qemu.org&#34;&gt;Qemu&lt;/a&gt; in particular.&lt;/p&gt;
@@ -39,10 +39,10 @@ why I created &lt;a href=&#34;https://github.com/troglobit/troglos&#34;&gt;Trogl
     
     <item>
       <title>Cross Compiler Foo</title>
-      <link>http://troglobit.com/2008/08/20/cross-compiler-foo/</link>
+      <link>/2008/08/20/cross-compiler-foo/</link>
       <pubDate>Wed, 20 Aug 2008 20:14:42 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://troglobit.com/2008/08/20/cross-compiler-foo/</guid>
+      <guid>/2008/08/20/cross-compiler-foo/</guid>
       <description>There is a certain magic surrounding cross compilers and the people that know how to build one. Not unlike that of (Linux/BSD) kernel developers. At work we today support two embedded Linux targets, both are ARM based, and in neither of the two have we built the cross compiler ourselves. The first was ye&amp;rsquo; old 2.95 based from uClinux.org and the second we had a consultant build for us. Lame!</description>
     </item>
     

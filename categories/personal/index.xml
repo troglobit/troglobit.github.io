@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Personal on Troglobit</title>
-    <link>http://troglobit.com/categories/personal/</link>
+    <link>/categories/personal/</link>
     <description>Recent content in Personal on Troglobit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -10,52 +10,52 @@
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
     <lastBuildDate>Sun, 14 Jun 2009 21:04:34 +0000</lastBuildDate>
     
-	<atom:link href="http://troglobit.com/categories/personal/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/personal/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Oona 6 years old!</title>
-      <link>http://troglobit.com/2009/06/14/oona-6-years-old/</link>
+      <link>/2009/06/14/oona-6-years-old/</link>
       <pubDate>Sun, 14 Jun 2009 21:04:34 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://troglobit.com/2009/06/14/oona-6-years-old/</guid>
+      <guid>/2009/06/14/oona-6-years-old/</guid>
       <description>Wow, this friday (June 12th) my daughter turned six! I can hardly believe it is six years since she came into our lives, time has gone by so quick &amp;hellip; when she was born we still lived in Västerås, now she has a younger brother and we live in a great house in Skultuna.
 Happy birthday, Oona! I wish you all the best now that you&amp;rsquo;re starting first year of school after the summer vacation.</description>
     </item>
     
     <item>
       <title>Moved</title>
-      <link>http://troglobit.com/2007/02/03/moved/</link>
+      <link>/2007/02/03/moved/</link>
       <pubDate>Sat, 03 Feb 2007 10:52:15 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://troglobit.com/2007/02/03/moved/</guid>
+      <guid>/2007/02/03/moved/</guid>
       <description>Yep, we finally did it, we bought ourselves a house. Last year in October we moved from our small three-room flat in central Västerås to the new house in Skultuna. Everything went really fast from finding it up for sale, deciding on it down to getting a loan and moving in. Worst part of it all was getting a decent broadband connection. We actually moved from a 100 Mbps dedicated copper line to a 24&amp;frasl;2 Mbps ADSL line.</description>
     </item>
     
     <item>
       <title>Besiktning</title>
-      <link>http://troglobit.com/2006/07/24/besiktning/</link>
+      <link>/2006/07/24/besiktning/</link>
       <pubDate>Mon, 24 Jul 2006 22:10:27 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://troglobit.com/2006/07/24/besiktning/</guid>
+      <guid>/2006/07/24/besiktning/</guid>
       <description>Yes, bilen gick igenom besiktningen!</description>
     </item>
     
     <item>
       <title>Bromsbyte Passat</title>
-      <link>http://troglobit.com/2006/07/21/bromsbyte-passat/</link>
+      <link>/2006/07/21/bromsbyte-passat/</link>
       <pubDate>Fri, 21 Jul 2006 22:10:48 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://troglobit.com/2006/07/21/bromsbyte-passat/</guid>
+      <guid>/2006/07/21/bromsbyte-passat/</guid>
       <description>Igår bytte jag bromsskivor på vår gamla Passat Variant -00. Det var definitivt dags efter över 15000 mil så var skivorna och beläggen så slitna att tom. Bilprovningen nog hade klagat i år. Dessutom var det fjärde service:en som VW-verkstaden tyckte det var dags att byta. VW var mer än villiga och gav mig ett anbud på 5500:- vilket jag var väldigt nära att nappa på. Efter en liten reality check så insåg jag dock att vi inte skulle ha råd med det, så jag fick loss delar från Mekonomen för 2400:- och började själv&amp;nbsp;&amp;hellip;</description>
     </item>
     
     <item>
       <title>No news are good news?</title>
-      <link>http://troglobit.com/2006/05/26/no-news-are-good-news/</link>
+      <link>/2006/05/26/no-news-are-good-news/</link>
       <pubDate>Fri, 26 May 2006 21:10:42 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>http://troglobit.com/2006/05/26/no-news-are-good-news/</guid>
+      <guid>/2006/05/26/no-news-are-good-news/</guid>
       <description>Seriously, it&amp;rsquo;s been one long winter and now finally summer is upon us again. It was about six months ago that I switched jobs and this is the first time for that period that I&amp;rsquo;ve got ten minutes above the surface. The new job is fun but currently takes up too much of my time to be healthy in the long run.
 Today we&amp;rsquo;re going to Stenby TV-service with our broken Hitachi 32&amp;rdquo; TV.</description>
     </item>
