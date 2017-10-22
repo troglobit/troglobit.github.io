@@ -2,6 +2,7 @@
 name:  "Playing with SNMP"
 title: "HowTo play with SNMP"
 date: 2015-11-07 12:49:00 +02:00
+aliases: [/howto-play-with-snmp.html]
 categories: [ "snmp", "debian", "ubuntu", "howto" ]
 ---
 
