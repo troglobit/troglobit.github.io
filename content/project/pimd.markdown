@@ -4,7 +4,7 @@ title: The original PIM-SM daemon
 date: 2017-07-12 20:17:00 +02:00
 aliases: /pimd.html
 ---
-<img class="right" src="/images/pim-sm.gif" style="width: 222px; height: 155px;" />
+<img src="/images/pim-sm.gif" style="width: 340px; height: 220px; float: right" />
 
 pimd is a lightweight standalone PIM-SM/SSM v2 multicast routing daemon.
 It is the original USC (netweb/catarina.usc.edu) implementation of the
