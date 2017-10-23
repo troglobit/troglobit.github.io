@@ -5,8 +5,8 @@ categories:
 - HowTo
 comments: true
 date: 2010-07-13T01:56:11Z
-title: 'HowTo: Converting from Bazaar to GIT'
-url: /2010/07/13/howto-converting-from-bazaar-to-git/
+title: Converting from Bazaar to GIT
+url: /2010/07/13/converting-from-bazaar-to-git/
 aliases: /blog/2010/07/13/howto-converting-from-bazaar-to-git/
 ---
 

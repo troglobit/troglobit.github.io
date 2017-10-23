@@ -2,8 +2,8 @@
 categories: null
 comments: true
 date: 2010-08-02T00:56:35Z
-title: Announcing Micro Tetris™ 1.2.0
-url: /2010/08/02/announcing-micro-tetris-1-dot-2-0/
+title: Micro Tetris™ v1.2.0
+url: /2010/08/02/micro-tetris-1-dot-2-0/
 aliases: /blog/2010/08/02/announcing-micro-tetris-1-dot-2-0/
 ---
 

@@ -6,8 +6,8 @@ categories:
 - HowTo
 comments: true
 date: 2010-12-31T20:26:37Z
-title: 'HowTo: Use Ubuntu to Serve Music to iTunes'
-url: /2010/12/31/howto-setup-debian-slash-ubuntu-to-serve-music-to-itunes/
+title: Use Ubuntu to Serve iTunes
+url: /2010/12/31/ubuntu-to-serve-music-to-itunes/
 aliases: /blog/2010/12/31/howto-setup-debian-slash-ubuntu-to-serve-music-to-itunes/
 ---
 
