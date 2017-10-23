@@ -1,10 +1,11 @@
 ---
 name: smcroute.conf
 date: 2017-06-13 23:15:00 +02:00
+title: smcroute.conf example
 url: /project/smcroute/smcroute-conf.html
 aliases: /smcroute-conf.html
 ---
-
+<!--more-->
 ```conf
 #
 # smcroute.conf example
@@ -55,7 +56,7 @@ phyint virbr0 enable ttl-threshold 5
 #
 mgroup from eth0 group 225.1.2.3
 mroute from eth0 group 225.1.2.3 source 192.168.1.42 to eth1 eth2
-    
+
 mgroup from virbr0 group 225.1.2.4
 mroute from virbr0 group 225.1.2.4 source 192.168.123.110 to eth0
 
