@@ -49,15 +49,14 @@ of voodoo, like &lt;code&gt;__attribute__ ((unused))&lt;/code&gt; &amp;hellip; s
       <description>&lt;p&gt;This is a response to the excellent post by Jani Gorše, titled
 &lt;a href=&#34;https://blooki.st/BlookElement/ShowTextPhoto?blookElementId=1962&#34;&gt;Why is Programming an Art?&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Ever since I began studying Computer Engineering at
-&lt;a href=&#34;http://www.mdh.se&#34;&gt;university&lt;/a&gt; back in 1995 I have struggled to find
-the &amp;ldquo;proper&amp;rdquo; ways to format my code, name functions and variables
-appropriately, structure functions into files and files into
-directories with Makefiles and Makefile snippets, using both recursive
-and non-recursive make.  Formatting of code, for instance, was for a
-while a bit of an obsession of mine, and it sort of is still.  But
-today I am more concerned with the overall structure and how
-components interact.  Even though I can still get very annoyed at
+&lt;p&gt;Ever since I began studying Computer Engineering at &lt;a href=&#34;http://www.mdh.se&#34;&gt;university&lt;/a&gt; back
+in 1995 I have struggled to find the &amp;ldquo;proper&amp;rdquo; ways to format my code,
+name functions and variables appropriately, structure functions into
+files and files into directories with Makefiles and Makefile snippets,
+using both recursive and non-recursive make.  Formatting of code, for
+instance, was for a while a bit of an obsession of mine, and it sort of
+is still.  But today I am more concerned with the overall structure and
+how components interact.  Even though I can still get very annoyed at
 people naming their local variables obtrusively.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

@@ -1234,7 +1234,7 @@ Enjoy!</description>
     </item>
     
     <item>
-      <title>Finally &amp;mdash; Google Movies &amp;amp; Music in Sweden</title>
+      <title>Finally — Google Movies &amp; Music in Sweden</title>
       <link>/2014/03/18/finally-google-movies-and-music-in-sweden/</link>
       <pubDate>Tue, 18 Mar 2014 00:00:00 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
@@ -1385,15 +1385,14 @@ that I know many people run into, myself included.&lt;/p&gt;
       <description>&lt;p&gt;This is a response to the excellent post by Jani Gorše, titled
 &lt;a href=&#34;https://blooki.st/BlookElement/ShowTextPhoto?blookElementId=1962&#34;&gt;Why is Programming an Art?&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Ever since I began studying Computer Engineering at
-&lt;a href=&#34;http://www.mdh.se&#34;&gt;university&lt;/a&gt; back in 1995 I have struggled to find
-the &amp;ldquo;proper&amp;rdquo; ways to format my code, name functions and variables
-appropriately, structure functions into files and files into
-directories with Makefiles and Makefile snippets, using both recursive
-and non-recursive make.  Formatting of code, for instance, was for a
-while a bit of an obsession of mine, and it sort of is still.  But
-today I am more concerned with the overall structure and how
-components interact.  Even though I can still get very annoyed at
+&lt;p&gt;Ever since I began studying Computer Engineering at &lt;a href=&#34;http://www.mdh.se&#34;&gt;university&lt;/a&gt; back
+in 1995 I have struggled to find the &amp;ldquo;proper&amp;rdquo; ways to format my code,
+name functions and variables appropriately, structure functions into
+files and files into directories with Makefiles and Makefile snippets,
+using both recursive and non-recursive make.  Formatting of code, for
+instance, was for a while a bit of an obsession of mine, and it sort of
+is still.  But today I am more concerned with the overall structure and
+how components interact.  Even though I can still get very annoyed at
 people naming their local variables obtrusively.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -1454,11 +1453,11 @@ As always, check the homepage, the ChangeLog and the GIT log for more details.</
     </item>
     
     <item>
-      <title>HowTo: Use Ubuntu to Serve Music to iTunes</title>
-      <link>/2010/12/31/howto-setup-debian-slash-ubuntu-to-serve-music-to-itunes/</link>
+      <title>Use Ubuntu to Serve iTunes</title>
+      <link>/2010/12/31/ubuntu-to-serve-music-to-itunes/</link>
       <pubDate>Fri, 31 Dec 2010 20:26:37 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/2010/12/31/howto-setup-debian-slash-ubuntu-to-serve-music-to-itunes/</guid>
+      <guid>/2010/12/31/ubuntu-to-serve-music-to-itunes/</guid>
       <description>OK, so we finally got an iPad. The effective marketing droids of Apple are doing a good job, even the Linux zealots are starting to use their products :-)
 So, how to serve the immense music collection of our family to the iPad? Well, it seems the magic integration with iTunes is not enough (yet), so you need a Simple Daap Client app on your iPad to get the most out of this HowTo.</description>
     </item>
@@ -1493,20 +1492,20 @@ The trick seems to be to ignore as much as you can from other Internet tips. Net
     </item>
     
     <item>
-      <title>Announcing Minix editline 1.14.0</title>
-      <link>/2010/08/12/announcing-minix-editline-1-dot-14-dot-0/</link>
+      <title>Minix editline v1.14.0</title>
+      <link>/2010/08/12/minix-editline-1-dot-14-dot-0/</link>
       <pubDate>Thu, 12 Aug 2010 18:17:40 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/2010/08/12/announcing-minix-editline-1-dot-14-dot-0/</guid>
+      <guid>/2010/08/12/minix-editline-1-dot-14-dot-0/</guid>
       <description>It is with great pleasure I announce the next release of the editline library by Simmule Turner and Rich Salz! This is a popular library, it exists in several forked versions. This release marks the end of a huge effort where archaeological methods have been applied to recover fixes and improvements developed independently over several decades by the following projects: Heimdal, Festival speech-tools, Debian, as well as patches by Mr. Steve Tell.</description>
     </item>
     
     <item>
-      <title>Announcing Micro Tetris™ 1.2.0</title>
-      <link>/2010/08/02/announcing-micro-tetris-1-dot-2-0/</link>
+      <title>Micro Tetris™ v1.2.0</title>
+      <link>/2010/08/02/micro-tetris-1-dot-2-0/</link>
       <pubDate>Mon, 02 Aug 2010 00:56:35 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/2010/08/02/announcing-micro-tetris-1-dot-2-0/</guid>
+      <guid>/2010/08/02/micro-tetris-1-dot-2-0/</guid>
       <description>New release of Micro Tetris™, v1.2.0, available for download now! Noteworthy changes and additions:
  Preview display fixes by Mattias Walström Next level triggered after every 10 cleared lines Speed increase by each level Display high score at game over High score recorded to save file Pause key fixed, again by Mattias Walström  Online GIT repository and release tarball available at the usual places:
  github:tetris.git (Main GIT) vmlinux:tetris.</description>
@@ -1537,11 +1536,11 @@ $ echo &amp;quot;Secret project, use ROT13 to decode source code&amp;quot; &amp;
     </item>
     
     <item>
-      <title>HowTo: Converting from Bazaar to GIT</title>
-      <link>/2010/07/13/howto-converting-from-bazaar-to-git/</link>
+      <title>Converting from Bazaar to GIT</title>
+      <link>/2010/07/13/converting-from-bazaar-to-git/</link>
       <pubDate>Tue, 13 Jul 2010 01:56:11 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/2010/07/13/howto-converting-from-bazaar-to-git/</guid>
+      <guid>/2010/07/13/converting-from-bazaar-to-git/</guid>
       <description>You need git, and bazaar obviously. Also install bzr-fastimport, it contains the export plugin as well. The rest is a rip off from Frank&amp;rsquo;s page.
 $ git init project.git $ cd project.git $ bzr fast-export --export-marks=.git/bzr.mark ~/project.bzr | git fast-import --export-marks=.git/git.mark  That worked for me. The output will likely be something like this:
 01:41:19 Calculating the revisions to include ... 01:41:19 Starting export of 33 revisions ... 01:41:20 Exported 33 revisions in 0:00:01 git-fast-import statistics: --------------------------------------------------------------------- Alloc&#39;d objects: 5000 Total objects : 267 ( 0 duplicates ) blobs : 158 ( 0 duplicates 57 deltas) trees : 76 ( 0 duplicates 55 deltas) commits: 33 ( 0 duplicates 0 deltas) tags : 0 ( 0 duplicates 0 deltas) Total branches : 10 ( 1 loads ) marks : 1024 ( 33 unique ) atoms : 38 Memory total : 2344 KiB pools : 2110 KiB objects: 234 KiB --------------------------------------------------------------------- pack_report: getpagesize() = 4096 pack_report: core.</description>
