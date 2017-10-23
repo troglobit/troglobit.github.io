@@ -16,7 +16,7 @@ was looking for a human readable file format that a user could easily
 and reliably edit by themselves without it being too error prone or
 sensitive to mistyping.
 
-{% gist 9177645 %}
+{{< gist troglobit 9177645 >}}
 
 I quickly narrowed down my scope of investigation to
 [Jansson](http://www.digip.org/jansson/) for JSON and and
@@ -30,7 +30,7 @@ The resulting code is in my
 [toolbox](https://github.com/troglobit/toolbox/tree/master/conf) on
 GitHub.
 
-{% gist 9177620 %}
+{{< gist troglobit 9177620 >}}
 
 In my opinion the .conf file is a lot easier to read, write and edit
 by Joe User, so that's what I'll be using for many of my own projects,

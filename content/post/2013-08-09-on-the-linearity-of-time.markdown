@@ -11,5 +11,5 @@ Don't try this at home kids. (Disclaimer: I live in Sweden :)
 
 <!--more-->
 
-{% gist 6168031 %}
+{{< gist coffeemug 6168031 >}}
 
