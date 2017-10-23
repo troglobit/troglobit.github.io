@@ -46,7 +46,7 @@ from the given profile and just complain in the log.  The default is
 `aa-enforce`.  For more info on AppArmor, see the
 [excellent upstream docs](http://wiki.apparmor.net/index.php/Documentation)
 
-<img class="right" src="/images/filesystem-pass-through.png" style="width: 500px;">
+<img src="/images/filesystem-pass-through.png" style="width: 500px; float: right">
 
 Now, how to do it.  I like virsh, but for most of the time the vmware
 like

@@ -7,7 +7,7 @@ url: /2010/08/02/announcing-micro-tetris-1-dot-2-0/
 aliases: /blog/2010/08/02/announcing-micro-tetris-1-dot-2-0/
 ---
 
-[<img class="right" src="/images/TetrisConstruction.jpg" style="width: 175px;">](http://erikjohanssonphoto.com/work/tetris/)
+[<img src="/images/TetrisConstruction.jpg" style="width: 230px; float: right">](http://erikjohanssonphoto.com/work/tetris/)
 
 New release of [Micro Tetris™](/tetris.html), v1.2.0, available for
 download now!  Noteworthy changes and additions:

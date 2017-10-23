@@ -22,25 +22,22 @@ does confuse people.
 
 <!--more-->
 
-<img class="right" src="/images/programming-in-a-nutshell.gif">
+<img style="float: right" src="/images/programming-in-a-nutshell.gif">
 
-In reality I'm
-[just a programmer](http://c2.com/cgi/wiki?JustaProgrammer) with a
-little bit more responsibility.  A day starts with coming in to the
-office, or sitting down in my home office, connecting to the company
-VPN, meanwhile planning loosely the day and my goals.  All while
-checking status of e-mail, our IRC channel and the issue tracker for
-any recently reported/updated issues in my fields of responsibility.
-Somewhere around there I have a pretty good idea about what must be
-done and in what order.  So I write it down, in no particular order,
-on folded A4 sheets I use for TODO lists and start working.  About 20
-minutes into that, when I've just reached
-[The Zone](http://c2.com/cgi/wiki?InTheZone), I get interrupted for an
-impromptu meeting, or
-[telco](https://en.wikipedia.org/wiki/Conference_call), which in turn
-always leads to another meeting, which in turn runs over and suddenly
-it's 16:00 (4 pm) and I have 45 minutes to complete a days work before
-picking up the kids from school.
+In reality I'm [just a programmer][1] with a little bit more
+responsibility.  A day starts with coming in to the office, or sitting
+down in my home office, connecting to the company VPN, meanwhile
+planning loosely the day and my goals.  All while checking status of
+e-mail, our IRC channel and the issue tracker for any recently
+reported/updated issues in my fields of responsibility.  Somewhere
+around there I have a pretty good idea about what must be done and in
+what order.  So I write it down, in no particular order, on folded A4
+sheets I use for TODO lists and start working.  About 20 minutes into
+that, when I've just reached [The Zone][2], I get interrupted for an
+impromptu meeting, or [telco][3], which in turn always leads to another
+meeting, which in turn runs over and suddenly it's 16:00 (4 pm) and I
+have 45 minutes to complete a days work before picking up the kids from
+school.
 
 Or ... you can apply that same crazy to a day when trying to fix a
 simple bug, finding another horrbile bug and fixing that first,
@@ -51,3 +48,7 @@ working on.
 
 That's what I do for a living.  And yes, I know it's not sustainable
 work conditions.  I'm working on that, it's on the TODO list ...
+
+[1]: http://c2.com/cgi/wiki?JustaProgrammer
+[2]: http://c2.com/cgi/wiki?InTheZone
+[3]: https://en.wikipedia.org/wiki/Conference_call
