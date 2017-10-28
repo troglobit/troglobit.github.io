@@ -51,7 +51,7 @@ host default
 runlevel 2
 
 # Launch bootstrap services
-service [S12345] /sbin/watchdogd -nx                              -- System watchdog daemon
+service [S12345] /sbin/watchdogd -T 16 -t 2 -F /dev/watchdog      -- System watchdog daemon
 service [S12345] /sbin/syslogd -n -b 3 -D                         -- System log daemon
 service [S12345] /sbin/klogd -n                                   -- Kernel log daemon
 
@@ -112,7 +112,6 @@ to that there is also the more modern `initctl` tool:
 4:2       inetd  0       [--2345----]  internal time allow *:37
 4:3       inetd  0       [--2345----]  internal 3737 allow *:3737
 5:1       inetd  0       [--2345----]  /sbin/telnetd allow *:23 deny eth0,eth1
-5:2       inetd  0       [--2345----]  /sbin/telnetd allow eth0:2323,eth2:2323,eth1:2323
 6:1       inetd  0       [---345----]  /sbin/dropbear allow eth0:222
 6:2       inetd  0       [---345----]  /sbin/dropbear allow *:22 deny eth0
 ```
