@@ -6,11 +6,11 @@ aliases: /finit.html
 <img class="center noborder" src="/images/finit3.png" style="width: 310px; height: 240px;" alt="Finit: A fast init for Linux" />
 
 Finit is a small event based [SysV init][1] replacement with built-in
-[process supervision][2], similar to that of its more famous cousins
-[daemontools][3] and [runit][4] --  *Services are supervised and
+inetd, getty, and [process supervision][2] similar to [systemd][7],
+[runit][4] and [daemontools][3] -- *Services are supervised and
 automatically restarted if they fail*.
 
-Finit primarily targets small and embedded Linux systems by heavily
+Finit primarily targets small and embedded Linux systems by greatly
 reducing the amount of context switches, forks, and calls to external
 tools that most other init daemons suffer from.
 
