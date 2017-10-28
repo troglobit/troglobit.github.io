@@ -51,17 +51,19 @@ host default
 runlevel 2
 
 # Launch bootstrap services
-service [S12345] /sbin/watchdogd -L -f                      -- System watchdog daemon
-service [S12345] /sbin/syslogd -n -b 3 -D                   -- System log daemon
-service [S12345] /sbin/klogd -n                             -- Kernel log daemon
+service [S12345] /sbin/watchdogd -nx                              -- System watchdog daemon
+service [S12345] /sbin/syslogd -n -b 3 -D                         -- System log daemon
+service [S12345] /sbin/klogd -n                                   -- Kernel log daemon
 
 # Services must not daemonize themselves, look for -n, --foreground or
 # similar switches to prevent them from forking to the background
-service :1 [2345] <net/eth1/up>       /sbin/dropbear -R -F -p 22  -- SSH daemon (LAN)
-service :2  [345] <net/route/default> /sbin/dropbear -R -F -p 222 -- SSH daemon (WAN)
-#service    [2345]                    /sbin/telnetd -F            -- Telnet daemon
+#service :1 [2345] <net/eth1/up>       /sbin/dropbear -R -F -p 22  -- SSH daemon (LAN)
+#service :2  [345] <net/route/default> /sbin/dropbear -R -F -p 222 -- SSH daemon (WAN)
+#service    [2345]                     /sbin/telnetd -F            -- Telnet daemon
 
 # Finit understands /etc/network/interfaces on Debian/BusyBox systems
+# on other systems you can use the `network SCRIPT` stanza or a simple
+# run or task stanza to run the necessary scripts.
 #network /etc/init.d/networking
 
 # System patch or extension scripts, see run-parts(8), built-in support in Finit.
@@ -77,10 +79,10 @@ inetd tftp/udp                    wait [2345] /sbin/uftpd -i -y       -- TFTP da
 inetd time/udp                    wait [2345] internal                -- UNIX rdate service
 inetd time/tcp                  nowait [2345] internal                -- UNIX rdate service
 inetd 3737/tcp                  nowait [2345] internal.time           -- UNIX rdate service
-inetd telnet/tcp@*,!eth0,       nowait [2345] /sbin/telnetd -i -F     -- Telnet daemon
-inetd 2323/tcp@eth0             nowait [2345] /sbin/telnetd -i -F     -- Telnet daemon
-#inetd 222/tcp@eth0             nowait [2345] /sbin/dropbear -i -R -F -- SSH service
-#inetd ssh/tcp@*,!eth0          nowait [2345] /sbin/dropbear -i -R -F -- SSH service
+#inetd 2323/tcp@eth0             nowait [2345] /sbin/telnetd -i -F     -- Telnet daemon (WAN)
+inetd telnet/tcp@*,!eth0,       nowait [2345] /sbin/telnetd -i -F     -- Telnet daemon (LAN)
+inetd 222/tcp@eth0             nowait [2345] /sbin/dropbear -i -R -F -- SSH daemon (WAN)
+inetd ssh/tcp@*,!eth0          nowait [2345] /sbin/dropbear -i -R -F -- SSH daemon (LAN)
 
 # Allow login on ttyUSB0, for systems with no dedicated console port
 tty [12345] /dev/ttyAMA0 115200 vt100 noclear
