@@ -36,13 +36,14 @@ and to simplify changing service configuration at runtime.
 
 ```conf
 # /etc/finit.conf - System bootstrap for TroglOS
-user root
-host default
 
-# Default runlevel
-runlevel 2
+# System hostname is set from /etc/hostname
+#host default
 
-# Launch bootstrap services
+# Default runlevel is 2
+#runlevel 2
+
+# Launch bootstrap 'S' services
 service [S12345] /sbin/watchdogd -T 16 -t 2 -F /dev/watchdog      -- System watchdog daemon
 service [S12345] /sbin/syslogd -n -b 3 -D                         -- System log daemon
 service [S12345] /sbin/klogd -n                                   -- Kernel log daemon
@@ -79,7 +80,6 @@ inetd ssh/tcp@*,!eth0          nowait [2345] /sbin/dropbear -i -R -F -- SSH daem
 # Allow login on ttyUSB0, for systems with no dedicated console port
 tty [12345] /dev/ttyAMA0 115200 vt100 noclear
 tty  [2345] /dev/ttyUSB0 115200 vt100 noclear
-console /dev/ttyAMA0
 ```
 
 Finit configuration files in `/etc/finit.d/` are monitored for changes,
