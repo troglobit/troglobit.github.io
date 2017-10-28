@@ -9,15 +9,12 @@ Finit is a simple alternative to [SysV init][1] and [systemd][7] reverse
 engineered from the EeePC fastinit ten years ago by Claudio Matsuoka —
 "gaps filled with frog DNA …"
 
-Finit supports runlevels, [process monitoring][2], and starting/stopping
-services on demand -- either with the built-in inetd support, or by
-triggering on free-form conditions.  E.g., PID file created/modified,
-Netlink events like default route or interfaces coming up/down, similar
-to [systemd][7].
+Finit supports runlevels, [process monitoring][2], and starting services
+on demand using the built-in inetd, or by triggering a condition.  E.g.,
+*"don't start this service until basic networking is available", or
+"wait until syslogd has started".
 
-Finit can also be extended with plugins to hook into the boot process
-and extend its functionality to fit your specific needs.  For more
-details, see the [documentation][README].
+For more details, see the [documentation][README].
 
 
 Example
