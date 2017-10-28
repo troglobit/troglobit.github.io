@@ -29,8 +29,8 @@ Example
 -------
 
 [TroglOS][9] provides an example of how to boot an embedded system with
-Finit, as well as extend it with plugins.  TroglOS use an [mtd.so][10]
-plugin to handle uninitialized flash:
+Finit, as well as extend it with plugins, or replace any default plugin.
+TroglOS use an [mtd.so][10] plugin to handle uninitialized flash:
 
 <img class="center" src="/images/finit3-screenshot.png" alt="Finit Screenshot" style="width: 472px; height: 422px;">
 
@@ -39,8 +39,8 @@ Configuration
 -------------
 
 The following is an example of `/etc/finit.conf`.  It can be split up in
-per-service `.conf` files in `/etc/finit.d/` to be able to change and
-reload the configuration at runtime.
+per-service `.conf` files in `/etc/finit.d/`, useful for distributions
+and to simplify changing service configuration at runtime.
 
 ```conf
 # /etc/finit.conf - System bootstrap for TroglOS
