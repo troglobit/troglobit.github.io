@@ -1,6 +1,5 @@
 ---
-name: Finit
-description: "Fast, extensible init for Linux systems"
+title: "Fast, extensible init for Linux systems"
 date: 2017-10-28 12:04:00 +0200
 aliases: /finit.html
 ---
