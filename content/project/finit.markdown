@@ -1,7 +1,7 @@
 ---
 name: Finit
 description: "Fast, extensible init for Linux systems"
-date: 2015-12-04 19:39:00 +0200
+date: 2017-10-28 12:04:00 +0200
 aliases: /finit.html
 ---
 <img class="center noborder" src="/images/finit3.png" style="width: 310px; height: 240px;" alt="Finit: A fast init for Linux" />
@@ -130,8 +130,8 @@ Matsuoka, which was reverse engineered from syscalls of the
 Issue tracker and GIT repository available at GitHub:
 
 * [Repository](http://github.com/troglobit/finit)
-* [CHANGELOG](https://github.com/troglobit/finit/blob/master/CHANGELOG.md)
-* [README](https://github.com/troglobit/finit/blob/master/README.md)
+* [ChangeLog](https://github.com/troglobit/finit/blob/master/ChangeLog.md)
+* [README][]
 * [TODO](https://github.com/troglobit/finit/blob/master/TODO.md)
 * [Issue Tracker](http://github.com/troglobit/finit/issues)
 * [finit-3.0.tar.xz](ftp://ftp.troglobit.com/finit/finit-3.0.tar.xz),
@@ -149,9 +149,3 @@ See also the [Free(code) page](http://freecode.com/projects/finit).
 [9]: https://github.com/troglobit/troglos
 [10]: https://github.com/troglobit/troglos/blob/master/packages/finit/plugins/mtd.c
 [README]: https://github.com/troglobit/finit/blob/master/README.md
-
-<!--
-  -- Local Variables:
-  -- mode: markdown
-  -- End:
-  -->
