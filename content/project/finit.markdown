@@ -5,16 +5,15 @@ aliases: /finit.html
 ---
 <img class="center noborder" src="/images/finit3.png" style="width: 310px; height: 240px;" alt="Finit: A fast init for Linux" />
 
-Finit is a small event based [SysV init][1] replacement with built-in
-inetd, getty, and [process supervision][2] similar to [systemd][7],
-[runit][4] and [daemontools][3] -- *Services are supervised and
-automatically restarted if they fail*.
+Finit is a simple alternative to [SysV init][] and [systemd][7].  It was
+reverse engineered from the legendary EeePC fastinit ten years ago by
+Claudio Matsuoka — "gaps filled with frog DNA …"
 
 Finit primarily targets small and embedded Linux systems by greatly
 reducing the amount of context switches, forks, and calls to external
 tools that most other init daemons suffer from.
 
-Finit supports runlevels, process monitoring, and starting/stopping
+Finit supports runlevels, [process monitoring][2], and starting/stopping
 services on demand -- either with the built-in inetd support, or by
 triggering on free-form conditions.  E.g., PID file created/modified,
 Netlink events like default route or interfaces coming up/down, similar
