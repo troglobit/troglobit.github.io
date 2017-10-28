@@ -80,6 +80,9 @@ inetd ssh/tcp@*,!eth0          nowait [2345] /sbin/dropbear -i -R -F -- SSH daem
 # Allow login on ttyUSB0, for systems with no dedicated console port
 tty [12345] /dev/ttyAMA0 115200 vt100 noclear
 tty  [2345] /dev/ttyUSB0 115200 vt100 noclear
+
+# Systems using a serial console can use this arch. neutral variant
+#tty [12345] @console 115200 linux noclear
 ```
 
 Finit configuration files in `/etc/finit.d/` are monitored for changes,
