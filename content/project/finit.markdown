@@ -5,9 +5,9 @@ aliases: /finit.html
 ---
 <img class="center noborder" src="/images/finit3.png" style="width: 310px; height: 240px;" alt="Finit: A fast init for Linux" />
 
-Finit is a simple alternative to [SysV init][] and [systemd][7].  It was
-reverse engineered from the legendary EeePC fastinit ten years ago by
-Claudio Matsuoka — "gaps filled with frog DNA …"
+Finit is a simple alternative to [SysV init][1] and [systemd][7].  It
+was reverse engineered from the legendary EeePC fastinit ten years ago
+by Claudio Matsuoka — "gaps filled with frog DNA …"
 
 Finit primarily targets small and embedded Linux systems by greatly
 reducing the amount of context switches, forks, and calls to external
