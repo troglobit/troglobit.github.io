@@ -5,14 +5,14 @@ aliases: /finit.html
 ---
 <img class="center noborder" src="/images/finit3.png" style="width: 310px; height: 240px;" alt="Finit: A fast init for Linux" />
 
-Finit is a simple alternative to [SysV init][1] and [systemd][7] reverse
-engineered from the EeePC fastinit ten years ago by Claudio Matsuoka —
-"gaps filled with frog DNA …"
+Finit is a simple alternative to [SysV init][1] and [systemd][7],
+reverse engineered from the EeePC fastinit ten years ago by Claudio
+Matsuoka — "gaps filled with frog DNA …"
 
 Finit supports runlevels, [process monitoring][2], and starting services
 on demand using the built-in inetd, or by triggering a condition.  E.g.,
-*"don't start this service until basic networking is available", or
-"wait until syslogd has started".
+*"don't start this service until basic networking is available"*, or
+*"wait until syslogd has started"*.
 
 For more details, see the online [documentation][README].
 
