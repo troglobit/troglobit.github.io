@@ -14,7 +14,7 @@ on demand using the built-in inetd, or by triggering a condition.  E.g.,
 *"don't start this service until basic networking is available", or
 "wait until syslogd has started".
 
-For more details, see the [documentation][README].
+For more details, see the online [documentation][README].
 
 
 Example
@@ -25,6 +25,9 @@ Finit, as well as extend it with plugins, or replace any default plugin.
 TroglOS use an [mtd.so][10] plugin to handle uninitialized flash:
 
 <img class="center" src="/images/finit3-screenshot.png" alt="Finit Screenshot" style="width: 472px; height: 422px;">
+
+For more examples, including sample configurations for Debian, Void, and
+Alpine Linux, see the [GitHub finit/contrib/ section][contrib].
 
 
 Configuration
@@ -124,11 +127,11 @@ Matsuoka, which was reverse engineered from syscalls of the
 
 Issue tracker and GIT repository available at GitHub:
 
-* [Repository](http://github.com/troglobit/finit)
+* [Repository](https://github.com/troglobit/finit)
 * [ChangeLog](https://github.com/troglobit/finit/blob/master/ChangeLog.md)
 * [README][]
 * [TODO](https://github.com/troglobit/finit/blob/master/TODO.md)
-* [Issue Tracker](http://github.com/troglobit/finit/issues)
+* [Issue Tracker](https://github.com/troglobit/finit/issues)
 * [finit-3.0.tar.xz](ftp://ftp.troglobit.com/finit/finit-3.0.tar.xz),
   [MD5](ftp://ftp.troglobit.com/finit/finit-3.0.tar.xz.md5)
 
@@ -144,3 +147,4 @@ See also the [Free(code) page](http://freecode.com/projects/finit).
 [9]: https://github.com/troglobit/troglos
 [10]: https://github.com/troglobit/troglos/blob/master/packages/finit/plugins/mtd.c
 [README]: https://github.com/troglobit/finit/blob/master/README.md
+[contrib]: https://github.com/troglobit/finit/contrib
