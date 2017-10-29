@@ -1,5 +1,5 @@
 ---
-title: "Fast, extensible init for Linux systems"
+title: "Fast init for Linux systems"
 date: 2017-10-28 12:04:00 +0200
 aliases: /finit.html
 ---
@@ -123,15 +123,16 @@ Origin
 
 This project is the continuation of the [original finit][5] by Claudio
 Matsuoka, which was reverse engineered from syscalls of the
-[EeePC fastinit][6] daemon -- "gaps filled with frog DNA ..."
+[EeePC fastinit][6] daemon.
 
-Issue tracker and GIT repository available at GitHub:
+Please file bug reports, clone it, or send pull requests for bug fixes
+and proposed extensions using GitHub:
 
 * [Repository](https://github.com/troglobit/finit)
-* [ChangeLog](https://github.com/troglobit/finit/blob/master/ChangeLog.md)
+* [Issue Tracker](https://github.com/troglobit/finit/issues)
 * [README][]
 * [TODO](https://github.com/troglobit/finit/blob/master/TODO.md)
-* [Issue Tracker](https://github.com/troglobit/finit/issues)
+* [ChangeLog](https://github.com/troglobit/finit/blob/master/ChangeLog.md)
 * [finit-3.0.tar.xz](ftp://ftp.troglobit.com/finit/finit-3.0.tar.xz),
   [MD5](ftp://ftp.troglobit.com/finit/finit-3.0.tar.xz.md5)
 
