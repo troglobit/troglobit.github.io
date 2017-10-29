@@ -148,4 +148,4 @@ See also the [Free(code) page](http://freecode.com/projects/finit).
 [9]: https://github.com/troglobit/troglos
 [10]: https://github.com/troglobit/troglos/blob/master/packages/finit/plugins/mtd.c
 [README]: https://github.com/troglobit/finit/blob/master/README.md
-[contrib]: https://github.com/troglobit/finit/contrib
+[contrib]: https://github.com/troglobit/finit/tree/master/contrib
