@@ -5,12 +5,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Troglobit</title>
-  <meta property="og:title" content="Troglobit" />
-  <meta name="twitter:title" content="Troglobit" />
-  <meta name="description" content="Fast, extensible init for Linux systems">
-  <meta property="og:description" content="Fast, extensible init for Linux systems">
-  <meta name="twitter:description" content="Fast, extensible init for Linux systems">
+  <title>Fast, extensible init for Linux systems</title>
+  <meta property="og:title" content="Fast, extensible init for Linux systems" />
+  <meta name="twitter:title" content="Fast, extensible init for Linux systems" />
+  <meta name="description" content="Finit is a simple alternative to SysV init and systemd, reverse engineered from the EeePC fastinit ten years ago by Claudio Matsuoka — &ldquo;gaps filled with frog DNA …&rdquo;
+Finit supports runlevels, process monitoring, and starting services on demand using the built-in inetd, or by triggering a condition. E.g., &ldquo;don&rsquo;t start this service until basic networking is available&rdquo;, or &ldquo;wait until syslogd has started&rdquo;.
+For more details, see the online documentation.">
+  <meta property="og:description" content="Finit is a simple alternative to SysV init and systemd, reverse engineered from the EeePC fastinit ten years ago by Claudio Matsuoka — &ldquo;gaps filled with frog DNA …&rdquo;
+Finit supports runlevels, process monitoring, and starting services on demand using the built-in inetd, or by triggering a condition. E.g., &ldquo;don&rsquo;t start this service until basic networking is available&rdquo;, or &ldquo;wait until syslogd has started&rdquo;.
+For more details, see the online documentation.">
+  <meta name="twitter:description" content="Finit is a simple alternative to SysV init and systemd, reverse engineered from the EeePC fastinit ten years ago by Claudio Matsuoka — &ldquo;gaps filled with frog DNA …&rdquo;
+Finit supports …">
   <meta name="author" content="Joachim Nilsson"/>
   <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="/images/profile.jpg" />
@@ -169,7 +174,25 @@
 
 
 
-  <div class="intro-header"></div>
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="project-heading">
+              <h1>Fast, extensible init for Linux systems</h1>
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
 
     
@@ -181,58 +204,56 @@
 
 <p><img class="center noborder" src="/images/finit3.png" style="width: 310px; height: 240px;" alt="Finit: A fast init for Linux" /></p>
 
-<p>Finit is a small event based <a href="https://en.wikipedia.org/wiki/Init">SysV init</a> replacement with built-in
-<a href="https://en.wikipedia.org/wiki/Process_supervision">process supervision</a>, similar to that of its more famous cousins
-<a href="http://cr.yp.to/daemontools.html">daemontools</a> and <a href="http://smarden.org/runit/">runit</a> &ndash;  <em>Services are supervised and
-automatically restarted if they fail</em>.</p>
+<p>Finit is a simple alternative to <a href="https://en.wikipedia.org/wiki/Init">SysV init</a> and <a href="https://www.freedesktop.org/wiki/Software/systemd/">systemd</a>,
+reverse engineered from the EeePC fastinit ten years ago by Claudio
+Matsuoka — &ldquo;gaps filled with frog DNA …&rdquo;</p>
 
-<p>Finit primarily targets small and embedded Linux systems by heavily
-reducing the amount of context switches, forks, and calls to external
-tools that most other init daemons suffer from.</p>
+<p>Finit supports runlevels, <a href="https://en.wikipedia.org/wiki/Process_supervision">process monitoring</a>, and starting services
+on demand using the built-in inetd, or by triggering a condition.  E.g.,
+<em>&ldquo;don&rsquo;t start this service until basic networking is available&rdquo;</em>, or
+<em>&ldquo;wait until syslogd has started&rdquo;</em>.</p>
 
-<p>Finit supports runlevels, process monitoring, and starting/stopping
-services on demand &ndash; either with the built-in inetd support, or by
-triggering on free-form conditions.  E.g., PID file created/modified,
-Netlink events like default route or interfaces coming up/down, similar
-to <a href="https://www.freedesktop.org/wiki/Software/systemd/">systemd</a>.</p>
-
-<p>Finit can also be extended with plugins to hook into the boot process
-and extend its functionality to fit your specific needs.  For more
-details, see the <a href="https://github.com/troglobit/finit/blob/master/README.md">documentation</a>.</p>
+<p>For more details, see the online <a href="https://github.com/troglobit/finit/blob/master/README.md">documentation</a>.</p>
 
 <h2 id="example">Example</h2>
 
 <p><a href="https://github.com/troglobit/troglos">TroglOS</a> provides an example of how to boot an embedded system with
-Finit, as well as extend it with plugins.  TroglOS use an <a href="https://github.com/troglobit/troglos/blob/master/packages/finit/plugins/mtd.c">mtd.so</a>
-plugin to handle uninitialized flash:</p>
+Finit, as well as extend it with plugins, or replace any default plugin.
+TroglOS use an <a href="https://github.com/troglobit/troglos/blob/master/packages/finit/plugins/mtd.c">mtd.so</a> plugin to handle uninitialized flash:</p>
 
 <p><img class="center" src="/images/finit3-screenshot.png" alt="Finit Screenshot" style="width: 472px; height: 422px;"></p>
+
+<p>For more examples, including sample configurations for Debian, Void, and
+Alpine Linux, see the <a href="https://github.com/troglobit/finit/contrib">GitHub finit/contrib/ section</a>.</p>
 
 <h2 id="configuration">Configuration</h2>
 
 <p>The following is an example of <code>/etc/finit.conf</code>.  It can be split up in
-per-service <code>.conf</code> files in <code>/etc/finit.d/</code> to be able to change and
-reload the configuration at runtime.</p>
+per-service <code>.conf</code> files in <code>/etc/finit.d/</code>, useful for distributions
+and to simplify changing service configuration at runtime.</p>
 
 <pre><code class="language-conf"># /etc/finit.conf - System bootstrap for TroglOS
-user root
-host default
 
-# Default runlevel
-runlevel 2
+# System hostname is set from /etc/hostname
+#host default
 
-# Launch bootstrap services
-service [S12345] /sbin/watchdogd -L -f                      -- System watchdog daemon
-service [S12345] /sbin/syslogd -n -b 3 -D                   -- System log daemon
-service [S12345] /sbin/klogd -n                             -- Kernel log daemon
+# Default runlevel is 2
+#runlevel 2
+
+# Launch bootstrap 'S' services
+service [S12345] /sbin/watchdogd -T 16 -t 2 -F /dev/watchdog      -- System watchdog daemon
+service [S12345] /sbin/syslogd -n -b 3 -D                         -- System log daemon
+service [S12345] /sbin/klogd -n                                   -- Kernel log daemon
 
 # Services must not daemonize themselves, look for -n, --foreground or
 # similar switches to prevent them from forking to the background
-service :1 [2345] &lt;net/eth1/up&gt;       /sbin/dropbear -R -F -p 22  -- SSH daemon (LAN)
-service :2  [345] &lt;net/route/default&gt; /sbin/dropbear -R -F -p 222 -- SSH daemon (WAN)
-#service    [2345]                    /sbin/telnetd -F            -- Telnet daemon
+#service :1 [2345] &lt;net/eth1/up&gt;       /sbin/dropbear -R -F -p 22  -- SSH daemon (LAN)
+#service :2  [345] &lt;net/route/default&gt; /sbin/dropbear -R -F -p 222 -- SSH daemon (WAN)
+#service    [2345]                     /sbin/telnetd -F            -- Telnet daemon
 
 # Finit understands /etc/network/interfaces on Debian/BusyBox systems
+# on other systems you can use the `network SCRIPT` stanza or a simple
+# run or task stanza to run the necessary scripts.
 #network /etc/init.d/networking
 
 # System patch or extension scripts, see run-parts(8), built-in support in Finit.
@@ -248,15 +269,17 @@ inetd tftp/udp                    wait [2345] /sbin/uftpd -i -y       -- TFTP da
 inetd time/udp                    wait [2345] internal                -- UNIX rdate service
 inetd time/tcp                  nowait [2345] internal                -- UNIX rdate service
 inetd 3737/tcp                  nowait [2345] internal.time           -- UNIX rdate service
-inetd telnet/tcp@*,!eth0,       nowait [2345] /sbin/telnetd -i -F     -- Telnet daemon
-inetd 2323/tcp@eth0             nowait [2345] /sbin/telnetd -i -F     -- Telnet daemon
-#inetd 222/tcp@eth0             nowait [2345] /sbin/dropbear -i -R -F -- SSH service
-#inetd ssh/tcp@*,!eth0          nowait [2345] /sbin/dropbear -i -R -F -- SSH service
+#inetd 2323/tcp@eth0             nowait [2345] /sbin/telnetd -i -F     -- Telnet daemon (WAN)
+inetd telnet/tcp@*,!eth0,       nowait [2345] /sbin/telnetd -i -F     -- Telnet daemon (LAN)
+inetd 222/tcp@eth0             nowait [2345] /sbin/dropbear -i -R -F -- SSH daemon (WAN)
+inetd ssh/tcp@*,!eth0          nowait [2345] /sbin/dropbear -i -R -F -- SSH daemon (LAN)
 
 # Allow login on ttyUSB0, for systems with no dedicated console port
 tty [12345] /dev/ttyAMA0 115200 vt100 noclear
 tty  [2345] /dev/ttyUSB0 115200 vt100 noclear
-console /dev/ttyAMA0
+
+# Systems using a serial console can use this arch. neutral variant
+#tty [12345] @console 115200 linux noclear
 </code></pre>
 
 <p>Finit configuration files in <code>/etc/finit.d/</code> are monitored for changes,
@@ -278,7 +301,6 @@ to that there is also the more modern <code>initctl</code> tool:</p>
 4:2       inetd  0       [--2345----]  internal time allow *:37
 4:3       inetd  0       [--2345----]  internal 3737 allow *:3737
 5:1       inetd  0       [--2345----]  /sbin/telnetd allow *:23 deny eth0,eth1
-5:2       inetd  0       [--2345----]  /sbin/telnetd allow eth0:2323,eth2:2323,eth1:2323
 6:1       inetd  0       [---345----]  /sbin/dropbear allow eth0:222
 6:2       inetd  0       [---345----]  /sbin/dropbear allow *:22 deny eth0
 </code></pre>
@@ -295,35 +317,25 @@ Matsuoka, which was reverse engineered from syscalls of the
 <p>Issue tracker and GIT repository available at GitHub:</p>
 
 <ul>
-<li><a href="http://github.com/troglobit/finit">Repository</a></li>
-<li><a href="https://github.com/troglobit/finit/blob/master/CHANGELOG.md">CHANGELOG</a></li>
+<li><a href="https://github.com/troglobit/finit">Repository</a></li>
+<li><a href="https://github.com/troglobit/finit/blob/master/ChangeLog.md">ChangeLog</a></li>
 <li><a href="https://github.com/troglobit/finit/blob/master/README.md">README</a></li>
 <li><a href="https://github.com/troglobit/finit/blob/master/TODO.md">TODO</a></li>
-<li><a href="http://github.com/troglobit/finit/issues">Issue Tracker</a></li>
+<li><a href="https://github.com/troglobit/finit/issues">Issue Tracker</a></li>
 <li><a href="ftp://ftp.troglobit.com/finit/finit-3.0.tar.xz">finit-3.0.tar.xz</a>,
 <a href="ftp://ftp.troglobit.com/finit/finit-3.0.tar.xz.md5">MD5</a></li>
 </ul>
 
 <p>See also the <a href="http://freecode.com/projects/finit">Free(code) page</a>.</p>
 
-<!--
-  -- Local Variables:
-  -- mode: markdown
-  -- End:
-  -->
-
       </article>
 
       <ul class="pager blog-pager">
         
           <li class="previous">
-            <a href="/project/tetris/" data-toggle="tooltip" data-placement="top" title="Micro Tetris™">&larr; Previous Post</a>
+            <a href="/project/editline/" data-toggle="tooltip" data-placement="top" title="Minix Editline">&larr; Previous Post</a>
           </li>
         
-        
-          <li class="next">
-            <a href="/project/uftpd/" data-toggle="tooltip" data-placement="top" title="No nonsense FTP/TFTP server">Next Post &rarr;</a>
-          </li>
         
       </ul>
 

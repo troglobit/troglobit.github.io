@@ -182,6 +182,29 @@
         <div class="posts-list">
           
             <article class="post-preview">
+              <a href="/project/finit/">
+                <h2 class="post-title">Fast, extensible init for Linux systems</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 28, 2017
+              </p>
+              <div class="post-entry">
+                
+                  Finit is a simple alternative to SysV init and systemd, reverse engineered from the EeePC fastinit ten years ago by Claudio Matsuoka — &ldquo;gaps filled with frog DNA …&rdquo;
+Finit supports runlevels, process monitoring, and starting services on demand using the built-in inetd, or by triggering a condition. E.g., &ldquo;don&rsquo;t start this service until basic networking is available&rdquo;, or &ldquo;wait until syslogd has started&rdquo;.
+For more details, see the online documentation.
+                  <a href="/project/finit/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
               <a href="/project/editline/">
                 <h2 class="post-title">Minix Editline</h2>
 
@@ -352,29 +375,6 @@ When a system comes back up after a reset, watchdogd determines the reset cause 
 Try uftpd(8)!
  Supports both FTP and TFTP Has no confusing configuration file Listens to port ftp/tcp and tftp/udp found in /etc/services, or custom port(s) Serves files from the ftp user&rsquo;s $HOME, as specified in /etc/passwd, or custom path Can run from inetd(8) or as a standalone daemon Can be built and installed as a .deb file, with debconf support Can run as root, with chroot and privsep, or as a regular user Supports TFTP blocksize negotiation, RFC 2348  Basically, it just works!
                   <a href="/project/uftpd/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="/project/finit/">
-                <h2 class="post-title"></h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on December 4, 2015
-              </p>
-              <div class="post-entry">
-                
-                  Finit is a small event based SysV init replacement with built-in process supervision, similar to that of its more famous cousins daemontools and runit &ndash; Services are supervised and automatically restarted if they fail.
-Finit primarily targets small and embedded Linux systems by heavily reducing the amount of context switches, forks, and calls to external tools that most other init daemons suffer from.
-Finit supports runlevels, process monitoring, and starting/stopping services on demand &ndash; either with the built-in inetd support, or by triggering on free-form conditions.
-                  <a href="/project/finit/" class="post-read-more">[Read More]</a>
                 
               </div>
 
