@@ -66,8 +66,3 @@ merged here.  Outstanding issues are listed in the [TODO][] file.
 [examples/]:    https://github.com/troglobit/editline/tree/master/examples
 [Minix3]:       http://www.minix3.org/
 [comp.sources.unix]: http://ftp.cs.toronto.edu/pub/white/pub/rc/editline.shar
-
-<!--
-  -- Local Variables:
-  -- mode: markdown
-  -- End:
