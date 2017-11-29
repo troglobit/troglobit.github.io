@@ -45,7 +45,7 @@ license.
 
 This version of the editline library is the continuation of the
 [Minix3][] sources, where it is called libedit.  Other known versions,
-often based on the original `comp.sources.unix` posting are:
+often based on the original [comp.sources.unix][] posting are:
 
 * [Debian libeditline](http://packages.qa.debian.org/e/editline.html)
 * [Heimdal](http://www.h5l.org/), in
@@ -65,9 +65,9 @@ merged here.  Outstanding issues are listed in the [TODO][] file.
 [GNU readline]: http://directory.fsf.org/project/readline/
 [examples/]:    https://github.com/troglobit/editline/tree/master/examples
 [Minix3]:       http://www.minix3.org/
+[comp.sources.unix]: http://ftp.cs.toronto.edu/pub/white/pub/rc/editline.shar
 
 <!--
   -- Local Variables:
   -- mode: markdown
   -- End:
-  -->
