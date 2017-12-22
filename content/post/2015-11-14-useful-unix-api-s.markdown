@@ -1,7 +1,8 @@
 ---
 categories: null
 comments: true
-date: 2015-11-14T11:45:49Z
+date: 2017-12-22T10:28:00Z
+orig-date: 2015-11-14T11:45:49Z
 title: Useful UNIX API:s
 url: /2015/11/14/useful-unix-api-s/
 aliases: /blog/2015/11/14/useful-unix-api-s/
@@ -14,7 +15,15 @@ UNIX for over a decade, it is still very satisfying finding gems like
 these.
 
 Most people are completely unaware they exist and end up rolling their
-own (buggy) implementations.
+own (buggy) implementations.  For instance, string manipulation and
+various forms of linked lists.  Which is why I many years ago extracted
+the *frog DNA* from [Finit](https://github.com/troglobit/finit/) to a
+separate library called [libite](https://github.com/troglobit/libite/),
+or -lite for short.  It imports the OpenBSD `strlcpy()` family of API:s,
+up-to-date `queue.h` with the `_SAFE` iterators, and more.  Some people
+like [libbsd](https://libbsd.freedesktop.org/wiki/) for this, but I've
+found many of the ports incomplete and unsafe and prefer to stay closer
+to the upstream *BSD versions.
 
 **Update:** This post was initially written Nov 14, 2015.  It was a
 Saturday and I remember being extremely inspired when I wrote it.  As it
