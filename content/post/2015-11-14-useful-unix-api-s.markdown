@@ -26,11 +26,10 @@ like [libbsd](https://libbsd.freedesktop.org/wiki/) for this, but I've
 found many of the ports incomplete and unsafe and prefer to stay closer
 to the upstream *BSD versions.
 
-**Update:** This post was initially written Nov 14, 2015.  It was a
-Saturday and I remember being extremely inspired when I wrote it.  As it
-happens, I've continued adding to it over the years, and still do.  So,
-as of Jul 2, 2017 I'm now bumping the modification date each time I add
-something new :-)
+**Update:** This post was originally written Nov 14, 2015.  It was a
+Saturday and I remember being extremely inspired when I wrote it.  I've
+continued adding to it over the years, and still do.  So, as of Jul 2,
+2017 I'm bumping the modification date each time I add something new :-)
 
 <!--more-->
 
