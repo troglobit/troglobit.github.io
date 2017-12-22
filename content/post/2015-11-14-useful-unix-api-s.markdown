@@ -4,8 +4,9 @@ comments: true
 date: 2017-12-22T10:28:00Z
 orig-date: 2015-11-14T11:45:49Z
 title: Useful UNIX API:s
-url: /2015/11/14/useful-unix-api-s/
-aliases: /blog/2015/11/14/useful-unix-api-s/
+aliases:
+    - /2015/11/14/useful-unix-api-s/
+    - /blog/2015/11/14/useful-unix-api-s/
 ---
 
 Had an interesting conversation with a buddy last night.  It started out
