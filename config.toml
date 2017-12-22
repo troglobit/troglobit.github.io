@@ -9,6 +9,9 @@ pygmentsUseClasses = true
 pygmentCodeFences = true
 enableEmoji = true
 
+[permalinks]
+  post = "/:year/:month/:title/"
+
 [Params]
   subtitle = "Help me Obi-Wan Troglobi, you're my only hope!"
   logo = "images/profile.jpg"
