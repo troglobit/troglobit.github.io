@@ -1,5 +1,7 @@
 ---
-categories: null
+categories:
+- linux
+- bluetooth
 comments: true
 date: 2017-01-03T17:03:05Z
 title: Trust Bluetooth 4.0 Adapter in Linux

@@ -1,5 +1,7 @@
 ---
-categories: null
+categories:
+- programming
+- personal
 comments: true
 date: 2013-08-13T00:00:00Z
 title: Just a Programmer

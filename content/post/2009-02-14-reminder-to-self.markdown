@@ -1,5 +1,7 @@
 ---
-categories: null
+categories:
+- reminder
+- misc
 comments: true
 date: 2009-02-14T21:13:41Z
 title: Reminder to Self

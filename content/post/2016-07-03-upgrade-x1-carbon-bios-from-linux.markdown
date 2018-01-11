@@ -1,5 +1,7 @@
 ---
-categories: null
+categories:
+- thinkpad
+- linux
 comments: true
 date: 2016-07-03T09:57:44Z
 title: Upgrade X1 Carbon BIOS from Linux

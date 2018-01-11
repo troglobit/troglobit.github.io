@@ -1,5 +1,7 @@
 ---
-categories: null
+categories:
+- projects
+- icmp
 comments: true
 date: 2016-11-19T23:37:20Z
 title: One ping only

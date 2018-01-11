@@ -1,5 +1,7 @@
 ---
-categories: null
+categories:
+- Linux
+- RAID
 comments: true
 date: 2016-08-13T15:59:36Z
 title: Fake RAID Adventures

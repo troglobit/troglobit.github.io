@@ -1,5 +1,8 @@
 ---
-categories: null
+categories:
+- unix
+- spotify
+- awesome
 comments: true
 date: 2015-11-10T12:14:09Z
 title: 'Awesome: Changing Next/Prev Tune in Spotify'

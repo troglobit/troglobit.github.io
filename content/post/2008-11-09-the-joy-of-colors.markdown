@@ -1,5 +1,7 @@
 ---
-categories: null
+categories:
+- Personal
+- Vim
 comments: true
 date: 2008-11-09T00:39:27Z
 title: The joy of colors

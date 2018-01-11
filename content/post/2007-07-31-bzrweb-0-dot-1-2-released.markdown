@@ -1,5 +1,7 @@
 ---
-categories: null
+categories:
+- bzr
+- hacking
 comments: true
 date: 2007-07-31T23:33:01Z
 title: Bzrweb 0.1.2 Released

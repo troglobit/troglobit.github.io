@@ -1,5 +1,7 @@
 ---
-categories: Misc
+categories:
+- misc
+- blog
 comments: false
 date: 2013-02-17T00:00:00Z
 title: Resurrection

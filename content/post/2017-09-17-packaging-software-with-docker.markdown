@@ -1,5 +1,7 @@
 ---
-categories: null
+categories:
+- docker
+- merecat
 comments: true
 date: 2017-09-17T10:45:37Z
 title: Packaging Software with Docker

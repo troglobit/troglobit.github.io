@@ -1,5 +1,7 @@
 ---
-categories: null
+categories:
+- kernel
+- modules
 comments: true
 date: 2007-03-25T23:59:57Z
 title: VMWare Kernel Modules for Your New Kernel

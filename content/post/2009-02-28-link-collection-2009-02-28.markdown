@@ -1,5 +1,6 @@
 ---
-categories: null
+categories:
+- misc
 comments: true
 date: 2009-02-28T23:36:37Z
 title: Link Collection 2009-02-28

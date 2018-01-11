@@ -1,5 +1,7 @@
 ---
-categories: programming
+categories:
+- programming
+- C
 comments: true
 date: 2015-01-12T01:57:40Z
 title: 'Rant: All the C Compiler Warnings ...'

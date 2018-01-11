@@ -1,5 +1,9 @@
 ---
-categories: null
+categories:
+- hacking
+- license
+- opensource
+- GNU
 comments: true
 date: 2008-07-30T23:53:42Z
 title: Moving to ISC

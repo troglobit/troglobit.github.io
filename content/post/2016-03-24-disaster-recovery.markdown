@@ -1,5 +1,6 @@
 ---
-categories: backup
+categories:
+- backup
 comments: true
 date: 2016-03-24T22:39:00Z
 title: Disaster Recovery

@@ -1,5 +1,8 @@
 ---
-categories: null
+categories:
+- UNIX
+- multicast
+- PIM
 comments: true
 date: 2016-07-05T22:04:36Z
 title: Multicast routing with PIM-SM over GRE

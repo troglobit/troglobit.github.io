@@ -1,5 +1,6 @@
 ---
-categories: null
+categories:
+- thinkpad
 comments: true
 date: 2008-07-19T11:09:25Z
 title: No Wireless LED on ThinkPad T61

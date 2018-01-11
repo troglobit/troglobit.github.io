@@ -1,5 +1,7 @@
 ---
-categories: null
+categories:
+- unix
+- programming
 comments: true
 date: 2017-12-22T10:28:00Z
 orig-date: 2015-11-14T11:45:49Z

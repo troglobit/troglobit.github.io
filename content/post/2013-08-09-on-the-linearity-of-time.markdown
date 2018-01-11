@@ -1,5 +1,7 @@
 ---
-categories: null
+categories:
+- misc
+- tz
 comments: true
 date: 2013-08-09T00:00:00Z
 title: On the Linearity of Time

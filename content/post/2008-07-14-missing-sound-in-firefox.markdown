@@ -1,5 +1,6 @@
 ---
-categories: null
+categories:
+- ubuntu
 comments: true
 date: 2008-07-14T10:30:48Z
 title: Missing Sound in Firefox?

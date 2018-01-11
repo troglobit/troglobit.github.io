@@ -1,5 +1,8 @@
 ---
-categories: null
+categories:
+- C
+- embedded
+- toolchain
 comments: true
 date: 2016-10-27T22:22:44Z
 title: New Toolchains

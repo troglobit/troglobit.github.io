@@ -1,5 +1,8 @@
 ---
-categories: null
+categories:
+- Linux
+- embedded
+- networking
 comments: true
 date: 2016-09-02T23:30:00Z
 title: The General Idea

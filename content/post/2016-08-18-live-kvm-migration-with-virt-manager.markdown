@@ -1,5 +1,7 @@
 ---
-categories: null
+categories:
+- KVM
+- virt-manager
 comments: true
 date: 2016-08-18T20:07:17Z
 title: Live KVM migration with virt-manager

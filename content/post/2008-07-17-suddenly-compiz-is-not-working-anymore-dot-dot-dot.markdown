@@ -1,5 +1,6 @@
 ---
-categories: null
+categories: 
+- ubuntu
 comments: true
 date: 2008-07-17T01:48:05Z
 title: Suddenly Compiz is not Working Anymore ...

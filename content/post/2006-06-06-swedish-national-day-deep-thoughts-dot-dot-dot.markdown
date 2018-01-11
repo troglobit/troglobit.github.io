@@ -1,5 +1,6 @@
 ---
-categories: null
+categories:
+- Personal
 comments: true
 date: 2006-06-06T22:10:42Z
 title: 'Swedish National Day: Deep thoughts ...'

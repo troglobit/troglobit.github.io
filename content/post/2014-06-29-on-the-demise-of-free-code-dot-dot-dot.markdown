@@ -1,5 +1,6 @@
 ---
-categories: null
+categories:
+- blog
 comments: true
 date: 2014-06-29T14:52:39Z
 title: On the demise of free(code) ...

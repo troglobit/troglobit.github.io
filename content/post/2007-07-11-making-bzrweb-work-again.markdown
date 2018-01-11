@@ -1,5 +1,7 @@
 ---
-categories: null
+categories:
+- bzr
+- hacking
 comments: true
 date: 2007-07-11T10:35:00Z
 title: Making bzrweb work again

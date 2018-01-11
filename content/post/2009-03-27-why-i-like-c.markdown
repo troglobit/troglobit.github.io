@@ -1,5 +1,7 @@
 ---
-categories: null
+categories:
+- programming
+- c
 comments: true
 date: 2009-03-27T00:37:42Z
 title: Why I Like C

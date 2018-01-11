@@ -1,5 +1,7 @@
 ---
-categories: null
+categories:
+- regexp
+- unix
 comments: true
 date: 2008-07-13T21:38:33Z
 title: Regexp replace in many files

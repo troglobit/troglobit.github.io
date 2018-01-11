@@ -1,5 +1,7 @@
 ---
-categories: null
+categories:
+- unix
+- shell
 comments: true
 date: 2010-05-09T19:53:19Z
 title: Syntax highlighting in less

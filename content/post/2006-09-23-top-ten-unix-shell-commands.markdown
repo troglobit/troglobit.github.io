@@ -1,5 +1,7 @@
 ---
-categories: null
+categories:
+- unix
+- shell
 comments: true
 date: 2006-09-23T23:02:42Z
 title: Top Ten UNIX Shell Commands

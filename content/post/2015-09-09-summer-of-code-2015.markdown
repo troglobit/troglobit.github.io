@@ -1,5 +1,8 @@
 ---
-categories: null
+categories:
+- programming
+- projects
+- hacking
 comments: true
 date: 2015-09-09T21:49:13Z
 title: Summer of Code 2015

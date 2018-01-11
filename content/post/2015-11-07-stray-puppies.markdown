@@ -1,5 +1,7 @@
 ---
-categories: null
+categories:
+- personal
+- projects
 comments: true
 date: 2015-11-07T02:32:12Z
 title: Stray Puppies

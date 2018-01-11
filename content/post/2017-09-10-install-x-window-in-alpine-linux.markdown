@@ -1,5 +1,6 @@
 ---
-categories: alpine
+categories:
+- alpine
 comments: true
 date: 2017-09-10T11:13:39Z
 title: Install X-Window in Alpine Linux

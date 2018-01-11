@@ -1,5 +1,8 @@
 ---
-categories: null
+categories:
+- libev
+- eventloop
+- programming
 comments: true
 date: 2017-09-19T08:51:38Z
 title: Threads vs Event Loop, Again ...

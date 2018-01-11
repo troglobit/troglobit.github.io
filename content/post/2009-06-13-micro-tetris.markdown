@@ -1,5 +1,7 @@
 ---
-categories: null
+categories:
+- hacking
+- tetris
 comments: true
 date: 2009-06-13T00:04:30Z
 title: Micro Tetris™

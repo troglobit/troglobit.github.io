@@ -1,5 +1,6 @@
 ---
-categories: Programming
+categories:
+- programming
 comments: true
 date: 2013-06-22T00:00:00Z
 title: Programming as an Artform

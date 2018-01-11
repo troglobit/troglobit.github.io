@@ -1,5 +1,7 @@
 ---
-categories: null
+categories:
+- finit
+- projects
 comments: true
 date: 2016-09-21T19:08:37Z
 title: 'Finit3: Almost there ...'

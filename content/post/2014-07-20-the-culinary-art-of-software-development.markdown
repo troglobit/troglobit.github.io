@@ -1,5 +1,7 @@
 ---
-categories: null
+categories:
+- programming
+- personal
 comments: true
 date: 2014-07-20T12:53:38Z
 published: false

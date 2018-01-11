@@ -1,5 +1,6 @@
 ---
-categories: alpine
+categories:
+- alpine
 comments: true
 date: 2017-09-09T21:37:10Z
 title: Boot Alpine Linux with GRUB

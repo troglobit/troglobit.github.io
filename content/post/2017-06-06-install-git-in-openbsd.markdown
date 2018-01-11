@@ -1,5 +1,6 @@
 ---
-categories: openbsd
+categories:
+- openbsd
 comments: true
 date: 2017-06-06T10:44:55Z
 title: GIT, Autoconf and Automake in OpenBSD

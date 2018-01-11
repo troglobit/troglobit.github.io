@@ -1,5 +1,8 @@
 ---
-categories: null
+categories:
+- debian
+- ubuntu
+- apt
 comments: true
 date: 2017-09-30T12:39:43Z
 title: Set up a Debian/Ubuntu APT Repository

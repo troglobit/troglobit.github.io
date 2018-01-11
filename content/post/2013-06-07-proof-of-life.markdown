@@ -1,6 +1,9 @@
 ---
 author: Joachim Nilsson
-categories: Misc
+categories:
+- misc
+- personal
+- blog
 comments: true
 date: 2013-06-07T00:00:00Z
 title: Proof of Life

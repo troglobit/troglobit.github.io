@@ -1,5 +1,9 @@
 ---
-categories: null
+categories:
+- hacking
+- json
+- UNIX
+- conf
 comments: true
 date: 2014-02-23T00:00:00Z
 title: 'Weekend Hack: JSON vs CONF'

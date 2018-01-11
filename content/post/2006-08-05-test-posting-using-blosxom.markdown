@@ -1,5 +1,6 @@
 ---
-categories: null
+categories:
+- blog
 comments: true
 date: 2006-08-05T22:35:49Z
 title: Test posting using blosxom

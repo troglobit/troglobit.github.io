@@ -1,5 +1,6 @@
 ---
-categories: null
+categories:
+- Personal
 comments: true
 date: 2006-07-23T22:10:50Z
 title: Atari ST(E) Emulation with Steem

@@ -1,5 +1,8 @@
 ---
-categories: null
+categories:
+- UNIX
+- tips
+- misc
 comments: true
 date: 2016-04-04T00:14:28Z
 title: Lecture from the UNIX beards

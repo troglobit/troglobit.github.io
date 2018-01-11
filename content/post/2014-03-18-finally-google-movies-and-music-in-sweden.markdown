@@ -1,5 +1,6 @@
 ---
-categories: null
+categories:
+- personal
 comments: true
 date: 2014-03-18T00:00:00Z
 title: Finally — Google Movies & Music in Sweden
