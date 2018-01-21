@@ -20,19 +20,19 @@ require unicast routing rules to be established.
            /    192.168.1.0/24    \
           /                        \
      .10 /                          \.20
-     +--'---+.1   GRE Tunnel   .2+---`--+
+     .--'---. .1  GRE Tunnel  .2 .---`--.
      |      |====================|      |
      |  R1  |   172.16.16.0/30   |  R2  |
      |      |                    |      |
-     +--.---+                    +------+
+     '--.---'                    '------'
         | .1                        | .1 
         |    10.0.1.0/24            |    10.0.2.0/24
         | .2                        | .2 
-     +--'---+                    +--'---+
+     .--'---.                    .--'---.
      |      |                    |      |
      |  C1  |                    |  C2  |
      |      |                    |      |
-     +------+                    +------+
+     '------'                    '------'
 
 In this post we are using the home WiFi network, 192.168.1.0/24, to hook
 up the GRE tunnel.  It is just as easy to extend this to a big corporate
