@@ -317,62 +317,62 @@ That's it. Have fun!
 FAQ
 ---
 
-1. It doesn't work?
+1. _It doesn't work?_
 
-   Check the TTL.
+    Check the TTL.
 
-2. Why does the TTL in multicast default to 1?
+2. _Why does the TTL in multicast default to 1?_
 
-   Because multicast is classified as broadcast, which inherently is
-   dangerous.  Without proper limitation, like switches with support for
-   IGMP Snooping, multicast IS broadcast.
+    Because multicast is classified as broadcast, which inherently is
+    dangerous.  Without proper limitation, like switches with support for
+    IGMP Snooping, multicast IS broadcast.
 
-3. I cannot change the TTL of the multicast sender, what can I do?!
+3. _I cannot change the TTL of the multicast sender, what can I do?!_
 
-   Ouch, then you may have to use some firewall mangling technique.
-   Here is how you could do it on Linux with iptables:
+    Ouch, then you may have to use some firewall mangling technique.
+    Here is how you could do it on Linux with iptables:
 
         iptables -t mangle -A PREROUTING -d GROUP[/LEN] -j TTL --ttl-set 64
 
-   Where `GROUP` is the multicast group address of the stream you want
-   to change the TTL of, with an optional prefix length `LEN` if you want
-   to specify a range of groups.  From this [RedHat mailing list entry][11].
+    Where `GROUP` is the multicast group address of the stream you want
+    to change the TTL of, with an optional prefix length `LEN` if you want
+    to specify a range of groups.  From this [RedHat mailing list entry][11].
 
-4. I want to use the loopback interface, but it doesn't show in `pimd`?
+4. _I want to use the loopback interface, but it doesn't show in `pimd`?_
 
-   Some interfaces, like `lo` or `tunN`, do not have the `MULTICAST`
-   interface flag set by default.  It should work if you enable it:
+    Some interfaces, like `lo` or `tunN`, do not have the `MULTICAST`
+    interface flag set by default.  It should work if you enable it:
 
         ip link set lo multicast on
         ip link set tun1 multicast on
 
-5. It doesn't work?
+5. _It still doesn't work?!_
 
-   Check your network topology, maybe a switch between the sender and
-   the receiver doesn't properly support IGMP snooping.
+    Check your network topology, maybe a switch between the sender and
+    the receiver doesn't properly support IGMP snooping.
 
-   For virtual/cloud setups, see above for disabling IGMP snooping
-   entirely in the Linux kernel.
+    For virtual/cloud setups, see above for disabling IGMP snooping
+    entirely in the Linux kernel.
 
-6. The PIM routers seem to have peered, and they list the multicast
-   groups I want to forward, the TTL is OK, but I see no traffic?
+6. _The PIM routers seem to have peered, and they list the multicast
+   groups I want to forward, the TTL is OK, but I see no traffic?_
 
-   Could be your underlying routing protocol (RIP/OSPF) does not know
-   the reverse path to the source.  Make sure the sender's network is
-   listed in the routing table on the receiving sides routing table.
+    Could be your underlying routing protocol (RIP/OSPF) does not know
+    the reverse path to the source.  Make sure the sender's network is
+    listed in the routing table on the receiving sides routing table.
 
-7. What's the routing performance of `pimd`/`mrouted`/`smcroute`?
+7. _What's the routing performance of `pimd`/`mrouted`/`smcroute`?_
 
-   N/A.  Neither of them take active part in the actual forwarding of
-   multicast frames.  This is what the kernel or dedicated routing HW
-   does.  The routing daemons `pimd`/`mrouted`/`smcroute` only
-   manipulate the multicast routing table(s) of the operating system's
-   kernel.
+    N/A.  Neither of them take active part in the actual forwarding of
+    multicast frames.  This is what the kernel or dedicated routing HW
+    does.  The routing daemons `pimd`/`mrouted`/`smcroute` only
+    manipulate the multicast routing table(s) of the operating system's
+    kernel.
 
-8. Do you have any example of how to set up GRE and `pimd`?
+8. _Do you have any example of how to set up GRE and `pimd`?_
 
-   Yes, for all the gory details see
-   [this howto](/blog/2016/07/05/multicast-routing-with-pim-sm-over-gre/)
+    Yes, for all the gory details see
+    [this howto](/blog/2016/07/05/multicast-routing-with-pim-sm-over-gre/)
 
 [1]: https://github.com/troglobit/smcroute/
 [2]: https://github.com/troglobit/mrouted/
