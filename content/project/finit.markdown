@@ -1,6 +1,6 @@
 ---
 title: "Fast init for Linux systems"
-date: 2017-10-28 12:04:00 +0200
+date: 2018-02-23 20:16:00 +0200
 aliases: /finit.html
 ---
 <img class="center noborder" src="/images/finit3.png" style="width: 310px; height: 240px;" alt="Finit: A fast init for Linux" />
@@ -89,9 +89,9 @@ tty  [2345] /dev/ttyUSB0 115200 vt100 noclear
 ```
 
 Finit configuration files in `/etc/finit.d/` are monitored for changes,
-if the `mtime` is changed on a file and the user calls `initctl reload`,
-that program is reloaded (`SIGHUP`:ed, or stop-started depending on the
-`<!>` in the service declaration.).
+if file is changed and the user calls `initctl reload`, that program is
+reloaded (`SIGHUP`:ed, or stop-started depending on the `<!>` in the
+service declaration.).
 
 
 Commands
@@ -133,8 +133,8 @@ and proposed extensions using GitHub:
 * [README][]
 * [TODO](https://github.com/troglobit/finit/blob/master/TODO.md)
 * [ChangeLog](https://github.com/troglobit/finit/blob/master/ChangeLog.md)
-* [finit-3.0.tar.xz](ftp://ftp.troglobit.com/finit/finit-3.0.tar.xz),
-  [MD5](ftp://ftp.troglobit.com/finit/finit-3.0.tar.xz.md5)
+* [finit-3.1.tar.xz](ftp://ftp.troglobit.com/finit/finit-3.1.tar.xz),
+  [MD5](ftp://ftp.troglobit.com/finit/finit-3.1.tar.xz.md5)
 
 See also the [Free(code) page](http://freecode.com/projects/finit).
 
