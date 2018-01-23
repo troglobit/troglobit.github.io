@@ -70,15 +70,15 @@ service [S12345] /sbin/klogd -n                                   -- Kernel log 
 # Allow telnet on standard port only if not from WAN (eth0)
 # Allow telnet onport 2323 from WAN (don't do this kids)
 # Built-in rdate service also available on custom port 3737, notice internal.time
-inetd ftp/tcp                   nowait [2345] /sbin/uftpd -i -f       -- FTP daemon
-inetd tftp/udp                    wait [2345] /sbin/uftpd -i -y       -- TFTP daemon
-inetd time/udp                    wait [2345] internal                -- UNIX rdate service
-inetd time/tcp                  nowait [2345] internal                -- UNIX rdate service
-inetd 3737/tcp                  nowait [2345] internal.time           -- UNIX rdate service
-#inetd 2323/tcp@eth0             nowait [2345] /sbin/telnetd -i -F     -- Telnet daemon (WAN)
-inetd telnet/tcp@*,!eth0,       nowait [2345] /sbin/telnetd -i -F     -- Telnet daemon (LAN)
-inetd 222/tcp@eth0             nowait [2345] /sbin/dropbear -i -R -F -- SSH daemon (WAN)
-inetd ssh/tcp@*,!eth0          nowait [2345] /sbin/dropbear -i -R -F -- SSH daemon (LAN)
+inetd ftp/tcp              nowait [2345] /sbin/uftpd -i -f       -- FTP daemon
+inetd tftp/udp               wait [2345] /sbin/uftpd -i -y       -- TFTP daemon
+inetd time/udp               wait [2345] internal                -- UNIX rdate service
+inetd time/tcp             nowait [2345] internal                -- UNIX rdate service
+inetd 3737/tcp             nowait [2345] internal.time           -- UNIX rdate service
+#inetd 2323/tcp@eth0       nowait [2345] /sbin/telnetd -i -F     -- Telnet daemon (WAN)
+inetd telnet/tcp@*,!eth0   nowait [2345] /sbin/telnetd -i -F     -- Telnet daemon (LAN)
+inetd 222/tcp@eth0         nowait [2345] /sbin/dropbear -i -R -F -- SSH daemon (WAN)
+inetd ssh/tcp@*,!eth0      nowait [2345] /sbin/dropbear -i -R -F -- SSH daemon (LAN)
 
 # Allow login on ttyUSB0, for systems with no dedicated console port
 tty [12345] /dev/ttyAMA0 115200 vt100 noclear
