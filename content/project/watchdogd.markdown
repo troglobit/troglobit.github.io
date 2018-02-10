@@ -8,14 +8,16 @@ aliases: /watchdogd.html
 <img style="float: right" src="/images/watchdog.png" alt="http://toonclips.com/design/788"
      title="Watch Dog Detective Taking Notes">
 
-`watchdogd(8)` is an advanced system and process supervisor daemon.
-It can monitor critical system resources, supervise the heartbeat of
-processes, record deadline transgressions, and reset the system on
-software lockups.
+`watchdogd(8)` is an advanced system and process supervisor daemon,
+primarily intended for embedded Linux and server systems.  By default it
+periodically kicks the system watchdog timer (WDT) to prevent it from
+resetting the system.  In its more advanced guise it monitors critical
+system resources, supervises the heartbeat of processes, records
+deadline transgressions, and initiates a controlled reset if needed.
 
 When a system comes back up after a reset, `watchdogd` determines the
-reset cause and records it in a logfile for later analysis by an
-operator or network management system (NMS).  This information can be
+reset cause and records it in a file for later analysis by an operator
+or network management system (NMS).  This information in turn can be
 used to put the system in an operational safe state, or non-operational
 safe state.
 
@@ -24,45 +26,55 @@ safe state.
 
 Most server and laptop motherboards today come equipped with a watchdog
 timer (WDT).  It is a small timer connected to the reset circuitry so
-that it can reset the board if the timer expires.  The system watchdog
-driver, and this daemon, periodically "kick", or reset the timer to
-prevent it from firing.
+that it can reset the board if the timer expires.  The WDT driver, and
+this daemon, periodically "kick" (reset) the timer to prevent it from
+firing.
 
 Most embedded systems utilise watchdog timers as a way to automatically
-recover from malfunctions.
+recover from malfunctions: lock-ups, live-locks, CPU overload.  With a
+bit of logic sprinkled on top the cause can more easily be tracked down.
 
 The Linux kernel provides a common userspace interface `/dev/watchdog`,
 created automatically when the appropriate watchdog driver is loaded.
-If your board does not have a WDT, the kernel provides a "softdog"
+If your board does not have a WDT, the kernel provides a `softdog.ko`
 module which in many cases can be good enough.
 
 The idea of a watchdog daemon in userspace is to run in the background
 of your system.  When there is no more CPU time for the watchdog daemon
 to run it will fail to "kick" the WDT.  This will in turn cause the WDT
-to reboot the system.  This background process can of course also be
-used to monitor other aspects of the system.
+to reboot the system.  When it does `watchdogd` have already saved the
+reset cause for your post mortem.
+
+As a background process, `watchdogd` can of course also be used to
+monitor other aspects of the system ...
 
 
 ### What can watchdogd do?
 
 Without arguments `watchdogd` runs in the background, monitoring the the
 CPU, and as long as there is CPU time it "kicks" the WDT chip (via the
-driver).  However, with few command line options it can also monitor
-other aspect of the system, such as:
+driver).  If `watchdogd` is stopped, or does not get enough CPU time to
+run, the WDT will detect this and reboot the system.  This is the normal
+mode of operation.
+
+With a few lines in `/etc/watchdogd.conf`, it can also monitor other
+aspects of the system, such as:
 
 - Load average
 - Memory leaks
 - File descriptor leaks
-- Process live locks (PMON)
+- Process live locks
+- Reset counter, for snmpEngineBoots (RFC 2574)
 
 
 Usage
 -----
 
 ```
-watchdogd [-hnsVvx] [-a WARN[,REBOOT]] [-T SEC] [-t SEC] [/dev/watchdog]
+watchdogd [-hnsVx] [-f FILE] [-T SEC] [-t SEC] [/dev/watchdog]
 
 Options:
+  -f, --config=FILE        Use FILE for daemon configuration
   -n, --foreground         Start in foreground (background is default)
   -s, --syslog             Use syslog, even if running in foreground
   -l, --loglevel=LVL       Log level: none, err, info, notice*, debug
@@ -70,30 +82,21 @@ Options:
   -T, --timeout=SEC        HW watchdog timer (WDT) timeout in SEC seconds
   -t, --interval=SEC       WDT kick interval in SEC seconds, default: 10
   -x, --safe-exit          Disable watchdog on exit from SIGINT/SIGTERM
+                           "magic" exit may not be supported by HW/driver
   
-  -a, --load-average=W[,R] Enable load average check WARN,REBOOT
-  -m, --meminfo=W[,R]      Enable memory leak check, WARN,REBOOT
-  -f, --filenr=W[,R]       Enable file descriptor leak check, WARN,REBOOT
-  -p, --pmon[=PRIO]        Enable process monitor, run at elevated RT prio
-                           Default RT prio when active: SCHED_RR @98
-  
-  -v, --version            Display version and exit
+  -V, --version            Display version and exit
   -h, --help               Display this help message and exit
 ```
 
-By default, with any arguments given on the command line, `watchdogd`
-opens `/dev/watchdog`, forks to the background and then tries to to set
-a 20 sec WDT timeout.  It then kicks every 10 sec.  See below, in the
-Operation section, for more information.
+Without any arguments, `watchdogd` opens `/dev/watchdog`, forks to the
+background, tries to to set a 20 sec WDT timeout, and then kicks every
+10 sec.  See the [Operation](#operation) section for more information.
 
 **Example**
 
 ```shell
-watchdogd -a 0.8,0.9 -T 120 -t 30 /dev/watchdog2
+watchdogd -T 120 -t 30 /dev/watchdog2
 ```
-
-Most WDT drivers only support 120 sec as lowest timeout, but `watchdogd`
-tries to set 20 sec timeout.  Example values above are recommendations.
 
 `watchdogd` runs at the default UNIX priority (nice) level, unless the
 process monitor is activated, in which case it runs at an elevated real
@@ -109,63 +112,96 @@ the WDT timer to the lowest possible value (1 sec), close the connection
 to `/dev/watchdog`, and wait for WDT reboot.  It waits at most 3x the
 WDT timeout before announcing HW WDT failure and forcing a reboot.
 
-`watchdogd(8)` supports optional monitoring of several system resources.
-First, system load average monitoring can be enabled with `-a 0.8,0.9`.
-Second, the memory leak detector `-m 0.9,0.95`.  Third, file descriptor
-leak detector `-f 0.8,0.95`.  All *very* useful on an embedded system.
+`watchdogd(8)` supports optional monitoring of several system resources
+that can be enabled in the `.conf` file.  First, system load average
+monitoring can be enabled with:
 
-The two values, separated by a comma, are the warning and reboot levels
-in percent.  For the loadavg monitoring it is important to know that the
-trigger levels are normalized.  This means `watchdogd` does not care how
-many CPU cores your system has online.  If the kernel `/proc/loadavg`
-file shows `3.9 3.0 2.5` on a four-core CPU, `watchdogd` will consider
-this as a load of `0.98 0.75 0.63`, i.e. divided by four.  Only the one
-(1) and five (5) minute average values are used.  For more information
-on the UNIX load average, see this [StackOverflow question][loadavg].
+```
+loadavg {
+    interval = 300       # Every 5 mins
+    warning  = 1.5
+    critical = 2.0
+}
+```
+
+Second, the memory leak detector, a value of 1.0 means 100% memory use:
+
+```
+meminfo {
+    interval = 3600       # Every hour
+    warning  = 0.9
+    critical = 0.95
+}
+```
+
+Third, file descriptor leak detector:
+
+```
+filenr {
+    interval = 3600       # Every hour
+    warning  = 0.8
+    critical = 0.95
+}
+```
+
+All of these monitors can be *very* useful on an embedded or headless
+system with little or no operator.
+
+The two values, `warning` and `critical`, are the warning and reboot
+levels in percent.  The latter is optional, if it is omitted reboot is
+disabled.  A script can also be run instead of reboot, see the `.conf`
+file for details.
+
+Determining suitable system load average levels is tricky.  It always
+depends on the system and use-case, not just the number of CPU cores.
+Peak loads of 16.00 on an 8 core system may be responsive and still
+useful but 2.00 on a 2 core system may be completely bogged down.  Make
+sure to read up on the subject and thoroughly test your system before
+enabling a reboot trigger value.  `watchdgod` uses an average of the
+first two load average values, the one (1) and five (5) minute.
 
 The RAM usage monitor only triggers on systems without swap.  This is
 detected by reading the file `/proc/meminfo`, looking for the
-`SwapTotal:` value.  For more details on the underlying mechanisms of
-file descriptor usage, see [this article][filenr].  For more info on the
-details of memory usage, see [this article][meminfo].
+`SwapTotal:` value.
 
-`watchdogd` v2.0 comes with a process monitor, pmon.  It must be enabled
-and a monitored client must connect using the API for pmon to start.  As
-soon pmon starts it raises the real-time priority of watchdogd to 98 to
-be able to ensure proper monitoring of its clients.
+`watchdogd` v2.0 and later comes with a process supervisor (previously
+called pmon).  It is enabled in `/etc/watchdogd.conf` and a monitored
+processes must connect using the API before the supervisor starts.  When
+it does, the real-time priority of watchdogd is raised to 98 to to
+ensure proper monitoring of all supervised processes.
 
 
-Pmon API
---------
+libwdog API
+-----------
 
 To use pmon a client must have its source code instrumented with at
 least a "subscribe" and a "kick" call.  Commonly this is achieved by
-adding the `wdog_pmon_kick()` call to the main event loop.
+adding the `wdog_kick2()` call to the main event loop.
 
-All API calls, except `wdog_pmon_ping()`, return POSIX OK(0) or negative
-value with `errno` set on error.  The `wdog_pmon_subscribe()` call
-returns a positive integer (including zero) for the watchdog `id`.
+All API calls, except `wdog_ping()`, return POSIX OK(0) or negative
+value with `errno` set on error.  The `wdog_subscribe()` call returns a
+positive integer (including zero) for the watchdog `id`.
 
 ```c
 /*
  * Enable or disable watchdogd at runtime.
  */
-int wdog_enable           (int enable);
-int wdog_status           (int *enabled);
+int wdog_enable      (int enable);
+int wdog_status      (int *enabled);
 
 /*
  * Check if watchdogd API is actively responding,
  * returns %TRUE(1) or %FALSE(0)
  */
-int wdog_pmon_ping        (void);
+int wdog_ping        (void);
 
 /*
  * Register with pmon, timeout in msec.  Return value is the `id`
  * to be used with the `ack` in subsequent kick()/unsubscribe()
  */
-int wdog_pmon_subscribe   (char *label, int timeout, int *ack);
-int wdog_pmon_unsubscribe (int id, int ack);
-int wdog_pmon_kick        (int id, int *ack);
+int wdog_subscribe   (char *label, int timeout, int *ack);
+int wdog_unsubscribe (int id, int ack);
+int wdog_kick2       (int id, int *ack);
 ```
 
 It is highly recommended to use an event loop like libev, [libuev][], or
@@ -182,13 +218,13 @@ instrument it like this:
 int ack, wid;
 
 /* Library will use process' name on NULL first arg. */
-wid = wdog_pmon_subscribe(NULL, 10000, &ack);
+wid = wdog_subscribe(NULL, 10000, &ack);
 if (-1 == wid)
         ;      /* Error handling */
 
 while (1) {
         ...
-        wdog_pmon_kick(wid, &ack);
+        wdog_kick2(wid, &ack);
         ...
 }
 ```
@@ -234,12 +270,11 @@ full debug output to stderr or the syslog, depending on how you start
 Build & Install
 ---------------
 
-`watchdogd` is tailored for Linux systems and should build against any
-(old) C libray.  However, `watchdogd` v2.1 and later require two
-external libraries that were previously a built-in, [libite][]
-and [libuEv][].  Neither of them should present any surprises, both use
-de facto standard `configure` scripts and support `pkg-config` which the
-`watchdogd` `configure` script use to locate requried libraries and
+`watchdogd` is tailored for Linux systems and should build against any C
+libray.  v2.1 and later require a few external libraries: [libite][],
+[libuEv][], and [libConfuse][].  Neither should present any surprises,
+all use de facto standard `configure` scripts and support `pkg-config`
+which the `watchdogd` `configure` script use to locate libraries and
 header files.
 
 Hence, the regular `./configure && make` is usually sufficient to build
@@ -275,8 +310,8 @@ Issue tracker and GIT repository available at GitHub:
 * [README](https://github.com/troglobit/watchdogd/blob/master/README.md)
 * [TODO](https://github.com/troglobit/watchdogd/blob/master/TODO.md)
 * [Issue Tracker](http://github.com/troglobit/watchdogd/issues)
-* [watchdogd-2.0.1.tar.xz](ftp://ftp.troglobit.com/watchdogd/watchdogd-2.0.1.tar.xz),
-  [MD5](ftp://ftp.troglobit.com/watchdogd/watchdogd-2.0.1.tar.xz.md5)
+* [watchdogd-3.0.tar.xz](ftp://ftp.troglobit.com/watchdogd/watchdogd-3.0.tar.xz),
+  [MD5](ftp://ftp.troglobit.com/watchdogd/watchdogd-3.0.tar.xz.md5)
 
 
 Contributing
@@ -303,6 +338,7 @@ more details, see the file [CONTRIBUTING][contrib].
 [original code]:   http://www.mail-archive.com/uclinux-dev@uclinux.org/msg04191.html
 [libite]:          https://github.com/troglobit/libite/
 [libuEv]:          https://github.com/troglobit/libuev/
+[libuEv]:          https://github.com/martinh/libConfuse/
 [Travis]:          https://travis-ci.org/troglobit/watchdogd
 [Travis Status]:   https://travis-ci.org/troglobit/watchdogd.png?branch=master
 [Coverity Scan]:   https://scan.coverity.com/projects/6458
