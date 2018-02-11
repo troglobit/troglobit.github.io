@@ -33,6 +33,11 @@ enableEmoji = true
     weight = 1
 
 [[menu.main]]
+    name = "Archive"
+    url = "/archive/"
+    weight = 1
+
+[[menu.main]]
     name = "HowTos"
     url = "/howto/"
     weight = 1
