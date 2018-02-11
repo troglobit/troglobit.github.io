@@ -1,7 +1,7 @@
 ---
 name: SMCRoute
 title: "Static Multicast Routing Daemon"
-date: 2017-06-13 23:15:00 +02:00
+date: 2018-02-11 14:16:00 +02:00
 aliases: /smcroute.html
 ---
 
@@ -24,6 +24,7 @@ Features
 - Optional built-in [mrdisc][] support, [RFC4286][]
 - Support for multiple routing tables on Linux
 - Client with built-in support to show routes and joined groups
+- Interface wildcard matching, `eth+` matches `eth0, eth15`
 
 
 Why a Daemon?
@@ -58,9 +59,9 @@ available as `.tar.gz` for systems that do not have `xz` in the default
 install, like OpenBSD:
 
    * [Repository][GitHub]
-   * [smcroute-2.3.1.tar.xz](ftp://ftp.troglobit.com/smcroute/smcroute-2.3.1.tar.xz),
-     [MD5](ftp://ftp.troglobit.com/smcroute/smcroute-2.3.1.tar.xz.md5)
-     [GPG Sign](ftp://ftp.troglobit.com/smcroute/smcroute-2.3.1.tar.xz.asc)
+   * [smcroute-2.4.0.tar.xz](ftp://ftp.troglobit.com/smcroute/smcroute-2.4.0.tar.xz),
+     [MD5](ftp://ftp.troglobit.com/smcroute/smcroute-2.4.0.tar.xz.md5)
+     [GPG Sign](ftp://ftp.troglobit.com/smcroute/smcroute-2.4.0.tar.xz.asc)
    * [Issue Tracker](http://github.com/troglobit/smcroute/issues)
    * [Debian packages](http://packages.debian.org/smcroute)
    * [Ubuntu packages](http://packages.ubuntu.com/smcroute)
