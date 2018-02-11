@@ -1,7 +1,7 @@
 ---
 name: watchdogd
 title: "System & Process Supervisor for Linux"
-date: 2017-04-09 14:52:00 +02:00
+date: 2018-02-10 14:52:00 +02:00
 aliases: /watchdogd.html
 ---
 
