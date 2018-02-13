@@ -1,15 +1,15 @@
 ---
-name: Inadyn
+name: In-a-dyn
 title: "Small and Simple DDNS Client"
-date: 2017-08-10 09:42:00 +02:00
+date: 2017-08-14 00:23:00 +02:00
 aliases: /inadyn.html
 ---
 
-Inadyn is a small and simple Dynamic DNS, [DDNS][1], client with HTTPS
+In-a-dyn is a small and simple Dynamic DNS, [DDNS][1], client with HTTPS
 support.  It is commonly available in many GNU/Linux distributions, used
-in off-the-shelf routers and Internet gateways to automate the task of
+in off-the-shelf routers  and Internet gateways to automate  the task of
 keeping your DNS record up to date with any IP address changes from your
-[ISP][2].  It can also be used in installations with redundant (backup)
+[ISP][2].  It can also be  used in installations with redundant (backup)
 connections to the Internet.
 
 
@@ -17,8 +17,8 @@ Supported Providers
 -------------------
 
 The following is a curated list of *some* of the natively supported DDNS
-providers.  Other providers, e.g. <http://twoDNS.de>, can usually be
-supported using the custom provider support.  For the full details, see
+providers.   Other providers,  e.g. <http://twoDNS.de>,  can usually  be
+supported using the custom provider  support.  For the full details, see
 the [README][], or `inadyn.conf(5)` found in the tarball.
 
 * <https://freedns.afraid.org>
@@ -67,7 +67,7 @@ The configuration file on most systems is in `/etc/inadyn.conf`:
         hostname = some.example.com
     }
 
-Inadyn comes with a systemd unit file, so simply restart the service or
+In-a-dyn comes with a systemd unit file, so simply restart the service or
 send `SIGHUP` to an already running inadyn to make it reload the `.conf`
 file.  If you've built Inadyn yourself from source, the `.conf` file may
 be located elsewhere.  See the `--prefix` argument to the `configure`
@@ -99,13 +99,12 @@ See also the [OpenHub page](https://www.openhub.net/p/inadyn/), the
 Origin & References
 -------------------
 
-This is the continuation of the [original INADYN][origin] project by
-Narcis Ilisei.  The goal of this project is to focus on \*BSD and
-various embedded Linux platforms, but *Cygwin is also supported*.  All
+This is  the continuation  of the  [original INADYN][origin]  project by
+Narcis  Ilisei.  The  goal of  this  project is  to focus  on \*BSD  and
+various embedded Linux  platforms, but *Cygwin is  also supported*.  All
 sane patches addressing this target audience are welcome!
 
-Included so far are relavant fixes and additions from the following
-forks:
+Relevant patches and features from the following forks have been merged:
 
 * ["New" upstream](https://sourceforge.net/projects/inadyn/) by
   [Christoph Brill](http://www.egore911.de/)
@@ -123,9 +122,3 @@ just for Windows.
 [README]: https://github.com/troglobit/inadyn/blob/master/README.md
 [origin]: http://www.inatech.eu/inadyn/
 [inadyn-mt]: http://sourceforge.net/projects/inadyn-mt/
-
-<!--
-  -- Local Variables:
-  -- mode: markdown
-  -- End:
-  -->
