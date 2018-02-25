@@ -1,7 +1,7 @@
 baseURL = "/"
 disablePathToLower = true
 languageCode = "en-us"
-title = "Troglobit"
+#title = "Joachim Nilsson"
 theme = "beautifulhugo"
 contentDir = "content"
 publishDir = "public"
@@ -13,7 +13,7 @@ enableEmoji = true
   post = "/:year/:month/:title/"
 
 [Params]
-  subtitle = "Help me Obi-Wan Troglobi, you're my only hope!"
+#  subtitle = "Help me Obi-Wan Troglobi, you're my only hope!"
   logo = "images/profile.jpg"
   favicon = "favicon.ico"
   commit = false
