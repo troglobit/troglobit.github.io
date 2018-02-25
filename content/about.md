@@ -3,13 +3,13 @@ title: "About"
 date: 2014-06-29T17:01:00Z
 ---
 
-Welcome, my name is Joachim Nilsson, I'm a hacker and this is my blog!
-My handle, `troglobit`, is a tribute to my old friend Henrik Flordal for
-inspiring me to become a hacker, and is also the password to the first
-ever Linux server (Henrik's) I got a login to, back in 1995.
+My name is Joachim Nilsson and I'm a hacker.  `troglobit`, is a tribute
+to my old friend Henrik Flordal for inspiring me to become a hacker, and
+is also the password to the first ever Linux server (Henrik's) I got a
+login to, back in 1995.
 
 I work at [Westermo R&D][westermo] as a software architect for [WeOS][],
-an embedded Linux network operating system for switches and routers.
+a Linux-based network operating system for switches and routers.
 
 In my spare time I write Free/Libre Open Source Software ([FLOSS][]).
 For example, I maintain [Finit][], [Inadyn][], [pimd][], [mrouted][],
