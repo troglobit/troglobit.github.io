@@ -2167,10 +2167,10 @@ Today we&amp;rsquo;re going to Stenby TV-service with our broken Hitachi 32&amp;
     
     <item>
       <title>Projects</title>
-      <link>/projects/</link>
+      <link>/project/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/projects/</guid>
+      <guid>/project/</guid>
       <description>{% for page in site.projects %} {% if page.name %}  {{ page.name }}  {% if page.description %}  {{ page.description }}  {% else if page.title %}  {{ page.title }}  {% endif %} {% endif %} {% endfor %}  Merecat   Simple, small and fast HTTP server   </description>
     </item>
     
