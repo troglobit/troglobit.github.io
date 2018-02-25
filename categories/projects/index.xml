@@ -1,17 +1,60 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Projects on Troglobit</title>
+    <title>Projects on </title>
     <link>/categories/projects/</link>
-    <description>Recent content in Projects on Troglobit</description>
+    <description>Recent content in Projects on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Tue, 06 Aug 2013 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 19 Nov 2016 23:37:20 +0000</lastBuildDate>
     
 	<atom:link href="/categories/projects/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>One ping only</title>
+      <link>/2016/11/19/one-ping-only/</link>
+      <pubDate>Sat, 19 Nov 2016 23:37:20 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2016/11/19/one-ping-only/</guid>
+      <description>For some odd reason, today was the day when I woke up and continued working on libICMP. It&amp;rsquo;s now almost seven years since I first adopted Tim Lawless&amp;rsquo; public domain version, and today I picked up where I left off and started refactoring and cleaning up.
+Example:
+#include &amp;quot;icmp/icmp.h&amp;quot; int main(int argc, char *argv[]) { char *host = &amp;quot;localhost&amp;quot;; struct libicmp *obj; if (argc &amp;gt;= 2) host = argv[1]; if (!</description>
+    </item>
+    
+    <item>
+      <title>Finit3: Almost there ...</title>
+      <link>/2016/09/21/finit3--almost-there-.../</link>
+      <pubDate>Wed, 21 Sep 2016 19:08:37 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2016/09/21/finit3--almost-there-.../</guid>
+      <description>Today the new logo for Finit3 was added to the GitHub repo and the homepage
+Gorgeous, isn&amp;rsquo;t it?! 😎
+This fancy artwork means we&amp;rsquo;re nearing the end of a long and agonizing release cycle where a lot of the internals of Finit have been rewritten and new exciting features have been added! More on this in an upcoming post 😃</description>
+    </item>
+    
+    <item>
+      <title>Stray Puppies</title>
+      <link>/2015/11/07/stray-puppies/</link>
+      <pubDate>Sat, 07 Nov 2015 02:32:12 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2015/11/07/stray-puppies/</guid>
+      <description>Sometimes I just cannot help myself. It&amp;rsquo;s like finding a stray puppy, or abandonded kitten &amp;hellip;
+&amp;hellip; I recently decided to adopt mini-snmpd since the original upstream site had passed into the great beyond. At this point in my life almost everyone I know can tell you I have no warm fuzzy feels for SNMP, at all. So why did I even consider this to begin with?!
+Well, I have to confess that there are certain things that SNMP can be really useful for.</description>
+    </item>
+    
+    <item>
+      <title>Summer of Code 2015</title>
+      <link>/2015/09/09/summer-of-code-2015/</link>
+      <pubDate>Wed, 09 Sep 2015 21:49:13 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2015/09/09/summer-of-code-2015/</guid>
+      <description>Summer is now slowly fading away, and what a summer it has been here in Sweden! For someone who isn&amp;rsquo;t a fan of the summer heat it has been an awesome time for brain work, and in my case work on my open source projects! :-)
+Due to my not really taking much vacation previous years I had saved up for ten weeks (10) this year! It was really worth it, and for the first time in many years I actually feel rested.</description>
+    </item>
     
     <item>
       <title>Threads vs Events</title>

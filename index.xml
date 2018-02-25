@@ -1,27 +1,129 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Troglobit</title>
+    <title></title>
     <link>/</link>
-    <description>Recent content on Troglobit</description>
+    <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Sat, 28 Oct 2017 12:04:00 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 23 Feb 2018 20:16:00 +0200</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Fast init for Linux systems</title>
-      <link>/project/finit/</link>
-      <pubDate>Sat, 28 Oct 2017 12:04:00 +0200</pubDate>
+      <link>/projects/finit/</link>
+      <pubDate>Fri, 23 Feb 2018 20:16:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/project/finit/</guid>
+      <guid>/projects/finit/</guid>
       <description>Finit is a simple alternative to SysV init and systemd, reverse engineered from the EeePC fastinit ten years ago by Claudio Matsuoka — &amp;ldquo;gaps filled with frog DNA …&amp;rdquo;
 Finit supports runlevels, process monitoring, and starting services on demand using the built-in inetd, or by triggering a condition. E.g., &amp;ldquo;don&amp;rsquo;t start this service until basic networking is available&amp;rdquo;, or &amp;ldquo;wait until syslogd has started&amp;rdquo;.
 For more details, see the online documentation.</description>
+    </item>
+    
+    <item>
+      <title>Slow Down</title>
+      <link>/2018/02/Slow-Down/</link>
+      <pubDate>Thu, 15 Feb 2018 20:05:25 +0100</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2018/02/Slow-Down/</guid>
+      <description>Anyone who knows me knows I&amp;rsquo;m quite stubborn. Whenever I set my sights on something I finish it. The last couple of years I&amp;rsquo;ve been quite busy on GitHub, making at least one commit per day. I&amp;rsquo;ve had a lot of things I&amp;rsquo;ve wanted to do and complete, and this commit regimen has kept me on track to do just that.
+However, nothing comes for free, and although I&amp;rsquo;ve achieved my goals, I&amp;rsquo;ve also had to make a lot of sacrifices.</description>
+    </item>
+    
+    <item>
+      <title>Static Multicast Routing Daemon</title>
+      <link>/projects/smcroute/</link>
+      <pubDate>Sun, 11 Feb 2018 14:16:00 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/projects/smcroute/</guid>
+      <description>SMCRoute is a daemon and command line tool to manipulate the multicast routing table in the UNIX kernel. Both FreeBSD and Linux kernels are supported, but it may work on other systems as well.
+SMCRoute can be used as an alternative to dynamic multicast routing daemons like mrouted or pimd when (only) static multicast routes should be maintained and/or no proper IGMP signalling exists.
+Features  Configuration file support, /etc/smcroute.</description>
+    </item>
+    
+    <item>
+      <title>System &amp; Process Supervisor for Linux</title>
+      <link>/projects/watchdogd/</link>
+      <pubDate>Sat, 10 Feb 2018 14:52:00 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/projects/watchdogd/</guid>
+      <description>watchdogd(8) is an advanced system and process supervisor daemon, primarily intended for embedded Linux and server systems. By default it periodically kicks the system watchdog timer (WDT) to prevent it from resetting the system. In its more advanced guise it monitors critical system resources, supervises the heartbeat of processes, records deadline transgressions, and initiates a controlled reset if needed.
+When a system comes back up after a reset, watchdogd determines the reset cause and records it in a file for later analysis by an operator or network management system (NMS).</description>
+    </item>
+    
+    <item>
+      <title>Multicast routing with PIM-SM over GRE</title>
+      <link>/2016/07/05/multicast-routing-with-pim-sm-over-gre/</link>
+      <pubDate>Tue, 23 Jan 2018 20:39:36 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2016/07/05/multicast-routing-with-pim-sm-over-gre/</guid>
+      <description>&lt;p&gt;GRE tunnels are useful in many ways.  This blog post shows how to set up
+multicast routing with &lt;a href=&#34;https://github.com/troglobit/pimd/&#34;&gt;pimd&lt;/a&gt; over a
+GRE tunnel.  To achieve this we will also set up OSPF over GRE with
+&lt;a href=&#34;http://www.quagga.net&#34;&gt;Quagga&lt;/a&gt;, because PIM, unlike DVMRP (&lt;code&gt;mrouted&lt;/code&gt;),
+require unicast routing rules to be established.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;       .----{ Intranet }----.
+      /    192.168.1.0/24    \
+     /                        \
+.10 /                          \.20
+.--&#39;---. .1  GRE Tunnel  .2 .---`--.
+|      |====================|      |
+|  R1  |   172.16.16.0/30   |  R2  |
+|      |                    |      |
+&#39;--.---&#39;                    &#39;------&#39;
+   | .1                        | .1 
+   |    10.0.1.0/24            |    10.0.2.0/24
+   | .2                        | .2 
+.--&#39;---.                    .--&#39;---.
+|      |                    |      |
+|  C1  |                    |  C2  |
+|      |                    |      |
+&#39;------&#39;                    &#39;------&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In this post we are using the home WiFi network, 192.168.1.0/24, to hook
+up the GRE tunnel.  It is just as easy to extend this to a big corporate
+Intranet with more routers between &lt;code&gt;R1&lt;/code&gt; and &lt;code&gt;R2&lt;/code&gt;.  As long as that IT
+department takes care of the unicast routing between &lt;code&gt;R1&lt;/code&gt; and &lt;code&gt;R2&lt;/code&gt; so
+that the GRE tunnel can be established.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Useful UNIX API:s</title>
+      <link>/2017/12/Useful-UNIX-APIs/</link>
+      <pubDate>Fri, 22 Dec 2017 10:28:00 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2017/12/Useful-UNIX-APIs/</guid>
+      <description>&lt;p&gt;Had an interesting conversation with a buddy last night.  It started out
+as a shift-reduce problem with Bison and ended up a ping-pong of useful
+UNIX API:s.  We concluded that despite having worked professionally with
+UNIX for over a decade, it is still very satisfying finding gems like
+these.&lt;/p&gt;
+
+&lt;p&gt;Most people are completely unaware they exist and end up rolling their
+own (buggy) implementations.  For instance, string manipulation and
+various forms of linked lists.  Which is why I many years ago extracted
+the &lt;em&gt;frog DNA&lt;/em&gt; from &lt;a href=&#34;https://github.com/troglobit/finit/&#34;&gt;Finit&lt;/a&gt; to a
+separate library called &lt;a href=&#34;https://github.com/troglobit/libite/&#34;&gt;libite&lt;/a&gt;,
+or -lite for short.  It imports the OpenBSD &lt;code&gt;strlcpy()&lt;/code&gt; family of API:s,
+up-to-date &lt;code&gt;queue.h&lt;/code&gt; with the &lt;code&gt;_SAFE&lt;/code&gt; iterators, and more.  Some people
+like &lt;a href=&#34;https://libbsd.freedesktop.org/wiki/&#34;&gt;libbsd&lt;/a&gt; for this, but I&amp;rsquo;ve
+found many of the ports incomplete and unsafe and prefer to stay closer
+to the upstream *BSD versions.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; This post was originally written Nov 14, 2015.  It was a
+Saturday and I remember being extremely inspired when I wrote it.  I&amp;rsquo;ve
+continued adding to it over the years, and still do.  So, as of Jul 2,
+2017 I&amp;rsquo;m bumping the modification date each time I add something new :-)&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -105,54 +207,43 @@ run Merecat httpd in production.&lt;/p&gt;
     
     <item>
       <title>Minix Editline</title>
-      <link>/project/editline/</link>
+      <link>/projects/editline/</link>
       <pubDate>Thu, 07 Sep 2017 01:32:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/project/editline/</guid>
+      <guid>/projects/editline/</guid>
       <description>This is a line editing library for UNIX. It can be linked into almost any program to provide command line editing and history. It is call compatible with the FSF readline library, but is a fraction of the size (and offers fewer features).
 The small size (&amp;lt;30k), lack of dependencies (no ncurses needed!) and the free license should make this library interesting to many embedded developers seeking a replacement for the GNU readline library.</description>
     </item>
     
     <item>
       <title>Small and Simple DDNS Client</title>
-      <link>/project/inadyn/</link>
-      <pubDate>Thu, 10 Aug 2017 09:42:00 +0200</pubDate>
+      <link>/projects/inadyn/</link>
+      <pubDate>Mon, 14 Aug 2017 00:23:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/project/inadyn/</guid>
-      <description>Inadyn is a small and simple Dynamic DNS, DDNS, client with HTTPS support. It is commonly available in many GNU/Linux distributions, used in off-the-shelf routers and Internet gateways to automate the task of keeping your DNS record up to date with any IP address changes from your ISP. It can also be used in installations with redundant (backup) connections to the Internet.
+      <guid>/projects/inadyn/</guid>
+      <description>In-a-dyn is a small and simple Dynamic DNS, DDNS, client with HTTPS support. It is commonly available in many GNU/Linux distributions, used in off-the-shelf routers and Internet gateways to automate the task of keeping your DNS record up to date with any IP address changes from your ISP. It can also be used in installations with redundant (backup) connections to the Internet.
 Supported Providers The following is a curated list of some of the natively supported DDNS providers.</description>
     </item>
     
     <item>
       <title>The original PIM-SM daemon</title>
-      <link>/project/pimd/</link>
+      <link>/projects/pimd/</link>
       <pubDate>Wed, 12 Jul 2017 20:17:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/project/pimd/</guid>
+      <guid>/projects/pimd/</guid>
       <description>pimd is a lightweight standalone PIM-SM/SSM v2 multicast routing daemon. It is the original USC (netweb/catarina.usc.edu) implementation of the protocol, RFC 2362. Today pimd strives for full RFC compliance, including RFC 4601, RFC 5059, and RFC 5796, with the v2.3.0 release supporting both PIM-SSM and IGMPv3.
 In 2003 the OpenBSD project managed to convince Stanford in to change the license of mrouted. This in turn also freed pimd, since it is built with DNA strands from mrouted.</description>
     </item>
     
     <item>
       <title>Mini SNMP daemon</title>
-      <link>/project/mini-snmpd/</link>
+      <link>/projects/mini-snmpd/</link>
       <pubDate>Tue, 27 Jun 2017 10:36:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/project/mini-snmpd/</guid>
+      <guid>/projects/mini-snmpd/</guid>
       <description>This is an SNMP server for small and embedded systems, currently Linux and FreeBSD are supported. It is easily portable to other UNIX systems since it&amp;rsquo;s written in C. The daemon is very small (~40 kiB) and does not have nowhere near the feature set of Net-SNMP, therefore it has a very low impact on system resources.
 Features:
  Supports SNMP version 1 and 2c Supports SNMP get, getnext and getbulk Supports both IPv4 and IPv6 Supports communication over UDP and TCP sockets Supports the most important performance data (uptime, CPU load, memory usage) Supports the most important network data (bytes/packets in/out, error counts) Supports the most important disk data (disk space/inodes available/used/free) Tested with net-snmp, cacti, and MRTG</description>
-    </item>
-    
-    <item>
-      <title>Static Multicast Routing Daemon</title>
-      <link>/project/smcroute/</link>
-      <pubDate>Tue, 13 Jun 2017 23:15:00 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/project/smcroute/</guid>
-      <description>SMCRoute is a daemon and command line tool to manipulate the multicast routing table in the UNIX kernel. Both FreeBSD and Linux kernels are supported, but it may work on other systems as well.
-SMCRoute can be used as an alternative to dynamic multicast routing daemons like mrouted or pimd when (only) static multicast routes should be maintained and/or no proper IGMP signalling exists.
-Features  Configuration file support, /etc/smcroute.</description>
     </item>
     
     <item>
@@ -176,21 +267,11 @@ AUTOCONF_VERSION=2.69 AUTOMAKE_VERSION=1.15 export AUTOCONF_VERSION AUTOMAKE_VER
     </item>
     
     <item>
-      <title>System &amp; Process Supervisor for Linux</title>
-      <link>/project/watchdogd/</link>
-      <pubDate>Sun, 09 Apr 2017 14:52:00 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/project/watchdogd/</guid>
-      <description>watchdogd(8) is an advanced system and process supervisor daemon. It can monitor critical system resources, supervise the heartbeat of processes, record deadline transgressions, and reset the system on software lockups.
-When a system comes back up after a reset, watchdogd determines the reset cause and records it in a logfile for later analysis by an operator or network management system (NMS). This information can be used to put the system in an operational safe state, or non-operational safe state.</description>
-    </item>
-    
-    <item>
       <title>No nonsense FTP/TFTP server</title>
-      <link>/project/uftpd/</link>
+      <link>/projects/uftpd/</link>
       <pubDate>Wed, 22 Mar 2017 08:00:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/project/uftpd/</guid>
+      <guid>/projects/uftpd/</guid>
       <description>Tired of confusing configuration files and security features you don&amp;rsquo;t need?
 Try uftpd(8)!
  Supports both FTP and TFTP Has no confusing configuration file Listens to port ftp/tcp and tftp/udp found in /etc/services, or custom port(s) Serves files from the ftp user&amp;rsquo;s $HOME, as specified in /etc/passwd, or custom path Can run from inetd(8) or as a standalone daemon Can be built and installed as a .deb file, with debconf support Can run as root, with chroot and privsep, or as a regular user Supports TFTP blocksize negotiation, RFC 2348  Basically, it just works!</description>
@@ -217,8 +298,9 @@ mkdir ~/certs cd ~/certs openssl req -x509 -newkey rsa:4096 -keyout key.pem -out
       <guid>/2017/02/11/running-ikiwiki-in-merecat-httpd/</guid>
       <description>This is a HowTo for setting up ikiwiki with Merecat httpd.
 First install ikiwiki
-sudo apt install ikiwiki libcgi-session-perl libcgi-formbuilder-perl  Follow the steps to setup a new Wiki or Blog. In this example we set up a wiki in our ~/public_html:
-ikiwiki --setup /etc/ikiwiki/auto.setup ... Successfully set up wiki: url: http://localhost/~jocke/wiki srcdir: ~/wiki destdir: ~/public_html/wiki repository: ~/wiki.git To modify settings, edit ~/home.setup and then run: ikiwiki --setup ~/home.setup  By default Merecat has per-user ~/public_html support disabled, this is for safety purposes.</description>
+$ sudo apt install ikiwiki libcgi-session-perl libcgi-formbuilder-perl  Follow the steps to setup a new Wiki or Blog. In this example we set up a wiki in our ~/public_html:
+$ ikiwiki --setup /etc/ikiwiki/auto.setup ... Successfully set up wiki: url: http://localhost/~jocke/wiki srcdir: ~/wiki destdir: ~/public_html/wiki repository: ~/wiki.git  To modify settings, edit ~/home.setup and then run:
+$ ikiwiki --setup ~/home.</description>
     </item>
     
     <item>
@@ -432,46 +514,6 @@ as well as Minecraft server for my kids :)&lt;/p&gt;
     </item>
     
     <item>
-      <title>Multicast routing with PIM-SM over GRE</title>
-      <link>/2016/07/05/multicast-routing-with-pim-sm-over-gre/</link>
-      <pubDate>Tue, 05 Jul 2016 22:04:36 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/2016/07/05/multicast-routing-with-pim-sm-over-gre/</guid>
-      <description>&lt;p&gt;GRE tunnels are useful in many ways.  This blog post shows how to set up
-multicast routing with &lt;a href=&#34;https://github.com/troglobit/pimd/&#34;&gt;pimd&lt;/a&gt; over a
-GRE tunnel.  To achieve this we will also set up OSPF over GRE with
-&lt;a href=&#34;http://www.quagga.net&#34;&gt;Quagga&lt;/a&gt;, because PIM, unlike DVMRP (&lt;code&gt;mrouted&lt;/code&gt;),
-require unicast routing rules to be established.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;        .----{ Intranet }----.
-       /    192.168.1.0/24    \
-      /                        \
- .10 /                          \.20
- +--&#39;---+.1   GRE Tunnel   .2+---`--+
- |      |====================|      |
- |  R1  |   172.16.16.0/30   |  R2  |
- |      |                    |      |
- +--.---+                    +------+
-    | .1                        | .1 
-    |    10.0.1.0/24            |    10.0.2.0/24
-    | .2                        | .2 
- +--&#39;---+                    +--&#39;---+
- |      |                    |      |
- |  C1  |                    |  C2  |
- |      |                    |      |
- +------+                    +------+
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;In this post we are using the home WiFi network, 192.168.1.0/24, to hook
-up the GRE tunnel.  It is just as easy to extend this to a big corporate
-Intranet with more routers between &lt;code&gt;R1&lt;/code&gt; and &lt;code&gt;R2&lt;/code&gt;.  As long as that IT
-department takes care of the unicast routing between &lt;code&gt;R1&lt;/code&gt; and &lt;code&gt;R2&lt;/code&gt; so
-that the GRE tunnel can be established.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Upgrade X1 Carbon BIOS from Linux</title>
       <link>/2016/07/03/upgrade-x1-carbon-bios-from-linux/</link>
       <pubDate>Sun, 03 Jul 2016 09:57:44 +0000</pubDate>
@@ -642,30 +684,6 @@ for your pings to get through, so you need to send an IGMP &amp;ldquo;join&amp;r
 David Stevens and announced in
 &lt;a href=&#34;https://lkml.org/lkml/2004/8/5/143&#34;&gt;this posting to LKML&lt;/a&gt;.  I started
 improving and adding features to it over the years.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Useful UNIX API:s</title>
-      <link>/2015/11/14/useful-unix-api-s/</link>
-      <pubDate>Sat, 14 Nov 2015 11:45:49 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/2015/11/14/useful-unix-api-s/</guid>
-      <description>&lt;p&gt;Had an interesting conversation with a buddy last night.  It started out
-as a shift-reduce problem with Bison and ended up a ping-pong of useful
-UNIX API:s.  We concluded that despite having worked professionally with
-UNIX for over a decade, it is still very satisfying finding gems like
-these.&lt;/p&gt;
-
-&lt;p&gt;Most people are completely unaware they exist and end up rolling their
-own (buggy) implementations.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; This post was initially written Nov 14, 2015.  It was a
-Saturday and I remember being extremely inspired when I wrote it.  As it
-happens, I&amp;rsquo;ve continued adding to it over the years, and still do.  So,
-as of Jul 2, 2017 I&amp;rsquo;m now bumping the modification date each time I add
-something new :-)&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -984,10 +1002,10 @@ of voodoo, like &lt;code&gt;__attribute__ ((unused))&lt;/code&gt; &amp;hellip; s
     
     <item>
       <title>Micro Tetris™</title>
-      <link>/project/tetris/</link>
+      <link>/projects/tetris/</link>
       <pubDate>Thu, 08 Jan 2015 01:50:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/project/tetris/</guid>
+      <guid>/projects/tetris/</guid>
       <description>Micro Tetris &amp;mdash; one of the smallest Tetris implementations in the world! Utilizing only ANSI escape sequences to draw the board, no external library dependencys other than a standard C-library, like uClibc or musl libc. Hence, it is very suitable for small embedded devices in need of an easter egg ;-)
 The game is based on a 1989 International Obfuscated C Code Contest (IOCCC) entry made by John Tromp.</description>
     </item>
@@ -1026,10 +1044,10 @@ available as
     
     <item>
       <title>The original multicast routing daemon</title>
-      <link>/project/mrouted/</link>
+      <link>/projects/mrouted/</link>
       <pubDate>Sun, 28 Dec 2014 16:25:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/project/mrouted/</guid>
+      <guid>/projects/mrouted/</guid>
       <description>mrouted is an implementation of the IPv4 DVMRP multicast routing protocol, RFC 1075. It is capable of turning a UNIX workstation, or an embedded Linux device, into a multicast router with tunnelling support, in order to cross non-multicast-aware routers.
 DVMRP is a distance vector based protocol, derived from RIP, suitable for closely located multicast users in smaller networks. It simply floods all multicast streams to all routers, i.e. implicit join. This is also known as &amp;ldquo;flood and prune&amp;rdquo; since you can opt out from groups you do not want.</description>
     </item>
@@ -1153,8 +1171,9 @@ This release completes the main purpose of uftpd for me, I can now use it as my 
       <pubDate>Sun, 29 Jun 2014 17:01:00 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/about/</guid>
-      <description>Welcome, my name is Joachim Nilsson, I&amp;rsquo;m a hacker and this is my blog! My handle, troglobit, is a tribute to my old friend Henrik Flordal for inspiring me to become a hacker, and is also the password to the first ever Linux server (Henrik&amp;rsquo;s) I got a login to, back in 1995.
-I work at Westermo R&amp;amp;D as a software architect for WeOS, an embedded Linux network operating system for switches and routers.</description>
+      <description>My name is Joachim Nilsson and I&amp;rsquo;m a hacker. troglobit, is a tribute to my old friend Henrik Flordal for inspiring me to become a hacker, and is also the password to the first ever Linux server (Henrik&amp;rsquo;s) I got a login to, back in 1995.
+I work at Westermo R&amp;amp;D as a software architect for WeOS, a Linux-based network operating system for switches and routers.
+In my spare time I write Free/Libre Open Source Software (FLOSS).</description>
     </item>
     
     <item>
@@ -1340,10 +1359,10 @@ All I had to provide was an FTP server and directory:</description>
     
     <item>
       <title>Micro Snake</title>
-      <link>/project/snake/</link>
+      <link>/projects/snake/</link>
       <pubDate>Sun, 07 Jul 2013 10:28:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/project/snake/</guid>
+      <guid>/projects/snake/</guid>
       <description>Welcome to Micro Snake, based on an original implementation by Simon Huggins. This version of the snake game is very small, utilizing only ANSI escape sequences to draw the board, no external library dependencys other than a standard C-library, like uClibc. Hence, it is very suitable for todays small embedded devices.
 The aim of the game is to collect the gold ($), avoid cactuses (*), borders, and colliding with the snake itself.</description>
     </item>
@@ -2106,6 +2125,15 @@ Here goes: when you build the latest Linux 2.6 kernel, checked out from the git 
       <guid>/2006/05/26/no-news-are-good-news/</guid>
       <description>Seriously, it&amp;rsquo;s been one long winter and now finally summer is upon us again. It was about six months ago that I switched jobs and this is the first time for that period that I&amp;rsquo;ve got ten minutes above the surface. The new job is fun but currently takes up too much of my time to be healthy in the long run.
 Today we&amp;rsquo;re going to Stenby TV-service with our broken Hitachi 32&amp;rdquo; TV.</description>
+    </item>
+    
+    <item>
+      <title>Archive page</title>
+      <link>/archive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/archive/</guid>
+      <description></description>
     </item>
     
     <item>

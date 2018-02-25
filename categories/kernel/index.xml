@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Kernel on Troglobit</title>
+    <title>Kernel on </title>
     <link>/categories/kernel/</link>
-    <description>Recent content in Kernel on Troglobit</description>
+    <description>Recent content in Kernel on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
@@ -33,6 +33,15 @@ cd /usr/src cd sys/amd64/conf cat GENERIC | sed &#39;s/GENERIC$/MULTICAST/&#39; 
       <description>This is a very short blog post, mostly intended as a reminder to myself. Basically, there are two methods of adding multicast routing support to the FreeBSD kernel:
  Rebuild the kernel with options MROUTING Load the kernel module: kldload ip_mroute  The kernel rebuild assumes the src.txz set was installed previously.
 cd /usr/src cd sys/amd64/conf cat GENERIC | sed &#39;s/GENERIC$/MULTICAST/&#39; &amp;gt; MULTICAST echo &#39;options MROUTING # Multicast routing&#39; &amp;gt;&amp;gt; MULTICAST echo &#39;options PIM # Enable for pimd&#39; &amp;gt;&amp;gt; MULTICAST cd - make kernel KERNCONF=MULTICAST reboot  That&amp;rsquo;s it.</description>
+    </item>
+    
+    <item>
+      <title>VMWare Kernel Modules for Your New Kernel</title>
+      <link>/2007/03/25/vmware-kernel-modules-for-your-new-kernel/</link>
+      <pubDate>Sun, 25 Mar 2007 23:59:57 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2007/03/25/vmware-kernel-modules-for-your-new-kernel/</guid>
+      <description>My recent post on building Debian kernels misses a subtle but useful point. Namely that of building Debian kernel modules alongside your new kernel. I wanted to run a new kernel with the Ubuntu vmware-player-kernel-source package. I was fumbling around wanting to use module-assistant to do this for me when I stumbled upon on the solution, presented so eloquently by my friend Albert Veli. This gives us a small update to the previous post:</description>
     </item>
     
     <item>

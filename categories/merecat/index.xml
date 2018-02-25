@@ -1,17 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Merecat on Troglobit</title>
+    <title>Merecat on </title>
     <link>/categories/merecat/</link>
-    <description>Recent content in Merecat on Troglobit</description>
+    <description>Recent content in Merecat on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Sun, 12 Feb 2017 00:07:44 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 17 Sep 2017 10:45:37 +0000</lastBuildDate>
     
 	<atom:link href="/categories/merecat/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Packaging Software with Docker</title>
+      <link>/2017/09/17/packaging-software-with-docker/</link>
+      <pubDate>Sun, 17 Sep 2017 10:45:37 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2017/09/17/packaging-software-with-docker/</guid>
+      <description>&lt;p&gt;This post details how to package and deploy software with Docker.  The
+example uses &lt;a href=&#34;https://github.com/troglobit/merecat&#34;&gt;Merecat httpd&lt;/a&gt; on Alpine Linux.  Try it out with:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;docker pull troglobit/merecat
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;See &lt;a href=&#34;https://hub.docker.com/r/troglobit/merecat/&#34;&gt;https://hub.docker.com/r/troglobit/merecat/&lt;/a&gt; for details on how to
+run Merecat httpd in production.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>HTTPS proxy for Merecat httpd</title>
@@ -34,8 +52,9 @@ mkdir ~/certs cd ~/certs openssl req -x509 -newkey rsa:4096 -keyout key.pem -out
       <guid>/2017/02/11/running-ikiwiki-in-merecat-httpd/</guid>
       <description>This is a HowTo for setting up ikiwiki with Merecat httpd.
 First install ikiwiki
-sudo apt install ikiwiki libcgi-session-perl libcgi-formbuilder-perl  Follow the steps to setup a new Wiki or Blog. In this example we set up a wiki in our ~/public_html:
-ikiwiki --setup /etc/ikiwiki/auto.setup ... Successfully set up wiki: url: http://localhost/~jocke/wiki srcdir: ~/wiki destdir: ~/public_html/wiki repository: ~/wiki.git To modify settings, edit ~/home.setup and then run: ikiwiki --setup ~/home.setup  By default Merecat has per-user ~/public_html support disabled, this is for safety purposes.</description>
+$ sudo apt install ikiwiki libcgi-session-perl libcgi-formbuilder-perl  Follow the steps to setup a new Wiki or Blog. In this example we set up a wiki in our ~/public_html:
+$ ikiwiki --setup /etc/ikiwiki/auto.setup ... Successfully set up wiki: url: http://localhost/~jocke/wiki srcdir: ~/wiki destdir: ~/public_html/wiki repository: ~/wiki.git  To modify settings, edit ~/home.setup and then run:
+$ ikiwiki --setup ~/home.</description>
     </item>
     
     <item>

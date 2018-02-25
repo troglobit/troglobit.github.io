@@ -17,23 +17,21 @@
   <meta name="twitter:creator" content="@troglobit" />
   <meta property="og:url" content="/post/" />
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Troglobit" />
+  <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.25.1" />
+  <meta name="generator" content="Hugo 0.35" />
   <link rel="canonical" href="/post/" />
-  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Troglobit">
+  <link rel="alternate" href="/post/index.xml" type="application/rss+xml" title="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="/css/main.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
-  <link rel="stylesheet" href="/css/pygment_highlights.css" />
-  <link rel="stylesheet" href="/css/highlight.min.css" />
+  <link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="/css/syntax.css" /><link rel="stylesheet" href="/css/codeblock.css" />
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
 
 
 
@@ -93,11 +91,17 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Troglobit</a>
+      <a class="navbar-brand" href="/"></a>
     </div>
 
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Archive" href="/archive/">Archive</a>
+            </li>
+          
         
           
             <li>
@@ -145,8 +149,8 @@
     <div class="avatar-container">
       <div class="avatar-img-border">
         
-          <a title="Troglobit" href="/">
-            <img class="avatar-img" src="/images/profile.jpg" alt="Troglobit" />
+          <a title="" href="/">
+            <img class="avatar-img" src="/images/profile.jpg" alt="" />
           </a>
         
       </div>
@@ -180,6 +184,98 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         
         <div class="posts-list">
+          
+            <article class="post-preview">
+              <a href="/2017/02/11/running-ikiwiki-in-merecat-httpd/">
+                <h2 class="post-title">Running ikiwiki in Merecat httpd</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on February 11, 2017
+              </p>
+              <div class="post-entry">
+                
+                  This is a HowTo for setting up ikiwiki with Merecat httpd.
+First install ikiwiki
+$ sudo apt install ikiwiki libcgi-session-perl libcgi-formbuilder-perl  Follow the steps to setup a new Wiki or Blog. In this example we set up a wiki in our ~/public_html:
+$ ikiwiki --setup /etc/ikiwiki/auto.setup ... Successfully set up wiki: url: http://localhost/~jocke/wiki srcdir: ~/wiki destdir: ~/public_html/wiki repository: ~/wiki.git  To modify settings, edit ~/home.setup and then run:
+$ ikiwiki --setup ~/home.
+                  <a href="/2017/02/11/running-ikiwiki-in-merecat-httpd/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="/2017/02/02/emulate-an-actual-mtd-device-in-qemu/">
+                <h2 class="post-title">Emulate an actual MTD device in Qemu</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on February 2, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <p>Having worked with Linux for the last 20 years, and embedded for more
+than ten of them, I&rsquo;ve become quite a fan of virtualization in general
+and <a href="http://qemu.org">Qemu</a> in particular.</p>
+
+<p>Qemu is a fantastic little tool, created by the Open Source superhero
+<a href="http://blog.smartbear.com/careers/fabrice-bellard-portrait-of-a-super-productive-programmer/">Fabrice Bellard</a>.
+It can be used to verify an embedded system without having to deal with
+the problems of actual HW until you really have to.  Don&rsquo;t get me wrong,
+HW excites me like any other nerd, but if the HW is new and shaky it can
+be quite a pain to develop higher level functions.</p>
+
+<p>My holy grail is to have a 100% complete and accurate virtualization
+target per architecture to test my various software projects on.  That&rsquo;s
+why I created <a href="https://github.com/troglobit/troglos">TroglOS</a>.</p>
+
+<p></p>
+                  <a href="/2017/02/02/emulate-an-actual-mtd-device-in-qemu/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="/2017/01/15/wolfenstein-3d-on-retropie/">
+                <h2 class="post-title">Wolfenstein-3D on RetroPie</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on January 15, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <p>The last game I ever played was <a href="https://en.wikipedia.org/wiki/Wolfenstein_3D">Castle Wolfenstein 3D</a>, released in
+1992 for MS-DOS, made by the now legendary id Software.  OK, admittedly
+I&rsquo;ve played other games since then, but I&rsquo;ve never again been so manic
+about a game since Wolfenstein.</p>
+
+<p><img style="width:50%;height:auto;" class="center" src="/images/wolf3d.png"></p>
+
+<p>This post is about how to build, install and set up Wolfenstein 3D on a
+Raspberry Pi running <a href="https://retropie.org.uk/">RetroPie</a> &hellip; on a <a href="https://shop.pimoroni.com/products/picade">Picade</a> :-)</p>
+
+<p></p>
+                  <a href="/2017/01/15/wolfenstein-3d-on-retropie/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
           
             <article class="post-preview">
               <a href="/2017/01/03/trust-bluetooth-4.0-adapter-in-linux/">
@@ -389,110 +485,17 @@ post 😃</p>
 
             </article>
           
-            <article class="post-preview">
-              <a href="/2016/09/02/the-general-idea/">
-                <h2 class="post-title">The General Idea</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on September 2, 2016
-              </p>
-              <div class="post-entry">
-                
-                  OK, so here&rsquo;s the general idea: take one teaspoon of a well equipped SBC with Marvell chips you know well, add an awesome WiFi hotspot with USB connection, stir feverishly for several weekends in a row, then sprinkle some AlpineLinux and a custom kernel on top. Enjoy!
-I have no clue if this will actually work, may even try porting my own little thing called TroglOS to the ClearFog first, I don&rsquo;t know, but it will definitely be awesome!
-                  <a href="/2016/09/02/the-general-idea/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2016/08/18/live-kvm-migration-with-virt-manager/">
-                <h2 class="post-title">Live KVM migration with virt-manager</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on August 18, 2016
-              </p>
-              <div class="post-entry">
-                
-                  <p>With the new servers and my server room shaping up, I&rsquo;ve been working on
-setting up ALL THE THINGS!  I just managed to set up live migration of
-the KVM virtual machines I use for testing my <a href="https://en.wikipedia.org/wiki/Free_and_open-source_software">FLOSS</a> projects.  Here
-is a short writeup of that, just as a reminder for myself.</p>
-
-<h2 id="checklist">Checklist</h2>
-
-<ol>
-<li>Make sure the libvirt versions are the same.  I tried setting up
-migration between CentOS 7.2 and and Ubuntu LTS 16.04 which turned
-out to be a mess of insurmountable incompatibilities.  I&rsquo;ve now gone
-back to run Ubuntu on everything and it all works fine.</li>
-<li>Set up NFS for the backend store of <code>/var/lib/libvirt/images</code>.  Make
-sure to export the share properly, I tried first with my ReadyNAS, but
-couldn&rsquo;t set up root access (defaulted to nobody).</li>
-<li>Set up VM disk caching=none</li>
-<li>Set up VM processor model=default</li>
-<li>Profit</li>
-</ol>
-
-<p>Good Luck! :)</p>
-
-<p></p>
-                  <a href="/2016/08/18/live-kvm-migration-with-virt-manager/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2016/08/13/fake-raid-adventures/">
-                <h2 class="post-title">Fake RAID Adventures</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on August 13, 2016
-              </p>
-              <div class="post-entry">
-                
-                  <p>The other day I got my geeky hands on two old SuperMicro X8STI-F 1U
-servers.  I plan to use them as build and embedded target emulation
-servers for my <a href="https://github.com/troglobit">open source projects</a>
-as well as Minecraft server for my kids :)</p>
-
-<p><img src="http://eitc.in/yahoo_site_admin/assets/docs/Supermicro_SuperServer_SC512L_small.324203750.JPG"></p>
-
-<p></p>
-                  <a href="/2016/08/13/fake-raid-adventures/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
         </div>
         
           <ul class="pager main-pager">
             
               <li class="previous">
-                <a href="/post/page/1">&larr; Newer Posts</a>
+                <a href="/post/page/1/">&larr; Newer Posts</a>
               </li>
             
             
               <li class="next">
-                <a href="/post/page/3">Older Posts &rarr;</a>
+                <a href="/post/page/3/">Older Posts &rarr;</a>
               </li>
             
           </ul>
@@ -541,7 +544,9 @@ as well as Minecraft server for my kids :)</p>
               </li>
           
           <li>
-            <a href="/index.xml" title="RSS">
+            
+            <a href="/post/index.xml" title="RSS">
+            
               <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
@@ -554,20 +559,17 @@ as well as Minecraft server for my kids :)</p>
           
             
               <a href="http://troglobit.com">Joachim Nilsson</a>
-                      
+            
           
-          
-          &nbsp;&bull;&nbsp;
-          2017
 
-          
-            &nbsp;&bull;&nbsp;
-            <a href="/">Troglobit</a>
+          &nbsp;&bull;&nbsp;
+          2018
+
           
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.25.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.35</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>
@@ -579,13 +581,13 @@ as well as Minecraft server for my kids :)</p>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="/js/main.js"></script>
-<script src="/js/highlight.min.js"></script>
-<script> hljs.initHighlightingOnLoad(); </script>
-<script> renderMathInElement(document.body); </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
 <script src="/js/load-photoswipe.js"></script>
+
+
+
 
 
 

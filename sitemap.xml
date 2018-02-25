@@ -3,8 +3,33 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/project/finit/</loc>
-    <lastmod>2017-10-28T12:04:00+02:00</lastmod>
+    <loc>/projects/finit/</loc>
+    <lastmod>2018-02-23T20:16:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2018/02/Slow-Down/</loc>
+    <lastmod>2018-02-15T20:05:25+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/smcroute/</loc>
+    <lastmod>2018-02-11T14:16:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/watchdogd/</loc>
+    <lastmod>2018-02-10T14:52:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2016/07/05/multicast-routing-with-pim-sm-over-gre/</loc>
+    <lastmod>2018-01-23T20:39:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2017/12/Useful-UNIX-APIs/</loc>
+    <lastmod>2017-12-22T10:28:00+00:00</lastmod>
   </url>
   
   <url>
@@ -33,28 +58,23 @@
   </url>
   
   <url>
-    <loc>/project/editline/</loc>
+    <loc>/projects/editline/</loc>
     <lastmod>2017-09-07T01:32:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>/project/inadyn/</loc>
-    <lastmod>2017-08-10T09:42:00+02:00</lastmod>
+    <loc>/projects/inadyn/</loc>
+    <lastmod>2017-08-14T00:23:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>/project/pimd/</loc>
+    <loc>/projects/pimd/</loc>
     <lastmod>2017-07-12T20:17:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>/project/mini-snmpd/</loc>
+    <loc>/projects/mini-snmpd/</loc>
     <lastmod>2017-06-27T10:36:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/smcroute/</loc>
-    <lastmod>2017-06-13T23:15:00+02:00</lastmod>
   </url>
   
   <url>
@@ -68,12 +88,7 @@
   </url>
   
   <url>
-    <loc>/project/watchdogd/</loc>
-    <lastmod>2017-04-09T14:52:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/uftpd/</loc>
+    <loc>/projects/uftpd/</loc>
     <lastmod>2017-03-22T08:00:00+02:00</lastmod>
   </url>
   
@@ -148,11 +163,6 @@
   </url>
   
   <url>
-    <loc>/2016/07/05/multicast-routing-with-pim-sm-over-gre/</loc>
-    <lastmod>2016-07-05T22:04:36+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/2016/07/03/upgrade-x1-carbon-bios-from-linux/</loc>
     <lastmod>2016-07-03T09:57:44+00:00</lastmod>
   </url>
@@ -190,11 +200,6 @@
   <url>
     <loc>/2016/03/07/multicast-testing/</loc>
     <lastmod>2016-03-07T01:06:02+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2015/11/14/useful-unix-api-s/</loc>
-    <lastmod>2015-11-14T11:45:49+00:00</lastmod>
   </url>
   
   <url>
@@ -278,7 +283,7 @@
   </url>
   
   <url>
-    <loc>/project/tetris/</loc>
+    <loc>/projects/tetris/</loc>
     <lastmod>2015-01-08T01:50:00+02:00</lastmod>
   </url>
   
@@ -293,7 +298,7 @@
   </url>
   
   <url>
-    <loc>/project/mrouted/</loc>
+    <loc>/projects/mrouted/</loc>
     <lastmod>2014-12-28T16:25:00+02:00</lastmod>
   </url>
   
@@ -413,7 +418,7 @@
   </url>
   
   <url>
-    <loc>/project/snake/</loc>
+    <loc>/projects/snake/</loc>
     <lastmod>2013-07-07T10:28:00+02:00</lastmod>
   </url>
   
@@ -763,6 +768,12 @@
   </url>
   
   <url>
+    <loc>/</loc>
+    <lastmod>2018-02-23T20:16:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/categories/administration/</loc>
     <lastmod>2013-07-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -781,7 +792,23 @@
   </url>
   
   <url>
+    <loc>/categories/apt/</loc>
+    <lastmod>2017-09-30T12:39:43+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/archive/</loc>
+  </url>
+  
+  <url>
     <loc>/archives/</loc>
+  </url>
+  
+  <url>
+    <loc>/categories/awesome/</loc>
+    <lastmod>2015-11-10T12:14:09+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -797,6 +824,18 @@
   </url>
   
   <url>
+    <loc>/categories/blog/</loc>
+    <lastmod>2014-06-29T14:52:39+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/bluetooth/</loc>
+    <lastmod>2017-01-03T17:03:05+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/categories/bsd/</loc>
     <lastmod>2015-09-27T18:45:00+02:00</lastmod>
     <priority>0</priority>
@@ -805,6 +844,12 @@
   <url>
     <loc>/categories/bzr/</loc>
     <lastmod>2010-07-13T01:56:11+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/c/</loc>
+    <lastmod>2016-10-27T22:22:44+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -822,6 +867,12 @@
   
   <url>
     <loc>/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>/categories/conf/</loc>
+    <lastmod>2014-02-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -850,7 +901,7 @@
   
   <url>
     <loc>/categories/debian/</loc>
-    <lastmod>2015-11-07T12:49:00+02:00</lastmod>
+    <lastmod>2017-09-30T12:39:43+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -862,7 +913,7 @@
   
   <url>
     <loc>/categories/docker/</loc>
-    <lastmod>2016-03-07T01:37:04+00:00</lastmod>
+    <lastmod>2017-09-17T10:45:37+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -885,8 +936,14 @@
   </url>
   
   <url>
+    <loc>/categories/eventloop/</loc>
+    <lastmod>2017-09-19T08:51:38+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/categories/finit/</loc>
-    <lastmod>2015-03-06T22:34:45+00:00</lastmod>
+    <lastmod>2016-09-21T19:08:37+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -933,6 +990,18 @@
   </url>
   
   <url>
+    <loc>/categories/gnu/</loc>
+    <lastmod>2008-07-30T23:53:42+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/hacking/</loc>
+    <lastmod>2015-09-09T21:49:13+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/howtos/</loc>
   </url>
   
@@ -957,6 +1026,12 @@
   <url>
     <loc>/categories/https/</loc>
     <lastmod>2017-02-12T00:07:44+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/icmp/</loc>
+    <lastmod>2016-11-19T23:37:20+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1003,6 +1078,12 @@
   </url>
   
   <url>
+    <loc>/categories/json/</loc>
+    <lastmod>2014-02-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/categories/kernel/</loc>
     <lastmod>2014-09-23T01:55:19+00:00</lastmod>
     <priority>0</priority>
@@ -1010,7 +1091,19 @@
   
   <url>
     <loc>/categories/kvm/</loc>
-    <lastmod>2010-08-29T20:44:34+00:00</lastmod>
+    <lastmod>2016-08-18T20:07:17+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/libev/</loc>
+    <lastmod>2017-09-19T08:51:38+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/license/</loc>
+    <lastmod>2008-07-30T23:53:42+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1028,7 +1121,7 @@
   
   <url>
     <loc>/categories/merecat/</loc>
-    <lastmod>2017-02-12T00:07:44+00:00</lastmod>
+    <lastmod>2017-09-17T10:45:37+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1040,7 +1133,13 @@
   
   <url>
     <loc>/categories/misc/</loc>
-    <lastmod>2013-06-07T00:00:00+00:00</lastmod>
+    <lastmod>2016-04-04T00:14:28+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/modules/</loc>
+    <lastmod>2007-03-25T23:59:57+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1052,7 +1151,7 @@
   
   <url>
     <loc>/categories/multicast/</loc>
-    <lastmod>2016-03-07T01:37:04+00:00</lastmod>
+    <lastmod>2018-01-23T20:39:36+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1063,8 +1162,14 @@
   </url>
   
   <url>
+    <loc>/categories/network/</loc>
+    <lastmod>2009-02-10T21:56:42+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/categories/networking/</loc>
-    <lastmod>2008-10-27T19:50:03+00:00</lastmod>
+    <lastmod>2016-09-02T23:30:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1094,7 +1199,13 @@
   
   <url>
     <loc>/categories/personal/</loc>
-    <lastmod>2009-06-14T21:04:34+00:00</lastmod>
+    <lastmod>2015-11-07T02:32:12+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/pim/</loc>
+    <lastmod>2018-01-23T20:39:36+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1106,25 +1217,25 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2017-09-30T12:39:43+00:00</lastmod>
+    <lastmod>2018-02-15T20:05:25+01:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/programming/</loc>
-    <lastmod>2015-01-12T01:57:40+00:00</lastmod>
+    <lastmod>2017-12-22T10:28:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/project/</loc>
-    <lastmod>2017-10-28T12:04:00+02:00</lastmod>
+    <loc>/projects/</loc>
+    <lastmod>2018-02-23T20:16:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/projects/</loc>
-    <lastmod>2013-08-06T00:00:00+00:00</lastmod>
+    <lastmod>2016-11-19T23:37:20+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1139,8 +1250,26 @@
   </url>
   
   <url>
+    <loc>/categories/raid/</loc>
+    <lastmod>2016-08-13T15:59:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/categories/raspberry-pi/</loc>
     <lastmod>2017-01-15T13:13:15+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/regexp/</loc>
+    <lastmod>2008-07-13T21:38:33+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/reminder/</loc>
+    <lastmod>2009-02-14T21:13:41+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1153,6 +1282,12 @@
   <url>
     <loc>/categories/sandwich/</loc>
     <lastmod>2016-12-11T20:26:12+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/shell/</loc>
+    <lastmod>2010-05-09T19:53:19+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1171,6 +1306,12 @@
   <url>
     <loc>/categories/snmp/</loc>
     <lastmod>2015-11-07T12:49:00+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/spotify/</loc>
+    <lastmod>2015-11-10T12:14:09+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1222,8 +1363,20 @@
   </url>
   
   <url>
+    <loc>/categories/tetris/</loc>
+    <lastmod>2010-08-02T00:56:35+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/categories/tftp/</loc>
     <lastmod>2014-12-21T19:42:17+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/thinkpad/</loc>
+    <lastmod>2016-07-03T09:57:44+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1240,8 +1393,14 @@
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2017-10-28T12:04:00+02:00</lastmod>
+    <loc>/categories/tips/</loc>
+    <lastmod>2016-04-04T00:14:28+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/toolchain/</loc>
+    <lastmod>2016-10-27T22:22:44+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1252,14 +1411,32 @@
   </url>
   
   <url>
+    <loc>/categories/tz/</loc>
+    <lastmod>2013-08-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/categories/ubuntu/</loc>
-    <lastmod>2015-11-07T12:49:00+02:00</lastmod>
+    <lastmod>2017-09-30T12:39:43+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/unix/</loc>
-    <lastmod>2016-07-02T12:54:37+00:00</lastmod>
+    <lastmod>2018-01-23T20:39:36+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/vim/</loc>
+    <lastmod>2008-11-09T00:39:27+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/virt-manager/</loc>
+    <lastmod>2016-08-18T20:07:17+00:00</lastmod>
     <priority>0</priority>
   </url>
   

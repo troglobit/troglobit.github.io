@@ -8,11 +8,11 @@
   <title>System &amp; Process Supervisor for Linux</title>
   <meta property="og:title" content="System &amp; Process Supervisor for Linux" />
   <meta name="twitter:title" content="System &amp; Process Supervisor for Linux" />
-  <meta name="description" content="watchdogd(8) is an advanced system and process supervisor daemon. It can monitor critical system resources, supervise the heartbeat of processes, record deadline transgressions, and reset the system on software lockups.
-When a system comes back up after a reset, watchdogd determines the reset cause and records it in a logfile for later analysis by an operator or network management system (NMS). This information can be used to put the system in an operational safe state, or non-operational safe state.">
-  <meta property="og:description" content="watchdogd(8) is an advanced system and process supervisor daemon. It can monitor critical system resources, supervise the heartbeat of processes, record deadline transgressions, and reset the system on software lockups.
-When a system comes back up after a reset, watchdogd determines the reset cause and records it in a logfile for later analysis by an operator or network management system (NMS). This information can be used to put the system in an operational safe state, or non-operational safe state.">
-  <meta name="twitter:description" content="watchdogd(8) is an advanced system and process supervisor daemon. It can monitor critical system resources, supervise the heartbeat of processes, record deadline transgressions, and reset the system …">
+  <meta name="description" content="watchdogd(8) is an advanced system and process supervisor daemon, primarily intended for embedded Linux and server systems. By default it periodically kicks the system watchdog timer (WDT) to prevent it from resetting the system. In its more advanced guise it monitors critical system resources, supervises the heartbeat of processes, records deadline transgressions, and initiates a controlled reset if needed.
+When a system comes back up after a reset, watchdogd determines the reset cause and records it in a file for later analysis by an operator or network management system (NMS).">
+  <meta property="og:description" content="watchdogd(8) is an advanced system and process supervisor daemon, primarily intended for embedded Linux and server systems. By default it periodically kicks the system watchdog timer (WDT) to prevent it from resetting the system. In its more advanced guise it monitors critical system resources, supervises the heartbeat of processes, records deadline transgressions, and initiates a controlled reset if needed.
+When a system comes back up after a reset, watchdogd determines the reset cause and records it in a file for later analysis by an operator or network management system (NMS).">
+  <meta name="twitter:description" content="watchdogd(8) is an advanced system and process supervisor daemon, primarily intended for embedded Linux and server systems. By default it periodically kicks the system watchdog timer (WDT) to prevent …">
   <meta name="author" content="Joachim Nilsson"/>
   <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="/images/profile.jpg" />
@@ -24,21 +24,19 @@ When a system comes back up after a reset, watchdogd determines the reset cause 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Troglobit" />
 
-  <meta name="generator" content="Hugo 0.25.1" />
+  <meta name="generator" content="Hugo 0.35" />
   <link rel="canonical" href="/project/watchdogd/" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Troglobit">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="/css/main.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
-  <link rel="stylesheet" href="/css/pygment_highlights.css" />
-  <link rel="stylesheet" href="/css/highlight.min.css" />
+  <link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="/css/syntax.css" /><link rel="stylesheet" href="/css/codeblock.css" />
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
 
 
 
@@ -103,6 +101,12 @@ When a system comes back up after a reset, watchdogd determines the reset cause 
 
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Archive" href="/archive/">Archive</a>
+            </li>
+          
         
           
             <li>
@@ -202,14 +206,16 @@ When a system comes back up after a reset, watchdogd determines the reset cause 
 <p><img style="float: right" src="/images/watchdog.png" alt="http://toonclips.com/design/788"
      title="Watch Dog Detective Taking Notes"></p>
 
-<p><code>watchdogd(8)</code> is an advanced system and process supervisor daemon.
-It can monitor critical system resources, supervise the heartbeat of
-processes, record deadline transgressions, and reset the system on
-software lockups.</p>
+<p><code>watchdogd(8)</code> is an advanced system and process supervisor daemon,
+primarily intended for embedded Linux and server systems.  By default it
+periodically kicks the system watchdog timer (WDT) to prevent it from
+resetting the system.  In its more advanced guise it monitors critical
+system resources, supervises the heartbeat of processes, records
+deadline transgressions, and initiates a controlled reset if needed.</p>
 
 <p>When a system comes back up after a reset, <code>watchdogd</code> determines the
-reset cause and records it in a logfile for later analysis by an
-operator or network management system (NMS).  This information can be
+reset cause and records it in a file for later analysis by an operator
+or network management system (NMS).  This information in turn can be
 used to put the system in an operational safe state, or non-operational
 safe state.</p>
 
@@ -217,43 +223,53 @@ safe state.</p>
 
 <p>Most server and laptop motherboards today come equipped with a watchdog
 timer (WDT).  It is a small timer connected to the reset circuitry so
-that it can reset the board if the timer expires.  The system watchdog
-driver, and this daemon, periodically &ldquo;kick&rdquo;, or reset the timer to
-prevent it from firing.</p>
+that it can reset the board if the timer expires.  The WDT driver, and
+this daemon, periodically &ldquo;kick&rdquo; (reset) the timer to prevent it from
+firing.</p>
 
 <p>Most embedded systems utilise watchdog timers as a way to automatically
-recover from malfunctions.</p>
+recover from malfunctions: lock-ups, live-locks, CPU overload.  With a
+bit of logic sprinkled on top the cause can more easily be tracked down.</p>
 
 <p>The Linux kernel provides a common userspace interface <code>/dev/watchdog</code>,
 created automatically when the appropriate watchdog driver is loaded.
-If your board does not have a WDT, the kernel provides a &ldquo;softdog&rdquo;
+If your board does not have a WDT, the kernel provides a <code>softdog.ko</code>
 module which in many cases can be good enough.</p>
 
 <p>The idea of a watchdog daemon in userspace is to run in the background
 of your system.  When there is no more CPU time for the watchdog daemon
 to run it will fail to &ldquo;kick&rdquo; the WDT.  This will in turn cause the WDT
-to reboot the system.  This background process can of course also be
-used to monitor other aspects of the system.</p>
+to reboot the system.  When it does <code>watchdogd</code> have already saved the
+reset cause for your post mortem.</p>
+
+<p>As a background process, <code>watchdogd</code> can of course also be used to
+monitor other aspects of the system &hellip;</p>
 
 <h3 id="what-can-watchdogd-do">What can watchdogd do?</h3>
 
 <p>Without arguments <code>watchdogd</code> runs in the background, monitoring the the
 CPU, and as long as there is CPU time it &ldquo;kicks&rdquo; the WDT chip (via the
-driver).  However, with few command line options it can also monitor
-other aspect of the system, such as:</p>
+driver).  If <code>watchdogd</code> is stopped, or does not get enough CPU time to
+run, the WDT will detect this and reboot the system.  This is the normal
+mode of operation.</p>
+
+<p>With a few lines in <code>/etc/watchdogd.conf</code>, it can also monitor other
+aspects of the system, such as:</p>
 
 <ul>
 <li>Load average</li>
 <li>Memory leaks</li>
 <li>File descriptor leaks</li>
-<li>Process live locks (PMON)</li>
+<li>Process live locks</li>
+<li>Reset counter, for snmpEngineBoots (RFC 2574)</li>
 </ul>
 
 <h2 id="usage">Usage</h2>
 
-<pre><code>watchdogd [-hnsVvx] [-a WARN[,REBOOT]] [-T SEC] [-t SEC] [/dev/watchdog]
+<pre><code>watchdogd [-hnsVx] [-f FILE] [-T SEC] [-t SEC] [/dev/watchdog]
 
 Options:
+  -f, --config=FILE        Use FILE for daemon configuration
   -n, --foreground         Start in foreground (background is default)
   -s, --syslog             Use syslog, even if running in foreground
   -l, --loglevel=LVL       Log level: none, err, info, notice*, debug
@@ -261,29 +277,20 @@ Options:
   -T, --timeout=SEC        HW watchdog timer (WDT) timeout in SEC seconds
   -t, --interval=SEC       WDT kick interval in SEC seconds, default: 10
   -x, --safe-exit          Disable watchdog on exit from SIGINT/SIGTERM
+                           &quot;magic&quot; exit may not be supported by HW/driver
   
-  -a, --load-average=W[,R] Enable load average check WARN,REBOOT
-  -m, --meminfo=W[,R]      Enable memory leak check, WARN,REBOOT
-  -f, --filenr=W[,R]       Enable file descriptor leak check, WARN,REBOOT
-  -p, --pmon[=PRIO]        Enable process monitor, run at elevated RT prio
-                           Default RT prio when active: SCHED_RR @98
-  
-  -v, --version            Display version and exit
+  -V, --version            Display version and exit
   -h, --help               Display this help message and exit
 </code></pre>
 
-<p>By default, with any arguments given on the command line, <code>watchdogd</code>
-opens <code>/dev/watchdog</code>, forks to the background and then tries to to set
-a 20 sec WDT timeout.  It then kicks every 10 sec.  See below, in the
-Operation section, for more information.</p>
+<p>Without any arguments, <code>watchdogd</code> opens <code>/dev/watchdog</code>, forks to the
+background, tries to to set a 20 sec WDT timeout, and then kicks every
+10 sec.  See the <a href="#operation">Operation</a> section for more information.</p>
 
 <p><strong>Example</strong></p>
 
-<pre><code class="language-shell">watchdogd -a 0.8,0.9 -T 120 -t 30 /dev/watchdog2
+<pre><code class="language-shell">watchdogd -T 120 -t 30 /dev/watchdog2
 </code></pre>
-
-<p>Most WDT drivers only support 120 sec as lowest timeout, but <code>watchdogd</code>
-tries to set 20 sec timeout.  Example values above are recommendations.</p>
 
 <p><code>watchdogd</code> runs at the default UNIX priority (nice) level, unless the
 process monitor is activated, in which case it runs at an elevated real
@@ -297,63 +304,93 @@ the WDT timer to the lowest possible value (1 sec), close the connection
 to <code>/dev/watchdog</code>, and wait for WDT reboot.  It waits at most 3x the
 WDT timeout before announcing HW WDT failure and forcing a reboot.</p>
 
-<p><code>watchdogd(8)</code> supports optional monitoring of several system resources.
-First, system load average monitoring can be enabled with <code>-a 0.8,0.9</code>.
-Second, the memory leak detector <code>-m 0.9,0.95</code>.  Third, file descriptor
-leak detector <code>-f 0.8,0.95</code>.  All <em>very</em> useful on an embedded system.</p>
+<p><code>watchdogd(8)</code> supports optional monitoring of several system resources
+that can be enabled in the <code>.conf</code> file.  First, system load average
+monitoring can be enabled with:</p>
 
-<p>The two values, separated by a comma, are the warning and reboot levels
-in percent.  For the loadavg monitoring it is important to know that the
-trigger levels are normalized.  This means <code>watchdogd</code> does not care how
-many CPU cores your system has online.  If the kernel <code>/proc/loadavg</code>
-file shows <code>3.9 3.0 2.5</code> on a four-core CPU, <code>watchdogd</code> will consider
-this as a load of <code>0.98 0.75 0.63</code>, i.e. divided by four.  Only the one
-(1) and five (5) minute average values are used.  For more information
-on the UNIX load average, see this <a href="http://stackoverflow.com/questions/11987495/linux-proc-loadavg">StackOverflow question</a>.</p>
+<pre><code>loadavg {
+    interval = 300       # Every 5 mins
+    warning  = 1.5
+    critical = 2.0
+}
+</code></pre>
+
+<p>Second, the memory leak detector, a value of 1.0 means 100% memory use:</p>
+
+<pre><code>meminfo {
+    interval = 3600       # Every hour
+    warning  = 0.9
+    critical = 0.95
+}
+</code></pre>
+
+<p>Third, file descriptor leak detector:</p>
+
+<pre><code>filenr {
+    interval = 3600       # Every hour
+    warning  = 0.8
+    critical = 0.95
+}
+</code></pre>
+
+<p>All of these monitors can be <em>very</em> useful on an embedded or headless
+system with little or no operator.</p>
+
+<p>The two values, <code>warning</code> and <code>critical</code>, are the warning and reboot
+levels in percent.  The latter is optional, if it is omitted reboot is
+disabled.  A script can also be run instead of reboot, see the <code>.conf</code>
+file for details.</p>
+
+<p>Determining suitable system load average levels is tricky.  It always
+depends on the system and use-case, not just the number of CPU cores.
+Peak loads of 16.00 on an 8 core system may be responsive and still
+useful but 2.00 on a 2 core system may be completely bogged down.  Make
+sure to read up on the subject and thoroughly test your system before
+enabling a reboot trigger value.  <code>watchdgod</code> uses an average of the
+first two load average values, the one (1) and five (5) minute.</p>
 
 <p>The RAM usage monitor only triggers on systems without swap.  This is
 detected by reading the file <code>/proc/meminfo</code>, looking for the
-<code>SwapTotal:</code> value.  For more details on the underlying mechanisms of
-file descriptor usage, see <a href="http://www.cyberciti.biz/tips/linux-procfs-file-descriptors.html">this article</a>.  For more info on the
-details of memory usage, see <a href="http://www.cyberciti.biz/faq/linux-check-memory-usage/">this article</a>.</p>
+<code>SwapTotal:</code> value.</p>
 
-<p><code>watchdogd</code> v2.0 comes with a process monitor, pmon.  It must be enabled
-and a monitored client must connect using the API for pmon to start.  As
-soon pmon starts it raises the real-time priority of watchdogd to 98 to
-be able to ensure proper monitoring of its clients.</p>
+<p><code>watchdogd</code> v2.0 and later comes with a process supervisor (previously
+called pmon).  It is enabled in <code>/etc/watchdogd.conf</code> and a monitored
+processes must connect using the API before the supervisor starts.  When
+it does, the real-time priority of watchdogd is raised to 98 to to
+ensure proper monitoring of all supervised processes.</p>
 
-<h2 id="pmon-api">Pmon API</h2>
+<h2 id="libwdog-api">libwdog API</h2>
 
 <p>To use pmon a client must have its source code instrumented with at
 least a &ldquo;subscribe&rdquo; and a &ldquo;kick&rdquo; call.  Commonly this is achieved by
-adding the <code>wdog_pmon_kick()</code> call to the main event loop.</p>
+adding the <code>wdog_kick2()</code> call to the main event loop.</p>
 
-<p>All API calls, except <code>wdog_pmon_ping()</code>, return POSIX OK(0) or negative
-value with <code>errno</code> set on error.  The <code>wdog_pmon_subscribe()</code> call
-returns a positive integer (including zero) for the watchdog <code>id</code>.</p>
+<p>All API calls, except <code>wdog_ping()</code>, return POSIX OK(0) or negative
+value with <code>errno</code> set on error.  The <code>wdog_subscribe()</code> call returns a
+positive integer (including zero) for the watchdog <code>id</code>.</p>
 
 <pre><code class="language-c">/*
  * Enable or disable watchdogd at runtime.
  */
-int wdog_enable           (int enable);
-int wdog_status           (int *enabled);
+int wdog_enable      (int enable);
+int wdog_status      (int *enabled);
 
 /*
  * Check if watchdogd API is actively responding,
  * returns %TRUE(1) or %FALSE(0)
  */
-int wdog_pmon_ping        (void);
+int wdog_ping        (void);
 
 /*
  * Register with pmon, timeout in msec.  Return value is the `id`
  * to be used with the `ack` in subsequent kick()/unsubscribe()
  */
-int wdog_pmon_subscribe   (char *label, int timeout, int *ack);
-int wdog_pmon_unsubscribe (int id, int ack);
-int wdog_pmon_kick        (int id, int *ack);
+int wdog_subscribe   (char *label, int timeout, int *ack);
+int wdog_unsubscribe (int id, int ack);
+int wdog_kick2       (int id, int *ack);
 </code></pre>
 
-<p>It is highly recommended to use an event loop like libev, <a href="https://github.com/troglobit/libuev/">libuev</a>, or
+<p>It is highly recommended to use an event loop like libev, <a href="https://github.com/martinh/libConfuse/">libuev</a>, or
 similar.  For such libraries one can simply add a timer callback for the
 kick to run periodically to monitor proper operation of the client.</p>
 
@@ -365,13 +402,13 @@ instrument it like this:</p>
 <pre><code class="language-c">int ack, wid;
 
 /* Library will use process' name on NULL first arg. */
-wid = wdog_pmon_subscribe(NULL, 10000, &amp;ack);
+wid = wdog_subscribe(NULL, 10000, &amp;ack);
 if (-1 == wid)
         ;      /* Error handling */
 
 while (1) {
         ...
-        wdog_pmon_kick(wid, &amp;ack);
+        wdog_kick2(wid, &amp;ack);
         ...
 }
 </code></pre>
@@ -411,12 +448,11 @@ full debug output to stderr or the syslog, depending on how you start
 
 <h2 id="build-install">Build &amp; Install</h2>
 
-<p><code>watchdogd</code> is tailored for Linux systems and should build against any
-(old) C libray.  However, <code>watchdogd</code> v2.1 and later require two
-external libraries that were previously a built-in, <a href="https://github.com/troglobit/libite/">libite</a>
-and <a href="https://github.com/troglobit/libuev/">libuEv</a>.  Neither of them should present any surprises, both use
-de facto standard <code>configure</code> scripts and support <code>pkg-config</code> which the
-<code>watchdogd</code> <code>configure</code> script use to locate requried libraries and
+<p><code>watchdogd</code> is tailored for Linux systems and should build against any C
+libray.  v2.1 and later require a few external libraries: <a href="https://github.com/troglobit/libite/">libite</a>,
+<a href="https://github.com/martinh/libConfuse/">libuEv</a>, and [libConfuse][].  Neither should present any surprises,
+all use de facto standard <code>configure</code> scripts and support <code>pkg-config</code>
+which the <code>watchdogd</code> <code>configure</code> script use to locate libraries and
 header files.</p>
 
 <p>Hence, the regular <code>./configure &amp;&amp; make</code> is usually sufficient to build
@@ -450,8 +486,8 @@ the <code>watchdogd</code> project, copyright © <a href="http://toonclips.com/d
 <li><a href="https://github.com/troglobit/watchdogd/blob/master/README.md">README</a></li>
 <li><a href="https://github.com/troglobit/watchdogd/blob/master/TODO.md">TODO</a></li>
 <li><a href="http://github.com/troglobit/watchdogd/issues">Issue Tracker</a></li>
-<li><a href="ftp://ftp.troglobit.com/watchdogd/watchdogd-2.0.1.tar.xz">watchdogd-2.0.1.tar.xz</a>,
-<a href="ftp://ftp.troglobit.com/watchdogd/watchdogd-2.0.1.tar.xz.md5">MD5</a></li>
+<li><a href="ftp://ftp.troglobit.com/watchdogd/watchdogd-3.0.tar.xz">watchdogd-3.0.tar.xz</a>,
+<a href="ftp://ftp.troglobit.com/watchdogd/watchdogd-3.0.tar.xz.md5">MD5</a></li>
 </ul>
 
 <h2 id="contributing">Contributing</h2>
@@ -476,18 +512,21 @@ more details, see the file <a href="https://github.com/troglobit/watchdogd/blob/
 
       </article>
 
-      <ul class="pager blog-pager">
-        
-          <li class="previous">
-            <a href="/project/uftpd/" data-toggle="tooltip" data-placement="top" title="No nonsense FTP/TFTP server">&larr; Previous Post</a>
-          </li>
-        
-        
-          <li class="next">
-            <a href="/project/smcroute/smcroute-conf.html" data-toggle="tooltip" data-placement="top" title="smcroute.conf example">Next Post &rarr;</a>
-          </li>
-        
-      </ul>
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="/project/editline/" data-toggle="tooltip" data-placement="top" title="Minix Editline">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="/project/smcroute/" data-toggle="tooltip" data-placement="top" title="Static Multicast Routing Daemon">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
 
       
 
@@ -535,7 +574,9 @@ more details, see the file <a href="https://github.com/troglobit/watchdogd/blob/
               </li>
           
           <li>
+            
             <a href="/index.xml" title="RSS">
+            
               <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
@@ -548,11 +589,11 @@ more details, see the file <a href="https://github.com/troglobit/watchdogd/blob/
           
             
               <a href="http://troglobit.com">Joachim Nilsson</a>
-                      
+            
           
-          
+
           &nbsp;&bull;&nbsp;
-          2017
+          2018
 
           
             &nbsp;&bull;&nbsp;
@@ -561,7 +602,7 @@ more details, see the file <a href="https://github.com/troglobit/watchdogd/blob/
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.25.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.35</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>
@@ -573,13 +614,13 @@ more details, see the file <a href="https://github.com/troglobit/watchdogd/blob/
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="/js/main.js"></script>
-<script src="/js/highlight.min.js"></script>
-<script> hljs.initHighlightingOnLoad(); </script>
-<script> renderMathInElement(document.body); </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
 <script src="/js/load-photoswipe.js"></script>
+
+
+
 
 
 

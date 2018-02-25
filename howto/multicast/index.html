@@ -27,23 +27,21 @@ For some …">
   <meta name="twitter:creator" content="@troglobit" />
   <meta property="og:url" content="/howto/multicast/" />
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Troglobit" />
+  <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.25.1" />
+  <meta name="generator" content="Hugo 0.35" />
   <link rel="canonical" href="/howto/multicast/" />
-  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Troglobit">
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="/css/main.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
-  <link rel="stylesheet" href="/css/pygment_highlights.css" />
-  <link rel="stylesheet" href="/css/highlight.min.css" />
+  <link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="/css/syntax.css" /><link rel="stylesheet" href="/css/codeblock.css" />
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
 
 
 
@@ -103,11 +101,17 @@ For some …">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Troglobit</a>
+      <a class="navbar-brand" href="/"></a>
     </div>
 
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Archive" href="/archive/">Archive</a>
+            </li>
+          
         
           
             <li>
@@ -155,8 +159,8 @@ For some …">
     <div class="avatar-container">
       <div class="avatar-img-border">
         
-          <a title="Troglobit" href="/">
-            <img class="avatar-img" src="/images/profile.jpg" alt="Troglobit" />
+          <a title="" href="/">
+            <img class="avatar-img" src="/images/profile.jpg" alt="" />
           </a>
         
       </div>
@@ -530,79 +534,65 @@ as with <code>mrouted</code> and <code>pimd</code>.</p>
 <h2 id="faq">FAQ</h2>
 
 <ol>
-<li>It doesn&rsquo;t work?</li>
-</ol>
+<li><p><em>It doesn&rsquo;t work?</em></p>
 
-<p>Check the TTL.</p>
+<p>Check the TTL.</p></li>
 
-<ol>
-<li>Why does the TTL in multicast default to 1?</li>
-</ol>
+<li><p><em>Why does the TTL in multicast default to 1?</em></p>
 
 <p>Because multicast is classified as broadcast, which inherently is
-   dangerous.  Without proper limitation, like switches with support for
-   IGMP Snooping, multicast IS broadcast.</p>
+dangerous.  Without proper limitation, like switches with support for
+IGMP Snooping, multicast IS broadcast.</p></li>
 
-<ol>
-<li>I cannot change the TTL of the multicast sender, what can I do?!</li>
-</ol>
+<li><p><em>I cannot change the TTL of the multicast sender, what can I do?!</em></p>
 
 <p>Ouch, then you may have to use some firewall mangling technique.
-   Here is how you could do it on Linux with iptables:</p>
+Here is how you could do it on Linux with iptables:</p>
 
-<pre><code>    iptables -t mangle -A PREROUTING -d GROUP[/LEN] -j TTL --ttl-set 64
+<pre><code>iptables -t mangle -A PREROUTING -d GROUP[/LEN] -j TTL --ttl-set 64
 </code></pre>
 
 <p>Where <code>GROUP</code> is the multicast group address of the stream you want
-   to change the TTL of, with an optional prefix length <code>LEN</code> if you want
-   to specify a range of groups.  From this <a href="http://www.redhat.com/archives/linux-cluster/2007-September/msg00150.html">RedHat mailing list entry</a>.</p>
+to change the TTL of, with an optional prefix length <code>LEN</code> if you want
+to specify a range of groups.  From this <a href="http://www.redhat.com/archives/linux-cluster/2007-September/msg00150.html">RedHat mailing list entry</a>.</p></li>
 
-<ol>
-<li>I want to use the loopback interface, but it doesn&rsquo;t show in <code>pimd</code>?</li>
-</ol>
+<li><p><em>I want to use the loopback interface, but it doesn&rsquo;t show in <code>pimd</code>?</em></p>
 
 <p>Some interfaces, like <code>lo</code> or <code>tunN</code>, do not have the <code>MULTICAST</code>
-   interface flag set by default.  It should work if you enable it:</p>
+interface flag set by default.  It should work if you enable it:</p>
 
-<pre><code>    ip link set lo multicast on
-    ip link set tun1 multicast on
-</code></pre>
+<pre><code>ip link set lo multicast on
+ip link set tun1 multicast on
+</code></pre></li>
 
-<ol>
-<li>It doesn&rsquo;t work?</li>
-</ol>
+<li><p><em>It still doesn&rsquo;t work?!</em></p>
 
 <p>Check your network topology, maybe a switch between the sender and
-   the receiver doesn&rsquo;t properly support IGMP snooping.</p>
+the receiver doesn&rsquo;t properly support IGMP snooping.</p>
 
 <p>For virtual/cloud setups, see above for disabling IGMP snooping
-   entirely in the Linux kernel.</p>
+entirely in the Linux kernel.</p></li>
 
-<ol>
-<li>The PIM routers seem to have peered, and they list the multicast
-groups I want to forward, the TTL is OK, but I see no traffic?</li>
-</ol>
+<li><p><em>The PIM routers seem to have peered, and they list the multicast
+groups I want to forward, the TTL is OK, but I see no traffic?</em></p>
 
 <p>Could be your underlying routing protocol (RIP/OSPF) does not know
-   the reverse path to the source.  Make sure the sender&rsquo;s network is
-   listed in the routing table on the receiving sides routing table.</p>
+the reverse path to the source.  Make sure the sender&rsquo;s network is
+listed in the routing table on the receiving sides routing table.</p></li>
 
-<ol>
-<li>What&rsquo;s the routing performance of <code>pimd</code>/<code>mrouted</code>/<code>smcroute</code>?</li>
-</ol>
+<li><p><em>What&rsquo;s the routing performance of <code>pimd</code>/<code>mrouted</code>/<code>smcroute</code>?</em></p>
 
 <p>N/A.  Neither of them take active part in the actual forwarding of
-   multicast frames.  This is what the kernel or dedicated routing HW
-   does.  The routing daemons <code>pimd</code>/<code>mrouted</code>/<code>smcroute</code> only
-   manipulate the multicast routing table(s) of the operating system&rsquo;s
-   kernel.</p>
+multicast frames.  This is what the kernel or dedicated routing HW
+does.  The routing daemons <code>pimd</code>/<code>mrouted</code>/<code>smcroute</code> only
+manipulate the multicast routing table(s) of the operating system&rsquo;s
+kernel.</p></li>
 
-<ol>
-<li>Do you have any example of how to set up GRE and <code>pimd</code>?</li>
-</ol>
+<li><p><em>Do you have any example of how to set up GRE and <code>pimd</code>?</em></p>
 
 <p>Yes, for all the gory details see
-   <a href="/blog/2016/07/05/multicast-routing-with-pim-sm-over-gre/">this howto</a></p>
+<a href="/blog/2016/07/05/multicast-routing-with-pim-sm-over-gre/">this howto</a></p></li>
+</ol>
 
 <!--
   -- Local Variables:
@@ -612,18 +602,21 @@ groups I want to forward, the TTL is OK, but I see no traffic?</li>
 
       </article>
 
-      <ul class="pager blog-pager">
-        
-          <li class="previous">
-            <a href="/howto/mrouting-in-freebsd/" data-toggle="tooltip" data-placement="top" title="HowTo: Add Multicast Routing to FreeBSD kernel">&larr; Previous Post</a>
-          </li>
-        
-        
-          <li class="next">
-            <a href="/howto/pimd-on-openbsd/" data-toggle="tooltip" data-placement="top" title="HowTo run pimd on OpenBSD">Next Post &rarr;</a>
-          </li>
-        
-      </ul>
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="/howto/mrouting-in-freebsd/" data-toggle="tooltip" data-placement="top" title="HowTo: Add Multicast Routing to FreeBSD kernel">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="/howto/pimd-on-openbsd/" data-toggle="tooltip" data-placement="top" title="HowTo run pimd on OpenBSD">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
 
       
 
@@ -671,7 +664,9 @@ groups I want to forward, the TTL is OK, but I see no traffic?</li>
               </li>
           
           <li>
+            
             <a href="/index.xml" title="RSS">
+            
               <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
@@ -684,20 +679,17 @@ groups I want to forward, the TTL is OK, but I see no traffic?</li>
           
             
               <a href="http://troglobit.com">Joachim Nilsson</a>
-                      
+            
           
-          
-          &nbsp;&bull;&nbsp;
-          2017
 
-          
-            &nbsp;&bull;&nbsp;
-            <a href="/">Troglobit</a>
+          &nbsp;&bull;&nbsp;
+          2018
+
           
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.25.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.35</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>
@@ -709,13 +701,13 @@ groups I want to forward, the TTL is OK, but I see no traffic?</li>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="/js/main.js"></script>
-<script src="/js/highlight.min.js"></script>
-<script> hljs.initHighlightingOnLoad(); </script>
-<script> renderMathInElement(document.body); </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
 <script src="/js/load-photoswipe.js"></script>
+
+
+
 
 
 

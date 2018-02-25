@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>System &amp; Process Supervisor for Linux</title>
+  <meta property="og:title" content="System &amp; Process Supervisor for Linux" />
+  <meta name="twitter:title" content="System &amp; Process Supervisor for Linux" />
+  <meta name="description" content="watchdogd(8) is an advanced system and process supervisor daemon, primarily intended for embedded Linux and server systems. By default it periodically kicks the system watchdog timer (WDT) to prevent it from resetting the system. In its more advanced guise it monitors critical system resources, supervises the heartbeat of processes, records deadline transgressions, and initiates a controlled reset if needed.
+When a system comes back up after a reset, watchdogd determines the reset cause and records it in a file for later analysis by an operator or network management system (NMS).">
+  <meta property="og:description" content="watchdogd(8) is an advanced system and process supervisor daemon, primarily intended for embedded Linux and server systems. By default it periodically kicks the system watchdog timer (WDT) to prevent it from resetting the system. In its more advanced guise it monitors critical system resources, supervises the heartbeat of processes, records deadline transgressions, and initiates a controlled reset if needed.
+When a system comes back up after a reset, watchdogd determines the reset cause and records it in a file for later analysis by an operator or network management system (NMS).">
+  <meta name="twitter:description" content="watchdogd(8) is an advanced system and process supervisor daemon, primarily intended for embedded Linux and server systems. By default it periodically kicks the system watchdog timer (WDT) to prevent …">
+  <meta name="author" content="Joachim Nilsson"/>
+  <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/images/profile.jpg" />
+  <meta name="twitter:image" content="/images/profile.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@troglobit" />
+  <meta name="twitter:creator" content="@troglobit" />
+  <meta property="og:url" content="/projects/watchdogd/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="" />
+
+  <meta name="generator" content="Hugo 0.35" />
+  <link rel="canonical" href="/projects/watchdogd/" />
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="/css/syntax.css" /><link rel="stylesheet" href="/css/codeblock.css" />
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"></a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Archive" href="/archive/">Archive</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="FTP" href="http://ftp.troglobit.com">FTP</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="GIT" href="http://git.troglobit.com">GIT</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="HowTos" href="/howto/">HowTos</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Projects" href="/project/">Projects</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Resumé" href="http://resume.troglobit.com">Resumé</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="" href="/">
+            <img class="avatar-img" src="/images/profile.jpg" alt="" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="projects-heading">
+              <h1>System &amp; Process Supervisor for Linux</h1>
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p><img style="float: right" src="/images/watchdog.png" alt="http://toonclips.com/design/788"
+     title="Watch Dog Detective Taking Notes"></p>
+
+<p><code>watchdogd(8)</code> is an advanced system and process supervisor daemon,
+primarily intended for embedded Linux and server systems.  By default it
+periodically kicks the system watchdog timer (WDT) to prevent it from
+resetting the system.  In its more advanced guise it monitors critical
+system resources, supervises the heartbeat of processes, records
+deadline transgressions, and initiates a controlled reset if needed.</p>
+
+<p>When a system comes back up after a reset, <code>watchdogd</code> determines the
+reset cause and records it in a file for later analysis by an operator
+or network management system (NMS).  This information in turn can be
+used to put the system in an operational safe state, or non-operational
+safe state.</p>
+
+<h3 id="what-is-a-watchdog-timer">What is a watchdog timer?</h3>
+
+<p>Most server and laptop motherboards today come equipped with a watchdog
+timer (WDT).  It is a small timer connected to the reset circuitry so
+that it can reset the board if the timer expires.  The WDT driver, and
+this daemon, periodically &ldquo;kick&rdquo; (reset) the timer to prevent it from
+firing.</p>
+
+<p>Most embedded systems utilise watchdog timers as a way to automatically
+recover from malfunctions: lock-ups, live-locks, CPU overload.  With a
+bit of logic sprinkled on top the cause can more easily be tracked down.</p>
+
+<p>The Linux kernel provides a common userspace interface <code>/dev/watchdog</code>,
+created automatically when the appropriate watchdog driver is loaded.
+If your board does not have a WDT, the kernel provides a <code>softdog.ko</code>
+module which in many cases can be good enough.</p>
+
+<p>The idea of a watchdog daemon in userspace is to run in the background
+of your system.  When there is no more CPU time for the watchdog daemon
+to run it will fail to &ldquo;kick&rdquo; the WDT.  This will in turn cause the WDT
+to reboot the system.  When it does <code>watchdogd</code> have already saved the
+reset cause for your post mortem.</p>
+
+<p>As a background process, <code>watchdogd</code> can of course also be used to
+monitor other aspects of the system &hellip;</p>
+
+<h3 id="what-can-watchdogd-do">What can watchdogd do?</h3>
+
+<p>Without arguments <code>watchdogd</code> runs in the background, monitoring the the
+CPU, and as long as there is CPU time it &ldquo;kicks&rdquo; the WDT chip (via the
+driver).  If <code>watchdogd</code> is stopped, or does not get enough CPU time to
+run, the WDT will detect this and reboot the system.  This is the normal
+mode of operation.</p>
+
+<p>With a few lines in <code>/etc/watchdogd.conf</code>, it can also monitor other
+aspects of the system, such as:</p>
+
+<ul>
+<li>Load average</li>
+<li>Memory leaks</li>
+<li>File descriptor leaks</li>
+<li>Process live locks</li>
+<li>Reset counter, for snmpEngineBoots (RFC 2574)</li>
+</ul>
+
+<h2 id="usage">Usage</h2>
+
+<pre><code>watchdogd [-hnsVx] [-f FILE] [-T SEC] [-t SEC] [/dev/watchdog]
+
+Options:
+  -f, --config=FILE        Use FILE for daemon configuration
+  -n, --foreground         Start in foreground (background is default)
+  -s, --syslog             Use syslog, even if running in foreground
+  -l, --loglevel=LVL       Log level: none, err, info, notice*, debug
+  
+  -T, --timeout=SEC        HW watchdog timer (WDT) timeout in SEC seconds
+  -t, --interval=SEC       WDT kick interval in SEC seconds, default: 10
+  -x, --safe-exit          Disable watchdog on exit from SIGINT/SIGTERM
+                           &quot;magic&quot; exit may not be supported by HW/driver
+  
+  -V, --version            Display version and exit
+  -h, --help               Display this help message and exit
+</code></pre>
+
+<p>Without any arguments, <code>watchdogd</code> opens <code>/dev/watchdog</code>, forks to the
+background, tries to to set a 20 sec WDT timeout, and then kicks every
+10 sec.  See the <a href="#operation">Operation</a> section for more information.</p>
+
+<p><strong>Example</strong></p>
+
+<pre><code class="language-shell">watchdogd -T 120 -t 30 /dev/watchdog2
+</code></pre>
+
+<p><code>watchdogd</code> runs at the default UNIX priority (nice) level, unless the
+process monitor is activated, in which case it runs at an elevated real
+time priority.</p>
+
+<h2 id="features">Features</h2>
+
+<p>To force a kernel watchdog reboot, <code>watchdogd</code> supports <code>SIGPWR</code>, used
+by some <code>init(1)</code> systems to delegate a reboot.  What it does is to set
+the WDT timer to the lowest possible value (1 sec), close the connection
+to <code>/dev/watchdog</code>, and wait for WDT reboot.  It waits at most 3x the
+WDT timeout before announcing HW WDT failure and forcing a reboot.</p>
+
+<p><code>watchdogd(8)</code> supports optional monitoring of several system resources
+that can be enabled in the <code>.conf</code> file.  First, system load average
+monitoring can be enabled with:</p>
+
+<pre><code>loadavg {
+    interval = 300       # Every 5 mins
+    warning  = 1.5
+    critical = 2.0
+}
+</code></pre>
+
+<p>Second, the memory leak detector, a value of 1.0 means 100% memory use:</p>
+
+<pre><code>meminfo {
+    interval = 3600       # Every hour
+    warning  = 0.9
+    critical = 0.95
+}
+</code></pre>
+
+<p>Third, file descriptor leak detector:</p>
+
+<pre><code>filenr {
+    interval = 3600       # Every hour
+    warning  = 0.8
+    critical = 0.95
+}
+</code></pre>
+
+<p>All of these monitors can be <em>very</em> useful on an embedded or headless
+system with little or no operator.</p>
+
+<p>The two values, <code>warning</code> and <code>critical</code>, are the warning and reboot
+levels in percent.  The latter is optional, if it is omitted reboot is
+disabled.  A script can also be run instead of reboot, see the <code>.conf</code>
+file for details.</p>
+
+<p>Determining suitable system load average levels is tricky.  It always
+depends on the system and use-case, not just the number of CPU cores.
+Peak loads of 16.00 on an 8 core system may be responsive and still
+useful but 2.00 on a 2 core system may be completely bogged down.  Make
+sure to read up on the subject and thoroughly test your system before
+enabling a reboot trigger value.  <code>watchdgod</code> uses an average of the
+first two load average values, the one (1) and five (5) minute.</p>
+
+<p>The RAM usage monitor only triggers on systems without swap.  This is
+detected by reading the file <code>/proc/meminfo</code>, looking for the
+<code>SwapTotal:</code> value.</p>
+
+<p><code>watchdogd</code> v2.0 and later comes with a process supervisor (previously
+called pmon).  It is enabled in <code>/etc/watchdogd.conf</code> and a monitored
+processes must connect using the API before the supervisor starts.  When
+it does, the real-time priority of watchdogd is raised to 98 to to
+ensure proper monitoring of all supervised processes.</p>
+
+<h2 id="libwdog-api">libwdog API</h2>
+
+<p>To use pmon a client must have its source code instrumented with at
+least a &ldquo;subscribe&rdquo; and a &ldquo;kick&rdquo; call.  Commonly this is achieved by
+adding the <code>wdog_kick2()</code> call to the main event loop.</p>
+
+<p>All API calls, except <code>wdog_ping()</code>, return POSIX OK(0) or negative
+value with <code>errno</code> set on error.  The <code>wdog_subscribe()</code> call returns a
+positive integer (including zero) for the watchdog <code>id</code>.</p>
+
+<pre><code class="language-c">/*
+ * Enable or disable watchdogd at runtime.
+ */
+int wdog_enable      (int enable);
+int wdog_status      (int *enabled);
+
+/*
+ * Check if watchdogd API is actively responding,
+ * returns %TRUE(1) or %FALSE(0)
+ */
+int wdog_ping        (void);
+
+/*
+ * Register with pmon, timeout in msec.  Return value is the `id`
+ * to be used with the `ack` in subsequent kick()/unsubscribe()
+ */
+int wdog_subscribe   (char *label, int timeout, int *ack);
+int wdog_unsubscribe (int id, int ack);
+int wdog_kick2       (int id, int *ack);
+</code></pre>
+
+<p>It is highly recommended to use an event loop like libev, <a href="https://github.com/martinh/libConfuse/">libuev</a>, or
+similar.  For such libraries one can simply add a timer callback for the
+kick to run periodically to monitor proper operation of the client.</p>
+
+<h3 id="example">Example</h3>
+
+<p>For other applications, identify your main loop, its max period time and
+instrument it like this:</p>
+
+<pre><code class="language-c">int ack, wid;
+
+/* Library will use process' name on NULL first arg. */
+wid = wdog_subscribe(NULL, 10000, &amp;ack);
+if (-1 == wid)
+        ;      /* Error handling */
+
+while (1) {
+        ...
+        wdog_kick2(wid, &amp;ack);
+        ...
+}
+</code></pre>
+
+<p>This simple example subscribes to the watchdog with a 10 sec timeout.
+The received <code>wid</code> is used in the call to <code>wdog_pmon_kick()</code>, along with
+the received <code>ack</code> value.  Which is changed every time the application
+calls <code>wdog_pmon_kick()</code>.  The application should of course check the
+return value of <code>wdog_pmon_subscribe()</code> for errors, that code is left
+out of the example to make it easier to read.</p>
+
+<p>See also the <a href="https://github.com/troglobit/watchdogd/blob/master/examples/ex1.c">example/ex1.c</a> in the source distribution.  This is
+used by the automatic tests.</p>
+
+<h2 id="operation">Operation</h2>
+
+<p>By default, <code>watchdogd</code> forks off a daemon in the background, opens the
+<code>/dev/watchdog</code> device, attempts to set the default WDT timeout to 20
+seconds and then goes into an endless loop where it kicks the watchdog
+every 10 seconds.</p>
+
+<p>If a device driver does not support setting the WDT timeout, <code>watchdogd</code>
+attempts to query the actual (possibly hard coded) watchdog timeout and
+then uses half that time as the kick interval.</p>
+
+<p>When <code>watchdogd</code> backgrounds itself syslog is implicitly used for all
+informational and debug messages.  If a user requests to run the daemon
+in the foreground <code>watchdogd</code> will also log to <code>STDERR</code> and <code>STDOUT</code>,
+unless the user gives the <code>--syslog</code> argument to force use of syslog.</p>
+
+<h2 id="debugging">Debugging</h2>
+
+<p>The code has both <code>INFO()</code> and <code>DEBUG()</code> statements sprinkled almost
+everywhere.  Use the <code>--loglevel=debug</code> command line option to enable
+full debug output to stderr or the syslog, depending on how you start
+<code>watchdogd</code>.</p>
+
+<h2 id="build-install">Build &amp; Install</h2>
+
+<p><code>watchdogd</code> is tailored for Linux systems and should build against any C
+libray.  v2.1 and later require a few external libraries: <a href="https://github.com/troglobit/libite/">libite</a>,
+<a href="https://github.com/martinh/libConfuse/">libuEv</a>, and [libConfuse][].  Neither should present any surprises,
+all use de facto standard <code>configure</code> scripts and support <code>pkg-config</code>
+which the <code>watchdogd</code> <code>configure</code> script use to locate libraries and
+header files.</p>
+
+<p>Hence, the regular <code>./configure &amp;&amp; make</code> is usually sufficient to build
+<code>watchdogd</code>.  But, if libraries are installed in non-standard locations
+you may need to provide their paths:</p>
+
+<pre><code class="language-shell">PKG_CONFIG_PATH=/opt/lib/pkgconfig:/home/ian/lib/pkgconfig ./configure
+make
+</code></pre>
+
+<p>To build the source from GIT, see below.</p>
+
+<h2 id="origin-references">Origin &amp; References</h2>
+
+<p><code>watchdogd(8)</code> is an improved version of the original, created by
+Michele d&rsquo;Amico and adapted to <a href="http://www.uclinux.org/pub/uClinux/dist/">uClinux-dist</a> by Mike Frysinger.  It
+is maintained by <a href="http://troglobit.com">Joachim Nilsson</a> collaboratively at <a href="http://github.com/troglobit/watchdogd">GitHub</a>.</p>
+
+<p>The <a href="http://www.mail-archive.com/uclinux-dev@uclinux.org/msg04191.html">original code</a> in uClinux-dist is available in the public domain,
+whereas this version is distributed under the ISC license.  See the
+file <a href="https://github.com/troglobit/watchdogd/blob/master/LICENSE">LICENSE</a> for more details on this.</p>
+
+<p>The <a href="https://www.clipartof.com/435776">logo</a>, &ldquo;Watch Dog Detective Taking Notes&rdquo;, is licensed for use by
+the <code>watchdogd</code> project, copyright © <a href="http://toonclips.com/design/788">Ron Leishman</a>.</p>
+
+<p>Issue tracker and GIT repository available at GitHub:</p>
+
+<ul>
+<li><a href="http://github.com/troglobit/watchdogd">Repository</a></li>
+<li><a href="https://github.com/troglobit/watchdogd/blob/master/ChangeLog.md">ChangeLog</a></li>
+<li><a href="https://github.com/troglobit/watchdogd/blob/master/README.md">README</a></li>
+<li><a href="https://github.com/troglobit/watchdogd/blob/master/TODO.md">TODO</a></li>
+<li><a href="http://github.com/troglobit/watchdogd/issues">Issue Tracker</a></li>
+<li><a href="ftp://ftp.troglobit.com/watchdogd/watchdogd-3.0.tar.xz">watchdogd-3.0.tar.xz</a>,
+<a href="ftp://ftp.troglobit.com/watchdogd/watchdogd-3.0.tar.xz.md5">MD5</a></li>
+</ul>
+
+<h2 id="contributing">Contributing</h2>
+
+<p>If you find bugs or want to contribute fixes or features, check out the
+code from GitHub:</p>
+
+<pre><code class="language-shell">git clone https://github.com/troglobit/watchdogd
+cd watchdogd
+./autogen.sh
+</code></pre>
+
+<p>The <code>autogen.sh</code> script runs <code>autoconf</code>, <code>automake</code>, et al to create the
+configure script and such generated files not part of the VCS tree.  For
+more details, see the file <a href="https://github.com/troglobit/watchdogd/blob/master/CONTRIBUTING.md">CONTRIBUTING</a>.</p>
+
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="/projects/editline/" data-toggle="tooltip" data-placement="top" title="Minix Editline">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="/projects/smcroute/" data-toggle="tooltip" data-placement="top" title="Static Multicast Routing Daemon">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:troglobit@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;JoachimNilsson" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/troglobit" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/troglobit" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="/index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="http://troglobit.com">Joachim Nilsson</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2018
+
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.35</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

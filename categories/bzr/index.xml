@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Bzr on Troglobit</title>
+    <title>Bzr on </title>
     <link>/categories/bzr/</link>
-    <description>Recent content in Bzr on Troglobit</description>
+    <description>Recent content in Bzr on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
@@ -44,6 +44,26 @@ laptop&amp;gt; mkdir projectX; cd projectX laptop&amp;gt; git init laptop&amp;gt
       <guid>/2009/06/12/more-about-bzrweb-and-some-about-git/</guid>
       <description>OK, I admit it. I cannot decide what version control system (VCS) to use. I&amp;rsquo;m stuck between the speed and massive snow ball effect of Git and the ease of use and emotional attachment I have to Bazaar.
 I&amp;rsquo;ve been &amp;ldquo;maintaining&amp;rdquo; bzrweb for a while now, not doing a very good job of it though. It&amp;rsquo;s lagging behind considerably to the bzr API. After the upgrade of vmlinux.org to the latest Ubuntu server release bzrweb actually didn&amp;rsquo;t work at all.</description>
+    </item>
+    
+    <item>
+      <title>Bzrweb 0.1.2 Released</title>
+      <link>/2007/07/31/bzrweb-0-dot-1-2-released/</link>
+      <pubDate>Tue, 31 Jul 2007 23:33:01 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2007/07/31/bzrweb-0-dot-1-2-released/</guid>
+      <description>The end of my own &amp;ldquo;summer of code&amp;rdquo; is here. Seriously, this summer I took it upon myself to clean up my act and move whole heartedly to the Bazaar version control system for my private projects. Needless to say, I didn&amp;rsquo;t get far.
+Being quite lazy I haven&amp;rsquo;t upgraded this server yet to the latest shiny Debian 4.0. This made it a bit hard to setup the new shiny Loggerhead web gui (see it in action here) for Bazaar &amp;mdash; so instead I started fixing up the old bzrweb that I already had setup a few years ago.</description>
+    </item>
+    
+    <item>
+      <title>Making bzrweb work again</title>
+      <link>/2007/07/11/making-bzrweb-work-again/</link>
+      <pubDate>Wed, 11 Jul 2007 10:35:00 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2007/07/11/making-bzrweb-work-again/</guid>
+      <description>During the past weekend and the last couple of evenings I&amp;rsquo;ve been studying the Python code in bzrweb &amp;mdash; which I&amp;rsquo;ve been using for online repository browsing. It broke sometime last year due to not keeping up with the development of bzr. Yesterday I got it working again!
+ Browse: http://vmlinux.org/jocke/bzr/ Branch: bzr branch http://vmlinux.org/jocke/bzr/bzrweb  Having only programmed Python very little earlier I must say that it&amp;rsquo;s really easy to get in to.</description>
     </item>
     
   </channel>

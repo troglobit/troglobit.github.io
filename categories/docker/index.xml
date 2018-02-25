@@ -1,17 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Docker on Troglobit</title>
+    <title>Docker on </title>
     <link>/categories/docker/</link>
-    <description>Recent content in Docker on Troglobit</description>
+    <description>Recent content in Docker on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Mon, 07 Mar 2016 01:37:04 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 17 Sep 2017 10:45:37 +0000</lastBuildDate>
     
 	<atom:link href="/categories/docker/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Packaging Software with Docker</title>
+      <link>/2017/09/17/packaging-software-with-docker/</link>
+      <pubDate>Sun, 17 Sep 2017 10:45:37 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2017/09/17/packaging-software-with-docker/</guid>
+      <description>&lt;p&gt;This post details how to package and deploy software with Docker.  The
+example uses &lt;a href=&#34;https://github.com/troglobit/merecat&#34;&gt;Merecat httpd&lt;/a&gt; on Alpine Linux.  Try it out with:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;docker pull troglobit/merecat
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;See &lt;a href=&#34;https://hub.docker.com/r/troglobit/merecat/&#34;&gt;https://hub.docker.com/r/troglobit/merecat/&lt;/a&gt; for details on how to
+run Merecat httpd in production.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Testing multicast with Docker</title>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Fast init for Linux systems</title>
+  <meta property="og:title" content="Fast init for Linux systems" />
+  <meta name="twitter:title" content="Fast init for Linux systems" />
+  <meta name="description" content="Finit is a simple alternative to SysV init and systemd, reverse engineered from the EeePC fastinit ten years ago by Claudio Matsuoka — &ldquo;gaps filled with frog DNA …&rdquo;
+Finit supports runlevels, process monitoring, and starting services on demand using the built-in inetd, or by triggering a condition. E.g., &ldquo;don&rsquo;t start this service until basic networking is available&rdquo;, or &ldquo;wait until syslogd has started&rdquo;.
+For more details, see the online documentation.">
+  <meta property="og:description" content="Finit is a simple alternative to SysV init and systemd, reverse engineered from the EeePC fastinit ten years ago by Claudio Matsuoka — &ldquo;gaps filled with frog DNA …&rdquo;
+Finit supports runlevels, process monitoring, and starting services on demand using the built-in inetd, or by triggering a condition. E.g., &ldquo;don&rsquo;t start this service until basic networking is available&rdquo;, or &ldquo;wait until syslogd has started&rdquo;.
+For more details, see the online documentation.">
+  <meta name="twitter:description" content="Finit is a simple alternative to SysV init and systemd, reverse engineered from the EeePC fastinit ten years ago by Claudio Matsuoka — &ldquo;gaps filled with frog DNA …&rdquo;
+Finit supports …">
+  <meta name="author" content="Joachim Nilsson"/>
+  <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/images/profile.jpg" />
+  <meta name="twitter:image" content="/images/profile.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@troglobit" />
+  <meta name="twitter:creator" content="@troglobit" />
+  <meta property="og:url" content="/projects/finit/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="" />
+
+  <meta name="generator" content="Hugo 0.35" />
+  <link rel="canonical" href="/projects/finit/" />
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="/css/syntax.css" /><link rel="stylesheet" href="/css/codeblock.css" />
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"></a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Archive" href="/archive/">Archive</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="FTP" href="http://ftp.troglobit.com">FTP</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="GIT" href="http://git.troglobit.com">GIT</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="HowTos" href="/howto/">HowTos</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Projects" href="/project/">Projects</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Resumé" href="http://resume.troglobit.com">Resumé</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="" href="/">
+            <img class="avatar-img" src="/images/profile.jpg" alt="" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="projects-heading">
+              <h1>Fast init for Linux systems</h1>
+                
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<p><img class="center noborder" src="/images/finit3.png" style="width: 310px; height: 240px;" alt="Finit: A fast init for Linux" /></p>
+
+<p>Finit is a simple alternative to <a href="https://en.wikipedia.org/wiki/Init">SysV init</a> and <a href="https://www.freedesktop.org/wiki/Software/systemd/">systemd</a>,
+reverse engineered from the EeePC fastinit ten years ago by Claudio
+Matsuoka — &ldquo;gaps filled with frog DNA …&rdquo;</p>
+
+<p>Finit supports runlevels, <a href="https://en.wikipedia.org/wiki/Process_supervision">process monitoring</a>, and starting services
+on demand using the built-in inetd, or by triggering a condition.  E.g.,
+<em>&ldquo;don&rsquo;t start this service until basic networking is available&rdquo;</em>, or
+<em>&ldquo;wait until syslogd has started&rdquo;</em>.</p>
+
+<p>For more details, see the online <a href="https://github.com/troglobit/finit/blob/master/README.md">documentation</a>.</p>
+
+<h2 id="example">Example</h2>
+
+<p><a href="https://github.com/troglobit/troglos">TroglOS</a> provides an example of how to boot an embedded system with
+Finit, as well as extend it with plugins, or replace any default plugin.
+TroglOS use an <a href="https://github.com/troglobit/troglos/blob/master/packages/finit/plugins/mtd.c">mtd.so</a> plugin to handle uninitialized flash:</p>
+
+<p><img class="center" src="/images/finit3-screenshot.png" alt="Finit Screenshot" style="width: 472px; height: 422px;"></p>
+
+<p>For more examples, including sample configurations for Debian, Void, and
+Alpine Linux, see the <a href="https://github.com/troglobit/finit/tree/master/contrib">GitHub finit/contrib/ section</a>.</p>
+
+<h2 id="configuration">Configuration</h2>
+
+<p>The following is an example of <code>/etc/finit.conf</code>.  It can be split up in
+per-service <code>.conf</code> files in <code>/etc/finit.d/</code>, useful for distributions
+and to simplify changing service configuration at runtime.</p>
+
+<pre><code class="language-conf"># /etc/finit.conf - System bootstrap for TroglOS
+
+# System hostname is set from /etc/hostname
+#host default
+
+# Default runlevel is 2
+#runlevel 2
+
+# Launch bootstrap 'S' services
+service [S12345] /sbin/watchdogd -T 16 -t 2 -F /dev/watchdog      -- System watchdog daemon
+service [S12345] /sbin/syslogd -n -b 3 -D                         -- System log daemon
+service [S12345] /sbin/klogd -n                                   -- Kernel log daemon
+
+# Services must not daemonize themselves, look for -n, --foreground or
+# similar switches to prevent them from forking to the background
+#service :1 [2345] &lt;net/eth1/up&gt;       /sbin/dropbear -R -F -p 22  -- SSH daemon (LAN)
+#service :2  [345] &lt;net/route/default&gt; /sbin/dropbear -R -F -p 222 -- SSH daemon (WAN)
+#service    [2345]                     /sbin/telnetd -F            -- Telnet daemon
+
+# Finit understands /etc/network/interfaces on Debian/BusyBox systems
+# on other systems you can use the `network SCRIPT` stanza or a simple
+# run or task stanza to run the necessary scripts.
+#network /etc/init.d/networking
+
+# System patch or extension scripts, see run-parts(8), built-in support in Finit.
+# You can also use /etc/rc.local for smaller things.
+#runparts /mnt/start.d
+
+# Inetd services
+# Allow telnet on standard port only if not from WAN (eth0)
+# Allow telnet onport 2323 from WAN (don't do this kids)
+# Built-in rdate service also available on custom port 3737, notice internal.time
+inetd ftp/tcp              nowait [2345] /sbin/uftpd -i -f       -- FTP daemon
+inetd tftp/udp               wait [2345] /sbin/uftpd -i -y       -- TFTP daemon
+inetd time/udp               wait [2345] internal                -- UNIX rdate service
+inetd time/tcp             nowait [2345] internal                -- UNIX rdate service
+inetd 3737/tcp             nowait [2345] internal.time           -- UNIX rdate service
+#inetd 2323/tcp@eth0       nowait [2345] /sbin/telnetd -i -F     -- Telnet daemon (WAN)
+inetd telnet/tcp@*,!eth0   nowait [2345] /sbin/telnetd -i -F     -- Telnet daemon (LAN)
+inetd 222/tcp@eth0         nowait [2345] /sbin/dropbear -i -R -F -- SSH daemon (WAN)
+inetd ssh/tcp@*,!eth0      nowait [2345] /sbin/dropbear -i -R -F -- SSH daemon (LAN)
+
+# Allow login on ttyUSB0, for systems with no dedicated console port
+tty [12345] /dev/ttyAMA0 115200 vt100 noclear
+tty  [2345] /dev/ttyUSB0 115200 vt100 noclear
+
+# Systems using a serial console can use this arch. neutral variant
+#tty [12345] @console 115200 linux noclear
+</code></pre>
+
+<p>Finit configuration files in <code>/etc/finit.d/</code> are monitored for changes,
+if file is changed and the user calls <code>initctl reload</code>, that program is
+reloaded (<code>SIGHUP</code>:ed, or stop-started depending on the <code>&lt;!&gt;</code> in the
+service declaration.).</p>
+
+<h2 id="commands">Commands</h2>
+
+<p>The familiar <code>shutdown</code>, <code>reboot</code>, <code>poweroff</code>, and <code>halt</code> commands are
+provided by Finit, as is the traditional <code>telinit</code> command.  In addition
+to that there is also the more modern <code>initctl</code> tool:</p>
+
+<pre><code class="language-sh">~ $ initctl status -v
+1       running  476     [S12345----]  /sbin/watchdog -T 16 -t 2 -F /dev/watchdog
+2       running  477     [S12345----]  /sbin/syslogd -n -b 3 -D
+3       running  478     [S12345----]  /sbin/klogd -n
+4:1       inetd  0       [--2345----]  internal time allow *:37
+4:2       inetd  0       [--2345----]  internal time allow *:37
+4:3       inetd  0       [--2345----]  internal 3737 allow *:3737
+5:1       inetd  0       [--2345----]  /sbin/telnetd allow *:23 deny eth0,eth1
+6:1       inetd  0       [---345----]  /sbin/dropbear allow eth0:222
+6:2       inetd  0       [---345----]  /sbin/dropbear allow *:22 deny eth0
+</code></pre>
+
+<p>For details, see the <a href="https://github.com/troglobit/finit/blob/master/README.md">documentation</a> and the online help <code>-h</code> to
+each tool.</p>
+
+<h2 id="origin">Origin</h2>
+
+<p>This project is the continuation of the <a href="http://helllabs.org/finit/">original finit</a> by Claudio
+Matsuoka, which was reverse engineered from syscalls of the
+<a href="http://wiki.eeeuser.com/boot_process:the_boot_process">EeePC fastinit</a> daemon.</p>
+
+<p>Please file bug reports, clone it, or send pull requests for bug fixes
+and proposed extensions using GitHub:</p>
+
+<ul>
+<li><a href="https://github.com/troglobit/finit">Repository</a></li>
+<li><a href="https://github.com/troglobit/finit/issues">Issue Tracker</a></li>
+<li><a href="https://github.com/troglobit/finit/blob/master/README.md">README</a></li>
+<li><a href="https://github.com/troglobit/finit/blob/master/TODO.md">TODO</a></li>
+<li><a href="https://github.com/troglobit/finit/blob/master/ChangeLog.md">ChangeLog</a></li>
+<li><a href="ftp://ftp.troglobit.com/finit/finit-3.1.tar.xz">finit-3.1.tar.xz</a>,
+<a href="ftp://ftp.troglobit.com/finit/finit-3.1.tar.xz.md5">MD5</a></li>
+</ul>
+
+<p>See also the <a href="http://freecode.com/projects/finit">Free(code) page</a>.</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="/projects/smcroute/" data-toggle="tooltip" data-placement="top" title="Static Multicast Routing Daemon">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:troglobit@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;JoachimNilsson" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/troglobit" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/troglobit" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="/index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="http://troglobit.com">Joachim Nilsson</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2018
+
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.35</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vim on </title>
+    <link>/categories/vim/</link>
+    <description>Recent content in Vim on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <lastBuildDate>Sun, 09 Nov 2008 00:39:27 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/vim/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The joy of colors</title>
+      <link>/2008/11/09/the-joy-of-colors/</link>
+      <pubDate>Sun, 09 Nov 2008 00:39:27 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2008/11/09/the-joy-of-colors/</guid>
+      <description>Ever so often, as I have mentioned before, I lose myself in trying to find new ways of working and doing my daily tasks. One such digression is the topic of editors. I mainly use GNU Emacs for development and other major tasks, for everything else I use Vim.
+Vim is quick to start, capable, good looking and easy to use, contrary to other vi implementations. (Most notably nvi, which I hate with a passion!</description>
+    </item>
+    
+  </channel>
+</rss>

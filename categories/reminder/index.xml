@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reminder on </title>
+    <link>/categories/reminder/</link>
+    <description>Recent content in Reminder on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <lastBuildDate>Sat, 14 Feb 2009 21:13:41 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/reminder/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Reminder to Self</title>
+      <link>/2009/02/14/reminder-to-self/</link>
+      <pubDate>Sat, 14 Feb 2009 21:13:41 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2009/02/14/reminder-to-self/</guid>
+      <description>How to recode AVI-files to be able to write them to a Video CD.
+ffmpeg -i original.avi -target pal-vcd copy.mpg vcdimager -t vcd1 -l &amp;quot;Title&amp;quot; -c vcd.cue -b vcd.bin copy.mpg cdrdao write --device /dev/cdrw vcd.cue  Note: vcdimager is able to take multiple .mpg files as argument, very useful when burning multiple family videos to the same disc!
+Tip from Johan Risberg on how to be able to reattach a UTF-8 Linux screen session from Cygwin.</description>
+    </item>
+    
+  </channel>
+</rss>

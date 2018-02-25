@@ -8,20 +8,30 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Sat, 28 Oct 2017 12:04:00 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 11 Feb 2018 14:16:00 +0200</lastBuildDate>
     
 	<atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Fast init for Linux systems</title>
-      <link>/project/finit/</link>
-      <pubDate>Sat, 28 Oct 2017 12:04:00 +0200</pubDate>
+      <title>Static Multicast Routing Daemon</title>
+      <link>/project/smcroute/</link>
+      <pubDate>Sun, 11 Feb 2018 14:16:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/project/finit/</guid>
-      <description>Finit is a simple alternative to SysV init and systemd, reverse engineered from the EeePC fastinit ten years ago by Claudio Matsuoka — &amp;ldquo;gaps filled with frog DNA …&amp;rdquo;
-Finit supports runlevels, process monitoring, and starting services on demand using the built-in inetd, or by triggering a condition. E.g., &amp;ldquo;don&amp;rsquo;t start this service until basic networking is available&amp;rdquo;, or &amp;ldquo;wait until syslogd has started&amp;rdquo;.
-For more details, see the online documentation.</description>
+      <guid>/project/smcroute/</guid>
+      <description>SMCRoute is a daemon and command line tool to manipulate the multicast routing table in the UNIX kernel. Both FreeBSD and Linux kernels are supported, but it may work on other systems as well.
+SMCRoute can be used as an alternative to dynamic multicast routing daemons like mrouted or pimd when (only) static multicast routes should be maintained and/or no proper IGMP signalling exists.
+Features  Configuration file support, /etc/smcroute.</description>
+    </item>
+    
+    <item>
+      <title>System &amp; Process Supervisor for Linux</title>
+      <link>/project/watchdogd/</link>
+      <pubDate>Sat, 10 Feb 2018 14:52:00 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/project/watchdogd/</guid>
+      <description>watchdogd(8) is an advanced system and process supervisor daemon, primarily intended for embedded Linux and server systems. By default it periodically kicks the system watchdog timer (WDT) to prevent it from resetting the system. In its more advanced guise it monitors critical system resources, supervises the heartbeat of processes, records deadline transgressions, and initiates a controlled reset if needed.
+When a system comes back up after a reset, watchdogd determines the reset cause and records it in a file for later analysis by an operator or network management system (NMS).</description>
     </item>
     
     <item>
@@ -37,10 +47,10 @@ The small size (&amp;lt;30k), lack of dependencies (no ncurses needed!) and the 
     <item>
       <title>Small and Simple DDNS Client</title>
       <link>/project/inadyn/</link>
-      <pubDate>Thu, 10 Aug 2017 09:42:00 +0200</pubDate>
+      <pubDate>Mon, 14 Aug 2017 00:23:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/project/inadyn/</guid>
-      <description>Inadyn is a small and simple Dynamic DNS, DDNS, client with HTTPS support. It is commonly available in many GNU/Linux distributions, used in off-the-shelf routers and Internet gateways to automate the task of keeping your DNS record up to date with any IP address changes from your ISP. It can also be used in installations with redundant (backup) connections to the Internet.
+      <description>In-a-dyn is a small and simple Dynamic DNS, DDNS, client with HTTPS support. It is commonly available in many GNU/Linux distributions, used in off-the-shelf routers and Internet gateways to automate the task of keeping your DNS record up to date with any IP address changes from your ISP. It can also be used in installations with redundant (backup) connections to the Internet.
 Supported Providers The following is a curated list of some of the natively supported DDNS providers.</description>
     </item>
     
@@ -66,33 +76,12 @@ Features:
     </item>
     
     <item>
-      <title>Static Multicast Routing Daemon</title>
-      <link>/project/smcroute/</link>
-      <pubDate>Tue, 13 Jun 2017 23:15:00 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/project/smcroute/</guid>
-      <description>SMCRoute is a daemon and command line tool to manipulate the multicast routing table in the UNIX kernel. Both FreeBSD and Linux kernels are supported, but it may work on other systems as well.
-SMCRoute can be used as an alternative to dynamic multicast routing daemons like mrouted or pimd when (only) static multicast routes should be maintained and/or no proper IGMP signalling exists.
-Features  Configuration file support, /etc/smcroute.</description>
-    </item>
-    
-    <item>
       <title>smcroute.conf example</title>
       <link>/project/smcroute/smcroute-conf.html</link>
       <pubDate>Tue, 13 Jun 2017 23:15:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/project/smcroute/smcroute-conf.html</guid>
       <description>&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>System &amp; Process Supervisor for Linux</title>
-      <link>/project/watchdogd/</link>
-      <pubDate>Sun, 09 Apr 2017 14:52:00 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/project/watchdogd/</guid>
-      <description>watchdogd(8) is an advanced system and process supervisor daemon. It can monitor critical system resources, supervise the heartbeat of processes, record deadline transgressions, and reset the system on software lockups.
-When a system comes back up after a reset, watchdogd determines the reset cause and records it in a logfile for later analysis by an operator or network management system (NMS). This information can be used to put the system in an operational safe state, or non-operational safe state.</description>
     </item>
     
     <item>

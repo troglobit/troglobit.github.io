@@ -14,23 +14,23 @@ GRE tunnel.  To achieve this we will also set up OSPF over GRE with
 Quagga, because PIM, unlike DVMRP (mrouted),
 require unicast routing rules to be established.
 
-        .----{ Intranet }----.
-       /    192.168.1.0/24    \
-      /                        \
- .10 /                          \.20
- &#43;--&#39;---&#43;.1   GRE Tunnel   .2&#43;---`--&#43;
- |      |====================|      |
- |  R1  |   172.16.16.0/30   |  R2  |
- |      |                    |      |
- &#43;--.---&#43;                    &#43;------&#43;
-    | .1                        | .1 
-    |    10.0.1.0/24            |    10.0.2.0/24
-    | .2                        | .2 
- &#43;--&#39;---&#43;                    &#43;--&#39;---&#43;
- |      |                    |      |
- |  C1  |                    |  C2  |
- |      |                    |      |
- &#43;------&#43;                    &#43;------&#43;
+       .----{ Intranet }----.
+      /    192.168.1.0/24    \
+     /                        \
+.10 /                          \.20
+.--&#39;---. .1  GRE Tunnel  .2 .---`--.
+|      |====================|      |
+|  R1  |   172.16.16.0/30   |  R2  |
+|      |                    |      |
+&#39;--.---&#39;                    &#39;------&#39;
+   | .1                        | .1 
+   |    10.0.1.0/24            |    10.0.2.0/24
+   | .2                        | .2 
+.--&#39;---.                    .--&#39;---.
+|      |                    |      |
+|  C1  |                    |  C2  |
+|      |                    |      |
+&#39;------&#39;                    &#39;------&#39;
 
 
 In this post we are using the home WiFi network, 192.168.1.0/24, to hook
@@ -46,23 +46,23 @@ GRE tunnel.  To achieve this we will also set up OSPF over GRE with
 Quagga, because PIM, unlike DVMRP (mrouted),
 require unicast routing rules to be established.
 
-        .----{ Intranet }----.
-       /    192.168.1.0/24    \
-      /                        \
- .10 /                          \.20
- &#43;--&#39;---&#43;.1   GRE Tunnel   .2&#43;---`--&#43;
- |      |====================|      |
- |  R1  |   172.16.16.0/30   |  R2  |
- |      |                    |      |
- &#43;--.---&#43;                    &#43;------&#43;
-    | .1                        | .1 
-    |    10.0.1.0/24            |    10.0.2.0/24
-    | .2                        | .2 
- &#43;--&#39;---&#43;                    &#43;--&#39;---&#43;
- |      |                    |      |
- |  C1  |                    |  C2  |
- |      |                    |      |
- &#43;------&#43;                    &#43;------&#43;
+       .----{ Intranet }----.
+      /    192.168.1.0/24    \
+     /                        \
+.10 /                          \.20
+.--&#39;---. .1  GRE Tunnel  .2 .---`--.
+|      |====================|      |
+|  R1  |   172.16.16.0/30   |  R2  |
+|      |                    |      |
+&#39;--.---&#39;                    &#39;------&#39;
+   | .1                        | .1 
+   |    10.0.1.0/24            |    10.0.2.0/24
+   | .2                        | .2 
+.--&#39;---.                    .--&#39;---.
+|      |                    |      |
+|  C1  |                    |  C2  |
+|      |                    |      |
+&#39;------&#39;                    &#39;------&#39;
 
 
 In this post we are using the home WiFi network, 192.168.1.0/24, to hook
@@ -85,23 +85,21 @@ Quagga, because PIM, …">
   <meta name="twitter:creator" content="@troglobit" />
   <meta property="og:url" content="/2016/07/05/multicast-routing-with-pim-sm-over-gre/" />
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Troglobit" />
+  <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.25.1" />
+  <meta name="generator" content="Hugo 0.35" />
   <link rel="canonical" href="/2016/07/05/multicast-routing-with-pim-sm-over-gre/" />
-  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Troglobit">
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="/css/main.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
-  <link rel="stylesheet" href="/css/pygment_highlights.css" />
-  <link rel="stylesheet" href="/css/highlight.min.css" />
+  <link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="/css/syntax.css" /><link rel="stylesheet" href="/css/codeblock.css" />
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
 
 
 
@@ -161,11 +159,17 @@ Quagga, because PIM, …">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Troglobit</a>
+      <a class="navbar-brand" href="/"></a>
     </div>
 
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Archive" href="/archive/">Archive</a>
+            </li>
+          
         
           
             <li>
@@ -213,8 +217,8 @@ Quagga, because PIM, …">
     <div class="avatar-container">
       <div class="avatar-img-border">
         
-          <a title="Troglobit" href="/">
-            <img class="avatar-img" src="/images/profile.jpg" alt="Troglobit" />
+          <a title="" href="/">
+            <img class="avatar-img" src="/images/profile.jpg" alt="" />
           </a>
         
       </div>
@@ -248,7 +252,11 @@ Quagga, because PIM, …">
                 
                 
                   <span class="post-meta">
-  Posted on July 5, 2016
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on January 23, 2018
+  
+  
   
 </span>
 
@@ -273,23 +281,23 @@ GRE tunnel.  To achieve this we will also set up OSPF over GRE with
 <a href="http://www.quagga.net">Quagga</a>, because PIM, unlike DVMRP (<code>mrouted</code>),
 require unicast routing rules to be established.</p>
 
-<pre><code>        .----{ Intranet }----.
-       /    192.168.1.0/24    \
-      /                        \
- .10 /                          \.20
- +--'---+.1   GRE Tunnel   .2+---`--+
- |      |====================|      |
- |  R1  |   172.16.16.0/30   |  R2  |
- |      |                    |      |
- +--.---+                    +------+
-    | .1                        | .1 
-    |    10.0.1.0/24            |    10.0.2.0/24
-    | .2                        | .2 
- +--'---+                    +--'---+
- |      |                    |      |
- |  C1  |                    |  C2  |
- |      |                    |      |
- +------+                    +------+
+<pre><code>       .----{ Intranet }----.
+      /    192.168.1.0/24    \
+     /                        \
+.10 /                          \.20
+.--'---. .1  GRE Tunnel  .2 .---`--.
+|      |====================|      |
+|  R1  |   172.16.16.0/30   |  R2  |
+|      |                    |      |
+'--.---'                    '------'
+   | .1                        | .1 
+   |    10.0.1.0/24            |    10.0.2.0/24
+   | .2                        | .2 
+.--'---.                    .--'---.
+|      |                    |      |
+|  C1  |                    |  C2  |
+|      |                    |      |
+'------'                    '------'
 </code></pre>
 
 <p>In this post we are using the home WiFi network, 192.168.1.0/24, to hook
@@ -302,7 +310,7 @@ that the GRE tunnel can be established.</p>
 
 <p>Now, on router R1 we set up the first GRE tunnel endpoint:</p>
 
-<pre><code>ip tunnel add gre0 mode gre remote 192.168.1.20 local 192.168.1.10 ttl 64
+<pre><code class="language-sh">ip tunnel add gre0 mode gre remote 192.168.1.20 local 192.168.1.10 ttl 64
 ip link set gre0 multicast on
 ip link set gre0 up
 ip addr add 172.16.16.1/30 dev gre0
@@ -315,7 +323,7 @@ GRE interface, it is not enabled by default in Linux.</p>
 
 <p>On router <code>R2</code> we can now set up the other side of the GRE tunnel:</p>
 
-<pre><code>ip tunnel add gre0 mode gre remote 192.168.1.10 local 192.168.1.20 ttl 64
+<pre><code class="language-sh">ip tunnel add gre0 mode gre remote 192.168.1.10 local 192.168.1.20 ttl 64
 ip link set gre0 multicast on
 ip link set gre0 up
 ip addr add 172.16.16.2/30 dev gre0
@@ -324,7 +332,7 @@ ip addr add 172.16.16.2/30 dev gre0
 <p>Setup of OSPF in Debian or Ubuntu distributions is only an <code>apt-get</code>
 away followed by enabling the zebra and ospf daemons:</p>
 
-<pre><code>sudo apt-get install quagga
+<pre><code class="language-sh">sudo apt-get install quagga
 sudo editor /etc/quagga/daemons
 </code></pre>
 
@@ -335,14 +343,14 @@ LAN interfaces towards <code>C1</code> and <code>C2</code> (in case we want to e
 example later).  In our setup the routers use <code>wlan0</code> to connect to the
 intranet.  We can use the sample configuration files to start from:</p>
 
-<pre><code>sudo cp /usr/share/doc/quagga/examples/zebra.conf.sample /etc/quagga/zebra.conf
+<pre><code class="language-sh">sudo cp /usr/share/doc/quagga/examples/zebra.conf.sample /etc/quagga/zebra.conf
 sudo cp /usr/share/doc/quagga/examples/ospfd.conf.sample /etc/quagga/ospfd.conf
 </code></pre>
 
 <p>The <code>zebra.conf</code> can be left as-is, just edit the <code>ospfd.conf</code> to look
 like this:</p>
 
-<pre><code>hostname ospfd
+<pre><code class="language-conf">hostname ospfd
 password zebra
 router ospf
     passive-interface wlan0
@@ -359,7 +367,7 @@ inspect the kernel routing table with <code>route -n</code>.  Use <code>tracerou
 confirm the traffic between clients do traverse the GRE tunnel and not
 over the Intranet.</p>
 
-<pre><code>root@C1:~$ traceroute 10.0.2.2
+<pre><code class="language-sh">root@C1:~$ traceroute 10.0.2.2
 traceroute to 10.0.2.2 (10.0.2.2), 30 hops max, 60 byte packets
  1  10.0.1.1 (10.0.1.1)  0.427 ms  0.384 ms  0.309 ms
  2  172.16.16.2 (172.16.16.2)  3.135 ms  4.724 ms  5.786 ms
@@ -370,7 +378,7 @@ traceroute to 10.0.2.2 (10.0.2.2), 30 hops max, 60 byte packets
 talking on <code>wlan0</code>, so add the following to the default <code>pimd.conf</code>,
 which can otherwise be left as-is:</p>
 
-<pre><code>phyint wlan0 disable
+<pre><code class="language-conf">phyint wlan0 disable
 </code></pre>
 
 <p>In our case the routers have many interfaces, so we disable <em>all</em>
@@ -378,7 +386,7 @@ interfaces using the <code>-N</code> switch to <code>pimd</code> and instead onl
 interfaces we are intrested in, the GRE tunnel and the client LAN
 interface, <code>eth0</code>:</p>
 
-<pre><code>phyint eth0 enable
+<pre><code class="language-conf">phyint eth0 enable
 phyint gre0 enable
 </code></pre>
 
@@ -386,7 +394,7 @@ phyint gre0 enable
 Now start pimd on each router, use the debug mode and run in foreground
 first to see what happens:</p>
 
-<pre><code>root@R1:~$ pimd -N -f -d
+<pre><code class="language-sh">root@R1:~$ pimd -N -f -d
 debug level 0xffffffff (dvmrp_detail,dvmrp_prunes,dvmrp_routes,dvmrp_neighbors,dvmrp_timers,igmp_proto,igmp_timers,igmp_members,trace,timeout,packets,interfaces,kernel,cache,rsrr,pim_detail,pim_hello,pim_register,pim_join_prune,pim_bootstrap,pim_asserts,pim_cand_rp,pim_routes,pim_timers,pim_rpf)
 02:01:49.616 pimd version 2.3.2 starting ...
 02:01:49.617 Got 262144 byte send buffer size in 0 iterations
@@ -399,7 +407,7 @@ debug level 0xffffffff (dvmrp_detail,dvmrp_prunes,dvmrp_routes,dvmrp_neighbors,d
 
 <p>&hellip; and on <code>R2</code>:</p>
 
-<pre><code>root@R2:~$ pimd -N -f -d
+<pre><code class="language-sh">root@R2:~$ pimd -N -f -d
 debug level 0xffffffff (dvmrp_detail,dvmrp_prunes,dvmrp_routes,dvmrp_neighbors,dvmrp_timers,igmp_proto,igmp_timers,igmp_members,trace,timeout,packets,interfaces,kernel,cache,rsrr,pim_detail,pim_hello,pim_register,pim_join_prune,pim_bootstrap,pim_asserts,pim_cand_rp,pim_routes,pim_timers,pim_rpf)
 02:01:49.616 pimd version 2.3.2 starting ...
 02:01:49.617 Got 262144 byte send buffer size in 0 iterations
@@ -413,7 +421,7 @@ debug level 0xffffffff (dvmrp_detail,dvmrp_prunes,dvmrp_routes,dvmrp_neighbors,d
 <p>To verify multicast routing works we start a multicast sender on <code>C1</code>
 and a receiver (sink) on <code>C2</code>:</p>
 
-<pre><code>root@C1:~$ mcjoin -s -t 10
+<pre><code class="language-sh">root@C1:~$ mcjoin -s -t 10
 root@C2:~$ mcjoin
 .................o
 </code></pre>
@@ -538,7 +546,7 @@ Number of Cache MIRRORs: 1
 <p>You can also verify that <code>pimd</code> actually sets routes in the kernel
 multicast routing table with:</p>
 
-<pre><code>root@R2:~$ ip mroute
+<pre><code class="language-sh">root@R2:~$ ip mroute
 (10.0.1.2, 225.1.2.3)        Iif: gre0       Oifs: eth0
 </code></pre>
 
@@ -548,8 +556,8 @@ multicast routing table with:</p>
 Here are a few:</p>
 
 <ol>
-<li>Check the TTL of the multicast stream, must be &gt;1 to be routed.  Rule
-of thumb: increase with each router in topology.</li>
+<li>Check the TTL of the multicast stream, must be &gt;1 to be routed.
+<strong>Rule of thumb:</strong> increase with each router in topology.</li>
 <li>Check the MTU of the interfaces in the path.</li>
 <li>Check the reverse path, make sure you have unicast connectivity
 between end nodes &ndash; PIM requires this to work!</li>
@@ -568,28 +576,26 @@ general <a href="/multicast-howto.html">Multicast HowTo</a>, or file a bug repor
 at <a href="https://github.com/troglobit">GitHub</a></p>
 
 <p>That&rsquo;s it, good luck!</p>
-
-<!--
-  -- Local Variables:
-  -- mode: markdown
-  -- End:
-  -->
       </article>
 
-      <ul class="pager blog-pager">
-        
-          <li class="previous">
-            <a href="/2016/07/03/upgrade-x1-carbon-bios-from-linux/" data-toggle="tooltip" data-placement="top" title="Upgrade X1 Carbon BIOS from Linux">&larr; Previous Post</a>
-          </li>
-        
-        
-          <li class="next">
-            <a href="/2016/08/13/fake-raid-adventures/" data-toggle="tooltip" data-placement="top" title="Fake RAID Adventures">Next Post &rarr;</a>
-          </li>
-        
-      </ul>
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="/2017/12/Useful-UNIX-APIs/" data-toggle="tooltip" data-placement="top" title="Useful UNIX API:s">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="/2018/02/Slow-Down/" data-toggle="tooltip" data-placement="top" title="Slow Down">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
 
       
+        
         
       
 
@@ -637,7 +643,9 @@ at <a href="https://github.com/troglobit">GitHub</a></p>
               </li>
           
           <li>
+            
             <a href="/index.xml" title="RSS">
+            
               <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
@@ -650,20 +658,17 @@ at <a href="https://github.com/troglobit">GitHub</a></p>
           
             
               <a href="http://troglobit.com">Joachim Nilsson</a>
-                      
+            
           
-          
-          &nbsp;&bull;&nbsp;
-          2017
 
-          
-            &nbsp;&bull;&nbsp;
-            <a href="/">Troglobit</a>
+          &nbsp;&bull;&nbsp;
+          2018
+
           
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.25.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.35</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>
@@ -675,13 +680,13 @@ at <a href="https://github.com/troglobit">GitHub</a></p>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="/js/main.js"></script>
-<script src="/js/highlight.min.js"></script>
-<script> hljs.initHighlightingOnLoad(); </script>
-<script> renderMathInElement(document.body); </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
 <script src="/js/load-photoswipe.js"></script>
+
+
+
 
 
 

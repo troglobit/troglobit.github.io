@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C on </title>
+    <link>/categories/c/</link>
+    <description>Recent content in C on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <lastBuildDate>Thu, 27 Oct 2016 22:22:44 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/c/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>New Toolchains</title>
+      <link>/2016/10/27/new-toolchains/</link>
+      <pubDate>Thu, 27 Oct 2016 22:22:44 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2016/10/27/new-toolchains/</guid>
+      <description>Finally, fresh from the oven, here are the remaining two toolchains I&amp;rsquo;ve promised, based on GCC 6.1 and GLIBC 2.23. Download from the FTP:
+ arm-unknown-linux-gnueabi-6.1.0-2.tar.xz powerpc-unknown-linux-gnu-6.1.0-2.tar.xz x86_64-unknown-linux-gnu-6.1.0-2.tar.xz  Unpack into /usr/local, and add to your $PATH, e.g.
+export PATH=/usr/local/arm-unknown-linux-gnueabi-6.1.0-2/bin:$PATH  The toolchains are built using crosstool-NG on Ubuntu 16.04 64-bit, and are primarily intended for myself and users of TroglOS, but are generic enough to be useful for other purposes as well.</description>
+    </item>
+    
+    <item>
+      <title>ARM Toolchain r1</title>
+      <link>/2016/09/26/arm-toolchain-r1/</link>
+      <pubDate>Mon, 26 Sep 2016 22:43:53 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2016/09/26/arm-toolchain-r1/</guid>
+      <description>First GCC 6.1 based ARM (32-bit) toolchain released on my FTP. Built using crosstool-NG for Ubuntu 16.04 (x86_64) with GLIBC 2.23.
+ arm-unknown-linux-gnueabi-6.1.0-1.tar.xz  Download, unpack into /usr/local, and add to your $PATH
+export PATH=/usr/local/arm-unknown-linux-gnueabi-6.1.0-1/bin:$PATH  There&amp;rsquo;s lots of neat stuff included, both a sysroot and a debug-root with GDB and gdbserver for target. For details on using it, see the excellent docs.
+The main purpose for my building this is TroglOS, but it is useful for other purposes as well of course.</description>
+    </item>
+    
+    <item>
+      <title>Rant: All the C Compiler Warnings ...</title>
+      <link>/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/</link>
+      <pubDate>Mon, 12 Jan 2015 01:57:40 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Enable &lt;em&gt;all&lt;/em&gt; the warnings!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This is one of the truths you learn when you start working with C.  Most
+of the time adding &lt;code&gt;CPPFLAGS=&amp;quot;-W -Wall -Werror&amp;quot;&lt;/code&gt; is all you need to find
+all the nasty bugs.  And if that&amp;rsquo;s not enough, there are tons of tools
+for static code analysis, like &lt;code&gt;scan-build&lt;/code&gt; in
+&lt;a href=&#34;http://clang-analyzer.llvm.org/scan-build.html&#34;&gt;Clang&lt;/a&gt;, and
+&lt;a href=&#34;https://scan.coverity.com/&#34;&gt;Coverity Scan&lt;/a&gt;, to help you &lt;em&gt;find all the
+bugs&lt;/em&gt;!&lt;/p&gt;
+
+&lt;p&gt;However, these pesky warnings (some of which cannot even be disabled!)
+are sometimes more of a nuisance than help.  Sometimes you &lt;em&gt;know&lt;/em&gt; that
+some parameters to a function will remain unused &amp;ndash; it&amp;rsquo;s a callback, and
+you don&amp;rsquo;t need all the data given to you.  So you start adding all kinds
+of voodoo, like &lt;code&gt;__attribute__ ((unused))&lt;/code&gt; &amp;hellip; seriously?&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Why I Like C</title>
+      <link>/2009/03/27/why-i-like-c/</link>
+      <pubDate>Fri, 27 Mar 2009 00:37:42 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2009/03/27/why-i-like-c/</guid>
+      <description>I thought I was alone, but it turns out I&amp;rsquo;m not. Scott James Remnant describes exactly what I&amp;rsquo;ve been feeling the last couple of years. Read his blog entry on the subject. I couldn&amp;rsquo;t agree more.</description>
+    </item>
+    
+  </channel>
+</rss>

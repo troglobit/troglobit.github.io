@@ -17,23 +17,21 @@
   <meta name="twitter:creator" content="@troglobit" />
   <meta property="og:url" content="/categories/programming/" />
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Troglobit" />
+  <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.25.1" />
+  <meta name="generator" content="Hugo 0.35" />
   <link rel="canonical" href="/categories/programming/" />
-  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Troglobit">
+  <link rel="alternate" href="/categories/programming/index.xml" type="application/rss+xml" title="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="/css/main.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
-  <link rel="stylesheet" href="/css/pygment_highlights.css" />
-  <link rel="stylesheet" href="/css/highlight.min.css" />
+  <link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="/css/syntax.css" /><link rel="stylesheet" href="/css/codeblock.css" />
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
 
 
 
@@ -93,11 +91,17 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Troglobit</a>
+      <a class="navbar-brand" href="/"></a>
     </div>
 
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Archive" href="/archive/">Archive</a>
+            </li>
+          
         
           
             <li>
@@ -145,8 +149,8 @@
     <div class="avatar-container">
       <div class="avatar-img-border">
         
-          <a title="Troglobit" href="/">
-            <img class="avatar-img" src="/images/profile.jpg" alt="Troglobit" />
+          <a title="" href="/">
+            <img class="avatar-img" src="/images/profile.jpg" alt="" />
           </a>
         
       </div>
@@ -180,6 +184,102 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         
         <div class="posts-list">
+          
+            <article class="post-preview">
+              <a href="/2017/12/Useful-UNIX-APIs/">
+                <h2 class="post-title">Useful UNIX API:s</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on December 22, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <p>Had an interesting conversation with a buddy last night.  It started out
+as a shift-reduce problem with Bison and ended up a ping-pong of useful
+UNIX API:s.  We concluded that despite having worked professionally with
+UNIX for over a decade, it is still very satisfying finding gems like
+these.</p>
+
+<p>Most people are completely unaware they exist and end up rolling their
+own (buggy) implementations.  For instance, string manipulation and
+various forms of linked lists.  Which is why I many years ago extracted
+the <em>frog DNA</em> from <a href="https://github.com/troglobit/finit/">Finit</a> to a
+separate library called <a href="https://github.com/troglobit/libite/">libite</a>,
+or -lite for short.  It imports the OpenBSD <code>strlcpy()</code> family of API:s,
+up-to-date <code>queue.h</code> with the <code>_SAFE</code> iterators, and more.  Some people
+like <a href="https://libbsd.freedesktop.org/wiki/">libbsd</a> for this, but I&rsquo;ve
+found many of the ports incomplete and unsafe and prefer to stay closer
+to the upstream *BSD versions.</p>
+
+<p><strong>Update:</strong> This post was originally written Nov 14, 2015.  It was a
+Saturday and I remember being extremely inspired when I wrote it.  I&rsquo;ve
+continued adding to it over the years, and still do.  So, as of Jul 2,
+2017 I&rsquo;m bumping the modification date each time I add something new :-)</p>
+
+<p></p>
+                  <a href="/2017/12/Useful-UNIX-APIs/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="/2017/09/19/threads-vs-event-loop--again-.../">
+                <h2 class="post-title">Threads vs Event Loop, Again ...</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on September 19, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <p>I still get asked this, from time to time.  Maybe it&rsquo;s because I only
+use event loops, maybe it&rsquo;s because I&rsquo;ve written <a href="https://github.com/troglobit/libuev">libuEv</a>, or maybe
+people still don&rsquo;t understand:</p>
+
+<blockquote>
+<p>Why an event loop, why not use threads?</p>
+</blockquote>
+
+<p>So here&rsquo;s my response, once more.</p>
+
+<p></p>
+                  <a href="/2017/09/19/threads-vs-event-loop--again-.../" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="/2015/09/09/summer-of-code-2015/">
+                <h2 class="post-title">Summer of Code 2015</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on September 9, 2015
+              </p>
+              <div class="post-entry">
+                
+                  Summer is now slowly fading away, and what a summer it has been here in Sweden! For someone who isn&rsquo;t a fan of the summer heat it has been an awesome time for brain work, and in my case work on my open source projects! :-)
+Due to my not really taking much vacation previous years I had saved up for ten weeks (10) this year! It was really worth it, and for the first time in many years I actually feel rested.
+                  <a href="/2015/09/09/summer-of-code-2015/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
           
             <article class="post-preview">
               <a href="/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/">
@@ -221,6 +321,40 @@ of voodoo, like <code>__attribute__ ((unused))</code> &hellip; seriously?</p>
             </article>
           
             <article class="post-preview">
+              <a href="/2013/08/13/just-a-programmer/">
+                <h2 class="post-title">Just a Programmer</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on August 13, 2013
+              </p>
+              <div class="post-entry">
+                
+                  <p>Sometimes people ask me what I do for a living.  Usually I tend to
+pause and think, real hard, becuase the people asking me this aren&rsquo;t
+programmers.  They use computers, but are mostly limited to a Windows
+machine, writing in MS Word and browsing the Internet, mostly for
+Facebook.</p>
+
+<p>I often start off with: &ldquo;It&rsquo;s a bit complicated to explain &hellip; &ldquo;, by
+which time I&rsquo;ve lost most of the people in the room listening to me.
+Sometimes I say: &ldquo;I&rsquo;m a software architect.&rdquo;, because people seem to
+know what architects do for a living, they draw houses, design stuff
+and drive SAAB&rsquo;s.  Much like dentists.  The prefix &ldquo;software&rdquo; however
+does confuse people.</p>
+
+<p></p>
+                  <a href="/2013/08/13/just-a-programmer/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
               <a href="/2013/06/22/programming-as-an-artform/">
                 <h2 class="post-title">Programming as an Artform</h2>
 
@@ -247,6 +381,99 @@ people naming their local variables obtrusively.</p>
 
 <p></p>
                   <a href="/2013/06/22/programming-as-an-artform/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="/2009/04/05/brief-libev-update/">
+                <h2 class="post-title">Brief libev update</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on April 5, 2009
+              </p>
+              <div class="post-entry">
+                
+                  I have now updated the libev examples. It took me a while, but during that time I have been hard at work converting two of our network daemons to use libev. As of today the upcoming Westermo WeOS uses libev in both its rstpd and igmpd implementations.
+Updated example code:
+ timer test message queue test  Enjoy, and feel free to [contact me][6] if you have any questions or comments on the code.
+                  <a href="/2009/04/05/brief-libev-update/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="/2009/03/28/the-marvellous-libev/">
+                <h2 class="post-title">The Marvellous libev</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on March 28, 2009
+              </p>
+              <div class="post-entry">
+                
+                  A very good friend mine recently told me about a neat event library, libev. Usually when he drops me links like that it takes me a couple of years to react and finally adopt.
+This time it only took me about a month.
+He has actually showed me lots of very useful stuff throughout the years, and even though we used GNU/Linux at university, he was one those hard core people who showed me the path into a successful full-time career as a Linux developer.
+                  <a href="/2009/03/28/the-marvellous-libev/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="/2009/03/27/why-i-like-c/">
+                <h2 class="post-title">Why I Like C</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on March 27, 2009
+              </p>
+              <div class="post-entry">
+                
+                  <p>I thought I was alone, but it turns out I&rsquo;m not.
+<a href="http://netsplit.com">Scott James Remnant</a> describes exactly what I&rsquo;ve
+been feeling the last couple of years.  Read his
+<a href="https://web.archive.org/web/20121019061557/http://netsplit.com/2009/03/26/the-fallacy-of-high-level-languages/">blog entry</a>
+on the subject.  I couldn&rsquo;t agree more.</p>
+
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="/2009/02/10/network-programming-link-collection/">
+                <h2 class="post-title">Netork Programming -- Link Collection</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on February 10, 2009
+              </p>
+              <div class="post-entry">
+                
+                  This is a first effort at collecting information about network programming structs and APIs available in UNIX. I plan on updating this as I find more.
+ Linux Journal: Linux Network Programming, Part I, II, III. Linux Journal: Multicast Routing Code in the Linux Kernel Linux Journal: Inside the Linux Packet Filter, Part I, II /usr/include/netinet/in.h  There are of course, in addition to these fine sources, the entire catalogue of work by Richard M.
+                  <a href="/2009/02/10/network-programming-link-collection/" class="post-read-more">[Read More]</a>
                 
               </div>
 
@@ -300,7 +527,9 @@ people naming their local variables obtrusively.</p>
               </li>
           
           <li>
-            <a href="/index.xml" title="RSS">
+            
+            <a href="/categories/programming/index.xml" title="RSS">
+            
               <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
                 <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
@@ -313,20 +542,17 @@ people naming their local variables obtrusively.</p>
           
             
               <a href="http://troglobit.com">Joachim Nilsson</a>
-                      
+            
           
-          
-          &nbsp;&bull;&nbsp;
-          2017
 
-          
-            &nbsp;&bull;&nbsp;
-            <a href="/">Troglobit</a>
+          &nbsp;&bull;&nbsp;
+          2018
+
           
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.25.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.35</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>
@@ -338,13 +564,13 @@ people naming their local variables obtrusively.</p>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="/js/main.js"></script>
-<script src="/js/highlight.min.js"></script>
-<script> hljs.initHighlightingOnLoad(); </script>
-<script> renderMathInElement(document.body); </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
 <script src="/js/load-photoswipe.js"></script>
+
+
+
 
 
 

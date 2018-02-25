@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shell on </title>
+    <link>/categories/shell/</link>
+    <description>Recent content in Shell on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <lastBuildDate>Sun, 09 May 2010 19:53:19 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/shell/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Syntax highlighting in less</title>
+      <link>/2010/05/09/syntax-highlighting-in-less/</link>
+      <pubDate>Sun, 09 May 2010 19:53:19 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2010/05/09/syntax-highlighting-in-less/</guid>
+      <description>Yes, it&amp;rsquo;s certainly possible and source code becomes so much easier to read. Try it out by:
+ downloading my .lessfilter save it as ~/.lessfilter in your $HOME Profit!  Ahem &amp;hellip;
+Just try it out on a C source file :-)
+less -R myfile.c  </description>
+    </item>
+    
+    <item>
+      <title>Top Ten UNIX Shell Commands</title>
+      <link>/2006/09/23/top-ten-unix-shell-commands/</link>
+      <pubDate>Sat, 23 Sep 2006 23:02:42 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2006/09/23/top-ten-unix-shell-commands/</guid>
+      <description>Current trend is to run the following one-liner from IBM. I&amp;rsquo;m usually logged in to the following three systems, with very different results.
+vmlinux.org $ history |awk &#39;{print $2}&#39;|sort|uniq -c|sort -nr|head -10 144 ls 61 cd 58 sudo 29 less 23 emacs 19 bzr 16 vim 11 rm 10 wget 10 mv  My personal life. Not much different from my professional dito. Most visible difference maybe is my use of bzr instead of svn.</description>
+    </item>
+    
+  </channel>
+</rss>

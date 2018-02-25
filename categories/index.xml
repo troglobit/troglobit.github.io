@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Troglobit</title>
+    <title>Categories on </title>
     <link>/categories/</link>
-    <description>Recent content in Categories on Troglobit</description>
+    <description>Recent content in Categories on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
@@ -41,6 +41,24 @@
     </item>
     
     <item>
+      <title>Apt</title>
+      <link>/categories/apt/</link>
+      <pubDate>Sat, 30 Sep 2017 12:39:43 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/apt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Awesome</title>
+      <link>/categories/awesome/</link>
+      <pubDate>Tue, 10 Nov 2015 12:14:09 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/awesome/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Backup</title>
       <link>/categories/backup/</link>
       <pubDate>Thu, 24 Mar 2016 22:39:00 +0000</pubDate>
@@ -55,6 +73,24 @@
       <pubDate>Sat, 13 Jun 2009 00:36:07 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/bazaar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blog</title>
+      <link>/categories/blog/</link>
+      <pubDate>Sun, 29 Jun 2014 14:52:39 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bluetooth</title>
+      <link>/categories/bluetooth/</link>
+      <pubDate>Tue, 03 Jan 2017 17:03:05 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/bluetooth/</guid>
       <description></description>
     </item>
     
@@ -77,11 +113,29 @@
     </item>
     
     <item>
+      <title>C</title>
+      <link>/categories/c/</link>
+      <pubDate>Thu, 27 Oct 2016 22:22:44 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Capabilities</title>
       <link>/categories/capabilities/</link>
       <pubDate>Sun, 11 Dec 2016 20:26:12 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/capabilities/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Conf</title>
+      <link>/categories/conf/</link>
+      <pubDate>Sun, 23 Feb 2014 00:00:00 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/conf/</guid>
       <description></description>
     </item>
     
@@ -124,7 +178,7 @@
     <item>
       <title>Debian</title>
       <link>/categories/debian/</link>
-      <pubDate>Sat, 07 Nov 2015 12:49:00 +0200</pubDate>
+      <pubDate>Sat, 30 Sep 2017 12:39:43 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/debian/</guid>
       <description></description>
@@ -142,7 +196,7 @@
     <item>
       <title>Docker</title>
       <link>/categories/docker/</link>
-      <pubDate>Mon, 07 Mar 2016 01:37:04 +0000</pubDate>
+      <pubDate>Sun, 17 Sep 2017 10:45:37 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/docker/</guid>
       <description></description>
@@ -176,9 +230,18 @@
     </item>
     
     <item>
+      <title>Eventloop</title>
+      <link>/categories/eventloop/</link>
+      <pubDate>Tue, 19 Sep 2017 08:51:38 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/eventloop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Finit</title>
       <link>/categories/finit/</link>
-      <pubDate>Fri, 06 Mar 2015 22:34:45 +0000</pubDate>
+      <pubDate>Wed, 21 Sep 2016 19:08:37 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/finit/</guid>
       <description></description>
@@ -248,6 +311,24 @@
     </item>
     
     <item>
+      <title>Gnu</title>
+      <link>/categories/gnu/</link>
+      <pubDate>Wed, 30 Jul 2008 23:53:42 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/gnu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hacking</title>
+      <link>/categories/hacking/</link>
+      <pubDate>Wed, 09 Sep 2015 21:49:13 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/hacking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Howto</title>
       <link>/categories/howto/</link>
       <pubDate>Sat, 07 Nov 2015 12:49:00 +0200</pubDate>
@@ -271,6 +352,15 @@
       <pubDate>Sun, 12 Feb 2017 00:07:44 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/https/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Icmp</title>
+      <link>/categories/icmp/</link>
+      <pubDate>Sat, 19 Nov 2016 23:37:20 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/icmp/</guid>
       <description></description>
     </item>
     
@@ -338,6 +428,15 @@
     </item>
     
     <item>
+      <title>Json</title>
+      <link>/categories/json/</link>
+      <pubDate>Sun, 23 Feb 2014 00:00:00 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/json/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Kernel</title>
       <link>/categories/kernel/</link>
       <pubDate>Tue, 23 Sep 2014 01:55:19 +0000</pubDate>
@@ -349,9 +448,27 @@
     <item>
       <title>Kvm</title>
       <link>/categories/kvm/</link>
-      <pubDate>Sun, 29 Aug 2010 20:44:34 +0000</pubDate>
+      <pubDate>Thu, 18 Aug 2016 20:07:17 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/kvm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Libev</title>
+      <link>/categories/libev/</link>
+      <pubDate>Tue, 19 Sep 2017 08:51:38 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/libev/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>License</title>
+      <link>/categories/license/</link>
+      <pubDate>Wed, 30 Jul 2008 23:53:42 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/license/</guid>
       <description></description>
     </item>
     
@@ -376,7 +493,7 @@
     <item>
       <title>Merecat</title>
       <link>/categories/merecat/</link>
-      <pubDate>Sun, 12 Feb 2017 00:07:44 +0000</pubDate>
+      <pubDate>Sun, 17 Sep 2017 10:45:37 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/merecat/</guid>
       <description></description>
@@ -394,9 +511,18 @@
     <item>
       <title>Misc</title>
       <link>/categories/misc/</link>
-      <pubDate>Fri, 07 Jun 2013 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 04 Apr 2016 00:14:28 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/misc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Modules</title>
+      <link>/categories/modules/</link>
+      <pubDate>Sun, 25 Mar 2007 23:59:57 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/modules/</guid>
       <description></description>
     </item>
     
@@ -412,7 +538,7 @@
     <item>
       <title>Multicast</title>
       <link>/categories/multicast/</link>
-      <pubDate>Mon, 07 Mar 2016 01:37:04 +0000</pubDate>
+      <pubDate>Tue, 23 Jan 2018 20:39:36 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/multicast/</guid>
       <description></description>
@@ -428,9 +554,18 @@
     </item>
     
     <item>
+      <title>Network</title>
+      <link>/categories/network/</link>
+      <pubDate>Tue, 10 Feb 2009 21:56:42 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Networking</title>
       <link>/categories/networking/</link>
-      <pubDate>Mon, 27 Oct 2008 19:50:03 +0000</pubDate>
+      <pubDate>Fri, 02 Sep 2016 23:30:00 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/networking/</guid>
       <description></description>
@@ -475,9 +610,18 @@
     <item>
       <title>Personal</title>
       <link>/categories/personal/</link>
-      <pubDate>Sun, 14 Jun 2009 21:04:34 +0000</pubDate>
+      <pubDate>Sat, 07 Nov 2015 02:32:12 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/personal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pim</title>
+      <link>/categories/pim/</link>
+      <pubDate>Tue, 23 Jan 2018 20:39:36 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/pim/</guid>
       <description></description>
     </item>
     
@@ -493,7 +637,7 @@
     <item>
       <title>Programming</title>
       <link>/categories/programming/</link>
-      <pubDate>Mon, 12 Jan 2015 01:57:40 +0000</pubDate>
+      <pubDate>Fri, 22 Dec 2017 10:28:00 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/programming/</guid>
       <description></description>
@@ -502,7 +646,7 @@
     <item>
       <title>Projects</title>
       <link>/categories/projects/</link>
-      <pubDate>Tue, 06 Aug 2013 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 19 Nov 2016 23:37:20 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/projects/</guid>
       <description></description>
@@ -518,11 +662,38 @@
     </item>
     
     <item>
+      <title>Raid</title>
+      <link>/categories/raid/</link>
+      <pubDate>Sat, 13 Aug 2016 15:59:36 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/raid/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Raspberry Pi</title>
       <link>/categories/raspberry-pi/</link>
       <pubDate>Sun, 15 Jan 2017 13:13:15 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/raspberry-pi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Regexp</title>
+      <link>/categories/regexp/</link>
+      <pubDate>Sun, 13 Jul 2008 21:38:33 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/regexp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reminder</title>
+      <link>/categories/reminder/</link>
+      <pubDate>Sat, 14 Feb 2009 21:13:41 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/reminder/</guid>
       <description></description>
     </item>
     
@@ -541,6 +712,15 @@
       <pubDate>Sun, 11 Dec 2016 20:26:12 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/sandwich/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shell</title>
+      <link>/categories/shell/</link>
+      <pubDate>Sun, 09 May 2010 19:53:19 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/shell/</guid>
       <description></description>
     </item>
     
@@ -568,6 +748,15 @@
       <pubDate>Sat, 07 Nov 2015 12:49:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/snmp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spotify</title>
+      <link>/categories/spotify/</link>
+      <pubDate>Tue, 10 Nov 2015 12:14:09 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/spotify/</guid>
       <description></description>
     </item>
     
@@ -635,6 +824,15 @@
     </item>
     
     <item>
+      <title>Tetris</title>
+      <link>/categories/tetris/</link>
+      <pubDate>Mon, 02 Aug 2010 00:56:35 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/tetris/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Tftp</title>
       <link>/categories/tftp/</link>
       <pubDate>Sun, 21 Dec 2014 19:42:17 +0000</pubDate>
@@ -644,7 +842,16 @@
     </item>
     
     <item>
-      <title>Threads Vs Events</title>
+      <title>Thinkpad</title>
+      <link>/categories/thinkpad/</link>
+      <pubDate>Sun, 03 Jul 2016 09:57:44 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/thinkpad/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Threads vs Events</title>
       <link>/categories/threads-vs-events/</link>
       <pubDate>Tue, 06 Aug 2013 00:00:00 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
@@ -662,6 +869,24 @@
     </item>
     
     <item>
+      <title>Tips</title>
+      <link>/categories/tips/</link>
+      <pubDate>Mon, 04 Apr 2016 00:14:28 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/tips/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Toolchain</title>
+      <link>/categories/toolchain/</link>
+      <pubDate>Thu, 27 Oct 2016 22:22:44 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/toolchain/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Typography</title>
       <link>/categories/typography/</link>
       <pubDate>Mon, 26 Apr 2010 22:44:19 +0000</pubDate>
@@ -671,9 +896,18 @@
     </item>
     
     <item>
+      <title>Tz</title>
+      <link>/categories/tz/</link>
+      <pubDate>Fri, 09 Aug 2013 00:00:00 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/tz/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Ubuntu</title>
       <link>/categories/ubuntu/</link>
-      <pubDate>Sat, 07 Nov 2015 12:49:00 +0200</pubDate>
+      <pubDate>Sat, 30 Sep 2017 12:39:43 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/ubuntu/</guid>
       <description></description>
@@ -682,9 +916,27 @@
     <item>
       <title>Unix</title>
       <link>/categories/unix/</link>
-      <pubDate>Sat, 02 Jul 2016 12:54:37 +0000</pubDate>
+      <pubDate>Tue, 23 Jan 2018 20:39:36 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/unix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vim</title>
+      <link>/categories/vim/</link>
+      <pubDate>Sun, 09 Nov 2008 00:39:27 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Virt Manager</title>
+      <link>/categories/virt-manager/</link>
+      <pubDate>Thu, 18 Aug 2016 20:07:17 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/virt-manager/</guid>
       <description></description>
     </item>
     
