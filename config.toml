@@ -29,7 +29,7 @@ enableEmoji = true
 
 [[menu.main]]
     name = "Projects"
-    url = "/project/"
+    url = "/projects/"
     weight = 1
 
 [[menu.main]]
