@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Projects
+permalink: /projects/
 ---
 
 <dl class="tags-box">
