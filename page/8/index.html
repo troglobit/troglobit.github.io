@@ -16,7 +16,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.35" />
+  <meta name="generator" content="Hugo 0.37.1" />
   <link rel="canonical" href="/" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
@@ -178,6 +178,39 @@
 
         <div class="posts-list">
           
+          
+            <article class="post-preview">
+              <a href="/2011/01/09/announcing-pimd-v2-dot-1-7/">
+                <h2 class="post-title">Announcing pimd v2.1.7</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on January 9, 2011
+  
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <p>This is a followup release to the <a href="https://security-tracker.debian.org/tracker/CVE-2011-0007">security fix</a> in <a href="/pimd.html">pimd</a>,
+v2.1.6.  The change to use <code>/var/lib/misc/</code>, instead of the insecure
+<code>/var/tmp/</code>, has now been refactored into using the proper <a href="http://www.pathname.com/fhs/pub/fhs-2.3.html#VARRUNRUNTIMEVARIABLEDATA">FHS</a>
+recommended <code>/var/run/pimd/</code> instead.</p>
+
+<p>As always, check the <a href="/pimd.html">homepage</a>, the <a href="https://github.com/troglobit/pimd/blob/master/ChangeLog">ChangeLog</a> and the
+<a href="https://github.com/troglobit/pimd/commits/2.1.7">GIT log</a> for more details.</p>
+
+                
+              </div>
+
+              
+            </article>
           
             <article class="post-preview">
               <a href="/2011/01/08/announcing-pimd-v2-dot-1-6/">
@@ -449,35 +482,6 @@ $ echo &quot;Secret project, use ROT13 to decode source code&quot; &gt;projectX.
               
             </article>
           
-            <article class="post-preview">
-              <a href="/2010/07/13/converting-from-bazaar-to-git/">
-                <h2 class="post-title">Converting from Bazaar to GIT</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on July 13, 2010
-  
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  You need git, and bazaar obviously. Also install bzr-fastimport, it contains the export plugin as well. The rest is a rip off from Frank&rsquo;s page.
-$ git init project.git $ cd project.git $ bzr fast-export --export-marks=.git/bzr.mark ~/project.bzr | git fast-import --export-marks=.git/git.mark  That worked for me. The output will likely be something like this:
-01:41:19 Calculating the revisions to include ... 01:41:19 Starting export of 33 revisions ... 01:41:20 Exported 33 revisions in 0:00:01 git-fast-import statistics: --------------------------------------------------------------------- Alloc'd objects: 5000 Total objects : 267 ( 0 duplicates ) blobs : 158 ( 0 duplicates 57 deltas) trees : 76 ( 0 duplicates 55 deltas) commits: 33 ( 0 duplicates 0 deltas) tags : 0 ( 0 duplicates 0 deltas) Total branches : 10 ( 1 loads ) marks : 1024 ( 33 unique ) atoms : 38 Memory total : 2344 KiB pools : 2110 KiB objects: 234 KiB --------------------------------------------------------------------- pack_report: getpagesize() = 4096 pack_report: core.
-                  <a href="/2010/07/13/converting-from-bazaar-to-git/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-            </article>
-          
         </div>
 
         
@@ -563,7 +567,7 @@ $ git init project.git $ cd project.git $ bzr fast-export --export-marks=.git/bz
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.35</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.37.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

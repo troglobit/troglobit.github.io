@@ -8,10 +8,21 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Thu, 15 Feb 2018 20:05:25 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 30 Mar 2018 19:41:26 +0200</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>cgit with merecat httpd</title>
+      <link>/2018/03/cgit-with-merecat-httpd/</link>
+      <pubDate>Fri, 30 Mar 2018 19:41:26 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2018/03/cgit-with-merecat-httpd/</guid>
+      <description>This post details how to set up cgit with Merecat httpd. It begins as a GitHub issue report by Mr Alok G. Singh, who had run into problems setting it up. I&amp;rsquo;m posting it here for others to see.
+My own site has several sub-domains set up, hence I run Merecat with the virtual-host = true setting and bind mounts in /var/www/. This is detailed in the online documentation.
+Setting up cgit requires a bit of linking &amp;amp; symlinking on top of the bind mounts, at least on Debian/Ubuntu.</description>
+    </item>
     
     <item>
       <title>Slow Down</title>
