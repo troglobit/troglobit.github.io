@@ -5,18 +5,18 @@ date: 2018-03-30 19:41:26 +0200
 tags: []
 ---
 
-This post details how to set up [cgit](https://git.zx2c4.com/cgit/) with
-[Merecat httpd](http://merecat.troglobit.com).  It begins as a [GitHub
-issue](https://github.com/troglobit/merecat/issues/3) report by Mr Alok
-G. Singh, who had run into problems setting it up.  I'm posting it here
-for others to see.
+This post details how to set up [cgit][1] with [Merecat httpd][2].  It
+begins as a [GitHub issue][3] report by Mr Alok G. Singh, who had run
+into problems setting it up.  I'm posting it here for others to see.
 
-My own site has several sub-domains set up, hence I run Merecat with the
-`virtual-host = true` setting and bind mounts in `/var/www/`.  This is
-detailed in the [online documentation](http://merecat.troglobit.com/).
+<!--more-->
 
-Setting up cgit requires a bit of linking & symlinking on top of the
-bind mounts, at least on Debian/Ubuntu.  The bundled cgit package is
+My server has several sub-domains set up, hence I run [Merecat][2] with
+the `virtual-host = true` setting and bind mounts in `/var/www/`.
+Detailed in the [online documentation][2].
+
+Setting up [cgit][1] requires a bit of linking & symlinking on top of
+the bind mounts, at least on Debian/Ubuntu.  The bundled cgit package is
 installed into both `/usr/share` and `/usr/lib`, and when Merecat has
 chrooted those directories will not be available.  I've bind mounted my
 `/usr/share/cgit` to `/var/www/cgit.troglobit.com` and linked the
@@ -58,3 +58,6 @@ robots=noindex, nofollow
 *Note the leading slash* in the `virtual-root`.  The resulting site can
 be viewed here: http://cgit.troglobit.com
 
+[1]: https://git.zx2c4.com/cgit/
+[2]: http://merecat.troglobit.com
+[3]: https://github.com/troglobit/merecat/issues/3
