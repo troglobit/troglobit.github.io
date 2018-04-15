@@ -10,7 +10,7 @@ last couple of weeks, sunny and  warm.  This has of course not prevented
 me from pursuing my favorite  indoor activity; coding!  This time around
 I've spent some time to resurrect the packet injection tool [Nemesis][].
 
-<!-- more -->
+<!--more-->
 
 Nemesis was seemingly abandonded by its original authors almost 15 years
 ago.  There  was talk on the  mailing-list about porting to  libdnet, as
