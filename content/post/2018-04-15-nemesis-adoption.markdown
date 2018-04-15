@@ -7,14 +7,17 @@ tags: []
 
 Summer is  almost upon us.  The  weather in Sweden has  been amazing the
 last couple of weeks, sunny and  warm.  This has of course not prevented
-me from pursuing my favorite indoor activity; coding!
+me from pursuing my favorite  indoor activity; coding!  This time around
+I've spent some time to resurrect the packet injection tool [Nemesis][].
 
-This time around I've spent some  time to resurrect the packet injection
-tool [Nemesis][].  It  was seemingly abandonded by  its original authors
-almost 15 years  ago.  There was talk about porting  to libdnet, as well
-as visions of a proper stand-alone  CLI instead of the command line tool
-with options, but  it seems none of these plans  materialized.  The last
-release, which was  v1.4, does not build against  libnet1, only libnet0.
+<!-- more -->
+
+Nemesis was seemingly abandonded by its original authors almost 15 years
+ago.  There  was talk on the  mailing-list about porting to  libdnet, as
+well as visions of a proper  stand-alone CLI instead of the command line
+tool with options,  but it seems none of these  plans materialized.  The
+last  release, which  was v1.4,  does  not build  against libnet1,  only
+libnet0.
 
 However, I discovered  through the mailiing list there was  a CVS branch
 integrating the porting work of some Cisco engineers to libnet1.
