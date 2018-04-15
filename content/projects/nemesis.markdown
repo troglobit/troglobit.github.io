@@ -4,6 +4,7 @@ title: "N E M E S I S"
 date: 2018-04-15 10:33:00 +02:00
 aliases: /nemesis.html
 ---
+<img src="/images/nemesis.png" style="float: right;">
 
 Nemesis is a command-line network packet crafting and injection utility
 for UNIX-like and Windows systems.  Well suited for testing Network
