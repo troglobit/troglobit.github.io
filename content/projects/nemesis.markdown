@@ -22,6 +22,22 @@ Issue tracker and GIT repository available at GitHub:
    * [ChangeLog](https://github.com/troglobit/nemesis/blob/master/ChangeLog.md)
 
 
+Documentation
+-------------
+
+   * [nemesis.1](http://nemesis.sourceforge.net/manpages/nemesis.1.html)
+   * [nemesis-arp.1](http://nemesis.sourceforge.net/manpages/nemesis-arp.1.html)
+   * [nemesis-dns.1](http://nemesis.sourceforge.net/manpages/nemesis-dns.1.html)
+   * [nemesis-ethernet.1](http://nemesis.sourceforge.net/manpages/nemesis-ethernet.1.html)
+   * [nemesis-icmp.1](http://nemesis.sourceforge.net/manpages/nemesis-icmp.1.html)
+   * [nemesis-igmp.1](http://nemesis.sourceforge.net/manpages/nemesis-igmp.1.html)
+   * [nemesis-ip.1](http://nemesis.sourceforge.net/manpages/nemesis-ip.1.html)
+   * [nemesis-ospf.1](http://nemesis.sourceforge.net/manpages/nemesis-ospf.1.html)
+   * [nemesis-rip.1](http://nemesis.sourceforge.net/manpages/nemesis-rip.1.html)
+   * [nemesis-tcp.1](http://nemesis.sourceforge.net/manpages/nemesis-tcp.1.html)
+   * [nemesis-udp.1](http://nemesis.sourceforge.net/manpages/nemesis-udp.1.html)
+
+
 Origin & References
 -------------------
 
