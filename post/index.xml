@@ -33,9 +33,11 @@ I&amp;rsquo;ve spent some time to resurrect the packet injection tool &lt;a href
       <pubDate>Fri, 30 Mar 2018 19:41:26 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2018/03/cgit-with-merecat-httpd/</guid>
-      <description>This post details how to set up cgit with Merecat httpd. It begins as a GitHub issue report by Mr Alok G. Singh, who had run into problems setting it up. I&amp;rsquo;m posting it here for others to see.
-My own site has several sub-domains set up, hence I run Merecat with the virtual-host = true setting and bind mounts in /var/www/. This is detailed in the online documentation.
-Setting up cgit requires a bit of linking &amp;amp; symlinking on top of the bind mounts, at least on Debian/Ubuntu.</description>
+      <description>&lt;p&gt;This post details how to set up &lt;a href=&#34;https://git.zx2c4.com/cgit/&#34;&gt;cgit&lt;/a&gt; with &lt;a href=&#34;http://merecat.troglobit.com&#34;&gt;Merecat httpd&lt;/a&gt;.  It
+begins as a &lt;a href=&#34;https://github.com/troglobit/merecat/issues/3&#34;&gt;GitHub issue&lt;/a&gt; report by Mr Alok G. Singh, who had run
+into problems setting it up.  I&amp;rsquo;m posting it here for others to see.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>

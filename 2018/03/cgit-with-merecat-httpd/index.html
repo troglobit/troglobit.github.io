@@ -8,13 +8,19 @@
   <title>cgit with merecat httpd</title>
   <meta property="og:title" content="cgit with merecat httpd" />
   <meta name="twitter:title" content="cgit with merecat httpd" />
-  <meta name="description" content="This post details how to set up cgit with Merecat httpd. It begins as a GitHub issue report by Mr Alok G. Singh, who had run into problems setting it up. I&rsquo;m posting it here for others to see.
-My own site has several sub-domains set up, hence I run Merecat with the virtual-host = true setting and bind mounts in /var/www/. This is detailed in the online documentation.
-Setting up cgit requires a bit of linking &amp; symlinking on top of the bind mounts, at least on Debian/Ubuntu.">
-  <meta property="og:description" content="This post details how to set up cgit with Merecat httpd. It begins as a GitHub issue report by Mr Alok G. Singh, who had run into problems setting it up. I&rsquo;m posting it here for others to see.
-My own site has several sub-domains set up, hence I run Merecat with the virtual-host = true setting and bind mounts in /var/www/. This is detailed in the online documentation.
-Setting up cgit requires a bit of linking &amp; symlinking on top of the bind mounts, at least on Debian/Ubuntu.">
-  <meta name="twitter:description" content="This post details how to set up cgit with Merecat httpd. It begins as a GitHub issue report by Mr Alok G. Singh, who had run into problems setting it up. I&rsquo;m posting it here for others to see. …">
+  <meta name="description" content="This post details how to set up cgit with Merecat httpd.  It
+begins as a GitHub issue report by Mr Alok G. Singh, who had run
+into problems setting it up.  I&rsquo;m posting it here for others to see.
+
+">
+  <meta property="og:description" content="This post details how to set up cgit with Merecat httpd.  It
+begins as a GitHub issue report by Mr Alok G. Singh, who had run
+into problems setting it up.  I&rsquo;m posting it here for others to see.
+
+">
+  <meta name="twitter:description" content="This post details how to set up cgit with Merecat httpd.  It
+begins as a GitHub issue report by Mr Alok G. Singh, who had run
+into problems setting it up.  I&rsquo;m posting it here for others to see. …">
   <meta name="author" content="Joachim Nilsson"/>
   <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="/images/profile.jpg" />
@@ -214,18 +220,18 @@ Setting up cgit requires a bit of linking &amp; symlinking on top of the bind mo
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>This post details how to set up <a href="https://git.zx2c4.com/cgit/">cgit</a> with
-<a href="http://merecat.troglobit.com">Merecat httpd</a>.  It begins as a <a href="https://github.com/troglobit/merecat/issues/3">GitHub
-issue</a> report by Mr Alok
-G. Singh, who had run into problems setting it up.  I&rsquo;m posting it here
-for others to see.</p>
+        <p>This post details how to set up <a href="https://git.zx2c4.com/cgit/">cgit</a> with <a href="http://merecat.troglobit.com">Merecat httpd</a>.  It
+begins as a <a href="https://github.com/troglobit/merecat/issues/3">GitHub issue</a> report by Mr Alok G. Singh, who had run
+into problems setting it up.  I&rsquo;m posting it here for others to see.</p>
 
-<p>My own site has several sub-domains set up, hence I run Merecat with the
-<code>virtual-host = true</code> setting and bind mounts in <code>/var/www/</code>.  This is
-detailed in the <a href="http://merecat.troglobit.com/">online documentation</a>.</p>
+<p></p>
 
-<p>Setting up cgit requires a bit of linking &amp; symlinking on top of the
-bind mounts, at least on Debian/Ubuntu.  The bundled cgit package is
+<p>My server has several sub-domains set up, hence I run <a href="http://merecat.troglobit.com">Merecat</a> with
+the <code>virtual-host = true</code> setting and bind mounts in <code>/var/www/</code>.
+Detailed in the <a href="http://merecat.troglobit.com">online documentation</a>.</p>
+
+<p>Setting up <a href="https://git.zx2c4.com/cgit/">cgit</a> requires a bit of linking &amp; symlinking on top of
+the bind mounts, at least on Debian/Ubuntu.  The bundled cgit package is
 installed into both <code>/usr/share</code> and <code>/usr/lib</code>, and when Merecat has
 chrooted those directories will not be available.  I&rsquo;ve bind mounted my
 <code>/usr/share/cgit</code> to <code>/var/www/cgit.troglobit.com</code> and linked the
@@ -264,7 +270,6 @@ robots=noindex, nofollow
 
 <p><em>Note the leading slash</em> in the <code>virtual-root</code>.  The resulting site can
 be viewed here: <a href="http://cgit.troglobit.com">http://cgit.troglobit.com</a></p>
-
       </article>
 
       
