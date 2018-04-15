@@ -22,6 +22,38 @@ Issue tracker and GIT repository available at GitHub:
    * [ChangeLog](https://github.com/troglobit/nemesis/blob/master/ChangeLog.md)
 
 
+Examples
+--------
+
+Send TCP packet (SYN/ACK) with payload from file 'foo' to target's ssh
+port from 192.168.1.1 to 192.168.2.2. (`-v` allows a `stdout` visual of
+current injected packet):
+
+    nemesis tcp -v -S 192.168.1.1 -D 192.168.2.2 -fSA -y 22 -P foo
+
+Send UDP packet from 10.11.12.13:11111 to 10.1.1.2's name-service port
+with a payload read from a file 'bindpkt'. (again `-v` is used in order to
+see confirmation of our injected packet):
+
+    nemesis udp -v -S 10.11.12.13 -D 10.1.1.2 -x 11111 -y 53 -P bindpkt
+
+Send ICMP REDIRECT (network) packet from 10.10.10.3 to 10.10.10.1 with
+preferred gateway as source address. Here we want no output to go to
+`stdout` -- which would be ideal as a component in a batch job via a
+shell script:
+
+    nemesis icmp -S 10.10.10.3 -D 10.10.10.1 -G 10.10.10.3 -qR
+
+Send ARP packet through device `ne0` (eg. my OpenBSD pcmcia nic) from
+hardware source address 00:01:02:03:04:05 with IP source address
+10.11.30.5 to destination IP address 10.10.15.1 with broadcast
+destination hardware address. In other words, who-has the mac address of
+10.10.15.1, tell 10.11.30.5 - assuming 00:01:02:03:04:05 is the source
+mac address of our `ne0` device:
+
+    nemesis arp -v -d ne0 -H 0:1:2:3:4:5 -S 10.11.30.5 -D 10.10.15.1
+
+
 Documentation
 -------------
 
