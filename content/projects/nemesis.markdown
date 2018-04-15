@@ -122,8 +122,8 @@ Documentation
 Origin & References
 -------------------
 
-Nemesis was created by Mark Grimes in 1999, with Jeff Nathan taking over
-the maintainership in 2001.  After more than a decade of inactivity, in
-2018, Joachim Nilsson stepped in, converted from CVS to GIT and merged
-the stale libnet-1.1 upgrade branch from 2005.
+Originally created by Mark Grimes in 1999, in 2001 Jeff Nathan took over
+maintainership, in 2005 the project went  dark ...  Now, after more than
+a decade  of inactivity, Joachim  Nilsson stepped in, converted  it from
+CVS to GIT and merged the stale libnet-1.1 upgrade branch from 2005.
 
