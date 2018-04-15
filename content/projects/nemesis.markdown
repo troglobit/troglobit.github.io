@@ -16,8 +16,6 @@ Nemesis can natively craft and inject ARP, DNS, ETHERNET, ICMP, IGMP,
 IP, OSPF, RIP, TCP and UDP packets.  Using the IP and the Ethernet
 injection modes, almost any custom packet can be crafted and injected.
 
-Issue tracker and GIT repository available at GitHub:
-
    * [Repository](http://github.com/troglobit/nemesis)
    * [Issue Tracker](http://github.com/troglobit/nemesis/issues)
    * [ChangeLog](https://github.com/troglobit/nemesis/blob/master/ChangeLog.md)
@@ -124,8 +122,8 @@ Documentation
 Origin & References
 -------------------
 
-Nemesis was created by Mark Grimes in 1999, in 2001 Jeff Nathan took
-over maintainership.  In 2018, after more than a decade of inactivity,
-Joachim Nilsson stepped in, converted from CVS to GIT and merged the
-stale libnet-1.1 upgrade branch from 2005.
+Nemesis was created by Mark Grimes in 1999, with Jeff Nathan taking over
+the maintainership in 2001.  After more than a decade of inactivity, in
+2018, Joachim Nilsson stepped in, converted from CVS to GIT and merged
+the stale libnet-1.1 upgrade branch from 2005.
 
