@@ -5,6 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
+  <title>N E M E S I S</title>
+  <meta property="og:title" content="N E M E S I S" />
+  <meta name="twitter:title" content="N E M E S I S" />
+  <meta name="description" content="The Resurrection">
+  <meta property="og:description" content="The Resurrection">
+  <meta name="twitter:description" content="The Resurrection">
   <meta name="author" content="Joachim Nilsson"/>
   <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="/images/profile.jpg" />
@@ -12,12 +18,12 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@troglobit" />
   <meta name="twitter:creator" content="@troglobit" />
-  <meta property="og:url" content="/" />
+  <meta property="og:url" content="/2018/04/N-E-M-E-S-I-S/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
   <meta name="generator" content="Hugo 0.38" />
-  <link rel="canonical" href="/" />
+  <link rel="canonical" href="/2018/04/N-E-M-E-S-I-S/" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -167,170 +173,89 @@
 
 
 
-  <div class="intro-header"></div>
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>N E M E S I S</h1>
+                
+                  
+                    <h2 class="post-subheading">The Resurrection</h2>
+                  
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on April 15, 2018
+  
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
 
     
-  <div role="main" class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Summer is  almost upon us.  The  weather in Sweden has  been amazing the
+last couple of weeks, sunny and  warm.  This has of course not prevented
+me from pursuing my favorite indoor activity; coding!</p>
 
-        <div class="posts-list">
+<p>This time around I&rsquo;ve spent some  time to resurrect the packet injection
+tool <a href="/projects/nemesis/">Nemesis</a>.  It  was seemingly abandonded by  its original authors
+almost 15 years  ago.  There was talk about porting  to libdnet, as well
+as visions of a proper stand-alone  CLI instead of the command line tool
+with options, but  it seems none of these plans  materialized.  The last
+release, which was  v1.4, does not build against  libnet1, only libnet0.</p>
+
+<p>However, I discovered  through the mailiing list there was  a CVS branch
+integrating the porting work of some Cisco engineers to libnet1.</p>
+
+<p><a href="https://sourceforge.net/p/nemesis/mailman/message/177129/">https://sourceforge.net/p/nemesis/mailman/message/177129/</a></p>
+
+<p>I needed something simple for myself to generate IGMP packets, and since
+I&rsquo;m fluent in C, I decided to give Nemesis a whirl.  I finished the port
+in a few days and began fixing some obvious bugs and incorporating fixes
+from the mailing list and Debian.</p>
+
+<p>The result is the upcoming v1.5 release, which is a long time coming &hellip;</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="/2018/03/cgit-with-merecat-httpd/" data-toggle="tooltip" data-placement="top" title="cgit with merecat httpd">&larr; Previous Post</a>
+            </li>
           
           
-            <article class="post-preview">
-              <a href="/2006/07/17/make-kpkg-and-dirty-modules/">
-                <h2 class="post-title">make-kpkg and dirty modules</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on July 17, 2006
-  
-  
-  
-</span>
+        </ul>
+      
 
 
-              <div class="post-entry">
-                
-                  Dammit, tonight I spent too many hours chasing down a &ldquo;feature&rdquo; in the Debian kernel build process or the Linux-2.6 kernel. I haven&rsquo;t yet deciced who to blame ;-)
-Here goes: when you build the latest Linux 2.6 kernel, checked out from the git repository, with make-kpkg you should make sure to uncheck the CONFIG_LOCALVERSION_AUTO option in the kernel config before hand. It&rsquo;s under &ldquo;General setup&rdquo; &rarr; &ldquo;Automatically append version information &hellip;&ldquo;.
-                  <a href="/2006/07/17/make-kpkg-and-dirty-modules/" class="post-read-more">[Read More]</a>
-                
-              </div>
+      
 
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2006/07/17/quick-note/">
-                <h2 class="post-title">Quick Note</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on July 17, 2006
-  
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  About that /etc/network/interface autoconfig thingy: it&rsquo;s almost done. Works perfect &hellip; at work (connected) and at home (wireless). I need to fine tune the tests, I think, to get the connected stuff to work at home too. The problem seems to be that the test to see if the machine is connected at home is that the MAC it looks for to ID the office network also is available from home, via the VPN.
-                  <a href="/2006/07/17/quick-note/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2006/06/06/swedish-national-day-deep-thoughts-dot-dot-dot/">
-                <h2 class="post-title">Swedish National Day: Deep thoughts ...</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on June 6, 2006
-  
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  From time to time, even though it seems to occur more frequently these days, I think about the persistence of things. How development is continuously accelerating in the modern world. To me this is like a double edged sword, it&rsquo;s both comforting and unsettling. Comforting that we as humans continuously improve and develop our methods and technologies. Unsettling because I know much of the development is in directions that I don&rsquo;t approve of: more intricate and capable weapons and methods of surveillance.
-                  <a href="/2006/06/06/swedish-national-day-deep-thoughts-dot-dot-dot/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2006/06/06/laptop-network-configuration-in-debian-slash-ubuntu/">
-                <h2 class="post-title">Laptop Network Configuration in Debian/Ubuntu</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on June 6, 2006
-  
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  I have three network cards in my laptop. Two built-in and one PCMCIA card. I&rsquo;m currently investigating how I can migrate from using the slow and tedious gnome-network &amp; C:o tools to the more integrated Debian/Ubuntu tools ifupdown, guessnet, ifplugd and waproamd instead. As usual Debian has a fine and clever way of handling all this with their /etc/network/interface file. To learn more about this fine management interface I&rsquo;m reading the well written book The Debian System by Martin F.
-                  <a href="/2006/06/06/laptop-network-configuration-in-debian-slash-ubuntu/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2006/05/26/no-news-are-good-news/">
-                <h2 class="post-title">No news are good news?</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on May 26, 2006
-  
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  Seriously, it&rsquo;s been one long winter and now finally summer is upon us again. It was about six months ago that I switched jobs and this is the first time for that period that I&rsquo;ve got ten minutes above the surface. The new job is fun but currently takes up too much of my time to be healthy in the long run.
-Today we&rsquo;re going to Stenby TV-service with our broken Hitachi 32&rdquo; TV.
-                  <a href="/2006/05/26/no-news-are-good-news/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-            </article>
-          
-        </div>
-
-        
-          <ul class="pager main-pager">
-            
-              <li class="previous">
-                <a href="/page/13/">&larr; Newer Posts</a>
-              </li>
-            
-            
-          </ul>
-        
-      </div>
     </div>
   </div>
+</div>
 
     <footer>
   <div class="container">

@@ -186,6 +186,46 @@
         <div class="posts-list">
           
             <article class="post-preview">
+              <a href="/2016/03/24/disaster-recovery/">
+                <h2 class="post-title">Disaster Recovery</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on March 24, 2016
+              </p>
+              <div class="post-entry">
+                
+                  <p>Days like these inconspicuously start out just like any other day,
+except on days like these you accidentally manage to erase <code>$HOME</code> and
+have no real backup to rely on &hellip; Maundy Thursday will forever be Black
+Thursday for me, from now on.</p>
+
+<p>Best thing your can do, after cursing at yourself constantly for a
+couple of hours, is to:</p>
+
+<ol>
+<li>Come up with a useful backup and <em>restore</em> strategy</li>
+<li>Read up on undeletion tools for Ext4</li>
+<li>Blog about it, naturally</li>
+</ol>
+
+<p>BUT FIRST &ndash; QUICK &ndash; UNMOUNT OR POWER-OFF YOUR COMPUTER &ndash; PULL OUT THE
+BATTERY &ndash; AND STEP AWAY FROM THE COMPUTER!  Must protect the partition
+from being accidentally written to &ndash; I completely fumbled this step, so
+take heed young people!</p>
+
+<p></p>
+                  <a href="/2016/03/24/disaster-recovery/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
               <a href="/2016/03/07/testing-multicast-with-docker/">
                 <h2 class="post-title">Testing multicast with Docker</h2>
 
@@ -471,98 +511,6 @@ service apache2 reload
 
 <p></p>
                   <a href="/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2015/03/06/inetd-support-in-finit-v1-dot-12/">
-                <h2 class="post-title">Inetd Support in Finit v1.12</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on March 6, 2015
-              </p>
-              <div class="post-entry">
-                
-                  <p>A steady flow of features, and releases, is key to keeping any project
-alive.  Recently I ticked off another item in the <a href="/finit.html">Finit</a>
-TODO list &hellip;</p>
-
-<p>Finit v1.12 now comes with a built-in inetd!  You no longer need an
-external inetd daemon to launch services on demand.</p>
-
-<p>The good news doesn&rsquo;t stop there, this little inetd actually supports a
-poor man&rsquo;s tcpwrappers!</p>
-
-<pre><code>inetd ssh/tcp          nowait [2345] /sbin/dropbear -i -R -F
-inetd ssh@eth0:222/tcp nowait [2345] /sbin/dropbear -i -R -F
-</code></pre>
-
-<p>With these two lines in your <code>/etc/finit.conf</code> you tell finit to launch
-the <a href="https://matt.ucc.asn.au/dropbear/dropbear.html">Dropbear SSH</a>
-server on demand on port 22 (default ssh/tcp port in <code>/etc/services</code>) on
-<em>all</em> interfaces except on <code>eth0</code>, which in your case is the Internet
-(WAN) interface, here you want SSH to run on port 222.  Actually, you
-don&rsquo;t want port 22 open at all on <code>eth0</code> &hellip; so finit takes care of this
-for you!  Seriously, it just works, no need for messing about with that
-nasty old <code>iptables</code> anymore!</p>
-
-<p>The original UNIX inetd super server supported many protocols
-internally, some of which may seem a bit odd today, and some have been
-superseded by more modern protocols.</p>
-
-<ul>
-<li><a href="http://en.wikipedia.org/wiki/Echo_Protocol">echo</a></li>
-<li><a href="http://en.wikipedia.org/wiki/Character_Generator_Protocol">chargen</a></li>
-<li><a href="http://en.wikipedia.org/wiki/Time_Protocol">time</a></li>
-<li><a href="http://en.wikipedia.org/wiki/Daytime_Protocol">daytime</a></li>
-<li><a href="http://en.wikipedia.org/wiki/Discard_Protocol">discard</a></li>
-</ul>
-
-<p>Finit currently only supports one internal/built-in standard service,
-<code>time</code>.  It is built as a plugin to serve as an example of how you can
-extend Finit yourself.  The time service can be called either as UDP or
-TCP.  To prevent security issues, the <code>time</code> protocol is disabled by
-default.  To enable it you need two things:</p>
-
-<ol>
-<li>The <code>time.so</code> plugin (built by default)</li>
-<li>An <code>inetd time ...</code> line in <code>/etc/finit.conf</code></li>
-</ol>
-
-<p>Assuming you&rsquo;ve installed the default set of plugins, the following two
-lines can be added:</p>
-
-<pre><code>inetd time/udp   wait [2345] internal
-inetd time/tcp nowait [2345] internal
-</code></pre>
-
-<p>This can be very useful for testing the inetd capabilities, your network
-connection, or simply to get the time to a client where NTP for some
-reason does not work, or is blocked.  For instance, you could have a GPS
-setup on your server and distribute time to clients with the <code>time</code>
-protocol.</p>
-
-<p>To use it you need an <a href="http://www.aelius.com/njh/rdate/"><code>rdate</code></a>
-client.  Users of <code>rdate</code> in BusyBox may need to be reminded that it
-only supports TCP.</p>
-
-<pre><code>$ rdate -pu 198.51.100.42
-Sat Mar  7 08:48:58 CET 2015
-</code></pre>
-
-<p>For more info on Finit and its features, see the <a href="https://github.com/troglobit/finit/blob/master/README.md">README</a>.</p>
-
-<p>Enjoy! ツ</p>
-
-<p></p>
-                  <a href="/2015/03/06/inetd-support-in-finit-v1-dot-12/" class="post-read-more">[Read More]</a>
                 
               </div>
 

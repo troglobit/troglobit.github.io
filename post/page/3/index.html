@@ -186,6 +186,30 @@
         <div class="posts-list">
           
             <article class="post-preview">
+              <a href="/2016/09/26/arm-toolchain-r1/">
+                <h2 class="post-title">ARM Toolchain r1</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on September 26, 2016
+              </p>
+              <div class="post-entry">
+                
+                  First GCC 6.1 based ARM (32-bit) toolchain released on my FTP. Built using crosstool-NG for Ubuntu 16.04 (x86_64) with GLIBC 2.23.
+ arm-unknown-linux-gnueabi-6.1.0-1.tar.xz  Download, unpack into /usr/local, and add to your $PATH
+export PATH=/usr/local/arm-unknown-linux-gnueabi-6.1.0-1/bin:$PATH  There&rsquo;s lots of neat stuff included, both a sysroot and a debug-root with GDB and gdbserver for target. For details on using it, see the excellent docs.
+The main purpose for my building this is TroglOS, but it is useful for other purposes as well of course.
+                  <a href="/2016/09/26/arm-toolchain-r1/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
               <a href="/2016/09/21/finit3--almost-there-.../">
                 <h2 class="post-title">Finit3: Almost there ...</h2>
 
@@ -458,46 +482,6 @@ Simply touch the PID file instead.</p>
 Turns out there are a few tricks that can save your home directory from accidents like mine. The first one is rather obvious, but I&rsquo;m writing it down anyway:
  Keep separate accounts. If possible, use separate accounts (with different permissions obviously) for different projects.
                   <a href="/2016/04/04/lecture-from-the-unix-beards/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2016/03/24/disaster-recovery/">
-                <h2 class="post-title">Disaster Recovery</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on March 24, 2016
-              </p>
-              <div class="post-entry">
-                
-                  <p>Days like these inconspicuously start out just like any other day,
-except on days like these you accidentally manage to erase <code>$HOME</code> and
-have no real backup to rely on &hellip; Maundy Thursday will forever be Black
-Thursday for me, from now on.</p>
-
-<p>Best thing your can do, after cursing at yourself constantly for a
-couple of hours, is to:</p>
-
-<ol>
-<li>Come up with a useful backup and <em>restore</em> strategy</li>
-<li>Read up on undeletion tools for Ext4</li>
-<li>Blog about it, naturally</li>
-</ol>
-
-<p>BUT FIRST &ndash; QUICK &ndash; UNMOUNT OR POWER-OFF YOUR COMPUTER &ndash; PULL OUT THE
-BATTERY &ndash; AND STEP AWAY FROM THE COMPUTER!  Must protect the partition
-from being accidentally written to &ndash; I completely fumbled this step, so
-take heed young people!</p>
-
-<p></p>
-                  <a href="/2016/03/24/disaster-recovery/" class="post-read-more">[Read More]</a>
                 
               </div>
 

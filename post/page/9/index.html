@@ -186,6 +186,30 @@
         <div class="posts-list">
           
             <article class="post-preview">
+              <a href="/2010/07/13/git-quickie/">
+                <h2 class="post-title">Git Quickie</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on July 13, 2010
+              </p>
+              <div class="post-entry">
+                
+                  This is a document I intend to maintain for my own purposes. It serves as a quick reminder for the steps needed when creating and working with git repositories.
+First setup a bare repository on the server.
+$ git --bare init projectX.git Initialized empty Git repository in /pub/git/projectX.git/  Set one-liner description, visible in gitweb.
+$ echo &quot;Secret project, use ROT13 to decode source code&quot; &gt;projectX.git/description  Set up a post-update hook so that the server repo is update automatically when you push to it.
+                  <a href="/2010/07/13/git-quickie/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
               <a href="/2010/07/13/converting-from-bazaar-to-git/">
                 <h2 class="post-title">Converting from Bazaar to GIT</h2>
 
@@ -406,28 +430,6 @@ Actually, this similarity in board layout, key combinations and feel led me to d
                   OK, I admit it. I cannot decide what version control system (VCS) to use. I&rsquo;m stuck between the speed and massive snow ball effect of Git and the ease of use and emotional attachment I have to Bazaar.
 I&rsquo;ve been &ldquo;maintaining&rdquo; bzrweb for a while now, not doing a very good job of it though. It&rsquo;s lagging behind considerably to the bzr API. After the upgrade of vmlinux.org to the latest Ubuntu server release bzrweb actually didn&rsquo;t work at all.
                   <a href="/2009/06/12/more-about-bzrweb-and-some-about-git/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2009/06/08/howto-setup-and-run-xen/">
-                <h2 class="post-title">Howto Setup and Run Xen</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on June 8, 2009
-              </p>
-              <div class="post-entry">
-                
-                  This is an extremly brief and quick Xen tutorial. There are lots of them already, see your GNU/Linux distribution&rsquo;s wiki, HowtoForge or other places for a starter guide. This particular HowTo deals with setting up Xen as easy as possible using Ubuntu 8.04 LTS as host operating system (dom0 in Xen terms) and Ubuntu 9.04 as guest operating systems (domU in Xen lingo).
-Ubuntu 8.04 LTS comes with a Xen kernel that can run as dom0.
-                  <a href="/2009/06/08/howto-setup-and-run-xen/" class="post-read-more">[Read More]</a>
                 
               </div>
 

@@ -8,10 +8,20 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Fri, 30 Mar 2018 19:41:26 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 15 Apr 2018 16:11:23 +0200</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>N E M E S I S</title>
+      <link>/2018/04/N-E-M-E-S-I-S/</link>
+      <pubDate>Sun, 15 Apr 2018 16:11:23 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2018/04/N-E-M-E-S-I-S/</guid>
+      <description>Summer is almost upon us. The weather in Sweden has been amazing the last couple of weeks, sunny and warm. This has of course not prevented me from pursuing my favorite indoor activity; coding!
+This time around I&amp;rsquo;ve spent some time to resurrect the packet injection tool Nemesis. It was seemingly abandonded by its original authors almost 15 years ago. There was talk about porting to libdnet, as well as visions of a proper stand-alone CLI instead of the command line tool with options, but it seems none of these plans materialized.</description>
+    </item>
     
     <item>
       <title>cgit with merecat httpd</title>
