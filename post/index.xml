@@ -19,8 +19,12 @@
       <pubDate>Sun, 15 Apr 2018 16:11:23 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2018/04/N-E-M-E-S-I-S/</guid>
-      <description>Summer is almost upon us. The weather in Sweden has been amazing the last couple of weeks, sunny and warm. This has of course not prevented me from pursuing my favorite indoor activity; coding! This time around I&amp;rsquo;ve spent some time to resurrect the packet injection tool Nemesis.
-Nemesis was seemingly abandonded by its original authors almost 15 years ago. There was talk on the mailing-list about porting to libdnet, as well as visions of a proper stand-alone CLI instead of the command line tool with options, but it seems none of these plans materialized.</description>
+      <description>&lt;p&gt;Summer is  almost upon us.  The  weather in Sweden has  been amazing the
+last couple of weeks, sunny and  warm.  This has of course not prevented
+me from pursuing my favorite  indoor activity; coding!  This time around
+I&amp;rsquo;ve spent some time to resurrect the packet injection tool &lt;a href=&#34;/projects/nemesis/&#34;&gt;Nemesis&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
