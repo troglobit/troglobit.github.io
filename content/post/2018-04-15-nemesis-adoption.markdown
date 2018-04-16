@@ -29,6 +29,8 @@ I'm fluent in C, I decided to give Nemesis a whirl.  I finished the port
 in a few days and began fixing some obvious bugs and incorporating fixes
 from the mailing list and Debian.
 
-The result is the upcoming v1.5 release, which is a long time coming ...
+I have set up a new home page  and a GitHub project.  I'm planning a new
+release, v1.5, before the  summer.  If you want to help  out or are just
+curious to try it out, check out the ⇒ [Home Page][Nemesis]
 
 [Nemesis]: /projects/nemesis/
