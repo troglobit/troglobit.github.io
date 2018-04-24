@@ -89,7 +89,7 @@ or:
 IGMP v3 query, with Router Alert IP option:
 
     echo -ne '\x03\x64\x00\x00' > v3
-    sudo ./src/nemesis igmp -p 0x11 -c 100 -i 0.0.0.0 -P v3 -D 224.0.0.1 -O RA
+    sudo nemesis igmp -p 0x11 -c 100 -i 0.0.0.0 -P v3 -D 224.0.0.1 -O RA
 
 Random TCP packet:
 
