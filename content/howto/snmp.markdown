@@ -1,12 +1,12 @@
 ---
 name:  "Playing with SNMP"
 title: "HowTo play with SNMP"
-date: 2015-11-07 12:49:00 +02:00
+date: 2018-05-05 13:57:00 +02:00
 aliases: [/howto-play-with-snmp.html]
 categories: [ "snmp", "debian", "ubuntu", "howto" ]
 ---
 
-This mini HowTo is about how you can use SNMP client tools to retrieve
+This mini HowTo describes how to use the SNMP client tools to retrieve
 *human readable* information from devices running an SNMP daemon.  In
 the examples below [mini-snmpd](/mini-snmpd.html) is used as the daemon
 and as client both the command line [net-snmp](http://www.net-snmp.org)
@@ -21,22 +21,27 @@ pages for how to install these client tools in your operating system.
 Installing SNMP in Ubuntu
 -------------------------
 
-The following command installs snmpset/get/walk, base MIBs and all
-standard MIBs needed.
+The following commands installs snmpset/get/walk, base MIBs and all the
+standard MIBs needed:
 
     sudo apt-get install snmp libsnmp-base snmp-mibs-downloader
+    sudo download-mibs
 
-Assuming you have already started `mini_snmpd` on your client, you
-should be able to do the following:
+On Debian/Ubuntu you have to also edit the file `/etc/snmp/snmp.conf` to
+enable automatic loading of the downloaded MIBs, which is disabled by
+default.  *Comment out* the line that reads:
 
-    snmpwalk -v2c -c public 127.0.0.1
-	snmpget -c public -v 2c 127.0.0.1 system.sysUpTime.0
+    mibs :
 
-If you experience problems, see Debian [bug #561578][bug] for details on
-how to edit and fix your system default `/etc/snmp/snmp.conf`
+Assuming you have already started `mini_snmpd`, say using port 16161 so
+it doesn't have to run as root, you can now talk to it using:
 
-On my system I've had trouble getting net-snmp to use the UCD-SNMP-MIB,
-so I've added it explicitly to my `~/snmp/snmp.conf`:
+    snmpwalk -v2c -c public 127.0.0.1:16161
+	snmpget -c public -v 2c 127.0.0.1:16161 system.sysUpTime.0
+
+On earlier versions of Ubuntu (pre 18.04) I've had trouble getting
+net-snmp to use the UCD-SNMP-MIB, so I've added it explicitly to my
+`~/snmp/snmp.conf`:
 
 	mibs +UCD-SNMP-MIB
 
@@ -50,9 +55,10 @@ If you want to access a router/switch which uses private MIBs you can do
 the same as I did for the UCD-SNMP-MIB:
 
     mkdir -p ~/.snmp/mibs
-	cp ALL-PRIVATE-MIBS ~/.snmp/mibs/`basename $file .my`
+	cp COMPANY-SOME-MIB COMPANY-OID-MIB ~/.snmp/mibs/
 	cat << EOF > ~/.snmp/snmp.conf
-	mibdirs /usr/share/snmp/mibs:/usr/share/mibs/ietf:/usr/share/mibs/iana:/usr/share/mibs/irtf:/usr/share/mibs/tubs:$HOME/.snmp/mibs
+	# mibdirs /usr/share/snmp/mibs:/usr/share/mibs/ietf:/usr/share/mibs/iana:/usr/share/mibs/irtf:/usr/share/mibs/tubs
+	mibdirs $HOME/.snmp/mibs
 	mibs +COMPANY-SOME-MIB
 	mibs +COMPANY-OID-MIB
 	EOF
@@ -75,7 +81,7 @@ Walk all IP addresses
 
 Get loadavg
 
-	snmpwalk -v2c -c public 127.0.0.1 UCD-SNMP-MIB::laLoad
+	snmpwalk -v2c -c public 127.0.0.1:16161 UCD-SNMP-MIB::laLoad
 
 For more tips on using `snmpwalk`, see the
 [Net-SNMP wiki](http://www.net-snmp.org/wiki/index.php/TUT:snmpwalk)
