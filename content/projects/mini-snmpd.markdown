@@ -11,7 +11,11 @@ since it's written in C.  The daemon is very small (~40 kiB) and does
 not have nowhere near the feature set of [Net-SNMP][1], therefore it has
 a very low impact on system resources.
 
-Features:
+See my mini HowTo: [Playing with SNMP](/howto-play-with-snmp.html) for a
+quick introduction to setting up the SNMP tools and MIBs to avoid having
+to use numerical OIDs.
+
+**Features:**
 
 - Supports SNMP version 1 and 2c
 - Supports SNMP `get`, `getnext` and `getbulk`
