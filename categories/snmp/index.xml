@@ -8,7 +8,7 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Sat, 07 Nov 2015 12:49:00 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 05 May 2018 13:57:00 +0200</lastBuildDate>
     
 	<atom:link href="/categories/snmp/index.xml" rel="self" type="application/rss+xml" />
     
@@ -16,10 +16,10 @@
     <item>
       <title>HowTo play with SNMP</title>
       <link>/howto/snmp/</link>
-      <pubDate>Sat, 07 Nov 2015 12:49:00 +0200</pubDate>
+      <pubDate>Sat, 05 May 2018 13:57:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/howto/snmp/</guid>
-      <description>This mini HowTo is about how you can use SNMP client tools to retrieve human readable information from devices running an SNMP daemon. In the examples below mini-snmpd is used as the daemon and as client both the command line net-snmp tool and the snmpB GUI are used.
+      <description>This mini HowTo describes how to use the SNMP client tools to retrieve human readable information from devices running an SNMP daemon. In the examples below mini-snmpd is used as the daemon and as client both the command line net-snmp tool and the snmpB GUI are used.
 Personally I use both Ubuntu and Debian, so the tools I use to download the clients will reflect that. See your respective UNIX distro&amp;rsquo;s help pages for how to install these client tools in your operating system.</description>
     </item>
     

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/howto/snmp/</loc>
+    <lastmod>2018-05-05T13:57:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2018/04/N-E-M-E-S-I-S/</loc>
     <lastmod>2018-04-15T16:11:23+02:00</lastmod>
   </url>
@@ -225,11 +230,6 @@
   <url>
     <loc>/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/</loc>
     <lastmod>2015-11-10T12:14:09+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/howto/snmp/</loc>
-    <lastmod>2015-11-07T12:49:00+02:00</lastmod>
   </url>
   
   <url>
@@ -784,7 +784,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2018-04-15T16:11:23+02:00</lastmod>
+    <lastmod>2018-05-05T13:57:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -916,7 +916,7 @@
   
   <url>
     <loc>/categories/debian/</loc>
-    <lastmod>2017-09-30T12:39:43+00:00</lastmod>
+    <lastmod>2018-05-05T13:57:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1022,13 +1022,13 @@
   
   <url>
     <loc>/categories/howto/</loc>
-    <lastmod>2015-11-07T12:49:00+02:00</lastmod>
+    <lastmod>2018-05-05T13:57:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/howto/</loc>
-    <lastmod>2015-11-07T12:49:00+02:00</lastmod>
+    <lastmod>2018-05-05T13:57:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1320,7 +1320,7 @@
   
   <url>
     <loc>/categories/snmp/</loc>
-    <lastmod>2015-11-07T12:49:00+02:00</lastmod>
+    <lastmod>2018-05-05T13:57:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1433,7 +1433,7 @@
   
   <url>
     <loc>/categories/ubuntu/</loc>
-    <lastmod>2017-09-30T12:39:43+00:00</lastmod>
+    <lastmod>2018-05-05T13:57:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   

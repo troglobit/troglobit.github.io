@@ -8,10 +8,20 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Sun, 15 Apr 2018 16:11:23 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 05 May 2018 13:57:00 +0200</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HowTo play with SNMP</title>
+      <link>/howto/snmp/</link>
+      <pubDate>Sat, 05 May 2018 13:57:00 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/howto/snmp/</guid>
+      <description>This mini HowTo describes how to use the SNMP client tools to retrieve human readable information from devices running an SNMP daemon. In the examples below mini-snmpd is used as the daemon and as client both the command line net-snmp tool and the snmpB GUI are used.
+Personally I use both Ubuntu and Debian, so the tools I use to download the clients will reflect that. See your respective UNIX distro&amp;rsquo;s help pages for how to install these client tools in your operating system.</description>
+    </item>
     
     <item>
       <title>N E M E S I S</title>
@@ -279,8 +289,7 @@ In 2003 the OpenBSD project managed to convince Stanford in to change the licens
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/projects/mini-snmpd/</guid>
       <description>This is an SNMP server for small and embedded systems, currently Linux and FreeBSD are supported. It is easily portable to other UNIX systems since it&amp;rsquo;s written in C. The daemon is very small (~40 kiB) and does not have nowhere near the feature set of Net-SNMP, therefore it has a very low impact on system resources.
-Features:
- Supports SNMP version 1 and 2c Supports SNMP get, getnext and getbulk Supports both IPv4 and IPv6 Supports communication over UDP and TCP sockets Supports the most important performance data (uptime, CPU load, memory usage) Supports the most important network data (bytes/packets in/out, error counts) Supports the most important disk data (disk space/inodes available/used/free) Tested with net-snmp, cacti, and MRTG</description>
+See my mini HowTo: Playing with SNMP for a quick introduction to setting up the SNMP tools and MIBs to avoid having to use numerical OIDs.</description>
     </item>
     
     <item>
@@ -744,16 +753,6 @@ improving and adding features to it over the years.&lt;/p&gt;
       <description>Back to using the Awesome WM in Ubuntu. This time I&amp;rsquo;m setting up everything from scratch and first up is fixing keybindings to control my main music player: Spotify!
 Edit your ~/.config/awesome/rc.lua with Emacs (obviously). If you do not have an rc file, simply copy the system /etc/xdb/awesome/rc.lua:
 globalkeys = awful.util.table.join(globalkeys, awful.key({}, &amp;quot;XF86AudioRaiseVolume&amp;quot;, function () awful.util.spawn(&amp;quot;amixer -D pulse sset Master 5%+&amp;quot;, false) end), awful.key({}, &amp;quot;XF86AudioLowerVolume&amp;quot;, function () awful.util.spawn(&amp;quot;amixer -D pulse sset Master 5%-&amp;quot;, false) end), awful.</description>
-    </item>
-    
-    <item>
-      <title>HowTo play with SNMP</title>
-      <link>/howto/snmp/</link>
-      <pubDate>Sat, 07 Nov 2015 12:49:00 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/howto/snmp/</guid>
-      <description>This mini HowTo is about how you can use SNMP client tools to retrieve human readable information from devices running an SNMP daemon. In the examples below mini-snmpd is used as the daemon and as client both the command line net-snmp tool and the snmpB GUI are used.
-Personally I use both Ubuntu and Debian, so the tools I use to download the clients will reflect that. See your respective UNIX distro&amp;rsquo;s help pages for how to install these client tools in your operating system.</description>
     </item>
     
     <item>
