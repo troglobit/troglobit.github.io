@@ -16,9 +16,12 @@ Nemesis can natively craft and inject ARP, DNS, ETHERNET, ICMP, IGMP,
 IP, OSPF, RIP, TCP and UDP packets.  Using the IP and the Ethernet
 injection modes, almost any custom packet can be crafted and injected.
 
-   * [Repository](http://github.com/troglobit/nemesis)
-   * [Issue Tracker](http://github.com/troglobit/nemesis/issues)
-   * [ChangeLog](https://github.com/troglobit/nemesis/blob/master/ChangeLog.md)
+* [README](https://github.com/troglobit/nemesis/blob/master/README.md)
+* [ChangeLog](https://github.com/troglobit/nemesis/blob/master/ChangeLog.md)
+* [Repository](http://github.com/troglobit/nemesis)
+* [Issue Tracker](http://github.com/troglobit/nemesis/issues)
+* [nemesis-1.5.tar.xz](ftp://ftp.troglobit.com/nemesis/nemesis-1.5.tar.xz),
+  [MD5](ftp://ftp.troglobit.com/nemesis/nemesis-1.5.tar.xz.md5)
 
 
 Examples
