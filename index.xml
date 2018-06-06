@@ -8,10 +8,21 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Sat, 05 May 2018 13:57:00 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 06 Jun 2018 22:00:00 +0200</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>No nonsense FTP/TFTP server</title>
+      <link>/projects/uftpd/</link>
+      <pubDate>Wed, 06 Jun 2018 22:00:00 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/projects/uftpd/</guid>
+      <description>Tired of confusing configuration files and security features you don&amp;rsquo;t need?
+Try uftpd(8)!
+ Supports both FTP and TFTP Has no confusing configuration file Listens to port ftp/tcp and tftp/udp found in /etc/services, or custom port(s) Serves files from the ftp user&amp;rsquo;s $HOME, as specified in /etc/passwd, or custom path Can run from inetd(8) or as a standalone daemon Can be built and installed as a .deb file, with debconf support Can run as root, with chroot and privsep, or as a regular user Supports TFTP blocksize negotiation, RFC 2348  Basically, it just works!</description>
+    </item>
     
     <item>
       <title>HowTo play with SNMP</title>
@@ -310,17 +321,6 @@ See my mini HowTo: Playing with SNMP for a quick introduction to setting up the 
       <description>Reminder to self:
 echo &amp;quot;https://ftp.eu.openbsd.org/pub/OpenBSD/&amp;quot; &amp;gt;/etc/installurl pkg_add git autoconf automake libtool  Select the latest versions, then add the following to ~/.profile:
 AUTOCONF_VERSION=2.69 AUTOMAKE_VERSION=1.15 export AUTOCONF_VERSION AUTOMAKE_VERSION  With your selected versions, of course.</description>
-    </item>
-    
-    <item>
-      <title>No nonsense FTP/TFTP server</title>
-      <link>/projects/uftpd/</link>
-      <pubDate>Wed, 22 Mar 2017 08:00:00 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/projects/uftpd/</guid>
-      <description>Tired of confusing configuration files and security features you don&amp;rsquo;t need?
-Try uftpd(8)!
- Supports both FTP and TFTP Has no confusing configuration file Listens to port ftp/tcp and tftp/udp found in /etc/services, or custom port(s) Serves files from the ftp user&amp;rsquo;s $HOME, as specified in /etc/passwd, or custom path Can run from inetd(8) or as a standalone daemon Can be built and installed as a .deb file, with debconf support Can run as root, with chroot and privsep, or as a regular user Supports TFTP blocksize negotiation, RFC 2348  Basically, it just works!</description>
     </item>
     
     <item>
