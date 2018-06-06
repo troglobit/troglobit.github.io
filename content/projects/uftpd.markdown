@@ -2,7 +2,7 @@
 name: uftpd
 title: "No nonsense FTP/TFTP server"
 description: "FTP/TFTP server for Linux that just works™"
-date: 2017-03-22 08:00:00 +0200
+date: 2018-06-06 22:00:00 +0200
 aliases: /uftpd.html
 ---
 
@@ -25,9 +25,9 @@ Basically, it just works!
 * [README](https://github.com/troglobit/uftpd/blob/master/README.md)
 * [TODO](https://github.com/troglobit/uftpd/blob/master/TODO.md)
 * [Issue Tracker](http://github.com/troglobit/uftpd/issues)
-* [uftpd-2.3.tar.xz](ftp://ftp.troglobit.com/uftpd/uftpd-2.3.tar.xz),
-  [MD5](ftp://ftp.troglobit.com/uftpd/uftpd-2.3.tar.xz.md5),
-* [ChangeLog](https://github.com/troglobit/uftpd/releases/tag/v2.3)
+* [uftpd-2.5.tar.xz](ftp://ftp.troglobit.com/uftpd/uftpd-2.5.tar.xz),
+  [MD5](ftp://ftp.troglobit.com/uftpd/uftpd-2.5.tar.xz.md5),
+* [ChangeLog](https://github.com/troglobit/uftpd/releases/tag/v2.5)
 
 See also the [OpenHub page](https://www.openhub.net/p/uftpd/), the cool
 [Fresh(code) page](http://freshcode.club/projects/uftpd), or the (sadly)
