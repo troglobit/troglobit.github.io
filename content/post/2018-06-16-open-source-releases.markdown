@@ -7,7 +7,11 @@ tags: []
 
 Last three months have been hectic, lots of exciting things going on [at
 work](https://www.westermo.com), with my kids, and also with some of my
-pet projects.  Here's quick update:
+pet projects.
+
+<!--more-->
+
+Here's quick update:
 
 * [libite (-lite)](https://github.com/troglobit/libite) saw a new minor
   release of this collection of useful APIs, v2.0.2
