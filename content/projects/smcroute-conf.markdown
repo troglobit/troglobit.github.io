@@ -21,21 +21,23 @@ aliases: /smcroute-conf.html
 #       multicast to your router, or select groups if they have
 #       such capabilities.  Usually MAC multicast filters exist.
 #
-#       Some switches IGMP snooping implementations support mrdisc,
-#       RFC4286, which SMCRoute use to advertise on source interfaces.
+#       Some switch manufacturers support mrdisc, RFC4286, which
+#       SMCRoute can use to advertise itself on source interfaces.
 #
 #       The UNIX kernel usually limits the number of multicast groups
-#       a socket/client can join.  Linux for instance supports only
-#       20 groups by default, but this can be configured using the
-#       /proc/sys/net/ipv4/igmp_max_memberships file.
+#       a socket/client can join.  In Linux, 20 mgroup lines can be
+#       configured by default, but this can be changed with sysctl:
 #
-# Similarly supported is setting mroutes. Removing mroutes is not
-# supported, remove/comment out the mroute or send a remove command.
+#           sysctl -w net.ipv4.igmp_max_memberships=30
+#
+# Similarly supported is setting mroutes.  Removing mroutes is not
+# supported, remove/comment out the mroute from the .conf file, or
+# send a remove command with smcroutectl.
 #
 # Syntax:
-#   phyint IFNAME <disable|enable> [ttl-threshold <1-255>]
-#   mgroup from IFNAME group MCGROUP
-#   mroute from IFNAME [source ADDRESS] group MCGROUP to IFNAME [IFNAME ...]
+#   phyint IFNAME <enable|disable> [mrdisc] [ttl-threshold <1-255>]
+#   mgroup from IFNAME [source ADDRESS] group MCGROUP
+#   mroute from IFNAME [source ADDRESS] group MCGROUP[/LEN] to IFNAME [IFNAME ...]
 
 # This example disables the creation of a multicast VIF for WiFi
 # interface wlan0.  The kernel (at least Linux) sets the ALLMULTI
@@ -54,11 +56,12 @@ phyint virbr0 enable ttl-threshold 5
 # mroute of the same multicast stream, but from the explicit sender
 # 192.168.1.42 on the eth0 network and forward to eth1 and eth2.
 #
-mgroup from eth0 group 225.1.2.3
-mroute from eth0 group 225.1.2.3 source 192.168.1.42 to eth1 eth2
+mgroup from eth0                     group 225.1.2.3
+mroute from eth0 source 192.168.1.42 group 225.1.2.3 to eth1 eth2
 
-mgroup from virbr0 group 225.1.2.4
-mroute from virbr0 group 225.1.2.4 source 192.168.123.110 to eth0
+# Similar example, but using source-specific group join
+mgroup from virbr0 source 192.168.123.110 group 225.1.2.4
+mroute from virbr0 source 192.168.123.110 group 225.1.2.4 to eth0
 
 # Here we allow routing of multicast to group 225.3.2.1 from ANY
 # source coming in from interface eth0 and forward to eth1 and eth2.
@@ -67,11 +70,10 @@ mroute from virbr0 group 225.1.2.4 source 192.168.123.110 to eth0
 mgroup from eth0 group 225.3.2.1
 mroute from eth0 group 225.3.2.1 to eth1 eth2
 
-# It is also possible to route a complete (*,G/LEN) range 
-mroute from eth0 group 239.255.255.0/24 to eth1
-
-# The following example instructs the kernel to join the source
-# specific multicast group 225.2.1.3 on interface eth0 with
-# source 192.168.10.25.
-mgroup from eth0 group 225.2.1.3 source 192.168.10.25
-```
+# The previous is an example of the (*,G) support.  Such rules cause
+# SMCRoute to dynamically add multicast routes to the kernel when the
+# first frame of a stream reaches the router.  It is also possible to
+# specify a range of such rules, again, note that this currently only
+# works for IPv4.  Also, it is not possible to set a range of groups
+# to join atm.
+mroute from eth0 group 225.0.0.0/24 to eth1 eth2

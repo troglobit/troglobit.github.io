@@ -1,7 +1,7 @@
 ---
 name: SMCRoute
 title: "Static Multicast Routing Daemon"
-date: 2018-02-11 14:16:00 +02:00
+date: 2018-06-16 15:07:00 +02:00
 aliases: /smcroute.html
 ---
 
@@ -21,6 +21,7 @@ Features
 - Configuration file support, [/etc/smcroute.conf](smcroute-conf.html)
 - Support for restarting and reloading the `.conf` on `SIGHUP`
 - Source-less on-demand routing, a.k.a. (*,G) based static routing
+- Source specific group join support
 - Optional built-in [mrdisc][] support, [RFC4286][]
 - Support for multiple routing tables on Linux
 - Client with built-in support to show routes and joined groups
@@ -59,13 +60,12 @@ available as `.tar.gz` for systems that do not have `xz` in the default
 install, like OpenBSD:
 
    * [Repository][GitHub]
-   * [smcroute-2.4.0.tar.xz](ftp://ftp.troglobit.com/smcroute/smcroute-2.4.0.tar.xz),
-     [MD5](ftp://ftp.troglobit.com/smcroute/smcroute-2.4.0.tar.xz.md5)
-     [GPG Sign](ftp://ftp.troglobit.com/smcroute/smcroute-2.4.0.tar.xz.asc)
+   * [smcroute-2.4.1.tar.xz](ftp://ftp.troglobit.com/smcroute/smcroute-2.4.1.tar.xz),
+     [MD5](ftp://ftp.troglobit.com/smcroute/smcroute-2.4.1.tar.xz.md5)
+     [GPG Sign](ftp://ftp.troglobit.com/smcroute/smcroute-2.4.1.tar.xz.asc)
    * [Issue Tracker](http://github.com/troglobit/smcroute/issues)
    * [Debian packages](http://packages.debian.org/smcroute)
    * [Ubuntu packages](http://packages.ubuntu.com/smcroute)
-   * [Google Group](https://groups.google.com/forum/?fromgroups#!forum/smcroute)
 
 See also the [OpenHub page](https://www.openhub.net/p/smcroute/), the
 [Freshcode page](http://freshcode.club/projects/smcroute), or the now
