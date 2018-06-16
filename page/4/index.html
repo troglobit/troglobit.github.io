@@ -180,6 +180,35 @@
           
           
             <article class="post-preview">
+              <a href="/2016/04/04/lecture-from-the-unix-beards/">
+                <h2 class="post-title">Lecture from the UNIX beards</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on April 4, 2016
+  
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  After the rm -rf /* disaster that hit me a couple of weeks ago I&rsquo;ve been rebuilding my setup, restoring the few files I&rsquo;ve had backed up, and collecting advice from the elders.
+Turns out there are a few tricks that can save your home directory from accidents like mine. The first one is rather obvious, but I&rsquo;m writing it down anyway:
+ Keep separate accounts. If possible, use separate accounts (with different permissions obviously) for different projects.
+                  <a href="/2016/04/04/lecture-from-the-unix-beards/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
               <a href="/2016/03/24/disaster-recovery/">
                 <h2 class="post-title">Disaster Recovery</h2>
                 
@@ -508,64 +537,6 @@ pushed to both the GitHub repo as well as my own server!</p>
 
 <p></p>
                   <a href="/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/">
-                <h2 class="post-title">HowTo: Apache with Gitweb on Debian 8.1</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on June 30, 2015
-  
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  <p>I&rsquo;m posting this in case anyone else gets stuck setting up <a href="http://www.apache.org">Apache</a>
-with <a href="http://git-scm.com/docs/gitweb">Gitweb</a>.  Also as a reminder to myself in case I ever need to
-set up this all over again.</p>
-
-<ol>
-<li>You have all your eggs in one basket (GitHub), and</li>
-<li>You really like that shiny basket, but</li>
-<li>You know you&rsquo;re clumsy and usually drop baskets yourself.</li>
-<li>You are wise (yes you are!) and realize you need another basket, so</li>
-<li>You set up a server and a domain yourself &hellip;</li>
-</ol>
-
-<p>OK.  Let&rsquo;s start simple, since you are already running the latest Debian
-you fire up the command line and install the basics:</p>
-
-<pre><code>sudo apt-get install gitweb apache2
-</code></pre>
-
-<p>So it&rsquo;ll complain, you&rsquo;ll clarify your request and soon all required
-packages are on your server.  Now what?</p>
-
-<p>Debian has already set up <a href="http://localhost/gitweb">http://localhost/gitweb</a> for you, and if you
-have a domain already you should go ahead and edit the master file for
-that:</p>
-
-<pre><code>editor /etc/apache2/sites-available/000-default.conf
-service apache2 reload
-</code></pre>
-
-<p>If you want to use that for your gitweb needs, then you&rsquo;re done!</p>
-
-<p></p>
-                  <a href="/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/" class="post-read-more">[Read More]</a>
                 
               </div>
 

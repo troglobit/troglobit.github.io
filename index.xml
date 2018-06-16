@@ -8,10 +8,20 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Sat, 16 Jun 2018 15:07:00 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 16 Jun 2018 15:19:28 +0200</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Open Source Releases</title>
+      <link>/2018/06/Open-Source-Releases/</link>
+      <pubDate>Sat, 16 Jun 2018 15:19:28 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2018/06/Open-Source-Releases/</guid>
+      <description>Last three months have been hectic, lots of exciting things going on at work, with my kids, and also with some of my pet projects. Here&amp;rsquo;s quick update:
+ libite (-lite) saw a new minor release of this collection of useful APIs, v2.0.2 tinyroot is a new project. I started it mostly to serve as a very simple example of an embedded system, v2018_071 nemesis is the latest stray I&amp;rsquo;ve adopeted.</description>
+    </item>
     
     <item>
       <title>Static Multicast Routing Daemon</title>

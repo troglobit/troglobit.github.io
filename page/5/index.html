@@ -180,6 +180,64 @@
           
           
             <article class="post-preview">
+              <a href="/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/">
+                <h2 class="post-title">HowTo: Apache with Gitweb on Debian 8.1</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on June 30, 2015
+  
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <p>I&rsquo;m posting this in case anyone else gets stuck setting up <a href="http://www.apache.org">Apache</a>
+with <a href="http://git-scm.com/docs/gitweb">Gitweb</a>.  Also as a reminder to myself in case I ever need to
+set up this all over again.</p>
+
+<ol>
+<li>You have all your eggs in one basket (GitHub), and</li>
+<li>You really like that shiny basket, but</li>
+<li>You know you&rsquo;re clumsy and usually drop baskets yourself.</li>
+<li>You are wise (yes you are!) and realize you need another basket, so</li>
+<li>You set up a server and a domain yourself &hellip;</li>
+</ol>
+
+<p>OK.  Let&rsquo;s start simple, since you are already running the latest Debian
+you fire up the command line and install the basics:</p>
+
+<pre><code>sudo apt-get install gitweb apache2
+</code></pre>
+
+<p>So it&rsquo;ll complain, you&rsquo;ll clarify your request and soon all required
+packages are on your server.  Now what?</p>
+
+<p>Debian has already set up <a href="http://localhost/gitweb">http://localhost/gitweb</a> for you, and if you
+have a domain already you should go ahead and edit the master file for
+that:</p>
+
+<pre><code>editor /etc/apache2/sites-available/000-default.conf
+service apache2 reload
+</code></pre>
+
+<p>If you want to use that for your gitweb needs, then you&rsquo;re done!</p>
+
+<p></p>
+                  <a href="/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
               <a href="/2015/03/06/inetd-support-in-finit-v1-dot-12/">
                 <h2 class="post-title">Inetd Support in Finit v1.12</h2>
                 
@@ -552,35 +610,6 @@ faster to transfer files over TFTP.</p>
  Rebuild the kernel with options MROUTING Load the kernel module: kldload ip_mroute  The kernel rebuild assumes the src.txz set was installed previously.
 cd /usr/src cd sys/amd64/conf cat GENERIC | sed 's/GENERIC$/MULTICAST/' &gt; MULTICAST echo 'options MROUTING # Multicast routing' &gt;&gt; MULTICAST echo 'options PIM # Enable for pimd' &gt;&gt; MULTICAST cd - make kernel KERNCONF=MULTICAST reboot  That&rsquo;s it.
                   <a href="/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/">
-                <h2 class="post-title">GnuTLS support in Inadyn and fixes to uftpd</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on September 13, 2014
-  
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  Quite a few changes lately. I finally got around to adding support for GnuTLS to Inadyn, hopefully this will get into Debian &hellip; unless the Jessie freeze prevents that.
-Also, thanks to a friend of mine trying out uftpd recently I discovered that libuev has been missing from the tarball since the release of the TFTP support. Fixed.
-Another great piece of news is that Coverity accepted uftpd as an Open Source project, I&rsquo;ve been hard at work fixing nasty bugs uncovered by the Coverity Scan.
-                  <a href="/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/" class="post-read-more">[Read More]</a>
                 
               </div>
 
