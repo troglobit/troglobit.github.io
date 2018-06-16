@@ -186,6 +186,29 @@
         <div class="posts-list">
           
             <article class="post-preview">
+              <a href="/projects/smcroute/">
+                <h2 class="post-title">Static Multicast Routing Daemon</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on June 16, 2018
+              </p>
+              <div class="post-entry">
+                
+                  SMCRoute is a daemon and command line tool to manipulate the multicast routing table in the UNIX kernel. Both FreeBSD and Linux kernels are supported, but it may work on other systems as well.
+SMCRoute can be used as an alternative to dynamic multicast routing daemons like mrouted or pimd when (only) static multicast routes should be maintained and/or no proper IGMP signalling exists.
+Features  Configuration file support, /etc/smcroute.
+                  <a href="/projects/smcroute/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
               <a href="/projects/uftpd/">
                 <h2 class="post-title">No nonsense FTP/TFTP server</h2>
 
@@ -246,29 +269,6 @@ Nemesis can natively craft and inject ARP, DNS, ETHERNET, ICMP, IGMP, IP, OSPF, 
 Finit supports runlevels, process monitoring, and starting services on demand using the built-in inetd, or by triggering a condition. E.g., &ldquo;don&rsquo;t start this service until basic networking is available&rdquo;, or &ldquo;wait until syslogd has started&rdquo;.
 For more details, see the online documentation.
                   <a href="/projects/finit/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="/projects/smcroute/">
-                <h2 class="post-title">Static Multicast Routing Daemon</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on February 11, 2018
-              </p>
-              <div class="post-entry">
-                
-                  SMCRoute is a daemon and command line tool to manipulate the multicast routing table in the UNIX kernel. Both FreeBSD and Linux kernels are supported, but it may work on other systems as well.
-SMCRoute can be used as an alternative to dynamic multicast routing daemons like mrouted or pimd when (only) static multicast routes should be maintained and/or no proper IGMP signalling exists.
-Features  Configuration file support, /etc/smcroute.
-                  <a href="/projects/smcroute/" class="post-read-more">[Read More]</a>
                 
               </div>
 
@@ -398,7 +398,10 @@ See my mini HowTo: Playing with SNMP for a quick introduction to setting up the 
               </p>
               <div class="post-entry">
                 
-                  <p></p>
+                  ```conf #
+smcroute.conf example #
+The configuration file supports joining multicast groups, to use Layer-2 signaling so that switches and routers open up multicast traffic to your interfaces. Leave is not supported, remove the mgroup and SIGHUP your daemon, or send a specific leave command. #
+NOTE: Use of the mgroup command should be avoided if possible. Instead configure &ldquo;router ports&rdquo; or similar on the switches or bridges on your LAN.
                   <a href="/project/smcroute/smcroute-conf.html" class="post-read-more">[Read More]</a>
                 
               </div>

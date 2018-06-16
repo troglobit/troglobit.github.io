@@ -8,9 +8,17 @@
   <title>smcroute.conf example</title>
   <meta property="og:title" content="smcroute.conf example" />
   <meta name="twitter:title" content="smcroute.conf example" />
-  <meta name="description" content="">
-  <meta property="og:description" content="">
-  <meta name="twitter:description" content="">
+  <meta name="description" content="```conf #
+smcroute.conf example #
+The configuration file supports joining multicast groups, to use Layer-2 signaling so that switches and routers open up multicast traffic to your interfaces. Leave is not supported, remove the mgroup and SIGHUP your daemon, or send a specific leave command. #
+NOTE: Use of the mgroup command should be avoided if possible. Instead configure &ldquo;router ports&rdquo; or similar on the switches or bridges on your LAN.">
+  <meta property="og:description" content="```conf #
+smcroute.conf example #
+The configuration file supports joining multicast groups, to use Layer-2 signaling so that switches and routers open up multicast traffic to your interfaces. Leave is not supported, remove the mgroup and SIGHUP your daemon, or send a specific leave command. #
+NOTE: Use of the mgroup command should be avoided if possible. Instead configure &ldquo;router ports&rdquo; or similar on the switches or bridges on your LAN.">
+  <meta name="twitter:description" content="```conf #
+smcroute.conf example #
+The configuration file supports joining multicast groups, to use Layer-2 signaling so that switches and routers open up multicast traffic to your interfaces. Leave is …">
   <meta name="author" content="Joachim Nilsson"/>
   <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="/images/profile.jpg" />
@@ -199,76 +207,130 @@
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p></p>
+        <p>
+```conf
+#</p>
 
-<pre><code class="language-conf">#
-# smcroute.conf example
-#
-# The configuration file supports joining multicast groups, to use
-# Layer-2 signaling so that switches and routers open up multicast
-# traffic to your interfaces.  Leave is not supported, remove the
-# mgroup and SIGHUP your daemon, or send a specific leave command.
-#
-# NOTE: Use of the mgroup command should be avoided if possible.
-#       Instead configure &quot;router ports&quot; or similar on the switches
-#       or bridges on your LAN.  This to have them direct all the
-#       multicast to your router, or select groups if they have
-#       such capabilities.  Usually MAC multicast filters exist.
-#
-#       Some switches IGMP snooping implementations support mrdisc,
-#       RFC4286, which SMCRoute use to advertise on source interfaces.
-#
-#       The UNIX kernel usually limits the number of multicast groups
-#       a socket/client can join.  Linux for instance supports only
-#       20 groups by default, but this can be configured using the
-#       /proc/sys/net/ipv4/igmp_max_memberships file.
-#
-# Similarly supported is setting mroutes. Removing mroutes is not
-# supported, remove/comment out the mroute or send a remove command.
-#
-# Syntax:
-#   phyint IFNAME &lt;disable|enable&gt; [ttl-threshold &lt;1-255&gt;]
-#   mgroup from IFNAME group MCGROUP
-#   mroute from IFNAME [source ADDRESS] group MCGROUP to IFNAME [IFNAME ...]
+<h1 id="smcroute-conf-example">smcroute.conf example</h1>
 
-# This example disables the creation of a multicast VIF for WiFi
-# interface wlan0.  The kernel (at least Linux) sets the ALLMULTI
-# flag for all interfaces that have a VIF enabled.  Hence, it can
-# cause quite a bit of unnecessary traffic to reach the CPU if too
-# many interfaces have a VIF (or MIF in IPv6 lingo).  Only enable
-# interfaces required for inbound and outbound traffic.
-# phyint wlan0 disable
-phyint eth0 enable ttl-threshold 11
+<p>#</p>
+
+<h1 id="the-configuration-file-supports-joining-multicast-groups-to-use">The configuration file supports joining multicast groups, to use</h1>
+
+<h1 id="layer-2-signaling-so-that-switches-and-routers-open-up-multicast">Layer-2 signaling so that switches and routers open up multicast</h1>
+
+<h1 id="traffic-to-your-interfaces-leave-is-not-supported-remove-the">traffic to your interfaces.  Leave is not supported, remove the</h1>
+
+<h1 id="mgroup-and-sighup-your-daemon-or-send-a-specific-leave-command">mgroup and SIGHUP your daemon, or send a specific leave command.</h1>
+
+<p>#</p>
+
+<h1 id="note-use-of-the-mgroup-command-should-be-avoided-if-possible">NOTE: Use of the mgroup command should be avoided if possible.</h1>
+
+<h1 id="instead-configure-router-ports-or-similar-on-the-switches">Instead configure &ldquo;router ports&rdquo; or similar on the switches</h1>
+
+<h1 id="or-bridges-on-your-lan-this-to-have-them-direct-all-the">or bridges on your LAN.  This to have them direct all the</h1>
+
+<h1 id="multicast-to-your-router-or-select-groups-if-they-have">multicast to your router, or select groups if they have</h1>
+
+<h1 id="such-capabilities-usually-mac-multicast-filters-exist">such capabilities.  Usually MAC multicast filters exist.</h1>
+
+<p>#</p>
+
+<h1 id="some-switch-manufacturers-support-mrdisc-rfc4286-which">Some switch manufacturers support mrdisc, RFC4286, which</h1>
+
+<h1 id="smcroute-can-use-to-advertise-itself-on-source-interfaces">SMCRoute can use to advertise itself on source interfaces.</h1>
+
+<p>#</p>
+
+<h1 id="the-unix-kernel-usually-limits-the-number-of-multicast-groups">The UNIX kernel usually limits the number of multicast groups</h1>
+
+<h1 id="a-socket-client-can-join-in-linux-20-mgroup-lines-can-be">a socket/client can join.  In Linux, 20 mgroup lines can be</h1>
+
+<h1 id="configured-by-default-but-this-can-be-changed-with-sysctl">configured by default, but this can be changed with sysctl:</h1>
+
+<p>#</p>
+
+<h1 id="sysctl-w-net-ipv4-igmp-max-memberships-30">sysctl -w net.ipv4.igmp_max_memberships=30</h1>
+
+<p>#</p>
+
+<h1 id="similarly-supported-is-setting-mroutes-removing-mroutes-is-not">Similarly supported is setting mroutes.  Removing mroutes is not</h1>
+
+<h1 id="supported-remove-comment-out-the-mroute-from-the-conf-file-or">supported, remove/comment out the mroute from the .conf file, or</h1>
+
+<h1 id="send-a-remove-command-with-smcroutectl">send a remove command with smcroutectl.</h1>
+
+<p>#</p>
+
+<h1 id="syntax">Syntax:</h1>
+
+<h1 id="phyint-ifname-enable-disable-mrdisc-ttl-threshold-1-255">phyint IFNAME <enable|disable> [mrdisc] [ttl-threshold <1-255>]</h1>
+
+<h1 id="mgroup-from-ifname-source-address-group-mcgroup">mgroup from IFNAME [source ADDRESS] group MCGROUP</h1>
+
+<h1 id="mroute-from-ifname-source-address-group-mcgroup-len-to-ifname-ifname">mroute from IFNAME [source ADDRESS] group MCGROUP[/LEN] to IFNAME [IFNAME &hellip;]</h1>
+
+<h1 id="this-example-disables-the-creation-of-a-multicast-vif-for-wifi">This example disables the creation of a multicast VIF for WiFi</h1>
+
+<h1 id="interface-wlan0-the-kernel-at-least-linux-sets-the-allmulti">interface wlan0.  The kernel (at least Linux) sets the ALLMULTI</h1>
+
+<h1 id="flag-for-all-interfaces-that-have-a-vif-enabled-hence-it-can">flag for all interfaces that have a VIF enabled.  Hence, it can</h1>
+
+<h1 id="cause-quite-a-bit-of-unnecessary-traffic-to-reach-the-cpu-if-too">cause quite a bit of unnecessary traffic to reach the CPU if too</h1>
+
+<h1 id="many-interfaces-have-a-vif-or-mif-in-ipv6-lingo-only-enable">many interfaces have a VIF (or MIF in IPv6 lingo).  Only enable</h1>
+
+<h1 id="interfaces-required-for-inbound-and-outbound-traffic">interfaces required for inbound and outbound traffic.</h1>
+
+<h1 id="phyint-wlan0-disable">phyint wlan0 disable</h1>
+
+<p>phyint eth0 enable ttl-threshold 11
 phyint eth1 enable ttl-threshold 3
 phyint eth2 enable ttl-threshold 5
-phyint virbr0 enable ttl-threshold 5
+phyint virbr0 enable ttl-threshold 5</p>
 
-# The following example instructs the kernel to join the multicast
-# group 225.1.2.3 on interface eth0.  Followed by setting up an
-# mroute of the same multicast stream, but from the explicit sender
-# 192.168.1.42 on the eth0 network and forward to eth1 and eth2.
-#
-mgroup from eth0 group 225.1.2.3
-mroute from eth0 group 225.1.2.3 source 192.168.1.42 to eth1 eth2
+<h1 id="the-following-example-instructs-the-kernel-to-join-the-multicast">The following example instructs the kernel to join the multicast</h1>
 
-mgroup from virbr0 group 225.1.2.4
-mroute from virbr0 group 225.1.2.4 source 192.168.123.110 to eth0
+<h1 id="group-225-1-2-3-on-interface-eth0-followed-by-setting-up-an">group 225.1.2.3 on interface eth0.  Followed by setting up an</h1>
 
-# Here we allow routing of multicast to group 225.3.2.1 from ANY
-# source coming in from interface eth0 and forward to eth1 and eth2.
-# NOTE: Routing from ANY source is currently only available for IPv4
-#       multicast.
-mgroup from eth0 group 225.3.2.1
-mroute from eth0 group 225.3.2.1 to eth1 eth2
+<h1 id="mroute-of-the-same-multicast-stream-but-from-the-explicit-sender">mroute of the same multicast stream, but from the explicit sender</h1>
 
-# It is also possible to route a complete (*,G/LEN) range 
-mroute from eth0 group 239.255.255.0/24 to eth1
+<h1 id="192-168-1-42-on-the-eth0-network-and-forward-to-eth1-and-eth2">192.168.1.42 on the eth0 network and forward to eth1 and eth2.</h1>
 
-# The following example instructs the kernel to join the source
-# specific multicast group 225.2.1.3 on interface eth0 with
-# source 192.168.10.25.
-mgroup from eth0 group 225.2.1.3 source 192.168.10.25
-</code></pre>
+<p>#
+mgroup from eth0                     group 225.1.2.3
+mroute from eth0 source 192.168.1.42 group 225.1.2.3 to eth1 eth2</p>
+
+<h1 id="similar-example-but-using-source-specific-group-join">Similar example, but using source-specific group join</h1>
+
+<p>mgroup from virbr0 source 192.168.123.110 group 225.1.2.4
+mroute from virbr0 source 192.168.123.110 group 225.1.2.4 to eth0</p>
+
+<h1 id="here-we-allow-routing-of-multicast-to-group-225-3-2-1-from-any">Here we allow routing of multicast to group 225.3.2.1 from ANY</h1>
+
+<h1 id="source-coming-in-from-interface-eth0-and-forward-to-eth1-and-eth2">source coming in from interface eth0 and forward to eth1 and eth2.</h1>
+
+<h1 id="note-routing-from-any-source-is-currently-only-available-for-ipv4">NOTE: Routing from ANY source is currently only available for IPv4</h1>
+
+<h1 id="multicast">multicast.</h1>
+
+<p>mgroup from eth0 group 225.3.2.1
+mroute from eth0 group 225.3.2.1 to eth1 eth2</p>
+
+<h1 id="the-previous-is-an-example-of-the-g-support-such-rules-cause">The previous is an example of the (*,G) support.  Such rules cause</h1>
+
+<h1 id="smcroute-to-dynamically-add-multicast-routes-to-the-kernel-when-the">SMCRoute to dynamically add multicast routes to the kernel when the</h1>
+
+<h1 id="first-frame-of-a-stream-reaches-the-router-it-is-also-possible-to">first frame of a stream reaches the router.  It is also possible to</h1>
+
+<h1 id="specify-a-range-of-such-rules-again-note-that-this-currently-only">specify a range of such rules, again, note that this currently only</h1>
+
+<h1 id="works-for-ipv4-also-it-is-not-possible-to-set-a-range-of-groups">works for IPv4.  Also, it is not possible to set a range of groups</h1>
+
+<h1 id="to-join-atm">to join atm.</h1>
+
+<p>mroute from eth0 group 225.0.0.0/24 to eth1 eth2</p>
       </article>
 
       

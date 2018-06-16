@@ -220,6 +220,7 @@ signalling exists.</p>
 <li>Configuration file support, <a href="smcroute-conf.html">/etc/smcroute.conf</a></li>
 <li>Support for restarting and reloading the <code>.conf</code> on <code>SIGHUP</code></li>
 <li>Source-less on-demand routing, a.k.a. (*,G) based static routing</li>
+<li>Source specific group join support</li>
 <li>Optional built-in <a href="https://github.com/troglobit/mrdisc">mrdisc</a> support, <a href="https://tools.ietf.org/html/rfc4286">RFC4286</a></li>
 <li>Support for multiple routing tables on Linux</li>
 <li>Client with built-in support to show routes and joined groups</li>
@@ -256,13 +257,12 @@ install, like OpenBSD:</p>
 
 <ul>
 <li><a href="http://github.com/troglobit/smcroute">Repository</a></li>
-<li><a href="ftp://ftp.troglobit.com/smcroute/smcroute-2.4.0.tar.xz">smcroute-2.4.0.tar.xz</a>,
- <a href="ftp://ftp.troglobit.com/smcroute/smcroute-2.4.0.tar.xz.md5">MD5</a>
- <a href="ftp://ftp.troglobit.com/smcroute/smcroute-2.4.0.tar.xz.asc">GPG Sign</a></li>
+<li><a href="ftp://ftp.troglobit.com/smcroute/smcroute-2.4.1.tar.xz">smcroute-2.4.1.tar.xz</a>,
+ <a href="ftp://ftp.troglobit.com/smcroute/smcroute-2.4.1.tar.xz.md5">MD5</a>
+ <a href="ftp://ftp.troglobit.com/smcroute/smcroute-2.4.1.tar.xz.asc">GPG Sign</a></li>
 <li><a href="http://github.com/troglobit/smcroute/issues">Issue Tracker</a></li>
 <li><a href="http://packages.debian.org/smcroute">Debian packages</a></li>
 <li><a href="http://packages.ubuntu.com/smcroute">Ubuntu packages</a></li>
-<li><a href="https://groups.google.com/forum/?fromgroups#!forum/smcroute">Google Group</a></li>
 </ul>
 
 <p>See also the <a href="https://www.openhub.net/p/smcroute/">OpenHub page</a>, the
@@ -281,13 +281,9 @@ dormant <a href="http://freecode.com/projects/smcroute">Free(code) page</a>.</p>
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="/projects/watchdogd/" data-toggle="tooltip" data-placement="top" title="System &amp; Process Supervisor for Linux">&larr; Previous Post</a>
+              <a href="/projects/uftpd/" data-toggle="tooltip" data-placement="top" title="No nonsense FTP/TFTP server">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="/projects/finit/" data-toggle="tooltip" data-placement="top" title="Fast init for Linux systems">Next Post &rarr;</a>
-            </li>
           
         </ul>
       
