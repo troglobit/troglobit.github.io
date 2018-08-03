@@ -7,7 +7,7 @@ tags: []
 
 Having just received a new (used) ThinkPad X250 I felt somewhat lost
 when I realized the display brightness keys didn't do anything in my 
-[Awesome WM(https://awesomewm.org/) setup.
+[Awesome WM][] setup.
 
 <!--more-->
 
@@ -30,4 +30,5 @@ that we should be able fix relatively easy.
 
 Great little tool, much recommend!
 
-[light]:  https://github.com/haikarainen/light
+[light]: https://github.com/haikarainen/light
+[Awesome WM]: https://awesomewm.org
