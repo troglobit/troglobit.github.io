@@ -186,6 +186,43 @@
         <div class="posts-list">
           
             <article class="post-preview">
+              <a href="/2016/04/11/the-key-to-successful-boot/">
+                <h2 class="post-title">The key to successful boot</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on April 11, 2016
+              </p>
+              <div class="post-entry">
+                
+                  <p>How do you know when your UNIX service (daemon) is ready?  Simple, it
+has created a PID file, signalling to you how to reach it.  Usually this
+file is created as <code>/var/run/daemon.pid</code>, or <code>/run/daemon.pid</code>, and has
+the PID of <code>daemon</code> as the first and only data in the file.  This data
+may or may not have a UNIX line ending.</p>
+
+<p>Only trouble is: most UNIX daemons do not re-assert that PID file
+properly on <code>SIGHUP</code> (if they support <code>SIGHUP</code> that is).  When I send
+<code>SIGHUP</code> to a daemon I expect it to re-read its <code>/etc/daemon.conf</code> and
+resume operation, basically a quicker way than stop/start.</p>
+
+<p>Annoyingly however, most daemons do not signal us back to tell us when
+they&rsquo;re done with the <code>SIGHUP</code>.  Naturally a new movement has risen that
+says we should all instrument our daemons with D-bus &hellip; I say no.
+Simply touch the PID file instead.</p>
+
+<p></p>
+                  <a href="/2016/04/11/the-key-to-successful-boot/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
               <a href="/2016/04/04/lecture-from-the-unix-beards/">
                 <h2 class="post-title">Lecture from the UNIX beards</h2>
 
@@ -449,39 +486,6 @@ projects &hellip;</p>
 
 <p></p>
                   <a href="/2015/07/02/howto-using-lite-with-a-git-based-application/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/">
-                <h2 class="post-title">HowTo: Push to multiple GIT repos with one command</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on July 1, 2015
-              </p>
-              <div class="post-entry">
-                
-                  <p>So, now that I have <a href="http://git.troglobit.com">http://git.troglobit.com</a> setup as a backup GIT repo
-to <a href="https://github.com/troglobit">https://github.com/troglobit</a>, I needed a <em>simple</em> way to always push
-to both repos &ndash; best way for me is to always hook into my regular work
-flow, otherwise I&rsquo;d just forget.  The <a href="1">git-remote(1)</a> man page to the
-rescue, it describes the <code>set-url --add</code> sub-command:</p>
-
-<pre><code>git remote set-url --add origin ssh://git.troglobit.com:1234/srv/git/watchdogd.git
-</code></pre>
-
-<p>Now, with a simple <code>git push</code> followed by <code>git push --tags</code> I had now
-pushed to both the GitHub repo as well as my own server!</p>
-
-<p></p>
-                  <a href="/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/" class="post-read-more">[Read More]</a>
                 
               </div>
 

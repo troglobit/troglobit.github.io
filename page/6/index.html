@@ -180,6 +180,35 @@
           
           
             <article class="post-preview">
+              <a href="/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/">
+                <h2 class="post-title">HowTo: Add Multicast Routing to FreeBSD kernel</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on September 23, 2014
+  
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  This is a very short blog post, mostly intended as a reminder to myself. Basically, there are two methods of adding multicast routing support to the FreeBSD kernel:
+ Rebuild the kernel with options MROUTING Load the kernel module: kldload ip_mroute  The kernel rebuild assumes the src.txz set was installed previously.
+cd /usr/src cd sys/amd64/conf cat GENERIC | sed 's/GENERIC$/MULTICAST/' &gt; MULTICAST echo 'options MROUTING # Multicast routing' &gt;&gt; MULTICAST echo 'options PIM # Enable for pimd' &gt;&gt; MULTICAST cd - make kernel KERNCONF=MULTICAST reboot  That&rsquo;s it.
+                  <a href="/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
               <a href="/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/">
                 <h2 class="post-title">GnuTLS support in Inadyn and fixes to uftpd</h2>
                 
@@ -463,42 +492,6 @@ useful if you want to partition your configuration, or if you share
 major pieces of configuration between different platforms.</p>
 
 <p>Enjoy!</p>
-
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2014/03/18/finally-google-movies-and-music-in-sweden/">
-                <h2 class="post-title">Finally — Google Movies &amp; Music in Sweden</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on March 18, 2014
-  
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  <p><img src="/images/play-movies.png" style="width: 364px; float: right"></p>
-
-<p>So, we finally got Google Music &amp; Movies services in Sweden!  The
-prices seem a bit on the steep side, apart from maybe the Music
-service, which is slightly cheaper than Spotify.  Will try it out for
-a month or so to see which one I like better.</p>
-
-<p>For some reason I chose Gravity as my first rental, at 39 Skr.  I&rsquo;ve
-heard so many bad reviews of it but for better or worse it&rsquo;ll now be
-my introduction to Google Movies :-)</p>
 
                 
               </div>

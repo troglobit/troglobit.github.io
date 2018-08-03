@@ -180,6 +180,45 @@
           
           
             <article class="post-preview">
+              <a href="/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/">
+                <h2 class="post-title">HowTo: Push to multiple GIT repos with one command</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on July 1, 2015
+  
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <p>So, now that I have <a href="http://git.troglobit.com">http://git.troglobit.com</a> setup as a backup GIT repo
+to <a href="https://github.com/troglobit">https://github.com/troglobit</a>, I needed a <em>simple</em> way to always push
+to both repos &ndash; best way for me is to always hook into my regular work
+flow, otherwise I&rsquo;d just forget.  The <a href="1">git-remote(1)</a> man page to the
+rescue, it describes the <code>set-url --add</code> sub-command:</p>
+
+<pre><code>git remote set-url --add origin ssh://git.troglobit.com:1234/srv/git/watchdogd.git
+</code></pre>
+
+<p>Now, with a simple <code>git push</code> followed by <code>git push --tags</code> I had now
+pushed to both the GitHub repo as well as my own server!</p>
+
+<p></p>
+                  <a href="/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
               <a href="/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/">
                 <h2 class="post-title">HowTo: Apache with Gitweb on Debian 8.1</h2>
                 
@@ -581,35 +620,6 @@ faster to transfer files over TFTP.</p>
 
 <p><a href="/uftpd.html">Try it out!</a></p>
 
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/">
-                <h2 class="post-title">HowTo: Add Multicast Routing to FreeBSD kernel</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on September 23, 2014
-  
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  This is a very short blog post, mostly intended as a reminder to myself. Basically, there are two methods of adding multicast routing support to the FreeBSD kernel:
- Rebuild the kernel with options MROUTING Load the kernel module: kldload ip_mroute  The kernel rebuild assumes the src.txz set was installed previously.
-cd /usr/src cd sys/amd64/conf cat GENERIC | sed 's/GENERIC$/MULTICAST/' &gt; MULTICAST echo 'options MROUTING # Multicast routing' &gt;&gt; MULTICAST echo 'options PIM # Enable for pimd' &gt;&gt; MULTICAST cd - make kernel KERNCONF=MULTICAST reboot  That&rsquo;s it.
-                  <a href="/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/" class="post-read-more">[Read More]</a>
                 
               </div>
 

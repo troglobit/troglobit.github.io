@@ -180,6 +180,66 @@
           
           
             <article class="post-preview">
+              <a href="/2016/11/06/merecat---another-stray-kitten-/">
+                <h2 class="post-title">Merecat - another stray kitten?</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on November 6, 2016
+  
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <p>This post is about my adoption, refactor, and rebranding of thttpd as
+<a href="http://merecat.troglobit.com">Merecat</a>.</p>
+
+<p>I code for recreation as well as work.  Most of the time I tinker around
+with my various <a href="https://github.com/troglobit">projects</a> simply to learn
+and sometimes these little projects turn into something useful for other
+people as well, which is great!</p>
+
+<p data-pullquote="not all things can be simplified, and not all simple
+things are correct"> Recently I discovered my method to get started:
+refactoring, or just simple code cleanup.  You see I've got this crazy
+idea that <em>all simple things are correct</em>.  Although things
+usually tend to require a certain balance &mdash; not all things can be
+simplified, and not all simple things are correct.</p>
+
+<p>When I recently had to migrate my personal blog, FTP, and GIT server, I
+set out to run everything from an old RasPi2.  This put my private life
+in just about the same niche as my work life, embedded.  On a resource
+constrained platform like that running Apache is not the best idea.  So
+I set out to (re-)discover the web servers of my past, the late 90&rsquo;s, I
+had almost forgotten:</p>
+
+<ul>
+<li><a href="http://acme.com/software/mini_httpd/">mini_httpd</a>,</li>
+<li><a href="http://www.boa.org/">Boa</a>,</li>
+<li>BusyBox httpd,</li>
+<li><a href="http://www.acme.com/software/thttpd/">thttpd</a>,</li>
+<li>and more &hellip;</li>
+</ul>
+
+<p>Come to think of it, they are probably one of the many reasons that I
+started my career in embedded in the first place!</p>
+
+<p></p>
+                  <a href="/2016/11/06/merecat---another-stray-kitten-/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
               <a href="/2016/10/27/new-toolchains/">
                 <h2 class="post-title">New Toolchains</h2>
                 
@@ -494,49 +554,6 @@ No.
 First, make sure your daemon is actually running and has successfully bound to the address and port in question:
 sudo netstat -atnup  If your application is not listed there you have a problem with it binding its server socket. Check the return values from bind().
                   <a href="/2016/04/21/using-netcat-to-test-your-internet-daemon/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2016/04/11/the-key-to-successful-boot/">
-                <h2 class="post-title">The key to successful boot</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on April 11, 2016
-  
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  <p>How do you know when your UNIX service (daemon) is ready?  Simple, it
-has created a PID file, signalling to you how to reach it.  Usually this
-file is created as <code>/var/run/daemon.pid</code>, or <code>/run/daemon.pid</code>, and has
-the PID of <code>daemon</code> as the first and only data in the file.  This data
-may or may not have a UNIX line ending.</p>
-
-<p>Only trouble is: most UNIX daemons do not re-assert that PID file
-properly on <code>SIGHUP</code> (if they support <code>SIGHUP</code> that is).  When I send
-<code>SIGHUP</code> to a daemon I expect it to re-read its <code>/etc/daemon.conf</code> and
-resume operation, basically a quicker way than stop/start.</p>
-
-<p>Annoyingly however, most daemons do not signal us back to tell us when
-they&rsquo;re done with the <code>SIGHUP</code>.  Naturally a new movement has risen that
-says we should all instrument our daemons with D-bus &hellip; I say no.
-Simply touch the PID file instead.</p>
-
-<p></p>
-                  <a href="/2016/04/11/the-key-to-successful-boot/" class="post-read-more">[Read More]</a>
                 
               </div>
 
