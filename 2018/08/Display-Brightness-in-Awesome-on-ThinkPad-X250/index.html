@@ -236,8 +236,8 @@ and bound it to the approriate keys in my <code>.config/awesome/rc.lua</code>:</
 
 <pre><code>-- Brightness
 globalkeys = gears.table.join(globalkeys,
-    awful.key({}, &quot;XF86MonBrightnessUp&quot;,   function () awful.util.spawn(&quot;light -A 10&quot;) end),
-    awful.key({}, &quot;XF86MonBrightnessDown&quot;, function () awful.util.spawn(&quot;light -U 10&quot;) end))
+  awful.key({}, &quot;XF86MonBrightnessUp&quot;,   function () awful.util.spawn(&quot;light -A 10&quot;) end),
+  awful.key({}, &quot;XF86MonBrightnessDown&quot;, function () awful.util.spawn(&quot;light -U 10&quot;) end))
 root.keys(globalkeys)
 </code></pre>
 
