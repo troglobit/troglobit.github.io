@@ -5,24 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Display Brightness in Awesome on ThinkPad X250</title>
-  <meta property="og:title" content="Display Brightness in Awesome on ThinkPad X250" />
-  <meta name="twitter:title" content="Display Brightness in Awesome on ThinkPad X250" />
-  <meta name="description" content="Having just received a new (used) ThinkPad X250 I felt somewhat lost
-when I realized the display brightness keys didn&rsquo;t do anything in my
-Awesome WM setup.
-
-">
-  <meta property="og:description" content="Having just received a new (used) ThinkPad X250 I felt somewhat lost
-when I realized the display brightness keys didn&rsquo;t do anything in my
-Awesome WM setup.
-
-">
-  <meta name="twitter:description" content="Having just received a new (used) ThinkPad X250 I felt somewhat lost
-when I realized the display brightness keys didn&rsquo;t do anything in my
-Awesome WM setup.
-
-">
+  <title>Dark Themes Ahead</title>
+  <meta property="og:title" content="Dark Themes Ahead" />
+  <meta name="twitter:title" content="Dark Themes Ahead" />
+  <meta name="description" content="If we do nothing">
+  <meta property="og:description" content="If we do nothing">
+  <meta name="twitter:description" content="If we do nothing">
   <meta name="author" content="Joachim Nilsson"/>
   <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="/images/profile.jpg" />
@@ -30,12 +18,12 @@ Awesome WM setup.
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@troglobit" />
   <meta name="twitter:creator" content="@troglobit" />
-  <meta property="og:url" content="/2018/08/Display-Brightness-in-Awesome-on-ThinkPad-X250/" />
+  <meta property="og:url" content="/2018/08/Dark-Themes-Ahead/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
   <meta name="generator" content="Hugo 0.40.1" />
-  <link rel="canonical" href="/2018/08/Display-Brightness-in-Awesome-on-ThinkPad-X250/" />
+  <link rel="canonical" href="/2018/08/Dark-Themes-Ahead/" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -195,13 +183,17 @@ Awesome WM setup.
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
-              <h1>Display Brightness in Awesome on ThinkPad X250</h1>
+              <h1>Dark Themes Ahead</h1>
+                
+                  
+                    <h2 class="post-subheading">If we do nothing</h2>
+                  
                 
                 
                   <span class="post-meta">
   
   
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on August 3, 2018
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on August 12, 2018
   
   
   
@@ -222,44 +214,43 @@ Awesome WM setup.
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>Having just received a new (used) ThinkPad X250 I felt somewhat lost
-when I realized the display brightness keys didn&rsquo;t do anything in my
-<a href="https://awesomewm.org">Awesome WM</a> setup.</p>
+        <p><em>Reminder to self:</em> How to fix Firefox <code>about:config</code> when using a Dark
+Theme in Gnome or <a href="https://awesomewm.org/">Awesome</a>.</p>
+
+<p>I use <a href="https://system76.com/">System76</a> amazing Gtk+ theme from <a href="https://github.com/pop-os/gtk-theme">Pop!_OS</a>.  It&rsquo;s quite
+simple to set up on top of Ubuntu and use in Awesome:</p>
+
+<pre><code class="language-sh">    sudo add-apt-repository ppa:system76/pop
+    sudo apt update
+    sudo apt install pop-theme
+</code></pre>
+
+<p>I then use <a href="https://wiki.gnome.org/Apps/Tweaks">gnome-tweaks</a> to select the Pop-dark-slim theme.  Now, the
+problem is that certain text box inputs in Firefox is either completely
+dark or white and the text cannot be seen until you mark it.  This isn&rsquo;t
+specific to the Pop!_OS theme, Adwaita-dark is exactly as bad.</p>
 
 <p></p>
 
-<p>My previous ThinkPads were a T430s and an X230 and it turns out Lenovo
-had changed from HW controlled to SW controlled in this new generation.</p>
+<p>Here&rsquo;s how you fix it:</p>
 
-<p>A quick google later and I had found Fredrik Haikarainen&rsquo;s <a href="https://github.com/haikarainen/light">light</a>
-and bound it to the approriate keys in my <code>.config/awesome/rc.lua</code>:</p>
+<ol>
+<li>Open about:config in Firefox</li>
+<li>Create a new String value (right click), named <code>widget.content.gtk-theme-override</code></li>
+<li>Set a light GTK theme name as the value, i chose Pop</li>
+<li>Restart Firefox</li>
+</ol>
 
-<pre><code>-- Brightness
-globalkeys = gears.table.join(globalkeys,
-  awful.key({}, &quot;XF86MonBrightnessUp&quot;,   function () awful.util.spawn(&quot;light -A 10&quot;) end),
-  awful.key({}, &quot;XF86MonBrightnessDown&quot;, function () awful.util.spawn(&quot;light -U 10&quot;) end))
-root.keys(globalkeys)
-</code></pre>
-
-<p>Actually, I tried running light from the command line first, without
-running <code>sudo make install</code>, and that didn&rsquo;t work so I was about to give
-up.  Turns out <code>light</code> needs to be SUID root because of reasons.  Oh well,
-that we should be able fix relatively easy.</p>
-
-<p>Great little tool, much recommend!</p>
+<p>Thanks to <a href="https://www.mkammerer.de/blog/gtk-dark-theme-and-firefox/">Moritz Kammerer</a> for blogging about this so I could find a solution.</p>
       </article>
 
       
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="/2018/06/Open-Source-Releases/" data-toggle="tooltip" data-placement="top" title="Open Source Releases">&larr; Previous Post</a>
+              <a href="/2018/08/Display-Brightness-in-Awesome-on-ThinkPad-X250/" data-toggle="tooltip" data-placement="top" title="Display Brightness in Awesome on ThinkPad X250">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="/2018/08/Dark-Themes-Ahead/" data-toggle="tooltip" data-placement="top" title="Dark Themes Ahead">Next Post &rarr;</a>
-            </li>
           
         </ul>
       

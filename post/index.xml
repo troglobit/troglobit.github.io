@@ -8,10 +8,35 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Fri, 03 Aug 2018 16:15:00 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 12 Aug 2018 23:51:52 +0200</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Dark Themes Ahead</title>
+      <link>/2018/08/Dark-Themes-Ahead/</link>
+      <pubDate>Sun, 12 Aug 2018 23:51:52 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2018/08/Dark-Themes-Ahead/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Reminder to self:&lt;/em&gt; How to fix Firefox &lt;code&gt;about:config&lt;/code&gt; when using a Dark
+Theme in Gnome or &lt;a href=&#34;https://awesomewm.org/&#34;&gt;Awesome&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I use &lt;a href=&#34;https://system76.com/&#34;&gt;System76&lt;/a&gt; amazing Gtk+ theme from &lt;a href=&#34;https://github.com/pop-os/gtk-theme&#34;&gt;Pop!_OS&lt;/a&gt;.  It&amp;rsquo;s quite
+simple to set up on top of Ubuntu and use in Awesome:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;    sudo add-apt-repository ppa:system76/pop
+    sudo apt update
+    sudo apt install pop-theme
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I then use &lt;a href=&#34;https://wiki.gnome.org/Apps/Tweaks&#34;&gt;gnome-tweaks&lt;/a&gt; to select the Pop-dark-slim theme.  Now, the
+problem is that certain text box inputs in Firefox is either completely
+dark or white and the text cannot be seen until you mark it.  This isn&amp;rsquo;t
+specific to the Pop!_OS theme, Adwaita-dark is exactly as bad.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Display Brightness in Awesome on ThinkPad X250</title>
