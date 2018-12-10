@@ -8,11 +8,11 @@
   <title>The original multicast routing daemon</title>
   <meta property="og:title" content="The original multicast routing daemon" />
   <meta name="twitter:title" content="The original multicast routing daemon" />
-  <meta name="description" content="mrouted is an implementation of the IPv4 DVMRP multicast routing protocol, RFC 1075. It is capable of turning a UNIX workstation, or an embedded Linux device, into a multicast router with tunnelling support, in order to cross non-multicast-aware routers.
-DVMRP is a distance vector based protocol, derived from RIP, suitable for closely located multicast users in smaller networks. It simply floods all multicast streams to all routers, i.e. implicit join. This is also known as &ldquo;flood and prune&rdquo; since you can opt out from groups you do not want.">
-  <meta property="og:description" content="mrouted is an implementation of the IPv4 DVMRP multicast routing protocol, RFC 1075. It is capable of turning a UNIX workstation, or an embedded Linux device, into a multicast router with tunnelling support, in order to cross non-multicast-aware routers.
-DVMRP is a distance vector based protocol, derived from RIP, suitable for closely located multicast users in smaller networks. It simply floods all multicast streams to all routers, i.e. implicit join. This is also known as &ldquo;flood and prune&rdquo; since you can opt out from groups you do not want.">
-  <meta name="twitter:description" content="mrouted is an implementation of the IPv4 DVMRP multicast routing protocol, RFC 1075. It is capable of turning a UNIX workstation, or an embedded Linux device, into a multicast router with tunnelling …">
+  <meta name="description" content="mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, RFC 1075. It is capable of turning a UNIX workstation, or an embedded Linux device, into a multicast router with tunnelling support, in order to cross non-multicast-aware routers.
+DVMRP is a distance vector based protocol, derived from RIP, suitable for closely located multicast users in smaller networks. It uses the &ldquo;flood and prune&rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups.">
+  <meta property="og:description" content="mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, RFC 1075. It is capable of turning a UNIX workstation, or an embedded Linux device, into a multicast router with tunnelling support, in order to cross non-multicast-aware routers.
+DVMRP is a distance vector based protocol, derived from RIP, suitable for closely located multicast users in smaller networks. It uses the &ldquo;flood and prune&rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups.">
+  <meta name="twitter:description" content="mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, RFC 1075. It is capable of turning a UNIX workstation, or an embedded Linux device, into a multicast router with tunnelling …">
   <meta name="author" content="Joachim Nilsson"/>
   <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="/images/profile.jpg" />
@@ -24,7 +24,7 @@ DVMRP is a distance vector based protocol, derived from RIP, suitable for closel
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.40.1" />
+  <meta name="generator" content="Hugo 0.47.1" />
   <link rel="canonical" href="/projects/mrouted/" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
@@ -203,21 +203,19 @@ DVMRP is a distance vector based protocol, derived from RIP, suitable for closel
       <article role="main" class="blog-post">
         <p><img src="/images/dvmrp.png" style="width: 300px; height: 229px; float: right"></p>
 
-<p>mrouted is an implementation of the IPv4 DVMRP multicast routing
-protocol, <a href="http://tools.ietf.org/html/rfc1075">RFC 1075</a>.  It is
-capable of turning a UNIX workstation, or an embedded Linux device,
-into a multicast router with tunnelling support, in order to cross
-non-multicast-aware routers.</p>
+<p>mrouted is an implementation of the IPv4 multicast routing protocol
+DVMRP, <a href="http://tools.ietf.org/html/rfc1075">RFC 1075</a>.  It is capable of turning a UNIX workstation, or an
+embedded Linux device, into a multicast router with tunnelling support,
+in order to cross non-multicast-aware routers.</p>
 
 <p>DVMRP is a distance vector based protocol, derived from RIP, suitable
-for closely located multicast users in smaller networks.  It simply
-floods all multicast streams to all routers, i.e. implicit join.  This
-is also known as &ldquo;flood and prune&rdquo; since you can opt out from groups
-you do not want.  For a detailed explanation of the protocol, see
-<a href="http://tools.ietf.org/html/rfc1075">RFC 1075</a>.  For larger networks,
-with sparsely located nodes, you might want to look into
-<a href="/pimd.html">pimd</a>, and for static multicast routing
-<a href="/smcroute.html">smcroute</a> may be used.</p>
+for closely located multicast users in smaller networks.  It uses the
+&ldquo;flood and prune&rdquo; method, where multicast is flooded until neighboring
+routers opt out from unwanted multicast groups.  For a more thorough
+explanation of the protocol, see <a href="http://tools.ietf.org/html/rfc1075">RFC 1075</a>.  In larger networks, with
+sparsely located nodes, you might want to look into <a href="/pimd.html">pimd</a>.
+For many use-cases static multicast routing, <a href="/smcroute.html">smcroute</a>
+may be sufficient.</p>
 
 <p>The mrouted routing daemon was developed by David Waitzman, Craig
 Partridge, Steve Deering, Ajit Thyagarajan, Bill Fenner, David Thaler
@@ -225,21 +223,16 @@ and Daniel Zappala.  With contributions by many others.</p>
 
 <p>The last release by Mr. Fenner was 3.9-beta3 on April 26 1999 and
 mrouted has been in &ldquo;beta&rdquo; status since then. Several prominent UNIX
-operating systems, such as AIX, Solaris,
-<a href="http://docs.hp.com/en/B2355-90777/ch01s01.html">HP-UX</a>, BSD/OS,
-NetBSD, FreeBSD, OpenBSD as well as most GNU/Linux based distributions
-have used that beta as a de facto stable release, with (mostly) minor
-patches for system adaptations. Over time however many dropped
-support, but Debian and OpenBSD kept it under their wings.</p>
+operating systems, such as AIX, Solaris, <a href="http://docs.hp.com/en/B2355-90777/ch01s01.html">HP-UX</a>, BSD/OS, NetBSD,
+FreeBSD, OpenBSD as well as most GNU/Linux based distributions have used
+that beta as a de facto stable release, with (mostly) minor patches for
+system adaptations. Over time however many dropped support, but Debian
+and OpenBSD kept it under their wings.</p>
 
-<p>In March 2003 OpenBSD, led by the fearless Theo de Raadt,
-<a href="http://www.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/LICENSE">managed to convince Stanford</a>
-to release mrouted under a
-<a href="https://github.com/troglobit/mrouted/blob/master/LICENSE">fully free license</a>,
-<a href="http://en.wikipedia.org/wiki/BSD_licenses">the 3-clause BSD license</a>.
-In February 2005
-<a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=288112">Debian nevertheless dropped mrouted</a>
-as an &ldquo;obsolete protocol&rdquo;.</p>
+<p>In March 2003 the OpenBSD project, led by the fearless Theo de Raadt,
+<a href="http://www.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/LICENSE)">managed to convince Stanford</a> to finally release mrouted under a
+<a href="https://github.com/troglobit/mrouted/blob/master/LICENSE">fully free license</a>, <a href="http://en.wikipedia.org/wiki/BSD_licenses">the 3-clause BSD license</a>.  In February
+2005 <a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=288112">Debian nevertheless dropped mrouted</a> as an &ldquo;obsolete protocol&rdquo;.</p>
 
 <p>For a long time the OpenBSD team remained the sole guardian of this
 project.</p>
@@ -253,10 +246,10 @@ been integrated. Support for Debian/Ubuntu is included in the tree.</p>
 
 <ul>
 <li><a href="http://github.com/troglobit/mrouted">Repository</a></li>
-<li><a href="https://github.com/troglobit/mrouted/releases/tag/3.9.7">ChangeLog</a></li>
+<li><a href="https://github.com/troglobit/mrouted/releases/tag/3.9.8">ChangeLog</a></li>
 <li><a href="http://github.com/troglobit/mrouted/issues">Issue Tracker</a></li>
-<li><a href="ftp://ftp.troglobit.com/mrouted/mrouted-3.9.7.tar.bz2">mrouted-3.9.7.tar.bz2</a>,
- <a href="ftp://ftp.troglobit.com/mrouted/mrouted-3.9.7.tar.bz2.md5">MD5</a></li>
+<li><a href="ftp://ftp.troglobit.com/mrouted/mrouted-3.9.8.tar.bz2">mrouted-3.9.8.tar.bz2</a>,
+ <a href="ftp://ftp.troglobit.com/mrouted/mrouted-3.9.8.tar.bz2.md5">MD5</a></li>
 </ul>
 
 <p>See also the <a href="https://www.openhub.net/p/mrouted/">OpenHub page</a>, or the
@@ -264,24 +257,18 @@ been integrated. Support for Debian/Ubuntu is included in the tree.</p>
 
 <p>Problems?  See the <a href="/multicast-howto.html">multicast howto</a></p>
 
-<!--
-  -- Local Variables:
-  -- mode: markdown
-  -- End:
-  -->
-
       </article>
 
       
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="/projects/snake/" data-toggle="tooltip" data-placement="top" title="Micro Snake">&larr; Previous Post</a>
+              <a href="/projects/tetris/" data-toggle="tooltip" data-placement="top" title="Micro Tetris™">&larr; Previous Post</a>
             </li>
           
           
             <li class="next">
-              <a href="/projects/tetris/" data-toggle="tooltip" data-placement="top" title="Micro Tetris™">Next Post &rarr;</a>
+              <a href="/project/smcroute/smcroute-conf.html" data-toggle="tooltip" data-placement="top" title="smcroute.conf example">Next Post &rarr;</a>
             </li>
           
         </ul>
@@ -359,7 +346,7 @@ been integrated. Support for Debian/Ubuntu is included in the tree.</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.40.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.47.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

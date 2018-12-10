@@ -153,6 +153,11 @@
   </url>
   
   <url>
+    <loc>/projects/mrouted/</loc>
+    <lastmod>2017-01-01T20:28:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2016/12/11/a-life-without-sudo/</loc>
     <lastmod>2016-12-11T20:26:12+00:00</lastmod>
   </url>
@@ -325,11 +330,6 @@
   <url>
     <loc>/2014/12/28/mrouted-v3-dot-9-7/</loc>
     <lastmod>2014-12-28T19:38:06+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/mrouted/</loc>
-    <lastmod>2014-12-28T16:25:00+02:00</lastmod>
   </url>
   
   <url>
