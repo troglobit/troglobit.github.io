@@ -1,7 +1,7 @@
 ---
 name: SMCRoute
 title: "Static Multicast Routing Daemon"
-date: 2018-06-16 15:07:00 +02:00
+date: 2019-02-11 20:46:00 +02:00
 aliases: /smcroute.html
 ---
 
@@ -11,8 +11,10 @@ supported, but it may work on other systems as well.
 
 SMCRoute can be used as an alternative to dynamic multicast routing
 daemons like [mrouted](/mrouted.html) or [pimd](/pimd.html) when (only)
-static multicast routes should be maintained and/or no proper IGMP
-signalling exists.
+static multicast routes should be maintained or no proper signalling
+exists.
+
+> Problems? See the [Multicast HowTo](/multicast-howto.html) for help!
 
 
 Features
@@ -31,17 +33,11 @@ Features
 Why a Daemon?
 -------------
 
-A very common question is why smcroute must be a daemon?  Why not just a
-simple tool, like `ip route`, for unicast routes?
-
-The answer lies in how multicast is implemented in the UNIX kernel.
-
-To be able to setup multicast routes a program must connect to the
-multicast routing socket in the kernel, when that socket is closed,
-which is done automatically when a UNIX program ends, the kernel cleans
-up all routes.
-
-Problems?  See the [multicast howto](/multicast-howto.html)
+One common question is why SMCRoute must be a daemon, why not just a
+simple tool, like `ip route` for unicast routes?  The answer is that to
+be able to add multicast routes a program must connect to the multicast
+routing socket in the kernel, when that socket is closed, which is done
+automatically when a UNIX program ends, the kernel cleans up all routes.
 
 
 Origin & References
@@ -59,13 +55,12 @@ Issue tracker and GIT repository available at [GitHub][], tarballs also
 available as `.tar.gz` for systems that do not have `xz` in the default
 install, like OpenBSD:
 
-   * [Repository][GitHub]
-   * [smcroute-2.4.1.tar.xz](ftp://ftp.troglobit.com/smcroute/smcroute-2.4.1.tar.xz),
-     [MD5](ftp://ftp.troglobit.com/smcroute/smcroute-2.4.1.tar.xz.md5)
-     [GPG Sign](ftp://ftp.troglobit.com/smcroute/smcroute-2.4.1.tar.xz.asc)
-   * [Issue Tracker](http://github.com/troglobit/smcroute/issues)
-   * [Debian packages](http://packages.debian.org/smcroute)
-   * [Ubuntu packages](http://packages.ubuntu.com/smcroute)
+* [Repository][GitHub]
+* [smcroute-2.4.4.tar.xz](ftp://ftp.troglobit.com/smcroute/smcroute-2.4.4.tar.xz),
+  [MD5](ftp://ftp.troglobit.com/smcroute/smcroute-2.4.4.tar.xz.md5)
+* [Issue Tracker](http://github.com/troglobit/smcroute/issues)
+* [Debian packages](http://packages.debian.org/smcroute)
+* [Ubuntu packages](http://packages.ubuntu.com/smcroute)
 
 See also the [OpenHub page](https://www.openhub.net/p/smcroute/), the
 [Freshcode page](http://freshcode.club/projects/smcroute), or the now
@@ -76,9 +71,3 @@ dormant [Free(code) page](http://freecode.com/projects/smcroute).
 [GitHub]:          http://github.com/troglobit/smcroute
 [Debian]:          http://alioth.debian.org/projects/smcroute/
 [Carsten Schill]:  http://www.cschill.de/smcroute/
-
-<!--
-  -- Local Variables:
-  -- mode: markdown
-  -- End:
-  -->
