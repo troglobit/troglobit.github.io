@@ -8,7 +8,7 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Sat, 16 Jun 2018 15:07:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 11 Feb 2019 20:46:00 +0200</lastBuildDate>
     
 	<atom:link href="/projects/index.xml" rel="self" type="application/rss+xml" />
     
@@ -16,12 +16,12 @@
     <item>
       <title>Static Multicast Routing Daemon</title>
       <link>/projects/smcroute/</link>
-      <pubDate>Sat, 16 Jun 2018 15:07:00 +0200</pubDate>
+      <pubDate>Mon, 11 Feb 2019 20:46:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/projects/smcroute/</guid>
       <description>SMCRoute is a daemon and command line tool to manipulate the multicast routing table in the UNIX kernel. Both FreeBSD and Linux kernels are supported, but it may work on other systems as well.
-SMCRoute can be used as an alternative to dynamic multicast routing daemons like mrouted or pimd when (only) static multicast routes should be maintained and/or no proper IGMP signalling exists.
-Features  Configuration file support, /etc/smcroute.</description>
+SMCRoute can be used as an alternative to dynamic multicast routing daemons like mrouted or pimd when (only) static multicast routes should be maintained or no proper signalling exists.
+ Problems? See the Multicast HowTo for help!</description>
     </item>
     
     <item>

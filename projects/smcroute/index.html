@@ -9,11 +9,11 @@
   <meta property="og:title" content="Static Multicast Routing Daemon" />
   <meta name="twitter:title" content="Static Multicast Routing Daemon" />
   <meta name="description" content="SMCRoute is a daemon and command line tool to manipulate the multicast routing table in the UNIX kernel. Both FreeBSD and Linux kernels are supported, but it may work on other systems as well.
-SMCRoute can be used as an alternative to dynamic multicast routing daemons like mrouted or pimd when (only) static multicast routes should be maintained and/or no proper IGMP signalling exists.
-Features  Configuration file support, /etc/smcroute.">
+SMCRoute can be used as an alternative to dynamic multicast routing daemons like mrouted or pimd when (only) static multicast routes should be maintained or no proper signalling exists.
+ Problems? See the Multicast HowTo for help!">
   <meta property="og:description" content="SMCRoute is a daemon and command line tool to manipulate the multicast routing table in the UNIX kernel. Both FreeBSD and Linux kernels are supported, but it may work on other systems as well.
-SMCRoute can be used as an alternative to dynamic multicast routing daemons like mrouted or pimd when (only) static multicast routes should be maintained and/or no proper IGMP signalling exists.
-Features  Configuration file support, /etc/smcroute.">
+SMCRoute can be used as an alternative to dynamic multicast routing daemons like mrouted or pimd when (only) static multicast routes should be maintained or no proper signalling exists.
+ Problems? See the Multicast HowTo for help!">
   <meta name="twitter:description" content="SMCRoute is a daemon and command line tool to manipulate the multicast routing table in the UNIX kernel. Both FreeBSD and Linux kernels are supported, but it may work on other systems as well. …">
   <meta name="author" content="Joachim Nilsson"/>
   <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
@@ -211,8 +211,12 @@ supported, but it may work on other systems as well.</p>
 
 <p>SMCRoute can be used as an alternative to dynamic multicast routing
 daemons like <a href="/mrouted.html">mrouted</a> or <a href="/pimd.html">pimd</a> when (only)
-static multicast routes should be maintained and/or no proper IGMP
-signalling exists.</p>
+static multicast routes should be maintained or no proper signalling
+exists.</p>
+
+<blockquote>
+<p>Problems? See the <a href="/multicast-howto.html">Multicast HowTo</a> for help!</p>
+</blockquote>
 
 <h2 id="features">Features</h2>
 
@@ -229,17 +233,11 @@ signalling exists.</p>
 
 <h2 id="why-a-daemon">Why a Daemon?</h2>
 
-<p>A very common question is why smcroute must be a daemon?  Why not just a
-simple tool, like <code>ip route</code>, for unicast routes?</p>
-
-<p>The answer lies in how multicast is implemented in the UNIX kernel.</p>
-
-<p>To be able to setup multicast routes a program must connect to the
-multicast routing socket in the kernel, when that socket is closed,
-which is done automatically when a UNIX program ends, the kernel cleans
-up all routes.</p>
-
-<p>Problems?  See the <a href="/multicast-howto.html">multicast howto</a></p>
+<p>One common question is why SMCRoute must be a daemon, why not just a
+simple tool, like <code>ip route</code> for unicast routes?  The answer is that to
+be able to add multicast routes a program must connect to the multicast
+routing socket in the kernel, when that socket is closed, which is done
+automatically when a UNIX program ends, the kernel cleans up all routes.</p>
 
 <h2 id="origin-references">Origin &amp; References</h2>
 
@@ -257,9 +255,8 @@ install, like OpenBSD:</p>
 
 <ul>
 <li><a href="http://github.com/troglobit/smcroute">Repository</a></li>
-<li><a href="ftp://ftp.troglobit.com/smcroute/smcroute-2.4.1.tar.xz">smcroute-2.4.1.tar.xz</a>,
- <a href="ftp://ftp.troglobit.com/smcroute/smcroute-2.4.1.tar.xz.md5">MD5</a>
- <a href="ftp://ftp.troglobit.com/smcroute/smcroute-2.4.1.tar.xz.asc">GPG Sign</a></li>
+<li><a href="ftp://ftp.troglobit.com/smcroute/smcroute-2.4.4.tar.xz">smcroute-2.4.4.tar.xz</a>,
+<a href="ftp://ftp.troglobit.com/smcroute/smcroute-2.4.4.tar.xz.md5">MD5</a></li>
 <li><a href="http://github.com/troglobit/smcroute/issues">Issue Tracker</a></li>
 <li><a href="http://packages.debian.org/smcroute">Debian packages</a></li>
 <li><a href="http://packages.ubuntu.com/smcroute">Ubuntu packages</a></li>
@@ -268,12 +265,6 @@ install, like OpenBSD:</p>
 <p>See also the <a href="https://www.openhub.net/p/smcroute/">OpenHub page</a>, the
 <a href="http://freshcode.club/projects/smcroute">Freshcode page</a>, or the now
 dormant <a href="http://freecode.com/projects/smcroute">Free(code) page</a>.</p>
-
-<!--
-  -- Local Variables:
-  -- mode: markdown
-  -- End:
-  -->
 
       </article>
 
@@ -354,7 +345,7 @@ dormant <a href="http://freecode.com/projects/smcroute">Free(code) page</a>.</p>
           
 
           &nbsp;&bull;&nbsp;
-          2018
+          2019
 
           
         </p>
