@@ -1,35 +1,33 @@
 ---
 name: mrouted
 title: "The original multicast routing daemon"
-date: 2017-01-01 20:28:00 +02:00
+date: 2019-02-24 11:21:31 +01:00
 aliases: /mrouted.html
 ---
 <img src="/images/dvmrp.png" style="width: 300px; height: 229px; float: right">
 
 mrouted is an implementation of the IPv4 multicast routing protocol
-DVMRP, [RFC 1075][].  It is capable of turning a UNIX workstation, or an
-embedded Linux device, into a multicast router with tunnelling support,
-in order to cross non-multicast-aware routers.
+DVMRP, [RFC 1075][].  It is capable of turning a UNIX workstation, or
+Linux device, into a multicast router with tunnelling[^1] support.
 
-DVMRP is a distance vector based protocol, derived from RIP, suitable
-for closely located multicast users in smaller networks.  It uses the
-"flood and prune" method, where multicast is flooded until neighboring
-routers opt out from unwanted multicast groups.  For a more thorough
-explanation of the protocol, see [RFC 1075][].  In larger networks, with
-sparsely located nodes, you might want to look into [pimd](/pimd.html).
-For many use-cases static multicast routing, [smcroute](/smcroute.html)
-may be sufficient.
+The Distantance Vector Multicast Routing Protocol (DVMRP), derived from
+RIP, is suitable for smaller/dense networks.  It employs the "flood and
+prune" method, where multicast is flooded until neighboring routers opt
+out from unwanted multicast groups.  For a more thorough explanation of
+the protocol, see [RFC 1075][].  In larger networks, with sparsely
+located nodes, you might want to look into [pimd](/pimd.html).  For many
+use-cases static multicast routing, [smcroute](/smcroute.html) may be
+sufficient.
 
-The mrouted routing daemon was developed by David Waitzman, Craig
-Partridge, Steve Deering, Ajit Thyagarajan, Bill Fenner, David Thaler
-and Daniel Zappala.  With contributions by many others.
+mrouted was developed by David Waitzman, Craig Partridge, Steve Deering,
+Ajit Thyagarajan, Bill Fenner, David Thaler and Daniel Zappala.  With
+contributions by many others.
 
-The last release by Mr. Fenner was 3.9-beta3 on April 26 1999 and
-mrouted has been in "beta" status since then. Several prominent UNIX
-operating systems, such as AIX, Solaris, [HP-UX][], BSD/OS, NetBSD,
-FreeBSD, OpenBSD as well as most GNU/Linux based distributions have used
-that beta as a de facto stable release, with (mostly) minor patches for
-system adaptations. Over time however many dropped support, but Debian
+The last release by Mr. Fenner was 3.9-beta3 on April 26 1999.  Several
+prominent UNIX operating systems, such as AIX, Solaris, [HP-UX][],
+BSD/OS, NetBSD, FreeBSD, OpenBSD as well as most GNU/Linux based
+distributions have used that release, with (mostly) minor patches for
+system adaptations.  However, over time many dropped support, but Debian
 and OpenBSD kept it under their wings.
 
 In March 2003 the OpenBSD project, led by the fearless Theo de Raadt,
@@ -41,9 +39,9 @@ For a long time the OpenBSD team remained the sole guardian of this
 project.
 
 In 2010 this effort of bringing mrouted back to life was started. The
-3.9.x stable series represent the first releases in over a
-decade. Patches from all over the Internet, including OpenBSD, have
-been integrated. Support for Debian/Ubuntu is included in the tree.
+3.9.x stable series represent the first releases in over a decade.
+Patches from all over the Internet, including OpenBSD, have been
+integrated.  Support for Debian/Ubuntu is included in the tree.
 
 Issue tracker and GIT repository available at GitHub:
 
@@ -64,3 +62,6 @@ Problems?  See the [multicast howto](/multicast-howto.html)
 [4]: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=288112
 [HP-UX]: http://docs.hp.com/en/B2355-90777/ch01s01.html
 [RFC 1075]: http://tools.ietf.org/html/rfc1075
+
+
+[^1]: Tunneling may be required to cross non-multicast-aware routers.
