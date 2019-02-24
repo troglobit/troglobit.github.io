@@ -186,20 +186,22 @@
         <div class="posts-list">
           
             <article class="post-preview">
-              <a href="/projects/mrouted/">
-                <h2 class="post-title">The original multicast routing daemon</h2>
+              <a href="/project/smcroute/smcroute-conf.html">
+                <h2 class="post-title">smcroute.conf example</h2>
 
                 
               </a>
 
               <p class="post-meta">
-                Posted on January 1, 2017
+                Posted on June 13, 2017
               </p>
               <div class="post-entry">
                 
-                  mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, RFC 1075. It is capable of turning a UNIX workstation, or an embedded Linux device, into a multicast router with tunnelling support, in order to cross non-multicast-aware routers.
-DVMRP is a distance vector based protocol, derived from RIP, suitable for closely located multicast users in smaller networks. It uses the &ldquo;flood and prune&rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups.
-                  <a href="/projects/mrouted/" class="post-read-more">[Read More]</a>
+                  ```conf #
+smcroute.conf example #
+The configuration file supports joining multicast groups, to use Layer-2 signaling so that switches and routers open up multicast traffic to your interfaces. Leave is not supported, remove the mgroup and SIGHUP your daemon, or send a specific leave command. #
+NOTE: Use of the mgroup command should be avoided if possible. Instead configure &ldquo;router ports&rdquo; or similar on the switches or bridges on your LAN.
+                  <a href="/project/smcroute/smcroute-conf.html" class="post-read-more">[Read More]</a>
                 
               </div>
 

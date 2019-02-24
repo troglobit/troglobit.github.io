@@ -186,6 +186,28 @@
         <div class="posts-list">
           
             <article class="post-preview">
+              <a href="/projects/mrouted/">
+                <h2 class="post-title">The original multicast routing daemon</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on February 24, 2019
+              </p>
+              <div class="post-entry">
+                
+                  mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, RFC 1075. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunnelling1 support.
+The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is suitable for smaller/dense networks. It employs the &ldquo;flood and prune&rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups. For a more thorough explanation of the protocol, see RFC 1075.
+                  <a href="/projects/mrouted/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
               <a href="/projects/smcroute/">
                 <h2 class="post-title">Static Multicast Routing Daemon</h2>
 
@@ -379,30 +401,6 @@ In 2003 the OpenBSD project managed to convince Stanford in to change the licens
                   This is an SNMP server for small and embedded systems, currently Linux and FreeBSD are supported. It is easily portable to other UNIX systems since it&rsquo;s written in C. The daemon is very small (~40 kiB) and does not have nowhere near the feature set of Net-SNMP, therefore it has a very low impact on system resources.
 See my mini HowTo: Playing with SNMP for a quick introduction to setting up the SNMP tools and MIBs to avoid having to use numerical OIDs.
                   <a href="/projects/mini-snmpd/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="/project/smcroute/smcroute-conf.html">
-                <h2 class="post-title">smcroute.conf example</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on June 13, 2017
-              </p>
-              <div class="post-entry">
-                
-                  ```conf #
-smcroute.conf example #
-The configuration file supports joining multicast groups, to use Layer-2 signaling so that switches and routers open up multicast traffic to your interfaces. Leave is not supported, remove the mgroup and SIGHUP your daemon, or send a specific leave command. #
-NOTE: Use of the mgroup command should be avoided if possible. Instead configure &ldquo;router ports&rdquo; or similar on the switches or bridges on your LAN.
-                  <a href="/project/smcroute/smcroute-conf.html" class="post-read-more">[Read More]</a>
                 
               </div>
 

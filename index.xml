@@ -8,10 +8,20 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Mon, 11 Feb 2019 20:46:00 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 24 Feb 2019 11:21:31 +0100</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The original multicast routing daemon</title>
+      <link>/projects/mrouted/</link>
+      <pubDate>Sun, 24 Feb 2019 11:21:31 +0100</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/projects/mrouted/</guid>
+      <description>mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, RFC 1075. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunnelling1 support.
+The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is suitable for smaller/dense networks. It employs the &amp;ldquo;flood and prune&amp;rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups. For a more thorough explanation of the protocol, see RFC 1075.</description>
+    </item>
     
     <item>
       <title>Static Multicast Routing Daemon</title>
@@ -456,16 +466,6 @@ Raspberry Pi running &lt;a href=&#34;https://retropie.org.uk/&#34;&gt;RetroPie&l
 (dongle) working in Linux, Ubuntu 16.04.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>The original multicast routing daemon</title>
-      <link>/projects/mrouted/</link>
-      <pubDate>Sun, 01 Jan 2017 20:28:00 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/projects/mrouted/</guid>
-      <description>mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, RFC 1075. It is capable of turning a UNIX workstation, or an embedded Linux device, into a multicast router with tunnelling support, in order to cross non-multicast-aware routers.
-DVMRP is a distance vector based protocol, derived from RIP, suitable for closely located multicast users in smaller networks. It uses the &amp;ldquo;flood and prune&amp;rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups.</description>
     </item>
     
     <item>
