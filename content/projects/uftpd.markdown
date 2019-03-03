@@ -8,11 +8,11 @@ aliases: /uftpd.html
 
 Tired of confusing configuration files and security features you don't need?
 
-Try `uftpd(8)`!
+Try uftpd!
 
-* Supports both FTP and TFTP
-* No confusing configuration file
-* Listens to port `ftp/tcp` and `tftp/udp` found in `/etc/services`, or custom port(s)
+* Supports FTP and TFTP
+* No configuration file
+* Defaults to port `ftp/tcp` and `tftp/udp` found in `/etc/services`, or custom port(s)
 * Serves files from the ftp user's $HOME, as specified in `/etc/passwd`, or custom path
 * Can run from `inetd(8)` or as a standalone daemon
 * Can be built and installed as a `.deb` file, with debconf support
