@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/projects/uftpd/</loc>
+    <lastmod>2019-03-03T15:55:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/projects/mrouted/</loc>
     <lastmod>2019-02-24T11:21:31+01:00</lastmod>
   </url>
@@ -25,11 +30,6 @@
   <url>
     <loc>/2018/06/Open-Source-Releases/</loc>
     <lastmod>2018-06-16T15:19:28+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/uftpd/</loc>
-    <lastmod>2018-06-06T22:00:00+02:00</lastmod>
   </url>
   
   <url>
@@ -799,7 +799,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-02-24T11:21:31+01:00</lastmod>
+    <lastmod>2019-03-03T15:55:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1259,7 +1259,7 @@
   
   <url>
     <loc>/projects/</loc>
-    <lastmod>2019-02-24T11:21:31+01:00</lastmod>
+    <lastmod>2019-03-03T15:55:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
