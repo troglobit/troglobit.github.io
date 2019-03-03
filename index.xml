@@ -20,8 +20,8 @@
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/projects/uftpd/</guid>
       <description>Tired of confusing configuration files and security features you don&amp;rsquo;t need?
-Try uftpd(8)!
- Supports both FTP and TFTP No confusing configuration file Listens to port ftp/tcp and tftp/udp found in /etc/services, or custom port(s) Serves files from the ftp user&amp;rsquo;s $HOME, as specified in /etc/passwd, or custom path Can run from inetd(8) or as a standalone daemon Can be built and installed as a .deb file, with debconf support Can run as root, with chroot and privsep, or as a regular user Supports TFTP blocksize negotiation, RFC 2348  Basically, it just works!</description>
+Try uftpd!
+ Supports FTP and TFTP No configuration file Defaults to port ftp/tcp and tftp/udp found in /etc/services, or custom port(s) Serves files from the ftp user&amp;rsquo;s $HOME, as specified in /etc/passwd, or custom path Can run from inetd(8) or as a standalone daemon Can be built and installed as a .deb file, with debconf support Can run as root, with chroot and privsep, or as a regular user Supports TFTP blocksize negotiation, RFC 2348  Basically, it just works!</description>
     </item>
     
     <item>
