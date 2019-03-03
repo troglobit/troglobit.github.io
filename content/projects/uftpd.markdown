@@ -2,7 +2,7 @@
 name: uftpd
 title: "No nonsense FTP/TFTP server"
 description: "FTP/TFTP server for Linux that just works™"
-date: 2018-06-06 22:00:00 +0200
+date: 2019-03-03 15:55:00 +0200
 aliases: /uftpd.html
 ---
 
@@ -11,7 +11,7 @@ Tired of confusing configuration files and security features you don't need?
 Try `uftpd(8)`!
 
 * Supports both FTP and TFTP
-* Has no confusing configuration file
+* No confusing configuration file
 * Listens to port `ftp/tcp` and `tftp/udp` found in `/etc/services`, or custom port(s)
 * Serves files from the ftp user's $HOME, as specified in `/etc/passwd`, or custom path
 * Can run from `inetd(8)` or as a standalone daemon
@@ -25,9 +25,9 @@ Basically, it just works!
 * [README](https://github.com/troglobit/uftpd/blob/master/README.md)
 * [TODO](https://github.com/troglobit/uftpd/blob/master/TODO.md)
 * [Issue Tracker](http://github.com/troglobit/uftpd/issues)
-* [uftpd-2.5.tar.xz](ftp://ftp.troglobit.com/uftpd/uftpd-2.5.tar.xz),
-  [MD5](ftp://ftp.troglobit.com/uftpd/uftpd-2.5.tar.xz.md5),
-* [ChangeLog](https://github.com/troglobit/uftpd/releases/tag/v2.5)
+* [uftpd-2.7.tar.xz](ftp://ftp.troglobit.com/uftpd/uftpd-2.7.tar.xz),
+  [MD5](ftp://ftp.troglobit.com/uftpd/uftpd-2.7.tar.xz.md5),
+* [ChangeLog](https://github.com/troglobit/uftpd/releases/tag/v2.7)
 
 See also the [OpenHub page](https://www.openhub.net/p/uftpd/), the cool
 [Fresh(code) page](http://freshcode.club/projects/uftpd), or the (sadly)
