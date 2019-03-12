@@ -11,9 +11,11 @@ created a setup to test pimd [issue #57][issue].  For these notes the
 following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and
 Qemu 2.3.0, is used:
 
+```
     .--------. net1 .----. net2 .----. net3 .----------.
     | Sender |------| R2 |------| R3 |------| Receiver |
     '--------'      '----'      '----'      '----------'
+```
 
 The networks between the boxes are actually Linux bridge devices (br),
 on which you may have to [disable IGMP/MLD snooping][igmp] to get `pimd`
@@ -31,16 +33,20 @@ You need a few things set up in FreeBSD before starting `pimd`.
 In `/boot/loader.conf` add the following line to load the MROUTING
 kernel module:
 
+```
     ip_mroute_load="yes"
+```
 
 If you want to serial console access to your FreeBSD, or run FreeBSD in
 Qemu (virt-manager), you may want to add the following lines as well to
 `/boot/loader.conf`:
 
+```
     boot_multicons="YES"
     boot_serial="YES"
     comconsole_speed="115200"
     console="comconsole,vidconsole"
+```
 
 In `/etc/rc.conf` there are several lines that need to be added, both to
 enable router/gateway mode and to enable RIP to resolve the unicast
@@ -48,15 +54,19 @@ forwarding table.  The `Sender` and `Recieiver` nodes, which run
 Ubuntu 14.04, employ Quagga `ripd` for this, but on FreeBSD we employ
 the god 'ol `routed` :-)
 
+```
     gateway_enable="YES"
     routed_enable="YES"
     routed_flags="-s"
+```
 
 Notice how we change the `routed_flags` from quiet mode! Now, for
 interop with the rest of the network we enable RIP v2 mode by adding the
 following line to `/etc/gateways`:
 
+```
     ripv2
+```
 
 
 ## Download pimd
@@ -64,26 +74,34 @@ following line to `/etc/gateways`:
 Next we need to download and build `pimd`.  It is available on GitHub if
 you want the latest bleeding edge stuff, or use the latest tarball:
 
-    ftp ftp://ftp.troglobit.com/pimd/pimd-2.3.0.tar.gz
-    tar xfz pimd-2.3.0.tar.gz
-    cd pimd-2.3.0/
+```sh
+    wget http://ftp.troglobit.com/pimd/pimd-2.3.2.tar.gz
+    tar xfz pimd-2.3.2.tar.gz
+    cd pimd-2.3.2/
     ./configure
     make
+```
 
 
 ## Running pimd
 
 Now we can start pimd on both routers:
 
+```sh
     ./pimd -c pimd.conf
+```
 
 After a while you should be able to see some interesting output in both
 
+```
     ./pimd -r
+```
 
 and
 
+```sh
     netstat -rn
+```
 
 See the [OpenBSD HowTo](/howto-run-pimd-on-openbsd.html) for example
 output and troubleshooting.
