@@ -8,10 +8,26 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Sun, 03 Mar 2019 15:55:00 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 12 Mar 2019 23:11:30 +0100</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Odd Progress</title>
+      <link>/2019/03/Odd-Progress/</link>
+      <pubDate>Tue, 12 Mar 2019 23:11:30 +0100</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2019/03/Odd-Progress/</guid>
+      <description>&lt;p&gt;A lot has happened since my last post; I got my bike stolen, found the
+guys who had stolen my bike, got mugged by the same guys, decided I&amp;rsquo;d
+had enough and then bought a house and moved to another city.  That&amp;rsquo;s
+the long and short of it.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m OK, sort of.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>No nonsense FTP/TFTP server</title>
@@ -836,8 +852,8 @@ Well, I have to confess that there are certain things that SNMP can be really us
       <pubDate>Sun, 27 Sep 2015 18:45:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/howto/pimd-on-freebsd/</guid>
-      <description>This is not a proper HowTo, more of a &amp;ldquo;note to self&amp;rdquo; after having created a setup to test pimd issue #57. For these notes the following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and Qemu 2.3.0, is used:
-.--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | &#39;--------&#39; &#39;----&#39; &#39;----&#39; &#39;----------&#39;  The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP/MLD snooping to get pimd to run smoothly.</description>
+      <description>This is not a proper HowTo, more of a &amp;ldquo;note to self&amp;rdquo; after having created a setup to test pimd issue #57. For these notes the following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and Qemu 2.3.2, is used:
+ .--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | &#39;--------&#39; &#39;----&#39; &#39;----&#39; &#39;----------&#39;  The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP/MLD snooping to get pimd to run smoothly.</description>
     </item>
     
     <item>

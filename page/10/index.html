@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <meta name="author" content="Joachim Nilsson"/>
-  <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
-  <meta property="og:image" content="/images/profile.jpg" />
-  <meta name="twitter:image" content="/images/profile.jpg" />
+  <link href='favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="images/profile.jpg" />
+  <meta name="twitter:image" content="images/profile.jpg" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@troglobit" />
   <meta name="twitter:creator" content="@troglobit" />
@@ -22,8 +22,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="/css/syntax.css" /><link rel="stylesheet" href="/css/codeblock.css" />
+  <link rel="stylesheet" href="css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="css/syntax.css" /><link rel="stylesheet" href="css/codeblock.css" />
 
 
 
@@ -88,7 +88,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/"></a>
+      <a class="navbar-brand" href=""></a>
     </div>
 
     <div class="collapse navbar-collapse" id="main-navbar">
@@ -102,13 +102,13 @@
         
           
             <li>
-              <a title="FTP" href="http://ftp.troglobit.com">FTP</a>
+              <a title="FTP" href="/http:/ftp.troglobit.com">FTP</a>
             </li>
           
         
           
             <li>
-              <a title="GIT" href="http://git.troglobit.com">GIT</a>
+              <a title="GIT" href="/http:/git.troglobit.com">GIT</a>
             </li>
           
         
@@ -126,7 +126,7 @@
         
           
             <li>
-              <a title="Resumé" href="http://resume.troglobit.com">Resumé</a>
+              <a title="Resumé" href="/http:/resume.troglobit.com">Resumé</a>
             </li>
           
         
@@ -146,8 +146,8 @@
     <div class="avatar-container">
       <div class="avatar-img-border">
         
-          <a title="" href="/">
-            <img class="avatar-img" src="/images/profile.jpg" alt="" />
+          <a title="" href="">
+            <img class="avatar-img" src="images/profile.jpg" alt="" />
           </a>
         
       </div>
@@ -178,6 +178,34 @@
 
         <div class="posts-list">
           
+          
+            <article class="post-preview">
+              <a href="/2009/06/14/editline-first-post/">
+                <h2 class="post-title">Editline First Post</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on June 14, 2009
+  
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  For a while now I&rsquo;ve been maintaining a port of the Minix editline library libedit. Mainly for my own purposes, or rather on behalf of Westermo WeOS, where it is used in the CLI. This library is the same as the Debian editline package, even though the origin of that package is somewhat unclear to me.
+Today I decided to adjust the package name and bump the version number to indicate that my port is the same, and now slightly more advanced, than the Debian version.
+                  <a href="/2009/06/14/editline-first-post/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
           
             <article class="post-preview">
               <a href="/2009/06/13/howto-use-git-for-collaborative-development/">
@@ -440,35 +468,6 @@ Ah, what every FLOSS dad is looking for, a way to make your kids interested in y
               
             </article>
           
-            <article class="post-preview">
-              <a href="/2009/02/14/reminder-to-self/">
-                <h2 class="post-title">Reminder to Self</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on February 14, 2009
-  
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  How to recode AVI-files to be able to write them to a Video CD.
-ffmpeg -i original.avi -target pal-vcd copy.mpg vcdimager -t vcd1 -l &quot;Title&quot; -c vcd.cue -b vcd.bin copy.mpg cdrdao write --device /dev/cdrw vcd.cue  Note: vcdimager is able to take multiple .mpg files as argument, very useful when burning multiple family videos to the same disc!
-Tip from Johan Risberg on how to be able to reattach a UTF-8 Linux screen session from Cygwin.
-                  <a href="/2009/02/14/reminder-to-self/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-            </article>
-          
         </div>
 
         
@@ -566,10 +565,10 @@ Tip from Johan Risberg on how to be able to reattach a UTF-8 Linux screen sessio
 <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="js/main.js"></script><script> renderMathInElement(document.body); </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
-<script src="/js/load-photoswipe.js"></script>
+<script src="js/load-photoswipe.js"></script>
 
 
 
