@@ -154,6 +154,31 @@ and as is shown in these examples, either `--ttl-set` or `--ttl-inc` can
 be used to adjust the TTL value.
 
 
+### Reverse Path Forwarding
+
+Dynamic multicast routing protocols like DVMRP and PIM-SM rely on
+something called *Reverse Path Forwarding* to build a multicast
+distribution tree.
+
+The unicast routing table has the destination in focus, i.e. how to
+forward an inbound frame towards the destionation address.
+
+A multicast router builds tables to instead find the reverse path, from
+the receiver (who requests multicast) to the source of the multicast
+distribution tree.
+
+`mrouted` uses its built-in RIP to construct its distribution tree, and
+`pimd` relies on an external routing protocol like OSPF, RIP, or even a
+manually set up routing table on each router.
+
+**Note:** A common problem with multicast forwarding on Linux based
+  routers is `rp_filter`.  Many systems has this by default set to
+  'strict' mode, to protect against DDOS attacks, which may cause major
+  problems for `pimd` and `mrouted`.  If the reverse path to the source
+  of multicast cannot be determined the frames will be dropped by the
+  kernel.  See the FAQ below for more information.
+
+
 CORE
 ----
 
