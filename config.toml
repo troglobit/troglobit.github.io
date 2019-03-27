@@ -2,18 +2,23 @@ baseURL = "/"
 disablePathToLower = true
 languageCode = "en-us"
 #title = "Joachim Nilsson"
+#theme = "blackburn"
 theme = "beautifulhugo"
 contentDir = "content"
 publishDir = "public"
 pygmentsUseClasses = true
 pygmentCodeFences = true
 enableEmoji = true
+#copyright = "&copy; 2019. All rights reserved."
+#canonifyurls = true
+#paginate = 10
 
 [permalinks]
   post = "/:year/:month/:title/"
 
 [Params]
 #  subtitle = "Help me Obi-Wan Troglobi, you're my only hope!"
+  brand = "Troglobit"
   logo = "images/profile.jpg"
   favicon = "favicon.ico"
   commit = false
@@ -27,37 +32,43 @@ enableEmoji = true
   github = "troglobit"
   twitter = "troglobit"
 
-[[menu.main]]
+[social]
+  googleplus = "+JoachimNilsson"
+  github = "troglobit"
+  twitter = "troglobit"
+
+[menu]
+  [[menu.main]]
     name = "Projects"
     url = "/projects/"
     weight = 1
 
-[[menu.main]]
+  [[menu.main]]
     name = "Archive"
     url = "/archive/"
     weight = 1
 
-[[menu.main]]
+  [[menu.main]]
     name = "HowTos"
     url = "/howto/"
     weight = 1
 
-[[menu.main]]
+  [[menu.main]]
     name = "Resumé"
     url = "http://resume.troglobit.com"
     weight = 1
 
-[[menu.main]]
+  [[menu.main]]
     name = "FTP"
     url = "http://ftp.troglobit.com"
     weight = 1
 
-[[menu.main]]
+  [[menu.main]]
     name = "GIT"
     url = "http://git.troglobit.com"
     weight = 1
 
-[[menu.main]]
+  [[menu.main]]
     name = "About"
     url = "/about/"
     weight = 3
