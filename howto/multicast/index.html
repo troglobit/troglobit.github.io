@@ -8,16 +8,13 @@
   <title>Multicast HowTo</title>
   <meta property="og:title" content="Multicast HowTo" />
   <meta name="twitter:title" content="Multicast HowTo" />
-  <meta name="description" content="This HowTo attempts to give some insight into the basics of setting up multicast routing. Both static multicast routing, with SMCRoute, and dynamic multicast routing, with mrouted and pimd.
+  <meta name="description" content="Introduction This HowTo attempts to give some insight into the basics of setting up multicast routing. Both static multicast routing, with SMCRoute, and dynamic multicast routing, with mrouted and pimd.
 For some use-cases it may not be possible to use multicast routing, then I recommend trying out:
- igmproxy, mcproxy, or OpenVPN in Layer-2, bridged mode  Make sure to check out the FAQ for the most common problems.
-Good Luck!">
-  <meta property="og:description" content="This HowTo attempts to give some insight into the basics of setting up multicast routing. Both static multicast routing, with SMCRoute, and dynamic multicast routing, with mrouted and pimd.
+ igmproxy, mcproxy, or OpenVPN in Layer-2, bridged mode  Make sure to check out the FAQ for the most common problems.">
+  <meta property="og:description" content="Introduction This HowTo attempts to give some insight into the basics of setting up multicast routing. Both static multicast routing, with SMCRoute, and dynamic multicast routing, with mrouted and pimd.
 For some use-cases it may not be possible to use multicast routing, then I recommend trying out:
- igmproxy, mcproxy, or OpenVPN in Layer-2, bridged mode  Make sure to check out the FAQ for the most common problems.
-Good Luck!">
-  <meta name="twitter:description" content="This HowTo attempts to give some insight into the basics of setting up multicast routing. Both static multicast routing, with SMCRoute, and dynamic multicast routing, with mrouted and pimd.
-For some …">
+ igmproxy, mcproxy, or OpenVPN in Layer-2, bridged mode  Make sure to check out the FAQ for the most common problems.">
+  <meta name="twitter:description" content="Introduction This HowTo attempts to give some insight into the basics of setting up multicast routing. Both static multicast routing, with SMCRoute, and dynamic multicast routing, with mrouted and …">
   <meta name="author" content="Joachim Nilsson"/>
   <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="/images/profile.jpg" />
@@ -206,7 +203,28 @@ For some …">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        
+	
+	<nav id="TableOfContents">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#basics">Basics</a>
+<ul>
+<li><a href="#layer-2-vs-layer-3">Layer-2 vs Layer-3</a></li>
+<li><a href="#multicast-distribution-point">Multicast Distribution Point</a></li>
+<li><a href="#multicast-router-ports">Multicast Router Ports</a></li>
+<li><a href="#pim-sm-igmp-v2-vs-pim-ssm-igmp-v3">PIM-SM :: IGMP v2 vs. PIM-SSM :: IGMP v3</a></li>
+<li><a href="#what-is-ttl-and-why-can-t-i-route-multicast">What is TTL and Why Can&rsquo;t I Route Multicast?</a></li>
+<li><a href="#reverse-path-forwarding">Reverse Path Forwarding</a></li>
+</ul></li>
+<li><a href="#core-network-simulator">CORE Network Simulator</a></li>
+<li><a href="#roll-your-own-cloud">Roll your own Cloud</a></li>
+<li><a href="#faq">FAQ</a></li>
+</ul>
+</nav>
+	
+	
+
+<h1 id="introduction">Introduction</h1>
 
 <p>This HowTo attempts to give some insight into the basics of setting up
 multicast routing.  Both static multicast routing, with <a href="https://github.com/troglobit/smcroute/">SMCRoute</a>,
@@ -225,13 +243,13 @@ I recommend trying out:</p>
 <p>Good Luck! <br />
 &ndash; Joachim</p>
 
-<h2 id="basics">Basics</h2>
+<h1 id="basics">Basics</h1>
 
 <p>To understand multicast routing one needs to first understand how
 multicast on a LAN works.  In this HowTo the LAN is usually referred to
 as Layer-2 and routing (between LANs) as Layer-3.</p>
 
-<h3 id="layer-2-vs-layer-3">Layer-2 vs Layer-3</h3>
+<h2 id="layer-2-vs-layer-3">Layer-2 vs Layer-3</h2>
 
 <p>First, without any form of regulation multicast is broadcast, which is
 inherently bad.  We don&rsquo;t want to route broadcast, but even on a LAN we
@@ -250,7 +268,7 @@ fancy way of saying: this switch does not flood multicast like broadcast
 on all ports.  However, it also means that everyone on a LAN that want
 multicast have to be able to request it.</p>
 
-<h3 id="multicast-distribution-point">Multicast Distribution Point</h3>
+<h2 id="multicast-distribution-point">Multicast Distribution Point</h2>
 
 <p>On a LAN with many IGMP Snooping capable switches a <em>Querier election</em>
 will take place.  The switch (or router) with the lowest IP address
@@ -263,7 +281,7 @@ router has the lowest IP address on the LAN, so that it will always
 be the elected IGMP querier, hence receiving all multicast so it can
 route it as required.</p>
 
-<h3 id="multicast-router-ports">Multicast Router Ports</h3>
+<h2 id="multicast-router-ports">Multicast Router Ports</h2>
 
 <p>In a network with redundant/multiple multicast routers one cannot rely
 solely on the IGMP querier election.  Instead, most managed switches
@@ -282,7 +300,7 @@ mapped to 01:00:5e:01:02:03.  For more on this, and the limitations
 it brings, see <a href="https://www.ietf.org/rfc/rfc1112.txt">RFC1112</a>.</p>
 </blockquote>
 
-<h3 id="pim-sm-igmp-v2-vs-pim-ssm-igmp-v3">PIM-SM :: IGMP v2 vs. PIM-SSM :: IGMP v3</h3>
+<h2 id="pim-sm-igmp-v2-vs-pim-ssm-igmp-v3">PIM-SM :: IGMP v2 vs. PIM-SSM :: IGMP v3</h2>
 
 <p>In the beginning there was darkness and DVMRP conquered the earth.  The
 God of all multicast, which is Steve Deering, was pleased.  Then light
@@ -309,7 +327,7 @@ and IGMP v3 on layer-2.  The biggest change is the ability to forward
 multicast based on source <em>and</em> group, called (S,G).  An end node on a
 LAN could now send an IGMP report requesting (192.168.10.1, 225.1.2.3).</p>
 
-<h3 id="what-is-ttl-and-why-can-t-i-route-multicast">What is TTL and Why Can&rsquo;t I Route Multicast?</h3>
+<h2 id="what-is-ttl-and-why-can-t-i-route-multicast">What is TTL and Why Can&rsquo;t I Route Multicast?</h2>
 
 <p>The single most common problem with routing multicast that everybody
 runs into is the TTL.</p>
@@ -362,7 +380,7 @@ as it egresses:</p>
 and as is shown in these examples, either <code>--ttl-set</code> or <code>--ttl-inc</code> can
 be used to adjust the TTL value.</p>
 
-<h3 id="reverse-path-forwarding">Reverse Path Forwarding</h3>
+<h2 id="reverse-path-forwarding">Reverse Path Forwarding</h2>
 
 <p>Dynamic multicast routing protocols like DVMRP and PIM-SM rely on
 something called <em>Reverse Path Forwarding</em> to build a multicast
@@ -384,9 +402,9 @@ manually set up routing table on each router.</p>
   &lsquo;strict&rsquo; mode, to protect against DDOS attacks, which may cause major
   problems for <code>pimd</code> and <code>mrouted</code>.  If the reverse path to the source
   of multicast cannot be determined the frames will be dropped by the
-  kernel.  See the FAQ below for more information.</p>
+  kernel.  See the <a href="#faq">FAQ</a> below for more information.</p>
 
-<h2 id="core">CORE</h2>
+<h1 id="core-network-simulator">CORE Network Simulator</h1>
 
 <p>These days I do most of my multicast testing with <a href="http://www.nrl.navy.mil/itd/ncs/products/core">CORE</a>, which is
 readily available i Debian/Ubuntu as simple as:</p>
@@ -415,7 +433,7 @@ for instance, see <a href="http://www.brianlinkletter.com/open-source-network-si
 
 <p><a name="roll-your-own"></a></p>
 
-<h2 id="roll-your-own-cloud">Roll your own Cloud</h2>
+<h1 id="roll-your-own-cloud">Roll your own Cloud</h1>
 
 <p>The below setup is done using four Ubuntu 12.04 LTS virtual machines
 running the linux-virtual kernel package.  In the HowTo I mention both
@@ -555,7 +573,7 @@ as with <code>mrouted</code> and <code>pimd</code>.</p>
 
 <p>That&rsquo;s it. Have fun!</p>
 
-<h2 id="faq">FAQ</h2>
+<h1 id="faq">FAQ</h1>
 
 <ol>
 <li><p><em>It doesn&rsquo;t work?</em></p>
