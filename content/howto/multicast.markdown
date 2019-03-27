@@ -1,9 +1,13 @@
 ---
 title: "Multicast HowTo"
+toc: true
 date: 2019-03-27 15:54:00 +02:00
 aliases: [/multicast-howto.html]
 categories: [ "multicast", "pimd", "mrouted", "SMCRoute", "IGMP", "igmpproxy", "mcproxy" ]
 ---
+
+Introduction
+============
 
 This HowTo attempts to give some insight into the basics of setting up
 multicast routing.  Both static multicast routing, with [SMCRoute][1],
@@ -22,13 +26,15 @@ Good Luck! <br />
 
 
 Basics
-------
+======
 
 To understand multicast routing one needs to first understand how
 multicast on a LAN works.  In this HowTo the LAN is usually referred to
 as Layer-2 and routing (between LANs) as Layer-3.
 
-### Layer-2 vs Layer-3
+
+Layer-2 vs Layer-3
+------------------
 
 First, without any form of regulation multicast is broadcast, which is
 inherently bad.  We don't want to route broadcast, but even on a LAN we
@@ -47,7 +53,9 @@ fancy way of saying: this switch does not flood multicast like broadcast
 on all ports.  However, it also means that everyone on a LAN that want
 multicast have to be able to request it.
 
-### Multicast Distribution Point
+
+Multicast Distribution Point
+----------------------------
 
 On a LAN with many IGMP Snooping capable switches a *Querier election*
 will take place.  The switch (or router) with the lowest IP address
@@ -60,7 +68,8 @@ router has the lowest IP address on the LAN, so that it will always
 be the elected IGMP querier, hence receiving all multicast so it can
 route it as required.
 
-### Multicast Router Ports
+Multicast Router Ports
+----------------------
 
 In a network with redundant/multiple multicast routers one cannot rely
 solely on the IGMP querier election.  Instead, most managed switches
@@ -77,7 +86,9 @@ instead.
 > mapped to 01:00:5e:01:02:03.  For more on this, and the limitations
 > it brings, see [RFC1112](https://www.ietf.org/rfc/rfc1112.txt).
 
-### PIM-SM :: IGMP v2 vs. PIM-SSM :: IGMP v3
+
+PIM-SM :: IGMP v2 vs. PIM-SSM :: IGMP v3
+----------------------------------------
 
 In the beginning there was darkness and DVMRP conquered the earth.  The
 God of all multicast, which is Steve Deering, was pleased.  Then light
@@ -105,7 +116,8 @@ multicast based on source *and* group, called (S,G).  An end node on a
 LAN could now send an IGMP report requesting (192.168.10.1, 225.1.2.3).
 
 
-### What is TTL and Why Can't I Route Multicast?
+What is TTL and Why Can't I Route Multicast?
+--------------------------------------------
 
 The single most common problem with routing multicast that everybody
 runs into is the TTL.
@@ -154,7 +166,8 @@ and as is shown in these examples, either `--ttl-set` or `--ttl-inc` can
 be used to adjust the TTL value.
 
 
-### Reverse Path Forwarding
+Reverse Path Forwarding
+-----------------------
 
 Dynamic multicast routing protocols like DVMRP and PIM-SM rely on
 something called *Reverse Path Forwarding* to build a multicast
@@ -176,11 +189,11 @@ manually set up routing table on each router.
   'strict' mode, to protect against DDOS attacks, which may cause major
   problems for `pimd` and `mrouted`.  If the reverse path to the source
   of multicast cannot be determined the frames will be dropped by the
-  kernel.  See the FAQ below for more information.
+  kernel.  See the [FAQ](#faq) below for more information.
 
 
-CORE
-----
+CORE Network Simulator
+======================
 
 These days I do most of my multicast testing with [CORE][7], which is
 readily available i Debian/Ubuntu as simple as:
@@ -207,7 +220,7 @@ for instance, see [Brian Linkletter's Reviews][10].
 <a name="roll-your-own"></a>
 
 Roll your own Cloud
--------------------
+===================
 
 The below setup is done using four Ubuntu 12.04 LTS virtual machines
 running the linux-virtual kernel package.  In the HowTo I mention both
@@ -340,7 +353,7 @@ That's it. Have fun!
 
 
 FAQ
----
+===
 
 1. _It doesn't work?_
 
