@@ -8,10 +8,22 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Wed, 13 Mar 2019 00:11:32 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 27 Mar 2019 15:54:00 +0200</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Multicast HowTo</title>
+      <link>/howto/multicast/</link>
+      <pubDate>Wed, 27 Mar 2019 15:54:00 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/howto/multicast/</guid>
+      <description>This HowTo attempts to give some insight into the basics of setting up multicast routing. Both static multicast routing, with SMCRoute, and dynamic multicast routing, with mrouted and pimd.
+For some use-cases it may not be possible to use multicast routing, then I recommend trying out:
+ igmproxy, mcproxy, or OpenVPN in Layer-2, bridged mode  Make sure to check out the FAQ for the most common problems.
+Good Luck!</description>
+    </item>
     
     <item>
       <title>FLOSS Progress</title>
@@ -901,18 +913,6 @@ pkg_add -v git  Or so you might think! As this blog points out, you also need to
       <guid>/howto/pimd-on-openbsd/</guid>
       <description>This is an introduction to HowTo run pimd on OpenBSD. I keep it around mostly as a reminder to myself when testing new pimd releases, maybe someone else can make use of it as well.
 First of all, my sincere thanks to the OpenBSD team for, not just an awesome UNIX distribution, but also for their good taste in shipping a MULTICAST enabled kernel in the base distribution! On both NetBSD and FreeBSD there is a bit of work to get multicast support, which is one of the reasons for my not writing a HowTo for either of them atm.</description>
-    </item>
-    
-    <item>
-      <title>Multicast HowTo</title>
-      <link>/howto/multicast/</link>
-      <pubDate>Thu, 16 Jul 2015 15:42:00 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/howto/multicast/</guid>
-      <description>This HowTo attempts to give some insight into the basics of setting up multicast routing. Both static multicast routing, with SMCRoute, and dynamic multicast routing, with mrouted and pimd.
-For some use-cases it may not be possible to use multicast routing, then I recommend trying out:
- igmproxy, mcproxy, or OpenVPN in Layer-2, bridged mode  Make sure to check out the FAQ for the most common problems.
-Good Luck!</description>
     </item>
     
     <item>

@@ -8,7 +8,7 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Thu, 16 Jul 2015 15:42:00 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 27 Mar 2019 15:54:00 +0200</lastBuildDate>
     
 	<atom:link href="/categories/mcproxy/index.xml" rel="self" type="application/rss+xml" />
     
@@ -16,7 +16,7 @@
     <item>
       <title>Multicast HowTo</title>
       <link>/howto/multicast/</link>
-      <pubDate>Thu, 16 Jul 2015 15:42:00 +0200</pubDate>
+      <pubDate>Wed, 27 Mar 2019 15:54:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/howto/multicast/</guid>
       <description>This HowTo attempts to give some insight into the basics of setting up multicast routing. Both static multicast routing, with SMCRoute, and dynamic multicast routing, with mrouted and pimd.

@@ -362,6 +362,30 @@ as it egresses:</p>
 and as is shown in these examples, either <code>--ttl-set</code> or <code>--ttl-inc</code> can
 be used to adjust the TTL value.</p>
 
+<h3 id="reverse-path-forwarding">Reverse Path Forwarding</h3>
+
+<p>Dynamic multicast routing protocols like DVMRP and PIM-SM rely on
+something called <em>Reverse Path Forwarding</em> to build a multicast
+distribution tree.</p>
+
+<p>The unicast routing table has the destination in focus, i.e. how to
+forward an inbound frame towards the destionation address.</p>
+
+<p>A multicast router builds tables to instead find the reverse path, from
+the receiver (who requests multicast) to the source of the multicast
+distribution tree.</p>
+
+<p><code>mrouted</code> uses its built-in RIP to construct its distribution tree, and
+<code>pimd</code> relies on an external routing protocol like OSPF, RIP, or even a
+manually set up routing table on each router.</p>
+
+<p><strong>Note:</strong> A common problem with multicast forwarding on Linux based
+  routers is <code>rp_filter</code>.  Many systems has this by default set to
+  &lsquo;strict&rsquo; mode, to protect against DDOS attacks, which may cause major
+  problems for <code>pimd</code> and <code>mrouted</code>.  If the reverse path to the source
+  of multicast cannot be determined the frames will be dropped by the
+  kernel.  See the FAQ below for more information.</p>
+
 <h2 id="core">CORE</h2>
 
 <p>These days I do most of my multicast testing with <a href="http://www.nrl.navy.mil/itd/ncs/products/core">CORE</a>, which is
@@ -578,7 +602,21 @@ groups I want to forward, the TTL is OK, but I see no traffic?</em></p>
 
 <p>Could be your underlying routing protocol (RIP/OSPF) does not know
 the reverse path to the source.  Make sure the sender&rsquo;s network is
-listed in the routing table on the receiving sides routing table.</p></li>
+listed in the routing table on the receiving sides routing table.</p>
+
+<p>Also, on Linux you might get bitten by the <code>rp_filter</code>.  It can be
+modified in your system <code>/etc/sysctl.conf</code> file.  Check it with:</p>
+
+<pre><code># sysctl -ar '\.rp_filter'
+net.ipv4.conf.all.rp_filter = 0
+net.ipv4.conf.default.rp_filter = 0
+net.ipv4.conf.eth0.rp_filter = 0
+net.ipv4.conf.eth1.rp_filter = 0
+net.ipv4.conf.lo.rp_filter = 1
+net.ipv4.conf.pimreg.rp_filter = 0
+</code></pre>
+
+<p><a href="https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt">https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt</a></p></li>
 
 <li><p><em>What&rsquo;s the routing performance of <code>pimd</code>/<code>mrouted</code>/<code>smcroute</code>?</em></p>
 
@@ -606,13 +644,9 @@ kernel.</p></li>
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="/howto/mrouting-in-freebsd/" data-toggle="tooltip" data-placement="top" title="HowTo: Add Multicast Routing to FreeBSD kernel">&larr; Previous Post</a>
+              <a href="/howto/snmp/" data-toggle="tooltip" data-placement="top" title="HowTo play with SNMP">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="/howto/pimd-on-openbsd/" data-toggle="tooltip" data-placement="top" title="HowTo run pimd on OpenBSD">Next Post &rarr;</a>
-            </li>
           
         </ul>
       

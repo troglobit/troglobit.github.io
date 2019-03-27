@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/howto/multicast/</loc>
+    <lastmod>2019-03-27T15:54:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2019/03/FLOSS-Progress/</loc>
     <lastmod>2019-03-13T00:11:32+01:00</lastmod>
   </url>
@@ -285,11 +290,6 @@
   <url>
     <loc>/howto/pimd-on-openbsd/</loc>
     <lastmod>2015-07-19T00:32:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/howto/multicast/</loc>
-    <lastmod>2015-07-16T15:42:00+02:00</lastmod>
   </url>
   
   <url>
@@ -809,7 +809,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-03-13T00:11:32+01:00</lastmod>
+    <lastmod>2019-03-27T15:54:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1053,7 +1053,7 @@
   
   <url>
     <loc>/howto/</loc>
-    <lastmod>2018-05-05T13:57:00+02:00</lastmod>
+    <lastmod>2019-03-27T15:54:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1077,13 +1077,13 @@
   
   <url>
     <loc>/categories/igmp/</loc>
-    <lastmod>2015-07-16T15:42:00+02:00</lastmod>
+    <lastmod>2019-03-27T15:54:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/igmpproxy/</loc>
-    <lastmod>2015-07-16T15:42:00+02:00</lastmod>
+    <lastmod>2019-03-27T15:54:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1155,7 +1155,7 @@
   
   <url>
     <loc>/categories/mcproxy/</loc>
-    <lastmod>2015-07-16T15:42:00+02:00</lastmod>
+    <lastmod>2019-03-27T15:54:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1185,13 +1185,13 @@
   
   <url>
     <loc>/categories/mrouted/</loc>
-    <lastmod>2015-07-16T15:42:00+02:00</lastmod>
+    <lastmod>2019-03-27T15:54:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/multicast/</loc>
-    <lastmod>2018-01-23T20:39:36+00:00</lastmod>
+    <lastmod>2019-03-27T15:54:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1251,7 +1251,7 @@
   
   <url>
     <loc>/categories/pimd/</loc>
-    <lastmod>2015-09-27T18:45:00+02:00</lastmod>
+    <lastmod>2019-03-27T15:54:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1339,7 +1339,7 @@
   
   <url>
     <loc>/categories/smcroute/</loc>
-    <lastmod>2015-07-16T15:42:00+02:00</lastmod>
+    <lastmod>2019-03-27T15:54:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
