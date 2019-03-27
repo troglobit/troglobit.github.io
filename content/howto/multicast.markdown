@@ -1,6 +1,6 @@
 ---
 title: "Multicast HowTo"
-date: 2015-07-16 15:42:00 +02:00
+date: 2019-03-27 15:54:00 +02:00
 aliases: [/multicast-howto.html]
 categories: [ "multicast", "pimd", "mrouted", "SMCRoute", "IGMP", "igmpproxy", "mcproxy" ]
 ---
@@ -360,6 +360,19 @@ FAQ
     Could be your underlying routing protocol (RIP/OSPF) does not know
     the reverse path to the source.  Make sure the sender's network is
     listed in the routing table on the receiving sides routing table.
+
+    Also, on Linux you might get bitten by the `rp_filter`.  It can be
+    modified in your system `/etc/sysctl.conf` file.  Check it with:
+
+        # sysctl -ar '\.rp_filter'
+        net.ipv4.conf.all.rp_filter = 0
+        net.ipv4.conf.default.rp_filter = 0
+        net.ipv4.conf.eth0.rp_filter = 0
+        net.ipv4.conf.eth1.rp_filter = 0
+        net.ipv4.conf.lo.rp_filter = 1
+        net.ipv4.conf.pimreg.rp_filter = 0
+
+    https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt
 
 7. _What's the routing performance of `pimd`/`mrouted`/`smcroute`?_
 
