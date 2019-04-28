@@ -39,17 +39,15 @@ to the upstream *BSD versions.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; This post was originally written Nov 14, 2015.  It was a
 Saturday and I remember being extremely inspired when I wrote it.  I&amp;rsquo;ve
 continued adding to it over the years, and still do.  So, as of Jul 2,
-2017 I&amp;rsquo;m bumping the modification date each time I add something new :-)&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+2017 I&amp;rsquo;m bumping the modification date each time I add something new :-)&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Threads vs Event Loop, Again ...</title>
-      <link>/2017/09/19/threads-vs-event-loop--again-.../</link>
+      <link>/2017/09/19/threads-vs-event-loop-again-.../</link>
       <pubDate>Tue, 19 Sep 2017 08:51:38 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/2017/09/19/threads-vs-event-loop--again-.../</guid>
+      <guid>/2017/09/19/threads-vs-event-loop-again-.../</guid>
       <description>&lt;p&gt;I still get asked this, from time to time.  Maybe it&amp;rsquo;s because I only
 use event loops, maybe it&amp;rsquo;s because I&amp;rsquo;ve written &lt;a href=&#34;https://github.com/troglobit/libuev&#34;&gt;libuEv&lt;/a&gt;, or maybe
 people still don&amp;rsquo;t understand:&lt;/p&gt;
@@ -58,9 +56,7 @@ people still don&amp;rsquo;t understand:&lt;/p&gt;
 &lt;p&gt;Why an event loop, why not use threads?&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;So here&amp;rsquo;s my response, once more.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;So here&amp;rsquo;s my response, once more.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -95,9 +91,7 @@ bugs&lt;/em&gt;!&lt;/p&gt;
 are sometimes more of a nuisance than help.  Sometimes you &lt;em&gt;know&lt;/em&gt; that
 some parameters to a function will remain unused &amp;ndash; it&amp;rsquo;s a callback, and
 you don&amp;rsquo;t need all the data given to you.  So you start adding all kinds
-of voodoo, like &lt;code&gt;__attribute__ ((unused))&lt;/code&gt; &amp;hellip; seriously?&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+of voodoo, like &lt;code&gt;__attribute__ ((unused))&lt;/code&gt; &amp;hellip; seriously?&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -117,9 +111,7 @@ which time I&amp;rsquo;ve lost most of the people in the room listening to me.
 Sometimes I say: &amp;ldquo;I&amp;rsquo;m a software architect.&amp;rdquo;, because people seem to
 know what architects do for a living, they draw houses, design stuff
 and drive SAAB&amp;rsquo;s.  Much like dentists.  The prefix &amp;ldquo;software&amp;rdquo; however
-does confuse people.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+does confuse people.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -139,9 +131,7 @@ using both recursive and non-recursive make.  Formatting of code, for
 instance, was for a while a bit of an obsession of mine, and it sort of
 is still.  But today I am more concerned with the overall structure and
 how components interact.  Even though I can still get very annoyed at
-people naming their local variables obtrusively.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+people naming their local variables obtrusively.&lt;/p&gt;</description>
     </item>
     
     <item>

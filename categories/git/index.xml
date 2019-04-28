@@ -33,9 +33,7 @@ is available on GitHub.&lt;/p&gt;
 &lt;p&gt;The code is open sourced under the very liberal &lt;a href=&#34;http://opensource.org/licenses/MIT&#34;&gt;MIT/X11 license&lt;/a&gt;,
 and much of its frog DNA has proven very useful to me over the years.
 This blog post is about how that frog DNA can help you fill gaps in your
-projects &amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+projects &amp;hellip;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -54,9 +52,7 @@ rescue, it describes the &lt;code&gt;set-url --add&lt;/code&gt; sub-command:&lt;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Now, with a simple &lt;code&gt;git push&lt;/code&gt; followed by &lt;code&gt;git push --tags&lt;/code&gt; I had now
-pushed to both the GitHub repo as well as my own server!&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+pushed to both the GitHub repo as well as my own server!&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -94,9 +90,7 @@ that:&lt;/p&gt;
 service apache2 reload
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;If you want to use that for your gitweb needs, then you&amp;rsquo;re done!&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;If you want to use that for your gitweb needs, then you&amp;rsquo;re done!&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -113,9 +107,7 @@ to GitHub, which also prompted me to set up
 &lt;a href=&#34;http://troglobit.github.io&#34;&gt;a mirror&lt;/a&gt; on
 &lt;a href=&#34;http://pages.github.io&#34;&gt;GitHub Pages&lt;/a&gt;.  As usual, reading up on the
 subject and muster enough motivation took me about three months, whereas
-the actual work took about 4h.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+the actual work took about 4h.&lt;/p&gt;</description>
     </item>
     
     <item>

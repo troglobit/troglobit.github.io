@@ -33,9 +33,7 @@ is available on GitHub.&lt;/p&gt;
 &lt;p&gt;The code is open sourced under the very liberal &lt;a href=&#34;http://opensource.org/licenses/MIT&#34;&gt;MIT/X11 license&lt;/a&gt;,
 and much of its frog DNA has proven very useful to me over the years.
 This blog post is about how that frog DNA can help you fill gaps in your
-projects &amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+projects &amp;hellip;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -113,9 +111,7 @@ Sat Mar  7 08:48:58 CET 2015
 
 &lt;p&gt;For more info on Finit and its features, see the &lt;a href=&#34;https://github.com/troglobit/finit/blob/master/README.md&#34;&gt;README&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;Enjoy! ツ&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Enjoy! ツ&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -126,9 +122,7 @@ Sat Mar  7 08:48:58 CET 2015
       <guid>/2015/01/24/finit-v1-dot-11-released/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Update 2015-03-09&lt;/strong&gt;: This release has unfortunately been &lt;em&gt;yanked&lt;/em&gt; due
 to serious regressions in launching background processes.  It has been
-replaced by &lt;a href=&#34;/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/&#34;&gt;v1.12&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+replaced by &lt;a href=&#34;/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/&#34;&gt;v1.12&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -149,9 +143,7 @@ replaced by &lt;a href=&#34;/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/&#
       <guid>/2014/12/28/mrouted-v3-dot-9-7/</guid>
       <description>&lt;p&gt;Another release today is the venerable &lt;a href=&#34;/mrouted.html&#34;&gt;mrouted&lt;/a&gt;, now
 available as
-&lt;a href=&#34;https://github.com/troglobit/mrouted/releases/tag/3.9.7&#34;&gt;v3.9.7 on GitHub&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;a href=&#34;https://github.com/troglobit/mrouted/releases/tag/3.9.7&#34;&gt;v3.9.7 on GitHub&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -180,9 +172,7 @@ Quagga PIM rather than pimd in WeOS.&lt;/p&gt;
 &lt;p&gt;For now though, enjoy pimd v2.2.0.  It&amp;rsquo;s been tested in both my Qemu
 based virtual testbed and a few setups using Linux&amp;rsquo; &lt;code&gt;netns&lt;/code&gt; feature in
 &lt;a href=&#34;http://www.nrl.navy.mil/itd/ncs/products/core&#34;&gt;CORE&lt;/a&gt; &amp;ndash; awesome
-little proggy! :-)&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+little proggy! :-)&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -257,9 +247,7 @@ something like this 2014?&lt;/p&gt;
 
 &lt;p&gt;As a developer the answer to most such questions is usually; to
 scratch an itch.  For a very long time I&amp;rsquo;ve looked for a really simple
-FTP server that just works, out of the box!&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+FTP server that just works, out of the box!&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -290,9 +278,7 @@ basically just something I need to get off my chest.&lt;/p&gt;
 to programming and event libraries like
 &lt;a href=&#34;http://libevent.org/&#34;&gt;libevent&lt;/a&gt; and
 &lt;a href=&#34;http://software.schmorp.de/pkg/libev.html&#34;&gt;libev&lt;/a&gt;.  Up until that
-point the silver bullet everyone was using was &amp;hellip; Threads.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+point the silver bullet everyone was using was &amp;hellip; Threads.&lt;/p&gt;</description>
     </item>
     
     <item>

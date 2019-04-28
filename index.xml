@@ -34,9 +34,7 @@ For some use-cases it may not be possible to use multicast routing, then I recom
 many pet projects.  As usual nothing fancy.  If you want to know more I
 suggest you find one on GitHub you&amp;rsquo;re interested in.  File an issue, or
 better yet, post a pull request to scratch that itch you have deep down:
-👉 &lt;a href=&#34;https://github.com/troglobit&#34;&gt;https://github.com/troglobit&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+👉 &lt;a href=&#34;https://github.com/troglobit&#34;&gt;https://github.com/troglobit&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -50,9 +48,7 @@ guys who had stolen my bike, got mugged by the same guys, decided I&amp;rsquo;d
 had enough and then bought a house and moved to another city.  That&amp;rsquo;s
 the long and short of it.&lt;/p&gt;
 
-&lt;p&gt;I&amp;rsquo;m OK, sort of.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;I&amp;rsquo;m OK, sort of.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -107,9 +103,7 @@ simple to set up on top of Ubuntu and use in Awesome:&lt;/p&gt;
 &lt;p&gt;I then use &lt;a href=&#34;https://wiki.gnome.org/Apps/Tweaks&#34;&gt;gnome-tweaks&lt;/a&gt; to select the Pop-dark-slim theme.  Now, the
 problem is that certain text box inputs in Firefox is either completely
 dark or white and the text cannot be seen until you mark it.  This isn&amp;rsquo;t
-specific to the Pop!_OS theme, Adwaita-dark is exactly as bad.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+specific to the Pop!_OS theme, Adwaita-dark is exactly as bad.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -120,9 +114,7 @@ specific to the Pop!_OS theme, Adwaita-dark is exactly as bad.&lt;/p&gt;
       <guid>/2018/08/Display-Brightness-in-Awesome-on-ThinkPad-X250/</guid>
       <description>&lt;p&gt;Having just received a new (used) ThinkPad X250 I felt somewhat lost
 when I realized the display brightness keys didn&amp;rsquo;t do anything in my
-&lt;a href=&#34;https://awesomewm.org&#34;&gt;Awesome WM&lt;/a&gt; setup.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;a href=&#34;https://awesomewm.org&#34;&gt;Awesome WM&lt;/a&gt; setup.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -133,9 +125,7 @@ when I realized the display brightness keys didn&amp;rsquo;t do anything in my
       <guid>/2018/06/Open-Source-Releases/</guid>
       <description>&lt;p&gt;Last three months have been hectic, lots of exciting things going on &lt;a href=&#34;https://www.westermo.com&#34;&gt;at
 work&lt;/a&gt;, with my kids, and also with some of my
-pet projects.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+pet projects.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -157,9 +147,7 @@ Personally I use both Ubuntu and Debian, so the tools I use to download the clie
       <description>&lt;p&gt;Summer is  almost upon us.  The  weather in Sweden has  been amazing the
 last couple of weeks, sunny and  warm.  This has of course not prevented
 me from pursuing my favorite  indoor activity; coding!  This time around
-I&amp;rsquo;ve spent some time to resurrect the packet injection tool &lt;a href=&#34;/projects/nemesis/&#34;&gt;Nemesis&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+I&amp;rsquo;ve spent some time to resurrect the packet injection tool &lt;a href=&#34;/projects/nemesis/&#34;&gt;Nemesis&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -180,9 +168,7 @@ Nemesis can natively craft and inject ARP, DNS, ETHERNET, ICMP, IGMP, IP, OSPF, 
       <guid>/2018/03/cgit-with-merecat-httpd/</guid>
       <description>&lt;p&gt;This post details how to set up &lt;a href=&#34;https://git.zx2c4.com/cgit/&#34;&gt;cgit&lt;/a&gt; with &lt;a href=&#34;http://merecat.troglobit.com&#34;&gt;Merecat httpd&lt;/a&gt;.  It
 begins as a &lt;a href=&#34;https://github.com/troglobit/merecat/issues/3&#34;&gt;GitHub issue&lt;/a&gt; report by Mr Alok G. Singh, who had run
-into problems setting it up.  I&amp;rsquo;m posting it here for others to see.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+into problems setting it up.  I&amp;rsquo;m posting it here for others to see.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -251,9 +237,7 @@ require unicast routing rules to be established.&lt;/p&gt;
 up the GRE tunnel.  It is just as easy to extend this to a big corporate
 Intranet with more routers between &lt;code&gt;R1&lt;/code&gt; and &lt;code&gt;R2&lt;/code&gt;.  As long as that IT
 department takes care of the unicast routing between &lt;code&gt;R1&lt;/code&gt; and &lt;code&gt;R2&lt;/code&gt; so
-that the GRE tunnel can be established.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+that the GRE tunnel can be established.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -282,9 +266,7 @@ to the upstream *BSD versions.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; This post was originally written Nov 14, 2015.  It was a
 Saturday and I remember being extremely inspired when I wrote it.  I&amp;rsquo;ve
 continued adding to it over the years, and still do.  So, as of Jul 2,
-2017 I&amp;rsquo;m bumping the modification date each time I add something new :-)&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+2017 I&amp;rsquo;m bumping the modification date each time I add something new :-)&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -300,17 +282,15 @@ managed to get it working.  Probably due to problems with GPG.  Then I
 went down the tried and true path of using &lt;a href=&#34;https://debian-administration.org/article/286/Setting_up_your_own_APT_repository_with_upload_support&#34;&gt;reprepro&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;ve tried to document my steps here, but I&amp;rsquo;ve very likely missed a few
-steps that a beginner admin may run into. YMMV B-)&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+steps that a beginner admin may run into. YMMV B-)&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Threads vs Event Loop, Again ...</title>
-      <link>/2017/09/19/threads-vs-event-loop--again-.../</link>
+      <link>/2017/09/19/threads-vs-event-loop-again-.../</link>
       <pubDate>Tue, 19 Sep 2017 08:51:38 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/2017/09/19/threads-vs-event-loop--again-.../</guid>
+      <guid>/2017/09/19/threads-vs-event-loop-again-.../</guid>
       <description>&lt;p&gt;I still get asked this, from time to time.  Maybe it&amp;rsquo;s because I only
 use event loops, maybe it&amp;rsquo;s because I&amp;rsquo;ve written &lt;a href=&#34;https://github.com/troglobit/libuev&#34;&gt;libuEv&lt;/a&gt;, or maybe
 people still don&amp;rsquo;t understand:&lt;/p&gt;
@@ -319,9 +299,7 @@ people still don&amp;rsquo;t understand:&lt;/p&gt;
 &lt;p&gt;Why an event loop, why not use threads?&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;So here&amp;rsquo;s my response, once more.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;So here&amp;rsquo;s my response, once more.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -337,9 +315,7 @@ example uses &lt;a href=&#34;https://github.com/troglobit/merecat&#34;&gt;Mereca
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;See &lt;a href=&#34;https://hub.docker.com/r/troglobit/merecat/&#34;&gt;https://hub.docker.com/r/troglobit/merecat/&lt;/a&gt; for details on how to
-run Merecat httpd in production.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+run Merecat httpd in production.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -349,9 +325,7 @@ run Merecat httpd in production.&lt;/p&gt;
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2017/09/10/install-x-window-in-alpine-linux/</guid>
       <description>&lt;p&gt;How to install LXDM + XFCE4 in Alpine Linux 3.6 when testing with
-&lt;a href=&#34;https://github.com/troglobit/finit/tree/master/contrib/alpine&#34;&gt;Finit&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;a href=&#34;https://github.com/troglobit/finit/tree/master/contrib/alpine&#34;&gt;Finit&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -361,9 +335,7 @@ run Merecat httpd in production.&lt;/p&gt;
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2017/09/09/boot-alpine-linux-with-grub/</guid>
       <description>&lt;p&gt;It&amp;rsquo;s fairly easy to replace the slightly unfriendly syslinux with grub
-(grub2) in Alpine Linux.  I use v3.6 but YMMV.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+(grub2) in Alpine Linux.  I use v3.6 but YMMV.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -384,16 +356,6 @@ The small size (&amp;lt;30k), lack of dependencies (no ncurses needed!) and the 
       <guid>/projects/inadyn/</guid>
       <description>In-a-dyn is a small and simple Dynamic DNS, DDNS, client with HTTPS support. It is commonly available in many GNU/Linux distributions, used in off-the-shelf routers and Internet gateways to automate the task of keeping your DNS record up to date with any IP address changes from your ISP. It can also be used in installations with redundant (backup) connections to the Internet.
 Supported Providers The following is a curated list of some of the natively supported DDNS providers.</description>
-    </item>
-    
-    <item>
-      <title>The original PIM-SM daemon</title>
-      <link>/projects/pimd/</link>
-      <pubDate>Wed, 12 Jul 2017 20:17:00 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/projects/pimd/</guid>
-      <description>pimd is a lightweight standalone PIM-SM/SSM v2 multicast routing daemon. It is the original USC (netweb/catarina.usc.edu) implementation of the protocol, RFC 2362. Today pimd strives for full RFC compliance, including RFC 4601, RFC 5059, and RFC 5796, with the v2.3.0 release supporting both PIM-SSM and IGMPv3.
-In 2003 the OpenBSD project managed to convince Stanford in to change the license of mrouted. This in turn also freed pimd, since it is built with DNA strands from mrouted.</description>
     </item>
     
     <item>
@@ -474,9 +436,7 @@ be quite a pain to develop higher level functions.&lt;/p&gt;
 
 &lt;p&gt;My holy grail is to have a 100% complete and accurate virtualization
 target per architecture to test my various software projects on.  That&amp;rsquo;s
-why I created &lt;a href=&#34;https://github.com/troglobit/troglos&#34;&gt;TroglOS&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+why I created &lt;a href=&#34;https://github.com/troglobit/troglos&#34;&gt;TroglOS&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -493,9 +453,7 @@ about a game since Wolfenstein.&lt;/p&gt;
 &lt;p&gt;&lt;img style=&#34;width:50%;height:auto;&#34; class=&#34;center&#34; src=&#34;/images/wolf3d.png&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;This post is about how to build, install and set up Wolfenstein 3D on a
-Raspberry Pi running &lt;a href=&#34;https://retropie.org.uk/&#34;&gt;RetroPie&lt;/a&gt; &amp;hellip; on a &lt;a href=&#34;https://shop.pimoroni.com/products/picade&#34;&gt;Picade&lt;/a&gt; :-)&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+Raspberry Pi running &lt;a href=&#34;https://retropie.org.uk/&#34;&gt;RetroPie&lt;/a&gt; &amp;hellip; on a &lt;a href=&#34;https://shop.pimoroni.com/products/picade&#34;&gt;Picade&lt;/a&gt; :-)&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -505,9 +463,7 @@ Raspberry Pi running &lt;a href=&#34;https://retropie.org.uk/&#34;&gt;RetroPie&l
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2017/01/03/trust-bluetooth-4.0-adapter-in-linux/</guid>
       <description>&lt;p&gt;This is a quick writeup of how to get the Trust Bluetooth 4.0 adapter
-(dongle) working in Linux, Ubuntu 16.04.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+(dongle) working in Linux, Ubuntu 16.04.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -534,10 +490,10 @@ Example:
     
     <item>
       <title>Merecat - another stray kitten?</title>
-      <link>/2016/11/06/merecat---another-stray-kitten-/</link>
+      <link>/2016/11/06/merecat-another-stray-kitten-/</link>
       <pubDate>Sun, 06 Nov 2016 01:34:18 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/2016/11/06/merecat---another-stray-kitten-/</guid>
+      <guid>/2016/11/06/merecat-another-stray-kitten-/</guid>
       <description>&lt;p&gt;This post is about my adoption, refactor, and rebranding of thttpd as
 &lt;a href=&#34;http://merecat.troglobit.com&#34;&gt;Merecat&lt;/a&gt;.&lt;/p&gt;
 
@@ -569,9 +525,7 @@ had almost forgotten:&lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Come to think of it, they are probably one of the many reasons that I
-started my career in embedded in the first place!&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+started my career in embedded in the first place!&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -599,10 +553,10 @@ The main purpose for my building this is TroglOS, but it is useful for other pur
     
     <item>
       <title>Finit3: Almost there ...</title>
-      <link>/2016/09/21/finit3--almost-there-.../</link>
+      <link>/2016/09/21/finit3-almost-there-.../</link>
       <pubDate>Wed, 21 Sep 2016 19:08:37 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/2016/09/21/finit3--almost-there-.../</guid>
+      <guid>/2016/09/21/finit3-almost-there-.../</guid>
       <description>Today the new logo for Finit3 was added to the GitHub repo and the homepage
 Gorgeous, isn&amp;rsquo;t it?! 😎
 This fancy artwork means we&amp;rsquo;re nearing the end of a long and agonizing release cycle where a lot of the internals of Finit have been rewritten and new exciting features have been added! More on this in an upcoming post 😃</description>
@@ -644,9 +598,7 @@ couldn&amp;rsquo;t set up root access (defaulted to nobody).&lt;/li&gt;
 &lt;li&gt;Profit&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Good Luck! :)&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Good Luck! :)&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -660,9 +612,7 @@ servers.  I plan to use them as build and embedded target emulation
 servers for my &lt;a href=&#34;https://github.com/troglobit&#34;&gt;open source projects&lt;/a&gt;
 as well as Minecraft server for my kids :)&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://eitc.in/yahoo_site_admin/assets/docs/Supermicro_SuperServer_SC512L_small.324203750.JPG&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;http://eitc.in/yahoo_site_admin/assets/docs/Supermicro_SuperServer_SC512L_small.324203750.JPG&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -676,9 +626,7 @@ as well as Minecraft server for my kids :)&lt;/p&gt;
 excellent &lt;a href=&#34;http://www.thinkwiki.org/wiki/BIOS_Upgrade&#34;&gt;ThinkWiki&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;OK, this post is more about creating the bootable USB stick needed, was
-too much of a chicken to try &lt;a href=&#34;https://www.flashrom.org/Flashrom&#34;&gt;Flashrom&lt;/a&gt; &amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+too much of a chicken to try &lt;a href=&#34;https://www.flashrom.org/Flashrom&#34;&gt;Flashrom&lt;/a&gt; &amp;hellip;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -702,9 +650,7 @@ look and feel.&lt;/p&gt;
 &lt;p&gt;Currently they are two separate applications, which in some use-cases
 can be beneficial (small size), but I may in the future transplant the
 UDP functionality of &lt;code&gt;uredir&lt;/code&gt; into &lt;code&gt;redir&lt;/code&gt;.  We&amp;rsquo;ll see, right now though
-I have several other &lt;a href=&#34;/projects/&#34;&gt;projects&lt;/a&gt; to attend to :-)&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+I have several other &lt;a href=&#34;/projects/&#34;&gt;projects&lt;/a&gt; to attend to :-)&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -739,9 +685,7 @@ resume operation, basically a quicker way than stop/start.&lt;/p&gt;
 &lt;p&gt;Annoyingly however, most daemons do not signal us back to tell us when
 they&amp;rsquo;re done with the &lt;code&gt;SIGHUP&lt;/code&gt;.  Naturally a new movement has risen that
 says we should all instrument our daemons with D-bus &amp;hellip; I say no.
-Simply touch the PID file instead.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+Simply touch the PID file instead.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -778,9 +722,7 @@ couple of hours, is to:&lt;/p&gt;
 &lt;p&gt;BUT FIRST &amp;ndash; QUICK &amp;ndash; UNMOUNT OR POWER-OFF YOUR COMPUTER &amp;ndash; PULL OUT THE
 BATTERY &amp;ndash; AND STEP AWAY FROM THE COMPUTER!  Must protect the partition
 from being accidentally written to &amp;ndash; I completely fumbled this step, so
-take heed young people!&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+take heed young people!&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -814,9 +756,7 @@ work properly with &lt;code&gt;pimd&lt;/code&gt; running on the host:&lt;/p&gt;
   \                     `------------------&amp;gt;-------&#39;         /
    \________________________________________________________/
       Container ship
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
@@ -835,9 +775,7 @@ for your pings to get through, so you need to send an IGMP &amp;ldquo;join&amp;r
 &lt;p&gt;Way back in 2006 I stumbled upon a neat tool called &lt;code&gt;mcjoin&lt;/code&gt;, written by
 David Stevens and announced in
 &lt;a href=&#34;https://lkml.org/lkml/2004/8/5/143&#34;&gt;this posting to LKML&lt;/a&gt;.  I started
-improving and adding features to it over the years.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+improving and adding features to it over the years.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -934,9 +872,7 @@ is available on GitHub.&lt;/p&gt;
 &lt;p&gt;The code is open sourced under the very liberal &lt;a href=&#34;http://opensource.org/licenses/MIT&#34;&gt;MIT/X11 license&lt;/a&gt;,
 and much of its frog DNA has proven very useful to me over the years.
 This blog post is about how that frog DNA can help you fill gaps in your
-projects &amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+projects &amp;hellip;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -955,9 +891,7 @@ rescue, it describes the &lt;code&gt;set-url --add&lt;/code&gt; sub-command:&lt;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Now, with a simple &lt;code&gt;git push&lt;/code&gt; followed by &lt;code&gt;git push --tags&lt;/code&gt; I had now
-pushed to both the GitHub repo as well as my own server!&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+pushed to both the GitHub repo as well as my own server!&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -995,9 +929,7 @@ that:&lt;/p&gt;
 service apache2 reload
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;If you want to use that for your gitweb needs, then you&amp;rsquo;re done!&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;If you want to use that for your gitweb needs, then you&amp;rsquo;re done!&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1075,9 +1007,7 @@ Sat Mar  7 08:48:58 CET 2015
 
 &lt;p&gt;For more info on Finit and its features, see the &lt;a href=&#34;https://github.com/troglobit/finit/blob/master/README.md&#34;&gt;README&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;Enjoy! ツ&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Enjoy! ツ&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1088,9 +1018,7 @@ Sat Mar  7 08:48:58 CET 2015
       <guid>/2015/01/24/finit-v1-dot-11-released/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Update 2015-03-09&lt;/strong&gt;: This release has unfortunately been &lt;em&gt;yanked&lt;/em&gt; due
 to serious regressions in launching background processes.  It has been
-replaced by &lt;a href=&#34;/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/&#34;&gt;v1.12&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+replaced by &lt;a href=&#34;/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/&#34;&gt;v1.12&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1115,9 +1043,7 @@ bugs&lt;/em&gt;!&lt;/p&gt;
 are sometimes more of a nuisance than help.  Sometimes you &lt;em&gt;know&lt;/em&gt; that
 some parameters to a function will remain unused &amp;ndash; it&amp;rsquo;s a callback, and
 you don&amp;rsquo;t need all the data given to you.  So you start adding all kinds
-of voodoo, like &lt;code&gt;__attribute__ ((unused))&lt;/code&gt; &amp;hellip; seriously?&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+of voodoo, like &lt;code&gt;__attribute__ ((unused))&lt;/code&gt; &amp;hellip; seriously?&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1154,9 +1080,7 @@ to GitHub, which also prompted me to set up
 &lt;a href=&#34;http://troglobit.github.io&#34;&gt;a mirror&lt;/a&gt; on
 &lt;a href=&#34;http://pages.github.io&#34;&gt;GitHub Pages&lt;/a&gt;.  As usual, reading up on the
 subject and muster enough motivation took me about three months, whereas
-the actual work took about 4h.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+the actual work took about 4h.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1167,9 +1091,7 @@ the actual work took about 4h.&lt;/p&gt;
       <guid>/2014/12/28/mrouted-v3-dot-9-7/</guid>
       <description>&lt;p&gt;Another release today is the venerable &lt;a href=&#34;/mrouted.html&#34;&gt;mrouted&lt;/a&gt;, now
 available as
-&lt;a href=&#34;https://github.com/troglobit/mrouted/releases/tag/3.9.7&#34;&gt;v3.9.7 on GitHub&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;a href=&#34;https://github.com/troglobit/mrouted/releases/tag/3.9.7&#34;&gt;v3.9.7 on GitHub&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1198,9 +1120,7 @@ Quagga PIM rather than pimd in WeOS.&lt;/p&gt;
 &lt;p&gt;For now though, enjoy pimd v2.2.0.  It&amp;rsquo;s been tested in both my Qemu
 based virtual testbed and a few setups using Linux&amp;rsquo; &lt;code&gt;netns&lt;/code&gt; feature in
 &lt;a href=&#34;http://www.nrl.navy.mil/itd/ncs/products/core&#34;&gt;CORE&lt;/a&gt; &amp;ndash; awesome
-little proggy! :-)&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+little proggy! :-)&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1321,9 +1241,7 @@ ones.  That&amp;rsquo;s completely useless to me.  I went there to dig for small
 unknown projects, small gems that are usually unlisted on GitHub or
 SourceForge.  I went there to publicize my own small creations, learn
 about other similar projects and get a quick feedback on recent
-changes of new releases to projects I was interested in.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+changes of new releases to projects I was interested in.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1356,9 +1274,7 @@ something like this 2014?&lt;/p&gt;
 
 &lt;p&gt;As a developer the answer to most such questions is usually; to
 scratch an itch.  For a very long time I&amp;rsquo;ve looked for a really simple
-FTP server that just works, out of the box!&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+FTP server that just works, out of the box!&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1408,9 +1324,7 @@ which time I&amp;rsquo;ve lost most of the people in the room listening to me.
 Sometimes I say: &amp;ldquo;I&amp;rsquo;m a software architect.&amp;rdquo;, because people seem to
 know what architects do for a living, they draw houses, design stuff
 and drive SAAB&amp;rsquo;s.  Much like dentists.  The prefix &amp;ldquo;software&amp;rdquo; however
-does confuse people.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+does confuse people.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1428,9 +1342,7 @@ does confuse people.&lt;/p&gt;
       <pubDate>Fri, 09 Aug 2013 00:00:00 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2013/08/09/on-the-linearity-of-time/</guid>
-      <description>&lt;p&gt;Don&amp;rsquo;t try this at home kids. (Disclaimer: I live in Sweden :)&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Don&amp;rsquo;t try this at home kids. (Disclaimer: I live in Sweden :)&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1450,9 +1362,7 @@ basically just something I need to get off my chest.&lt;/p&gt;
 to programming and event libraries like
 &lt;a href=&#34;http://libevent.org/&#34;&gt;libevent&lt;/a&gt; and
 &lt;a href=&#34;http://software.schmorp.de/pkg/libev.html&#34;&gt;libev&lt;/a&gt;.  Up until that
-point the silver bullet everyone was using was &amp;hellip; Threads.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+point the silver bullet everyone was using was &amp;hellip; Threads.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1510,9 +1420,7 @@ provide a good starting point, as is the original
 &lt;a href=&#34;https://www.kernel.org/doc/ols/2010/ols2010-pages-109-120.pdf&#34;&gt;IBM paper on VirtFS&lt;/a&gt;.
 For users of Ubuntu &amp;lt;= 13.04, watch out for the
 &lt;a href=&#34;https://bugs.launchpad.net/ubuntu/+source/libvirt/+bug/943680&#34;&gt;libvirt bug&lt;/a&gt;
-that I know many people run into, myself included.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+that I know many people run into, myself included.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1532,9 +1440,7 @@ using both recursive and non-recursive make.  Formatting of code, for
 instance, was for a while a bit of an obsession of mine, and it sort of
 is still.  But today I am more concerned with the overall structure and
 how components interact.  Even though I can still get very annoyed at
-people naming their local variables obtrusively.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+people naming their local variables obtrusively.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -2060,9 +1966,7 @@ have a setup wizard in the upstream distribution of Emacs as well?&lt;/p&gt;
 &lt;p&gt;Well, this is my gripe, the pieces of Emacs that are still unfriendly to
 users, and mostly new users, coming from Windows or MAC.  I will use
 this blog to present ideas and small things I have done to make Emacs
-more user friendly.  I call this &lt;em&gt;Enterprise Emacs&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+more user friendly.  I call this &lt;em&gt;Enterprise Emacs&lt;/em&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -2292,6 +2196,16 @@ Today we&amp;rsquo;re going to Stenby TV-service with our broken Hitachi 32&amp;
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/project/</guid>
       <description>{% for page in site.projects %} {% if page.name %}  {{ page.name }}  {% if page.description %}  {{ page.description }}  {% else if page.title %}  {{ page.title }}  {% endif %} {% endif %} {% endfor %}  Merecat   Simple, small and fast HTTP server   </description>
+    </item>
+    
+    <item>
+      <title>The original PIM-SM daemon</title>
+      <link>/projects/pimd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/projects/pimd/</guid>
+      <description>Protocol Independent Multicast, PIM, allows existing networks to route IP multicast, regardless of what unicast routing protocol is in use. It is designed to use existing routing tables to make its multicast routing decisions. PIM-SM is suitable for sparsely located multicast subscribers, for dense mode operation mrouted is recommended, and for static multicast routing smcroute may be used.
+pimd is a lightweight standalone PIM-SM/SSM v2 multicast routing daemon. It is the original USC (netweb/catarina.</description>
     </item>
     
   </channel>

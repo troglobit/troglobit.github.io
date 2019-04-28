@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Merecat - another stray kitten?</title>
+  <meta property="og:title" content="Merecat - another stray kitten?" />
+  <meta name="twitter:title" content="Merecat - another stray kitten?" />
+  <meta name="description" content="This post is about my adoption, refactor, and rebranding of thttpd as
+Merecat.
+
+I code for recreation as well as work.  Most of the time I tinker around
+with my various projects simply to learn
+and sometimes these little projects turn into something useful for other
+people as well, which is great!
+
+ Recently I discovered my method to get started:
+refactoring, or just simple code cleanup.  You see I&#39;ve got this crazy
+idea that all simple things are correct.  Although things
+usually tend to require a certain balance &mdash; not all things can be
+simplified, and not all simple things are correct.
+
+When I recently had to migrate my personal blog, FTP, and GIT server, I
+set out to run everything from an old RasPi2.  This put my private life
+in just about the same niche as my work life, embedded.  On a resource
+constrained platform like that running Apache is not the best idea.  So
+I set out to (re-)discover the web servers of my past, the late 90&rsquo;s, I
+had almost forgotten:
+
+
+mini_httpd,
+Boa,
+BusyBox httpd,
+thttpd,
+and more &hellip;
+
+
+Come to think of it, they are probably one of the many reasons that I
+started my career in embedded in the first place!">
+  <meta property="og:description" content="This post is about my adoption, refactor, and rebranding of thttpd as
+Merecat.
+
+I code for recreation as well as work.  Most of the time I tinker around
+with my various projects simply to learn
+and sometimes these little projects turn into something useful for other
+people as well, which is great!
+
+ Recently I discovered my method to get started:
+refactoring, or just simple code cleanup.  You see I&#39;ve got this crazy
+idea that all simple things are correct.  Although things
+usually tend to require a certain balance &mdash; not all things can be
+simplified, and not all simple things are correct.
+
+When I recently had to migrate my personal blog, FTP, and GIT server, I
+set out to run everything from an old RasPi2.  This put my private life
+in just about the same niche as my work life, embedded.  On a resource
+constrained platform like that running Apache is not the best idea.  So
+I set out to (re-)discover the web servers of my past, the late 90&rsquo;s, I
+had almost forgotten:
+
+
+mini_httpd,
+Boa,
+BusyBox httpd,
+thttpd,
+and more &hellip;
+
+
+Come to think of it, they are probably one of the many reasons that I
+started my career in embedded in the first place!">
+  <meta name="twitter:description" content="This post is about my adoption, refactor, and rebranding of thttpd as
+Merecat.
+
+I code for recreation as well as work.  Most of the time I tinker around
+with my various projects simply to learn
+and …">
+  <meta name="author" content="Joachim Nilsson"/>
+  <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/images/profile.jpg" />
+  <meta name="twitter:image" content="/images/profile.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@troglobit" />
+  <meta name="twitter:creator" content="@troglobit" />
+  <meta property="og:url" content="/2016/11/06/merecat---another-stray-kitten-/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="" />
+
+  <meta name="generator" content="Hugo 0.52" />
+  <link rel="canonical" href="/2016/11/06/merecat---another-stray-kitten-/" />
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="/css/syntax.css" /><link rel="stylesheet" href="/css/codeblock.css" />
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"></a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Archive" href="/archive/">Archive</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="FTP" href="http://ftp.troglobit.com">FTP</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="GIT" href="http://git.troglobit.com">GIT</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="HowTos" href="/howto/">HowTos</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Projects" href="/projects/">Projects</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Resumé" href="http://resume.troglobit.com">Resumé</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="" href="/">
+            <img class="avatar-img" src="/images/profile.jpg" alt="" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Merecat - another stray kitten?</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on November 6, 2016
+  
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+	
+	<p>This post is about my adoption, refactor, and rebranding of thttpd as
+<a href="http://merecat.troglobit.com">Merecat</a>.</p>
+
+<p>I code for recreation as well as work.  Most of the time I tinker around
+with my various <a href="https://github.com/troglobit">projects</a> simply to learn
+and sometimes these little projects turn into something useful for other
+people as well, which is great!</p>
+
+<p data-pullquote="not all things can be simplified, and not all simple
+things are correct"> Recently I discovered my method to get started:
+refactoring, or just simple code cleanup.  You see I've got this crazy
+idea that <em>all simple things are correct</em>.  Although things
+usually tend to require a certain balance &mdash; not all things can be
+simplified, and not all simple things are correct.</p>
+
+<p>When I recently had to migrate my personal blog, FTP, and GIT server, I
+set out to run everything from an old RasPi2.  This put my private life
+in just about the same niche as my work life, embedded.  On a resource
+constrained platform like that running Apache is not the best idea.  So
+I set out to (re-)discover the web servers of my past, the late 90&rsquo;s, I
+had almost forgotten:</p>
+
+<ul>
+<li><a href="http://acme.com/software/mini_httpd/">mini_httpd</a>,</li>
+<li><a href="http://www.boa.org/">Boa</a>,</li>
+<li>BusyBox httpd,</li>
+<li><a href="http://www.acme.com/software/thttpd/">thttpd</a>,</li>
+<li>and more &hellip;</li>
+</ul>
+
+<p>Come to think of it, they are probably one of the many reasons that I
+started my career in embedded in the first place!</p>
+
+<p>With all the warm feels and fuzzy memories I had of thttpd I decided to
+give it a whirl.  And with my usual lack of insight (of how much time
+this would consume) I started fixing bugs and issues that nagged me.</p>
+
+<p>Ten patches in I hesitated and set out on another archaeological
+expedition, surely I couldn&rsquo;t have seen all these problems myself?  I
+visited the usual burial grounds for ancient software: *BSD, Debian,
+Gentoo, SourceForge, Internet Archive &hellip; and that&rsquo;s when I found
+<a href="https://github.com/blueness/sthttpd/">sthttpd</a> by Anthony G. Basile.</p>
+
+<p>Anthony had left sthttpd in great shape!  Not only had he merged all
+Gentoo fixes, he had also converted the build system to GNU configure
+and automake.  So I started rebasing my patches on sthttpd and then I
+simply couldn&rsquo;t stop.  The refactoring machine in my head was on fire, I
+simpy had to let it all out!</p>
+
+<p>The goal I had was a simple to use, good looking by default, bare bones
+web server.  My use-case was simple: serve gitweb, HTTP gateway for my
+FTP, serve my resumé, and possibly even my Jekyll blog.  So I basically
+just needed to get virtual hosts and dir listings working.</p>
+
+<p>In the process, however, I had done a lot more. Lots of half baked ideas
+and barely working code.  But it worked for me, so I tagged the first
+release of Merecat, v2.30, and went on my merry way.</p>
+
+<p>Until the RasPi server crashed.  I thought it might be heat and maybe
+overclocking issues, so I moved it to my server room and downclocked it.
+A few weeks passed and everything seemed to work just fine, then bam!
+Another crash, and now it only stayed up a few hours at a time between
+crashes.</p>
+
+<p>Heartbroken (well not really) I decided it was time to move to the cloud
+like everyone else.  So a droplet was created (clear of US influence I
+hope) and data was being moved to the new location.  This time I wanted
+the setup to be as clean as possible, so only Debian packages and proper
+systemd integration.  Fortunately I had a well timed week off from work
+to do all this.</p>
+
+<p>I had just barely started digging in, when I got a bug report by email
+from Gaetan Bisson who had found lots of issues with Merecat.  The bugs
+he reported overlapped nicely with the work I planned to do anyway \o/</p>
+
+<p>The resulting v2.31 release of Merecat has a lot of fixes and new
+features, these are the ones I can remember (and are in the GitHub
+changelog):</p>
+
+<h3 id="changes">Changes</h3>
+
+<ul>
+<li>Sort directories first in dir listings</li>
+<li>Include systemd unit file</li>
+<li>Add <code>debian/</code> packaging, easy to rebuild and replace for others</li>
+<li>Add <code>--enable-public-html</code> to enable <code>~user/public_html</code> dirs</li>
+<li>Support for shared <code>WEBROOT/cgi-bin</code> as fallback for vhosts</li>
+<li>Update default landing page</li>
+</ul>
+
+<h3 id="fixes">Fixes</h3>
+
+<ul>
+<li>Add missing CSS and jpeg files to install</li>
+<li>Fix dependency tracking when reconfiguring</li>
+<li>Fix .conf file parser bugs reported by Gaetan Bisson</li>
+<li>Fix missing <code>HAVE_LIBCONFUSE</code> #define causing .conf file support to
+not be built, reported by Gaetan Bisson</li>
+<li>Fix malplaced call to <code>cfg_free()</code> in .conf file parser, reported by
+Gaetan Bisson</li>
+<li>Update man page and other documentation with missing quotes around CGI
+pattern, issue reported by Gaetan Bisson</li>
+<li>Fix syslog warning: bind 0.0.0.0: Address already in use</li>
+</ul>
+
+<p>Download the release from my <a href="http://ftp.troglobit.com">FTP</a>, or the
+<a href="https://github.com/troglobit/merecat/releases/tag/v2.31">GitHub release page</a>,
+which also has a pre-built .deb for Ubuntu 16.04.  For those who want to
+build the .deb themselves:</p>
+
+<pre><code>cd merecat/
+dpkg-buildpackage -uc -us -B -d
+</code></pre>
+
+<p>Then simply:</p>
+
+<pre><code>sudo dpkg -i ../merecat_2.31-3_amd64.deb
+</code></pre>
+
+<p><strong>Note:</strong> For use with GitWeb, remember to install <code>libcgi-pm-perl</code></p>
+
+<p>I&rsquo;d like to take this opportunity to thank a couple of friends who
+helped out with the auditing and layout testing of the new default
+landing page.  Thank you Anders Bornäs and Martin Olsson :-)</p>
+
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="/2016/10/27/new-toolchains/" data-toggle="tooltip" data-placement="top" title="New Toolchains">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="/2016/11/19/one-ping-only/" data-toggle="tooltip" data-placement="top" title="One ping only">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:troglobit@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://plus.google.com/&#43;JoachimNilsson" title="Google&#43;">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/troglobit" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/troglobit" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            
+            <a href="/index.xml" title="RSS">
+            
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="http://troglobit.com">Joachim Nilsson</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2019
+
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.52</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+

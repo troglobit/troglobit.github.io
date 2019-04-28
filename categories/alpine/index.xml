@@ -20,9 +20,7 @@
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2017/09/10/install-x-window-in-alpine-linux/</guid>
       <description>&lt;p&gt;How to install LXDM + XFCE4 in Alpine Linux 3.6 when testing with
-&lt;a href=&#34;https://github.com/troglobit/finit/tree/master/contrib/alpine&#34;&gt;Finit&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;a href=&#34;https://github.com/troglobit/finit/tree/master/contrib/alpine&#34;&gt;Finit&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -32,9 +30,7 @@
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2017/09/09/boot-alpine-linux-with-grub/</guid>
       <description>&lt;p&gt;It&amp;rsquo;s fairly easy to replace the slightly unfriendly syslinux with grub
-(grub2) in Alpine Linux.  I use v3.6 but YMMV.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+(grub2) in Alpine Linux.  I use v3.6 but YMMV.&lt;/p&gt;</description>
     </item>
     
   </channel>

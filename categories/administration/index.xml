@@ -47,9 +47,7 @@ provide a good starting point, as is the original
 &lt;a href=&#34;https://www.kernel.org/doc/ols/2010/ols2010-pages-109-120.pdf&#34;&gt;IBM paper on VirtFS&lt;/a&gt;.
 For users of Ubuntu &amp;lt;= 13.04, watch out for the
 &lt;a href=&#34;https://bugs.launchpad.net/ubuntu/+source/libvirt/+bug/943680&#34;&gt;libvirt bug&lt;/a&gt;
-that I know many people run into, myself included.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+that I know many people run into, myself included.&lt;/p&gt;</description>
     </item>
     
   </channel>

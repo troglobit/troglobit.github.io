@@ -36,9 +36,7 @@ managed to get it working.  Probably due to problems with GPG.  Then I
 went down the tried and true path of using &lt;a href=&#34;https://debian-administration.org/article/286/Setting_up_your_own_APT_repository_with_upload_support&#34;&gt;reprepro&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;ve tried to document my steps here, but I&amp;rsquo;ve very likely missed a few
-steps that a beginner admin may run into. YMMV B-)&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+steps that a beginner admin may run into. YMMV B-)&lt;/p&gt;</description>
     </item>
     
     <item>

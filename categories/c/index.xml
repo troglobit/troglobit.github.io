@@ -58,9 +58,7 @@ bugs&lt;/em&gt;!&lt;/p&gt;
 are sometimes more of a nuisance than help.  Sometimes you &lt;em&gt;know&lt;/em&gt; that
 some parameters to a function will remain unused &amp;ndash; it&amp;rsquo;s a callback, and
 you don&amp;rsquo;t need all the data given to you.  So you start adding all kinds
-of voodoo, like &lt;code&gt;__attribute__ ((unused))&lt;/code&gt; &amp;hellip; seriously?&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+of voodoo, like &lt;code&gt;__attribute__ ((unused))&lt;/code&gt; &amp;hellip; seriously?&lt;/p&gt;</description>
     </item>
     
     <item>

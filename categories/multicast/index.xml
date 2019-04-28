@@ -59,9 +59,7 @@ require unicast routing rules to be established.&lt;/p&gt;
 up the GRE tunnel.  It is just as easy to extend this to a big corporate
 Intranet with more routers between &lt;code&gt;R1&lt;/code&gt; and &lt;code&gt;R2&lt;/code&gt;.  As long as that IT
 department takes care of the unicast routing between &lt;code&gt;R1&lt;/code&gt; and &lt;code&gt;R2&lt;/code&gt; so
-that the GRE tunnel can be established.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+that the GRE tunnel can be established.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -95,9 +93,7 @@ work properly with &lt;code&gt;pimd&lt;/code&gt; running on the host:&lt;/p&gt;
   \                     `------------------&amp;gt;-------&#39;         /
    \________________________________________________________/
       Container ship
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
@@ -116,9 +112,7 @@ for your pings to get through, so you need to send an IGMP &amp;ldquo;join&amp;r
 &lt;p&gt;Way back in 2006 I stumbled upon a neat tool called &lt;code&gt;mcjoin&lt;/code&gt;, written by
 David Stevens and announced in
 &lt;a href=&#34;https://lkml.org/lkml/2004/8/5/143&#34;&gt;this posting to LKML&lt;/a&gt;.  I started
-improving and adding features to it over the years.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+improving and adding features to it over the years.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -149,9 +143,7 @@ First of all, my sincere thanks to the OpenBSD team for, not just an awesome UNI
       <guid>/2014/12/28/mrouted-v3-dot-9-7/</guid>
       <description>&lt;p&gt;Another release today is the venerable &lt;a href=&#34;/mrouted.html&#34;&gt;mrouted&lt;/a&gt;, now
 available as
-&lt;a href=&#34;https://github.com/troglobit/mrouted/releases/tag/3.9.7&#34;&gt;v3.9.7 on GitHub&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;a href=&#34;https://github.com/troglobit/mrouted/releases/tag/3.9.7&#34;&gt;v3.9.7 on GitHub&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -180,9 +172,7 @@ Quagga PIM rather than pimd in WeOS.&lt;/p&gt;
 &lt;p&gt;For now though, enjoy pimd v2.2.0.  It&amp;rsquo;s been tested in both my Qemu
 based virtual testbed and a few setups using Linux&amp;rsquo; &lt;code&gt;netns&lt;/code&gt; feature in
 &lt;a href=&#34;http://www.nrl.navy.mil/itd/ncs/products/core&#34;&gt;CORE&lt;/a&gt; &amp;ndash; awesome
-little proggy! :-)&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+little proggy! :-)&lt;/p&gt;</description>
     </item>
     
     <item>

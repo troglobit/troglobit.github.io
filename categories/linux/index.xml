@@ -32,9 +32,7 @@ be quite a pain to develop higher level functions.&lt;/p&gt;
 
 &lt;p&gt;My holy grail is to have a 100% complete and accurate virtualization
 target per architecture to test my various software projects on.  That&amp;rsquo;s
-why I created &lt;a href=&#34;https://github.com/troglobit/troglos&#34;&gt;TroglOS&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+why I created &lt;a href=&#34;https://github.com/troglobit/troglos&#34;&gt;TroglOS&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -44,9 +42,7 @@ why I created &lt;a href=&#34;https://github.com/troglobit/troglos&#34;&gt;Trogl
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2017/01/03/trust-bluetooth-4.0-adapter-in-linux/</guid>
       <description>&lt;p&gt;This is a quick writeup of how to get the Trust Bluetooth 4.0 adapter
-(dongle) working in Linux, Ubuntu 16.04.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+(dongle) working in Linux, Ubuntu 16.04.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -81,9 +77,7 @@ servers.  I plan to use them as build and embedded target emulation
 servers for my &lt;a href=&#34;https://github.com/troglobit&#34;&gt;open source projects&lt;/a&gt;
 as well as Minecraft server for my kids :)&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://eitc.in/yahoo_site_admin/assets/docs/Supermicro_SuperServer_SC512L_small.324203750.JPG&#34;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;http://eitc.in/yahoo_site_admin/assets/docs/Supermicro_SuperServer_SC512L_small.324203750.JPG&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -97,9 +91,7 @@ as well as Minecraft server for my kids :)&lt;/p&gt;
 excellent &lt;a href=&#34;http://www.thinkwiki.org/wiki/BIOS_Upgrade&#34;&gt;ThinkWiki&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;OK, this post is more about creating the bootable USB stick needed, was
-too much of a chicken to try &lt;a href=&#34;https://www.flashrom.org/Flashrom&#34;&gt;Flashrom&lt;/a&gt; &amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+too much of a chicken to try &lt;a href=&#34;https://www.flashrom.org/Flashrom&#34;&gt;Flashrom&lt;/a&gt; &amp;hellip;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -136,9 +128,7 @@ provide a good starting point, as is the original
 &lt;a href=&#34;https://www.kernel.org/doc/ols/2010/ols2010-pages-109-120.pdf&#34;&gt;IBM paper on VirtFS&lt;/a&gt;.
 For users of Ubuntu &amp;lt;= 13.04, watch out for the
 &lt;a href=&#34;https://bugs.launchpad.net/ubuntu/+source/libvirt/+bug/943680&#34;&gt;libvirt bug&lt;/a&gt;
-that I know many people run into, myself included.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+that I know many people run into, myself included.&lt;/p&gt;</description>
     </item>
     
   </channel>

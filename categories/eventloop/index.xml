@@ -15,10 +15,10 @@
     
     <item>
       <title>Threads vs Event Loop, Again ...</title>
-      <link>/2017/09/19/threads-vs-event-loop--again-.../</link>
+      <link>/2017/09/19/threads-vs-event-loop-again-.../</link>
       <pubDate>Tue, 19 Sep 2017 08:51:38 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/2017/09/19/threads-vs-event-loop--again-.../</guid>
+      <guid>/2017/09/19/threads-vs-event-loop-again-.../</guid>
       <description>&lt;p&gt;I still get asked this, from time to time.  Maybe it&amp;rsquo;s because I only
 use event loops, maybe it&amp;rsquo;s because I&amp;rsquo;ve written &lt;a href=&#34;https://github.com/troglobit/libuev&#34;&gt;libuEv&lt;/a&gt;, or maybe
 people still don&amp;rsquo;t understand:&lt;/p&gt;
@@ -27,9 +27,7 @@ people still don&amp;rsquo;t understand:&lt;/p&gt;
 &lt;p&gt;Why an event loop, why not use threads?&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;So here&amp;rsquo;s my response, once more.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;So here&amp;rsquo;s my response, once more.&lt;/p&gt;</description>
     </item>
     
     <item>

@@ -26,9 +26,7 @@ example uses &lt;a href=&#34;https://github.com/troglobit/merecat&#34;&gt;Mereca
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;See &lt;a href=&#34;https://hub.docker.com/r/troglobit/merecat/&#34;&gt;https://hub.docker.com/r/troglobit/merecat/&lt;/a&gt; for details on how to
-run Merecat httpd in production.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+run Merecat httpd in production.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -62,9 +60,7 @@ work properly with &lt;code&gt;pimd&lt;/code&gt; running on the host:&lt;/p&gt;
   \                     `------------------&amp;gt;-------&#39;         /
    \________________________________________________________/
       Container ship
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
   </channel>

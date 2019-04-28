@@ -48,9 +48,7 @@ require unicast routing rules to be established.&lt;/p&gt;
 up the GRE tunnel.  It is just as easy to extend this to a big corporate
 Intranet with more routers between &lt;code&gt;R1&lt;/code&gt; and &lt;code&gt;R2&lt;/code&gt;.  As long as that IT
 department takes care of the unicast routing between &lt;code&gt;R1&lt;/code&gt; and &lt;code&gt;R2&lt;/code&gt; so
-that the GRE tunnel can be established.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+that the GRE tunnel can be established.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -79,9 +77,7 @@ to the upstream *BSD versions.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; This post was originally written Nov 14, 2015.  It was a
 Saturday and I remember being extremely inspired when I wrote it.  I&amp;rsquo;ve
 continued adding to it over the years, and still do.  So, as of Jul 2,
-2017 I&amp;rsquo;m bumping the modification date each time I add something new :-)&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+2017 I&amp;rsquo;m bumping the modification date each time I add something new :-)&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -105,9 +101,7 @@ look and feel.&lt;/p&gt;
 &lt;p&gt;Currently they are two separate applications, which in some use-cases
 can be beneficial (small size), but I may in the future transplant the
 UDP functionality of &lt;code&gt;uredir&lt;/code&gt; into &lt;code&gt;redir&lt;/code&gt;.  We&amp;rsquo;ll see, right now though
-I have several other &lt;a href=&#34;/projects/&#34;&gt;projects&lt;/a&gt; to attend to :-)&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+I have several other &lt;a href=&#34;/projects/&#34;&gt;projects&lt;/a&gt; to attend to :-)&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -142,9 +136,7 @@ resume operation, basically a quicker way than stop/start.&lt;/p&gt;
 &lt;p&gt;Annoyingly however, most daemons do not signal us back to tell us when
 they&amp;rsquo;re done with the &lt;code&gt;SIGHUP&lt;/code&gt;.  Naturally a new movement has risen that
 says we should all instrument our daemons with D-bus &amp;hellip; I say no.
-Simply touch the PID file instead.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+Simply touch the PID file instead.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -189,9 +181,7 @@ work properly with &lt;code&gt;pimd&lt;/code&gt; running on the host:&lt;/p&gt;
   \                     `------------------&amp;gt;-------&#39;         /
    \________________________________________________________/
       Container ship
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
@@ -210,9 +200,7 @@ for your pings to get through, so you need to send an IGMP &amp;ldquo;join&amp;r
 &lt;p&gt;Way back in 2006 I stumbled upon a neat tool called &lt;code&gt;mcjoin&lt;/code&gt;, written by
 David Stevens and announced in
 &lt;a href=&#34;https://lkml.org/lkml/2004/8/5/143&#34;&gt;this posting to LKML&lt;/a&gt;.  I started
-improving and adding features to it over the years.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+improving and adding features to it over the years.&lt;/p&gt;</description>
     </item>
     
     <item>

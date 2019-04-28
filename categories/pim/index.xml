@@ -48,9 +48,7 @@ require unicast routing rules to be established.&lt;/p&gt;
 up the GRE tunnel.  It is just as easy to extend this to a big corporate
 Intranet with more routers between &lt;code&gt;R1&lt;/code&gt; and &lt;code&gt;R2&lt;/code&gt;.  As long as that IT
 department takes care of the unicast routing between &lt;code&gt;R1&lt;/code&gt; and &lt;code&gt;R2&lt;/code&gt; so
-that the GRE tunnel can be established.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+that the GRE tunnel can be established.&lt;/p&gt;</description>
     </item>
     
   </channel>
