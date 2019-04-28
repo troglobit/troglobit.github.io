@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/projects/pimd/</loc>
+    <lastmod>2019-04-28T08:50:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/howto/multicast/</loc>
     <lastmod>2019-03-27T15:54:00+02:00</lastmod>
   </url>
@@ -804,7 +809,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-03-27T15:54:00+02:00</lastmod>
+    <lastmod>2019-04-28T08:50:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1264,7 +1269,7 @@
   
   <url>
     <loc>/projects/</loc>
-    <lastmod>2019-03-03T15:55:00+02:00</lastmod>
+    <lastmod>2019-04-28T08:50:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1407,10 +1412,6 @@
     <loc>/categories/tftp/</loc>
     <lastmod>2014-12-21T19:42:17+00:00</lastmod>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/projects/pimd/</loc>
   </url>
   
   <url>

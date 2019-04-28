@@ -8,10 +8,20 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Sun, 03 Mar 2019 15:55:00 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 28 Apr 2019 08:50:00 +0200</lastBuildDate>
     
 	<atom:link href="/projects/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The original PIM-SM daemon</title>
+      <link>/projects/pimd/</link>
+      <pubDate>Sun, 28 Apr 2019 08:50:00 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/projects/pimd/</guid>
+      <description>Protocol Independent Multicast, PIM, allows existing networks to route IP multicast, regardless of what unicast routing protocol is in use. It is designed to use existing routing tables to make its multicast routing decisions. PIM-SM is suitable for sparsely located multicast subscribers, for dense mode operation mrouted is recommended, and for static multicast routing smcroute may be used.
+pimd is a lightweight standalone PIM-SM/SSM v2 multicast routing daemon. It is the original USC (netweb/catarina.</description>
+    </item>
     
     <item>
       <title>No nonsense FTP/TFTP server</title>
@@ -136,16 +146,6 @@ The game is based on a 1989 International Obfuscated C Code Contest (IOCCC) entr
       <guid>/projects/snake/</guid>
       <description>Welcome to Micro Snake, based on an original implementation by Simon Huggins. This version of the snake game is very small, utilizing only ANSI escape sequences to draw the board, no external library dependencys other than a standard C-library, like uClibc. Hence, it is very suitable for todays small embedded devices.
 The aim of the game is to collect the gold ($), avoid cactuses (*), borders, and colliding with the snake itself.</description>
-    </item>
-    
-    <item>
-      <title>The original PIM-SM daemon</title>
-      <link>/projects/pimd/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/projects/pimd/</guid>
-      <description>Protocol Independent Multicast, PIM, allows existing networks to route IP multicast, regardless of what unicast routing protocol is in use. It is designed to use existing routing tables to make its multicast routing decisions. PIM-SM is suitable for sparsely located multicast subscribers, for dense mode operation mrouted is recommended, and for static multicast routing smcroute may be used.
-pimd is a lightweight standalone PIM-SM/SSM v2 multicast routing daemon. It is the original USC (netweb/catarina.</description>
     </item>
     
   </channel>
