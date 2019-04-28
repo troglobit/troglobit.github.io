@@ -72,14 +72,15 @@ in [RFC 4601][2], with additions in [RFC 5059][3] and [RFC 5796][4].
    * The [pimd-dense][dense]
      University of Oregon standalone implementation, based on the USC
      pimd.  Now available from the [mcast-tools][] project
+   * [MRD6](http://fivebits.net/proj/mrd6/), an IPv6 Multicast Router.
+     Project has been deprecated, recommending pim6sd, but is available
+     at <https://github.com/hugosantos/mrd6>
    * The PIM IPv6 [pim6sd][] by Mickael Hoerdt at LSIIT Laboratory,
      based on USC pimd.  Now available from the [mcast-tools][] project
    * [The XORP project][xorp] supports both IPv4 and IPv6 PIM-SM,
      currently maintained by [Ben Greear at GitHub][xorp.ct]
-   * [MRD6](http://fivebits.net/proj/mrd6/), an IPv6 Multicast Router.
-     Now available at <https://github.com/hugosantos/mrd6>
    * [Quagga][] and [FRR][] support PIM-SSM (IPv4 only?).  Originally
-     developed by Everton da Silva Marques as [qpimpd][]
+     developed by Everton da Silva Marques as [qpimd][]
 
 
 [1]: http://tools.ietf.org/html/rfc2362
