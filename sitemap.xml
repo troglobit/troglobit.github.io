@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/projects/watchdogd/</loc>
+    <lastmod>2019-05-27T21:46:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/projects/pimd/</loc>
     <lastmod>2019-04-28T08:50:00+02:00</lastmod>
   </url>
@@ -80,11 +85,6 @@
   <url>
     <loc>/2018/02/Slow-Down/</loc>
     <lastmod>2018-02-15T20:05:25+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/watchdogd/</loc>
-    <lastmod>2018-02-10T14:52:00+02:00</lastmod>
   </url>
   
   <url>
@@ -809,7 +809,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-04-28T08:50:00+02:00</lastmod>
+    <lastmod>2019-05-27T21:46:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1269,7 +1269,7 @@
   
   <url>
     <loc>/projects/</loc>
-    <lastmod>2019-04-28T08:50:00+02:00</lastmod>
+    <lastmod>2019-05-27T21:46:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -8,10 +8,20 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Sun, 28 Apr 2019 08:50:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 27 May 2019 21:46:00 +0200</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>System &amp; Process Supervisor for Linux</title>
+      <link>/projects/watchdogd/</link>
+      <pubDate>Mon, 27 May 2019 21:46:00 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/projects/watchdogd/</guid>
+      <description>watchdogd(8) is an advanced system and process supervisor daemon, primarily intended for embedded Linux and server systems. By default it periodically kicks the system watchdog timer (WDT) to prevent it from resetting the system. In its more advanced guise it monitors critical system resources, supervises the heartbeat of processes, records deadline transgressions, and initiates a controlled reset if needed.
+When a system comes back up after a reset, watchdogd determines the reset cause and records it in a file for later analysis by an operator or network management system (NMS).</description>
+    </item>
     
     <item>
       <title>The original PIM-SM daemon</title>
@@ -200,16 +210,6 @@ For more details, see the online documentation.</description>
       <guid>/2018/02/Slow-Down/</guid>
       <description>Anyone who knows me knows I&amp;rsquo;m quite stubborn. Whenever I set my sights on something I finish it. The last couple of years I&amp;rsquo;ve been quite busy on GitHub, making at least one commit per day. I&amp;rsquo;ve had a lot of things I&amp;rsquo;ve wanted to do and complete, and this commit regimen has kept me on track to do just that.
 However, nothing comes for free, and although I&amp;rsquo;ve achieved my goals, I&amp;rsquo;ve also had to make a lot of sacrifices.</description>
-    </item>
-    
-    <item>
-      <title>System &amp; Process Supervisor for Linux</title>
-      <link>/projects/watchdogd/</link>
-      <pubDate>Sat, 10 Feb 2018 14:52:00 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/projects/watchdogd/</guid>
-      <description>watchdogd(8) is an advanced system and process supervisor daemon, primarily intended for embedded Linux and server systems. By default it periodically kicks the system watchdog timer (WDT) to prevent it from resetting the system. In its more advanced guise it monitors critical system resources, supervises the heartbeat of processes, records deadline transgressions, and initiates a controlled reset if needed.
-When a system comes back up after a reset, watchdogd determines the reset cause and records it in a file for later analysis by an operator or network management system (NMS).</description>
     </item>
     
     <item>
