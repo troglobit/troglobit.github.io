@@ -66,6 +66,10 @@ aspects of the system, such as:
 - Process live locks
 - Reset counter, for snmpEngineBoots (RFC 2574)
 
+To top things off there is support for periodically calling a generic
+script where operators can do housekeeping checks.  For details on how
+to configure this, see the watchdogd.conf(5) man page.
+
 
 Usage
 -----
@@ -165,10 +169,34 @@ detected by reading the file `/proc/meminfo`, looking for the
 `SwapTotal:` value.
 
 `watchdogd` v2.0 and later comes with a process supervisor (previously
-called pmon).  It is enabled in `/etc/watchdogd.conf` and a monitored
-processes must connect using the API before the supervisor starts.  When
-it does, the real-time priority of watchdogd is raised to 98 to to
-ensure proper monitoring of all supervised processes.
+called pmon).  When the supervisor is enabled the daemon runs as a
+real-time task with the configured priority, default 98.  Monitored
+clients connect to the supervisor using the libwdog API.
+
+```
+supervisor {
+    enabled = true
+    priority = 98
+}
+```
+
+[See below](#libwdog-api) for details on how to have your process
+internal deadlines be supervised.
+
+When a process fails to meet its deadlines, or a monitor plugin reaches
+critical level, `watchdogd` initiates a controlled reset.  To see the
+reset cause after reboot, the following section must be enabled in the
+`/etc/watchdogd.conf` file:
+
+```
+reset-cause {
+    enabled = true
+#   file    = /var/lib/watchdogd.state
+}
+```
+
+The `file` setting is optional, the default is usually sufficient, but
+make sure the destination directory is writable if you change it.
 
 
 libwdog API
@@ -308,7 +336,7 @@ Issue tracker and GIT repository available at GitHub:
 * [Repository](http://github.com/troglobit/watchdogd)
 * [ChangeLog](https://github.com/troglobit/watchdogd/blob/master/ChangeLog.md)
 * [README](https://github.com/troglobit/watchdogd/blob/master/README.md)
-* [TODO](https://github.com/troglobit/watchdogd/blob/master/TODO.md)
+* [TODO](https://github.com/troglobit/watchdogd/blob/master/docs/TODO.md)
 * [Issue Tracker](http://github.com/troglobit/watchdogd/issues)
 * [watchdogd-3.2.tar.xz](ftp://ftp.troglobit.com/watchdogd/watchdogd-3.2.tar.xz),
   [MD5](ftp://ftp.troglobit.com/watchdogd/watchdogd-3.2.tar.xz.md5)
