@@ -1,7 +1,7 @@
 ---
 name: watchdogd
 title: "System & Process Supervisor for Linux"
-date: 2018-02-10 14:52:00 +02:00
+date: 2019-05-27 21:46:00 +02:00
 aliases: /watchdogd.html
 ---
 
@@ -310,8 +310,8 @@ Issue tracker and GIT repository available at GitHub:
 * [README](https://github.com/troglobit/watchdogd/blob/master/README.md)
 * [TODO](https://github.com/troglobit/watchdogd/blob/master/TODO.md)
 * [Issue Tracker](http://github.com/troglobit/watchdogd/issues)
-* [watchdogd-3.0.tar.xz](ftp://ftp.troglobit.com/watchdogd/watchdogd-3.0.tar.xz),
-  [MD5](ftp://ftp.troglobit.com/watchdogd/watchdogd-3.0.tar.xz.md5)
+* [watchdogd-3.2.tar.xz](ftp://ftp.troglobit.com/watchdogd/watchdogd-3.2.tar.xz),
+  [MD5](ftp://ftp.troglobit.com/watchdogd/watchdogd-3.2.tar.xz.md5)
 
 
 Contributing
