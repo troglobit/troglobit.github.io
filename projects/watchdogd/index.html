@@ -265,6 +265,10 @@ aspects of the system, such as:</p>
 <li>Reset counter, for snmpEngineBoots (RFC 2574)</li>
 </ul>
 
+<p>To top things off there is support for periodically calling a generic
+script where operators can do housekeeping checks.  For details on how
+to configure this, see the watchdogd.conf(5) man page.</p>
+
 <h2 id="usage">Usage</h2>
 
 <pre><code>watchdogd [-hnsVx] [-f FILE] [-T SEC] [-t SEC] [/dev/watchdog]
@@ -355,10 +359,32 @@ detected by reading the file <code>/proc/meminfo</code>, looking for the
 <code>SwapTotal:</code> value.</p>
 
 <p><code>watchdogd</code> v2.0 and later comes with a process supervisor (previously
-called pmon).  It is enabled in <code>/etc/watchdogd.conf</code> and a monitored
-processes must connect using the API before the supervisor starts.  When
-it does, the real-time priority of watchdogd is raised to 98 to to
-ensure proper monitoring of all supervised processes.</p>
+called pmon).  When the supervisor is enabled the daemon runs as a
+real-time task with the configured priority, default 98.  Monitored
+clients connect to the supervisor using the libwdog API.</p>
+
+<pre><code>supervisor {
+    enabled = true
+    priority = 98
+}
+</code></pre>
+
+<p><a href="#libwdog-api">See below</a> for details on how to have your process
+internal deadlines be supervised.</p>
+
+<p>When a process fails to meet its deadlines, or a monitor plugin reaches
+critical level, <code>watchdogd</code> initiates a controlled reset.  To see the
+reset cause after reboot, the following section must be enabled in the
+<code>/etc/watchdogd.conf</code> file:</p>
+
+<pre><code>reset-cause {
+    enabled = true
+#   file    = /var/lib/watchdogd.state
+}
+</code></pre>
+
+<p>The <code>file</code> setting is optional, the default is usually sufficient, but
+make sure the destination directory is writable if you change it.</p>
 
 <h2 id="libwdog-api">libwdog API</h2>
 
@@ -485,7 +511,7 @@ the <code>watchdogd</code> project, copyright © <a href="http://toonclips.com/d
 <li><a href="http://github.com/troglobit/watchdogd">Repository</a></li>
 <li><a href="https://github.com/troglobit/watchdogd/blob/master/ChangeLog.md">ChangeLog</a></li>
 <li><a href="https://github.com/troglobit/watchdogd/blob/master/README.md">README</a></li>
-<li><a href="https://github.com/troglobit/watchdogd/blob/master/TODO.md">TODO</a></li>
+<li><a href="https://github.com/troglobit/watchdogd/blob/master/docs/TODO.md">TODO</a></li>
 <li><a href="http://github.com/troglobit/watchdogd/issues">Issue Tracker</a></li>
 <li><a href="ftp://ftp.troglobit.com/watchdogd/watchdogd-3.2.tar.xz">watchdogd-3.2.tar.xz</a>,
 <a href="ftp://ftp.troglobit.com/watchdogd/watchdogd-3.2.tar.xz.md5">MD5</a></li>
