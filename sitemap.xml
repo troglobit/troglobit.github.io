@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/projects/uftpd/</loc>
+    <lastmod>2019-05-28T06:25:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/projects/watchdogd/</loc>
     <lastmod>2019-05-27T21:46:00+02:00</lastmod>
   </url>
@@ -25,11 +30,6 @@
   <url>
     <loc>/2019/03/Odd-Progress/</loc>
     <lastmod>2019-03-12T23:11:30+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/uftpd/</loc>
-    <lastmod>2019-03-03T15:55:00+02:00</lastmod>
   </url>
   
   <url>
@@ -809,7 +809,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-05-27T21:46:00+02:00</lastmod>
+    <lastmod>2019-05-28T06:25:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1269,7 +1269,7 @@
   
   <url>
     <loc>/projects/</loc>
-    <lastmod>2019-05-27T21:46:00+02:00</lastmod>
+    <lastmod>2019-05-28T06:25:00+02:00</lastmod>
     <priority>0</priority>
   </url>
   
