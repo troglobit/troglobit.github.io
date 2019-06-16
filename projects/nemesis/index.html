@@ -221,8 +221,8 @@ injection modes, almost any custom packet can be crafted and injected.</p>
 <li><a href="https://github.com/troglobit/nemesis/blob/master/ChangeLog.md">ChangeLog</a></li>
 <li><a href="http://github.com/troglobit/nemesis">Repository</a></li>
 <li><a href="http://github.com/troglobit/nemesis/issues">Issue Tracker</a></li>
-<li><a href="ftp://ftp.troglobit.com/nemesis/nemesis-1.5.tar.xz">nemesis-1.5.tar.xz</a>,
-<a href="ftp://ftp.troglobit.com/nemesis/nemesis-1.5.tar.xz.md5">MD5</a></li>
+<li><a href="ftp://ftp.troglobit.com/nemesis/nemesis-1.6.tar.gz">nemesis-1.6.tar.xz</a>,
+<a href="ftp://ftp.troglobit.com/nemesis/nemesis-1.6.tar.gz.md5">MD5</a></li>
 </ul>
 
 <h2 id="examples">Examples</h2>
@@ -306,6 +306,11 @@ sudo nemesis igmp -v -p 0x11 -c 100 -D 224.0.0.1 -O RA
 sudo nemesis igmp -p 0x11 -c 100 -i 0.0.0.0 -P v3 -D 224.0.0.1 -O RA
 </code></pre>
 
+<p>DHCP Discover (must use sudo and <code>-d</code> to send with source IP 0.0.0.0):</p>
+
+<pre><code>sudo nemesis dhcp -d eth0
+</code></pre>
+
 <p>Random TCP packet:</p>
 
 <pre><code>sudo nemesis tcp
@@ -348,13 +353,9 @@ CVS to GIT and merged the stale libnet-1.1 upgrade branch from 2005.</p>
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="/projects/finit/" data-toggle="tooltip" data-placement="top" title="Fast init for Linux systems">&larr; Previous Post</a>
+              <a href="/projects/uftpd/" data-toggle="tooltip" data-placement="top" title="No nonsense FTP/TFTP server">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="/projects/smcroute/" data-toggle="tooltip" data-placement="top" title="Static Multicast Routing Daemon">Next Post &rarr;</a>
-            </li>
           
         </ul>
       

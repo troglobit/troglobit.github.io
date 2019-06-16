@@ -8,10 +8,20 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Tue, 28 May 2019 06:25:00 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 16 Jun 2019 15:39:00 +0200</lastBuildDate>
     
 	<atom:link href="/projects/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>N E M E S I S</title>
+      <link>/projects/nemesis/</link>
+      <pubDate>Sun, 16 Jun 2019 15:39:00 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/projects/nemesis/</guid>
+      <description>Nemesis is a command-line network packet crafting and injection utility for UNIX-like and Windows systems. Well suited for testing Network Intrusion Detection Systems, firewalls, IP stacks and a variety of other tasks. As a command-line driven utility, it is perfect for automation and scripting.
+Nemesis can natively craft and inject ARP, DNS, ETHERNET, ICMP, IGMP, IP, OSPF, RIP, TCP and UDP packets. Using the IP and the Ethernet injection modes, almost any custom packet can be crafted and injected.</description>
+    </item>
     
     <item>
       <title>No nonsense FTP/TFTP server</title>
@@ -63,16 +73,6 @@ The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is 
       <description>SMCRoute is a daemon and command line tool to manipulate the multicast routing table in the UNIX kernel. Both FreeBSD and Linux kernels are supported, but it may work on other systems as well.
 SMCRoute can be used as an alternative to dynamic multicast routing daemons like mrouted or pimd when (only) static multicast routes should be maintained or no proper signalling exists.
  Problems? See the Multicast HowTo for help!</description>
-    </item>
-    
-    <item>
-      <title>N E M E S I S</title>
-      <link>/projects/nemesis/</link>
-      <pubDate>Sun, 15 Apr 2018 10:33:00 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/projects/nemesis/</guid>
-      <description>Nemesis is a command-line network packet crafting and injection utility for UNIX-like and Windows systems. Well suited for testing Network Intrusion Detection Systems, firewalls, IP stacks and a variety of other tasks. As a command-line driven utility, it is perfect for automation and scripting.
-Nemesis can natively craft and inject ARP, DNS, ETHERNET, ICMP, IGMP, IP, OSPF, RIP, TCP and UDP packets. Using the IP and the Ethernet injection modes, almost any custom packet can be crafted and injected.</description>
     </item>
     
     <item>
