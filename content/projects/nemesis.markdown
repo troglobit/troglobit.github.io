@@ -1,7 +1,7 @@
 ---
 name: Nemesis
 title: "N E M E S I S"
-date: 2018-04-15 10:33:00 +02:00
+date: 2019-06-16 15:39:00 +02:00
 aliases: /nemesis.html
 ---
 <img src="/images/nemesis.png" style="float: right;">
@@ -20,8 +20,8 @@ injection modes, almost any custom packet can be crafted and injected.
 * [ChangeLog](https://github.com/troglobit/nemesis/blob/master/ChangeLog.md)
 * [Repository](http://github.com/troglobit/nemesis)
 * [Issue Tracker](http://github.com/troglobit/nemesis/issues)
-* [nemesis-1.5.tar.xz](ftp://ftp.troglobit.com/nemesis/nemesis-1.5.tar.xz),
-  [MD5](ftp://ftp.troglobit.com/nemesis/nemesis-1.5.tar.xz.md5)
+* [nemesis-1.6.tar.xz](ftp://ftp.troglobit.com/nemesis/nemesis-1.6.tar.gz),
+  [MD5](ftp://ftp.troglobit.com/nemesis/nemesis-1.6.tar.gz.md5)
 
 
 Examples
@@ -93,6 +93,11 @@ IGMP v3 query, with Router Alert IP option:
 
     echo -ne '\x03\x64\x00\x00' > v3
     sudo nemesis igmp -p 0x11 -c 100 -i 0.0.0.0 -P v3 -D 224.0.0.1 -O RA
+
+
+DHCP Discover (must use sudo and `-d` to send with source IP 0.0.0.0):
+
+    sudo nemesis dhcp -d eth0
 
 Random TCP packet:
 
