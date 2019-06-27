@@ -180,6 +180,53 @@
           
           
             <article class="post-preview">
+              <a href="/2017/12/Useful-UNIX-APIs/">
+                <h2 class="post-title">Useful UNIX API:s</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on December 22, 2017
+  
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <p>Had an interesting conversation with a buddy last night.  It started out
+as a shift-reduce problem with Bison and ended up a ping-pong of useful
+UNIX API:s.  We concluded that despite having worked professionally with
+UNIX for over a decade, it is still very satisfying finding gems like
+these.</p>
+
+<p>Most people are completely unaware they exist and end up rolling their
+own (buggy) implementations.  For instance, string manipulation and
+various forms of linked lists.  Which is why I many years ago extracted
+the <em>frog DNA</em> from <a href="https://github.com/troglobit/finit/">Finit</a> to a
+separate library called <a href="https://github.com/troglobit/libite/">libite</a>,
+or -lite for short.  It imports the OpenBSD <code>strlcpy()</code> family of API:s,
+up-to-date <code>queue.h</code> with the <code>_SAFE</code> iterators, and more.  Some people
+like <a href="https://libbsd.freedesktop.org/wiki/">libbsd</a> for this, but I&rsquo;ve
+found many of the ports incomplete and unsafe and prefer to stay closer
+to the upstream *BSD versions.</p>
+
+<p><strong>Update:</strong> This post was originally written Nov 14, 2015.  It was a
+Saturday and I remember being extremely inspired when I wrote it.  I&rsquo;ve
+continued adding to it over the years, and still do.  So, as of Jul 2,
+2017 I&rsquo;m bumping the modification date each time I add something new :-)</p>
+                  <a href="/2017/12/Useful-UNIX-APIs/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
               <a href="/2017/09/30/set-up-a-debian-ubuntu-apt-repository/">
                 <h2 class="post-title">Set up a Debian/Ubuntu APT Repository</h2>
                 
@@ -480,41 +527,6 @@ be quite a pain to develop higher level functions.</p>
 target per architecture to test my various software projects on.  That&rsquo;s
 why I created <a href="https://github.com/troglobit/troglos">TroglOS</a>.</p>
                   <a href="/2017/02/02/emulate-an-actual-mtd-device-in-qemu/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2017/01/15/wolfenstein-3d-on-retropie/">
-                <h2 class="post-title">Wolfenstein-3D on RetroPie</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on January 15, 2017
-  
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  <p>The last game I ever played was <a href="https://en.wikipedia.org/wiki/Wolfenstein_3D">Castle Wolfenstein 3D</a>, released in
-1992 for MS-DOS, made by the now legendary id Software.  OK, admittedly
-I&rsquo;ve played other games since then, but I&rsquo;ve never again been so manic
-about a game since Wolfenstein.</p>
-
-<p><img style="width:50%;height:auto;" class="center" src="/images/wolf3d.png"></p>
-
-<p>This post is about how to build, install and set up Wolfenstein 3D on a
-Raspberry Pi running <a href="https://retropie.org.uk/">RetroPie</a> &hellip; on a <a href="https://shop.pimoroni.com/products/picade">Picade</a> :-)</p>
-                  <a href="/2017/01/15/wolfenstein-3d-on-retropie/" class="post-read-more">[Read More]</a>
                 
               </div>
 

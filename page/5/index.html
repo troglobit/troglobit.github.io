@@ -180,6 +180,35 @@
           
           
             <article class="post-preview">
+              <a href="/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/">
+                <h2 class="post-title">Awesome: Changing Next/Prev Tune in Spotify</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on November 10, 2015
+  
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Back to using the Awesome WM in Ubuntu. This time I&rsquo;m setting up everything from scratch and first up is fixing keybindings to control my main music player: Spotify!
+Edit your ~/.config/awesome/rc.lua with Emacs (obviously). If you do not have an rc file, simply copy the system /etc/xdb/awesome/rc.lua:
+globalkeys = awful.util.table.join(globalkeys, awful.key({}, &quot;XF86AudioRaiseVolume&quot;, function () awful.util.spawn(&quot;amixer -D pulse sset Master 5%+&quot;, false) end), awful.key({}, &quot;XF86AudioLowerVolume&quot;, function () awful.util.spawn(&quot;amixer -D pulse sset Master 5%-&quot;, false) end), awful.
+                  <a href="/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
               <a href="/2015/11/07/stray-puppies/">
                 <h2 class="post-title">Stray Puppies</h2>
                 
@@ -560,41 +589,6 @@ of voodoo, like <code>__attribute__ ((unused))</code> &hellip; seriously?</p>
                   I&rsquo;m a coder, not a writer. Here&rsquo;s what I&rsquo;ve been working on during the winter holidays:
  A new feature release of Finit is coming shortly, which will use libuEv and feature inetd support built-in! Another minor release of my own take on event loops, libuEv v1.0.3. This time with a heavy focus on documentation and Q&amp;A, extensive validation testing have been done on this release. Released another minor release of mrouted, v3.
                   <a href="/2015/01/08/recent-open-source-work/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2015/01/02/blog-restoration-project-now-also-on-github-pages/">
-                <h2 class="post-title">Blog Restoration Project</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on January 2, 2015
-  
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  <p>I&rsquo;ve had this long-standing issue with backups.  It&rsquo;s deadly boring to
-set up and maintain, so I don&rsquo;t do any.  Until today!</p>
-
-<p>Today I moved the sources for my <a href="http://troglobit.com">Octopress blag</a>
-to GitHub, which also prompted me to set up
-<a href="http://troglobit.github.io">a mirror</a> on
-<a href="http://pages.github.io">GitHub Pages</a>.  As usual, reading up on the
-subject and muster enough motivation took me about three months, whereas
-the actual work took about 4h.</p>
-                  <a href="/2015/01/02/blog-restoration-project-now-also-on-github-pages/" class="post-read-more">[Read More]</a>
                 
               </div>
 
