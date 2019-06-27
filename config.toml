@@ -26,7 +26,7 @@ enableEmoji = true
 
 [Author]
   name = "Joachim Nilsson"
-  website = "http://troglobit.com"
+  website = "https://troglobit.com"
   email = "troglobit@gmail.com"
   googleplus = "+JoachimNilsson"
   github = "troglobit"
@@ -55,17 +55,17 @@ enableEmoji = true
 
   [[menu.main]]
     name = "Resumé"
-    url = "http://resume.troglobit.com"
+    url = "https://resume.troglobit.com"
     weight = 1
 
   [[menu.main]]
     name = "FTP"
-    url = "http://ftp.troglobit.com"
+    url = "https://ftp.troglobit.com"
     weight = 1
 
   [[menu.main]]
     name = "GIT"
-    url = "http://git.troglobit.com"
+    url = "https://git.troglobit.com"
     weight = 1
 
   [[menu.main]]
