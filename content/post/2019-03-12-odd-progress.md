@@ -5,10 +5,10 @@ subtitle: ""
 tags: []
 ---
 
-A lot has happened since my last post; I got my bike stolen, found the
-guys who had stolen my bike, got mugged by the same guys, decided I'd
-had enough and then bought a house and moved to another city.  That's
-the long and short of it.
+A lot has happened since my last post; I had my bike stolen, stumbled
+upon the guys who'd stolen it, got mugged by same guys, decided I'd had
+enough and then bought a house and moved to another city.  That's the
+long and short of it.
 
 I'm OK, sort of.
 
