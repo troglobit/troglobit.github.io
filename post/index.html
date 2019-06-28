@@ -186,6 +186,29 @@
         <div class="posts-list">
           
             <article class="post-preview">
+              <a href="/2019/06/HowTo-Set-up-Merecat-with-Lets-Encrypt-certificate/">
+                <h2 class="post-title">HowTo: Set up Merecat with Let&#39;s Encrypt certificate</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on June 27, 2019
+              </p>
+              <div class="post-entry">
+                
+                  This is a HowTo for setting up Merecat httpd with Let&rsquo;s Encrypt HTTPS certificates.
+The upcoming v2.32 release of Merecat supports HTTPS as well as serving more than one Internet port. This is highly useful for those who want to serve both HTTPS and HTTP content.
+To start with, you need the latest release of Merecat. Note, if you are reading this before Merecat v2.32 has been released you can use the latest software from the GitHub master branch.
+                  <a href="/2019/06/HowTo-Set-up-Merecat-with-Lets-Encrypt-certificate/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
               <a href="/2019/06/Minor-Miracles/">
                 <h2 class="post-title">Minor Miracles</h2>
 
@@ -413,56 +436,6 @@ into problems setting it up.  I&rsquo;m posting it here for others to see.</p>
                   Anyone who knows me knows I&rsquo;m quite stubborn. Whenever I set my sights on something I finish it. The last couple of years I&rsquo;ve been quite busy on GitHub, making at least one commit per day. I&rsquo;ve had a lot of things I&rsquo;ve wanted to do and complete, and this commit regimen has kept me on track to do just that.
 However, nothing comes for free, and although I&rsquo;ve achieved my goals, I&rsquo;ve also had to make a lot of sacrifices.
                   <a href="/2018/02/Slow-Down/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2016/07/05/multicast-routing-with-pim-sm-over-gre/">
-                <h2 class="post-title">Multicast routing with PIM-SM over GRE</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on January 23, 2018
-              </p>
-              <div class="post-entry">
-                
-                  <p>GRE tunnels are useful in many ways.  This blog post shows how to set up
-multicast routing with <a href="https://github.com/troglobit/pimd/">pimd</a> over a
-GRE tunnel.  To achieve this we will also set up OSPF over GRE with
-<a href="http://www.quagga.net">Quagga</a>, because PIM, unlike DVMRP (<code>mrouted</code>),
-require unicast routing rules to be established.</p>
-
-<pre><code>       .----{ Intranet }----.
-      /    192.168.1.0/24    \
-     /                        \
-.10 /                          \.20
-.--'---. .1  GRE Tunnel  .2 .---`--.
-|      |====================|      |
-|  R1  |   172.16.16.0/30   |  R2  |
-|      |                    |      |
-'--.---'                    '------'
-   | .1                        | .1 
-   |    10.0.1.0/24            |    10.0.2.0/24
-   | .2                        | .2 
-.--'---.                    .--'---.
-|      |                    |      |
-|  C1  |                    |  C2  |
-|      |                    |      |
-'------'                    '------'
-</code></pre>
-
-<p>In this post we are using the home WiFi network, 192.168.1.0/24, to hook
-up the GRE tunnel.  It is just as easy to extend this to a big corporate
-Intranet with more routers between <code>R1</code> and <code>R2</code>.  As long as that IT
-department takes care of the unicast routing between <code>R1</code> and <code>R2</code> so
-that the GRE tunnel can be established.</p>
-                  <a href="/2016/07/05/multicast-routing-with-pim-sm-over-gre/" class="post-read-more">[Read More]</a>
                 
               </div>
 

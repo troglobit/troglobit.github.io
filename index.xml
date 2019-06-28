@@ -8,10 +8,21 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Wed, 26 Jun 2019 19:07:29 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 27 Jun 2019 16:27:39 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HowTo: Set up Merecat with Let&#39;s Encrypt certificate</title>
+      <link>/2019/06/HowTo-Set-up-Merecat-with-Lets-Encrypt-certificate/</link>
+      <pubDate>Thu, 27 Jun 2019 16:27:39 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2019/06/HowTo-Set-up-Merecat-with-Lets-Encrypt-certificate/</guid>
+      <description>This is a HowTo for setting up Merecat httpd with Let&amp;rsquo;s Encrypt HTTPS certificates.
+The upcoming v2.32 release of Merecat supports HTTPS as well as serving more than one Internet port. This is highly useful for those who want to serve both HTTPS and HTTP content.
+To start with, you need the latest release of Merecat. Note, if you are reading this before Merecat v2.32 has been released you can use the latest software from the GitHub master branch.</description>
+    </item>
     
     <item>
       <title>Minor Miracles</title>

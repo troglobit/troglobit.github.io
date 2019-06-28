@@ -186,6 +186,40 @@
         <div class="posts-list">
           
             <article class="post-preview">
+              <a href="/2017/02/02/emulate-an-actual-mtd-device-in-qemu/">
+                <h2 class="post-title">Emulate an actual MTD device in Qemu</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on February 2, 2017
+              </p>
+              <div class="post-entry">
+                
+                  <p>Having worked with Linux for the last 20 years, and embedded for more
+than ten of them, I&rsquo;ve become quite a fan of virtualization in general
+and <a href="http://qemu.org">Qemu</a> in particular.</p>
+
+<p>Qemu is a fantastic little tool, created by the Open Source superhero
+<a href="http://blog.smartbear.com/careers/fabrice-bellard-portrait-of-a-super-productive-programmer/">Fabrice Bellard</a>.
+It can be used to verify an embedded system without having to deal with
+the problems of actual HW until you really have to.  Don&rsquo;t get me wrong,
+HW excites me like any other nerd, but if the HW is new and shaky it can
+be quite a pain to develop higher level functions.</p>
+
+<p>My holy grail is to have a 100% complete and accurate virtualization
+target per architecture to test my various software projects on.  That&rsquo;s
+why I created <a href="https://github.com/troglobit/troglos">TroglOS</a>.</p>
+                  <a href="/2017/02/02/emulate-an-actual-mtd-device-in-qemu/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
               <a href="/2017/01/15/wolfenstein-3d-on-retropie/">
                 <h2 class="post-title">Wolfenstein-3D on RetroPie</h2>
 
@@ -433,47 +467,6 @@ post 😃</p>
                   OK, so here&rsquo;s the general idea: take one teaspoon of a well equipped SBC with Marvell chips you know well, add an awesome WiFi hotspot with USB connection, stir feverishly for several weekends in a row, then sprinkle some AlpineLinux and a custom kernel on top. Enjoy!
 I have no clue if this will actually work, may even try porting my own little thing called TroglOS to the ClearFog first, I don&rsquo;t know, but it will definitely be awesome!
                   <a href="/2016/09/02/the-general-idea/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2016/08/18/live-kvm-migration-with-virt-manager/">
-                <h2 class="post-title">Live KVM migration with virt-manager</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on August 18, 2016
-              </p>
-              <div class="post-entry">
-                
-                  <p>With the new servers and my server room shaping up, I&rsquo;ve been working on
-setting up ALL THE THINGS!  I just managed to set up live migration of
-the KVM virtual machines I use for testing my <a href="https://en.wikipedia.org/wiki/Free_and_open-source_software">FLOSS</a> projects.  Here
-is a short writeup of that, just as a reminder for myself.</p>
-
-<h2 id="checklist">Checklist</h2>
-
-<ol>
-<li>Make sure the libvirt versions are the same.  I tried setting up
-migration between CentOS 7.2 and and Ubuntu LTS 16.04 which turned
-out to be a mess of insurmountable incompatibilities.  I&rsquo;ve now gone
-back to run Ubuntu on everything and it all works fine.</li>
-<li>Set up NFS for the backend store of <code>/var/lib/libvirt/images</code>.  Make
-sure to export the share properly, I tried first with my ReadyNAS, but
-couldn&rsquo;t set up root access (defaulted to nobody).</li>
-<li>Set up VM disk caching=none</li>
-<li>Set up VM processor model=default</li>
-<li>Profit</li>
-</ol>
-
-<p>Good Luck! :)</p>
-                  <a href="/2016/08/18/live-kvm-migration-with-virt-manager/" class="post-read-more">[Read More]</a>
                 
               </div>
 
