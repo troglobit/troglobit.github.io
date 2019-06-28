@@ -1,12 +1,6 @@
 ---
-categories:
-- Merecat
-- thttpd
-- httpd
-- ikiwiki
-comments: true
-date: 2017-02-11T16:03:39Z
 title: Running ikiwiki in Merecat httpd
+date: 2017-02-11T16:03:39Z
 url: /2017/02/11/running-ikiwiki-in-merecat-httpd/
 aliases: /blog/2017/02/11/running-ikiwiki-in-merecat-httpd/
 ---
@@ -68,4 +62,4 @@ Cheers!
 
 [thttpd]:  http://acme.com/software/thttpd/
 [ikiwiki]: http://ikiwiki.info/
-[merecat]: http://merecat.troglobit.com
+[merecat]: https://merecat.troglobit.com
