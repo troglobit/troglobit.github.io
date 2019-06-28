@@ -8,12 +8,12 @@ tags: []
 This is a HowTo for setting up [Merecat httpd][merecat] with [Let's
 Encrypt](https://letsencrypt.org/) HTTPS certificates.
 
-The upcoming v2.32 release of [Merecat][merecat] supports HTTPS as well
-as serving more than one Internet port.  This is highly useful for those
+The upcoming v2.32 release of [Merecat][] supports HTTPS as well as
+serving more than one Internet port.  This is highly useful for those
 who want to serve both HTTPS and HTTP content.
 
-To start with, you need the latest release of Merecat.  Note, if you are
-reading this before Merecat v2.32 has been released you can use the
+To start with, you need the latest release of [Merecat][].  Note, if you
+are reading this before Merecat v2.32 has been released you can use the
 latest software from the GitHub master branch.  Note, you need OpenSSL
 and a few other packages, see the README file for details:
 
@@ -26,10 +26,10 @@ make package
 sudo dpkg -i ../merecat_2.32-1_amd64.deb
 ```
 
-If you already have at least version v2.32 of Merecat installed you can
-begin the process of getting a Let's Encrypt certificate.  This HowTo
-use the EFF's certbot, which is available in Ubuntu or from the Let's
-Encrypt homepage:
+If you already have at least version v2.32 of [Merecat][] installed you
+can begin the process of getting a Let's Encrypt certificate.  This
+HowTo use the EFF's certbot, which is available in Ubuntu or from the
+Let's Encrypt homepage:
 
 <pre>
 root@example:/var/www# <b>systemctl stop merecat.service</b>
@@ -79,14 +79,13 @@ root@example:/var/www# <b>certbot certonly --standalone</b>
 Saving debug log to /var/log/letsencrypt/letsencrypt.log
 Plugins selected: Authenticator standalone, Installer None
 Please enter in your domain name(s) (comma and/or space separated)  (Enter 'c'
-to cancel): <b>example.com www.example.com merecat.example.com git.example.com ftp.example.com deb.example.com</b>
+to cancel): <b>example.com www.example.com git.example.com ftp.example.com deb.example.com</b>
 Obtaining a new certificate
 Performing the following challenges:
 http-01 challenge for example.com
 http-01 challenge for deb.example.com
 http-01 challenge for ftp.example.com
 http-01 challenge for git.example.com
-http-01 challenge for merecat.example.com
 http-01 challenge for www.example.com
 Waiting for verification...
 Cleaning up challenges
@@ -201,10 +200,16 @@ server secure {
 }
 ```
 
-The Merecat defaults take care of a lot of the nasty details you
-shouldn't have to bother with, and unlike other web servers the
-virtual host setup is done in the file system rather than in the
-configuration file.  See Merecat docs for details.
+The [Merecat][] defaults take care of a lot of the nasty details you
+shouldn't have to bother with, and unlike other web servers the virtual
+host setup is done in the file system rather than in the configuration
+file.  See [Merecat][] docs for details.
 
-[merecat]: https://merecat.troglobit.com
+With everything set up we can fire it up:
+
+<pre>
+root@example:/var/www# <b>systemctl start merecat.service</b>
+</pre>
+
+[Merecat]: https://merecat.troglobit.com
 [letsguide]: https://certbot.eff.org/lets-encrypt/ubuntubionic-other
