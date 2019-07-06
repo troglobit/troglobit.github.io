@@ -12,7 +12,7 @@ kids and my family, and even put in some time on my personal software
 projects!
 
 Three years ago I forked [thttpd][] and began merging patches I'd found
-scattered around the net.  I'd also added a few features of my own, and
+scattered around the net.  I've also added a few features of my own, and
 to avoid any confusion with the original (bug free!) project, I renamed
 the resulting monster [Merecat](https://merecat.troglobit.com/) and it
 has served <http://troglobit.com> and its subdomains since then.  Test
