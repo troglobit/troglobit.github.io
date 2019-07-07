@@ -19,10 +19,8 @@
       <pubDate>Sun, 07 Jul 2019 14:27:58 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2019/07/XScreenSaver-Fonts/</guid>
-      <description>I run Awesome on Ubuntu 19.04 with XScreenSaver. This is a brief writeup of what I did to fix the ugly default fonts.
-Let&amp;rsquo;s start with my ~/.Xdefaults file. The resources set are used by XScreenSaver only if ~/.xscreensaver is missing. So start by moving that out of the way:
-mv ~/.xscreensaver ~/dot.xscreensaver  Here&amp;rsquo;s the ~/.Xdefaults file:
-!font settings xscreensaver.Dialog.headingFont: -*-verdana-bold-r-*-*-28-*-*-*-*-*-*-* xscreensaver.Dialog.bodyFont: -*-verdana-medium-r-*-*-20-*-*-*-*-*-*-* xscreensaver.Dialog.labelFont: -*-verdana-medium-r-*-*-20-*-*-*-*-*-*-* xscreensaver.Dialog.unameFont: -*-verdana-medium-r-*-*-26-*-*-*-*-*-*-* xscreensaver.Dialog.buttonFont: -*-verdana-bold-r-*-*-20-*-*-*-*-*-*-* xscreensaver.</description>
+      <description>&lt;p&gt;I run Awesome on Ubuntu 19.04 with XScreenSaver.  This is a brief
+writeup of what I did to fix the ugly default fonts.&lt;/p&gt;</description>
     </item>
     
     <item>

@@ -218,8 +218,6 @@
 	<p>I run Awesome on Ubuntu 19.04 with XScreenSaver.  This is a brief
 writeup of what I did to fix the ugly default fonts.</p>
 
-<!-- more -->
-
 <p>Let&rsquo;s start with my <code>~/.Xdefaults</code> file.  The resources set are
 used by XScreenSaver only if <code>~/.xscreensaver</code> is missing.  So
 start by moving that out of the way:</p>
@@ -250,7 +248,6 @@ xset fp rehash
 xrdb -merge ~/.Xdefaults
 xscreensaver-command -restart
 </code></pre>
-
       </article>
 
       
