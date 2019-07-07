@@ -8,7 +8,7 @@ tags: []
 I run Awesome on Ubuntu 19.04 with XScreenSaver.  This is a brief
 writeup of what I did to fix the ugly default fonts.
 
-<!-- more -->
+<!--more-->
 
 Let's start with my `~/.Xdefaults` file.  The resources set are
 used by XScreenSaver only if `~/.xscreensaver` is missing.  So
