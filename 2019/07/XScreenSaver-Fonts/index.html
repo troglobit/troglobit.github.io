@@ -5,9 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Posts</title>
-  <meta property="og:title" content="Posts" />
-  <meta name="twitter:title" content="Posts" />
+  <title>XScreenSaver Fonts</title>
+  <meta property="og:title" content="XScreenSaver Fonts" />
+  <meta name="twitter:title" content="XScreenSaver Fonts" />
+  <meta name="description" content="in Debian/Ubuntu">
+  <meta property="og:description" content="in Debian/Ubuntu">
+  <meta name="twitter:description" content="in Debian/Ubuntu">
   <meta name="author" content="Joachim Nilsson"/>
   <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="/images/profile.jpg" />
@@ -15,13 +18,13 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@troglobit" />
   <meta name="twitter:creator" content="@troglobit" />
-  <meta property="og:url" content="/post/" />
+  <meta property="og:url" content="/2019/07/XScreenSaver-Fonts/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
   <meta name="generator" content="Hugo 0.52" />
-  <link rel="canonical" href="/post/" />
-  <link rel="alternate" href="/post/index.xml" type="application/rss+xml" title="">
+  <link rel="canonical" href="/2019/07/XScreenSaver-Fonts/" />
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -163,14 +166,41 @@
 
 
     
+  
+  
+  
+
+
+
+
+  
+
   <header class="header-section ">
+    
     <div class="intro-header no-img">
+      
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="page-heading">
-              <h1>Posts</h1>
-              <hr class="small">
+            <div class="post-heading">
+              <h1>XScreenSaver Fonts</h1>
+                
+                  
+                    <h2 class="post-subheading">in Debian/Ubuntu</h2>
+                  
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on July 7, 2019
+  
+  
+  
+</span>
+
+
+                
             </div>
           </div>
         </div>
@@ -178,91 +208,68 @@
     </div>
   </header>
 
+
     
-  <div class="container" role="main">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        
-        <div class="posts-list">
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+	
+	<p>I run Awesome on Ubuntu 19.04 with XScreenSaver.  This is a brief
+writeup of what I did to fix the ugly default fonts.</p>
+
+<!-- more -->
+
+<p>Let&rsquo;s start with my <code>~/.Xdefaults</code> file.  The resources set are
+used by XScreenSaver only if <code>~/.xscreensaver</code> is missing.  So
+start by moving that out of the way:</p>
+
+<pre><code class="language-sh">mv ~/.xscreensaver ~/dot.xscreensaver
+</code></pre>
+
+<p>Here&rsquo;s the <code>~/.Xdefaults</code> file:</p>
+
+<pre><code>!font settings
+xscreensaver.Dialog.headingFont:        -*-verdana-bold-r-*-*-28-*-*-*-*-*-*-*
+xscreensaver.Dialog.bodyFont:           -*-verdana-medium-r-*-*-20-*-*-*-*-*-*-*
+xscreensaver.Dialog.labelFont:          -*-verdana-medium-r-*-*-20-*-*-*-*-*-*-*
+xscreensaver.Dialog.unameFont:          -*-verdana-medium-r-*-*-26-*-*-*-*-*-*-*
+xscreensaver.Dialog.buttonFont:         -*-verdana-bold-r-*-*-20-*-*-*-*-*-*-*
+xscreensaver.Dialog.dateFont:           -*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*
+xscreensaver.passwd.passwdFont:         -*-verdana-bold-r-*-*-20-*-*-*-*-*-*-*
+</code></pre>
+
+<p>To make TrueType fonts visible to old X applications one has to jump
+through a few hoops.</p>
+
+<pre><code class="language-sh">cd /usr/share/fonts/truetype/msttcorefonts
+sudo mkfontscale
+sudo mkfontdir
+xset +fp /usr/share/fonts/truetype/msttcorefonts/
+xset fp rehash
+xrdb -merge ~/.Xdefaults
+xscreensaver-command -restart
+</code></pre>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
           
-            <article class="post-preview">
-              <a href="/2006/06/06/swedish-national-day-deep-thoughts-dot-dot-dot/">
-                <h2 class="post-title">Swedish National Day: Deep thoughts ...</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on June 6, 2006
-              </p>
-              <div class="post-entry">
-                
-                  From time to time, even though it seems to occur more frequently these days, I think about the persistence of things. How development is continuously accelerating in the modern world. To me this is like a double edged sword, it&rsquo;s both comforting and unsettling. Comforting that we as humans continuously improve and develop our methods and technologies. Unsettling because I know much of the development is in directions that I don&rsquo;t approve of: more intricate and capable weapons and methods of surveillance.
-                  <a href="/2006/06/06/swedish-national-day-deep-thoughts-dot-dot-dot/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
+            <li class="previous">
+              <a href="/2019/06/HowTo-Set-up-Merecat-with-Lets-Encrypt-certificate/" data-toggle="tooltip" data-placement="top" title="HowTo: Set up Merecat with Let&#39;s Encrypt certificate">&larr; Previous Post</a>
+            </li>
           
-            <article class="post-preview">
-              <a href="/2006/06/06/laptop-network-configuration-in-debian-slash-ubuntu/">
-                <h2 class="post-title">Laptop Network Configuration in Debian/Ubuntu</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on June 6, 2006
-              </p>
-              <div class="post-entry">
-                
-                  I have three network cards in my laptop. Two built-in and one PCMCIA card. I&rsquo;m currently investigating how I can migrate from using the slow and tedious gnome-network &amp; C:o tools to the more integrated Debian/Ubuntu tools ifupdown, guessnet, ifplugd and waproamd instead. As usual Debian has a fine and clever way of handling all this with their /etc/network/interface file. To learn more about this fine management interface I&rsquo;m reading the well written book The Debian System by Martin F.
-                  <a href="/2006/06/06/laptop-network-configuration-in-debian-slash-ubuntu/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
           
-            <article class="post-preview">
-              <a href="/2006/05/26/no-news-are-good-news/">
-                <h2 class="post-title">No news are good news?</h2>
+        </ul>
+      
 
-                
-              </a>
 
-              <p class="post-meta">
-                Posted on May 26, 2006
-              </p>
-              <div class="post-entry">
-                
-                  Seriously, it&rsquo;s been one long winter and now finally summer is upon us again. It was about six months ago that I switched jobs and this is the first time for that period that I&rsquo;ve got ten minutes above the surface. The new job is fun but currently takes up too much of my time to be healthy in the long run.
-Today we&rsquo;re going to Stenby TV-service with our broken Hitachi 32&rdquo; TV.
-                  <a href="/2006/05/26/no-news-are-good-news/" class="post-read-more">[Read More]</a>
-                
-              </div>
+      
 
-              
-
-            </article>
-          
-        </div>
-        
-          <ul class="pager main-pager">
-            
-              <li class="previous">
-                <a href="/post/page/14/">&larr; Newer Posts</a>
-              </li>
-            
-            
-          </ul>
-        
-      </div>
     </div>
   </div>
+</div>
 
     <footer>
   <div class="container">
@@ -305,7 +312,7 @@ Today we&rsquo;re going to Stenby TV-service with our broken Hitachi 32&rdquo; T
           
           <li>
             
-            <a href="/post/index.xml" title="RSS">
+            <a href="/index.xml" title="RSS">
             
               <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>

@@ -180,6 +180,37 @@
           
           
             <article class="post-preview">
+              <a href="/2017/02/11/running-ikiwiki-in-merecat-httpd/">
+                <h2 class="post-title">Running ikiwiki in Merecat httpd</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on February 11, 2017
+  
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  This is a HowTo for setting up ikiwiki with Merecat httpd.
+First install ikiwiki
+$ sudo apt install ikiwiki libcgi-session-perl libcgi-formbuilder-perl  Follow the steps to setup a new Wiki or Blog. In this example we set up a wiki in our ~/public_html:
+$ ikiwiki --setup /etc/ikiwiki/auto.setup ... Successfully set up wiki: url: http://localhost/~jocke/wiki srcdir: ~/wiki destdir: ~/public_html/wiki repository: ~/wiki.git  To modify settings, edit ~/home.setup and then run:
+$ ikiwiki --setup ~/home.
+                  <a href="/2017/02/11/running-ikiwiki-in-merecat-httpd/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
               <a href="/2017/02/02/emulate-an-actual-mtd-device-in-qemu/">
                 <h2 class="post-title">Emulate an actual MTD device in Qemu</h2>
                 
@@ -494,34 +525,6 @@ post 😃</p>
   -- End:
   -->
 
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2016/09/02/the-general-idea/">
-                <h2 class="post-title">The General Idea</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on September 2, 2016
-  
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  OK, so here&rsquo;s the general idea: take one teaspoon of a well equipped SBC with Marvell chips you know well, add an awesome WiFi hotspot with USB connection, stir feverishly for several weekends in a row, then sprinkle some AlpineLinux and a custom kernel on top. Enjoy!
-I have no clue if this will actually work, may even try porting my own little thing called TroglOS to the ClearFog first, I don&rsquo;t know, but it will definitely be awesome!
-                  <a href="/2016/09/02/the-general-idea/" class="post-read-more">[Read More]</a>
                 
               </div>
 

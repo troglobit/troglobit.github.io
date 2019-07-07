@@ -8,10 +8,22 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Thu, 27 Jun 2019 16:27:39 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 07 Jul 2019 14:27:58 +0200</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>XScreenSaver Fonts</title>
+      <link>/2019/07/XScreenSaver-Fonts/</link>
+      <pubDate>Sun, 07 Jul 2019 14:27:58 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2019/07/XScreenSaver-Fonts/</guid>
+      <description>I run Awesome on Ubuntu 19.04 with XScreenSaver. This is a brief writeup of what I did to fix the ugly default fonts.
+Let&amp;rsquo;s start with my ~/.Xdefaults file. The resources set are used by XScreenSaver only if ~/.xscreensaver is missing. So start by moving that out of the way:
+mv ~/.xscreensaver ~/dot.xscreensaver  Here&amp;rsquo;s the ~/.Xdefaults file:
+!font settings xscreensaver.Dialog.headingFont: -*-verdana-bold-r-*-*-28-*-*-*-*-*-*-* xscreensaver.Dialog.bodyFont: -*-verdana-medium-r-*-*-20-*-*-*-*-*-*-* xscreensaver.Dialog.labelFont: -*-verdana-medium-r-*-*-20-*-*-*-*-*-*-* xscreensaver.Dialog.unameFont: -*-verdana-medium-r-*-*-26-*-*-*-*-*-*-* xscreensaver.Dialog.buttonFont: -*-verdana-bold-r-*-*-20-*-*-*-*-*-*-* xscreensaver.</description>
+    </item>
     
     <item>
       <title>HowTo: Set up Merecat with Let&#39;s Encrypt certificate</title>
@@ -31,7 +43,7 @@ To start with, you need the latest release of Merecat. Note, if you are reading 
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2019/06/Minor-Miracles/</guid>
       <description>The last six months at work have been really stressful, so to finally get a week off for Swedish Midsummer celebrations was really what the doctor ordered! I&amp;rsquo;ve managed to wind down and relax, spend time with my kids and my family, and even put in some time on my personal software projects!
-Three years ago I forked thttpd and began merging patches I&amp;rsquo;d found scattered around the net. I&amp;rsquo;d also added a few features of my own, and to avoid any confusion with the original (bug free!</description>
+Three years ago I forked thttpd and began merging patches I&amp;rsquo;d found scattered around the net. I&amp;rsquo;ve also added a few features of my own, and to avoid any confusion with the original (bug free!</description>
     </item>
     
     <item>

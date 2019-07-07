@@ -180,6 +180,49 @@
           
           
             <article class="post-preview">
+              <a href="/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/">
+                <h2 class="post-title">Rant: All the C Compiler Warnings ...</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on January 12, 2015
+  
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>Enable <em>all</em> the warnings!</p>
+</blockquote>
+
+<p>This is one of the truths you learn when you start working with C.  Most
+of the time adding <code>CPPFLAGS=&quot;-W -Wall -Werror&quot;</code> is all you need to find
+all the nasty bugs.  And if that&rsquo;s not enough, there are tons of tools
+for static code analysis, like <code>scan-build</code> in
+<a href="http://clang-analyzer.llvm.org/scan-build.html">Clang</a>, and
+<a href="https://scan.coverity.com/">Coverity Scan</a>, to help you <em>find all the
+bugs</em>!</p>
+
+<p>However, these pesky warnings (some of which cannot even be disabled!)
+are sometimes more of a nuisance than help.  Sometimes you <em>know</em> that
+some parameters to a function will remain unused &ndash; it&rsquo;s a callback, and
+you don&rsquo;t need all the data given to you.  So you start adding all kinds
+of voodoo, like <code>__attribute__ ((unused))</code> &hellip; seriously?</p>
+                  <a href="/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
               <a href="/2015/01/08/recent-open-source-work/">
                 <h2 class="post-title">Recent Open Source Work</h2>
                 
@@ -464,33 +507,6 @@ is basically just to change <code>nowait</code> to <code>wait</code> for the TFT
                   Today sees the release of v1.3 of the awesome little uftpd. The main news is the new TFTP support! Just like before you don&rsquo;t need any configuration file, just build and install &ndash; or build a .deb file and install.
 This release completes the main purpose of uftpd for me, I can now use it as my daily driver and fully replace vsftpd and tftpd-hpa, which to me are the next best.
                   <a href="/2014/09/02/new-release-of-the-awesome-uftpd/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2014/08/27/howto-rebase-without-an-origin/">
-                <h2 class="post-title">HowTo Rebase without an origin</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on August 27, 2014
-  
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  OK, so you&rsquo;ve just been handed the task to integrate a big piece of corporate software and it&rsquo;s nowhere near as done and ready as project management thinks. Of course you&rsquo;ve already started chugging away at it, fixing bugs, refactoring code and wrapping it in neat containers to keep the changeset against the base SW small &ndash; you already know you&rsquo;ll get another drop of the same stinking pieace of code in another six months, so you keep the changes small and track them in GIT with neatly formatted commit messages.
-                  <a href="/2014/08/27/howto-rebase-without-an-origin/" class="post-read-more">[Read More]</a>
                 
               </div>
 
