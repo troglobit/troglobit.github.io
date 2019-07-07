@@ -10,15 +10,7 @@ writeup of what I did to fix the ugly default fonts.
 
 <!--more-->
 
-Let's start with my `~/.Xdefaults` file.  The resources set are
-used by XScreenSaver only if `~/.xscreensaver` is missing.  So
-start by moving that out of the way:
-
-```sh
-mv ~/.xscreensaver ~/dot.xscreensaver
-```
-
-Here's the `~/.Xdefaults` file:
+Let's start with the `~/.Xdefaults` file:
 
 ```
 !font settings
@@ -44,3 +36,4 @@ xrdb -merge ~/.Xdefaults
 xscreensaver-command -restart
 ```
 
+Test it with `xfontsel`
