@@ -187,16 +187,17 @@ virtual-host     = true
 user-agent-deny  = "**SemrushBot**|**MJ12bot**|**DotBot**"
 
 server default {
-        port     = 80
-        ssl      = off
+    port     = 80
+    ssl      = off
 }
 
 server secure {
-        port     = 443
-        ssl      = on
+    port     = 443
+	ssl {
         certfile = /etc/letsencrypt/live/example.com/fullchain.pem
         keyfile  = /etc/letsencrypt/live/example.com/privkey.pem
         dhfile   = certs/dhparam.pem
+	}
 }
 ```
 
