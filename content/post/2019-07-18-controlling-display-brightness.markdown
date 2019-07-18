@@ -23,7 +23,7 @@ To use it, download the [latest release][]; then unpack, configure,
 build, and install.  You may have to reboot for the udev rules to take
 effect.
 
-Users of the [Awesome WM]] can update their `~/.config/awesome/rc.lua`
+Users of the [Awesome WM][] can update their `~/.config/awesome/rc.lua`
 to include the following:
 
 ```lua
