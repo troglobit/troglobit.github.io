@@ -5,12 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>XScreenSaver Fonts</title>
-  <meta property="og:title" content="XScreenSaver Fonts" />
-  <meta name="twitter:title" content="XScreenSaver Fonts" />
-  <meta name="description" content="in Debian/Ubuntu">
-  <meta property="og:description" content="in Debian/Ubuntu">
-  <meta name="twitter:description" content="in Debian/Ubuntu">
+  <title>Controlling Display Brightness in Awesome WM</title>
+  <meta property="og:title" content="Controlling Display Brightness in Awesome WM" />
+  <meta name="twitter:title" content="Controlling Display Brightness in Awesome WM" />
+  <meta name="description" content="Part 2/2">
+  <meta property="og:description" content="Part 2/2">
+  <meta name="twitter:description" content="Part 2/2">
   <meta name="author" content="Joachim Nilsson"/>
   <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="/images/profile.jpg" />
@@ -18,12 +18,12 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@troglobit" />
   <meta name="twitter:creator" content="@troglobit" />
-  <meta property="og:url" content="/2019/07/XScreenSaver-Fonts/" />
+  <meta property="og:url" content="/2019/07/Controlling-Display-Brightness-in-Awesome-WM/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
   <meta name="generator" content="Hugo 0.52" />
-  <link rel="canonical" href="/2019/07/XScreenSaver-Fonts/" />
+  <link rel="canonical" href="/2019/07/Controlling-Display-Brightness-in-Awesome-WM/" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -183,17 +183,17 @@
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
-              <h1>XScreenSaver Fonts</h1>
+              <h1>Controlling Display Brightness in Awesome WM</h1>
                 
                   
-                    <h2 class="post-subheading">in Debian/Ubuntu</h2>
+                    <h2 class="post-subheading">Part 2/2</h2>
                   
                 
                 
                   <span class="post-meta">
   
   
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on July 7, 2019
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on July 18, 2019
   
   
   
@@ -215,47 +215,45 @@
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
 	
-	<p>I run Awesome on Ubuntu 19.04 with XScreenSaver.  This is a brief
-writeup of what I did to fix the ugly default fonts.</p>
+	<p>About a year ago I wrote about a way to control the <a href="/2018/08/Display-Brightness-in-Awesome-on-ThinkPad-X250/">brightness on my
+x250</a>.  I found a
+lot of tools, and at the time I saw a lot of potential in <a href="https://github.com/haikarainen/light/">light</a>,
+which I even contributed to a lot.</p>
 
-<p>Let&rsquo;s start with the <code>~/.Xdefaults</code> file:</p>
+<p>However, I ended up not using the evolved versions myself, and it took
+me a while to digest why.  I think the project just outgrew me and what
+I wanted in such a tool.</p>
 
-<pre><code>!font settings
-xscreensaver.Dialog.headingFont:        -*-verdana-bold-r-*-*-28-*-*-*-*-*-*-*
-xscreensaver.Dialog.bodyFont:           -*-verdana-medium-r-*-*-20-*-*-*-*-*-*-*
-xscreensaver.Dialog.labelFont:          -*-verdana-medium-r-*-*-20-*-*-*-*-*-*-*
-xscreensaver.Dialog.unameFont:          -*-verdana-medium-r-*-*-26-*-*-*-*-*-*-*
-xscreensaver.Dialog.buttonFont:         -*-verdana-bold-r-*-*-20-*-*-*-*-*-*-*
-xscreensaver.Dialog.dateFont:           -*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*
-xscreensaver.passwd.passwdFont:         -*-verdana-bold-r-*-*-20-*-*-*-*-*-*-*
+<p><a href="https://github.com/Hummer12007/brightnessctl/">brightnessctl</a> was another tool I had looked into, but I wanted
+something much simpler, so today I wrote my own 😄</p>
+
+<p><a href="https://github.com/troglobit/backlight">https://github.com/troglobit/backlight</a></p>
+
+<p>To use it, download the <a href="https://github.com/troglobit/backlight/releases/latest">latest release</a>; then unpack, configure,
+build, and install.  You may have to reboot for the udev rules to take
+effect.</p>
+
+<p>Users of the <a href="https://awesomewm.org/">Awesome WM</a> can update their <code>~/.config/awesome/rc.lua</code>
+to include the following:</p>
+
+<pre><code class="language-lua">    -- Brightness
+    awful.key({ }, &quot;XF86MonBrightnessUp&quot;, function () os.execute(&quot;backlight up&quot;) end,
+              {description = &quot;Increase brightness&quot;, group = &quot;hotkeys&quot;}),
+    awful.key({ }, &quot;XF86MonBrightnessDown&quot;, function () os.execute(&quot;backlight down&quot;) end,
+              {description = &quot;Decrease brightness&quot;, group = &quot;hotkeys&quot;}),
 </code></pre>
 
-<p>To make TrueType fonts visible to old X applications one has to jump
-through a few hoops.</p>
+<p>Reload Awesome and your brightness keys will now work as expected.</p>
 
-<pre><code class="language-sh">cd /usr/share/fonts/truetype/msttcorefonts
-sudo mkfontscale
-sudo mkfontdir
-xset +fp /usr/share/fonts/truetype/msttcorefonts/
-xset fp rehash
-xrdb -merge ~/.Xdefaults
-xscreensaver-command -restart
-</code></pre>
-
-<p>Test it with <code>xfontsel</code></p>
       </article>
 
       
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="/2019/06/HowTo-Set-up-Merecat-with-Lets-Encrypt-certificate/" data-toggle="tooltip" data-placement="top" title="HowTo: Set up Merecat with Let&#39;s Encrypt certificate">&larr; Previous Post</a>
+              <a href="/2019/07/XScreenSaver-Fonts/" data-toggle="tooltip" data-placement="top" title="XScreenSaver Fonts">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="/2019/07/Controlling-Display-Brightness-in-Awesome-WM/" data-toggle="tooltip" data-placement="top" title="Controlling Display Brightness in Awesome WM">Next Post &rarr;</a>
-            </li>
           
         </ul>
       

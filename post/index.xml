@@ -14,11 +14,11 @@
     
     
     <item>
-      <title>Controlling Display Brightness</title>
-      <link>/2019/07/Controlling-Display-Brightness/</link>
+      <title>Controlling Display Brightness in Awesome WM</title>
+      <link>/2019/07/Controlling-Display-Brightness-in-Awesome-WM/</link>
       <pubDate>Thu, 18 Jul 2019 15:13:53 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/2019/07/Controlling-Display-Brightness/</guid>
+      <guid>/2019/07/Controlling-Display-Brightness-in-Awesome-WM/</guid>
       <description>About a year ago I wrote about a way to control the brightness on my x250. I found a lot of tools, and at the time I saw a lot of potential in light, which I even contributed to a lot.
 However, I ended up not using the evolved versions myself, and it took me a while to digest why. I think the project just outgrew me and what I wanted in such a tool.</description>
     </item>
