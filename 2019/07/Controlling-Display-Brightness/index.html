@@ -217,19 +217,33 @@
 	
 	<p>About a year ago I wrote about a way to control the <a href="/2018/08/Display-Brightness-in-Awesome-on-ThinkPad-X250/">brightness on my
 x250</a>.  I found a
-lot of tools, and at the time I saw a lot of potential in
-<a href="https://github.com/haikarainen/light/">light</a>, which I even contributed
-to a lot.</p>
+lot of tools, and at the time I saw a lot of potential in <a href="https://github.com/haikarainen/light/">light</a>,
+which I even contributed to a lot.</p>
 
-<p>However, I ended up not using the evolved version myself.  Took me a
-while to digest what happened, but I think the project just outgrew me
-and what I wanted in such a tool.</p>
+<p>However, I ended up not using the evolved versions myself, and it took
+me a while to digest why.  I think the project just outgrew me and what
+I wanted in such a tool.</p>
 
-<p><a href="https://github.com/Hummer12007/brightnessctl/">brightnessctl</a> was
-another tool I had looked into, but I wanted something much simpler, so
-today I wrote my own 😄</p>
+<p><a href="https://github.com/Hummer12007/brightnessctl/">brightnessctl</a> was another tool I had looked into, but I wanted
+something much simpler, so today I wrote my own 😄</p>
 
 <p><a href="https://github.com/troglobit/backlight">https://github.com/troglobit/backlight</a></p>
+
+<p>To use it, download the <a href="https://github.com/troglobit/backlight/releases/latest">latest release</a>; then unpack, configure,
+build, and install.  You may have to reboot for the udev rules to take
+effect.</p>
+
+<p>Users of the [Awesome WM][] can update their <code>~/.config/awesome/rc.lua</code>
+to include the following:</p>
+
+<pre><code class="language-lua">    -- Brightness
+    awful.key({ }, &quot;XF86MonBrightnessUp&quot;, function () os.execute(&quot;backlight up&quot;) end,
+              {description = &quot;Increase brightness&quot;, group = &quot;hotkeys&quot;}),
+    awful.key({ }, &quot;XF86MonBrightnessDown&quot;, function () os.execute(&quot;backlight down&quot;) end,
+              {description = &quot;Decrease brightness&quot;, group = &quot;hotkeys&quot;}),
+</code></pre>
+
+<p>Reload Awesome and your brightness keys will now work as expected.</p>
 
       </article>
 
