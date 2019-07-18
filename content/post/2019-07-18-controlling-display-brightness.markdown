@@ -23,8 +23,8 @@ To use it, download the [latest release][]; then unpack, configure,
 build, and install.  You may have to reboot for the udev rules to take
 effect.
 
-Users of the [Awesome WM][] can update their `~/.config/awesome/rc.lua`
-to include the following:
+Users of the [Awesome][awesome] window manager can update their
+`~/.config/awesome/rc.lua` to with the following:
 
 ```lua
     -- Brightness
@@ -40,4 +40,4 @@ Reload Awesome and your brightness keys will now work as expected.
 [light]:          https://github.com/haikarainen/light/
 [brightnessctl]:  https://github.com/Hummer12007/brightnessctl/
 [latest release]: https://github.com/troglobit/backlight/releases/latest
-[Awesome WM]:     https://awesomewm.org/
+[awesome]:        https://awesomewm.org/
