@@ -186,6 +186,29 @@
         <div class="posts-list">
           
             <article class="post-preview">
+              <a href="/2010/07/13/converting-from-bazaar-to-git/">
+                <h2 class="post-title">Converting from Bazaar to GIT</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on July 13, 2010
+              </p>
+              <div class="post-entry">
+                
+                  You need git, and bazaar obviously. Also install bzr-fastimport, it contains the export plugin as well. The rest is a rip off from Frank&rsquo;s page.
+$ git init project.git $ cd project.git $ bzr fast-export --export-marks=.git/bzr.mark ~/project.bzr | git fast-import --export-marks=.git/git.mark  That worked for me. The output will likely be something like this:
+01:41:19 Calculating the revisions to include ... 01:41:19 Starting export of 33 revisions ... 01:41:20 Exported 33 revisions in 0:00:01 git-fast-import statistics: --------------------------------------------------------------------- Alloc'd objects: 5000 Total objects : 267 ( 0 duplicates ) blobs : 158 ( 0 duplicates 57 deltas) trees : 76 ( 0 duplicates 55 deltas) commits: 33 ( 0 duplicates 0 deltas) tags : 0 ( 0 duplicates 0 deltas) Total branches : 10 ( 1 loads ) marks : 1024 ( 33 unique ) atoms : 38 Memory total : 2344 KiB pools : 2110 KiB objects: 234 KiB --------------------------------------------------------------------- pack_report: getpagesize() = 4096 pack_report: core.
+                  <a href="/2010/07/13/converting-from-bazaar-to-git/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
               <a href="/2010/05/09/syntax-highlighting-in-less/">
                 <h2 class="post-title">Syntax highlighting in less</h2>
 
@@ -405,28 +428,6 @@ I&rsquo;ve been &ldquo;maintaining&rdquo; bzrweb for a while now, not doing a ve
                   This is an extremly brief and quick Xen tutorial. There are lots of them already, see your GNU/Linux distribution&rsquo;s wiki, HowtoForge or other places for a starter guide. This particular HowTo deals with setting up Xen as easy as possible using Ubuntu 8.04 LTS as host operating system (dom0 in Xen terms) and Ubuntu 9.04 as guest operating systems (domU in Xen lingo).
 Ubuntu 8.04 LTS comes with a Xen kernel that can run as dom0.
                   <a href="/2009/06/08/howto-setup-and-run-xen/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2009/04/10/learning-about-git/">
-                <h2 class="post-title">Learning About GIT</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on April 10, 2009
-              </p>
-              <div class="post-entry">
-                
-                  It has been a long time coming, but now I&rsquo;m seriously starting to look at Git. Git is the content tracker used by the Linux kernel folks, initially developed by Torvalds.
-At Westermo R&amp;D we use Subversion for our daily operations and today I started migrating the software to Git. Mainly just to get a comparison of performance, storage size and to explore how we can use Git on top of svn to become more productive when working in parallel in different teams.
-                  <a href="/2009/04/10/learning-about-git/" class="post-read-more">[Read More]</a>
                 
               </div>
 

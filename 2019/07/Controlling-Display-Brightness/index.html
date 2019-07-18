@@ -5,6 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
+  <title>Controlling Display Brightness</title>
+  <meta property="og:title" content="Controlling Display Brightness" />
+  <meta name="twitter:title" content="Controlling Display Brightness" />
+  <meta name="description" content="Part 2/2">
+  <meta property="og:description" content="Part 2/2">
+  <meta name="twitter:description" content="Part 2/2">
   <meta name="author" content="Joachim Nilsson"/>
   <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="/images/profile.jpg" />
@@ -12,12 +18,12 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@troglobit" />
   <meta name="twitter:creator" content="@troglobit" />
-  <meta property="og:url" content="/" />
+  <meta property="og:url" content="/2019/07/Controlling-Display-Brightness/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
   <meta name="generator" content="Hugo 0.52" />
-  <link rel="canonical" href="/" />
+  <link rel="canonical" href="/2019/07/Controlling-Display-Brightness/" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -167,142 +173,83 @@
 
 
 
-  <div class="intro-header"></div>
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Controlling Display Brightness</h1>
+                
+                  
+                    <h2 class="post-subheading">Part 2/2</h2>
+                  
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on July 18, 2019
+  
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
 
     
-  <div role="main" class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+	
+	<p>About a year ago I wrote about this topic, looking for a way to control
+the <a href="2018-08-03-brightness-on-x250.markdown">brightness on my x250</a>, and
+I found a lot of tools that did just this.  At the time I saw a lot of
+potential in <a href="https://github.com/haikarainen/light/">light</a>, which I
+even contributed to a lot.</p>
 
-        <div class="posts-list">
+<p>However, I ended up not using the evolved version myself.  Took me a
+while to digest what happened, but I think the project just outgrew me
+and what I wanted in such a tool.</p>
+
+<p><a href="https://github.com/Hummer12007/brightnessctl/">brightnessctl</a> was
+another tool I had looked into, but I wanted something much simpler, so
+today I wrote my own 😄</p>
+
+<p><a href="https://github.com/troglobit/backlight">https://github.com/troglobit/backlight</a></p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="/2019/07/XScreenSaver-Fonts/" data-toggle="tooltip" data-placement="top" title="XScreenSaver Fonts">&larr; Previous Post</a>
+            </li>
           
           
-            <article class="post-preview">
-              <a href="/2006/07/17/quick-note/">
-                <h2 class="post-title">Quick Note</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on July 17, 2006
-  
-  
-  
-</span>
+        </ul>
+      
 
 
-              <div class="post-entry">
-                
-                  About that /etc/network/interface autoconfig thingy: it&rsquo;s almost done. Works perfect &hellip; at work (connected) and at home (wireless). I need to fine tune the tests, I think, to get the connected stuff to work at home too. The problem seems to be that the test to see if the machine is connected at home is that the MAC it looks for to ID the office network also is available from home, via the VPN.
-                  <a href="/2006/07/17/quick-note/" class="post-read-more">[Read More]</a>
-                
-              </div>
+      
 
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2006/06/06/swedish-national-day-deep-thoughts-dot-dot-dot/">
-                <h2 class="post-title">Swedish National Day: Deep thoughts ...</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on June 6, 2006
-  
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  From time to time, even though it seems to occur more frequently these days, I think about the persistence of things. How development is continuously accelerating in the modern world. To me this is like a double edged sword, it&rsquo;s both comforting and unsettling. Comforting that we as humans continuously improve and develop our methods and technologies. Unsettling because I know much of the development is in directions that I don&rsquo;t approve of: more intricate and capable weapons and methods of surveillance.
-                  <a href="/2006/06/06/swedish-national-day-deep-thoughts-dot-dot-dot/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2006/06/06/laptop-network-configuration-in-debian-slash-ubuntu/">
-                <h2 class="post-title">Laptop Network Configuration in Debian/Ubuntu</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on June 6, 2006
-  
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  I have three network cards in my laptop. Two built-in and one PCMCIA card. I&rsquo;m currently investigating how I can migrate from using the slow and tedious gnome-network &amp; C:o tools to the more integrated Debian/Ubuntu tools ifupdown, guessnet, ifplugd and waproamd instead. As usual Debian has a fine and clever way of handling all this with their /etc/network/interface file. To learn more about this fine management interface I&rsquo;m reading the well written book The Debian System by Martin F.
-                  <a href="/2006/06/06/laptop-network-configuration-in-debian-slash-ubuntu/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2006/05/26/no-news-are-good-news/">
-                <h2 class="post-title">No news are good news?</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on May 26, 2006
-  
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  Seriously, it&rsquo;s been one long winter and now finally summer is upon us again. It was about six months ago that I switched jobs and this is the first time for that period that I&rsquo;ve got ten minutes above the surface. The new job is fun but currently takes up too much of my time to be healthy in the long run.
-Today we&rsquo;re going to Stenby TV-service with our broken Hitachi 32&rdquo; TV.
-                  <a href="/2006/05/26/no-news-are-good-news/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-            </article>
-          
-        </div>
-
-        
-          <ul class="pager main-pager">
-            
-              <li class="previous">
-                <a href="/page/14/">&larr; Newer Posts</a>
-              </li>
-            
-            
-          </ul>
-        
-      </div>
     </div>
   </div>
+</div>
 
     <footer>
   <div class="container">

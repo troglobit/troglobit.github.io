@@ -186,6 +186,43 @@
         <div class="posts-list">
           
             <article class="post-preview">
+              <a href="/2016/09/21/finit3-almost-there-.../">
+                <h2 class="post-title">Finit3: Almost there ...</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on September 21, 2016
+              </p>
+              <div class="post-entry">
+                
+                  <p>Today the new logo for Finit3 was added to the GitHub repo and the
+<a href="/finit.html">homepage</a></p>
+
+<p><img src="/images/finit3.png" alt="Finit3 logo" /></p>
+
+<p>Gorgeous, isn&rsquo;t it?! 😎</p>
+
+<p>This fancy artwork means we&rsquo;re nearing the end of a long and agonizing
+release cycle where a lot of the internals of Finit have been rewritten
+and new exciting features have been added!  More on this in an upcoming
+post 😃</p>
+
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->
+
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
               <a href="/2016/09/02/the-general-idea/">
                 <h2 class="post-title">The General Idea</h2>
 
@@ -449,52 +486,6 @@ BATTERY &ndash; AND STEP AWAY FROM THE COMPUTER!  Must protect the partition
 from being accidentally written to &ndash; I completely fumbled this step, so
 take heed young people!</p>
                   <a href="/2016/03/24/disaster-recovery/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2016/03/07/testing-multicast-with-docker/">
-                <h2 class="post-title">Testing multicast with Docker</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on March 7, 2016
-              </p>
-              <div class="post-entry">
-                
-                  <p>Recently <a href="https://github.com/troglobit/pimd/issues/70">issue #70</a> was
-reported to <a href="https://github.com/troglobit/pimd/">pimd</a>.  That number of
-issues reported is cool in itself, but this was a question about
-<a href="https://www.docker.com">Docker</a> and <code>pimd</code>.</p>
-
-<p>Up until that point I had only read about this new fad, and played
-around with it a bit <a href="http://www.westermo.com">at work</a> for use as a
-stable build environment for cross-compiling.  I had no idea people
-would want to use a Docker container as a multicast sink.  Basically I
-was baffled.</p>
-
-<p>The reporter used a Java based tool but simply couldn&rsquo;t get things to
-work properly with <code>pimd</code> running on the host:</p>
-
-<pre><code>                eth0
- MC sender ---&gt; [ Server host ]    &lt;--- router running pimd
-                       |
-               ________|________
-              /     docker0     \   &lt;--- bridge    ______
-             /         |         \                |      |   &lt;--- MC receiver
-  __________/          |          \_______________|______|_____
- \                     |                            /         /
-  \                     `------------------&gt;-------'         /
-   \________________________________________________________/
-      Container ship
-</code></pre>
-                  <a href="/2016/03/07/testing-multicast-with-docker/" class="post-read-more">[Read More]</a>
                 
               </div>
 

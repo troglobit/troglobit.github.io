@@ -186,6 +186,52 @@
         <div class="posts-list">
           
             <article class="post-preview">
+              <a href="/2016/03/07/testing-multicast-with-docker/">
+                <h2 class="post-title">Testing multicast with Docker</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on March 7, 2016
+              </p>
+              <div class="post-entry">
+                
+                  <p>Recently <a href="https://github.com/troglobit/pimd/issues/70">issue #70</a> was
+reported to <a href="https://github.com/troglobit/pimd/">pimd</a>.  That number of
+issues reported is cool in itself, but this was a question about
+<a href="https://www.docker.com">Docker</a> and <code>pimd</code>.</p>
+
+<p>Up until that point I had only read about this new fad, and played
+around with it a bit <a href="http://www.westermo.com">at work</a> for use as a
+stable build environment for cross-compiling.  I had no idea people
+would want to use a Docker container as a multicast sink.  Basically I
+was baffled.</p>
+
+<p>The reporter used a Java based tool but simply couldn&rsquo;t get things to
+work properly with <code>pimd</code> running on the host:</p>
+
+<pre><code>                eth0
+ MC sender ---&gt; [ Server host ]    &lt;--- router running pimd
+                       |
+               ________|________
+              /     docker0     \   &lt;--- bridge    ______
+             /         |         \                |      |   &lt;--- MC receiver
+  __________/          |          \_______________|______|_____
+ \                     |                            /         /
+  \                     `------------------&gt;-------'         /
+   \________________________________________________________/
+      Container ship
+</code></pre>
+                  <a href="/2016/03/07/testing-multicast-with-docker/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
               <a href="/2016/03/07/multicast-testing/">
                 <h2 class="post-title">Multicast testing, made easy!</h2>
 
@@ -505,29 +551,6 @@ Sat Mar  7 08:48:58 CET 2015
 
 <p>Enjoy! ツ</p>
                   <a href="/2015/03/06/inetd-support-in-finit-v1-dot-12/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2015/01/24/finit-v1-dot-11-released/">
-                <h2 class="post-title">Finit v1.11 released!</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on January 24, 2015
-              </p>
-              <div class="post-entry">
-                
-                  <p><strong>Update 2015-03-09</strong>: This release has unfortunately been <em>yanked</em> due
-to serious regressions in launching background processes.  It has been
-replaced by <a href="/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/">v1.12</a></p>
-                  <a href="/2015/01/24/finit-v1-dot-11-released/" class="post-read-more">[Read More]</a>
                 
               </div>
 

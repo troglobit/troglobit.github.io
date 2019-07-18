@@ -180,6 +180,37 @@
           
           
             <article class="post-preview">
+              <a href="/2017/02/12/https-proxy-for-merecat-httpd/">
+                <h2 class="post-title">HTTPS proxy for Merecat httpd</h2>
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on February 12, 2017
+  
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  This is a HTTPS proxy HowTo for Merecat httpd using pound and OpenSSL.
+Pound is a reverse proxy, load balancer, and HTTPS front-end for Web servers. It is available in Debian/Ubuntu and is very simple to set up:
+First install the package, including OpenSSL, or LibreSSL:
+sudo apt install pound openssl  Use OpenSSL to create a self-signed certificate:
+mkdir ~/certs cd ~/certs openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.
+                  <a href="/2017/02/12/https-proxy-for-merecat-httpd/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
               <a href="/2017/02/11/running-ikiwiki-in-merecat-httpd/">
                 <h2 class="post-title">Running ikiwiki in Merecat httpd</h2>
                 
@@ -482,49 +513,6 @@ export PATH=/usr/local/arm-unknown-linux-gnueabi-6.1.0-2/bin:$PATH  The toolchai
 export PATH=/usr/local/arm-unknown-linux-gnueabi-6.1.0-1/bin:$PATH  There&rsquo;s lots of neat stuff included, both a sysroot and a debug-root with GDB and gdbserver for target. For details on using it, see the excellent docs.
 The main purpose for my building this is TroglOS, but it is useful for other purposes as well of course.
                   <a href="/2016/09/26/arm-toolchain-r1/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2016/09/21/finit3-almost-there-.../">
-                <h2 class="post-title">Finit3: Almost there ...</h2>
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on September 21, 2016
-  
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  <p>Today the new logo for Finit3 was added to the GitHub repo and the
-<a href="/finit.html">homepage</a></p>
-
-<p><img src="/images/finit3.png" alt="Finit3 logo" /></p>
-
-<p>Gorgeous, isn&rsquo;t it?! 😎</p>
-
-<p>This fancy artwork means we&rsquo;re nearing the end of a long and agonizing
-release cycle where a lot of the internals of Finit have been rewritten
-and new exciting features have been added!  More on this in an upcoming
-post 😃</p>
-
-<!--
-  -- Local Variables:
-  -- mode: markdown
-  -- End:
-  -->
-
                 
               </div>
 

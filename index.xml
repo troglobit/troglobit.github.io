@@ -8,10 +8,20 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Sun, 07 Jul 2019 14:27:58 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jul 2019 15:13:53 +0200</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Controlling Display Brightness</title>
+      <link>/2019/07/Controlling-Display-Brightness/</link>
+      <pubDate>Thu, 18 Jul 2019 15:13:53 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2019/07/Controlling-Display-Brightness/</guid>
+      <description>About a year ago I wrote about this topic, looking for a way to control the brightness on my x250, and I found a lot of tools that did just this. At the time I saw a lot of potential in light, which I even contributed to a lot.
+However, I ended up not using the evolved version myself. Took me a while to digest what happened, but I think the project just outgrew me and what I wanted in such a tool.</description>
+    </item>
     
     <item>
       <title>XScreenSaver Fonts</title>
