@@ -8,10 +8,21 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Thu, 18 Jul 2019 15:13:53 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 19 Jul 2019 12:35:00 +0200</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Merecat httpd</title>
+      <link>/projects/merecat/</link>
+      <pubDate>Fri, 19 Jul 2019 12:35:00 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/projects/merecat/</guid>
+      <description>Merecat started out as a pun at Mongoose, but is now useful for actual web serving purposes. It is however not a real Meerkat, merely yet another copycat, forked from the great thttpd created by Jef&amp;nbsp;Poskanzer.
+Merecat expands on the features originally offered by thttpd, but still has a limited feature set:
+ Virtual hosts Basic .htpassd and .htaccess support URL-traffic-based throttling CGI/1.1 HTTP/1.1 Keep-alive Built-in gzip deflate using zlib HTTPS support using OpenSSL/LibreSSL, works with Let&amp;rsquo;s Encrypt!</description>
+    </item>
     
     <item>
       <title>Controlling Display Brightness</title>
