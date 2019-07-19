@@ -4,10 +4,6 @@ title: "Merecat httpd"
 date: 2019-07-19 12:35:00 +02:00
 aliases: /merecat.html
 ---
-<a href="https://github.com/troglobit/merecat/blob/master/LICENSE"><img style="float:right;" src="https://img.shields.io/badge/License-BSD%202--Clause-orange.svg"></a>
-<a href="https://travis-ci.org/troglobit/merecat"><img style="float:right;" src="https://travis-ci.org/troglobit/merecat.png?branch=master"></a>
-
-
 [Merecat][] started out as a pun at [Mongoose][], but is now useful for
 actual web serving purposes.  It is however not a real [Meerkat][],
 merely yet another copycat, forked from the great [thttpd][] created by
@@ -26,6 +22,10 @@ has a limited feature set:
 - Dual server support, both HTTP/HTTPS from one process
 - HTTP redirect, to gently redirect from HTTP server to HTTPS
 - Native PHP support, using `php-cgi` if enabled in `merecat.conf`
+
+The first landing page after installation can be seen here:
+
+:point_right: <https://merecat.troglobit.com>
 
 <img class="center noborder" src="/images/peeking.gif" />
 
