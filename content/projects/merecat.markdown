@@ -20,7 +20,7 @@ has a limited feature set:
 - Built-in gzip deflate using zlib
 - HTTPS support using OpenSSL/LibreSSL, works with [Let's Encrypt][]!
 - Dual server support, both HTTP/HTTPS from one process
-- HTTP redirect, to gently redirect from HTTP server to HTTPS
+- HTTP redirect, to gently redirect a HTTP server to HTTPS
 - Native PHP support, using `php-cgi` if enabled in `merecat.conf`
 
 The first landing page after installation can be seen here:
