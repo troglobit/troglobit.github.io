@@ -13,9 +13,10 @@ This HowTo attempts to give some insight into the basics of setting up
 multicast routing.  Both static multicast routing, with [SMCRoute][1],
 and dynamic multicast routing, with [mrouted][2] and [pimd][3].
 
-For some use-cases it may not be possible to use multicast routing, then
-I recommend trying out:
+For some use-cases, in particular link-local multicast, it may not be
+possible to use multicast routing, then I recommend trying out:
 
+* Bridging networks, see bridge(8) or [Linux bridge - how it works][0]
 * [igmproxy][4], [mcproxy][5], or
 * OpenVPN in Layer-2, [bridged mode][6]
 
@@ -390,7 +391,7 @@ FAQ
     the receiver doesn't properly support IGMP snooping.
 
     For virtual/cloud setups, see above for disabling IGMP snooping
-    entirely in the Linux kernel.
+    entirely in the Linux kernel bridge.
 
 6. _The PIM routers seem to have peered, and they list the multicast
    groups I want to forward, the TTL is OK, but I see no traffic?_
@@ -425,6 +426,7 @@ FAQ
     Yes, for all the gory details see
     [this howto](/blog/2016/07/05/multicast-routing-with-pim-sm-over-gre/)
 
+[0]: https://goyalankit.com/blog/linux-bridge
 [1]: https://github.com/troglobit/smcroute/
 [2]: https://github.com/troglobit/mrouted/
 [3]: https://github.com/troglobit/pimd/
@@ -436,9 +438,3 @@ FAQ
 [9]: http://www.gns3.com/
 [10]: http://www.brianlinkletter.com/open-source-network-simulators/
 [11]: http://www.redhat.com/archives/linux-cluster/2007-September/msg00150.html
-
-<!--
-  -- Local Variables:
-  -- mode: markdown
-  -- End:
-  -->
