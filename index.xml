@@ -113,8 +113,8 @@ pimd is a lightweight standalone PIM-SM/SSM v2 multicast routing daemon. It is t
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/howto/multicast/</guid>
       <description>Introduction This HowTo attempts to give some insight into the basics of setting up multicast routing. Both static multicast routing, with SMCRoute, and dynamic multicast routing, with mrouted and pimd.
-For some use-cases it may not be possible to use multicast routing, then I recommend trying out:
- igmproxy, mcproxy, or OpenVPN in Layer-2, bridged mode  Make sure to check out the FAQ for the most common problems.</description>
+For some use-cases, in particular link-local multicast, it may not be possible to use multicast routing, then I recommend trying out:
+ Bridging networks, see bridge(8) or Linux bridge - how it works igmproxy, mcproxy, or OpenVPN in Layer-2, bridged mode  Make sure to check out the FAQ for the most common problems.</description>
     </item>
     
     <item>
