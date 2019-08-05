@@ -8,10 +8,22 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Mon, 29 Jul 2019 20:31:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 05 Aug 2019 22:00:25 +0200</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Basic CGI in C with Merecat httpd</title>
+      <link>/2019/08/Basic-CGI-in-C-with-Merecat-httpd/</link>
+      <pubDate>Mon, 05 Aug 2019 22:00:25 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2019/08/Basic-CGI-in-C-with-Merecat-httpd/</guid>
+      <description>This post details how to use basic CGI programs in Merecat httpd v2.32.
+Downloads:
+ https://troglobit.com/projects/merecat http://www.boutell.com/cgic/cgic207.tar.gz  Build Merecat httpd according to the instructions in the README. This document assumes the directory ~/merecat/. Then create a config file, ~/test.conf, with the following content:
+port = 8080 cgi &amp;quot;**.cgi|cgi-bin/*&amp;quot; { enabled = true }  Since the we&amp;rsquo;ve chosen port 8080 we can start the server as a regular user. For production systems you likely want to use the default (80), or set up proper HTTPS, see [this HowTo][howto] for help with that.</description>
+    </item>
     
     <item>
       <title>No nonsense FTP/TFTP server</title>

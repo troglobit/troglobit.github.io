@@ -186,6 +186,30 @@
         <div class="posts-list">
           
             <article class="post-preview">
+              <a href="/2019/08/Basic-CGI-in-C-with-Merecat-httpd/">
+                <h2 class="post-title">Basic CGI in C with Merecat httpd</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on August 5, 2019
+              </p>
+              <div class="post-entry">
+                
+                  This post details how to use basic CGI programs in Merecat httpd v2.32.
+Downloads:
+ https://troglobit.com/projects/merecat http://www.boutell.com/cgic/cgic207.tar.gz  Build Merecat httpd according to the instructions in the README. This document assumes the directory ~/merecat/. Then create a config file, ~/test.conf, with the following content:
+port = 8080 cgi &quot;**.cgi|cgi-bin/*&quot; { enabled = true }  Since the we&rsquo;ve chosen port 8080 we can start the server as a regular user. For production systems you likely want to use the default (80), or set up proper HTTPS, see [this HowTo][howto] for help with that.
+                  <a href="/2019/08/Basic-CGI-in-C-with-Merecat-httpd/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
               <a href="/2019/07/Controlling-Display-Brightness/">
                 <h2 class="post-title">Controlling Display Brightness</h2>
 
@@ -415,34 +439,6 @@ when I realized the display brightness keys didn&rsquo;t do anything in my
 work</a>, with my kids, and also with some of my
 pet projects.</p>
                   <a href="/2018/06/Open-Source-Releases/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2018/04/N-E-M-E-S-I-S/">
-                <h2 class="post-title">N E M E S I S</h2>
-
-                
-                  <h3 class="post-subtitle">
-                    The Resurrection
-                  </h3>
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on April 15, 2018
-              </p>
-              <div class="post-entry">
-                
-                  <p>Summer is  almost upon us.  The  weather in Sweden has  been amazing the
-last couple of weeks, sunny and  warm.  This has of course not prevented
-me from pursuing my favorite  indoor activity; coding!  This time around
-I&rsquo;ve spent some time to resurrect the packet injection tool <a href="/projects/nemesis/">Nemesis</a>.</p>
-                  <a href="/2018/04/N-E-M-E-S-I-S/" class="post-read-more">[Read More]</a>
                 
               </div>
 

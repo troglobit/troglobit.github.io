@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/2019/08/Basic-CGI-in-C-with-Merecat-httpd/</loc>
+    <lastmod>2019-08-05T22:00:25+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/projects/uftpd/</loc>
     <lastmod>2019-07-29T20:31:00+02:00</lastmod>
   </url>
@@ -834,7 +839,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-07-29T20:31:00+02:00</lastmod>
+    <lastmod>2019-08-05T22:00:25+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1276,7 +1281,7 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-07-18T15:13:53+02:00</lastmod>
+    <lastmod>2019-08-05T22:00:25+02:00</lastmod>
     <priority>0</priority>
   </url>
   

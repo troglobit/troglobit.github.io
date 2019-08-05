@@ -5,9 +5,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Posts</title>
-  <meta property="og:title" content="Posts" />
-  <meta name="twitter:title" content="Posts" />
+  <title>Basic CGI in C with Merecat httpd</title>
+  <meta property="og:title" content="Basic CGI in C with Merecat httpd" />
+  <meta name="twitter:title" content="Basic CGI in C with Merecat httpd" />
+  <meta name="description" content="This post details how to use basic CGI programs in Merecat httpd v2.32.
+Downloads:
+ https://troglobit.com/projects/merecat http://www.boutell.com/cgic/cgic207.tar.gz  Build Merecat httpd according to the instructions in the README. This document assumes the directory ~/merecat/. Then create a config file, ~/test.conf, with the following content:
+port = 8080 cgi &quot;**.cgi|cgi-bin/*&quot; { enabled = true }  Since the we&rsquo;ve chosen port 8080 we can start the server as a regular user. For production systems you likely want to use the default (80), or set up proper HTTPS, see [this HowTo][howto] for help with that.">
+  <meta property="og:description" content="This post details how to use basic CGI programs in Merecat httpd v2.32.
+Downloads:
+ https://troglobit.com/projects/merecat http://www.boutell.com/cgic/cgic207.tar.gz  Build Merecat httpd according to the instructions in the README. This document assumes the directory ~/merecat/. Then create a config file, ~/test.conf, with the following content:
+port = 8080 cgi &quot;**.cgi|cgi-bin/*&quot; { enabled = true }  Since the we&rsquo;ve chosen port 8080 we can start the server as a regular user. For production systems you likely want to use the default (80), or set up proper HTTPS, see [this HowTo][howto] for help with that.">
+  <meta name="twitter:description" content="This post details how to use basic CGI programs in Merecat httpd v2.32.
+Downloads:
+ https://troglobit.com/projects/merecat http://www.boutell.com/cgic/cgic207.tar.gz  Build Merecat httpd according to …">
   <meta name="author" content="Joachim Nilsson"/>
   <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="/images/profile.jpg" />
@@ -15,13 +26,13 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@troglobit" />
   <meta name="twitter:creator" content="@troglobit" />
-  <meta property="og:url" content="/post/" />
+  <meta property="og:url" content="/2019/08/Basic-CGI-in-C-with-Merecat-httpd/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
   <meta name="generator" content="Hugo 0.52" />
-  <link rel="canonical" href="/post/" />
-  <link rel="alternate" href="/post/index.xml" type="application/rss+xml" title="">
+  <link rel="canonical" href="/2019/08/Basic-CGI-in-C-with-Merecat-httpd/" />
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -163,14 +174,37 @@
 
 
     
+  
+  
+  
+
+
+
+
+  
+
   <header class="header-section ">
+    
     <div class="intro-header no-img">
+      
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="page-heading">
-              <h1>Posts</h1>
-              <hr class="small">
+            <div class="post-heading">
+              <h1>Basic CGI in C with Merecat httpd</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on August 5, 2019
+  
+  
+  
+</span>
+
+
+                
             </div>
           </div>
         </div>
@@ -178,134 +212,86 @@
     </div>
   </header>
 
+
     
-  <div class="container" role="main">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        
-        <div class="posts-list">
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+	
+	<p>This post details how to use basic CGI programs in Merecat httpd v2.32.</p>
+
+<p>Downloads:</p>
+
+<ul>
+<li><a href="https://troglobit.com/projects/merecat">https://troglobit.com/projects/merecat</a></li>
+<li><a href="http://www.boutell.com/cgic/cgic207.tar.gz">http://www.boutell.com/cgic/cgic207.tar.gz</a></li>
+</ul>
+
+<p>Build Merecat httpd according to the instructions in the README.  This
+document assumes the directory <code>~/merecat/</code>.  Then create a config file,
+<code>~/test.conf</code>, with the following content:</p>
+
+<pre><code>port = 8080
+
+cgi &quot;**.cgi|cgi-bin/*&quot; {
+    enabled = true
+}
+</code></pre>
+
+<p>Since the we&rsquo;ve chosen port 8080 we can start the server as a regular
+user.  For production systems you likely want to use the default (80),
+or set up proper HTTPS, see [this HowTo][howto] for help with that.</p>
+
+<p>The classic <em>cgic</em> used here is just an example.  A CGI program can be
+written in just about any programming language, or plain shell script.
+Merecat actually ships with a <code>/cgi-bin/printenv</code>, which is a plain
+Bourne shell script.</p>
+
+<p>Download, unpack and build cgic:</p>
+
+<pre><code>mkdir temp; cd temp/
+wget http://www.boutell.com/cgic/cgic207.tar.gz
+tar xf cgic207.tar.gz
+cd cgic207/
+make
+</code></pre>
+
+<p>An stand-alone example prgram is built which we can install into the
+Merecat web root.  Notice the name change to <code>index.cgi</code>, we dont&rsquo;t have
+to use the <code>cgi-bin/</code> due to the CGI pattern we set up previously:</p>
+
+<pre><code>cp cgictest.cgi ~/merecat/www/index.cgi
+</code></pre>
+
+<p>Now we can start the web server and test the CGI program out.</p>
+
+<pre><code>cd ~/merecat/
+./src/merecat -f ~/test.conf www
+</code></pre>
+
+<p>We can now open our browser at <a href="http://127.0.0.1:9000/">http://127.0.0.1:9000/</a> and there is the
+CGI! :-)</p>
+
+      </article>
+
+      
+        <ul class="pager blog-pager">
           
-            <article class="post-preview">
-              <a href="/2006/07/17/make-kpkg-and-dirty-modules/">
-                <h2 class="post-title">make-kpkg and dirty modules</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on July 17, 2006
-              </p>
-              <div class="post-entry">
-                
-                  Dammit, tonight I spent too many hours chasing down a &ldquo;feature&rdquo; in the Debian kernel build process or the Linux-2.6 kernel. I haven&rsquo;t yet deciced who to blame ;-)
-Here goes: when you build the latest Linux 2.6 kernel, checked out from the git repository, with make-kpkg you should make sure to uncheck the CONFIG_LOCALVERSION_AUTO option in the kernel config before hand. It&rsquo;s under &ldquo;General setup&rdquo; &rarr; &ldquo;Automatically append version information &hellip;&ldquo;.
-                  <a href="/2006/07/17/make-kpkg-and-dirty-modules/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
+            <li class="previous">
+              <a href="/2019/07/Controlling-Display-Brightness/" data-toggle="tooltip" data-placement="top" title="Controlling Display Brightness">&larr; Previous Post</a>
+            </li>
           
-            <article class="post-preview">
-              <a href="/2006/07/17/quick-note/">
-                <h2 class="post-title">Quick Note</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on July 17, 2006
-              </p>
-              <div class="post-entry">
-                
-                  About that /etc/network/interface autoconfig thingy: it&rsquo;s almost done. Works perfect &hellip; at work (connected) and at home (wireless). I need to fine tune the tests, I think, to get the connected stuff to work at home too. The problem seems to be that the test to see if the machine is connected at home is that the MAC it looks for to ID the office network also is available from home, via the VPN.
-                  <a href="/2006/07/17/quick-note/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
           
-            <article class="post-preview">
-              <a href="/2006/06/06/swedish-national-day-deep-thoughts-dot-dot-dot/">
-                <h2 class="post-title">Swedish National Day: Deep thoughts ...</h2>
+        </ul>
+      
 
-                
-              </a>
 
-              <p class="post-meta">
-                Posted on June 6, 2006
-              </p>
-              <div class="post-entry">
-                
-                  From time to time, even though it seems to occur more frequently these days, I think about the persistence of things. How development is continuously accelerating in the modern world. To me this is like a double edged sword, it&rsquo;s both comforting and unsettling. Comforting that we as humans continuously improve and develop our methods and technologies. Unsettling because I know much of the development is in directions that I don&rsquo;t approve of: more intricate and capable weapons and methods of surveillance.
-                  <a href="/2006/06/06/swedish-national-day-deep-thoughts-dot-dot-dot/" class="post-read-more">[Read More]</a>
-                
-              </div>
+      
 
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2006/06/06/laptop-network-configuration-in-debian-slash-ubuntu/">
-                <h2 class="post-title">Laptop Network Configuration in Debian/Ubuntu</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on June 6, 2006
-              </p>
-              <div class="post-entry">
-                
-                  I have three network cards in my laptop. Two built-in and one PCMCIA card. I&rsquo;m currently investigating how I can migrate from using the slow and tedious gnome-network &amp; C:o tools to the more integrated Debian/Ubuntu tools ifupdown, guessnet, ifplugd and waproamd instead. As usual Debian has a fine and clever way of handling all this with their /etc/network/interface file. To learn more about this fine management interface I&rsquo;m reading the well written book The Debian System by Martin F.
-                  <a href="/2006/06/06/laptop-network-configuration-in-debian-slash-ubuntu/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2006/05/26/no-news-are-good-news/">
-                <h2 class="post-title">No news are good news?</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                Posted on May 26, 2006
-              </p>
-              <div class="post-entry">
-                
-                  Seriously, it&rsquo;s been one long winter and now finally summer is upon us again. It was about six months ago that I switched jobs and this is the first time for that period that I&rsquo;ve got ten minutes above the surface. The new job is fun but currently takes up too much of my time to be healthy in the long run.
-Today we&rsquo;re going to Stenby TV-service with our broken Hitachi 32&rdquo; TV.
-                  <a href="/2006/05/26/no-news-are-good-news/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-        </div>
-        
-          <ul class="pager main-pager">
-            
-              <li class="previous">
-                <a href="/post/page/14/">&larr; Newer Posts</a>
-              </li>
-            
-            
-          </ul>
-        
-      </div>
     </div>
   </div>
+</div>
 
     <footer>
   <div class="container">
@@ -348,7 +334,7 @@ Today we&rsquo;re going to Stenby TV-service with our broken Hitachi 32&rdquo; T
           
           <li>
             
-            <a href="/post/index.xml" title="RSS">
+            <a href="/index.xml" title="RSS">
             
               <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
