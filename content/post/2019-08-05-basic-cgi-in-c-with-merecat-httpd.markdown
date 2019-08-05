@@ -59,5 +59,5 @@ cd ~/merecat/
 ./src/merecat -f ~/test.conf www
 ```
 
-We can now open our browser at http://127.0.0.1:9000/ and there is the
-CGI! :-)
+We can now open our browser at http://127.0.0.1:8080/ and there is the
+CGI!  Remember to check out http://127.0.0.1:8080/cgi-bin/printenv too.
