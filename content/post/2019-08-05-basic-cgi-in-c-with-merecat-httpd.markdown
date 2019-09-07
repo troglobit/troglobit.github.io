@@ -6,7 +6,9 @@ tags: []
 ---
 
 
-This post details how to use basic CGI programs in Merecat httpd v2.32.
+This post is a writeup of how to use basic CGI programs in Merecat httpd v2.32.
+
+<!--more-->
 
 Downloads:
 
@@ -17,7 +19,7 @@ Build Merecat httpd according to the instructions in the README.  This
 document assumes the directory `~/merecat/`.  Then create a config file,
 `~/test.conf`, with the following content:
 
-```
+```conf
 port = 8080
 
 cgi "**.cgi|cgi-bin/*" {
@@ -25,9 +27,9 @@ cgi "**.cgi|cgi-bin/*" {
 }
 ```
 
-Since the we've chosen port 8080 we can start the server as a regular
-user.  For production systems you likely want to use the default (80),
-or set up proper HTTPS, see [this HowTo][howto] for help with that.
+We've chosen port 8080 we can start the server as a regular user.  For
+production systems you likely want to use the default (80), or set up
+proper HTTPS, see [Let's Encrypt Merecat][howto] for help with that.
 
 The classic _cgic_ used here is just an example.  A CGI program can be
 written in just about any programming language, or plain shell script.
@@ -61,3 +63,5 @@ cd ~/merecat/
 
 We can now open our browser at http://127.0.0.1:8080/ and there is the
 CGI!  Remember to check out http://127.0.0.1:8080/cgi-bin/printenv too.
+
+[howto]: {{< relref "/2019-06-27-Merecat-and-Lets-Encrypt.md" >}}
