@@ -19,10 +19,7 @@
       <pubDate>Mon, 05 Aug 2019 22:00:25 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2019/08/Basic-CGI-in-C-with-Merecat-httpd/</guid>
-      <description>This post details how to use basic CGI programs in Merecat httpd v2.32.
-Downloads:
- https://troglobit.com/projects/merecat http://www.boutell.com/cgic/cgic207.tar.gz  Build Merecat httpd according to the instructions in the README. This document assumes the directory ~/merecat/. Then create a config file, ~/test.conf, with the following content:
-port = 8080 cgi &amp;quot;**.cgi|cgi-bin/*&amp;quot; { enabled = true }  Since the we&amp;rsquo;ve chosen port 8080 we can start the server as a regular user. For production systems you likely want to use the default (80), or set up proper HTTPS, see [this HowTo][howto] for help with that.</description>
+      <description>&lt;p&gt;This post is a writeup of how to use basic CGI programs in Merecat httpd v2.32.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -448,10 +445,7 @@ See my mini HowTo: Playing with SNMP for a quick introduction to setting up the 
       <pubDate>Tue, 13 Jun 2017 23:15:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/project/smcroute/smcroute-conf.html</guid>
-      <description>```conf #
-smcroute.conf example #
-The configuration file supports joining multicast groups, to use Layer-2 signaling so that switches and routers open up multicast traffic to your interfaces. Leave is not supported, remove the mgroup and SIGHUP your daemon, or send a specific leave command. #
-NOTE: Use of the mgroup command should be avoided if possible. Instead configure &amp;ldquo;router ports&amp;rdquo; or similar on the switches or bridges on your LAN.</description>
+      <description></description>
     </item>
     
     <item>

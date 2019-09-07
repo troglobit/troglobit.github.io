@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>UNIX on </title>
+    <link>/categories/UNIX/</link>
+    <description>Recent content in UNIX on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <lastBuildDate>Tue, 23 Jan 2018 20:39:36 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/UNIX/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Multicast routing with PIM-SM over GRE</title>
+      <link>/2016/07/05/multicast-routing-with-pim-sm-over-gre/</link>
+      <pubDate>Tue, 23 Jan 2018 20:39:36 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2016/07/05/multicast-routing-with-pim-sm-over-gre/</guid>
+      <description>&lt;p&gt;GRE tunnels are useful in many ways.  This blog post shows how to set up
+multicast routing with &lt;a href=&#34;https://github.com/troglobit/pimd/&#34;&gt;pimd&lt;/a&gt; over a
+GRE tunnel.  To achieve this we will also set up OSPF over GRE with
+&lt;a href=&#34;http://www.quagga.net&#34;&gt;Quagga&lt;/a&gt;, because PIM, unlike DVMRP (&lt;code&gt;mrouted&lt;/code&gt;),
+require unicast routing rules to be established.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;       .----{ Intranet }----.
+      /    192.168.1.0/24    \
+     /                        \
+.10 /                          \.20
+.--&#39;---. .1  GRE Tunnel  .2 .---`--.
+|      |====================|      |
+|  R1  |   172.16.16.0/30   |  R2  |
+|      |                    |      |
+&#39;--.---&#39;                    &#39;------&#39;
+   | .1                        | .1 
+   |    10.0.1.0/24            |    10.0.2.0/24
+   | .2                        | .2 
+.--&#39;---.                    .--&#39;---.
+|      |                    |      |
+|  C1  |                    |  C2  |
+|      |                    |      |
+&#39;------&#39;                    &#39;------&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In this post we are using the home WiFi network, 192.168.1.0/24, to hook
+up the GRE tunnel.  It is just as easy to extend this to a big corporate
+Intranet with more routers between &lt;code&gt;R1&lt;/code&gt; and &lt;code&gt;R2&lt;/code&gt;.  As long as that IT
+department takes care of the unicast routing between &lt;code&gt;R1&lt;/code&gt; and &lt;code&gt;R2&lt;/code&gt; so
+that the GRE tunnel can be established.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Redirecting Ports For Fun and Profit</title>
+      <link>/2016/07/02/redirecting-tcp-udp-ports-for-fun-and-profit/</link>
+      <pubDate>Sat, 02 Jul 2016 12:54:37 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2016/07/02/redirecting-tcp-udp-ports-for-fun-and-profit/</guid>
+      <description>&lt;p&gt;Recently I needed a simple TCP/UDP port redirector and stumbled upon
+&lt;a href=&#34;https://serverfault.com/questions/252150/port-forwarding-on-linux-without-iptables/&#34;&gt;this Stackoverflow post&lt;/a&gt;.  As usual I wasn&amp;rsquo;t first wanting to this
+without using &lt;code&gt;iptables&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;There were several alternatives, but since my target was embedded with
+limited amount of RAM and flash I wanted something really small.  So the
+best fit turned out to be &lt;a href=&#34;https://github.com/troglobit/redir&#34;&gt;redir&lt;/a&gt;, which unfortunately only could
+handle TCP connections.  This is what led me to write &lt;a href=&#34;https://github.com/troglobit/uredir&#34;&gt;uredir&lt;/a&gt; to
+complement &lt;code&gt;redir&lt;/code&gt;.  Eventually I ended up adoptiing &lt;code&gt;redir&lt;/code&gt; as well,
+which meant giving it a bit of a facelift and to give them both the same
+look and feel.&lt;/p&gt;
+
+&lt;p&gt;Currently they are two separate applications, which in some use-cases
+can be beneficial (small size), but I may in the future transplant the
+UDP functionality of &lt;code&gt;uredir&lt;/code&gt; into &lt;code&gt;redir&lt;/code&gt;.  We&amp;rsquo;ll see, right now though
+I have several other &lt;a href=&#34;/projects/&#34;&gt;projects&lt;/a&gt; to attend to :-)&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Using netcat to test your Internet daemon</title>
+      <link>/2016/04/21/using-netcat-to-test-your-internet-daemon/</link>
+      <pubDate>Thu, 21 Apr 2016 14:21:49 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2016/04/21/using-netcat-to-test-your-internet-daemon/</guid>
+      <description>So you&amp;rsquo;re having a problem with the Internet daemon you wrote. You&amp;rsquo;re convinced the firewall, or some other magic, in your modern Linux distribution is eating your packets.
+No.
+First, make sure your daemon is actually running and has successfully bound to the address and port in question:
+sudo netstat -atnup  If your application is not listed there you have a problem with it binding its server socket. Check the return values from bind().</description>
+    </item>
+    
+    <item>
+      <title>The key to successful boot</title>
+      <link>/2016/04/11/the-key-to-successful-boot/</link>
+      <pubDate>Mon, 11 Apr 2016 01:28:27 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2016/04/11/the-key-to-successful-boot/</guid>
+      <description>&lt;p&gt;How do you know when your UNIX service (daemon) is ready?  Simple, it
+has created a PID file, signalling to you how to reach it.  Usually this
+file is created as &lt;code&gt;/var/run/daemon.pid&lt;/code&gt;, or &lt;code&gt;/run/daemon.pid&lt;/code&gt;, and has
+the PID of &lt;code&gt;daemon&lt;/code&gt; as the first and only data in the file.  This data
+may or may not have a UNIX line ending.&lt;/p&gt;
+
+&lt;p&gt;Only trouble is: most UNIX daemons do not re-assert that PID file
+properly on &lt;code&gt;SIGHUP&lt;/code&gt; (if they support &lt;code&gt;SIGHUP&lt;/code&gt; that is).  When I send
+&lt;code&gt;SIGHUP&lt;/code&gt; to a daemon I expect it to re-read its &lt;code&gt;/etc/daemon.conf&lt;/code&gt; and
+resume operation, basically a quicker way than stop/start.&lt;/p&gt;
+
+&lt;p&gt;Annoyingly however, most daemons do not signal us back to tell us when
+they&amp;rsquo;re done with the &lt;code&gt;SIGHUP&lt;/code&gt;.  Naturally a new movement has risen that
+says we should all instrument our daemons with D-bus &amp;hellip; I say no.
+Simply touch the PID file instead.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Lecture from the UNIX beards</title>
+      <link>/2016/04/04/lecture-from-the-unix-beards/</link>
+      <pubDate>Mon, 04 Apr 2016 00:14:28 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2016/04/04/lecture-from-the-unix-beards/</guid>
+      <description>After the rm -rf /* disaster that hit me a couple of weeks ago I&amp;rsquo;ve been rebuilding my setup, restoring the few files I&amp;rsquo;ve had backed up, and collecting advice from the elders.
+Turns out there are a few tricks that can save your home directory from accidents like mine. The first one is rather obvious, but I&amp;rsquo;m writing it down anyway:
+ Keep separate accounts. If possible, use separate accounts (with different permissions obviously) for different projects.</description>
+    </item>
+    
+    <item>
+      <title>Weekend Hack: JSON vs CONF</title>
+      <link>/2014/02/23/weekend-hack-json-vs-conf/</link>
+      <pubDate>Sun, 23 Feb 2014 00:00:00 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2014/02/23/weekend-hack-json-vs-conf/</guid>
+      <description>It was time. I had been putting it off for far too long &amp;ndash; learning about JSON and deciding on a new .conf file format for Inadyn. So this weekend I sat myself down to read up on JSON and the multitude of parser libraries for both JSON and traditional .conf file parsers. I was looking for a human readable file format that a user could easily and reliably edit by themselves without it being too error prone or sensitive to mistyping.</description>
+    </item>
+    
+  </channel>
+</rss>

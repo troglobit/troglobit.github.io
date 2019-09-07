@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Embedded on </title>
+    <title>embedded on </title>
     <link>/categories/embedded/</link>
-    <description>Recent content in Embedded on </description>
+    <description>Recent content in embedded on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
@@ -66,15 +66,6 @@ The main purpose for my building this is TroglOS, but it is useful for other pur
       <guid>/2016/09/02/the-general-idea/</guid>
       <description>OK, so here&amp;rsquo;s the general idea: take one teaspoon of a well equipped SBC with Marvell chips you know well, add an awesome WiFi hotspot with USB connection, stir feverishly for several weekends in a row, then sprinkle some AlpineLinux and a custom kernel on top. Enjoy!
 I have no clue if this will actually work, may even try porting my own little thing called TroglOS to the ClearFog first, I don&amp;rsquo;t know, but it will definitely be awesome!</description>
-    </item>
-    
-    <item>
-      <title>Cross Compiler Foo</title>
-      <link>/2008/08/20/cross-compiler-foo/</link>
-      <pubDate>Wed, 20 Aug 2008 20:14:42 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/2008/08/20/cross-compiler-foo/</guid>
-      <description>There is a certain magic surrounding cross compilers and the people that know how to build one. Not unlike that of (Linux/BSD) kernel developers. At work we today support two embedded Linux targets, both are ARM based, and in neither of the two have we built the cross compiler ourselves. The first was ye&amp;rsquo; old 2.95 based from uClinux.org and the second we had a consultant build for us. Lame!</description>
     </item>
     
   </channel>

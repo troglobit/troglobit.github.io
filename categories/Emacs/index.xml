@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Emacs on </title>
+    <link>/categories/Emacs/</link>
+    <description>Recent content in Emacs on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <lastBuildDate>Mon, 28 Jul 2008 01:38:13 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/Emacs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HowTo: Build GNU Emacs from CVS</title>
+      <link>/2008/07/28/howto-build-gnu-emacs-from-cvs/</link>
+      <pubDate>Mon, 28 Jul 2008 01:38:13 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2008/07/28/howto-build-gnu-emacs-from-cvs/</guid>
+      <description>Why would you want to do this? Well, considering all the neat new things that have been added lately it should be tempting for any old Emacs fan.
+The Emacs Wiki has all the info you need, but here is a quick run-down of the bare necessities. Start by checking out your working copy:
+cvs -z3 -d:pserver:anonymous@cvs.savannah.gnu.org:/cvsroot/emacs co emacs cd emacs/ ./configure make bootstrap  Start with ./src/emacs or symlink the binary to your ~/bin/ directory.</description>
+    </item>
+    
+    <item>
+      <title>More Emacs Progress!</title>
+      <link>/2008/07/22/more-emacs-progress/</link>
+      <pubDate>Tue, 22 Jul 2008 23:56:55 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2008/07/22/more-emacs-progress/</guid>
+      <description>Wow, I&amp;rsquo;m almost starting to feel like a Windows user. The latest CVS builds of GNU Emacs has a lot of new features:
+ XFT Support (font anti-aliasing) Better GTK integration (desktop) A font selector!  I use the CVS version now as my daily driver in Ubuntu 8.10. It&amp;rsquo;s really useful, and I love the improved support for debugging programs inside Emacs!
+I think it is quite impressive how far this little editor has come.</description>
+    </item>
+    
+    <item>
+      <title>Enterprise Emacs</title>
+      <link>/2008/02/24/enterprise-emacs/</link>
+      <pubDate>Sun, 24 Feb 2008 10:59:19 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2008/02/24/enterprise-emacs/</guid>
+      <description>&lt;p&gt;Many years ago I discovered the beauty in a beast called &lt;a href=&#34;http://www.gnu.org/software/emacs/&#34;&gt;Emacs&lt;/a&gt;.  I
+am actually a frequent user of both Emacs and &lt;a href=&#34;http://www.vim.org&#34;&gt;Vim&lt;/a&gt;, but I firmly
+belive in the notion of &lt;a href=&#34;http://pragmaticprogrammer.com/the-pragmatic-programmer/extracts/tips&#34;&gt;learning one editor well&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;The editor should be an extension of your hand; make sure your editor
+is configurable, extensible, and programmable.&amp;rdquo; &amp;mdash;&amp;nbsp;&lt;a href=&#34;http://pragmaticprogrammer.com/the-pragmatic-programmer/extracts/tips&#34;&gt;The Pragmatic Programmer&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;At the many jobs I have had, colleagues often glanced over my shoulder
+and said; &amp;ldquo;Oh, Emacs&amp;nbsp;&amp;hellip; Yeah I used that ages ago when I was
+working on UNIX&amp;nbsp;&amp;hellip;&amp;ldquo;, often they remember it fondly, sometimes for
+all the quirky keyboard shortcuts.  Very few know that it is still being
+actively developed.&lt;/p&gt;
+
+&lt;p&gt;Emacs can be quite counter intuitive and sometimes even an outright pain
+to use.  I find it a shame that still today, after (literally) decades
+there are no sane defaults.  Once, when I was still forced to use
+Windows, I saw a setup wizard in &lt;a href=&#34;http://ntemacs.sourceforge.net/&#34;&gt;Win32-Emacs&lt;/a&gt; that resembled what I
+would like to have — a sort of use cases possible to chose from.  It may
+have been some extension that was maintained in some non-official
+version, because now when I look for it I cannot find it.  But why not
+have a setup wizard in the upstream distribution of Emacs as well?&lt;/p&gt;
+
+&lt;p&gt;Well, this is my gripe, the pieces of Emacs that are still unfriendly to
+users, and mostly new users, coming from Windows or MAC.  I will use
+this blog to present ideas and small things I have done to make Emacs
+more user friendly.  I call this &lt;em&gt;Enterprise Emacs&lt;/em&gt;.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
