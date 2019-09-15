@@ -5,7 +5,7 @@ date: 2019-07-07 14:27:58 +0200
 tags: []
 ---
 
-I run Awesome on Ubuntu 19.04 with XScreenSaver.  This is a brief
+I run Awesome on Ubuntu 19.04 with XScreenSaver.  This post is a brief
 writeup of what I did to fix the ugly default fonts.
 
 <!--more-->
@@ -13,7 +13,15 @@ writeup of what I did to fix the ugly default fonts.
 Let's start with the `~/.Xdefaults` file:
 
 ```
-!font settings
+! xft
+Xft.antialias: true
+Xft.dpi: 96
+Xft.hinting: true
+Xft.hintstyle: hintfull
+Xft.lcdfilter: lcddefault
+Xft.rgba: rgb
+
+! XScreenSaver font settings
 xscreensaver.Dialog.headingFont:        -*-verdana-bold-r-*-*-28-*-*-*-*-*-*-*
 xscreensaver.Dialog.bodyFont:           -*-verdana-medium-r-*-*-20-*-*-*-*-*-*-*
 xscreensaver.Dialog.labelFont:          -*-verdana-medium-r-*-*-20-*-*-*-*-*-*-*
@@ -21,6 +29,12 @@ xscreensaver.Dialog.unameFont:          -*-verdana-medium-r-*-*-26-*-*-*-*-*-*-*
 xscreensaver.Dialog.buttonFont:         -*-verdana-bold-r-*-*-20-*-*-*-*-*-*-*
 xscreensaver.Dialog.dateFont:           -*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*
 xscreensaver.passwd.passwdFont:         -*-verdana-bold-r-*-*-20-*-*-*-*-*-*-*
+```
+
+If you don't have Verdana installed:
+
+```sh
+sudo apt install ttf-mscorefonts-installer
 ```
 
 To make TrueType fonts visible to old X applications one has to jump
