@@ -6,6 +6,7 @@ theme = "beautifulhugo"
 contentDir = "content"
 publishDir = "public"
 pygmentsUseClasses = true
+pygmentsUseClassic = true
 pygmentCodeFences = true
 enableEmoji = true
 #copyright = "&copy; 2019. All rights reserved."
