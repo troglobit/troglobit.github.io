@@ -476,6 +476,7 @@ footer .theme-by {
 .intro-header {
   margin: 80px 0 20px;
   position: relative;
+  text-align: center;
 }
 .intro-header.big-img {
   background: no-repeat center center;

@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>BSD syslogd in Linux - </title>
+  <meta property="og:title" content="BSD syslogd in Linux" />
+  <meta name="twitter:title" content="BSD syslogd in Linux" />
+  <meta name="description" content="modern syslog and standards">
+  <meta property="og:description" content="modern syslog and standards">
+  <meta name="twitter:description" content="modern syslog and standards">
+  <meta name="author" content="Joachim Nilsson"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "",
+    
+    "url": "\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "\/2019\/11\/BSD-syslogd-in-Linux\/",
+          "name": "B s d syslogd in linux"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Joachim Nilsson"
+  },
+  "headline": "BSD syslogd in Linux",
+  "description" : "Some time ago now I was in a meeting with a customer where I first learned of the new syslog standard, RFC5424. I say \x26ldquo;new\x26rdquo; because, despite it being ten years old, it was new to me.\nThree weeks ago I started updating my fork of sysklogd to be RFC5424 compliant. I ended up ripping out most of the old code and replacing it with fresh DNA strands from FreeBSD and NetBSD.\nThe result is a fully RFC compliant syslogd, and a libsyslog with a replacement syslog.h header for sending RFC5424 events from applications!\nhttps:\/\/github.com\/troglobit\/sysklogd\/\n",
+  "inLanguage" : "en",
+  "wordCount":  894 ,
+  "datePublished" : "2019-11-03T23:04:00",
+  "dateModified" : "2019-11-03T23:04:00",
+  "image" : "\/images\/profile.jpg",
+  "keywords" : [ "opensource, sysklogd" ],
+  "mainEntityOfPage" : "\/2019\/11\/BSD-syslogd-in-Linux\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "\/images\/profile.jpg",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="BSD syslogd in Linux" />
+<meta property="og:description" content="modern syslog and standards">
+<meta property="og:image" content="/images/profile.jpg" />
+<meta property="og:url" content="/2019/11/BSD-syslogd-in-Linux/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="" />
+
+  <meta name="twitter:title" content="BSD syslogd in Linux" />
+  <meta name="twitter:description" content="modern syslog and standards">
+  <meta name="twitter:image" content="/images/profile.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@troglobit" />
+  <meta name="twitter:creator" content="@troglobit" />
+  <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/images/profile.jpg" />
+  <meta name="twitter:image" content="/images/profile.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@troglobit" />
+  <meta name="twitter:creator" content="@troglobit" />
+  <meta property="og:url" content="/2019/11/BSD-syslogd-in-Linux/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="" />
+
+  <meta name="generator" content="Hugo 0.58.3" />
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="/css/syntax.css" /><link rel="stylesheet" href="/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"></a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Archive" href="/archive/">Archive</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="FTP" href="https://ftp.troglobit.com">FTP</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="GIT" href="https://git.troglobit.com">GIT</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="HowTos" href="/howto/">HowTos</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Projects" href="/projects/">Projects</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Resumé" href="https://resume.troglobit.com">Resumé</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="" href="/">
+            <img class="avatar-img" src="/images/profile.jpg" alt="" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>BSD syslogd in Linux</h1>
+              
+              
+              
+                
+                  <h2 class="post-subheading">modern syslog and standards</h2>
+                
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on November 3, 2019
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Nilsson
+    
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+	
+        <p>Some time ago now I was in a meeting with a customer where I first learned of
+the new syslog standard, <a href="https://tools.ietf.org/html/rfc5424">RFC5424</a>.  I say &ldquo;new&rdquo; because, despite it being
+ten years old, it was new to me.</p>
+
+<p>Three weeks ago I started updating my fork of <a href="https://www.infodrom.org/projects/sysklogd/">sysklogd</a> to be <a href="https://tools.ietf.org/html/rfc5424">RFC5424</a>
+compliant.  I ended up ripping out most of the old code and replacing it with
+fresh DNA strands from FreeBSD and NetBSD.</p>
+
+<p>The result is a fully RFC compliant <code>syslogd</code>, <strong>and</strong> a <code>libsyslog</code> with a
+replacement <code>syslog.h</code> header for sending RFC5424 events from applications!</p>
+
+<p><a href="https://github.com/troglobit/sysklogd/">https://github.com/troglobit/sysklogd/</a></p>
+
+<p>When I first embarked on this journey I was very surprised to learn that Linux
+(GLIBC) did not have an RFC5424 compliant <code>syslog()</code> API.  As it turned out,
+neither did FreeBSD.  Only NetBSD had implemented a full stack, from C-library
+to syslog daemon.</p>
+
+<p>So the <code>libsyslog</code> and <code>syslog.h</code> replacements included now in sysklogd are
+taken from NetBSD, whereas the major parts of the <a href="https://tools.ietf.org/html/rfc3164">RFC3164</a> and <a href="https://tools.ietf.org/html/rfc5424">RFC5424</a>
+parsing code in syslogd are taken from FreeBSD.</p>
+
+<h2 id="differences">Differences</h2>
+
+<p>So what are the main differences between the two RFCs?  Well, there are in
+fact three different standards at play here.  The first is the original BSD
+implementation, which was later sort of standardized in <a href="https://tools.ietf.org/html/rfc3164">RFC3164</a>, this
+original BSD is what sysklogd was.</p>
+
+<p>One major difference from the original BSD code and RFC3164, I learned, is
+that when sending messages to a remote syslog server, there was no timestamp
+or hostname included.  So the receiving syslog server had to look up the host
+from the source address in the IP header and then also do the timestamping.
+In some respects this is good (and understandable): 1) early on many hosts did
+not properly set their hostname, and 2) these same hosts often did not even
+have the correct time.</p>
+
+<p>The first job of updating <code>sysklogd</code> was to update it to properly support
+RFC3164 formatting of remote syslog messages:</p>
+
+<pre><code>&lt;------- HEADER --------&gt; &lt;----------- MSG ------------&gt;
+Aug 24 05:14:15 192.0.2.1 myproc[8710]: Kilroy was here.
+ \                \        \      \      \
+  \                \        \      \      `-- What you think is the message
+   \                \        \      `-------- Convention for process ID (PID)
+    \                \        `-------------- Convetion for process name
+     \                `---------------------- Hostname or IP address
+      `-------------------------------------- Notice lack of year ...
+</code></pre>
+
+<p>The second part was to add RFC5424 formatting:</p>
+
+<pre><code>&lt;---------------------- HEADER ------------------------&gt;   &lt;---- MSG -----&gt;
+2003-08-24T05:14:15.000003-07:00 192.0.2.1 myproc 8710 - - Kilroy was here.
+ \                                \         \      \    \ \ \
+  \                                \         \      \    \ \ `-- Actual message
+   \                                \         \      \    \ `--- Structured data
+    \                                \         \      \    `---- Message ID (MsgID)
+     \                                \         \      `-------- Process ID (ProcID)
+      \                                \         `-------------- Process name (App-Name)
+       \                                `----------------------- Hostname or IP address
+        `------------------------------------------------------- RFC3339 Timestamp
+</code></pre>
+
+<p>Yeah, what about those dashes (<code>-</code>)?  I had to fake it to begin with, because
+those dashes, if you disregard the difference in the timestamp, is what are
+the major differences between the two RFCs.  As you can see from the figures
+above, the RFC3164 world was empty and scary, and the RFC5424 world is full of
+confusing stuff??</p>
+
+<p>The first dash above is the new MesgID field, which is a free-form string that
+a receiver can use for quick and easy regexp filtering.  The second dash is
+<em>structured data</em> and is essentially name-value pairs in a <code>[ .. ]</code> container.
+See the RFC for more details and <a href="https://tools.ietf.org/html/rfc5424#section-6.3.5">an example in section
+6.3.5</a></p>
+
+<p>To distinguish between the two formats RFC5424 added a version field that
+comes right after the <code>&lt;PRI&gt;</code> field, which is at the very start of each syslog
+message.  I.e., RFC3164 starts with <code>&lt;PRI&gt;</code> and a space, and RFC5424 starts
+with <code>&lt;PRI&gt;1</code> and a space, before the timestamp.</p>
+
+<h2 id="netbsd-api">NetBSD API</h2>
+
+<p>The GLIBC, musl, and uClibc libraries all currently just support RFC3164.  So
+there is no way for a Linux application today to add a MsgID or any structured
+data to a syslog message &hellip; until now.</p>
+
+<p><code>sysklogd</code> comes with <code>libsyslog</code> and a <code>syslog.h</code> header replacement that
+has the NetBSD <code>syslogp()</code> family of APIs:</p>
+
+<pre><code class="language-c">void    openlog(const char *ident, int logopt, int facility);
+void    openlog_r(const char *ident, int logopt, int facility, struct syslog_data *data);
+
+void    closelog(void);
+void    closelog_r(struct syslog_data *data);
+
+int     setlogmask(int maskpri);
+int     setlogmask_r(int maskpri, struct syslog_data *data);
+
+void    syslog(int priority, const char *message, ...);
+void    syslog_r(int priority, struct syslog_data *data, const char *message, ...);
+void    syslogp(int priority, const char *msgid, const char *sd, const char *message, ...);
+void    syslogp_r(int priority, struct syslog_data *data, const char *msgid, const char *sd, const char *message, ...);
+
+void    vsyslog(int priority, const char *message, va_list args);
+void    vsyslog_r(int priority, struct syslog_data *data, const char *message, va_list args);
+void    vsyslogp_r(int priority, struct syslog_data *data, const char *msgid, const char *sd, const char *message, va_list args);
+void    vsyslogp(int priority, const char *msgid, const char *sd, const char *message, va_list args);
+</code></pre>
+
+<h2 id="example">Example</h2>
+
+<p>To use the new API on Linux we create an example application:</p>
+
+<pre><code class="language-c">/* example.c - Example of how to use NetBSD syslogp() API */
+#include &lt;stdio.h&gt;
+#include &lt;syslog/syslog.h&gt;
+
+int main(void)
+{
+        openlog(&quot;example&quot;, LOG_PID, LOG_USER);
+        syslogp(LOG_NOTICE, &quot;MSGID&quot;, NULL, &quot;Kilroy was here.&quot;);
+		closelog();
+}
+</code></pre>
+
+<p>We build and run the application.</p>
+
+<pre><code class="language-sh">jocke@troglobit:~/tmp $ gcc `pkg-config --libs --static --cflags libsyslog` \
+                            -o example example.c
+jocke@troglobit:~/tmp $ ./example
+</code></pre>
+
+<p>Provided <code>syslogd</code> is set up properly the following would be logged in your
+local log file, or sent to a remote syslog server:</p>
+
+<pre><code>2019-11-03T00:46:34.034324+01:00 troglobit example 1234 MSGID - Kilroy was here.
+</code></pre>
+
+        
+          <div class="blog-tags">
+            
+              <a href="//tags/opensource/">opensource</a>&nbsp;
+            
+              <a href="//tags/sysklogd/">sysklogd</a>&nbsp;
+            
+          </div>
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="/2019/08/Basic-CGI-in-C-with-Merecat-httpd/" data-toggle="tooltip" data-placement="top" title="Basic CGI in C with Merecat httpd">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:troglobit@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/troglobit" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/troglobit" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="https://troglobit.com">Joachim Nilsson</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2019
+          
+
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.58.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="/js/main.js"></script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
+

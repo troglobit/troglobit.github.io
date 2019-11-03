@@ -8,9 +8,28 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <lastBuildDate>Sun, 03 Nov 2019 23:04:00 +0100</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>opensource</title>
+      <link>/tags/opensource/</link>
+      <pubDate>Sun, 03 Nov 2019 23:04:00 +0100</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/tags/opensource/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sysklogd</title>
+      <link>/tags/sysklogd/</link>
+      <pubDate>Sun, 03 Nov 2019 23:04:00 +0100</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/tags/sysklogd/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

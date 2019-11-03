@@ -1,0 +1,1628 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+<title>Howtos - Joachim Nilsson</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
+  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+
+  <meta name="generator" content="Hugo 0.58.3" />
+  <meta itemprop="name" content="Howtos">
+<meta itemprop="description" content="">
+
+
+  <meta property="og:title" content="Howtos" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/howto/" />
+
+<meta property="og:updated_time" content="2019-03-27T15:54:00+02:00" />
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Howtos"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@troglobit"/>
+
+  
+
+  <link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
+  
+    
+      <link rel="stylesheet" href="/css/normalize.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
+      
+      
+      <link rel="stylesheet" href="/css/main.min.0a64f3eede6e78edc2d8b2ca7051e4d9a6379f472dac76b1168733b88d27146a.css" integrity="sha256-CmTz7t5ueO3C2LLKcFHk2aY3n0ctrHaxFoczuI0nFGo=">
+      <link rel="stylesheet" href="/css/add-on.css">
+    
+  
+  
+  
+  
+</head>
+
+  <body>
+    
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="/">
+        
+          
+            howto
+          
+        
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu">
+      
+        
+          
+          
+            <a href="/archive/" class="link">Archive</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://ftp.troglobit.com" class="link">FTP</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://git.troglobit.com" class="link">GIT</a>
+          
+        
+      
+        
+          
+          
+            <a href="/howto/" class="link">HowTos</a>
+          
+        
+      
+        
+          
+          
+            <a href="/projects/" class="link">Projects</a>
+          
+        
+      
+        
+          
+          
+            <a href="https://resume.troglobit.com" class="link">Resumé</a>
+          
+        
+      
+        
+          
+          
+            <a href="/about/" class="link">About</a>
+          
+        
+      
+      <a href="#share-menu" class="share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
+      
+
+    </menu>
+    
+
+    <a href="#share-menu" class="share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
+    <a href="#lang-menu" class="lang-toggle" lang="en">en</a>
+    <a href="#site-nav" class="nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  <menu id="lang-menu" class="flyout-menu">
+  <a href="#" lang="en" class="link active">English (en)</a>
+  
+    
+      
+    
+  
+</menu>
+
+  
+    <menu id="share-menu" class="flyout-menu">
+      <h1>Share Post</h1>
+      
+
+
+
+
+  
+    
+    <a href="//twitter.com/share?text=Howtos&amp;url=%2fhowto%2f" target="_blank" rel="noopener" class="share-btn twitter">
+        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
+      </a>
+  
+
+  
+      <a href="//www.facebook.com/sharer/sharer.php?u=%2fhowto%2f" target="_blank" rel="noopener" class="share-btn facebook">
+        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
+        </a>
+  
+
+  
+    <a href="//www.reddit.com/submit?url=%2fhowto%2f&amp;title=Howtos" target="_blank" rel="noopener" class="share-btn reddit">
+          <i class="fab fa-reddit-alien"></i><p>&nbsp;Reddit</p>
+        </a>
+  
+
+  
+        <a href="//www.linkedin.com/shareArticle?url=%2fhowto%2f&amp;title=Howtos" target="_blank" rel="noopener" class="share-btn linkedin">
+            <i class="fab fa-linkedin"></i><p>&nbsp;LinkedIn</p>
+          </a>
+  
+
+  
+        <a href="//www.pinterest.com/pin/create/button/?url=%2fhowto%2f&amp;description=Howtos" target="_blank" rel="noopener" class="share-btn pinterest">
+          <i class="fab fa-pinterest-p"></i><p>&nbsp;Pinterest</p>
+        </a>
+  
+
+  
+        <a href="mailto:?subject=Check out this post by %7b%20%20%20%20%20%20%20%20map%5b%5d%7d&amp;body=%2fhowto%2f" target="_blank" class="share-btn email" data-proofer-ignore>
+          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
+        </a>
+  
+
+
+    </menu>
+  
+</header>
+
+    <div id="wrapper">
+      <section id="site-intro">
+  <a href="/"><img src="/images/profile.jpg" class="circle" width="200" alt="Joachim Nilsson" /></a>
+  <header>
+    <h1>Joachim Nilsson</h1>
+  </header>
+  <main>
+    <p>Help me Obi-Wan Troglobi,<br/> you're my only hope!</p>
+  </main>
+  
+    <footer>
+      <ul class="socnet-icons">
+        
+    <li><a href="/howto/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fas fa-rss"></a></li>
+
+
+        <li><a href="//github.com/troglobit" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/joachim-nilsson-3a017125" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//instagram.com/troglobit" target="_blank" rel="noopener" title="Instagram" class="fab fa-instagram"></a></li>
+
+<li><a href="//twitter.com/troglobit" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+<li><a href="//pinterest.com/troglobit" target="_blank" rel="noopener" title="Pinterest" class="fab fa-pinterest-p"></a></li>
+
+
+
+
+
+<li><a href="//keybase.io/troglobit" target="_blank" rel="noopener" title="keybase" class="fab fa-keybase"></a></li>
+
+<li><a href="mailto:troglobit@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+    </footer>
+  
+</section>
+
+      <main id="site-main">
+        
+        
+          <article class="post">
+  <header>
+  <div class="title">
+    
+        <h2><a href="/2016/11/06/merecat-another-stray-kitten-/">Merecat - another stray kitten?</a></h2>
+    
+    
+</div>
+  <div class="meta">
+    <time class="published" datetime="2016-11-06 01:34:18 &#43;0000 UTC">
+      November 6, 2016
+    </time>
+    <span class="author"></span>
+    
+      <p>4 minutes read</p>
+    
+  </div>
+</header>
+
+  
+
+  
+  <p>This post is about my adoption, refactor, and rebranding of thttpd as
+<a href="http://merecat.troglobit.com">Merecat</a>.</p>
+  <footer>
+    <a href="/2016/11/06/merecat-another-stray-kitten-/" class="button big">Read more</a>
+    <ul class="stats">
+  
+    
+    
+      <li class="categories">
+        <ul>
+          
+            
+            <li><a class="article-category-link" href="/categories/merecat">Merecat</a></li>
+          
+            
+            <li><a class="article-category-link" href="/categories/thttpd">thttpd</a></li>
+          
+            
+            <li><a class="article-category-link" href="/categories/sthttpd">sthttpd</a></li>
+          
+            
+            <li><a class="article-category-link" href="/categories/httpd">httpd</a></li>
+          
+        </ul>
+      </li>
+    
+  
+  
+    <li class="tags">
+      <ul>
+        <li>None</li>
+      </ul>
+    </li>
+  
+</ul>
+
+  </footer>
+</article>
+
+        
+          <article class="post">
+  <header>
+  <div class="title">
+    
+        <h2><a href="/2016/10/27/new-toolchains/">New Toolchains</a></h2>
+    
+    
+</div>
+  <div class="meta">
+    <time class="published" datetime="2016-10-27 22:22:44 &#43;0000 UTC">
+      October 27, 2016
+    </time>
+    <span class="author"></span>
+    
+      <p>1 minute read</p>
+    
+  </div>
+</header>
+
+  
+
+  
+  <p>Finally, fresh from the oven, here are the remaining two toolchains I&rsquo;ve
+promised, based on GCC 6.1 and GLIBC 2.23.  Download from the <a href="http://ftp.troglobit.com/pub/Toolchains">FTP</a>:</p>
+  <footer>
+    <a href="/2016/10/27/new-toolchains/" class="button big">Read more</a>
+    <ul class="stats">
+  
+    
+    
+      <li class="categories">
+        <ul>
+          
+            
+            <li><a class="article-category-link" href="/categories/c">C</a></li>
+          
+            
+            <li><a class="article-category-link" href="/categories/embedded">embedded</a></li>
+          
+            
+            <li><a class="article-category-link" href="/categories/toolchain">toolchain</a></li>
+          
+        </ul>
+      </li>
+    
+  
+  
+    <li class="tags">
+      <ul>
+        <li>None</li>
+      </ul>
+    </li>
+  
+</ul>
+
+  </footer>
+</article>
+
+        
+          <article class="post">
+  <header>
+  <div class="title">
+    
+        <h2><a href="/2016/09/26/arm-toolchain-r1/">ARM Toolchain r1</a></h2>
+    
+    
+</div>
+  <div class="meta">
+    <time class="published" datetime="2016-09-26 22:43:53 &#43;0000 UTC">
+      September 26, 2016
+    </time>
+    <span class="author"></span>
+    
+      <p>1 minute read</p>
+    
+  </div>
+</header>
+
+  
+
+  
+  <p>First GCC 6.1 based ARM (32-bit) toolchain released on my FTP.  Built
+using <a href="https://github.com/crosstool-ng/crosstool-ng">crosstool-NG</a> for Ubuntu 16.04 (x86_64) with GLIBC 2.23.</p>
+  <footer>
+    <a href="/2016/09/26/arm-toolchain-r1/" class="button big">Read more</a>
+    <ul class="stats">
+  
+    
+    
+      <li class="categories">
+        <ul>
+          
+            
+            <li><a class="article-category-link" href="/categories/c">C</a></li>
+          
+            
+            <li><a class="article-category-link" href="/categories/embedded">embedded</a></li>
+          
+            
+            <li><a class="article-category-link" href="/categories/toolchain">toolchain</a></li>
+          
+        </ul>
+      </li>
+    
+  
+  
+    <li class="tags">
+      <ul>
+        <li>None</li>
+      </ul>
+    </li>
+  
+</ul>
+
+  </footer>
+</article>
+
+        
+          <article class="post">
+  <header>
+  <div class="title">
+    
+        <h2><a href="/2016/09/21/finit3-almost-there-.../">Finit3: Almost there ...</a></h2>
+    
+    
+</div>
+  <div class="meta">
+    <time class="published" datetime="2016-09-21 19:08:37 &#43;0000 UTC">
+      September 21, 2016
+    </time>
+    <span class="author"></span>
+    
+      <p>1 minute read</p>
+    
+  </div>
+</header>
+
+  
+
+  
+  <p>Today the new logo for Finit3 was added to the GitHub repo and the
+<a href="/finit.html">homepage</a></p>
+  <footer>
+    <a href="/2016/09/21/finit3-almost-there-.../" class="button big">Read more</a>
+    <ul class="stats">
+  
+    
+    
+      <li class="categories">
+        <ul>
+          
+            
+            <li><a class="article-category-link" href="/categories/finit">finit</a></li>
+          
+            
+            <li><a class="article-category-link" href="/categories/projects">projects</a></li>
+          
+        </ul>
+      </li>
+    
+  
+  
+    <li class="tags">
+      <ul>
+        <li>None</li>
+      </ul>
+    </li>
+  
+</ul>
+
+  </footer>
+</article>
+
+        
+          <article class="post">
+  <header>
+  <div class="title">
+    
+        <h2><a href="/2016/09/02/the-general-idea/">The General Idea</a></h2>
+    
+    
+</div>
+  <div class="meta">
+    <time class="published" datetime="2016-09-02 23:30:00 &#43;0000 UTC">
+      September 2, 2016
+    </time>
+    <span class="author"></span>
+    
+      <p>1 minute read</p>
+    
+  </div>
+</header>
+
+  
+
+  
+  <p>OK, so here&rsquo;s the general idea: take one teaspoon of a well equipped SBC
+with Marvell chips you know well, add an awesome WiFi hotspot with USB
+connection, stir feverishly for several weekends in a row, then sprinkle
+some AlpineLinux and a custom kernel on top.  Enjoy!</p>
+  <footer>
+    <a href="/2016/09/02/the-general-idea/" class="button big">Read more</a>
+    <ul class="stats">
+  
+    
+    
+      <li class="categories">
+        <ul>
+          
+            
+            <li><a class="article-category-link" href="/categories/linux">Linux</a></li>
+          
+            
+            <li><a class="article-category-link" href="/categories/embedded">embedded</a></li>
+          
+            
+            <li><a class="article-category-link" href="/categories/networking">networking</a></li>
+          
+        </ul>
+      </li>
+    
+  
+  
+    <li class="tags">
+      <ul>
+        <li>None</li>
+      </ul>
+    </li>
+  
+</ul>
+
+  </footer>
+</article>
+
+        
+          <article class="post">
+  <header>
+  <div class="title">
+    
+        <h2><a href="/2016/08/18/live-kvm-migration-with-virt-manager/">Live KVM migration with virt-manager</a></h2>
+    
+    
+</div>
+  <div class="meta">
+    <time class="published" datetime="2016-08-18 20:07:17 &#43;0000 UTC">
+      August 18, 2016
+    </time>
+    <span class="author"></span>
+    
+      <p>2 minutes read</p>
+    
+  </div>
+</header>
+
+  
+
+  
+  <p>With the new servers and my server room shaping up, I&rsquo;ve been working on
+setting up ALL THE THINGS!  I just managed to set up live migration of
+the KVM virtual machines I use for testing my <a href="https://en.wikipedia.org/wiki/Free_and_open-source_software">FLOSS</a> projects.  Here
+is a short writeup of that, just as a reminder for myself.</p>
+  <footer>
+    <a href="/2016/08/18/live-kvm-migration-with-virt-manager/" class="button big">Read more</a>
+    <ul class="stats">
+  
+    
+    
+      <li class="categories">
+        <ul>
+          
+            
+            <li><a class="article-category-link" href="/categories/kvm">KVM</a></li>
+          
+            
+            <li><a class="article-category-link" href="/categories/virt-manager">virt-manager</a></li>
+          
+        </ul>
+      </li>
+    
+  
+  
+    <li class="tags">
+      <ul>
+        <li>None</li>
+      </ul>
+    </li>
+  
+</ul>
+
+  </footer>
+</article>
+
+        
+          <article class="post">
+  <header>
+  <div class="title">
+    
+        <h2><a href="/2016/08/13/fake-raid-adventures/">Fake RAID Adventures</a></h2>
+    
+    
+</div>
+  <div class="meta">
+    <time class="published" datetime="2016-08-13 15:59:36 &#43;0000 UTC">
+      August 13, 2016
+    </time>
+    <span class="author"></span>
+    
+      <p>3 minutes read</p>
+    
+  </div>
+</header>
+
+  
+
+  
+  <p>The other day I got my geeky hands on two old SuperMicro X8STI-F 1U
+servers.  I plan to use them as build and embedded target emulation
+servers for my <a href="https://github.com/troglobit">open source projects</a>
+as well as Minecraft server for my kids :)</p>
+  <footer>
+    <a href="/2016/08/13/fake-raid-adventures/" class="button big">Read more</a>
+    <ul class="stats">
+  
+    
+    
+      <li class="categories">
+        <ul>
+          
+            
+            <li><a class="article-category-link" href="/categories/linux">Linux</a></li>
+          
+            
+            <li><a class="article-category-link" href="/categories/raid">RAID</a></li>
+          
+        </ul>
+      </li>
+    
+  
+  
+    <li class="tags">
+      <ul>
+        <li>None</li>
+      </ul>
+    </li>
+  
+</ul>
+
+  </footer>
+</article>
+
+        
+          <article class="post">
+  <header>
+  <div class="title">
+    
+        <h2><a href="/2016/07/03/upgrade-x1-carbon-bios-from-linux/">Upgrade X1 Carbon BIOS from Linux</a></h2>
+    
+    
+</div>
+  <div class="meta">
+    <time class="published" datetime="2016-07-03 09:57:44 &#43;0000 UTC">
+      July 3, 2016
+    </time>
+    <span class="author"></span>
+    
+      <p>2 minutes read</p>
+    
+  </div>
+</header>
+
+  
+
+  
+  <p>This is a very brief writeup of how to upgrade the BIOS on a X1 Carbon
+(G1) from Linux.  For more information on this topic there is always the
+excellent <a href="http://www.thinkwiki.org/wiki/BIOS_Upgrade">ThinkWiki</a>.</p>
+  <footer>
+    <a href="/2016/07/03/upgrade-x1-carbon-bios-from-linux/" class="button big">Read more</a>
+    <ul class="stats">
+  
+    
+    
+      <li class="categories">
+        <ul>
+          
+            
+            <li><a class="article-category-link" href="/categories/thinkpad">thinkpad</a></li>
+          
+            
+            <li><a class="article-category-link" href="/categories/linux">linux</a></li>
+          
+        </ul>
+      </li>
+    
+  
+  
+    <li class="tags">
+      <ul>
+        <li>None</li>
+      </ul>
+    </li>
+  
+</ul>
+
+  </footer>
+</article>
+
+        
+          <article class="post">
+  <header>
+  <div class="title">
+    
+        <h2><a href="/2016/07/02/redirecting-tcp-udp-ports-for-fun-and-profit/">Redirecting Ports For Fun and Profit</a></h2>
+    
+    
+</div>
+  <div class="meta">
+    <time class="published" datetime="2016-07-02 12:54:37 &#43;0000 UTC">
+      July 2, 2016
+    </time>
+    <span class="author"></span>
+    
+      <p>2 minutes read</p>
+    
+  </div>
+</header>
+
+  
+
+  
+  <p>Recently I needed a simple TCP/UDP port redirector and stumbled upon
+<a href="https://serverfault.com/questions/252150/port-forwarding-on-linux-without-iptables/">this Stackoverflow post</a>.  As usual I wasn&rsquo;t first wanting to this
+without using <code>iptables</code>.</p>
+  <footer>
+    <a href="/2016/07/02/redirecting-tcp-udp-ports-for-fun-and-profit/" class="button big">Read more</a>
+    <ul class="stats">
+  
+    
+    
+      <li class="categories">
+        <ul>
+          
+            
+            <li><a class="article-category-link" href="/categories/unix">UNIX</a></li>
+          
+        </ul>
+      </li>
+    
+  
+  
+    <li class="tags">
+      <ul>
+        <li>None</li>
+      </ul>
+    </li>
+  
+</ul>
+
+  </footer>
+</article>
+
+        
+          <article class="post">
+  <header>
+  <div class="title">
+    
+        <h2><a href="/2016/04/21/using-netcat-to-test-your-internet-daemon/">Using netcat to test your Internet daemon</a></h2>
+    
+    
+</div>
+  <div class="meta">
+    <time class="published" datetime="2016-04-21 14:21:49 &#43;0000 UTC">
+      April 21, 2016
+    </time>
+    <span class="author"></span>
+    
+      <p>1 minute read</p>
+    
+  </div>
+</header>
+
+  
+
+  
+  <p>So you&rsquo;re having a problem with the Internet daemon you wrote.  You&rsquo;re
+convinced the firewall, or some other magic, in your modern Linux
+distribution is eating your packets.</p>
+  <footer>
+    <a href="/2016/04/21/using-netcat-to-test-your-internet-daemon/" class="button big">Read more</a>
+    <ul class="stats">
+  
+    
+    
+      <li class="categories">
+        <ul>
+          
+            
+            <li><a class="article-category-link" href="/categories/unix">UNIX</a></li>
+          
+        </ul>
+      </li>
+    
+  
+  
+    <li class="tags">
+      <ul>
+        <li>None</li>
+      </ul>
+    </li>
+  
+</ul>
+
+  </footer>
+</article>
+
+        
+        
+<div class="pagination">
+  
+    <a href="/howto/page/3/" class="button big previous"><i class="fas fa-angle-left"></i></a>
+  
+  
+    <a href="/howto/page/5/" class="button big next"><i class="fas fa-angle-right"></i></a>
+  
+</div>
+
+      </main>
+      <section id="site-sidebar">
+  
+    <section id="recent-posts">
+      <header>
+        <h1>Recent posts</h1>
+      </header>
+      
+      <article class="mini-post">
+        <section>
+          
+
+        </section>
+        <header>
+          <h1><a href="/2019/08/Basic-CGI-in-C-with-Merecat-httpd/">Basic CGI in C with Merecat httpd</a></h1>
+          <time class="published" datetime="">August 5, 2019</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+
+        </section>
+        <header>
+          <h1><a href="/post/">Posts</a></h1>
+          <time class="published" datetime="">August 5, 2019</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+
+        </section>
+        <header>
+          <h1><a href="/2019/07/Controlling-Display-Brightness/">Controlling Display Brightness</a></h1>
+          <time class="published" datetime="">July 18, 2019</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+
+        </section>
+        <header>
+          <h1><a href="/2019/07/XScreenSaver-Fonts/">XScreenSaver Fonts</a></h1>
+          <time class="published" datetime="">July 7, 2019</time>
+        </header>
+      </article>
+      
+      <article class="mini-post">
+        <section>
+          
+
+        </section>
+        <header>
+          <h1><a href="/2019/06/HowTo-Set-up-Merecat-with-Lets-Encrypt-certificate/">HowTo: Set up Merecat with Let&#39;s Encrypt certificate</a></h1>
+          <time class="published" datetime="">June 27, 2019</time>
+        </header>
+      </article>
+      
+      
+        <a href="/blog/" class="button">See more</a>
+      
+    </section>
+  
+
+  
+    
+      <section id="categories">
+        <header>
+          <h1><a href="/categories">Categories</a></h1>
+        </header>
+        <ul>
+          
+            
+          
+          
+          <li>
+            
+              <a href="/categories/opensource/">opensource<span class="count">29</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/multicast/">multicast<span class="count">14</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/HowTo/">HowTo<span class="count">13</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/Editline/">Editline<span class="count">10</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/programming/">programming<span class="count">10</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/ubuntu/">ubuntu<span class="count">10</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/git/">git<span class="count">9</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/Personal/">Personal<span class="count">8</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/hacking/">hacking<span class="count">7</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/misc/">misc<span class="count">7</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/unix/">unix<span class="count">7</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/debian/">debian<span class="count">6</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/ftp/">ftp<span class="count">6</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/howto/">howto<span class="count">6</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/UNIX/">UNIX<span class="count">6</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/kernel/">kernel<span class="count">5</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/networking/">networking<span class="count">5</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/tftp/">tftp<span class="count">5</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/blog/">blog<span class="count">4</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/bzr/">bzr<span class="count">4</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/embedded/">embedded<span class="count">4</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/Finit/">Finit<span class="count">4</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/Linux/">Linux<span class="count">4</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/linux/">linux<span class="count">4</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/personal/">personal<span class="count">4</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/pimd/">pimd<span class="count">4</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/Projects/">Projects<span class="count">4</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/projects/">projects<span class="count">4</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/bsd/">bsd<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/C/">C<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/ddns/">ddns<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/Debian/">Debian<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/Emacs/">Emacs<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/eventloop/">eventloop<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/Git/">Git<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/libev/">libev<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/Minix/">Minix<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/SMCRoute/">SMCRoute<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/Ubuntu/">Ubuntu<span class="count">3</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/Administration/">Administration<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/alpine/">alpine<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/backup/">backup<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/docker/">docker<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/freebsd/">freebsd<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/Gnome/">Gnome<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/httpd/">httpd<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/KVM/">KVM<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/Merecat/">Merecat<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/mrouted/">mrouted<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/openbsd/">openbsd<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/shell/">shell<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/Swedish/">Swedish<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/tetris/">tetris<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/thinkpad/">thinkpad<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/thttpd/">thttpd<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/toolchain/">toolchain<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/virtualization/">virtualization<span class="count">2</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/Apache/">Apache<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/apt/">apt<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/awesome/">awesome<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/Bazaar/">Bazaar<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/bazaar/">bazaar<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/bluetooth/">bluetooth<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/Bzr/">Bzr<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/c/">c<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/capabilities/">capabilities<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/conf/">conf<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/containers/">containers<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/cvs/">cvs<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/darkside/">darkside<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/dns/">dns<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/Embedded/">Embedded<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/finit/">finit<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/Fonts/">Fonts<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/FreeBSD/">FreeBSD<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/github/">github<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/gitweb/">gitweb<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/GNU/">GNU<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/HTTPS/">HTTPS<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/icmp/">icmp<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/IGMP/">IGMP<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/igmpproxy/">igmpproxy<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/Inadyn/">Inadyn<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/inetd/">inetd<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/iTunes/">iTunes<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/jedi/">jedi<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/json/">json<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/license/">license<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/mcproxy/">mcproxy<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/merecat/">merecat<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/modules/">modules<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/NetBSD/">NetBSD<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/netbsd/">netbsd<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/network/">network<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/octopress/">octopress<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/OpenSSL/">OpenSSL<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/PIM/">PIM<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/qemu/">qemu<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/RAID/">RAID<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/raspberry-pi/">raspberry-pi<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/regexp/">regexp<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/reminder/">reminder<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/retro/">retro<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/sandwich/">sandwich<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/sith/">sith<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/snmp/">snmp<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/spotify/">spotify<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/starwars/">starwars<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/sthttpd/">sthttpd<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/submodules/">submodules<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/subversion/">subversion<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/sudo/">sudo<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/svn/">svn<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/Threads-vs-Events/">Threads-vs-Events<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/tips/">tips<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/Typography/">Typography<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/tz/">tz<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/Vim/">Vim<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/virt-manager/">virt-manager<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/work/">work<span class="count">1</span></a>
+            
+          
+          <li>
+            
+              <a href="/categories/xen/">xen<span class="count">1</span></a>
+            
+          
+          </li>
+        </ul>
+      </section>
+    
+  
+
+  <section id="mini-bio">
+    <header>
+      <h1>About</h1>
+    </header>
+    <p>Hack the planet!</p>
+    <footer>
+      <a href="/about" class="button">Learn More</a>
+    </footer>
+  </section>
+</section>
+
+      <footer id="site-footer">
+  
+      <ul class="socnet-icons">
+        
+    <li><a href="/howto/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fas fa-rss"></a></li>
+
+
+        <li><a href="//github.com/troglobit" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/joachim-nilsson-3a017125" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//instagram.com/troglobit" target="_blank" rel="noopener" title="Instagram" class="fab fa-instagram"></a></li>
+
+<li><a href="//twitter.com/troglobit" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
+
+
+<li><a href="//pinterest.com/troglobit" target="_blank" rel="noopener" title="Pinterest" class="fab fa-pinterest-p"></a></li>
+
+
+
+
+
+<li><a href="//keybase.io/troglobit" target="_blank" rel="noopener" title="keybase" class="fab fa-keybase"></a></li>
+
+<li><a href="mailto:troglobit@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
+
+      </ul>
+  
+  <p class="copyright">
+    
+      &copy; 2019
+      
+        Joachim Nilsson
+      
+    . <br>
+    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.58.3' target='_blank' rel='noopener'>Hugo</a>
+  </p>
+</footer>
+<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+
+      
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/html.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/css.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/js.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/toml.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+  <script src=/js/util.js></script>
+  <script src=/js/main.js></script>
+  <script src=/js/add-on.js></script>
+  
+
+
+
+
+
+    </div>
+  </body>
+</html>
