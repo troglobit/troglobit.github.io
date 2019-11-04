@@ -100,24 +100,28 @@ data to a syslog message ... until now.
 has the NetBSD `syslogp()` family of APIs:
 
 ```c
-void    openlog(const char *ident, int logopt, int facility);
-void    openlog_r(const char *ident, int logopt, int facility, struct syslog_data *data);
+int  setlogmask  (int maskpri);
+int  setlogmask_r(int maskpri, struct syslog_data *data);
 
-void    closelog(void);
-void    closelog_r(struct syslog_data *data);
+void openlog   (const char *ident, int logopt, int facility);
+void openlog_r (const char *ident, int logopt, int facility, struct syslog_data *data);
 
-int     setlogmask(int maskpri);
-int     setlogmask_r(int maskpri, struct syslog_data *data);
+void closelog  (void);
+void closelog_r(struct syslog_data *data);
 
-void    syslog(int priority, const char *message, ...);
-void    syslog_r(int priority, struct syslog_data *data, const char *message, ...);
-void    syslogp(int priority, const char *msgid, const char *sd, const char *message, ...);
-void    syslogp_r(int priority, struct syslog_data *data, const char *msgid, const char *sd, const char *message, ...);
+void syslog    (int priority, const char *message, ...);
+void vsyslog   (int priority, const char *message, va_list args);
 
-void    vsyslog(int priority, const char *message, va_list args);
-void    vsyslog_r(int priority, struct syslog_data *data, const char *message, va_list args);
-void    vsyslogp_r(int priority, struct syslog_data *data, const char *msgid, const char *sd, const char *message, va_list args);
-void    vsyslogp(int priority, const char *msgid, const char *sd, const char *message, va_list args);
+void syslogp   (int priority, const char *msgid, const char *sd, const char *message, ...);
+void vsyslogp  (int priority, const char *msgid, const char *sd, const char *message, va_list args);
+
+void syslog_r  (int priority, struct syslog_data *data, const char *message, ...);
+void vsyslog_r (int priority, struct syslog_data *data, const char *message, va_list args);
+
+void syslogp_r (int priority, struct syslog_data *data, const char *msgid, const char *sd,
+                const char *message, ...);
+void vsyslogp_r(int priority, struct syslog_data *data, const char *msgid, const char *sd,
+                const char *message, va_list args);
 ```
 
 Example
@@ -134,7 +138,7 @@ int main(void)
 {
         openlog("example", LOG_PID, LOG_USER);
         syslogp(LOG_NOTICE, "MSGID", NULL, "Kilroy was here.");
-		closelog();
+        closelog();
 }
 ```
 
