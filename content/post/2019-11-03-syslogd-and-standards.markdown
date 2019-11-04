@@ -2,6 +2,7 @@
 title: "BSD syslogd in Linux"
 subtitle: "modern syslog and standards"
 date: 2019-11-03 23:04:00 +0100
+aliases: /sysklogd.html
 tags: [ opensource, sysklogd ]
 ---
 
