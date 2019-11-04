@@ -13,12 +13,12 @@
   <meta name="description" content="This is a HowTo for setting up ikiwiki with Merecat httpd.
 First install ikiwiki
 $ sudo apt install ikiwiki libcgi-session-perl libcgi-formbuilder-perl  Follow the steps to setup a new Wiki or Blog. In this example we set up a wiki in our ~/public_html:
-$ ikiwiki --setup /etc/ikiwiki/auto.setup ... Successfully set up wiki: url: http://localhost/~jocke/wiki srcdir: ~/wiki destdir: ~/public_html/wiki repository: ~/wiki.git  To modify settings, edit ~/home.setup and then run:
+$ ikiwiki --setup /etc/ikiwiki/auto.setup ... Successfully set up wiki: url: http://localhost/~jocke/wiki srcdir: ~/wiki destdir: ~/public_html/wiki repository: ~/wiki.git To modify settings, edit ~/home.setup and then run:
 $ ikiwiki --setup ~/home.">
   <meta property="og:description" content="This is a HowTo for setting up ikiwiki with Merecat httpd.
 First install ikiwiki
 $ sudo apt install ikiwiki libcgi-session-perl libcgi-formbuilder-perl  Follow the steps to setup a new Wiki or Blog. In this example we set up a wiki in our ~/public_html:
-$ ikiwiki --setup /etc/ikiwiki/auto.setup ... Successfully set up wiki: url: http://localhost/~jocke/wiki srcdir: ~/wiki destdir: ~/public_html/wiki repository: ~/wiki.git  To modify settings, edit ~/home.setup and then run:
+$ ikiwiki --setup /etc/ikiwiki/auto.setup ... Successfully set up wiki: url: http://localhost/~jocke/wiki srcdir: ~/wiki destdir: ~/public_html/wiki repository: ~/wiki.git To modify settings, edit ~/home.setup and then run:
 $ ikiwiki --setup ~/home.">
   <meta name="twitter:description" content="This is a HowTo for setting up ikiwiki with Merecat httpd.
 First install ikiwiki
@@ -71,7 +71,7 @@ $ sudo apt install ikiwiki libcgi-session-perl libcgi-formbuilder-perl  Follow t
     "name" : "Joachim Nilsson"
   },
   "headline": "Running ikiwiki in Merecat httpd",
-  "description" : "This is a HowTo for setting up ikiwiki with Merecat httpd.\nFirst install ikiwiki\n$ sudo apt install ikiwiki libcgi-session-perl libcgi-formbuilder-perl  Follow the steps to setup a new Wiki or Blog. In this example we set up a wiki in our ~\/public_html:\n$ ikiwiki --setup \/etc\/ikiwiki\/auto.setup ... Successfully set up wiki: url: http:\/\/localhost\/~jocke\/wiki srcdir: ~\/wiki destdir: ~\/public_html\/wiki repository: ~\/wiki.git  To modify settings, edit ~\/home.setup and then run:\n$ ikiwiki --setup ~\/home.",
+  "description" : "This is a HowTo for setting up ikiwiki with Merecat httpd.\nFirst install ikiwiki\n$ sudo apt install ikiwiki libcgi-session-perl libcgi-formbuilder-perl  Follow the steps to setup a new Wiki or Blog. In this example we set up a wiki in our ~\/public_html:\n$ ikiwiki --setup \/etc\/ikiwiki\/auto.setup ... Successfully set up wiki: url: http:\/\/localhost\/~jocke\/wiki srcdir: ~\/wiki destdir: ~\/public_html\/wiki repository: ~\/wiki.git To modify settings, edit ~\/home.setup and then run:\n$ ikiwiki --setup ~\/home.",
   "inLanguage" : "en",
   "wordCount":  174 ,
   "datePublished" : "2017-02-11T16:03:39",
@@ -96,7 +96,7 @@ $ sudo apt install ikiwiki libcgi-session-perl libcgi-formbuilder-perl  Follow t
 <meta property="og:description" content="This is a HowTo for setting up ikiwiki with Merecat httpd.
 First install ikiwiki
 $ sudo apt install ikiwiki libcgi-session-perl libcgi-formbuilder-perl  Follow the steps to setup a new Wiki or Blog. In this example we set up a wiki in our ~/public_html:
-$ ikiwiki --setup /etc/ikiwiki/auto.setup ... Successfully set up wiki: url: http://localhost/~jocke/wiki srcdir: ~/wiki destdir: ~/public_html/wiki repository: ~/wiki.git  To modify settings, edit ~/home.setup and then run:
+$ ikiwiki --setup /etc/ikiwiki/auto.setup ... Successfully set up wiki: url: http://localhost/~jocke/wiki srcdir: ~/wiki destdir: ~/public_html/wiki repository: ~/wiki.git To modify settings, edit ~/home.setup and then run:
 $ ikiwiki --setup ~/home.">
 <meta property="og:image" content="/images/profile.jpg" />
 <meta property="og:url" content="/2017/02/11/running-ikiwiki-in-merecat-httpd/" />
@@ -325,37 +325,25 @@ $ sudo apt install ikiwiki libcgi-session-perl libcgi-formbuilder-perl  Follow t
 
 <p>Follow the steps to setup a new Wiki or Blog.  In this example we set up a
 wiki in our <code>~/public_html</code>:</p>
-
-<pre><code class="language-sh">$ ikiwiki --setup /etc/ikiwiki/auto.setup
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ ikiwiki --setup /etc/ikiwiki/auto.setup
 ...
-Successfully set up wiki:
+Successfully <span style="color:#0086b3">set</span> up wiki:
 url:         http://localhost/~jocke/wiki
 srcdir:      ~/wiki
 destdir:     ~/public_html/wiki
-repository:  ~/wiki.git
-</code></pre>
-
+repository:  ~/wiki.git</code></pre></div>
 <p>To modify settings, edit ~/home.setup and then run:</p>
-
-<pre><code class="language-sh">$ ikiwiki --setup ~/home.setup
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ ikiwiki --setup ~/home.setup</code></pre></div>
 <p>By default Merecat has per-user <code>~/public_html</code> support disabled, this
 is for safety purposes.  To build from source, here from GIT, use:</p>
-
-<pre><code class="language-sh">git clone https://github.com/troglobit/merecat
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://github.com/troglobit/merecat
 ./autogen.sh
 ./configure --enable-public-html
 make
-sudo make install
-</code></pre>
-
+sudo make install</code></pre></div>
 <p>Now, to start playing with Ikiwiki, simply start the httpd as your user
 on a non-priviliged port:</p>
-
-<pre><code class="language-sh">$ merecat -n -p 8080
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ merecat -n -p <span style="color:#099">8080</span></code></pre></div>
 <p>&hellip; and open <a href="http://localhost:8080/~jocke/wiki/">http://localhost:8080/~jocke/wiki/</a> in your browser 😃</p>
 
 <p><strong>NOTE:</strong> Although Merecat httpd is a fork of <a href="http://acme.com/software/thttpd/">thttpd</a>.  Compared to

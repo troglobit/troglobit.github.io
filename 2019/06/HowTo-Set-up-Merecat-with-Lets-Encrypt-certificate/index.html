@@ -318,15 +318,12 @@ who want to serve both HTTPS and HTTP content.</p>
 are reading this before Merecat v2.32 has been released you can use the
 latest software from the GitHub master branch.  Note, you need OpenSSL
 and a few other packages, see the README file for details:</p>
-
-<pre><code class="language-sh">git clone https://github.com/troglobit/merecat.git
-cd merecat/
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://github.com/troglobit/merecat.git
+<span style="color:#0086b3">cd</span> merecat/
 ./autogen.sh
 ./configure
 make package
-sudo dpkg -i ../merecat_2.32-1_amd64.deb
-</code></pre>
-
+sudo dpkg -i ../merecat_2.32-1_amd64.deb</code></pre></div>
 <p>If you already have at least version v2.32 of <a href="https://merecat.troglobit.com">Merecat</a> installed you
 can begin the process of getting a Let&rsquo;s Encrypt certificate.  This
 HowTo use the EFF&rsquo;s certbot, which is available in Ubuntu or from the
@@ -458,11 +455,10 @@ root@example:/var/www#
 
 <p>It is recommended to also set up Diffie-Hellman paramaters.  For this
 you need to genereate a site specific file:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">root@example:/var/www# openssl dhparam -out certs/dhparam.pem <span style="color:#099">2048</span>
+Generating DH parameters, <span style="color:#099">2048</span> bit long safe prime, generator <span style="color:#099">2</span>
 
-<pre><code class="language-sh">root@example:/var/www# openssl dhparam -out certs/dhparam.pem 2048
-Generating DH parameters, 2048 bit long safe prime, generator 2
-
-This is going to take a long time
+This is going to take a long <span style="color:#0086b3">time</span>
 ........................................................+.........................................................................
 .......+......................................+...................................................................................
 .............................................................................................+....................................
@@ -473,17 +469,14 @@ This is going to take a long time
 .+.......+........................................................................................................................
 .........................+........................................................................................................
 .................+.............................................................++*++*++*++*
-root@example:/var/www#
-</code></pre>
-
+root@example:/var/www#</code></pre></div>
 <p>The <code>/etc/merecat.conf</code> file for a site with a couple of virtual hosts,
 look like this:</p>
-
-<pre><code class="language-conf">## /etc/merecat.conf                                     -*-conf-unix-*-
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-conf" data-lang="conf">## /etc/merecat.conf                                     -*-conf-unix-*-
 
 virtual-host     = true
 
-user-agent-deny  = &quot;**SemrushBot**|**MJ12bot**|**DotBot**&quot;
+user-agent-deny  = &#34;**SemrushBot**|**MJ12bot**|**DotBot**&#34;
 
 server default {
     port     = 80
@@ -496,9 +489,7 @@ server secure {
         keyfile  = /etc/letsencrypt/live/example.com/privkey.pem
         dhfile   = certs/dhparam.pem
     }
-}
-</code></pre>
-
+}</code></pre></div>
 <p>The <a href="https://merecat.troglobit.com">Merecat</a> defaults take care of a lot of the nasty details you
 shouldn&rsquo;t have to bother with, and unlike other web servers the virtual
 host setup is done in the file system rather than in the configuration

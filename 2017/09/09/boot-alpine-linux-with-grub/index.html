@@ -310,32 +310,26 @@
 <p>Notice how I use the tool <code>blkid</code> to find the Linux root device.  The
 <em>grub</em> root device, however, needs to be the first partition, which is
 a bit confusing.</p>
-
-<pre><code class="language-sh">alpine:~# apk del syslinux
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">alpine:~# apk del syslinux
 alpine:~# apk add grub grub-bios
 alpine:~# grub-install /dev/sda
 alpine:~# blkid 
-/dev/sda3: UUID=&quot;caff7641-b9d3-435a-8282-fc3b15ae8b3a&quot; TYPE=&quot;ext4&quot;
-/dev/sda2: UUID=&quot;fe051023-0986-425e-af4c-5e34a24d4756&quot; TYPE=&quot;swap&quot;
-/dev/sda1: UUID=&quot;1c6b6010-4dff-4d10-881f-16899bd4c227&quot; TYPE=&quot;ext4&quot;
-alpine:~# cat &lt;&lt;EOF &gt;&gt; /etc/grub.d/40_custom
-
-menuentry &quot;Alpine Linux&quot; {
-	set root=(hd0,1)
-	linux /boot/vmlinuz root=UUID=caff7641-b9d3-435a-8282-fc3b15ae8b3a modules=sd-mod,usb-storage4,ext3 quiet
-	initrd /boot/initramfs-vanilla
-}
-EOF
-</code></pre>
-
+/dev/sda3: <span style="color:#008080">UUID</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;caff7641-b9d3-435a-8282-fc3b15ae8b3a&#34;</span> <span style="color:#008080">TYPE</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;ext4&#34;</span>
+/dev/sda2: <span style="color:#008080">UUID</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;fe051023-0986-425e-af4c-5e34a24d4756&#34;</span> <span style="color:#008080">TYPE</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;swap&#34;</span>
+/dev/sda1: <span style="color:#008080">UUID</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;1c6b6010-4dff-4d10-881f-16899bd4c227&#34;</span> <span style="color:#008080">TYPE</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">&#34;ext4&#34;</span>
+alpine:~# cat <span style="color:#d14">&lt;&lt;EOF &gt;&gt; /etc/grub.d/40_custom
+</span><span style="color:#d14">
+</span><span style="color:#d14">menuentry &#34;Alpine Linux&#34; {
+</span><span style="color:#d14">	set root=(hd0,1)
+</span><span style="color:#d14">	linux /boot/vmlinuz root=UUID=caff7641-b9d3-435a-8282-fc3b15ae8b3a modules=sd-mod,usb-storage4,ext3 quiet
+</span><span style="color:#d14">	initrd /boot/initramfs-vanilla
+</span><span style="color:#d14">}
+</span><span style="color:#d14">EOF</span></code></pre></div>
 <p>Or edit the file with <code>mg /etc/grub.d/40_custom</code> to add the above
 <code>menuentry</code>.</p>
 
 <p>Now create the <code>grub.cfg</code> file from the templates in <code>/etc/grub.d/*</code>:</p>
-
-<pre><code class="language-sh">alpine:~# grub-mkconfig -o /boot/grub/grub.cfg
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">alpine:~# grub-mkconfig -o /boot/grub/grub.cfg</code></pre></div>
 <!--
   -- Local Variables:
   -- mode: markdown

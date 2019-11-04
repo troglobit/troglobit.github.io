@@ -378,39 +378,27 @@ you don&rsquo;t need all the data given to you.  So you start adding all kinds
 of voodoo, like <code>__attribute__ ((unused))</code> &hellip; seriously?</p>
 
 <p>Imagine this now sprinkled all over the code base.</p>
-
-<pre><code class="language-C">    static void callback(uev_ctx_t *ctx __attribute__((unused)),
-                         uev_t *w __attribute__((unused)),
-                         void *arg __attribute__((unused)),
-                         int events __attribute__((unused)))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C">    <span style="color:#000;font-weight:bold">static</span> <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">callback</span>(uev_ctx_t <span style="color:#000;font-weight:bold">*</span>ctx __attribute__((unused)),
+                         uev_t <span style="color:#000;font-weight:bold">*</span>w __attribute__((unused)),
+                         <span style="color:#458;font-weight:bold">void</span> <span style="color:#000;font-weight:bold">*</span>arg __attribute__((unused)),
+                         <span style="color:#458;font-weight:bold">int</span> events __attribute__((unused)))
     {
             ...
-    }
-</code></pre>
-
+    }</code></pre></div>
 <p>So you make small macros to help out:</p>
-
-<pre><code class="language-C">    #define UNUSED(arg) arg __attribute__ ((unused))
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C">    <span style="color:#999;font-weight:bold;font-style:italic">#define UNUSED(arg) arg __attribute__ ((unused))</span></code></pre></div>
 <p>We now have this instead:</p>
-
-<pre><code class="language-C">    static void callback(uev_ctx_t *UNUSED(ctx), uev_t *UNUSED(w),
-                         void *UNUSED(arg), int UNUSED(events))
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C">    <span style="color:#000;font-weight:bold">static</span> <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">callback</span>(uev_ctx_t <span style="color:#000;font-weight:bold">*</span>UNUSED(ctx), uev_t <span style="color:#000;font-weight:bold">*</span>UNUSED(w),
+                         <span style="color:#458;font-weight:bold">void</span> <span style="color:#000;font-weight:bold">*</span>UNUSED(arg), <span style="color:#458;font-weight:bold">int</span> UNUSED(events))
     {
             ...
-    }
-</code></pre>
-
+    }</code></pre></div>
 <p>Admittedly, using the macro is much cleaner, but still.  Why not just
 allow this <em>much more readable</em> version?</p>
-
-<pre><code class="language-C">    static void callback(uev_ctx_t *ctx, uev_t *w, void *arg, int events)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C">    <span style="color:#000;font-weight:bold">static</span> <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">callback</span>(uev_ctx_t <span style="color:#000;font-weight:bold">*</span>ctx, uev_t <span style="color:#000;font-weight:bold">*</span>w, <span style="color:#458;font-weight:bold">void</span> <span style="color:#000;font-weight:bold">*</span>arg, <span style="color:#458;font-weight:bold">int</span> events)
     {
             ...
-    }
-</code></pre>
-
+    }</code></pre></div>
 <p>The human eye is marvellous at finding little things that stick out,
 but when there&rsquo;s nothing but annoying things on the screen we can no
 longer see the most obvious pointer casting bugs, and we get sloppy.</p>

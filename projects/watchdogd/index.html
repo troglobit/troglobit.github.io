@@ -378,10 +378,7 @@ background, tries to to set a 20 sec WDT timeout, and then kicks every
 10 sec.  See the <a href="#operation">Operation</a> section for more information.</p>
 
 <p><strong>Example</strong></p>
-
-<pre><code class="language-shell">watchdogd -T 120 -t 30 /dev/watchdog2
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">watchdogd -T <span style="color:#099">120</span> -t <span style="color:#099">30</span> /dev/watchdog2</code></pre></div>
 <p><code>watchdogd</code> runs at the default UNIX priority (nice) level, unless the
 process monitor is activated, in which case it runs at an elevated real
 time priority.</p>
@@ -480,28 +477,25 @@ adding the <code>wdog_kick2()</code> call to the main event loop.</p>
 <p>All API calls, except <code>wdog_ping()</code>, return POSIX OK(0) or negative
 value with <code>errno</code> set on error.  The <code>wdog_subscribe()</code> call returns a
 positive integer (including zero) for the watchdog <code>id</code>.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#998;font-style:italic">/*
+</span><span style="color:#998;font-style:italic"> * Enable or disable watchdogd at runtime.
+</span><span style="color:#998;font-style:italic"> */</span>
+<span style="color:#458;font-weight:bold">int</span> <span style="color:#900;font-weight:bold">wdog_enable</span>      (<span style="color:#458;font-weight:bold">int</span> enable);
+<span style="color:#458;font-weight:bold">int</span> <span style="color:#900;font-weight:bold">wdog_status</span>      (<span style="color:#458;font-weight:bold">int</span> <span style="color:#000;font-weight:bold">*</span>enabled);
 
-<pre><code class="language-c">/*
- * Enable or disable watchdogd at runtime.
- */
-int wdog_enable      (int enable);
-int wdog_status      (int *enabled);
+<span style="color:#998;font-style:italic">/*
+</span><span style="color:#998;font-style:italic"> * Check if watchdogd API is actively responding,
+</span><span style="color:#998;font-style:italic"> * returns %TRUE(1) or %FALSE(0)
+</span><span style="color:#998;font-style:italic"> */</span>
+<span style="color:#458;font-weight:bold">int</span> <span style="color:#900;font-weight:bold">wdog_ping</span>        (<span style="color:#458;font-weight:bold">void</span>);
 
-/*
- * Check if watchdogd API is actively responding,
- * returns %TRUE(1) or %FALSE(0)
- */
-int wdog_ping        (void);
-
-/*
- * Register with pmon, timeout in msec.  Return value is the `id`
- * to be used with the `ack` in subsequent kick()/unsubscribe()
- */
-int wdog_subscribe   (char *label, int timeout, int *ack);
-int wdog_unsubscribe (int id, int ack);
-int wdog_kick2       (int id, int *ack);
-</code></pre>
-
+<span style="color:#998;font-style:italic">/*
+</span><span style="color:#998;font-style:italic"> * Register with pmon, timeout in msec.  Return value is the `id`
+</span><span style="color:#998;font-style:italic"> * to be used with the `ack` in subsequent kick()/unsubscribe()
+</span><span style="color:#998;font-style:italic"> */</span>
+<span style="color:#458;font-weight:bold">int</span> <span style="color:#900;font-weight:bold">wdog_subscribe</span>   (<span style="color:#458;font-weight:bold">char</span> <span style="color:#000;font-weight:bold">*</span>label, <span style="color:#458;font-weight:bold">int</span> timeout, <span style="color:#458;font-weight:bold">int</span> <span style="color:#000;font-weight:bold">*</span>ack);
+<span style="color:#458;font-weight:bold">int</span> <span style="color:#900;font-weight:bold">wdog_unsubscribe</span> (<span style="color:#458;font-weight:bold">int</span> id, <span style="color:#458;font-weight:bold">int</span> ack);
+<span style="color:#458;font-weight:bold">int</span> <span style="color:#900;font-weight:bold">wdog_kick2</span>       (<span style="color:#458;font-weight:bold">int</span> id, <span style="color:#458;font-weight:bold">int</span> <span style="color:#000;font-weight:bold">*</span>ack);</code></pre></div>
 <p>It is highly recommended to use an event loop like libev, <a href="https://github.com/martinh/libConfuse/">libuev</a>, or
 similar.  For such libraries one can simply add a timer callback for the
 kick to run periodically to monitor proper operation of the client.</p>
@@ -510,21 +504,18 @@ kick to run periodically to monitor proper operation of the client.</p>
 
 <p>For other applications, identify your main loop, its max period time and
 instrument it like this:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#458;font-weight:bold">int</span> ack, wid;
 
-<pre><code class="language-c">int ack, wid;
+<span style="color:#998;font-style:italic">/* Library will use process&#39; name on NULL first arg. */</span>
+wid <span style="color:#000;font-weight:bold">=</span> wdog_subscribe(<span style="color:#0086b3">NULL</span>, <span style="color:#099">10000</span>, <span style="color:#000;font-weight:bold">&amp;</span>ack);
+<span style="color:#000;font-weight:bold">if</span> (<span style="color:#000;font-weight:bold">-</span><span style="color:#099">1</span> <span style="color:#000;font-weight:bold">==</span> wid)
+        ;      <span style="color:#998;font-style:italic">/* Error handling */</span>
 
-/* Library will use process' name on NULL first arg. */
-wid = wdog_subscribe(NULL, 10000, &amp;ack);
-if (-1 == wid)
-        ;      /* Error handling */
-
-while (1) {
+<span style="color:#000;font-weight:bold">while</span> (<span style="color:#099">1</span>) {
         ...
-        wdog_kick2(wid, &amp;ack);
+        wdog_kick2(wid, <span style="color:#000;font-weight:bold">&amp;</span>ack);
         ...
-}
-</code></pre>
-
+}</code></pre></div>
 <p>This simple example subscribes to the watchdog with a 10 sec timeout.
 The received <code>wid</code> is used in the call to <code>wdog_pmon_kick()</code>, along with
 the received <code>ack</code> value.  Which is changed every time the application
@@ -570,11 +561,8 @@ header files.</p>
 <p>Hence, the regular <code>./configure &amp;&amp; make</code> is usually sufficient to build
 <code>watchdogd</code>.  But, if libraries are installed in non-standard locations
 you may need to provide their paths:</p>
-
-<pre><code class="language-shell">PKG_CONFIG_PATH=/opt/lib/pkgconfig:/home/ian/lib/pkgconfig ./configure
-make
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#008080">PKG_CONFIG_PATH</span><span style="color:#000;font-weight:bold">=</span>/opt/lib/pkgconfig:/home/ian/lib/pkgconfig ./configure
+make</code></pre></div>
 <p>To build the source from GIT, see below.</p>
 
 <h2 id="origin-references">Origin &amp; References</h2>
@@ -606,12 +594,9 @@ the <code>watchdogd</code> project, copyright © <a href="http://toonclips.com/d
 
 <p>If you find bugs or want to contribute fixes or features, check out the
 code from GitHub:</p>
-
-<pre><code class="language-shell">git clone https://github.com/troglobit/watchdogd
-cd watchdogd
-./autogen.sh
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone https://github.com/troglobit/watchdogd
+<span style="color:#0086b3">cd</span> watchdogd
+./autogen.sh</code></pre></div>
 <p>The <code>autogen.sh</code> script runs <code>autoconf</code>, <code>automake</code>, et al to create the
 configure script and such generated files not part of the VCS tree.  For
 more details, see the file <a href="https://github.com/troglobit/watchdogd/blob/master/CONTRIBUTING.md">CONTRIBUTING</a>.</p>

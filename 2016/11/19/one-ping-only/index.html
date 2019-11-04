@@ -12,10 +12,10 @@
   <meta name="twitter:title" content="One ping only" />
   <meta name="description" content="For some odd reason, today was the day when I woke up and continued working on libICMP. It&rsquo;s now almost seven years since I first adopted Tim Lawless&rsquo; public domain version, and today I picked up where I left off and started refactoring and cleaning up.
 Example:
-#include &quot;icmp/icmp.h&quot; int main(int argc, char *argv[]) { char *host = &quot;localhost&quot;; struct libicmp *obj; if (argc &gt;= 2) host = argv[1]; if (!">
+#include &#34;icmp/icmp.h&#34; int main(int argc, char *argv[]) { char *host = &#34;localhost&#34;; struct libicmp *obj; if (argc &gt;= 2) host = argv[1]; if (!">
   <meta property="og:description" content="For some odd reason, today was the day when I woke up and continued working on libICMP. It&rsquo;s now almost seven years since I first adopted Tim Lawless&rsquo; public domain version, and today I picked up where I left off and started refactoring and cleaning up.
 Example:
-#include &quot;icmp/icmp.h&quot; int main(int argc, char *argv[]) { char *host = &quot;localhost&quot;; struct libicmp *obj; if (argc &gt;= 2) host = argv[1]; if (!">
+#include &#34;icmp/icmp.h&#34; int main(int argc, char *argv[]) { char *host = &#34;localhost&#34;; struct libicmp *obj; if (argc &gt;= 2) host = argv[1]; if (!">
   <meta name="twitter:description" content="For some odd reason, today was the day when I woke up and continued working on libICMP. It&rsquo;s now almost seven years since I first adopted Tim Lawless&rsquo; public domain version, and today I …">
   <meta name="author" content="Joachim Nilsson"/><script type="application/ld+json">
 {
@@ -65,7 +65,7 @@ Example:
     "name" : "Joachim Nilsson"
   },
   "headline": "One ping only",
-  "description" : "For some odd reason, today was the day when I woke up and continued working on libICMP. It\x26rsquo;s now almost seven years since I first adopted Tim Lawless\x26rsquo; public domain version, and today I picked up where I left off and started refactoring and cleaning up.\nExample:\n#include \x26quot;icmp\/icmp.h\x26quot; int main(int argc, char *argv[]) { char *host = \x26quot;localhost\x26quot;; struct libicmp *obj; if (argc \x26gt;= 2) host = argv[1]; if (!",
+  "description" : "For some odd reason, today was the day when I woke up and continued working on libICMP. It\x26rsquo;s now almost seven years since I first adopted Tim Lawless\x26rsquo; public domain version, and today I picked up where I left off and started refactoring and cleaning up.\nExample:\n#include \x26#34;icmp\/icmp.h\x26#34; int main(int argc, char *argv[]) { char *host = \x26#34;localhost\x26#34;; struct libicmp *obj; if (argc \x26gt;= 2) host = argv[1]; if (!",
   "inLanguage" : "en",
   "wordCount":  119 ,
   "datePublished" : "2016-11-19T23:37:20",
@@ -89,7 +89,7 @@ Example:
 <meta property="og:title" content="One ping only" />
 <meta property="og:description" content="For some odd reason, today was the day when I woke up and continued working on libICMP. It&rsquo;s now almost seven years since I first adopted Tim Lawless&rsquo; public domain version, and today I picked up where I left off and started refactoring and cleaning up.
 Example:
-#include &quot;icmp/icmp.h&quot; int main(int argc, char *argv[]) { char *host = &quot;localhost&quot;; struct libicmp *obj; if (argc &gt;= 2) host = argv[1]; if (!">
+#include &#34;icmp/icmp.h&#34; int main(int argc, char *argv[]) { char *host = &#34;localhost&#34;; struct libicmp *obj; if (argc &gt;= 2) host = argv[1]; if (!">
 <meta property="og:image" content="/images/profile.jpg" />
 <meta property="og:url" content="/2016/11/19/one-ping-only/" />
 <meta property="og:type" content="website" />
@@ -313,24 +313,21 @@ up where I left off and started refactoring and cleaning up.</p>
 <p><img src="/images/one-ping-only.jpg" style="width:50%;height:auto;" title="Sean Connery vs USS ICMP" class="center"></p>
 
 <p><strong>Example:</strong></p>
-
-<pre><code class="language-c">#include &quot;icmp/icmp.h&quot;
-
-int main(int argc, char *argv[])
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#999;font-weight:bold;font-style:italic">#include</span> <span style="color:#999;font-weight:bold;font-style:italic">&#34;icmp/icmp.h&#34;</span><span style="color:#999;font-weight:bold;font-style:italic">
+</span><span style="color:#999;font-weight:bold;font-style:italic"></span>
+<span style="color:#458;font-weight:bold">int</span> <span style="color:#900;font-weight:bold">main</span>(<span style="color:#458;font-weight:bold">int</span> argc, <span style="color:#458;font-weight:bold">char</span> <span style="color:#000;font-weight:bold">*</span>argv[])
 {
-    char *host = &quot;localhost&quot;;
-    struct libicmp *obj;
+    <span style="color:#458;font-weight:bold">char</span> <span style="color:#000;font-weight:bold">*</span>host <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;localhost&#34;</span>;
+    <span style="color:#000;font-weight:bold">struct</span> libicmp <span style="color:#000;font-weight:bold">*</span>obj;
     
-    if (argc &gt;= 2)
-            host = argv[1];
+    <span style="color:#000;font-weight:bold">if</span> (argc <span style="color:#000;font-weight:bold">&gt;=</span> <span style="color:#099">2</span>)
+            host <span style="color:#000;font-weight:bold">=</span> argv[<span style="color:#099">1</span>];
 
-    if (!(obj = icmp_open(host, 0x1337, 0)))
-            return 1;
+    <span style="color:#000;font-weight:bold">if</span> (<span style="color:#000;font-weight:bold">!</span>(obj <span style="color:#000;font-weight:bold">=</span> icmp_open(host, <span style="color:#099">0x1337</span>, <span style="color:#099">0</span>)))
+            <span style="color:#000;font-weight:bold">return</span> <span style="color:#099">1</span>;
     
-    return icmp_ping(obj, 0, 0) == -1;
-}
-</code></pre>
-
+    <span style="color:#000;font-weight:bold">return</span> icmp_ping(obj, <span style="color:#099">0</span>, <span style="color:#099">0</span>) <span style="color:#000;font-weight:bold">==</span> <span style="color:#000;font-weight:bold">-</span><span style="color:#099">1</span>;
+}</code></pre></div>
 <p>libICMP is nowhere near as fancy as <a href="http://noping.cc/">liboping</a> and is only slightly
 smaller with a more liberal license (<a href="https://en.wikipedia.org/wiki/ISC_license">ISC</a>).  The <a href="https://github.com/troglobit/libicmp/releases/v1.0">first release</a>
 is however available from GitHub.  Pull requests are as usual most

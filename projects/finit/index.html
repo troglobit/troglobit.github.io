@@ -323,8 +323,7 @@ Alpine Linux, see the <a href="https://github.com/troglobit/finit/tree/master/co
 <p>The following is an example of <code>/etc/finit.conf</code>.  It can be split up in
 per-service <code>.conf</code> files in <code>/etc/finit.d/</code>, useful for distributions
 and to simplify changing service configuration at runtime.</p>
-
-<pre><code class="language-conf"># /etc/finit.conf - System bootstrap for TroglOS
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-conf" data-lang="conf"># /etc/finit.conf - System bootstrap for TroglOS
 
 # System hostname is set from /etc/hostname
 #host default
@@ -332,7 +331,7 @@ and to simplify changing service configuration at runtime.</p>
 # Default runlevel is 2
 #runlevel 2
 
-# Launch bootstrap 'S' services
+# Launch bootstrap &#39;S&#39; services
 service [S12345] /sbin/watchdogd -T 16 -t 2 -F /dev/watchdog      -- System watchdog daemon
 service [S12345] /sbin/syslogd -n -b 3 -D                         -- System log daemon
 service [S12345] /sbin/klogd -n                                   -- Kernel log daemon
@@ -354,7 +353,7 @@ service [S12345] /sbin/klogd -n                                   -- Kernel log 
 
 # Inetd services
 # Allow telnet on standard port only if not from WAN (eth0)
-# Allow telnet onport 2323 from WAN (don't do this kids)
+# Allow telnet onport 2323 from WAN (don&#39;t do this kids)
 # Built-in rdate service also available on custom port 3737, notice internal.time
 inetd ftp/tcp              nowait [2345] /sbin/uftpd -i -f       -- FTP daemon
 inetd tftp/udp               wait [2345] /sbin/uftpd -i -y       -- TFTP daemon
@@ -371,9 +370,7 @@ tty [12345] /dev/ttyAMA0 115200 vt100 noclear
 tty  [2345] /dev/ttyUSB0 115200 vt100 noclear
 
 # Systems using a serial console can use this arch. neutral variant
-#tty [12345] @console 115200 linux noclear
-</code></pre>
-
+#tty [12345] @console 115200 linux noclear</code></pre></div>
 <p>Finit configuration files in <code>/etc/finit.d/</code> are monitored for changes,
 if file is changed and the user calls <code>initctl reload</code>, that program is
 reloaded (<code>SIGHUP</code>:ed, or stop-started depending on the <code>&lt;!&gt;</code> in the
@@ -384,19 +381,16 @@ service declaration.).</p>
 <p>The familiar <code>shutdown</code>, <code>reboot</code>, <code>poweroff</code>, and <code>halt</code> commands are
 provided by Finit, as is the traditional <code>telinit</code> command.  In addition
 to that there is also the more modern <code>initctl</code> tool:</p>
-
-<pre><code class="language-sh">~ $ initctl status -v
-1       running  476     [S12345----]  /sbin/watchdog -T 16 -t 2 -F /dev/watchdog
-2       running  477     [S12345----]  /sbin/syslogd -n -b 3 -D
-3       running  478     [S12345----]  /sbin/klogd -n
-4:1       inetd  0       [--2345----]  internal time allow *:37
-4:2       inetd  0       [--2345----]  internal time allow *:37
-4:3       inetd  0       [--2345----]  internal 3737 allow *:3737
-5:1       inetd  0       [--2345----]  /sbin/telnetd allow *:23 deny eth0,eth1
-6:1       inetd  0       [---345----]  /sbin/dropbear allow eth0:222
-6:2       inetd  0       [---345----]  /sbin/dropbear allow *:22 deny eth0
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">~ $ initctl status -v
+<span style="color:#099">1</span>       running  <span style="color:#099">476</span>     <span style="color:#000;font-weight:bold">[</span>S12345----<span style="color:#000;font-weight:bold">]</span>  /sbin/watchdog -T <span style="color:#099">16</span> -t <span style="color:#099">2</span> -F /dev/watchdog
+<span style="color:#099">2</span>       running  <span style="color:#099">477</span>     <span style="color:#000;font-weight:bold">[</span>S12345----<span style="color:#000;font-weight:bold">]</span>  /sbin/syslogd -n -b <span style="color:#099">3</span> -D
+<span style="color:#099">3</span>       running  <span style="color:#099">478</span>     <span style="color:#000;font-weight:bold">[</span>S12345----<span style="color:#000;font-weight:bold">]</span>  /sbin/klogd -n
+<span style="color:#099">4</span>:1       inetd  <span style="color:#099">0</span>       <span style="color:#000;font-weight:bold">[</span>--2345----<span style="color:#000;font-weight:bold">]</span>  internal <span style="color:#0086b3">time</span> allow *:37
+<span style="color:#099">4</span>:2       inetd  <span style="color:#099">0</span>       <span style="color:#000;font-weight:bold">[</span>--2345----<span style="color:#000;font-weight:bold">]</span>  internal <span style="color:#0086b3">time</span> allow *:37
+<span style="color:#099">4</span>:3       inetd  <span style="color:#099">0</span>       <span style="color:#000;font-weight:bold">[</span>--2345----<span style="color:#000;font-weight:bold">]</span>  internal <span style="color:#099">3737</span> allow *:3737
+<span style="color:#099">5</span>:1       inetd  <span style="color:#099">0</span>       <span style="color:#000;font-weight:bold">[</span>--2345----<span style="color:#000;font-weight:bold">]</span>  /sbin/telnetd allow *:23 deny eth0,eth1
+<span style="color:#099">6</span>:1       inetd  <span style="color:#099">0</span>       <span style="color:#000;font-weight:bold">[</span>---345----<span style="color:#000;font-weight:bold">]</span>  /sbin/dropbear allow eth0:222
+<span style="color:#099">6</span>:2       inetd  <span style="color:#099">0</span>       <span style="color:#000;font-weight:bold">[</span>---345----<span style="color:#000;font-weight:bold">]</span>  /sbin/dropbear allow *:22 deny eth0</code></pre></div>
 <p>For details, see the <a href="https://github.com/troglobit/finit/blob/master/README.md">documentation</a> and the online help <code>-h</code> to
 each tool.</p>
 

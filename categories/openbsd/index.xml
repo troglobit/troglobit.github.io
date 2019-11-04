@@ -20,8 +20,8 @@
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2017/06/06/install-git-in-openbsd/</guid>
       <description>Reminder to self:
-echo &amp;quot;https://ftp.eu.openbsd.org/pub/OpenBSD/&amp;quot; &amp;gt;/etc/installurl pkg_add git autoconf automake libtool  Select the latest versions, then add the following to ~/.profile:
-AUTOCONF_VERSION=2.69 AUTOMAKE_VERSION=1.15 export AUTOCONF_VERSION AUTOMAKE_VERSION  With your selected versions, of course.</description>
+echo &amp;#34;https://ftp.eu.openbsd.org/pub/OpenBSD/&amp;#34; &amp;gt;/etc/installurl pkg_add git autoconf automake libtool Select the latest versions, then add the following to ~/.profile:
+AUTOCONF_VERSION=2.69 AUTOMAKE_VERSION=1.15 export AUTOCONF_VERSION AUTOMAKE_VERSION With your selected versions, of course.</description>
     </item>
     
     <item>

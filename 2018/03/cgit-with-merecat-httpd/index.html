@@ -323,38 +323,32 @@ installed into both <code>/usr/share</code> and <code>/usr/lib</code>, and when 
 chrooted those directories will not be available.  I&rsquo;ve bind mounted my
 <code>/usr/share/cgit</code> to <code>/var/www/cgit.troglobit.com</code> and linked the
 <code>cgit.cgi</code> from <code>../../lib/cgit/</code>:</p>
-
-<pre><code class="language-sh">root@example:/usr/share/cgit# ll
-total 1000
-drwxr-xr-x   2 root root   4096 Mar 30 11:16 ./
-drwxr-xr-x 140 root root   4096 Mar 30 09:39 ../
--rwxr-xr-x   2 root root 986800 Feb 12  2016 cgit.cgi*
--rw-r--r--   1 root root  13312 Feb 12  2016 cgit.css
--rw-r--r--   1 root root   1278 Feb 12  2016 cgit.png
--rw-r--r--   1 root root   1078 Feb 12  2016 favicon.ico
-lrwxrwxrwx   1 root root     22 Mar 30 11:16 filters -&gt; ../../lib/cgit/filters/
-lrwxrwxrwx   1 root root      8 Mar 30 10:16 index.cgi -&gt; cgit.cgi*
--rw-r--r--   1 root root     47 Feb 12  2016 robots.txt
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">root@example:/usr/share/cgit# ll
+total <span style="color:#099">1000</span>
+drwxr-xr-x   <span style="color:#099">2</span> root root   <span style="color:#099">4096</span> Mar <span style="color:#099">30</span> <span style="color:#099">11</span>:16 ./
+drwxr-xr-x <span style="color:#099">140</span> root root   <span style="color:#099">4096</span> Mar <span style="color:#099">30</span> <span style="color:#099">09</span>:39 ../
+-rwxr-xr-x   <span style="color:#099">2</span> root root <span style="color:#099">986800</span> Feb <span style="color:#099">12</span>  <span style="color:#099">2016</span> cgit.cgi*
+-rw-r--r--   <span style="color:#099">1</span> root root  <span style="color:#099">13312</span> Feb <span style="color:#099">12</span>  <span style="color:#099">2016</span> cgit.css
+-rw-r--r--   <span style="color:#099">1</span> root root   <span style="color:#099">1278</span> Feb <span style="color:#099">12</span>  <span style="color:#099">2016</span> cgit.png
+-rw-r--r--   <span style="color:#099">1</span> root root   <span style="color:#099">1078</span> Feb <span style="color:#099">12</span>  <span style="color:#099">2016</span> favicon.ico
+lrwxrwxrwx   <span style="color:#099">1</span> root root     <span style="color:#099">22</span> Mar <span style="color:#099">30</span> <span style="color:#099">11</span>:16 filters -&gt; ../../lib/cgit/filters/
+lrwxrwxrwx   <span style="color:#099">1</span> root root      <span style="color:#099">8</span> Mar <span style="color:#099">30</span> <span style="color:#099">10</span>:16 index.cgi -&gt; cgit.cgi*
+-rw-r--r--   <span style="color:#099">1</span> root root     <span style="color:#099">47</span> Feb <span style="color:#099">12</span>  <span style="color:#099">2016</span> robots.txt</code></pre></div>
 <p>Merecat httpd currently does not support URL rewrite, so I&rsquo;ve set up
 cgit as follows, <code>/etc/cgitrc</code>:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cfg" data-lang="cfg"><span style="color:#998;font-style:italic"># cgit config</span>
 
-<pre><code class="language-cfg"># cgit config
+<span style="color:#008080">css</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">/cgit.css</span>
+<span style="color:#008080">logo</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">/cgit.png</span>
 
-css=/cgit.css
-logo=/cgit.png
+<span style="color:#998;font-style:italic"># Prepend this to all URLs</span>
+<span style="color:#008080">virtual-root</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">/cgit.cgi/</span>
 
-# Prepend this to all URLs
-virtual-root=/cgit.cgi/
+<span style="color:#998;font-style:italic"># Home of all GIT repos</span>
+<span style="color:#008080">scan-path</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">/srv/git/</span>
 
-# Home of all GIT repos
-scan-path=/srv/git/
-
-# if you do not want that webcrawler (like google) index your site
-robots=noindex, nofollow
-</code></pre>
-
+<span style="color:#998;font-style:italic"># if you do not want that webcrawler (like google) index your site</span>
+<span style="color:#008080">robots</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">noindex, nofollow</span></code></pre></div>
 <p><em>Note the leading slash</em> in the <code>virtual-root</code>.  The resulting site can
 be viewed here: <a href="http://cgit.troglobit.com">http://cgit.troglobit.com</a></p>
 

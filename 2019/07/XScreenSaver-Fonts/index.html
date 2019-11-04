@@ -327,22 +327,16 @@ xscreensaver.passwd.passwdFont:         -*-verdana-bold-r-*-*-20-*-*-*-*-*-*-*
 </code></pre>
 
 <p>If you don&rsquo;t have Verdana installed:</p>
-
-<pre><code class="language-sh">sudo apt install ttf-mscorefonts-installer
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo apt install ttf-mscorefonts-installer</code></pre></div>
 <p>To make TrueType fonts visible to old X applications one has to jump
 through a few hoops.</p>
-
-<pre><code class="language-sh">cd /usr/share/fonts/truetype/msttcorefonts
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#0086b3">cd</span> /usr/share/fonts/truetype/msttcorefonts
 sudo mkfontscale
 sudo mkfontdir
 xset +fp /usr/share/fonts/truetype/msttcorefonts/
 xset fp rehash
 xrdb -merge ~/.Xdefaults
-xscreensaver-command -restart
-</code></pre>
-
+xscreensaver-command -restart</code></pre></div>
 <p>Test it with <code>xfontsel</code></p>
 
         

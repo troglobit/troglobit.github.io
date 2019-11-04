@@ -63,7 +63,7 @@
   "headline": "BSD syslogd in Linux",
   "description" : "Some time ago now I was in a meeting with a customer where I first learned of the new syslog standard, RFC5424. I say \x26ldquo;new\x26rdquo; because, despite it being ten years old, it was new to me.\nThree weeks ago I started updating my fork of sysklogd to be RFC5424 compliant. I ended up ripping out most of the old code and replacing it with fresh DNA strands from FreeBSD and NetBSD.\nThe result is a fully RFC compliant syslogd, and a libsyslog with a replacement syslog.h header for sending RFC5424 events from applications!\nhttps:\/\/github.com\/troglobit\/sysklogd\/\n",
   "inLanguage" : "en",
-  "wordCount":  894 ,
+  "wordCount":  904 ,
   "datePublished" : "2019-11-03T23:04:00",
   "dateModified" : "2019-11-03T23:04:00",
   "image" : "\/images\/profile.jpg",
@@ -392,50 +392,45 @@ data to a syslog message &hellip; until now.</p>
 
 <p><code>sysklogd</code> comes with <code>libsyslog</code> and a <code>syslog.h</code> header replacement that
 has the NetBSD <code>syslogp()</code> family of APIs:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#458;font-weight:bold">int</span>  <span style="color:#900;font-weight:bold">setlogmask</span>  (<span style="color:#458;font-weight:bold">int</span> maskpri);
+<span style="color:#458;font-weight:bold">int</span>  <span style="color:#900;font-weight:bold">setlogmask_r</span>(<span style="color:#458;font-weight:bold">int</span> maskpri, <span style="color:#000;font-weight:bold">struct</span> syslog_data <span style="color:#000;font-weight:bold">*</span>data);
 
-<pre><code class="language-c">void    openlog(const char *ident, int logopt, int facility);
-void    openlog_r(const char *ident, int logopt, int facility, struct syslog_data *data);
+<span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">openlog</span>   (<span style="color:#000;font-weight:bold">const</span> <span style="color:#458;font-weight:bold">char</span> <span style="color:#000;font-weight:bold">*</span>ident, <span style="color:#458;font-weight:bold">int</span> logopt, <span style="color:#458;font-weight:bold">int</span> facility);
+<span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">openlog_r</span> (<span style="color:#000;font-weight:bold">const</span> <span style="color:#458;font-weight:bold">char</span> <span style="color:#000;font-weight:bold">*</span>ident, <span style="color:#458;font-weight:bold">int</span> logopt, <span style="color:#458;font-weight:bold">int</span> facility, <span style="color:#000;font-weight:bold">struct</span> syslog_data <span style="color:#000;font-weight:bold">*</span>data);
 
-void    closelog(void);
-void    closelog_r(struct syslog_data *data);
+<span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">closelog</span>  (<span style="color:#458;font-weight:bold">void</span>);
+<span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">closelog_r</span>(<span style="color:#000;font-weight:bold">struct</span> syslog_data <span style="color:#000;font-weight:bold">*</span>data);
 
-int     setlogmask(int maskpri);
-int     setlogmask_r(int maskpri, struct syslog_data *data);
+<span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">syslog</span>    (<span style="color:#458;font-weight:bold">int</span> priority, <span style="color:#000;font-weight:bold">const</span> <span style="color:#458;font-weight:bold">char</span> <span style="color:#000;font-weight:bold">*</span>message, ...);
+<span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">vsyslog</span>   (<span style="color:#458;font-weight:bold">int</span> priority, <span style="color:#000;font-weight:bold">const</span> <span style="color:#458;font-weight:bold">char</span> <span style="color:#000;font-weight:bold">*</span>message, va_list args);
 
-void    syslog(int priority, const char *message, ...);
-void    syslog_r(int priority, struct syslog_data *data, const char *message, ...);
-void    syslogp(int priority, const char *msgid, const char *sd, const char *message, ...);
-void    syslogp_r(int priority, struct syslog_data *data, const char *msgid, const char *sd, const char *message, ...);
+<span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">syslogp</span>   (<span style="color:#458;font-weight:bold">int</span> priority, <span style="color:#000;font-weight:bold">const</span> <span style="color:#458;font-weight:bold">char</span> <span style="color:#000;font-weight:bold">*</span>msgid, <span style="color:#000;font-weight:bold">const</span> <span style="color:#458;font-weight:bold">char</span> <span style="color:#000;font-weight:bold">*</span>sd, <span style="color:#000;font-weight:bold">const</span> <span style="color:#458;font-weight:bold">char</span> <span style="color:#000;font-weight:bold">*</span>message, ...);
+<span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">vsyslogp</span>  (<span style="color:#458;font-weight:bold">int</span> priority, <span style="color:#000;font-weight:bold">const</span> <span style="color:#458;font-weight:bold">char</span> <span style="color:#000;font-weight:bold">*</span>msgid, <span style="color:#000;font-weight:bold">const</span> <span style="color:#458;font-weight:bold">char</span> <span style="color:#000;font-weight:bold">*</span>sd, <span style="color:#000;font-weight:bold">const</span> <span style="color:#458;font-weight:bold">char</span> <span style="color:#000;font-weight:bold">*</span>message, va_list args);
 
-void    vsyslog(int priority, const char *message, va_list args);
-void    vsyslog_r(int priority, struct syslog_data *data, const char *message, va_list args);
-void    vsyslogp_r(int priority, struct syslog_data *data, const char *msgid, const char *sd, const char *message, va_list args);
-void    vsyslogp(int priority, const char *msgid, const char *sd, const char *message, va_list args);
-</code></pre>
+<span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">syslog_r</span>  (<span style="color:#458;font-weight:bold">int</span> priority, <span style="color:#000;font-weight:bold">struct</span> syslog_data <span style="color:#000;font-weight:bold">*</span>data, <span style="color:#000;font-weight:bold">const</span> <span style="color:#458;font-weight:bold">char</span> <span style="color:#000;font-weight:bold">*</span>message, ...);
+<span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">vsyslog_r</span> (<span style="color:#458;font-weight:bold">int</span> priority, <span style="color:#000;font-weight:bold">struct</span> syslog_data <span style="color:#000;font-weight:bold">*</span>data, <span style="color:#000;font-weight:bold">const</span> <span style="color:#458;font-weight:bold">char</span> <span style="color:#000;font-weight:bold">*</span>message, va_list args);
 
+<span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">syslogp_r</span> (<span style="color:#458;font-weight:bold">int</span> priority, <span style="color:#000;font-weight:bold">struct</span> syslog_data <span style="color:#000;font-weight:bold">*</span>data, <span style="color:#000;font-weight:bold">const</span> <span style="color:#458;font-weight:bold">char</span> <span style="color:#000;font-weight:bold">*</span>msgid, <span style="color:#000;font-weight:bold">const</span> <span style="color:#458;font-weight:bold">char</span> <span style="color:#000;font-weight:bold">*</span>sd,
+                <span style="color:#000;font-weight:bold">const</span> <span style="color:#458;font-weight:bold">char</span> <span style="color:#000;font-weight:bold">*</span>message, ...);
+<span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">vsyslogp_r</span>(<span style="color:#458;font-weight:bold">int</span> priority, <span style="color:#000;font-weight:bold">struct</span> syslog_data <span style="color:#000;font-weight:bold">*</span>data, <span style="color:#000;font-weight:bold">const</span> <span style="color:#458;font-weight:bold">char</span> <span style="color:#000;font-weight:bold">*</span>msgid, <span style="color:#000;font-weight:bold">const</span> <span style="color:#458;font-weight:bold">char</span> <span style="color:#000;font-weight:bold">*</span>sd,
+                <span style="color:#000;font-weight:bold">const</span> <span style="color:#458;font-weight:bold">char</span> <span style="color:#000;font-weight:bold">*</span>message, va_list args);</code></pre></div>
 <h2 id="example">Example</h2>
 
 <p>To use the new API on Linux we create an example application:</p>
-
-<pre><code class="language-c">/* example.c - Example of how to use NetBSD syslogp() API */
-#include &lt;stdio.h&gt;
-#include &lt;syslog/syslog.h&gt;
-
-int main(void)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#998;font-style:italic">/* example.c - Example of how to use NetBSD syslogp() API */</span>
+<span style="color:#999;font-weight:bold;font-style:italic">#include</span> <span style="color:#999;font-weight:bold;font-style:italic">&lt;stdio.h&gt;</span><span style="color:#999;font-weight:bold;font-style:italic">
+</span><span style="color:#999;font-weight:bold;font-style:italic">#include</span> <span style="color:#999;font-weight:bold;font-style:italic">&lt;syslog/syslog.h&gt;</span><span style="color:#999;font-weight:bold;font-style:italic">
+</span><span style="color:#999;font-weight:bold;font-style:italic"></span>
+<span style="color:#458;font-weight:bold">int</span> <span style="color:#900;font-weight:bold">main</span>(<span style="color:#458;font-weight:bold">void</span>)
 {
-        openlog(&quot;example&quot;, LOG_PID, LOG_USER);
-        syslogp(LOG_NOTICE, &quot;MSGID&quot;, NULL, &quot;Kilroy was here.&quot;);
-		closelog();
-}
-</code></pre>
-
+        openlog(<span style="color:#d14">&#34;example&#34;</span>, LOG_PID, LOG_USER);
+        syslogp(LOG_NOTICE, <span style="color:#d14">&#34;MSGID&#34;</span>, <span style="color:#0086b3">NULL</span>, <span style="color:#d14">&#34;Kilroy was here.&#34;</span>);
+        closelog();
+}</code></pre></div>
 <p>We build and run the application.</p>
-
-<pre><code class="language-sh">jocke@troglobit:~/tmp $ gcc `pkg-config --libs --static --cflags libsyslog` \
-                            -o example example.c
-jocke@troglobit:~/tmp $ ./example
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">jocke@troglobit:~/tmp $ gcc <span style="color:#d14">`</span>pkg-config --libs --static --cflags libsyslog<span style="color:#d14">`</span> <span style="color:#d14">\
+</span><span style="color:#d14"></span>                            -o example example.c
+jocke@troglobit:~/tmp $ ./example</code></pre></div>
 <p>Provided <code>syslogd</code> is set up properly the following would be logged in your
 local log file, or sent to a remote syslog server:</p>
 

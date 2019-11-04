@@ -349,31 +349,22 @@ following line to <code>/etc/gateways</code>:</p>
 
 <p>Next we need to download and build <code>pimd</code>.  It is available on GitHub if
 you want the latest bleeding edge stuff, or use the latest tarball:</p>
-
-<pre><code class="language-sh">    wget http://ftp.troglobit.com/pimd/pimd-2.3.2.tar.gz
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">    wget http://ftp.troglobit.com/pimd/pimd-2.3.2.tar.gz
     tar xfz pimd-2.3.2.tar.gz
-    cd pimd-2.3.2/
+    <span style="color:#0086b3">cd</span> pimd-2.3.2/
     ./configure
-    make
-</code></pre>
-
+    make</code></pre></div>
 <h2 id="running-pimd">Running pimd</h2>
 
 <p>Now we can start pimd on both routers:</p>
-
-<pre><code class="language-sh">    ./pimd -c pimd.conf
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">    ./pimd -c pimd.conf</code></pre></div>
 <p>After a while you should be able to see some interesting output in both</p>
 
 <pre><code>    ./pimd -r
 </code></pre>
 
 <p>and</p>
-
-<pre><code class="language-sh">    netstat -rn
-</code></pre>
-
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">    netstat -rn</code></pre></div>
 <p>See the <a href="/howto-run-pimd-on-openbsd.html">OpenBSD HowTo</a> for example
 output and troubleshooting.</p>
 

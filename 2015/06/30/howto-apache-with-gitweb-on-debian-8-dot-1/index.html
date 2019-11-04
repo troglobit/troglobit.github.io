@@ -439,8 +439,7 @@ one for the sub-domain:</p>
 </code></pre>
 
 <p>&hellip; and added the following:</p>
-
-<pre><code class="language-apache">    &lt;VirtualHost *:80&gt;
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apache /etc/apache2/sites-available/git.conf" data-lang="apache /etc/apache2/sites-available/git.conf">    &lt;VirtualHost *:80&gt;
         ServerName git.troglobit.com
         DocumentRoot /usr/share/gitweb
 
@@ -462,16 +461,14 @@ one for the sub-domain:</p>
 
         # Enable git clone over HTTP
         ScriptAliasMatch \
-	        &quot;(?x)^/(.*/(HEAD | \
+	        &#34;(?x)^/(.*/(HEAD | \
 	        info/refs | \
             objects/(info/[^/]+ | \
             [0-9a-f]{2}/[0-9a-f]{38} | \
             pack/pack-[0-9a-f]{40}\.(pack|idx)) | \
-            git-(upload|receive)-pack))$&quot; \
+            git-(upload|receive)-pack))$&#34; \
             /usr/lib/git-core/git-http-backend/$1
-    &lt;/VirtualHost&gt;
-</code></pre>
-
+    &lt;/VirtualHost&gt;</code></pre></div>
 <p>Remember to enable the new sub-domain in Apache and restart the daemon:</p>
 
 <pre><code>a2ensite git
@@ -480,61 +477,60 @@ service apache2 restart
 
 <p>I&rsquo;m not using the default Debian GIT repo location, <code>/var/lib/git</code>, so I
 need to set the project root for both the Apache and the GitWeb config:</p>
-
-<pre><code class="language-perl">    # See https://github.com/kogakure/gitweb-theme for more help and pointers
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl /etc/gitweb.conf" data-lang="perl /etc/gitweb.conf">    # See https://github.com/kogakure/gitweb-theme for more help and pointers
 
     # path to git projects (&lt;project&gt;.git)
-    $projectroot = &quot;/srv/git&quot;;
+    $projectroot = &#34;/srv/git&#34;;
     
-    @git_base_url_list = (&quot;git://git.troglobit.com&quot;, &quot;http://git.troglobit.com&quot;);
+    @git_base_url_list = (&#34;git://git.troglobit.com&#34;, &#34;http://git.troglobit.com&#34;);
     
     # directory to use for temp files
-    $git_temp = &quot;/tmp&quot;;
+    $git_temp = &#34;/tmp&#34;;
     
-    $site_name = &quot;git.troglobit.com&quot;;
+    $site_name = &#34;git.troglobit.com&#34;;
     
     # target of the home link on top of all pages
-    $home_link = $my_uri || &quot;/&quot;;
+    $home_link = $my_uri || &#34;/&#34;;
     
     # html text to include at home page
-    #$home_text = &quot;indextext.html&quot;;
+    #$home_text = &#34;indextext.html&#34;;
     
     # file with project list; by default, simply scan the projectroot dir.
     #$projects_list = $projectroot;
     
     # stylesheet to use
-    @stylesheets = (&quot;static/gitweb.css&quot;);
+    @stylesheets = (&#34;static/gitweb.css&#34;);
     
     # javascript code for gitweb
-    $javascript = &quot;static/gitweb.js&quot;;
+    $javascript = &#34;static/gitweb.js&#34;;
     
     # logo to use
-    $logo = &quot;static/git-logo.png&quot;;
+    $logo = &#34;static/git-logo.png&#34;;
     
-    # the 'favicon'
-    $favicon = &quot;static/git-favicon.png&quot;;
+    # the &#39;favicon&#39;
+    $favicon = &#34;static/git-favicon.png&#34;;
     
     # git-diff-tree(1) options to use for generated patches
-    #@diff_opts = (&quot;-M&quot;);
+    #@diff_opts = (&#34;-M&#34;);
     @diff_opts = ();
         
     # Enable PATH_INFO so the server can produce URLs of the
     # form: http://git.hokietux.net/project.git/xxx/xxx
     # This allows for pretty URLs *within* the Git repository,
     # also needs the Apache rewrite rules for full effect.
-    $feature{'pathinfo'}{'default'} = [1];
+    $feature{&#39;pathinfo&#39;}{&#39;default&#39;} = [1];
     
     # Neat way of prefixing the top URL listing
     our @extra_breadcrumbs = (
-          [ 'Troglobit Software' =&gt; 'http://troglobit.com/' ],
+          [ &#39;Troglobit Software&#39; =&gt; &#39;http://troglobit.com/&#39; ],
         );
     
     # List avatars next to committers
-    $feature{'avatar'}{'default'} = ['gravatar'];
+    $feature{&#39;avatar&#39;}{&#39;default&#39;} = [&#39;gravatar&#39;];
     
     # The category name is read from .git/category, in the same manner as .git/description.
     $projects_list_group_categories = 1;
-    $project_list_default_category = &quot;misc&quot;;
+    $project_list_default_category = &#34;misc&#34;;
     
     $projects_list_description_width = 80;
     
@@ -542,25 +538,23 @@ need to set the project root for both the Apache and the GitWeb config:</p>
     # support, but still allow individual projects to turn them off.
     # These are features that users can use to interact with your Git trees. They
     # consume some CPU whenever a user uses them, so you can turn them off if you
-    # need to.  Note that the 'override' option means that you can override the
+    # need to.  Note that the &#39;override&#39; option means that you can override the
     # setting on a per-repository basis.
-    $feature{'blame'}{'default'} = [1];
-    $feature{'blame'}{'override'} = [1];
+    $feature{&#39;blame&#39;}{&#39;default&#39;} = [1];
+    $feature{&#39;blame&#39;}{&#39;override&#39;} = [1];
     
-    $feature{'pickaxe'}{'default'} = [1];
-    $feature{'pickaxe'}{'override'} = [1];
+    $feature{&#39;pickaxe&#39;}{&#39;default&#39;} = [1];
+    $feature{&#39;pickaxe&#39;}{&#39;override&#39;} = [1];
     
-    $feature{'snapshot'}{'default'} = [1];
-    $feature{'snapshot'}{'override'} = [1];
+    $feature{&#39;snapshot&#39;}{&#39;default&#39;} = [1];
+    $feature{&#39;snapshot&#39;}{&#39;override&#39;} = [1];
     
-    $feature{'search'}{'default'} = [1];
+    $feature{&#39;search&#39;}{&#39;default&#39;} = [1];
     
-    $feature{'grep'}{'default'} = [1];
-    $feature{'grep'}{'override'} = [1];
+    $feature{&#39;grep&#39;}{&#39;default&#39;} = [1];
+    $feature{&#39;grep&#39;}{&#39;override&#39;} = [1];
     
-    $feature{'highlight'}{'default'} = [1];
-</code></pre>
-
+    $feature{&#39;highlight&#39;}{&#39;default&#39;} = [1];</code></pre></div>
 <p>The impossibly simple Apache config has been ripped from the intro by
 <a href="http://dereenigne.org/debian/debian-gitweb-server">Jonathan McCrohan</a>,
 the GitWeb config is a mixture of findings on the Internets.  Notice the

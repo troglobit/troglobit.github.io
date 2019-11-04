@@ -311,14 +311,11 @@
 <p>Build Merecat httpd according to the instructions in the README.  This
 document assumes the directory <code>~/merecat/</code>.  Then create a config file,
 <code>~/test.conf</code>, with the following content:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-conf" data-lang="conf">port = 8080
 
-<pre><code class="language-conf">port = 8080
-
-cgi &quot;**.cgi|cgi-bin/*&quot; {
+cgi &#34;**.cgi|cgi-bin/*&#34; {
     enabled = true
-}
-</code></pre>
-
+}</code></pre></div>
 <p>We&rsquo;ve chosen port 8080 we can start the server as a regular user.  For
 production systems you likely want to use the default (80), or set up
 proper HTTPS, see <a href="/2019/06/HowTo-Set-up-Merecat-with-Lets-Encrypt-certificate/">Let&rsquo;s Encrypt Merecat</a> for help with that.</p>
