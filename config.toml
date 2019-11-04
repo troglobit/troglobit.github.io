@@ -5,9 +5,14 @@ languageCode = "en-us"
 theme = "beautifulhugo"
 contentDir = "content"
 publishDir = "public"
-pygmentsUseClasses = true
-pygmentsUseClassic = true
-pygmentCodeFences = true
+
+pygmentsCodefences = true
+pygmentsCodefencesGyessSyntax = true
+pygmentsStyle = "github"
+#pygmentsUseClasses = true
+#pygmentsUseClassic = true
+
+
 enableEmoji = true
 #copyright = "&copy; 2019. All rights reserved."
 #canonifyurls = true
