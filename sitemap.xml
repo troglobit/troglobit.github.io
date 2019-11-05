@@ -258,11 +258,6 @@
   </url>
   
   <url>
-    <loc>/categories/merecat/</loc>
-    <lastmod>2017-09-17T10:45:37+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/2017/09/17/packaging-software-with-docker/</loc>
     <lastmod>2017-09-17T10:45:37+00:00</lastmod>
   </url>
@@ -324,6 +319,11 @@
   
   <url>
     <loc>/2017/02/12/https-proxy-for-merecat-httpd/</loc>
+    <lastmod>2017-02-12T00:07:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/Merecat/</loc>
     <lastmod>2017-02-12T00:07:44+00:00</lastmod>
   </url>
   
