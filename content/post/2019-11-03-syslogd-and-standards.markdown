@@ -55,7 +55,7 @@ RFC3164 formatting of remote syslog messages:
 	 \                \        \      \      \
       \                \        \      \      `-- What you think is the message
        \                \        \      `-------- Convention for process ID (PID)
-	    \				 \	      `-------------- Convetion for process name
+	    \				 \	      `-------------- Convention for process name
 		 \                `---------------------- Hostname or IP address
 	      `-------------------------------------- Notice lack of year ...
 
@@ -78,7 +78,7 @@ the major differences between the two RFCs.  As you can see from the figures
 above, the RFC3164 world was empty and scary, and the RFC5424 world is full of
 confusing stuff??
 
-The first dash above is the new MesgID field, which is a free-form string that
+The first dash above is the new MsgID field, which is a free-form string that
 a receiver can use for quick and easy regexp filtering.  The second dash is
 *structured data* and is essentially name-value pairs in a `[ .. ]` container.
 See the RFC for more details and [an example in section
