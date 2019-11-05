@@ -27,9 +27,10 @@ cgi "**.cgi|cgi-bin/*" {
 }
 ```
 
-We've chosen port 8080 we can start the server as a regular user.  For
-production systems you likely want to use the default (80), or set up
-proper HTTPS, see [Let's Encrypt Merecat][howto] for help with that.
+In this example we've chosen port 8080 so we can start the server as a
+regular user.  For production systems you likely want to use the default
+(80), or set up proper HTTPS, see [Let's Encrypt Merecat][howto] for
+help with that.
 
 The classic _cgic_ used here is just an example.  A CGI program can be
 written in just about any programming language, or plain shell script.
@@ -46,8 +47,8 @@ cd cgic207/
 make
 ```
 
-An stand-alone example prgram is built which we can install into the
-Merecat web root.  Notice the name change to `index.cgi`, we dont't have
+A stand-alone example program is built which we can install into the
+Merecat web root.  Notice the name change to `index.cgi`, we don't have
 to use the `cgi-bin/` due to the CGI pattern we set up previously:
 
 ```
