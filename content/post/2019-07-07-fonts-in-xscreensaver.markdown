@@ -51,3 +51,11 @@ xscreensaver-command -restart
 ```
 
 Test it with `xfontsel`
+
+You may also want to enable a few X server settings:
+
+```sh
+cd /etc/fonts/conf.d
+sudo ln -s ../conf.avail/10-autohint.conf .
+sudo ln -s ../conf.avail/10-sub-pixel-rgb.conf .
+```
