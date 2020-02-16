@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on </title>
@@ -186,10 +186,10 @@
     
     <item>
       <title>merecat</title>
-      <link></link>
+      <link>/categories/merecat/</link>
       <pubDate>Sun, 17 Sep 2017 10:45:37 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid></guid>
+      <guid>/categories/merecat/</guid>
       <description></description>
     </item>
     
@@ -231,10 +231,10 @@
     
     <item>
       <title>Merecat</title>
-      <link>/categories/Merecat/</link>
+      <link></link>
       <pubDate>Sun, 12 Feb 2017 00:07:44 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/categories/Merecat/</guid>
+      <guid></guid>
       <description></description>
     </item>
     

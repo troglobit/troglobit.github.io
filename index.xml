@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
@@ -8,10 +8,21 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Sun, 03 Nov 2019 23:04:00 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 16 Feb 2020 21:06:59 +0100</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Fixing file sharing in Ubuntu 20.04</title>
+      <link>/2020/02/Fixing-file-sharing-in-Ubuntu-20.04/</link>
+      <pubDate>Sun, 16 Feb 2020 21:06:59 +0100</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2020/02/Fixing-file-sharing-in-Ubuntu-20.04/</guid>
+      <description>So file sharing with my ReadyNAS file server stopped working after upgrading to Ubuntu 20.04. Turns out there was a change in behavior in Sambva v4.11 that disabled SMB1 protocol by default. It&amp;rsquo;ll be interesting to see how this panes out in the rest of the Linux community &amp;hellip;
+Here&amp;rsquo;s the fix, from Reddit; open /etc/samba/smb.conf using your favorite editor:
+sudo mg /etc/samba/smb.conf Add the following line to the [global] section:</description>
+    </item>
     
     <item>
       <title>BSD syslogd in Linux</title>
@@ -643,7 +654,7 @@ The main purpose for my building this is TroglOS, but it is useful for other pur
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2016/09/21/finit3-almost-there-.../</guid>
       <description>Today the new logo for Finit3 was added to the GitHub repo and the homepage
-Gorgeous, isn&amp;rsquo;t it?! 😎
+Gorgeous, isn&amp;rsquo;t it?! 🕶
 This fancy artwork means we&amp;rsquo;re nearing the end of a long and agonizing release cycle where a lot of the internals of Finit have been rewritten and new exciting features have been added! More on this in an upcoming post 😃</description>
     </item>
     
