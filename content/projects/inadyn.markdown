@@ -1,7 +1,7 @@
 ---
 name: In-a-dyn
 title: "Small and Simple DDNS Client"
-date: 2017-08-14 00:23:00 +02:00
+date: 2018-09-30 00:23:00 +02:00
 aliases: /inadyn.html
 ---
 
@@ -21,31 +21,36 @@ providers.   Other providers,  e.g. <http://twoDNS.de>,  can usually  be
 supported using the custom provider  support.  For the full details, see
 the [README][], or `inadyn.conf(5)` found in the tarball.
 
-* <https://freedns.afraid.org>
-* <https://nsupdate.info>
-* <https://duckdns.org>
-* <https://freemyip.com>
-* <https://www.loopia.com>
-* <https://www.dyndns.org>, <https://dyn.com>
-* <https://www.zoneedit.com>
-* <https://www.easydns.com>
-* <https://www.dnsomatic.com>
-* <https://www.tunnelbroker.net>
-* <https://dns.he.net>
-* <https://www.changeip.com>
-* <https://www.sitelutions.com>
-* <https://www.dnsexit.com>
-* <https://www.namecheap.com>
-* <https://domains.google>
-* <https://www.ovh.com>
-* <https://www.dtdns.com>
-* <https://www.duiadns.net>
-* <https://ddnss.de>
-* <https://dynv6.com>
-* <https://spdyn.de>
-* <https://www.strato.com>
-* <https://www.cloudxns.net>
-* <https://www.dnspod.cn>
+   * <https://freedns.afraid.org>
+   * <https://www.nsupdate.info>
+   * <https://duckdns.org>
+   * <https://freemyip.com>
+   * <https://www.loopia.com>
+   * <https://www.dyndns.org>, <https://dyn.com>
+   * <https://www.noip.com>
+   * <https://www.easydns.com>
+   * <https://www.dnsomatic.com>
+   * <https://dns.he.net>
+   * <https://www.tunnelbroker.net>
+   * <https://www.sitelutions.com>
+   * <https://www.dnsexit.com>, parent of <https://www.zoneedit.com>
+   * <https://www.changeip.com>
+   * <https://www.dhis.org>
+   * <https://www.namecheap.com>
+   * <https://domains.google>
+   * <https://www.ovh.com>
+   * <https://giradns.com>
+   * <https://www.duiadns.net>
+   * <https://ddnss.de>
+   * <https://dynv6.com>
+   * <https://spdyn.de>
+   * <https://www.cloudxns.net>
+   * <https://www.pubyun.com>, formerly <http://www.3322.org>
+   * <https://www.dnspod.cn>
+   * <https://www.dynu.com>
+   * <https://www.selfhost.de>
+   * <https://connect.yandex.ru>
+   * <https://www.cloudflare.com>
 
 Some of these services are free of charge for non-commercial use, others
 take a small fee, but also provide more domains to choose from.
@@ -85,11 +90,11 @@ Issue tracker and GIT repository available at GitHub:
 
 * [README][]
 * [ChangeLog](https://github.com/troglobit/inadyn/blob/master/ChangeLog.md)
-* [Repository](http://github.com/troglobit/inadyn)
-* [Issue Tracker](http://github.com/troglobit/inadyn/issues)
-* [inadyn-2.3.1.tar.xz](ftp://ftp.troglobit.com/inadyn/inadyn-2.3.1.tar.xz),
-  [MD5](ftp://ftp.troglobit.com/inadyn/inadyn-2.3.1.tar.xz.md5)
-  [GPG Sign](ftp://ftp.troglobit.com/inadyn/inadyn-2.3.1.xz.asc)
+* [Repository](https://github.com/troglobit/inadyn)
+* [Issue Tracker](https://github.com/troglobit/inadyn/issues)
+* [inadyn-2.5.tar.xz](ftp://ftp.troglobit.com/inadyn/inadyn-2.5.tar.xz),
+  [MD5](ftp://ftp.troglobit.com/inadyn/inadyn-2.5.tar.xz.md5)
+  [GPG Sign](ftp://ftp.troglobit.com/inadyn/inadyn-2.5.xz.asc)
 
 See also the [OpenHub page](https://www.openhub.net/p/inadyn/), the
 [Freshcode page](http://freshcode.club/projects/inadyn), or the dormant
@@ -117,8 +122,8 @@ The [inadyn-mt][] project is another fork from the original INADYN.  It
 maintains support for Windows and adds many new features and fixes, not
 just for Windows.
 
-[1]: http://en.wikipedia.org/wiki/Dynamic_DNS
-[2]: http://en.wikipedia.org/wiki/ISP
+[1]: https://en.wikipedia.org/wiki/Dynamic_DNS
+[2]: https://en.wikipedia.org/wiki/ISP
 [README]: https://github.com/troglobit/inadyn/blob/master/README.md
 [origin]: http://www.inatech.eu/inadyn/
-[inadyn-mt]: http://sourceforge.net/projects/inadyn-mt/
+[inadyn-mt]: https://sourceforge.net/projects/inadyn-mt/
