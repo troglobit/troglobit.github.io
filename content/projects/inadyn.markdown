@@ -1,7 +1,7 @@
 ---
 name: In-a-dyn
 title: "Small and Simple DDNS Client"
-date: 2018-09-30 00:23:00 +02:00
+date: 2020-02-17 12:12:00 +02:00
 aliases: /inadyn.html
 ---
 
@@ -11,6 +11,8 @@ in off-the-shelf routers  and Internet gateways to automate  the task of
 keeping your DNS record up to date with any IP address changes from your
 [ISP][2].  It can also be  used in installations with redundant (backup)
 connections to the Internet.
+
+[Presentation here.](https://docs.google.com/presentation/d/14rT-LB5Ea_aHamlMFzVvT92ZU1DMWzVhav9OMOiVkpI/edit?usp=sharing)
 
 
 Supported Providers
