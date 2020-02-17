@@ -206,6 +206,16 @@ SMCRoute can be used as an alternative to dynamic multicast routing daemons like
     </item>
     
     <item>
+      <title>Small and Simple DDNS Client</title>
+      <link>/projects/inadyn/</link>
+      <pubDate>Sun, 30 Sep 2018 00:23:00 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/projects/inadyn/</guid>
+      <description>In-a-dyn is a small and simple Dynamic DNS, DDNS, client with HTTPS support. It is commonly available in many GNU/Linux distributions, used in off-the-shelf routers and Internet gateways to automate the task of keeping your DNS record up to date with any IP address changes from your ISP. It can also be used in installations with redundant (backup) connections to the Internet.
+Supported Providers The following is a curated list of some of the natively supported DDNS providers.</description>
+    </item>
+    
+    <item>
       <title>Dark Themes Ahead</title>
       <link>/2018/08/Dark-Themes-Ahead/</link>
       <pubDate>Sun, 12 Aug 2018 23:51:52 +0200</pubDate>
@@ -445,16 +455,6 @@ run Merecat httpd in production.&lt;/p&gt;</description>
       <guid>/projects/editline/</guid>
       <description>This is a line editing library for UNIX. It can be linked into almost any program to provide command line editing and history. It is call compatible with the FSF readline library, but is a fraction of the size (and offers fewer features).
 The small size (&amp;lt;30k), lack of dependencies (no ncurses needed!) and the free license should make this library interesting to many embedded developers seeking a replacement for the GNU readline library.</description>
-    </item>
-    
-    <item>
-      <title>Small and Simple DDNS Client</title>
-      <link>/projects/inadyn/</link>
-      <pubDate>Mon, 14 Aug 2017 00:23:00 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/projects/inadyn/</guid>
-      <description>In-a-dyn is a small and simple Dynamic DNS, DDNS, client with HTTPS support. It is commonly available in many GNU/Linux distributions, used in off-the-shelf routers and Internet gateways to automate the task of keeping your DNS record up to date with any IP address changes from your ISP. It can also be used in installations with redundant (backup) connections to the Internet.
-Supported Providers The following is a curated list of some of the natively supported DDNS providers.</description>
     </item>
     
     <item>
