@@ -8,10 +8,21 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Sun, 16 Feb 2020 21:06:59 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 17 Feb 2020 12:12:00 +0200</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Small and Simple DDNS Client</title>
+      <link>/projects/inadyn/</link>
+      <pubDate>Mon, 17 Feb 2020 12:12:00 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/projects/inadyn/</guid>
+      <description>In-a-dyn is a small and simple Dynamic DNS, DDNS, client with HTTPS support. It is commonly available in many GNU/Linux distributions, used in off-the-shelf routers and Internet gateways to automate the task of keeping your DNS record up to date with any IP address changes from your ISP. It can also be used in installations with redundant (backup) connections to the Internet.
+Presentation here.
+Supported Providers The following is a curated list of some of the natively supported DDNS providers.</description>
+    </item>
     
     <item>
       <title>Fixing file sharing in Ubuntu 20.04</title>
@@ -203,16 +214,6 @@ The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is 
       <description>SMCRoute is a daemon and command line tool to manipulate the multicast routing table in the UNIX kernel. Both FreeBSD and Linux kernels are supported, but it may work on other systems as well.
 SMCRoute can be used as an alternative to dynamic multicast routing daemons like mrouted or pimd when (only) static multicast routes should be maintained or no proper signalling exists.
  Problems? See the Multicast HowTo for help!</description>
-    </item>
-    
-    <item>
-      <title>Small and Simple DDNS Client</title>
-      <link>/projects/inadyn/</link>
-      <pubDate>Sun, 30 Sep 2018 00:23:00 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/projects/inadyn/</guid>
-      <description>In-a-dyn is a small and simple Dynamic DNS, DDNS, client with HTTPS support. It is commonly available in many GNU/Linux distributions, used in off-the-shelf routers and Internet gateways to automate the task of keeping your DNS record up to date with any IP address changes from your ISP. It can also be used in installations with redundant (backup) connections to the Internet.
-Supported Providers The following is a curated list of some of the natively supported DDNS providers.</description>
     </item>
     
     <item>

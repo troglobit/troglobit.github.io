@@ -366,10 +366,10 @@
     
     <item>
       <title>C</title>
-      <link>/categories/C/</link>
+      <link></link>
       <pubDate>Thu, 27 Oct 2016 22:22:44 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/categories/C/</guid>
+      <guid></guid>
       <description></description>
     </item>
     
@@ -996,10 +996,10 @@
     
     <item>
       <title>c</title>
-      <link></link>
+      <link>/categories/c/</link>
       <pubDate>Fri, 27 Mar 2009 00:37:42 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid></guid>
+      <guid>/categories/c/</guid>
       <description></description>
     </item>
     

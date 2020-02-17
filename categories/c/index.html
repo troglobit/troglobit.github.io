@@ -1,1110 +1,365 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
   <head>
-  <meta charset="utf-8">
-<title>c - Joachim Nilsson</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    
 
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=1">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=1">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=1">
-  <link rel="manifest" href="/favicon/site.webmanifest?v=1">
+  <title>Overview of all pages with the category #c - </title>
+  <meta property="og:title" content="Overview of all pages with the category #c" />
+  <meta name="twitter:title" content="Overview of all pages with the category #c" />
+  <meta name="description" content="Overview of all pages with the category #c, such as: Why I Like C">
+  <meta property="og:description" content="Overview of all pages with the category #c, such as: Why I Like C">
+  <meta name="twitter:description" content="Overview of all pages with the category #c, such as: Why I Like C">
+  <meta name="author" content="Joachim Nilsson"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "",
+    
+    "url": "\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "\/"
   
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="theme-color" content="#ffffff">
+  
+  
+  
+}
+</script>
 
-
-  <meta name="generator" content="Hugo 0.58.3" />
-  <meta itemprop="name" content="c">
-<meta itemprop="description" content="">
-
-
-  <meta property="og:title" content="c" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
+<meta property="og:title" content="c" />
+<meta property="og:image" content="/images/profile.jpg" />
 <meta property="og:url" content="/categories/c/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="" />
 
-<meta property="og:updated_time" content="2009-03-27T00:37:42+00:00" />
+  <meta name="twitter:title" content="c" />
+  <meta name="twitter:image" content="/images/profile.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@troglobit" />
+  <meta name="twitter:creator" content="@troglobit" />
+  <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="/images/profile.jpg" />
+  <meta name="twitter:image" content="/images/profile.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@troglobit" />
+  <meta name="twitter:creator" content="@troglobit" />
+  <meta property="og:url" content="/categories/c/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="" />
 
-  <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="c"/>
-<meta name="twitter:description" content=""/>
-<meta name="twitter:site" content="@troglobit"/>
+  <meta name="generator" content="Hugo 0.59.1" />
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="/css/syntax.css" /><link rel="stylesheet" href="/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
 
-  
 
-  <link rel="stylesheet"
-      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
-  
-    
-      <link rel="stylesheet" href="/css/normalize.css">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css">
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
-      
-      
-      <link rel="stylesheet" href="/css/main.min.0a64f3eede6e78edc2d8b2ca7051e4d9a6379f472dac76b1168733b88d27146a.css" integrity="sha256-CmTz7t5ueO3C2LLKcFHk2aY3n0ctrHaxFoczuI0nFGo=">
-      <link rel="stylesheet" href="/css/add-on.css">
-    
-  
-  
-  
-  
-</head>
 
+  </head>
   <body>
-    
-<header id="site-header">
-  <nav id="site-nav">
-    <h1 class="nav-title">
-      <a href="/">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"></a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
         
           
-            Categories
+            <li>
+              <a title="Archive" href="/archive/">Archive</a>
+            </li>
           
         
-      </a>
-    </h1>
-    <menu id="site-nav-menu" class="flyout-menu">
-      
-        
           
-          
-            <a href="/archive/" class="link">Archive</a>
+            <li>
+              <a title="FTP" href="https://ftp.troglobit.com">FTP</a>
+            </li>
           
         
-      
-        
           
-          
-            <a href="https://ftp.troglobit.com" class="link">FTP</a>
-          
-        
-      
-        
-          
-          
-            <a href="https://git.troglobit.com" class="link">GIT</a>
+            <li>
+              <a title="GIT" href="https://git.troglobit.com">GIT</a>
+            </li>
           
         
-      
-        
           
-          
-            <a href="/howto/" class="link">HowTos</a>
-          
-        
-      
-        
-          
-          
-            <a href="/projects/" class="link">Projects</a>
+            <li>
+              <a title="HowTos" href="/howto/">HowTos</a>
+            </li>
           
         
-      
-        
           
-          
-            <a href="https://resume.troglobit.com" class="link">Resumé</a>
-          
-        
-      
-        
-          
-          
-            <a href="/about/" class="link">About</a>
+            <li>
+              <a title="Projects" href="/projects/">Projects</a>
+            </li>
           
         
-      
-      <a href="#share-menu" class="share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>
-      
-
-    </menu>
-    
-
-    <a href="#share-menu" class="share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>
-    <a href="#lang-menu" class="lang-toggle" lang="en">en</a>
-    <a href="#site-nav" class="nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
-  </nav>
-  <menu id="lang-menu" class="flyout-menu">
-  <a href="#" lang="en" class="link active">English (en)</a>
-  
-    
-      
-    
-  
-</menu>
-
-  
-    <menu id="share-menu" class="flyout-menu">
-      <h1>Share Post</h1>
-      
-
-
-
-
-  
-    
-    <a href="//twitter.com/share?text=c&amp;url=%2fcategories%2fc%2f" target="_blank" rel="noopener" class="share-btn twitter">
-        <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
-      </a>
-  
-
-  
-      <a href="//www.facebook.com/sharer/sharer.php?u=%2fcategories%2fc%2f" target="_blank" rel="noopener" class="share-btn facebook">
-        <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
-        </a>
-  
-
-  
-    <a href="//www.reddit.com/submit?url=%2fcategories%2fc%2f&amp;title=c" target="_blank" rel="noopener" class="share-btn reddit">
-          <i class="fab fa-reddit-alien"></i><p>&nbsp;Reddit</p>
-        </a>
-  
-
-  
-        <a href="//www.linkedin.com/shareArticle?url=%2fcategories%2fc%2f&amp;title=c" target="_blank" rel="noopener" class="share-btn linkedin">
-            <i class="fab fa-linkedin"></i><p>&nbsp;LinkedIn</p>
-          </a>
-  
-
-  
-        <a href="//www.pinterest.com/pin/create/button/?url=%2fcategories%2fc%2f&amp;description=c" target="_blank" rel="noopener" class="share-btn pinterest">
-          <i class="fab fa-pinterest-p"></i><p>&nbsp;Pinterest</p>
-        </a>
-  
-
-  
-        <a href="mailto:?subject=Check out this post by %7b%20%20%20%20%20%20%20%20map%5b%5d%7d&amp;body=%2fcategories%2fc%2f" target="_blank" class="share-btn email" data-proofer-ignore>
-          <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
-        </a>
-  
-
-
-    </menu>
-  
-</header>
-
-    <div id="wrapper">
-      <section id="site-intro">
-  <a href="/"><img src="/images/profile.jpg" class="circle" width="200" alt="Joachim Nilsson" /></a>
-  <header>
-    <h1>Joachim Nilsson</h1>
-  </header>
-  <main>
-    <p>Help me Obi-Wan Troglobi,<br/> you're my only hope!</p>
-  </main>
-  
-    <footer>
-      <ul class="socnet-icons">
+          
+            <li>
+              <a title="Resumé" href="https://resume.troglobit.com">Resumé</a>
+            </li>
+          
         
-    <li><a href="/categories/c/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fas fa-rss"></a></li>
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
 
+        
 
-        <li><a href="//github.com/troglobit" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
-
-
-
-
-
-
-
-
-
-
-
-<li><a href="//linkedin.com/in/joachim-nilsson-3a017125" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li><a href="//instagram.com/troglobit" target="_blank" rel="noopener" title="Instagram" class="fab fa-instagram"></a></li>
-
-<li><a href="//twitter.com/troglobit" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
-
-
-<li><a href="//pinterest.com/troglobit" target="_blank" rel="noopener" title="Pinterest" class="fab fa-pinterest-p"></a></li>
-
-
-
-
-
-<li><a href="//keybase.io/troglobit" target="_blank" rel="noopener" title="keybase" class="fab fa-keybase"></a></li>
-
-<li><a href="mailto:troglobit@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
-
+        
       </ul>
-    </footer>
-  
-</section>
+    </div>
 
-      <main id="site-main">
-        <h1>c</h1>
-        
-        
-            <article class="post">
-  <header>
-  <div class="title">
     
-        <h2><a href="/2009/03/27/why-i-like-c/">Why I Like C</a></h2>
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="" href="/">
+            <img class="avatar-img" src="/images/profile.jpg" alt="" />
+          </a>
+        </div>
+      </div>
     
-    
-</div>
-  <div class="meta">
-    <time class="published" datetime="2009-03-27 00:37:42 &#43;0000 UTC">
-      March 27, 2009
-    </time>
-    <span class="author"></span>
-    
-      <p>1 minute read</p>
-    
+
   </div>
-</header>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
 
   
 
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="categories-heading">
+              
+                <h1>c</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+  <div class="container" role="main">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        <div class="posts-list">
+          
+            <article class="post-preview">
+              <a href="/2009/03/27/why-i-like-c/">
+                <h2 class="post-title">Why I Like C</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                <span class="post-meta">
   
-  <p>I thought I was alone, but it turns out I&rsquo;m not.
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on March 27, 2009
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Nilsson
+    
+  
+  
+</span>
+
+
+              </p>
+              <div class="post-entry">
+                
+                  <p>I thought I was alone, but it turns out I&rsquo;m not.
 <a href="http://netsplit.com">Scott James Remnant</a> describes exactly what I&rsquo;ve
 been feeling the last couple of years.  Read his
 <a href="https://web.archive.org/web/20121019061557/http://netsplit.com/2009/03/26/the-fallacy-of-high-level-languages/">blog entry</a>
 on the subject.  I couldn&rsquo;t agree more.</p>
-  <footer>
-    <a href="/2009/03/27/why-i-like-c/" class="button big">Read more</a>
-    <ul class="stats">
-  
-    
-    
-      <li class="categories">
-        <ul>
-          
-            
-            <li><a class="article-category-link" href="/categories/programming">programming</a></li>
-          
-            
-            <li><a class="article-category-link" href="/categories/c">c</a></li>
-          
-        </ul>
-      </li>
-    
-  
-  
-    <li class="tags">
-      <ul>
-        <li>None</li>
-      </ul>
-    </li>
-  
-</ul>
 
-  </footer>
-</article>
+                
+              </div>
 
+              
+
+            </article>
+          
+        </div>
         
-        
-<div class="pagination">
-  
-    <a href="#" class="disabled button big previous"><i class="fas fa-angle-left"></i></a>
-  
-  
-    <a href="#" class="disabled button big next"><i class="fas fa-angle-right"></i></a>
-  
-</div>
-
-      </main>
-      <section id="site-sidebar">
-  
-    <section id="recent-posts">
-      <header>
-        <h1>Recent posts</h1>
-      </header>
-      
-      <article class="mini-post">
-        <section>
-          
-
-        </section>
-        <header>
-          <h1><a href="/2019/08/Basic-CGI-in-C-with-Merecat-httpd/">Basic CGI in C with Merecat httpd</a></h1>
-          <time class="published" datetime="">August 5, 2019</time>
-        </header>
-      </article>
-      
-      <article class="mini-post">
-        <section>
-          
-
-        </section>
-        <header>
-          <h1><a href="/post/">Posts</a></h1>
-          <time class="published" datetime="">August 5, 2019</time>
-        </header>
-      </article>
-      
-      <article class="mini-post">
-        <section>
-          
-
-        </section>
-        <header>
-          <h1><a href="/2019/07/Controlling-Display-Brightness/">Controlling Display Brightness</a></h1>
-          <time class="published" datetime="">July 18, 2019</time>
-        </header>
-      </article>
-      
-      <article class="mini-post">
-        <section>
-          
-
-        </section>
-        <header>
-          <h1><a href="/2019/07/XScreenSaver-Fonts/">XScreenSaver Fonts</a></h1>
-          <time class="published" datetime="">July 7, 2019</time>
-        </header>
-      </article>
-      
-      <article class="mini-post">
-        <section>
-          
-
-        </section>
-        <header>
-          <h1><a href="/2019/06/HowTo-Set-up-Merecat-with-Lets-Encrypt-certificate/">HowTo: Set up Merecat with Let&#39;s Encrypt certificate</a></h1>
-          <time class="published" datetime="">June 27, 2019</time>
-        </header>
-      </article>
-      
-      
-        <a href="/blog/" class="button">See more</a>
-      
-    </section>
-  
-
-  
-    
-      <section id="categories">
-        <header>
-          <h1><a href="/categories">Categories</a></h1>
-        </header>
-        <ul>
-          
-            
-          
-          
-          <li>
-            
-              <a href="/categories/opensource/">opensource<span class="count">29</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/multicast/">multicast<span class="count">14</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/HowTo/">HowTo<span class="count">13</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/Editline/">Editline<span class="count">10</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/programming/">programming<span class="count">10</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/ubuntu/">ubuntu<span class="count">10</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/git/">git<span class="count">9</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/Personal/">Personal<span class="count">8</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/hacking/">hacking<span class="count">7</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/misc/">misc<span class="count">7</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/unix/">unix<span class="count">7</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/debian/">debian<span class="count">6</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/ftp/">ftp<span class="count">6</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/howto/">howto<span class="count">6</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/UNIX/">UNIX<span class="count">6</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/kernel/">kernel<span class="count">5</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/networking/">networking<span class="count">5</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/tftp/">tftp<span class="count">5</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/blog/">blog<span class="count">4</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/bzr/">bzr<span class="count">4</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/embedded/">embedded<span class="count">4</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/Finit/">Finit<span class="count">4</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/Linux/">Linux<span class="count">4</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/linux/">linux<span class="count">4</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/personal/">personal<span class="count">4</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/pimd/">pimd<span class="count">4</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/Projects/">Projects<span class="count">4</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/projects/">projects<span class="count">4</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/bsd/">bsd<span class="count">3</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/C/">C<span class="count">3</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/ddns/">ddns<span class="count">3</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/Debian/">Debian<span class="count">3</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/Emacs/">Emacs<span class="count">3</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/eventloop/">eventloop<span class="count">3</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/Git/">Git<span class="count">3</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/libev/">libev<span class="count">3</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/Minix/">Minix<span class="count">3</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/SMCRoute/">SMCRoute<span class="count">3</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/Ubuntu/">Ubuntu<span class="count">3</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/Administration/">Administration<span class="count">2</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/alpine/">alpine<span class="count">2</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/backup/">backup<span class="count">2</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/docker/">docker<span class="count">2</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/freebsd/">freebsd<span class="count">2</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/Gnome/">Gnome<span class="count">2</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/httpd/">httpd<span class="count">2</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/KVM/">KVM<span class="count">2</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/Merecat/">Merecat<span class="count">2</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/mrouted/">mrouted<span class="count">2</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/openbsd/">openbsd<span class="count">2</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/shell/">shell<span class="count">2</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/Swedish/">Swedish<span class="count">2</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/tetris/">tetris<span class="count">2</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/thinkpad/">thinkpad<span class="count">2</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/thttpd/">thttpd<span class="count">2</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/toolchain/">toolchain<span class="count">2</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/virtualization/">virtualization<span class="count">2</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/Apache/">Apache<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/apt/">apt<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/awesome/">awesome<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/Bazaar/">Bazaar<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/bazaar/">bazaar<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/bluetooth/">bluetooth<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/Bzr/">Bzr<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/c/">c<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/capabilities/">capabilities<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/conf/">conf<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/containers/">containers<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/cvs/">cvs<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/darkside/">darkside<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/dns/">dns<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/Embedded/">Embedded<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/finit/">finit<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/Fonts/">Fonts<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/FreeBSD/">FreeBSD<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/github/">github<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/gitweb/">gitweb<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/GNU/">GNU<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/HTTPS/">HTTPS<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/icmp/">icmp<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/IGMP/">IGMP<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/igmpproxy/">igmpproxy<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/Inadyn/">Inadyn<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/inetd/">inetd<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/iTunes/">iTunes<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/jedi/">jedi<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/json/">json<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/license/">license<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/mcproxy/">mcproxy<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/merecat/">merecat<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/modules/">modules<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/NetBSD/">NetBSD<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/netbsd/">netbsd<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/network/">network<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/octopress/">octopress<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/OpenSSL/">OpenSSL<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/PIM/">PIM<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/qemu/">qemu<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/RAID/">RAID<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/raspberry-pi/">raspberry-pi<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/regexp/">regexp<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/reminder/">reminder<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/retro/">retro<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/sandwich/">sandwich<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/sith/">sith<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/snmp/">snmp<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/spotify/">spotify<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/starwars/">starwars<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/sthttpd/">sthttpd<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/submodules/">submodules<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/subversion/">subversion<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/sudo/">sudo<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/svn/">svn<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/Threads-vs-Events/">Threads-vs-Events<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/tips/">tips<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/Typography/">Typography<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/tz/">tz<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/Vim/">Vim<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/virt-manager/">virt-manager<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/work/">work<span class="count">1</span></a>
-            
-          
-          <li>
-            
-              <a href="/categories/xen/">xen<span class="count">1</span></a>
-            
-          
-          </li>
-        </ul>
-      </section>
-    
-  
-
-  <section id="mini-bio">
-    <header>
-      <h1>About</h1>
-    </header>
-    <p>Hack the planet!</p>
-    <footer>
-      <a href="/about" class="button">Learn More</a>
-    </footer>
-  </section>
-</section>
-
-      <footer id="site-footer">
-  
-      <ul class="socnet-icons">
-        
-    <li><a href="/categories/c/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fas fa-rss"></a></li>
-
-
-        <li><a href="//github.com/troglobit" target="_blank" rel="noopener" title="GitHub" class="fab fa-github"></a></li>
-
-
-
-
-
-
-
-
-
-
-
-<li><a href="//linkedin.com/in/joachim-nilsson-3a017125" target="_blank" rel="noopener" title="LinkedIn" class="fab fa-linkedin"></a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<li><a href="//instagram.com/troglobit" target="_blank" rel="noopener" title="Instagram" class="fab fa-instagram"></a></li>
-
-<li><a href="//twitter.com/troglobit" target="_blank" rel="noopener" title="Twitter" class="fab fa-twitter"></a></li>
-
-
-<li><a href="//pinterest.com/troglobit" target="_blank" rel="noopener" title="Pinterest" class="fab fa-pinterest-p"></a></li>
-
-
-
-
-
-<li><a href="//keybase.io/troglobit" target="_blank" rel="noopener" title="keybase" class="fab fa-keybase"></a></li>
-
-<li><a href="mailto:troglobit@gmail.com" target="_blank" title="Email" class="far fa-envelope"></a></li>
-
-      </ul>
-  
-  <p class="copyright">
-    
-      &copy; 2019
-      
-        Joachim Nilsson
-      
-    . <br>
-    Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='0.58.3' target='_blank' rel='noopener'>Hugo</a>
-  </p>
-</footer>
-<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
-
-      
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/html.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/css.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/js.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/toml.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
-
-  
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
-  <script src=/js/util.js></script>
-  <script src=/js/main.js></script>
-  <script src=/js/add-on.js></script>
-  
-
-
-
-
-
+      </div>
     </div>
+  </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:troglobit@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/troglobit" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/troglobit" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="/categories/c/index.xml" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="https://troglobit.com">Joachim Nilsson</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2020
+          
+
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="/js/main.js"></script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
   </body>
 </html>
+

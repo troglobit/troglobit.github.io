@@ -4,7 +4,17 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-02-16T21:06:59+01:00</lastmod>
+    <lastmod>2020-02-17T12:12:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/</loc>
+    <lastmod>2020-02-17T12:12:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/inadyn/</loc>
+    <lastmod>2020-02-17T12:12:00+02:00</lastmod>
   </url>
   
   <url>
@@ -44,11 +54,6 @@
   
   <url>
     <loc>/projects/uftpd/</loc>
-    <lastmod>2019-07-29T20:31:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/</loc>
     <lastmod>2019-07-29T20:31:00+02:00</lastmod>
   </url>
   
@@ -160,11 +165,6 @@
   <url>
     <loc>/projects/smcroute/</loc>
     <lastmod>2019-02-11T20:46:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/inadyn/</loc>
-    <lastmod>2018-09-30T00:23:00+02:00</lastmod>
   </url>
   
   <url>
@@ -435,11 +435,6 @@
   <url>
     <loc>/categories/sthttpd/</loc>
     <lastmod>2016-11-06T01:34:18+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/C/</loc>
-    <lastmod>2016-10-27T22:22:44+00:00</lastmod>
   </url>
   
   <url>
@@ -1155,6 +1150,11 @@
   <url>
     <loc>/2009/03/28/the-marvellous-libev/</loc>
     <lastmod>2009-03-28T23:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/c/</loc>
+    <lastmod>2009-03-27T00:37:42+00:00</lastmod>
   </url>
   
   <url>
