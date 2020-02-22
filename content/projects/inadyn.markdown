@@ -1,7 +1,7 @@
 ---
 name: In-a-dyn
 title: "Small and Simple DDNS Client"
-date: 2020-02-17 12:12:00 +02:00
+date: 2020-02-20 16:29:00 +02:00
 aliases: /inadyn.html
 ---
 
@@ -94,13 +94,26 @@ Issue tracker and GIT repository available at GitHub:
 * [ChangeLog](https://github.com/troglobit/inadyn/blob/master/ChangeLog.md)
 * [Repository](https://github.com/troglobit/inadyn)
 * [Issue Tracker](https://github.com/troglobit/inadyn/issues)
-* [inadyn-2.5.tar.xz](ftp://ftp.troglobit.com/inadyn/inadyn-2.5.tar.xz),
-  [MD5](ftp://ftp.troglobit.com/inadyn/inadyn-2.5.tar.xz.md5)
-  [GPG Sign](ftp://ftp.troglobit.com/inadyn/inadyn-2.5.xz.asc)
+* [inadyn-2.6.tar.xz](ftp://ftp.troglobit.com/inadyn/inadyn-2.6.tar.xz),
+  [MD5](ftp://ftp.troglobit.com/inadyn/inadyn-2.6.tar.xz.md5)
+  [GPG Sign](ftp://ftp.troglobit.com/inadyn/inadyn-2.6.xz.asc)
 
 See also the [OpenHub page](https://www.openhub.net/p/inadyn/), the
 [Freshcode page](http://freshcode.club/projects/inadyn), or the dormant
 [Free(code) page](http://freecode.com/projects/inadyn).
+
+
+Install
+-------
+
+Pre-built package for Debian, and other compatible amd64 derivatives,
+like Ubuntu, Linux Mint, etc. is available here:
+
+```sh
+curl -sS https://deb.troglobit.com/pubkey.gpg | sudo apt-key add -
+echo "deb [arch=amd64] https://deb.troglobit.com/debian stable main" | sudo tee /etc/apt/sources.list.d/troglobit.list
+sudo apt-get update && sudo apt-get install inadyn
+```
 
 
 Origin & References
