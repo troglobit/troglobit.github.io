@@ -8,7 +8,7 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Mon, 17 Feb 2020 12:12:00 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 20 Feb 2020 16:29:00 +0200</lastBuildDate>
     
 	<atom:link href="/projects/index.xml" rel="self" type="application/rss+xml" />
     
@@ -16,7 +16,7 @@
     <item>
       <title>Small and Simple DDNS Client</title>
       <link>/projects/inadyn/</link>
-      <pubDate>Mon, 17 Feb 2020 12:12:00 +0200</pubDate>
+      <pubDate>Thu, 20 Feb 2020 16:29:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/projects/inadyn/</guid>
       <description>In-a-dyn is a small and simple Dynamic DNS, DDNS, client with HTTPS support. It is commonly available in many GNU/Linux distributions, used in off-the-shelf routers and Internet gateways to automate the task of keeping your DNS record up to date with any IP address changes from your ISP. It can also be used in installations with redundant (backup) connections to the Internet.

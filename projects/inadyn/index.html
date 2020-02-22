@@ -67,9 +67,9 @@ Supported Providers The following is a curated list of some of the natively supp
   "headline": "Small and Simple DDNS Client",
   "description" : "In-a-dyn is a small and simple Dynamic DNS, DDNS, client with HTTPS support. It is commonly available in many GNU\/Linux distributions, used in off-the-shelf routers and Internet gateways to automate the task of keeping your DNS record up to date with any IP address changes from your ISP. It can also be used in installations with redundant (backup) connections to the Internet.\nPresentation here.\nSupported Providers The following is a curated list of some of the natively supported DDNS providers.",
   "inLanguage" : "en",
-  "wordCount":  421 ,
-  "datePublished" : "2020-02-17T12:12:00",
-  "dateModified" : "2020-02-17T12:12:00",
+  "wordCount":  465 ,
+  "datePublished" : "2020-02-20T16:29:00",
+  "dateModified" : "2020-02-20T16:29:00",
   "image" : "\/images\/profile.jpg",
   "keywords" : [ "" ],
   "mainEntityOfPage" : "\/projects\/inadyn\/",
@@ -379,15 +379,22 @@ script, use <code>--help</code> or see the <a href="https://github.com/troglobit
 <li><a href="https://github.com/troglobit/inadyn/blob/master/ChangeLog.md">ChangeLog</a></li>
 <li><a href="https://github.com/troglobit/inadyn">Repository</a></li>
 <li><a href="https://github.com/troglobit/inadyn/issues">Issue Tracker</a></li>
-<li><a href="ftp://ftp.troglobit.com/inadyn/inadyn-2.5.tar.xz">inadyn-2.5.tar.xz</a>,
-<a href="ftp://ftp.troglobit.com/inadyn/inadyn-2.5.tar.xz.md5">MD5</a>
-<a href="ftp://ftp.troglobit.com/inadyn/inadyn-2.5.xz.asc">GPG Sign</a></li>
+<li><a href="ftp://ftp.troglobit.com/inadyn/inadyn-2.6.tar.xz">inadyn-2.6.tar.xz</a>,
+<a href="ftp://ftp.troglobit.com/inadyn/inadyn-2.6.tar.xz.md5">MD5</a>
+<a href="ftp://ftp.troglobit.com/inadyn/inadyn-2.6.xz.asc">GPG Sign</a></li>
 </ul>
 
 <p>See also the <a href="https://www.openhub.net/p/inadyn/">OpenHub page</a>, the
 <a href="http://freshcode.club/projects/inadyn">Freshcode page</a>, or the dormant
 <a href="http://freecode.com/projects/inadyn">Free(code) page</a>.</p>
 
+<h2 id="install">Install</h2>
+
+<p>Pre-built package for Debian, and other compatible amd64 derivatives,
+like Ubuntu, Linux Mint, etc. is available here:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">curl -sS https://deb.troglobit.com/pubkey.gpg | sudo apt-key add -
+<span style="color:#0086b3">echo</span> <span style="color:#d14">&#34;deb [arch=amd64] https://deb.troglobit.com/debian stable main&#34;</span> | sudo tee /etc/apt/sources.list.d/troglobit.list
+sudo apt-get update <span style="color:#000;font-weight:bold">&amp;&amp;</span> sudo apt-get install inadyn</code></pre></div>
 <h2 id="origin-references">Origin &amp; References</h2>
 
 <p>This is  the continuation  of the  <a href="http://www.inatech.eu/inadyn/">original INADYN</a>  project by
