@@ -74,6 +74,11 @@ enableEmoji = true
     weight = 1
 
   [[menu.main]]
+    name = "DEB"
+    url = "https://deb.troglobit.com"
+    weight = 1
+
+  [[menu.main]]
     name = "About"
     url = "/about/"
     weight = 3
