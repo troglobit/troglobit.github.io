@@ -4,7 +4,8 @@ categories:
 - ubuntu
 - apt
 comments: true
-date: 2017-09-30T12:39:43Z
+date: 2020-02-22T12:28:00Z
+orig-date: 2017-09-30T12:39:43Z
 title: Set up a Debian/Ubuntu APT Repository
 url: /2017/09/30/set-up-a-debian-ubuntu-apt-repository/
 aliases: /blog/2017/09/30/set-up-a-debian-ubuntu-apt-repository/
@@ -54,7 +55,7 @@ will continue with Debian only.  Notice the use of Debian code names
 which are different in the Ubuntu world.
 
     $ cd debian/conf
-	$ mg distributions
+    $ mg distributions
 
 Notice the `Suite` and `Codename` for each entry in the `distributions`
 file below.  These are the official names and their current release
@@ -65,7 +66,7 @@ automatically create synmlinks based on this file.
 Origin: Troglobit Software
 Label: deb.troglobit.com
 Suite: oldstable
-Codename: jessie
+Codename: stretch
 Architectures: amd64
 Components: main
 Description: Unofficial Debian/Ubuntu Packages maintained by Joachim Nilsson
@@ -74,7 +75,7 @@ SignWith: 4B8786A6
 Origin: Troglobit Software
 Label: deb.troglobit.com
 Suite: stable
-Codename: stretch
+Codename: buster
 Architectures: amd64
 Components: main
 Description: Unofficial Debian/Ubuntu Packages maintained by Joachim Nilsson
@@ -96,7 +97,7 @@ Next up is `conf/incoming`:
 Name: default
 IncomingDir: incoming
 TempDir: tmp
-Allow: oldstable>jessie stable>stretch unstable>sid
+Allow: oldstable>stretch stable>buster unstable>sid
 Cleanup: on_deny on_error
 ```
 
@@ -117,15 +118,15 @@ a 4096 bit key.  I set it up *without a passphrase* for convenince¹ and
 then upload the resulting public key:
 
     $ gpg --gen-key
-	gpg: key 44D7FA0A marked as ultimately trusted
-	public and secret key created and signed.
-	$ gpg --send-keys 4B8786A6
-	gpg: sending key 4B8786A6 to hkp server keys.gnupg.net
+    gpg: key 44D7FA0A marked as ultimately trusted
+    public and secret key created and signed.
+    $ gpg --send-keys 4B8786A6
+    gpg: sending key 4B8786A6 to hkp server keys.gnupg.net
 
 Add the fingerprint to the `SignWith:` in the `conf/distributions` file.
 
 
-### archive-keyring.deb
+### Publishing the Public Key
 
 The public part of the GPG key also needs to be published as a regular
 `.deb` package.  Clone my [GIT repo](https://github.com/troglobit/deb)
@@ -140,6 +141,11 @@ and build the package:
 
     $ dpkg-buildpackage
 
+Alternatively, publish it in ascii form in a safe place:
+
+    $ cd /srv/deb/
+    $ gpg --armor --export archive@troglobit.com > pubkey.gpg
+
 Done.
 
 
@@ -150,8 +156,7 @@ It's now time for the developer(s) to upload the(ir) package(s) to the
 
     $ scp troglobit-archive-keyring_* server:/srv/deb/debian/incoming/
 
-Then run `mini-dinstall` in batch mode from the command line, or start
-it in daemon mode:
+Then tell reprepro to process the incoming queue:
 
     $ cd /srv/deb/debian
     $ reprepro -Vb . processincoming default
@@ -159,20 +164,9 @@ it in daemon mode:
 
 ### Users
 
-Add a dedicated `.sources` file to the `/etc/sources.list.d/` directory,
-e.g. `troglobit.sources`:
-
-    Types: deb
-    URIs: http://deb.troglobit.com/debian
-    Suites: unstable
-    Architectures: amd64
-    Components: main
-    Signed-By: /usr/share/keyrings/troglobit-archive-keyring.gpg
-
-Run an `sudo apt update` and remember to add the GPG key:
-
-    sudo apt-key adv --recv 4B8786A6
-    apt install --allow-unauthenticated troglobit-archive-keyring
+    $ curl -sS https://deb.troglobit.com/pubkey.gpg | sudo apt-key add -
+    $ echo "deb [arch=amd64] https://deb.troglobit.com/debian stable main" | sudo tee /etc/apt/sources.list.d/troglobit.list
+    $ sudo apt-get update
 
 There.  Packages can now be installed.
 
@@ -187,9 +181,3 @@ for the new passphrase.
 [1]: https://debian-administration.org/article/717/Setting_up_a_personal_secure_apt_repository
 [2]: https://debian-administration.org/article/286/Setting_up_your_own_APT_repository_with_upload_support
 [3]: https://github.com/troglobit/merecat
-
-<!--
-  -- Local Variables:
-  -- mode: markdown
-  -- End:
-  -->
