@@ -9,6 +9,8 @@ Every now and then people ask me for pre-built packages of software I
 maintain.  Up until today I've had to refer them to the cold hard build
 instructions for each of my programs.
 
+<!--more-->
+
 However, today I announce <https://deb.troglobit.com>, a repository of
 pre-built amd64 packages built for Debian 10 (Buster), which will work
 on any Debian derived distribution; Ubuntu, Linux Mint, etc.
