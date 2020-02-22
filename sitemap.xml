@@ -4,17 +4,27 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-02-22T09:45:00+00:00</lastmod>
+    <lastmod>2020-02-22T12:28:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/apt/</loc>
+    <lastmod>2020-02-22T12:28:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2020-02-22T09:45:00+00:00</lastmod>
+    <lastmod>2020-02-22T12:28:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2020-02-22T09:45:00+00:00</lastmod>
+    <lastmod>2020-02-22T12:28:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2017/09/30/set-up-a-debian-ubuntu-apt-repository/</loc>
+    <lastmod>2020-02-22T12:28:00+00:00</lastmod>
   </url>
   
   <url>
@@ -235,16 +245,6 @@
   <url>
     <loc>/categories/UNIX/</loc>
     <lastmod>2018-01-23T20:39:36+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/apt/</loc>
-    <lastmod>2017-09-30T12:39:43+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2017/09/30/set-up-a-debian-ubuntu-apt-repository/</loc>
-    <lastmod>2017-09-30T12:39:43+00:00</lastmod>
   </url>
   
   <url>
@@ -1098,6 +1098,11 @@
   </url>
   
   <url>
+    <loc>/categories/Bazaar/</loc>
+    <lastmod>2009-06-13T00:36:07+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2009/06/13/howto-use-git-for-collaborative-development/</loc>
     <lastmod>2009-06-13T00:36:07+00:00</lastmod>
   </url>
@@ -1105,11 +1110,6 @@
   <url>
     <loc>/2009/06/13/micro-tetris/</loc>
     <lastmod>2009-06-13T00:04:30+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/bazaar/</loc>
-    <lastmod>2009-06-12T19:50:27+00:00</lastmod>
   </url>
   
   <url>

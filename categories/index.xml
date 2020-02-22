@@ -8,10 +8,37 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Sat, 22 Feb 2020 09:45:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 22 Feb 2020 12:28:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>apt</title>
+      <link>/categories/apt/</link>
+      <pubDate>Sat, 22 Feb 2020 12:28:00 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/apt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>debian</title>
+      <link></link>
+      <pubDate>Sat, 22 Feb 2020 12:28:00 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid></guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ubuntu</title>
+      <link></link>
+      <pubDate>Sat, 22 Feb 2020 12:28:00 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid></guid>
+      <description></description>
+    </item>
     
     <item>
       <title>programming</title>
@@ -95,15 +122,6 @@
     </item>
     
     <item>
-      <title>debian</title>
-      <link></link>
-      <pubDate>Sat, 05 May 2018 13:57:00 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid></guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>howto</title>
       <link></link>
       <pubDate>Sat, 05 May 2018 13:57:00 +0200</pubDate>
@@ -122,15 +140,6 @@
     </item>
     
     <item>
-      <title>ubuntu</title>
-      <link></link>
-      <pubDate>Sat, 05 May 2018 13:57:00 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid></guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>PIM</title>
       <link>/categories/PIM/</link>
       <pubDate>Tue, 23 Jan 2018 20:39:36 +0000</pubDate>
@@ -145,15 +154,6 @@
       <pubDate>Tue, 23 Jan 2018 20:39:36 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/UNIX/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>apt</title>
-      <link>/categories/apt/</link>
-      <pubDate>Sat, 30 Sep 2017 12:39:43 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/categories/apt/</guid>
       <description></description>
     </item>
     
@@ -933,10 +933,10 @@
     
     <item>
       <title>Bazaar</title>
-      <link></link>
+      <link>/categories/Bazaar/</link>
       <pubDate>Sat, 13 Jun 2009 00:36:07 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid></guid>
+      <guid>/categories/Bazaar/</guid>
       <description></description>
     </item>
     
@@ -951,10 +951,10 @@
     
     <item>
       <title>bazaar</title>
-      <link>/categories/bazaar/</link>
+      <link></link>
       <pubDate>Fri, 12 Jun 2009 19:50:27 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/categories/bazaar/</guid>
+      <guid></guid>
       <description></description>
     </item>
     

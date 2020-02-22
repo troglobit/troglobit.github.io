@@ -80,9 +80,9 @@ managed to get it working.  Probably due to problems with GPG. …">
   "headline": "Set up a Debian\/Ubuntu APT Repository",
   "description" : "How to set up a Debian\/Ubuntu APT repository with GPG signing.\nAt first I tried to use Bas Wijnen\x26rsquo;s mini-dinstall howto, but never managed to get it working. Probably due to problems with GPG. Then I went down the tried and true path of using reprepro.\nI\x26rsquo;ve tried to document my steps here, but I\x26rsquo;ve very likely missed a few steps that a beginner admin may run into. YMMV B-)\n",
   "inLanguage" : "en",
-  "wordCount":  639 ,
-  "datePublished" : "2017-09-30T12:39:43",
-  "dateModified" : "2017-09-30T12:39:43",
+  "wordCount":  634 ,
+  "datePublished" : "2020-02-22T12:28:00",
+  "dateModified" : "2020-02-22T12:28:00",
   "image" : "\/images\/profile.jpg",
   "keywords" : [ "" ],
   "mainEntityOfPage" : "\/2017\/09\/30\/set-up-a-debian-ubuntu-apt-repository\/",
@@ -298,7 +298,7 @@ managed to get it working.  Probably due to problems with GPG. …">
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on September 30, 2017
+  <i class="fas fa-calendar"></i>&nbsp;Posted on February 22, 2020
   
   
   
@@ -379,7 +379,7 @@ automatically create synmlinks based on this file.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-conf" data-lang="conf">Origin: Troglobit Software
 Label: deb.troglobit.com
 Suite: oldstable
-Codename: jessie
+Codename: stretch
 Architectures: amd64
 Components: main
 Description: Unofficial Debian/Ubuntu Packages maintained by Joachim Nilsson
@@ -388,7 +388,7 @@ SignWith: 4B8786A6
 Origin: Troglobit Software
 Label: deb.troglobit.com
 Suite: stable
-Codename: stretch
+Codename: buster
 Architectures: amd64
 Components: main
 Description: Unofficial Debian/Ubuntu Packages maintained by Joachim Nilsson
@@ -407,7 +407,7 @@ SignWith: 4B8786A6</code></pre></div>
 <pre><code>Name: default
 IncomingDir: incoming
 TempDir: tmp
-Allow: oldstable&gt;jessie stable&gt;stretch unstable&gt;sid
+Allow: oldstable&gt;stretch stable&gt;buster unstable&gt;sid
 Cleanup: on_deny on_error
 </code></pre>
 
@@ -436,7 +436,7 @@ gpg: sending key 4B8786A6 to hkp server keys.gnupg.net
 
 <p>Add the fingerprint to the <code>SignWith:</code> in the <code>conf/distributions</code> file.</p>
 
-<h3 id="archive-keyring-deb">archive-keyring.deb</h3>
+<h3 id="publishing-the-public-key">Publishing the Public Key</h3>
 
 <p>The public part of the GPG key also needs to be published as a regular
 <code>.deb</code> package.  Clone my <a href="https://github.com/troglobit/deb">GIT repo</a>
@@ -453,6 +453,12 @@ and build the package:</p>
 <pre><code>$ dpkg-buildpackage
 </code></pre>
 
+<p>Alternatively, publish it in ascii form in a safe place:</p>
+
+<pre><code>$ cd /srv/deb/
+$ gpg --armor --export archive@troglobit.com &gt; pubkey.gpg
+</code></pre>
+
 <p>Done.</p>
 
 <h3 id="developer">Developer</h3>
@@ -463,8 +469,7 @@ and build the package:</p>
 <pre><code>$ scp troglobit-archive-keyring_* server:/srv/deb/debian/incoming/
 </code></pre>
 
-<p>Then run <code>mini-dinstall</code> in batch mode from the command line, or start
-it in daemon mode:</p>
+<p>Then tell reprepro to process the incoming queue:</p>
 
 <pre><code>$ cd /srv/deb/debian
 $ reprepro -Vb . processincoming default
@@ -472,21 +477,9 @@ $ reprepro -Vb . processincoming default
 
 <h3 id="users">Users</h3>
 
-<p>Add a dedicated <code>.sources</code> file to the <code>/etc/sources.list.d/</code> directory,
-e.g. <code>troglobit.sources</code>:</p>
-
-<pre><code>Types: deb
-URIs: http://deb.troglobit.com/debian
-Suites: unstable
-Architectures: amd64
-Components: main
-Signed-By: /usr/share/keyrings/troglobit-archive-keyring.gpg
-</code></pre>
-
-<p>Run an <code>sudo apt update</code> and remember to add the GPG key:</p>
-
-<pre><code>sudo apt-key adv --recv 4B8786A6
-apt install --allow-unauthenticated troglobit-archive-keyring
+<pre><code>$ curl -sS https://deb.troglobit.com/pubkey.gpg | sudo apt-key add -
+$ echo &quot;deb [arch=amd64] https://deb.troglobit.com/debian stable main&quot; | sudo tee /etc/apt/sources.list.d/troglobit.list
+$ sudo apt-get update
 </code></pre>
 
 <p>There.  Packages can now be installed.</p>
@@ -496,12 +489,6 @@ apt install --allow-unauthenticated troglobit-archive-keyring
 <p>¹ To remove a GPG passphrase from a key, use <code>gpg --edit-key HASH</code>, and
 then <code>passwd</code> at the <code>gpg&gt;</code> prompt.  Simply press enter when prompted
 for the new passphrase.</p>
-
-<!--
-  -- Local Variables:
-  -- mode: markdown
-  -- End:
-  -->
 
         
 
@@ -514,13 +501,9 @@ for the new passphrase.</p>
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="/2017/09/19/threads-vs-event-loop-again-.../" data-toggle="tooltip" data-placement="top" title="Threads vs Event Loop, Again ...">&larr; Previous Post</a>
+              <a href="/2020/02/Useful-UNIX-APIs/" data-toggle="tooltip" data-placement="top" title="Useful UNIX API:s">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="/2016/07/05/multicast-routing-with-pim-sm-over-gre/" data-toggle="tooltip" data-placement="top" title="Multicast routing with PIM-SM over GRE">Next Post &rarr;</a>
-            </li>
           
         </ul>
       

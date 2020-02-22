@@ -8,10 +8,26 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Sat, 22 Feb 2020 09:45:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 22 Feb 2020 12:28:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Set up a Debian/Ubuntu APT Repository</title>
+      <link>/2017/09/30/set-up-a-debian-ubuntu-apt-repository/</link>
+      <pubDate>Sat, 22 Feb 2020 12:28:00 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2017/09/30/set-up-a-debian-ubuntu-apt-repository/</guid>
+      <description>&lt;p&gt;How to set up a Debian/Ubuntu APT repository with GPG signing.&lt;/p&gt;
+
+&lt;p&gt;At first I tried to use &lt;a href=&#34;https://debian-administration.org/article/717/Setting_up_a_personal_secure_apt_repository&#34;&gt;Bas Wijnen&amp;rsquo;s mini-dinstall howto&lt;/a&gt;, but never
+managed to get it working.  Probably due to problems with GPG.  Then I
+went down the tried and true path of using &lt;a href=&#34;https://debian-administration.org/article/286/Setting_up_your_own_APT_repository_with_upload_support&#34;&gt;reprepro&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ve tried to document my steps here, but I&amp;rsquo;ve very likely missed a few
+steps that a beginner admin may run into. YMMV B-)&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Useful UNIX API:s</title>
@@ -377,22 +393,6 @@ up the GRE tunnel.  It is just as easy to extend this to a big corporate
 Intranet with more routers between &lt;code&gt;R1&lt;/code&gt; and &lt;code&gt;R2&lt;/code&gt;.  As long as that IT
 department takes care of the unicast routing between &lt;code&gt;R1&lt;/code&gt; and &lt;code&gt;R2&lt;/code&gt; so
 that the GRE tunnel can be established.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Set up a Debian/Ubuntu APT Repository</title>
-      <link>/2017/09/30/set-up-a-debian-ubuntu-apt-repository/</link>
-      <pubDate>Sat, 30 Sep 2017 12:39:43 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/2017/09/30/set-up-a-debian-ubuntu-apt-repository/</guid>
-      <description>&lt;p&gt;How to set up a Debian/Ubuntu APT repository with GPG signing.&lt;/p&gt;
-
-&lt;p&gt;At first I tried to use &lt;a href=&#34;https://debian-administration.org/article/717/Setting_up_a_personal_secure_apt_repository&#34;&gt;Bas Wijnen&amp;rsquo;s mini-dinstall howto&lt;/a&gt;, but never
-managed to get it working.  Probably due to problems with GPG.  Then I
-went down the tried and true path of using &lt;a href=&#34;https://debian-administration.org/article/286/Setting_up_your_own_APT_repository_with_upload_support&#34;&gt;reprepro&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ve tried to document my steps here, but I&amp;rsquo;ve very likely missed a few
-steps that a beginner admin may run into. YMMV B-)&lt;/p&gt;</description>
     </item>
     
     <item>
