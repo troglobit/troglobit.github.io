@@ -86,6 +86,12 @@
         
           
             <li>
+              <a title="DEB" href="https://deb.troglobit.com">DEB</a>
+            </li>
+          
+        
+          
+            <li>
               <a title="FTP" href="https://ftp.troglobit.com">FTP</a>
             </li>
           
@@ -246,6 +252,44 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         
         <div class="posts-list">
+          
+            <article class="post-preview">
+              <a href="/2016/11/19/one-ping-only/">
+                <h2 class="post-title">One ping only</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on November 19, 2016
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Nilsson
+    
+  
+  
+</span>
+
+
+              </p>
+              <div class="post-entry">
+                
+                  For some odd reason, today was the day when I woke up and continued working on libICMP. It&rsquo;s now almost seven years since I first adopted Tim Lawless&rsquo; public domain version, and today I picked up where I left off and started refactoring and cleaning up.
+Example:
+#include &#34;icmp/icmp.h&#34; int main(int argc, char *argv[]) { char *host = &#34;localhost&#34;; struct libicmp *obj; if (argc &gt;= 2) host = argv[1]; if (!
+                  <a href="/2016/11/19/one-ping-only/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
           
             <article class="post-preview">
               <a href="/2016/11/06/merecat-another-stray-kitten-/">
@@ -662,45 +706,6 @@ can be beneficial (small size), but I may in the future transplant the
 UDP functionality of <code>uredir</code> into <code>redir</code>.  We&rsquo;ll see, right now though
 I have several other <a href="/projects/">projects</a> to attend to :-)</p>
                   <a href="/2016/07/02/redirecting-tcp-udp-ports-for-fun-and-profit/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2016/04/21/using-netcat-to-test-your-internet-daemon/">
-                <h2 class="post-title">Using netcat to test your Internet daemon</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on April 21, 2016
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Nilsson
-    
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                
-                  So you&rsquo;re having a problem with the Internet daemon you wrote. You&rsquo;re convinced the firewall, or some other magic, in your modern Linux distribution is eating your packets.
-No.
-First, make sure your daemon is actually running and has successfully bound to the address and port in question:
-sudo netstat -atnup  If your application is not listed there you have a problem with it binding its server socket. Check the return values from bind().
-                  <a href="/2016/04/21/using-netcat-to-test-your-internet-daemon/" class="post-read-more">[Read More]</a>
                 
               </div>
 

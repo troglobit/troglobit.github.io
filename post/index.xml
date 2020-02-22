@@ -8,10 +8,22 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Sat, 22 Feb 2020 12:28:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 22 Feb 2020 17:36:45 +0100</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HowTo: Install pre-built packages</title>
+      <link>/2020/02/HowTo-Install-pre-built-packages/</link>
+      <pubDate>Sat, 22 Feb 2020 17:36:45 +0100</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2020/02/HowTo-Install-pre-built-packages/</guid>
+      <description>Every now and then people ask me for pre-built packages of software I maintain. Up until today I&amp;rsquo;ve had to refer them to the cold hard build instructions for each of my programs.
+However, today I announce https://deb.troglobit.com, a repository of pre-built amd64 packages built for Debian 10 (Buster), which will work on any Debian derived distribution; Ubuntu, Linux Mint, etc.
+To install packages from this repository,
+ add the archive key:</description>
+    </item>
     
     <item>
       <title>Set up a Debian/Ubuntu APT Repository</title>

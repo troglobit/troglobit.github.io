@@ -86,6 +86,12 @@
         
           
             <li>
+              <a title="DEB" href="https://deb.troglobit.com">DEB</a>
+            </li>
+          
+        
+          
+            <li>
               <a title="FTP" href="https://ftp.troglobit.com">FTP</a>
             </li>
           
@@ -246,6 +252,45 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         
         <div class="posts-list">
+          
+            <article class="post-preview">
+              <a href="/2016/04/21/using-netcat-to-test-your-internet-daemon/">
+                <h2 class="post-title">Using netcat to test your Internet daemon</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on April 21, 2016
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Nilsson
+    
+  
+  
+</span>
+
+
+              </p>
+              <div class="post-entry">
+                
+                  So you&rsquo;re having a problem with the Internet daemon you wrote. You&rsquo;re convinced the firewall, or some other magic, in your modern Linux distribution is eating your packets.
+No.
+First, make sure your daemon is actually running and has successfully bound to the address and port in question:
+sudo netstat -atnup  If your application is not listed there you have a problem with it binding its server socket. Check the return values from bind().
+                  <a href="/2016/04/21/using-netcat-to-test-your-internet-daemon/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
           
             <article class="post-preview">
               <a href="/2016/04/11/the-key-to-successful-boot/">
@@ -638,56 +683,6 @@ Well, I have to confess that there are certain things that SNMP can be really us
                   Summer is now slowly fading away, and what a summer it has been here in Sweden! For someone who isn&rsquo;t a fan of the summer heat it has been an awesome time for brain work, and in my case work on my open source projects! :-)
 Due to my not really taking much vacation previous years I had saved up for ten weeks (10) this year! It was really worth it, and for the first time in many years I actually feel rested.
                   <a href="/2015/09/09/summer-of-code-2015/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2015/07/02/howto-using-lite-with-a-git-based-application/">
-                <h2 class="post-title">HowTo: Using -lite with a GIT-based application</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on July 2, 2015
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Nilsson
-    
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                
-                  <p>Years ago while looking for a fast <a href="https://en.wikipedia.org/wiki/Init">init</a> replacement for <a href="http://westermo.com/">work</a>,
-I found <a href="http://helllabs.org/finit/">Finit</a>.  Originally written by <a href="https://github.com/cmatsuoka">Claudio Matsuoka</a> to act
-as a drop-in replacement for the <a href="https://en.wikipedia.org/wiki/Asus_Eee_PC">Asus EeePC</a> <a href="http://wiki.eeeuser.com/boot_process:the_boot_process">fastinit</a>, <em>&ldquo;gaps
-filled with frog DNA &hellip;&ldquo;</em></p>
-
-<p>Until I found Finit I had always been in awe of those venturing into the
-realm of <a href="http://0pointer.net/blog/">PID 1</a>.  However, learning from the simplicity of Claudio&rsquo;s
-code I realized that although PID 1 at times is indistinguishable from
-magic, it is really not that hard to master.  <a href="https://github.com/troglobit/finit">My version of Finit</a>
-is available on GitHub.</p>
-
-<p>The code is open sourced under the very liberal <a href="http://opensource.org/licenses/MIT">MIT/X11 license</a>,
-and much of its frog DNA has proven very useful to me over the years.
-This blog post is about how that frog DNA can help you fill gaps in your
-projects &hellip;</p>
-                  <a href="/2015/07/02/howto-using-lite-with-a-git-based-application/" class="post-read-more">[Read More]</a>
                 
               </div>
 
