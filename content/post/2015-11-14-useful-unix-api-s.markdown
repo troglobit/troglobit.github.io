@@ -3,7 +3,7 @@ categories:
 - unix
 - programming
 comments: true
-date: 2017-12-22T10:28:00Z
+date: 2020-02-22T09:45:00Z
 orig-date: 2015-11-14T11:45:49Z
 title: Useful UNIX API:s
 aliases:
@@ -14,7 +14,7 @@ aliases:
 Had an interesting conversation with a buddy last night.  It started out
 as a shift-reduce problem with Bison and ended up a ping-pong of useful
 UNIX API:s.  We concluded that despite having worked professionally with
-UNIX for over a decade, it is still very satisfying finding gems like
+UNIX for over two decades, it is still very satisfying finding gems like
 these.
 
 Most people are completely unaware they exist and end up rolling their
@@ -119,6 +119,12 @@ Other (standard/POSIX) functions worthy of mentioning here are:
 ### `fnmatch.h`
 
 - [`fnmatch()`](http://man7.org/linux/man-pages/man3/fnmatch.3.html)
+
+### `fts.h`
+
+- [`fts_open()`](http://man7.org/linux/man-pages/man3/fts_open.3.html)
+- [`fts_read()`](http://man7.org/linux/man-pages/man3/fts_read.3.html)
+- [`fts_close()`](http://man7.org/linux/man-pages/man3/fts_close.3.html)
 
 ### `ftw.h`
 
