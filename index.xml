@@ -8,10 +8,39 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Mon, 17 Feb 2020 12:12:00 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 22 Feb 2020 09:45:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Useful UNIX API:s</title>
+      <link>/2020/02/Useful-UNIX-APIs/</link>
+      <pubDate>Sat, 22 Feb 2020 09:45:00 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2020/02/Useful-UNIX-APIs/</guid>
+      <description>&lt;p&gt;Had an interesting conversation with a buddy last night.  It started out
+as a shift-reduce problem with Bison and ended up a ping-pong of useful
+UNIX API:s.  We concluded that despite having worked professionally with
+UNIX for over two decades, it is still very satisfying finding gems like
+these.&lt;/p&gt;
+
+&lt;p&gt;Most people are completely unaware they exist and end up rolling their
+own (buggy) implementations.  For instance, string manipulation and
+various forms of linked lists.  Which is why I many years ago extracted
+the &lt;em&gt;frog DNA&lt;/em&gt; from &lt;a href=&#34;https://github.com/troglobit/finit/&#34;&gt;Finit&lt;/a&gt; to a
+separate library called &lt;a href=&#34;https://github.com/troglobit/libite/&#34;&gt;libite&lt;/a&gt;,
+or -lite for short.  It imports the OpenBSD &lt;code&gt;strlcpy()&lt;/code&gt; family of API:s,
+up-to-date &lt;code&gt;queue.h&lt;/code&gt; with the &lt;code&gt;_SAFE&lt;/code&gt; iterators, and more.  Some people
+like &lt;a href=&#34;https://libbsd.freedesktop.org/wiki/&#34;&gt;libbsd&lt;/a&gt; for this, but I&amp;rsquo;ve
+found many of the ports incomplete and unsafe and prefer to stay closer
+to the upstream *BSD versions.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; This post was originally written Nov 14, 2015.  It was a
+Saturday and I remember being extremely inspired when I wrote it.  I&amp;rsquo;ve
+continued adding to it over the years, and still do.  So, as of Jul 2,
+2017 I&amp;rsquo;m bumping the modification date each time I add something new :-)&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Small and Simple DDNS Client</title>
@@ -348,35 +377,6 @@ up the GRE tunnel.  It is just as easy to extend this to a big corporate
 Intranet with more routers between &lt;code&gt;R1&lt;/code&gt; and &lt;code&gt;R2&lt;/code&gt;.  As long as that IT
 department takes care of the unicast routing between &lt;code&gt;R1&lt;/code&gt; and &lt;code&gt;R2&lt;/code&gt; so
 that the GRE tunnel can be established.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Useful UNIX API:s</title>
-      <link>/2017/12/Useful-UNIX-APIs/</link>
-      <pubDate>Fri, 22 Dec 2017 10:28:00 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/2017/12/Useful-UNIX-APIs/</guid>
-      <description>&lt;p&gt;Had an interesting conversation with a buddy last night.  It started out
-as a shift-reduce problem with Bison and ended up a ping-pong of useful
-UNIX API:s.  We concluded that despite having worked professionally with
-UNIX for over a decade, it is still very satisfying finding gems like
-these.&lt;/p&gt;
-
-&lt;p&gt;Most people are completely unaware they exist and end up rolling their
-own (buggy) implementations.  For instance, string manipulation and
-various forms of linked lists.  Which is why I many years ago extracted
-the &lt;em&gt;frog DNA&lt;/em&gt; from &lt;a href=&#34;https://github.com/troglobit/finit/&#34;&gt;Finit&lt;/a&gt; to a
-separate library called &lt;a href=&#34;https://github.com/troglobit/libite/&#34;&gt;libite&lt;/a&gt;,
-or -lite for short.  It imports the OpenBSD &lt;code&gt;strlcpy()&lt;/code&gt; family of API:s,
-up-to-date &lt;code&gt;queue.h&lt;/code&gt; with the &lt;code&gt;_SAFE&lt;/code&gt; iterators, and more.  Some people
-like &lt;a href=&#34;https://libbsd.freedesktop.org/wiki/&#34;&gt;libbsd&lt;/a&gt; for this, but I&amp;rsquo;ve
-found many of the ports incomplete and unsafe and prefer to stay closer
-to the upstream *BSD versions.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; This post was originally written Nov 14, 2015.  It was a
-Saturday and I remember being extremely inspired when I wrote it.  I&amp;rsquo;ve
-continued adding to it over the years, and still do.  So, as of Jul 2,
-2017 I&amp;rsquo;m bumping the modification date each time I add something new :-)&lt;/p&gt;</description>
     </item>
     
     <item>

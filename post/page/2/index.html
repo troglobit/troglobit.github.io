@@ -218,7 +218,7 @@
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on February 16, 2020
+  <i class="fas fa-calendar"></i>&nbsp;Posted on February 22, 2020
   
   
   
@@ -246,6 +246,57 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         
         <div class="posts-list">
+          
+            <article class="post-preview">
+              <a href="/2018/08/Dark-Themes-Ahead/">
+                <h2 class="post-title">Dark Themes Ahead</h2>
+
+                
+                  <h3 class="post-subtitle">
+                    If we do nothing
+                  </h3>
+                
+              </a>
+
+              <p class="post-meta">
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on August 12, 2018
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Nilsson
+    
+  
+  
+</span>
+
+
+              </p>
+              <div class="post-entry">
+                
+                  <p><em>Reminder to self:</em> How to fix Firefox <code>about:config</code> when using a Dark
+Theme in Gnome or <a href="https://awesomewm.org/">Awesome</a>.</p>
+
+<p>I use <a href="https://system76.com/">System76</a> amazing Gtk+ theme from <a href="https://github.com/pop-os/gtk-theme">Pop!_OS</a>.  It&rsquo;s quite
+simple to set up on top of Ubuntu and use in Awesome:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">    sudo add-apt-repository ppa:system76/pop
+    sudo apt update
+    sudo apt install pop-theme</code></pre></div>
+<p>I then use <a href="https://wiki.gnome.org/Apps/Tweaks">gnome-tweaks</a> to select the Pop-dark-slim theme.  Now, the
+problem is that certain text box inputs in Firefox is either completely
+dark or white and the text cannot be seen until you mark it.  This isn&rsquo;t
+specific to the Pop!_OS theme, Adwaita-dark is exactly as bad.</p>
+                  <a href="/2018/08/Dark-Themes-Ahead/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
           
             <article class="post-preview">
               <a href="/2018/08/Display-Brightness-in-Awesome-on-ThinkPad-X250/">
@@ -499,62 +550,6 @@ Intranet with more routers between <code>R1</code> and <code>R2</code>.  As long
 department takes care of the unicast routing between <code>R1</code> and <code>R2</code> so
 that the GRE tunnel can be established.</p>
                   <a href="/2016/07/05/multicast-routing-with-pim-sm-over-gre/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2017/12/Useful-UNIX-APIs/">
-                <h2 class="post-title">Useful UNIX API:s</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on December 22, 2017
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Nilsson
-    
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                
-                  <p>Had an interesting conversation with a buddy last night.  It started out
-as a shift-reduce problem with Bison and ended up a ping-pong of useful
-UNIX API:s.  We concluded that despite having worked professionally with
-UNIX for over a decade, it is still very satisfying finding gems like
-these.</p>
-
-<p>Most people are completely unaware they exist and end up rolling their
-own (buggy) implementations.  For instance, string manipulation and
-various forms of linked lists.  Which is why I many years ago extracted
-the <em>frog DNA</em> from <a href="https://github.com/troglobit/finit/">Finit</a> to a
-separate library called <a href="https://github.com/troglobit/libite/">libite</a>,
-or -lite for short.  It imports the OpenBSD <code>strlcpy()</code> family of API:s,
-up-to-date <code>queue.h</code> with the <code>_SAFE</code> iterators, and more.  Some people
-like <a href="https://libbsd.freedesktop.org/wiki/">libbsd</a> for this, but I&rsquo;ve
-found many of the ports incomplete and unsafe and prefer to stay closer
-to the upstream *BSD versions.</p>
-
-<p><strong>Update:</strong> This post was originally written Nov 14, 2015.  It was a
-Saturday and I remember being extremely inspired when I wrote it.  I&rsquo;ve
-continued adding to it over the years, and still do.  So, as of Jul 2,
-2017 I&rsquo;m bumping the modification date each time I add something new :-)</p>
-                  <a href="/2017/12/Useful-UNIX-APIs/" class="post-read-more">[Read More]</a>
                 
               </div>
 

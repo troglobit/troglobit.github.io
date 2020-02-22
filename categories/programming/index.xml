@@ -8,21 +8,21 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Fri, 22 Dec 2017 10:28:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 22 Feb 2020 09:45:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/programming/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Useful UNIX API:s</title>
-      <link>/2017/12/Useful-UNIX-APIs/</link>
-      <pubDate>Fri, 22 Dec 2017 10:28:00 +0000</pubDate>
+      <link>/2020/02/Useful-UNIX-APIs/</link>
+      <pubDate>Sat, 22 Feb 2020 09:45:00 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/2017/12/Useful-UNIX-APIs/</guid>
+      <guid>/2020/02/Useful-UNIX-APIs/</guid>
       <description>&lt;p&gt;Had an interesting conversation with a buddy last night.  It started out
 as a shift-reduce problem with Bison and ended up a ping-pong of useful
 UNIX API:s.  We concluded that despite having worked professionally with
-UNIX for over a decade, it is still very satisfying finding gems like
+UNIX for over two decades, it is still very satisfying finding gems like
 these.&lt;/p&gt;
 
 &lt;p&gt;Most people are completely unaware they exist and end up rolling their
