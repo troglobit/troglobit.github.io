@@ -1103,11 +1103,6 @@
   </url>
   
   <url>
-    <loc>/categories/Bazaar/</loc>
-    <lastmod>2009-06-13T00:36:07+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/2009/06/13/howto-use-git-for-collaborative-development/</loc>
     <lastmod>2009-06-13T00:36:07+00:00</lastmod>
   </url>
@@ -1115,6 +1110,11 @@
   <url>
     <loc>/2009/06/13/micro-tetris/</loc>
     <lastmod>2009-06-13T00:04:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/bazaar/</loc>
+    <lastmod>2009-06-12T19:50:27+00:00</lastmod>
   </url>
   
   <url>

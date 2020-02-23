@@ -933,10 +933,10 @@
     
     <item>
       <title>Bazaar</title>
-      <link>/categories/Bazaar/</link>
+      <link></link>
       <pubDate>Sat, 13 Jun 2009 00:36:07 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/categories/Bazaar/</guid>
+      <guid></guid>
       <description></description>
     </item>
     
@@ -951,10 +951,10 @@
     
     <item>
       <title>bazaar</title>
-      <link></link>
+      <link>/categories/bazaar/</link>
       <pubDate>Fri, 12 Jun 2009 19:50:27 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid></guid>
+      <guid>/categories/bazaar/</guid>
       <description></description>
     </item>
     
