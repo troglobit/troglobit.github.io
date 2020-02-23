@@ -32,6 +32,6 @@ To install packages from this repository,
 
 To install some packages:
 
-    sudo apt-get install inadyn mg uftpd
+    sudo apt-get install inadyn mg uftpd mcjoin mini-snmpd
 
 Please let me know when there's anything you'd like me to add.
