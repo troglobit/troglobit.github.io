@@ -1,7 +1,7 @@
 ---
 name: mini-snmpd
 title: "Mini SNMP daemon"
-date: 2017-06-27 10:36:00 +02:00
+date: 2020-02-23 09:00:00 +02:00
 aliases: /mini-snmpd.html
 ---
 
@@ -33,7 +33,7 @@ Example
 
 First start the daemon:
 
-	$ sudo ./mini_snmpd -i eth0,eth1,wlan0
+	$ sudo ./mini-snmpd -i eth0,eth1,wlan0
 
 Then do an SNMP walk:
 
@@ -124,37 +124,37 @@ mini-snmpd binary.  Sure, most people know about setting `CFLAGS=-Os`
 before calling the configure script -- that's how you reach the ~40 kiB
 mentioned above.
 
-	CFLAGS="-Os" ./configure && make clean all && strip mini_snmpd && ll mini_snmpd && size mini_snmpd
-	-rwxrwxr-x 1 jocke jocke 39520 nov  8 21:35 mini_snmpd*
+	CFLAGS="-Os" ./configure && make clean all && strip mini-snmpd && ll mini-snmpd && size mini-snmpd
+	-rwxrwxr-x 1 jocke jocke 39520 nov  8 21:35 mini-snmpd*
 	   text	   data	    bss	    dec	    hex	 filename
-	  32766	   1028	  16032	  49826	   c2a2	 mini_snmpd
+	  32766	   1028	  16032	  49826	   c2a2	 mini-snmpd
 
 To get really crazy with things you can try this, it works for me but
 YMMV as usual:
 
 	CFLAGS="-W -Wall -Os -U_FORTIFY_SOURCE -fno-stack-protector -fomit-frame-pointer -ffunction-sections -fdata-sections -Wl,--gc-sections -fno-asynchronous-unwind-tables -fmerge-all-constants -fno-ident -Wl,-z,norelro -Wl,--hash-style=gnu -Wl,--build-id=none " ./configure --disable-ipv6
-	make clean all && strip -S --strip-unneeded --remove-section=.note.gnu.gold-version --remove-section=.comment --remove-section=.note --remove-section=.note.gnu.build-id --remove-section=.note.ABI-tag mini_snmpd && ll mini_snmpd && size mini_snmpd
-    -rwxrwxr-x 1 jocke jocke 30696 nov  8 21:37 mini_snmpd*
+	make clean all && strip -S --strip-unneeded --remove-section=.note.gnu.gold-version --remove-section=.comment --remove-section=.note --remove-section=.note.gnu.build-id --remove-section=.note.ABI-tag mini-snmpd && ll mini-snmpd && size mini-snmpd
+    -rwxrwxr-x 1 jocke jocke 30696 nov  8 21:37 mini-snmpd*
        text	   data	    bss	    dec	    hex	 filename
-      27305	    964	  15968	  44237	   accd	 mini_snmpd
+      27305	    964	  15968	  44237	   accd	 mini-snmpd
 
 This insane amount of arguments to GCC saves you ~9kiB.  Which begs the
 question, is there anything else you can do, how low can we go?!  Let me
 introduce you to [upx](http://upx.sourceforge.net/):
 
-	upx --ultra-brute mini_snmpd && ll mini_snmpd && size mini_snmpd
+	upx --ultra-brute mini-snmpd && ll mini-snmpd && size mini-snmpd
                            Ultimate Packer for eXecutables
                               Copyright (C) 1996 - 2013
 	UPX 3.91        Markus Oberhumer, Laszlo Molnar & John Reiser   Sep 30th 2013
 	
             File size         Ratio      Format      Name
        --------------------   ------   -----------   -----------
-         30696 ->     15604   50.83%  linux/ElfAMD   mini_snmpd                    
+         30696 ->     15604   50.83%  linux/ElfAMD   mini-snmpd
     
     Packed 1 file.
-    -rwxrwxr-x 1 jocke jocke 15604 nov  8 21:37 mini_snmpd*
+    -rwxrwxr-x 1 jocke jocke 15604 nov  8 21:37 mini-snmpd*
        text	   data	    bss	    dec	    hex	 filename
-          0	      0	      0	      0	      0	 mini_snmpd
+          0	      0	      0	      0	      0	 mini-snmpd
 
 Yeah, running `size` on the binary afterwards is kinda useless, but
 *WOW*!  Using upx actually cut the size down to almost half of what we
@@ -184,9 +184,9 @@ mini-snmpd is licensed under the [GNU GPL v2][LICENSE].
 
    * [Repository][repo]
    * [Issue Tracker](http://github.com/troglobit/mini-snmpd/issues)
-   * [mini-snmpd-1.4.tar.gz](ftp://ftp.troglobit.com/mini-snmpd/mini-snmpd-1.4.tar.gz),
-     [MD5](ftp://ftp.troglobit.com/mini-snmpd/mini-snmpd-1.4.tar.gz.md5),
-   * [ChangeLog](https://github.com/troglobit/mini-snmpd/releases/tag/v1.4)
+   * [mini-snmpd-1.6.tar.gz](ftp://ftp.troglobit.com/mini-snmpd/mini-snmpd-1.6.tar.gz),
+     [MD5](ftp://ftp.troglobit.com/mini-snmpd/mini-snmpd-1.6.tar.gz.md5),
+   * [ChangeLog](https://github.com/troglobit/mini-snmpd/releases/tag/v1.6)
    * [TODO][]
    * Man page [mini-snmpd.8](http://ftp.troglobit.com/mini-snmpd/mini-snmpd.html) (outdated)
 
@@ -200,9 +200,3 @@ See also the old [Free(code) page](http://freecode.com/projects/minisnmpd).
 [repo]: http://github.com/troglobit/mini-snmpd
 [TODO]: https://github.com/troglobit/mini-snmpd/blob/master/TODO
 [LICENSE]: https://github.com/troglobit/mini-snmpd/blob/master/COPYING
-
-<!--
-  -- Local Variables:
-  -- mode: markdown
-  -- End:
-  -->
