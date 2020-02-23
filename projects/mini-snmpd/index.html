@@ -66,8 +66,8 @@ See my mini HowTo: Playing with SNMP for a quick introduction to setting up the 
   "description" : "This is an SNMP server for small and embedded systems, currently Linux and FreeBSD are supported. It is easily portable to other UNIX systems since it\x26rsquo;s written in C. The daemon is very small (~40 kiB) and does not have nowhere near the feature set of Net-SNMP, therefore it has a very low impact on system resources.\nSee my mini HowTo: Playing with SNMP for a quick introduction to setting up the SNMP tools and MIBs to avoid having to use numerical OIDs.",
   "inLanguage" : "en",
   "wordCount":  956 ,
-  "datePublished" : "2017-06-27T10:36:00",
-  "dateModified" : "2017-06-27T10:36:00",
+  "datePublished" : "2020-02-23T09:00:00",
+  "dateModified" : "2020-02-23T09:00:00",
   "image" : "\/images\/profile.jpg",
   "keywords" : [ "" ],
   "mainEntityOfPage" : "\/projects\/mini-snmpd\/",
@@ -324,7 +324,7 @@ to use numerical OIDs.</p>
 
 <p>First start the daemon:</p>
 
-<pre><code>$ sudo ./mini_snmpd -i eth0,eth1,wlan0
+<pre><code>$ sudo ./mini-snmpd -i eth0,eth1,wlan0
 </code></pre>
 
 <p>Then do an SNMP walk:</p>
@@ -416,39 +416,39 @@ mini-snmpd binary.  Sure, most people know about setting <code>CFLAGS=-Os</code>
 before calling the configure script &ndash; that&rsquo;s how you reach the ~40 kiB
 mentioned above.</p>
 
-<pre><code>CFLAGS=&quot;-Os&quot; ./configure &amp;&amp; make clean all &amp;&amp; strip mini_snmpd &amp;&amp; ll mini_snmpd &amp;&amp; size mini_snmpd
--rwxrwxr-x 1 jocke jocke 39520 nov  8 21:35 mini_snmpd*
+<pre><code>CFLAGS=&quot;-Os&quot; ./configure &amp;&amp; make clean all &amp;&amp; strip mini-snmpd &amp;&amp; ll mini-snmpd &amp;&amp; size mini-snmpd
+-rwxrwxr-x 1 jocke jocke 39520 nov  8 21:35 mini-snmpd*
    text    data     bss     dec     hex  filename
-  32766    1028   16032   49826    c2a2  mini_snmpd
+  32766    1028   16032   49826    c2a2  mini-snmpd
 </code></pre>
 
 <p>To get really crazy with things you can try this, it works for me but
 YMMV as usual:</p>
 
 <pre><code>CFLAGS=&quot;-W -Wall -Os -U_FORTIFY_SOURCE -fno-stack-protector -fomit-frame-pointer -ffunction-sections -fdata-sections -Wl,--gc-sections -fno-asynchronous-unwind-tables -fmerge-all-constants -fno-ident -Wl,-z,norelro -Wl,--hash-style=gnu -Wl,--build-id=none &quot; ./configure --disable-ipv6
-make clean all &amp;&amp; strip -S --strip-unneeded --remove-section=.note.gnu.gold-version --remove-section=.comment --remove-section=.note --remove-section=.note.gnu.build-id --remove-section=.note.ABI-tag mini_snmpd &amp;&amp; ll mini_snmpd &amp;&amp; size mini_snmpd
--rwxrwxr-x 1 jocke jocke 30696 nov  8 21:37 mini_snmpd*
+make clean all &amp;&amp; strip -S --strip-unneeded --remove-section=.note.gnu.gold-version --remove-section=.comment --remove-section=.note --remove-section=.note.gnu.build-id --remove-section=.note.ABI-tag mini-snmpd &amp;&amp; ll mini-snmpd &amp;&amp; size mini-snmpd
+-rwxrwxr-x 1 jocke jocke 30696 nov  8 21:37 mini-snmpd*
    text    data     bss     dec     hex  filename
-  27305     964   15968   44237    accd  mini_snmpd
+  27305     964   15968   44237    accd  mini-snmpd
 </code></pre>
 
 <p>This insane amount of arguments to GCC saves you ~9kiB.  Which begs the
 question, is there anything else you can do, how low can we go?!  Let me
 introduce you to <a href="http://upx.sourceforge.net/">upx</a>:</p>
 
-<pre><code>upx --ultra-brute mini_snmpd &amp;&amp; ll mini_snmpd &amp;&amp; size mini_snmpd
+<pre><code>upx --ultra-brute mini-snmpd &amp;&amp; ll mini-snmpd &amp;&amp; size mini-snmpd
                        Ultimate Packer for eXecutables
                           Copyright (C) 1996 - 2013
 UPX 3.91        Markus Oberhumer, Laszlo Molnar &amp; John Reiser   Sep 30th 2013
 
         File size         Ratio      Format      Name
    --------------------   ------   -----------   -----------
-     30696 -&gt;     15604   50.83%  linux/ElfAMD   mini_snmpd                    
+     30696 -&gt;     15604   50.83%  linux/ElfAMD   mini-snmpd
 
 Packed 1 file.
--rwxrwxr-x 1 jocke jocke 15604 nov  8 21:37 mini_snmpd*
+-rwxrwxr-x 1 jocke jocke 15604 nov  8 21:37 mini-snmpd*
    text    data     bss     dec     hex  filename
-      0       0       0       0       0  mini_snmpd
+      0       0       0       0       0  mini-snmpd
 </code></pre>
 
 <p>Yeah, running <code>size</code> on the binary afterwards is kinda useless, but
@@ -479,20 +479,14 @@ to come by any older version(s), send me an email! :)</p>
 <ul>
 <li><a href="http://github.com/troglobit/mini-snmpd">Repository</a></li>
 <li><a href="http://github.com/troglobit/mini-snmpd/issues">Issue Tracker</a></li>
-<li><a href="ftp://ftp.troglobit.com/mini-snmpd/mini-snmpd-1.4.tar.gz">mini-snmpd-1.4.tar.gz</a>,
- <a href="ftp://ftp.troglobit.com/mini-snmpd/mini-snmpd-1.4.tar.gz.md5">MD5</a>,</li>
-<li><a href="https://github.com/troglobit/mini-snmpd/releases/tag/v1.4">ChangeLog</a></li>
+<li><a href="ftp://ftp.troglobit.com/mini-snmpd/mini-snmpd-1.6.tar.gz">mini-snmpd-1.6.tar.gz</a>,
+ <a href="ftp://ftp.troglobit.com/mini-snmpd/mini-snmpd-1.6.tar.gz.md5">MD5</a>,</li>
+<li><a href="https://github.com/troglobit/mini-snmpd/releases/tag/v1.6">ChangeLog</a></li>
 <li><a href="https://github.com/troglobit/mini-snmpd/blob/master/TODO">TODO</a></li>
 <li>Man page <a href="http://ftp.troglobit.com/mini-snmpd/mini-snmpd.html">mini-snmpd.8</a> (outdated)</li>
 </ul>
 
 <p>See also the old <a href="http://freecode.com/projects/minisnmpd">Free(code) page</a>.</p>
-
-<!--
-  -- Local Variables:
-  -- mode: markdown
-  -- End:
-  -->
 
 
         
@@ -506,13 +500,9 @@ to come by any older version(s), send me an email! :)</p>
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="/project/smcroute/smcroute-conf.html" data-toggle="tooltip" data-placement="top" title="smcroute.conf example">&larr; Previous Post</a>
+              <a href="/projects/inadyn/" data-toggle="tooltip" data-placement="top" title="Small and Simple DDNS Client">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="/projects/editline/" data-toggle="tooltip" data-placement="top" title="Minix Editline">Next Post &rarr;</a>
-            </li>
           
         </ul>
       

@@ -4,7 +4,17 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-02-22T17:36:45+01:00</lastmod>
+    <lastmod>2020-02-23T09:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/mini-snmpd/</loc>
+    <lastmod>2020-02-23T09:00:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/</loc>
+    <lastmod>2020-02-23T09:00:00+02:00</lastmod>
   </url>
   
   <url>
@@ -40,11 +50,6 @@
   <url>
     <loc>/2020/02/Useful-UNIX-APIs/</loc>
     <lastmod>2020-02-22T09:45:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/</loc>
-    <lastmod>2020-02-20T16:29:00+02:00</lastmod>
   </url>
   
   <url>
@@ -300,11 +305,6 @@
   <url>
     <loc>/projects/editline/</loc>
     <lastmod>2017-09-07T01:32:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/mini-snmpd/</loc>
-    <lastmod>2017-06-27T10:36:00+02:00</lastmod>
   </url>
   
   <url>
