@@ -8,10 +8,31 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Sun, 23 Feb 2020 09:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 23 Feb 2020 19:16:45 +0100</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HowTo: Install pre-built packages</title>
+      <link>/2020/02/HowTo-Install-pre-built-packages/</link>
+      <pubDate>Sun, 23 Feb 2020 19:16:45 +0100</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2020/02/HowTo-Install-pre-built-packages/</guid>
+      <description>&lt;p&gt;Every now and then people ask me for pre-built packages of software I
+maintain.  Up until today I&amp;rsquo;ve had to refer them to the cold hard build
+instructions for each of my programs.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Minix Editline</title>
+      <link>/projects/editline/</link>
+      <pubDate>Sun, 23 Feb 2020 19:13:00 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/projects/editline/</guid>
+      <description>This is a line editing library for UNIX. It can be linked into almost any program to provide command line editing and history. It is call compatible with the FSF readline library, but is a fraction of the size (and offers fewer features).
+The small size (&amp;lt;30k), lack of dependencies (no ncurses needed!) and the free license should make this library interesting to many embedded developers seeking a replacement for the GNU readline library.</description>
+    </item>
     
     <item>
       <title>Mini SNMP daemon</title>
@@ -21,17 +42,6 @@
       <guid>/projects/mini-snmpd/</guid>
       <description>This is an SNMP server for small and embedded systems, currently Linux and FreeBSD are supported. It is easily portable to other UNIX systems since it&amp;rsquo;s written in C. The daemon is very small (~40 kiB) and does not have nowhere near the feature set of Net-SNMP, therefore it has a very low impact on system resources.
 See my mini HowTo: Playing with SNMP for a quick introduction to setting up the SNMP tools and MIBs to avoid having to use numerical OIDs.</description>
-    </item>
-    
-    <item>
-      <title>HowTo: Install pre-built packages</title>
-      <link>/2020/02/HowTo-Install-pre-built-packages/</link>
-      <pubDate>Sat, 22 Feb 2020 17:36:45 +0100</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/2020/02/HowTo-Install-pre-built-packages/</guid>
-      <description>&lt;p&gt;Every now and then people ask me for pre-built packages of software I
-maintain.  Up until today I&amp;rsquo;ve had to refer them to the cold hard build
-instructions for each of my programs.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -467,16 +477,6 @@ run Merecat httpd in production.&lt;/p&gt;</description>
       <guid>/2017/09/09/boot-alpine-linux-with-grub/</guid>
       <description>&lt;p&gt;It&amp;rsquo;s fairly easy to replace the slightly unfriendly syslinux with grub
 (grub2) in Alpine Linux.  I use v3.6 but YMMV.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Minix Editline</title>
-      <link>/projects/editline/</link>
-      <pubDate>Thu, 07 Sep 2017 01:32:00 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/projects/editline/</guid>
-      <description>This is a line editing library for UNIX. It can be linked into almost any program to provide command line editing and history. It is call compatible with the FSF readline library, but is a fraction of the size (and offers fewer features).
-The small size (&amp;lt;30k), lack of dependencies (no ncurses needed!) and the free license should make this library interesting to many embedded developers seeking a replacement for the GNU readline library.</description>
     </item>
     
     <item>

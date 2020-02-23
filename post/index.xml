@@ -8,7 +8,7 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Sat, 22 Feb 2020 17:36:45 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 23 Feb 2020 19:16:45 +0100</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
@@ -16,7 +16,7 @@
     <item>
       <title>HowTo: Install pre-built packages</title>
       <link>/2020/02/HowTo-Install-pre-built-packages/</link>
-      <pubDate>Sat, 22 Feb 2020 17:36:45 +0100</pubDate>
+      <pubDate>Sun, 23 Feb 2020 19:16:45 +0100</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2020/02/HowTo-Install-pre-built-packages/</guid>
       <description>&lt;p&gt;Every now and then people ask me for pre-built packages of software I
