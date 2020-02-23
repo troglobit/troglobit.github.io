@@ -1,7 +1,7 @@
 ---
 title: "HowTo: Install pre-built packages"
 subtitle: ""
-date: 2020-02-22 17:36:45 +0100
+date: 2020-02-23 19:16:45 +0100
 tags: []
 ---
 
@@ -32,6 +32,6 @@ To install packages from this repository,
 
 To install some packages:
 
-    sudo apt-get install inadyn mg uftpd mcjoin mini-snmpd
+    sudo apt-get install inadyn mg uftpd mcjoin mini-snmpd libeditline-dev
 
 Please let me know when there's anything you'd like me to add.
