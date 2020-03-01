@@ -4,16 +4,21 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-02-23T19:16:45+01:00</lastmod>
+    <lastmod>2020-03-01T16:58:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/2020/02/HowTo-Install-pre-built-packages/</loc>
-    <lastmod>2020-02-23T19:16:45+01:00</lastmod>
+    <loc>/2020/03/Fixing-file-sharing-in-Debian/Ubuntu/</loc>
+    <lastmod>2020-03-01T16:58:00+01:00</lastmod>
   </url>
   
   <url>
     <loc>/post/</loc>
+    <lastmod>2020-03-01T16:58:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2020/02/HowTo-Install-pre-built-packages/</loc>
     <lastmod>2020-02-23T19:16:45+01:00</lastmod>
   </url>
   
@@ -60,11 +65,6 @@
   <url>
     <loc>/projects/inadyn/</loc>
     <lastmod>2020-02-20T16:29:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2020/02/Fixing-file-sharing-in-Ubuntu-20.04/</loc>
-    <lastmod>2020-02-16T21:06:59+01:00</lastmod>
   </url>
   
   <url>
@@ -1103,6 +1103,11 @@
   </url>
   
   <url>
+    <loc>/categories/Bazaar/</loc>
+    <lastmod>2009-06-13T00:36:07+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2009/06/13/howto-use-git-for-collaborative-development/</loc>
     <lastmod>2009-06-13T00:36:07+00:00</lastmod>
   </url>
@@ -1110,11 +1115,6 @@
   <url>
     <loc>/2009/06/13/micro-tetris/</loc>
     <lastmod>2009-06-13T00:04:30+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/bazaar/</loc>
-    <lastmod>2009-06-12T19:50:27+00:00</lastmod>
   </url>
   
   <url>
