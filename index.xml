@@ -8,10 +8,20 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Sun, 01 Mar 2020 16:58:00 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 05 Apr 2020 14:38:00 +0200</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Minix Editline</title>
+      <link>/projects/editline/</link>
+      <pubDate>Sun, 05 Apr 2020 14:38:00 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/projects/editline/</guid>
+      <description>This is a line editing library for UNIX. It can be linked into almost any program to provide command line editing and history. It is call compatible with the FSF readline library, but is a fraction of the size (and offers fewer features).
+The small size (&amp;lt;30k), lack of dependencies (no ncurses needed!) and the free license should make this library interesting to many embedded developers seeking a replacement for the GNU readline library.</description>
+    </item>
     
     <item>
       <title>Fixing file sharing in Debian/Ubuntu</title>
@@ -35,16 +45,6 @@ out in the rest of the Linux community &amp;hellip;&lt;/p&gt;</description>
       <description>&lt;p&gt;Every now and then people ask me for pre-built packages of software I
 maintain.  Up until today I&amp;rsquo;ve had to refer them to the cold hard build
 instructions for each of my programs.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Minix Editline</title>
-      <link>/projects/editline/</link>
-      <pubDate>Sun, 23 Feb 2020 19:13:00 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/projects/editline/</guid>
-      <description>This is a line editing library for UNIX. It can be linked into almost any program to provide command line editing and history. It is call compatible with the FSF readline library, but is a fraction of the size (and offers fewer features).
-The small size (&amp;lt;30k), lack of dependencies (no ncurses needed!) and the free license should make this library interesting to many embedded developers seeking a replacement for the GNU readline library.</description>
     </item>
     
     <item>
