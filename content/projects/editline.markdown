@@ -1,7 +1,7 @@
 ---
 name: libeditline
 title: "Minix Editline"
-date: 2020-02-23 19:13:00 +02:00
+date: 2020-04-05 14:38:00 +02:00
 aliases: /editline.html
 ---
 
@@ -62,7 +62,7 @@ merged here.  Outstanding issues are listed in the [TODO][] file.
 
 [Rich Salz]:    http://en.wikipedia.org/wiki/Rich_Salz
 [C News]:       http://en.wikipedia.org/wiki/C_News
-[TODO]:         https://github.com/troglobit/editline/blob/master/TODO
+[TODO]:         https://github.com/troglobit/editline/blob/master/docs/TODO.md
 [LICENSE]:      https://github.com/troglobit/editline/blob/master/LICENSE
 [GNU readline]: http://directory.fsf.org/project/readline/
 [examples/]:    https://github.com/troglobit/editline/tree/master/examples
