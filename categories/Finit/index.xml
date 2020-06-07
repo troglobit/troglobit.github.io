@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Finit on </title>
+    <link>/categories/Finit/</link>
+    <description>Recent content in Finit on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <lastBuildDate>Wed, 21 Sep 2016 19:08:37 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/Finit/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Finit3: Almost there ...</title>
+      <link>/2016/09/21/finit3-almost-there-.../</link>
+      <pubDate>Wed, 21 Sep 2016 19:08:37 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2016/09/21/finit3-almost-there-.../</guid>
+      <description>Today the new logo for Finit3 was added to the GitHub repo and the homepage
+Gorgeous, isn&amp;rsquo;t it?! 🕶
+This fancy artwork means we&amp;rsquo;re nearing the end of a long and agonizing release cycle where a lot of the internals of Finit have been rewritten and new exciting features have been added! More on this in an upcoming post 😃</description>
+    </item>
+    
+    <item>
+      <title>Inetd Support in Finit v1.12</title>
+      <link>/2015/03/06/inetd-support-in-finit-v1-dot-12/</link>
+      <pubDate>Fri, 06 Mar 2015 22:34:45 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2015/03/06/inetd-support-in-finit-v1-dot-12/</guid>
+      <description>&lt;p&gt;A steady flow of features, and releases, is key to keeping any project
+alive.  Recently I ticked off another item in the &lt;a href=&#34;/finit.html&#34;&gt;Finit&lt;/a&gt;
+TODO list &amp;hellip;&lt;/p&gt;
+&lt;p&gt;Finit v1.12 now comes with a built-in inetd!  You no longer need an
+external inetd daemon to launch services on demand.&lt;/p&gt;
+&lt;p&gt;The good news doesn&amp;rsquo;t stop there, this little inetd actually supports a
+poor man&amp;rsquo;s tcpwrappers!&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;inetd ssh/tcp          nowait [2345] /sbin/dropbear -i -R -F
+inetd ssh@eth0:222/tcp nowait [2345] /sbin/dropbear -i -R -F
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;With these two lines in your &lt;code&gt;/etc/finit.conf&lt;/code&gt; you tell finit to launch
+the &lt;a href=&#34;https://matt.ucc.asn.au/dropbear/dropbear.html&#34;&gt;Dropbear SSH&lt;/a&gt;
+server on demand on port 22 (default ssh/tcp port in &lt;code&gt;/etc/services&lt;/code&gt;) on
+&lt;em&gt;all&lt;/em&gt; interfaces except on &lt;code&gt;eth0&lt;/code&gt;, which in your case is the Internet
+(WAN) interface, here you want SSH to run on port 222.  Actually, you
+don&amp;rsquo;t want port 22 open at all on &lt;code&gt;eth0&lt;/code&gt; &amp;hellip; so finit takes care of this
+for you!  Seriously, it just works, no need for messing about with that
+nasty old &lt;code&gt;iptables&lt;/code&gt; anymore!&lt;/p&gt;
+&lt;p&gt;The original UNIX inetd super server supported many protocols
+internally, some of which may seem a bit odd today, and some have been
+superseded by more modern protocols.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Echo_Protocol&#34;&gt;echo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Character_Generator_Protocol&#34;&gt;chargen&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Time_Protocol&#34;&gt;time&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Daytime_Protocol&#34;&gt;daytime&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Discard_Protocol&#34;&gt;discard&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Finit currently only supports one internal/built-in standard service,
+&lt;code&gt;time&lt;/code&gt;.  It is built as a plugin to serve as an example of how you can
+extend Finit yourself.  The time service can be called either as UDP or
+TCP.  To prevent security issues, the &lt;code&gt;time&lt;/code&gt; protocol is disabled by
+default.  To enable it you need two things:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The &lt;code&gt;time.so&lt;/code&gt; plugin (built by default)&lt;/li&gt;
+&lt;li&gt;An &lt;code&gt;inetd time ...&lt;/code&gt; line in &lt;code&gt;/etc/finit.conf&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Assuming you&amp;rsquo;ve installed the default set of plugins, the following two
+lines can be added:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;inetd time/udp   wait [2345] internal
+inetd time/tcp nowait [2345] internal
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This can be very useful for testing the inetd capabilities, your network
+connection, or simply to get the time to a client where NTP for some
+reason does not work, or is blocked.  For instance, you could have a GPS
+setup on your server and distribute time to clients with the &lt;code&gt;time&lt;/code&gt;
+protocol.&lt;/p&gt;
+&lt;p&gt;To use it you need an &lt;a href=&#34;http://www.aelius.com/njh/rdate/&#34;&gt;&lt;code&gt;rdate&lt;/code&gt;&lt;/a&gt;
+client.  Users of &lt;code&gt;rdate&lt;/code&gt; in BusyBox may need to be reminded that it
+only supports TCP.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ rdate -pu 198.51.100.42
+Sat Mar  7 08:48:58 CET 2015
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;For more info on Finit and its features, see the &lt;a href=&#34;https://github.com/troglobit/finit/blob/master/README.md&#34;&gt;README&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Enjoy! ツ&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Finit v1.11 released!</title>
+      <link>/2015/01/24/finit-v1-dot-11-released/</link>
+      <pubDate>Sat, 24 Jan 2015 16:54:23 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2015/01/24/finit-v1-dot-11-released/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Update 2015-03-09&lt;/strong&gt;: This release has unfortunately been &lt;em&gt;yanked&lt;/em&gt; due
+to serious regressions in launching background processes.  It has been
+replaced by &lt;a href=&#34;/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/&#34;&gt;v1.12&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Release of Finit v1.9</title>
+      <link>/2014/04/21/release-of-finit-v1-dot-9/</link>
+      <pubDate>Mon, 21 Apr 2014 16:08:30 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2014/04/21/release-of-finit-v1-dot-9/</guid>
+      <description>Just made it! Here&amp;rsquo;s the result of #Easterhack14 &amp;ndash; Finit v1.9 :-)
+Nothing fancy this time, just collecting some bug fixes, playing with cppcheck a bit and adding support for including .conf files. Quite useful if you want to partition your configuration, or if you share major pieces of configuration between different platforms.
+Enjoy!</description>
+    </item>
+    
+    <item>
+      <title>Finit v1.8</title>
+      <link>/2013/06/08/finit-v1-dot-8/</link>
+      <pubDate>Sat, 08 Jun 2013 00:00:00 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2013/06/08/finit-v1-dot-8/</guid>
+      <description>It&amp;rsquo;s been a long time coming, but here it finally is, Finit v1.8! The goodies we&amp;rsquo;ve been waiting for are:
+ Runlevels Multiple TTYs One-shot tasks  Let&amp;rsquo;s start off with tasks. Tasks are one-shot commands, with a syntax like service directives, but are not monitored and respawned like services. Tasks are started in parallel, just like services. For some cases, like the system bootstrap phase, some tasks may need to be executed in sequence, and for that purpose there also exists a run command.</description>
+    </item>
+    
+  </channel>
+</rss>

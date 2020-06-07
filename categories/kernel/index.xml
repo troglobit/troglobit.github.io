@@ -51,7 +51,7 @@ cd /usr/src cd sys/amd64/conf cat GENERIC | sed &#39;s/GENERIC$/MULTICAST/&#39; 
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2007/02/03/building-debian-slash-ubuntu-kernels/</guid>
       <description>I have been over this topic so many times now, strangely enough I&amp;rsquo;ve managed to make things more complicated than they need to be. It&amp;rsquo;s really this simple:
-$ wget ftp://ftp.sunet.se/pub/Linux/kernels/v2.6/linux-2.6.19.2.tar.bz2 $ tar xfj linux-2.6.19.2.tar.bz2 $ cd linux-2.6.19.2/ $ zcat /proc/config.gz &amp;gt;.config $ make menuconfig [Tweak to your hearts desire] $ fakeroot make-kpkg --initrd kernel_image $ dpkg -i ../linux-image-2.6.19.2_2.6.19.2-10.00.Custom_i386.deb [DONE!]  You may, of course, need to tweak the file /etc/kernel-pkg.</description>
+$ wget ftp://ftp.sunet.se/pub/Linux/kernels/v2.6/linux-2.6.19.2.tar.bz2 $ tar xfj linux-2.6.19.2.tar.bz2 $ cd linux-2.6.19.2/ $ zcat /proc/config.gz &amp;gt;.config $ make menuconfig [Tweak to your hearts desire] $ fakeroot make-kpkg --initrd kernel_image $ dpkg -i ../linux-image-2.6.19.2_2.6.19.2-10.00.Custom_i386.deb [DONE!] You may, of course, need to tweak the file /etc/kernel-pkg.conf, but there are man pages for that.</description>
     </item>
     
     <item>
@@ -61,7 +61,7 @@ $ wget ftp://ftp.sunet.se/pub/Linux/kernels/v2.6/linux-2.6.19.2.tar.bz2 $ tar xf
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2006/07/17/make-kpkg-and-dirty-modules/</guid>
       <description>Dammit, tonight I spent too many hours chasing down a &amp;ldquo;feature&amp;rdquo; in the Debian kernel build process or the Linux-2.6 kernel. I haven&amp;rsquo;t yet deciced who to blame ;-)
-Here goes: when you build the latest Linux 2.6 kernel, checked out from the git repository, with make-kpkg you should make sure to uncheck the CONFIG_LOCALVERSION_AUTO option in the kernel config before hand. It&amp;rsquo;s under &amp;ldquo;General setup&amp;rdquo; &amp;rarr; &amp;ldquo;Automatically append version information &amp;hellip;&amp;ldquo;.</description>
+Here goes: when you build the latest Linux 2.6 kernel, checked out from the git repository, with make-kpkg you should make sure to uncheck the CONFIG_LOCALVERSION_AUTO option in the kernel config before hand. It&amp;rsquo;s under &amp;ldquo;General setup&amp;rdquo; → &amp;ldquo;Automatically append version information &amp;hellip;&amp;quot;.</description>
     </item>
     
   </channel>

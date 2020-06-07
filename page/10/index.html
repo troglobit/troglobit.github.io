@@ -47,7 +47,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -214,6 +214,76 @@
           
           
             <article class="post-preview">
+              <a href="/2010/09/08/announcing-pimd-v2-dot-1-3/">
+                <h2 class="post-title">Announcing pimd v2.1.3</h2>
+                
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on September 8, 2010
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Nilsson
+    
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  I&rsquo;m very pleased to present the next bug-fix release of pimd, v2.1.3. The real announcement for v2.1.2 I never really got around to write because the diligent Debian maintainer, Antonin Kral alerted me to some problems. Which is great! I do not have the resources to test the build on all those platforms. I sure appreciate all the help I can get. Thank you Antonin!
+As always, check the homepage, the changelog and the GIT log for details.
+                  <a href="/2010/09/08/announcing-pimd-v2-dot-1-3/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="/2010/08/29/finally/">
+                <h2 class="post-title">Finally, NetBSD Boots in KVM!</h2>
+                
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on August 29, 2010
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Nilsson
+    
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Compared to OpenBSD and FreeBSD the NetBSD install was hard, really hard. It wasn&rsquo;t until I stumbled across this that I managed to convince myself to try it again.
+The trick seems to be to ignore as much as you can from other Internet tips. NetBSD runs fine in KVM, so if someone says you need to run it in Qemu mode — don&rsquo;t believe the hype. OK, in virt-manager there is no preset defaults for NetBSD, so I went with a generic OS and tried starting the install from there.
+                  <a href="/2010/08/29/finally/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
               <a href="/2010/08/12/minix-editline-1-dot-14-dot-0/">
                 <h2 class="post-title">Minix editline v1.14.0</h2>
                 
@@ -311,7 +381,7 @@
                 
                   A small heads-up, I&rsquo;ve migrated the Minix editline project from Bazaar to GIT. The new URL for keeping tabs on your favourite free readline() clone is:
  http://git.vmlinux.org/editline.git/
- I&rsquo;m currently working on fixing up the tree and doing some house cleaning &mdash; including making more stuff configurable &mdash; before releasing a 1.14.0 later on.
+ I&rsquo;m currently working on fixing up the tree and doing some house cleaning — including making more stuff configurable — before releasing a 1.14.0 later on.
 One such item is the integration of libtool with our autoconf friends. This should make it lot more portable (again) and also help smooth a merge with other sources for this library.
                   <a href="/2010/07/19/minix-editline-moves-to-git/" class="post-read-more">[Read More]</a>
                 
@@ -419,21 +489,16 @@ $ git init project.git $ cd project.git $ bzr fast-export --export-marks=.git/bz
 
               <div class="post-entry">
                 
-                  <p><img style="float: right" src="/images/lessfilter.png"></p>
-
+                  <!-- raw HTML omitted -->
 <p>Yes, it&rsquo;s certainly possible and source code becomes so much easier to
 read.  Try it out by:</p>
-
 <ol>
 <li><a href="https://github.com/troglobit/toolbox/blob/master/dot.lessfilter">downloading my .lessfilter</a></li>
 <li>save it as <code>~/.lessfilter</code> in your <code>$HOME</code></li>
 <li>Profit!</li>
 </ol>
-
 <p>Ahem &hellip;</p>
-
 <p>Just try it out on a C source file :-)</p>
-
 <pre><code>less -R myfile.c
 </code></pre>
 
@@ -472,7 +537,6 @@ read.  Try it out by:</p>
                   <p>When you&rsquo;ve installed Ubuntu 10.04 you might want to have the window
 controls back to the right side, where you&rsquo;re used to having them.  Use
 the following simple command:</p>
-
 <pre><code>gconftool-2 --set /apps/metacity/general/button_layout --type string &quot;menu:minimize,maximize,close&quot;
 </code></pre>
 
@@ -511,84 +575,12 @@ the following simple command:</p>
                   <p>This is not only a reminder to myself, it is appraisal to the probably
 best programming font ever: <a href="http://levien.com/type/myfonts/inconsolata.html">Inconsolata</a>.  Thank you so much, Mr
 <a href="http://levien.com">Raph Levien</a>!</p>
-
 <p>On the previous laptop I used <a href="http://www.tobiasjung.net/profont/">ProFont</a> quite extensively, but its screen
 was only 1280x800, on the new laptop I have 1680x1050 and ProFont just
 got too small for my aging eyes.</p>
-
 <p>For more tips on fonts, see <a href="http://hivelogic.com/articles/top-10-programming-fonts">Top-10 Programming Fonts</a> and
 <a href="http://keithdevens.com/wiki/ProgrammerFonts">KeithDevens.com</a>.</p>
 
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2009/06/14/oona-6-years-old/">
-                <h2 class="post-title">Oona 6 years old!</h2>
-                
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on June 14, 2009
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Nilsson
-    
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  Wow, this friday (June 12th) my daughter turned six! I can hardly believe it is six years since she came into our lives, time has gone by so quick &hellip; when she was born we still lived in Västerås, now she has a younger brother and we live in a great house in Skultuna.
-Happy birthday, Oona! I wish you all the best now that you&rsquo;re starting first year of school after the summer vacation.
-                  <a href="/2009/06/14/oona-6-years-old/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2009/06/14/editline-first-post/">
-                <h2 class="post-title">Editline First Post</h2>
-                
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on June 14, 2009
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Nilsson
-    
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  For a while now I&rsquo;ve been maintaining a port of the Minix editline library libedit. Mainly for my own purposes, or rather on behalf of Westermo WeOS, where it is used in the CLI. This library is the same as the Debian editline package, even though the origin of that package is somewhat unclear to me.
-Today I decided to adjust the package name and bump the version number to indicate that my port is the same, and now slightly more advanced, than the Debian version.
-                  <a href="/2009/06/14/editline-first-post/" class="post-read-more">[Read More]</a>
                 
               </div>
 
@@ -672,7 +664,7 @@ Today I decided to adjust the package name and bump the version number to indica
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

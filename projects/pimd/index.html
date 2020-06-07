@@ -108,7 +108,7 @@ pimd is a lightweight standalone PIM-SM/SSM v2 multicast routing daemon. It is t
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -293,10 +293,7 @@ pimd is a lightweight standalone PIM-SM/SSM v2 multicast routing daemon. It is t
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
 	
-        
-
-<p><img src="/images/pim-sm.gif" style="width: 340px; height: 220px; float: right" /></p>
-
+        <p><!-- raw HTML omitted --></p>
 <p>Protocol Independent Multicast, PIM, allows existing networks to route
 IP multicast, regardless of what unicast routing protocol is in use.  It
 is designed to use existing routing tables to make its multicast routing
@@ -304,73 +301,59 @@ decisions.  PIM-SM is suitable for sparsely located multicast
 subscribers, for dense mode operation <a href="/mrouted.html">mrouted</a> is
 recommended, and for static multicast routing <a href="/smcroute.html">smcroute</a>
 may be used.</p>
-
 <p>pimd is a lightweight standalone PIM-SM/SSM v2 multicast routing daemon.
 It is the original USC (netweb/catarina.usc.edu) implementation of the
 protocol, <a href="http://tools.ietf.org/html/rfc2362">RFC 2362</a>.  Today pimd strives for full RFC compliance,
 including <a href="http://tools.ietf.org/html/rfc4601">RFC 4601</a>, <a href="http://tools.ietf.org/html/rfc5059">RFC 5059</a>, and <a href="http://tools.ietf.org/html/rfc5796">RFC 5796</a>, with the
 v2.3.0 release supporting both PIM-SSM and IGMPv3.</p>
-
 <p>pimd was originally written by Ahmed Helmy, George Edmond &ldquo;Rusty&rdquo; Eddy,
 and Pavlin Ivanov Radoslavov, with contributions by many others.  Lately
 the most notable contributors have been Markus Veranen, Joonas Ruohonen,
 and Mika Joutsenvirta.</p>
-
 <p>In 2003 the OpenBSD project <a href="http://www.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/LICENSE">managed to convince Stanford</a>
 to change the license of <a href="/mrouted.shtml">mrouted</a>.  This in turn also
 freed pimd, since it is built with DNA strands from mrouted.  pimd is
 fully free to use under the simplified 3-clause <a href="https://github.com/troglobit/pimd/blob/master/LICENSE">BSD license</a>.</p>
-
 <p>Issue tracker and GIT repository available at GitHub:</p>
-
 <ul>
 <li><a href="http://github.com/troglobit/pimd">Repository</a></li>
 <li><a href="https://github.com/troglobit/pimd/releases/tag/2.3.2">ChangeLog</a></li>
 <li><a href="ftp://ftp.troglobit.com/pimd/pimd-2.3.2.tar.gz">pimd-2.3.2.tar.gz</a>,
- <a href="ftp://ftp.troglobit.com/pimd/pimd-2.3.2.tar.gz.md5">MD5</a></li>
+<a href="ftp://ftp.troglobit.com/pimd/pimd-2.3.2.tar.gz.md5">MD5</a></li>
 <li><a href="http://github.com/troglobit/pimd/issues">Issue Tracker</a></li>
 <li><a href="http://packages.debian.org/pimd">Debian packages</a></li>
 <li><a href="http://packages.ubuntu.com/pimd">Ubuntu packages</a></li>
 </ul>
-
 <p>See also the <a href="https://www.openhub.net/p/pimd/">OpenHub page</a>, the
 <a href="http://freshcode.club/projects/pimd">Fresh(code) page</a>, or the now
 now dormant <a href="http://freecode.com/projects/pimd">Free(code) page</a>.</p>
-
 <h2 id="troubleshooting">Troubleshooting</h2>
-
 <p>See the <a href="/multicast-howto.html">multicast howto</a></p>
-
 <h2 id="mailing-lists">Mailing Lists</h2>
-
 <p>The following mailing list is directly related to PIM:</p>
-
 <ul>
-<li><a href="mailto:pim@ietf.org">pim@ietf.org</a>: the IETF PIM Working Group mailing list.</li>
+<li><a href="mailto:pim@ietf.org">mailto:pim@ietf.org</a>: the IETF PIM Working Group mailing list.</li>
 <li>To subscribe/unsubscribe, <a href="https://www.ietf.org/mailman/listinfo/pim/">https://www.ietf.org/mailman/listinfo/pim/</a></li>
 <li>Archives available at <a href="http://www.ietf.org/mail-archive/web/pim/current/maillist.html">http://www.ietf.org/mail-archive/web/pim/current/maillist.html</a></li>
 </ul>
-
 <h2 id="references">References</h2>
-
 <p>The PIM-SM protocol was first defined in <a href="http://tools.ietf.org/html/rfc2362">RFC 2362</a> and later updated
 in <a href="http://tools.ietf.org/html/rfc4601">RFC 4601</a>, with additions in <a href="http://tools.ietf.org/html/rfc5059">RFC 5059</a> and <a href="http://tools.ietf.org/html/rfc5796">RFC 5796</a>.</p>
-
 <ul>
 <li>The PIM-SM GateD implementation from ISI. (defunct)</li>
 <li>The PIM-DM GateD implementation from the University of Oregon. (defunct)</li>
 <li>The <a href="http://antc.uoregon.edu/PIMDM/pimd-dense.html">pimd-dense</a>
- University of Oregon standalone implementation, based on the USC
- pimd.  Now available from the <a href="https://github.com/F0rth/mcast-tools">mcast-tools</a> project</li>
+University of Oregon standalone implementation, based on the USC
+pimd.  Now available from the <a href="https://github.com/F0rth/mcast-tools">mcast-tools</a> project</li>
 <li><a href="http://fivebits.net/proj/mrd6/">MRD6</a>, an IPv6 Multicast Router.
- Project has been deprecated, recommending pim6sd, but is available
- at <a href="https://github.com/hugosantos/mrd6">https://github.com/hugosantos/mrd6</a></li>
+Project has been deprecated, recommending pim6sd, but is available
+at <a href="https://github.com/hugosantos/mrd6">https://github.com/hugosantos/mrd6</a></li>
 <li>The PIM IPv6 <a href="http://clarinet.u-strasbg.fr/~hoerdt/dev/pim6sd_linux/">pim6sd</a> by Mickael Hoerdt at LSIIT Laboratory,
- based on USC pimd.  Now available from the <a href="https://github.com/F0rth/mcast-tools">mcast-tools</a> project</li>
+based on USC pimd.  Now available from the <a href="https://github.com/F0rth/mcast-tools">mcast-tools</a> project</li>
 <li><a href="http://www.xorp.org/">The XORP project</a> supports both IPv4 and IPv6 PIM-SM,
- currently maintained by <a href="https://github.com/greearb/xorp.ct">Ben Greear at GitHub</a></li>
+currently maintained by <a href="https://github.com/greearb/xorp.ct">Ben Greear at GitHub</a></li>
 <li><a href="http://www.quagga.net/">Quagga</a> and <a href="https://github.com/FRRouting/frr">FRR</a> support PIM-SSM (IPv4 only?).  Originally
- developed by Everton da Silva Marques as <a href="https://savannah.nongnu.org/projects/qpimd">qpimd</a></li>
+developed by Everton da Silva Marques as <a href="https://savannah.nongnu.org/projects/qpimd">qpimd</a></li>
 </ul>
 
 
@@ -460,7 +443,7 @@ in <a href="http://tools.ietf.org/html/rfc4601">RFC 4601</a>, with additions in 
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

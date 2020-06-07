@@ -15,16 +15,12 @@
 I&rsquo;ve played other games since then, but I&rsquo;ve never again been so manic
 about a game since Wolfenstein.
 
-
-
 This post is about how to build, install and set up Wolfenstein 3D on a
 Raspberry Pi running RetroPie &hellip; on a Picade :-)">
   <meta property="og:description" content="The last game I ever played was Castle Wolfenstein 3D, released in
 1992 for MS-DOS, made by the now legendary id Software.  OK, admittedly
 I&rsquo;ve played other games since then, but I&rsquo;ve never again been so manic
 about a game since Wolfenstein.
-
-
 
 This post is about how to build, install and set up Wolfenstein 3D on a
 Raspberry Pi running RetroPie &hellip; on a Picade :-)">
@@ -81,7 +77,7 @@ I&rsquo;ve played other games since then, but I&rsquo;ve …">
   "headline": "Wolfenstein-3D on RetroPie",
   "description" : "The last game I ever played was Castle Wolfenstein 3D, released in 1992 for MS-DOS, made by the now legendary id Software. OK, admittedly I\x26rsquo;ve played other games since then, but I\x26rsquo;ve never again been so manic about a game since Wolfenstein.\nThis post is about how to build, install and set up Wolfenstein 3D on a Raspberry Pi running RetroPie \x26hellip; on a Picade :-)\n",
   "inLanguage" : "en",
-  "wordCount":  312 ,
+  "wordCount":  305 ,
   "datePublished" : "2017-01-15T13:13:15",
   "dateModified" : "2017-01-15T13:13:15",
   "image" : "\/images\/profile.jpg",
@@ -105,8 +101,6 @@ I&rsquo;ve played other games since then, but I&rsquo;ve …">
 1992 for MS-DOS, made by the now legendary id Software.  OK, admittedly
 I&rsquo;ve played other games since then, but I&rsquo;ve never again been so manic
 about a game since Wolfenstein.
-
-
 
 This post is about how to build, install and set up Wolfenstein 3D on a
 Raspberry Pi running RetroPie &hellip; on a Picade :-)">
@@ -133,7 +127,7 @@ I&rsquo;ve played other games since then, but I&rsquo;ve …">
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -337,98 +331,64 @@ I&rsquo;ve played other games since then, but I&rsquo;ve …">
 1992 for MS-DOS, made by the now legendary id Software.  OK, admittedly
 I&rsquo;ve played other games since then, but I&rsquo;ve never again been so manic
 about a game since Wolfenstein.</p>
-
-<p><img style="width:50%;height:auto;" class="center" src="/images/wolf3d.png"></p>
-
+<!-- raw HTML omitted -->
 <p>This post is about how to build, install and set up Wolfenstein 3D on a
 Raspberry Pi running <a href="https://retropie.org.uk/">RetroPie</a> &hellip; on a <a href="https://shop.pimoroni.com/products/picade">Picade</a> :-)</p>
-
 <p>You need the original WAD files to play the game.  It&rsquo;s really worth
 investing the money if you don&rsquo;t already have a copy.  Mount the CD, or
 the CD image to <code>/mnt</code> on your Linux PC, the files are located in:</p>
-
 <pre><code>mkdir ~/wolf3d
 cd /mnt/Install/data/WOLF3D/
 cp *.WL6 ~/wolf3d/
 </code></pre>
-
 <p>The <code>.wl6</code> files must be installed in <code>/usr/local/share/games/wolf3d/</code>
 on the Raspberry Pi, with names in <em>lower-case</em>.  Use the following
 command to rename them from upper-case:</p>
-
 <pre><code>cd
 rename 'y/A-Z/a-z/' wolf3d/*
 </code></pre>
-
 <p>Transfer the files to the Pi using scp, or similar:</p>
-
 <pre><code>scp -r wolf3d pi@raspberrypi.local:.
 </code></pre>
-
 <p>On the Rasberry Pi:</p>
-
 <pre><code>sudo mv ~/wolf3d /usr/local/share/games/
 </code></pre>
-
 <p>Now, download the game source from GitHub:</p>
-
 <pre><code>git clone https://github.com/mozzwald/wolf4sdl.git
 cd wolf4sdl/
 </code></pre>
-
 <p>To build the game you need to install the SDL libraries, in particular
 the <code>-dev</code> packages for both SDL and the SDL mixer:</p>
-
 <pre><code>sudo apt install libsdl*-dev 
 </code></pre>
-
 <p>You may need to edit the file <code>version.h</code>, depending on what version of
 the original game you have.  When done, build the game:</p>
-
 <pre><code>make
 </code></pre>
-
 <p>To start Wolfenstein in RetroPie (Emulation Station), create the
 following script and it will appear in the Ports section, like
 Minecraft:</p>
-
 <pre><code>cd ~/RetroPie/roms/ports
 vim Wolfenstein-3D.sh
 </code></pre>
-
 <p>Copy and paste the following lines:</p>
-
 <pre><code>#!/bin/bash
 cd /home/pi/wolf4sdl
 /opt/retropie/supplementary/runcommand/runcommand.sh 0 &quot;./wolf3d --res 640 480&quot;
 </code></pre>
-
 <p>Remember to set the executable flag on the script before restarting the
 Emulation Station GUI:</p>
-
 <pre><code>chmod +x Wolfenstein-3D.sh
 </code></pre>
-
 <p>Done.</p>
-
 <p>Restart and enjoy the game on your Picade like I do :-)</p>
-
-<p><blockquote class="twitter-tweet" data-lang="en">
-<p lang="en" dir="ltr"></p>
-
-<p>Wolfenstein 3D on the <a href="https://twitter.com/hashtag/Picade?src=hash">#Picade</a> 😍
-<a href="https://t.co/8RUY4gidSv">pic.twitter.com/8RUY4gidSv</a></p>
-
-<p></p>&mdash; Troglobit (@troglobit) <a href="https://twitter.com/troglobit/status/820614016498331648">January 15, 2017</a></p>
-
-<p></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
-
-<!--
-  -- Local Variables:
-  -- mode: markdown
-  -- End:
-  -->
+<!-- raw HTML omitted -->
+<p>Wolfenstein 3D on the <!-- raw HTML omitted -->#Picade<!-- raw HTML omitted --> 😍
+<!-- raw HTML omitted -->pic.twitter.com/8RUY4gidSv<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 
         
 
@@ -519,7 +479,7 @@ Emulation Station GUI:</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

@@ -111,7 +111,7 @@ SMCRoute can be used as an alternative to dynamic multicast routing daemons like
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -296,23 +296,17 @@ SMCRoute can be used as an alternative to dynamic multicast routing daemons like
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
 	
-        
-
-<p>SMCRoute is a daemon and command line tool to manipulate the multicast
+        <p>SMCRoute is a daemon and command line tool to manipulate the multicast
 routing table in the UNIX kernel.  Both FreeBSD and Linux kernels are
 supported, but it may work on other systems as well.</p>
-
 <p>SMCRoute can be used as an alternative to dynamic multicast routing
 daemons like <a href="/mrouted.html">mrouted</a> or <a href="/pimd.html">pimd</a> when (only)
 static multicast routes should be maintained or no proper signalling
 exists.</p>
-
 <blockquote>
 <p>Problems? See the <a href="/multicast-howto.html">Multicast HowTo</a> for help!</p>
 </blockquote>
-
 <h2 id="features">Features</h2>
-
 <ul>
 <li>Configuration file support, <a href="smcroute-conf.html">/etc/smcroute.conf</a></li>
 <li>Support for restarting and reloading the <code>.conf</code> on <code>SIGHUP</code></li>
@@ -323,29 +317,22 @@ exists.</p>
 <li>Client with built-in support to show routes and joined groups</li>
 <li>Interface wildcard matching, <code>eth+</code> matches <code>eth0, eth15</code></li>
 </ul>
-
 <h2 id="why-a-daemon">Why a Daemon?</h2>
-
 <p>One common question is why SMCRoute must be a daemon, why not just a
 simple tool, like <code>ip route</code> for unicast routes?  The answer is that to
 be able to add multicast routes a program must connect to the multicast
 routing socket in the kernel, when that socket is closed, which is done
 automatically when a UNIX program ends, the kernel cleans up all routes.</p>
-
-<h2 id="origin-references">Origin &amp; References</h2>
-
+<h2 id="origin--references">Origin &amp; References</h2>
 <p>SMCRoute was originally written by <a href="http://www.cschill.de/smcroute/">Carsten Schill</a>.  Later on Julien
 Blache, Todd Hayton and Micha Lenk picked up development for <a href="http://alioth.debian.org/projects/smcroute/">Debian</a>.</p>
-
 <p>Since 2011 Joachim Nilsson heads development at <a href="http://github.com/troglobit/smcroute">GitHub</a>.  New
 features include config file support, reloading config on <code>SIGHUP</code>,
 source-less on-demand (*,G) routing, TTL scoping and support for
 disabling ALL interfaces except the few used for multicast routing.</p>
-
 <p>Issue tracker and GIT repository available at <a href="http://github.com/troglobit/smcroute">GitHub</a>, tarballs also
 available as <code>.tar.gz</code> for systems that do not have <code>xz</code> in the default
 install, like OpenBSD:</p>
-
 <ul>
 <li><a href="http://github.com/troglobit/smcroute">Repository</a></li>
 <li><a href="ftp://ftp.troglobit.com/smcroute/smcroute-2.4.4.tar.xz">smcroute-2.4.4.tar.xz</a>,
@@ -354,7 +341,6 @@ install, like OpenBSD:</p>
 <li><a href="http://packages.debian.org/smcroute">Debian packages</a></li>
 <li><a href="http://packages.ubuntu.com/smcroute">Ubuntu packages</a></li>
 </ul>
-
 <p>See also the <a href="https://www.openhub.net/p/smcroute/">OpenHub page</a>, the
 <a href="http://freshcode.club/projects/smcroute">Freshcode page</a>, or the now
 dormant <a href="http://freecode.com/projects/smcroute">Free(code) page</a>.</p>
@@ -446,7 +432,7 @@ dormant <a href="http://freecode.com/projects/smcroute">Free(code) page</a>.</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

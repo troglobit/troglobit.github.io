@@ -39,7 +39,6 @@ the
 or
 &lt;a href=&#34;http://www.howtoforge.com/virtualization-with-kvm-on-ubuntu-12.04-lts-p3&#34;&gt;HowtoForge&lt;/a&gt;
 for that.&lt;/p&gt;
-
 &lt;p&gt;Instead this blog post details the most relevant steps to get file
 system pass-through between a Linux host and Qemu guest working.  The
 upstream &lt;a href=&#34;http://wiki.qemu.org/Documentation/9psetup&#34;&gt;Qemu docs&lt;/a&gt;

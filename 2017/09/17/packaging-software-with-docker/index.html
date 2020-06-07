@@ -12,25 +12,19 @@
   <meta name="twitter:title" content="Packaging Software with Docker" />
   <meta name="description" content="This post details how to package and deploy software with Docker.  The
 example uses Merecat httpd on Alpine Linux.  Try it out with:
-
 docker pull troglobit/merecat
-
 
 See https://hub.docker.com/r/troglobit/merecat/ for details on how to
 run Merecat httpd in production.">
   <meta property="og:description" content="This post details how to package and deploy software with Docker.  The
 example uses Merecat httpd on Alpine Linux.  Try it out with:
-
 docker pull troglobit/merecat
-
 
 See https://hub.docker.com/r/troglobit/merecat/ for details on how to
 run Merecat httpd in production.">
   <meta name="twitter:description" content="This post details how to package and deploy software with Docker.  The
 example uses Merecat httpd on Alpine Linux.  Try it out with:
-
 docker pull troglobit/merecat
-
 
 See …">
   <meta name="author" content="Joachim Nilsson"/><script type="application/ld+json">
@@ -105,9 +99,7 @@ See …">
 <meta property="og:title" content="Packaging Software with Docker" />
 <meta property="og:description" content="This post details how to package and deploy software with Docker.  The
 example uses Merecat httpd on Alpine Linux.  Try it out with:
-
 docker pull troglobit/merecat
-
 
 See https://hub.docker.com/r/troglobit/merecat/ for details on how to
 run Merecat httpd in production.">
@@ -119,9 +111,7 @@ run Merecat httpd in production.">
   <meta name="twitter:title" content="Packaging Software with Docker" />
   <meta name="twitter:description" content="This post details how to package and deploy software with Docker.  The
 example uses Merecat httpd on Alpine Linux.  Try it out with:
-
 docker pull troglobit/merecat
-
 
 See …">
   <meta name="twitter:image" content="/images/profile.jpg" />
@@ -138,7 +128,7 @@ See …">
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -340,88 +330,62 @@ See …">
 	
         <p>This post details how to package and deploy software with Docker.  The
 example uses <a href="https://github.com/troglobit/merecat">Merecat httpd</a> on Alpine Linux.  Try it out with:</p>
-
 <pre><code>docker pull troglobit/merecat
 </code></pre>
-
 <p>See <a href="https://hub.docker.com/r/troglobit/merecat/">https://hub.docker.com/r/troglobit/merecat/</a> for details on how to
 run Merecat httpd in production.</p>
-
 <p>The software I&rsquo;ve chosen for this exercise is <a href="https://github.com/troglobit/merecat">Merecat httpd</a>,
 and the reason is simple: we needed a <em>really</em> small web front-end to
 the FTP server at work and Debian has removed <a href="http://www.boa.org">Boa</a> from its repo,
 which also means it&rsquo;s missing from Ubuntu these days.</p>
-
 <p>If you&rsquo;ve not yet installed Docker, do so now.</p>
-
 <pre><code>sudo apt install docker.io
 sudo adduser $LOGNAME docker
 </code></pre>
-
 <p><strong>NOTE:</strong> Remember to log out and in again to activate the new group
 settings before continuing below.</p>
-
 <p>Merecat comes with a <a href="https://github.com/troglobit/merecat/blob/master/Dockerfile">Dockerfile</a>, so all we need to do to is build
 the image and flatten it before we deploy.  Start by cloning the repo:</p>
-
 <pre><code>git clone https://github.com/troglobit/merecat.git
 cd merecat/
 docker build .
 [..]
 Successfully built c87dd09084a3
 </code></pre>
-
 <p>Take note of the resulting image hash, here <code>c87dd09084a3</code>.  You can
 also find this with the <code>docker images</code> command.</p>
-
 <p>Now, take it for a spin.  Allow your host&rsquo;s port 80 (HTTP) to be
 forwarded to the container&rsquo;s port 80:</p>
-
 <pre><code>docker run -dit -p 80:80 c87dd09084a3
 d98583cb31c9417c6e4117768245f1256e3003d44668e21e75589b63e0e03074
 www-browser localhost
 </code></pre>
-
 <p>Another hash is printed, this time for the running container, which can
 also be seen using the <code>docker ps</code> command.</p>
-
 <p>Finally, it&rsquo;s time to flatten the container:</p>
-
 <pre><code>docker export d98583cb31c9 | docker import - troglobit/merecat:latest
 </code></pre>
-
 <p>Notice this size difference of between d98583cb31c9 and the flattnened
 image, run <code>docker images</code>:</p>
-
 <pre><code>REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 troglobit/merecat   latest              1764df1eb990        5 seconds ago       4.271 MB
 &lt;none&gt;              &lt;none&gt;              c87dd09084a3        29 minutes ago      192.4 MB
 alpine              3.5                 37c7be7a096b        3 days ago          3.991 MB
-</code></pre>
-
-<p>We now have our production image.  Kill the currently running &ldquo;template&rdquo;
+</code></pre><p>We now have our production image.  Kill the currently running &ldquo;template&rdquo;
 container and remove its image before continuing:</p>
-
 <pre><code>docker kill d98583cb31c9
 docker rmi -f c87dd09084a3
 </code></pre>
-
 <p>Let&rsquo;s check the production image, here I export my FTP directory to the
 container&rsquo;s WWW dir.  Notice how the entry point is lost after flattening,
 so we have to provide the full command, or write a new Dockerfile:</p>
-
 <pre><code>docker run -dit -v /srv/ftp:/var/www -p 80:80 troglobit/merecat merecat -n /var/www
 www-browser localhost
 </code></pre>
-
 <p>You should now see the FTP server contents, provided of course your host
 has an <code>/srv/ftp</code> directory.</p>
-
-<!--
-  -- Local Variables:
-  -- mode: markdown
-  -- End:
-  -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 
         
 
@@ -512,7 +476,7 @@ has an <code>/srv/ftp</code> directory.</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

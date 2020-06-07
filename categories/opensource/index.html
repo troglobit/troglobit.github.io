@@ -55,7 +55,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -271,18 +271,16 @@
                   <p>Years ago while looking for a fast <a href="https://en.wikipedia.org/wiki/Init">init</a> replacement for <a href="http://westermo.com/">work</a>,
 I found <a href="http://helllabs.org/finit/">Finit</a>.  Originally written by <a href="https://github.com/cmatsuoka">Claudio Matsuoka</a> to act
 as a drop-in replacement for the <a href="https://en.wikipedia.org/wiki/Asus_Eee_PC">Asus EeePC</a> <a href="http://wiki.eeeuser.com/boot_process:the_boot_process">fastinit</a>, <em>&ldquo;gaps
-filled with frog DNA &hellip;&ldquo;</em></p>
-
+filled with frog DNA …&quot;</em></p>
 <p>Until I found Finit I had always been in awe of those venturing into the
 realm of <a href="http://0pointer.net/blog/">PID 1</a>.  However, learning from the simplicity of Claudio&rsquo;s
 code I realized that although PID 1 at times is indistinguishable from
 magic, it is really not that hard to master.  <a href="https://github.com/troglobit/finit">My version of Finit</a>
 is available on GitHub.</p>
-
 <p>The code is open sourced under the very liberal <a href="http://opensource.org/licenses/MIT">MIT/X11 license</a>,
 and much of its frog DNA has proven very useful to me over the years.
 This blog post is about how that frog DNA can help you fill gaps in your
-projects &hellip;</p>
+projects …</p>
                   <a href="/2015/07/02/howto-using-lite-with-a-git-based-application/" class="post-read-more">[Read More]</a>
                 
               </div>
@@ -321,17 +319,13 @@ projects &hellip;</p>
                   <p>A steady flow of features, and releases, is key to keeping any project
 alive.  Recently I ticked off another item in the <a href="/finit.html">Finit</a>
 TODO list &hellip;</p>
-
 <p>Finit v1.12 now comes with a built-in inetd!  You no longer need an
 external inetd daemon to launch services on demand.</p>
-
 <p>The good news doesn&rsquo;t stop there, this little inetd actually supports a
 poor man&rsquo;s tcpwrappers!</p>
-
 <pre><code>inetd ssh/tcp          nowait [2345] /sbin/dropbear -i -R -F
 inetd ssh@eth0:222/tcp nowait [2345] /sbin/dropbear -i -R -F
 </code></pre>
-
 <p>With these two lines in your <code>/etc/finit.conf</code> you tell finit to launch
 the <a href="https://matt.ucc.asn.au/dropbear/dropbear.html">Dropbear SSH</a>
 server on demand on port 22 (default ssh/tcp port in <code>/etc/services</code>) on
@@ -340,11 +334,9 @@ server on demand on port 22 (default ssh/tcp port in <code>/etc/services</code>)
 don&rsquo;t want port 22 open at all on <code>eth0</code> &hellip; so finit takes care of this
 for you!  Seriously, it just works, no need for messing about with that
 nasty old <code>iptables</code> anymore!</p>
-
 <p>The original UNIX inetd super server supported many protocols
 internally, some of which may seem a bit odd today, and some have been
 superseded by more modern protocols.</p>
-
 <ul>
 <li><a href="http://en.wikipedia.org/wiki/Echo_Protocol">echo</a></li>
 <li><a href="http://en.wikipedia.org/wiki/Character_Generator_Protocol">chargen</a></li>
@@ -352,41 +344,32 @@ superseded by more modern protocols.</p>
 <li><a href="http://en.wikipedia.org/wiki/Daytime_Protocol">daytime</a></li>
 <li><a href="http://en.wikipedia.org/wiki/Discard_Protocol">discard</a></li>
 </ul>
-
 <p>Finit currently only supports one internal/built-in standard service,
 <code>time</code>.  It is built as a plugin to serve as an example of how you can
 extend Finit yourself.  The time service can be called either as UDP or
 TCP.  To prevent security issues, the <code>time</code> protocol is disabled by
 default.  To enable it you need two things:</p>
-
 <ol>
 <li>The <code>time.so</code> plugin (built by default)</li>
 <li>An <code>inetd time ...</code> line in <code>/etc/finit.conf</code></li>
 </ol>
-
 <p>Assuming you&rsquo;ve installed the default set of plugins, the following two
 lines can be added:</p>
-
 <pre><code>inetd time/udp   wait [2345] internal
 inetd time/tcp nowait [2345] internal
 </code></pre>
-
 <p>This can be very useful for testing the inetd capabilities, your network
 connection, or simply to get the time to a client where NTP for some
 reason does not work, or is blocked.  For instance, you could have a GPS
 setup on your server and distribute time to clients with the <code>time</code>
 protocol.</p>
-
 <p>To use it you need an <a href="http://www.aelius.com/njh/rdate/"><code>rdate</code></a>
 client.  Users of <code>rdate</code> in BusyBox may need to be reminded that it
 only supports TCP.</p>
-
 <pre><code>$ rdate -pu 198.51.100.42
 Sat Mar  7 08:48:58 CET 2015
 </code></pre>
-
 <p>For more info on Finit and its features, see the <a href="https://github.com/troglobit/finit/blob/master/README.md">README</a>.</p>
-
 <p>Enjoy! ツ</p>
                   <a href="/2015/03/06/inetd-support-in-finit-v1-dot-12/" class="post-read-more">[Read More]</a>
                 
@@ -462,7 +445,9 @@ replaced by <a href="/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/">v1.12</
               <div class="post-entry">
                 
                   I&rsquo;m a coder, not a writer. Here&rsquo;s what I&rsquo;ve been working on during the winter holidays:
- A new feature release of Finit is coming shortly, which will use libuEv and feature inetd support built-in! Another minor release of my own take on event loops, libuEv v1.0.3. This time with a heavy focus on documentation and Q&amp;A, extensive validation testing have been done on this release. Released another minor release of mrouted, v3.
+  A new feature release of Finit is coming shortly, which will use libuEv and feature inetd support built-in!
+  Another minor release of my own take on event loops, libuEv v1.0.3. This time with a heavy focus on documentation and Q&amp;A, extensive validation testing have been done on this release.
+  Released another minor release of mrouted, v3.
                   <a href="/2015/01/08/recent-open-source-work/" class="post-read-more">[Read More]</a>
                 
               </div>
@@ -539,7 +524,6 @@ available as
                   <p>On one of the last days of 2014 I release <a href="/pimd.html">pimd</a>
 <a href="https://github.com/troglobit/pimd/releases/tag/2.2.0">v2.2.0</a>, which
 is an awesome release with a lot of new features and bug fixes!</p>
-
 <p>However, it could very well be the last release I do.  Even though its
 one of my most popular projects on
 <a href="https://github.com/troglobit">GitHub</a> I have not had enough time to
@@ -549,10 +533,8 @@ the distinct possibility that the
 <a href="https://github.com/greearb/xorp.ct">Xorp PIM-SM</a> or the new
 <a href="https://github.com/udhos/qpimd">Quagga PIM-SSM</a> implementations will
 (finally) make good old pimd completely redundant.</p>
-
 <p>At <a href="http://www.westermo.com">work</a> we will likely start using the
 Quagga PIM rather than pimd in WeOS.</p>
-
 <p>For now though, enjoy pimd v2.2.0.  It&rsquo;s been tested in both my Qemu
 based virtual testbed and a few setups using Linux&rsquo; <code>netns</code> feature in
 <a href="http://www.nrl.navy.mil/itd/ncs/products/core">CORE</a> &ndash; awesome
@@ -595,7 +577,6 @@ little proggy! :-)</p>
                   <p>New release of uftpd, this time with TFTP blocksize negotiation,
 <a href="http://tools.ietf.org/html/rfc2348">RFC 2348</a>.  Making it a lot
 faster to transfer files over TFTP.</p>
-
 <p><a href="/uftpd.html">Try it out!</a></p>
 
                 
@@ -673,11 +654,9 @@ Another great piece of news is that Coverity accepted uftpd as an Open Source pr
                   <blockquote>
 <p>So them pesky details of <code>/etc/inetd.conf</code> really are important?</p>
 </blockquote>
-
 <p>This is a small bugfix release of <a href="/uftpd.html">uftpd</a>.  Version 1.4
 is basically just to change <code>nowait</code> to <code>wait</code> for the TFTP service in
 <code>/etc/inetd.conf</code>, but there&rsquo;s also a minor man page update.</p>
-
 <p>Enjoy! :)</p>
 
                 
@@ -796,7 +775,7 @@ This release completes the main purpose of uftpd for me, I can now use it as my 
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

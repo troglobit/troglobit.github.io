@@ -115,7 +115,7 @@ into problems setting it up.  I&rsquo;m posting it here for others to see.">
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -318,11 +318,9 @@ into problems setting it up.  I&rsquo;m posting it here for others to see.">
         <p>This post details how to set up <a href="https://git.zx2c4.com/cgit/">cgit</a> with <a href="http://merecat.troglobit.com">Merecat httpd</a>.  It
 begins as a <a href="https://github.com/troglobit/merecat/issues/3">GitHub issue</a> report by Mr Alok G. Singh, who had run
 into problems setting it up.  I&rsquo;m posting it here for others to see.</p>
-
 <p>My server has several sub-domains set up, hence I run <a href="http://merecat.troglobit.com">Merecat</a> with
 the <code>virtual-host = true</code> setting and bind mounts in <code>/var/www/</code>.
 Detailed in the <a href="http://merecat.troglobit.com">online documentation</a>.</p>
-
 <p>Setting up <a href="https://git.zx2c4.com/cgit/">cgit</a> requires a bit of linking &amp; symlinking on top of
 the bind mounts, at least on Debian/Ubuntu.  The bundled cgit package is
 installed into both <code>/usr/share</code> and <code>/usr/lib</code>, and when Merecat has
@@ -331,16 +329,16 @@ chrooted those directories will not be available.  I&rsquo;ve bind mounted my
 <code>cgit.cgi</code> from <code>../../lib/cgit/</code>:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">root@example:/usr/share/cgit# ll
 total <span style="color:#099">1000</span>
-drwxr-xr-x   <span style="color:#099">2</span> root root   <span style="color:#099">4096</span> Mar <span style="color:#099">30</span> <span style="color:#099">11</span>:16 ./
-drwxr-xr-x <span style="color:#099">140</span> root root   <span style="color:#099">4096</span> Mar <span style="color:#099">30</span> <span style="color:#099">09</span>:39 ../
+drwxr-xr-x   <span style="color:#099">2</span> root root   <span style="color:#099">4096</span> Mar <span style="color:#099">30</span> 11:16 ./
+drwxr-xr-x <span style="color:#099">140</span> root root   <span style="color:#099">4096</span> Mar <span style="color:#099">30</span> 09:39 ../
 -rwxr-xr-x   <span style="color:#099">2</span> root root <span style="color:#099">986800</span> Feb <span style="color:#099">12</span>  <span style="color:#099">2016</span> cgit.cgi*
 -rw-r--r--   <span style="color:#099">1</span> root root  <span style="color:#099">13312</span> Feb <span style="color:#099">12</span>  <span style="color:#099">2016</span> cgit.css
 -rw-r--r--   <span style="color:#099">1</span> root root   <span style="color:#099">1278</span> Feb <span style="color:#099">12</span>  <span style="color:#099">2016</span> cgit.png
 -rw-r--r--   <span style="color:#099">1</span> root root   <span style="color:#099">1078</span> Feb <span style="color:#099">12</span>  <span style="color:#099">2016</span> favicon.ico
-lrwxrwxrwx   <span style="color:#099">1</span> root root     <span style="color:#099">22</span> Mar <span style="color:#099">30</span> <span style="color:#099">11</span>:16 filters -&gt; ../../lib/cgit/filters/
-lrwxrwxrwx   <span style="color:#099">1</span> root root      <span style="color:#099">8</span> Mar <span style="color:#099">30</span> <span style="color:#099">10</span>:16 index.cgi -&gt; cgit.cgi*
--rw-r--r--   <span style="color:#099">1</span> root root     <span style="color:#099">47</span> Feb <span style="color:#099">12</span>  <span style="color:#099">2016</span> robots.txt</code></pre></div>
-<p>Merecat httpd currently does not support URL rewrite, so I&rsquo;ve set up
+lrwxrwxrwx   <span style="color:#099">1</span> root root     <span style="color:#099">22</span> Mar <span style="color:#099">30</span> 11:16 filters -&gt; ../../lib/cgit/filters/
+lrwxrwxrwx   <span style="color:#099">1</span> root root      <span style="color:#099">8</span> Mar <span style="color:#099">30</span> 10:16 index.cgi -&gt; cgit.cgi*
+-rw-r--r--   <span style="color:#099">1</span> root root     <span style="color:#099">47</span> Feb <span style="color:#099">12</span>  <span style="color:#099">2016</span> robots.txt
+</code></pre></div><p>Merecat httpd currently does not support URL rewrite, so I&rsquo;ve set up
 cgit as follows, <code>/etc/cgitrc</code>:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cfg" data-lang="cfg"><span style="color:#998;font-style:italic"># cgit config</span>
 
@@ -354,8 +352,8 @@ cgit as follows, <code>/etc/cgitrc</code>:</p>
 <span style="color:#008080">scan-path</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">/srv/git/</span>
 
 <span style="color:#998;font-style:italic"># if you do not want that webcrawler (like google) index your site</span>
-<span style="color:#008080">robots</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">noindex, nofollow</span></code></pre></div>
-<p><em>Note the leading slash</em> in the <code>virtual-root</code>.  The resulting site can
+<span style="color:#008080">robots</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">noindex, nofollow</span>
+</code></pre></div><p><em>Note the leading slash</em> in the <code>virtual-root</code>.  The resulting site can
 be viewed here: <a href="http://cgit.troglobit.com">http://cgit.troglobit.com</a></p>
 
         
@@ -444,7 +442,7 @@ be viewed here: <a href="http://cgit.troglobit.com">http://cgit.troglobit.com</a
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

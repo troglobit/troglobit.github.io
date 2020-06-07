@@ -8,10 +8,34 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Sun, 01 Mar 2020 16:58:00 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 07 Jun 2020 12:25:52 +0200</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>sudo tricks</title>
+      <link>/2020/06/sudo-tricks/</link>
+      <pubDate>Sun, 07 Jun 2020 12:25:52 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2020/06/sudo-tricks/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;My name is Joachim and I&amp;rsquo;m a &lt;code&gt;sudo su -&lt;/code&gt; user.&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Before you read any further, please read &lt;a href=&#34;/2016/12/11/a-life-without-sudo/&#34;&gt;A life without sudo&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Fix blinking WiFi LED on X200</title>
+      <link>/2020/03/Fix-blinking-WiFi-LED-on-X200/</link>
+      <pubDate>Sat, 28 Mar 2020 14:16:00 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2020/03/Fix-blinking-WiFi-LED-on-X200/</guid>
+      <description>&lt;p&gt;Recently got my hands on a ThinkPad X200, the last model without the
+useless touchpad and with the awesome classic keyboard.  A fine little
+machine that can easily be upgraded with an SSD disk and 8 GiB RAM!&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve set it up with &lt;a href=&#34;https://www.linuxmint.com/download_lmde.php&#34;&gt;Linx Mint (LMDE 4)&lt;/a&gt; which works great! :)&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Fixing file sharing in Debian/Ubuntu</title>
@@ -44,11 +68,9 @@ instructions for each of my programs.&lt;/p&gt;</description>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2017/09/30/set-up-a-debian-ubuntu-apt-repository/</guid>
       <description>&lt;p&gt;How to set up a Debian/Ubuntu APT repository with GPG signing.&lt;/p&gt;
-
 &lt;p&gt;At first I tried to use &lt;a href=&#34;https://debian-administration.org/article/717/Setting_up_a_personal_secure_apt_repository&#34;&gt;Bas Wijnen&amp;rsquo;s mini-dinstall howto&lt;/a&gt;, but never
 managed to get it working.  Probably due to problems with GPG.  Then I
 went down the tried and true path of using &lt;a href=&#34;https://debian-administration.org/article/286/Setting_up_your_own_APT_repository_with_upload_support&#34;&gt;reprepro&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;I&amp;rsquo;ve tried to document my steps here, but I&amp;rsquo;ve very likely missed a few
 steps that a beginner admin may run into. YMMV B-)&lt;/p&gt;</description>
     </item>
@@ -64,7 +86,6 @@ as a shift-reduce problem with Bison and ended up a ping-pong of useful
 UNIX API:s.  We concluded that despite having worked professionally with
 UNIX for over two decades, it is still very satisfying finding gems like
 these.&lt;/p&gt;
-
 &lt;p&gt;Most people are completely unaware they exist and end up rolling their
 own (buggy) implementations.  For instance, string manipulation and
 various forms of linked lists.  Which is why I many years ago extracted
@@ -75,7 +96,6 @@ up-to-date &lt;code&gt;queue.h&lt;/code&gt; with the &lt;code&gt;_SAFE&lt;/code&
 like &lt;a href=&#34;https://libbsd.freedesktop.org/wiki/&#34;&gt;libbsd&lt;/a&gt; for this, but I&amp;rsquo;ve
 found many of the ports incomplete and unsafe and prefer to stay closer
 to the upstream *BSD versions.&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; This post was originally written Nov 14, 2015.  It was a
 Saturday and I remember being extremely inspired when I wrote it.  I&amp;rsquo;ve
 continued adding to it over the years, and still do.  So, as of Jul 2,
@@ -91,14 +111,11 @@ continued adding to it over the years, and still do.  So, as of Jul 2,
       <description>&lt;p&gt;Some time ago now I was in a meeting with a customer where I first learned of
 the new syslog standard, &lt;a href=&#34;https://tools.ietf.org/html/rfc5424&#34;&gt;RFC5424&lt;/a&gt;.  I say &amp;ldquo;new&amp;rdquo; because, despite it being
 ten years old, it was new to me.&lt;/p&gt;
-
 &lt;p&gt;Three weeks ago I started updating my fork of &lt;a href=&#34;https://www.infodrom.org/projects/sysklogd/&#34;&gt;sysklogd&lt;/a&gt; to be &lt;a href=&#34;https://tools.ietf.org/html/rfc5424&#34;&gt;RFC5424&lt;/a&gt;
 compliant.  I ended up ripping out most of the old code and replacing it with
 fresh DNA strands from FreeBSD and NetBSD.&lt;/p&gt;
-
 &lt;p&gt;The result is a fully RFC compliant &lt;code&gt;syslogd&lt;/code&gt;, &lt;strong&gt;and&lt;/strong&gt; a &lt;code&gt;libsyslog&lt;/code&gt; with a
 replacement &lt;code&gt;syslog.h&lt;/code&gt; header for sending RFC5424 events from applications!&lt;/p&gt;
-
 &lt;p&gt;&lt;a href=&#34;https://github.com/troglobit/sysklogd/&#34;&gt;https://github.com/troglobit/sysklogd/&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
@@ -175,7 +192,6 @@ better yet, post a pull request to scratch that itch you have deep down:
 upon the guys who&amp;rsquo;d stolen it, got mugged by same guys, decided I&amp;rsquo;d had
 enough and then bought a house and moved to another city.  That&amp;rsquo;s the
 long and short of it.&lt;/p&gt;
-
 &lt;p&gt;I&amp;rsquo;m OK, sort of.&lt;/p&gt;</description>
     </item>
     
@@ -187,13 +203,12 @@ long and short of it.&lt;/p&gt;
       <guid>/2018/08/Dark-Themes-Ahead/</guid>
       <description>&lt;p&gt;&lt;em&gt;Reminder to self:&lt;/em&gt; How to fix Firefox &lt;code&gt;about:config&lt;/code&gt; when using a Dark
 Theme in Gnome or &lt;a href=&#34;https://awesomewm.org/&#34;&gt;Awesome&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;I use &lt;a href=&#34;https://system76.com/&#34;&gt;System76&lt;/a&gt; amazing Gtk+ theme from &lt;a href=&#34;https://github.com/pop-os/gtk-theme&#34;&gt;Pop!_OS&lt;/a&gt;.  It&amp;rsquo;s quite
 simple to set up on top of Ubuntu and use in Awesome:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;    sudo add-apt-repository ppa:system76/pop
     sudo apt update
-    sudo apt install pop-theme&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;I then use &lt;a href=&#34;https://wiki.gnome.org/Apps/Tweaks&#34;&gt;gnome-tweaks&lt;/a&gt; to select the Pop-dark-slim theme.  Now, the
+    sudo apt install pop-theme
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I then use &lt;a href=&#34;https://wiki.gnome.org/Apps/Tweaks&#34;&gt;gnome-tweaks&lt;/a&gt; to select the Pop-dark-slim theme.  Now, the
 problem is that certain text box inputs in Firefox is either completely
 dark or white and the text cannot be seen until you mark it.  This isn&amp;rsquo;t
 specific to the Pop!_OS theme, Adwaita-dark is exactly as bad.&lt;/p&gt;</description>
@@ -265,7 +280,6 @@ multicast routing with &lt;a href=&#34;https://github.com/troglobit/pimd/&#34;&g
 GRE tunnel.  To achieve this we will also set up OSPF over GRE with
 &lt;a href=&#34;http://www.quagga.net&#34;&gt;Quagga&lt;/a&gt;, because PIM, unlike DVMRP (&lt;code&gt;mrouted&lt;/code&gt;),
 require unicast routing rules to be established.&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;       .----{ Intranet }----.
       /    192.168.1.0/24    \
      /                        \
@@ -283,9 +297,7 @@ require unicast routing rules to be established.&lt;/p&gt;
 |  C1  |                    |  C2  |
 |      |                    |      |
 &#39;------&#39;                    &#39;------&#39;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;In this post we are using the home WiFi network, 192.168.1.0/24, to hook
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In this post we are using the home WiFi network, 192.168.1.0/24, to hook
 up the GRE tunnel.  It is just as easy to extend this to a big corporate
 Intranet with more routers between &lt;code&gt;R1&lt;/code&gt; and &lt;code&gt;R2&lt;/code&gt;.  As long as that IT
 department takes care of the unicast routing between &lt;code&gt;R1&lt;/code&gt; and &lt;code&gt;R2&lt;/code&gt; so
@@ -301,11 +313,9 @@ that the GRE tunnel can be established.&lt;/p&gt;</description>
       <description>&lt;p&gt;I still get asked this, from time to time.  Maybe it&amp;rsquo;s because I only
 use event loops, maybe it&amp;rsquo;s because I&amp;rsquo;ve written &lt;a href=&#34;https://github.com/troglobit/libuev&#34;&gt;libuEv&lt;/a&gt;, or maybe
 people still don&amp;rsquo;t understand:&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;Why an event loop, why not use threads?&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;So here&amp;rsquo;s my response, once more.&lt;/p&gt;</description>
     </item>
     
@@ -317,10 +327,8 @@ people still don&amp;rsquo;t understand:&lt;/p&gt;
       <guid>/2017/09/17/packaging-software-with-docker/</guid>
       <description>&lt;p&gt;This post details how to package and deploy software with Docker.  The
 example uses &lt;a href=&#34;https://github.com/troglobit/merecat&#34;&gt;Merecat httpd&lt;/a&gt; on Alpine Linux.  Try it out with:&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;docker pull troglobit/merecat
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;See &lt;a href=&#34;https://hub.docker.com/r/troglobit/merecat/&#34;&gt;https://hub.docker.com/r/troglobit/merecat/&lt;/a&gt; for details on how to
 run Merecat httpd in production.&lt;/p&gt;</description>
     </item>
@@ -377,7 +385,7 @@ mkdir ~/certs cd ~/certs openssl req -x509 -newkey rsa:4096 -keyout key.pem -out
       <guid>/2017/02/11/running-ikiwiki-in-merecat-httpd/</guid>
       <description>This is a HowTo for setting up ikiwiki with Merecat httpd.
 First install ikiwiki
-$ sudo apt install ikiwiki libcgi-session-perl libcgi-formbuilder-perl  Follow the steps to setup a new Wiki or Blog. In this example we set up a wiki in our ~/public_html:
+$ sudo apt install ikiwiki libcgi-session-perl libcgi-formbuilder-perl Follow the steps to setup a new Wiki or Blog. In this example we set up a wiki in our ~/public_html:
 $ ikiwiki --setup /etc/ikiwiki/auto.setup ... Successfully set up wiki: url: http://localhost/~jocke/wiki srcdir: ~/wiki destdir: ~/public_html/wiki repository: ~/wiki.git To modify settings, edit ~/home.setup and then run:
 $ ikiwiki --setup ~/home.</description>
     </item>
@@ -391,14 +399,12 @@ $ ikiwiki --setup ~/home.</description>
       <description>&lt;p&gt;Having worked with Linux for the last 20 years, and embedded for more
 than ten of them, I&amp;rsquo;ve become quite a fan of virtualization in general
 and &lt;a href=&#34;http://qemu.org&#34;&gt;Qemu&lt;/a&gt; in particular.&lt;/p&gt;
-
 &lt;p&gt;Qemu is a fantastic little tool, created by the Open Source superhero
 &lt;a href=&#34;http://blog.smartbear.com/careers/fabrice-bellard-portrait-of-a-super-productive-programmer/&#34;&gt;Fabrice Bellard&lt;/a&gt;.
 It can be used to verify an embedded system without having to deal with
 the problems of actual HW until you really have to.  Don&amp;rsquo;t get me wrong,
 HW excites me like any other nerd, but if the HW is new and shaky it can
 be quite a pain to develop higher level functions.&lt;/p&gt;
-
 &lt;p&gt;My holy grail is to have a 100% complete and accurate virtualization
 target per architecture to test my various software projects on.  That&amp;rsquo;s
 why I created &lt;a href=&#34;https://github.com/troglobit/troglos&#34;&gt;TroglOS&lt;/a&gt;.&lt;/p&gt;</description>
@@ -414,9 +420,7 @@ why I created &lt;a href=&#34;https://github.com/troglobit/troglos&#34;&gt;Trogl
 1992 for MS-DOS, made by the now legendary id Software.  OK, admittedly
 I&amp;rsquo;ve played other games since then, but I&amp;rsquo;ve never again been so manic
 about a game since Wolfenstein.&lt;/p&gt;
-
-&lt;p&gt;&lt;img style=&#34;width:50%;height:auto;&#34; class=&#34;center&#34; src=&#34;/images/wolf3d.png&#34;&gt;&lt;/p&gt;
-
+&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;This post is about how to build, install and set up Wolfenstein 3D on a
 Raspberry Pi running &lt;a href=&#34;https://retropie.org.uk/&#34;&gt;RetroPie&lt;/a&gt; &amp;hellip; on a &lt;a href=&#34;https://shop.pimoroni.com/products/picade&#34;&gt;Picade&lt;/a&gt; :-)&lt;/p&gt;</description>
     </item>
@@ -461,26 +465,17 @@ Example:
       <guid>/2016/11/06/merecat-another-stray-kitten-/</guid>
       <description>&lt;p&gt;This post is about my adoption, refactor, and rebranding of thttpd as
 &lt;a href=&#34;http://merecat.troglobit.com&#34;&gt;Merecat&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;I code for recreation as well as work.  Most of the time I tinker around
 with my various &lt;a href=&#34;https://github.com/troglobit&#34;&gt;projects&lt;/a&gt; simply to learn
 and sometimes these little projects turn into something useful for other
 people as well, which is great!&lt;/p&gt;
-
-&lt;p data-pullquote=&#34;not all things can be simplified, and not all simple
-things are correct&#34;&gt; Recently I discovered my method to get started:
-refactoring, or just simple code cleanup.  You see I&#39;ve got this crazy
-idea that &lt;em&gt;all simple things are correct&lt;/em&gt;.  Although things
-usually tend to require a certain balance &amp;mdash; not all things can be
-simplified, and not all simple things are correct.&lt;/p&gt;
-
+&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;When I recently had to migrate my personal blog, FTP, and GIT server, I
 set out to run everything from an old RasPi2.  This put my private life
 in just about the same niche as my work life, embedded.  On a resource
 constrained platform like that running Apache is not the best idea.  So
 I set out to (re-)discover the web servers of my past, the late 90&amp;rsquo;s, I
 had almost forgotten:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://acme.com/software/mini_httpd/&#34;&gt;mini_httpd&lt;/a&gt;,&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.boa.org/&#34;&gt;Boa&lt;/a&gt;,&lt;/li&gt;
@@ -488,7 +483,6 @@ had almost forgotten:&lt;/p&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.acme.com/software/thttpd/&#34;&gt;thttpd&lt;/a&gt;,&lt;/li&gt;
 &lt;li&gt;and more &amp;hellip;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;Come to think of it, they are probably one of the many reasons that I
 started my career in embedded in the first place!&lt;/p&gt;</description>
     </item>
@@ -547,9 +541,7 @@ I have no clue if this will actually work, may even try porting my own little th
 setting up ALL THE THINGS!  I just managed to set up live migration of
 the KVM virtual machines I use for testing my &lt;a href=&#34;https://en.wikipedia.org/wiki/Free_and_open-source_software&#34;&gt;FLOSS&lt;/a&gt; projects.  Here
 is a short writeup of that, just as a reminder for myself.&lt;/p&gt;
-
 &lt;h2 id=&#34;checklist&#34;&gt;Checklist&lt;/h2&gt;
-
 &lt;ol&gt;
 &lt;li&gt;Make sure the libvirt versions are the same.  I tried setting up
 migration between CentOS 7.2 and and Ubuntu LTS 16.04 which turned
@@ -562,7 +554,6 @@ couldn&amp;rsquo;t set up root access (defaulted to nobody).&lt;/li&gt;
 &lt;li&gt;Set up VM processor model=default&lt;/li&gt;
 &lt;li&gt;Profit&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;p&gt;Good Luck! :)&lt;/p&gt;</description>
     </item>
     
@@ -576,8 +567,7 @@ couldn&amp;rsquo;t set up root access (defaulted to nobody).&lt;/li&gt;
 servers.  I plan to use them as build and embedded target emulation
 servers for my &lt;a href=&#34;https://github.com/troglobit&#34;&gt;open source projects&lt;/a&gt;
 as well as Minecraft server for my kids :)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://eitc.in/yahoo_site_admin/assets/docs/Supermicro_SuperServer_SC512L_small.324203750.JPG&#34;&gt;&lt;/p&gt;</description>
+&lt;!-- raw HTML omitted --&gt;</description>
     </item>
     
     <item>
@@ -589,7 +579,6 @@ as well as Minecraft server for my kids :)&lt;/p&gt;
       <description>&lt;p&gt;This is a very brief writeup of how to upgrade the BIOS on a X1 Carbon
 (G1) from Linux.  For more information on this topic there is always the
 excellent &lt;a href=&#34;http://www.thinkwiki.org/wiki/BIOS_Upgrade&#34;&gt;ThinkWiki&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;OK, this post is more about creating the bootable USB stick needed, was
 too much of a chicken to try &lt;a href=&#34;https://www.flashrom.org/Flashrom&#34;&gt;Flashrom&lt;/a&gt; &amp;hellip;&lt;/p&gt;</description>
     </item>
@@ -603,7 +592,6 @@ too much of a chicken to try &lt;a href=&#34;https://www.flashrom.org/Flashrom&#
       <description>&lt;p&gt;Recently I needed a simple TCP/UDP port redirector and stumbled upon
 &lt;a href=&#34;https://serverfault.com/questions/252150/port-forwarding-on-linux-without-iptables/&#34;&gt;this Stackoverflow post&lt;/a&gt;.  As usual I wasn&amp;rsquo;t first wanting to this
 without using &lt;code&gt;iptables&lt;/code&gt;.&lt;/p&gt;
-
 &lt;p&gt;There were several alternatives, but since my target was embedded with
 limited amount of RAM and flash I wanted something really small.  So the
 best fit turned out to be &lt;a href=&#34;https://github.com/troglobit/redir&#34;&gt;redir&lt;/a&gt;, which unfortunately only could
@@ -611,7 +599,6 @@ handle TCP connections.  This is what led me to write &lt;a href=&#34;https://gi
 complement &lt;code&gt;redir&lt;/code&gt;.  Eventually I ended up adoptiing &lt;code&gt;redir&lt;/code&gt; as well,
 which meant giving it a bit of a facelift and to give them both the same
 look and feel.&lt;/p&gt;
-
 &lt;p&gt;Currently they are two separate applications, which in some use-cases
 can be beneficial (small size), but I may in the future transplant the
 UDP functionality of &lt;code&gt;uredir&lt;/code&gt; into &lt;code&gt;redir&lt;/code&gt;.  We&amp;rsquo;ll see, right now though
@@ -641,12 +628,10 @@ has created a PID file, signalling to you how to reach it.  Usually this
 file is created as &lt;code&gt;/var/run/daemon.pid&lt;/code&gt;, or &lt;code&gt;/run/daemon.pid&lt;/code&gt;, and has
 the PID of &lt;code&gt;daemon&lt;/code&gt; as the first and only data in the file.  This data
 may or may not have a UNIX line ending.&lt;/p&gt;
-
 &lt;p&gt;Only trouble is: most UNIX daemons do not re-assert that PID file
 properly on &lt;code&gt;SIGHUP&lt;/code&gt; (if they support &lt;code&gt;SIGHUP&lt;/code&gt; that is).  When I send
 &lt;code&gt;SIGHUP&lt;/code&gt; to a daemon I expect it to re-read its &lt;code&gt;/etc/daemon.conf&lt;/code&gt; and
 resume operation, basically a quicker way than stop/start.&lt;/p&gt;
-
 &lt;p&gt;Annoyingly however, most daemons do not signal us back to tell us when
 they&amp;rsquo;re done with the &lt;code&gt;SIGHUP&lt;/code&gt;.  Naturally a new movement has risen that
 says we should all instrument our daemons with D-bus &amp;hellip; I say no.
@@ -674,16 +659,13 @@ Turns out there are a few tricks that can save your home directory from accident
 except on days like these you accidentally manage to erase &lt;code&gt;$HOME&lt;/code&gt; and
 have no real backup to rely on &amp;hellip; Maundy Thursday will forever be Black
 Thursday for me, from now on.&lt;/p&gt;
-
 &lt;p&gt;Best thing your can do, after cursing at yourself constantly for a
 couple of hours, is to:&lt;/p&gt;
-
 &lt;ol&gt;
 &lt;li&gt;Come up with a useful backup and &lt;em&gt;restore&lt;/em&gt; strategy&lt;/li&gt;
 &lt;li&gt;Read up on undeletion tools for Ext4&lt;/li&gt;
 &lt;li&gt;Blog about it, naturally&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;p&gt;BUT FIRST &amp;ndash; QUICK &amp;ndash; UNMOUNT OR POWER-OFF YOUR COMPUTER &amp;ndash; PULL OUT THE
 BATTERY &amp;ndash; AND STEP AWAY FROM THE COMPUTER!  Must protect the partition
 from being accidentally written to &amp;ndash; I completely fumbled this step, so
@@ -700,16 +682,13 @@ take heed young people!&lt;/p&gt;</description>
 reported to &lt;a href=&#34;https://github.com/troglobit/pimd/&#34;&gt;pimd&lt;/a&gt;.  That number of
 issues reported is cool in itself, but this was a question about
 &lt;a href=&#34;https://www.docker.com&#34;&gt;Docker&lt;/a&gt; and &lt;code&gt;pimd&lt;/code&gt;.&lt;/p&gt;
-
 &lt;p&gt;Up until that point I had only read about this new fad, and played
 around with it a bit &lt;a href=&#34;http://www.westermo.com&#34;&gt;at work&lt;/a&gt; for use as a
 stable build environment for cross-compiling.  I had no idea people
 would want to use a Docker container as a multicast sink.  Basically I
 was baffled.&lt;/p&gt;
-
 &lt;p&gt;The reporter used a Java based tool but simply couldn&amp;rsquo;t get things to
 work properly with &lt;code&gt;pimd&lt;/code&gt; running on the host:&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;                eth0
  MC sender ---&amp;gt; [ Server host ]    &amp;lt;--- router running pimd
                        |
@@ -736,7 +715,6 @@ testing, but on most systems I usually resort to &lt;code&gt;ping(1)&lt;/code&gt
 &lt;code&gt;tcpdump(1)&lt;/code&gt;, which are quite sufficient.  However, you often need to
 tell bridges (switches) to open up multicast in your general direction
 for your pings to get through, so you need to send an IGMP &amp;ldquo;join&amp;rdquo; first.&lt;/p&gt;
-
 &lt;p&gt;Way back in 2006 I stumbled upon a neat tool called &lt;code&gt;mcjoin&lt;/code&gt;, written by
 David Stevens and announced in
 &lt;a href=&#34;https://lkml.org/lkml/2004/8/5/143&#34;&gt;this posting to LKML&lt;/a&gt;.  I started
@@ -794,18 +772,16 @@ Due to my not really taking much vacation previous years I had saved up for ten 
       <description>&lt;p&gt;Years ago while looking for a fast &lt;a href=&#34;https://en.wikipedia.org/wiki/Init&#34;&gt;init&lt;/a&gt; replacement for &lt;a href=&#34;http://westermo.com/&#34;&gt;work&lt;/a&gt;,
 I found &lt;a href=&#34;http://helllabs.org/finit/&#34;&gt;Finit&lt;/a&gt;.  Originally written by &lt;a href=&#34;https://github.com/cmatsuoka&#34;&gt;Claudio Matsuoka&lt;/a&gt; to act
 as a drop-in replacement for the &lt;a href=&#34;https://en.wikipedia.org/wiki/Asus_Eee_PC&#34;&gt;Asus EeePC&lt;/a&gt; &lt;a href=&#34;http://wiki.eeeuser.com/boot_process:the_boot_process&#34;&gt;fastinit&lt;/a&gt;, &lt;em&gt;&amp;ldquo;gaps
-filled with frog DNA &amp;hellip;&amp;ldquo;&lt;/em&gt;&lt;/p&gt;
-
+filled with frog DNA …&amp;quot;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Until I found Finit I had always been in awe of those venturing into the
 realm of &lt;a href=&#34;http://0pointer.net/blog/&#34;&gt;PID 1&lt;/a&gt;.  However, learning from the simplicity of Claudio&amp;rsquo;s
 code I realized that although PID 1 at times is indistinguishable from
 magic, it is really not that hard to master.  &lt;a href=&#34;https://github.com/troglobit/finit&#34;&gt;My version of Finit&lt;/a&gt;
 is available on GitHub.&lt;/p&gt;
-
 &lt;p&gt;The code is open sourced under the very liberal &lt;a href=&#34;http://opensource.org/licenses/MIT&#34;&gt;MIT/X11 license&lt;/a&gt;,
 and much of its frog DNA has proven very useful to me over the years.
 This blog post is about how that frog DNA can help you fill gaps in your
-projects &amp;hellip;&lt;/p&gt;</description>
+projects …&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -815,14 +791,12 @@ projects &amp;hellip;&lt;/p&gt;</description>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/</guid>
       <description>&lt;p&gt;So, now that I have &lt;a href=&#34;http://git.troglobit.com&#34;&gt;http://git.troglobit.com&lt;/a&gt; setup as a backup GIT repo
-to &lt;a href=&#34;https://github.com/troglobit&#34;&gt;https://github.com/troglobit&lt;/a&gt;, I needed a &lt;em&gt;simple&lt;/em&gt; way to always push
+to &lt;a href=&#34;https://github.com/troglobit,&#34;&gt;https://github.com/troglobit,&lt;/a&gt; I needed a &lt;em&gt;simple&lt;/em&gt; way to always push
 to both repos &amp;ndash; best way for me is to always hook into my regular work
 flow, otherwise I&amp;rsquo;d just forget.  The &lt;a href=&#34;1&#34;&gt;git-remote(1)&lt;/a&gt; man page to the
 rescue, it describes the &lt;code&gt;set-url --add&lt;/code&gt; sub-command:&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;git remote set-url --add origin ssh://git.troglobit.com:1234/srv/git/watchdogd.git
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;Now, with a simple &lt;code&gt;git push&lt;/code&gt; followed by &lt;code&gt;git push --tags&lt;/code&gt; I had now
 pushed to both the GitHub repo as well as my own server!&lt;/p&gt;</description>
     </item>
@@ -836,7 +810,6 @@ pushed to both the GitHub repo as well as my own server!&lt;/p&gt;</description>
       <description>&lt;p&gt;I&amp;rsquo;m posting this in case anyone else gets stuck setting up &lt;a href=&#34;http://www.apache.org&#34;&gt;Apache&lt;/a&gt;
 with &lt;a href=&#34;http://git-scm.com/docs/gitweb&#34;&gt;Gitweb&lt;/a&gt;.  Also as a reminder to myself in case I ever need to
 set up this all over again.&lt;/p&gt;
-
 &lt;ol&gt;
 &lt;li&gt;You have all your eggs in one basket (GitHub), and&lt;/li&gt;
 &lt;li&gt;You really like that shiny basket, but&lt;/li&gt;
@@ -844,24 +817,18 @@ set up this all over again.&lt;/p&gt;
 &lt;li&gt;You are wise (yes you are!) and realize you need another basket, so&lt;/li&gt;
 &lt;li&gt;You set up a server and a domain yourself &amp;hellip;&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;p&gt;OK.  Let&amp;rsquo;s start simple, since you are already running the latest Debian
 you fire up the command line and install the basics:&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;sudo apt-get install gitweb apache2
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;So it&amp;rsquo;ll complain, you&amp;rsquo;ll clarify your request and soon all required
 packages are on your server.  Now what?&lt;/p&gt;
-
-&lt;p&gt;Debian has already set up &lt;a href=&#34;http://localhost/gitweb&#34;&gt;http://localhost/gitweb&lt;/a&gt; for you, and if you
+&lt;p&gt;Debian has already set up http://localhost/gitweb for you, and if you
 have a domain already you should go ahead and edit the master file for
 that:&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;editor /etc/apache2/sites-available/000-default.conf
 service apache2 reload
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;If you want to use that for your gitweb needs, then you&amp;rsquo;re done!&lt;/p&gt;</description>
     </item>
     
@@ -874,17 +841,13 @@ service apache2 reload
       <description>&lt;p&gt;A steady flow of features, and releases, is key to keeping any project
 alive.  Recently I ticked off another item in the &lt;a href=&#34;/finit.html&#34;&gt;Finit&lt;/a&gt;
 TODO list &amp;hellip;&lt;/p&gt;
-
 &lt;p&gt;Finit v1.12 now comes with a built-in inetd!  You no longer need an
 external inetd daemon to launch services on demand.&lt;/p&gt;
-
 &lt;p&gt;The good news doesn&amp;rsquo;t stop there, this little inetd actually supports a
 poor man&amp;rsquo;s tcpwrappers!&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;inetd ssh/tcp          nowait [2345] /sbin/dropbear -i -R -F
 inetd ssh@eth0:222/tcp nowait [2345] /sbin/dropbear -i -R -F
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;With these two lines in your &lt;code&gt;/etc/finit.conf&lt;/code&gt; you tell finit to launch
 the &lt;a href=&#34;https://matt.ucc.asn.au/dropbear/dropbear.html&#34;&gt;Dropbear SSH&lt;/a&gt;
 server on demand on port 22 (default ssh/tcp port in &lt;code&gt;/etc/services&lt;/code&gt;) on
@@ -893,11 +856,9 @@ server on demand on port 22 (default ssh/tcp port in &lt;code&gt;/etc/services&l
 don&amp;rsquo;t want port 22 open at all on &lt;code&gt;eth0&lt;/code&gt; &amp;hellip; so finit takes care of this
 for you!  Seriously, it just works, no need for messing about with that
 nasty old &lt;code&gt;iptables&lt;/code&gt; anymore!&lt;/p&gt;
-
 &lt;p&gt;The original UNIX inetd super server supported many protocols
 internally, some of which may seem a bit odd today, and some have been
 superseded by more modern protocols.&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Echo_Protocol&#34;&gt;echo&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Character_Generator_Protocol&#34;&gt;chargen&lt;/a&gt;&lt;/li&gt;
@@ -905,41 +866,32 @@ superseded by more modern protocols.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Daytime_Protocol&#34;&gt;daytime&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Discard_Protocol&#34;&gt;discard&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;Finit currently only supports one internal/built-in standard service,
 &lt;code&gt;time&lt;/code&gt;.  It is built as a plugin to serve as an example of how you can
 extend Finit yourself.  The time service can be called either as UDP or
 TCP.  To prevent security issues, the &lt;code&gt;time&lt;/code&gt; protocol is disabled by
 default.  To enable it you need two things:&lt;/p&gt;
-
 &lt;ol&gt;
 &lt;li&gt;The &lt;code&gt;time.so&lt;/code&gt; plugin (built by default)&lt;/li&gt;
 &lt;li&gt;An &lt;code&gt;inetd time ...&lt;/code&gt; line in &lt;code&gt;/etc/finit.conf&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;p&gt;Assuming you&amp;rsquo;ve installed the default set of plugins, the following two
 lines can be added:&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;inetd time/udp   wait [2345] internal
 inetd time/tcp nowait [2345] internal
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;This can be very useful for testing the inetd capabilities, your network
 connection, or simply to get the time to a client where NTP for some
 reason does not work, or is blocked.  For instance, you could have a GPS
 setup on your server and distribute time to clients with the &lt;code&gt;time&lt;/code&gt;
 protocol.&lt;/p&gt;
-
 &lt;p&gt;To use it you need an &lt;a href=&#34;http://www.aelius.com/njh/rdate/&#34;&gt;&lt;code&gt;rdate&lt;/code&gt;&lt;/a&gt;
 client.  Users of &lt;code&gt;rdate&lt;/code&gt; in BusyBox may need to be reminded that it
 only supports TCP.&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;$ rdate -pu 198.51.100.42
 Sat Mar  7 08:48:58 CET 2015
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;For more info on Finit and its features, see the &lt;a href=&#34;https://github.com/troglobit/finit/blob/master/README.md&#34;&gt;README&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;Enjoy! ツ&lt;/p&gt;</description>
     </item>
     
@@ -963,7 +915,6 @@ replaced by &lt;a href=&#34;/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/&#
       <description>&lt;blockquote&gt;
 &lt;p&gt;Enable &lt;em&gt;all&lt;/em&gt; the warnings!&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;This is one of the truths you learn when you start working with C.  Most
 of the time adding &lt;code&gt;CPPFLAGS=&amp;quot;-W -Wall -Werror&amp;quot;&lt;/code&gt; is all you need to find
 all the nasty bugs.  And if that&amp;rsquo;s not enough, there are tons of tools
@@ -971,7 +922,6 @@ for static code analysis, like &lt;code&gt;scan-build&lt;/code&gt; in
 &lt;a href=&#34;http://clang-analyzer.llvm.org/scan-build.html&#34;&gt;Clang&lt;/a&gt;, and
 &lt;a href=&#34;https://scan.coverity.com/&#34;&gt;Coverity Scan&lt;/a&gt;, to help you &lt;em&gt;find all the
 bugs&lt;/em&gt;!&lt;/p&gt;
-
 &lt;p&gt;However, these pesky warnings (some of which cannot even be disabled!)
 are sometimes more of a nuisance than help.  Sometimes you &lt;em&gt;know&lt;/em&gt; that
 some parameters to a function will remain unused &amp;ndash; it&amp;rsquo;s a callback, and
@@ -986,7 +936,9 @@ of voodoo, like &lt;code&gt;__attribute__ ((unused))&lt;/code&gt; &amp;hellip; s
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2015/01/08/recent-open-source-work/</guid>
       <description>I&amp;rsquo;m a coder, not a writer. Here&amp;rsquo;s what I&amp;rsquo;ve been working on during the winter holidays:
- A new feature release of Finit is coming shortly, which will use libuEv and feature inetd support built-in! Another minor release of my own take on event loops, libuEv v1.0.3. This time with a heavy focus on documentation and Q&amp;amp;A, extensive validation testing have been done on this release. Released another minor release of mrouted, v3.</description>
+  A new feature release of Finit is coming shortly, which will use libuEv and feature inetd support built-in!
+  Another minor release of my own take on event loops, libuEv v1.0.3. This time with a heavy focus on documentation and Q&amp;amp;A, extensive validation testing have been done on this release.
+  Released another minor release of mrouted, v3.</description>
     </item>
     
     <item>
@@ -997,7 +949,6 @@ of voodoo, like &lt;code&gt;__attribute__ ((unused))&lt;/code&gt; &amp;hellip; s
       <guid>/2015/01/02/blog-restoration-project-now-also-on-github-pages/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve had this long-standing issue with backups.  It&amp;rsquo;s deadly boring to
 set up and maintain, so I don&amp;rsquo;t do any.  Until today!&lt;/p&gt;
-
 &lt;p&gt;Today I moved the sources for my &lt;a href=&#34;http://troglobit.com&#34;&gt;Octopress blag&lt;/a&gt;
 to GitHub, which also prompted me to set up
 &lt;a href=&#34;http://troglobit.github.io&#34;&gt;a mirror&lt;/a&gt; on
@@ -1026,7 +977,6 @@ available as
       <description>&lt;p&gt;On one of the last days of 2014 I release &lt;a href=&#34;/pimd.html&#34;&gt;pimd&lt;/a&gt;
 &lt;a href=&#34;https://github.com/troglobit/pimd/releases/tag/2.2.0&#34;&gt;v2.2.0&lt;/a&gt;, which
 is an awesome release with a lot of new features and bug fixes!&lt;/p&gt;
-
 &lt;p&gt;However, it could very well be the last release I do.  Even though its
 one of my most popular projects on
 &lt;a href=&#34;https://github.com/troglobit&#34;&gt;GitHub&lt;/a&gt; I have not had enough time to
@@ -1036,10 +986,8 @@ the distinct possibility that the
 &lt;a href=&#34;https://github.com/greearb/xorp.ct&#34;&gt;Xorp PIM-SM&lt;/a&gt; or the new
 &lt;a href=&#34;https://github.com/udhos/qpimd&#34;&gt;Quagga PIM-SSM&lt;/a&gt; implementations will
 (finally) make good old pimd completely redundant.&lt;/p&gt;
-
 &lt;p&gt;At &lt;a href=&#34;http://www.westermo.com&#34;&gt;work&lt;/a&gt; we will likely start using the
 Quagga PIM rather than pimd in WeOS.&lt;/p&gt;
-
 &lt;p&gt;For now though, enjoy pimd v2.2.0.  It&amp;rsquo;s been tested in both my Qemu
 based virtual testbed and a few setups using Linux&amp;rsquo; &lt;code&gt;netns&lt;/code&gt; feature in
 &lt;a href=&#34;http://www.nrl.navy.mil/itd/ncs/products/core&#34;&gt;CORE&lt;/a&gt; &amp;ndash; awesome
@@ -1119,7 +1067,6 @@ This release completes the main purpose of uftpd for me, I can now use it as my 
 &lt;a href=&#34;http://esr.ibiblio.org/?p=5936&#34;&gt;Others&lt;/a&gt; have written about it too,
 and its been covered on &lt;a href=&#34;http://lwn.net/Articles/603403/&#34;&gt;lwn.net&lt;/a&gt; as
 well.&lt;/p&gt;
-
 &lt;p&gt;It&amp;rsquo;s actually a rather depressing development.  They claim it&amp;rsquo;s due to
 the low traffic and decline in updates, but it&amp;rsquo;s evident that&amp;rsquo;s not
 the whole truth.  The owners recommend their other site, SourceForge,
@@ -1127,7 +1074,6 @@ but anyone having been in the loop for the last decade or two knows
 that SourceForge has been in a slow decline for a long time, more so
 than free(code) in my opinion.  Also, SourceForge only lists its own
 projects, and only the most active or &amp;ldquo;top&amp;rdquo; projects.&lt;/p&gt;
-
 &lt;p&gt;I never used free(code) to find the &amp;ldquo;top&amp;rdquo; projects or the most active
 ones.  That&amp;rsquo;s completely useless to me.  I went there to dig for small
 unknown projects, small gems that are usually unlisted on GitHub or
@@ -1163,7 +1109,6 @@ changes of new releases to projects I was interested in.&lt;/p&gt;</description>
       <description>&lt;p&gt;So, I finally got fed up with all other FTP servers and wrote
 &lt;a href=&#34;/uftpd.html&#34;&gt;my own&lt;/a&gt;.  Why would someone in their right mind do
 something like this 2014?&lt;/p&gt;
-
 &lt;p&gt;As a developer the answer to most such questions is usually; to
 scratch an itch.  For a very long time I&amp;rsquo;ve looked for a really simple
 FTP server that just works, out of the box!&lt;/p&gt;</description>
@@ -1210,10 +1155,9 @@ pause and think, real hard, becuase the people asking me this aren&amp;rsquo;t
 programmers.  They use computers, but are mostly limited to a Windows
 machine, writing in MS Word and browsing the Internet, mostly for
 Facebook.&lt;/p&gt;
-
 &lt;p&gt;I often start off with: &amp;ldquo;It&amp;rsquo;s a bit complicated to explain &amp;hellip; &amp;ldquo;, by
 which time I&amp;rsquo;ve lost most of the people in the room listening to me.
-Sometimes I say: &amp;ldquo;I&amp;rsquo;m a software architect.&amp;rdquo;, because people seem to
+Sometimes I say: &amp;ldquo;I&amp;rsquo;m a software architect.&amp;quot;, because people seem to
 know what architects do for a living, they draw houses, design stuff
 and drive SAAB&amp;rsquo;s.  Much like dentists.  The prefix &amp;ldquo;software&amp;rdquo; however
 does confuse people.&lt;/p&gt;</description>
@@ -1249,7 +1193,6 @@ battle line in the world of programming,
 The event vs thread based approach to programming.  As rants go I do
 not aspire to deliver a clear or logical message, what so ever.  It&amp;rsquo;s
 basically just something I need to get off my chest.&lt;/p&gt;
-
 &lt;p&gt;It was not until 2007 I first learned about the event based approach
 to programming and event libraries like
 &lt;a href=&#34;http://libevent.org/&#34;&gt;libevent&lt;/a&gt; and
@@ -1294,7 +1237,6 @@ the
 or
 &lt;a href=&#34;http://www.howtoforge.com/virtualization-with-kvm-on-ubuntu-12.04-lts-p3&#34;&gt;HowtoForge&lt;/a&gt;
 for that.&lt;/p&gt;
-
 &lt;p&gt;Instead this blog post details the most relevant steps to get file
 system pass-through between a Linux host and Qemu guest working.  The
 upstream &lt;a href=&#34;http://wiki.qemu.org/Documentation/9psetup&#34;&gt;Qemu docs&lt;/a&gt;
@@ -1313,7 +1255,6 @@ that I know many people run into, myself included.&lt;/p&gt;</description>
       <guid>/2013/06/22/programming-as-an-artform/</guid>
       <description>&lt;p&gt;This is a response to the excellent post by Jani Gorše, titled
 &lt;a href=&#34;https://blooki.st/BlookElement/ShowTextPhoto?blookElementId=1962&#34;&gt;Why is Programming an Art?&lt;/a&gt;&lt;/p&gt;
-
 &lt;p&gt;Ever since I began studying Computer Engineering at &lt;a href=&#34;http://www.mdh.se&#34;&gt;university&lt;/a&gt; back
 in 1995 I have struggled to find the &amp;ldquo;proper&amp;rdquo; ways to format my code,
 name functions and variables appropriately, structure functions into
@@ -1415,7 +1356,7 @@ As always, check the homepage, the changelog and the GIT log for details.</descr
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2010/08/29/finally/</guid>
       <description>Compared to OpenBSD and FreeBSD the NetBSD install was hard, really hard. It wasn&amp;rsquo;t until I stumbled across this that I managed to convince myself to try it again.
-The trick seems to be to ignore as much as you can from other Internet tips. NetBSD runs fine in KVM, so if someone says you need to run it in Qemu mode &amp;mdash; don&amp;rsquo;t believe the hype. OK, in virt-manager there is no preset defaults for NetBSD, so I went with a generic OS and tried starting the install from there.</description>
+The trick seems to be to ignore as much as you can from other Internet tips. NetBSD runs fine in KVM, so if someone says you need to run it in Qemu mode — don&amp;rsquo;t believe the hype. OK, in virt-manager there is no preset defaults for NetBSD, so I went with a generic OS and tried starting the install from there.</description>
     </item>
     
     <item>
@@ -1446,7 +1387,7 @@ The trick seems to be to ignore as much as you can from other Internet tips. Net
       <guid>/2010/07/19/minix-editline-moves-to-git/</guid>
       <description>A small heads-up, I&amp;rsquo;ve migrated the Minix editline project from Bazaar to GIT. The new URL for keeping tabs on your favourite free readline() clone is:
  http://git.vmlinux.org/editline.git/
- I&amp;rsquo;m currently working on fixing up the tree and doing some house cleaning &amp;mdash; including making more stuff configurable &amp;mdash; before releasing a 1.14.0 later on.
+ I&amp;rsquo;m currently working on fixing up the tree and doing some house cleaning — including making more stuff configurable — before releasing a 1.14.0 later on.
 One such item is the integration of libtool with our autoconf friends. This should make it lot more portable (again) and also help smooth a merge with other sources for this library.</description>
     </item>
     
@@ -1616,7 +1557,7 @@ He has actually showed me lots of very useful stuff throughout the years, and ev
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2009/02/28/link-collection-2009-02-28/</guid>
       <description>This makes it possible to debug why a disk needs to spin up, and to increase battery life even more.
-Dislike NetworkManager? Try wicd&amp;nbsp;&amp;hellip;
+Dislike NetworkManager? Try wicd &amp;hellip;
 Minimalistic distro Crush Bang Linux 8.10
 Ah, what every FLOSS dad is looking for, a way to make your kids interested in your world instead of the dark side, and what is better than to trick them into it with a cool Linux game? Read Uwe Hermann&amp;rsquo;s blog about Teeworlds, or visit the home page.</description>
     </item>
@@ -1629,7 +1570,7 @@ Ah, what every FLOSS dad is looking for, a way to make your kids interested in y
       <guid>/2009/02/14/reminder-to-self/</guid>
       <description>How to recode AVI-files to be able to write them to a Video CD.
 ffmpeg -i original.avi -target pal-vcd copy.mpg vcdimager -t vcd1 -l &amp;quot;Title&amp;quot; -c vcd.cue -b vcd.bin copy.mpg cdrdao write --device /dev/cdrw vcd.cue  Note: vcdimager is able to take multiple .mpg files as argument, very useful when burning multiple family videos to the same disc!
-Tip from Johan Risberg on how to be able to reattach a UTF-8 Linux screen session from Cygwin.</description>
+ Tip from Johan Risberg on how to be able to reattach a UTF-8 Linux screen session from Cygwin.</description>
     </item>
     
     <item>
@@ -1720,7 +1661,7 @@ Is Ubuntu 8.04 really that buggy as everyone suggest? My guess is that we&amp;rs
       <guid>/2008/07/28/howto-build-gnu-emacs-from-cvs/</guid>
       <description>Why would you want to do this? Well, considering all the neat new things that have been added lately it should be tempting for any old Emacs fan.
 The Emacs Wiki has all the info you need, but here is a quick run-down of the bare necessities. Start by checking out your working copy:
-cvs -z3 -d:pserver:anonymous@cvs.savannah.gnu.org:/cvsroot/emacs co emacs cd emacs/ ./configure make bootstrap  Start with ./src/emacs or symlink the binary to your ~/bin/ directory.</description>
+cvs -z3 -d:pserver:anonymous@cvs.savannah.gnu.org:/cvsroot/emacs co emacs cd emacs/ ./configure make bootstrap Start with ./src/emacs or symlink the binary to your ~/bin/ directory.</description>
     </item>
     
     <item>
@@ -1790,7 +1731,7 @@ Get it from the usual FTP location:
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2008/06/09/minix-editline-v0-dot-1-4/</guid>
       <description>Another day another release, I guess. :-)
-Lots of small fixes &amp;mdash; it can now be cross-built for Arm (Xscale) without any serious warnings. Get it from the usual FTP location:
+Lots of small fixes — it can now be cross-built for Arm (Xscale) without any serious warnings. Get it from the usual FTP location:
  http://ftp.vmlinux.org/pub/People/jocke/minix-editline/  </description>
     </item>
     
@@ -1824,18 +1765,15 @@ All I really wanted was a bare bones readline() suitable for small embedded syst
       <description>&lt;p&gt;Many years ago I discovered the beauty in a beast called &lt;a href=&#34;http://www.gnu.org/software/emacs/&#34;&gt;Emacs&lt;/a&gt;.  I
 am actually a frequent user of both Emacs and &lt;a href=&#34;http://www.vim.org&#34;&gt;Vim&lt;/a&gt;, but I firmly
 belive in the notion of &lt;a href=&#34;http://pragmaticprogrammer.com/the-pragmatic-programmer/extracts/tips&#34;&gt;learning one editor well&lt;/a&gt;:&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;&amp;ldquo;The editor should be an extension of your hand; make sure your editor
-is configurable, extensible, and programmable.&amp;rdquo; &amp;mdash;&amp;nbsp;&lt;a href=&#34;http://pragmaticprogrammer.com/the-pragmatic-programmer/extracts/tips&#34;&gt;The Pragmatic Programmer&lt;/a&gt;&lt;/p&gt;
+is configurable, extensible, and programmable.&amp;rdquo; — &lt;a href=&#34;http://pragmaticprogrammer.com/the-pragmatic-programmer/extracts/tips&#34;&gt;The Pragmatic Programmer&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;At the many jobs I have had, colleagues often glanced over my shoulder
-and said; &amp;ldquo;Oh, Emacs&amp;nbsp;&amp;hellip; Yeah I used that ages ago when I was
-working on UNIX&amp;nbsp;&amp;hellip;&amp;ldquo;, often they remember it fondly, sometimes for
+and said; &amp;ldquo;Oh, Emacs &amp;hellip; Yeah I used that ages ago when I was
+working on UNIX &amp;hellip;&amp;quot;, often they remember it fondly, sometimes for
 all the quirky keyboard shortcuts.  Very few know that it is still being
 actively developed.&lt;/p&gt;
-
 &lt;p&gt;Emacs can be quite counter intuitive and sometimes even an outright pain
 to use.  I find it a shame that still today, after (literally) decades
 there are no sane defaults.  Once, when I was still forced to use
@@ -1844,7 +1782,6 @@ would like to have — a sort of use cases possible to chose from.  It may
 have been some extension that was maintained in some non-official
 version, because now when I look for it I cannot find it.  But why not
 have a setup wizard in the upstream distribution of Emacs as well?&lt;/p&gt;
-
 &lt;p&gt;Well, this is my gripe, the pieces of Emacs that are still unfriendly to
 users, and mostly new users, coming from Windows or MAC.  I will use
 this blog to present ideas and small things I have done to make Emacs
@@ -1867,7 +1804,7 @@ more user friendly.  I call this &lt;em&gt;Enterprise Emacs&lt;/em&gt;.&lt;/p&gt
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2007/07/31/bzrweb-0-dot-1-2-released/</guid>
       <description>The end of my own &amp;ldquo;summer of code&amp;rdquo; is here. Seriously, this summer I took it upon myself to clean up my act and move whole heartedly to the Bazaar version control system for my private projects. Needless to say, I didn&amp;rsquo;t get far.
-Being quite lazy I haven&amp;rsquo;t upgraded this server yet to the latest shiny Debian 4.0. This made it a bit hard to setup the new shiny Loggerhead web gui (see it in action here) for Bazaar &amp;mdash; so instead I started fixing up the old bzrweb that I already had setup a few years ago.</description>
+Being quite lazy I haven&amp;rsquo;t upgraded this server yet to the latest shiny Debian 4.0. This made it a bit hard to setup the new shiny Loggerhead web gui (see it in action here) for Bazaar — so instead I started fixing up the old bzrweb that I already had setup a few years ago.</description>
     </item>
     
     <item>
@@ -1876,7 +1813,7 @@ Being quite lazy I haven&amp;rsquo;t upgraded this server yet to the latest shin
       <pubDate>Thu, 12 Jul 2007 11:37:38 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2007/07/12/netapplet-patchwork/</guid>
-      <description>I think I&amp;rsquo;ve finally done it &amp;mdash; achieved my ultimate goal of combining the awesome powers of the Debian /etc/network/interfaces file with guessnet, wpa_supplicant, ifplugd and now also with netapplet!
+      <description>I think I&amp;rsquo;ve finally done it — achieved my ultimate goal of combining the awesome powers of the Debian /etc/network/interfaces file with guessnet, wpa_supplicant, ifplugd and now also with netapplet!
 I&amp;rsquo;ve been looking for a way to just point-and-click to select a different access point, both at home and at work. To that end I have a pretty advanced interfaces file that automatically detects where I am, what I am connected with (cable/wireless) and then, like magic, sets it all up.</description>
     </item>
     
@@ -1886,7 +1823,7 @@ I&amp;rsquo;ve been looking for a way to just point-and-click to select a differ
       <pubDate>Wed, 11 Jul 2007 10:35:00 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2007/07/11/making-bzrweb-work-again/</guid>
-      <description>During the past weekend and the last couple of evenings I&amp;rsquo;ve been studying the Python code in bzrweb &amp;mdash; which I&amp;rsquo;ve been using for online repository browsing. It broke sometime last year due to not keeping up with the development of bzr. Yesterday I got it working again!
+      <description>During the past weekend and the last couple of evenings I&amp;rsquo;ve been studying the Python code in bzrweb — which I&amp;rsquo;ve been using for online repository browsing. It broke sometime last year due to not keeping up with the development of bzr. Yesterday I got it working again!
  Browse: http://vmlinux.org/jocke/bzr/ Branch: bzr branch http://vmlinux.org/jocke/bzr/bzrweb  Having only programmed Python very little earlier I must say that it&amp;rsquo;s really easy to get in to.</description>
     </item>
     
@@ -1917,7 +1854,7 @@ I haven&amp;rsquo;t set up any repository, so just download the below two .</des
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2007/02/03/building-debian-slash-ubuntu-kernels/</guid>
       <description>I have been over this topic so many times now, strangely enough I&amp;rsquo;ve managed to make things more complicated than they need to be. It&amp;rsquo;s really this simple:
-$ wget ftp://ftp.sunet.se/pub/Linux/kernels/v2.6/linux-2.6.19.2.tar.bz2 $ tar xfj linux-2.6.19.2.tar.bz2 $ cd linux-2.6.19.2/ $ zcat /proc/config.gz &amp;gt;.config $ make menuconfig [Tweak to your hearts desire] $ fakeroot make-kpkg --initrd kernel_image $ dpkg -i ../linux-image-2.6.19.2_2.6.19.2-10.00.Custom_i386.deb [DONE!]  You may, of course, need to tweak the file /etc/kernel-pkg.</description>
+$ wget ftp://ftp.sunet.se/pub/Linux/kernels/v2.6/linux-2.6.19.2.tar.bz2 $ tar xfj linux-2.6.19.2.tar.bz2 $ cd linux-2.6.19.2/ $ zcat /proc/config.gz &amp;gt;.config $ make menuconfig [Tweak to your hearts desire] $ fakeroot make-kpkg --initrd kernel_image $ dpkg -i ../linux-image-2.6.19.2_2.6.19.2-10.00.Custom_i386.deb [DONE!] You may, of course, need to tweak the file /etc/kernel-pkg.conf, but there are man pages for that.</description>
     </item>
     
     <item>
@@ -1926,7 +1863,7 @@ $ wget ftp://ftp.sunet.se/pub/Linux/kernels/v2.6/linux-2.6.19.2.tar.bz2 $ tar xf
       <pubDate>Sat, 03 Feb 2007 10:52:15 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2007/02/03/moved/</guid>
-      <description>Yep, we finally did it, we bought ourselves a house. Last year in October we moved from our small three-room flat in central Västerås to the new house in Skultuna. Everything went really fast from finding it up for sale, deciding on it down to getting a loan and moving in. Worst part of it all was getting a decent broadband connection. We actually moved from a 100 Mbps dedicated copper line to a 24&amp;frasl;2 Mbps ADSL line.</description>
+      <description>Yep, we finally did it, we bought ourselves a house. Last year in October we moved from our small three-room flat in central Västerås to the new house in Skultuna. Everything went really fast from finding it up for sale, deciding on it down to getting a loan and moving in. Worst part of it all was getting a decent broadband connection. We actually moved from a 100 Mbps dedicated copper line to a 24/2 Mbps ADSL line.</description>
     </item>
     
     <item>
@@ -1983,7 +1920,7 @@ Since today is also my birthday I received a gift.</description>
       <pubDate>Fri, 21 Jul 2006 22:10:48 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2006/07/21/bromsbyte-passat/</guid>
-      <description>Igår bytte jag bromsskivor på vår gamla Passat Variant -00. Det var definitivt dags efter över 15000 mil så var skivorna och beläggen så slitna att tom. Bilprovningen nog hade klagat i år. Dessutom var det fjärde service:en som VW-verkstaden tyckte det var dags att byta. VW var mer än villiga och gav mig ett anbud på 5500:- vilket jag var väldigt nära att nappa på. Efter en liten reality check så insåg jag dock att vi inte skulle ha råd med det, så jag fick loss delar från Mekonomen för 2400:- och började själv&amp;nbsp;&amp;hellip;</description>
+      <description>Igår bytte jag bromsskivor på vår gamla Passat Variant -00. Det var definitivt dags efter över 15000 mil så var skivorna och beläggen så slitna att tom. Bilprovningen nog hade klagat i år. Dessutom var det fjärde service:en som VW-verkstaden tyckte det var dags att byta. VW var mer än villiga och gav mig ett anbud på 5500:- vilket jag var väldigt nära att nappa på. Efter en liten reality check så insåg jag dock att vi inte skulle ha råd med det, så jag fick loss delar från Mekonomen för 2400:- och började själv &amp;hellip;</description>
     </item>
     
     <item>
@@ -1993,7 +1930,7 @@ Since today is also my birthday I received a gift.</description>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2006/07/17/make-kpkg-and-dirty-modules/</guid>
       <description>Dammit, tonight I spent too many hours chasing down a &amp;ldquo;feature&amp;rdquo; in the Debian kernel build process or the Linux-2.6 kernel. I haven&amp;rsquo;t yet deciced who to blame ;-)
-Here goes: when you build the latest Linux 2.6 kernel, checked out from the git repository, with make-kpkg you should make sure to uncheck the CONFIG_LOCALVERSION_AUTO option in the kernel config before hand. It&amp;rsquo;s under &amp;ldquo;General setup&amp;rdquo; &amp;rarr; &amp;ldquo;Automatically append version information &amp;hellip;&amp;ldquo;.</description>
+Here goes: when you build the latest Linux 2.6 kernel, checked out from the git repository, with make-kpkg you should make sure to uncheck the CONFIG_LOCALVERSION_AUTO option in the kernel config before hand. It&amp;rsquo;s under &amp;ldquo;General setup&amp;rdquo; → &amp;ldquo;Automatically append version information &amp;hellip;&amp;quot;.</description>
     </item>
     
     <item>

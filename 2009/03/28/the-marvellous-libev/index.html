@@ -113,7 +113,7 @@ This time it only took me …">
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -317,22 +317,18 @@ This time it only took me …">
 <a href="http://software.schmorp.de/pkg/libev">libev</a>.  Usually when he drops me
 links like that it takes me a couple of years to react and finally
 adopt.</p>
-
 <p>This time it only took me about a month.</p>
-
 <p>He has actually showed me lots of very useful stuff throughout the
 years, and even though we used GNU/Linux at university, he was one
 those hard core people who showed me the path into a successful
 full-time career as a Linux developer. I don&rsquo;t think I have ever
 thanked you properly for that, Jakob!</p>
-
 <p>As it turns out libev was exactly what I have been looking for, for
 years!  Way back in 2005 when I switched jobs I started working with a
 scary home brew code base ported to Linux from VxWorks.  From the
 original code only the basic state machine, basic election algorithms
 and some other minor glue code remains.  I have slowly refactored the
 code base into something, hopefully, more maintainable.</p>
-
 <p>The one missing piece was the timer implementation.  The old code used
 to create a new pthread for each new timeout.  I tried replacing it with
 code of
@@ -342,7 +338,6 @@ based on Don Libes
 As it turns out libev already has (working) timers, in fact, it has
 taken an even more complete approach and made almost everything into
 events with callbacks, perfect for state machines!</p>
-
 <p>After having done
 <a href="https://github.com/troglobit/toolbox/blob/master/event-demo.c">some initial testing</a>
 of the libev timers I put on a big smile and fired up Emacs to
@@ -355,21 +350,18 @@ started looking around and I had a vague recollection of some message
 primitives that actually used file descriptors.  On the mailing list
 Marc (Lehman) was as always extremely quick to answer my questions and
 with his help I eventually found the <code>mq_overview(7)</code> man page:</p>
-
 <blockquote>
 <p>Polling message queue descriptors
-    On Linux, a message queue descriptor is actually a file descriptor,
-    and can be monitored using select(2), poll(2), or epoll(7). This
-    is not portable.</p>
+On Linux, a message queue descriptor is actually a file descriptor,
+and can be monitored using select(2), poll(2), or epoll(7). This
+is not portable.</p>
 </blockquote>
-
 <p>Wow, I could hardly wait until I, later that day, could get my hands on
 the keyboard again and try it out!  Yes, the POSIX message queue
 primitives work!  Here is my
 <a href="https://github.com/troglobit/toolbox/blob/master/event-demo2.c">sample message queue code</a>.
 Compile it in Emacs with <code>M-x compile</code> (I have that bound to F9 in my
 .emacs, Borland IDE style :)</p>
-
 <p>Thus far I must say I can really recommend libev!  Even though it isn&rsquo;t
 <a href="http://www.openbsd.org/policy.html">ISC licensed</a>, it&rsquo;s dual licensed
 under the
@@ -469,7 +461,7 @@ with the 2-clause BSD license, which according to Wikipedia is
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

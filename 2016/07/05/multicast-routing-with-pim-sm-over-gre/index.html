@@ -15,7 +15,6 @@ multicast routing with pimd over a
 GRE tunnel.  To achieve this we will also set up OSPF over GRE with
 Quagga, because PIM, unlike DVMRP (mrouted),
 require unicast routing rules to be established.
-
        .----{ Intranet }----.
       /    192.168.1.0/24    \
      /                        \
@@ -33,8 +32,6 @@ require unicast routing rules to be established.
 |  C1  |                    |  C2  |
 |      |                    |      |
 &#39;------&#39;                    &#39;------&#39;
-
-
 In this post we are using the home WiFi network, 192.168.1.0/24, to hook
 up the GRE tunnel.  It is just as easy to extend this to a big corporate
 Intranet with more routers between R1 and R2.  As long as that IT
@@ -45,7 +42,6 @@ multicast routing with pimd over a
 GRE tunnel.  To achieve this we will also set up OSPF over GRE with
 Quagga, because PIM, unlike DVMRP (mrouted),
 require unicast routing rules to be established.
-
        .----{ Intranet }----.
       /    192.168.1.0/24    \
      /                        \
@@ -63,8 +59,6 @@ require unicast routing rules to be established.
 |  C1  |                    |  C2  |
 |      |                    |      |
 &#39;------&#39;                    &#39;------&#39;
-
-
 In this post we are using the home WiFi network, 192.168.1.0/24, to hook
 up the GRE tunnel.  It is just as easy to extend this to a big corporate
 Intranet with more routers between R1 and R2.  As long as that IT
@@ -122,7 +116,7 @@ Quagga, because PIM, …">
     "name" : "Joachim Nilsson"
   },
   "headline": "Multicast routing with PIM-SM over GRE",
-  "description" : "GRE tunnels are useful in many ways. This blog post shows how to set up multicast routing with pimd over a GRE tunnel. To achieve this we will also set up OSPF over GRE with Quagga, because PIM, unlike DVMRP (mrouted), require unicast routing rules to be established.\n .----{ Intranet }----. \/ 192.168.1.0\/24 \\ \/ \\ .10 \/ \\.20 .--\x27---. .1 GRE Tunnel .2 .---`--. | |====================| | | R1 | 172.16.16.0\/30 | R2 | | | | | \x27--.---\x27 \x27------\x27 | .1 | .1 | 10.0.1.0\/24 | 10.0.2.0\/24 | .2 | .2 .--\x27---. .--\x27---. | | | | | C1 | | C2 | | | | | \x27------\x27 \x27------\x27  In this post we are using the home WiFi network, 192.168.1.0\/24, to hook up the GRE tunnel. It is just as easy to extend this to a big corporate Intranet with more routers between R1 and R2. As long as that IT department takes care of the unicast routing between R1 and R2 so that the GRE tunnel can be established.\n",
+  "description" : "GRE tunnels are useful in many ways. This blog post shows how to set up multicast routing with pimd over a GRE tunnel. To achieve this we will also set up OSPF over GRE with Quagga, because PIM, unlike DVMRP (mrouted), require unicast routing rules to be established.\n .----{ Intranet }----. \/ 192.168.1.0\/24 \\ \/ \\ .10 \/ \\.20 .--\x27---. .1 GRE Tunnel .2 .---`--. | |====================| | | R1 | 172.16.16.0\/30 | R2 | | | | | \x27--.---\x27 \x27------\x27 | .1 | .1 | 10.0.1.0\/24 | 10.0.2.0\/24 | .2 | .2 .--\x27---. .--\x27---. | | | | | C1 | | C2 | | | | | \x27------\x27 \x27------\x27 In this post we are using the home WiFi network, 192.168.1.0\/24, to hook up the GRE tunnel. It is just as easy to extend this to a big corporate Intranet with more routers between R1 and R2. As long as that IT department takes care of the unicast routing between R1 and R2 so that the GRE tunnel can be established.\n",
   "inLanguage" : "en",
   "wordCount":  1590 ,
   "datePublished" : "2018-01-23T20:39:36",
@@ -149,7 +143,6 @@ multicast routing with pimd over a
 GRE tunnel.  To achieve this we will also set up OSPF over GRE with
 Quagga, because PIM, unlike DVMRP (mrouted),
 require unicast routing rules to be established.
-
        .----{ Intranet }----.
       /    192.168.1.0/24    \
      /                        \
@@ -167,8 +160,6 @@ require unicast routing rules to be established.
 |  C1  |                    |  C2  |
 |      |                    |      |
 &#39;------&#39;                    &#39;------&#39;
-
-
 In this post we are using the home WiFi network, 192.168.1.0/24, to hook
 up the GRE tunnel.  It is just as easy to extend this to a big corporate
 Intranet with more routers between R1 and R2.  As long as that IT
@@ -198,7 +189,7 @@ Quagga, because PIM, …">
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -403,7 +394,6 @@ multicast routing with <a href="https://github.com/troglobit/pimd/">pimd</a> ove
 GRE tunnel.  To achieve this we will also set up OSPF over GRE with
 <a href="http://www.quagga.net">Quagga</a>, because PIM, unlike DVMRP (<code>mrouted</code>),
 require unicast routing rules to be established.</p>
-
 <pre><code>       .----{ Intranet }----.
       /    192.168.1.0/24    \
      /                        \
@@ -421,50 +411,46 @@ require unicast routing rules to be established.</p>
 |  C1  |                    |  C2  |
 |      |                    |      |
 '------'                    '------'
-</code></pre>
-
-<p>In this post we are using the home WiFi network, 192.168.1.0/24, to hook
+</code></pre><p>In this post we are using the home WiFi network, 192.168.1.0/24, to hook
 up the GRE tunnel.  It is just as easy to extend this to a big corporate
 Intranet with more routers between <code>R1</code> and <code>R2</code>.  As long as that IT
 department takes care of the unicast routing between <code>R1</code> and <code>R2</code> so
 that the GRE tunnel can be established.</p>
-
 <p>Now, on router R1 we set up the first GRE tunnel endpoint:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ip tunnel add gre0 mode gre remote <span style="color:#099">192</span>.168.1.20 <span style="color:#0086b3">local</span> <span style="color:#099">192</span>.168.1.10 ttl <span style="color:#099">64</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ip tunnel add gre0 mode gre remote 192.168.1.20 <span style="color:#0086b3">local</span> 192.168.1.10 ttl <span style="color:#099">64</span>
 ip link <span style="color:#0086b3">set</span> gre0 multicast on
 ip link <span style="color:#0086b3">set</span> gre0 up
-ip addr add <span style="color:#099">172</span>.16.16.1/30 dev gre0</code></pre></div>
-<p>We do not add any static route for <code>R1</code> to reach the LAN on <code>R2</code> that
+ip addr add 172.16.16.1/30 dev gre0
+</code></pre></div><p>We do not add any static route for <code>R1</code> to reach the LAN on <code>R2</code> that
 <code>C2</code> is connected to, that is for OSPF to add dynamically for us later.
 Notice, hower, that we must explicitly enable the multicast flag on the
 GRE interface, it is not enabled by default in Linux.</p>
-
 <p>On router <code>R2</code> we can now set up the other side of the GRE tunnel:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ip tunnel add gre0 mode gre remote <span style="color:#099">192</span>.168.1.10 <span style="color:#0086b3">local</span> <span style="color:#099">192</span>.168.1.20 ttl <span style="color:#099">64</span>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ip tunnel add gre0 mode gre remote 192.168.1.10 <span style="color:#0086b3">local</span> 192.168.1.20 ttl <span style="color:#099">64</span>
 ip link <span style="color:#0086b3">set</span> gre0 multicast on
 ip link <span style="color:#0086b3">set</span> gre0 up
-ip addr add <span style="color:#099">172</span>.16.16.2/30 dev gre0</code></pre></div>
-<p>Setup of OSPF in Debian or Ubuntu distributions is only an <code>apt-get</code>
+ip addr add 172.16.16.2/30 dev gre0
+</code></pre></div><p>Setup of OSPF in Debian or Ubuntu distributions is only an <code>apt-get</code>
 away followed by enabling the zebra and ospf daemons:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo apt-get install quagga
-sudo editor /etc/quagga/daemons</code></pre></div>
-<p>The idea is to set up an OSPF backbone, area 0, for our routers without
+sudo editor /etc/quagga/daemons
+</code></pre></div><p>The idea is to set up an OSPF backbone, area 0, for our routers without
 wrecking havoc in the big corporate intranet, which may already run OSPF
 &hellip; so OSPF should only talk on the <code>gre0</code> interface, and maybe even the
 LAN interfaces towards <code>C1</code> and <code>C2</code> (in case we want to expand on this
 example later).  In our setup the routers use <code>wlan0</code> to connect to the
 intranet.  We can use the sample configuration files to start from:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo cp /usr/share/doc/quagga/examples/zebra.conf.sample /etc/quagga/zebra.conf
-sudo cp /usr/share/doc/quagga/examples/ospfd.conf.sample /etc/quagga/ospfd.conf</code></pre></div>
-<p>The <code>zebra.conf</code> can be left as-is, just edit the <code>ospfd.conf</code> to look
+sudo cp /usr/share/doc/quagga/examples/ospfd.conf.sample /etc/quagga/ospfd.conf
+</code></pre></div><p>The <code>zebra.conf</code> can be left as-is, just edit the <code>ospfd.conf</code> to look
 like this:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-conf" data-lang="conf">hostname ospfd
+<pre><code class="language-conf" data-lang="conf">hostname ospfd
 password zebra
 router ospf
     passive-interface wlan0
     redistribute connected
-    network 172.16.16.0/30 area 0</code></pre></div>
-<p>When the routers have peered, the two clients <code>C1</code> and <code>C2</code> should be
+    network 172.16.16.0/30 area 0
+</code></pre><p>When the routers have peered, the two clients <code>C1</code> and <code>C2</code> should be
 able to (unicast) ping each other.  Telnet into the OSPF daemon using
 <code>telnet localhost ospfd</code> and type <code>show ip ospf neigh</code> to see all OSPF
 neighbors and their status, should be <code>Full/...</code> when done exchanging
@@ -472,53 +458,51 @@ routes.  Use <code>show ip ospf route</code> to see the exchanged routes, also
 inspect the kernel routing table with <code>route -n</code>.  Use <code>traceroute</code> to
 confirm the traffic between clients do traverse the GRE tunnel and not
 over the Intranet.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">root@C1:~$ traceroute <span style="color:#099">10</span>.0.2.2
-traceroute to <span style="color:#099">10</span>.0.2.2 <span style="color:#000;font-weight:bold">(</span><span style="color:#099">10</span>.0.2.2<span style="color:#000;font-weight:bold">)</span>, <span style="color:#099">30</span> hops max, <span style="color:#099">60</span> byte packets
- <span style="color:#099">1</span>  <span style="color:#099">10</span>.0.1.1 <span style="color:#000;font-weight:bold">(</span><span style="color:#099">10</span>.0.1.1<span style="color:#000;font-weight:bold">)</span>  <span style="color:#099">0</span>.427 ms  <span style="color:#099">0</span>.384 ms  <span style="color:#099">0</span>.309 ms
- <span style="color:#099">2</span>  <span style="color:#099">172</span>.16.16.2 <span style="color:#000;font-weight:bold">(</span><span style="color:#099">172</span>.16.16.2<span style="color:#000;font-weight:bold">)</span>  <span style="color:#099">3</span>.135 ms  <span style="color:#099">4</span>.724 ms  <span style="color:#099">5</span>.786 ms
- <span style="color:#099">3</span>  <span style="color:#099">10</span>.0.2.2 <span style="color:#000;font-weight:bold">(</span><span style="color:#099">10</span>.0.2.2<span style="color:#000;font-weight:bold">)</span>  <span style="color:#099">9</span>.979 ms  <span style="color:#099">10</span>.777 ms  <span style="color:#099">10</span>.676 ms</code></pre></div>
-<p>Time for <code>pimd</code> to be started.  Just like OSPF we want <code>pimd</code> to avoid
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">root@C1:~$ traceroute 10.0.2.2
+traceroute to 10.0.2.2 <span style="color:#000;font-weight:bold">(</span>10.0.2.2<span style="color:#000;font-weight:bold">)</span>, <span style="color:#099">30</span> hops max, <span style="color:#099">60</span> byte packets
+ <span style="color:#099">1</span>  10.0.1.1 <span style="color:#000;font-weight:bold">(</span>10.0.1.1<span style="color:#000;font-weight:bold">)</span>  0.427 ms  0.384 ms  0.309 ms
+ <span style="color:#099">2</span>  172.16.16.2 <span style="color:#000;font-weight:bold">(</span>172.16.16.2<span style="color:#000;font-weight:bold">)</span>  3.135 ms  4.724 ms  5.786 ms
+ <span style="color:#099">3</span>  10.0.2.2 <span style="color:#000;font-weight:bold">(</span>10.0.2.2<span style="color:#000;font-weight:bold">)</span>  9.979 ms  10.777 ms  10.676 ms
+</code></pre></div><p>Time for <code>pimd</code> to be started.  Just like OSPF we want <code>pimd</code> to avoid
 talking on <code>wlan0</code>, so add the following to the default <code>pimd.conf</code>,
 which can otherwise be left as-is:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-conf" data-lang="conf">phyint wlan0 disable</code></pre></div>
-<p>In our case the routers have many interfaces, so we disable <em>all</em>
+<pre><code class="language-conf" data-lang="conf">phyint wlan0 disable
+</code></pre><p>In our case the routers have many interfaces, so we disable <em>all</em>
 interfaces using the <code>-N</code> switch to <code>pimd</code> and instead only enable the
 interfaces we are intrested in, the GRE tunnel and the client LAN
 interface, <code>eth0</code>:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-conf" data-lang="conf">phyint eth0 enable
-phyint gre0 enable</code></pre></div>
-<p>Make sure to add the <code>phyint</code> setting to the correct place in the file.
+<pre><code class="language-conf" data-lang="conf">phyint eth0 enable
+phyint gre0 enable
+</code></pre><p>Make sure to add the <code>phyint</code> setting to the correct place in the file.
 Now start pimd on each router, use the debug mode and run in foreground
 first to see what happens:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">root@R1:~$ pimd -N -f -d
 debug level 0xffffffff <span style="color:#000;font-weight:bold">(</span>dvmrp_detail,dvmrp_prunes,dvmrp_routes,dvmrp_neighbors,dvmrp_timers,igmp_proto,igmp_timers,igmp_members,trace,timeout,packets,interfaces,kernel,cache,rsrr,pim_detail,pim_hello,pim_register,pim_join_prune,pim_bootstrap,pim_asserts,pim_cand_rp,pim_routes,pim_timers,pim_rpf<span style="color:#000;font-weight:bold">)</span>
-<span style="color:#099">02</span>:01:49.616 pimd version <span style="color:#099">2</span>.3.2 starting ...
-<span style="color:#099">02</span>:01:49.617 Got <span style="color:#099">262144</span> byte send buffer size in <span style="color:#099">0</span> iterations
-<span style="color:#099">02</span>:01:49.617 Got <span style="color:#099">262144</span> byte recv buffer size in <span style="color:#099">0</span> iterations
-<span style="color:#099">02</span>:01:49.617 Got <span style="color:#099">262144</span> byte send buffer size in <span style="color:#099">0</span> iterations
-<span style="color:#099">02</span>:01:49.617 Got <span style="color:#099">262144</span> byte recv buffer size in <span style="color:#099">0</span> iterations
-<span style="color:#099">02</span>:01:49.617 Getting vifs from kernel
-<span style="color:#099">02</span>:01:49.618 /etc/pimd.conf:0 - Skipping interface lo, either loopback or does not support multicast.</code></pre></div>
-<p>&hellip; and on <code>R2</code>:</p>
+02:01:49.616 pimd version 2.3.2 starting ...
+02:01:49.617 Got <span style="color:#099">262144</span> byte send buffer size in <span style="color:#099">0</span> iterations
+02:01:49.617 Got <span style="color:#099">262144</span> byte recv buffer size in <span style="color:#099">0</span> iterations
+02:01:49.617 Got <span style="color:#099">262144</span> byte send buffer size in <span style="color:#099">0</span> iterations
+02:01:49.617 Got <span style="color:#099">262144</span> byte recv buffer size in <span style="color:#099">0</span> iterations
+02:01:49.617 Getting vifs from kernel
+02:01:49.618 /etc/pimd.conf:0 - Skipping interface lo, either loopback or does not support multicast.
+</code></pre></div><p>&hellip; and on <code>R2</code>:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">root@R2:~$ pimd -N -f -d
 debug level 0xffffffff <span style="color:#000;font-weight:bold">(</span>dvmrp_detail,dvmrp_prunes,dvmrp_routes,dvmrp_neighbors,dvmrp_timers,igmp_proto,igmp_timers,igmp_members,trace,timeout,packets,interfaces,kernel,cache,rsrr,pim_detail,pim_hello,pim_register,pim_join_prune,pim_bootstrap,pim_asserts,pim_cand_rp,pim_routes,pim_timers,pim_rpf<span style="color:#000;font-weight:bold">)</span>
-<span style="color:#099">02</span>:01:49.616 pimd version <span style="color:#099">2</span>.3.2 starting ...
-<span style="color:#099">02</span>:01:49.617 Got <span style="color:#099">262144</span> byte send buffer size in <span style="color:#099">0</span> iterations
-<span style="color:#099">02</span>:01:49.617 Got <span style="color:#099">262144</span> byte recv buffer size in <span style="color:#099">0</span> iterations
-<span style="color:#099">02</span>:01:49.617 Got <span style="color:#099">262144</span> byte send buffer size in <span style="color:#099">0</span> iterations
-<span style="color:#099">02</span>:01:49.617 Got <span style="color:#099">262144</span> byte recv buffer size in <span style="color:#099">0</span> iterations
-<span style="color:#099">02</span>:01:49.617 Getting vifs from kernel
-<span style="color:#099">02</span>:01:49.618 /etc/pimd.conf:0 - Skipping interface lo, either loopback or does not support multicast.</code></pre></div>
-<p>To verify multicast routing works we start a multicast sender on <code>C1</code>
+02:01:49.616 pimd version 2.3.2 starting ...
+02:01:49.617 Got <span style="color:#099">262144</span> byte send buffer size in <span style="color:#099">0</span> iterations
+02:01:49.617 Got <span style="color:#099">262144</span> byte recv buffer size in <span style="color:#099">0</span> iterations
+02:01:49.617 Got <span style="color:#099">262144</span> byte send buffer size in <span style="color:#099">0</span> iterations
+02:01:49.617 Got <span style="color:#099">262144</span> byte recv buffer size in <span style="color:#099">0</span> iterations
+02:01:49.617 Getting vifs from kernel
+02:01:49.618 /etc/pimd.conf:0 - Skipping interface lo, either loopback or does not support multicast.
+</code></pre></div><p>To verify multicast routing works we start a multicast sender on <code>C1</code>
 and a receiver (sink) on <code>C2</code>:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">root@C1:~$ mcjoin -s -t <span style="color:#099">10</span>
 root@C2:~$ mcjoin
-.................o</code></pre></div>
-<p>Notice the TTL adjustment (<code>-t 10</code>) on the sender side, this is needed
+.................o
+</code></pre></div><p>Notice the TTL adjustment (<code>-t 10</code>) on the sender side, this is needed
 because the default TTL for multicast, due to safety concerns, is 1.</p>
-
 <p>The log on the routers should look something like this (snippet):</p>
-
 <pre><code>01:44:16.750 accept_group_report(): igmp_src 10.0.2.2 ssm_src 0.0.0.0 group 225.1.2.3 report_type 34
 01:44:16.750 Set delete timer for group: 225.1.2.3
 01:44:16.750 Adding vif 4 for group 225.1.2.3
@@ -578,13 +562,10 @@ RP address       Incoming  Group Prefix        Priority  Holdtime
 169.254.0.1      1         232/8               1         65535   
 ------------------------------------------------------------------------------
 Current BSR address: 10.0.2.1
-</code></pre>
-
-<p>In normal operation, i.e. without the debug flag <code>-d</code>, the routing table
+</code></pre><p>In normal operation, i.e. without the debug flag <code>-d</code>, the routing table
 and other useful PIM information can be queried from the running <code>pimd</code>
 by calling it in client mode.  The following is a wrapper for sending a
 <code>SIGUSR1</code> signal to the daemon and reading <code>/var/run/pimd/pimd.dump</code>:</p>
-
 <pre><code>root@R2:~$ pimd -r
 Virtual Interface Table ======================================================
 Vif  Local Address    Subnet              Thresh  Flags      Neighbors
@@ -629,17 +610,13 @@ TIMERS:  Entry    JP    RS  Assert VIFS:  0  1  2  3  4  5
 Number of Groups: 1
 Number of Cache MIRRORs: 1
 ------------------------------------------------------------------------------
-</code></pre>
-
-<p>You can also verify that <code>pimd</code> actually sets routes in the kernel
+</code></pre><p>You can also verify that <code>pimd</code> actually sets routes in the kernel
 multicast routing table with:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">root@R2:~$ ip mroute
-<span style="color:#000;font-weight:bold">(</span><span style="color:#099">10</span>.0.1.2, <span style="color:#099">225</span>.1.2.3<span style="color:#000;font-weight:bold">)</span>        Iif: gre0       Oifs: eth0</code></pre></div>
-<h2 id="caveats">Caveats</h2>
-
+<span style="color:#000;font-weight:bold">(</span>10.0.1.2, 225.1.2.3<span style="color:#000;font-weight:bold">)</span>        Iif: gre0       Oifs: eth0
+</code></pre></div><h2 id="caveats">Caveats</h2>
 <p>There are quite a few caveats to watch out for with multicast routing.
 Here are a few:</p>
-
 <ol>
 <li>Check the TTL of the multicast stream, must be &gt;1 to be routed.
 <strong>Rule of thumb:</strong> increase with each router in topology.</li>
@@ -655,11 +632,9 @@ have a network or <code>pimd.conf</code> problem.</li>
 See <a href="https://github.com/troglobit/pimd/issues/79">issue #79</a> for
 details and possible future resolution.</li>
 </ol>
-
 <p>For other questions, ideas on setting up multicast routing, see the
 general <a href="/multicast-howto.html">Multicast HowTo</a>, or file a bug report
 at <a href="https://github.com/troglobit">GitHub</a></p>
-
 <p>That&rsquo;s it, good luck!</p>
 
         
@@ -751,7 +726,7 @@ at <a href="https://github.com/troglobit">GitHub</a></p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

@@ -12,7 +12,6 @@
   <meta name="twitter:title" content="Blog Restoration Project" />
   <meta name="description" content="I&rsquo;ve had this long-standing issue with backups.  It&rsquo;s deadly boring to
 set up and maintain, so I don&rsquo;t do any.  Until today!
-
 Today I moved the sources for my Octopress blag
 to GitHub, which also prompted me to set up
 a mirror on
@@ -21,7 +20,6 @@ subject and muster enough motivation took me about three months, whereas
 the actual work took about 4h.">
   <meta property="og:description" content="I&rsquo;ve had this long-standing issue with backups.  It&rsquo;s deadly boring to
 set up and maintain, so I don&rsquo;t do any.  Until today!
-
 Today I moved the sources for my Octopress blag
 to GitHub, which also prompted me to set up
 a mirror on
@@ -30,7 +28,6 @@ subject and muster enough motivation took me about three months, whereas
 the actual work took about 4h.">
   <meta name="twitter:description" content="I&rsquo;ve had this long-standing issue with backups.  It&rsquo;s deadly boring to
 set up and maintain, so I don&rsquo;t do any.  Until today!
-
 Today I moved the sources for my Octopress blag
 to …">
   <meta name="author" content="Joachim Nilsson"/><script type="application/ld+json">
@@ -105,7 +102,6 @@ to …">
 <meta property="og:title" content="Blog Restoration Project" />
 <meta property="og:description" content="I&rsquo;ve had this long-standing issue with backups.  It&rsquo;s deadly boring to
 set up and maintain, so I don&rsquo;t do any.  Until today!
-
 Today I moved the sources for my Octopress blag
 to GitHub, which also prompted me to set up
 a mirror on
@@ -120,7 +116,6 @@ the actual work took about 4h.">
   <meta name="twitter:title" content="Blog Restoration Project" />
   <meta name="twitter:description" content="I&rsquo;ve had this long-standing issue with backups.  It&rsquo;s deadly boring to
 set up and maintain, so I don&rsquo;t do any.  Until today!
-
 Today I moved the sources for my Octopress blag
 to …">
   <meta name="twitter:image" content="/images/profile.jpg" />
@@ -137,7 +132,7 @@ to …">
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -339,18 +334,15 @@ to …">
 	
         <p>I&rsquo;ve had this long-standing issue with backups.  It&rsquo;s deadly boring to
 set up and maintain, so I don&rsquo;t do any.  Until today!</p>
-
 <p>Today I moved the sources for my <a href="http://troglobit.com">Octopress blag</a>
 to GitHub, which also prompted me to set up
 <a href="http://troglobit.github.io">a mirror</a> on
 <a href="http://pages.github.io">GitHub Pages</a>.  As usual, reading up on the
 subject and muster enough motivation took me about three months, whereas
 the actual work took about 4h.</p>
-
 <p>I now have a concoction of mixed remotes, multiple branches and some
 Ruby magic to administer it all with!  Here are some links I used to
 get where I am:</p>
-
 <ul>
 <li><a href="http://octopress.org/docs/setup/">http://octopress.org/docs/setup/</a></li>
 <li><a href="https://help.github.com/articles/creating-project-pages-manually/">https://help.github.com/articles/creating-project-pages-manually/</a></li>
@@ -359,27 +351,21 @@ get where I am:</p>
 <li><a href="http://miguelcamba.com/blog/2013/04/22/tutorial-create-a-blog-with-octopress-and-host-it-in-github-pages/">http://miguelcamba.com/blog/2013/04/22/tutorial-create-a-blog-with-octopress-and-host-it-in-github-pages/</a></li>
 <li><a href="http://octopress.org/docs/deploying/github/">http://octopress.org/docs/deploying/github/</a></li>
 </ul>
-
 <p>With some added <code>apt-get intall ruby ruby-bundler</code> magic in Ubuntu
 everything started to look normal &ndash; now I could even do <code>rake preview</code>
 before deploying!  Only a minor problem I had before getting everything
 working was this:</p>
-
 <blockquote>
 <p>/usr/local/rvm/gems/ruby-2.1.2/gems/execjs-2.2.0/lib/execjs/runtimes.rb:51:in `autodetect&rsquo;:
 Could not find a JavaScript runtime. See <a href="https://github.com/sstephenson/execjs">https://github.com/sstephenson/execjs</a>
 for a list of available runtimes. (ExecJS::RuntimeUnavailable)</p>
 </blockquote>
-
 <p>Turns out I had to install nodejs as well, dunno why.</p>
-
 <pre><code>sudo apt install nodejs
 </code></pre>
-
 <p>Since I wanted a mirrored setup I chose to have Octopress setup default
 to deploy to GitHub Pages.  Then I simply rsync the whole shebang to my
 own server.</p>
-
 <p>All this means I can now finally begin restoring more content from
 <a href="/blog/2013/02/17/resurrection/">my old blog</a> thanks to partial backups
 I&rsquo;ve found at the <a href="https://archive.org/">Wayback Machine</a> :-)</p>
@@ -473,7 +459,7 @@ I&rsquo;ve found at the <a href="https://archive.org/">Wayback Machine</a> :-)</
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

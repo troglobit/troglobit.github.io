@@ -111,7 +111,7 @@ All I really wanted was a bare bones readline() suitable for small embedded syst
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -314,36 +314,27 @@ All I really wanted was a bare bones readline() suitable for small embedded syst
         <p>I&rsquo;ve been looking long and hard for a small and useful <a href="http://www.gnu.org/software/readline/">GNU readline</a>
 replacement.  Oddly enough, all the time I was looking for one I never
 even once considered looking at the <a href="http://www.minix3.org/">Minix</a> sources!</p>
-
 <p>Currently I&rsquo;m using the NetBSD <a href="http://thrysoee.dk/editline/">editline derivative</a> (readline
 compatible) from <a href="http://thrysoee.dk/">Jess Thrysoee</a>, but it requires ncurses, which is
 huge!</p>
-
 <p>All I really wanted was a bare bones <code>readline()</code> suitable for small
 embedded systems.  One which could record history and preferably, but
 not required to, support completion.</p>
-
 <p>OK, so yesterday I found the Minix editline implementation, written
 years ago by Simmule Turner and Rich Salz. My hat is off to you guys,
 you rock!</p>
-
 <p>Here&rsquo;s my first packaged version for Linux:</p>
-
 <ul>
 <li><a href="http://ftp.vmlinux.org/pub/People/jocke/minix-editline/">http://ftp.vmlinux.org/pub/People/jocke/minix-editline/</a></li>
 </ul>
-
 <p>All I have done, so far, is to move around the files a bit and add the
 standard <a href="http://mij.oltrelinux.com/devel/autoconf-automake/">GNU configure and build system</a>.  It now builds and runs
 perfectly on my laptop, next step is to cross-build it for a couple of
 embedded ARM targets.</p>
-
 <p>I do all development using <a href="http://www.bazaar-vcs.org/">GNU Bazaar</a>. If you want to join in, then
 branch from the following public URL:</p>
-
 <pre><code> bzr branch http://vmlinux.org/jocke/bzr/minix-editline 
 </code></pre>
-
 <p>Patches and ideas are welcome!</p>
 
 
@@ -436,7 +427,7 @@ branch from the following public URL:</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

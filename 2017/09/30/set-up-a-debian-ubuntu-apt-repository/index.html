@@ -11,23 +11,18 @@
   <meta property="og:title" content="Set up a Debian/Ubuntu APT Repository" />
   <meta name="twitter:title" content="Set up a Debian/Ubuntu APT Repository" />
   <meta name="description" content="How to set up a Debian/Ubuntu APT repository with GPG signing.
-
 At first I tried to use Bas Wijnen&rsquo;s mini-dinstall howto, but never
 managed to get it working.  Probably due to problems with GPG.  Then I
 went down the tried and true path of using reprepro.
-
 I&rsquo;ve tried to document my steps here, but I&rsquo;ve very likely missed a few
 steps that a beginner admin may run into. YMMV B-)">
   <meta property="og:description" content="How to set up a Debian/Ubuntu APT repository with GPG signing.
-
 At first I tried to use Bas Wijnen&rsquo;s mini-dinstall howto, but never
 managed to get it working.  Probably due to problems with GPG.  Then I
 went down the tried and true path of using reprepro.
-
 I&rsquo;ve tried to document my steps here, but I&rsquo;ve very likely missed a few
 steps that a beginner admin may run into. YMMV B-)">
   <meta name="twitter:description" content="How to set up a Debian/Ubuntu APT repository with GPG signing.
-
 At first I tried to use Bas Wijnen&rsquo;s mini-dinstall howto, but never
 managed to get it working.  Probably due to problems with GPG. …">
   <meta name="author" content="Joachim Nilsson"/><script type="application/ld+json">
@@ -101,11 +96,9 @@ managed to get it working.  Probably due to problems with GPG. …">
 
 <meta property="og:title" content="Set up a Debian/Ubuntu APT Repository" />
 <meta property="og:description" content="How to set up a Debian/Ubuntu APT repository with GPG signing.
-
 At first I tried to use Bas Wijnen&rsquo;s mini-dinstall howto, but never
 managed to get it working.  Probably due to problems with GPG.  Then I
 went down the tried and true path of using reprepro.
-
 I&rsquo;ve tried to document my steps here, but I&rsquo;ve very likely missed a few
 steps that a beginner admin may run into. YMMV B-)">
 <meta property="og:image" content="/images/profile.jpg" />
@@ -115,7 +108,6 @@ steps that a beginner admin may run into. YMMV B-)">
 
   <meta name="twitter:title" content="Set up a Debian/Ubuntu APT Repository" />
   <meta name="twitter:description" content="How to set up a Debian/Ubuntu APT repository with GPG signing.
-
 At first I tried to use Bas Wijnen&rsquo;s mini-dinstall howto, but never
 managed to get it working.  Probably due to problems with GPG. …">
   <meta name="twitter:image" content="/images/profile.jpg" />
@@ -132,7 +124,7 @@ managed to get it working.  Probably due to problems with GPG. …">
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -333,56 +325,42 @@ managed to get it working.  Probably due to problems with GPG. …">
       <article role="main" class="blog-post">
 	
         <p>How to set up a Debian/Ubuntu APT repository with GPG signing.</p>
-
 <p>At first I tried to use <a href="https://debian-administration.org/article/717/Setting_up_a_personal_secure_apt_repository">Bas Wijnen&rsquo;s mini-dinstall howto</a>, but never
 managed to get it working.  Probably due to problems with GPG.  Then I
 went down the tried and true path of using <a href="https://debian-administration.org/article/286/Setting_up_your_own_APT_repository_with_upload_support">reprepro</a>.</p>
-
 <p>I&rsquo;ve tried to document my steps here, but I&rsquo;ve very likely missed a few
 steps that a beginner admin may run into. YMMV B-)</p>
-
 <h3 id="install">Install</h3>
-
 <p>First set up the web server and its directories.  I obviously use
 <a href="https://github.com/troglobit/merecat">Merecat httpd</a>, but you can use just about any web server:</p>
-
 <pre><code>$ sudo mkdir /srv/deb
 $ sudo mkdir /var/www/deb.troglobit.com
 $ sudo echo &quot;/srv/deb  /var/www/deb.troglobit.com  none  defaults,bind  0 0&quot; &gt;&gt;/etc/fstab
 </code></pre>
-
 <p>Then install reprepro</p>
-
 <pre><code>$ sudo apt install reprepro
 </code></pre>
-
 <p>The man page and the documentation in <code>/usr/share/doc/reprepro/</code> is
 quite good, so I recommend at least skimming through it before you
 continue.</p>
-
 <h3 id="setup">Setup</h3>
-
 <p>The following steps create the necessary directories and configuration
 files:</p>
-
 <pre><code>$ sudo mkdir -p /srv/deb/{debian,ubuntu}/{conf,dists,incoming,indices,logs,pool,project,tmp}
 $ cd /srv/deb
 $ sudo chown -R `whoami` .
 </code></pre>
-
 <p>I&rsquo;ve created a set of directories for both Debian and Ubuntu, below I
 will continue with Debian only.  Notice the use of Debian code names
 which are different in the Ubuntu world.</p>
-
 <pre><code>$ cd debian/conf
 $ mg distributions
 </code></pre>
-
 <p>Notice the <code>Suite</code> and <code>Codename</code> for each entry in the <code>distributions</code>
 file below.  These are the official names and their current release
 state in Debian.  Below we will use <code>reprepro createsymlinks</code> to
 automatically create synmlinks based on this file.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-conf" data-lang="conf">Origin: Troglobit Software
+<pre><code class="language-conf" data-lang="conf">Origin: Troglobit Software
 Label: deb.troglobit.com
 Suite: oldstable
 Codename: stretch
@@ -407,91 +385,65 @@ Codename: sid
 Architectures: amd64
 Components: main
 Description: Unofficial Debian/Ubuntu Packages maintained by Joachim Nilsson
-SignWith: 4B8786A6</code></pre></div>
-<p>Next up is <code>conf/incoming</code>:</p>
-
+SignWith: 4B8786A6
+</code></pre><p>Next up is <code>conf/incoming</code>:</p>
 <pre><code>Name: default
 IncomingDir: incoming
 TempDir: tmp
 Allow: oldstable&gt;stretch stable&gt;buster unstable&gt;sid
 Cleanup: on_deny on_error
-</code></pre>
-
-<p>We can now create the initial structure, symbolic links and initial
+</code></pre><p>We can now create the initial structure, symbolic links and initial
 Packages files:</p>
-
 <pre><code>$ cd /srv/deb/debian
 $ reprepro -Vb . createsymlinks
 $ reprepro -Vb . export
 </code></pre>
-
 <h3 id="signing">Signing</h3>
-
 <p>To be able to actually sign <code>.deb</code> files you need to create (and also
 publish the public part of) a GPG signing key.  Answer the questions to
 <code>--gen-key</code> below, select type 4 RSA key for signing.  Make sure to use
 a 4096 bit key.  I set it up <em>without a passphrase</em> for convenince¹ and
 then upload the resulting public key:</p>
-
 <pre><code>$ gpg --gen-key
 gpg: key 44D7FA0A marked as ultimately trusted
 public and secret key created and signed.
 $ gpg --send-keys 4B8786A6
 gpg: sending key 4B8786A6 to hkp server keys.gnupg.net
 </code></pre>
-
 <p>Add the fingerprint to the <code>SignWith:</code> in the <code>conf/distributions</code> file.</p>
-
 <h3 id="publishing-the-public-key">Publishing the Public Key</h3>
-
 <p>The public part of the GPG key also needs to be published as a regular
 <code>.deb</code> package.  Clone my <a href="https://github.com/troglobit/deb">GIT repo</a>
 and change the <code>active/archive.asc</code> key:</p>
-
 <pre><code>$ git clone https://github.com/troglobit/deb.git
 $ cd deb/
 $ gpg --export archive@troglobit.com &gt;active/archive.gpg
 </code></pre>
-
 <p>Then edit the files in the <code>debian/</code> sub-directory to match your repo
 and build the package:</p>
-
 <pre><code>$ dpkg-buildpackage
 </code></pre>
-
 <p>Alternatively, publish it in ascii form in a safe place:</p>
-
 <pre><code>$ cd /srv/deb/
 $ gpg --armor --export archive@troglobit.com &gt; pubkey.gpg
 </code></pre>
-
 <p>Done.</p>
-
 <h3 id="developer">Developer</h3>
-
 <p>It&rsquo;s now time for the developer(s) to upload the(ir) package(s) to the
 <code>/srv/deb/debian/incoming/</code> directory.</p>
-
 <pre><code>$ scp troglobit-archive-keyring_* server:/srv/deb/debian/incoming/
 </code></pre>
-
 <p>Then tell reprepro to process the incoming queue:</p>
-
 <pre><code>$ cd /srv/deb/debian
 $ reprepro -Vb . processincoming default
 </code></pre>
-
 <h3 id="users">Users</h3>
-
 <pre><code>$ curl -sS https://deb.troglobit.com/pubkey.gpg | sudo apt-key add -
 $ echo &quot;deb [arch=amd64] https://deb.troglobit.com/debian stable main&quot; | sudo tee /etc/apt/sources.list.d/troglobit.list
 $ sudo apt-get update
 </code></pre>
-
 <p>There.  Packages can now be installed.</p>
-
 <h3 id="footnotes">Footnotes</h3>
-
 <p>¹ To remove a GPG passphrase from a key, use <code>gpg --edit-key HASH</code>, and
 then <code>passwd</code> at the <code>gpg&gt;</code> prompt.  Simply press enter when prompted
 for the new passphrase.</p>
@@ -585,7 +537,7 @@ for the new passphrase.</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

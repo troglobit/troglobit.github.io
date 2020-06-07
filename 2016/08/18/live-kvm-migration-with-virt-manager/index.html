@@ -14,9 +14,7 @@
 setting up ALL THE THINGS!  I just managed to set up live migration of
 the KVM virtual machines I use for testing my FLOSS projects.  Here
 is a short writeup of that, just as a reminder for myself.
-
 Checklist
-
 
 Make sure the libvirt versions are the same.  I tried setting up
 migration between CentOS 7.2 and and Ubuntu LTS 16.04 which turned
@@ -28,16 +26,13 @@ couldn&rsquo;t set up root access (defaulted to nobody).
 Set up VM disk caching=none
 Set up VM processor model=default
 Profit
-
 
 Good Luck! :)">
   <meta property="og:description" content="With the new servers and my server room shaping up, I&rsquo;ve been working on
 setting up ALL THE THINGS!  I just managed to set up live migration of
 the KVM virtual machines I use for testing my FLOSS projects.  Here
 is a short writeup of that, just as a reminder for myself.
-
 Checklist
-
 
 Make sure the libvirt versions are the same.  I tried setting up
 migration between CentOS 7.2 and and Ubuntu LTS 16.04 which turned
@@ -49,7 +44,6 @@ couldn&rsquo;t set up root access (defaulted to nobody).
 Set up VM disk caching=none
 Set up VM processor model=default
 Profit
-
 
 Good Luck! :)">
   <meta name="twitter:description" content="With the new servers and my server room shaping up, I&rsquo;ve been working on
@@ -129,9 +123,7 @@ the KVM virtual machines I use for testing my …">
 setting up ALL THE THINGS!  I just managed to set up live migration of
 the KVM virtual machines I use for testing my FLOSS projects.  Here
 is a short writeup of that, just as a reminder for myself.
-
 Checklist
-
 
 Make sure the libvirt versions are the same.  I tried setting up
 migration between CentOS 7.2 and and Ubuntu LTS 16.04 which turned
@@ -143,7 +135,6 @@ couldn&rsquo;t set up root access (defaulted to nobody).
 Set up VM disk caching=none
 Set up VM processor model=default
 Profit
-
 
 Good Luck! :)">
 <meta property="og:image" content="/images/profile.jpg" />
@@ -169,7 +160,7 @@ the KVM virtual machines I use for testing my …">
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -373,9 +364,7 @@ the KVM virtual machines I use for testing my …">
 setting up ALL THE THINGS!  I just managed to set up live migration of
 the KVM virtual machines I use for testing my <a href="https://en.wikipedia.org/wiki/Free_and_open-source_software">FLOSS</a> projects.  Here
 is a short writeup of that, just as a reminder for myself.</p>
-
 <h2 id="checklist">Checklist</h2>
-
 <ol>
 <li>Make sure the libvirt versions are the same.  I tried setting up
 migration between CentOS 7.2 and and Ubuntu LTS 16.04 which turned
@@ -388,71 +377,45 @@ couldn&rsquo;t set up root access (defaulted to nobody).</li>
 <li>Set up VM processor model=default</li>
 <li>Profit</li>
 </ol>
-
 <p>Good Luck! :)</p>
-
 <h2 id="setting-up-nfs">Setting up NFS</h2>
-
 <p>This is probably the easiest file sharing protocol to set up in UNIX.
 On Ubuntu and Debian GNU/Linux you need to install the NFS packages
 first:</p>
-
 <pre><code>apt install nfs-common
 </code></pre>
-
 <p>Then simply list the directory and permissions in <code>/etc/exports</code> on the
 server and run <code>exportfs -a</code>:</p>
-
-<pre><code>/var/lib/libvirt/images     *(rw,sync,no_root_squash)
+<pre><code>/var/lib/libvirt/images		*(rw,sync,no_root_squash)
 </code></pre>
-
 <p>Yhen mount it on the client with:</p>
-
 <pre><code>mount -t nfs server:/var/lib/libvirt/images/ /var/lib/libvirt/images/
 </code></pre>
-
 <p>For a more permanant setup, add the mount point to <code>/etc/fstab</code> and run
 <code>mount -a</code>:</p>
-
 <pre><code>server:/var/lib/libvirt/images/  /var/lib/libvirt/images/  nfs  defaults  0  0
 </code></pre>
-
 <p>To speed things up a bit you can install the <code>nfs-kernel-server</code> package
 on the server.</p>
-
 <p>To see what shares a server has, use <code>showmount -e server</code> &ndash; useful for
 debugging.  Usually I forget running <code>exportfs</code> on the server.</p>
-
 <h2 id="setting-up-virt-manager">Setting up virt-manager</h2>
-
 <p>In principle not much needs to be changed on the system you want to
 migrate <em>from</em>, only a few things need tweaking and libvirt will give
 you warnings along the way.</p>
-
 <p>First, make sure to change caching settings of the VM&rsquo;s backing store.
 It is located in the Details view:</p>
-
 <pre><code>IDE Disk 1 --&gt; Advanced --&gt; Performance --&gt; Cache mode: none
 </code></pre>
-
-<p><img class="center" src="/images/migrate-disk-nocache.png"></p>
-
+<!-- raw HTML omitted -->
 <p>Second, set CPU model to Hypervisor default:</p>
-
 <pre><code>CPUs --&gt; Configuration --&gt; Model: Hypervisor Default
 </code></pre>
-
-<p><img class="center" src="/images/migrate-cpu-default.png"></p>
-
+<!-- raw HTML omitted -->
 <h2 id="profit">Profit!</h2>
-
 <p>That&rsquo;s it, now live migration from your laptop to the server should work.</p>
-
-<!--
-  -- Local Variables:
-  -- mode: markdown
-  -- End:
-  -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 
         
 
@@ -543,7 +506,7 @@ It is located in the Details view:</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

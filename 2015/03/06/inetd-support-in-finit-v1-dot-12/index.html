@@ -13,16 +13,12 @@
   <meta name="description" content="A steady flow of features, and releases, is key to keeping any project
 alive.  Recently I ticked off another item in the Finit
 TODO list &hellip;
-
 Finit v1.12 now comes with a built-in inetd!  You no longer need an
 external inetd daemon to launch services on demand.
-
 The good news doesn&rsquo;t stop there, this little inetd actually supports a
 poor man&rsquo;s tcpwrappers!
-
 inetd ssh/tcp          nowait [2345] /sbin/dropbear -i -R -F
 inetd ssh@eth0:222/tcp nowait [2345] /sbin/dropbear -i -R -F
-
 
 With these two lines in your /etc/finit.conf you tell finit to launch
 the Dropbear SSH
@@ -32,11 +28,9 @@ all interfaces except on eth0, which in your case is the Internet
 don&rsquo;t want port 22 open at all on eth0 &hellip; so finit takes care of this
 for you!  Seriously, it just works, no need for messing about with that
 nasty old iptables anymore!
-
 The original UNIX inetd super server supported many protocols
 internally, some of which may seem a bit odd today, and some have been
 superseded by more modern protocols.
-
 
 echo
 chargen
@@ -44,55 +38,42 @@ time
 daytime
 discard
 
-
 Finit currently only supports one internal/built-in standard service,
 time.  It is built as a plugin to serve as an example of how you can
 extend Finit yourself.  The time service can be called either as UDP or
 TCP.  To prevent security issues, the time protocol is disabled by
 default.  To enable it you need two things:
 
-
 The time.so plugin (built by default)
 An inetd time ... line in /etc/finit.conf
 
-
 Assuming you&rsquo;ve installed the default set of plugins, the following two
 lines can be added:
-
 inetd time/udp   wait [2345] internal
 inetd time/tcp nowait [2345] internal
-
 
 This can be very useful for testing the inetd capabilities, your network
 connection, or simply to get the time to a client where NTP for some
 reason does not work, or is blocked.  For instance, you could have a GPS
 setup on your server and distribute time to clients with the time
 protocol.
-
 To use it you need an rdate
 client.  Users of rdate in BusyBox may need to be reminded that it
 only supports TCP.
-
 $ rdate -pu 198.51.100.42
 Sat Mar  7 08:48:58 CET 2015
 
-
 For more info on Finit and its features, see the README.
-
 Enjoy! ツ">
   <meta property="og:description" content="A steady flow of features, and releases, is key to keeping any project
 alive.  Recently I ticked off another item in the Finit
 TODO list &hellip;
-
 Finit v1.12 now comes with a built-in inetd!  You no longer need an
 external inetd daemon to launch services on demand.
-
 The good news doesn&rsquo;t stop there, this little inetd actually supports a
 poor man&rsquo;s tcpwrappers!
-
 inetd ssh/tcp          nowait [2345] /sbin/dropbear -i -R -F
 inetd ssh@eth0:222/tcp nowait [2345] /sbin/dropbear -i -R -F
-
 
 With these two lines in your /etc/finit.conf you tell finit to launch
 the Dropbear SSH
@@ -102,11 +83,9 @@ all interfaces except on eth0, which in your case is the Internet
 don&rsquo;t want port 22 open at all on eth0 &hellip; so finit takes care of this
 for you!  Seriously, it just works, no need for messing about with that
 nasty old iptables anymore!
-
 The original UNIX inetd super server supported many protocols
 internally, some of which may seem a bit odd today, and some have been
 superseded by more modern protocols.
-
 
 echo
 chargen
@@ -114,46 +93,36 @@ time
 daytime
 discard
 
-
 Finit currently only supports one internal/built-in standard service,
 time.  It is built as a plugin to serve as an example of how you can
 extend Finit yourself.  The time service can be called either as UDP or
 TCP.  To prevent security issues, the time protocol is disabled by
 default.  To enable it you need two things:
 
-
 The time.so plugin (built by default)
 An inetd time ... line in /etc/finit.conf
 
-
 Assuming you&rsquo;ve installed the default set of plugins, the following two
 lines can be added:
-
 inetd time/udp   wait [2345] internal
 inetd time/tcp nowait [2345] internal
-
 
 This can be very useful for testing the inetd capabilities, your network
 connection, or simply to get the time to a client where NTP for some
 reason does not work, or is blocked.  For instance, you could have a GPS
 setup on your server and distribute time to clients with the time
 protocol.
-
 To use it you need an rdate
 client.  Users of rdate in BusyBox may need to be reminded that it
 only supports TCP.
-
 $ rdate -pu 198.51.100.42
 Sat Mar  7 08:48:58 CET 2015
 
-
 For more info on Finit and its features, see the README.
-
 Enjoy! ツ">
   <meta name="twitter:description" content="A steady flow of features, and releases, is key to keeping any project
 alive.  Recently I ticked off another item in the Finit
 TODO list &hellip;
-
 Finit v1.12 now comes with a built-in inetd!  You no …">
   <meta name="author" content="Joachim Nilsson"/><script type="application/ld+json">
 {
@@ -228,16 +197,12 @@ Finit v1.12 now comes with a built-in inetd!  You no …">
 <meta property="og:description" content="A steady flow of features, and releases, is key to keeping any project
 alive.  Recently I ticked off another item in the Finit
 TODO list &hellip;
-
 Finit v1.12 now comes with a built-in inetd!  You no longer need an
 external inetd daemon to launch services on demand.
-
 The good news doesn&rsquo;t stop there, this little inetd actually supports a
 poor man&rsquo;s tcpwrappers!
-
 inetd ssh/tcp          nowait [2345] /sbin/dropbear -i -R -F
 inetd ssh@eth0:222/tcp nowait [2345] /sbin/dropbear -i -R -F
-
 
 With these two lines in your /etc/finit.conf you tell finit to launch
 the Dropbear SSH
@@ -247,11 +212,9 @@ all interfaces except on eth0, which in your case is the Internet
 don&rsquo;t want port 22 open at all on eth0 &hellip; so finit takes care of this
 for you!  Seriously, it just works, no need for messing about with that
 nasty old iptables anymore!
-
 The original UNIX inetd super server supported many protocols
 internally, some of which may seem a bit odd today, and some have been
 superseded by more modern protocols.
-
 
 echo
 chargen
@@ -259,41 +222,32 @@ time
 daytime
 discard
 
-
 Finit currently only supports one internal/built-in standard service,
 time.  It is built as a plugin to serve as an example of how you can
 extend Finit yourself.  The time service can be called either as UDP or
 TCP.  To prevent security issues, the time protocol is disabled by
 default.  To enable it you need two things:
 
-
 The time.so plugin (built by default)
 An inetd time ... line in /etc/finit.conf
 
-
 Assuming you&rsquo;ve installed the default set of plugins, the following two
 lines can be added:
-
 inetd time/udp   wait [2345] internal
 inetd time/tcp nowait [2345] internal
-
 
 This can be very useful for testing the inetd capabilities, your network
 connection, or simply to get the time to a client where NTP for some
 reason does not work, or is blocked.  For instance, you could have a GPS
 setup on your server and distribute time to clients with the time
 protocol.
-
 To use it you need an rdate
 client.  Users of rdate in BusyBox may need to be reminded that it
 only supports TCP.
-
 $ rdate -pu 198.51.100.42
 Sat Mar  7 08:48:58 CET 2015
 
-
 For more info on Finit and its features, see the README.
-
 Enjoy! ツ">
 <meta property="og:image" content="/images/profile.jpg" />
 <meta property="og:url" content="/2015/03/06/inetd-support-in-finit-v1-dot-12/" />
@@ -304,7 +258,6 @@ Enjoy! ツ">
   <meta name="twitter:description" content="A steady flow of features, and releases, is key to keeping any project
 alive.  Recently I ticked off another item in the Finit
 TODO list &hellip;
-
 Finit v1.12 now comes with a built-in inetd!  You no …">
   <meta name="twitter:image" content="/images/profile.jpg" />
   <meta name="twitter:card" content="summary" />
@@ -320,7 +273,7 @@ Finit v1.12 now comes with a built-in inetd!  You no …">
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -523,17 +476,13 @@ Finit v1.12 now comes with a built-in inetd!  You no …">
         <p>A steady flow of features, and releases, is key to keeping any project
 alive.  Recently I ticked off another item in the <a href="/finit.html">Finit</a>
 TODO list &hellip;</p>
-
 <p>Finit v1.12 now comes with a built-in inetd!  You no longer need an
 external inetd daemon to launch services on demand.</p>
-
 <p>The good news doesn&rsquo;t stop there, this little inetd actually supports a
 poor man&rsquo;s tcpwrappers!</p>
-
 <pre><code>inetd ssh/tcp          nowait [2345] /sbin/dropbear -i -R -F
 inetd ssh@eth0:222/tcp nowait [2345] /sbin/dropbear -i -R -F
 </code></pre>
-
 <p>With these two lines in your <code>/etc/finit.conf</code> you tell finit to launch
 the <a href="https://matt.ucc.asn.au/dropbear/dropbear.html">Dropbear SSH</a>
 server on demand on port 22 (default ssh/tcp port in <code>/etc/services</code>) on
@@ -542,11 +491,9 @@ server on demand on port 22 (default ssh/tcp port in <code>/etc/services</code>)
 don&rsquo;t want port 22 open at all on <code>eth0</code> &hellip; so finit takes care of this
 for you!  Seriously, it just works, no need for messing about with that
 nasty old <code>iptables</code> anymore!</p>
-
 <p>The original UNIX inetd super server supported many protocols
 internally, some of which may seem a bit odd today, and some have been
 superseded by more modern protocols.</p>
-
 <ul>
 <li><a href="http://en.wikipedia.org/wiki/Echo_Protocol">echo</a></li>
 <li><a href="http://en.wikipedia.org/wiki/Character_Generator_Protocol">chargen</a></li>
@@ -554,45 +501,34 @@ superseded by more modern protocols.</p>
 <li><a href="http://en.wikipedia.org/wiki/Daytime_Protocol">daytime</a></li>
 <li><a href="http://en.wikipedia.org/wiki/Discard_Protocol">discard</a></li>
 </ul>
-
 <p>Finit currently only supports one internal/built-in standard service,
 <code>time</code>.  It is built as a plugin to serve as an example of how you can
 extend Finit yourself.  The time service can be called either as UDP or
 TCP.  To prevent security issues, the <code>time</code> protocol is disabled by
 default.  To enable it you need two things:</p>
-
 <ol>
 <li>The <code>time.so</code> plugin (built by default)</li>
 <li>An <code>inetd time ...</code> line in <code>/etc/finit.conf</code></li>
 </ol>
-
 <p>Assuming you&rsquo;ve installed the default set of plugins, the following two
 lines can be added:</p>
-
 <pre><code>inetd time/udp   wait [2345] internal
 inetd time/tcp nowait [2345] internal
 </code></pre>
-
 <p>This can be very useful for testing the inetd capabilities, your network
 connection, or simply to get the time to a client where NTP for some
 reason does not work, or is blocked.  For instance, you could have a GPS
 setup on your server and distribute time to clients with the <code>time</code>
 protocol.</p>
-
 <p>To use it you need an <a href="http://www.aelius.com/njh/rdate/"><code>rdate</code></a>
 client.  Users of <code>rdate</code> in BusyBox may need to be reminded that it
 only supports TCP.</p>
-
 <pre><code>$ rdate -pu 198.51.100.42
 Sat Mar  7 08:48:58 CET 2015
 </code></pre>
-
 <p>For more info on Finit and its features, see the <a href="https://github.com/troglobit/finit/blob/master/README.md">README</a>.</p>
-
 <p>Enjoy! ツ</p>
-
 <h3 id="changes">Changes</h3>
-
 <ul>
 <li>Add support for built-in inetd super server &ndash; launch services on
 demand.  Supports filtering per interface and custom Inet ports.</li>
@@ -609,9 +545,7 @@ that too is unset fall back to <code>/bin/sh</code></li>
 <li>When falling back to the <code>console</code> TTY or <code>/bin/sh</code>, finit now marks
 this fallback as console.  Should improve usability in some use cases.</li>
 </ul>
-
 <h3 id="fixes">Fixes</h3>
-
 <ul>
 <li>Revert &ldquo;Use vfork() instead of fork() before exec()&rdquo; from v1.11.  It
 turned out to not work so well after all.  For instance, launching
@@ -716,7 +650,7 @@ pointer.  For the time being we do not support unloading plugins.</li>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

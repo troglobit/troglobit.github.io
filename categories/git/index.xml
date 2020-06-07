@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Git on </title>
+    <title>git on </title>
     <link>/categories/git/</link>
-    <description>Recent content in Git on </description>
+    <description>Recent content in git on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
@@ -22,18 +22,16 @@
       <description>&lt;p&gt;Years ago while looking for a fast &lt;a href=&#34;https://en.wikipedia.org/wiki/Init&#34;&gt;init&lt;/a&gt; replacement for &lt;a href=&#34;http://westermo.com/&#34;&gt;work&lt;/a&gt;,
 I found &lt;a href=&#34;http://helllabs.org/finit/&#34;&gt;Finit&lt;/a&gt;.  Originally written by &lt;a href=&#34;https://github.com/cmatsuoka&#34;&gt;Claudio Matsuoka&lt;/a&gt; to act
 as a drop-in replacement for the &lt;a href=&#34;https://en.wikipedia.org/wiki/Asus_Eee_PC&#34;&gt;Asus EeePC&lt;/a&gt; &lt;a href=&#34;http://wiki.eeeuser.com/boot_process:the_boot_process&#34;&gt;fastinit&lt;/a&gt;, &lt;em&gt;&amp;ldquo;gaps
-filled with frog DNA &amp;hellip;&amp;ldquo;&lt;/em&gt;&lt;/p&gt;
-
+filled with frog DNA …&amp;quot;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Until I found Finit I had always been in awe of those venturing into the
 realm of &lt;a href=&#34;http://0pointer.net/blog/&#34;&gt;PID 1&lt;/a&gt;.  However, learning from the simplicity of Claudio&amp;rsquo;s
 code I realized that although PID 1 at times is indistinguishable from
 magic, it is really not that hard to master.  &lt;a href=&#34;https://github.com/troglobit/finit&#34;&gt;My version of Finit&lt;/a&gt;
 is available on GitHub.&lt;/p&gt;
-
 &lt;p&gt;The code is open sourced under the very liberal &lt;a href=&#34;http://opensource.org/licenses/MIT&#34;&gt;MIT/X11 license&lt;/a&gt;,
 and much of its frog DNA has proven very useful to me over the years.
 This blog post is about how that frog DNA can help you fill gaps in your
-projects &amp;hellip;&lt;/p&gt;</description>
+projects …&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -43,14 +41,12 @@ projects &amp;hellip;&lt;/p&gt;</description>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/</guid>
       <description>&lt;p&gt;So, now that I have &lt;a href=&#34;http://git.troglobit.com&#34;&gt;http://git.troglobit.com&lt;/a&gt; setup as a backup GIT repo
-to &lt;a href=&#34;https://github.com/troglobit&#34;&gt;https://github.com/troglobit&lt;/a&gt;, I needed a &lt;em&gt;simple&lt;/em&gt; way to always push
+to &lt;a href=&#34;https://github.com/troglobit,&#34;&gt;https://github.com/troglobit,&lt;/a&gt; I needed a &lt;em&gt;simple&lt;/em&gt; way to always push
 to both repos &amp;ndash; best way for me is to always hook into my regular work
 flow, otherwise I&amp;rsquo;d just forget.  The &lt;a href=&#34;1&#34;&gt;git-remote(1)&lt;/a&gt; man page to the
 rescue, it describes the &lt;code&gt;set-url --add&lt;/code&gt; sub-command:&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;git remote set-url --add origin ssh://git.troglobit.com:1234/srv/git/watchdogd.git
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;Now, with a simple &lt;code&gt;git push&lt;/code&gt; followed by &lt;code&gt;git push --tags&lt;/code&gt; I had now
 pushed to both the GitHub repo as well as my own server!&lt;/p&gt;</description>
     </item>
@@ -64,7 +60,6 @@ pushed to both the GitHub repo as well as my own server!&lt;/p&gt;</description>
       <description>&lt;p&gt;I&amp;rsquo;m posting this in case anyone else gets stuck setting up &lt;a href=&#34;http://www.apache.org&#34;&gt;Apache&lt;/a&gt;
 with &lt;a href=&#34;http://git-scm.com/docs/gitweb&#34;&gt;Gitweb&lt;/a&gt;.  Also as a reminder to myself in case I ever need to
 set up this all over again.&lt;/p&gt;
-
 &lt;ol&gt;
 &lt;li&gt;You have all your eggs in one basket (GitHub), and&lt;/li&gt;
 &lt;li&gt;You really like that shiny basket, but&lt;/li&gt;
@@ -72,24 +67,18 @@ set up this all over again.&lt;/p&gt;
 &lt;li&gt;You are wise (yes you are!) and realize you need another basket, so&lt;/li&gt;
 &lt;li&gt;You set up a server and a domain yourself &amp;hellip;&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;p&gt;OK.  Let&amp;rsquo;s start simple, since you are already running the latest Debian
 you fire up the command line and install the basics:&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;sudo apt-get install gitweb apache2
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;So it&amp;rsquo;ll complain, you&amp;rsquo;ll clarify your request and soon all required
 packages are on your server.  Now what?&lt;/p&gt;
-
-&lt;p&gt;Debian has already set up &lt;a href=&#34;http://localhost/gitweb&#34;&gt;http://localhost/gitweb&lt;/a&gt; for you, and if you
+&lt;p&gt;Debian has already set up http://localhost/gitweb for you, and if you
 have a domain already you should go ahead and edit the master file for
 that:&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;editor /etc/apache2/sites-available/000-default.conf
 service apache2 reload
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;If you want to use that for your gitweb needs, then you&amp;rsquo;re done!&lt;/p&gt;</description>
     </item>
     
@@ -101,7 +90,6 @@ service apache2 reload
       <guid>/2015/01/02/blog-restoration-project-now-also-on-github-pages/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve had this long-standing issue with backups.  It&amp;rsquo;s deadly boring to
 set up and maintain, so I don&amp;rsquo;t do any.  Until today!&lt;/p&gt;
-
 &lt;p&gt;Today I moved the sources for my &lt;a href=&#34;http://troglobit.com&#34;&gt;Octopress blag&lt;/a&gt;
 to GitHub, which also prompted me to set up
 &lt;a href=&#34;http://troglobit.github.io&#34;&gt;a mirror&lt;/a&gt; on
@@ -156,7 +144,7 @@ $ echo &amp;quot;Secret project, use ROT13 to decode source code&amp;quot; &amp;
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2010/07/13/converting-from-bazaar-to-git/</guid>
       <description>You need git, and bazaar obviously. Also install bzr-fastimport, it contains the export plugin as well. The rest is a rip off from Frank&amp;rsquo;s page.
-$ git init project.git $ cd project.git $ bzr fast-export --export-marks=.git/bzr.mark ~/project.bzr | git fast-import --export-marks=.git/git.mark  That worked for me. The output will likely be something like this:
+$ git init project.git $ cd project.git $ bzr fast-export --export-marks=.git/bzr.mark ~/project.bzr | git fast-import --export-marks=.git/git.mark That worked for me. The output will likely be something like this:
 01:41:19 Calculating the revisions to include ... 01:41:19 Starting export of 33 revisions ... 01:41:20 Exported 33 revisions in 0:00:01 git-fast-import statistics: --------------------------------------------------------------------- Alloc&#39;d objects: 5000 Total objects : 267 ( 0 duplicates ) blobs : 158 ( 0 duplicates 57 deltas) trees : 76 ( 0 duplicates 55 deltas) commits: 33 ( 0 duplicates 0 deltas) tags : 0 ( 0 duplicates 0 deltas) Total branches : 10 ( 1 loads ) marks : 1024 ( 33 unique ) atoms : 38 Memory total : 2344 KiB pools : 2110 KiB objects: 234 KiB --------------------------------------------------------------------- pack_report: getpagesize() = 4096 pack_report: core.</description>
     </item>
     

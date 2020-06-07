@@ -105,7 +105,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -311,9 +311,7 @@
 	
         <p>I run Awesome on Ubuntu 19.04 with XScreenSaver.  This post is a brief
 writeup of what I did to fix the ugly default fonts.</p>
-
 <p>Let&rsquo;s start with the <code>~/.Xdefaults</code> file:</p>
-
 <pre><code>! xft
 Xft.antialias: true
 Xft.dpi: 96
@@ -330,11 +328,9 @@ xscreensaver.Dialog.unameFont:          -*-verdana-medium-r-*-*-26-*-*-*-*-*-*-*
 xscreensaver.Dialog.buttonFont:         -*-verdana-bold-r-*-*-20-*-*-*-*-*-*-*
 xscreensaver.Dialog.dateFont:           -*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*
 xscreensaver.passwd.passwdFont:         -*-verdana-bold-r-*-*-20-*-*-*-*-*-*-*
-</code></pre>
-
-<p>If you don&rsquo;t have Verdana installed:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo apt install ttf-mscorefonts-installer</code></pre></div>
-<p>To make TrueType fonts visible to old X applications one has to jump
+</code></pre><p>If you don&rsquo;t have Verdana installed:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo apt install ttf-mscorefonts-installer
+</code></pre></div><p>To make TrueType fonts visible to old X applications one has to jump
 through a few hoops.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#0086b3">cd</span> /usr/share/fonts/truetype/msttcorefonts
 sudo mkfontscale
@@ -342,13 +338,13 @@ sudo mkfontdir
 xset +fp /usr/share/fonts/truetype/msttcorefonts/
 xset fp rehash
 xrdb -merge ~/.Xdefaults
-xscreensaver-command -restart</code></pre></div>
-<p>Test it with <code>xfontsel</code></p>
-
+xscreensaver-command -restart
+</code></pre></div><p>Test it with <code>xfontsel</code></p>
 <p>You may also want to enable a few X server settings:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#0086b3">cd</span> /etc/fonts/conf.d
 sudo ln -s ../conf.avail/10-autohint.conf .
-sudo ln -s ../conf.avail/10-sub-pixel-rgb.conf .</code></pre></div>
+sudo ln -s ../conf.avail/10-sub-pixel-rgb.conf .
+</code></pre></div>
 
         
 
@@ -436,7 +432,7 @@ sudo ln -s ../conf.avail/10-sub-pixel-rgb.conf .</code></pre></div>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

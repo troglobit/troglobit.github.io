@@ -52,7 +52,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -224,7 +224,7 @@
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on March 1, 2020
+  <i class="fas fa-calendar"></i>&nbsp;Posted on June 7, 2020
   
   
   
@@ -252,6 +252,95 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         
         <div class="posts-list">
+          
+            <article class="post-preview">
+              <a href="/2016/07/03/upgrade-x1-carbon-bios-from-linux/">
+                <h2 class="post-title">Upgrade X1 Carbon BIOS from Linux</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on July 3, 2016
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Nilsson
+    
+  
+  
+</span>
+
+
+              </p>
+              <div class="post-entry">
+                
+                  <p>This is a very brief writeup of how to upgrade the BIOS on a X1 Carbon
+(G1) from Linux.  For more information on this topic there is always the
+excellent <a href="http://www.thinkwiki.org/wiki/BIOS_Upgrade">ThinkWiki</a>.</p>
+<p>OK, this post is more about creating the bootable USB stick needed, was
+too much of a chicken to try <a href="https://www.flashrom.org/Flashrom">Flashrom</a> &hellip;</p>
+                  <a href="/2016/07/03/upgrade-x1-carbon-bios-from-linux/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="/2016/07/02/redirecting-tcp-udp-ports-for-fun-and-profit/">
+                <h2 class="post-title">Redirecting Ports For Fun and Profit</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on July 2, 2016
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Nilsson
+    
+  
+  
+</span>
+
+
+              </p>
+              <div class="post-entry">
+                
+                  <p>Recently I needed a simple TCP/UDP port redirector and stumbled upon
+<a href="https://serverfault.com/questions/252150/port-forwarding-on-linux-without-iptables/">this Stackoverflow post</a>.  As usual I wasn&rsquo;t first wanting to this
+without using <code>iptables</code>.</p>
+<p>There were several alternatives, but since my target was embedded with
+limited amount of RAM and flash I wanted something really small.  So the
+best fit turned out to be <a href="https://github.com/troglobit/redir">redir</a>, which unfortunately only could
+handle TCP connections.  This is what led me to write <a href="https://github.com/troglobit/uredir">uredir</a> to
+complement <code>redir</code>.  Eventually I ended up adoptiing <code>redir</code> as well,
+which meant giving it a bit of a facelift and to give them both the same
+look and feel.</p>
+<p>Currently they are two separate applications, which in some use-cases
+can be beneficial (small size), but I may in the future transplant the
+UDP functionality of <code>uredir</code> into <code>redir</code>.  We&rsquo;ll see, right now though
+I have several other <a href="/projects/">projects</a> to attend to :-)</p>
+                  <a href="/2016/07/02/redirecting-tcp-udp-ports-for-fun-and-profit/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
           
             <article class="post-preview">
               <a href="/2016/04/21/using-netcat-to-test-your-internet-daemon/">
@@ -324,12 +413,10 @@ has created a PID file, signalling to you how to reach it.  Usually this
 file is created as <code>/var/run/daemon.pid</code>, or <code>/run/daemon.pid</code>, and has
 the PID of <code>daemon</code> as the first and only data in the file.  This data
 may or may not have a UNIX line ending.</p>
-
 <p>Only trouble is: most UNIX daemons do not re-assert that PID file
 properly on <code>SIGHUP</code> (if they support <code>SIGHUP</code> that is).  When I send
 <code>SIGHUP</code> to a daemon I expect it to re-read its <code>/etc/daemon.conf</code> and
 resume operation, basically a quicker way than stop/start.</p>
-
 <p>Annoyingly however, most daemons do not signal us back to tell us when
 they&rsquo;re done with the <code>SIGHUP</code>.  Naturally a new movement has risen that
 says we should all instrument our daemons with D-bus &hellip; I say no.
@@ -411,16 +498,13 @@ Turns out there are a few tricks that can save your home directory from accident
 except on days like these you accidentally manage to erase <code>$HOME</code> and
 have no real backup to rely on &hellip; Maundy Thursday will forever be Black
 Thursday for me, from now on.</p>
-
 <p>Best thing your can do, after cursing at yourself constantly for a
 couple of hours, is to:</p>
-
 <ol>
 <li>Come up with a useful backup and <em>restore</em> strategy</li>
 <li>Read up on undeletion tools for Ext4</li>
 <li>Blog about it, naturally</li>
 </ol>
-
 <p>BUT FIRST &ndash; QUICK &ndash; UNMOUNT OR POWER-OFF YOUR COMPUTER &ndash; PULL OUT THE
 BATTERY &ndash; AND STEP AWAY FROM THE COMPUTER!  Must protect the partition
 from being accidentally written to &ndash; I completely fumbled this step, so
@@ -464,16 +548,13 @@ take heed young people!</p>
 reported to <a href="https://github.com/troglobit/pimd/">pimd</a>.  That number of
 issues reported is cool in itself, but this was a question about
 <a href="https://www.docker.com">Docker</a> and <code>pimd</code>.</p>
-
 <p>Up until that point I had only read about this new fad, and played
 around with it a bit <a href="http://www.westermo.com">at work</a> for use as a
 stable build environment for cross-compiling.  I had no idea people
 would want to use a Docker container as a multicast sink.  Basically I
 was baffled.</p>
-
 <p>The reporter used a Java based tool but simply couldn&rsquo;t get things to
 work properly with <code>pimd</code> running on the host:</p>
-
 <pre><code>                eth0
  MC sender ---&gt; [ Server host ]    &lt;--- router running pimd
                        |
@@ -527,7 +608,6 @@ testing, but on most systems I usually resort to <code>ping(1)</code> and
 <code>tcpdump(1)</code>, which are quite sufficient.  However, you often need to
 tell bridges (switches) to open up multicast in your general direction
 for your pings to get through, so you need to send an IGMP &ldquo;join&rdquo; first.</p>
-
 <p>Way back in 2006 I stumbled upon a neat tool called <code>mcjoin</code>, written by
 David Stevens and announced in
 <a href="https://lkml.org/lkml/2004/8/5/143">this posting to LKML</a>.  I started
@@ -615,81 +695,6 @@ globalkeys = awful.util.table.join(globalkeys, awful.key({}, &quot;XF86AudioRais
 
             </article>
           
-            <article class="post-preview">
-              <a href="/2015/11/07/stray-puppies/">
-                <h2 class="post-title">Stray Puppies</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on November 7, 2015
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Nilsson
-    
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                
-                  Sometimes I just cannot help myself. It&rsquo;s like finding a stray puppy, or abandonded kitten &hellip;
-&hellip; I recently decided to adopt mini-snmpd since the original upstream site had passed into the great beyond. At this point in my life almost everyone I know can tell you I have no warm fuzzy feels for SNMP, at all. So why did I even consider this to begin with?!
-Well, I have to confess that there are certain things that SNMP can be really useful for.
-                  <a href="/2015/11/07/stray-puppies/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2015/09/09/summer-of-code-2015/">
-                <h2 class="post-title">Summer of Code 2015</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on September 9, 2015
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Nilsson
-    
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                
-                  Summer is now slowly fading away, and what a summer it has been here in Sweden! For someone who isn&rsquo;t a fan of the summer heat it has been an awesome time for brain work, and in my case work on my open source projects! :-)
-Due to my not really taking much vacation previous years I had saved up for ten weeks (10) this year! It was really worth it, and for the first time in many years I actually feel rested.
-                  <a href="/2015/09/09/summer-of-code-2015/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
         </div>
         
           <ul class="pager main-pager">
@@ -766,7 +771,7 @@ Due to my not really taking much vacation previous years I had saved up for ten 
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

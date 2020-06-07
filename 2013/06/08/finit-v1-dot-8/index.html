@@ -110,7 +110,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -312,13 +312,11 @@
 	
         <p>It&rsquo;s been a long time coming, but here it finally is, <a href="/finit.html">Finit</a>
 <a href="ftp://ftp.troglobit.com/finit/finit-1.8.tar.xz">v1.8</a>!  The goodies we&rsquo;ve been waiting for are:</p>
-
 <ul>
 <li>Runlevels</li>
 <li>Multiple TTYs</li>
 <li>One-shot tasks</li>
 </ul>
-
 <p>Let&rsquo;s start off with tasks.  Tasks are one-shot commands, with a
 syntax like service directives, but are not monitored and respawned
 like services.  Tasks are started in parallel, just like services.
@@ -327,33 +325,27 @@ to be executed in sequence, and for that purpose there also exists a
 run command.  Run commands are executed in the order listed in
 finit.conf and will run until completion before continuing with the
 next task or service.</p>
-
 <p>Multiple TTYs is another neat feature.  Similar to services many TTYs
 can be started and automatically be respawned when a user logs out.
 For embedded targets wanting to save CPU cycles usually one TTY is the
 system console.  Use the console command to point to a defined TTY to
 activate &ldquo;Press any key to activate this console.&rdquo;</p>
-
 <p>Finally, runlevels!  This is the key feature in this release of Finit.
 Adding the flexibility from SysV init, without the complexity.  This
 is one of the key points of Finit &ndash; it should be simple!</p>
-
 <pre><code>finit.conf:
     service [2345] /usr/sbin/sshd -D -- OpenSSH Daemon
 </code></pre>
-
 <p>This command tells Finit that the OpenSSH daemon should only run in
 runlevel 2-5.  Finit will also respawn sshd if it should crash, just
 like before.</p>
-
 <p>Runlevels are needed in use-cases in many embedded devices.  E.g.,
 bootstrap, upgrading, and regular operation.  It is completely up to
 the system administrator to setup the runlevels of the product or
-installation.  At boot runlevel &rsquo;S&rsquo; runs, well before any networking
+installation.  At boot runlevel &lsquo;S&rsquo; runs, well before any networking
 is up.  This is used to to one-time probing and setup of the
 system. When done the runlevel defined in finit.conf, or the default
 2, is started.</p>
-
 <p>See the <a href="https://github.com/troglobit/finit/blob/master/README.md">README</a> for more information, or the code for the full
 details.</p>
 
@@ -447,7 +439,7 @@ details.</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

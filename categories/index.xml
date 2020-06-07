@@ -8,10 +8,28 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Sat, 22 Feb 2020 12:28:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 07 Jun 2020 12:25:52 +0200</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux</title>
+      <link>/categories/Linux/</link>
+      <pubDate>Sun, 07 Jun 2020 12:25:52 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/Linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sudo</title>
+      <link>/categories/sudo/</link>
+      <pubDate>Sun, 07 Jun 2020 12:25:52 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/sudo/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>apt</title>
@@ -24,19 +42,19 @@
     
     <item>
       <title>debian</title>
-      <link></link>
+      <link>/categories/debian/</link>
       <pubDate>Sat, 22 Feb 2020 12:28:00 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid></guid>
+      <guid>/categories/debian/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ubuntu</title>
-      <link></link>
+      <link>/categories/ubuntu/</link>
       <pubDate>Sat, 22 Feb 2020 12:28:00 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid></guid>
+      <guid>/categories/ubuntu/</guid>
       <description></description>
     </item>
     
@@ -51,10 +69,10 @@
     
     <item>
       <title>unix</title>
-      <link></link>
+      <link>/categories/unix/</link>
       <pubDate>Sat, 22 Feb 2020 09:45:00 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid></guid>
+      <guid>/categories/unix/</guid>
       <description></description>
     </item>
     
@@ -104,6 +122,15 @@
     </item>
     
     <item>
+      <title>PIM</title>
+      <link>/categories/PIM/</link>
+      <pubDate>Wed, 27 Mar 2019 15:54:00 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/PIM/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>pimd</title>
       <link>/categories/pimd/</link>
       <pubDate>Wed, 27 Mar 2019 15:54:00 +0200</pubDate>
@@ -123,10 +150,10 @@
     
     <item>
       <title>howto</title>
-      <link></link>
+      <link>/categories/howto/</link>
       <pubDate>Sat, 05 May 2018 13:57:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid></guid>
+      <guid>/categories/howto/</guid>
       <description></description>
     </item>
     
@@ -136,24 +163,6 @@
       <pubDate>Sat, 05 May 2018 13:57:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/snmp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>PIM</title>
-      <link>/categories/PIM/</link>
-      <pubDate>Tue, 23 Jan 2018 20:39:36 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/categories/PIM/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>UNIX</title>
-      <link>/categories/UNIX/</link>
-      <pubDate>Tue, 23 Jan 2018 20:39:36 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/categories/UNIX/</guid>
       <description></description>
     </item>
     
@@ -185,11 +194,11 @@
     </item>
     
     <item>
-      <title>merecat</title>
-      <link>/categories/merecat/</link>
+      <title>Merecat</title>
+      <link>/categories/Merecat/</link>
       <pubDate>Sun, 17 Sep 2017 10:45:37 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/categories/merecat/</guid>
+      <guid>/categories/Merecat/</guid>
       <description></description>
     </item>
     
@@ -230,15 +239,6 @@
     </item>
     
     <item>
-      <title>Merecat</title>
-      <link></link>
-      <pubDate>Sun, 12 Feb 2017 00:07:44 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid></guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>OpenSSL</title>
       <link>/categories/OpenSSL/</link>
       <pubDate>Sun, 12 Feb 2017 00:07:44 +0000</pubDate>
@@ -257,20 +257,11 @@
     </item>
     
     <item>
-      <title>embedded</title>
-      <link>/categories/embedded/</link>
+      <title>Embedded</title>
+      <link>/categories/Embedded/</link>
       <pubDate>Thu, 02 Feb 2017 18:52:18 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/categories/embedded/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>/categories/linux/</link>
-      <pubDate>Thu, 02 Feb 2017 18:52:18 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/categories/linux/</guid>
+      <guid>/categories/Embedded/</guid>
       <description></description>
     </item>
     
@@ -311,6 +302,15 @@
     </item>
     
     <item>
+      <title>c</title>
+      <link>/categories/c/</link>
+      <pubDate>Sun, 11 Dec 2016 20:26:12 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>capabilities</title>
       <link>/categories/capabilities/</link>
       <pubDate>Sun, 11 Dec 2016 20:26:12 +0000</pubDate>
@@ -329,15 +329,6 @@
     </item>
     
     <item>
-      <title>sudo</title>
-      <link>/categories/sudo/</link>
-      <pubDate>Sun, 11 Dec 2016 20:26:12 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/categories/sudo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>icmp</title>
       <link>/categories/icmp/</link>
       <pubDate>Sat, 19 Nov 2016 23:37:20 +0000</pubDate>
@@ -347,11 +338,11 @@
     </item>
     
     <item>
-      <title>projects</title>
-      <link>/categories/projects/</link>
+      <title>Projects</title>
+      <link>/categories/Projects/</link>
       <pubDate>Sat, 19 Nov 2016 23:37:20 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/categories/projects/</guid>
+      <guid>/categories/Projects/</guid>
       <description></description>
     </item>
     
@@ -365,15 +356,6 @@
     </item>
     
     <item>
-      <title>C</title>
-      <link>/categories/C/</link>
-      <pubDate>Thu, 27 Oct 2016 22:22:44 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/categories/C/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>toolchain</title>
       <link>/categories/toolchain/</link>
       <pubDate>Thu, 27 Oct 2016 22:22:44 +0000</pubDate>
@@ -383,20 +365,20 @@
     </item>
     
     <item>
-      <title>finit</title>
-      <link>/categories/finit/</link>
+      <title>Finit</title>
+      <link>/categories/Finit/</link>
       <pubDate>Wed, 21 Sep 2016 19:08:37 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/categories/finit/</guid>
+      <guid>/categories/Finit/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Linux</title>
-      <link></link>
+      <title>network</title>
+      <link>/categories/network/</link>
       <pubDate>Fri, 02 Sep 2016 23:30:00 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid></guid>
+      <guid>/categories/network/</guid>
       <description></description>
     </item>
     
@@ -554,11 +536,11 @@
     </item>
     
     <item>
-      <title>personal</title>
-      <link>/categories/personal/</link>
+      <title>Personal</title>
+      <link>/categories/Personal/</link>
       <pubDate>Sat, 07 Nov 2015 02:32:12 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/categories/personal/</guid>
+      <guid>/categories/Personal/</guid>
       <description></description>
     </item>
     
@@ -573,10 +555,10 @@
     
     <item>
       <title>freebsd</title>
-      <link></link>
+      <link>/categories/freebsd/</link>
       <pubDate>Sun, 27 Sep 2015 18:45:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid></guid>
+      <guid>/categories/freebsd/</guid>
       <description></description>
     </item>
     
@@ -591,28 +573,19 @@
     
     <item>
       <title>netbsd</title>
-      <link></link>
+      <link>/categories/netbsd/</link>
       <pubDate>Thu, 30 Jul 2015 11:13:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid></guid>
+      <guid>/categories/netbsd/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Git</title>
-      <link>/categories/Git/</link>
+      <title>git</title>
+      <link>/categories/git/</link>
       <pubDate>Thu, 02 Jul 2015 17:11:55 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/categories/Git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>HowTo</title>
-      <link>/categories/HowTo/</link>
-      <pubDate>Thu, 02 Jul 2015 17:11:55 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/categories/HowTo/</guid>
+      <guid>/categories/git/</guid>
       <description></description>
     </item>
     
@@ -644,38 +617,11 @@
     </item>
     
     <item>
-      <title>Debian</title>
-      <link>/categories/Debian/</link>
-      <pubDate>Tue, 30 Jun 2015 23:13:48 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/categories/Debian/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>git</title>
-      <link></link>
-      <pubDate>Tue, 30 Jun 2015 23:13:48 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid></guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>gitweb</title>
       <link>/categories/gitweb/</link>
       <pubDate>Tue, 30 Jun 2015 23:13:48 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/gitweb/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Finit</title>
-      <link></link>
-      <pubDate>Fri, 06 Mar 2015 22:34:45 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid></guid>
       <description></description>
     </item>
     
@@ -721,15 +667,6 @@
       <pubDate>Sun, 21 Dec 2014 19:42:17 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/tftp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>FreeBSD</title>
-      <link>/categories/FreeBSD/</link>
-      <pubDate>Tue, 23 Sep 2014 01:55:19 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/categories/FreeBSD/</guid>
       <description></description>
     </item>
     
@@ -788,15 +725,6 @@
     </item>
     
     <item>
-      <title>Projects</title>
-      <link></link>
-      <pubDate>Tue, 06 Aug 2013 00:00:00 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid></guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Threads vs Events</title>
       <link>/categories/Threads-vs-Events/</link>
       <pubDate>Tue, 06 Aug 2013 00:00:00 +0000</pubDate>
@@ -842,24 +770,6 @@
     </item>
     
     <item>
-      <title>Ubuntu</title>
-      <link>/categories/Ubuntu/</link>
-      <pubDate>Fri, 31 Dec 2010 20:26:37 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/categories/Ubuntu/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>NetBSD</title>
-      <link>/categories/NetBSD/</link>
-      <pubDate>Sun, 29 Aug 2010 20:44:34 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/categories/NetBSD/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>virtualization</title>
       <link>/categories/virtualization/</link>
       <pubDate>Sun, 29 Aug 2010 20:44:34 +0000</pubDate>
@@ -887,11 +797,11 @@
     </item>
     
     <item>
-      <title>Bzr</title>
-      <link>/categories/Bzr/</link>
+      <title>bzr</title>
+      <link>/categories/bzr/</link>
       <pubDate>Tue, 13 Jul 2010 01:56:11 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/categories/Bzr/</guid>
+      <guid>/categories/bzr/</guid>
       <description></description>
     </item>
     
@@ -923,36 +833,9 @@
     </item>
     
     <item>
-      <title>Personal</title>
-      <link></link>
-      <pubDate>Sun, 14 Jun 2009 21:04:34 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid></guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bazaar</title>
-      <link></link>
-      <pubDate>Sat, 13 Jun 2009 00:36:07 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid></guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>bzr</title>
-      <link></link>
-      <pubDate>Sat, 13 Jun 2009 00:36:07 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid></guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>bazaar</title>
       <link>/categories/bazaar/</link>
-      <pubDate>Fri, 12 Jun 2009 19:50:27 +0000</pubDate>
+      <pubDate>Sat, 13 Jun 2009 00:36:07 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/bazaar/</guid>
       <description></description>
@@ -995,15 +878,6 @@
     </item>
     
     <item>
-      <title>c</title>
-      <link></link>
-      <pubDate>Fri, 27 Mar 2009 00:37:42 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid></guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>reminder</title>
       <link>/categories/reminder/</link>
       <pubDate>Sat, 14 Feb 2009 21:13:41 +0000</pubDate>
@@ -1013,29 +887,11 @@
     </item>
     
     <item>
-      <title>network</title>
-      <link>/categories/network/</link>
-      <pubDate>Tue, 10 Feb 2009 21:56:42 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/categories/network/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Vim</title>
       <link>/categories/Vim/</link>
       <pubDate>Sun, 09 Nov 2008 00:39:27 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/Vim/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Embedded</title>
-      <link></link>
-      <pubDate>Wed, 20 Aug 2008 20:14:42 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid></guid>
       <description></description>
     </item>
     

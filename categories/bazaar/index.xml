@@ -8,10 +8,22 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Fri, 12 Jun 2009 19:50:27 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jun 2009 00:36:07 +0000</lastBuildDate>
     
 	<atom:link href="/categories/bazaar/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HowTo use Git for Collaborative Development</title>
+      <link>/2009/06/13/howto-use-git-for-collaborative-development/</link>
+      <pubDate>Sat, 13 Jun 2009 00:36:07 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2009/06/13/howto-use-git-for-collaborative-development/</guid>
+      <description>This is mainly some notes for myself so I don&amp;rsquo;t forget. Having worked with GNU Bazaar before much of Git is still alien to me.
+This HowTo is divided into two parts:
+ what happens on your laptop, and what you must do on a remote server where you publish your changes  So, let&amp;rsquo;s start stimple:
+laptop&amp;gt; mkdir projectX; cd projectX laptop&amp;gt; git init laptop&amp;gt; emacs file1.txt laptop&amp;gt; git add file1.</description>
+    </item>
     
     <item>
       <title>More about Bzrweb and some about Git</title>

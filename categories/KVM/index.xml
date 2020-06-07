@@ -23,9 +23,7 @@
 setting up ALL THE THINGS!  I just managed to set up live migration of
 the KVM virtual machines I use for testing my &lt;a href=&#34;https://en.wikipedia.org/wiki/Free_and_open-source_software&#34;&gt;FLOSS&lt;/a&gt; projects.  Here
 is a short writeup of that, just as a reminder for myself.&lt;/p&gt;
-
 &lt;h2 id=&#34;checklist&#34;&gt;Checklist&lt;/h2&gt;
-
 &lt;ol&gt;
 &lt;li&gt;Make sure the libvirt versions are the same.  I tried setting up
 migration between CentOS 7.2 and and Ubuntu LTS 16.04 which turned
@@ -38,7 +36,6 @@ couldn&amp;rsquo;t set up root access (defaulted to nobody).&lt;/li&gt;
 &lt;li&gt;Set up VM processor model=default&lt;/li&gt;
 &lt;li&gt;Profit&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;p&gt;Good Luck! :)&lt;/p&gt;</description>
     </item>
     
@@ -49,7 +46,7 @@ couldn&amp;rsquo;t set up root access (defaulted to nobody).&lt;/li&gt;
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2010/08/29/finally/</guid>
       <description>Compared to OpenBSD and FreeBSD the NetBSD install was hard, really hard. It wasn&amp;rsquo;t until I stumbled across this that I managed to convince myself to try it again.
-The trick seems to be to ignore as much as you can from other Internet tips. NetBSD runs fine in KVM, so if someone says you need to run it in Qemu mode &amp;mdash; don&amp;rsquo;t believe the hype. OK, in virt-manager there is no preset defaults for NetBSD, so I went with a generic OS and tried starting the install from there.</description>
+The trick seems to be to ignore as much as you can from other Internet tips. NetBSD runs fine in KVM, so if someone says you need to run it in Qemu mode — don&amp;rsquo;t believe the hype. OK, in virt-manager there is no preset defaults for NetBSD, so I went with a generic OS and tried starting the install from there.</description>
     </item>
     
   </channel>

@@ -110,7 +110,7 @@ Finit.">
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -312,30 +312,21 @@ Finit.">
 	
         <p>How to install LXDM + XFCE4 in Alpine Linux 3.6 when testing with
 <a href="https://github.com/troglobit/finit/tree/master/contrib/alpine">Finit</a>.</p>
-
 <p>The following sets up everything needed to run in KVM or virt-manager.
 The QXL driver is probably not needed for other environments, and there
 are other icon themes than Tango.</p>
-
 <p>The evdev driver requires the evdev kernel module, and you may also need
 to load the mousedev kernel module.</p>
-
 <pre><code>setup-alpine
 setup-xorg-base
 apk add xfce4 lxdm
 apk add xf86-video-qxl
 apk add xf86-input-keyboard xf86-input-mouse xf86-input-evdev
 apk add tango-icon-theme
-</code></pre>
-
-<p>Now, configure X, it may be necessary when running in KVM or virt-manager:</p>
-
+</code></pre><p>Now, configure X, it may be necessary when running in KVM or virt-manager:</p>
 <pre><code>X -configure
-</code></pre>
-
-<p>Edit the file <code>xorg.conf.new</code> as needed, possibly you need to disable X
+</code></pre><p>Edit the file <code>xorg.conf.new</code> as needed, possibly you need to disable X
 automatic features for adding and enabling devices.</p>
-
 <pre><code>Section &quot;ServerLayout&quot;
 	Identifier     &quot;X.org Configured&quot;
 	Screen      0  &quot;Screen0&quot; 0 0
@@ -344,38 +335,23 @@ automatic features for adding and enabling devices.</p>
 	Option &quot;AutoAddDevices&quot;    &quot;false&quot;          # &lt;-- 
 	Option &quot;AutoEnableDevices&quot; &quot;false&quot;          # &lt;--
 EndSection
-</code></pre>
-
-<p>There seems to be a bug in the Qemu QXL driver, so make sure to also set
+</code></pre><p>There seems to be a bug in the Qemu QXL driver, so make sure to also set
 the following:</p>
-
 <pre><code>Section &quot;Device&quot;
 	Option      &quot;ENABLE_SURFACES&quot;	&quot;false&quot;     # &lt;--
 	Identifier  &quot;Card0&quot;
 	Driver      &quot;qxl&quot;
 	BusID       &quot;PCI:0:2:0&quot;
 EndSection
-</code></pre>
-
-<p>Then copy it to its place:</p>
-
+</code></pre><p>Then copy it to its place:</p>
 <pre><code>cp xorg.conf.new /etc/X11/xorg.conf
-</code></pre>
-
-<p>Now you should be able to use <code>startx</code> to test your installation.  If
+</code></pre><p>Now you should be able to use <code>startx</code> to test your installation.  If
 you want LXDM to work properly you need to modify <code>/etc/lxdm/lxdm.conf</code>.
 Find a commented row that says <code>sessions</code>, add a new one that is:</p>
-
 <pre><code>session /usr/bin/startxfce4
-</code></pre>
-
-<p>For more help with LXDM, see <a href="https://wiki.archlinux.org/index.php/LXDM">https://wiki.archlinux.org/index.php/LXDM</a></p>
-
-<!--
-  -- Local Variables:
-  -- mode: markdown
-  -- End:
-  -->
+</code></pre><p>For more help with LXDM, see <a href="https://wiki.archlinux.org/index.php/LXDM">https://wiki.archlinux.org/index.php/LXDM</a></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 
         
 
@@ -466,7 +442,7 @@ Find a commented row that says <code>sessions</code>, add a new one that is:</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

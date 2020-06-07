@@ -15,7 +15,6 @@ as a shift-reduce problem with Bison and ended up a ping-pong of useful
 UNIX API:s.  We concluded that despite having worked professionally with
 UNIX for over two decades, it is still very satisfying finding gems like
 these.
-
 Most people are completely unaware they exist and end up rolling their
 own (buggy) implementations.  For instance, string manipulation and
 various forms of linked lists.  Which is why I many years ago extracted
@@ -26,7 +25,6 @@ up-to-date queue.h with the _SAFE iterators, and more.  Some people
 like libbsd for this, but I&rsquo;ve
 found many of the ports incomplete and unsafe and prefer to stay closer
 to the upstream *BSD versions.
-
 Update: This post was originally written Nov 14, 2015.  It was a
 Saturday and I remember being extremely inspired when I wrote it.  I&rsquo;ve
 continued adding to it over the years, and still do.  So, as of Jul 2,
@@ -36,7 +34,6 @@ as a shift-reduce problem with Bison and ended up a ping-pong of useful
 UNIX API:s.  We concluded that despite having worked professionally with
 UNIX for over two decades, it is still very satisfying finding gems like
 these.
-
 Most people are completely unaware they exist and end up rolling their
 own (buggy) implementations.  For instance, string manipulation and
 various forms of linked lists.  Which is why I many years ago extracted
@@ -47,7 +44,6 @@ up-to-date queue.h with the _SAFE iterators, and more.  Some people
 like libbsd for this, but I&rsquo;ve
 found many of the ports incomplete and unsafe and prefer to stay closer
 to the upstream *BSD versions.
-
 Update: This post was originally written Nov 14, 2015.  It was a
 Saturday and I remember being extremely inspired when I wrote it.  I&rsquo;ve
 continued adding to it over the years, and still do.  So, as of Jul 2,
@@ -130,7 +126,6 @@ as a shift-reduce problem with Bison and ended up a ping-pong of useful
 UNIX API:s.  We concluded that despite having worked professionally with
 UNIX for over two decades, it is still very satisfying finding gems like
 these.
-
 Most people are completely unaware they exist and end up rolling their
 own (buggy) implementations.  For instance, string manipulation and
 various forms of linked lists.  Which is why I many years ago extracted
@@ -141,7 +136,6 @@ up-to-date queue.h with the _SAFE iterators, and more.  Some people
 like libbsd for this, but I&rsquo;ve
 found many of the ports incomplete and unsafe and prefer to stay closer
 to the upstream *BSD versions.
-
 Update: This post was originally written Nov 14, 2015.  It was a
 Saturday and I remember being extremely inspired when I wrote it.  I&rsquo;ve
 continued adding to it over the years, and still do.  So, as of Jul 2,
@@ -169,7 +163,7 @@ UNIX API:s.  We concluded that despite having worked …">
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -374,7 +368,6 @@ as a shift-reduce problem with Bison and ended up a ping-pong of useful
 UNIX API:s.  We concluded that despite having worked professionally with
 UNIX for over two decades, it is still very satisfying finding gems like
 these.</p>
-
 <p>Most people are completely unaware they exist and end up rolling their
 own (buggy) implementations.  For instance, string manipulation and
 various forms of linked lists.  Which is why I many years ago extracted
@@ -385,31 +378,23 @@ up-to-date <code>queue.h</code> with the <code>_SAFE</code> iterators, and more.
 like <a href="https://libbsd.freedesktop.org/wiki/">libbsd</a> for this, but I&rsquo;ve
 found many of the ports incomplete and unsafe and prefer to stay closer
 to the upstream *BSD versions.</p>
-
 <p><strong>Update:</strong> This post was originally written Nov 14, 2015.  It was a
 Saturday and I remember being extremely inspired when I wrote it.  I&rsquo;ve
 continued adding to it over the years, and still do.  So, as of Jul 2,
 2017 I&rsquo;m bumping the modification date each time I add something new :-)</p>
-
-<h2 id="sysv-search-h">SysV <code>search.h</code></h2>
-
+<h2 id="sysv-searchh">SysV <code>search.h</code></h2>
 <p>Mangage a <a href="http://pubs.opengroup.org/onlinepubs/009695399/functions/insque.html">simple queue</a>:</p>
-
 <ul>
 <li><a href="http://man7.org/linux/man-pages/man3/insque.3.html"><code>insque()</code></a>,</li>
 <li><a href="http://man7.org/linux/man-pages/man3/remque.3.html"><code>remque()</code></a>,</li>
 </ul>
-
 <p>Manage <a href="http://pubs.opengroup.org/onlinepubs/009695399/functions/hcreate.html">hash search table</a>:</p>
-
 <ul>
 <li><a href="http://man7.org/linux/man-pages/man3/hsearch.3.html"><code>hsearch()</code></a></li>
 <li><a href="http://man7.org/linux/man-pages/man3/hcreate.3.html"><code>hcreate()</code></a></li>
 <li><a href="http://man7.org/linux/man-pages/man3/hdestroy.3.html"><code>hdestroy()</code></a></li>
 </ul>
-
 <p>Manage a <a href="http://pubs.opengroup.org/onlinepubs/009695399/functions/tsearch.html">binary search tree</a>:</p>
-
 <ul>
 <li><a href="http://man7.org/linux/man-pages/man3/tsearch.3.html"><code>tsearch()</code></a>,</li>
 <li><a href="http://man7.org/linux/man-pages/man3/tfind.3.html"><code>tfind()</code></a>,</li>
@@ -417,23 +402,17 @@ continued adding to it over the years, and still do.  So, as of Jul 2,
 <li><a href="http://man7.org/linux/man-pages/man3/twalk.3.html"><code>twalk()</code></a></li>
 <li><a href="http://man7.org/linux/man-pages/man3/tdestroy.3.html"><code>tdestroy()</code></a>,</li>
 </ul>
-
 <p><a href="http://pubs.opengroup.org/onlinepubs/009695399/functions/lsearch.html">Linear search</a> and update:</p>
-
 <ul>
 <li><a href="http://man7.org/linux/man-pages/man3/lfind.3.html"><code>lfind()</code></a></li>
 <li><a href="http://man7.org/linux/man-pages/man3/lsearch.3.html"><code>lsearch()</code></a></li>
 </ul>
-
-<h2 id="bsd-sys-queue-h">BSD <code>sys/queue.h</code></h2>
-
+<h2 id="bsd-sysqueueh">BSD <code>sys/queue.h</code></h2>
 <p><a href="https://www.freebsd.org/cgi/man.cgi?query=queue&amp;sektion=3">This header</a> has lots of macros for handling various forms of
 linked lists.  The version in GLIBC is a bit behind the BSD&rsquo;s, because
 the latter also have <code>_safe()</code> versions of some macros to aid the user
 in some tricky cases, e.g. when removing entries while iterating.</p>
-
 <p>Several types of lists are supported:</p>
-
 <ul>
 <li>LIST: Doubly linked list</li>
 <li>SLIST: Single linked list</li>
@@ -441,9 +420,7 @@ in some tricky cases, e.g. when removing entries while iterating.</p>
 <li>SIMPLEQ: Simple queue</li>
 <li>TAILQ: Tail queue</li>
 </ul>
-
 <p>Here&rsquo;s a few of them, this example for doubly linked lists:</p>
-
 <ul>
 <li><code>LIST_INIT()</code></li>
 <li><code>LIST_EMPTY()</code></li>
@@ -455,59 +432,42 @@ in some tricky cases, e.g. when removing entries while iterating.</p>
 <li><code>LIST_INSERT_BEFORE()</code></li>
 <li><code>LIST_INSERT_HEAD()</code></li>
 </ul>
-
 <p>I wrote a <a href="https://github.com/troglobit/toolbox/blob/master/tailq-demo.c">demo of the TAILQ API</a> a couple of years ago.</p>
-
-<h2 id="other-noteworthy-api-s">Other Noteworthy API&rsquo;s</h2>
-
+<h2 id="other-noteworthy-apis">Other Noteworthy API&rsquo;s</h2>
 <p>Other (standard/POSIX) functions worthy of mentioning here are:</p>
-
-<h3 id="stdio-h"><code>stdio.h</code></h3>
-
+<h3 id="stdioh"><code>stdio.h</code></h3>
 <ul>
 <li><a href="http://man7.org/linux/man-pages/man3/fmemopen.3.html"><code>fmemopen()</code></a></li>
 <li><a href="http://man7.org/linux/man-pages/man3/getdelim.3.html"><code>getdelim()</code></a></li>
 <li><a href="http://man7.org/linux/man-pages/man3/getline.3.html"><code>getline()</code></a></li>
 </ul>
-
-<h3 id="stdlib-h"><code>stdlib.h</code></h3>
-
+<h3 id="stdlibh"><code>stdlib.h</code></h3>
 <ul>
 <li><a href="http://man7.org/linux/man-pages/man3/atexit.3.html"><code>atexit()</code></a></li>
 <li><a href="http://man7.org/linux/man-pages/man3/bsearch.3.html"><code>bsearch()</code></a></li>
 <li><a href="http://man7.org/linux/man-pages/man3/realpath.3.html"><code>realpath()</code></a></li>
 <li><a href="http://man7.org/linux/man-pages/man3/qsort.3.html"><code>qsort()</code></a></li>
 </ul>
-
-<h3 id="glob-h"><code>glob.h</code></h3>
-
+<h3 id="globh"><code>glob.h</code></h3>
 <ul>
 <li><a href="http://man7.org/linux/man-pages/man3/glob.3.html"><code>glob()</code></a></li>
 </ul>
-
-<h3 id="fnmatch-h"><code>fnmatch.h</code></h3>
-
+<h3 id="fnmatchh"><code>fnmatch.h</code></h3>
 <ul>
 <li><a href="http://man7.org/linux/man-pages/man3/fnmatch.3.html"><code>fnmatch()</code></a></li>
 </ul>
-
-<h3 id="fts-h"><code>fts.h</code></h3>
-
+<h3 id="ftsh"><code>fts.h</code></h3>
 <ul>
 <li><a href="http://man7.org/linux/man-pages/man3/fts_open.3.html"><code>fts_open()</code></a></li>
 <li><a href="http://man7.org/linux/man-pages/man3/fts_read.3.html"><code>fts_read()</code></a></li>
 <li><a href="http://man7.org/linux/man-pages/man3/fts_close.3.html"><code>fts_close()</code></a></li>
 </ul>
-
-<h3 id="ftw-h"><code>ftw.h</code></h3>
-
+<h3 id="ftwh"><code>ftw.h</code></h3>
 <ul>
 <li><a href="http://man7.org/linux/man-pages/man3/ftw.3.html"><code>ftw()</code></a></li>
 <li><a href="http://man7.org/linux/man-pages/man3/nftw.3.html"><code>nftw()</code></a></li>
 </ul>
-
-<h3 id="unistd-h"><code>unistd.h</code></h3>
-
+<h3 id="unistdh"><code>unistd.h</code></h3>
 <ul>
 <li><a href="http://man7.org/linux/man-pages/man2/access.2.html"><code>access()</code></a></li>
 <li><a href="http://man7.org/linux/man-pages/man2/alarm.2.html"><code>alarm()</code></a>,
@@ -517,15 +477,12 @@ in some tricky cases, e.g. when removing entries while iterating.</p>
 <li><a href="http://man7.org/linux/man-pages/man2/pipe.2.html"><code>pipe()</code></a></li>
 <li><a href="http://man7.org/linux/man-pages/man3/profil.3.html"><code>profil()</code></a></li>
 </ul>
-
-<h3 id="wordexp-h"><code>wordexp.h</code></h3>
-
+<h3 id="wordexph"><code>wordexp.h</code></h3>
 <ul>
 <li><a href="http://man7.org/linux/man-pages/man3/wordexp.3.html"><code>wordexp()</code></a></li>
 </ul>
-
 <p><strong>Note:</strong> API&rsquo;s specific to GNU or BSD are not included, but there are
-  <em>many</em> more useful functions on your specific OS, in case you do not
+<em>many</em> more useful functions on your specific OS, in case you do not
 need to write code that is portable across different UNIX platforms.
 Examples can be <code>unshare()</code> and <code>clone()</code> on Linux and <code>pledge()</code> on
 OpenBSD, all highly useful but also very specific.</p>
@@ -619,7 +576,7 @@ OpenBSD, all highly useful but also very specific.</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

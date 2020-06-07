@@ -23,16 +23,13 @@
 except on days like these you accidentally manage to erase &lt;code&gt;$HOME&lt;/code&gt; and
 have no real backup to rely on &amp;hellip; Maundy Thursday will forever be Black
 Thursday for me, from now on.&lt;/p&gt;
-
 &lt;p&gt;Best thing your can do, after cursing at yourself constantly for a
 couple of hours, is to:&lt;/p&gt;
-
 &lt;ol&gt;
 &lt;li&gt;Come up with a useful backup and &lt;em&gt;restore&lt;/em&gt; strategy&lt;/li&gt;
 &lt;li&gt;Read up on undeletion tools for Ext4&lt;/li&gt;
 &lt;li&gt;Blog about it, naturally&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;p&gt;BUT FIRST &amp;ndash; QUICK &amp;ndash; UNMOUNT OR POWER-OFF YOUR COMPUTER &amp;ndash; PULL OUT THE
 BATTERY &amp;ndash; AND STEP AWAY FROM THE COMPUTER!  Must protect the partition
 from being accidentally written to &amp;ndash; I completely fumbled this step, so
@@ -47,7 +44,6 @@ take heed young people!&lt;/p&gt;</description>
       <guid>/2015/01/02/blog-restoration-project-now-also-on-github-pages/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve had this long-standing issue with backups.  It&amp;rsquo;s deadly boring to
 set up and maintain, so I don&amp;rsquo;t do any.  Until today!&lt;/p&gt;
-
 &lt;p&gt;Today I moved the sources for my &lt;a href=&#34;http://troglobit.com&#34;&gt;Octopress blag&lt;/a&gt;
 to GitHub, which also prompted me to set up
 &lt;a href=&#34;http://troglobit.github.io&#34;&gt;a mirror&lt;/a&gt; on

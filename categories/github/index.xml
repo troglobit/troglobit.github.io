@@ -21,7 +21,6 @@
       <guid>/2015/01/02/blog-restoration-project-now-also-on-github-pages/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve had this long-standing issue with backups.  It&amp;rsquo;s deadly boring to
 set up and maintain, so I don&amp;rsquo;t do any.  Until today!&lt;/p&gt;
-
 &lt;p&gt;Today I moved the sources for my &lt;a href=&#34;http://troglobit.com&#34;&gt;Octopress blag&lt;/a&gt;
 to GitHub, which also prompted me to set up
 &lt;a href=&#34;http://troglobit.github.io&#34;&gt;a mirror&lt;/a&gt; on

@@ -22,11 +22,9 @@
       <description>&lt;p&gt;I still get asked this, from time to time.  Maybe it&amp;rsquo;s because I only
 use event loops, maybe it&amp;rsquo;s because I&amp;rsquo;ve written &lt;a href=&#34;https://github.com/troglobit/libuev&#34;&gt;libuEv&lt;/a&gt;, or maybe
 people still don&amp;rsquo;t understand:&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;Why an event loop, why not use threads?&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;So here&amp;rsquo;s my response, once more.&lt;/p&gt;</description>
     </item>
     

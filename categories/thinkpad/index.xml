@@ -22,7 +22,6 @@
       <description>&lt;p&gt;This is a very brief writeup of how to upgrade the BIOS on a X1 Carbon
 (G1) from Linux.  For more information on this topic there is always the
 excellent &lt;a href=&#34;http://www.thinkwiki.org/wiki/BIOS_Upgrade&#34;&gt;ThinkWiki&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;OK, this post is more about creating the bootable USB stick needed, was
 too much of a chicken to try &lt;a href=&#34;https://www.flashrom.org/Flashrom&#34;&gt;Flashrom&lt;/a&gt; &amp;hellip;&lt;/p&gt;</description>
     </item>

@@ -22,18 +22,16 @@
       <description>&lt;p&gt;Years ago while looking for a fast &lt;a href=&#34;https://en.wikipedia.org/wiki/Init&#34;&gt;init&lt;/a&gt; replacement for &lt;a href=&#34;http://westermo.com/&#34;&gt;work&lt;/a&gt;,
 I found &lt;a href=&#34;http://helllabs.org/finit/&#34;&gt;Finit&lt;/a&gt;.  Originally written by &lt;a href=&#34;https://github.com/cmatsuoka&#34;&gt;Claudio Matsuoka&lt;/a&gt; to act
 as a drop-in replacement for the &lt;a href=&#34;https://en.wikipedia.org/wiki/Asus_Eee_PC&#34;&gt;Asus EeePC&lt;/a&gt; &lt;a href=&#34;http://wiki.eeeuser.com/boot_process:the_boot_process&#34;&gt;fastinit&lt;/a&gt;, &lt;em&gt;&amp;ldquo;gaps
-filled with frog DNA &amp;hellip;&amp;ldquo;&lt;/em&gt;&lt;/p&gt;
-
+filled with frog DNA …&amp;quot;&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;Until I found Finit I had always been in awe of those venturing into the
 realm of &lt;a href=&#34;http://0pointer.net/blog/&#34;&gt;PID 1&lt;/a&gt;.  However, learning from the simplicity of Claudio&amp;rsquo;s
 code I realized that although PID 1 at times is indistinguishable from
 magic, it is really not that hard to master.  &lt;a href=&#34;https://github.com/troglobit/finit&#34;&gt;My version of Finit&lt;/a&gt;
 is available on GitHub.&lt;/p&gt;
-
 &lt;p&gt;The code is open sourced under the very liberal &lt;a href=&#34;http://opensource.org/licenses/MIT&#34;&gt;MIT/X11 license&lt;/a&gt;,
 and much of its frog DNA has proven very useful to me over the years.
 This blog post is about how that frog DNA can help you fill gaps in your
-projects &amp;hellip;&lt;/p&gt;</description>
+projects …&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -45,17 +43,13 @@ projects &amp;hellip;&lt;/p&gt;</description>
       <description>&lt;p&gt;A steady flow of features, and releases, is key to keeping any project
 alive.  Recently I ticked off another item in the &lt;a href=&#34;/finit.html&#34;&gt;Finit&lt;/a&gt;
 TODO list &amp;hellip;&lt;/p&gt;
-
 &lt;p&gt;Finit v1.12 now comes with a built-in inetd!  You no longer need an
 external inetd daemon to launch services on demand.&lt;/p&gt;
-
 &lt;p&gt;The good news doesn&amp;rsquo;t stop there, this little inetd actually supports a
 poor man&amp;rsquo;s tcpwrappers!&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;inetd ssh/tcp          nowait [2345] /sbin/dropbear -i -R -F
 inetd ssh@eth0:222/tcp nowait [2345] /sbin/dropbear -i -R -F
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;With these two lines in your &lt;code&gt;/etc/finit.conf&lt;/code&gt; you tell finit to launch
 the &lt;a href=&#34;https://matt.ucc.asn.au/dropbear/dropbear.html&#34;&gt;Dropbear SSH&lt;/a&gt;
 server on demand on port 22 (default ssh/tcp port in &lt;code&gt;/etc/services&lt;/code&gt;) on
@@ -64,11 +58,9 @@ server on demand on port 22 (default ssh/tcp port in &lt;code&gt;/etc/services&l
 don&amp;rsquo;t want port 22 open at all on &lt;code&gt;eth0&lt;/code&gt; &amp;hellip; so finit takes care of this
 for you!  Seriously, it just works, no need for messing about with that
 nasty old &lt;code&gt;iptables&lt;/code&gt; anymore!&lt;/p&gt;
-
 &lt;p&gt;The original UNIX inetd super server supported many protocols
 internally, some of which may seem a bit odd today, and some have been
 superseded by more modern protocols.&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Echo_Protocol&#34;&gt;echo&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Character_Generator_Protocol&#34;&gt;chargen&lt;/a&gt;&lt;/li&gt;
@@ -76,41 +68,32 @@ superseded by more modern protocols.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Daytime_Protocol&#34;&gt;daytime&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Discard_Protocol&#34;&gt;discard&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;Finit currently only supports one internal/built-in standard service,
 &lt;code&gt;time&lt;/code&gt;.  It is built as a plugin to serve as an example of how you can
 extend Finit yourself.  The time service can be called either as UDP or
 TCP.  To prevent security issues, the &lt;code&gt;time&lt;/code&gt; protocol is disabled by
 default.  To enable it you need two things:&lt;/p&gt;
-
 &lt;ol&gt;
 &lt;li&gt;The &lt;code&gt;time.so&lt;/code&gt; plugin (built by default)&lt;/li&gt;
 &lt;li&gt;An &lt;code&gt;inetd time ...&lt;/code&gt; line in &lt;code&gt;/etc/finit.conf&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;p&gt;Assuming you&amp;rsquo;ve installed the default set of plugins, the following two
 lines can be added:&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;inetd time/udp   wait [2345] internal
 inetd time/tcp nowait [2345] internal
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;This can be very useful for testing the inetd capabilities, your network
 connection, or simply to get the time to a client where NTP for some
 reason does not work, or is blocked.  For instance, you could have a GPS
 setup on your server and distribute time to clients with the &lt;code&gt;time&lt;/code&gt;
 protocol.&lt;/p&gt;
-
 &lt;p&gt;To use it you need an &lt;a href=&#34;http://www.aelius.com/njh/rdate/&#34;&gt;&lt;code&gt;rdate&lt;/code&gt;&lt;/a&gt;
 client.  Users of &lt;code&gt;rdate&lt;/code&gt; in BusyBox may need to be reminded that it
 only supports TCP.&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;$ rdate -pu 198.51.100.42
 Sat Mar  7 08:48:58 CET 2015
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;For more info on Finit and its features, see the &lt;a href=&#34;https://github.com/troglobit/finit/blob/master/README.md&#34;&gt;README&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;Enjoy! ツ&lt;/p&gt;</description>
     </item>
     
@@ -132,7 +115,9 @@ replaced by &lt;a href=&#34;/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/&#
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2015/01/08/recent-open-source-work/</guid>
       <description>I&amp;rsquo;m a coder, not a writer. Here&amp;rsquo;s what I&amp;rsquo;ve been working on during the winter holidays:
- A new feature release of Finit is coming shortly, which will use libuEv and feature inetd support built-in! Another minor release of my own take on event loops, libuEv v1.0.3. This time with a heavy focus on documentation and Q&amp;amp;A, extensive validation testing have been done on this release. Released another minor release of mrouted, v3.</description>
+  A new feature release of Finit is coming shortly, which will use libuEv and feature inetd support built-in!
+  Another minor release of my own take on event loops, libuEv v1.0.3. This time with a heavy focus on documentation and Q&amp;amp;A, extensive validation testing have been done on this release.
+  Released another minor release of mrouted, v3.</description>
     </item>
     
     <item>
@@ -155,7 +140,6 @@ available as
       <description>&lt;p&gt;On one of the last days of 2014 I release &lt;a href=&#34;/pimd.html&#34;&gt;pimd&lt;/a&gt;
 &lt;a href=&#34;https://github.com/troglobit/pimd/releases/tag/2.2.0&#34;&gt;v2.2.0&lt;/a&gt;, which
 is an awesome release with a lot of new features and bug fixes!&lt;/p&gt;
-
 &lt;p&gt;However, it could very well be the last release I do.  Even though its
 one of my most popular projects on
 &lt;a href=&#34;https://github.com/troglobit&#34;&gt;GitHub&lt;/a&gt; I have not had enough time to
@@ -165,10 +149,8 @@ the distinct possibility that the
 &lt;a href=&#34;https://github.com/greearb/xorp.ct&#34;&gt;Xorp PIM-SM&lt;/a&gt; or the new
 &lt;a href=&#34;https://github.com/udhos/qpimd&#34;&gt;Quagga PIM-SSM&lt;/a&gt; implementations will
 (finally) make good old pimd completely redundant.&lt;/p&gt;
-
 &lt;p&gt;At &lt;a href=&#34;http://www.westermo.com&#34;&gt;work&lt;/a&gt; we will likely start using the
 Quagga PIM rather than pimd in WeOS.&lt;/p&gt;
-
 &lt;p&gt;For now though, enjoy pimd v2.2.0.  It&amp;rsquo;s been tested in both my Qemu
 based virtual testbed and a few setups using Linux&amp;rsquo; &lt;code&gt;netns&lt;/code&gt; feature in
 &lt;a href=&#34;http://www.nrl.navy.mil/itd/ncs/products/core&#34;&gt;CORE&lt;/a&gt; &amp;ndash; awesome
@@ -244,7 +226,6 @@ This release completes the main purpose of uftpd for me, I can now use it as my 
       <description>&lt;p&gt;So, I finally got fed up with all other FTP servers and wrote
 &lt;a href=&#34;/uftpd.html&#34;&gt;my own&lt;/a&gt;.  Why would someone in their right mind do
 something like this 2014?&lt;/p&gt;
-
 &lt;p&gt;As a developer the answer to most such questions is usually; to
 scratch an itch.  For a very long time I&amp;rsquo;ve looked for a really simple
 FTP server that just works, out of the box!&lt;/p&gt;</description>
@@ -273,7 +254,6 @@ battle line in the world of programming,
 The event vs thread based approach to programming.  As rants go I do
 not aspire to deliver a clear or logical message, what so ever.  It&amp;rsquo;s
 basically just something I need to get off my chest.&lt;/p&gt;
-
 &lt;p&gt;It was not until 2007 I first learned about the event based approach
 to programming and event libraries like
 &lt;a href=&#34;http://libevent.org/&#34;&gt;libevent&lt;/a&gt; and
@@ -401,7 +381,7 @@ Get it from the usual FTP location:
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2008/06/09/minix-editline-v0-dot-1-4/</guid>
       <description>Another day another release, I guess. :-)
-Lots of small fixes &amp;mdash; it can now be cross-built for Arm (Xscale) without any serious warnings. Get it from the usual FTP location:
+Lots of small fixes — it can now be cross-built for Arm (Xscale) without any serious warnings. Get it from the usual FTP location:
  http://ftp.vmlinux.org/pub/People/jocke/minix-editline/  </description>
     </item>
     

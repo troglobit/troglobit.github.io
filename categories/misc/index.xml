@@ -63,7 +63,7 @@ Fortunately, at this point in time I had migrated most of my projects from CVS a
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2009/02/28/link-collection-2009-02-28/</guid>
       <description>This makes it possible to debug why a disk needs to spin up, and to increase battery life even more.
-Dislike NetworkManager? Try wicd&amp;nbsp;&amp;hellip;
+Dislike NetworkManager? Try wicd &amp;hellip;
 Minimalistic distro Crush Bang Linux 8.10
 Ah, what every FLOSS dad is looking for, a way to make your kids interested in your world instead of the dark side, and what is better than to trick them into it with a cool Linux game? Read Uwe Hermann&amp;rsquo;s blog about Teeworlds, or visit the home page.</description>
     </item>
@@ -76,7 +76,7 @@ Ah, what every FLOSS dad is looking for, a way to make your kids interested in y
       <guid>/2009/02/14/reminder-to-self/</guid>
       <description>How to recode AVI-files to be able to write them to a Video CD.
 ffmpeg -i original.avi -target pal-vcd copy.mpg vcdimager -t vcd1 -l &amp;quot;Title&amp;quot; -c vcd.cue -b vcd.bin copy.mpg cdrdao write --device /dev/cdrw vcd.cue  Note: vcdimager is able to take multiple .mpg files as argument, very useful when burning multiple family videos to the same disc!
-Tip from Johan Risberg on how to be able to reattach a UTF-8 Linux screen session from Cygwin.</description>
+ Tip from Johan Risberg on how to be able to reattach a UTF-8 Linux screen session from Cygwin.</description>
     </item>
     
     <item>

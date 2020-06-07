@@ -105,7 +105,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -312,7 +312,6 @@ vmware-player-kernel-source package.  I was fumbling around wanting to
 use <code>module-assistant</code> to do this for me when I stumbled upon on the
 solution, <a href="http://ubuntuforums.org/showthread.php?p=1266060#post1266060">presented so eloquently by my friend Albert Veli</a>.  This
 gives us a small update to the previous post:</p>
-
 <pre><code>$ wget ftp://ftp.sunet.se/pub/Linux/kernels/v2.6/patch-2.6.20.4.bz2
 $ cd linux-2.6.20/
 $ bzcat ../patch-2.6.20.4.bz2 | patch -p1
@@ -323,10 +322,7 @@ $ make oldconfig
 $ fakeroot make-kpkg clean
 $ fakeroot make-kpkg --initrd kernel_image
 $ sudo dpkg -i ../linux-image-2.6.20.4_2.6.20.4-7.troglobit_i386.deb
-</code></pre>
-
-<p>Next up is installing and building the vmware-player-kernel-source:</p>
-
+</code></pre><p>Next up is installing and building the vmware-player-kernel-source:</p>
 <pre><code>$ sudo apt-get install vmware-player-kernel-source
 $ cd /usr/src
 $ sudo tar xvfj vmware-player-kernel-source.tar.bz2
@@ -335,9 +331,7 @@ $ cd linux-2.6.20.4
 $ fakeroot make-kpkg modules_clean
 $ fakeroot make-kpkg modules_image
 $ sudo dpkg -i  ../vmware-player-kernel-modules-2.6.20.4_2.6.20.4-7.troglobit_i386.deb
-</code></pre>
-
-<p>You may, of course, need to tweak the file <code>/etc/kernel-pkg.conf</code>, but
+</code></pre><p>You may, of course, need to tweak the file <code>/etc/kernel-pkg.conf</code>, but
 there are man pages for that.</p>
 
 
@@ -430,7 +424,7 @@ there are man pages for that.</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

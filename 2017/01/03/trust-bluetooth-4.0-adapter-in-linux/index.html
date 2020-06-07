@@ -110,7 +110,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -312,57 +312,42 @@
 	
         <p>This is a quick writeup of how to get the Trust Bluetooth 4.0 adapter
 (dongle) working in Linux, Ubuntu 16.04.</p>
-
 <p>The Bluetooth adapter in my ThinkPad X1 Carbon has never worked, it was
 a heavily used laptop when I purchased it, so it may have been broken
 for some time.  I spent some time early on trying to get it to work, but
 to no avail unfortunately.</p>
-
 <p>Today I stumbled upon a quite cheap Bluetooth adapter from Trust at
 Net-on-Net here in Västerås.  The adapter use a chipset common to many
 such small Bluetooth dongles:</p>
-
 <pre><code>$ lsusb
 ...
 Bus 003 Device 005: ID 0a12:0001 Cambridge Silicon Radio, Ltd Bluetooth Dongle (HID mode)
 ...
 </code></pre>
-
 <p>The dongle is a bit stubborn since it starts up in HID mode, instead of
 HCI mode, by default.  However, thanks to the power open source there
 is a way to switch it around without having to resort to using Windows.</p>
-
 <p>Create the file <code>/etc/udev/rules.d/97-hid2hci.rules</code> as root and add
 the following line:</p>
-
 <pre><code>$ sudo vim /etc/udev/rules.d/97-hid2hci.rules
 ATTR{idVendor}==&quot;0a12&quot;, ATTR{idProduct}==&quot;0001&quot;, RUN+=&quot;/lib/udev/hid2hci --mode=hci --method=csr2 --devpath=%p&quot;
 </code></pre>
-
 <p>Simply unplugging and plugging it back in again didn&rsquo;t work for me, so
 reboot your laptop/system/raspberry to get it to work.  Having started
 up you can check the output of <code>lsusb</code> again:</p>
-
 <pre><code>$ lsusb
 ...
 Bus 003 Device 005: ID 0a12:0001 Cambridge Silicon Radio, Ltd Bluetooth Dongle (HCI mode)
 ...
 </code></pre>
-
 <p>Then check <code>hciool</code> to verify Linux has found the Bluetooth dongle:</p>
-
 <pre><code>$ hcitool dev
 Devices:
-       hci0 00:1A:7D:DA:71:13
+       hci0	00:1A:7D:DA:71:13
 </code></pre>
-
 <p>Good Luck! :)</p>
-
-<!--
-  -- Local Variables:
-  -- mode: markdown
-  -- End:
-  -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 
         
 
@@ -453,7 +438,7 @@ Devices:
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

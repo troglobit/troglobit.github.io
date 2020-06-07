@@ -14,66 +14,51 @@
 with Gitweb.  Also as a reminder to myself in case I ever need to
 set up this all over again.
 
-
 You have all your eggs in one basket (GitHub), and
 You really like that shiny basket, but
 You know you&rsquo;re clumsy and usually drop baskets yourself.
 You are wise (yes you are!) and realize you need another basket, so
 You set up a server and a domain yourself &hellip;
 
-
 OK.  Let&rsquo;s start simple, since you are already running the latest Debian
 you fire up the command line and install the basics:
-
 sudo apt-get install gitweb apache2
-
 
 So it&rsquo;ll complain, you&rsquo;ll clarify your request and soon all required
 packages are on your server.  Now what?
-
 Debian has already set up http://localhost/gitweb for you, and if you
 have a domain already you should go ahead and edit the master file for
 that:
-
 editor /etc/apache2/sites-available/000-default.conf
 service apache2 reload
-
 
 If you want to use that for your gitweb needs, then you&rsquo;re done!">
   <meta property="og:description" content="I&rsquo;m posting this in case anyone else gets stuck setting up Apache
 with Gitweb.  Also as a reminder to myself in case I ever need to
 set up this all over again.
 
-
 You have all your eggs in one basket (GitHub), and
 You really like that shiny basket, but
 You know you&rsquo;re clumsy and usually drop baskets yourself.
 You are wise (yes you are!) and realize you need another basket, so
 You set up a server and a domain yourself &hellip;
 
-
 OK.  Let&rsquo;s start simple, since you are already running the latest Debian
 you fire up the command line and install the basics:
-
 sudo apt-get install gitweb apache2
-
 
 So it&rsquo;ll complain, you&rsquo;ll clarify your request and soon all required
 packages are on your server.  Now what?
-
 Debian has already set up http://localhost/gitweb for you, and if you
 have a domain already you should go ahead and edit the master file for
 that:
-
 editor /etc/apache2/sites-available/000-default.conf
 service apache2 reload
-
 
 If you want to use that for your gitweb needs, then you&rsquo;re done!">
   <meta name="twitter:description" content="I&rsquo;m posting this in case anyone else gets stuck setting up Apache
 with Gitweb.  Also as a reminder to myself in case I ever need to
 set up this all over again.
-
 
 You have all your eggs in one …">
   <meta name="author" content="Joachim Nilsson"/><script type="application/ld+json">
@@ -150,30 +135,23 @@ You have all your eggs in one …">
 with Gitweb.  Also as a reminder to myself in case I ever need to
 set up this all over again.
 
-
 You have all your eggs in one basket (GitHub), and
 You really like that shiny basket, but
 You know you&rsquo;re clumsy and usually drop baskets yourself.
 You are wise (yes you are!) and realize you need another basket, so
 You set up a server and a domain yourself &hellip;
 
-
 OK.  Let&rsquo;s start simple, since you are already running the latest Debian
 you fire up the command line and install the basics:
-
 sudo apt-get install gitweb apache2
-
 
 So it&rsquo;ll complain, you&rsquo;ll clarify your request and soon all required
 packages are on your server.  Now what?
-
 Debian has already set up http://localhost/gitweb for you, and if you
 have a domain already you should go ahead and edit the master file for
 that:
-
 editor /etc/apache2/sites-available/000-default.conf
 service apache2 reload
-
 
 If you want to use that for your gitweb needs, then you&rsquo;re done!">
 <meta property="og:image" content="/images/profile.jpg" />
@@ -185,7 +163,6 @@ If you want to use that for your gitweb needs, then you&rsquo;re done!">
   <meta name="twitter:description" content="I&rsquo;m posting this in case anyone else gets stuck setting up Apache
 with Gitweb.  Also as a reminder to myself in case I ever need to
 set up this all over again.
-
 
 You have all your eggs in one …">
   <meta name="twitter:image" content="/images/profile.jpg" />
@@ -202,7 +179,7 @@ You have all your eggs in one …">
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -405,7 +382,6 @@ You have all your eggs in one …">
         <p>I&rsquo;m posting this in case anyone else gets stuck setting up <a href="http://www.apache.org">Apache</a>
 with <a href="http://git-scm.com/docs/gitweb">Gitweb</a>.  Also as a reminder to myself in case I ever need to
 set up this all over again.</p>
-
 <ol>
 <li>You have all your eggs in one basket (GitHub), and</li>
 <li>You really like that shiny basket, but</li>
@@ -413,166 +389,151 @@ set up this all over again.</p>
 <li>You are wise (yes you are!) and realize you need another basket, so</li>
 <li>You set up a server and a domain yourself &hellip;</li>
 </ol>
-
 <p>OK.  Let&rsquo;s start simple, since you are already running the latest Debian
 you fire up the command line and install the basics:</p>
-
 <pre><code>sudo apt-get install gitweb apache2
 </code></pre>
-
 <p>So it&rsquo;ll complain, you&rsquo;ll clarify your request and soon all required
 packages are on your server.  Now what?</p>
-
-<p>Debian has already set up <a href="http://localhost/gitweb">http://localhost/gitweb</a> for you, and if you
+<p>Debian has already set up http://localhost/gitweb for you, and if you
 have a domain already you should go ahead and edit the master file for
 that:</p>
-
 <pre><code>editor /etc/apache2/sites-available/000-default.conf
 service apache2 reload
 </code></pre>
-
 <p>If you want to use that for your gitweb needs, then you&rsquo;re done!</p>
-
 <p>For me, running <a href="http://troglobit.com/gitweb">http://troglobit.com/gitweb</a> out of the box was not
 enough.  I wanted to setup <a href="http://git.troglobit.com">http://git.troglobit.com</a> and also to make
 sure to keep really short and pretty URLs to projects I host.  So the
 next part of this post is about how to set that up.</p>
-
 <p>My <code>000-default.conf</code> is for <a href="http://troglobit.com">http://troglobit.com</a>, so I created a new
 one for the sub-domain:</p>
-
 <pre><code>editor /etc/apache2/sites-available/git.conf
 </code></pre>
-
 <p>&hellip; and added the following:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apache /etc/apache2/sites-available/git.conf" data-lang="apache /etc/apache2/sites-available/git.conf">    &lt;VirtualHost *:80&gt;
-        ServerName git.troglobit.com
-        DocumentRoot /usr/share/gitweb
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apache" data-lang="apache">    <span style="color:#000080">&lt;VirtualHost</span> <span style="color:#d14">*:80</span><span style="color:#000080">&gt;</span>
+        <span style="color:#0086b3">ServerName</span> git.troglobit.com
+        <span style="color:#0086b3">DocumentRoot</span> <span style="color:#d14">/usr/share/gitweb</span>
 
-        SetEnv GITWEB_CONFIG    /etc/gitweb.conf
-        SetEnv GIT_PROJECT_ROOT /srv/git
+        <span style="color:#0086b3">SetEnv</span> GITWEB_CONFIG    <span style="color:#d14">/etc/gitweb.conf</span>
+        <span style="color:#0086b3">SetEnv</span> GIT_PROJECT_ROOT <span style="color:#d14">/srv/git</span>
 
-        &lt;Directory /usr/share/gitweb&gt;
-	        Options FollowSymLinks ExecCGI
-	        AddHandler cgi-script .cgi
+        <span style="color:#000080">&lt;Directory</span> <span style="color:#d14">/usr/share/gitweb</span><span style="color:#000080">&gt;</span>
+	        <span style="color:#0086b3">Options</span> FollowSymLinks ExecCGI
+	        <span style="color:#0086b3">AddHandler</span> cgi-script .cgi
 
-            DirectoryIndex gitweb.cgi
+            <span style="color:#0086b3">DirectoryIndex</span> gitweb.cgi
 
-            # Pretty gitweb URLs + pathinfo feature in gitweb.conf
-	        RewriteEngine On
-	        RewriteCond %{REQUEST_FILENAME} !-f
-	        RewriteCond %{REQUEST_FILENAME} !-d
-	        RewriteRule ^.* /gitweb.cgi/$0 [L,PT]
-        &lt;/Directory&gt;
+            <span style="color:#998;font-style:italic"># Pretty gitweb URLs + pathinfo feature in gitweb.conf</span>
+	        <span style="color:#0086b3">RewriteEngine</span> <span style="color:#000;font-weight:bold">On</span>
+	        <span style="color:#0086b3">RewriteCond</span> %{REQUEST_FILENAME} !-f
+	        <span style="color:#0086b3">RewriteCond</span> %{REQUEST_FILENAME} !-d
+	        <span style="color:#0086b3">RewriteRule</span> ^.* <span style="color:#d14">/gitweb.cgi/</span>$0 [L,PT]
+        <span style="color:#000080">&lt;/Directory&gt;</span>
 
-        # Enable git clone over HTTP
-        ScriptAliasMatch \
-	        &#34;(?x)^/(.*/(HEAD | \
-	        info/refs | \
+        <span style="color:#998;font-style:italic"># Enable git clone over HTTP</span>
+        <span style="color:#0086b3">ScriptAliasMatch</span> \
+	        <span style="color:#a61717;background-color:#e3d2d2">&#34;</span>(?x)^/(.*/(HEAD | \
+	        <span style="color:#000;font-weight:bold">info</span><span style="color:#d14">/refs</span> | \
             objects/(info/[^/]+ | \
             [0-9a-f]{2}/[0-9a-f]{38} | \
             pack/pack-[0-9a-f]{40}\.(pack|idx)) | \
-            git-(upload|receive)-pack))$&#34; \
-            /usr/lib/git-core/git-http-backend/$1
-    &lt;/VirtualHost&gt;</code></pre></div>
-<p>Remember to enable the new sub-domain in Apache and restart the daemon:</p>
-
+            git-(upload|receive)-pack))$<span style="color:#a61717;background-color:#e3d2d2">&#34;</span> \
+            <span style="color:#d14">/usr/lib/git-core/git-http-backend/</span>$1
+    <span style="color:#000080">&lt;/VirtualHost&gt;</span>
+</code></pre></div><p>Remember to enable the new sub-domain in Apache and restart the daemon:</p>
 <pre><code>a2ensite git
 service apache2 restart
 </code></pre>
-
 <p>I&rsquo;m not using the default Debian GIT repo location, <code>/var/lib/git</code>, so I
 need to set the project root for both the Apache and the GitWeb config:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl /etc/gitweb.conf" data-lang="perl /etc/gitweb.conf">    # See https://github.com/kogakure/gitweb-theme for more help and pointers
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-perl" data-lang="perl">    <span style="color:#998;font-style:italic"># See https://github.com/kogakure/gitweb-theme for more help and pointers</span>
 
-    # path to git projects (&lt;project&gt;.git)
-    $projectroot = &#34;/srv/git&#34;;
+    <span style="color:#998;font-style:italic"># path to git projects (&lt;project&gt;.git)</span>
+    <span style="color:#008080">$projectroot</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;/srv/git&#34;</span>;
     
-    @git_base_url_list = (&#34;git://git.troglobit.com&#34;, &#34;http://git.troglobit.com&#34;);
+    <span style="color:#008080">@git_base_url_list</span> <span style="color:#000;font-weight:bold">=</span> (<span style="color:#d14">&#34;git://git.troglobit.com&#34;</span>, <span style="color:#d14">&#34;http://git.troglobit.com&#34;</span>);
     
-    # directory to use for temp files
-    $git_temp = &#34;/tmp&#34;;
+    <span style="color:#998;font-style:italic"># directory to use for temp files</span>
+    <span style="color:#008080">$git_temp</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;/tmp&#34;</span>;
     
-    $site_name = &#34;git.troglobit.com&#34;;
+    <span style="color:#008080">$site_name</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;git.troglobit.com&#34;</span>;
     
-    # target of the home link on top of all pages
-    $home_link = $my_uri || &#34;/&#34;;
+    <span style="color:#998;font-style:italic"># target of the home link on top of all pages</span>
+    <span style="color:#008080">$home_link</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#008080">$my_uri</span> <span style="color:#000;font-weight:bold">||</span> <span style="color:#d14">&#34;/&#34;</span>;
     
-    # html text to include at home page
-    #$home_text = &#34;indextext.html&#34;;
+    <span style="color:#998;font-style:italic"># html text to include at home page</span>
+    <span style="color:#998;font-style:italic">#$home_text = &#34;indextext.html&#34;;</span>
     
-    # file with project list; by default, simply scan the projectroot dir.
-    #$projects_list = $projectroot;
+    <span style="color:#998;font-style:italic"># file with project list; by default, simply scan the projectroot dir.</span>
+    <span style="color:#998;font-style:italic">#$projects_list = $projectroot;</span>
     
-    # stylesheet to use
-    @stylesheets = (&#34;static/gitweb.css&#34;);
+    <span style="color:#998;font-style:italic"># stylesheet to use</span>
+    <span style="color:#008080">@stylesheets</span> <span style="color:#000;font-weight:bold">=</span> (<span style="color:#d14">&#34;static/gitweb.css&#34;</span>);
     
-    # javascript code for gitweb
-    $javascript = &#34;static/gitweb.js&#34;;
+    <span style="color:#998;font-style:italic"># javascript code for gitweb</span>
+    <span style="color:#008080">$javascript</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;static/gitweb.js&#34;</span>;
     
-    # logo to use
-    $logo = &#34;static/git-logo.png&#34;;
+    <span style="color:#998;font-style:italic"># logo to use</span>
+    <span style="color:#008080">$logo</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;static/git-logo.png&#34;</span>;
     
-    # the &#39;favicon&#39;
-    $favicon = &#34;static/git-favicon.png&#34;;
+    <span style="color:#998;font-style:italic"># the &#39;favicon&#39;</span>
+    <span style="color:#008080">$favicon</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;static/git-favicon.png&#34;</span>;
     
-    # git-diff-tree(1) options to use for generated patches
-    #@diff_opts = (&#34;-M&#34;);
-    @diff_opts = ();
+    <span style="color:#998;font-style:italic"># git-diff-tree(1) options to use for generated patches</span>
+    <span style="color:#998;font-style:italic">#@diff_opts = (&#34;-M&#34;);</span>
+    <span style="color:#008080">@diff_opts</span> <span style="color:#000;font-weight:bold">=</span> ();
         
-    # Enable PATH_INFO so the server can produce URLs of the
-    # form: http://git.hokietux.net/project.git/xxx/xxx
-    # This allows for pretty URLs *within* the Git repository,
-    # also needs the Apache rewrite rules for full effect.
-    $feature{&#39;pathinfo&#39;}{&#39;default&#39;} = [1];
+    <span style="color:#998;font-style:italic"># Enable PATH_INFO so the server can produce URLs of the</span>
+    <span style="color:#998;font-style:italic"># form: http://git.hokietux.net/project.git/xxx/xxx</span>
+    <span style="color:#998;font-style:italic"># This allows for pretty URLs *within* the Git repository,</span>
+    <span style="color:#998;font-style:italic"># also needs the Apache rewrite rules for full effect.</span>
+    <span style="color:#008080">$feature</span>{<span style="color:#d14">&#39;pathinfo&#39;</span>}{<span style="color:#d14">&#39;default&#39;</span>} <span style="color:#000;font-weight:bold">=</span> [<span style="color:#099">1</span>];
     
-    # Neat way of prefixing the top URL listing
-    our @extra_breadcrumbs = (
-          [ &#39;Troglobit Software&#39; =&gt; &#39;http://troglobit.com/&#39; ],
+    <span style="color:#998;font-style:italic"># Neat way of prefixing the top URL listing</span>
+    <span style="color:#000;font-weight:bold">our</span> <span style="color:#008080">@extra_breadcrumbs</span> <span style="color:#000;font-weight:bold">=</span> (
+          [ <span style="color:#d14">&#39;Troglobit Software&#39;</span> <span style="color:#000;font-weight:bold">=&gt;</span> <span style="color:#d14">&#39;http://troglobit.com/&#39;</span> ],
         );
     
-    # List avatars next to committers
-    $feature{&#39;avatar&#39;}{&#39;default&#39;} = [&#39;gravatar&#39;];
+    <span style="color:#998;font-style:italic"># List avatars next to committers</span>
+    <span style="color:#008080">$feature</span>{<span style="color:#d14">&#39;avatar&#39;</span>}{<span style="color:#d14">&#39;default&#39;</span>} <span style="color:#000;font-weight:bold">=</span> [<span style="color:#d14">&#39;gravatar&#39;</span>];
     
-    # The category name is read from .git/category, in the same manner as .git/description.
-    $projects_list_group_categories = 1;
-    $project_list_default_category = &#34;misc&#34;;
+    <span style="color:#998;font-style:italic"># The category name is read from .git/category, in the same manner as .git/description.</span>
+    <span style="color:#008080">$projects_list_group_categories</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">1</span>;
+    <span style="color:#008080">$project_list_default_category</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;misc&#34;</span>;
     
-    $projects_list_description_width = 80;
+    <span style="color:#008080">$projects_list_description_width</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#099">80</span>;
     
-    # Enable blame, pickaxe search, snapshop, search, and grep
-    # support, but still allow individual projects to turn them off.
-    # These are features that users can use to interact with your Git trees. They
-    # consume some CPU whenever a user uses them, so you can turn them off if you
-    # need to.  Note that the &#39;override&#39; option means that you can override the
-    # setting on a per-repository basis.
-    $feature{&#39;blame&#39;}{&#39;default&#39;} = [1];
-    $feature{&#39;blame&#39;}{&#39;override&#39;} = [1];
+    <span style="color:#998;font-style:italic"># Enable blame, pickaxe search, snapshop, search, and grep</span>
+    <span style="color:#998;font-style:italic"># support, but still allow individual projects to turn them off.</span>
+    <span style="color:#998;font-style:italic"># These are features that users can use to interact with your Git trees. They</span>
+    <span style="color:#998;font-style:italic"># consume some CPU whenever a user uses them, so you can turn them off if you</span>
+    <span style="color:#998;font-style:italic"># need to.  Note that the &#39;override&#39; option means that you can override the</span>
+    <span style="color:#998;font-style:italic"># setting on a per-repository basis.</span>
+    <span style="color:#008080">$feature</span>{<span style="color:#d14">&#39;blame&#39;</span>}{<span style="color:#d14">&#39;default&#39;</span>} <span style="color:#000;font-weight:bold">=</span> [<span style="color:#099">1</span>];
+    <span style="color:#008080">$feature</span>{<span style="color:#d14">&#39;blame&#39;</span>}{<span style="color:#d14">&#39;override&#39;</span>} <span style="color:#000;font-weight:bold">=</span> [<span style="color:#099">1</span>];
     
-    $feature{&#39;pickaxe&#39;}{&#39;default&#39;} = [1];
-    $feature{&#39;pickaxe&#39;}{&#39;override&#39;} = [1];
+    <span style="color:#008080">$feature</span>{<span style="color:#d14">&#39;pickaxe&#39;</span>}{<span style="color:#d14">&#39;default&#39;</span>} <span style="color:#000;font-weight:bold">=</span> [<span style="color:#099">1</span>];
+    <span style="color:#008080">$feature</span>{<span style="color:#d14">&#39;pickaxe&#39;</span>}{<span style="color:#d14">&#39;override&#39;</span>} <span style="color:#000;font-weight:bold">=</span> [<span style="color:#099">1</span>];
     
-    $feature{&#39;snapshot&#39;}{&#39;default&#39;} = [1];
-    $feature{&#39;snapshot&#39;}{&#39;override&#39;} = [1];
+    <span style="color:#008080">$feature</span>{<span style="color:#d14">&#39;snapshot&#39;</span>}{<span style="color:#d14">&#39;default&#39;</span>} <span style="color:#000;font-weight:bold">=</span> [<span style="color:#099">1</span>];
+    <span style="color:#008080">$feature</span>{<span style="color:#d14">&#39;snapshot&#39;</span>}{<span style="color:#d14">&#39;override&#39;</span>} <span style="color:#000;font-weight:bold">=</span> [<span style="color:#099">1</span>];
     
-    $feature{&#39;search&#39;}{&#39;default&#39;} = [1];
+    <span style="color:#008080">$feature</span>{<span style="color:#d14">&#39;search&#39;</span>}{<span style="color:#d14">&#39;default&#39;</span>} <span style="color:#000;font-weight:bold">=</span> [<span style="color:#099">1</span>];
     
-    $feature{&#39;grep&#39;}{&#39;default&#39;} = [1];
-    $feature{&#39;grep&#39;}{&#39;override&#39;} = [1];
+    <span style="color:#008080">$feature</span>{<span style="color:#d14">&#39;grep&#39;</span>}{<span style="color:#d14">&#39;default&#39;</span>} <span style="color:#000;font-weight:bold">=</span> [<span style="color:#099">1</span>];
+    <span style="color:#008080">$feature</span>{<span style="color:#d14">&#39;grep&#39;</span>}{<span style="color:#d14">&#39;override&#39;</span>} <span style="color:#000;font-weight:bold">=</span> [<span style="color:#099">1</span>];
     
-    $feature{&#39;highlight&#39;}{&#39;default&#39;} = [1];</code></pre></div>
-<p>The impossibly simple Apache config has been ripped from the intro by
+    <span style="color:#008080">$feature</span>{<span style="color:#d14">&#39;highlight&#39;</span>}{<span style="color:#d14">&#39;default&#39;</span>} <span style="color:#000;font-weight:bold">=</span> [<span style="color:#099">1</span>];
+</code></pre></div><p>The impossibly simple Apache config has been ripped from the intro by
 <a href="http://dereenigne.org/debian/debian-gitweb-server">Jonathan McCrohan</a>,
 the GitWeb config is a mixture of findings on the Internets.  Notice the
 breadcrumbs and the grouping settings, very useful.</p>
-
 <p>The magic with the pretty URLs is in both files, all <code>RewriteRule</code> lines
 in the Apache <code>.conf</code> and the <code>$feature{'pathinfo'}{'default'} = [1];</code>
 setting in <code>gitweb.conf</code>.</p>
-
 <p>Also, try out the cool <a href="https://github.com/kogakure/gitweb-theme">theme</a>
 I use, it looks a lot better than the default.</p>
-
 <p>Happy coding!</p>
 
         
@@ -664,7 +625,7 @@ I use, it looks a lot better than the default.</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

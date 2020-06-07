@@ -113,7 +113,7 @@ Finit supports …">
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -298,38 +298,27 @@ Finit supports …">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
 	
-        
-
-<p><img class="center noborder" src="/images/finit3.png" style="width: 310px; height: 240px;" alt="Finit: A fast init for Linux" /></p>
-
+        <p><!-- raw HTML omitted --></p>
 <p>Finit is a simple alternative to <a href="https://en.wikipedia.org/wiki/Init">SysV init</a> and <a href="https://www.freedesktop.org/wiki/Software/systemd/">systemd</a>,
 reverse engineered from the EeePC fastinit ten years ago by Claudio
 Matsuoka — &ldquo;gaps filled with frog DNA …&rdquo;</p>
-
 <p>Finit supports runlevels, <a href="https://en.wikipedia.org/wiki/Process_supervision">process monitoring</a>, and starting services
 on demand using the built-in inetd, or by triggering a condition.  E.g.,
 <em>&ldquo;don&rsquo;t start this service until basic networking is available&rdquo;</em>, or
 <em>&ldquo;wait until syslogd has started&rdquo;</em>.</p>
-
 <p>For more details, see the online <a href="https://github.com/troglobit/finit/blob/master/README.md">documentation</a>.</p>
-
 <h2 id="example">Example</h2>
-
 <p><a href="https://github.com/troglobit/troglos">TroglOS</a> provides an example of how to boot an embedded system with
 Finit, as well as extend it with plugins, or replace any default plugin.
 TroglOS use an <a href="https://github.com/troglobit/troglos/blob/master/packages/finit/plugins/mtd.c">mtd.so</a> plugin to handle uninitialized flash:</p>
-
-<p><img class="center" src="/images/finit3-screenshot.png" alt="Finit Screenshot" style="width: 472px; height: 422px;"></p>
-
+<!-- raw HTML omitted -->
 <p>For more examples, including sample configurations for Debian, Void, and
 Alpine Linux, see the <a href="https://github.com/troglobit/finit/tree/master/contrib">GitHub finit/contrib/ section</a>.</p>
-
 <h2 id="configuration">Configuration</h2>
-
 <p>The following is an example of <code>/etc/finit.conf</code>.  It can be split up in
 per-service <code>.conf</code> files in <code>/etc/finit.d/</code>, useful for distributions
 and to simplify changing service configuration at runtime.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-conf" data-lang="conf"># /etc/finit.conf - System bootstrap for TroglOS
+<pre><code class="language-conf" data-lang="conf"># /etc/finit.conf - System bootstrap for TroglOS
 
 # System hostname is set from /etc/hostname
 #host default
@@ -337,7 +326,7 @@ and to simplify changing service configuration at runtime.</p>
 # Default runlevel is 2
 #runlevel 2
 
-# Launch bootstrap &#39;S&#39; services
+# Launch bootstrap 'S' services
 service [S12345] /sbin/watchdogd -T 16 -t 2 -F /dev/watchdog      -- System watchdog daemon
 service [S12345] /sbin/syslogd -n -b 3 -D                         -- System log daemon
 service [S12345] /sbin/klogd -n                                   -- Kernel log daemon
@@ -359,7 +348,7 @@ service [S12345] /sbin/klogd -n                                   -- Kernel log 
 
 # Inetd services
 # Allow telnet on standard port only if not from WAN (eth0)
-# Allow telnet onport 2323 from WAN (don&#39;t do this kids)
+# Allow telnet onport 2323 from WAN (don't do this kids)
 # Built-in rdate service also available on custom port 3737, notice internal.time
 inetd ftp/tcp              nowait [2345] /sbin/uftpd -i -f       -- FTP daemon
 inetd tftp/udp               wait [2345] /sbin/uftpd -i -y       -- TFTP daemon
@@ -376,14 +365,12 @@ tty [12345] /dev/ttyAMA0 115200 vt100 noclear
 tty  [2345] /dev/ttyUSB0 115200 vt100 noclear
 
 # Systems using a serial console can use this arch. neutral variant
-#tty [12345] @console 115200 linux noclear</code></pre></div>
-<p>Finit configuration files in <code>/etc/finit.d/</code> are monitored for changes,
+#tty [12345] @console 115200 linux noclear
+</code></pre><p>Finit configuration files in <code>/etc/finit.d/</code> are monitored for changes,
 if file is changed and the user calls <code>initctl reload</code>, that program is
 reloaded (<code>SIGHUP</code>:ed, or stop-started depending on the <code>&lt;!&gt;</code> in the
 service declaration.).</p>
-
 <h2 id="commands">Commands</h2>
-
 <p>The familiar <code>shutdown</code>, <code>reboot</code>, <code>poweroff</code>, and <code>halt</code> commands are
 provided by Finit, as is the traditional <code>telinit</code> command.  In addition
 to that there is also the more modern <code>initctl</code> tool:</p>
@@ -391,24 +378,20 @@ to that there is also the more modern <code>initctl</code> tool:</p>
 <span style="color:#099">1</span>       running  <span style="color:#099">476</span>     <span style="color:#000;font-weight:bold">[</span>S12345----<span style="color:#000;font-weight:bold">]</span>  /sbin/watchdog -T <span style="color:#099">16</span> -t <span style="color:#099">2</span> -F /dev/watchdog
 <span style="color:#099">2</span>       running  <span style="color:#099">477</span>     <span style="color:#000;font-weight:bold">[</span>S12345----<span style="color:#000;font-weight:bold">]</span>  /sbin/syslogd -n -b <span style="color:#099">3</span> -D
 <span style="color:#099">3</span>       running  <span style="color:#099">478</span>     <span style="color:#000;font-weight:bold">[</span>S12345----<span style="color:#000;font-weight:bold">]</span>  /sbin/klogd -n
-<span style="color:#099">4</span>:1       inetd  <span style="color:#099">0</span>       <span style="color:#000;font-weight:bold">[</span>--2345----<span style="color:#000;font-weight:bold">]</span>  internal <span style="color:#0086b3">time</span> allow *:37
-<span style="color:#099">4</span>:2       inetd  <span style="color:#099">0</span>       <span style="color:#000;font-weight:bold">[</span>--2345----<span style="color:#000;font-weight:bold">]</span>  internal <span style="color:#0086b3">time</span> allow *:37
-<span style="color:#099">4</span>:3       inetd  <span style="color:#099">0</span>       <span style="color:#000;font-weight:bold">[</span>--2345----<span style="color:#000;font-weight:bold">]</span>  internal <span style="color:#099">3737</span> allow *:3737
-<span style="color:#099">5</span>:1       inetd  <span style="color:#099">0</span>       <span style="color:#000;font-weight:bold">[</span>--2345----<span style="color:#000;font-weight:bold">]</span>  /sbin/telnetd allow *:23 deny eth0,eth1
-<span style="color:#099">6</span>:1       inetd  <span style="color:#099">0</span>       <span style="color:#000;font-weight:bold">[</span>---345----<span style="color:#000;font-weight:bold">]</span>  /sbin/dropbear allow eth0:222
-<span style="color:#099">6</span>:2       inetd  <span style="color:#099">0</span>       <span style="color:#000;font-weight:bold">[</span>---345----<span style="color:#000;font-weight:bold">]</span>  /sbin/dropbear allow *:22 deny eth0</code></pre></div>
-<p>For details, see the <a href="https://github.com/troglobit/finit/blob/master/README.md">documentation</a> and the online help <code>-h</code> to
+4:1       inetd  <span style="color:#099">0</span>       <span style="color:#000;font-weight:bold">[</span>--2345----<span style="color:#000;font-weight:bold">]</span>  internal <span style="color:#0086b3">time</span> allow *:37
+4:2       inetd  <span style="color:#099">0</span>       <span style="color:#000;font-weight:bold">[</span>--2345----<span style="color:#000;font-weight:bold">]</span>  internal <span style="color:#0086b3">time</span> allow *:37
+4:3       inetd  <span style="color:#099">0</span>       <span style="color:#000;font-weight:bold">[</span>--2345----<span style="color:#000;font-weight:bold">]</span>  internal <span style="color:#099">3737</span> allow *:3737
+5:1       inetd  <span style="color:#099">0</span>       <span style="color:#000;font-weight:bold">[</span>--2345----<span style="color:#000;font-weight:bold">]</span>  /sbin/telnetd allow *:23 deny eth0,eth1
+6:1       inetd  <span style="color:#099">0</span>       <span style="color:#000;font-weight:bold">[</span>---345----<span style="color:#000;font-weight:bold">]</span>  /sbin/dropbear allow eth0:222
+6:2       inetd  <span style="color:#099">0</span>       <span style="color:#000;font-weight:bold">[</span>---345----<span style="color:#000;font-weight:bold">]</span>  /sbin/dropbear allow *:22 deny eth0
+</code></pre></div><p>For details, see the <a href="https://github.com/troglobit/finit/blob/master/README.md">documentation</a> and the online help <code>-h</code> to
 each tool.</p>
-
 <h2 id="origin">Origin</h2>
-
 <p>This project is the continuation of the <a href="http://helllabs.org/finit/">original finit</a> by Claudio
 Matsuoka, which was reverse engineered from syscalls of the
 <a href="http://wiki.eeeuser.com/boot_process:the_boot_process">EeePC fastinit</a> daemon.</p>
-
 <p>Please file bug reports, clone it, or send pull requests for bug fixes
 and proposed extensions using GitHub:</p>
-
 <ul>
 <li><a href="https://github.com/troglobit/finit">Repository</a></li>
 <li><a href="https://github.com/troglobit/finit/issues">Issue Tracker</a></li>
@@ -418,7 +401,6 @@ and proposed extensions using GitHub:</p>
 <li><a href="ftp://ftp.troglobit.com/finit/finit-3.1.tar.xz">finit-3.1.tar.xz</a>,
 <a href="ftp://ftp.troglobit.com/finit/finit-3.1.tar.xz.md5">MD5</a></li>
 </ul>
-
 <p>See also the <a href="http://freecode.com/projects/finit">Free(code) page</a>.</p>
 
 
@@ -508,7 +490,7 @@ and proposed extensions using GitHub:</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

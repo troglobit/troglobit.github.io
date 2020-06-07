@@ -13,21 +13,18 @@
   <meta name="description" content="So, I finally got fed up with all other FTP servers and wrote
 my own.  Why would someone in their right mind do
 something like this 2014?
-
 As a developer the answer to most such questions is usually; to
 scratch an itch.  For a very long time I&rsquo;ve looked for a really simple
 FTP server that just works, out of the box!">
   <meta property="og:description" content="So, I finally got fed up with all other FTP servers and wrote
 my own.  Why would someone in their right mind do
 something like this 2014?
-
 As a developer the answer to most such questions is usually; to
 scratch an itch.  For a very long time I&rsquo;ve looked for a really simple
 FTP server that just works, out of the box!">
   <meta name="twitter:description" content="So, I finally got fed up with all other FTP servers and wrote
 my own.  Why would someone in their right mind do
 something like this 2014?
-
 As a developer the answer to most such questions is usually; …">
   <meta name="author" content="Joachim Nilsson"/><script type="application/ld+json">
 {
@@ -102,7 +99,6 @@ As a developer the answer to most such questions is usually; …">
 <meta property="og:description" content="So, I finally got fed up with all other FTP servers and wrote
 my own.  Why would someone in their right mind do
 something like this 2014?
-
 As a developer the answer to most such questions is usually; to
 scratch an itch.  For a very long time I&rsquo;ve looked for a really simple
 FTP server that just works, out of the box!">
@@ -115,7 +111,6 @@ FTP server that just works, out of the box!">
   <meta name="twitter:description" content="So, I finally got fed up with all other FTP servers and wrote
 my own.  Why would someone in their right mind do
 something like this 2014?
-
 As a developer the answer to most such questions is usually; …">
   <meta name="twitter:image" content="/images/profile.jpg" />
   <meta name="twitter:card" content="summary" />
@@ -131,7 +126,7 @@ As a developer the answer to most such questions is usually; …">
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -334,11 +329,9 @@ As a developer the answer to most such questions is usually; …">
         <p>So, I finally got fed up with all other FTP servers and wrote
 <a href="/uftpd.html">my own</a>.  Why would someone in their right mind do
 something like this 2014?</p>
-
 <p>As a developer the answer to most such questions is usually; to
 scratch an itch.  For a very long time I&rsquo;ve looked for a really simple
 FTP server that just works, out of the box!</p>
-
 <p>My alternatives on GNU/Linux distributions have been: several variants
 of the original <a href="https://github.com/mit-athena/ftpd">MIT/Athena ftpd</a>,
 <a href="http://www.proftpd.org/">ProFTPD</a>,
@@ -348,34 +341,28 @@ too damn difficult to configure, have ugly configuration files or are
 plainly just too confusing.  With one exception, vsftpd.  I really
 like vsftpd!  It&rsquo;s got a simple and well documented configuration file
 (inline as comments) and always worked almost painlessly for me.</p>
-
 <p>However, over the past couple of Ubuntu LTS installations it&rsquo;s been
 starting to act up on me.  Not allowing me to have a group-writable
 root directory, and not even an ability to disable that security
 feature.</p>
-
 <p>It&rsquo;s simple really.  I&rsquo;m a developer.  I have colleagues.  We share
 servers at work.  We bootstrap and upgrade our embedded devices using
 TFTP/FTP.  We have one directory, usually <code>/srv/ftp</code>, which is group
 writable and all developers are members of that group.  Anyone can
 upload a file there and the file servers &hellip; would you know &hellip; are
 supposed to <em>serve</em> that file, as TFTP or anonymous FTP.</p>
-
 <p>Maybe I&rsquo;m a fringe user?  Maybe secured local area networks, or laptop
 to embedded device crossed-cables networks, are no longer the &ldquo;fad&rdquo;?
 Maybe a sane built-in default is no longer cool or hipster enough?</p>
-
 <p>I don&rsquo;t know anymore, and this time I was so fed up chasing around for
 answers to &ldquo;How to setup your &lsquo;favorite&rsquo; FTP Server&rdquo;, that I just sat
 down and fixed it once and for all.  I figured I&rsquo;d otherwise be doing
 this waltz over and over again, just like I already have, for the next
 10 years &hellip;</p>
-
 <p>I trawled the net once more for good candidates, this time for
 adoption and holy cow sacrifices.  I wanted a very simple base to
 start from, which I could cut up into pieces, iteratively refactor and
 improve upon until I was happy.  That took a while.</p>
-
 <p>I&rsquo;m a big fan of both the Free Software and the Open Source cultures.
 (They are slightly different you know.)  I routinely work on software
 with GNU GPL, MIT/X11, Apache, and ISC licenses, but for most of my
@@ -388,7 +375,6 @@ but for anything which I have a great investment in, or has a great
 <a href="http://en.wikipedia.org/wiki/Threshold_of_originality">threshold of originality</a>,
 I&rsquo;d use a more restrictive license to make sure the software is kept
 in the open.</p>
-
 <p>Anyway, I read much code, discarded several projects that were too
 big, too unreadable code or simply didn&rsquo;t feel right.  I tested so
 many small &ldquo;FTP&rdquo; servers that turned out to be unusable homegrown
@@ -397,7 +383,6 @@ finally settled on <a href="https://github.com/xu-wang11/FtpServer">FtpServer</a
 by <a href="https://github.com/xu-wang11">Xu Wang</a> as a base for my little
 project.  I suspect it too is a school project, but this one actually
 worked, right off the bat!</p>
-
 <p>I got so excited that I immediately started improving it, cleaning up
 the source code, reindenting it (KNF) and fixing small bugs here and
 there.  It was a perfect fit!  This is where I made my big mistake,
@@ -410,11 +395,9 @@ away.  The changes I&rsquo;ve made are so substantial that there isn&rsquo;t muc
 left of the original code, so uftpd should be safe.  Yes, I named it
 uftpd, the micro ftp server &ndash; the no nonsense file transfer protocol
 daemon.</p>
-
 <p>The whole hack took about three days and I&rsquo;ve learned a lot during
 this time!  It was fun, inspiring and gave me a lot of creative energy
 that I can use in other projects: at work as well as at home :)</p>
-
 <p>See the <a href="/uftpd.html">uftpd project home</a> for download links.</p>
 
         
@@ -506,7 +489,7 @@ that I can use in other projects: at work as well as at home :)</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

@@ -14,13 +14,11 @@
 servers.  I plan to use them as build and embedded target emulation
 servers for my open source projects
 as well as Minecraft server for my kids :)
-
 ">
   <meta property="og:description" content="The other day I got my geeky hands on two old SuperMicro X8STI-F 1U
 servers.  I plan to use them as build and embedded target emulation
 servers for my open source projects
 as well as Minecraft server for my kids :)
-
 ">
   <meta name="twitter:description" content="The other day I got my geeky hands on two old SuperMicro X8STI-F 1U
 servers.  I plan to use them as build and embedded target emulation
@@ -100,7 +98,6 @@ as well as Minecraft server …">
 servers.  I plan to use them as build and embedded target emulation
 servers for my open source projects
 as well as Minecraft server for my kids :)
-
 ">
 <meta property="og:image" content="/images/profile.jpg" />
 <meta property="og:url" content="/2016/08/13/fake-raid-adventures/" />
@@ -126,7 +123,7 @@ as well as Minecraft server …">
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -330,45 +327,32 @@ as well as Minecraft server …">
 servers.  I plan to use them as build and embedded target emulation
 servers for my <a href="https://github.com/troglobit">open source projects</a>
 as well as Minecraft server for my kids :)</p>
-
-<p><img src="http://eitc.in/yahoo_site_admin/assets/docs/Supermicro_SuperServer_SC512L_small.324203750.JPG"></p>
-
+<!-- raw HTML omitted -->
 <p>During the install of Ubuntu Server 16.04 I realized I wanted try to use
 the Intel PCH &ldquo;Fake Raid&rdquo; on the two 1 TB disks, RAID-1.  The support
 Intel has in Linux and <code>mdadm</code> for their southbridge RAID controller is
 really excellent!</p>
-
 <p>I&rsquo;m not so sure though about the level of support that Debian/Ubuntu and
 systemd have for RAID controllers though.  I&rsquo;ve run into problems with
 how to shutdown, reboot, and power-off the servers with the RAID.</p>
-
 <p>So far I&rsquo;ve made out that it is possible to power-off the servers with
 the power button, but only straight after boot!  To make matters worse
 it doesn&rsquo;t seem that Ubuntu sets the IMSM controller in &ldquo;idle&rdquo; state
 when rebooting, so unmount (remount ro) fails.  I <em>think</em> this is the
 recommended way:</p>
-
 <pre><code>echo idle &gt; /sys/block/md127/md/sync_action
 </code></pre>
-
 <p>&hellip; for all the <code>md</code> devices found by globbing <code>/sys/block/md*</code> &hellip;</p>
-
 <p>And then wait for state to become idle before unmounting and remounting
 <code>/</code> read-only, as you have to do, but that doesn&rsquo;t seem to be done, so
 when the system is booted again it always comes up in a degraded state
 :-/</p>
-
 <p>Anyhow, this little adventure taught me a few tricks worth remembering.</p>
-
 <h3 id="show-status-of-intel-container">Show status of Intel Container</h3>
-
 <p>This command lists member arrays and disks used in the container:</p>
-
 <pre><code>user@example:~$ sudo mdadm -D /dev/md/imsm0
 </code></pre>
-
 <p>This command details RAID (firmware) capabilities:</p>
-
 <pre><code>user@example:~$ sudo mdadm --detail-platform
        Platform : Intel(R) Matrix Storage Manager
         Version : 8.9.1.1002
@@ -380,63 +364,47 @@ when the system is booted again it always comes up in a degraded state
     Max Volumes : 2 per array, 4 per controller
  I/O Controller : /sys/devices/pci0000:00/0000:00:1f.2 (SATA)
 </code></pre>
-
 <h3 id="remove-a-disk-from-a-container">Remove a disk from a container</h3>
-
 <p>Say disk <code>/dev/sda</code> is unhealthy in any of the member volumes, fail it
 in all volumes, remove it, and zero out the superblock to re-add:</p>
-
 <pre><code>user@example:~$ sudo mdadm /dev/md/Boot -f /dev/sda
 user@example:~$ sudo mdadm /dev/md/Root -f /dev/sda
 user@example:~$ sudo mdadm /dev/md/imsm0 -r /dev/sda
 user@example:~$ sudo mdadm --zero-superblock --force /dev/sda
 user@example:~$ sudo mdadm /dev/md/imsm0 -a /dev/sda
 </code></pre>
-
 <p>Here <code>Root</code> and <code>Boot</code> are my member volumes in the Intel PCH <code>imsm0</code>
 container.  I use a small <code>Boot</code> partition for <code>/boot</code>, first partition
 on the array, to be able to boot using GRUB from it.</p>
-
 <p>If the above doesn&rsquo;t work for you (it didn&rsquo;t for me), try zeroing out
 the complete device, which naturally will take a while, try smaller
 blocksize (bs) if the following does not work:</p>
-
 <pre><code>user@example:~$ sudo dd if=/dev/zero of=/dev/sda bs=100M
 </code></pre>
-
 <p>Then reboot and tell the Intel firmware (Ctrl-I maybe) at POST to add
 the &ldquo;new&rdquo; disk to the array, or rather to the <em>container</em> to be correct.
 When booting up the system again, Linux starts a background rebuild.</p>
-
 <h3 id="check-satus-of-raid">Check satus of RAID</h3>
-
 <p>Check progress of the rebuild with:</p>
-
 <pre><code>user@example:~$ cat /proc/mdstat
 Personalities : [raid1] [linear] [multipath] [raid0] [raid6] [raid5] [raid4] [raid10] 
 md125 : active raid1 sda[1] sdb[0]
       2097152 blocks super external:/md127/0 [2/1] [_U]
         resync=DELAYED
-
+      
 md126 : active raid1 sda[1] sdb[0]
       974660608 blocks super external:/md127/1 [2/1] [_U]
   [===&gt;.................]  recovery = 17.5% (171137152/974660740) finish=103.4min speed=129396K/sec
-
+          
 md127 : inactive sda[1](S) sdb[0](S)
       5024 blocks super external:imsm
-
+           
 unused devices: &lt;none&gt;
 </code></pre>
-
 <p>Which is very useful with the <code>watch</code> command!</p>
-
 <p>Good Luck!</p>
-
-<!--
-  -- Local Variables:
-  -- mode: markdown
-  -- End:
-  -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 
         
 
@@ -527,7 +495,7 @@ unused devices: &lt;none&gt;
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

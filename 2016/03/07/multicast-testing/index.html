@@ -16,7 +16,6 @@ testing, but on most systems I usually resort to ping(1) and
 tcpdump(1), which are quite sufficient.  However, you often need to
 tell bridges (switches) to open up multicast in your general direction
 for your pings to get through, so you need to send an IGMP &ldquo;join&rdquo; first.
-
 Way back in 2006 I stumbled upon a neat tool called mcjoin, written by
 David Stevens and announced in
 this posting to LKML.  I started
@@ -27,7 +26,6 @@ testing, but on most systems I usually resort to ping(1) and
 tcpdump(1), which are quite sufficient.  However, you often need to
 tell bridges (switches) to open up multicast in your general direction
 for your pings to get through, so you need to send an IGMP &ldquo;join&rdquo; first.
-
 Way back in 2006 I stumbled upon a neat tool called mcjoin, written by
 David Stevens and announced in
 this posting to LKML.  I started
@@ -111,7 +109,6 @@ testing, but on most systems I usually resort to ping(1) and
 tcpdump(1), which are quite sufficient.  However, you often need to
 tell bridges (switches) to open up multicast in your general direction
 for your pings to get through, so you need to send an IGMP &ldquo;join&rdquo; first.
-
 Way back in 2006 I stumbled upon a neat tool called mcjoin, written by
 David Stevens and announced in
 this posting to LKML.  I started
@@ -139,7 +136,7 @@ testing, but on most systems I usually resort to ping(1) …">
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -345,32 +342,25 @@ testing, but on most systems I usually resort to <code>ping(1)</code> and
 <code>tcpdump(1)</code>, which are quite sufficient.  However, you often need to
 tell bridges (switches) to open up multicast in your general direction
 for your pings to get through, so you need to send an IGMP &ldquo;join&rdquo; first.</p>
-
 <p>Way back in 2006 I stumbled upon a neat tool called <code>mcjoin</code>, written by
 David Stevens and announced in
 <a href="https://lkml.org/lkml/2004/8/5/143">this posting to LKML</a>.  I started
 improving and adding features to it over the years.</p>
-
 <p>Now, my interest and fascination with multicast only grew with time,
 and despite elegant tools like <code>mgen(1)</code> and <code>omping(1)</code> I was never
 quite happy.</p>
-
 <p>When releasing SMCRoute v2.1.0 recently, and currently working on the
 pimd v2.3.2 release, I was so tired of having to do so many manual steps
 just to verify correct operation of a routing daemon.  Therefore I spent
 the better part of the past weekend fixing up my old mcjoin tool.</p>
-
 <p>I wanted a reliable, simple, and UNIX-y tool to just test things for me.
 So I cleaned up the old mcjoin project, first by migrating it from the
 toolbox repo, removing confusing command line options, improving and
 simplifying the syntax, and then I added send/receive capabilities.</p>
-
 <p>I&rsquo;ve been meaning to get around to this for ages, and now it seems I had
 finally had enough.  So here it is, v2.0:</p>
-
-<p><strong>Project</strong>: <a href="https://github.com/troglobit/mcjoin/">https://github.com/troglobit/mcjoin/</a><br />
+<p><strong>Project</strong>: <a href="https://github.com/troglobit/mcjoin/">https://github.com/troglobit/mcjoin/</a><br>
 <strong>ChangeLog</strong>: <a href="https://github.com/troglobit/mcjoin/releases/tag/v2.0">https://github.com/troglobit/mcjoin/releases/tag/v2.0</a></p>
-
 <p>Most of the time I simply want to see a resulting IGMP join message in
 Wireshark, watch a group entry pop up in a switch&rsquo;s FDB or a routing
 daemon&rsquo;s forwarding table.  So, join is the default operation, and also
@@ -378,7 +368,6 @@ continues to be the name of the tool.  My favourite testing group is set
 as the default, 225.1.2.3, so you only need to start the tool and you&rsquo;re
 off.  To send to the same default group (225.1.2.3), simply add <code>-s</code> to
 the sender side.</p>
-
 <pre><code>sender$ mcjoin -s
 ^C
 sender$
@@ -389,15 +378,10 @@ joined group 225.1.2.3 on eth0 ...
 Received total: 66 packets
 receiver$
 </code></pre>
-
 <p>If you ever need anything else, e.g. routing multicast, there&rsquo;s even a
 man page.  It mentions setting the TTL and other such nastiness :)</p>
-
-<!--
-  -- Local Variables:
-  -- mode: markdown
-  -- End:
-  -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 
         
 
@@ -488,7 +472,7 @@ man page.  It mentions setting the TTL and other such nastiness :)</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

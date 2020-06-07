@@ -11,9 +11,9 @@
   <meta property="og:title" content="HowTo run pimd on FreeBSD" />
   <meta name="twitter:title" content="HowTo run pimd on FreeBSD" />
   <meta name="description" content="This is not a proper HowTo, more of a &ldquo;note to self&rdquo; after having created a setup to test pimd issue #57. For these notes the following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and Qemu 2.3.0, is used:
- .--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | &#39;--------&#39; &#39;----&#39; &#39;----&#39; &#39;----------&#39;  The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP/MLD snooping to get pimd to run smoothly.">
+ .--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | &#39;--------&#39; &#39;----&#39; &#39;----&#39; &#39;----------&#39; The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP/MLD snooping to get pimd to run smoothly.">
   <meta property="og:description" content="This is not a proper HowTo, more of a &ldquo;note to self&rdquo; after having created a setup to test pimd issue #57. For these notes the following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and Qemu 2.3.0, is used:
- .--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | &#39;--------&#39; &#39;----&#39; &#39;----&#39; &#39;----------&#39;  The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP/MLD snooping to get pimd to run smoothly.">
+ .--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | &#39;--------&#39; &#39;----&#39; &#39;----&#39; &#39;----------&#39; The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP/MLD snooping to get pimd to run smoothly.">
   <meta name="twitter:description" content="This is not a proper HowTo, more of a &ldquo;note to self&rdquo; after having created a setup to test pimd issue #57. For these notes the following virtual topology, running on Ubuntu 15.10 with Linux …">
   <meta name="author" content="Joachim Nilsson"/><script type="application/ld+json">
 {
@@ -63,7 +63,7 @@
     "name" : "Joachim Nilsson"
   },
   "headline": "HowTo run pimd on FreeBSD",
-  "description" : "This is not a proper HowTo, more of a \x26ldquo;note to self\x26rdquo; after having created a setup to test pimd issue #57. For these notes the following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and Qemu 2.3.0, is used:\n .--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | \x27--------\x27 \x27----\x27 \x27----\x27 \x27----------\x27  The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP\/MLD snooping to get pimd to run smoothly.",
+  "description" : "This is not a proper HowTo, more of a \x26ldquo;note to self\x26rdquo; after having created a setup to test pimd issue #57. For these notes the following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and Qemu 2.3.0, is used:\n .--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | \x27--------\x27 \x27----\x27 \x27----\x27 \x27----------\x27 The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP\/MLD snooping to get pimd to run smoothly.",
   "inLanguage" : "en",
   "wordCount":  354 ,
   "datePublished" : "2015-09-27T18:45:00",
@@ -86,7 +86,7 @@
 
 <meta property="og:title" content="HowTo run pimd on FreeBSD" />
 <meta property="og:description" content="This is not a proper HowTo, more of a &ldquo;note to self&rdquo; after having created a setup to test pimd issue #57. For these notes the following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and Qemu 2.3.0, is used:
- .--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | &#39;--------&#39; &#39;----&#39; &#39;----&#39; &#39;----------&#39;  The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP/MLD snooping to get pimd to run smoothly.">
+ .--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | &#39;--------&#39; &#39;----&#39; &#39;----&#39; &#39;----------&#39; The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP/MLD snooping to get pimd to run smoothly.">
 <meta property="og:image" content="/images/profile.jpg" />
 <meta property="og:url" content="/howto/pimd-on-freebsd/" />
 <meta property="og:type" content="website" />
@@ -108,7 +108,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -293,85 +293,60 @@
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
 	
-        
-
-<p>This is not a proper HowTo, more of a &ldquo;note to self&rdquo; after having
+        <p>This is not a proper HowTo, more of a &ldquo;note to self&rdquo; after having
 created a setup to test pimd <a href="https://github.com/troglobit/pimd/issues/57">issue #57</a>.  For these notes the
 following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and
 Qemu 2.3.0, is used:</p>
-
 <pre><code>    .--------. net1 .----. net2 .----. net3 .----------.
     | Sender |------| R2 |------| R3 |------| Receiver |
     '--------'      '----'      '----'      '----------'
-</code></pre>
-
-<p>The networks between the boxes are actually Linux bridge devices (br),
+</code></pre><p>The networks between the boxes are actually Linux bridge devices (br),
 on which you may have to <a href="/multicast-howto.html#roll-your-own">disable IGMP/MLD snooping</a> to get <code>pimd</code>
 to run smoothly.  Only R2 and R3 run FreeBSD v10.2, 64-bit.  The <code>net1</code>,
 between sender and <code>R2</code>, and <code>net3</code>, between <code>R3</code> and the receiver, are
 both setup using simple DHCP client.  The Linux bridges have a DHCP
 server running.  Only <code>net2</code> between the two routers is static, using
 <code>20.30.0.0/24</code>.</p>
-
 <h2 id="freebsd-setup">FreeBSD Setup</h2>
-
 <p>You need a few things set up in FreeBSD before starting <code>pimd</code>.</p>
-
 <p>In <code>/boot/loader.conf</code> add the following line to load the MROUTING
 kernel module:</p>
-
 <pre><code>    ip_mroute_load=&quot;yes&quot;
-</code></pre>
-
-<p>If you want to serial console access to your FreeBSD, or run FreeBSD in
+</code></pre><p>If you want to serial console access to your FreeBSD, or run FreeBSD in
 Qemu (virt-manager), you may want to add the following lines as well to
 <code>/boot/loader.conf</code>:</p>
-
 <pre><code>    boot_multicons=&quot;YES&quot;
     boot_serial=&quot;YES&quot;
     comconsole_speed=&quot;115200&quot;
     console=&quot;comconsole,vidconsole&quot;
-</code></pre>
-
-<p>In <code>/etc/rc.conf</code> there are several lines that need to be added, both to
+</code></pre><p>In <code>/etc/rc.conf</code> there are several lines that need to be added, both to
 enable router/gateway mode and to enable RIP to resolve the unicast
 forwarding table.  The <code>Sender</code> and <code>Recieiver</code> nodes, which run
 Ubuntu 14.04, employ Quagga <code>ripd</code> for this, but on FreeBSD we employ
 the god &lsquo;ol <code>routed</code> :-)</p>
-
 <pre><code>    gateway_enable=&quot;YES&quot;
     routed_enable=&quot;YES&quot;
     routed_flags=&quot;-s&quot;
-</code></pre>
-
-<p>Notice how we change the <code>routed_flags</code> from quiet mode! Now, for
+</code></pre><p>Notice how we change the <code>routed_flags</code> from quiet mode! Now, for
 interop with the rest of the network we enable RIP v2 mode by adding the
 following line to <code>/etc/gateways</code>:</p>
-
 <pre><code>    ripv2
-</code></pre>
-
-<h2 id="download-pimd">Download pimd</h2>
-
+</code></pre><h2 id="download-pimd">Download pimd</h2>
 <p>Next we need to download and build <code>pimd</code>.  It is available on GitHub if
 you want the latest bleeding edge stuff, or use the latest tarball:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">    wget http://ftp.troglobit.com/pimd/pimd-2.3.2.tar.gz
     tar xfz pimd-2.3.2.tar.gz
     <span style="color:#0086b3">cd</span> pimd-2.3.2/
     ./configure
-    make</code></pre></div>
-<h2 id="running-pimd">Running pimd</h2>
-
+    make
+</code></pre></div><h2 id="running-pimd">Running pimd</h2>
 <p>Now we can start pimd on both routers:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">    ./pimd -c pimd.conf</code></pre></div>
-<p>After a while you should be able to see some interesting output in both</p>
-
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">    ./pimd -c pimd.conf
+</code></pre></div><p>After a while you should be able to see some interesting output in both</p>
 <pre><code>    ./pimd -r
-</code></pre>
-
-<p>and</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">    netstat -rn</code></pre></div>
-<p>See the <a href="/howto-run-pimd-on-openbsd.html">OpenBSD HowTo</a> for example
+</code></pre><p>and</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">    netstat -rn
+</code></pre></div><p>See the <a href="/howto-run-pimd-on-openbsd.html">OpenBSD HowTo</a> for example
 output and troubleshooting.</p>
 
 
@@ -461,7 +436,7 @@ output and troubleshooting.</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

@@ -24,7 +24,6 @@ as a shift-reduce problem with Bison and ended up a ping-pong of useful
 UNIX API:s.  We concluded that despite having worked professionally with
 UNIX for over two decades, it is still very satisfying finding gems like
 these.&lt;/p&gt;
-
 &lt;p&gt;Most people are completely unaware they exist and end up rolling their
 own (buggy) implementations.  For instance, string manipulation and
 various forms of linked lists.  Which is why I many years ago extracted
@@ -35,7 +34,6 @@ up-to-date &lt;code&gt;queue.h&lt;/code&gt; with the &lt;code&gt;_SAFE&lt;/code&
 like &lt;a href=&#34;https://libbsd.freedesktop.org/wiki/&#34;&gt;libbsd&lt;/a&gt; for this, but I&amp;rsquo;ve
 found many of the ports incomplete and unsafe and prefer to stay closer
 to the upstream *BSD versions.&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; This post was originally written Nov 14, 2015.  It was a
 Saturday and I remember being extremely inspired when I wrote it.  I&amp;rsquo;ve
 continued adding to it over the years, and still do.  So, as of Jul 2,
@@ -51,11 +49,9 @@ continued adding to it over the years, and still do.  So, as of Jul 2,
       <description>&lt;p&gt;I still get asked this, from time to time.  Maybe it&amp;rsquo;s because I only
 use event loops, maybe it&amp;rsquo;s because I&amp;rsquo;ve written &lt;a href=&#34;https://github.com/troglobit/libuev&#34;&gt;libuEv&lt;/a&gt;, or maybe
 people still don&amp;rsquo;t understand:&lt;/p&gt;
-
 &lt;blockquote&gt;
 &lt;p&gt;Why an event loop, why not use threads?&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;So here&amp;rsquo;s my response, once more.&lt;/p&gt;</description>
     </item>
     
@@ -78,7 +74,6 @@ Due to my not really taking much vacation previous years I had saved up for ten 
       <description>&lt;blockquote&gt;
 &lt;p&gt;Enable &lt;em&gt;all&lt;/em&gt; the warnings!&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;This is one of the truths you learn when you start working with C.  Most
 of the time adding &lt;code&gt;CPPFLAGS=&amp;quot;-W -Wall -Werror&amp;quot;&lt;/code&gt; is all you need to find
 all the nasty bugs.  And if that&amp;rsquo;s not enough, there are tons of tools
@@ -86,7 +81,6 @@ for static code analysis, like &lt;code&gt;scan-build&lt;/code&gt; in
 &lt;a href=&#34;http://clang-analyzer.llvm.org/scan-build.html&#34;&gt;Clang&lt;/a&gt;, and
 &lt;a href=&#34;https://scan.coverity.com/&#34;&gt;Coverity Scan&lt;/a&gt;, to help you &lt;em&gt;find all the
 bugs&lt;/em&gt;!&lt;/p&gt;
-
 &lt;p&gt;However, these pesky warnings (some of which cannot even be disabled!)
 are sometimes more of a nuisance than help.  Sometimes you &lt;em&gt;know&lt;/em&gt; that
 some parameters to a function will remain unused &amp;ndash; it&amp;rsquo;s a callback, and
@@ -105,10 +99,9 @@ pause and think, real hard, becuase the people asking me this aren&amp;rsquo;t
 programmers.  They use computers, but are mostly limited to a Windows
 machine, writing in MS Word and browsing the Internet, mostly for
 Facebook.&lt;/p&gt;
-
 &lt;p&gt;I often start off with: &amp;ldquo;It&amp;rsquo;s a bit complicated to explain &amp;hellip; &amp;ldquo;, by
 which time I&amp;rsquo;ve lost most of the people in the room listening to me.
-Sometimes I say: &amp;ldquo;I&amp;rsquo;m a software architect.&amp;rdquo;, because people seem to
+Sometimes I say: &amp;ldquo;I&amp;rsquo;m a software architect.&amp;quot;, because people seem to
 know what architects do for a living, they draw houses, design stuff
 and drive SAAB&amp;rsquo;s.  Much like dentists.  The prefix &amp;ldquo;software&amp;rdquo; however
 does confuse people.&lt;/p&gt;</description>
@@ -122,7 +115,6 @@ does confuse people.&lt;/p&gt;</description>
       <guid>/2013/06/22/programming-as-an-artform/</guid>
       <description>&lt;p&gt;This is a response to the excellent post by Jani Gorše, titled
 &lt;a href=&#34;https://blooki.st/BlookElement/ShowTextPhoto?blookElementId=1962&#34;&gt;Why is Programming an Art?&lt;/a&gt;&lt;/p&gt;
-
 &lt;p&gt;Ever since I began studying Computer Engineering at &lt;a href=&#34;http://www.mdh.se&#34;&gt;university&lt;/a&gt; back
 in 1995 I have struggled to find the &amp;ldquo;proper&amp;rdquo; ways to format my code,
 name functions and variables appropriately, structure functions into

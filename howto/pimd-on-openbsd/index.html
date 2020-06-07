@@ -110,7 +110,7 @@ First of all, my …">
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -295,45 +295,35 @@ First of all, my …">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
 	
-        
-
-<p>This is an introduction to HowTo run <a href="/pimd.html">pimd</a> on OpenBSD.  I
+        <p>This is an introduction to HowTo run <a href="/pimd.html">pimd</a> on OpenBSD.  I
 keep it around mostly as a reminder to myself when testing new pimd
 releases, maybe someone else can make use of it as well.</p>
-
 <p>First of all, my sincere thanks to the <a href="http://www.openbsd.org">OpenBSD</a>
 team for, not just an awesome UNIX distribution, but also for their good
 taste in shipping a MULTICAST enabled kernel in the base distribution!
 On both NetBSD and FreeBSD <a href="/blog/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/">there is a bit of work</a> to get multicast
 support, which is one of the reasons for my not writing a HowTo for
 either of them atm.</p>
-
 <p>Now, OpenBSD already ships mrouted, which is an older flood and prune based
 protocol called DVMRP.  Their version is a few years older than the
 <a href="/mrouted.html">mrouted</a> I maintain.  The DVMRP protocol in mrouted uses a
 sort of built-in RIP to figure out how to route multicast.  This was one of
 the first things <a href="http://tools.ietf.org/html/rfc2362">they</a> ripped out when
 creating PIM.</p>
-
 <p>PIM stands for <em>Protocol Independent Multicast</em>, so you need to run RIP
 or OSPF (or BGP or IS-IS) or whatever <em>unicast</em> routing protocol first
 so that regular traffic works.  Which is kind of useful since you can
 test the network with simple <code>ping</code> before trying to get any multicast
 routing to work &hellip;</p>
-
-<!-- more -->
-
+<!-- raw HTML omitted -->
 <p>My topology for testing <code>pimd</code> often looks something like the following.
 In this HowTo the OpenBSD router is R3:</p>
-
 <pre><code>.--------.    .----.    .----.    .----.    .----------.
 | Sender |----| R1 |----| R2 |----| R3 |----| Receiver |
 '--------'    '----'    '----'    '----'    '----------'
 </code></pre>
-
 <p>So, starting out with a clean OpenBSD install we begin by setting up the
 basics:</p>
-
 <ul>
 <li>Activate unicast &amp; multicast routing in the kernel</li>
 <li>Enable ripd and set system up as a multicast router</li>
@@ -342,24 +332,17 @@ basics:</p>
 <li>Run pimd</li>
 <li>Troubleshooting</li>
 </ul>
-
-<h3 id="enable-unicast-multicast-routing-in-the-kernel">Enable Unicast &amp; Multicast Routing in the Kernel</h3>
-
+<h3 id="enable-unicast--multicast-routing-in-the-kernel">Enable Unicast &amp; Multicast Routing in the Kernel</h3>
 <pre><code>cp /etc/examples/sysctl.conf /etc/
 </code></pre>
-
 <p>Uncomment the following two lines</p>
-
 <pre><code>net.inet.ip.forwarding=1        # 1=Permit forwarding (routing) of IPv4 packets
 net.inet.ip.mforwarding=1       # 1=Permit forwarding (routing) of IPv4 multicast packets
 </code></pre>
-
 <h3 id="enable-ripd-and-set-system-up-as-multicast-router">Enable ripd and set System up as Multicast Router</h3>
-
 <p>Create the file /etc/rc.conf.local, unless you already have it.  Add the
 following lines to enable ripd and enable the use of a multicast routing
 daemon:</p>
-
 <pre><code># Enable ripd, also edit /etc/ripd.conf
 ripd_flags=&quot;&quot;           # for normal use: &quot;&quot;
 
@@ -368,17 +351,12 @@ ripd_flags=&quot;&quot;           # for normal use: &quot;&quot;
 multicast_host=NO       # Route all multicast packets to a single interface
 multicast_router=YES    # A multicast routing daemon will be run, e.g. mrouted
 </code></pre>
-
 <h3 id="configure-ripd">Configure ripd</h3>
-
 <p>Create the file /etc/ripd.conf by using the template</p>
-
 <pre><code>cp /etc/examples/ripd.conf /etc/
 </code></pre>
-
 <p>Edit the file and add interface sections to all the interfaces you want
 ripd to operate on, or to not operate on.  Here is my <code>ripd.conf</code>:</p>
-
 <pre><code>fib-update yes
 redistribute connected
 split-horizon poisoned
@@ -399,56 +377,40 @@ interface pcn2 {
         cost 1
 }
 </code></pre>
-
 <p>Notice how I have <code>redistribute connected</code> instead of the default.</p>
-
-<h3 id="download-build-pimd">Download &amp; Build pimd</h3>
-
+<h3 id="download--build-pimd">Download &amp; Build pimd</h3>
 <p>GitHub is the home for pimd development, the latest release is always
 available on the <a href="https://github.com/troglobit/pimd/releases">releases</a> page.  For convenience I also provide an
 <a href="ftp://ftp.troglobit.com/pimd/">FTP</a>, so it is simple enough to use OpenBSD without any additional
 tools.</p>
-
 <pre><code>$ ftp ftp://ftp.troglobit.com/pimd/pimd-2.3.0.tar.gz
 $ tar xfz pimd-2.3.0.tar.gz
 $ cd pimd-2.3.0/
 $ ./configure; make
 </code></pre>
-
 <p>You may want to install <code>pimd</code> to your system when done, but you can
 also run it from the build directory if you like.  The default install
 path is <code>/usr/local/sbin/pimd</code> and <code>/etc/pimd.conf</code>.  Use the <code>--prefix</code>
 and <code>--sysconfdir</code> command line options to the configure script to set
 other install directories.  See the file <a href="https://github.com/troglobit/pimd/blob/master/INSTALL.md">INSTALL.md</a> for more info.</p>
-
 <p>That&rsquo;s it!</p>
-
 <h3 id="run-pimd">Run pimd</h3>
-
 <p>The default settings in <code>/etc/pimd.conf</code> should work for almost all use
 cases, but it is good practise to at least disable PIM on interfaces out
 to the Internet, or your local office network.  In my case, like in the
 case with ripd above, it is <code>pcn0</code>.</p>
-
 <p>Uncomment and edit the line <code>#phyint eth0 disable</code> in <code>/etc/pimd.conf</code>:</p>
-
 <pre><code>phyint pcn0 disable
 </code></pre>
-
 <p>Then you can start pimd:</p>
-
 <pre><code>pimd
 </code></pre>
-
 <p>To see what it is doing you can run it in the foreground with the debug
 command:</p>
-
 <pre><code>pimd -d
 </code></pre>
-
 <p>or if you simply want to see the current state.  Notice how it says
 <code>DISABLED</code> on VIF 0, which is <code>pcn0</code>:</p>
-
 <pre><code>pimd -r
 Virtual Interface Table ======================================================
 Vif  Local Address    Subnet              Thresh  Flags      Neighbors
@@ -492,10 +454,8 @@ Number of Groups: 1
 Number of Cache MIRRORs: 1
 ------------------------------------------------------------------------------
 </code></pre>
-
 <p>You may also want to see what the OpenBSD kernel thinks about the
 situation when everything is working:</p>
-
 <pre><code># netstat -g
 
 Virtual Interface Table
@@ -514,16 +474,12 @@ Total no. of entries in cache: 1
 IPv6 Multicast Interface Table is empty
 IPv6 Multicast Routing Table is empty
 </code></pre>
-
 <h3 id="troubleshooting">Troubleshooting</h3>
-
 <p>The number one problem in multicast routing is the TTL of the multicast
 stream from the sender.  In this example I use simple <code>ping</code>, but tweak
 the TTL and force the output interface:</p>
-
 <pre><code>root@sender:~# ping -I eth1 -t 10 225.1.2.3           # Linux
 </code></pre>
-
 <p>The second most common problem is with equipment between the sender or
 the receiver and the closes router.  Usually some infrastructure like a
 simple switch, or as in the case with virtual setups, a software bridge.
@@ -532,10 +488,8 @@ If you suspect trouble, use <code>ping</code> from the receiver (or the sender) 
 use <code>tcpdump</code> on the closest router.  You should be able to see the ICMP
 frames.  If not, try disabling <em>IGMP snooping</em> on the swithc or software
 bridge.  On a Linux <em>host system</em> this is done by:</p>
-
 <pre><code>echo 0 &gt; /sys/devices/virtual/net/virbr*/bridge/multicast_snooping
 </code></pre>
-
 <p>The third most common problem is actually the firewall in your system.
 On Linux systems you get <code>EPERM</code> &ndash; &ldquo;Operation not permitted&rdquo;, and on
 OpenBSD you likely get <code>EHOSTUNREACH</code> &ndash; &ldquo;No route to host&rdquo; all over the
@@ -544,7 +498,6 @@ is due to <code>pf</code> by default filtering all frames with IP options set.  
 added support for the &ldquo;Router Alert&rdquo; IP option to IGMP frames in v2.2.0,
 this is recommended per RFC.   Add this to your <code>/etc/pf.conf</code> to allow
 IGMP frames to be sent by pimd:</p>
-
 <pre><code># Enable IGMP with Router Alert IP option
 pass proto igmp allow-opts
 </code></pre>
@@ -636,7 +589,7 @@ pass proto igmp allow-opts
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

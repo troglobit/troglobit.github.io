@@ -41,7 +41,7 @@ Currently I&amp;rsquo;m shaping up the home pages and this blog to improve the e
       <guid>/2010/07/19/minix-editline-moves-to-git/</guid>
       <description>A small heads-up, I&amp;rsquo;ve migrated the Minix editline project from Bazaar to GIT. The new URL for keeping tabs on your favourite free readline() clone is:
  http://git.vmlinux.org/editline.git/
- I&amp;rsquo;m currently working on fixing up the tree and doing some house cleaning &amp;mdash; including making more stuff configurable &amp;mdash; before releasing a 1.14.0 later on.
+ I&amp;rsquo;m currently working on fixing up the tree and doing some house cleaning — including making more stuff configurable — before releasing a 1.14.0 later on.
 One such item is the integration of libtool with our autoconf friends. This should make it lot more portable (again) and also help smooth a merge with other sources for this library.</description>
     </item>
     
@@ -94,7 +94,7 @@ Get it from the usual FTP location:
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2008/06/09/minix-editline-v0-dot-1-4/</guid>
       <description>Another day another release, I guess. :-)
-Lots of small fixes &amp;mdash; it can now be cross-built for Arm (Xscale) without any serious warnings. Get it from the usual FTP location:
+Lots of small fixes — it can now be cross-built for Arm (Xscale) without any serious warnings. Get it from the usual FTP location:
  http://ftp.vmlinux.org/pub/People/jocke/minix-editline/  </description>
     </item>
     

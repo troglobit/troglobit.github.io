@@ -10,9 +10,9 @@
   <title>Overview of all pages with the category #c - </title>
   <meta property="og:title" content="Overview of all pages with the category #c" />
   <meta name="twitter:title" content="Overview of all pages with the category #c" />
-  <meta name="description" content="Overview of all pages with the category #c, such as: Why I Like C">
-  <meta property="og:description" content="Overview of all pages with the category #c, such as: Why I Like C">
-  <meta name="twitter:description" content="Overview of all pages with the category #c, such as: Why I Like C">
+  <meta name="description" content="Overview of all pages with the category #c, such as: New Toolchains">
+  <meta property="og:description" content="Overview of all pages with the category #c, such as: New Toolchains">
+  <meta name="twitter:description" content="Overview of all pages with the category #c, such as: New Toolchains">
   <meta name="author" content="Joachim Nilsson"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -55,7 +55,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -84,6 +84,12 @@
           
             <li>
               <a title="Archive" href="/archive/">Archive</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="DEB" href="https://deb.troglobit.com">DEB</a>
             </li>
           
         
@@ -236,6 +242,133 @@
         <div class="posts-list">
           
             <article class="post-preview">
+              <a href="/2016/10/27/new-toolchains/">
+                <h2 class="post-title">New Toolchains</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on October 27, 2016
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Nilsson
+    
+  
+  
+</span>
+
+
+              </p>
+              <div class="post-entry">
+                
+                  Finally, fresh from the oven, here are the remaining two toolchains I&rsquo;ve promised, based on GCC 6.1 and GLIBC 2.23. Download from the FTP:
+ arm-unknown-linux-gnueabi-6.1.0-2.tar.xz powerpc-unknown-linux-gnu-6.1.0-2.tar.xz x86_64-unknown-linux-gnu-6.1.0-2.tar.xz  Unpack into /usr/local, and add to your $PATH, e.g.
+export PATH=/usr/local/arm-unknown-linux-gnueabi-6.1.0-2/bin:$PATH  The toolchains are built using crosstool-NG on Ubuntu 16.04 64-bit, and are primarily intended for myself and users of TroglOS, but are generic enough to be useful for other purposes as well.
+                  <a href="/2016/10/27/new-toolchains/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="/2016/09/26/arm-toolchain-r1/">
+                <h2 class="post-title">ARM Toolchain r1</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on September 26, 2016
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Nilsson
+    
+  
+  
+</span>
+
+
+              </p>
+              <div class="post-entry">
+                
+                  First GCC 6.1 based ARM (32-bit) toolchain released on my FTP. Built using crosstool-NG for Ubuntu 16.04 (x86_64) with GLIBC 2.23.
+ arm-unknown-linux-gnueabi-6.1.0-1.tar.xz  Download, unpack into /usr/local, and add to your $PATH
+export PATH=/usr/local/arm-unknown-linux-gnueabi-6.1.0-1/bin:$PATH  There&rsquo;s lots of neat stuff included, both a sysroot and a debug-root with GDB and gdbserver for target. For details on using it, see the excellent docs.
+The main purpose for my building this is TroglOS, but it is useful for other purposes as well of course.
+                  <a href="/2016/09/26/arm-toolchain-r1/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/">
+                <h2 class="post-title">Rant: All the C Compiler Warnings ...</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on January 12, 2015
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Nilsson
+    
+  
+  
+</span>
+
+
+              </p>
+              <div class="post-entry">
+                
+                  <blockquote>
+<p>Enable <em>all</em> the warnings!</p>
+</blockquote>
+<p>This is one of the truths you learn when you start working with C.  Most
+of the time adding <code>CPPFLAGS=&quot;-W -Wall -Werror&quot;</code> is all you need to find
+all the nasty bugs.  And if that&rsquo;s not enough, there are tons of tools
+for static code analysis, like <code>scan-build</code> in
+<a href="http://clang-analyzer.llvm.org/scan-build.html">Clang</a>, and
+<a href="https://scan.coverity.com/">Coverity Scan</a>, to help you <em>find all the
+bugs</em>!</p>
+<p>However, these pesky warnings (some of which cannot even be disabled!)
+are sometimes more of a nuisance than help.  Sometimes you <em>know</em> that
+some parameters to a function will remain unused &ndash; it&rsquo;s a callback, and
+you don&rsquo;t need all the data given to you.  So you start adding all kinds
+of voodoo, like <code>__attribute__ ((unused))</code> &hellip; seriously?</p>
+                  <a href="/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
               <a href="/2009/03/27/why-i-like-c/">
                 <h2 class="post-title">Why I Like C</h2>
 
@@ -338,7 +471,7 @@ on the subject.  I couldn&rsquo;t agree more.</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

@@ -13,7 +13,6 @@
   <meta name="description" content="Recently I needed a simple TCP/UDP port redirector and stumbled upon
 this Stackoverflow post.  As usual I wasn&rsquo;t first wanting to this
 without using iptables.
-
 There were several alternatives, but since my target was embedded with
 limited amount of RAM and flash I wanted something really small.  So the
 best fit turned out to be redir, which unfortunately only could
@@ -21,7 +20,6 @@ handle TCP connections.  This is what led me to write uredir to
 complement redir.  Eventually I ended up adoptiing redir as well,
 which meant giving it a bit of a facelift and to give them both the same
 look and feel.
-
 Currently they are two separate applications, which in some use-cases
 can be beneficial (small size), but I may in the future transplant the
 UDP functionality of uredir into redir.  We&rsquo;ll see, right now though
@@ -29,7 +27,6 @@ I have several other projects to attend to :-)">
   <meta property="og:description" content="Recently I needed a simple TCP/UDP port redirector and stumbled upon
 this Stackoverflow post.  As usual I wasn&rsquo;t first wanting to this
 without using iptables.
-
 There were several alternatives, but since my target was embedded with
 limited amount of RAM and flash I wanted something really small.  So the
 best fit turned out to be redir, which unfortunately only could
@@ -37,7 +34,6 @@ handle TCP connections.  This is what led me to write uredir to
 complement redir.  Eventually I ended up adoptiing redir as well,
 which meant giving it a bit of a facelift and to give them both the same
 look and feel.
-
 Currently they are two separate applications, which in some use-cases
 can be beneficial (small size), but I may in the future transplant the
 UDP functionality of uredir into redir.  We&rsquo;ll see, right now though
@@ -45,7 +41,6 @@ I have several other projects to attend to :-)">
   <meta name="twitter:description" content="Recently I needed a simple TCP/UDP port redirector and stumbled upon
 this Stackoverflow post.  As usual I wasn&rsquo;t first wanting to this
 without using iptables.
-
 There were several alternatives, …">
   <meta name="author" content="Joachim Nilsson"/><script type="application/ld+json">
 {
@@ -120,7 +115,6 @@ There were several alternatives, …">
 <meta property="og:description" content="Recently I needed a simple TCP/UDP port redirector and stumbled upon
 this Stackoverflow post.  As usual I wasn&rsquo;t first wanting to this
 without using iptables.
-
 There were several alternatives, but since my target was embedded with
 limited amount of RAM and flash I wanted something really small.  So the
 best fit turned out to be redir, which unfortunately only could
@@ -128,7 +122,6 @@ handle TCP connections.  This is what led me to write uredir to
 complement redir.  Eventually I ended up adoptiing redir as well,
 which meant giving it a bit of a facelift and to give them both the same
 look and feel.
-
 Currently they are two separate applications, which in some use-cases
 can be beneficial (small size), but I may in the future transplant the
 UDP functionality of uredir into redir.  We&rsquo;ll see, right now though
@@ -142,7 +135,6 @@ I have several other projects to attend to :-)">
   <meta name="twitter:description" content="Recently I needed a simple TCP/UDP port redirector and stumbled upon
 this Stackoverflow post.  As usual I wasn&rsquo;t first wanting to this
 without using iptables.
-
 There were several alternatives, …">
   <meta name="twitter:image" content="/images/profile.jpg" />
   <meta name="twitter:card" content="summary" />
@@ -158,7 +150,7 @@ There were several alternatives, …">
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -361,7 +353,6 @@ There were several alternatives, …">
         <p>Recently I needed a simple TCP/UDP port redirector and stumbled upon
 <a href="https://serverfault.com/questions/252150/port-forwarding-on-linux-without-iptables/">this Stackoverflow post</a>.  As usual I wasn&rsquo;t first wanting to this
 without using <code>iptables</code>.</p>
-
 <p>There were several alternatives, but since my target was embedded with
 limited amount of RAM and flash I wanted something really small.  So the
 best fit turned out to be <a href="https://github.com/troglobit/redir">redir</a>, which unfortunately only could
@@ -369,59 +360,40 @@ handle TCP connections.  This is what led me to write <a href="https://github.co
 complement <code>redir</code>.  Eventually I ended up adoptiing <code>redir</code> as well,
 which meant giving it a bit of a facelift and to give them both the same
 look and feel.</p>
-
 <p>Currently they are two separate applications, which in some use-cases
 can be beneficial (small size), but I may in the future transplant the
 UDP functionality of <code>uredir</code> into <code>redir</code>.  We&rsquo;ll see, right now though
 I have several other <a href="/projects/">projects</a> to attend to :-)</p>
-
 <h2 id="examples">Examples</h2>
-
 <p>To redirect port 80 to a webserver listening on loopback port 8080,
 remember to use sudo when using priviliged ports:</p>
-
 <pre><code>sudo redir :80 127.0.0.1:8080
 </code></pre>
-
 <p>To run redir from a process monitor like <a href="https://github.com/troglobit/finit">Finit</a> or systemd, tell it
 to not background itself and to only use the syslog for log messages:</p>
-
 <pre><code>redir -n -s :80 127.0.0.1:8080
 </code></pre>
-
 <p>An <code>/etc/inetd.conf</code> line of the same looks very similar:</p>
-
 <pre><code>http  stream  tcp  nowait  root  /usr/sbin/tcpd /usr/bin/redir -n -s -i 127.0.0.1:8080
 </code></pre>
-
 <p>When running multiple instances it can be useful to change how they
 identify themselves.  The following starts an NNTP and a POP3 port
 redirector, named accordingly.</p>
-
 <pre><code>redir -I nntp www:119 netgate:119
 redir -I pop3 ftp:110 netgate:110
 </code></pre>
-
 <p><code>uredir</code> works much in the same way, but also has a few UDP specific
 features from the early days of the Internet:</p>
-
 <pre><code>uredir 0.0.0.0:53 192.168.0.1:53
 uredir 0.0.0.0:7                   # Echo mode
 </code></pre>
-
 <p>An <code>/etc/inetd.conf</code> example:</p>
-
 <pre><code>snmp    dgram   udp wait    root    /usr/sbin/tcpd /usr/bin/uredir -i 127.0.0.1:16161
 </code></pre>
-
 <p>See the <code>README</code> and man pages for each of the two commands for more
 information.  Enjoy!</p>
-
-<!--
-  -- Local Variables:
-  -- mode: markdown
-  -- End:
-  -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 
         
 
@@ -512,7 +484,7 @@ information.  Enjoy!</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

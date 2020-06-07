@@ -108,7 +108,7 @@ See my mini HowTo: Playing with SNMP for a quick introduction to setting up the 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -293,20 +293,15 @@ See my mini HowTo: Playing with SNMP for a quick introduction to setting up the 
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
 	
-        
-
-<p>This is an SNMP server for small and embedded systems, currently Linux
+        <p>This is an SNMP server for small and embedded systems, currently Linux
 and FreeBSD are supported.  It is easily portable to other UNIX systems
 since it&rsquo;s written in C.  The daemon is very small (~40 kiB) and does
 not have nowhere near the feature set of <a href="http://net-snmp.org">Net-SNMP</a>, therefore it has
 a very low impact on system resources.</p>
-
 <p>See my mini HowTo: <a href="/howto-play-with-snmp.html">Playing with SNMP</a> for a
 quick introduction to setting up the SNMP tools and MIBs to avoid having
 to use numerical OIDs.</p>
-
 <p><strong>Features:</strong></p>
-
 <ul>
 <li>Supports SNMP version 1 and 2c</li>
 <li>Supports SNMP <code>get</code>, <code>getnext</code> and <code>getbulk</code></li>
@@ -317,18 +312,12 @@ to use numerical OIDs.</p>
 <li>Supports the most important disk data (disk space/inodes available/used/free)</li>
 <li>Tested with <a href="http://net-snmp.org">net-snmp</a>, <a href="http://net-snmp.net">cacti</a>, and <a href="http://oss.oetiker.ch/mrtg/">MRTG</a></li>
 </ul>
-
-<p><a id="example"></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h2 id="example">Example</h2>
-
 <p>First start the daemon:</p>
-
 <pre><code>$ sudo ./mini-snmpd -i eth0,eth1,wlan0
 </code></pre>
-
 <p>Then do an SNMP walk:</p>
-
 <pre><code>$ snmpwalk -v2c -c public 127.0.0.1 .
 SNMPv2-MIB::sysDescr.0 = STRING: 
 SNMPv2-MIB::sysObjectID.0 = OID: SNMPv2-SMI::enterprises
@@ -406,36 +395,28 @@ UCD-SNMP-MIB::ssRawInterrupts.0 = Counter32: 50186444
 UCD-SNMP-MIB::ssRawContexts.0 = Counter32: 243678129
 UCD-SNMP-MIB::ssRawContexts.0 = No more variables left in this MIB View (It is past the end of the MIB tree)
 </code></pre>
-
-<p><a id="small"></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h2 id="building-really-small-binaries">Building Really Small Binaries</h2>
-
 <p>By simply calling <code>./configure &amp;&amp; make</code> you don&rsquo;t really get a small
 mini-snmpd binary.  Sure, most people know about setting <code>CFLAGS=-Os</code>
 before calling the configure script &ndash; that&rsquo;s how you reach the ~40 kiB
 mentioned above.</p>
-
 <pre><code>CFLAGS=&quot;-Os&quot; ./configure &amp;&amp; make clean all &amp;&amp; strip mini-snmpd &amp;&amp; ll mini-snmpd &amp;&amp; size mini-snmpd
 -rwxrwxr-x 1 jocke jocke 39520 nov  8 21:35 mini-snmpd*
-   text    data     bss     dec     hex  filename
-  32766    1028   16032   49826    c2a2  mini-snmpd
+   text	   data	    bss	    dec	    hex	 filename
+  32766	   1028	  16032	  49826	   c2a2	 mini-snmpd
 </code></pre>
-
 <p>To get really crazy with things you can try this, it works for me but
 YMMV as usual:</p>
-
 <pre><code>CFLAGS=&quot;-W -Wall -Os -U_FORTIFY_SOURCE -fno-stack-protector -fomit-frame-pointer -ffunction-sections -fdata-sections -Wl,--gc-sections -fno-asynchronous-unwind-tables -fmerge-all-constants -fno-ident -Wl,-z,norelro -Wl,--hash-style=gnu -Wl,--build-id=none &quot; ./configure --disable-ipv6
 make clean all &amp;&amp; strip -S --strip-unneeded --remove-section=.note.gnu.gold-version --remove-section=.comment --remove-section=.note --remove-section=.note.gnu.build-id --remove-section=.note.ABI-tag mini-snmpd &amp;&amp; ll mini-snmpd &amp;&amp; size mini-snmpd
 -rwxrwxr-x 1 jocke jocke 30696 nov  8 21:37 mini-snmpd*
-   text    data     bss     dec     hex  filename
-  27305     964   15968   44237    accd  mini-snmpd
+   text	   data	    bss	    dec	    hex	 filename
+  27305	    964	  15968	  44237	   accd	 mini-snmpd
 </code></pre>
-
 <p>This insane amount of arguments to GCC saves you ~9kiB.  Which begs the
 question, is there anything else you can do, how low can we go?!  Let me
 introduce you to <a href="http://upx.sourceforge.net/">upx</a>:</p>
-
 <pre><code>upx --ultra-brute mini-snmpd &amp;&amp; ll mini-snmpd &amp;&amp; size mini-snmpd
                        Ultimate Packer for eXecutables
                           Copyright (C) 1996 - 2013
@@ -447,25 +428,20 @@ UPX 3.91        Markus Oberhumer, Laszlo Molnar &amp; John Reiser   Sep 30th 201
 
 Packed 1 file.
 -rwxrwxr-x 1 jocke jocke 15604 nov  8 21:37 mini-snmpd*
-   text    data     bss     dec     hex  filename
-      0       0       0       0       0  mini-snmpd
+   text	   data	    bss	    dec	    hex	 filename
+      0	      0	      0	      0	      0	 mini-snmpd
 </code></pre>
-
 <p>Yeah, running <code>size</code> on the binary afterwards is kinda useless, but
 <em>WOW</em>!  Using upx actually cut the size down to almost half of what we
 got with the insane arguments above &ndash; saved ~15kiB on a 30kiB binary!</p>
-
 <p>On embedded targets some of these tricks may just about save you if
 you&rsquo;re running out of flash.  However, there are often nasty compiler
 bugs to be found just by changing optimization level to <code>-Os</code>.  So when
 it comes to embedded I always recommend playing it safe and going with
 <code>-O2</code> and no further optimizations, unless you want to spend a lot of
 time looking for weird bugs!</p>
-
-<p><a id="info"></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h2 id="project-info">Project Info</h2>
-
 <p>This is the continuation of the hard work on mini-snmpd by Robert Ernst.
 Unfortunately his <a href="https://web.archive.org/web/20150522170054/http://members.aon.at/linuxfreak/linux/mini_snmpd.html">mini-snmpd homepage</a> has gone offline, so that and
 the lack of updates over the last couple of years is what prompted my
@@ -473,19 +449,16 @@ setting up a <a href="http://github.com/troglobit/mini-snmpd">GitHub project</a>
 development.  I&rsquo;ve also taken the liberty of setting up an
 <a href="ftp://ftp.troglobit.com/mini-snmpd/">FTP mirror</a> of any previous releases I could find.  If you happen
 to come by any older version(s), send me an email! :)</p>
-
 <p>mini-snmpd is licensed under the <a href="https://github.com/troglobit/mini-snmpd/blob/master/COPYING">GNU GPL v2</a>.</p>
-
 <ul>
 <li><a href="http://github.com/troglobit/mini-snmpd">Repository</a></li>
 <li><a href="http://github.com/troglobit/mini-snmpd/issues">Issue Tracker</a></li>
 <li><a href="ftp://ftp.troglobit.com/mini-snmpd/mini-snmpd-1.6.tar.gz">mini-snmpd-1.6.tar.gz</a>,
- <a href="ftp://ftp.troglobit.com/mini-snmpd/mini-snmpd-1.6.tar.gz.md5">MD5</a>,</li>
+<a href="ftp://ftp.troglobit.com/mini-snmpd/mini-snmpd-1.6.tar.gz.md5">MD5</a>,</li>
 <li><a href="https://github.com/troglobit/mini-snmpd/releases/tag/v1.6">ChangeLog</a></li>
 <li><a href="https://github.com/troglobit/mini-snmpd/blob/master/TODO">TODO</a></li>
 <li>Man page <a href="http://ftp.troglobit.com/mini-snmpd/mini-snmpd.html">mini-snmpd.8</a> (outdated)</li>
 </ul>
-
 <p>See also the old <a href="http://freecode.com/projects/minisnmpd">Free(code) page</a>.</p>
 
 
@@ -575,7 +548,7 @@ to come by any older version(s), send me an email! :)</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

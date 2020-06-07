@@ -11,9 +11,9 @@
   <meta property="og:title" content="HowTo: Building Debian/Ubuntu Kernels" />
   <meta name="twitter:title" content="HowTo: Building Debian/Ubuntu Kernels" />
   <meta name="description" content="I have been over this topic so many times now, strangely enough I&rsquo;ve managed to make things more complicated than they need to be. It&rsquo;s really this simple:
-$ wget ftp://ftp.sunet.se/pub/Linux/kernels/v2.6/linux-2.6.19.2.tar.bz2 $ tar xfj linux-2.6.19.2.tar.bz2 $ cd linux-2.6.19.2/ $ zcat /proc/config.gz &gt;.config $ make menuconfig [Tweak to your hearts desire] $ fakeroot make-kpkg --initrd kernel_image $ dpkg -i ../linux-image-2.6.19.2_2.6.19.2-10.00.Custom_i386.deb [DONE!]  You may, of course, need to tweak the file /etc/kernel-pkg.">
+$ wget ftp://ftp.sunet.se/pub/Linux/kernels/v2.6/linux-2.6.19.2.tar.bz2 $ tar xfj linux-2.6.19.2.tar.bz2 $ cd linux-2.6.19.2/ $ zcat /proc/config.gz &gt;.config $ make menuconfig [Tweak to your hearts desire] $ fakeroot make-kpkg --initrd kernel_image $ dpkg -i ../linux-image-2.6.19.2_2.6.19.2-10.00.Custom_i386.deb [DONE!] You may, of course, need to tweak the file /etc/kernel-pkg.conf, but there are man pages for that.">
   <meta property="og:description" content="I have been over this topic so many times now, strangely enough I&rsquo;ve managed to make things more complicated than they need to be. It&rsquo;s really this simple:
-$ wget ftp://ftp.sunet.se/pub/Linux/kernels/v2.6/linux-2.6.19.2.tar.bz2 $ tar xfj linux-2.6.19.2.tar.bz2 $ cd linux-2.6.19.2/ $ zcat /proc/config.gz &gt;.config $ make menuconfig [Tweak to your hearts desire] $ fakeroot make-kpkg --initrd kernel_image $ dpkg -i ../linux-image-2.6.19.2_2.6.19.2-10.00.Custom_i386.deb [DONE!]  You may, of course, need to tweak the file /etc/kernel-pkg.">
+$ wget ftp://ftp.sunet.se/pub/Linux/kernels/v2.6/linux-2.6.19.2.tar.bz2 $ tar xfj linux-2.6.19.2.tar.bz2 $ cd linux-2.6.19.2/ $ zcat /proc/config.gz &gt;.config $ make menuconfig [Tweak to your hearts desire] $ fakeroot make-kpkg --initrd kernel_image $ dpkg -i ../linux-image-2.6.19.2_2.6.19.2-10.00.Custom_i386.deb [DONE!] You may, of course, need to tweak the file /etc/kernel-pkg.conf, but there are man pages for that.">
   <meta name="twitter:description" content="I have been over this topic so many times now, strangely enough I&rsquo;ve managed to make things more complicated than they need to be. It&rsquo;s really this simple:
 $ wget …">
   <meta name="author" content="Joachim Nilsson"/><script type="application/ld+json">
@@ -64,7 +64,7 @@ $ wget …">
     "name" : "Joachim Nilsson"
   },
   "headline": "HowTo: Building Debian\/Ubuntu Kernels",
-  "description" : "I have been over this topic so many times now, strangely enough I\x26rsquo;ve managed to make things more complicated than they need to be. It\x26rsquo;s really this simple:\n$ wget ftp:\/\/ftp.sunet.se\/pub\/Linux\/kernels\/v2.6\/linux-2.6.19.2.tar.bz2 $ tar xfj linux-2.6.19.2.tar.bz2 $ cd linux-2.6.19.2\/ $ zcat \/proc\/config.gz \x26gt;.config $ make menuconfig [Tweak to your hearts desire] $ fakeroot make-kpkg --initrd kernel_image $ dpkg -i ..\/linux-image-2.6.19.2_2.6.19.2-10.00.Custom_i386.deb [DONE!]  You may, of course, need to tweak the file \/etc\/kernel-pkg.",
+  "description" : "I have been over this topic so many times now, strangely enough I\x26rsquo;ve managed to make things more complicated than they need to be. It\x26rsquo;s really this simple:\n$ wget ftp:\/\/ftp.sunet.se\/pub\/Linux\/kernels\/v2.6\/linux-2.6.19.2.tar.bz2 $ tar xfj linux-2.6.19.2.tar.bz2 $ cd linux-2.6.19.2\/ $ zcat \/proc\/config.gz \x26gt;.config $ make menuconfig [Tweak to your hearts desire] $ fakeroot make-kpkg --initrd kernel_image $ dpkg -i ..\/linux-image-2.6.19.2_2.6.19.2-10.00.Custom_i386.deb [DONE!] You may, of course, need to tweak the file \/etc\/kernel-pkg.conf, but there are man pages for that.",
   "inLanguage" : "en",
   "wordCount":  77 ,
   "datePublished" : "2007-02-03T11:00:45",
@@ -87,7 +87,7 @@ $ wget …">
 
 <meta property="og:title" content="HowTo: Building Debian/Ubuntu Kernels" />
 <meta property="og:description" content="I have been over this topic so many times now, strangely enough I&rsquo;ve managed to make things more complicated than they need to be. It&rsquo;s really this simple:
-$ wget ftp://ftp.sunet.se/pub/Linux/kernels/v2.6/linux-2.6.19.2.tar.bz2 $ tar xfj linux-2.6.19.2.tar.bz2 $ cd linux-2.6.19.2/ $ zcat /proc/config.gz &gt;.config $ make menuconfig [Tweak to your hearts desire] $ fakeroot make-kpkg --initrd kernel_image $ dpkg -i ../linux-image-2.6.19.2_2.6.19.2-10.00.Custom_i386.deb [DONE!]  You may, of course, need to tweak the file /etc/kernel-pkg.">
+$ wget ftp://ftp.sunet.se/pub/Linux/kernels/v2.6/linux-2.6.19.2.tar.bz2 $ tar xfj linux-2.6.19.2.tar.bz2 $ cd linux-2.6.19.2/ $ zcat /proc/config.gz &gt;.config $ make menuconfig [Tweak to your hearts desire] $ fakeroot make-kpkg --initrd kernel_image $ dpkg -i ../linux-image-2.6.19.2_2.6.19.2-10.00.Custom_i386.deb [DONE!] You may, of course, need to tweak the file /etc/kernel-pkg.conf, but there are man pages for that.">
 <meta property="og:image" content="/images/profile.jpg" />
 <meta property="og:url" content="/2007/02/03/building-debian-slash-ubuntu-kernels/" />
 <meta property="og:type" content="website" />
@@ -110,7 +110,7 @@ $ wget …">
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -313,7 +313,6 @@ $ wget …">
         <p>I have been over this topic so many times now, strangely enough I&rsquo;ve
 managed to make things more complicated than they need to be.  It&rsquo;s
 really this simple:</p>
-
 <pre><code>$ wget ftp://ftp.sunet.se/pub/Linux/kernels/v2.6/linux-2.6.19.2.tar.bz2
 $ tar xfj linux-2.6.19.2.tar.bz2
 $ cd linux-2.6.19.2/
@@ -323,9 +322,7 @@ $ make menuconfig
 $ fakeroot make-kpkg --initrd kernel_image
 $ dpkg -i ../linux-image-2.6.19.2_2.6.19.2-10.00.Custom_i386.deb
 [DONE!]
-</code></pre>
-
-<p>You may, of course, need to tweak the file <code>/etc/kernel-pkg.conf</code>, but
+</code></pre><p>You may, of course, need to tweak the file <code>/etc/kernel-pkg.conf</code>, but
 there are man pages for that.</p>
 
 
@@ -418,7 +415,7 @@ there are man pages for that.</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

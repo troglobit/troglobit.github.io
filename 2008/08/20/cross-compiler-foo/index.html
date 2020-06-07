@@ -63,7 +63,7 @@
   "headline": "Cross Compiler Foo",
   "description" : "There is a certain magic surrounding cross compilers and the people that know how to build one. Not unlike that of (Linux\/BSD) kernel developers. At work we today support two embedded Linux targets, both are ARM based, and in neither of the two have we built the cross compiler ourselves. The first was ye\x26rsquo; old 2.95 based from uClinux.org and the second we had a consultant build for us. Lame!",
   "inLanguage" : "en",
-  "wordCount":  305 ,
+  "wordCount":  306 ,
   "datePublished" : "2008-08-20T20:14:42",
   "dateModified" : "2008-08-20T20:14:42",
   "image" : "\/images\/profile.jpg",
@@ -105,7 +105,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -311,19 +311,16 @@ developers.  At work we today support two embedded Linux targets, both
 are ARM based, and in neither of the two have we built the cross
 compiler ourselves.  The first was ye&rsquo; old 2.95 based from
 <a href="http://www.uclinux.org/">uClinux.org</a> and the second we had a consultant build for us.  Lame!</p>
-
 <p>Ever since I was appointed software architect I&rsquo;ve had this nagging
 sensation about our cross-compiler situation.  We do everything else:
 roll our own archs for Linux, patch BusyBox, design our own L2/L3
 network daemons, and what-not.  Very annoying that we have such poor
 control of the mantle piece of our build environment.</p>
-
 <p>Sure, it&rsquo;s almost indistinguishable from magic, but it&rsquo;s not hard.
 There are fine helpers such as <a href="http://buildroot.uclibc.org/">buildroot</a>, ptxdist and the aging
 crosstool scripts by Dan Kegel.  I used to do some work with Dan&rsquo;s
 scripts in a couple of previous jobs, so it was a pleasant surprise to
 find that the project had found a new maintainer!</p>
-
 <p>I can highly recommend the <a href="http://crosstool-ng.org/">crosstool-NG</a> project!  It makes building
 a toolchain really easy.  In a snap had I copied our uClibc <code>.config</code>
 into the work dir of my configuration, issued the &ldquo;build&rdquo; command and
@@ -331,8 +328,7 @@ wham, there it was a coffee break later.  A working GCC v4.2.4 cross
 compiler for Arm Xscale (big-endian) with built-in uClibc (no more GLIBC
 madness and separate uClibc builds in our tree), not to mention an all
 you can eat buffe of extra tools for the target: <code>strace</code>, <code>gdb</code> &amp;
-<code>gdbserver</code>, <code>libdmalloc</code>, <code>ncurses</code>&nbsp;&hellip; crazy.</p>
-
+<code>gdbserver</code>, <code>libdmalloc</code>, <code>ncurses</code> &hellip; crazy.</p>
 <p>I&rsquo;ll start rolling it out on monday in our department and keep close
 tabs on the development of crosstool-NG to be able to grab the
 latest 4.3.2, or later GCC when it enters the ct-ng Subversion
@@ -428,7 +424,7 @@ repository.</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

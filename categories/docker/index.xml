@@ -21,10 +21,8 @@
       <guid>/2017/09/17/packaging-software-with-docker/</guid>
       <description>&lt;p&gt;This post details how to package and deploy software with Docker.  The
 example uses &lt;a href=&#34;https://github.com/troglobit/merecat&#34;&gt;Merecat httpd&lt;/a&gt; on Alpine Linux.  Try it out with:&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;docker pull troglobit/merecat
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;See &lt;a href=&#34;https://hub.docker.com/r/troglobit/merecat/&#34;&gt;https://hub.docker.com/r/troglobit/merecat/&lt;/a&gt; for details on how to
 run Merecat httpd in production.&lt;/p&gt;</description>
     </item>
@@ -39,16 +37,13 @@ run Merecat httpd in production.&lt;/p&gt;</description>
 reported to &lt;a href=&#34;https://github.com/troglobit/pimd/&#34;&gt;pimd&lt;/a&gt;.  That number of
 issues reported is cool in itself, but this was a question about
 &lt;a href=&#34;https://www.docker.com&#34;&gt;Docker&lt;/a&gt; and &lt;code&gt;pimd&lt;/code&gt;.&lt;/p&gt;
-
 &lt;p&gt;Up until that point I had only read about this new fad, and played
 around with it a bit &lt;a href=&#34;http://www.westermo.com&#34;&gt;at work&lt;/a&gt; for use as a
 stable build environment for cross-compiling.  I had no idea people
 would want to use a Docker container as a multicast sink.  Basically I
 was baffled.&lt;/p&gt;
-
 &lt;p&gt;The reporter used a Java based tool but simply couldn&amp;rsquo;t get things to
 work properly with &lt;code&gt;pimd&lt;/code&gt; running on the host:&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;                eth0
  MC sender ---&amp;gt; [ Server host ]    &amp;lt;--- router running pimd
                        |

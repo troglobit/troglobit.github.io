@@ -21,7 +21,7 @@
       <guid>/2009/02/14/reminder-to-self/</guid>
       <description>How to recode AVI-files to be able to write them to a Video CD.
 ffmpeg -i original.avi -target pal-vcd copy.mpg vcdimager -t vcd1 -l &amp;quot;Title&amp;quot; -c vcd.cue -b vcd.bin copy.mpg cdrdao write --device /dev/cdrw vcd.cue  Note: vcdimager is able to take multiple .mpg files as argument, very useful when burning multiple family videos to the same disc!
-Tip from Johan Risberg on how to be able to reattach a UTF-8 Linux screen session from Cygwin.</description>
+ Tip from Johan Risberg on how to be able to reattach a UTF-8 Linux screen session from Cygwin.</description>
     </item>
     
   </channel>

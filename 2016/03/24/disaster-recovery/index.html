@@ -14,15 +14,12 @@
 except on days like these you accidentally manage to erase $HOME and
 have no real backup to rely on &hellip; Maundy Thursday will forever be Black
 Thursday for me, from now on.
-
 Best thing your can do, after cursing at yourself constantly for a
 couple of hours, is to:
-
 
 Come up with a useful backup and restore strategy
 Read up on undeletion tools for Ext4
 Blog about it, naturally
-
 
 BUT FIRST &ndash; QUICK &ndash; UNMOUNT OR POWER-OFF YOUR COMPUTER &ndash; PULL OUT THE
 BATTERY &ndash; AND STEP AWAY FROM THE COMPUTER!  Must protect the partition
@@ -32,15 +29,12 @@ take heed young people!">
 except on days like these you accidentally manage to erase $HOME and
 have no real backup to rely on &hellip; Maundy Thursday will forever be Black
 Thursday for me, from now on.
-
 Best thing your can do, after cursing at yourself constantly for a
 couple of hours, is to:
-
 
 Come up with a useful backup and restore strategy
 Read up on undeletion tools for Ext4
 Blog about it, naturally
-
 
 BUT FIRST &ndash; QUICK &ndash; UNMOUNT OR POWER-OFF YOUR COMPUTER &ndash; PULL OUT THE
 BATTERY &ndash; AND STEP AWAY FROM THE COMPUTER!  Must protect the partition
@@ -123,15 +117,12 @@ have no real backup to rely on &hellip; Maundy Thursday will …">
 except on days like these you accidentally manage to erase $HOME and
 have no real backup to rely on &hellip; Maundy Thursday will forever be Black
 Thursday for me, from now on.
-
 Best thing your can do, after cursing at yourself constantly for a
 couple of hours, is to:
-
 
 Come up with a useful backup and restore strategy
 Read up on undeletion tools for Ext4
 Blog about it, naturally
-
 
 BUT FIRST &ndash; QUICK &ndash; UNMOUNT OR POWER-OFF YOUR COMPUTER &ndash; PULL OUT THE
 BATTERY &ndash; AND STEP AWAY FROM THE COMPUTER!  Must protect the partition
@@ -160,7 +151,7 @@ have no real backup to rely on &hellip; Maundy Thursday will …">
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -364,37 +355,28 @@ have no real backup to rely on &hellip; Maundy Thursday will …">
 except on days like these you accidentally manage to erase <code>$HOME</code> and
 have no real backup to rely on &hellip; Maundy Thursday will forever be Black
 Thursday for me, from now on.</p>
-
 <p>Best thing your can do, after cursing at yourself constantly for a
 couple of hours, is to:</p>
-
 <ol>
 <li>Come up with a useful backup and <em>restore</em> strategy</li>
 <li>Read up on undeletion tools for Ext4</li>
 <li>Blog about it, naturally</li>
 </ol>
-
 <p>BUT FIRST &ndash; QUICK &ndash; UNMOUNT OR POWER-OFF YOUR COMPUTER &ndash; PULL OUT THE
 BATTERY &ndash; AND STEP AWAY FROM THE COMPUTER!  Must protect the partition
 from being accidentally written to &ndash; I completely fumbled this step, so
 take heed young people!</p>
-
 <p>Now calm down and act like an engineer again.</p>
-
 <p>There exist two neat tools, three if you count the more hard core
 <code>debugfs</code>:</p>
-
 <ul>
 <li><a href="http://extundelete.sourceforge.net/">extundelete</a></li>
 <li><a href="http://ext4magic.sourceforge.net/ext4magic_en.html">ext4magic</a></li>
 </ul>
-
 <p>Both have been around a while, and both are capable of restoring all
 files.  See their respective home pages for details.</p>
-
 <p>My system used LVM, of course, to make things a bit harder.  That&rsquo;s why
 I&rsquo;m documenting my steps here:</p>
-
 <ol>
 <li>Remove disk from lappy</li>
 <li>Prepare to connect using USB cradle to workstation, <em>prepare</em> don&rsquo;t
@@ -405,55 +387,40 @@ well burn!</li>
 have cool features like automount that would cause the journal to be
 replayed &ndash; WE DO NOT WANT THAT OK? OK!</li>
 </ol>
-
 <p>You need the lvm tools:</p>
-
 <pre><code>apt-get install lvm2
 vgscan
 vgchange -ay ubuntu-vg
 lvs
 </code></pre>
-
 <p>The last command should list your logical volume group(s), in my case
 labled <code>ubuntu-vg</code>.  To be able to run <code>extundelete</code> or <code>ext4magic</code> on
 the partition you have to mount the partition, <em>read-only</em> needless to
 say:</p>
-
 <pre><code>mkdir /rescue
 mount -o ro /dev/ubuntu-vg/root /rescue
 </code></pre>
-
 <p>Now we try some fairy dust:</p>
-
 <pre><code>ext4magic /dev/ubuntu-vg/root -r
 </code></pre>
-
 <p>OK, so let&rsquo;s see:</p>
-
 <pre><code>ls -l RECOVERDIR/
 </code></pre>
-
 <p>The results between <code>ext4magic</code> and <code>extundelete</code> may vary, so try them
 both out, test different options, and maybe even look at <code>debugfs</code>,
 we&rsquo;re desperate after all.</p>
-
 <pre><code>extundelete /dev/ubuntu-vg/root --restore-all
 ls -l RECOVERED_FILES
 </code></pre>
-
 <p>If there&rsquo;s a LOT of files you may have some luck narrowing down the
 result using the <code>--after DATE</code> option &hellip; where <code>DATE</code> is the number
 of seconds since the UNX epoch:</p>
-
 <pre><code>extundelete /dev/ubuntu-vg/root --restore-all --after 1458802800
 ls -l RECOVERED_FILES
 </code></pre>
-
 <p>I found my magic number using</p>
-
 <pre><code>date -d &quot;Mar 24 8:00 2016&quot; +%s
 </code></pre>
-
 <p>Well, as I said, I didn&rsquo;t turn off my computer in time. Instead I took
 the braindead option of starting to google for solutions.  So all my
 files (with proper filenames) turned out to contain only cached files
@@ -548,7 +515,7 @@ from the browser &ndash; reclaiming the blocks goes quick, so watch out kids.</p
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

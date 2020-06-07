@@ -19,7 +19,6 @@ Ubuntu Server Guide on libvirt,
 or
 HowtoForge
 for that.
-
 Instead this blog post details the most relevant steps to get file
 system pass-through between a Linux host and Qemu guest working.  The
 upstream Qemu docs
@@ -37,7 +36,6 @@ Ubuntu Server Guide on libvirt,
 or
 HowtoForge
 for that.
-
 Instead this blog post details the most relevant steps to get file
 system pass-through between a Linux host and Qemu guest working.  The
 upstream Qemu docs
@@ -131,7 +129,6 @@ Ubuntu Server Guide on libvirt,
 or
 HowtoForge
 for that.
-
 Instead this blog post details the most relevant steps to get file
 system pass-through between a Linux host and Qemu guest working.  The
 upstream Qemu docs
@@ -166,7 +163,7 @@ Ubuntu Server Guide on libvirt, …">
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -375,7 +372,6 @@ the
 or
 <a href="http://www.howtoforge.com/virtualization-with-kvm-on-ubuntu-12.04-lts-p3">HowtoForge</a>
 for that.</p>
-
 <p>Instead this blog post details the most relevant steps to get file
 system pass-through between a Linux host and Qemu guest working.  The
 upstream <a href="http://wiki.qemu.org/Documentation/9psetup">Qemu docs</a>
@@ -384,32 +380,25 @@ provide a good starting point, as is the original
 For users of Ubuntu &lt;= 13.04, watch out for the
 <a href="https://bugs.launchpad.net/ubuntu/+source/libvirt/+bug/943680">libvirt bug</a>
 that I know many people run into, myself included.</p>
-
 <p>First of all, I could never really master the beast called AppArmor in
 Ubuntu.  Once I got the hang of the files to edit, the order to make
 changes and the syntax of its profile files I think I tried every
 possible permutation without any success.  So I ended up disabling the
 profile(s) of my VM guests.  The UUID in the filename can be found in
-the details of your VM, or in the process listing on the host: <code>ps fax
-| grep guestname</code>.  Here is an example of how to disable one guest:</p>
-
+the details of your VM, or in the process listing on the host: <code>ps fax | grep guestname</code>.  Here is an example of how to disable one guest:</p>
 <pre><code>aa-complain /etc/apparmor.d/libvirt/libvirt-20b8c6c6-440c-bd76-254e-42fd475e6770
 </code></pre>
-
 <p>You need to install <a href="apt://apparmor-utils">apparmor-utils</a> to get the
 <code>aa-complain</code> tool.  Where <em>complain</em> basically means ignore any hits
 from the given profile and just complain in the log.  The default is
 <code>aa-enforce</code>.  For more info on AppArmor, see the
 <a href="http://wiki.apparmor.net/index.php/Documentation">excellent upstream docs</a></p>
-
-<p><img src="/images/filesystem-pass-through.png" style="width: 500px; float: right"></p>
-
+<!-- raw HTML omitted -->
 <p>Now, how to do it.  I like virsh, but for most of the time the vmware
 like
 <a href="http://virt-manager.org/">virt-manager is a lot more user friendly</a>.
 In the VM&rsquo;s Detailed view, click the &ldquo;Add Hardware&rdquo; button and select
 &ldquo;Filesystem&rdquo;.  This is where the action happens.</p>
-
 <ul>
 <li><strong>Type:</strong> preset to Passthrough</li>
 <li><strong>Mode:</strong> change to <code>Mapped</code> <em>This is the most important step in
@@ -422,41 +411,28 @@ command in the guest.  I use <code>share</code>, no slashes or anything.  In
 reality this isn&rsquo;t a path per se, it&rsquo;s a tag that the guest sends to
 the kernel 9p driver via the mount command</li>
 </ul>
-
 <p>Please note that 9P file systems simply pass-through the owner UID/GID
 and directory permissions from the host to the guest.  This can be a
 bit confusing, but just make sure to use the same for all guests that
 share the same directory.  I chowned it to my account on the host:</p>
-
 <pre><code>host# chown jocke:users /var/lib/libvirt/share
 </code></pre>
-
 <p>In my <code>guest:/etc/modules</code> I added the following modules, even though
 the kernel can probably load them itself on demand:</p>
-
 <pre><code>9p
 9pnet
 9pnet_virtio
 </code></pre>
-
 <p>The actual command to get the ball rolling on the guest:</p>
-
 <pre><code>guest# mount -t 9p -o trans=virtio,version=9p2000.L,rw share /mnt
 </code></pre>
-
 <p>To automatically mount this every time at boot, add the following
 to your <code>guest:/etc/fstab</code>:</p>
-
-<pre><code>share   /mnt    9p  trans=virtio,version=9p2000.L,rw    0   0
+<pre><code>share	/mnt	9p	trans=virtio,version=9p2000.L,rw	0	0
 </code></pre>
-
 <p>That&rsquo;s it. Good Luck!</p>
-
-<!--
-  -- Local Variables:
-  -- mode: markdown
-  -- End:
-  -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 
         
 
@@ -547,7 +523,7 @@ to your <code>guest:/etc/fstab</code>:</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

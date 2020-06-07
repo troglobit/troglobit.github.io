@@ -111,7 +111,7 @@ For some use-cases, in particular link-local multicast, it may not be possible t
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -297,136 +297,99 @@ For some use-cases, in particular link-local multicast, it may not be possible t
       <article role="main" class="blog-post">
 	
 	<nav id="TableOfContents">
-<ul>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#basics">Basics</a>
-<ul>
-<li><a href="#layer-2-vs-layer-3">Layer-2 vs Layer-3</a></li>
-<li><a href="#multicast-distribution-point">Multicast Distribution Point</a></li>
-<li><a href="#multicast-router-ports">Multicast Router Ports</a></li>
-<li><a href="#pim-sm-igmp-v2-vs-pim-ssm-igmp-v3">PIM-SM :: IGMP v2 vs. PIM-SSM :: IGMP v3</a></li>
-<li><a href="#what-is-ttl-and-why-can-t-i-route-multicast">What is TTL and Why Can&rsquo;t I Route Multicast?</a></li>
-<li><a href="#reverse-path-forwarding">Reverse Path Forwarding</a></li>
-</ul></li>
-<li><a href="#core-network-simulator">CORE Network Simulator</a></li>
-<li><a href="#roll-your-own-cloud">Roll your own Cloud</a></li>
-<li><a href="#faq">FAQ</a></li>
-</ul>
+  <ul>
+    <li><a href="#layer-2-vs-layer-3">Layer-2 vs Layer-3</a></li>
+    <li><a href="#multicast-distribution-point">Multicast Distribution Point</a></li>
+    <li><a href="#multicast-router-ports">Multicast Router Ports</a></li>
+    <li><a href="#pim-sm--igmp-v2-vs-pim-ssm--igmp-v3">PIM-SM :: IGMP v2 vs. PIM-SSM :: IGMP v3</a></li>
+    <li><a href="#what-is-ttl-and-why-cant-i-route-multicast">What is TTL and Why Can&rsquo;t I Route Multicast?</a></li>
+    <li><a href="#reverse-path-forwarding">Reverse Path Forwarding</a></li>
+  </ul>
 </nav>
 	
-        
-
-<h1 id="introduction">Introduction</h1>
-
+        <h1 id="introduction">Introduction</h1>
 <p>This HowTo attempts to give some insight into the basics of setting up
 multicast routing.  Both static multicast routing, with <a href="https://github.com/troglobit/smcroute/">SMCRoute</a>,
 and dynamic multicast routing, with <a href="https://github.com/troglobit/mrouted/">mrouted</a> and <a href="https://github.com/troglobit/pimd/">pimd</a>.</p>
-
 <p>For some use-cases, in particular link-local multicast, it may not be
 possible to use multicast routing, then I recommend trying out:</p>
-
 <ul>
 <li>Bridging networks, see bridge(8) or <a href="https://goyalankit.com/blog/linux-bridge">Linux bridge - how it works</a></li>
 <li><a href="http://sourceforge.net/projects/igmpproxy/">igmproxy</a>, <a href="https://github.com/mcproxy/mcproxy">mcproxy</a>, or</li>
 <li>OpenVPN in Layer-2, <a href="https://community.openvpn.net/openvpn/wiki/OpenVPNBridging">bridged mode</a></li>
 </ul>
-
 <p>Make sure to check out the <a href="#faq">FAQ</a> for the most common problems.</p>
-
-<p>Good Luck! <br />
+<p>Good Luck! <!-- raw HTML omitted -->
 &ndash; Joachim</p>
-
 <h1 id="basics">Basics</h1>
-
 <p>To understand multicast routing one needs to first understand how
 multicast on a LAN works.  In this HowTo the LAN is usually referred to
 as Layer-2 and routing (between LANs) as Layer-3.</p>
-
 <h2 id="layer-2-vs-layer-3">Layer-2 vs Layer-3</h2>
-
 <p>First, without any form of regulation multicast is broadcast, which is
 inherently bad.  We don&rsquo;t want to route broadcast, but even on a LAN we
 want to keep broadcast to a minimum.  Before switches we had hubs which
 caused <em>all</em> traffic to be broadcast.  We can do better, not just for
 the sake of security but also to increase bandwidth.</p>
-
 <p>Enter IGMP and MLD, the control protocol for multicast on a LAN, for
 IPv4 and IPv6 respectively.  Essentially they act as a subscription
 based protocol, every N seconds sending out a Query to all nodes on the
-LAN; &ldquo;Anyone want multicast?&rdquo;, to which a node can reply; &ldquo;Yes please,
-I&rsquo;d like to have 225.1.2.3.&ldquo;.  MLD (IPv6) works in a similar way.</p>
-
+LAN; &ldquo;Anyone want multicast?&quot;, to which a node can reply; &ldquo;Yes please,
+I&rsquo;d like to have 225.1.2.3.&quot;.  MLD (IPv6) works in a similar way.</p>
 <p>Most managed switches today support <em>IGMP Snooping</em> which is just a
 fancy way of saying: this switch does not flood multicast like broadcast
 on all ports.  However, it also means that everyone on a LAN that want
 multicast have to be able to request it.</p>
-
 <h2 id="multicast-distribution-point">Multicast Distribution Point</h2>
-
 <p>On a LAN with many IGMP Snooping capable switches a <em>Querier election</em>
 will take place.  The switch (or router) with the lowest IP address
 wins, unless that address is 0.0.0.0.  The elected IGMP querier on a LAN
 becomes the <em>distribution point</em> for all multicast.  All other switches
 on the LAN must forward both known and unknown multicast to the Querier.</p>
-
 <p>Usually the network IP plan (design) is set in such a way that the
 router has the lowest IP address on the LAN, so that it will always
 be the elected IGMP querier, hence receiving all multicast so it can
 route it as required.</p>
-
 <h2 id="multicast-router-ports">Multicast Router Ports</h2>
-
 <p>In a network with redundant/multiple multicast routers one cannot rely
 solely on the IGMP querier election.  Instead, most managed switches
 have a setting called <em>Multicast Router Ports</em> where you can configure
 on which ports to <em>also</em> flood all multicast.</p>
-
 <p>This feature can also be used to forward multicast to nodes that do not
 speak IGMP/MLD.  But since it will forward all multicast it is usually
 better to set up static FDB entries per multicast group on the switch
 instead.</p>
-
 <blockquote>
 <p>Many switches are limited to filtering multicast based on the
 <em>multicast MAC</em> equivalent.  In our case of 225.1.2.3 it would be
 mapped to 01:00:5e:01:02:03.  For more on this, and the limitations
 it brings, see <a href="https://www.ietf.org/rfc/rfc1112.txt">RFC1112</a>.</p>
 </blockquote>
-
-<h2 id="pim-sm-igmp-v2-vs-pim-ssm-igmp-v3">PIM-SM :: IGMP v2 vs. PIM-SSM :: IGMP v3</h2>
-
+<h2 id="pim-sm--igmp-v2-vs-pim-ssm--igmp-v3">PIM-SM :: IGMP v2 vs. PIM-SSM :: IGMP v3</h2>
 <p>In the beginning there was darkness and DVMRP conquered the earth.  The
 God of all multicast, which is Steve Deering, was pleased.  Then light
 came upon us, gods were overthrown and PIM-SM was invented.</p>
-
 <p>The story continues but becomes a bit of a blur because so much happened
 in such a short time frame.  There are RFCs that tell the tale better, go
 read up on them.  What eventually came out of it was this:</p>
-
 <p>IGMP v2 was an OK protocol, a client requested a group, 225.1.2.3, and
 it was unblocked by switches leading up to the Querier and multicast was
 received.</p>
-
 <p>PIM-SM was OK, many routers could agree on what groups each of them had,
 set up a distribution tree with magic distribution point/routers,
 called rendez-vous points (RPs), for one or more, but not necessarily
 all multicast groups.  This could be tweaked by hand as well to optimize
 distribution.</p>
-
 <p>But what if we had multiple senders for the same group?  A ridiculous
 thought at first, but as deployments grew a need for optimizing also
 based on the sender (source) grew as well.  Enter PIM-SSM for layer-3
 and IGMP v3 on layer-2.  The biggest change is the ability to forward
 multicast based on source <em>and</em> group, called (S,G).  An end node on a
 LAN could now send an IGMP report requesting (192.168.10.1, 225.1.2.3).</p>
-
-<h2 id="what-is-ttl-and-why-can-t-i-route-multicast">What is TTL and Why Can&rsquo;t I Route Multicast?</h2>
-
+<h2 id="what-is-ttl-and-why-cant-i-route-multicast">What is TTL and Why Can&rsquo;t I Route Multicast?</h2>
 <p>The single most common problem with routing multicast that everybody
 runs into is the TTL.</p>
-
 <p>The TTL is the the <em>Time To Live</em> field in the IP header of a frame.</p>
-
 <pre><code>$ tcpdump -i lo -vvv icmp
 tcpdump: listening on lo, link-type EN10MB (Ethernet), capture size 262144 bytes
 20:36:50.146377 IP (tos 0x0, ttl 1, id 0, offset 0, flags [DF], proto ICMP (1), length 84)
@@ -434,79 +397,59 @@ tcpdump: listening on lo, link-type EN10MB (Ethernet), capture size 262144 bytes
 20:36:51.146380 IP (tos 0x0, ttl 1, id 0, offset 0, flags [DF], proto ICMP (1), length 84)
     192.168.122.1 &gt; 225.1.2.3: ICMP echo request, id 16746, seq 21, length 64
 </code></pre>
-
 <p>The TTL for broadcast and multicast is by default 1, which means that a
 router should not forward the frame beyond the originating LAN.  Again,
 without any regulation multicast is broadcast and we do not want to
 route broadcast!</p>
-
 <p>The singular best way to fix this problem is for the sender to to set a
 higher TTL.  Set it only as high as the number of hops you want this to
 be forwarded!</p>
-
 <blockquote>
 <p>Multicast is used for A LOT of protocols, many of which was only ever
 intended to be either link-local or limited to the LAN.  Check with
 the appropriate standard (RFCs are freely available online) before
 attempting something foolish that may cause unintended side effects.</p>
 </blockquote>
-
 <p>For such cases when you want to connect two remote sites and make them
 into one big LAN you might be better off using, e.g. a bridged SSL VPN
 on layer-2.</p>
-
 <p>However, when you absolutely cannot change the TTL at the sender and
 bridging the two LANs is out of the question, then you can try using
 the firewall.  On Linux systems you can <em>mangle</em> matching frames with
 the following magic rule(s):</p>
-
 <pre><code>iptables -t mangle -A PREROUTING -d 225.1.2.3 -j TTL --ttl-inc 1
 </code></pre>
-
 <p>or, if the sender runs on a system with Linux you can change the frame
 as it egresses:</p>
-
 <pre><code>iptables -t mangle -A OUTPUT -d 225.1.2.3 -j TTL --ttl-set 128
 </code></pre>
-
 <p>The group can also be a range, so <code>239.0.0.0/8</code> is possible to enter,
 and as is shown in these examples, either <code>--ttl-set</code> or <code>--ttl-inc</code> can
 be used to adjust the TTL value.</p>
-
 <h2 id="reverse-path-forwarding">Reverse Path Forwarding</h2>
-
 <p>Dynamic multicast routing protocols like DVMRP and PIM-SM rely on
 something called <em>Reverse Path Forwarding</em> to build a multicast
 distribution tree.</p>
-
 <p>The unicast routing table has the destination in focus, i.e. how to
 forward an inbound frame towards the destionation address.</p>
-
 <p>A multicast router builds tables to instead find the reverse path, from
 the receiver (who requests multicast) to the source of the multicast
 distribution tree.</p>
-
 <p><code>mrouted</code> uses its built-in RIP to construct its distribution tree, and
 <code>pimd</code> relies on an external routing protocol like OSPF, RIP, or even a
 manually set up routing table on each router.</p>
-
 <p><strong>Note:</strong> A common problem with multicast forwarding on Linux based
-  routers is <code>rp_filter</code>.  Many systems has this by default set to
-  &lsquo;strict&rsquo; mode, to protect against DDOS attacks, which may cause major
-  problems for <code>pimd</code> and <code>mrouted</code>.  If the reverse path to the source
-  of multicast cannot be determined the frames will be dropped by the
-  kernel.  See the <a href="#faq">FAQ</a> below for more information.</p>
-
+routers is <code>rp_filter</code>.  Many systems has this by default set to
+&lsquo;strict&rsquo; mode, to protect against DDOS attacks, which may cause major
+problems for <code>pimd</code> and <code>mrouted</code>.  If the reverse path to the source
+of multicast cannot be determined the frames will be dropped by the
+kernel.  See the <a href="#faq">FAQ</a> below for more information.</p>
 <h1 id="core-network-simulator">CORE Network Simulator</h1>
-
 <p>These days I do most of my multicast testing with <a href="http://www.nrl.navy.mil/itd/ncs/products/core">CORE</a>, which is
 readily available i Debian/Ubuntu as simple as:</p>
-
 <pre><code>sudo apt-get install core-gui
 </code></pre>
-
 <p>CORE is very simple to get started with:</p>
-
 <ol>
 <li>Fire up the GUI</li>
 <li>Drag and drop a few router icons to the grid</li>
@@ -514,26 +457,20 @@ readily available i Debian/Ubuntu as simple as:</p>
 <li><em>BOOM</em> you now have IP addresses automatically assigned!</li>
 <li>Press the Play button &ndash; routers are now starting up</li>
 </ol>
-
 <p>Play around a bit to try it out, it&rsquo;s awesome!  I usually start <code>pimd</code>,
 <code>mrouted</code>, and <code>smcroute</code> manually with a script.  (You can access the
 shell of each router by right-clicking on them.)  The host file system
 is reachable from each router in CORE, even though they are isolated and
 have their own <a href="http://blog.scottlowe.org/2013/09/04/introducing-linux-network-namespaces/">network namespaces</a>.</p>
-
 <p>For more info on network simulation, like the equally awesome <a href="http://www.gns3.com/">GNS3</a>
 for instance, see <a href="http://www.brianlinkletter.com/open-source-network-simulators/">Brian Linkletter&rsquo;s Reviews</a>.</p>
-
-<p><a name="roll-your-own"></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h1 id="roll-your-own-cloud">Roll your own Cloud</h1>
-
 <p>The below setup is done using four Ubuntu 12.04 LTS virtual machines
 running the linux-virtual kernel package.  In the HowTo I mention both
 <a href="/pimd.html">pimd</a> and <a href="/mrouted.html">mrouted</a>, since they work
 out-of-the-box w/o any config changes, but you could just as easily
 use <a href="/smcroute.html">SMCRoute</a> for the same purpose.</p>
-
 <p>When setting up virtual machines and virtual networking there are many
 pitfalls and several requirements for the host to consider.  The most
 important one, that needs pointing out, is a <em>bug in the IGMP snooping
@@ -542,77 +479,61 @@ code</em> in the Linux bridging code: the bridge handles the special case
 segment should also be forwarded as-is to all multicast routers.  Since
 this does not work with the current IGMP snooping code in the Linux 3.13
 kernel bridge code you must disable snooping:</p>
-
 <pre><code>host# echo 0 &gt; /sys/devices/virtual/net/virbr1/bridge/multicast_snooping
 host# echo 0 &gt; /sys/devices/virtual/net/virbr2/bridge/multicast_snooping
 host# echo 0 &gt; /sys/devices/virtual/net/virbr3/bridge/multicast_snooping
 </code></pre>
-
 <p>Disabling IGMP snooping on the hosts&rsquo; <code>virbr3</code> is not really necessary,
 but is done anyway for completeness, and also because I re-use the
 same setup in other test cases as well.</p>
-
 <blockquote>
 <p>It is of course not recommended to disable IGMP snooping on a bridge,
 but if it&rsquo;s buggy you really don&rsquo;t have a choice.  Please check this
 for yourself since it depends on the kernel you run.</p>
 </blockquote>
-
 <pre><code>    R1                        R2                        R3                        R4
 .--------.                .--------.                .--------.                .--------.
 |eth0    | 172.16.12.0/24 |eth0    | 172.16.10.0/24 |eth0    |  10.1.0.0/24   |eth0    |
 |      .1|----------------|.2    .1|----------------|.2    .1|----------------|.2      |
 |    eth1|     virbr1     |    eth1|     virbr2     |    eth1|    virbr3      |        |
 '--------'                '--------'                '--------'                '--------'
-</code></pre>
-
-<p>This setup, or
+</code></pre><p>This setup, or
 <a href="ftp://ftp.troglobit.com/pimd/lab-network.svg">another more advanced</a>,
 can be used for trying out SMCRoute, pimd and mrouted.  Remember there
 is only one multicast routing socket, so for each router (Rn) you have
 to choose one of:</p>
-
 <ol>
 <li><code>pimd -c pimd.conf</code></li>
 <li><code>mrouted -c mrouted.conf</code></li>
 <li><code>smcroute -f smcroute.conf</code></li>
 </ol>
-
 <p>The default configuration files delivered with <code>pimd</code> and <code>mrouted</code>
 usually suffice, see their respective manual pages or the comments in
 each <code>.conf</code> file for help.</p>
-
 <p>When you start <code>mrouted</code>, you&rsquo;re usually ready to go immediately.  But
 in the case of <code>pimd</code>, wait for routers to peer.  Then you can test your
 setup using multicast <code>ping</code> from R1 to a <code>tcpdump</code> on R4:</p>
-
 <pre><code>R1# ping -I eth1 -t 3 225.1.2.3
 R4# tcpdump -i eth0
 </code></pre>
-
 <p>As soon as the PIM routers R2 and R3 have peered you should start seeing
 ICMP traffic reaching R4.  If you don&rsquo;t, then check the underlying
 routing protocol, e.g. RIP or OSPF, to make sure the <em>reverse path</em> is
 known &ndash; this is required for PIM since, unlike DVMRP (<code>mrouted</code>) which
 sort of has RIP built-in, PIM relies on a unicast routing protocol to
 have populated the routing table.</p>
-
 <p>Now, to the actual test case.  The first command for R1 adds a route for
 all multicast packets, that is necessary for all tools where you cannot
 set the outbound interface for the multicast stream, in our case
 <code>iperf</code>.</p>
-
 <pre><code>R1# ip route add 224.0.0.0/4 dev eth1
 R1# iperf -u -c 225.1.2.3 -T 3
 R4# iperf -s -u -B 225.1.2.3
 </code></pre>
-
 <p>The <code>-T</code> option is important since it tells <code>iperf</code> to raise the TTL to
 3, the default TTL for multicast is otherwise 1 due to its broadcast
 like nature.</p>
-
 <p>The desired output from <code>iperf</code> is as follows:</p>
-
 <pre><code>R1# iperf -u -c 225.1.2.3 -T 3
 ------------------------------------------------------------
 Client connecting to 225.1.2.3, UDP port 5001
@@ -637,7 +558,6 @@ UDP buffer size:  160 KByte (default)
 [ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
 [  3]  0.0-10.0 sec  1.25 MBytes  1.05 Mbits/sec   0.268 ms    0/  893 (0%)
 </code></pre>
-
 <p>To achieve the same using <a href="/smcroute.html">SMCRoute</a> you need to setup
 the multicast routing rules manually.  The easiest way to do this is to
 update <code>/etc/smcroute.conf</code> and and start/restart <code>smcroute</code>, or send
@@ -647,100 +567,86 @@ control over all multicast senders.  There is a slight setup cost
 associated with this: the time it takes the kernel to notify SMCRoute
 about a new source and before the the actual multicast route is written
 to the kernel.  In most cases this is acceptable.</p>
-
 <p>In <code>smcroute.conf</code> on R2:</p>
-
 <pre><code>mgroup from eth0 group 225.1.2.3
 mroute from eth0 group 225.1.2.3 to eth1
 </code></pre>
-
 <p>In <code>smcroute.conf</code> on R3:</p>
-
 <pre><code>mgroup from eth0 group 225.1.2.3
 mroute from eth0 group 225.1.2.3 to eth1
 </code></pre>
-
 <p>Now, start <code>smcroute</code> on each of R2 and R4 and then proceed to start
 iperf on R4 and R1, as described above. You should get the same result
 as with <code>mrouted</code> and <code>pimd</code>.</p>
-
 <p>That&rsquo;s it. Have fun!</p>
-
 <h1 id="faq">FAQ</h1>
-
 <ol>
-<li><p><em>It doesn&rsquo;t work?</em></p>
-
-<p>Check the TTL.</p></li>
-
-<li><p><em>Why does the TTL in multicast default to 1?</em></p>
-
+<li>
+<p><em>It doesn&rsquo;t work?</em></p>
+<p>Check the TTL.</p>
+</li>
+<li>
+<p><em>Why does the TTL in multicast default to 1?</em></p>
 <p>Because multicast is classified as broadcast, which inherently is
 dangerous.  Without proper limitation, like switches with support for
-IGMP Snooping, multicast IS broadcast.</p></li>
-
-<li><p><em>I cannot change the TTL of the multicast sender, what can I do?!</em></p>
-
+IGMP Snooping, multicast IS broadcast.</p>
+</li>
+<li>
+<p><em>I cannot change the TTL of the multicast sender, what can I do?!</em></p>
 <p>Ouch, then you may have to use some firewall mangling technique.
 Here is how you could do it on Linux with iptables:</p>
-
-<pre><code>iptables -t mangle -A PREROUTING -d GROUP[/LEN] -j TTL --ttl-set 64
+<pre><code> iptables -t mangle -A PREROUTING -d GROUP[/LEN] -j TTL --ttl-set 64
 </code></pre>
-
 <p>Where <code>GROUP</code> is the multicast group address of the stream you want
 to change the TTL of, with an optional prefix length <code>LEN</code> if you want
-to specify a range of groups.  From this <a href="http://www.redhat.com/archives/linux-cluster/2007-September/msg00150.html">RedHat mailing list entry</a>.</p></li>
-
-<li><p><em>I want to use the loopback interface, but it doesn&rsquo;t show in <code>pimd</code>?</em></p>
-
+to specify a range of groups.  From this <a href="http://www.redhat.com/archives/linux-cluster/2007-September/msg00150.html">RedHat mailing list entry</a>.</p>
+</li>
+<li>
+<p><em>I want to use the loopback interface, but it doesn&rsquo;t show in <code>pimd</code>?</em></p>
 <p>Some interfaces, like <code>lo</code> or <code>tunN</code>, do not have the <code>MULTICAST</code>
 interface flag set by default.  It should work if you enable it:</p>
-
-<pre><code>ip link set lo multicast on
-ip link set tun1 multicast on
-</code></pre></li>
-
-<li><p><em>It still doesn&rsquo;t work?!</em></p>
-
+<pre><code> ip link set lo multicast on
+ ip link set tun1 multicast on
+</code></pre>
+</li>
+<li>
+<p><em>It still doesn&rsquo;t work?!</em></p>
 <p>Check your network topology, maybe a switch between the sender and
 the receiver doesn&rsquo;t properly support IGMP snooping.</p>
-
 <p>For virtual/cloud setups, see above for disabling IGMP snooping
-entirely in the Linux kernel bridge.</p></li>
-
-<li><p><em>The PIM routers seem to have peered, and they list the multicast
+entirely in the Linux kernel bridge.</p>
+</li>
+<li>
+<p><em>The PIM routers seem to have peered, and they list the multicast
 groups I want to forward, the TTL is OK, but I see no traffic?</em></p>
-
 <p>Could be your underlying routing protocol (RIP/OSPF) does not know
 the reverse path to the source.  Make sure the sender&rsquo;s network is
 listed in the routing table on the receiving sides routing table.</p>
-
 <p>Also, on Linux you might get bitten by the <code>rp_filter</code>.  It can be
 modified in your system <code>/etc/sysctl.conf</code> file.  Check it with:</p>
-
-<pre><code># sysctl -ar '\.rp_filter'
-net.ipv4.conf.all.rp_filter = 0
-net.ipv4.conf.default.rp_filter = 0
-net.ipv4.conf.eth0.rp_filter = 0
-net.ipv4.conf.eth1.rp_filter = 0
-net.ipv4.conf.lo.rp_filter = 1
-net.ipv4.conf.pimreg.rp_filter = 0
+<pre><code> # sysctl -ar '\.rp_filter'
+ net.ipv4.conf.all.rp_filter = 0
+ net.ipv4.conf.default.rp_filter = 0
+ net.ipv4.conf.eth0.rp_filter = 0
+ net.ipv4.conf.eth1.rp_filter = 0
+ net.ipv4.conf.lo.rp_filter = 1
+ net.ipv4.conf.pimreg.rp_filter = 0
 </code></pre>
-
-<p><a href="https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt">https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt</a></p></li>
-
-<li><p><em>What&rsquo;s the routing performance of <code>pimd</code>/<code>mrouted</code>/<code>smcroute</code>?</em></p>
-
+<p><a href="https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt">https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt</a></p>
+</li>
+<li>
+<p><em>What&rsquo;s the routing performance of <code>pimd</code>/<code>mrouted</code>/<code>smcroute</code>?</em></p>
 <p>N/A.  Neither of them take active part in the actual forwarding of
 multicast frames.  This is what the kernel or dedicated routing HW
 does.  The routing daemons <code>pimd</code>/<code>mrouted</code>/<code>smcroute</code> only
 manipulate the multicast routing table(s) of the operating system&rsquo;s
-kernel.</p></li>
-
-<li><p><em>Do you have any example of how to set up GRE and <code>pimd</code>?</em></p>
-
+kernel.</p>
+</li>
+<li>
+<p><em>Do you have any example of how to set up GRE and <code>pimd</code>?</em></p>
 <p>Yes, for all the gory details see
-<a href="/blog/2016/07/05/multicast-routing-with-pim-sm-over-gre/">this howto</a></p></li>
+<a href="/blog/2016/07/05/multicast-routing-with-pim-sm-over-gre/">this howto</a></p>
+</li>
 </ol>
 
 
@@ -826,7 +732,7 @@ kernel.</p></li>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

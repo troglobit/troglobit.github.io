@@ -13,35 +13,30 @@
   <meta name="description" content="Having worked with Linux for the last 20 years, and embedded for more
 than ten of them, I&rsquo;ve become quite a fan of virtualization in general
 and Qemu in particular.
-
 Qemu is a fantastic little tool, created by the Open Source superhero
 Fabrice Bellard.
 It can be used to verify an embedded system without having to deal with
 the problems of actual HW until you really have to.  Don&rsquo;t get me wrong,
 HW excites me like any other nerd, but if the HW is new and shaky it can
 be quite a pain to develop higher level functions.
-
 My holy grail is to have a 100% complete and accurate virtualization
 target per architecture to test my various software projects on.  That&rsquo;s
 why I created TroglOS.">
   <meta property="og:description" content="Having worked with Linux for the last 20 years, and embedded for more
 than ten of them, I&rsquo;ve become quite a fan of virtualization in general
 and Qemu in particular.
-
 Qemu is a fantastic little tool, created by the Open Source superhero
 Fabrice Bellard.
 It can be used to verify an embedded system without having to deal with
 the problems of actual HW until you really have to.  Don&rsquo;t get me wrong,
 HW excites me like any other nerd, but if the HW is new and shaky it can
 be quite a pain to develop higher level functions.
-
 My holy grail is to have a 100% complete and accurate virtualization
 target per architecture to test my various software projects on.  That&rsquo;s
 why I created TroglOS.">
   <meta name="twitter:description" content="Having worked with Linux for the last 20 years, and embedded for more
 than ten of them, I&rsquo;ve become quite a fan of virtualization in general
 and Qemu in particular.
-
 Qemu is a fantastic little …">
   <meta name="author" content="Joachim Nilsson"/><script type="application/ld+json">
 {
@@ -116,14 +111,12 @@ Qemu is a fantastic little …">
 <meta property="og:description" content="Having worked with Linux for the last 20 years, and embedded for more
 than ten of them, I&rsquo;ve become quite a fan of virtualization in general
 and Qemu in particular.
-
 Qemu is a fantastic little tool, created by the Open Source superhero
 Fabrice Bellard.
 It can be used to verify an embedded system without having to deal with
 the problems of actual HW until you really have to.  Don&rsquo;t get me wrong,
 HW excites me like any other nerd, but if the HW is new and shaky it can
 be quite a pain to develop higher level functions.
-
 My holy grail is to have a 100% complete and accurate virtualization
 target per architecture to test my various software projects on.  That&rsquo;s
 why I created TroglOS.">
@@ -136,7 +129,6 @@ why I created TroglOS.">
   <meta name="twitter:description" content="Having worked with Linux for the last 20 years, and embedded for more
 than ten of them, I&rsquo;ve become quite a fan of virtualization in general
 and Qemu in particular.
-
 Qemu is a fantastic little …">
   <meta name="twitter:image" content="/images/profile.jpg" />
   <meta name="twitter:card" content="summary" />
@@ -152,7 +144,7 @@ Qemu is a fantastic little …">
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -355,35 +347,28 @@ Qemu is a fantastic little …">
         <p>Having worked with Linux for the last 20 years, and embedded for more
 than ten of them, I&rsquo;ve become quite a fan of virtualization in general
 and <a href="http://qemu.org">Qemu</a> in particular.</p>
-
 <p>Qemu is a fantastic little tool, created by the Open Source superhero
 <a href="http://blog.smartbear.com/careers/fabrice-bellard-portrait-of-a-super-productive-programmer/">Fabrice Bellard</a>.
 It can be used to verify an embedded system without having to deal with
 the problems of actual HW until you really have to.  Don&rsquo;t get me wrong,
 HW excites me like any other nerd, but if the HW is new and shaky it can
 be quite a pain to develop higher level functions.</p>
-
 <p>My holy grail is to have a 100% complete and accurate virtualization
 target per architecture to test my various software projects on.  That&rsquo;s
 why I created <a href="https://github.com/troglobit/troglos">TroglOS</a>.</p>
-
 <p>Since most of the systems I&rsquo;ve engaged with have had built-in (NOR)
 flash, I wanted a similar enough emulated system.  However, many things
 like RTC or MTD did not really exist or work the way I wanted.  I can
 live without an emulated RTC, but mapping <em>named</em> MTD partitions to
 different mount points was a showstopper for me.  So one of the small
 fixes to Linux I&rsquo;ve made is an extension to the mtd2block driver.</p>
-
 <p>The mtd2block driver can take a device, provided by Qemu emulating a
 block device from a raw file on the host, and present as an MTD.  The
 following patch adds naming of that MTD so the below <code>/etc/fstab</code> can
 find and mount it just like it would an actual named MTD partition.</p>
-
 <p>Here&rsquo;s the <code>/etc/fstab</code> entry:</p>
-
-<pre><code>mtd:Config  /mnt    jffs2   sync,noatime,nodiratime     0   0
+<pre><code>mtd:Config	/mnt	jffs2	sync,noatime,nodiratime		0	0
 </code></pre>
-
 <p>And here&rsquo;s <a href="https://github.com/troglobit/troglos/blob/master/kernel/patches/4.2/mtd2block-custom-label.patch">the patch</a>:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-patch" data-lang="patch">commit 69f0cbdcfa6a80fbebe206e2bc3e516342da3be8
 Author: Joachim Nilsson &lt;troglobit@gmail.com&gt;
@@ -484,12 +469,8 @@ Date:   Wed Nov 18 16:38:13 2015 +0100
 </span><span style="color:#000;background-color:#dfd"></span> 
  static int __init block2mtd_init(void)
  {
-</code></pre></div>
-<!--
-  -- Local Variables:
-  -- mode: markdown
-  -- End:
-  -->
+</code></pre></div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 
         
 
@@ -580,7 +561,7 @@ Date:   Wed Nov 18 16:38:13 2015 +0100
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

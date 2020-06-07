@@ -118,7 +118,7 @@ First, make …">
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -321,32 +321,23 @@ First, make …">
         <p>So you&rsquo;re having a problem with the Internet daemon you wrote.  You&rsquo;re
 convinced the firewall, or some other magic, in your modern Linux
 distribution is eating your packets.</p>
-
 <p>No.</p>
-
 <p>First, make sure your daemon is actually running and has successfully
 bound to the address and port in question:</p>
-
 <pre><code>sudo netstat -atnup
 </code></pre>
-
 <p>If your application is not listed there you have a problem with it
 binding its server socket.  Check the return values from <code>bind()</code>.</p>
-
 <p>If you&rsquo;re still suspecting the firewall, or some other magic, test your
 theory with netcat.  First start a server, with your relevant address
 and port, remember you need to be root, or have <code>CAP_NET_ADMIN</code>, to use
 ports &lt;= 4096:</p>
-
 <pre><code>nc -l -u -p 9999
 </code></pre>
-
 <p>Here we bind to 0.0.0.0:9999. Now, start a client to test if the
 server can receive any data:</p>
-
 <pre><code>nc -u 127.0.0.1 9999
 </code></pre>
-
 <p>Type something on the console and press enter to send it to the server.
 If you receive the data then there&rsquo;s no magic, execpt from bugs in you
 application, preventing your appplication from working.</p>
@@ -441,7 +432,7 @@ application, preventing your appplication from working.</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

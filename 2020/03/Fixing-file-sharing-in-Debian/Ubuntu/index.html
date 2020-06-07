@@ -121,7 +121,7 @@ Turns out there was a change in behavior in Sambva v4.11 that …">
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -326,22 +326,15 @@ upgrading to Ubuntu 20.04.  (<em>Update:</em> same on Debian 11 (bullseye)
 Turns out there was a change in behavior in Sambva v4.11 that disabled
 SMB1 protocol by default.  It&rsquo;ll be interesting to see how this panes
 out in the rest of the Linux community &hellip;</p>
-
 <p>Here&rsquo;s the fix, <a href="https://www.reddit.com/r/linuxquestions/comments/djvpdn/smb_connection_nautilus_error_debian_bullseye/">from
 Reddit</a>;
 open <code>/etc/samba/smb.conf</code> using your favorite editor:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo mg /etc/samba/smb.conf</code></pre></div>
-<p>Add the following line to the <code>[global]</code> section:</p>
-
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo mg /etc/samba/smb.conf
+</code></pre></div><p>Add the following line to the <code>[global]</code> section:</p>
 <pre><code>client min protocol = CORE
-</code></pre>
-
-<p>Then restart Samba to have Nautilus (Files) working again:</p>
-
+</code></pre><p>Then restart Samba to have Nautilus (Files) working again:</p>
 <pre><code>sudo systemctl restart smbd.service
-</code></pre>
-
-<p>That&rsquo;s it.</p>
+</code></pre><p>That&rsquo;s it.</p>
 
         
 
@@ -357,6 +350,10 @@ open <code>/etc/samba/smb.conf</code> using your favorite editor:</p>
               <a href="/2020/02/HowTo-Install-pre-built-packages/" data-toggle="tooltip" data-placement="top" title="HowTo: Install pre-built packages">&larr; Previous Post</a>
             </li>
           
+          
+            <li class="next">
+              <a href="/2020/03/Fix-blinking-WiFi-LED-on-X200/" data-toggle="tooltip" data-placement="top" title="Fix blinking WiFi LED on X200">Next Post &rarr;</a>
+            </li>
           
         </ul>
       
@@ -425,7 +422,7 @@ open <code>/etc/samba/smb.conf</code> using your favorite editor:</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

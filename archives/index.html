@@ -10,11 +10,16 @@
   <title>Archives - </title>
   <meta property="og:title" content="Archives" />
   <meta name="twitter:title" content="Archives" />
-  <meta name="description" content="{% if site.posts != empty %} {% for post in site.posts %} {% capture this_year %}{{ post.date | date: &#34;%Y&#34; }}{% endcapture %} {% unless year == this_year %} {% assign year = this_year %} {% unless post == site.posts.first %} {% endunless %} {{ year }} {% endunless %} {{ post.date | date:&#34;%Y-%m-%d&#34; }}  &raquo; {{ post.title }}
-{% endfor %} {% else %} No posts {% endif %}  ">
-  <meta property="og:description" content="{% if site.posts != empty %} {% for post in site.posts %} {% capture this_year %}{{ post.date | date: &#34;%Y&#34; }}{% endcapture %} {% unless year == this_year %} {% assign year = this_year %} {% unless post == site.posts.first %} {% endunless %} {{ year }} {% endunless %} {{ post.date | date:&#34;%Y-%m-%d&#34; }}  &raquo; {{ post.title }}
-{% endfor %} {% else %} No posts {% endif %}  ">
-  <meta name="twitter:description" content="{% if site.posts != empty %} {% for post in site.posts %} {% capture this_year %}{{ post.date | date: &#34;%Y&#34; }}{% endcapture %} {% unless year == this_year %} {% assign year = this_year %} {% unless …">
+  <meta name="description" content="{% if site.posts != empty %}
+{% for post in site.posts %} {% capture this_year %}{{ post.date | date: &ldquo;%Y&rdquo; }}{% endcapture %} {% unless year == this_year %} {% assign year = this_year %} {% unless post == site.posts.first %} {% endunless %}
+{% else %}
+No posts{% endif %}">
+  <meta property="og:description" content="{% if site.posts != empty %}
+{% for post in site.posts %} {% capture this_year %}{{ post.date | date: &ldquo;%Y&rdquo; }}{% endcapture %} {% unless year == this_year %} {% assign year = this_year %} {% unless post == site.posts.first %} {% endunless %}
+{% else %}
+No posts{% endif %}">
+  <meta name="twitter:description" content="{% if site.posts != empty %}
+{% for post in site.posts %} {% capture this_year %}{{ post.date | date: &ldquo;%Y&rdquo; }}{% endcapture %} {% unless year == this_year %} {% assign year = this_year %} …">
   <meta name="author" content="Joachim Nilsson"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -63,9 +68,9 @@
     "name" : "Joachim Nilsson"
   },
   "headline": "Archives",
-  "description" : "{% if site.posts != empty %} {% for post in site.posts %} {% capture this_year %}{{ post.date | date: \x22%Y\x22 }}{% endcapture %} {% unless year == this_year %} {% assign year = this_year %} {% unless post == site.posts.first %} {% endunless %} {{ year }} {% endunless %} {{ post.date | date:\x22%Y-%m-%d\x22 }}  \x26raquo; {{ post.title }}\n{% endfor %} {% else %} No posts {% endif %}  ",
+  "description" : "{% if site.posts != empty %}\n{% for post in site.posts %} {% capture this_year %}{{ post.date | date: \x26ldquo;%Y\x26rdquo; }}{% endcapture %} {% unless year == this_year %} {% assign year = this_year %} {% unless post == site.posts.first %} {% endunless %}\n{% else %}\nNo posts{% endif %}",
   "inLanguage" : "en",
-  "wordCount":  70 ,
+  "wordCount":  51 ,
   "datePublished" : "0001-01-01T00:00:00",
   "dateModified" : "0001-01-01T00:00:00",
   "image" : "\/images\/profile.jpg",
@@ -85,15 +90,18 @@
 </script>
 
 <meta property="og:title" content="Archives" />
-<meta property="og:description" content="{% if site.posts != empty %} {% for post in site.posts %} {% capture this_year %}{{ post.date | date: &#34;%Y&#34; }}{% endcapture %} {% unless year == this_year %} {% assign year = this_year %} {% unless post == site.posts.first %} {% endunless %} {{ year }} {% endunless %} {{ post.date | date:&#34;%Y-%m-%d&#34; }}  &raquo; {{ post.title }}
-{% endfor %} {% else %} No posts {% endif %}  ">
+<meta property="og:description" content="{% if site.posts != empty %}
+{% for post in site.posts %} {% capture this_year %}{{ post.date | date: &ldquo;%Y&rdquo; }}{% endcapture %} {% unless year == this_year %} {% assign year = this_year %} {% unless post == site.posts.first %} {% endunless %}
+{% else %}
+No posts{% endif %}">
 <meta property="og:image" content="/images/profile.jpg" />
 <meta property="og:url" content="/archives/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="" />
 
   <meta name="twitter:title" content="Archives" />
-  <meta name="twitter:description" content="{% if site.posts != empty %} {% for post in site.posts %} {% capture this_year %}{{ post.date | date: &#34;%Y&#34; }}{% endcapture %} {% unless year == this_year %} {% assign year = this_year %} {% unless …">
+  <meta name="twitter:description" content="{% if site.posts != empty %}
+{% for post in site.posts %} {% capture this_year %}{{ post.date | date: &ldquo;%Y&rdquo; }}{% endcapture %} {% unless year == this_year %} {% assign year = this_year %} …">
   <meta name="twitter:image" content="/images/profile.jpg" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@troglobit" />
@@ -108,7 +116,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -293,31 +301,19 @@
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
 	
-        <ul class="tags-box">
-
-{% if site.posts != empty %}
-
-{% for post in site.posts %}
-{% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+        <!-- raw HTML omitted -->
+<p>{% if site.posts != empty %}</p>
+<p>{% for post in site.posts %}
+{% capture this_year %}{{ post.date | date: &ldquo;%Y&rdquo; }}{% endcapture %}
 {% unless year == this_year %}
 {% assign year = this_year %}
 {% unless post == site.posts.first %}
-{% endunless %}
-<li id="{{ year }}">{{ year }}</li>
-{% endunless %}
-<time datetime="{{ post.date | date:"%Y-%m-%d" }}">
-{{ post.date | date:"%Y-%m-%d" }}
-</time>
-&raquo; <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><br />
-{% endfor %}
-
-{% else %}
-
-<span>No posts</span>
-
-{% endif %}
-
-</ul>
+{% endunless %}</p>
+<!-- raw HTML omitted -->
+<p>{% else %}</p>
+<p><!-- raw HTML omitted -->No posts<!-- raw HTML omitted --></p>
+<p>{% endif %}</p>
+<!-- raw HTML omitted -->
 
 
         
@@ -393,7 +389,7 @@
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

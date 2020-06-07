@@ -108,7 +108,7 @@ Personally I use both Ubuntu and Debian, so the tools I use to download the clie
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -293,56 +293,40 @@ Personally I use both Ubuntu and Debian, so the tools I use to download the clie
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
 	
-        
-
-<p>This mini HowTo describes how to use the SNMP client tools to retrieve
+        <p>This mini HowTo describes how to use the SNMP client tools to retrieve
 <em>human readable</em> information from devices running an SNMP daemon.  In
 the examples below <a href="/mini-snmpd.html">mini-snmpd</a> is used as the daemon
 and as client both the command line <a href="http://www.net-snmp.org">net-snmp</a>
 tool and the <a href="http://sourceforge.net/projects/snmpb/">snmpB</a> GUI are
 used.</p>
-
 <p>Personally I use both Ubuntu and Debian, so the tools I use to download
 the clients will reflect that.  See your respective UNIX distro&rsquo;s help
 pages for how to install these client tools in your operating system.</p>
-
 <h2 id="installing-snmp-in-ubuntu">Installing SNMP in Ubuntu</h2>
-
 <p>The following commands installs snmpset/get/walk, base MIBs and all the
 standard MIBs needed:</p>
-
 <pre><code>sudo apt-get install snmp libsnmp-base snmp-mibs-downloader
 sudo download-mibs
 </code></pre>
-
 <p>On Debian/Ubuntu you have to also edit the file <code>/etc/snmp/snmp.conf</code> to
 enable automatic loading of the downloaded MIBs, which is disabled by
 default.  <em>Comment out</em> the line that reads:</p>
-
 <pre><code>mibs :
 </code></pre>
-
 <p>Assuming you have already started <code>mini_snmpd</code>, say using port 16161 so
 it doesn&rsquo;t have to run as root, you can now talk to it using:</p>
-
 <pre><code>snmpwalk -v2c -c public 127.0.0.1:16161
 snmpget -c public -v 2c 127.0.0.1:16161 system.sysUpTime.0
 </code></pre>
-
 <p>On earlier versions of Ubuntu (pre 18.04) I&rsquo;ve had trouble getting
 net-snmp to use the UCD-SNMP-MIB, so I&rsquo;ve added it explicitly to my
 <code>~/snmp/snmp.conf</code>:</p>
-
 <pre><code>mibs +UCD-SNMP-MIB
 </code></pre>
-
 <p>This MIB is in <code>/usr/share/snmp/mibs/</code> on my system &hellip;</p>
-
 <h2 id="installing-private-mib-files">Installing Private MIB files</h2>
-
 <p>If you want to access a router/switch which uses private MIBs you can do
 the same as I did for the UCD-SNMP-MIB:</p>
-
 <pre><code>mkdir -p ~/.snmp/mibs
 cp COMPANY-SOME-MIB COMPANY-OID-MIB ~/.snmp/mibs/
 cat &lt;&lt; EOF &gt; ~/.snmp/snmp.conf
@@ -352,29 +336,19 @@ mibs +COMPANY-SOME-MIB
 mibs +COMPANY-OID-MIB
 EOF
 </code></pre>
-
 <p>Now you should be able to do this:</p>
-
 <pre><code>snmpset -c private -v 2c 192.168.2.200 COMPANY-SOME-MIB::reboot.0 i 1
 </code></pre>
-
 <p>which is quite an improvement over:</p>
-
 <pre><code>snmpset -c private -v 2c 192.168.2.200 1.3.6.1.4.1.16177.2.1.1.1.0 i 1
 </code></pre>
-
 <h2 id="useful-tests">Useful Tests</h2>
-
 <p>Walk all IP addresses</p>
-
 <pre><code>snmpwalk -v2c -c public 192.168.2.20 1.3.6.1.2.1.4.20 
 </code></pre>
-
 <p>Get loadavg</p>
-
 <pre><code>snmpwalk -v2c -c public 127.0.0.1:16161 UCD-SNMP-MIB::laLoad
 </code></pre>
-
 <p>For more tips on using <code>snmpwalk</code>, see the
 <a href="http://www.net-snmp.org/wiki/index.php/TUT:snmpwalk">Net-SNMP wiki</a></p>
 
@@ -465,7 +439,7 @@ EOF
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

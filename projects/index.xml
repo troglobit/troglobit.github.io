@@ -61,7 +61,7 @@ Try uftpd!
       <pubDate>Fri, 19 Jul 2019 12:35:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/projects/merecat/</guid>
-      <description>Merecat started out as a pun at Mongoose, but is now useful for actual web serving purposes. It is however not a real Meerkat, merely yet another copycat, forked from the great thttpd created by Jef&amp;nbsp;Poskanzer.
+      <description>Merecat started out as a pun at Mongoose, but is now useful for actual web serving purposes. It is however not a real Meerkat, merely yet another copycat, forked from the great thttpd created by Jef Poskanzer.
 Merecat expands on the features originally offered by thttpd, but still has a limited feature set:
  Virtual hosts Basic .htpassd and .htaccess support URL-traffic-based throttling CGI/1.1 HTTP/1.1 Keep-alive Built-in gzip deflate using zlib HTTPS support using OpenSSL/LibreSSL, works with Let&amp;rsquo;s Encrypt!</description>
     </item>
@@ -102,8 +102,8 @@ pimd is a lightweight standalone PIM-SM/SSM v2 multicast routing daemon. It is t
       <pubDate>Sun, 24 Feb 2019 11:21:31 +0100</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/projects/mrouted/</guid>
-      <description>mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, RFC 1075. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunnelling1 support.
-The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is suitable for smaller/dense networks. It employs the &amp;ldquo;flood and prune&amp;rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups. For a more thorough explanation of the protocol, see RFC 1075.</description>
+      <description>mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, [RFC 1075][]. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunnelling1 support.
+The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is suitable for smaller/dense networks. It employs the &amp;ldquo;flood and prune&amp;rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups. For a more thorough explanation of the protocol, see [RFC 1075][].</description>
     </item>
     
     <item>
@@ -143,7 +143,7 @@ For more details, see the online documentation.</description>
       <pubDate>Thu, 08 Jan 2015 01:50:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/projects/tetris/</guid>
-      <description>Micro Tetris &amp;mdash; one of the smallest Tetris implementations in the world! Utilizing only ANSI escape sequences to draw the board, no external library dependencys other than a standard C-library, like uClibc or musl libc. Hence, it is very suitable for small embedded devices in need of an easter egg ;-)
+      <description>Micro Tetris — one of the smallest Tetris implementations in the world! Utilizing only ANSI escape sequences to draw the board, no external library dependencys other than a standard C-library, like uClibc or musl libc. Hence, it is very suitable for small embedded devices in need of an easter egg ;-)
 The game is based on a 1989 International Obfuscated C Code Contest (IOCCC) entry made by John Tromp.</description>
     </item>
     

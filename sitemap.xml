@@ -3,8 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/</loc>
-    <lastmod>2020-04-05T14:38:00+02:00</lastmod>
+    <loc>/categories/</loc>
+    <lastmod>2020-06-07T12:25:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/Linux/</loc>
+    <lastmod>2020-06-07T12:25:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-06-07T12:25:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/sudo/</loc>
+    <lastmod>2020-06-07T12:25:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2020/06/sudo-tricks/</loc>
+    <lastmod>2020-06-07T12:25:52+02:00</lastmod>
   </url>
   
   <url>
@@ -18,12 +38,12 @@
   </url>
   
   <url>
-    <loc>/2020/03/Fixing-file-sharing-in-Debian/Ubuntu/</loc>
-    <lastmod>2020-03-01T16:58:00+01:00</lastmod>
+    <loc>/2020/03/Fix-blinking-WiFi-LED-on-X200/</loc>
+    <lastmod>2020-03-28T14:16:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/</loc>
+    <loc>/2020/03/Fixing-file-sharing-in-Debian/Ubuntu/</loc>
     <lastmod>2020-03-01T16:58:00+01:00</lastmod>
   </url>
   
@@ -43,7 +63,7 @@
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>/categories/debian/</loc>
     <lastmod>2020-02-22T12:28:00+00:00</lastmod>
   </url>
   
@@ -53,7 +73,17 @@
   </url>
   
   <url>
+    <loc>/categories/ubuntu/</loc>
+    <lastmod>2020-02-22T12:28:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/categories/programming/</loc>
+    <lastmod>2020-02-22T09:45:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/unix/</loc>
     <lastmod>2020-02-22T09:45:00+00:00</lastmod>
   </url>
   
@@ -173,6 +203,11 @@
   </url>
   
   <url>
+    <loc>/categories/PIM/</loc>
+    <lastmod>2019-03-27T15:54:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/categories/pimd/</loc>
     <lastmod>2019-03-27T15:54:00+02:00</lastmod>
   </url>
@@ -218,6 +253,11 @@
   </url>
   
   <url>
+    <loc>/categories/howto/</loc>
+    <lastmod>2018-05-05T13:57:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/howto/snmp/</loc>
     <lastmod>2018-05-05T13:57:00+02:00</lastmod>
   </url>
@@ -253,16 +293,6 @@
   </url>
   
   <url>
-    <loc>/categories/PIM/</loc>
-    <lastmod>2018-01-23T20:39:36+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/UNIX/</loc>
-    <lastmod>2018-01-23T20:39:36+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/categories/eventloop/</loc>
     <lastmod>2017-09-19T08:51:38+00:00</lastmod>
   </url>
@@ -283,7 +313,7 @@
   </url>
   
   <url>
-    <loc>/categories/merecat/</loc>
+    <loc>/categories/Merecat/</loc>
     <lastmod>2017-09-17T10:45:37+00:00</lastmod>
   </url>
   
@@ -353,17 +383,12 @@
   </url>
   
   <url>
-    <loc>/categories/embedded/</loc>
+    <loc>/categories/Embedded/</loc>
     <lastmod>2017-02-02T18:52:18+00:00</lastmod>
   </url>
   
   <url>
     <loc>/2017/02/02/emulate-an-actual-mtd-device-in-qemu/</loc>
-    <lastmod>2017-02-02T18:52:18+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/linux/</loc>
     <lastmod>2017-02-02T18:52:18+00:00</lastmod>
   </url>
   
@@ -403,17 +428,17 @@
   </url>
   
   <url>
+    <loc>/categories/c/</loc>
+    <lastmod>2016-12-11T20:26:12+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/categories/capabilities/</loc>
     <lastmod>2016-12-11T20:26:12+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/sandwich/</loc>
-    <lastmod>2016-12-11T20:26:12+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/sudo/</loc>
     <lastmod>2016-12-11T20:26:12+00:00</lastmod>
   </url>
   
@@ -428,7 +453,7 @@
   </url>
   
   <url>
-    <loc>/categories/projects/</loc>
+    <loc>/categories/Projects/</loc>
     <lastmod>2016-11-19T23:37:20+00:00</lastmod>
   </url>
   
@@ -440,11 +465,6 @@
   <url>
     <loc>/categories/sthttpd/</loc>
     <lastmod>2016-11-06T01:34:18+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/C/</loc>
-    <lastmod>2016-10-27T22:22:44+00:00</lastmod>
   </url>
   
   <url>
@@ -463,13 +483,18 @@
   </url>
   
   <url>
-    <loc>/categories/finit/</loc>
+    <loc>/categories/Finit/</loc>
     <lastmod>2016-09-21T19:08:37+00:00</lastmod>
   </url>
   
   <url>
     <loc>/2016/09/21/finit3-almost-there-.../</loc>
     <lastmod>2016-09-21T19:08:37+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/network/</loc>
+    <lastmod>2016-09-02T23:30:00+00:00</lastmod>
   </url>
   
   <url>
@@ -623,7 +648,7 @@
   </url>
   
   <url>
-    <loc>/categories/personal/</loc>
+    <loc>/categories/Personal/</loc>
     <lastmod>2015-11-07T02:32:12+00:00</lastmod>
   </url>
   
@@ -634,6 +659,11 @@
   
   <url>
     <loc>/categories/bsd/</loc>
+    <lastmod>2015-09-27T18:45:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/freebsd/</loc>
     <lastmod>2015-09-27T18:45:00+02:00</lastmod>
   </url>
   
@@ -658,17 +688,17 @@
   </url>
   
   <url>
+    <loc>/categories/netbsd/</loc>
+    <lastmod>2015-07-30T11:13:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/howto/pimd-on-openbsd/</loc>
     <lastmod>2015-07-19T00:32:00+02:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/Git/</loc>
-    <lastmod>2015-07-02T17:11:55+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/HowTo/</loc>
+    <loc>/categories/git/</loc>
     <lastmod>2015-07-02T17:11:55+00:00</lastmod>
   </url>
   
@@ -694,11 +724,6 @@
   
   <url>
     <loc>/categories/Apache/</loc>
-    <lastmod>2015-06-30T23:13:48+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/Debian/</loc>
     <lastmod>2015-06-30T23:13:48+00:00</lastmod>
   </url>
   
@@ -783,11 +808,6 @@
   </url>
   
   <url>
-    <loc>/categories/FreeBSD/</loc>
-    <lastmod>2014-09-23T01:55:19+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/</loc>
     <lastmod>2014-09-23T01:55:19+00:00</lastmod>
   </url>
@@ -830,6 +850,11 @@
   <url>
     <loc>/howto/rebase-without-an-origin/</loc>
     <lastmod>2014-08-27T10:00:13+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2014-06-29T17:01:00+00:00</lastmod>
   </url>
   
   <url>
@@ -988,11 +1013,6 @@
   </url>
   
   <url>
-    <loc>/categories/Ubuntu/</loc>
-    <lastmod>2010-12-31T20:26:37+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/2010/12/31/ubuntu-to-serve-music-to-itunes/</loc>
     <lastmod>2010-12-31T20:26:37+00:00</lastmod>
   </url>
@@ -1009,11 +1029,6 @@
   
   <url>
     <loc>/2010/08/29/finally/</loc>
-    <lastmod>2010-08-29T20:44:34+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/NetBSD/</loc>
     <lastmod>2010-08-29T20:44:34+00:00</lastmod>
   </url>
   
@@ -1053,7 +1068,7 @@
   </url>
   
   <url>
-    <loc>/categories/Bzr/</loc>
+    <loc>/categories/bzr/</loc>
     <lastmod>2010-07-13T01:56:11+00:00</lastmod>
   </url>
   
@@ -1103,6 +1118,11 @@
   </url>
   
   <url>
+    <loc>/categories/bazaar/</loc>
+    <lastmod>2009-06-13T00:36:07+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2009/06/13/howto-use-git-for-collaborative-development/</loc>
     <lastmod>2009-06-13T00:36:07+00:00</lastmod>
   </url>
@@ -1110,11 +1130,6 @@
   <url>
     <loc>/2009/06/13/micro-tetris/</loc>
     <lastmod>2009-06-13T00:04:30+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/bazaar/</loc>
-    <lastmod>2009-06-12T19:50:27+00:00</lastmod>
   </url>
   
   <url>
@@ -1184,11 +1199,6 @@
   
   <url>
     <loc>/2009/02/10/network-programming-link-collection/</loc>
-    <lastmod>2009-02-10T21:56:42+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/network/</loc>
     <lastmod>2009-02-10T21:56:42+00:00</lastmod>
   </url>
   

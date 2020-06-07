@@ -55,7 +55,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -271,7 +271,6 @@
                   <p>I&rsquo;m posting this in case anyone else gets stuck setting up <a href="http://www.apache.org">Apache</a>
 with <a href="http://git-scm.com/docs/gitweb">Gitweb</a>.  Also as a reminder to myself in case I ever need to
 set up this all over again.</p>
-
 <ol>
 <li>You have all your eggs in one basket (GitHub), and</li>
 <li>You really like that shiny basket, but</li>
@@ -279,24 +278,18 @@ set up this all over again.</p>
 <li>You are wise (yes you are!) and realize you need another basket, so</li>
 <li>You set up a server and a domain yourself &hellip;</li>
 </ol>
-
 <p>OK.  Let&rsquo;s start simple, since you are already running the latest Debian
 you fire up the command line and install the basics:</p>
-
 <pre><code>sudo apt-get install gitweb apache2
 </code></pre>
-
 <p>So it&rsquo;ll complain, you&rsquo;ll clarify your request and soon all required
 packages are on your server.  Now what?</p>
-
-<p>Debian has already set up <a href="http://localhost/gitweb">http://localhost/gitweb</a> for you, and if you
+<p>Debian has already set up http://localhost/gitweb for you, and if you
 have a domain already you should go ahead and edit the master file for
 that:</p>
-
 <pre><code>editor /etc/apache2/sites-available/000-default.conf
 service apache2 reload
 </code></pre>
-
 <p>If you want to use that for your gitweb needs, then you&rsquo;re done!</p>
                   <a href="/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/" class="post-read-more">[Read More]</a>
                 
@@ -369,7 +362,7 @@ service apache2 reload
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

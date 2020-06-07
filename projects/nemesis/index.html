@@ -108,7 +108,7 @@ Nemesis can natively craft and inject ARP, DNS, ETHERNET, ICMP, IGMP, IP, OSPF, 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -293,20 +293,15 @@ Nemesis can natively craft and inject ARP, DNS, ETHERNET, ICMP, IGMP, IP, OSPF, 
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
 	
-        
-
-<p><img src="/images/nemesis.png" style="float: right;"></p>
-
+        <!-- raw HTML omitted -->
 <p>Nemesis is a command-line network packet crafting and injection utility
 for UNIX-like and Windows systems.  Well suited for testing Network
 Intrusion Detection Systems, firewalls, IP stacks and a variety of other
 tasks.  As a command-line driven utility, it is perfect for automation
 and scripting.</p>
-
 <p>Nemesis can natively craft and inject ARP, DNS, ETHERNET, ICMP, IGMP,
 IP, OSPF, RIP, TCP and UDP packets.  Using the IP and the Ethernet
 injection modes, almost any custom packet can be crafted and injected.</p>
-
 <ul>
 <li><a href="https://github.com/troglobit/nemesis/blob/master/README.md">README</a></li>
 <li><a href="https://github.com/troglobit/nemesis/blob/master/ChangeLog.md">ChangeLog</a></li>
@@ -315,108 +310,75 @@ injection modes, almost any custom packet can be crafted and injected.</p>
 <li><a href="ftp://ftp.troglobit.com/nemesis/nemesis-1.6.tar.gz">nemesis-1.6.tar.xz</a>,
 <a href="ftp://ftp.troglobit.com/nemesis/nemesis-1.6.tar.gz.md5">MD5</a></li>
 </ul>
-
 <h2 id="examples">Examples</h2>
-
 <p>Send TCP packet (SYN/ACK) with payload from file &lsquo;foo&rsquo; to target&rsquo;s ssh
 port from 192.168.1.1 to 192.168.2.2. (<code>-v</code> allows a <code>stdout</code> visual of
 current injected packet):</p>
-
 <pre><code>sudo nemesis tcp -v -S 192.168.1.1 -D 192.168.2.2 -fSA -y 22 -P foo
 </code></pre>
-
 <p>Send UDP packet from 10.11.12.13:11111 to 10.1.1.2&rsquo;s name-service port
 with a payload read from a file &lsquo;bindpkt&rsquo;. (again <code>-v</code> is used in order to
 see confirmation of our injected packet):</p>
-
 <pre><code>sudo nemesis udp -v -S 10.11.12.13 -D 10.1.1.2 -x 11111 -y 53 -P bindpkt
 </code></pre>
-
 <p>Send ICMP REDIRECT (network) packet from 10.10.10.3 to 10.10.10.1 with
 preferred gateway as source address. Here we want no output to go to
 <code>stdout</code> &ndash; which would be ideal as a component in a batch job via a
 shell script:</p>
-
 <pre><code>sudo nemesis icmp -S 10.10.10.3 -D 10.10.10.1 -G 10.10.10.3 -qR
 </code></pre>
-
 <p>Send ARP packet through device <code>ne0</code> (eg. my OpenBSD pcmcia nic) from
 hardware source address 00:01:02:03:04:05 with IP source address
 10.11.30.5 to destination IP address 10.10.15.1 with broadcast
 destination hardware address. In other words, who-has the mac address of
 10.10.15.1, tell 10.11.30.5 &ndash; assuming 00:01:02:03:04:05 is the source
 mac address of our <code>ne0</code> device:</p>
-
 <pre><code>sudo nemesis arp -v -d ne0 -H 0:1:2:c0:ff:ee -S 10.11.30.5 -D 10.10.15.1
 </code></pre>
-
 <p>ARP poisoning #1, setup <code>gateway --&gt; me --&gt; victim</code> traffic redirect
 (poison gateway&rsquo;s ARP table):</p>
-
 <pre><code>sudo nemesis arp -v -r -d eth0 -S victim -D gateway -h myMAC
 </code></pre>
-
 <p>ARP poisoning #2, Setup <code>victim --&gt; me --&gt; gateway</code> traffic redirect
 (poison victim&rsquo;s ARP table):</p>
-
 <pre><code>sudo nemesis arp -v -r -d eth0 -S gateway -D victim -h myMAC
 </code></pre>
-
 <p>and more:</p>
-
 <pre><code>sudo nemesis arp -v -S 10.0.0.1 -D 10.0.1.2 -H 0:1:2:3:4:5 -h de:ad:be:ef:0:0 \
     -M 00:60:b0:dc:5c:c0 -m 00:60:b0:dc:5c:c0 -d eth0 -T
 
 sudo nemesis icmp -S 10.10.10.3 -D 10.10.10.1 -G 10.10.10.3 -i 5
 </code></pre>
-
 <p>IGMP, join a multicast stream (example from Bluewin TV Enviroment):</p>
-
 <pre><code>sudo nemesis igmp -v -p 22 -S 192.168.1.20 -i 239.186.39.5 -D 239.186.39.5
 </code></pre>
-
 <p>IGMP v2 join for group 239.186.39.5:</p>
-
 <pre><code>sudo nemesis igmp -v -p 22 -S 192.168.1.20 -i 239.186.39.5 -D 239.186.39.5
 </code></pre>
-
 <p>IGMP v2 query, max resp. time 10 sec, with Router Alert IP option:</p>
-
 <pre><code>echo -ne '\x94\x04\x00\x00' &gt;RA
 sudo nemesis igmp -v -p 0x11 -c 100 -D 224.0.0.1 -O RA
 </code></pre>
-
 <p>or:</p>
-
 <pre><code>echo -ne '\x94\x04\x00\x00' | sudo nemesis igmp -v -p 0x11 -c 100 -D 224.0.0.1 -O -
 </code></pre>
-
 <p>IGMP v3 query, with Router Alert IP option:</p>
-
 <pre><code>echo -ne '\x03\x64\x00\x00' &gt; v3
 sudo nemesis igmp -p 0x11 -c 100 -i 0.0.0.0 -P v3 -D 224.0.0.1 -O RA
 </code></pre>
-
 <p>DHCP Discover (must use sudo and <code>-d</code> to send with source IP 0.0.0.0):</p>
-
 <pre><code>sudo nemesis dhcp -d eth0
 </code></pre>
-
 <p>Random TCP packet:</p>
-
 <pre><code>sudo nemesis tcp
 </code></pre>
-
 <p>DoS and DDoS testing:</p>
-
 <pre><code>sudo nemesis tcp -v -S 192.168.1.1 -D 192.168.2.2 -fSA -y 22 -P foo
 sudo nemesis udp -v -S 10.11.12.13 -D 10.1.1.2 -x 11111 -y 53 -P bindpkt
 sudo nemesis icmp redirect -S 10.10.10.3 -D 10.10.10.1 -G 10.10.10.3 -qR
 sudo nemesis arp -v -d ne0 -H 0:1:2:3:4:5 -S 10.11.30.5 -D 10.10.15.1
 </code></pre>
-
 <h2 id="documentation">Documentation</h2>
-
 <ul>
 <li><a href="http://nemesis.sourceforge.net/manpages/nemesis.1.html">nemesis.1</a></li>
 <li><a href="http://nemesis.sourceforge.net/manpages/nemesis-arp.1.html">nemesis-arp.1</a></li>
@@ -430,9 +392,7 @@ sudo nemesis arp -v -d ne0 -H 0:1:2:3:4:5 -S 10.11.30.5 -D 10.10.15.1
 <li><a href="http://nemesis.sourceforge.net/manpages/nemesis-tcp.1.html">nemesis-tcp.1</a></li>
 <li><a href="http://nemesis.sourceforge.net/manpages/nemesis-udp.1.html">nemesis-udp.1</a></li>
 </ul>
-
-<h2 id="origin-references">Origin &amp; References</h2>
-
+<h2 id="origin--references">Origin &amp; References</h2>
 <p>Originally created by Mark Grimes in 1999, in 2001 Jeff Nathan took over
 maintainership, in 2005 the project went  dark &hellip;  Now, after more than
 a decade  of inactivity, Joachim  Nilsson stepped in, converted  it from
@@ -525,7 +485,7 @@ CVS to GIT and merged the stale libnet-1.1 upgrade branch from 2005.</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

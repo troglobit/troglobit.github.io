@@ -16,7 +16,6 @@ Lau78.
 The event vs thread based approach to programming.  As rants go I do
 not aspire to deliver a clear or logical message, what so ever.  It&rsquo;s
 basically just something I need to get off my chest.
-
 It was not until 2007 I first learned about the event based approach
 to programming and event libraries like
 libevent and
@@ -28,7 +27,6 @@ Lau78.
 The event vs thread based approach to programming.  As rants go I do
 not aspire to deliver a clear or logical message, what so ever.  It&rsquo;s
 basically just something I need to get off my chest.
-
 It was not until 2007 I first learned about the event based approach
 to programming and event libraries like
 libevent and
@@ -89,7 +87,7 @@ not aspire to …">
   "headline": "Threads vs Events",
   "description" : "This is a rant about something I recently found to be a long standing battle line in the world of programming, Lau78. The event vs thread based approach to programming. As rants go I do not aspire to deliver a clear or logical message, what so ever. It\x26rsquo;s basically just something I need to get off my chest.\nIt was not until 2007 I first learned about the event based approach to programming and event libraries like libevent and libev. Up until that point the silver bullet everyone was using was \x26hellip; Threads.\n",
   "inLanguage" : "en",
-  "wordCount":  418 ,
+  "wordCount":  372 ,
   "datePublished" : "2013-08-06T00:00:00",
   "dateModified" : "2013-08-06T00:00:00",
   "image" : "\/images\/profile.jpg",
@@ -115,7 +113,6 @@ Lau78.
 The event vs thread based approach to programming.  As rants go I do
 not aspire to deliver a clear or logical message, what so ever.  It&rsquo;s
 basically just something I need to get off my chest.
-
 It was not until 2007 I first learned about the event based approach
 to programming and event libraries like
 libevent and
@@ -146,7 +143,7 @@ not aspire to …">
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -352,32 +349,22 @@ battle line in the world of programming,
 The event vs thread based approach to programming.  As rants go I do
 not aspire to deliver a clear or logical message, what so ever.  It&rsquo;s
 basically just something I need to get off my chest.</p>
-
 <p>It was not until 2007 I first learned about the event based approach
 to programming and event libraries like
 <a href="http://libevent.org/">libevent</a> and
 <a href="http://software.schmorp.de/pkg/libev.html">libev</a>.  Up until that
 point the silver bullet everyone was using was &hellip; Threads.</p>
-
 <p>I don&rsquo;t really know when it all started, maybe it was the Linux
 revolution, the first NPTL release with GLIBC, Java or Solaris.
 Nevertheless, from my point of view it was sometime in the mid 90&rsquo;s
 during my time at university that the use of threads was starting to
 become prevalent.</p>
-
-<p data-pullquote='"With the rise of the thread based model of
-programming we now had a hammer, and every problem looked like a
-nail."'>I had a gut feeling there was something really wrong with using
-threads for every conceivable program, but I could not find a way to
-express it, so I chugged away with my threads, semaphores and condition
-variables.  I convinced myself I was happy like this.</p>
-
+<!-- raw HTML omitted -->
 <p>Of course I knew about the event based approach, but it was more or
 less dismissed as a thing of the past, a while(1) loop to mimic the
 behavior of PLC&rsquo;s.  So almost every program I wrote, and every program
 I took over from others, were like Indiana Jones types of mazes full
 of deadlocks and race conditions.</p>
-
 <p>I thought I did something wrong, and so did many others like me.  I
 spent days and nights trying to understand, refactor, and redesign
 threaded programs.  What I found was a doubt that the thread based
@@ -386,7 +373,6 @@ model actually didn&rsquo;t suit every problem,
 There are quite a few domains, however, where thread based models
 shine. Usually in languages that come with thread support built-in,
 like Erlang.</p>
-
 <p>Most of the programs I work with today are network daemons.  Meaning
 they are essentially message based applications that spend a lot of
 time waiting for an event to occur: receiving a data frame, waiting
@@ -486,7 +472,7 @@ look at threads again.</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

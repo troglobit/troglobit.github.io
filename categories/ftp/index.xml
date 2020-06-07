@@ -73,7 +73,6 @@ This release completes the main purpose of uftpd for me, I can now use it as my 
       <description>&lt;p&gt;So, I finally got fed up with all other FTP servers and wrote
 &lt;a href=&#34;/uftpd.html&#34;&gt;my own&lt;/a&gt;.  Why would someone in their right mind do
 something like this 2014?&lt;/p&gt;
-
 &lt;p&gt;As a developer the answer to most such questions is usually; to
 scratch an itch.  For a very long time I&amp;rsquo;ve looked for a really simple
 FTP server that just works, out of the box!&lt;/p&gt;</description>

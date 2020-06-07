@@ -22,17 +22,13 @@
       <description>&lt;p&gt;A steady flow of features, and releases, is key to keeping any project
 alive.  Recently I ticked off another item in the &lt;a href=&#34;/finit.html&#34;&gt;Finit&lt;/a&gt;
 TODO list &amp;hellip;&lt;/p&gt;
-
 &lt;p&gt;Finit v1.12 now comes with a built-in inetd!  You no longer need an
 external inetd daemon to launch services on demand.&lt;/p&gt;
-
 &lt;p&gt;The good news doesn&amp;rsquo;t stop there, this little inetd actually supports a
 poor man&amp;rsquo;s tcpwrappers!&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;inetd ssh/tcp          nowait [2345] /sbin/dropbear -i -R -F
 inetd ssh@eth0:222/tcp nowait [2345] /sbin/dropbear -i -R -F
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;With these two lines in your &lt;code&gt;/etc/finit.conf&lt;/code&gt; you tell finit to launch
 the &lt;a href=&#34;https://matt.ucc.asn.au/dropbear/dropbear.html&#34;&gt;Dropbear SSH&lt;/a&gt;
 server on demand on port 22 (default ssh/tcp port in &lt;code&gt;/etc/services&lt;/code&gt;) on
@@ -41,11 +37,9 @@ server on demand on port 22 (default ssh/tcp port in &lt;code&gt;/etc/services&l
 don&amp;rsquo;t want port 22 open at all on &lt;code&gt;eth0&lt;/code&gt; &amp;hellip; so finit takes care of this
 for you!  Seriously, it just works, no need for messing about with that
 nasty old &lt;code&gt;iptables&lt;/code&gt; anymore!&lt;/p&gt;
-
 &lt;p&gt;The original UNIX inetd super server supported many protocols
 internally, some of which may seem a bit odd today, and some have been
 superseded by more modern protocols.&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Echo_Protocol&#34;&gt;echo&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Character_Generator_Protocol&#34;&gt;chargen&lt;/a&gt;&lt;/li&gt;
@@ -53,41 +47,32 @@ superseded by more modern protocols.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Daytime_Protocol&#34;&gt;daytime&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Discard_Protocol&#34;&gt;discard&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;Finit currently only supports one internal/built-in standard service,
 &lt;code&gt;time&lt;/code&gt;.  It is built as a plugin to serve as an example of how you can
 extend Finit yourself.  The time service can be called either as UDP or
 TCP.  To prevent security issues, the &lt;code&gt;time&lt;/code&gt; protocol is disabled by
 default.  To enable it you need two things:&lt;/p&gt;
-
 &lt;ol&gt;
 &lt;li&gt;The &lt;code&gt;time.so&lt;/code&gt; plugin (built by default)&lt;/li&gt;
 &lt;li&gt;An &lt;code&gt;inetd time ...&lt;/code&gt; line in &lt;code&gt;/etc/finit.conf&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;p&gt;Assuming you&amp;rsquo;ve installed the default set of plugins, the following two
 lines can be added:&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;inetd time/udp   wait [2345] internal
 inetd time/tcp nowait [2345] internal
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;This can be very useful for testing the inetd capabilities, your network
 connection, or simply to get the time to a client where NTP for some
 reason does not work, or is blocked.  For instance, you could have a GPS
 setup on your server and distribute time to clients with the &lt;code&gt;time&lt;/code&gt;
 protocol.&lt;/p&gt;
-
 &lt;p&gt;To use it you need an &lt;a href=&#34;http://www.aelius.com/njh/rdate/&#34;&gt;&lt;code&gt;rdate&lt;/code&gt;&lt;/a&gt;
 client.  Users of &lt;code&gt;rdate&lt;/code&gt; in BusyBox may need to be reminded that it
 only supports TCP.&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;$ rdate -pu 198.51.100.42
 Sat Mar  7 08:48:58 CET 2015
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;For more info on Finit and its features, see the &lt;a href=&#34;https://github.com/troglobit/finit/blob/master/README.md&#34;&gt;README&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;Enjoy! ツ&lt;/p&gt;</description>
     </item>
     

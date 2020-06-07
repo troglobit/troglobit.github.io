@@ -12,10 +12,10 @@
   <meta name="twitter:title" content="Reminder to Self" />
   <meta name="description" content="How to recode AVI-files to be able to write them to a Video CD.
 ffmpeg -i original.avi -target pal-vcd copy.mpg vcdimager -t vcd1 -l &quot;Title&quot; -c vcd.cue -b vcd.bin copy.mpg cdrdao write --device /dev/cdrw vcd.cue  Note: vcdimager is able to take multiple .mpg files as argument, very useful when burning multiple family videos to the same disc!
-Tip from Johan Risberg on how to be able to reattach a UTF-8 Linux screen session from Cygwin.">
+ Tip from Johan Risberg on how to be able to reattach a UTF-8 Linux screen session from Cygwin.">
   <meta property="og:description" content="How to recode AVI-files to be able to write them to a Video CD.
 ffmpeg -i original.avi -target pal-vcd copy.mpg vcdimager -t vcd1 -l &quot;Title&quot; -c vcd.cue -b vcd.bin copy.mpg cdrdao write --device /dev/cdrw vcd.cue  Note: vcdimager is able to take multiple .mpg files as argument, very useful when burning multiple family videos to the same disc!
-Tip from Johan Risberg on how to be able to reattach a UTF-8 Linux screen session from Cygwin.">
+ Tip from Johan Risberg on how to be able to reattach a UTF-8 Linux screen session from Cygwin.">
   <meta name="twitter:description" content="How to recode AVI-files to be able to write them to a Video CD.
 ffmpeg -i original.avi -target pal-vcd copy.mpg vcdimager -t vcd1 -l &quot;Title&quot; -c vcd.cue -b vcd.bin copy.mpg cdrdao write …">
   <meta name="author" content="Joachim Nilsson"/><script type="application/ld+json">
@@ -66,7 +66,7 @@ ffmpeg -i original.avi -target pal-vcd copy.mpg vcdimager -t vcd1 -l &quot;Title
     "name" : "Joachim Nilsson"
   },
   "headline": "Reminder to Self",
-  "description" : "How to recode AVI-files to be able to write them to a Video CD.\nffmpeg -i original.avi -target pal-vcd copy.mpg vcdimager -t vcd1 -l \x26quot;Title\x26quot; -c vcd.cue -b vcd.bin copy.mpg cdrdao write --device \/dev\/cdrw vcd.cue  Note: vcdimager is able to take multiple .mpg files as argument, very useful when burning multiple family videos to the same disc!\nTip from Johan Risberg on how to be able to reattach a UTF-8 Linux screen session from Cygwin.",
+  "description" : "How to recode AVI-files to be able to write them to a Video CD.\nffmpeg -i original.avi -target pal-vcd copy.mpg vcdimager -t vcd1 -l \x26quot;Title\x26quot; -c vcd.cue -b vcd.bin copy.mpg cdrdao write --device \/dev\/cdrw vcd.cue  Note: vcdimager is able to take multiple .mpg files as argument, very useful when burning multiple family videos to the same disc!\n Tip from Johan Risberg on how to be able to reattach a UTF-8 Linux screen session from Cygwin.",
   "inLanguage" : "en",
   "wordCount":  100 ,
   "datePublished" : "2009-02-14T21:13:41",
@@ -90,7 +90,7 @@ ffmpeg -i original.avi -target pal-vcd copy.mpg vcdimager -t vcd1 -l &quot;Title
 <meta property="og:title" content="Reminder to Self" />
 <meta property="og:description" content="How to recode AVI-files to be able to write them to a Video CD.
 ffmpeg -i original.avi -target pal-vcd copy.mpg vcdimager -t vcd1 -l &quot;Title&quot; -c vcd.cue -b vcd.bin copy.mpg cdrdao write --device /dev/cdrw vcd.cue  Note: vcdimager is able to take multiple .mpg files as argument, very useful when burning multiple family videos to the same disc!
-Tip from Johan Risberg on how to be able to reattach a UTF-8 Linux screen session from Cygwin.">
+ Tip from Johan Risberg on how to be able to reattach a UTF-8 Linux screen session from Cygwin.">
 <meta property="og:image" content="/images/profile.jpg" />
 <meta property="og:url" content="/2009/02/14/reminder-to-self/" />
 <meta property="og:type" content="website" />
@@ -113,7 +113,7 @@ ffmpeg -i original.avi -target pal-vcd copy.mpg vcdimager -t vcd1 -l &quot;Title
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -314,17 +314,13 @@ ffmpeg -i original.avi -target pal-vcd copy.mpg vcdimager -t vcd1 -l &quot;Title
       <article role="main" class="blog-post">
 	
         <p>How to recode AVI-files to be able to write them to a <a href="http://en.wikipedia.org/wiki/Video_CD">Video CD</a>.</p>
-
 <pre><code>ffmpeg -i original.avi -target pal-vcd copy.mpg
 vcdimager -t vcd1 -l &quot;Title&quot; -c vcd.cue -b vcd.bin copy.mpg
 cdrdao write --device /dev/cdrw vcd.cue
 </code></pre>
-
 <p><strong>Note:</strong> <code>vcdimager</code> is able to take multiple .mpg files as argument,
 very useful when burning multiple family videos to the same disc!</p>
-
-<hr />
-
+<hr>
 <p>Tip from <a href="http://nummerfem.se/">Johan Risberg</a> on how to be able to reattach a UTF-8 Linux
 screen session from Cygwin.  First, start irssi in a screen from a
 Linux login with <code>LANG=LANG en_US.utf8</code>.  Then reattach to the screen,
@@ -420,7 +416,7 @@ preferably using <code>-xRR</code>, with <code>LANG=C</code> from <a href="http:
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

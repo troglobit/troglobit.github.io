@@ -110,7 +110,7 @@ So, how to serve the immense music collection …">
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -313,72 +313,56 @@ So, how to serve the immense music collection …">
         <p>OK, so we finally got an iPad.  The effective marketing droids of Apple
 are doing a good job, even the Linux zealots are starting to use their
 products :-)</p>
-
 <p>So, how to serve the immense music collection of our family to the iPad?
 Well, it seems the magic integration with iTunes is not enough (yet), so
 you need a <a href="http://itunes.apple.com/app/simple-daap-client/id369605270">Simple Daap Client</a> app on your iPad to get the most out
 of this HowTo. I hope DAAP sharing for iPad will be added soon, that
 would be really cool!</p>
-
 <p>I used the <a href="http://www.fireflymediaserver.org/">Firefly Media Server</a>, which in Debian/Ubuntu is known as
 <a href="apt://mt-daapd">mt-daapd</a>.  It needs som minor setting up to play nice with the
 Avahi multicast DNS (mDNS) services that we will use to let iTunes
 discover our new service.</p>
-
 <p>First go ahead and install mt-daapd</p>
-
 <pre><code>sudo apt-get install mt-daapd
 </code></pre>
-
 <p>Then make sure to edit the file <code>/etc/default/mt-daapd</code> file, it usually
 does not exist in the default setup, so create it and add the following
 contents to disable the built-in mDNS server:</p>
-
 <pre><code># -m Disables the built-in mDNS server, useful if you already run Avahi
 DAEMON_OPTS=&quot;-m&quot;
 </code></pre>
-
 <p>The default configuration of must be updated with the location of your
 music library.  On my system it is <code>/pub/Music</code>, so I edit the file
 <code>/etc/mt-daapd.conf</code> and change:</p>
-
 <pre><code># Location of the mp3 files to share.  Note that because the
 # files are stored in the database by inode, these must be
 # in the same physical filesystem.
 mp3_dir = /pub/Music
 </code></pre>
-
 <p>If you like, you can change the <code>admin_pw</code> (mt-daapd) and default port
 to something other than the defaults.  After changing the settings you
 need to restart the service:</p>
-
 <pre><code>sudo service mt-daapd restart
 </code></pre>
-
 <p>Now enter <code>localhost:3689</code> in your browser window, leave the username
 field empty and set password to mt-daapd.  Unless you changed any of the
 defaults above.</p>
-
 <p>Time for multicast!  The Avahi service on GNU/Linux systems is what
 Bonjour/Rendez-Vous is to Apple systems.  It provides seamless
 interaction between clients and servers on a LAN.  My HP printer, for
 instance, pops up automatically in Windows, OS X and Linux these days
 because these operating systems listen in on network mDNS servers that
 broadcast (or rather multicast) available services.  Very neat.</p>
-
 <p>However, as usual there are a few snags you might need to work around to
 get everything to work.  Thanks to my ISP (Telia, Sweden), I need to tell
 Avahi the following nasty things in <code>/etc/default/avahi-daemon</code></p>
-
 <pre><code># 1 = Try to detect unicast dns servers that serve .local and disable avahi in
 # that case, 0 = Don't try to detect .local unicast dns servers, can cause
 # troubles on misconfigured networks
 AVAHI_DAEMON_DETECT_LOCAL=0
 </code></pre>
-
 <p>And also edit the file <code>/etc/avahi/avahi-daemon.conf</code>, the following is
 not the entire contents of the file, only the sections I&rsquo;ve changed:</p>
-
 <pre><code>[server]
 # Comment out any current/previous work arounds
 #domain-name=local
@@ -389,10 +373,8 @@ disallow-other-stacks=yes
 publish-workstation=no
 publish-domain=no
 </code></pre>
-
 <p>Also, in the directory <code>/etc/avahi/services/</code> we need to add an entry for
 DAAP.  Create the file <code>/etc/avahi/services/daap.service</code>:</p>
-
 <pre><code>&lt;!DOCTYPE service-group SYSTEM &quot;avahi-service.dtd&quot;&gt;
 &lt;!-- iTunes DAAP, music streaming, for mt-daapd or Firefly Media Server
      See avahi.service(5) for more information about this configuration file --&gt;
@@ -414,13 +396,10 @@ DAAP.  Create the file <code>/etc/avahi/services/daap.service</code>:</p>
     &lt;/service&gt;
 &lt;/service-group&gt;
 </code></pre>
-
 <p>Now, restart avahi and see your music server pop up automatically as a
 Share in iTunes:</p>
-
 <pre><code>sudo service avahi-daemon restart
 </code></pre>
-
 <p>Good Luck!</p>
 
 
@@ -513,7 +492,7 @@ Share in iTunes:</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

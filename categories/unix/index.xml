@@ -1,17 +1,44 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unix on </title>
+    <title>unix on </title>
     <link>/categories/unix/</link>
-    <description>Recent content in Unix on </description>
+    <description>Recent content in unix on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Tue, 23 Jan 2018 20:39:36 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 22 Feb 2020 09:45:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/unix/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Useful UNIX API:s</title>
+      <link>/2020/02/Useful-UNIX-APIs/</link>
+      <pubDate>Sat, 22 Feb 2020 09:45:00 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2020/02/Useful-UNIX-APIs/</guid>
+      <description>&lt;p&gt;Had an interesting conversation with a buddy last night.  It started out
+as a shift-reduce problem with Bison and ended up a ping-pong of useful
+UNIX API:s.  We concluded that despite having worked professionally with
+UNIX for over two decades, it is still very satisfying finding gems like
+these.&lt;/p&gt;
+&lt;p&gt;Most people are completely unaware they exist and end up rolling their
+own (buggy) implementations.  For instance, string manipulation and
+various forms of linked lists.  Which is why I many years ago extracted
+the &lt;em&gt;frog DNA&lt;/em&gt; from &lt;a href=&#34;https://github.com/troglobit/finit/&#34;&gt;Finit&lt;/a&gt; to a
+separate library called &lt;a href=&#34;https://github.com/troglobit/libite/&#34;&gt;libite&lt;/a&gt;,
+or -lite for short.  It imports the OpenBSD &lt;code&gt;strlcpy()&lt;/code&gt; family of API:s,
+up-to-date &lt;code&gt;queue.h&lt;/code&gt; with the &lt;code&gt;_SAFE&lt;/code&gt; iterators, and more.  Some people
+like &lt;a href=&#34;https://libbsd.freedesktop.org/wiki/&#34;&gt;libbsd&lt;/a&gt; for this, but I&amp;rsquo;ve
+found many of the ports incomplete and unsafe and prefer to stay closer
+to the upstream *BSD versions.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; This post was originally written Nov 14, 2015.  It was a
+Saturday and I remember being extremely inspired when I wrote it.  I&amp;rsquo;ve
+continued adding to it over the years, and still do.  So, as of Jul 2,
+2017 I&amp;rsquo;m bumping the modification date each time I add something new :-)&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Multicast routing with PIM-SM over GRE</title>
@@ -24,7 +51,6 @@ multicast routing with &lt;a href=&#34;https://github.com/troglobit/pimd/&#34;&g
 GRE tunnel.  To achieve this we will also set up OSPF over GRE with
 &lt;a href=&#34;http://www.quagga.net&#34;&gt;Quagga&lt;/a&gt;, because PIM, unlike DVMRP (&lt;code&gt;mrouted&lt;/code&gt;),
 require unicast routing rules to be established.&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;       .----{ Intranet }----.
       /    192.168.1.0/24    \
      /                        \
@@ -42,42 +68,11 @@ require unicast routing rules to be established.&lt;/p&gt;
 |  C1  |                    |  C2  |
 |      |                    |      |
 &#39;------&#39;                    &#39;------&#39;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;In this post we are using the home WiFi network, 192.168.1.0/24, to hook
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In this post we are using the home WiFi network, 192.168.1.0/24, to hook
 up the GRE tunnel.  It is just as easy to extend this to a big corporate
 Intranet with more routers between &lt;code&gt;R1&lt;/code&gt; and &lt;code&gt;R2&lt;/code&gt;.  As long as that IT
 department takes care of the unicast routing between &lt;code&gt;R1&lt;/code&gt; and &lt;code&gt;R2&lt;/code&gt; so
 that the GRE tunnel can be established.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Useful UNIX API:s</title>
-      <link>/2017/12/Useful-UNIX-APIs/</link>
-      <pubDate>Fri, 22 Dec 2017 10:28:00 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/2017/12/Useful-UNIX-APIs/</guid>
-      <description>&lt;p&gt;Had an interesting conversation with a buddy last night.  It started out
-as a shift-reduce problem with Bison and ended up a ping-pong of useful
-UNIX API:s.  We concluded that despite having worked professionally with
-UNIX for over a decade, it is still very satisfying finding gems like
-these.&lt;/p&gt;
-
-&lt;p&gt;Most people are completely unaware they exist and end up rolling their
-own (buggy) implementations.  For instance, string manipulation and
-various forms of linked lists.  Which is why I many years ago extracted
-the &lt;em&gt;frog DNA&lt;/em&gt; from &lt;a href=&#34;https://github.com/troglobit/finit/&#34;&gt;Finit&lt;/a&gt; to a
-separate library called &lt;a href=&#34;https://github.com/troglobit/libite/&#34;&gt;libite&lt;/a&gt;,
-or -lite for short.  It imports the OpenBSD &lt;code&gt;strlcpy()&lt;/code&gt; family of API:s,
-up-to-date &lt;code&gt;queue.h&lt;/code&gt; with the &lt;code&gt;_SAFE&lt;/code&gt; iterators, and more.  Some people
-like &lt;a href=&#34;https://libbsd.freedesktop.org/wiki/&#34;&gt;libbsd&lt;/a&gt; for this, but I&amp;rsquo;ve
-found many of the ports incomplete and unsafe and prefer to stay closer
-to the upstream *BSD versions.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; This post was originally written Nov 14, 2015.  It was a
-Saturday and I remember being extremely inspired when I wrote it.  I&amp;rsquo;ve
-continued adding to it over the years, and still do.  So, as of Jul 2,
-2017 I&amp;rsquo;m bumping the modification date each time I add something new :-)&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -89,7 +84,6 @@ continued adding to it over the years, and still do.  So, as of Jul 2,
       <description>&lt;p&gt;Recently I needed a simple TCP/UDP port redirector and stumbled upon
 &lt;a href=&#34;https://serverfault.com/questions/252150/port-forwarding-on-linux-without-iptables/&#34;&gt;this Stackoverflow post&lt;/a&gt;.  As usual I wasn&amp;rsquo;t first wanting to this
 without using &lt;code&gt;iptables&lt;/code&gt;.&lt;/p&gt;
-
 &lt;p&gt;There were several alternatives, but since my target was embedded with
 limited amount of RAM and flash I wanted something really small.  So the
 best fit turned out to be &lt;a href=&#34;https://github.com/troglobit/redir&#34;&gt;redir&lt;/a&gt;, which unfortunately only could
@@ -97,7 +91,6 @@ handle TCP connections.  This is what led me to write &lt;a href=&#34;https://gi
 complement &lt;code&gt;redir&lt;/code&gt;.  Eventually I ended up adoptiing &lt;code&gt;redir&lt;/code&gt; as well,
 which meant giving it a bit of a facelift and to give them both the same
 look and feel.&lt;/p&gt;
-
 &lt;p&gt;Currently they are two separate applications, which in some use-cases
 can be beneficial (small size), but I may in the future transplant the
 UDP functionality of &lt;code&gt;uredir&lt;/code&gt; into &lt;code&gt;redir&lt;/code&gt;.  We&amp;rsquo;ll see, right now though
@@ -127,12 +120,10 @@ has created a PID file, signalling to you how to reach it.  Usually this
 file is created as &lt;code&gt;/var/run/daemon.pid&lt;/code&gt;, or &lt;code&gt;/run/daemon.pid&lt;/code&gt;, and has
 the PID of &lt;code&gt;daemon&lt;/code&gt; as the first and only data in the file.  This data
 may or may not have a UNIX line ending.&lt;/p&gt;
-
 &lt;p&gt;Only trouble is: most UNIX daemons do not re-assert that PID file
 properly on &lt;code&gt;SIGHUP&lt;/code&gt; (if they support &lt;code&gt;SIGHUP&lt;/code&gt; that is).  When I send
 &lt;code&gt;SIGHUP&lt;/code&gt; to a daemon I expect it to re-read its &lt;code&gt;/etc/daemon.conf&lt;/code&gt; and
 resume operation, basically a quicker way than stop/start.&lt;/p&gt;
-
 &lt;p&gt;Annoyingly however, most daemons do not signal us back to tell us when
 they&amp;rsquo;re done with the &lt;code&gt;SIGHUP&lt;/code&gt;.  Naturally a new movement has risen that
 says we should all instrument our daemons with D-bus &amp;hellip; I say no.
@@ -160,16 +151,13 @@ Turns out there are a few tricks that can save your home directory from accident
 reported to &lt;a href=&#34;https://github.com/troglobit/pimd/&#34;&gt;pimd&lt;/a&gt;.  That number of
 issues reported is cool in itself, but this was a question about
 &lt;a href=&#34;https://www.docker.com&#34;&gt;Docker&lt;/a&gt; and &lt;code&gt;pimd&lt;/code&gt;.&lt;/p&gt;
-
 &lt;p&gt;Up until that point I had only read about this new fad, and played
 around with it a bit &lt;a href=&#34;http://www.westermo.com&#34;&gt;at work&lt;/a&gt; for use as a
 stable build environment for cross-compiling.  I had no idea people
 would want to use a Docker container as a multicast sink.  Basically I
 was baffled.&lt;/p&gt;
-
 &lt;p&gt;The reporter used a Java based tool but simply couldn&amp;rsquo;t get things to
 work properly with &lt;code&gt;pimd&lt;/code&gt; running on the host:&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;                eth0
  MC sender ---&amp;gt; [ Server host ]    &amp;lt;--- router running pimd
                        |
@@ -196,7 +184,6 @@ testing, but on most systems I usually resort to &lt;code&gt;ping(1)&lt;/code&gt
 &lt;code&gt;tcpdump(1)&lt;/code&gt;, which are quite sufficient.  However, you often need to
 tell bridges (switches) to open up multicast in your general direction
 for your pings to get through, so you need to send an IGMP &amp;ldquo;join&amp;rdquo; first.&lt;/p&gt;
-
 &lt;p&gt;Way back in 2006 I stumbled upon a neat tool called &lt;code&gt;mcjoin&lt;/code&gt;, written by
 David Stevens and announced in
 &lt;a href=&#34;https://lkml.org/lkml/2004/8/5/143&#34;&gt;this posting to LKML&lt;/a&gt;.  I started

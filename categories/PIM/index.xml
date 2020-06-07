@@ -8,7 +8,7 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Tue, 23 Jan 2018 20:39:36 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 Mar 2019 15:54:00 +0200</lastBuildDate>
     
 	<atom:link href="/categories/PIM/index.xml" rel="self" type="application/rss+xml" />
     
@@ -24,7 +24,6 @@ multicast routing with &lt;a href=&#34;https://github.com/troglobit/pimd/&#34;&g
 GRE tunnel.  To achieve this we will also set up OSPF over GRE with
 &lt;a href=&#34;http://www.quagga.net&#34;&gt;Quagga&lt;/a&gt;, because PIM, unlike DVMRP (&lt;code&gt;mrouted&lt;/code&gt;),
 require unicast routing rules to be established.&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;       .----{ Intranet }----.
       /    192.168.1.0/24    \
      /                        \
@@ -42,9 +41,7 @@ require unicast routing rules to be established.&lt;/p&gt;
 |  C1  |                    |  C2  |
 |      |                    |      |
 &#39;------&#39;                    &#39;------&#39;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;In this post we are using the home WiFi network, 192.168.1.0/24, to hook
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In this post we are using the home WiFi network, 192.168.1.0/24, to hook
 up the GRE tunnel.  It is just as easy to extend this to a big corporate
 Intranet with more routers between &lt;code&gt;R1&lt;/code&gt; and &lt;code&gt;R2&lt;/code&gt;.  As long as that IT
 department takes care of the unicast routing between &lt;code&gt;R1&lt;/code&gt; and &lt;code&gt;R2&lt;/code&gt; so

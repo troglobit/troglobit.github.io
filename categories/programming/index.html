@@ -55,7 +55,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -273,7 +273,6 @@ as a shift-reduce problem with Bison and ended up a ping-pong of useful
 UNIX API:s.  We concluded that despite having worked professionally with
 UNIX for over two decades, it is still very satisfying finding gems like
 these.</p>
-
 <p>Most people are completely unaware they exist and end up rolling their
 own (buggy) implementations.  For instance, string manipulation and
 various forms of linked lists.  Which is why I many years ago extracted
@@ -284,7 +283,6 @@ up-to-date <code>queue.h</code> with the <code>_SAFE</code> iterators, and more.
 like <a href="https://libbsd.freedesktop.org/wiki/">libbsd</a> for this, but I&rsquo;ve
 found many of the ports incomplete and unsafe and prefer to stay closer
 to the upstream *BSD versions.</p>
-
 <p><strong>Update:</strong> This post was originally written Nov 14, 2015.  It was a
 Saturday and I remember being extremely inspired when I wrote it.  I&rsquo;ve
 continued adding to it over the years, and still do.  So, as of Jul 2,
@@ -327,11 +325,9 @@ continued adding to it over the years, and still do.  So, as of Jul 2,
                   <p>I still get asked this, from time to time.  Maybe it&rsquo;s because I only
 use event loops, maybe it&rsquo;s because I&rsquo;ve written <a href="https://github.com/troglobit/libuev">libuEv</a>, or maybe
 people still don&rsquo;t understand:</p>
-
 <blockquote>
 <p>Why an event loop, why not use threads?</p>
 </blockquote>
-
 <p>So here&rsquo;s my response, once more.</p>
                   <a href="/2017/09/19/threads-vs-event-loop-again-.../" class="post-read-more">[Read More]</a>
                 
@@ -408,7 +404,6 @@ Due to my not really taking much vacation previous years I had saved up for ten 
                   <blockquote>
 <p>Enable <em>all</em> the warnings!</p>
 </blockquote>
-
 <p>This is one of the truths you learn when you start working with C.  Most
 of the time adding <code>CPPFLAGS=&quot;-W -Wall -Werror&quot;</code> is all you need to find
 all the nasty bugs.  And if that&rsquo;s not enough, there are tons of tools
@@ -416,7 +411,6 @@ for static code analysis, like <code>scan-build</code> in
 <a href="http://clang-analyzer.llvm.org/scan-build.html">Clang</a>, and
 <a href="https://scan.coverity.com/">Coverity Scan</a>, to help you <em>find all the
 bugs</em>!</p>
-
 <p>However, these pesky warnings (some of which cannot even be disabled!)
 are sometimes more of a nuisance than help.  Sometimes you <em>know</em> that
 some parameters to a function will remain unused &ndash; it&rsquo;s a callback, and
@@ -462,10 +456,9 @@ pause and think, real hard, becuase the people asking me this aren&rsquo;t
 programmers.  They use computers, but are mostly limited to a Windows
 machine, writing in MS Word and browsing the Internet, mostly for
 Facebook.</p>
-
 <p>I often start off with: &ldquo;It&rsquo;s a bit complicated to explain &hellip; &ldquo;, by
 which time I&rsquo;ve lost most of the people in the room listening to me.
-Sometimes I say: &ldquo;I&rsquo;m a software architect.&rdquo;, because people seem to
+Sometimes I say: &ldquo;I&rsquo;m a software architect.&quot;, because people seem to
 know what architects do for a living, they draw houses, design stuff
 and drive SAAB&rsquo;s.  Much like dentists.  The prefix &ldquo;software&rdquo; however
 does confuse people.</p>
@@ -506,7 +499,6 @@ does confuse people.</p>
                 
                   <p>This is a response to the excellent post by Jani Gorše, titled
 <a href="https://blooki.st/BlookElement/ShowTextPhoto?blookElementId=1962">Why is Programming an Art?</a></p>
-
 <p>Ever since I began studying Computer Engineering at <a href="http://www.mdh.se">university</a> back
 in 1995 I have struggled to find the &ldquo;proper&rdquo; ways to format my code,
 name functions and variables appropriately, structure functions into
@@ -740,7 +732,7 @@ on the subject.  I couldn&rsquo;t agree more.</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

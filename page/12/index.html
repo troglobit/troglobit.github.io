@@ -47,7 +47,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.59.1" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -214,6 +214,79 @@
           
           
             <article class="post-preview">
+              <a href="/2009/02/28/link-collection-2009-02-28/">
+                <h2 class="post-title">Link Collection 2009-02-28</h2>
+                
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on February 28, 2009
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Nilsson
+    
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  This makes it possible to debug why a disk needs to spin up, and to increase battery life even more.
+Dislike NetworkManager? Try wicd &hellip;
+Minimalistic distro Crush Bang Linux 8.10
+Ah, what every FLOSS dad is looking for, a way to make your kids interested in your world instead of the dark side, and what is better than to trick them into it with a cool Linux game? Read Uwe Hermann&rsquo;s blog about Teeworlds, or visit the home page.
+                  <a href="/2009/02/28/link-collection-2009-02-28/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
+              <a href="/2009/02/14/reminder-to-self/">
+                <h2 class="post-title">Reminder to Self</h2>
+                
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on February 14, 2009
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Nilsson
+    
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  How to recode AVI-files to be able to write them to a Video CD.
+ffmpeg -i original.avi -target pal-vcd copy.mpg vcdimager -t vcd1 -l &quot;Title&quot; -c vcd.cue -b vcd.bin copy.mpg cdrdao write --device /dev/cdrw vcd.cue  Note: vcdimager is able to take multiple .mpg files as argument, very useful when burning multiple family videos to the same disc!
+ Tip from Johan Risberg on how to be able to reattach a UTF-8 Linux screen session from Cygwin.
+                  <a href="/2009/02/14/reminder-to-self/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
               <a href="/2009/02/10/network-programming-link-collection/">
                 <h2 class="post-title">Netork Programming -- Link Collection</h2>
                 
@@ -277,9 +350,7 @@
                   <p>It&rsquo;s here!  Fresh, new and packed with new features!  Well, really just
 one new major feature — support for ANSI arrow keys.  A good enough
 reason to bump the minor version number :-)</p>
-
 <p>Get it from the usual FTP location:</p>
-
 <ul>
 <li><a href="http://ftp.vmlinux.org/pub/People/jocke/minix-editline/">http://ftp.vmlinux.org/pub/People/jocke/minix-editline/</a></li>
 </ul>
@@ -499,78 +570,6 @@ Is Ubuntu 8.04 really that buggy as everyone suggest? My guess is that we&rsquo;
               
             </article>
           
-            <article class="post-preview">
-              <a href="/2008/07/28/howto-build-gnu-emacs-from-cvs/">
-                <h2 class="post-title">HowTo: Build GNU Emacs from CVS</h2>
-                
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on July 28, 2008
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Nilsson
-    
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  Why would you want to do this? Well, considering all the neat new things that have been added lately it should be tempting for any old Emacs fan.
-The Emacs Wiki has all the info you need, but here is a quick run-down of the bare necessities. Start by checking out your working copy:
-cvs -z3 -d:pserver:anonymous@cvs.savannah.gnu.org:/cvsroot/emacs co emacs cd emacs/ ./configure make bootstrap  Start with ./src/emacs or symlink the binary to your ~/bin/ directory.
-                  <a href="/2008/07/28/howto-build-gnu-emacs-from-cvs/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2008/07/22/more-emacs-progress/">
-                <h2 class="post-title">More Emacs Progress!</h2>
-                
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on July 22, 2008
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Nilsson
-    
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  Wow, I&rsquo;m almost starting to feel like a Windows user. The latest CVS builds of GNU Emacs has a lot of new features:
- XFT Support (font anti-aliasing) Better GTK integration (desktop) A font selector!  I use the CVS version now as my daily driver in Ubuntu 8.10. It&rsquo;s really useful, and I love the improved support for debugging programs inside Emacs!
-I think it is quite impressive how far this little editor has come.
-                  <a href="/2008/07/22/more-emacs-progress/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-            </article>
-          
         </div>
 
         
@@ -648,7 +647,7 @@ I think it is quite impressive how far this little editor has come.
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.59.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

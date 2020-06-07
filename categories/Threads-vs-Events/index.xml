@@ -25,7 +25,6 @@ battle line in the world of programming,
 The event vs thread based approach to programming.  As rants go I do
 not aspire to deliver a clear or logical message, what so ever.  It&amp;rsquo;s
 basically just something I need to get off my chest.&lt;/p&gt;
-
 &lt;p&gt;It was not until 2007 I first learned about the event based approach
 to programming and event libraries like
 &lt;a href=&#34;http://libevent.org/&#34;&gt;libevent&lt;/a&gt; and
