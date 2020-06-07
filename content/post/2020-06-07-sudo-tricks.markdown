@@ -20,7 +20,7 @@ of my favorites.
 Remeber to edit `/etc/sudoers` with the proper command, which validates the
 input to prevent you from locking yourself out:
 
-    visudo
+    sudo visudo
 
 ## 1. Remember auth. in other terminal windows
 
