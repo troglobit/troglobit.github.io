@@ -8,7 +8,7 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Sun, 07 Jun 2020 12:25:52 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jun 2020 22:48:52 +0200</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -16,9 +16,36 @@
     <item>
       <title>Linux</title>
       <link>/categories/Linux/</link>
-      <pubDate>Sun, 07 Jun 2020 12:25:52 +0200</pubDate>
+      <pubDate>Tue, 09 Jun 2020 22:48:52 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/Linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>multicast</title>
+      <link>/categories/multicast/</link>
+      <pubDate>Tue, 09 Jun 2020 22:48:52 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/multicast/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>opensource</title>
+      <link>/categories/opensource/</link>
+      <pubDate>Tue, 09 Jun 2020 22:48:52 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/opensource/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>unix</title>
+      <link>/categories/unix/</link>
+      <pubDate>Tue, 09 Jun 2020 22:48:52 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/unix/</guid>
       <description></description>
     </item>
     
@@ -68,15 +95,6 @@
     </item>
     
     <item>
-      <title>unix</title>
-      <link>/categories/unix/</link>
-      <pubDate>Sat, 22 Feb 2020 09:45:00 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/categories/unix/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>IGMP</title>
       <link>/categories/IGMP/</link>
       <pubDate>Wed, 27 Mar 2019 15:54:00 +0200</pubDate>
@@ -109,15 +127,6 @@
       <pubDate>Wed, 27 Mar 2019 15:54:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/mrouted/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>multicast</title>
-      <link>/categories/multicast/</link>
-      <pubDate>Wed, 27 Mar 2019 15:54:00 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/categories/multicast/</guid>
       <description></description>
     </item>
     
@@ -577,15 +586,6 @@
       <pubDate>Thu, 02 Jul 2015 17:11:55 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>opensource</title>
-      <link>/categories/opensource/</link>
-      <pubDate>Thu, 02 Jul 2015 17:11:55 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/categories/opensource/</guid>
       <description></description>
     </item>
     

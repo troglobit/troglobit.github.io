@@ -10,9 +10,9 @@
   <title>Overview of all pages with the category #multicast - </title>
   <meta property="og:title" content="Overview of all pages with the category #multicast" />
   <meta name="twitter:title" content="Overview of all pages with the category #multicast" />
-  <meta name="description" content="Overview of all pages with the category #multicast, such as: Multicast HowTo">
-  <meta property="og:description" content="Overview of all pages with the category #multicast, such as: Multicast HowTo">
-  <meta name="twitter:description" content="Overview of all pages with the category #multicast, such as: Multicast HowTo">
+  <meta name="description" content="Overview of all pages with the category #multicast, such as: Open Source Releases">
+  <meta property="og:description" content="Overview of all pages with the category #multicast, such as: Open Source Releases">
+  <meta name="twitter:description" content="Overview of all pages with the category #multicast, such as: Open Source Releases">
   <meta name="author" content="Joachim Nilsson"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -240,6 +240,43 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         
         <div class="posts-list">
+          
+            <article class="post-preview">
+              <a href="/2020/06/Open-Source-Releases/">
+                <h2 class="post-title">Open Source Releases</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on June 9, 2020
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Nilsson
+    
+  
+  
+</span>
+
+
+              </p>
+              <div class="post-entry">
+                
+                  The last couple of months have been crazy. The downturn in the economy due to Covid-19, mass layoffs, social distancing and quarantine. Not to mention the unrest in US and Europe in the wake of George Floyd&rsquo;s uneccessary death.
+I&rsquo;ve always been a bit of a misanthrope and indoor enthusiast, keeping to myself and working on my own stuff. But even I have to admit to being quite worried about the world in general and have cried on more than one occasion.
+                  <a href="/2020/06/Open-Source-Releases/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
           
             <article class="post-preview">
               <a href="/howto/multicast/">
@@ -640,44 +677,6 @@ little proggy! :-)</p>
  Rebuild the kernel with options MROUTING Load the kernel module: kldload ip_mroute  The kernel rebuild assumes the src.txz set was installed previously.
 cd /usr/src cd sys/amd64/conf cat GENERIC | sed 's/GENERIC$/MULTICAST/' &gt; MULTICAST echo 'options MROUTING # Multicast routing' &gt;&gt; MULTICAST echo 'options PIM # Enable for pimd' &gt;&gt; MULTICAST cd - make kernel KERNCONF=MULTICAST reboot  That&rsquo;s it.
                   <a href="/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="/howto/mrouting-in-freebsd/">
-                <h2 class="post-title">HowTo: Add Multicast Routing to FreeBSD kernel</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on September 23, 2014
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Nilsson
-    
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                
-                  This is a very short blog post, mostly intended as a reminder to myself. Basically, there are two methods of adding multicast routing support to the FreeBSD kernel:
- Rebuild the kernel with options MROUTING Load the kernel module: kldload ip_mroute  The kernel rebuild assumes the src.txz set was installed previously.
-cd /usr/src cd sys/amd64/conf cat GENERIC | sed 's/GENERIC$/MULTICAST/' &gt; MULTICAST echo 'options MROUTING # Multicast routing' &gt;&gt; MULTICAST echo 'options PIM # Enable for pimd' &gt;&gt; MULTICAST cd - make kernel KERNCONF=MULTICAST reboot  That&rsquo;s it.
-                  <a href="/howto/mrouting-in-freebsd/" class="post-read-more">[Read More]</a>
                 
               </div>
 

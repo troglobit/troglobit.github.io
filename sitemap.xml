@@ -4,7 +4,42 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-06-07T22:27:31+01:00</lastmod>
+    <lastmod>2020-06-09T22:48:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <lastmod>2020-06-09T22:48:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/Linux/</loc>
+    <lastmod>2020-06-09T22:48:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/multicast/</loc>
+    <lastmod>2020-06-09T22:48:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2020/06/Open-Source-Releases/</loc>
+    <lastmod>2020-06-09T22:48:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/opensource/</loc>
+    <lastmod>2020-06-09T22:48:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-06-09T22:48:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/unix/</loc>
+    <lastmod>2020-06-09T22:48:52+02:00</lastmod>
   </url>
   
   <url>
@@ -15,21 +50,6 @@
   <url>
     <loc>/projects/mrouted/</loc>
     <lastmod>2020-06-07T22:27:31+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
-    <lastmod>2020-06-07T12:25:52+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/Linux/</loc>
-    <lastmod>2020-06-07T12:25:52+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
-    <lastmod>2020-06-07T12:25:52+02:00</lastmod>
   </url>
   
   <url>
@@ -89,11 +109,6 @@
   
   <url>
     <loc>/categories/programming/</loc>
-    <lastmod>2020-02-22T09:45:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/unix/</loc>
     <lastmod>2020-02-22T09:45:00+00:00</lastmod>
   </url>
   
@@ -199,11 +214,6 @@
   
   <url>
     <loc>/categories/mrouted/</loc>
-    <lastmod>2019-03-27T15:54:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/multicast/</loc>
     <lastmod>2019-03-27T15:54:00+02:00</lastmod>
   </url>
   
@@ -704,11 +714,6 @@
   
   <url>
     <loc>/2015/07/02/howto-using-lite-with-a-git-based-application/</loc>
-    <lastmod>2015-07-02T17:11:55+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/opensource/</loc>
     <lastmod>2015-07-02T17:11:55+00:00</lastmod>
   </url>
   
