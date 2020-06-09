@@ -105,7 +105,7 @@ $ wget ftp://ftp.sunet.se/pub/Linux/kernels/v2.6/linux-2.6.19.2.tar.bz2 $ tar xf
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2006/07/17/make-kpkg-and-dirty-modules/</guid>
       <description>Dammit, tonight I spent too many hours chasing down a &amp;ldquo;feature&amp;rdquo; in the Debian kernel build process or the Linux-2.6 kernel. I haven&amp;rsquo;t yet deciced who to blame ;-)
-Here goes: when you build the latest Linux 2.6 kernel, checked out from the git repository, with make-kpkg you should make sure to uncheck the CONFIG_LOCALVERSION_AUTO option in the kernel config before hand. It&amp;rsquo;s under &amp;ldquo;General setup&amp;rdquo; → &amp;ldquo;Automatically append version information &amp;hellip;&amp;quot;.</description>
+Here goes: when you build the latest Linux 2.6 kernel, checked out from the git repository, with make-kpkg you should make sure to uncheck the CONFIG_LOCALVERSION_AUTO option in the kernel config before hand. It&amp;rsquo;s under &amp;ldquo;General setup&amp;rdquo; → &amp;ldquo;Automatically append version information &amp;hellip;&amp;rdquo;.</description>
     </item>
     
     <item>

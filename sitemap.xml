@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/</loc>
+    <lastmod>2020-06-07T12:25:52+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/categories/</loc>
     <lastmod>2020-06-07T12:25:52+02:00</lastmod>
   </url>
@@ -203,11 +208,6 @@
   </url>
   
   <url>
-    <loc>/categories/PIM/</loc>
-    <lastmod>2019-03-27T15:54:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/categories/pimd/</loc>
     <lastmod>2019-03-27T15:54:00+02:00</lastmod>
   </url>
@@ -289,6 +289,11 @@
   
   <url>
     <loc>/2016/07/05/multicast-routing-with-pim-sm-over-gre/</loc>
+    <lastmod>2018-01-23T20:39:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/PIM/</loc>
     <lastmod>2018-01-23T20:39:36+00:00</lastmod>
   </url>
   
@@ -428,11 +433,6 @@
   </url>
   
   <url>
-    <loc>/categories/c/</loc>
-    <lastmod>2016-12-11T20:26:12+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/categories/capabilities/</loc>
     <lastmod>2016-12-11T20:26:12+00:00</lastmod>
   </url>
@@ -468,6 +468,11 @@
   </url>
   
   <url>
+    <loc>/categories/c/</loc>
+    <lastmod>2016-10-27T22:22:44+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/2016/10/27/new-toolchains/</loc>
     <lastmod>2016-10-27T22:22:44+00:00</lastmod>
   </url>
@@ -490,11 +495,6 @@
   <url>
     <loc>/2016/09/21/finit3-almost-there-.../</loc>
     <lastmod>2016-09-21T19:08:37+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/network/</loc>
-    <lastmod>2016-09-02T23:30:00+00:00</lastmod>
   </url>
   
   <url>
@@ -853,11 +853,6 @@
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2014-06-29T17:01:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/about/</loc>
     <lastmod>2014-06-29T17:01:00+00:00</lastmod>
   </url>
@@ -1199,6 +1194,11 @@
   
   <url>
     <loc>/2009/02/10/network-programming-link-collection/</loc>
+    <lastmod>2009-02-10T21:56:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/network/</loc>
     <lastmod>2009-02-10T21:56:42+00:00</lastmod>
   </url>
   
