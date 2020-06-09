@@ -10,11 +10,13 @@
   <title>The original multicast routing daemon - </title>
   <meta property="og:title" content="The original multicast routing daemon" />
   <meta name="twitter:title" content="The original multicast routing daemon" />
-  <meta name="description" content="mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, [RFC 1075][]. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunnelling1 support.
-The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is suitable for smaller/dense networks. It employs the &ldquo;flood and prune&rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups. For a more thorough explanation of the protocol, see [RFC 1075][].">
-  <meta property="og:description" content="mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, [RFC 1075][]. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunnelling1 support.
-The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is suitable for smaller/dense networks. It employs the &ldquo;flood and prune&rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups. For a more thorough explanation of the protocol, see [RFC 1075][].">
-  <meta name="twitter:description" content="mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, [RFC 1075][]. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunnelling1 support. …">
+  <meta name="description" content="mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, RFC 1075. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunneling support.
+ Tunneling may be required to cross non-multicast-aware routers.
+ The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is suitable for smaller/dense networks. It employs the &ldquo;flood and prune&rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups.">
+  <meta property="og:description" content="mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, RFC 1075. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunneling support.
+ Tunneling may be required to cross non-multicast-aware routers.
+ The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is suitable for smaller/dense networks. It employs the &ldquo;flood and prune&rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups.">
+  <meta name="twitter:description" content="mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, RFC 1075. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunneling support. …">
   <meta name="author" content="Joachim Nilsson"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -63,9 +65,9 @@ The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is 
     "name" : "Joachim Nilsson"
   },
   "headline": "The original multicast routing daemon",
-  "description" : "mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, [RFC 1075][]. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunnelling1 support.\nThe Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is suitable for smaller\/dense networks. It employs the \u0026ldquo;flood and prune\u0026rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups. For a more thorough explanation of the protocol, see [RFC 1075][].",
+  "description" : "mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, RFC 1075. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunneling support.\n Tunneling may be required to cross non-multicast-aware routers.\n The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is suitable for smaller\/dense networks. It employs the \u0026ldquo;flood and prune\u0026rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups.",
   "inLanguage" : "en",
-  "wordCount":  340 ,
+  "wordCount":  326 ,
   "datePublished" : "2019-02-24T11:21:31",
   "dateModified" : "2019-02-24T11:21:31",
   "image" : "\/images\/profile.jpg",
@@ -85,15 +87,16 @@ The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is 
 </script>
 
 <meta property="og:title" content="The original multicast routing daemon" />
-<meta property="og:description" content="mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, [RFC 1075][]. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunnelling1 support.
-The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is suitable for smaller/dense networks. It employs the &ldquo;flood and prune&rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups. For a more thorough explanation of the protocol, see [RFC 1075][].">
+<meta property="og:description" content="mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, RFC 1075. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunneling support.
+ Tunneling may be required to cross non-multicast-aware routers.
+ The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is suitable for smaller/dense networks. It employs the &ldquo;flood and prune&rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups.">
 <meta property="og:image" content="/images/profile.jpg" />
 <meta property="og:url" content="/projects/mrouted/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="" />
 
   <meta name="twitter:title" content="The original multicast routing daemon" />
-  <meta name="twitter:description" content="mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, [RFC 1075][]. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunnelling1 support. …">
+  <meta name="twitter:description" content="mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, RFC 1075. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunneling support. …">
   <meta name="twitter:image" content="/images/profile.jpg" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@troglobit" />
@@ -295,13 +298,16 @@ The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is 
 	
         <!-- raw HTML omitted -->
 <p>mrouted is an implementation of the IPv4 multicast routing protocol
-DVMRP, [RFC 1075][].  It is capable of turning a UNIX workstation, or
-Linux device, into a multicast router with tunnelling<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> support.</p>
+DVMRP, <a href="http://tools.ietf.org/html/rfc1075">RFC 1075</a>.  It is capable of turning a UNIX workstation, or
+Linux device, into a multicast router with tunneling support.</p>
+<blockquote>
+<p>Tunneling may be required to cross non-multicast-aware routers.</p>
+</blockquote>
 <p>The Distantance Vector Multicast Routing Protocol (DVMRP), derived from
 RIP, is suitable for smaller/dense networks.  It employs the &ldquo;flood and
 prune&rdquo; method, where multicast is flooded until neighboring routers opt
 out from unwanted multicast groups.  For a more thorough explanation of
-the protocol, see [RFC 1075][].  In larger networks, with sparsely
+the protocol, see <a href="http://tools.ietf.org/html/rfc1075">RFC 1075</a>.  In larger networks, with sparsely
 located nodes, you might want to look into <a href="/pimd.html">pimd</a>.  For many
 use-cases static multicast routing, <a href="/smcroute.html">smcroute</a> may be
 sufficient.</p>
@@ -309,15 +315,15 @@ sufficient.</p>
 Ajit Thyagarajan, Bill Fenner, David Thaler and Daniel Zappala.  With
 contributions by many others.</p>
 <p>The last release by Mr. Fenner was 3.9-beta3 on April 26 1999.  Several
-prominent UNIX operating systems, such as AIX, Solaris, [HP-UX][],
+prominent UNIX operating systems, such as AIX, Solaris, <a href="http://docs.hp.com/en/B2355-90777/ch01s01.html">HP-UX</a>,
 BSD/OS, NetBSD, FreeBSD, OpenBSD as well as most GNU/Linux based
 distributions have used that release, with (mostly) minor patches for
 system adaptations.  However, over time many dropped support, but Debian
 and OpenBSD kept it under their wings.</p>
 <p>In March 2003 the OpenBSD project, led by the fearless Theo de Raadt,
-[managed to convince Stanford][1] to finally release mrouted under a
-[fully free license][2], [the 3-clause BSD license][3].  In February
-2005 [Debian nevertheless dropped mrouted][4] as an &ldquo;obsolete protocol&rdquo;.</p>
+<a href="http://www.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/LICENSE">managed to convince Stanford</a> to finally release mrouted under a
+<a href="https://github.com/troglobit/mrouted/blob/master/LICENSE">fully free license</a>, <a href="http://en.wikipedia.org/wiki/BSD_licenses">the 3-clause BSD license</a>.  In February
+2005 <a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=288112">Debian nevertheless dropped mrouted</a> as an &ldquo;obsolete protocol&rdquo;.</p>
 <p>For a long time the OpenBSD team remained the sole guardian of this
 project.</p>
 <p>In 2010 this effort of bringing mrouted back to life was started. The
@@ -340,20 +346,6 @@ integrated.  Support for Debian/Ubuntu is included in the tree.</p>
 <p>See also the <a href="https://www.openhub.net/p/mrouted/">OpenHub page</a>, or the
 (sadly) dormant <a href="http://freecode.com/projects/mrouted">Free(code) page</a>.</p>
 <p>Problems?  See the <a href="/multicast-howto.html">multicast howto</a></p>
-<p>[1]: <a href="http://www.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/LICENSE">http://www.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/LICENSE</a>)
-[2]: <a href="https://github.com/troglobit/mrouted/blob/master/LICENSE">https://github.com/troglobit/mrouted/blob/master/LICENSE</a>
-[3]: <a href="http://en.wikipedia.org/wiki/BSD_licenses">http://en.wikipedia.org/wiki/BSD_licenses</a>
-[4]: <a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=288112">http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=288112</a>
-[HP-UX]: <a href="http://docs.hp.com/en/B2355-90777/ch01s01.html">http://docs.hp.com/en/B2355-90777/ch01s01.html</a>
-[RFC 1075]: <a href="http://tools.ietf.org/html/rfc1075">http://tools.ietf.org/html/rfc1075</a></p>
-<section class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1" role="doc-endnote">
-<p>Tunneling may be required to cross non-multicast-aware routers. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</section>
 
 
         

@@ -564,8 +564,9 @@ pimd is a lightweight standalone PIM-SM/SSM v2 multicast routing daemon. It is t
               </p>
               <div class="post-entry">
                 
-                  mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, [RFC 1075][]. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunnelling1 support.
-The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is suitable for smaller/dense networks. It employs the &ldquo;flood and prune&rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups. For a more thorough explanation of the protocol, see [RFC 1075][].
+                  mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, RFC 1075. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunneling support.
+ Tunneling may be required to cross non-multicast-aware routers.
+ The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is suitable for smaller/dense networks. It employs the &ldquo;flood and prune&rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups.
                   <a href="/projects/mrouted/" class="post-read-more">[Read More]</a>
                 
               </div>
