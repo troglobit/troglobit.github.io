@@ -1,6 +1,6 @@
 ---
 name: mrouted
-title: "The original multicast routing daemon"
+title: The original multicast routing daemon
 date: 2019-02-24 11:21:31 +01:00
 aliases: /mrouted.html
 ---
@@ -8,7 +8,9 @@ aliases: /mrouted.html
 
 mrouted is an implementation of the IPv4 multicast routing protocol
 DVMRP, [RFC 1075][].  It is capable of turning a UNIX workstation, or
-Linux device, into a multicast router with tunnelling[^1] support.
+Linux device, into a multicast router with tunneling support.
+
+> Tunneling may be required to cross non-multicast-aware routers.
 
 The Distantance Vector Multicast Routing Protocol (DVMRP), derived from
 RIP, is suitable for smaller/dense networks.  It employs the "flood and
@@ -61,12 +63,9 @@ See also the [OpenHub page](https://www.openhub.net/p/mrouted/), or the
 
 Problems?  See the [multicast howto](/multicast-howto.html)
 
-[1]: http://www.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/LICENSE)
+[1]: http://www.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/LICENSE
 [2]: https://github.com/troglobit/mrouted/blob/master/LICENSE
 [3]: http://en.wikipedia.org/wiki/BSD_licenses
 [4]: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=288112
 [HP-UX]: http://docs.hp.com/en/B2355-90777/ch01s01.html
 [RFC 1075]: http://tools.ietf.org/html/rfc1075
-
-
-[^1]: Tunneling may be required to cross non-multicast-aware routers.
