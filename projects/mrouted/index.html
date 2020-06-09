@@ -67,9 +67,9 @@
   "headline": "The original multicast routing daemon",
   "description" : "mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, RFC 1075. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunneling support.\n Tunneling may be required to cross non-multicast-aware routers.\n The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is suitable for smaller\/dense networks. It employs the \u0026ldquo;flood and prune\u0026rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups.",
   "inLanguage" : "en",
-  "wordCount":  326 ,
-  "datePublished" : "2019-02-24T11:21:31",
-  "dateModified" : "2019-02-24T11:21:31",
+  "wordCount":  351 ,
+  "datePublished" : "2020-06-07T22:27:31",
+  "dateModified" : "2020-06-07T22:27:31",
   "image" : "\/images\/profile.jpg",
   "keywords" : [ "" ],
   "mainEntityOfPage" : "\/projects\/mrouted\/",
@@ -298,7 +298,7 @@
 	
         <!-- raw HTML omitted -->
 <p>mrouted is an implementation of the IPv4 multicast routing protocol
-DVMRP, <a href="http://tools.ietf.org/html/rfc1075">RFC 1075</a>.  It is capable of turning a UNIX workstation, or
+DVMRP, <a href="https://tools.ietf.org/html/rfc1075">RFC 1075</a>.  It is capable of turning a UNIX workstation, or
 Linux device, into a multicast router with tunneling support.</p>
 <blockquote>
 <p>Tunneling may be required to cross non-multicast-aware routers.</p>
@@ -307,7 +307,7 @@ Linux device, into a multicast router with tunneling support.</p>
 RIP, is suitable for smaller/dense networks.  It employs the &ldquo;flood and
 prune&rdquo; method, where multicast is flooded until neighboring routers opt
 out from unwanted multicast groups.  For a more thorough explanation of
-the protocol, see <a href="http://tools.ietf.org/html/rfc1075">RFC 1075</a>.  In larger networks, with sparsely
+the protocol, see <a href="https://tools.ietf.org/html/rfc1075">RFC 1075</a>.  In larger networks, with sparsely
 located nodes, you might want to look into <a href="/pimd.html">pimd</a>.  For many
 use-cases static multicast routing, <a href="/smcroute.html">smcroute</a> may be
 sufficient.</p>
@@ -315,33 +315,41 @@ sufficient.</p>
 Ajit Thyagarajan, Bill Fenner, David Thaler and Daniel Zappala.  With
 contributions by many others.</p>
 <p>The last release by Mr. Fenner was 3.9-beta3 on April 26 1999.  Several
-prominent UNIX operating systems, such as AIX, Solaris, <a href="http://docs.hp.com/en/B2355-90777/ch01s01.html">HP-UX</a>,
+prominent UNIX operating systems, such as AIX, Solaris, <a href="https://docs.hp.com/en/B2355-90777/ch01s01.html">HP-UX</a>,
 BSD/OS, NetBSD, FreeBSD, OpenBSD as well as most GNU/Linux based
 distributions have used that release, with (mostly) minor patches for
 system adaptations.  However, over time many dropped support, but Debian
 and OpenBSD kept it under their wings.</p>
 <p>In March 2003 the OpenBSD project, led by the fearless Theo de Raadt,
-<a href="http://www.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/LICENSE">managed to convince Stanford</a> to finally release mrouted under a
-<a href="https://github.com/troglobit/mrouted/blob/master/LICENSE">fully free license</a>, <a href="http://en.wikipedia.org/wiki/BSD_licenses">the 3-clause BSD license</a>.  In February
-2005 <a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=288112">Debian nevertheless dropped mrouted</a> as an &ldquo;obsolete protocol&rdquo;.</p>
+<a href="https://www.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/LICENSE">managed to convince Stanford</a> to finally release mrouted under a
+<a href="https://github.com/troglobit/mrouted/blob/master/LICENSE">fully free license</a>, <a href="https://en.wikipedia.org/wiki/BSD_licenses">the 3-clause BSD license</a>.  In February
+2005 <a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=288112">Debian nevertheless dropped mrouted</a> as an &ldquo;obsolete protocol&rdquo;.</p>
 <p>For a long time the OpenBSD team remained the sole guardian of this
 project.</p>
 <p>In 2010 this effort of bringing mrouted back to life was started. The
 3.9.x stable series represent the first releases in over a decade.
 Patches from all over the Internet, including OpenBSD, have been
-integrated.  Support for Debian/Ubuntu is included in the tree.</p>
+integrated.</p>
+<p>In 2020, v4.0 was finally released after another 10 years of hard work.
+The most important news include:</p>
+<ul>
+<li>A new command line tool, <code>mroutectl</code> to control and query status</li>
+<li>Support for IGMPv3</li>
+</ul>
+<hr>
 <p>Issue tracker and GIT repository available at GitHub:</p>
 <ul>
-<li><a href="http://github.com/troglobit/mrouted">Repository</a></li>
-<li><a href="https://github.com/troglobit/mrouted/releases/tag/3.9.8">ChangeLog</a></li>
-<li><a href="http://github.com/troglobit/mrouted/issues">Issue Tracker</a></li>
-<li><a href="ftp://ftp.troglobit.com/mrouted/mrouted-3.9.8.tar.bz2">mrouted-3.9.8.tar.bz2</a>,
-<a href="ftp://ftp.troglobit.com/mrouted/mrouted-3.9.8.tar.bz2.md5">MD5</a></li>
+<li><a href="https://github.com/troglobit/mrouted">Repository</a></li>
+<li><a href="https://github.com/troglobit/mrouted/releases/tag/4.0">ChangeLog</a></li>
+<li><a href="https://github.com/troglobit/mrouted/issues">Issue Tracker</a></li>
+<li><a href="https://ftp.troglobit.com/mrouted/mrouted-4.0.tar.gz">mrouted-4.0.tar.gz</a>,
+<a href="https://ftp.troglobit.com/mrouted/mrouted-4.0.tar.gz.md5">MD5</a></li>
 </ul>
 <p>Manual pages availale here:</p>
 <ul>
-<li><a href="https://ftp.troglobit.com/man/mrouted.8.html">mrouted(8)</a></li>
-<li><a href="https://ftp.troglobit.com/man/mrouted.conf.5.html">mrouted.conf(5)</a></li>
+<li><a href="https://man.troglobit.com/man8/mrouted.8.html">mrouted(8)</a></li>
+<li><a href="https://man.troglobit.com/man8/mroutectl.8.html">mroutectl(8)</a></li>
+<li><a href="https://man.troglobit.com/man5/mrouted.conf.5.html">mrouted.conf(5)</a></li>
 </ul>
 <p>See also the <a href="https://www.openhub.net/p/mrouted/">OpenHub page</a>, or the
 (sadly) dormant <a href="http://freecode.com/projects/mrouted">Free(code) page</a>.</p>
@@ -359,13 +367,9 @@ integrated.  Support for Debian/Ubuntu is included in the tree.</p>
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="/projects/smcroute/" data-toggle="tooltip" data-placement="top" title="Static Multicast Routing Daemon">&larr; Previous Post</a>
+              <a href="/projects/editline/" data-toggle="tooltip" data-placement="top" title="Minix Editline">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="/projects/pimd/" data-toggle="tooltip" data-placement="top" title="The original PIM-SM daemon">Next Post &rarr;</a>
-            </li>
           
         </ul>
       
