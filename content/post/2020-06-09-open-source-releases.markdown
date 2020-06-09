@@ -13,6 +13,8 @@ due to Covid-19, mass layoffs, social distancing and quarantine.  Not
 to mention the unrest in US and Europe in the wake of George Floyd's
 uneccessary death.
 
+<!--more-->
+
 I've always been a bit of a misanthrope and indoor enthusiast, keeping
 to myself and working on my own stuff.  But even I have to admit to
 being quite worried about the world in general and have cried on more
@@ -20,7 +22,9 @@ than one occasion.
 
 I've been channeling all these feelings into my work, primarily all my
 Open Source projects.  Over just the last couple of weeks the following
-new releases have hit GitHub, my FTP, and my new .deb repository:
+new releases have hit [GitHub](https://github.com/troglobit), my
+[FTP](https://ftp.troglobit.com), and my new [.deb
+repository](https://deb.troglobit.com):
 
   * [sysklogd v2.1.2](https://github.com/troglobit/sysklogd/releases/tag/v2.1.2)
   * [-lite v2.2.0](https://github.com/troglobit/libite/releases/tag/v2.2.0)
