@@ -1,7 +1,7 @@
 ---
 name: mrouted
 title: The original multicast routing daemon
-date: 2019-02-24 11:21:31 +01:00
+date: 2020-06-07 22:27:31 +01:00
 aliases: /mrouted.html
 ---
 <img src="/images/dvmrp.png" style="width: 300px; height: 229px; float: right">
@@ -43,29 +43,38 @@ project.
 In 2010 this effort of bringing mrouted back to life was started. The
 3.9.x stable series represent the first releases in over a decade.
 Patches from all over the Internet, including OpenBSD, have been
-integrated.  Support for Debian/Ubuntu is included in the tree.
+integrated.
+
+In 2020, v4.0 was finally released after another 10 years of hard work.
+The most important news include:
+
+   * A new command line tool, `mroutectl` to control and query status
+   * Support for IGMPv3
+
+----
 
 Issue tracker and GIT repository available at GitHub:
 
-   * [Repository](http://github.com/troglobit/mrouted)
-   * [ChangeLog](https://github.com/troglobit/mrouted/releases/tag/3.9.8)
-   * [Issue Tracker](http://github.com/troglobit/mrouted/issues)
-   * [mrouted-3.9.8.tar.bz2](ftp://ftp.troglobit.com/mrouted/mrouted-3.9.8.tar.bz2),
-     [MD5](ftp://ftp.troglobit.com/mrouted/mrouted-3.9.8.tar.bz2.md5)
+   * [Repository](https://github.com/troglobit/mrouted)
+   * [ChangeLog](https://github.com/troglobit/mrouted/releases/tag/4.0)
+   * [Issue Tracker](https://github.com/troglobit/mrouted/issues)
+   * [mrouted-4.0.tar.gz](https://ftp.troglobit.com/mrouted/mrouted-4.0.tar.gz),
+     [MD5](https://ftp.troglobit.com/mrouted/mrouted-4.0.tar.gz.md5)
 
 Manual pages availale here:
 
-   * [mrouted(8)](https://ftp.troglobit.com/man/mrouted.8.html)
-   * [mrouted.conf(5)](https://ftp.troglobit.com/man/mrouted.conf.5.html)
+   * [mrouted(8)](https://man.troglobit.com/man8/mrouted.8.html)
+   * [mroutectl(8)](https://man.troglobit.com/man8/mroutectl.8.html)
+   * [mrouted.conf(5)](https://man.troglobit.com/man5/mrouted.conf.5.html)
 
 See also the [OpenHub page](https://www.openhub.net/p/mrouted/), or the
 (sadly) dormant [Free(code) page](http://freecode.com/projects/mrouted).
 
 Problems?  See the [multicast howto](/multicast-howto.html)
 
-[1]: http://www.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/LICENSE
+[1]: https://www.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/mrouted/LICENSE
 [2]: https://github.com/troglobit/mrouted/blob/master/LICENSE
-[3]: http://en.wikipedia.org/wiki/BSD_licenses
-[4]: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=288112
-[HP-UX]: http://docs.hp.com/en/B2355-90777/ch01s01.html
-[RFC 1075]: http://tools.ietf.org/html/rfc1075
+[3]: https://en.wikipedia.org/wiki/BSD_licenses
+[4]: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=288112
+[HP-UX]: https://docs.hp.com/en/B2355-90777/ch01s01.html
+[RFC 1075]: https://tools.ietf.org/html/rfc1075
