@@ -13,11 +13,21 @@
   <meta name="description" content="Recently got my hands on a ThinkPad X200, the last model without the
 useless touchpad and with the awesome classic keyboard.  A fine little
 machine that can easily be upgraded with an SSD disk and 8 GiB RAM!
-I&rsquo;ve set it up with Linx Mint (LMDE 4) which works great! :)">
+I set it up with Linx Mint (LMDE 4), which worked great to begin
+with, but there was some odd issue with X/Waland that sometimes caused
+the screen (only the screen) to freeze up and show random color patterns.
+Only way to workaround it was to suspend, wait, and resume again.  So
+now I&rsquo;m running Ubuntu 20.04 on it and everything seems to work a lot
+better, this far.">
   <meta property="og:description" content="Recently got my hands on a ThinkPad X200, the last model without the
 useless touchpad and with the awesome classic keyboard.  A fine little
 machine that can easily be upgraded with an SSD disk and 8 GiB RAM!
-I&rsquo;ve set it up with Linx Mint (LMDE 4) which works great! :)">
+I set it up with Linx Mint (LMDE 4), which worked great to begin
+with, but there was some odd issue with X/Waland that sometimes caused
+the screen (only the screen) to freeze up and show random color patterns.
+Only way to workaround it was to suspend, wait, and resume again.  So
+now I&rsquo;m running Ubuntu 20.04 on it and everything seems to work a lot
+better, this far.">
   <meta name="twitter:description" content="Recently got my hands on a ThinkPad X200, the last model without the
 useless touchpad and with the awesome classic keyboard.  A fine little
 machine that can easily be upgraded with an SSD disk and 8 …">
@@ -69,9 +79,9 @@ machine that can easily be upgraded with an SSD disk and 8 …">
     "name" : "Joachim Nilsson"
   },
   "headline": "Fix blinking WiFi LED on X200",
-  "description" : "Recently got my hands on a ThinkPad X200, the last model without the useless touchpad and with the awesome classic keyboard. A fine little machine that can easily be upgraded with an SSD disk and 8 GiB RAM!\nI\u0026rsquo;ve set it up with Linx Mint (LMDE 4) which works great! :)\n",
+  "description" : "Recently got my hands on a ThinkPad X200, the last model without the useless touchpad and with the awesome classic keyboard. A fine little machine that can easily be upgraded with an SSD disk and 8 GiB RAM!\nI set it up with Linx Mint (LMDE 4), which worked great to begin with, but there was some odd issue with X\/Waland that sometimes caused the screen (only the screen) to freeze up and show random color patterns. Only way to workaround it was to suspend, wait, and resume again. So now I\u0026rsquo;m running Ubuntu 20.04 on it and everything seems to work a lot better, this far.\n",
   "inLanguage" : "en",
-  "wordCount":  89 ,
+  "wordCount":  165 ,
   "datePublished" : "2020-03-28T14:16:00",
   "dateModified" : "2020-03-28T14:16:00",
   "image" : "\/images\/profile.jpg",
@@ -94,7 +104,12 @@ machine that can easily be upgraded with an SSD disk and 8 …">
 <meta property="og:description" content="Recently got my hands on a ThinkPad X200, the last model without the
 useless touchpad and with the awesome classic keyboard.  A fine little
 machine that can easily be upgraded with an SSD disk and 8 GiB RAM!
-I&rsquo;ve set it up with Linx Mint (LMDE 4) which works great! :)">
+I set it up with Linx Mint (LMDE 4), which worked great to begin
+with, but there was some odd issue with X/Waland that sometimes caused
+the screen (only the screen) to freeze up and show random color patterns.
+Only way to workaround it was to suspend, wait, and resume again.  So
+now I&rsquo;m running Ubuntu 20.04 on it and everything seems to work a lot
+better, this far.">
 <meta property="og:image" content="/images/profile.jpg" />
 <meta property="og:url" content="/2020/03/Fix-blinking-WiFi-LED-on-X200/" />
 <meta property="og:type" content="website" />
@@ -321,11 +336,18 @@ machine that can easily be upgraded with an SSD disk and 8 …">
         <p>Recently got my hands on a ThinkPad X200, the last model without the
 useless touchpad and with the awesome classic keyboard.  A fine little
 machine that can easily be upgraded with an SSD disk and 8 GiB RAM!</p>
-<p>I&rsquo;ve set it up with <a href="https://www.linuxmint.com/download_lmde.php">Linx Mint (LMDE 4)</a> which works great! :)</p>
-<p>Only annoying thing is the WiFi LED blinking like crazy.  Very
+<p>I set it up with <a href="https://www.linuxmint.com/download_lmde.php">Linx Mint (LMDE 4)</a>, which worked great to begin
+with, but there was some odd issue with X/Waland that sometimes caused
+the screen (only the screen) to freeze up and show random color patterns.
+Only way to workaround it was to suspend, wait, and resume again.  So
+now I&rsquo;m running Ubuntu 20.04 on it and everything seems to work a lot
+better, this far.</p>
+<p>One really annoying thing is the WiFi LED blinking like crazy.  Very
 disturbing when you&rsquo;re working on something.</p>
-<p>Turns out it was quite easy to fix.  Create the following file:</p>
-<pre><code># /etc/modprobe.d/iwlwifi.conf
+<p>Turns out it was quite easy to fix.  Create the following file, or
+modify it if it exists already (Ubuntu), so that the first line after
+comments is this:</p>
+<pre><code># sudo editor /etc/modprobe.d/iwlwifi.conf
 options iwlwifi led_mode=1
 </code></pre><p>Reboot et voilà! \o/</p>
 
