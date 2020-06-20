@@ -1,24 +1,24 @@
 ---
 title: "About"
-date: 2014-06-29T17:01:00Z
+date: 2020-06-20 08:57:00 +0100
 ---
 
-My name is Joachim Nilsson and I'm a hacker.  `troglobit`, is a tribute
-to my old friend Henrik Flordal for inspiring me to become a hacker, and
-is also the password to the first ever Linux server (Henrik's) I got a
-login to, back in 1995.
+Welcome to my blog, my name is Joachim Nilsson.  The nick `troglobit` is
+a tribute to my childhood friend Henrik Flordal, for being a good friend
+and inspiring me to become a hacker.  It is also the first password to a
+Linux server (Henrik's) I got a login to, back in 1995.
 
 I work at [Westermo R&D][westermo] as a software architect for [WeOS][],
 a Linux-based network operating system for switches and routers.
 
 In my spare time I write Free/Libre Open Source Software ([FLOSS][]).
 For example, I maintain [Finit][], [Inadyn][], [pimd][], [mrouted][],
-[SMCRoute][], [uftpd][], and more at [GitHub][].
+[SMCRoute][], [sysklogd][], [uftpd][], and more at [GitHub][].
 
-My [GPG key][] fingerprint is `DE09 3183 2DBF 8339 191F B2B2 2C2A B0A9
-6E0C 4758`.  Fetch it from a key server using:
+My [GPG key][] fingerprint is `4A11 E139 3486 34EF 499C ECAC ECA8 26A3
+7B6C 7409`.  Fetch it from a key server using:
 
-    gpg --recv-keys 6E0C4758
+    gpg --recv-keys ECA826A37B6C7409
 
 You can find my [online resume here][resume], or download the [PDF][].
 
@@ -28,10 +28,11 @@ You can find my [online resume here][resume], or download the [PDF][].
 [mrouted]:  /mrouted.html
 [SMCRoute]: /smcroute.html
 [uftpd]:    /uftpd.html
-[westermo]: http://www.westermo.com
-[WeOS]:     http://www.westermo.com/web/web_en_idc_com.nsf/AllDocuments/771C3C1ECF9B9550C1257E58002B89B3
-[FLOSS]:    http://en.wikipedia.org/wiki/Free_and_open-source_software
-[GitHub]:   http://github.com/troglobit/
-[GPG key]:  http://pgp.mit.edu:11371/pks/lookup?op=get&search=0x6E0C4758
-[resume]:   http://resume.troglobit.com
-[PDF]:      http://resume.troglobit.com/resume.pdf
+[westermo]: https://www.westermo.com
+[WeOS]:     https://www.westermo.com/web/web_en_idc_com.nsf/AllDocuments/771C3C1ECF9B9550C1257E58002B89B3
+[FLOSS]:    https://en.wikipedia.org/wiki/Free_and_open-source_software
+[GitHub]:   https://github.com/troglobit/
+[sysklogd]: https://github.com/troglobit/sysklogd
+[GPG key]:  http://keys.gnupg.net/pks/lookup?search=0xECA826A37B6C7409&fingerprint=on&op=index
+[resume]:   https://resume.troglobit.com
+[PDF]:      https://resume.troglobit.com/resume.pdf
