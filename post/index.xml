@@ -8,10 +8,26 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Tue, 09 Jun 2020 22:48:52 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2020 08:25:00 +0100</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Fixing file sharing in Debian/Ubuntu</title>
+      <link>/2020/06/Fixing-file-sharing-in-Debian/Ubuntu/</link>
+      <pubDate>Sat, 20 Jun 2020 08:25:00 +0100</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2020/06/Fixing-file-sharing-in-Debian/Ubuntu/</guid>
+      <description>&lt;p&gt;Mounting my ReadyNAS from Nautilus stopped working after upgrading to
+Ubuntu 20.04.  Turns out there was a change in behavior in Sambva v4.11
+that disabled SMB1 protocol by default.  It&amp;rsquo;ll be interesting to see how
+this pans out in the rest of the Linux community &amp;hellip; fortunately there&amp;rsquo;s
+a workaround!&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; same on Debian 11 (&lt;em&gt;bullseye&lt;/em&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
     
     <item>
       <title>Open Source Releases</title>

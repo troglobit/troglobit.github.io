@@ -4,7 +4,22 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2020-06-09T22:48:52+02:00</lastmod>
+    <lastmod>2020-06-20T08:57:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/about/</loc>
+    <lastmod>2020-06-20T08:57:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2020/06/Fixing-file-sharing-in-Debian/Ubuntu/</loc>
+    <lastmod>2020-06-20T08:25:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-06-20T08:25:00+01:00</lastmod>
   </url>
   
   <url>
@@ -29,11 +44,6 @@
   
   <url>
     <loc>/categories/opensource/</loc>
-    <lastmod>2020-06-09T22:48:52+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
     <lastmod>2020-06-09T22:48:52+02:00</lastmod>
   </url>
   
