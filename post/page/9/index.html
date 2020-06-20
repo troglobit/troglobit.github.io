@@ -52,7 +52,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.72.0" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -252,44 +252,6 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         
         <div class="posts-list">
-          
-            <article class="post-preview">
-              <a href="/2013/07/12/new-open-source-releases/">
-                <h2 class="post-title">New Open Source Releases</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on July 12, 2013
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Nilsson
-    
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                
-                  Vacation time means catching up on my Open Source projects! :)
-Currently I&rsquo;m shaping up the home pages and this blog to improve the easy access and overview of all the packages I maintain. The following packages have new releases, or can expect new releases soon:
- Minix Editline v1.14.1 SMCRoute v1.99.1 &ndash; There&rsquo;s even a v2.0.0 being planned, with the core of SMCRoute available as a library mrouted minor cleanup an sync with OpenBSD pimd cleanups and bug fixes, needs testing inadyn is in dire need of a release, but needs more testing and fixes  As usual, see my GitHub for the latest commits if you want to try anything out, file an issue report, or if you want to contribute.
-                  <a href="/2013/07/12/new-open-source-releases/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
           
             <article class="post-preview">
               <a href="/2013/07/10/net-install-centos/">
@@ -671,6 +633,47 @@ So, how to serve the immense music collection of our family to the iPad? Well, i
 
             </article>
           
+            <article class="post-preview">
+              <a href="/2010/10/11/announcing-mrouted-v3-dot-9-3/">
+                <h2 class="post-title">Announcing mrouted v3.9.3</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on October 11, 2010
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Nilsson
+    
+  
+  
+</span>
+
+
+              </p>
+              <div class="post-entry">
+                
+                  <p>Here is another bug-fix release of <a href="/mrouted.html">mrouted</a>.  This time
+with a couple of really nasty bugs fixed.  A big thanks to Dan Kruchinin
+for tracking down a <code>NULL</code> pointer dereference in the conf file parser
+and an overzealous check of netmask that made mrouted useless over
+tunnel interfaces or point-to-point links (OpenVPN, PPP, L2TP and PPTP).
+See the <a href="https://github.com/troglobit/mrouted/blob/master/ChangeLog">ChangeLog</a> or the <a href="http://git.troglobit.com/mrouted.git/">GIT log</a> for details.</p>
+
+                
+              </div>
+
+              
+
+            </article>
+          
         </div>
         
           <ul class="pager main-pager">
@@ -747,7 +750,7 @@ So, how to serve the immense music collection of our family to the iPad? Well, i
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.72.0</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

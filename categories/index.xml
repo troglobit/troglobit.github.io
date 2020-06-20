@@ -131,6 +131,15 @@
     </item>
     
     <item>
+      <title>PIM</title>
+      <link>/categories/PIM/</link>
+      <pubDate>Wed, 27 Mar 2019 15:54:00 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/PIM/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>pimd</title>
       <link>/categories/pimd/</link>
       <pubDate>Wed, 27 Mar 2019 15:54:00 +0200</pubDate>
@@ -163,15 +172,6 @@
       <pubDate>Sat, 05 May 2018 13:57:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/snmp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>PIM</title>
-      <link>/categories/PIM/</link>
-      <pubDate>Tue, 23 Jan 2018 20:39:36 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/categories/PIM/</guid>
       <description></description>
     </item>
     
@@ -311,6 +311,15 @@
     </item>
     
     <item>
+      <title>c</title>
+      <link>/categories/c/</link>
+      <pubDate>Sun, 11 Dec 2016 20:26:12 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>capabilities</title>
       <link>/categories/capabilities/</link>
       <pubDate>Sun, 11 Dec 2016 20:26:12 +0000</pubDate>
@@ -356,15 +365,6 @@
     </item>
     
     <item>
-      <title>c</title>
-      <link>/categories/c/</link>
-      <pubDate>Thu, 27 Oct 2016 22:22:44 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/categories/c/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>toolchain</title>
       <link>/categories/toolchain/</link>
       <pubDate>Thu, 27 Oct 2016 22:22:44 +0000</pubDate>
@@ -379,6 +379,15 @@
       <pubDate>Wed, 21 Sep 2016 19:08:37 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/Finit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>network</title>
+      <link>/categories/network/</link>
+      <pubDate>Fri, 02 Sep 2016 23:30:00 +0000</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/categories/network/</guid>
       <description></description>
     </item>
     
@@ -874,15 +883,6 @@
       <pubDate>Sat, 14 Feb 2009 21:13:41 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/categories/reminder/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>network</title>
-      <link>/categories/network/</link>
-      <pubDate>Tue, 10 Feb 2009 21:56:42 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/categories/network/</guid>
       <description></description>
     </item>
     

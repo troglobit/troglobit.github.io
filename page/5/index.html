@@ -47,7 +47,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
-  <meta name="generator" content="Hugo 0.72.0" />
+  <meta name="generator" content="Hugo 0.68.3" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
@@ -212,44 +212,6 @@
 
         <div class="posts-list">
           
-          
-            <article class="post-preview">
-              <a href="/2016/08/13/fake-raid-adventures/">
-                <h2 class="post-title">Fake RAID Adventures</h2>
-                
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on August 13, 2016
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Nilsson
-    
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  <p>The other day I got my geeky hands on two old SuperMicro X8STI-F 1U
-servers.  I plan to use them as build and embedded target emulation
-servers for my <a href="https://github.com/troglobit">open source projects</a>
-as well as Minecraft server for my kids :)</p>
-<!-- raw HTML omitted -->
-                  <a href="/2016/08/13/fake-raid-adventures/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-            </article>
           
             <article class="post-preview">
               <a href="/2016/07/03/upgrade-x1-carbon-bios-from-linux/">
@@ -637,6 +599,42 @@ improving and adding features to it over the years.</p>
               
             </article>
           
+            <article class="post-preview">
+              <a href="/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/">
+                <h2 class="post-title">Awesome: Changing Next/Prev Tune in Spotify</h2>
+                
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on November 10, 2015
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Nilsson
+    
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  Back to using the Awesome WM in Ubuntu. This time I&rsquo;m setting up everything from scratch and first up is fixing keybindings to control my main music player: Spotify!
+Edit your ~/.config/awesome/rc.lua with Emacs (obviously). If you do not have an rc file, simply copy the system /etc/xdb/awesome/rc.lua:
+globalkeys = awful.util.table.join(globalkeys, awful.key({}, &quot;XF86AudioRaiseVolume&quot;, function () awful.util.spawn(&quot;amixer -D pulse sset Master 5%+&quot;, false) end), awful.key({}, &quot;XF86AudioLowerVolume&quot;, function () awful.util.spawn(&quot;amixer -D pulse sset Master 5%-&quot;, false) end), awful.
+                  <a href="/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+            </article>
+          
         </div>
 
         
@@ -714,7 +712,7 @@ improving and adding features to it over the years.</p>
         </p>
         
         <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.72.0</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
           
         </p>
       </div>

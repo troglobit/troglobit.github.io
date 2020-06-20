@@ -55,19 +55,6 @@ better, this far.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Fixing file sharing in Debian/Ubuntu</title>
-      <link>/2020/03/Fixing-file-sharing-in-Debian/Ubuntu/</link>
-      <pubDate>Sun, 01 Mar 2020 16:58:00 +0100</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/2020/03/Fixing-file-sharing-in-Debian/Ubuntu/</guid>
-      <description>&lt;p&gt;So file sharing with my ReadyNAS file server stopped working after
-upgrading to Ubuntu 20.04.  (&lt;em&gt;Update:&lt;/em&gt; same on Debian 11 (bullseye)
-Turns out there was a change in behavior in Sambva v4.11 that disabled
-SMB1 protocol by default.  It&amp;rsquo;ll be interesting to see how this panes
-out in the rest of the Linux community &amp;hellip;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>HowTo: Install pre-built packages</title>
       <link>/2020/02/HowTo-Install-pre-built-packages/</link>
       <pubDate>Sun, 23 Feb 2020 19:16:45 +0100</pubDate>
@@ -534,7 +521,7 @@ The main purpose for my building this is TroglOS, but it is useful for other pur
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2016/09/21/finit3-almost-there-.../</guid>
       <description>Today the new logo for Finit3 was added to the GitHub repo and the homepage
-Gorgeous, isn&amp;rsquo;t it?! 😎
+Gorgeous, isn&amp;rsquo;t it?! 🕶
 This fancy artwork means we&amp;rsquo;re nearing the end of a long and agonizing release cycle where a lot of the internals of Finit have been rewritten and new exciting features have been added! More on this in an upcoming post 😃</description>
     </item>
     
@@ -1174,7 +1161,7 @@ machine, writing in MS Word and browsing the Internet, mostly for
 Facebook.&lt;/p&gt;
 &lt;p&gt;I often start off with: &amp;ldquo;It&amp;rsquo;s a bit complicated to explain &amp;hellip; &amp;ldquo;, by
 which time I&amp;rsquo;ve lost most of the people in the room listening to me.
-Sometimes I say: &amp;ldquo;I&amp;rsquo;m a software architect.&amp;rdquo;, because people seem to
+Sometimes I say: &amp;ldquo;I&amp;rsquo;m a software architect.&amp;quot;, because people seem to
 know what architects do for a living, they draw houses, design stuff
 and drive SAAB&amp;rsquo;s.  Much like dentists.  The prefix &amp;ldquo;software&amp;rdquo; however
 does confuse people.&lt;/p&gt;</description>
@@ -1788,7 +1775,7 @@ is configurable, extensible, and programmable.&amp;rdquo; — &lt;a href=&#34;h
 &lt;/blockquote&gt;
 &lt;p&gt;At the many jobs I have had, colleagues often glanced over my shoulder
 and said; &amp;ldquo;Oh, Emacs &amp;hellip; Yeah I used that ages ago when I was
-working on UNIX &amp;hellip;&amp;rdquo;, often they remember it fondly, sometimes for
+working on UNIX &amp;hellip;&amp;quot;, often they remember it fondly, sometimes for
 all the quirky keyboard shortcuts.  Very few know that it is still being
 actively developed.&lt;/p&gt;
 &lt;p&gt;Emacs can be quite counter intuitive and sometimes even an outright pain
@@ -1947,7 +1934,7 @@ Since today is also my birthday I received a gift.</description>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2006/07/17/make-kpkg-and-dirty-modules/</guid>
       <description>Dammit, tonight I spent too many hours chasing down a &amp;ldquo;feature&amp;rdquo; in the Debian kernel build process or the Linux-2.6 kernel. I haven&amp;rsquo;t yet deciced who to blame ;-)
-Here goes: when you build the latest Linux 2.6 kernel, checked out from the git repository, with make-kpkg you should make sure to uncheck the CONFIG_LOCALVERSION_AUTO option in the kernel config before hand. It&amp;rsquo;s under &amp;ldquo;General setup&amp;rdquo; → &amp;ldquo;Automatically append version information &amp;hellip;&amp;rdquo;.</description>
+Here goes: when you build the latest Linux 2.6 kernel, checked out from the git repository, with make-kpkg you should make sure to uncheck the CONFIG_LOCALVERSION_AUTO option in the kernel config before hand. It&amp;rsquo;s under &amp;ldquo;General setup&amp;rdquo; → &amp;ldquo;Automatically append version information &amp;hellip;&amp;quot;.</description>
     </item>
     
     <item>
