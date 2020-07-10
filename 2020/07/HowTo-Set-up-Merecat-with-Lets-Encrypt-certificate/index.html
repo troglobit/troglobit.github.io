@@ -7,12 +7,29 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Basic CGI in C with Merecat httpd - </title>
-  <meta property="og:title" content="Basic CGI in C with Merecat httpd" />
-  <meta name="twitter:title" content="Basic CGI in C with Merecat httpd" />
-  <meta name="description" content="This post is a writeup of how to use basic CGI programs in Merecat httpd v2.32.">
-  <meta property="og:description" content="This post is a writeup of how to use basic CGI programs in Merecat httpd v2.32.">
-  <meta name="twitter:description" content="This post is a writeup of how to use basic CGI programs in Merecat httpd v2.32.">
+  <title>HowTo: Set up Merecat with Let&#39;s Encrypt certificate - </title>
+  <meta property="og:title" content="HowTo: Set up Merecat with Let&#39;s Encrypt certificate" />
+  <meta name="twitter:title" content="HowTo: Set up Merecat with Let&#39;s Encrypt certificate" />
+  <meta name="description" content="This is a HowTo for setting up Merecat httpd with Let&rsquo;s
+Encrypt HTTPS certificates.
+The upcoming v2.32 release of Merecat supports HTTPS as well as
+serving more than one Internet port.  This is highly useful for those
+who want to serve both HTTPS and HTTP content.
+
+Update: now with support for --webroot and HTTP-01 renewal!
+">
+  <meta property="og:description" content="This is a HowTo for setting up Merecat httpd with Let&rsquo;s
+Encrypt HTTPS certificates.
+The upcoming v2.32 release of Merecat supports HTTPS as well as
+serving more than one Internet port.  This is highly useful for those
+who want to serve both HTTPS and HTTP content.
+
+Update: now with support for --webroot and HTTP-01 renewal!
+">
+  <meta name="twitter:description" content="This is a HowTo for setting up Merecat httpd with Let&rsquo;s
+Encrypt HTTPS certificates.
+The upcoming v2.32 release of Merecat supports HTTPS as well as
+serving more than one Internet port.  This is …">
   <meta name="author" content="Joachim Nilsson"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -48,8 +65,8 @@
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "\/2019\/08\/Basic-CGI-in-C-with-Merecat-httpd\/",
-          "name": "Basic c g i in c with merecat httpd"
+          "@id": "\/2020\/07\/HowTo-Set-up-Merecat-with-Lets-Encrypt-certificate\/",
+          "name": "How to set up merecat with let\x27s encrypt certificate"
         }
     }]
 }
@@ -60,15 +77,15 @@
   "author": {
     "name" : "Joachim Nilsson"
   },
-  "headline": "Basic CGI in C with Merecat httpd",
-  "description" : "This post is a writeup of how to use basic CGI programs in Merecat httpd v2.32.\n",
+  "headline": "HowTo: Set up Merecat with Let\x27s Encrypt certificate",
+  "description" : "This is a HowTo for setting up Merecat httpd with Let\x26rsquo;s Encrypt HTTPS certificates.\nThe upcoming v2.32 release of Merecat supports HTTPS as well as serving more than one Internet port. This is highly useful for those who want to serve both HTTPS and HTTP content.\n Update: now with support for --webroot and HTTP-01 renewal!\n",
   "inLanguage" : "en",
-  "wordCount":  229 ,
-  "datePublished" : "2019-08-05T22:00:25",
-  "dateModified" : "2019-08-05T22:00:25",
+  "wordCount":  507 ,
+  "datePublished" : "2020-07-10T08:46:00",
+  "dateModified" : "2020-07-10T08:46:00",
   "image" : "\/images\/profile.jpg",
   "keywords" : [ "" ],
-  "mainEntityOfPage" : "\/2019\/08\/Basic-CGI-in-C-with-Merecat-httpd\/",
+  "mainEntityOfPage" : "\/2020\/07\/HowTo-Set-up-Merecat-with-Lets-Encrypt-certificate\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "\/",
@@ -82,15 +99,25 @@
 }
 </script>
 
-<meta property="og:title" content="Basic CGI in C with Merecat httpd" />
-<meta property="og:description" content="This post is a writeup of how to use basic CGI programs in Merecat httpd v2.32.">
+<meta property="og:title" content="HowTo: Set up Merecat with Let&#39;s Encrypt certificate" />
+<meta property="og:description" content="This is a HowTo for setting up Merecat httpd with Let&rsquo;s
+Encrypt HTTPS certificates.
+The upcoming v2.32 release of Merecat supports HTTPS as well as
+serving more than one Internet port.  This is highly useful for those
+who want to serve both HTTPS and HTTP content.
+
+Update: now with support for --webroot and HTTP-01 renewal!
+">
 <meta property="og:image" content="/images/profile.jpg" />
-<meta property="og:url" content="/2019/08/Basic-CGI-in-C-with-Merecat-httpd/" />
+<meta property="og:url" content="/2020/07/HowTo-Set-up-Merecat-with-Lets-Encrypt-certificate/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="" />
 
-  <meta name="twitter:title" content="Basic CGI in C with Merecat httpd" />
-  <meta name="twitter:description" content="This post is a writeup of how to use basic CGI programs in Merecat httpd v2.32.">
+  <meta name="twitter:title" content="HowTo: Set up Merecat with Let&#39;s Encrypt certificate" />
+  <meta name="twitter:description" content="This is a HowTo for setting up Merecat httpd with Let&rsquo;s
+Encrypt HTTPS certificates.
+The upcoming v2.32 release of Merecat supports HTTPS as well as
+serving more than one Internet port.  This is …">
   <meta name="twitter:image" content="/images/profile.jpg" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@troglobit" />
@@ -101,7 +128,7 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@troglobit" />
   <meta name="twitter:creator" content="@troglobit" />
-  <meta property="og:url" content="/2019/08/Basic-CGI-in-C-with-Merecat-httpd/" />
+  <meta property="og:url" content="/2020/07/HowTo-Set-up-Merecat-with-Lets-Encrypt-certificate/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
@@ -269,7 +296,7 @@
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
               
-                <h1>Basic CGI in C with Merecat httpd</h1>
+                <h1>HowTo: Set up Merecat with Let&#39;s Encrypt certificate</h1>
               
               
               
@@ -277,7 +304,7 @@
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on August 5, 2019
+  <i class="fas fa-calendar"></i>&nbsp;Posted on July 10, 2020
   
   
   
@@ -305,43 +332,109 @@
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
 	
-        <p>This post is a writeup of how to use basic CGI programs in Merecat httpd v2.32.</p>
-<p>Downloads:</p>
-<ul>
-<li><a href="https://troglobit.com/projects/merecat">https://troglobit.com/projects/merecat</a></li>
-<li><a href="http://www.boutell.com/cgic/cgic207.tar.gz">http://www.boutell.com/cgic/cgic207.tar.gz</a></li>
-</ul>
-<p>Build Merecat httpd according to the instructions in the README.  This
-document assumes the directory <code>~/merecat/</code>.  Then create a config file,
-<code>~/test.conf</code>, with the following content:</p>
-<pre><code class="language-conf" data-lang="conf">port = 8080
+        <p>This is a HowTo for setting up <a href="https://merecat.troglobit.com">Merecat httpd</a> with <a href="https://letsencrypt.org/">Let&rsquo;s
+Encrypt</a> HTTPS certificates.</p>
+<p>The upcoming v2.32 release of <a href="https://merecat.troglobit.com">Merecat</a> supports HTTPS as well as
+serving more than one Internet port.  This is highly useful for those
+who want to serve both HTTPS and HTTP content.</p>
+<blockquote>
+<p><strong>Update:</strong> now with support for <code>--webroot</code> and HTTP-01 renewal!</p>
+</blockquote>
+<h2 id="getting-the-source">Getting the Source</h2>
+<p>To start with, you need the latest release of <a href="https://merecat.troglobit.com">Merecat</a>.  Note, if you
+are reading this before Merecat v2.32 has been released you can use the
+latest software from the GitHub master branch.  Note, you need OpenSSL
+and a few other packages, see the README file for details:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone https://github.com/troglobit/merecat.git
+<span style="color:#0086b3">cd</span> merecat/
+./autogen.sh
+./configure
+make package
+sudo dpkg -i ../merecat_2.32-1_amd64.deb
+</code></pre></div><h2 id="starting-certbot">Starting Certbot</h2>
+<p>If you already have at least version v2.32 of <a href="https://merecat.troglobit.com">Merecat</a> installed you
+can begin the process of getting a Let&rsquo;s Encrypt certificate.  This
+HowTo use the EFF&rsquo;s certbot, which is available in Ubuntu or from the
+Let&rsquo;s Encrypt homepage:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Oups, that didn&rsquo;t go as planned &hellip; well, it turns out the version of
+certbot in Ubuntu 18.04 lacks support for <em>wildcard certificates</em>.  We
+can either go to their homepage and get the latest version, or list all
+the domains we need:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>The <a href="https://certbot.eff.org/lets-encrypt/ubuntubionic-other">Let&rsquo;s Encrypt setup guide</a> at this point recommends that
+we verify that automatic certificate renewal works (cronjob or systemd
+timer).  If this doesn&rsquo;t work, your certificate will expire after only
+six months!  So let&rsquo;s check that now:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>It is recommended to also set up Diffie-Hellman paramaters.  For this
+you need to genereate a site specific file:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">root@example:/var/www# openssl dhparam -out certs/dhparam.pem <span style="color:#099">2048</span>
+Generating DH parameters, <span style="color:#099">2048</span> bit long safe prime, generator <span style="color:#099">2</span>
 
-cgi &quot;**.cgi|cgi-bin/*&quot; {
-    enabled = true
+This is going to take a long <span style="color:#0086b3">time</span>
+........................................................+.........................................................................
+.......+......................................+...................................................................................
+.............................................................................................+....................................
+..................................................................................................................................
+......................................................................+...........................................................
+............................................................................................................................+.....
+..................................................................................................................................
+.+.......+........................................................................................................................
+.........................+........................................................................................................
+.................+.............................................................++*++*++*++*
+root@example:/var/www#
+</code></pre></div><p>The <code>/etc/merecat.conf</code> file for a site with a couple of virtual hosts,
+look like this:</p>
+<pre><code class="language-conf" data-lang="conf">## /etc/merecat.conf                                     -*-conf-unix-*-
+
+virtual-host     = true
+
+user-agent-deny  = &quot;**SemrushBot**|**MJ12bot**|**DotBot**&quot;
+
+server default {
+    port     = 80
 }
-</code></pre><p>In this example we&rsquo;ve chosen port 8080 so we can start the server as a
-regular user.  For production systems you likely want to use the default
-(80), or set up proper HTTPS, see <a href="/2020/07/HowTo-Set-up-Merecat-with-Lets-Encrypt-certificate/">Let&rsquo;s Encrypt Merecat</a> for
-help with that.</p>
-<p>The classic <em>cgic</em> used here is just an example.  A CGI program can be
-written in just about any programming language, or plain shell script.
-Merecat actually ships with a <code>/cgi-bin/printenv</code>, which is a plain
-Bourne shell script.</p>
-<p>Download, unpack and build cgic:</p>
-<pre><code>mkdir temp; cd temp/
-wget http://www.boutell.com/cgic/cgic207.tar.gz
-tar xf cgic207.tar.gz
-cd cgic207/
-make
-</code></pre><p>A stand-alone example program is built which we can install into the
-Merecat web root.  Notice the name change to <code>index.cgi</code>, we don&rsquo;t have
-to use the <code>cgi-bin/</code> due to the CGI pattern we set up previously:</p>
-<pre><code>cp cgictest.cgi ~/merecat/www/index.cgi
-</code></pre><p>Now we can start the web server and test the CGI program out.</p>
-<pre><code>cd ~/merecat/
-./src/merecat -f ~/test.conf www
-</code></pre><p>We can now open our browser at http://127.0.0.1:8080/ and there is the
-CGI!  Remember to check out http://127.0.0.1:8080/cgi-bin/printenv too.</p>
+
+server secure {
+    port     = 443
+    ssl {
+        certfile = /etc/letsencrypt/live/example.com/fullchain.pem
+        keyfile  = /etc/letsencrypt/live/example.com/privkey.pem
+        dhfile   = certs/dhparam.pem
+    }
+}
+</code></pre><p>The <a href="https://merecat.troglobit.com">Merecat</a> defaults take care of a lot of the nasty details you
+shouldn&rsquo;t have to bother with, and unlike other web servers the virtual
+host setup is done in the file system rather than in the configuration
+file.  See <a href="https://merecat.troglobit.com">Merecat</a> docs for details.</p>
+<p>With everything set up we can fire it up:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="http-01-renewal">HTTP-01 Renewal</h2>
+<p>For automatic renewal to work you need a new (July 2020) feature of
+Merecat, called location matching:</p>
+<pre><code class="language-conf" data-lang="conf">server default {
+        port = 80
+        location &quot;/.well-known/acme-challenge/**&quot; {
+                 path = &quot;letsencrypt/.well-known/acme-challenge/&quot;
+        }
+        redirect &quot;/**&quot; {
+                 code = 301
+                 location = &quot;https://$host$request_uri$args&quot;
+        }
+}
+</code></pre><p>The <code>path</code> must be relative to the server root directory.  Use bind
+mounts to get <code>/var/lib/letsencrypt</code> into your server root.  This way
+we can ensure <code>certbot</code> only writes to its own directory and cannot
+write to any file in the server root.</p>
+<p>Then run <code>certbot</code> with the following arguments and then add all virtual
+hosts you want to support from Merecat:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">root@example:/var/www/&gt; certbot certonly --webroot --webroot-path /var/lib/letsencrypt
+</code></pre></div>
 
         
 
@@ -354,13 +447,9 @@ CGI!  Remember to check out http://127.0.0.1:8080/cgi-bin/printenv too.</p>
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="/2019/07/Controlling-Display-Brightness/" data-toggle="tooltip" data-placement="top" title="Controlling Display Brightness">&larr; Previous Post</a>
+              <a href="/2020/06/Fixing-file-sharing-in-Debian/Ubuntu/" data-toggle="tooltip" data-placement="top" title="Fixing file sharing in Debian/Ubuntu">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="/2019/11/BSD-syslogd-in-Linux/" data-toggle="tooltip" data-placement="top" title="BSD syslogd in Linux">Next Post &rarr;</a>
-            </li>
           
         </ul>
       

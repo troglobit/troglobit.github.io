@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/2020/07/HowTo-Set-up-Merecat-with-Lets-Encrypt-certificate/</loc>
+    <lastmod>2020-07-10T08:46:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-07-10T08:46:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/</loc>
     <lastmod>2020-06-20T08:57:00+01:00</lastmod>
   </url>
@@ -14,11 +24,6 @@
   
   <url>
     <loc>/2020/06/Fixing-file-sharing-in-Debian/Ubuntu/</loc>
-    <lastmod>2020-06-20T08:25:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
     <lastmod>2020-06-20T08:25:00+01:00</lastmod>
   </url>
   
@@ -170,11 +175,6 @@
   <url>
     <loc>/2019/07/XScreenSaver-Fonts/</loc>
     <lastmod>2019-07-07T14:27:58+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2019/06/HowTo-Set-up-Merecat-with-Lets-Encrypt-certificate/</loc>
-    <lastmod>2019-06-27T16:27:39+00:00</lastmod>
   </url>
   
   <url>
