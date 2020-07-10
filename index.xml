@@ -248,9 +248,14 @@ writeup of what I did to fix the ugly default fonts.&lt;/p&gt;</description>
       <pubDate>Thu, 27 Jun 2019 16:27:39 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Nilsson)</author>
       <guid>/2019/06/HowTo-Set-up-Merecat-with-Lets-Encrypt-certificate/</guid>
-      <description>This is a HowTo for setting up Merecat httpd with Let&amp;rsquo;s Encrypt HTTPS certificates.
-The upcoming v2.32 release of Merecat supports HTTPS as well as serving more than one Internet port. This is highly useful for those who want to serve both HTTPS and HTTP content.
-To start with, you need the latest release of Merecat. Note, if you are reading this before Merecat v2.32 has been released you can use the latest software from the GitHub master branch.</description>
+      <description>&lt;p&gt;This is a HowTo for setting up &lt;a href=&#34;https://merecat.troglobit.com&#34;&gt;Merecat httpd&lt;/a&gt; with &lt;a href=&#34;https://letsencrypt.org/&#34;&gt;Let&amp;rsquo;s
+Encrypt&lt;/a&gt; HTTPS certificates.&lt;/p&gt;
+&lt;p&gt;The upcoming v2.32 release of &lt;a href=&#34;https://merecat.troglobit.com&#34;&gt;Merecat&lt;/a&gt; supports HTTPS as well as
+serving more than one Internet port.  This is highly useful for those
+who want to serve both HTTPS and HTTP content.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; now with support for &lt;code&gt;--webroot&lt;/code&gt; and HTTP-01 renewal!&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>

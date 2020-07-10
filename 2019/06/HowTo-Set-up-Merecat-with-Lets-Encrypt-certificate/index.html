@@ -10,14 +10,26 @@
   <title>HowTo: Set up Merecat with Let&#39;s Encrypt certificate - </title>
   <meta property="og:title" content="HowTo: Set up Merecat with Let&#39;s Encrypt certificate" />
   <meta name="twitter:title" content="HowTo: Set up Merecat with Let&#39;s Encrypt certificate" />
-  <meta name="description" content="This is a HowTo for setting up Merecat httpd with Let&rsquo;s Encrypt HTTPS certificates.
-The upcoming v2.32 release of Merecat supports HTTPS as well as serving more than one Internet port. This is highly useful for those who want to serve both HTTPS and HTTP content.
-To start with, you need the latest release of Merecat. Note, if you are reading this before Merecat v2.32 has been released you can use the latest software from the GitHub master branch.">
-  <meta property="og:description" content="This is a HowTo for setting up Merecat httpd with Let&rsquo;s Encrypt HTTPS certificates.
-The upcoming v2.32 release of Merecat supports HTTPS as well as serving more than one Internet port. This is highly useful for those who want to serve both HTTPS and HTTP content.
-To start with, you need the latest release of Merecat. Note, if you are reading this before Merecat v2.32 has been released you can use the latest software from the GitHub master branch.">
-  <meta name="twitter:description" content="This is a HowTo for setting up Merecat httpd with Let&rsquo;s Encrypt HTTPS certificates.
-The upcoming v2.32 release of Merecat supports HTTPS as well as serving more than one Internet port. This is …">
+  <meta name="description" content="This is a HowTo for setting up Merecat httpd with Let&rsquo;s
+Encrypt HTTPS certificates.
+The upcoming v2.32 release of Merecat supports HTTPS as well as
+serving more than one Internet port.  This is highly useful for those
+who want to serve both HTTPS and HTTP content.
+
+Update: now with support for --webroot and HTTP-01 renewal!
+">
+  <meta property="og:description" content="This is a HowTo for setting up Merecat httpd with Let&rsquo;s
+Encrypt HTTPS certificates.
+The upcoming v2.32 release of Merecat supports HTTPS as well as
+serving more than one Internet port.  This is highly useful for those
+who want to serve both HTTPS and HTTP content.
+
+Update: now with support for --webroot and HTTP-01 renewal!
+">
+  <meta name="twitter:description" content="This is a HowTo for setting up Merecat httpd with Let&rsquo;s
+Encrypt HTTPS certificates.
+The upcoming v2.32 release of Merecat supports HTTPS as well as
+serving more than one Internet port.  This is …">
   <meta name="author" content="Joachim Nilsson"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -66,9 +78,9 @@ The upcoming v2.32 release of Merecat supports HTTPS as well as serving more tha
     "name" : "Joachim Nilsson"
   },
   "headline": "HowTo: Set up Merecat with Let\x27s Encrypt certificate",
-  "description" : "This is a HowTo for setting up Merecat httpd with Let\x26rsquo;s Encrypt HTTPS certificates.\nThe upcoming v2.32 release of Merecat supports HTTPS as well as serving more than one Internet port. This is highly useful for those who want to serve both HTTPS and HTTP content.\nTo start with, you need the latest release of Merecat. Note, if you are reading this before Merecat v2.32 has been released you can use the latest software from the GitHub master branch.",
+  "description" : "This is a HowTo for setting up Merecat httpd with Let\x26rsquo;s Encrypt HTTPS certificates.\nThe upcoming v2.32 release of Merecat supports HTTPS as well as serving more than one Internet port. This is highly useful for those who want to serve both HTTPS and HTTP content.\n Update: now with support for --webroot and HTTP-01 renewal!\n",
   "inLanguage" : "en",
-  "wordCount":  383 ,
+  "wordCount":  507 ,
   "datePublished" : "2019-06-27T16:27:39",
   "dateModified" : "2019-06-27T16:27:39",
   "image" : "\/images\/profile.jpg",
@@ -88,17 +100,24 @@ The upcoming v2.32 release of Merecat supports HTTPS as well as serving more tha
 </script>
 
 <meta property="og:title" content="HowTo: Set up Merecat with Let&#39;s Encrypt certificate" />
-<meta property="og:description" content="This is a HowTo for setting up Merecat httpd with Let&rsquo;s Encrypt HTTPS certificates.
-The upcoming v2.32 release of Merecat supports HTTPS as well as serving more than one Internet port. This is highly useful for those who want to serve both HTTPS and HTTP content.
-To start with, you need the latest release of Merecat. Note, if you are reading this before Merecat v2.32 has been released you can use the latest software from the GitHub master branch.">
+<meta property="og:description" content="This is a HowTo for setting up Merecat httpd with Let&rsquo;s
+Encrypt HTTPS certificates.
+The upcoming v2.32 release of Merecat supports HTTPS as well as
+serving more than one Internet port.  This is highly useful for those
+who want to serve both HTTPS and HTTP content.
+
+Update: now with support for --webroot and HTTP-01 renewal!
+">
 <meta property="og:image" content="/images/profile.jpg" />
 <meta property="og:url" content="/2019/06/HowTo-Set-up-Merecat-with-Lets-Encrypt-certificate/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="" />
 
   <meta name="twitter:title" content="HowTo: Set up Merecat with Let&#39;s Encrypt certificate" />
-  <meta name="twitter:description" content="This is a HowTo for setting up Merecat httpd with Let&rsquo;s Encrypt HTTPS certificates.
-The upcoming v2.32 release of Merecat supports HTTPS as well as serving more than one Internet port. This is …">
+  <meta name="twitter:description" content="This is a HowTo for setting up Merecat httpd with Let&rsquo;s
+Encrypt HTTPS certificates.
+The upcoming v2.32 release of Merecat supports HTTPS as well as
+serving more than one Internet port.  This is …">
   <meta name="twitter:image" content="/images/profile.jpg" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@troglobit" />
@@ -318,6 +337,10 @@ Encrypt</a> HTTPS certificates.</p>
 <p>The upcoming v2.32 release of <a href="https://merecat.troglobit.com">Merecat</a> supports HTTPS as well as
 serving more than one Internet port.  This is highly useful for those
 who want to serve both HTTPS and HTTP content.</p>
+<blockquote>
+<p><strong>Update:</strong> now with support for <code>--webroot</code> and HTTP-01 renewal!</p>
+</blockquote>
+<h2 id="getting-the-source">Getting the Source</h2>
 <p>To start with, you need the latest release of <a href="https://merecat.troglobit.com">Merecat</a>.  Note, if you
 are reading this before Merecat v2.32 has been released you can use the
 latest software from the GitHub master branch.  Note, you need OpenSSL
@@ -328,7 +351,8 @@ and a few other packages, see the README file for details:</p>
 ./configure
 make package
 sudo dpkg -i ../merecat_2.32-1_amd64.deb
-</code></pre></div><p>If you already have at least version v2.32 of <a href="https://merecat.troglobit.com">Merecat</a> installed you
+</code></pre></div><h2 id="starting-certbot">Starting Certbot</h2>
+<p>If you already have at least version v2.32 of <a href="https://merecat.troglobit.com">Merecat</a> installed you
 can begin the process of getting a Let&rsquo;s Encrypt certificate.  This
 HowTo use the EFF&rsquo;s certbot, which is available in Ubuntu or from the
 Let&rsquo;s Encrypt homepage:</p>
@@ -390,7 +414,27 @@ file.  See <a href="https://merecat.troglobit.com">Merecat</a> docs for details.
 <p>With everything set up we can fire it up:</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-
+<h2 id="http-01-renewal">HTTP-01 Renewal</h2>
+<p>For automatic renewal to work you need a new (July 2020) feature of
+Merecat, called location matching:</p>
+<pre><code class="language-conf" data-lang="conf">server default {
+        port = 80
+        location &quot;/.well-known/acme-challenge/**&quot; {
+                 path = &quot;letsencrypt/.well-known/acme-challenge/&quot;
+        }
+        redirect &quot;/**&quot; {
+                 code = 301
+                 location = &quot;https://$host$request_uri$args&quot;
+        }
+}
+</code></pre><p>The <code>path</code> must be relative to the server root directory.  Use bind
+mounts to get <code>/var/lib/letsencrypt</code> into your server root.  This way
+we can ensure <code>certbot</code> only writes to its own directory and cannot
+write to any file in the server root.</p>
+<p>Then run <code>certbot</code> with the following arguments and then add all virtual
+hosts you want to support from Merecat:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">root@example:/var/www/&gt; certbot certonly --webroot --webroot-path /var/lib/letsencrypt
+</code></pre></div>
 
         
 
