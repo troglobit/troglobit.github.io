@@ -12,6 +12,12 @@ The upcoming v2.32 release of [Merecat][] supports HTTPS as well as
 serving more than one Internet port.  This is highly useful for those
 who want to serve both HTTPS and HTTP content.
 
+> **Update:** now with support for `--webroot` and HTTP-01 renewal!
+
+<!--more-->
+
+## Getting the Source
+
 To start with, you need the latest release of [Merecat][].  Note, if you
 are reading this before Merecat v2.32 has been released you can use the
 latest software from the GitHub master branch.  Note, you need OpenSSL
@@ -25,6 +31,8 @@ cd merecat/
 make package
 sudo dpkg -i ../merecat_2.32-1_amd64.deb
 ```
+
+## Starting Certbot
 
 If you already have at least version v2.32 of [Merecat][] installed you
 can begin the process of getting a Let's Encrypt certificate.  This
@@ -210,6 +218,37 @@ With everything set up we can fire it up:
 <pre>
 root@example:/var/www# <b>systemctl start merecat.service</b>
 </pre>
+
+## HTTP-01 Renewal
+
+For automatic renewal to work you need a new (July 2020) feature of
+Merecat, called location matching:
+
+```conf
+server default {
+        port = 80
+        location "/.well-known/acme-challenge/**" {
+                 path = "letsencrypt/.well-known/acme-challenge/"
+        }
+        redirect "/**" {
+                 code = 301
+                 location = "https://$host$request_uri$args"
+        }
+}
+```
+
+The `path` must be relative to the server root directory.  Use bind
+mounts to get `/var/lib/letsencrypt` into your server root.  This way
+we can ensure `certbot` only writes to its own directory and cannot
+write to any file in the server root.
+
+Then run `certbot` with the following arguments and then add all virtual
+hosts you want to support from Merecat:
+
+```shell
+root@example:/var/www/> certbot certonly --webroot --webroot-path /var/lib/letsencrypt
+```
+
 
 [Merecat]: https://merecat.troglobit.com
 [letsguide]: https://certbot.eff.org/lets-encrypt/ubuntubionic-other
