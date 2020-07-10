@@ -247,7 +247,21 @@ Then run `certbot` with the following arguments and then add all virtual
 hosts you want to support from Merecat:
 
 ```shell
-root@example:/var/www/> certbot certonly --webroot --webroot-path /var/lib/letsencrypt
+root@example:/var/www/> certbot certonly --webroot --webroot-path /var/lib/letsencrypt --dry-run
+```
+
+The actual renewal is set up automatically by the certbot install as a
+cronjob or systemd timer.  Certbot uses the last known method you used
+to manually install/update your certs.  For details on this, see the
+file `/etc/letsencrypt/renewal/example.com.conf`.  (Dry runs does not
+change this.)
+
+After a successful renewal you need to restart Merecat httpd to activate
+the new certificates.  Instead of modifying the above cronjob or timer,
+we add the following line to `/etc/letsencrypt/cli.ini`:
+
+```conf
+deploy-hook = systemctl reload merecat
 ```
 
 
