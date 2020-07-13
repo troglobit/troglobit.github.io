@@ -1,8 +1,8 @@
 ---
-title: "Fixing file sharing in Debian/Ubuntu"
+title: "Fixing file sharing in Debian/Ubuntu/Mint"
 subtitle: ""
 orig-date: 2020-02-16 21:06:59 +0100
-date: 2020-06-20 08:25:00 +0100
+date: 2020-07-13 17:37:00 +0100
 tags: []
 ---
 
@@ -12,7 +12,7 @@ that disabled SMB1 protocol by default.  It'll be interesting to see how
 this pans out in the rest of the Linux community ... fortunately there's
 a workaround!
 
-> **Update:** same on Debian 11 (*bullseye*)
+> **Update:** same on Debian 11 (*bullseye*) and Linux Mint 20 (*Ulyana*)
 
 <!--more-->
 
@@ -26,7 +26,9 @@ Add the following line to the `[global]` section:
 
     client min protocol = NT1
 
-Then restart Samba to have Nautilus (Files) working again:
+If you're using Nautilus (Files, Nemo), you're done.  But if you're
+using Samba, e.g. from the command line, restart it to make change take
+effect:
 
     sudo systemctl restart smbd.service
 
