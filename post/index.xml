@@ -8,10 +8,26 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
-    <lastBuildDate>Fri, 10 Jul 2020 08:46:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Jul 2020 17:37:00 +0100</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Fixing file sharing in Debian/Ubuntu/Mint</title>
+      <link>/2020/07/Fixing-file-sharing-in-Debian/Ubuntu/Mint/</link>
+      <pubDate>Mon, 13 Jul 2020 17:37:00 +0100</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2020/07/Fixing-file-sharing-in-Debian/Ubuntu/Mint/</guid>
+      <description>&lt;p&gt;Mounting my ReadyNAS from Nautilus stopped working after upgrading to
+Ubuntu 20.04.  Turns out there was a change in behavior in Sambva v4.11
+that disabled SMB1 protocol by default.  It&amp;rsquo;ll be interesting to see how
+this pans out in the rest of the Linux community &amp;hellip; fortunately there&amp;rsquo;s
+a workaround!&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; same on Debian 11 (&lt;em&gt;bullseye&lt;/em&gt;) and Linux Mint 20 (&lt;em&gt;Ulyana&lt;/em&gt;)&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
     
     <item>
       <title>HowTo: Set up Merecat with Let&#39;s Encrypt certificate</title>
@@ -26,22 +42,6 @@ serving more than one Internet port.  This is highly useful for those
 who want to serve both HTTPS and HTTP content.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; now with support for &lt;code&gt;--webroot&lt;/code&gt; and HTTP-01 renewal!&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>Fixing file sharing in Debian/Ubuntu</title>
-      <link>/2020/06/Fixing-file-sharing-in-Debian/Ubuntu/</link>
-      <pubDate>Sat, 20 Jun 2020 08:25:00 +0100</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/2020/06/Fixing-file-sharing-in-Debian/Ubuntu/</guid>
-      <description>&lt;p&gt;Mounting my ReadyNAS from Nautilus stopped working after upgrading to
-Ubuntu 20.04.  Turns out there was a change in behavior in Sambva v4.11
-that disabled SMB1 protocol by default.  It&amp;rsquo;ll be interesting to see how
-this pans out in the rest of the Linux community &amp;hellip; fortunately there&amp;rsquo;s
-a workaround!&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; same on Debian 11 (&lt;em&gt;bullseye&lt;/em&gt;)&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
     
