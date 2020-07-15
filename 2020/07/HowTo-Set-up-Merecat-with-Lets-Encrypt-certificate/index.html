@@ -80,9 +80,9 @@ serving more than one Internet port.  This is …">
   "headline": "HowTo: Set up Merecat with Let\x27s Encrypt certificate",
   "description" : "This is a HowTo for setting up Merecat httpd with Let\x26rsquo;s Encrypt HTTPS certificates.\nThe upcoming v2.32 release of Merecat supports HTTPS as well as serving more than one Internet port. This is highly useful for those who want to serve both HTTPS and HTTP content.\n Update: now with support for --webroot and HTTP-01 renewal!\n",
   "inLanguage" : "en",
-  "wordCount":  587 ,
-  "datePublished" : "2020-07-10T08:46:00",
-  "dateModified" : "2020-07-10T08:46:00",
+  "wordCount":  597 ,
+  "datePublished" : "2020-07-15T14:10:00",
+  "dateModified" : "2020-07-15T14:10:00",
   "image" : "\/images\/profile.jpg",
   "keywords" : [ "" ],
   "mainEntityOfPage" : "\/2020\/07\/HowTo-Set-up-Merecat-with-Lets-Encrypt-certificate\/",
@@ -304,7 +304,7 @@ serving more than one Internet port.  This is …">
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on July 10, 2020
+  <i class="fas fa-calendar"></i>&nbsp;Posted on July 15, 2020
   
   
   
@@ -434,7 +434,8 @@ write to any file in the server root.</p>
 <p>Then run <code>certbot</code> with the following arguments and then add all virtual
 hosts you want to support from Merecat:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">root@example:/var/www/&gt; certbot certonly --webroot --webroot-path /var/lib/letsencrypt --dry-run
-</code></pre></div><p>The actual renewal is set up automatically by the certbot install as a
+</code></pre></div><p>Drop <code>--dry-run</code> when you&rsquo;re done playing around learning all settings.</p>
+<p>The actual renewal is set up automatically by the certbot install as a
 cronjob or systemd timer.  Certbot uses the last known method you used
 to manually install/update your certs.  For details on this, see the
 file <code>/etc/letsencrypt/renewal/example.com.conf</code>.  (Dry runs does not
@@ -442,7 +443,7 @@ change this.)</p>
 <p>After a successful renewal you need to restart Merecat httpd to activate
 the new certificates.  Instead of modifying the above cronjob or timer,
 we add the following line to <code>/etc/letsencrypt/cli.ini</code>:</p>
-<pre><code class="language-conf" data-lang="conf">deploy-hook = systemctl reload merecat
+<pre><code class="language-conf" data-lang="conf">deploy-hook = systemctl restart merecat
 </code></pre>
 
         
@@ -456,13 +457,9 @@ we add the following line to <code>/etc/letsencrypt/cli.ini</code>:</p>
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="/2020/06/Open-Source-Releases/" data-toggle="tooltip" data-placement="top" title="Open Source Releases">&larr; Previous Post</a>
+              <a href="/2020/07/Fixing-file-sharing-in-Debian/Ubuntu/Mint/" data-toggle="tooltip" data-placement="top" title="Fixing file sharing in Debian/Ubuntu/Mint">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="/2020/07/Fixing-file-sharing-in-Debian/Ubuntu/Mint/" data-toggle="tooltip" data-placement="top" title="Fixing file sharing in Debian/Ubuntu/Mint">Next Post &rarr;</a>
-            </li>
           
         </ul>
       
