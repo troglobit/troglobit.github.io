@@ -1,6 +1,6 @@
 ---
 title: "HowTo: Set up Merecat with Let's Encrypt certificate"
-date: 2020-07-10T08:46:00Z
+date: 2020-07-15T14:10:00Z
 orig-date: 2019-06-27T16:27:39Z
 subtitle: ""
 tags: []
@@ -250,6 +250,8 @@ hosts you want to support from Merecat:
 root@example:/var/www/> certbot certonly --webroot --webroot-path /var/lib/letsencrypt --dry-run
 ```
 
+Drop `--dry-run` when you're done playing around learning all settings.
+
 The actual renewal is set up automatically by the certbot install as a
 cronjob or systemd timer.  Certbot uses the last known method you used
 to manually install/update your certs.  For details on this, see the
@@ -261,7 +263,7 @@ the new certificates.  Instead of modifying the above cronjob or timer,
 we add the following line to `/etc/letsencrypt/cli.ini`:
 
 ```conf
-deploy-hook = systemctl reload merecat
+deploy-hook = systemctl restart merecat
 ```
 
 
