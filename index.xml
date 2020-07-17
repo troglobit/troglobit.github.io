@@ -14,6 +14,18 @@
     
     
     <item>
+      <title>Wireguard and DNS Timeout</title>
+      <link>/2020/07/Wireguard-and-DNS-Timeout/</link>
+      <pubDate>Fri, 17 Jul 2020 11:04:09 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/2020/07/Wireguard-and-DNS-Timeout/</guid>
+      <description>&lt;p&gt;For a while now my Wireguard VPN provider has been handing out a bad DNS
+server.  So whenever I do a DNS lookup it takes five (5!) seconds timing
+out, which is quite annoying.&lt;/p&gt;
+&lt;p&gt;This blog post is about how you can fix this with &lt;code&gt;openresolv&lt;/code&gt; in Ubuntu.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>HowTo: Set up Merecat with Let&#39;s Encrypt certificate</title>
       <link>/2020/07/HowTo-Set-up-Merecat-with-Lets-Encrypt-certificate/</link>
       <pubDate>Wed, 15 Jul 2020 14:10:00 +0000</pubDate>

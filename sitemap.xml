@@ -3,12 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/2020/07/HowTo-Set-up-Merecat-with-Lets-Encrypt-certificate/</loc>
-    <lastmod>2020-07-15T14:10:00+00:00</lastmod>
+    <loc>/post/</loc>
+    <lastmod>2020-07-17T11:04:09+02:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/</loc>
+    <loc>/2020/07/Wireguard-and-DNS-Timeout/</loc>
+    <lastmod>2020-07-17T11:04:09+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2020/07/HowTo-Set-up-Merecat-with-Lets-Encrypt-certificate/</loc>
     <lastmod>2020-07-15T14:10:00+00:00</lastmod>
   </url>
   

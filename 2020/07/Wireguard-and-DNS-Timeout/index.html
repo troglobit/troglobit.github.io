@@ -7,9 +7,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Posts - </title>
-  <meta property="og:title" content="Posts" />
-  <meta name="twitter:title" content="Posts" />
+  <title>Wireguard and DNS Timeout - </title>
+  <meta property="og:title" content="Wireguard and DNS Timeout" />
+  <meta name="twitter:title" content="Wireguard and DNS Timeout" />
+  <meta name="description" content="For a while now my Wireguard VPN provider has been handing out a bad DNS
+server.  So whenever I do a DNS lookup it takes five (5!) seconds timing
+out, which is quite annoying.
+This blog post is about how you can fix this with openresolv in Ubuntu.">
+  <meta property="og:description" content="For a while now my Wireguard VPN provider has been handing out a bad DNS
+server.  So whenever I do a DNS lookup it takes five (5!) seconds timing
+out, which is quite annoying.
+This blog post is about how you can fix this with openresolv in Ubuntu.">
+  <meta name="twitter:description" content="For a while now my Wireguard VPN provider has been handing out a bad DNS
+server.  So whenever I do a DNS lookup it takes five (5!) seconds timing
+out, which is quite annoying.
+This blog post is about …">
   <meta name="author" content="Joachim Nilsson"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -30,14 +42,70 @@
   
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "\/2020\/07\/Wireguard-and-DNS-Timeout\/",
+          "name": "Wireguard and dns timeout"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Joachim Nilsson"
+  },
+  "headline": "Wireguard and DNS Timeout",
+  "description" : "For a while now my Wireguard VPN provider has been handing out a bad DNS server. So whenever I do a DNS lookup it takes five (5!) seconds timing out, which is quite annoying.\nThis blog post is about how you can fix this with openresolv in Ubuntu.\n",
+  "inLanguage" : "en",
+  "wordCount":  215 ,
+  "datePublished" : "2020-07-17T11:04:09",
+  "dateModified" : "2020-07-17T11:04:09",
+  "image" : "\/images\/profile.jpg",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "\/2020\/07\/Wireguard-and-DNS-Timeout\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "\/images\/profile.jpg",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
 
-<meta property="og:title" content="Posts" />
+<meta property="og:title" content="Wireguard and DNS Timeout" />
+<meta property="og:description" content="For a while now my Wireguard VPN provider has been handing out a bad DNS
+server.  So whenever I do a DNS lookup it takes five (5!) seconds timing
+out, which is quite annoying.
+This blog post is about how you can fix this with openresolv in Ubuntu.">
 <meta property="og:image" content="/images/profile.jpg" />
-<meta property="og:url" content="/post/" />
+<meta property="og:url" content="/2020/07/Wireguard-and-DNS-Timeout/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="" />
 
-  <meta name="twitter:title" content="Posts" />
+  <meta name="twitter:title" content="Wireguard and DNS Timeout" />
+  <meta name="twitter:description" content="For a while now my Wireguard VPN provider has been handing out a bad DNS
+server.  So whenever I do a DNS lookup it takes five (5!) seconds timing
+out, which is quite annoying.
+This blog post is about …">
   <meta name="twitter:image" content="/images/profile.jpg" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@troglobit" />
@@ -48,7 +116,7 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@troglobit" />
   <meta name="twitter:creator" content="@troglobit" />
-  <meta property="og:url" content="/post/" />
+  <meta property="og:url" content="/2020/07/Wireguard-and-DNS-Timeout/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
@@ -216,7 +284,7 @@
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
               
-                <h1>Posts</h1>
+                <h1>Wireguard and DNS Timeout</h1>
               
               
               
@@ -247,99 +315,64 @@
 
 
     
-  <div class="container" role="main">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+	
+        <p>For a while now my Wireguard VPN provider has been handing out a bad DNS
+server.  So whenever I do a DNS lookup it takes five (5!) seconds timing
+out, which is quite annoying.</p>
+<p>This blog post is about how you can fix this with <code>openresolv</code> in Ubuntu.</p>
+<p>When you <code>apt install wireguard wireguard-tools</code> on Ubuntu 20.04, you
+need a manager for <code>/etc/resolv.conf</code>.  There are two options here; the
+traditional <code>resolvconf</code> package and the newer <code>openresolv</code>.  To fix my
+problems I chose the latter.</p>
+<p>With the system up and your <code>wg0</code> connection active (setting it up is
+not the topic of this post), edit the file <code>/etc/resolvconf.conf</code>, yes
+its named that even though we&rsquo;re using the <code>openresolv</code> package.  There
+is lots of stuff already in it, but add the following:</p>
+<pre><code>$ sudo vim /etc/resolvconf.conf
+
+# Slow/inactive DNS servers /Jocke
+name_server_blacklist=2001:9b1:8826::53
+
+# The edns0 option is from the original resolvconf
+resolv_conf_options=&quot;edns0 timeout:1&quot;
+
+# Also from original resolvonf
+append_search=localdomain
+</code></pre><p>I&rsquo;ve added my malfunctioning IPv6 DNS server to the blacklist.  This
+means any provider wanting to add a DNS server to <code>/etc/resolv.conf</code>
+will be filtered through that blacklist.</p>
+<p>Finally, the <code>timeout:1</code> option (notice the double qoutes for multiple
+options!).  I&rsquo;ve set the timeout to 1, the default is 5 sec, in case
+any other DNS server starts misbehaving.</p>
+
         
-        <div class="posts-list">
-          
-            <article class="post-preview">
-              <a href="/2006/06/06/laptop-network-configuration-in-debian-slash-ubuntu/">
-                <h2 class="post-title">Laptop Network Configuration in Debian/Ubuntu</h2>
 
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on June 6, 2006
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Nilsson
-    
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                
-                  I have three network cards in my laptop. Two built-in and one PCMCIA card. I&rsquo;m currently investigating how I can migrate from using the slow and tedious gnome-network &amp; C:o tools to the more integrated Debian/Ubuntu tools ifupdown, guessnet, ifplugd and waproamd instead. As usual Debian has a fine and clever way of handling all this with their /etc/network/interface file. To learn more about this fine management interface I&rsquo;m reading the well written book The Debian System by Martin F.
-                  <a href="/2006/06/06/laptop-network-configuration-in-debian-slash-ubuntu/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2006/05/26/no-news-are-good-news/">
-                <h2 class="post-title">No news are good news?</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on May 26, 2006
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Nilsson
-    
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                
-                  Seriously, it&rsquo;s been one long winter and now finally summer is upon us again. It was about six months ago that I switched jobs and this is the first time for that period that I&rsquo;ve got ten minutes above the surface. The new job is fun but currently takes up too much of my time to be healthy in the long run.
-Today we&rsquo;re going to Stenby TV-service with our broken Hitachi 32&rdquo; TV.
-                  <a href="/2006/05/26/no-news-are-good-news/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-        </div>
         
-          <ul class="pager main-pager">
-            
-              <li class="previous">
-                <a href="/post/page/15/">&larr; Newer Posts</a>
-              </li>
-            
-            
-          </ul>
+
         
-      </div>
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="/2020/07/HowTo-Set-up-Merecat-with-Lets-Encrypt-certificate/" data-toggle="tooltip" data-placement="top" title="HowTo: Set up Merecat with Let&#39;s Encrypt certificate">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+
     </div>
   </div>
+</div>
 
     <footer>
   <div class="container">
@@ -373,7 +406,7 @@ Today we&rsquo;re going to Stenby TV-service with our broken Hitachi 32&rdquo; T
               </li>
           
           <li>
-            <a href="/post/index.xml" title="RSS">
+            <a href="" title="RSS">
               <span class="fa-stack fa-lg">
                 <i class="fas fa-circle fa-stack-2x"></i>
                 <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
