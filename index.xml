@@ -14,6 +14,46 @@
     
     
     <item>
+      <title>HowTo: Build &amp; Use My Projects</title>
+      <link>/howto/howto-build-and-use-my-projects/</link>
+      <pubDate>Fri, 14 Aug 2020 07:38:09 +0200</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/howto/howto-build-and-use-my-projects/</guid>
+      <description>&lt;p&gt;Ever so often someone new to Open Source show up on GitHub or in my
+inbox.  It usually starts something like this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&amp;ldquo;Hey, I just downloaded your software, what&amp;rsquo;s next?&amp;quot;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&amp;ldquo;Your crappy software doesn&amp;rsquo;t work on my system!!!!&amp;quot;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&amp;ldquo;How can I do that weird-thing that fits my odd use-case?&amp;quot;&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This HowTo is for you.&lt;/p&gt;
+&lt;h2 id=&#34;0-short-version&#34;&gt;0. Short Version&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Download the &lt;em&gt;versioned&lt;/em&gt; archive from the project&amp;rsquo;s Releases page&lt;/li&gt;
+&lt;li&gt;Extract archive and change to its directory&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;./configure --help&lt;/code&gt;, or just&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;./configure &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo make install&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Some projects of mine are available in Debian/Ubuntu/FreeBSD, if you
+use that, please report bugs to them and not me.  I have no control
+over what they do.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Cheers&lt;br&gt;
+/Joachim&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Zoo Archiver</title>
+      <link>/projects/zoo/</link>
+      <pubDate>Sat, 08 Aug 2020 17:50:00 +0100</pubDate>
+      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <guid>/projects/zoo/</guid>
+      <description>Issue tracker and GIT repository available at GitHub:
+ Repository Issue Tracker zoo-1.21.tar.gz, MD5  </description>
+    </item>
+    
+    <item>
       <title>Wireguard and DNS Timeout</title>
       <link>/2020/07/Wireguard-and-DNS-Timeout/</link>
       <pubDate>Fri, 17 Jul 2020 11:04:09 +0200</pubDate>
