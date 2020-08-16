@@ -2,7 +2,8 @@
 title: "HowTo: Build & Use My Projects"
 author: "Joachim Nilsson"
 type: ""
-date: 2020-08-14T07:38:09+02:00
+orig-date: 2020-08-14T07:38:09+01:00
+date: 2020-08-16T16:36:00+01:00
 subtitle: "#include <stddisclaimer.h>"
 image: ""
 tags: []
@@ -112,3 +113,49 @@ using:
 This installs them into the default prefix `/usr/local`, which you can
 change by supplying a different prefix path to the configure script.
 See `./configure --help` for details.
+
+
+## 4. Building from GIT
+
+I always recommend users to run released software.  However, sometimes
+new features are not released yet, or (new) users want to try out the
+latest upcoming software.
+
+  1. In 95% of the cases you need `autoconf` and `automake`.  Sometimes
+     you also need (GNU) `libtool`, sometimes more tools are required,
+	 see the README for each project for details.
+  2. Usually I never put generated files under version control.  This
+     means `configure` et al is not available in GIT.
+
+To generate `configure`, for projects that use the GNU Configure & Build
+system, run.
+
+    ./autogen.sh
+
+When refreshing your `git clone` with `git pull`, you may have to run
+the `autogen.sh` script again, but most of the time `make` handles this
+for you.
+
+
+## 5. A note on paths
+
+With `configure` everything is about `--prefix`.  Everything is derived
+from that path, which traditionally defaults to `/usr/local`.  A few of
+the default directories are listed here:
+
+    prefix        = /usr/local           # default, use --prefix=/foo
+	sysconfdir    = $prefix/etc
+	datadir       = $prefix/share
+	docdir        = $datadir/doc/PACKAGE
+	localstatedir = $prefix/var
+	runstatedir   = $localstatedir/run   # only in recent autoconf versions
+
+All of the above (except `$runstatedir`, depending on autoconf version)
+are possible to override from the configure script.  For details, see
+the usage text with:
+
+    ./configure --help
+
+Most, if not all, of my projects use these directories also in the
+binary/daemon.  E.g., `$runstatedir` (or equivalent) is used for
+PID files and `.sock` files.
