@@ -63,9 +63,9 @@
   "headline": "HowTo: Build \x26 Use My Projects",
   "description" : "Ever so often someone new to Open Source show up on GitHub or in my inbox. It usually starts something like this:\n \x26ldquo;Hey, I just downloaded your software, what\x26rsquo;s next?\x26quot; \x26ldquo;Your crappy software doesn\x26rsquo;t work on my system!!!!\x26quot; \x26ldquo;How can I do that weird-thing that fits my odd use-case?\x26quot;  This HowTo is for you.\n0. Short Version  Download the versioned archive from the project\x26rsquo;s Releases page Extract archive and change to its directory .\/configure --help, or just .\/configure \x26amp;\x26amp; make \x26amp;\x26amp; sudo make install   Some projects of mine are available in Debian\/Ubuntu\/FreeBSD, if you use that, please report bugs to them and not me. I have no control over what they do.\n Cheers\n\/Joachim\n",
   "inLanguage" : "en",
-  "wordCount":  572 ,
-  "datePublished" : "2020-08-14T07:38:09",
-  "dateModified" : "2020-08-14T07:38:09",
+  "wordCount":  805 ,
+  "datePublished" : "2020-08-16T16:36:00",
+  "dateModified" : "2020-08-16T16:36:00",
   "image" : "\/images\/profile.jpg",
   "keywords" : [ "" ],
   "mainEntityOfPage" : "\/howto\/howto-build-and-use-my-projects\/",
@@ -375,6 +375,43 @@ using:</p>
 <p>This installs them into the default prefix <code>/usr/local</code>, which you can
 change by supplying a different prefix path to the configure script.
 See <code>./configure --help</code> for details.</p>
+<h2 id="4-building-from-git">4. Building from GIT</h2>
+<p>I always recommend users to run released software.  However, sometimes
+new features are not released yet, or (new) users want to try out the
+latest upcoming software.</p>
+<ol>
+<li>In 95% of the cases you need <code>autoconf</code> and <code>automake</code>.  Sometimes
+you also need (GNU) <code>libtool</code>, sometimes more tools are required,
+see the README for each project for details.</li>
+<li>Usually I never put generated files under version control.  This
+means <code>configure</code> et al is not available in GIT.</li>
+</ol>
+<p>To generate <code>configure</code>, for projects that use the GNU Configure &amp; Build
+system, run.</p>
+<pre><code>./autogen.sh
+</code></pre>
+<p>When refreshing your <code>git clone</code> with <code>git pull</code>, you may have to run
+the <code>autogen.sh</code> script again, but most of the time <code>make</code> handles this
+for you.</p>
+<h2 id="5-a-note-on-paths">5. A note on paths</h2>
+<p>With <code>configure</code> everything is about <code>--prefix</code>.  Everything is derived
+from that path, which traditionally defaults to <code>/usr/local</code>.  A few of
+the default directories are listed here:</p>
+<pre><code>prefix        = /usr/local           # default, use --prefix=/foo
+sysconfdir    = $prefix/etc
+datadir       = $prefix/share
+docdir        = $datadir/doc/PACKAGE
+localstatedir = $prefix/var
+runstatedir   = $localstatedir/run   # only in recent autoconf versions
+</code></pre>
+<p>All of the above (except <code>$runstatedir</code>, depending on autoconf version)
+are possible to override from the configure script.  For details, see
+the usage text with:</p>
+<pre><code>./configure --help
+</code></pre>
+<p>Most, if not all, of my projects use these directories also in the
+binary/daemon.  E.g., <code>$runstatedir</code> (or equivalent) is used for
+PID files and <code>.sock</code> files.</p>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
