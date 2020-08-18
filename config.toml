@@ -1,7 +1,6 @@
-baseURL = "/"
-disablePathToLower = true
+baseURL = "/" disablePathToLower = true
 languageCode = "en-us"
-#title = "Joachim Nilsson"
+#title = "Joachim Wiberg"
 theme = "beautifulhugo"
 contentDir = "content"
 publishDir = "public"
@@ -30,15 +29,13 @@ enableEmoji = true
   rss = true
 
 [Author]
-  name = "Joachim Nilsson"
+  name = "Joachim Wiberg"
   website = "https://troglobit.com"
   email = "troglobit@gmail.com"
-  googleplus = "+JoachimNilsson"
   github = "troglobit"
   twitter = "troglobit"
 
 [social]
-  googleplus = "+JoachimNilsson"
   github = "troglobit"
   twitter = "troglobit"
 

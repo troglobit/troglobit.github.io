@@ -1,6 +1,6 @@
 ---
 title: "HowTo: Build & Use My Projects"
-author: "Joachim Nilsson"
+author: "Joachim Wiberg"
 type: ""
 orig-date: 2020-08-14T07:38:09+01:00
 date: 2020-08-16T16:36:00+01:00

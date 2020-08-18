@@ -3,10 +3,11 @@ title: "About"
 date: 2020-06-20 08:57:00 +0100
 ---
 
-Welcome to my blog, my name is Joachim Nilsson.  The nick `troglobit` is
-a tribute to my childhood friend Henrik Flordal, for being a good friend
-and inspiring me to become a hacker.  It is also the first password to a
-Linux server (Henrik's) I got a login to, back in 1995.
+Welcome to my blog, my name is Joachim Wiberg, formerly Nilsson.  The
+nick `troglobit` is a tribute to my childhood friend Henrik Flordal,
+for being a good friend and inspiring me to become a hacker.  It is
+also the first password to a Linux server (Henrik's) I got a login to,
+back in 1995.
 
 I work at [Westermo R&D][westermo] as a software architect for [WeOS][],
 a Linux-based network operating system for switches and routers.
