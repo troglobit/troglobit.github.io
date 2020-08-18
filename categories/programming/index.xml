@@ -6,8 +6,8 @@
     <description>Recent content in programming on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Sat, 22 Feb 2020 09:45:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/programming/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>Useful UNIX API:s</title>
       <link>/2020/02/Useful-UNIX-APIs/</link>
       <pubDate>Sat, 22 Feb 2020 09:45:00 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2020/02/Useful-UNIX-APIs/</guid>
       <description>&lt;p&gt;Had an interesting conversation with a buddy last night.  It started out
 as a shift-reduce problem with Bison and ended up a ping-pong of useful
@@ -44,7 +44,7 @@ continued adding to it over the years, and still do.  So, as of Jul 2,
       <title>Threads vs Event Loop, Again ...</title>
       <link>/2017/09/19/threads-vs-event-loop-again-.../</link>
       <pubDate>Tue, 19 Sep 2017 08:51:38 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2017/09/19/threads-vs-event-loop-again-.../</guid>
       <description>&lt;p&gt;I still get asked this, from time to time.  Maybe it&amp;rsquo;s because I only
 use event loops, maybe it&amp;rsquo;s because I&amp;rsquo;ve written &lt;a href=&#34;https://github.com/troglobit/libuev&#34;&gt;libuEv&lt;/a&gt;, or maybe
@@ -59,7 +59,7 @@ people still don&amp;rsquo;t understand:&lt;/p&gt;
       <title>Summer of Code 2015</title>
       <link>/2015/09/09/summer-of-code-2015/</link>
       <pubDate>Wed, 09 Sep 2015 21:49:13 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2015/09/09/summer-of-code-2015/</guid>
       <description>Summer is now slowly fading away, and what a summer it has been here in Sweden! For someone who isn&amp;rsquo;t a fan of the summer heat it has been an awesome time for brain work, and in my case work on my open source projects! :-)
 Due to my not really taking much vacation previous years I had saved up for ten weeks (10) this year! It was really worth it, and for the first time in many years I actually feel rested.</description>
@@ -69,7 +69,7 @@ Due to my not really taking much vacation previous years I had saved up for ten 
       <title>Rant: All the C Compiler Warnings ...</title>
       <link>/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/</link>
       <pubDate>Mon, 12 Jan 2015 01:57:40 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;Enable &lt;em&gt;all&lt;/em&gt; the warnings!&lt;/p&gt;
@@ -92,7 +92,7 @@ of voodoo, like &lt;code&gt;__attribute__ ((unused))&lt;/code&gt; &amp;hellip; s
       <title>Just a Programmer</title>
       <link>/2013/08/13/just-a-programmer/</link>
       <pubDate>Tue, 13 Aug 2013 00:00:00 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2013/08/13/just-a-programmer/</guid>
       <description>&lt;p&gt;Sometimes people ask me what I do for a living.  Usually I tend to
 pause and think, real hard, becuase the people asking me this aren&amp;rsquo;t
@@ -111,7 +111,7 @@ does confuse people.&lt;/p&gt;</description>
       <title>Programming as an Artform</title>
       <link>/2013/06/22/programming-as-an-artform/</link>
       <pubDate>Sat, 22 Jun 2013 00:00:00 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2013/06/22/programming-as-an-artform/</guid>
       <description>&lt;p&gt;This is a response to the excellent post by Jani Gorše, titled
 &lt;a href=&#34;https://blooki.st/BlookElement/ShowTextPhoto?blookElementId=1962&#34;&gt;Why is Programming an Art?&lt;/a&gt;&lt;/p&gt;
@@ -130,7 +130,7 @@ people naming their local variables obtrusively.&lt;/p&gt;</description>
       <title>Brief libev update</title>
       <link>/2009/04/05/brief-libev-update/</link>
       <pubDate>Sun, 05 Apr 2009 23:53:47 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2009/04/05/brief-libev-update/</guid>
       <description>I have now updated the libev examples. It took me a while, but during that time I have been hard at work converting two of our network daemons to use libev. As of today the upcoming Westermo WeOS uses libev in both its rstpd and igmpd implementations.
 Updated example code:
@@ -141,7 +141,7 @@ Updated example code:
       <title>The Marvellous libev</title>
       <link>/2009/03/28/the-marvellous-libev/</link>
       <pubDate>Sat, 28 Mar 2009 23:00:00 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2009/03/28/the-marvellous-libev/</guid>
       <description>A very good friend mine recently told me about a neat event library, libev. Usually when he drops me links like that it takes me a couple of years to react and finally adopt.
 This time it only took me about a month.
@@ -152,7 +152,7 @@ He has actually showed me lots of very useful stuff throughout the years, and ev
       <title>Why I Like C</title>
       <link>/2009/03/27/why-i-like-c/</link>
       <pubDate>Fri, 27 Mar 2009 00:37:42 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2009/03/27/why-i-like-c/</guid>
       <description>I thought I was alone, but it turns out I&amp;rsquo;m not. Scott James Remnant describes exactly what I&amp;rsquo;ve been feeling the last couple of years. Read his blog entry on the subject. I couldn&amp;rsquo;t agree more.</description>
     </item>
@@ -161,7 +161,7 @@ He has actually showed me lots of very useful stuff throughout the years, and ev
       <title>Netork Programming -- Link Collection</title>
       <link>/2009/02/10/network-programming-link-collection/</link>
       <pubDate>Tue, 10 Feb 2009 21:56:42 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2009/02/10/network-programming-link-collection/</guid>
       <description>This is a first effort at collecting information about network programming structs and APIs available in UNIX. I plan on updating this as I find more.
  Linux Journal: Linux Network Programming, Part I, II, III. Linux Journal: Multicast Routing Code in the Linux Kernel Linux Journal: Inside the Linux Packet Filter, Part I, II /usr/include/netinet/in.h  There are of course, in addition to these fine sources, the entire catalogue of work by Richard M.</description>

@@ -6,8 +6,8 @@
     <description>Recent content in tips on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Mon, 04 Apr 2016 00:14:28 +0000</lastBuildDate>
     
 	<atom:link href="/categories/tips/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>Lecture from the UNIX beards</title>
       <link>/2016/04/04/lecture-from-the-unix-beards/</link>
       <pubDate>Mon, 04 Apr 2016 00:14:28 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2016/04/04/lecture-from-the-unix-beards/</guid>
       <description>After the rm -rf /* disaster that hit me a couple of weeks ago I&amp;rsquo;ve been rebuilding my setup, restoring the few files I&amp;rsquo;ve had backed up, and collecting advice from the elders.
 Turns out there are a few tricks that can save your home directory from accidents like mine. The first one is rather obvious, but I&amp;rsquo;m writing it down anyway:

@@ -6,8 +6,8 @@
     <description>Recent content in awesome on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Tue, 10 Nov 2015 12:14:09 +0000</lastBuildDate>
     
 	<atom:link href="/categories/awesome/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>Awesome: Changing Next/Prev Tune in Spotify</title>
       <link>/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/</link>
       <pubDate>Tue, 10 Nov 2015 12:14:09 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/</guid>
       <description>Back to using the Awesome WM in Ubuntu. This time I&amp;rsquo;m setting up everything from scratch and first up is fixing keybindings to control my main music player: Spotify!
 Edit your ~/.config/awesome/rc.lua with Emacs (obviously). If you do not have an rc file, simply copy the system /etc/xdb/awesome/rc.lua:

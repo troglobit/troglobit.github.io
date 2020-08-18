@@ -6,8 +6,8 @@
     <description>Recent content in Emacs on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Mon, 28 Jul 2008 01:38:13 +0000</lastBuildDate>
     
 	<atom:link href="/categories/Emacs/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>HowTo: Build GNU Emacs from CVS</title>
       <link>/2008/07/28/howto-build-gnu-emacs-from-cvs/</link>
       <pubDate>Mon, 28 Jul 2008 01:38:13 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2008/07/28/howto-build-gnu-emacs-from-cvs/</guid>
       <description>Why would you want to do this? Well, considering all the neat new things that have been added lately it should be tempting for any old Emacs fan.
 The Emacs Wiki has all the info you need, but here is a quick run-down of the bare necessities. Start by checking out your working copy:
@@ -28,7 +28,7 @@ cvs -z3 -d:pserver:anonymous@cvs.savannah.gnu.org:/cvsroot/emacs co emacs cd ema
       <title>More Emacs Progress!</title>
       <link>/2008/07/22/more-emacs-progress/</link>
       <pubDate>Tue, 22 Jul 2008 23:56:55 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2008/07/22/more-emacs-progress/</guid>
       <description>Wow, I&amp;rsquo;m almost starting to feel like a Windows user. The latest CVS builds of GNU Emacs has a lot of new features:
  XFT Support (font anti-aliasing) Better GTK integration (desktop) A font selector!  I use the CVS version now as my daily driver in Ubuntu 8.10. It&amp;rsquo;s really useful, and I love the improved support for debugging programs inside Emacs!
@@ -39,7 +39,7 @@ I think it is quite impressive how far this little editor has come.</description
       <title>Enterprise Emacs</title>
       <link>/2008/02/24/enterprise-emacs/</link>
       <pubDate>Sun, 24 Feb 2008 10:59:19 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2008/02/24/enterprise-emacs/</guid>
       <description>&lt;p&gt;Many years ago I discovered the beauty in a beast called &lt;a href=&#34;http://www.gnu.org/software/emacs/&#34;&gt;Emacs&lt;/a&gt;.  I
 am actually a frequent user of both Emacs and &lt;a href=&#34;http://www.vim.org&#34;&gt;Vim&lt;/a&gt;, but I firmly

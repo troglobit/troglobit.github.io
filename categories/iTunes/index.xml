@@ -6,8 +6,8 @@
     <description>Recent content in iTunes on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Fri, 31 Dec 2010 20:26:37 +0000</lastBuildDate>
     
 	<atom:link href="/categories/iTunes/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>Use Ubuntu to Serve iTunes</title>
       <link>/2010/12/31/ubuntu-to-serve-music-to-itunes/</link>
       <pubDate>Fri, 31 Dec 2010 20:26:37 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2010/12/31/ubuntu-to-serve-music-to-itunes/</guid>
       <description>OK, so we finally got an iPad. The effective marketing droids of Apple are doing a good job, even the Linux zealots are starting to use their products :-)
 So, how to serve the immense music collection of our family to the iPad? Well, it seems the magic integration with iTunes is not enough (yet), so you need a Simple Daap Client app on your iPad to get the most out of this HowTo.</description>

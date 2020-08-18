@@ -6,8 +6,8 @@
     <description>Recent content in modules on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Sun, 25 Mar 2007 23:59:57 +0000</lastBuildDate>
     
 	<atom:link href="/categories/modules/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>VMWare Kernel Modules for Your New Kernel</title>
       <link>/2007/03/25/vmware-kernel-modules-for-your-new-kernel/</link>
       <pubDate>Sun, 25 Mar 2007 23:59:57 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2007/03/25/vmware-kernel-modules-for-your-new-kernel/</guid>
       <description>My recent post on building Debian kernels misses a subtle but useful point. Namely that of building Debian kernel modules alongside your new kernel. I wanted to run a new kernel with the Ubuntu vmware-player-kernel-source package. I was fumbling around wanting to use module-assistant to do this for me when I stumbled upon on the solution, presented so eloquently by my friend Albert Veli. This gives us a small update to the previous post:</description>
     </item>

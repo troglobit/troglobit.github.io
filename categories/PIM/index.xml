@@ -6,8 +6,8 @@
     <description>Recent content in PIM on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Wed, 27 Mar 2019 15:54:00 +0200</lastBuildDate>
     
 	<atom:link href="/categories/PIM/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>Multicast routing with PIM-SM over GRE</title>
       <link>/2016/07/05/multicast-routing-with-pim-sm-over-gre/</link>
       <pubDate>Tue, 23 Jan 2018 20:39:36 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2016/07/05/multicast-routing-with-pim-sm-over-gre/</guid>
       <description>&lt;p&gt;GRE tunnels are useful in many ways.  This blog post shows how to set up
 multicast routing with &lt;a href=&#34;https://github.com/troglobit/pimd/&#34;&gt;pimd&lt;/a&gt; over a

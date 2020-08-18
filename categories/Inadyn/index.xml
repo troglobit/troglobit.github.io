@@ -6,8 +6,8 @@
     <description>Recent content in Inadyn on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Fri, 12 Jul 2013 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/Inadyn/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>New Open Source Releases</title>
       <link>/2013/07/12/new-open-source-releases/</link>
       <pubDate>Fri, 12 Jul 2013 00:00:00 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2013/07/12/new-open-source-releases/</guid>
       <description>Vacation time means catching up on my Open Source projects! :)
 Currently I&amp;rsquo;m shaping up the home pages and this blog to improve the easy access and overview of all the packages I maintain. The following packages have new releases, or can expect new releases soon:

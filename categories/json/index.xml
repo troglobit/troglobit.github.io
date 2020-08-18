@@ -6,8 +6,8 @@
     <description>Recent content in json on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Sun, 23 Feb 2014 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/json/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>Weekend Hack: JSON vs CONF</title>
       <link>/2014/02/23/weekend-hack-json-vs-conf/</link>
       <pubDate>Sun, 23 Feb 2014 00:00:00 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2014/02/23/weekend-hack-json-vs-conf/</guid>
       <description>It was time. I had been putting it off for far too long &amp;ndash; learning about JSON and deciding on a new .conf file format for Inadyn. So this weekend I sat myself down to read up on JSON and the multitude of parser libraries for both JSON and traditional .conf file parsers. I was looking for a human readable file format that a user could easily and reliably edit by themselves without it being too error prone or sensitive to mistyping.</description>
     </item>

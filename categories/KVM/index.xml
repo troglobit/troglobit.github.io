@@ -6,8 +6,8 @@
     <description>Recent content in KVM on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Thu, 18 Aug 2016 20:07:17 +0000</lastBuildDate>
     
 	<atom:link href="/categories/KVM/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>Live KVM migration with virt-manager</title>
       <link>/2016/08/18/live-kvm-migration-with-virt-manager/</link>
       <pubDate>Thu, 18 Aug 2016 20:07:17 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2016/08/18/live-kvm-migration-with-virt-manager/</guid>
       <description>&lt;p&gt;With the new servers and my server room shaping up, I&amp;rsquo;ve been working on
 setting up ALL THE THINGS!  I just managed to set up live migration of
@@ -43,7 +43,7 @@ couldn&amp;rsquo;t set up root access (defaulted to nobody).&lt;/li&gt;
       <title>Finally, NetBSD Boots in KVM!</title>
       <link>/2010/08/29/finally/</link>
       <pubDate>Sun, 29 Aug 2010 20:44:34 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2010/08/29/finally/</guid>
       <description>Compared to OpenBSD and FreeBSD the NetBSD install was hard, really hard. It wasn&amp;rsquo;t until I stumbled across this that I managed to convince myself to try it again.
 The trick seems to be to ignore as much as you can from other Internet tips. NetBSD runs fine in KVM, so if someone says you need to run it in Qemu mode — don&amp;rsquo;t believe the hype. OK, in virt-manager there is no preset defaults for NetBSD, so I went with a generic OS and tried starting the install from there.</description>

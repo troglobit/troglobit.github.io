@@ -6,8 +6,8 @@
     <description>Recent content in networking on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Fri, 02 Sep 2016 23:30:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/networking/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>The General Idea</title>
       <link>/2016/09/02/the-general-idea/</link>
       <pubDate>Fri, 02 Sep 2016 23:30:00 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2016/09/02/the-general-idea/</guid>
       <description>OK, so here&amp;rsquo;s the general idea: take one teaspoon of a well equipped SBC with Marvell chips you know well, add an awesome WiFi hotspot with USB connection, stir feverishly for several weekends in a row, then sprinkle some AlpineLinux and a custom kernel on top. Enjoy!
 I have no clue if this will actually work, may even try porting my own little thing called TroglOS to the ClearFog first, I don&amp;rsquo;t know, but it will definitely be awesome!</description>
@@ -27,7 +27,7 @@ I have no clue if this will actually work, may even try porting my own little th
       <title>Ubuntu 8.10rc1 &amp;mdash; NetworkManager WTF?!</title>
       <link>/2008/10/27/ubuntu-8-dot-10rc1-networkmanager-wtf/</link>
       <pubDate>Mon, 27 Oct 2008 19:50:03 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2008/10/27/ubuntu-8-dot-10rc1-networkmanager-wtf/</guid>
       <description>I tried upgrading from Hardy Heron to Intrepid Ibex this weekend. Big mistake. If I disregard the total dpkg meltdown that I, as usually, had to resolve manually there still remains this recurring madness called Network Manager.
 I&amp;rsquo;m an engineer. I have a masters degree in computer engineering. I have worked professionally with GNU/Linux since 2000 and been a die hard user of it since I left OS/2 behind in 1996.</description>
@@ -37,7 +37,7 @@ I&amp;rsquo;m an engineer. I have a masters degree in computer engineering. I ha
       <title>Netapplet Patchwork</title>
       <link>/2007/07/12/netapplet-patchwork/</link>
       <pubDate>Thu, 12 Jul 2007 11:37:38 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2007/07/12/netapplet-patchwork/</guid>
       <description>I think I&amp;rsquo;ve finally done it — achieved my ultimate goal of combining the awesome powers of the Debian /etc/network/interfaces file with guessnet, wpa_supplicant, ifplugd and now also with netapplet!
 I&amp;rsquo;ve been looking for a way to just point-and-click to select a different access point, both at home and at work. To that end I have a pretty advanced interfaces file that automatically detects where I am, what I am connected with (cable/wireless) and then, like magic, sets it all up.</description>
@@ -47,7 +47,7 @@ I&amp;rsquo;ve been looking for a way to just point-and-click to select a differ
       <title>Quick Note</title>
       <link>/2006/07/17/quick-note/</link>
       <pubDate>Mon, 17 Jul 2006 21:10:45 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2006/07/17/quick-note/</guid>
       <description>About that /etc/network/interface autoconfig thingy: it&amp;rsquo;s almost done. Works perfect &amp;hellip; at work (connected) and at home (wireless). I need to fine tune the tests, I think, to get the connected stuff to work at home too. The problem seems to be that the test to see if the machine is connected at home is that the MAC it looks for to ID the office network also is available from home, via the VPN.</description>
     </item>
@@ -56,7 +56,7 @@ I&amp;rsquo;ve been looking for a way to just point-and-click to select a differ
       <title>Laptop Network Configuration in Debian/Ubuntu</title>
       <link>/2006/06/06/laptop-network-configuration-in-debian-slash-ubuntu/</link>
       <pubDate>Tue, 06 Jun 2006 21:10:24 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2006/06/06/laptop-network-configuration-in-debian-slash-ubuntu/</guid>
       <description>I have three network cards in my laptop. Two built-in and one PCMCIA card. I&amp;rsquo;m currently investigating how I can migrate from using the slow and tedious gnome-network &amp;amp; C:o tools to the more integrated Debian/Ubuntu tools ifupdown, guessnet, ifplugd and waproamd instead. As usual Debian has a fine and clever way of handling all this with their /etc/network/interface file. To learn more about this fine management interface I&amp;rsquo;m reading the well written book The Debian System by Martin F.</description>
     </item>

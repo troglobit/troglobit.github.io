@@ -6,8 +6,8 @@
     <description>Recent content in Finit on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Wed, 21 Sep 2016 19:08:37 +0000</lastBuildDate>
     
 	<atom:link href="/categories/Finit/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>Finit3: Almost there ...</title>
       <link>/2016/09/21/finit3-almost-there-.../</link>
       <pubDate>Wed, 21 Sep 2016 19:08:37 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2016/09/21/finit3-almost-there-.../</guid>
       <description>Today the new logo for Finit3 was added to the GitHub repo and the homepage
 Gorgeous, isn&amp;rsquo;t it?! 🕶
@@ -28,7 +28,7 @@ This fancy artwork means we&amp;rsquo;re nearing the end of a long and agonizing
       <title>Inetd Support in Finit v1.12</title>
       <link>/2015/03/06/inetd-support-in-finit-v1-dot-12/</link>
       <pubDate>Fri, 06 Mar 2015 22:34:45 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2015/03/06/inetd-support-in-finit-v1-dot-12/</guid>
       <description>&lt;p&gt;A steady flow of features, and releases, is key to keeping any project
 alive.  Recently I ticked off another item in the &lt;a href=&#34;/finit.html&#34;&gt;Finit&lt;/a&gt;
@@ -91,7 +91,7 @@ Sat Mar  7 08:48:58 CET 2015
       <title>Finit v1.11 released!</title>
       <link>/2015/01/24/finit-v1-dot-11-released/</link>
       <pubDate>Sat, 24 Jan 2015 16:54:23 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2015/01/24/finit-v1-dot-11-released/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Update 2015-03-09&lt;/strong&gt;: This release has unfortunately been &lt;em&gt;yanked&lt;/em&gt; due
 to serious regressions in launching background processes.  It has been
@@ -102,7 +102,7 @@ replaced by &lt;a href=&#34;/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/&#
       <title>Release of Finit v1.9</title>
       <link>/2014/04/21/release-of-finit-v1-dot-9/</link>
       <pubDate>Mon, 21 Apr 2014 16:08:30 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2014/04/21/release-of-finit-v1-dot-9/</guid>
       <description>Just made it! Here&amp;rsquo;s the result of #Easterhack14 &amp;ndash; Finit v1.9 :-)
 Nothing fancy this time, just collecting some bug fixes, playing with cppcheck a bit and adding support for including .conf files. Quite useful if you want to partition your configuration, or if you share major pieces of configuration between different platforms.
@@ -113,7 +113,7 @@ Enjoy!</description>
       <title>Finit v1.8</title>
       <link>/2013/06/08/finit-v1-dot-8/</link>
       <pubDate>Sat, 08 Jun 2013 00:00:00 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2013/06/08/finit-v1-dot-8/</guid>
       <description>It&amp;rsquo;s been a long time coming, but here it finally is, Finit v1.8! The goodies we&amp;rsquo;ve been waiting for are:
  Runlevels Multiple TTYs One-shot tasks  Let&amp;rsquo;s start off with tasks. Tasks are one-shot commands, with a syntax like service directives, but are not monitored and respawned like services. Tasks are started in parallel, just like services. For some cases, like the system bootstrap phase, some tasks may need to be executed in sequence, and for that purpose there also exists a run command.</description>

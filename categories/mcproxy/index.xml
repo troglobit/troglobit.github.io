@@ -6,8 +6,8 @@
     <description>Recent content in mcproxy on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Wed, 27 Mar 2019 15:54:00 +0200</lastBuildDate>
     
 	<atom:link href="/categories/mcproxy/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>Multicast HowTo</title>
       <link>/howto/multicast/</link>
       <pubDate>Wed, 27 Mar 2019 15:54:00 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/howto/multicast/</guid>
       <description>Introduction This HowTo attempts to give some insight into the basics of setting up multicast routing. Both static multicast routing, with SMCRoute, and dynamic multicast routing, with mrouted and pimd.
 For some use-cases, in particular link-local multicast, it may not be possible to use multicast routing, then I recommend trying out:

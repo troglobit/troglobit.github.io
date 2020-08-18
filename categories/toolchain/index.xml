@@ -6,8 +6,8 @@
     <description>Recent content in toolchain on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Thu, 27 Oct 2016 22:22:44 +0000</lastBuildDate>
     
 	<atom:link href="/categories/toolchain/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>New Toolchains</title>
       <link>/2016/10/27/new-toolchains/</link>
       <pubDate>Thu, 27 Oct 2016 22:22:44 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2016/10/27/new-toolchains/</guid>
       <description>Finally, fresh from the oven, here are the remaining two toolchains I&amp;rsquo;ve promised, based on GCC 6.1 and GLIBC 2.23. Download from the FTP:
  arm-unknown-linux-gnueabi-6.1.0-2.tar.xz powerpc-unknown-linux-gnu-6.1.0-2.tar.xz x86_64-unknown-linux-gnu-6.1.0-2.tar.xz  Unpack into /usr/local, and add to your $PATH, e.g.
@@ -28,7 +28,7 @@ export PATH=/usr/local/arm-unknown-linux-gnueabi-6.1.0-2/bin:$PATH  The toolchai
       <title>ARM Toolchain r1</title>
       <link>/2016/09/26/arm-toolchain-r1/</link>
       <pubDate>Mon, 26 Sep 2016 22:43:53 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2016/09/26/arm-toolchain-r1/</guid>
       <description>First GCC 6.1 based ARM (32-bit) toolchain released on my FTP. Built using crosstool-NG for Ubuntu 16.04 (x86_64) with GLIBC 2.23.
  arm-unknown-linux-gnueabi-6.1.0-1.tar.xz  Download, unpack into /usr/local, and add to your $PATH

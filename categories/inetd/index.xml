@@ -6,8 +6,8 @@
     <description>Recent content in inetd on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Fri, 06 Mar 2015 22:34:45 +0000</lastBuildDate>
     
 	<atom:link href="/categories/inetd/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>Inetd Support in Finit v1.12</title>
       <link>/2015/03/06/inetd-support-in-finit-v1-dot-12/</link>
       <pubDate>Fri, 06 Mar 2015 22:34:45 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2015/03/06/inetd-support-in-finit-v1-dot-12/</guid>
       <description>&lt;p&gt;A steady flow of features, and releases, is key to keeping any project
 alive.  Recently I ticked off another item in the &lt;a href=&#34;/finit.html&#34;&gt;Finit&lt;/a&gt;

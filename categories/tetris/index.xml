@@ -6,8 +6,8 @@
     <description>Recent content in tetris on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Mon, 02 Aug 2010 00:56:35 +0000</lastBuildDate>
     
 	<atom:link href="/categories/tetris/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>Micro Tetris™ v1.2.0</title>
       <link>/2010/08/02/micro-tetris-1-dot-2-0/</link>
       <pubDate>Mon, 02 Aug 2010 00:56:35 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2010/08/02/micro-tetris-1-dot-2-0/</guid>
       <description>New release of Micro Tetris™, v1.2.0, available for download now! Noteworthy changes and additions:
  Preview display fixes by Mattias Walström Next level triggered after every 10 cleared lines Speed increase by each level Display high score at game over High score recorded to save file Pause key fixed, again by Mattias Walström  Online GIT repository and release tarball available at the usual places:
@@ -28,7 +28,7 @@
       <title>Micro Tetris™</title>
       <link>/2009/06/13/micro-tetris/</link>
       <pubDate>Sat, 13 Jun 2009 00:04:30 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2009/06/13/micro-tetris/</guid>
       <description>I just published the unobfuscated version of the 1989 IOCCC Best Game entry, Tetris™. See the original author&amp;rsquo;s, John Tromp, home page for the game for details. But suffice it to say, this is an extremely bare bones version of the classic game and very similar to the BSD games&amp;rsquo; version.
 Actually, this similarity in board layout, key combinations and feel led me to do some archaeological digging. I dowloaded the classic BSD games collection and, after having called GNU Indent on the obfuscated code, I started noticing such extreme similarities that just could not be coincidental.</description>

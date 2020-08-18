@@ -6,8 +6,8 @@
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Sun, 03 Nov 2019 23:04:00 +0100</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>opensource</title>
       <link>/tags/opensource/</link>
       <pubDate>Sun, 03 Nov 2019 23:04:00 +0100</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/tags/opensource/</guid>
       <description></description>
     </item>
@@ -26,7 +26,7 @@
       <title>sysklogd</title>
       <link>/tags/sysklogd/</link>
       <pubDate>Sun, 03 Nov 2019 23:04:00 +0100</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/tags/sysklogd/</guid>
       <description></description>
     </item>

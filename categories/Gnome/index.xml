@@ -6,8 +6,8 @@
     <description>Recent content in Gnome on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Sat, 07 Jul 2007 09:52:17 +0000</lastBuildDate>
     
 	<atom:link href="/categories/Gnome/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>Buggy Gnome Main Menu</title>
       <link>/2007/07/07/buggy-gnome-main-menu/</link>
       <pubDate>Sat, 07 Jul 2007 09:52:17 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2007/07/07/buggy-gnome-main-menu/</guid>
       <description>I&amp;rsquo;ve been living with the new Gnome Main Menu for a while now. Like many others I run Ubuntu these days and I&amp;rsquo;ve found the version in Feisty Fawn to be extremely slow and buggy.
 I tried manually installing (dpkg -i) the latest version in Gutsy, but it had too many dependencies. So I decided to try and backport it, and it worked!
@@ -28,7 +28,7 @@ I haven&amp;rsquo;t set up any repository, so just download the below two .</des
       <title>Aaaah, the fish got a facelift! :)</title>
       <link>/2006/08/13/aaaah/</link>
       <pubDate>Sun, 13 Aug 2006 10:43:13 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2006/08/13/aaaah/</guid>
       <description>This is just great! Wanda the fortune telling fish of the Gnome desktop got herself a face lift. Take a look at this:
 Add her new look to your applet by copying the file to /usr/share/gnome/panel/pixmaps/. Select it in the applet preferences and use 8 frames and 0.3 seconds per frame.</description>

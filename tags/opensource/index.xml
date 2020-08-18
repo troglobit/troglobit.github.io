@@ -6,8 +6,8 @@
     <description>Recent content in opensource on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Sun, 03 Nov 2019 23:04:00 +0100</lastBuildDate>
     
 	<atom:link href="/tags/opensource/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>BSD syslogd in Linux</title>
       <link>/2019/11/BSD-syslogd-in-Linux/</link>
       <pubDate>Sun, 03 Nov 2019 23:04:00 +0100</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2019/11/BSD-syslogd-in-Linux/</guid>
       <description>&lt;p&gt;Some time ago now I was in a meeting with a customer where I first learned of
 the new syslog standard, &lt;a href=&#34;https://tools.ietf.org/html/rfc5424&#34;&gt;RFC5424&lt;/a&gt;.  I say &amp;ldquo;new&amp;rdquo; because, despite it being

@@ -20,7 +20,7 @@ No posts{% endif %}">
 No posts{% endif %}">
   <meta name="twitter:description" content="{% if site.posts != empty %}
 {% for post in site.posts %} {% capture this_year %}{{ post.date | date: &ldquo;%Y&rdquo; }}{% endcapture %} {% unless year == this_year %} {% assign year = this_year %} …">
-  <meta name="author" content="Joachim Nilsson"/><script type="application/ld+json">
+  <meta name="author" content="Joachim Wiberg"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "WebSite",
@@ -65,7 +65,7 @@ No posts{% endif %}">
   "@context": "http://schema.org",
   "@type": "Article",
   "author": {
-    "name" : "Joachim Nilsson"
+    "name" : "Joachim Wiberg"
   },
   "headline": "Archives",
   "description" : "{% if site.posts != empty %}\n{% for post in site.posts %} {% capture this_year %}{{ post.date | date: \x26ldquo;%Y\x26rdquo; }}{% endcapture %} {% unless year == this_year %} {% assign year = this_year %} {% unless post == site.posts.first %} {% endunless %}\n{% else %}\nNo posts{% endif %}",
@@ -376,7 +376,7 @@ No posts{% endif %}">
         <p class="credits copyright text-muted">
           
             
-              <a href="https://troglobit.com">Joachim Nilsson</a>
+              <a href="https://troglobit.com">Joachim Wiberg</a>
             
           
 

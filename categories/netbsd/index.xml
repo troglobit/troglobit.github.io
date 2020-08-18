@@ -6,8 +6,8 @@
     <description>Recent content in netbsd on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Thu, 30 Jul 2015 11:13:00 +0200</lastBuildDate>
     
 	<atom:link href="/categories/netbsd/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>HowTo use NetBSD pre-built packages</title>
       <link>/howto/netbsd-pkgsrc/</link>
       <pubDate>Thu, 30 Jul 2015 11:13:00 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/howto/netbsd-pkgsrc/</guid>
       <description>Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.
 Here it is, you&amp;rsquo;d think this be something the installer could set up a default for &amp;hellip;
@@ -29,7 +29,7 @@ pkg_add -v git  Or so you might think! As this blog points out, you also need to
       <title>Finally, NetBSD Boots in KVM!</title>
       <link>/2010/08/29/finally/</link>
       <pubDate>Sun, 29 Aug 2010 20:44:34 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2010/08/29/finally/</guid>
       <description>Compared to OpenBSD and FreeBSD the NetBSD install was hard, really hard. It wasn&amp;rsquo;t until I stumbled across this that I managed to convince myself to try it again.
 The trick seems to be to ignore as much as you can from other Internet tips. NetBSD runs fine in KVM, so if someone says you need to run it in Qemu mode — don&amp;rsquo;t believe the hype. OK, in virt-manager there is no preset defaults for NetBSD, so I went with a generic OS and tried starting the install from there.</description>

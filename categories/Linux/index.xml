@@ -6,8 +6,8 @@
     <description>Recent content in Linux on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Tue, 09 Jun 2020 22:48:52 +0200</lastBuildDate>
     
 	<atom:link href="/categories/Linux/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>Open Source Releases</title>
       <link>/2020/06/Open-Source-Releases/</link>
       <pubDate>Tue, 09 Jun 2020 22:48:52 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2020/06/Open-Source-Releases/</guid>
       <description>&lt;p&gt;The last couple of months have been crazy.  The downturn in the economy
 due to Covid-19, mass layoffs, social distancing and quarantine.  Not
@@ -29,7 +29,7 @@ uneccessary death.&lt;/p&gt;</description>
       <title>sudo tricks</title>
       <link>/2020/06/sudo-tricks/</link>
       <pubDate>Sun, 07 Jun 2020 12:25:52 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2020/06/sudo-tricks/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;&amp;ldquo;My name is Joachim and I&amp;rsquo;m a &lt;code&gt;sudo su -&lt;/code&gt; user.&amp;rdquo;&lt;/p&gt;
@@ -41,7 +41,7 @@ uneccessary death.&lt;/p&gt;</description>
       <title>Emulate an actual MTD device in Qemu</title>
       <link>/2017/02/02/emulate-an-actual-mtd-device-in-qemu/</link>
       <pubDate>Thu, 02 Feb 2017 18:52:18 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2017/02/02/emulate-an-actual-mtd-device-in-qemu/</guid>
       <description>&lt;p&gt;Having worked with Linux for the last 20 years, and embedded for more
 than ten of them, I&amp;rsquo;ve become quite a fan of virtualization in general
@@ -61,7 +61,7 @@ why I created &lt;a href=&#34;https://github.com/troglobit/troglos&#34;&gt;Trogl
       <title>Trust Bluetooth 4.0 Adapter in Linux</title>
       <link>/2017/01/03/trust-bluetooth-4.0-adapter-in-linux/</link>
       <pubDate>Tue, 03 Jan 2017 17:03:05 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2017/01/03/trust-bluetooth-4.0-adapter-in-linux/</guid>
       <description>&lt;p&gt;This is a quick writeup of how to get the Trust Bluetooth 4.0 adapter
 (dongle) working in Linux, Ubuntu 16.04.&lt;/p&gt;</description>
@@ -71,7 +71,7 @@ why I created &lt;a href=&#34;https://github.com/troglobit/troglos&#34;&gt;Trogl
       <title>A life without sudo</title>
       <link>/2016/12/11/a-life-without-sudo/</link>
       <pubDate>Sun, 11 Dec 2016 20:26:12 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2016/12/11/a-life-without-sudo/</guid>
       <description>Ever since my first stumbling steps with Linux back in &amp;lsquo;96, I&amp;rsquo;ve been learning about UNIX. The first obvious lesson was to not use the root account. Since then I&amp;rsquo;ve been using a combination of sudo command and suid root binaries to get the job done.
 
@@ -82,7 +82,7 @@ For the last ten years, however, I&amp;rsquo;ve been meaning to learn about Linu
       <title>The General Idea</title>
       <link>/2016/09/02/the-general-idea/</link>
       <pubDate>Fri, 02 Sep 2016 23:30:00 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2016/09/02/the-general-idea/</guid>
       <description>OK, so here&amp;rsquo;s the general idea: take one teaspoon of a well equipped SBC with Marvell chips you know well, add an awesome WiFi hotspot with USB connection, stir feverishly for several weekends in a row, then sprinkle some AlpineLinux and a custom kernel on top. Enjoy!
 I have no clue if this will actually work, may even try porting my own little thing called TroglOS to the ClearFog first, I don&amp;rsquo;t know, but it will definitely be awesome!</description>
@@ -92,7 +92,7 @@ I have no clue if this will actually work, may even try porting my own little th
       <title>Fake RAID Adventures</title>
       <link>/2016/08/13/fake-raid-adventures/</link>
       <pubDate>Sat, 13 Aug 2016 15:59:36 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2016/08/13/fake-raid-adventures/</guid>
       <description>&lt;p&gt;The other day I got my geeky hands on two old SuperMicro X8STI-F 1U
 servers.  I plan to use them as build and embedded target emulation
@@ -105,7 +105,7 @@ as well as Minecraft server for my kids :)&lt;/p&gt;
       <title>Upgrade X1 Carbon BIOS from Linux</title>
       <link>/2016/07/03/upgrade-x1-carbon-bios-from-linux/</link>
       <pubDate>Sun, 03 Jul 2016 09:57:44 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2016/07/03/upgrade-x1-carbon-bios-from-linux/</guid>
       <description>&lt;p&gt;This is a very brief writeup of how to upgrade the BIOS on a X1 Carbon
 (G1) from Linux.  For more information on this topic there is always the
@@ -118,7 +118,7 @@ too much of a chicken to try &lt;a href=&#34;https://www.flashrom.org/Flashrom&#
       <title>Net Install CentOS</title>
       <link>/2013/07/10/net-install-centos/</link>
       <pubDate>Wed, 10 Jul 2013 00:00:00 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2013/07/10/net-install-centos/</guid>
       <description>I usually run Debian or Ubuntu on my machines. However, having recently found some time to work on my various projects again, I&amp;rsquo;ve now suddenly found myself in need of a CentOS machine.
 The CentOS home page invited me to download an installation ISO, so I went for the small Net Install which started perfectly with my virt-manager in Ubuntu.
@@ -129,7 +129,7 @@ All I had to provide was an FTP server and directory:</description>
       <title>File System Pass-Through in KVM/Qemu/libvirt</title>
       <link>/2013/07/05/file-system-pass-through-in-kvm-slash-qemu-slash-libvirt/</link>
       <pubDate>Fri, 05 Jul 2013 00:00:00 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2013/07/05/file-system-pass-through-in-kvm-slash-qemu-slash-libvirt/</guid>
       <description>&lt;p&gt;This post doesn&amp;rsquo;t cover fully setting up KVM/Qemu with virt-manager
 and creating virtual machine guests.  See the Ubuntu

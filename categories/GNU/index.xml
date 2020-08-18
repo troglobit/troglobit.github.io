@@ -6,8 +6,8 @@
     <description>Recent content in GNU on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Wed, 30 Jul 2008 23:53:42 +0000</lastBuildDate>
     
 	<atom:link href="/categories/GNU/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>Moving to ISC</title>
       <link>/2008/07/30/moving-to-isc/</link>
       <pubDate>Wed, 30 Jul 2008 23:53:42 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2008/07/30/moving-to-isc/</guid>
       <description>I hereby announce that all of the code I produce from now on will use the ISC license. Previously I&amp;rsquo;ve used the MIT license and the GNU GPL, or LGPL where applicable.
 The reason for changing this is two-fold. First, I like to be able to reuse much of what I do in proprietary settings. Yes, I&amp;rsquo;m one of those people who look upon the world with &amp;ldquo;grey&amp;rdquo; eyes rather than black &amp;amp; white.</description>

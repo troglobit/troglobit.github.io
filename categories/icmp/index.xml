@@ -6,8 +6,8 @@
     <description>Recent content in icmp on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Sat, 19 Nov 2016 23:37:20 +0000</lastBuildDate>
     
 	<atom:link href="/categories/icmp/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>One ping only</title>
       <link>/2016/11/19/one-ping-only/</link>
       <pubDate>Sat, 19 Nov 2016 23:37:20 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2016/11/19/one-ping-only/</guid>
       <description>For some odd reason, today was the day when I woke up and continued working on libICMP. It&amp;rsquo;s now almost seven years since I first adopted Tim Lawless&amp;rsquo; public domain version, and today I picked up where I left off and started refactoring and cleaning up.
 Example:

@@ -6,8 +6,8 @@
     <description>Recent content in c on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Sun, 11 Dec 2016 20:26:12 +0000</lastBuildDate>
     
 	<atom:link href="/categories/c/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>New Toolchains</title>
       <link>/2016/10/27/new-toolchains/</link>
       <pubDate>Thu, 27 Oct 2016 22:22:44 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2016/10/27/new-toolchains/</guid>
       <description>Finally, fresh from the oven, here are the remaining two toolchains I&amp;rsquo;ve promised, based on GCC 6.1 and GLIBC 2.23. Download from the FTP:
  arm-unknown-linux-gnueabi-6.1.0-2.tar.xz powerpc-unknown-linux-gnu-6.1.0-2.tar.xz x86_64-unknown-linux-gnu-6.1.0-2.tar.xz  Unpack into /usr/local, and add to your $PATH, e.g.
@@ -28,7 +28,7 @@ export PATH=/usr/local/arm-unknown-linux-gnueabi-6.1.0-2/bin:$PATH  The toolchai
       <title>ARM Toolchain r1</title>
       <link>/2016/09/26/arm-toolchain-r1/</link>
       <pubDate>Mon, 26 Sep 2016 22:43:53 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2016/09/26/arm-toolchain-r1/</guid>
       <description>First GCC 6.1 based ARM (32-bit) toolchain released on my FTP. Built using crosstool-NG for Ubuntu 16.04 (x86_64) with GLIBC 2.23.
  arm-unknown-linux-gnueabi-6.1.0-1.tar.xz  Download, unpack into /usr/local, and add to your $PATH
@@ -40,7 +40,7 @@ The main purpose for my building this is TroglOS, but it is useful for other pur
       <title>Rant: All the C Compiler Warnings ...</title>
       <link>/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/</link>
       <pubDate>Mon, 12 Jan 2015 01:57:40 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;Enable &lt;em&gt;all&lt;/em&gt; the warnings!&lt;/p&gt;
@@ -63,7 +63,7 @@ of voodoo, like &lt;code&gt;__attribute__ ((unused))&lt;/code&gt; &amp;hellip; s
       <title>Why I Like C</title>
       <link>/2009/03/27/why-i-like-c/</link>
       <pubDate>Fri, 27 Mar 2009 00:37:42 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2009/03/27/why-i-like-c/</guid>
       <description>I thought I was alone, but it turns out I&amp;rsquo;m not. Scott James Remnant describes exactly what I&amp;rsquo;ve been feeling the last couple of years. Read his blog entry on the subject. I couldn&amp;rsquo;t agree more.</description>
     </item>

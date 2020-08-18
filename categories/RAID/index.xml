@@ -6,8 +6,8 @@
     <description>Recent content in RAID on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Sat, 13 Aug 2016 15:59:36 +0000</lastBuildDate>
     
 	<atom:link href="/categories/RAID/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>Fake RAID Adventures</title>
       <link>/2016/08/13/fake-raid-adventures/</link>
       <pubDate>Sat, 13 Aug 2016 15:59:36 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2016/08/13/fake-raid-adventures/</guid>
       <description>&lt;p&gt;The other day I got my geeky hands on two old SuperMicro X8STI-F 1U
 servers.  I plan to use them as build and embedded target emulation

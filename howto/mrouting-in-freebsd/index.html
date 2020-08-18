@@ -18,7 +18,7 @@ cd /usr/src cd sys/amd64/conf cat GENERIC | sed &#39;s/GENERIC$/MULTICAST/&#39; 
 cd /usr/src cd sys/amd64/conf cat GENERIC | sed &#39;s/GENERIC$/MULTICAST/&#39; &gt; MULTICAST echo &#39;options MROUTING # Multicast routing&#39; &gt;&gt; MULTICAST echo &#39;options PIM # Enable for pimd&#39; &gt;&gt; MULTICAST cd - make kernel KERNCONF=MULTICAST reboot  That&rsquo;s it.">
   <meta name="twitter:description" content="This is a very short blog post, mostly intended as a reminder to myself. Basically, there are two methods of adding multicast routing support to the FreeBSD kernel:
  Rebuild the kernel with options …">
-  <meta name="author" content="Joachim Nilsson"/><script type="application/ld+json">
+  <meta name="author" content="Joachim Wiberg"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "WebSite",
@@ -63,7 +63,7 @@ cd /usr/src cd sys/amd64/conf cat GENERIC | sed &#39;s/GENERIC$/MULTICAST/&#39; 
   "@context": "http://schema.org",
   "@type": "Article",
   "author": {
-    "name" : "Joachim Nilsson"
+    "name" : "Joachim Wiberg"
   },
   "headline": "HowTo: Add Multicast Routing to FreeBSD kernel",
   "description" : "This is a very short blog post, mostly intended as a reminder to myself. Basically, there are two methods of adding multicast routing support to the FreeBSD kernel:\n Rebuild the kernel with options MROUTING Load the kernel module: kldload ip_mroute  The kernel rebuild assumes the src.txz set was installed previously.\ncd \/usr\/src cd sys\/amd64\/conf cat GENERIC | sed \x27s\/GENERIC$\/MULTICAST\/\x27 \x26gt; MULTICAST echo \x27options MROUTING # Multicast routing\x27 \x26gt;\x26gt; MULTICAST echo \x27options PIM # Enable for pimd\x27 \x26gt;\x26gt; MULTICAST cd - make kernel KERNCONF=MULTICAST reboot  That\x26rsquo;s it.",
@@ -396,7 +396,7 @@ you want it to load at boot.  So add this to <code>/boot/loader.conf</code>:</p>
         <p class="credits copyright text-muted">
           
             
-              <a href="https://troglobit.com">Joachim Nilsson</a>
+              <a href="https://troglobit.com">Joachim Wiberg</a>
             
           
 

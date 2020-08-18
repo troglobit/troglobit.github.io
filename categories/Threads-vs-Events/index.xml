@@ -6,8 +6,8 @@
     <description>Recent content in Threads vs Events on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Tue, 06 Aug 2013 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/Threads-vs-Events/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>Threads vs Events</title>
       <link>/2013/08/06/event-handling/</link>
       <pubDate>Tue, 06 Aug 2013 00:00:00 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2013/08/06/event-handling/</guid>
       <description>&lt;p&gt;This is a rant about something I recently found to be a long standing
 battle line in the world of programming,

@@ -39,7 +39,7 @@ Simply touch the PID file instead.">
   <meta name="twitter:description" content="How do you know when your UNIX service (daemon) is ready?  Simple, it
 has created a PID file, signalling to you how to reach it.  Usually this
 file is created as /var/run/daemon.pid, or …">
-  <meta name="author" content="Joachim Nilsson"/><script type="application/ld+json">
+  <meta name="author" content="Joachim Wiberg"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "WebSite",
@@ -84,7 +84,7 @@ file is created as /var/run/daemon.pid, or …">
   "@context": "http://schema.org",
   "@type": "Article",
   "author": {
-    "name" : "Joachim Nilsson"
+    "name" : "Joachim Wiberg"
   },
   "headline": "The key to successful boot",
   "description" : "How do you know when your UNIX service (daemon) is ready? Simple, it has created a PID file, signalling to you how to reach it. Usually this file is created as \/var\/run\/daemon.pid, or \/run\/daemon.pid, and has the PID of daemon as the first and only data in the file. This data may or may not have a UNIX line ending.\nOnly trouble is: most UNIX daemons do not re-assert that PID file properly on SIGHUP (if they support SIGHUP that is). When I send SIGHUP to a daemon I expect it to re-read its \/etc\/daemon.conf and resume operation, basically a quicker way than stop\/start.\nAnnoyingly however, most daemons do not signal us back to tell us when they\x26rsquo;re done with the SIGHUP. Naturally a new movement has risen that says we should all instrument our daemons with D-bus \x26hellip; I say no. Simply touch the PID file instead.\n",
@@ -323,7 +323,7 @@ file is created as /var/run/daemon.pid, or …">
   
   
     
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Nilsson
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Wiberg
     
   
   
@@ -462,7 +462,7 @@ in a later article.  Hopefully this will have made you interested!</p>
         <p class="credits copyright text-muted">
           
             
-              <a href="https://troglobit.com">Joachim Nilsson</a>
+              <a href="https://troglobit.com">Joachim Wiberg</a>
             
           
 

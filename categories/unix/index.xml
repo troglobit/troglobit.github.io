@@ -6,8 +6,8 @@
     <description>Recent content in unix on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Tue, 09 Jun 2020 22:48:52 +0200</lastBuildDate>
     
 	<atom:link href="/categories/unix/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>Open Source Releases</title>
       <link>/2020/06/Open-Source-Releases/</link>
       <pubDate>Tue, 09 Jun 2020 22:48:52 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2020/06/Open-Source-Releases/</guid>
       <description>&lt;p&gt;The last couple of months have been crazy.  The downturn in the economy
 due to Covid-19, mass layoffs, social distancing and quarantine.  Not
@@ -29,7 +29,7 @@ uneccessary death.&lt;/p&gt;</description>
       <title>Useful UNIX API:s</title>
       <link>/2020/02/Useful-UNIX-APIs/</link>
       <pubDate>Sat, 22 Feb 2020 09:45:00 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2020/02/Useful-UNIX-APIs/</guid>
       <description>&lt;p&gt;Had an interesting conversation with a buddy last night.  It started out
 as a shift-reduce problem with Bison and ended up a ping-pong of useful
@@ -56,7 +56,7 @@ continued adding to it over the years, and still do.  So, as of Jul 2,
       <title>Multicast routing with PIM-SM over GRE</title>
       <link>/2016/07/05/multicast-routing-with-pim-sm-over-gre/</link>
       <pubDate>Tue, 23 Jan 2018 20:39:36 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2016/07/05/multicast-routing-with-pim-sm-over-gre/</guid>
       <description>&lt;p&gt;GRE tunnels are useful in many ways.  This blog post shows how to set up
 multicast routing with &lt;a href=&#34;https://github.com/troglobit/pimd/&#34;&gt;pimd&lt;/a&gt; over a
@@ -91,7 +91,7 @@ that the GRE tunnel can be established.&lt;/p&gt;</description>
       <title>Redirecting Ports For Fun and Profit</title>
       <link>/2016/07/02/redirecting-tcp-udp-ports-for-fun-and-profit/</link>
       <pubDate>Sat, 02 Jul 2016 12:54:37 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2016/07/02/redirecting-tcp-udp-ports-for-fun-and-profit/</guid>
       <description>&lt;p&gt;Recently I needed a simple TCP/UDP port redirector and stumbled upon
 &lt;a href=&#34;https://serverfault.com/questions/252150/port-forwarding-on-linux-without-iptables/&#34;&gt;this Stackoverflow post&lt;/a&gt;.  As usual I wasn&amp;rsquo;t first wanting to this
@@ -113,7 +113,7 @@ I have several other &lt;a href=&#34;/projects/&#34;&gt;projects&lt;/a&gt; to at
       <title>Using netcat to test your Internet daemon</title>
       <link>/2016/04/21/using-netcat-to-test-your-internet-daemon/</link>
       <pubDate>Thu, 21 Apr 2016 14:21:49 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2016/04/21/using-netcat-to-test-your-internet-daemon/</guid>
       <description>So you&amp;rsquo;re having a problem with the Internet daemon you wrote. You&amp;rsquo;re convinced the firewall, or some other magic, in your modern Linux distribution is eating your packets.
 No.
@@ -125,7 +125,7 @@ sudo netstat -atnup  If your application is not listed there you have a problem 
       <title>The key to successful boot</title>
       <link>/2016/04/11/the-key-to-successful-boot/</link>
       <pubDate>Mon, 11 Apr 2016 01:28:27 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2016/04/11/the-key-to-successful-boot/</guid>
       <description>&lt;p&gt;How do you know when your UNIX service (daemon) is ready?  Simple, it
 has created a PID file, signalling to you how to reach it.  Usually this
@@ -146,7 +146,7 @@ Simply touch the PID file instead.&lt;/p&gt;</description>
       <title>Lecture from the UNIX beards</title>
       <link>/2016/04/04/lecture-from-the-unix-beards/</link>
       <pubDate>Mon, 04 Apr 2016 00:14:28 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2016/04/04/lecture-from-the-unix-beards/</guid>
       <description>After the rm -rf /* disaster that hit me a couple of weeks ago I&amp;rsquo;ve been rebuilding my setup, restoring the few files I&amp;rsquo;ve had backed up, and collecting advice from the elders.
 Turns out there are a few tricks that can save your home directory from accidents like mine. The first one is rather obvious, but I&amp;rsquo;m writing it down anyway:
@@ -157,7 +157,7 @@ Turns out there are a few tricks that can save your home directory from accident
       <title>Testing multicast with Docker</title>
       <link>/2016/03/07/testing-multicast-with-docker/</link>
       <pubDate>Mon, 07 Mar 2016 01:37:04 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2016/03/07/testing-multicast-with-docker/</guid>
       <description>&lt;p&gt;Recently &lt;a href=&#34;https://github.com/troglobit/pimd/issues/70&#34;&gt;issue #70&lt;/a&gt; was
 reported to &lt;a href=&#34;https://github.com/troglobit/pimd/&#34;&gt;pimd&lt;/a&gt;.  That number of
@@ -188,7 +188,7 @@ work properly with &lt;code&gt;pimd&lt;/code&gt; running on the host:&lt;/p&gt;
       <title>Multicast testing, made easy!</title>
       <link>/2016/03/07/multicast-testing/</link>
       <pubDate>Mon, 07 Mar 2016 01:06:02 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2016/03/07/multicast-testing/</guid>
       <description>&lt;p&gt;For the better part of the last ten years I have been working with
 multicast in one way or another.  I&amp;rsquo;ve used many different tools for
@@ -206,7 +206,7 @@ improving and adding features to it over the years.&lt;/p&gt;</description>
       <title>Awesome: Changing Next/Prev Tune in Spotify</title>
       <link>/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/</link>
       <pubDate>Tue, 10 Nov 2015 12:14:09 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/</guid>
       <description>Back to using the Awesome WM in Ubuntu. This time I&amp;rsquo;m setting up everything from scratch and first up is fixing keybindings to control my main music player: Spotify!
 Edit your ~/.config/awesome/rc.lua with Emacs (obviously). If you do not have an rc file, simply copy the system /etc/xdb/awesome/rc.lua:
@@ -217,7 +217,7 @@ globalkeys = awful.util.table.join(globalkeys, awful.key({}, &amp;quot;XF86Audio
       <title>Weekend Hack: JSON vs CONF</title>
       <link>/2014/02/23/weekend-hack-json-vs-conf/</link>
       <pubDate>Sun, 23 Feb 2014 00:00:00 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2014/02/23/weekend-hack-json-vs-conf/</guid>
       <description>It was time. I had been putting it off for far too long &amp;ndash; learning about JSON and deciding on a new .conf file format for Inadyn. So this weekend I sat myself down to read up on JSON and the multitude of parser libraries for both JSON and traditional .conf file parsers. I was looking for a human readable file format that a user could easily and reliably edit by themselves without it being too error prone or sensitive to mistyping.</description>
     </item>
@@ -226,7 +226,7 @@ globalkeys = awful.util.table.join(globalkeys, awful.key({}, &amp;quot;XF86Audio
       <title>Syntax highlighting in less</title>
       <link>/2010/05/09/syntax-highlighting-in-less/</link>
       <pubDate>Sun, 09 May 2010 19:53:19 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2010/05/09/syntax-highlighting-in-less/</guid>
       <description>Yes, it&amp;rsquo;s certainly possible and source code becomes so much easier to read. Try it out by:
  downloading my .lessfilter save it as ~/.lessfilter in your $HOME Profit!  Ahem &amp;hellip;
@@ -238,7 +238,7 @@ less -R myfile.c  </description>
       <title>Regexp replace in many files</title>
       <link>/2008/07/13/regexp-replace-in-many-files/</link>
       <pubDate>Sun, 13 Jul 2008 21:38:33 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2008/07/13/regexp-replace-in-many-files/</guid>
       <description>I just have to blog about this exceptional tool I just found. It is called regexxer and is a tool in the true UNIX spirit — it does one job only, and does it well.</description>
     </item>
@@ -247,7 +247,7 @@ less -R myfile.c  </description>
       <title>Top Ten UNIX Shell Commands</title>
       <link>/2006/09/23/top-ten-unix-shell-commands/</link>
       <pubDate>Sat, 23 Sep 2006 23:02:42 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2006/09/23/top-ten-unix-shell-commands/</guid>
       <description>Current trend is to run the following one-liner from IBM. I&amp;rsquo;m usually logged in to the following three systems, with very different results.
 vmlinux.org $ history |awk &#39;{print $2}&#39;|sort|uniq -c|sort -nr|head -10 144 ls 61 cd 58 sudo 29 less 23 emacs 19 bzr 16 vim 11 rm 10 wget 10 mv  My personal life. Not much different from my professional dito. Most visible difference maybe is my use of bzr instead of svn.</description>

@@ -6,8 +6,8 @@
     <description>Recent content in sith on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Fri, 13 Nov 2015 20:57:29 +0000</lastBuildDate>
     
 	<atom:link href="/categories/sith/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>En vanlig dag på jobbet (SWEDISH)</title>
       <link>/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/</link>
       <pubDate>Fri, 13 Nov 2015 20:57:29 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/</guid>
       <description>I vanlig ordning bashar vi DNS på jobbet, pga ofungerar hårt över VPN för de flesta. (Ja vi kör alla Linux, utom cheferna som envisas med att använda något ur gamla testamentet.) Här följer ett utdrag från vår IRC:
 14:32 &amp;lt;n00b&amp;gt; Success! Äntligen fick jag ordning på DNS via guest wifi -&amp;gt; vpn -&amp;gt; office network. Firar med att skapa lite irc noise. :D 14:32 &amp;lt; rooth&amp;gt;n00b: Du har väl fått den distribuerade /etc/hosts filen?</description>

@@ -6,8 +6,8 @@
     <description>Recent content in blog on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Sun, 29 Jun 2014 14:52:39 +0000</lastBuildDate>
     
 	<atom:link href="/categories/blog/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>On the demise of free(code) ...</title>
       <link>/2014/06/29/on-the-demise-of-free-code-dot-dot-dot/</link>
       <pubDate>Sun, 29 Jun 2014 14:52:39 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2014/06/29/on-the-demise-of-free-code-dot-dot-dot/</guid>
       <description>&lt;p&gt;I feel I have to write something about the demise of
 &lt;a href=&#34;http://freecode.com&#34;&gt;free(code)&lt;/a&gt;.
@@ -43,7 +43,7 @@ changes of new releases to projects I was interested in.&lt;/p&gt;</description>
       <title>Proof of Life</title>
       <link>/2013/06/07/proof-of-life/</link>
       <pubDate>Fri, 07 Jun 2013 00:00:00 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2013/06/07/proof-of-life/</guid>
       <description>There is a certain &amp;ldquo;burstyness&amp;rdquo; to the way I work on my open source projects. It seems it often coincides with intense work loads during new release cycles at work.
 However, I&amp;rsquo;ve just finished restoring two pages that got lost in the big server crash:
@@ -54,7 +54,7 @@ However, I&amp;rsquo;ve just finished restoring two pages that got lost in the b
       <title>Resurrection</title>
       <link>/2013/02/17/resurrection/</link>
       <pubDate>Sun, 17 Feb 2013 00:00:00 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2013/02/17/resurrection/</guid>
       <description>Quite some time has passed now since our old site, http://vmlinux.org, crashed and burned, and with it much of my previous Open Source work and blogs. Tech blog entries, archives for the projects I maintain, lost.
 Backups? Of course not.
@@ -66,7 +66,7 @@ Fortunately, at this point in time I had migrated most of my projects from CVS a
       <title>Test posting using blosxom</title>
       <link>/2006/08/05/test-posting-using-blosxom/</link>
       <pubDate>Sat, 05 Aug 2006 22:35:49 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2006/08/05/test-posting-using-blosxom/</guid>
       <description>First try to consolidate on using an already working implementation of a blog script rather than writing my own. I&amp;rsquo;m trying out Blosxom, which is somewhat overkill for my needs. I actually wrote up a simple Perl script a couple of weeks ago that did what I wanted, oh well, what remains now is to do some Emacs hacks to smooth things over a bit.</description>
     </item>

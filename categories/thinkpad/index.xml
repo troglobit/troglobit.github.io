@@ -6,8 +6,8 @@
     <description>Recent content in thinkpad on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Sun, 03 Jul 2016 09:57:44 +0000</lastBuildDate>
     
 	<atom:link href="/categories/thinkpad/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>Upgrade X1 Carbon BIOS from Linux</title>
       <link>/2016/07/03/upgrade-x1-carbon-bios-from-linux/</link>
       <pubDate>Sun, 03 Jul 2016 09:57:44 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2016/07/03/upgrade-x1-carbon-bios-from-linux/</guid>
       <description>&lt;p&gt;This is a very brief writeup of how to upgrade the BIOS on a X1 Carbon
 (G1) from Linux.  For more information on this topic there is always the
@@ -30,7 +30,7 @@ too much of a chicken to try &lt;a href=&#34;https://www.flashrom.org/Flashrom&#
       <title>No Wireless LED on ThinkPad T61</title>
       <link>/2008/07/19/no-wireless-led-on-thinkpad-t61/</link>
       <pubDate>Sat, 19 Jul 2008 11:09:25 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2008/07/19/no-wireless-led-on-thinkpad-t61/</guid>
       <description>I&amp;rsquo;ve got a ThinkPad T61 with Intel iwl3945 wireless chipset that I installed fresh with Ubuntu 8.04. Everything worked flawlessly out-of-the-box, except for the useless fingerprint scanner and the wireless LED. Don&amp;rsquo;t get me wrong, the wireless network worked fine, but the LED wasn&amp;rsquo;t on.
 At first I thought there was something wrong with the LED itself, but a couple of searches later I found that it was a known limitation of the 2.</description>

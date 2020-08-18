@@ -6,8 +6,8 @@
     <description>Recent content in Apache on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Tue, 30 Jun 2015 23:13:48 +0000</lastBuildDate>
     
 	<atom:link href="/categories/Apache/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>HowTo: Apache with Gitweb on Debian 8.1</title>
       <link>/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/</link>
       <pubDate>Tue, 30 Jun 2015 23:13:48 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m posting this in case anyone else gets stuck setting up &lt;a href=&#34;http://www.apache.org&#34;&gt;Apache&lt;/a&gt;
 with &lt;a href=&#34;http://git-scm.com/docs/gitweb&#34;&gt;Gitweb&lt;/a&gt;.  Also as a reminder to myself in case I ever need to

@@ -6,8 +6,8 @@
     <description>Recent content in svn on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Fri, 10 Apr 2009 16:23:42 +0000</lastBuildDate>
     
 	<atom:link href="/categories/svn/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>Learning About GIT</title>
       <link>/2009/04/10/learning-about-git/</link>
       <pubDate>Fri, 10 Apr 2009 16:23:42 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2009/04/10/learning-about-git/</guid>
       <description>It has been a long time coming, but now I&amp;rsquo;m seriously starting to look at Git. Git is the content tracker used by the Linux kernel folks, initially developed by Torvalds.
 At Westermo R&amp;amp;D we use Subversion for our daily operations and today I started migrating the software to Git. Mainly just to get a comparison of performance, storage size and to explore how we can use Git on top of svn to become more productive when working in parallel in different teams.</description>

@@ -6,8 +6,8 @@
     <description>Recent content in openbsd on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Tue, 06 Jun 2017 10:44:55 +0000</lastBuildDate>
     
 	<atom:link href="/categories/openbsd/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>GIT, Autoconf and Automake in OpenBSD</title>
       <link>/2017/06/06/install-git-in-openbsd/</link>
       <pubDate>Tue, 06 Jun 2017 10:44:55 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2017/06/06/install-git-in-openbsd/</guid>
       <description>Reminder to self:
 echo &amp;#34;https://ftp.eu.openbsd.org/pub/OpenBSD/&amp;#34; &amp;gt;/etc/installurl pkg_add git autoconf automake libtool Select the latest versions, then add the following to ~/.profile:
@@ -28,7 +28,7 @@ AUTOCONF_VERSION=2.69 AUTOMAKE_VERSION=1.15 export AUTOCONF_VERSION AUTOMAKE_VER
       <title>HowTo run pimd on OpenBSD</title>
       <link>/howto/pimd-on-openbsd/</link>
       <pubDate>Sun, 19 Jul 2015 00:32:00 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/howto/pimd-on-openbsd/</guid>
       <description>This is an introduction to HowTo run pimd on OpenBSD. I keep it around mostly as a reminder to myself when testing new pimd releases, maybe someone else can make use of it as well.
 First of all, my sincere thanks to the OpenBSD team for, not just an awesome UNIX distribution, but also for their good taste in shipping a MULTICAST enabled kernel in the base distribution! On both NetBSD and FreeBSD there is a bit of work to get multicast support, which is one of the reasons for my not writing a HowTo for either of them atm.</description>

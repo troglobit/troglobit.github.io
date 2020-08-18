@@ -6,8 +6,8 @@
     <description>Recent content in docker on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
+    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
     <lastBuildDate>Sun, 17 Sep 2017 10:45:37 +0000</lastBuildDate>
     
 	<atom:link href="/categories/docker/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>Packaging Software with Docker</title>
       <link>/2017/09/17/packaging-software-with-docker/</link>
       <pubDate>Sun, 17 Sep 2017 10:45:37 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2017/09/17/packaging-software-with-docker/</guid>
       <description>&lt;p&gt;This post details how to package and deploy software with Docker.  The
 example uses &lt;a href=&#34;https://github.com/troglobit/merecat&#34;&gt;Merecat httpd&lt;/a&gt; on Alpine Linux.  Try it out with:&lt;/p&gt;
@@ -31,7 +31,7 @@ run Merecat httpd in production.&lt;/p&gt;</description>
       <title>Testing multicast with Docker</title>
       <link>/2016/03/07/testing-multicast-with-docker/</link>
       <pubDate>Mon, 07 Mar 2016 01:37:04 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/2016/03/07/testing-multicast-with-docker/</guid>
       <description>&lt;p&gt;Recently &lt;a href=&#34;https://github.com/troglobit/pimd/issues/70&#34;&gt;issue #70&lt;/a&gt; was
 reported to &lt;a href=&#34;https://github.com/troglobit/pimd/&#34;&gt;pimd&lt;/a&gt;.  That number of
