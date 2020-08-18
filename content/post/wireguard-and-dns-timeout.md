@@ -1,6 +1,6 @@
 ---
 title: "Wireguard and DNS Timeout"
-author: "Joachim Nilsson"
+author: "Joachim Wiberg"
 type: ""
 date: 2020-07-17T11:04:09+02:00
 subtitle: ""
