@@ -1,6 +1,6 @@
-baseURL = "/" disablePathToLower = true
+baseURL = "/"
+disablePathToLower = true
 languageCode = "en-us"
-#title = "Joachim Wiberg"
 theme = "beautifulhugo"
 contentDir = "content"
 publishDir = "public"
@@ -8,14 +8,7 @@ publishDir = "public"
 pygmentsCodefences = true
 pygmentsCodefencesGyessSyntax = true
 pygmentsStyle = "github"
-#pygmentsUseClasses = true
-#pygmentsUseClassic = true
-
-
 enableEmoji = true
-#copyright = "&copy; 2019. All rights reserved."
-#canonifyurls = true
-#paginate = 10
 
 [permalinks]
   post = "/:year/:month/:title/"
