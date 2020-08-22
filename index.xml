@@ -14,6 +14,19 @@
     
     
     <item>
+      <title>HowTo use NetBSD pre-built packages</title>
+      <link>/howto/netbsd-pkgsrc/</link>
+      <pubDate>Sat, 22 Aug 2020 21:39:00 +0100</pubDate>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
+      <guid>/howto/netbsd-pkgsrc/</guid>
+      <description>Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.
+Here it is, you&amp;rsquo;d think this be something the installer could set up a default for &amp;hellip;
+PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/  or if you use the latest on an old ThinkPad T42:
+PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/i386/9.0/All/  The simply
+pkg_add -v git  Or so you might think!</description>
+    </item>
+    
+    <item>
       <title>HowTo: Build &amp; Use My Projects</title>
       <link>/howto/howto-build-and-use-my-projects/</link>
       <pubDate>Sun, 16 Aug 2020 16:36:00 +0100</pubDate>
@@ -1004,18 +1017,6 @@ Well, I have to confess that there are certain things that SNMP can be really us
       <guid>/2015/09/09/summer-of-code-2015/</guid>
       <description>Summer is now slowly fading away, and what a summer it has been here in Sweden! For someone who isn&amp;rsquo;t a fan of the summer heat it has been an awesome time for brain work, and in my case work on my open source projects! :-)
 Due to my not really taking much vacation previous years I had saved up for ten weeks (10) this year! It was really worth it, and for the first time in many years I actually feel rested.</description>
-    </item>
-    
-    <item>
-      <title>HowTo use NetBSD pre-built packages</title>
-      <link>/howto/netbsd-pkgsrc/</link>
-      <pubDate>Thu, 30 Jul 2015 11:13:00 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/howto/netbsd-pkgsrc/</guid>
-      <description>Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.
-Here it is, you&amp;rsquo;d think this be something the installer could set up a default for &amp;hellip;
-PKG_PATH=ftp://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/  The simply
-pkg_add -v git  Or so you might think! As this blog points out, you also need to install some root certificates to get HTTPS/SSL working.</description>
     </item>
     
     <item>

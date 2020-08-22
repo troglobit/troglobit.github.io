@@ -3,12 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/howto/howto-build-and-use-my-projects/</loc>
-    <lastmod>2020-08-16T16:36:00+01:00</lastmod>
+    <loc>/categories/bsd/</loc>
+    <lastmod>2020-08-22T21:39:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <lastmod>2020-08-22T21:39:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/howto/</loc>
+    <lastmod>2020-08-22T21:39:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/howto/netbsd-pkgsrc/</loc>
+    <lastmod>2020-08-22T21:39:00+01:00</lastmod>
   </url>
   
   <url>
     <loc>/howto/</loc>
+    <lastmod>2020-08-22T21:39:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/netbsd/</loc>
+    <lastmod>2020-08-22T21:39:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/howto/howto-build-and-use-my-projects/</loc>
     <lastmod>2020-08-16T16:36:00+01:00</lastmod>
   </url>
   
@@ -50,11 +75,6 @@
   <url>
     <loc>/about/</loc>
     <lastmod>2020-06-20T08:57:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
-    <lastmod>2020-06-09T22:48:52+02:00</lastmod>
   </url>
   
   <url>
@@ -285,11 +305,6 @@
   <url>
     <loc>/2018/06/Open-Source-Releases/</loc>
     <lastmod>2018-06-16T15:19:28+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/howto/</loc>
-    <lastmod>2018-05-05T13:57:00+02:00</lastmod>
   </url>
   
   <url>
@@ -693,11 +708,6 @@
   </url>
   
   <url>
-    <loc>/categories/bsd/</loc>
-    <lastmod>2015-09-27T18:45:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/categories/freebsd/</loc>
     <lastmod>2015-09-27T18:45:00+02:00</lastmod>
   </url>
@@ -715,16 +725,6 @@
   <url>
     <loc>/2015/09/09/summer-of-code-2015/</loc>
     <lastmod>2015-09-09T21:49:13+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/howto/netbsd-pkgsrc/</loc>
-    <lastmod>2015-07-30T11:13:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/netbsd/</loc>
-    <lastmod>2015-07-30T11:13:00+02:00</lastmod>
   </url>
   
   <url>

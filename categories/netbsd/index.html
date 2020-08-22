@@ -252,7 +252,7 @@
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on July 30, 2015
+  <i class="fas fa-calendar"></i>&nbsp;Posted on August 22, 2020
   
   
   
@@ -270,8 +270,9 @@
                 
                   Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.
 Here it is, you&rsquo;d think this be something the installer could set up a default for &hellip;
-PKG_PATH=ftp://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/  The simply
-pkg_add -v git  Or so you might think! As this blog points out, you also need to install some root certificates to get HTTPS/SSL working.
+PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/  or if you use the latest on an old ThinkPad T42:
+PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/i386/9.0/All/  The simply
+pkg_add -v git  Or so you might think!
                   <a href="/howto/netbsd-pkgsrc/" class="post-read-more">[Read More]</a>
                 
               </div>

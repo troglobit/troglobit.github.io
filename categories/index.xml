@@ -8,10 +8,37 @@
     <language>en-us</language>
     <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
     <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
-    <lastBuildDate>Tue, 09 Jun 2020 22:48:52 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 22 Aug 2020 21:39:00 +0100</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>bsd</title>
+      <link>/categories/bsd/</link>
+      <pubDate>Sat, 22 Aug 2020 21:39:00 +0100</pubDate>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
+      <guid>/categories/bsd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>howto</title>
+      <link>/categories/howto/</link>
+      <pubDate>Sat, 22 Aug 2020 21:39:00 +0100</pubDate>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
+      <guid>/categories/howto/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>netbsd</title>
+      <link>/categories/netbsd/</link>
+      <pubDate>Sat, 22 Aug 2020 21:39:00 +0100</pubDate>
+      <author>troglobit@gmail.com (Joachim Wiberg)</author>
+      <guid>/categories/netbsd/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Linux</title>
@@ -154,15 +181,6 @@
       <pubDate>Wed, 27 Mar 2019 15:54:00 +0200</pubDate>
       <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/categories/SMCRoute/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>howto</title>
-      <link>/categories/howto/</link>
-      <pubDate>Sat, 05 May 2018 13:57:00 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/categories/howto/</guid>
       <description></description>
     </item>
     
@@ -554,15 +572,6 @@
     </item>
     
     <item>
-      <title>bsd</title>
-      <link>/categories/bsd/</link>
-      <pubDate>Sun, 27 Sep 2015 18:45:00 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/categories/bsd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>freebsd</title>
       <link>/categories/freebsd/</link>
       <pubDate>Sun, 27 Sep 2015 18:45:00 +0200</pubDate>
@@ -577,15 +586,6 @@
       <pubDate>Wed, 09 Sep 2015 21:49:13 +0000</pubDate>
       <author>troglobit@gmail.com (Joachim Wiberg)</author>
       <guid>/categories/hacking/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>netbsd</title>
-      <link>/categories/netbsd/</link>
-      <pubDate>Thu, 30 Jul 2015 11:13:00 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/categories/netbsd/</guid>
       <description></description>
     </item>
     

@@ -10,9 +10,9 @@
   <title>Overview of all pages with the category #bsd - </title>
   <meta property="og:title" content="Overview of all pages with the category #bsd" />
   <meta name="twitter:title" content="Overview of all pages with the category #bsd" />
-  <meta name="description" content="Overview of all pages with the category #bsd, such as: HowTo run pimd on FreeBSD">
-  <meta property="og:description" content="Overview of all pages with the category #bsd, such as: HowTo run pimd on FreeBSD">
-  <meta name="twitter:description" content="Overview of all pages with the category #bsd, such as: HowTo run pimd on FreeBSD">
+  <meta name="description" content="Overview of all pages with the category #bsd, such as: HowTo use NetBSD pre-built packages">
+  <meta property="og:description" content="Overview of all pages with the category #bsd, such as: HowTo use NetBSD pre-built packages">
+  <meta name="twitter:description" content="Overview of all pages with the category #bsd, such as: HowTo use NetBSD pre-built packages">
   <meta name="author" content="Joachim Wiberg"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -242,6 +242,46 @@
         <div class="posts-list">
           
             <article class="post-preview">
+              <a href="/howto/netbsd-pkgsrc/">
+                <h2 class="post-title">HowTo use NetBSD pre-built packages</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on August 22, 2020
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Wiberg
+    
+  
+  
+</span>
+
+
+              </p>
+              <div class="post-entry">
+                
+                  Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.
+Here it is, you&rsquo;d think this be something the installer could set up a default for &hellip;
+PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/  or if you use the latest on an old ThinkPad T42:
+PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/i386/9.0/All/  The simply
+pkg_add -v git  Or so you might think!
+                  <a href="/howto/netbsd-pkgsrc/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
               <a href="/howto/pimd-on-freebsd/">
                 <h2 class="post-title">HowTo run pimd on FreeBSD</h2>
 
@@ -271,45 +311,6 @@
                   This is not a proper HowTo, more of a &ldquo;note to self&rdquo; after having created a setup to test pimd issue #57. For these notes the following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and Qemu 2.3.0, is used:
  .--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | '--------' '----' '----' '----------' The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP/MLD snooping to get pimd to run smoothly.
                   <a href="/howto/pimd-on-freebsd/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="/howto/netbsd-pkgsrc/">
-                <h2 class="post-title">HowTo use NetBSD pre-built packages</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on July 30, 2015
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Wiberg
-    
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                
-                  Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.
-Here it is, you&rsquo;d think this be something the installer could set up a default for &hellip;
-PKG_PATH=ftp://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/  The simply
-pkg_add -v git  Or so you might think! As this blog points out, you also need to install some root certificates to get HTTPS/SSL working.
-                  <a href="/howto/netbsd-pkgsrc/" class="post-read-more">[Read More]</a>
                 
               </div>
 

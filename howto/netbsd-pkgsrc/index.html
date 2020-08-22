@@ -12,12 +12,14 @@
   <meta name="twitter:title" content="HowTo use NetBSD pre-built packages" />
   <meta name="description" content="Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.
 Here it is, you&rsquo;d think this be something the installer could set up a default for &hellip;
-PKG_PATH=ftp://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/  The simply
-pkg_add -v git  Or so you might think! As this blog points out, you also need to install some root certificates to get HTTPS/SSL working.">
+PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/  or if you use the latest on an old ThinkPad T42:
+PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/i386/9.0/All/  The simply
+pkg_add -v git  Or so you might think!">
   <meta property="og:description" content="Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.
 Here it is, you&rsquo;d think this be something the installer could set up a default for &hellip;
-PKG_PATH=ftp://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/  The simply
-pkg_add -v git  Or so you might think! As this blog points out, you also need to install some root certificates to get HTTPS/SSL working.">
+PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/  or if you use the latest on an old ThinkPad T42:
+PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/i386/9.0/All/  The simply
+pkg_add -v git  Or so you might think!">
   <meta name="twitter:description" content="Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.
 Here it is, you&rsquo;d …">
   <meta name="author" content="Joachim Wiberg"/><script type="application/ld+json">
@@ -68,11 +70,11 @@ Here it is, you&rsquo;d …">
     "name" : "Joachim Wiberg"
   },
   "headline": "HowTo use NetBSD pre-built packages",
-  "description" : "Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.\nHere it is, you\x26rsquo;d think this be something the installer could set up a default for \x26hellip;\nPKG_PATH=ftp:\/\/ftp.netbsd.org\/pub\/pkgsrc\/packages\/NetBSD\/amd64\/6.1.5\/All\/  The simply\npkg_add -v git  Or so you might think! As this blog points out, you also need to install some root certificates to get HTTPS\/SSL working.",
+  "description" : "Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.\nHere it is, you\x26rsquo;d think this be something the installer could set up a default for \x26hellip;\nPKG_PATH=http:\/\/ftp.netbsd.org\/pub\/pkgsrc\/packages\/NetBSD\/amd64\/6.1.5\/All\/  or if you use the latest on an old ThinkPad T42:\nPKG_PATH=http:\/\/ftp.netbsd.org\/pub\/pkgsrc\/packages\/NetBSD\/i386\/9.0\/All\/  The simply\npkg_add -v git  Or so you might think!",
   "inLanguage" : "en",
-  "wordCount":  139 ,
-  "datePublished" : "2015-07-30T11:13:00",
-  "dateModified" : "2015-07-30T11:13:00",
+  "wordCount":  180 ,
+  "datePublished" : "2020-08-22T21:39:00",
+  "dateModified" : "2020-08-22T21:39:00",
   "image" : "\/images\/profile.jpg",
   "keywords" : [ "" ],
   "mainEntityOfPage" : "\/howto\/netbsd-pkgsrc\/",
@@ -92,8 +94,9 @@ Here it is, you&rsquo;d …">
 <meta property="og:title" content="HowTo use NetBSD pre-built packages" />
 <meta property="og:description" content="Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.
 Here it is, you&rsquo;d think this be something the installer could set up a default for &hellip;
-PKG_PATH=ftp://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/  The simply
-pkg_add -v git  Or so you might think! As this blog points out, you also need to install some root certificates to get HTTPS/SSL working.">
+PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/  or if you use the latest on an old ThinkPad T42:
+PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/i386/9.0/All/  The simply
+pkg_add -v git  Or so you might think!">
 <meta property="og:image" content="/images/profile.jpg" />
 <meta property="og:url" content="/howto/netbsd-pkgsrc/" />
 <meta property="og:type" content="website" />
@@ -306,7 +309,10 @@ URI.  Also, use the correct ARCH, otherwise the installer complains.  Do
 not use <code>amd64</code>, but rather <code>x86_64</code>.</p>
 <p>Here it is, you&rsquo;d think this be something the installer could set up a
 default for &hellip;</p>
-<pre><code>PKG_PATH=ftp://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/
+<pre><code>PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/
+</code></pre>
+<p>or if you use the latest on an old ThinkPad T42:</p>
+<pre><code>PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/i386/9.0/All/
 </code></pre>
 <p>The simply</p>
 <pre><code>pkg_add -v git
@@ -322,6 +328,9 @@ cd /etc/openssl/certs
 mozilla-rootcerts extract
 mozilla-rootcerts rehash
 </code></pre>
+<p>on newer NetBSD you only need to do:</p>
+<pre><code>mozilla-rootcerts install
+</code></pre>
 <p>Then you can clone your GitHub repo and start working &hellip;</p>
 <pre><code>cd
 git clone https://github.com/troglobit/pimd
@@ -329,6 +338,11 @@ git clone https://github.com/troglobit/pimd
 <p>On FreeBSD it&rsquo;s a lot simpler, type <code>pkg dasdastradf</code> and the OS asks
 you nicely if you want to install the pkgsrc system?   Reply and then
 simply do <code>pkg add git</code>.</p>
+<hr>
+<blockquote>
+<p>P.S.  Modern NetBSD have <code>pkgin</code>, so use the above only to bootstrap
+pkgin, then use that for the rest.</p>
+</blockquote>
 
 
         
@@ -342,13 +356,9 @@ simply do <code>pkg add git</code>.</p>
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="/howto/pimd-on-openbsd/" data-toggle="tooltip" data-placement="top" title="HowTo run pimd on OpenBSD">&larr; Previous Post</a>
+              <a href="/howto/howto-build-and-use-my-projects/" data-toggle="tooltip" data-placement="top" title="HowTo: Build &amp; Use My Projects">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="/howto/pimd-on-freebsd/" data-toggle="tooltip" data-placement="top" title="HowTo run pimd on FreeBSD">Next Post &rarr;</a>
-            </li>
           
         </ul>
       
