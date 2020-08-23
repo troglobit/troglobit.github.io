@@ -8,7 +8,7 @@ useless touchpad and with the awesome classic keyboard.  A fine little
 machine that can easily be upgraded with an SSD disk and 8 GiB RAM!
 
 I set it up with [Linx Mint (LMDE 4)][1], which worked great to begin
-with, but there was some odd issue with X/Waland that sometimes caused
+with, but there was some odd issue with X/Wayland that sometimes caused
 the screen (only the screen) to freeze up and show random color patterns.
 Only way to workaround it was to suspend, wait, and resume again.  So
 now I'm running Ubuntu 20.04 on it and everything seems to work a lot
