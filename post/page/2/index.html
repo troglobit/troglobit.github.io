@@ -224,7 +224,7 @@
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on July 17, 2020
+  <i class="fas fa-calendar"></i>&nbsp;Posted on August 23, 2020
   
   
   
@@ -252,6 +252,62 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         
         <div class="posts-list">
+          
+            <article class="post-preview">
+              <a href="/2019/11/BSD-syslogd-in-Linux/">
+                <h2 class="post-title">BSD syslogd in Linux</h2>
+
+                
+                  <h3 class="post-subtitle">
+                    modern syslog and standards
+                  </h3>
+                
+              </a>
+
+              <p class="post-meta">
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on November 3, 2019
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Wiberg
+    
+  
+  
+</span>
+
+
+              </p>
+              <div class="post-entry">
+                
+                  <p>Some time ago now I was in a meeting with a customer where I first learned of
+the new syslog standard, <a href="https://tools.ietf.org/html/rfc5424">RFC5424</a>.  I say &ldquo;new&rdquo; because, despite it being
+ten years old, it was new to me.</p>
+<p>Three weeks ago I started updating my fork of <a href="https://www.infodrom.org/projects/sysklogd/">sysklogd</a> to be <a href="https://tools.ietf.org/html/rfc5424">RFC5424</a>
+compliant.  I ended up ripping out most of the old code and replacing it with
+fresh DNA strands from FreeBSD and NetBSD.</p>
+<p>The result is a fully RFC compliant <code>syslogd</code>, <strong>and</strong> a <code>libsyslog</code> with a
+replacement <code>syslog.h</code> header for sending RFC5424 events from applications!</p>
+<p><a href="https://github.com/troglobit/sysklogd/">https://github.com/troglobit/sysklogd/</a></p>
+                  <a href="/2019/11/BSD-syslogd-in-Linux/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+                <div class="blog-tags">
+                  
+                    <a href="//tags/opensource/">opensource</a>&nbsp;
+                  
+                    <a href="//tags/sysklogd/">sysklogd</a>&nbsp;
+                  
+                </div>
+              
+
+            </article>
           
             <article class="post-preview">
               <a href="/2019/08/Basic-CGI-in-C-with-Merecat-httpd/">
@@ -611,49 +667,6 @@ when I realized the display brightness keys didn&rsquo;t do anything in my
 work</a>, with my kids, and also with some of my
 pet projects.</p>
                   <a href="/2018/06/Open-Source-Releases/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2018/04/N-E-M-E-S-I-S/">
-                <h2 class="post-title">N E M E S I S</h2>
-
-                
-                  <h3 class="post-subtitle">
-                    The Resurrection
-                  </h3>
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on April 15, 2018
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Wiberg
-    
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                
-                  <p>Summer is  almost upon us.  The  weather in Sweden has  been amazing the
-last couple of weeks, sunny and  warm.  This has of course not prevented
-me from pursuing my favorite  indoor activity; coding!  This time around
-I&rsquo;ve spent some time to resurrect the packet injection tool <a href="/projects/nemesis/">Nemesis</a>.</p>
-                  <a href="/2018/04/N-E-M-E-S-I-S/" class="post-read-more">[Read More]</a>
                 
               </div>
 

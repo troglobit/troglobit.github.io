@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/post/</loc>
+    <lastmod>2020-08-23T14:02:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2020/08/Weird-Screen-Artifacts-on-X200/</loc>
+    <lastmod>2020-08-23T14:02:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/categories/bsd/</loc>
     <lastmod>2020-08-22T21:39:00+01:00</lastmod>
   </url>
@@ -45,11 +55,6 @@
   <url>
     <loc>/projects/zoo/</loc>
     <lastmod>2020-08-08T17:50:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/</loc>
-    <lastmod>2020-07-17T11:04:09+02:00</lastmod>
   </url>
   
   <url>

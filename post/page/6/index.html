@@ -224,7 +224,7 @@
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on July 17, 2020
+  <i class="fas fa-calendar"></i>&nbsp;Posted on August 23, 2020
   
   
   
@@ -252,6 +252,51 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         
         <div class="posts-list">
+          
+            <article class="post-preview">
+              <a href="/2016/03/07/multicast-testing/">
+                <h2 class="post-title">Multicast testing, made easy!</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on March 7, 2016
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Wiberg
+    
+  
+  
+</span>
+
+
+              </p>
+              <div class="post-entry">
+                
+                  <p>For the better part of the last ten years I have been working with
+multicast in one way or another.  I&rsquo;ve used many different tools for
+testing, but on most systems I usually resort to <code>ping(1)</code> and
+<code>tcpdump(1)</code>, which are quite sufficient.  However, you often need to
+tell bridges (switches) to open up multicast in your general direction
+for your pings to get through, so you need to send an IGMP &ldquo;join&rdquo; first.</p>
+<p>Way back in 2006 I stumbled upon a neat tool called <code>mcjoin</code>, written by
+David Stevens and announced in
+<a href="https://lkml.org/lkml/2004/8/5/143">this posting to LKML</a>.  I started
+improving and adding features to it over the years.</p>
+                  <a href="/2016/03/07/multicast-testing/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
           
             <article class="post-preview">
               <a href="/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/">
@@ -674,56 +719,6 @@ Sat Mar  7 08:48:58 CET 2015
 to serious regressions in launching background processes.  It has been
 replaced by <a href="/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/">v1.12</a></p>
                   <a href="/2015/01/24/finit-v1-dot-11-released/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/">
-                <h2 class="post-title">Rant: All the C Compiler Warnings ...</h2>
-
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on January 12, 2015
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Wiberg
-    
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                
-                  <blockquote>
-<p>Enable <em>all</em> the warnings!</p>
-</blockquote>
-<p>This is one of the truths you learn when you start working with C.  Most
-of the time adding <code>CPPFLAGS=&quot;-W -Wall -Werror&quot;</code> is all you need to find
-all the nasty bugs.  And if that&rsquo;s not enough, there are tons of tools
-for static code analysis, like <code>scan-build</code> in
-<a href="http://clang-analyzer.llvm.org/scan-build.html">Clang</a>, and
-<a href="https://scan.coverity.com/">Coverity Scan</a>, to help you <em>find all the
-bugs</em>!</p>
-<p>However, these pesky warnings (some of which cannot even be disabled!)
-are sometimes more of a nuisance than help.  Sometimes you <em>know</em> that
-some parameters to a function will remain unused &ndash; it&rsquo;s a callback, and
-you don&rsquo;t need all the data given to you.  So you start adding all kinds
-of voodoo, like <code>__attribute__ ((unused))</code> &hellip; seriously?</p>
-                  <a href="/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/" class="post-read-more">[Read More]</a>
                 
               </div>
 

@@ -214,6 +214,45 @@
           
           
             <article class="post-preview">
+              <a href="/2008/06/09/minix-editline-v0-dot-1-4/">
+                <h2 class="post-title">Minix editline v0.1.4</h2>
+                
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on June 9, 2008
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Wiberg
+    
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <p>Another day another release, I guess. :-)</p>
+<p>Lots of small fixes — it can now be cross-built for Arm (Xscale)
+without any serious warnings.  Get it from the usual FTP location:</p>
+<ul>
+<li><a href="http://ftp.vmlinux.org/pub/People/jocke/minix-editline/">http://ftp.vmlinux.org/pub/People/jocke/minix-editline/</a></li>
+</ul>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
               <a href="/2008/06/08/minix-editline-v0-dot-1-1/">
                 <h2 class="post-title">Minix editline v0.1.1</h2>
                 
@@ -548,41 +587,6 @@ I haven&rsquo;t set up any repository, so just download the below two .
                 
                   My recent post on building Debian kernels misses a subtle but useful point. Namely that of building Debian kernel modules alongside your new kernel. I wanted to run a new kernel with the Ubuntu vmware-player-kernel-source package. I was fumbling around wanting to use module-assistant to do this for me when I stumbled upon on the solution, presented so eloquently by my friend Albert Veli. This gives us a small update to the previous post:
                   <a href="/2007/03/25/vmware-kernel-modules-for-your-new-kernel/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2007/02/03/building-debian-slash-ubuntu-kernels/">
-                <h2 class="post-title">HowTo: Building Debian/Ubuntu Kernels</h2>
-                
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on February 3, 2007
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Wiberg
-    
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  I have been over this topic so many times now, strangely enough I&rsquo;ve managed to make things more complicated than they need to be. It&rsquo;s really this simple:
-$ wget ftp://ftp.sunet.se/pub/Linux/kernels/v2.6/linux-2.6.19.2.tar.bz2 $ tar xfj linux-2.6.19.2.tar.bz2 $ cd linux-2.6.19.2/ $ zcat /proc/config.gz &gt;.config $ make menuconfig [Tweak to your hearts desire] $ fakeroot make-kpkg --initrd kernel_image $ dpkg -i ../linux-image-2.6.19.2_2.6.19.2-10.00.Custom_i386.deb [DONE!] You may, of course, need to tweak the file /etc/kernel-pkg.conf, but there are man pages for that.
-                  <a href="/2007/02/03/building-debian-slash-ubuntu-kernels/" class="post-read-more">[Read More]</a>
                 
               </div>
 

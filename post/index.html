@@ -224,7 +224,7 @@
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on July 17, 2020
+  <i class="fas fa-calendar"></i>&nbsp;Posted on August 23, 2020
   
   
   
@@ -252,6 +252,44 @@
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         
         <div class="posts-list">
+          
+            <article class="post-preview">
+              <a href="/2020/08/Weird-Screen-Artifacts-on-X200/">
+                <h2 class="post-title">Weird Screen Artifacts on X200</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on August 23, 2020
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Wiberg
+    
+  
+  
+</span>
+
+
+              </p>
+              <div class="post-entry">
+                
+                  I blogged earlier about the awesome little ThinkPad X200 I found and its blinking WiFi LED. Briefly I mentioned an odd issue with X/Wayland on LMDE 4. This turned out to be a HW bug that can only be worked around by disabling hardware acceleration for virtualization:
+https://forums.lenovo.com/t5/Windows-8-1-8-7-Vista-and-XP-Discussions/Bizarre-screen-artifacts-on-R400-Integrated-Graphics-running-Win-7-RTM/m-p/153980?page=1#199768
+The post says it should be sufficient to &ldquo;Disable Virtualization Technology for Directed-IO (VT-d)&quot;, but that didn&rsquo;t work for me, and I wanted to keep the 8 GiB of RAM I managed to fit into it.
+                  <a href="/2020/08/Weird-Screen-Artifacts-on-X200/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
           
             <article class="post-preview">
               <a href="/2020/07/Wireguard-and-DNS-Timeout/">
@@ -487,7 +525,7 @@ uneccessary death.</p>
 useless touchpad and with the awesome classic keyboard.  A fine little
 machine that can easily be upgraded with an SSD disk and 8 GiB RAM!</p>
 <p>I set it up with <a href="https://www.linuxmint.com/download_lmde.php">Linx Mint (LMDE 4)</a>, which worked great to begin
-with, but there was some odd issue with X/Waland that sometimes caused
+with, but there was some odd issue with X/Wayland that sometimes caused
 the screen (only the screen) to freeze up and show random color patterns.
 Only way to workaround it was to suspend, wait, and resume again.  So
 now I&rsquo;m running Ubuntu 20.04 on it and everything seems to work a lot
@@ -629,62 +667,6 @@ continued adding to it over the years, and still do.  So, as of Jul 2,
                 
               </div>
 
-              
-
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2019/11/BSD-syslogd-in-Linux/">
-                <h2 class="post-title">BSD syslogd in Linux</h2>
-
-                
-                  <h3 class="post-subtitle">
-                    modern syslog and standards
-                  </h3>
-                
-              </a>
-
-              <p class="post-meta">
-                <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on November 3, 2019
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Wiberg
-    
-  
-  
-</span>
-
-
-              </p>
-              <div class="post-entry">
-                
-                  <p>Some time ago now I was in a meeting with a customer where I first learned of
-the new syslog standard, <a href="https://tools.ietf.org/html/rfc5424">RFC5424</a>.  I say &ldquo;new&rdquo; because, despite it being
-ten years old, it was new to me.</p>
-<p>Three weeks ago I started updating my fork of <a href="https://www.infodrom.org/projects/sysklogd/">sysklogd</a> to be <a href="https://tools.ietf.org/html/rfc5424">RFC5424</a>
-compliant.  I ended up ripping out most of the old code and replacing it with
-fresh DNA strands from FreeBSD and NetBSD.</p>
-<p>The result is a fully RFC compliant <code>syslogd</code>, <strong>and</strong> a <code>libsyslog</code> with a
-replacement <code>syslog.h</code> header for sending RFC5424 events from applications!</p>
-<p><a href="https://github.com/troglobit/sysklogd/">https://github.com/troglobit/sysklogd/</a></p>
-                  <a href="/2019/11/BSD-syslogd-in-Linux/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-                <div class="blog-tags">
-                  
-                    <a href="//tags/opensource/">opensource</a>&nbsp;
-                  
-                    <a href="//tags/sysklogd/">sysklogd</a>&nbsp;
-                  
-                </div>
               
 
             </article>

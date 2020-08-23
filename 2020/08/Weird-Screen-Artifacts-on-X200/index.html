@@ -7,30 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Fix blinking WiFi LED on X200 - </title>
-  <meta property="og:title" content="Fix blinking WiFi LED on X200" />
-  <meta name="twitter:title" content="Fix blinking WiFi LED on X200" />
-  <meta name="description" content="Recently got my hands on a ThinkPad X200, the last model without the
-useless touchpad and with the awesome classic keyboard.  A fine little
-machine that can easily be upgraded with an SSD disk and 8 GiB RAM!
-I set it up with Linx Mint (LMDE 4), which worked great to begin
-with, but there was some odd issue with X/Wayland that sometimes caused
-the screen (only the screen) to freeze up and show random color patterns.
-Only way to workaround it was to suspend, wait, and resume again.  So
-now I&rsquo;m running Ubuntu 20.04 on it and everything seems to work a lot
-better, this far.">
-  <meta property="og:description" content="Recently got my hands on a ThinkPad X200, the last model without the
-useless touchpad and with the awesome classic keyboard.  A fine little
-machine that can easily be upgraded with an SSD disk and 8 GiB RAM!
-I set it up with Linx Mint (LMDE 4), which worked great to begin
-with, but there was some odd issue with X/Wayland that sometimes caused
-the screen (only the screen) to freeze up and show random color patterns.
-Only way to workaround it was to suspend, wait, and resume again.  So
-now I&rsquo;m running Ubuntu 20.04 on it and everything seems to work a lot
-better, this far.">
-  <meta name="twitter:description" content="Recently got my hands on a ThinkPad X200, the last model without the
-useless touchpad and with the awesome classic keyboard.  A fine little
-machine that can easily be upgraded with an SSD disk and 8 …">
+  <title>Weird Screen Artifacts on X200 - </title>
+  <meta property="og:title" content="Weird Screen Artifacts on X200" />
+  <meta name="twitter:title" content="Weird Screen Artifacts on X200" />
+  <meta name="description" content="I blogged earlier about the awesome little ThinkPad X200 I found and its blinking WiFi LED. Briefly I mentioned an odd issue with X/Wayland on LMDE 4. This turned out to be a HW bug that can only be worked around by disabling hardware acceleration for virtualization:
+https://forums.lenovo.com/t5/Windows-8-1-8-7-Vista-and-XP-Discussions/Bizarre-screen-artifacts-on-R400-Integrated-Graphics-running-Win-7-RTM/m-p/153980?page=1#199768
+The post says it should be sufficient to &ldquo;Disable Virtualization Technology for Directed-IO (VT-d)&quot;, but that didn&rsquo;t work for me, and I wanted to keep the 8 GiB of RAM I managed to fit into it.">
+  <meta property="og:description" content="I blogged earlier about the awesome little ThinkPad X200 I found and its blinking WiFi LED. Briefly I mentioned an odd issue with X/Wayland on LMDE 4. This turned out to be a HW bug that can only be worked around by disabling hardware acceleration for virtualization:
+https://forums.lenovo.com/t5/Windows-8-1-8-7-Vista-and-XP-Discussions/Bizarre-screen-artifacts-on-R400-Integrated-Graphics-running-Win-7-RTM/m-p/153980?page=1#199768
+The post says it should be sufficient to &ldquo;Disable Virtualization Technology for Directed-IO (VT-d)&quot;, but that didn&rsquo;t work for me, and I wanted to keep the 8 GiB of RAM I managed to fit into it.">
+  <meta name="twitter:description" content="I blogged earlier about the awesome little ThinkPad X200 I found and its blinking WiFi LED. Briefly I mentioned an odd issue with X/Wayland on LMDE 4. This turned out to be a HW bug that can only be …">
   <meta name="author" content="Joachim Wiberg"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -66,8 +52,8 @@ machine that can easily be upgraded with an SSD disk and 8 …">
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "\/2020\/03\/Fix-blinking-WiFi-LED-on-X200\/",
-          "name": "Fix blinking wifi l e d on x200"
+          "@id": "\/2020\/08\/Weird-Screen-Artifacts-on-X200\/",
+          "name": "Weird screen artifacts on x200"
         }
     }]
 }
@@ -78,15 +64,15 @@ machine that can easily be upgraded with an SSD disk and 8 …">
   "author": {
     "name" : "Joachim Wiberg"
   },
-  "headline": "Fix blinking WiFi LED on X200",
-  "description" : "Recently got my hands on a ThinkPad X200, the last model without the useless touchpad and with the awesome classic keyboard. A fine little machine that can easily be upgraded with an SSD disk and 8 GiB RAM!\nI set it up with Linx Mint (LMDE 4), which worked great to begin with, but there was some odd issue with X\/Wayland that sometimes caused the screen (only the screen) to freeze up and show random color patterns. Only way to workaround it was to suspend, wait, and resume again. So now I\x26rsquo;m running Ubuntu 20.04 on it and everything seems to work a lot better, this far.\n",
+  "headline": "Weird Screen Artifacts on X200",
+  "description" : "I blogged earlier about the awesome little ThinkPad X200 I found and its blinking WiFi LED. Briefly I mentioned an odd issue with X\/Wayland on LMDE 4. This turned out to be a HW bug that can only be worked around by disabling hardware acceleration for virtualization:\nhttps:\/\/forums.lenovo.com\/t5\/Windows-8-1-8-7-Vista-and-XP-Discussions\/Bizarre-screen-artifacts-on-R400-Integrated-Graphics-running-Win-7-RTM\/m-p\/153980?page=1#199768\nThe post says it should be sufficient to \x26ldquo;Disable Virtualization Technology for Directed-IO (VT-d)\x26quot;, but that didn\x26rsquo;t work for me, and I wanted to keep the 8 GiB of RAM I managed to fit into it.",
   "inLanguage" : "en",
-  "wordCount":  165 ,
-  "datePublished" : "2020-03-28T14:16:00",
-  "dateModified" : "2020-03-28T14:16:00",
+  "wordCount":  95 ,
+  "datePublished" : "2020-08-23T14:02:00",
+  "dateModified" : "2020-08-23T14:02:00",
   "image" : "\/images\/profile.jpg",
   "keywords" : [ "" ],
-  "mainEntityOfPage" : "\/2020\/03\/Fix-blinking-WiFi-LED-on-X200\/",
+  "mainEntityOfPage" : "\/2020\/08\/Weird-Screen-Artifacts-on-X200\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "\/",
@@ -100,25 +86,17 @@ machine that can easily be upgraded with an SSD disk and 8 …">
 }
 </script>
 
-<meta property="og:title" content="Fix blinking WiFi LED on X200" />
-<meta property="og:description" content="Recently got my hands on a ThinkPad X200, the last model without the
-useless touchpad and with the awesome classic keyboard.  A fine little
-machine that can easily be upgraded with an SSD disk and 8 GiB RAM!
-I set it up with Linx Mint (LMDE 4), which worked great to begin
-with, but there was some odd issue with X/Wayland that sometimes caused
-the screen (only the screen) to freeze up and show random color patterns.
-Only way to workaround it was to suspend, wait, and resume again.  So
-now I&rsquo;m running Ubuntu 20.04 on it and everything seems to work a lot
-better, this far.">
+<meta property="og:title" content="Weird Screen Artifacts on X200" />
+<meta property="og:description" content="I blogged earlier about the awesome little ThinkPad X200 I found and its blinking WiFi LED. Briefly I mentioned an odd issue with X/Wayland on LMDE 4. This turned out to be a HW bug that can only be worked around by disabling hardware acceleration for virtualization:
+https://forums.lenovo.com/t5/Windows-8-1-8-7-Vista-and-XP-Discussions/Bizarre-screen-artifacts-on-R400-Integrated-Graphics-running-Win-7-RTM/m-p/153980?page=1#199768
+The post says it should be sufficient to &ldquo;Disable Virtualization Technology for Directed-IO (VT-d)&quot;, but that didn&rsquo;t work for me, and I wanted to keep the 8 GiB of RAM I managed to fit into it.">
 <meta property="og:image" content="/images/profile.jpg" />
-<meta property="og:url" content="/2020/03/Fix-blinking-WiFi-LED-on-X200/" />
+<meta property="og:url" content="/2020/08/Weird-Screen-Artifacts-on-X200/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="" />
 
-  <meta name="twitter:title" content="Fix blinking WiFi LED on X200" />
-  <meta name="twitter:description" content="Recently got my hands on a ThinkPad X200, the last model without the
-useless touchpad and with the awesome classic keyboard.  A fine little
-machine that can easily be upgraded with an SSD disk and 8 …">
+  <meta name="twitter:title" content="Weird Screen Artifacts on X200" />
+  <meta name="twitter:description" content="I blogged earlier about the awesome little ThinkPad X200 I found and its blinking WiFi LED. Briefly I mentioned an odd issue with X/Wayland on LMDE 4. This turned out to be a HW bug that can only be …">
   <meta name="twitter:image" content="/images/profile.jpg" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@troglobit" />
@@ -129,7 +107,7 @@ machine that can easily be upgraded with an SSD disk and 8 …">
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@troglobit" />
   <meta name="twitter:creator" content="@troglobit" />
-  <meta property="og:url" content="/2020/03/Fix-blinking-WiFi-LED-on-X200/" />
+  <meta property="og:url" content="/2020/08/Weird-Screen-Artifacts-on-X200/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="" />
 
@@ -297,7 +275,7 @@ machine that can easily be upgraded with an SSD disk and 8 …">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
               
-                <h1>Fix blinking WiFi LED on X200</h1>
+                <h1>Weird Screen Artifacts on X200</h1>
               
               
               
@@ -305,7 +283,7 @@ machine that can easily be upgraded with an SSD disk and 8 …">
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on March 28, 2020
+  <i class="fas fa-calendar"></i>&nbsp;Posted on August 23, 2020
   
   
   
@@ -333,23 +311,17 @@ machine that can easily be upgraded with an SSD disk and 8 …">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
 	
-        <p>Recently got my hands on a ThinkPad X200, the last model without the
-useless touchpad and with the awesome classic keyboard.  A fine little
-machine that can easily be upgraded with an SSD disk and 8 GiB RAM!</p>
-<p>I set it up with <a href="https://www.linuxmint.com/download_lmde.php">Linx Mint (LMDE 4)</a>, which worked great to begin
-with, but there was some odd issue with X/Wayland that sometimes caused
-the screen (only the screen) to freeze up and show random color patterns.
-Only way to workaround it was to suspend, wait, and resume again.  So
-now I&rsquo;m running Ubuntu 20.04 on it and everything seems to work a lot
-better, this far.</p>
-<p>One really annoying thing is the WiFi LED blinking like crazy.  Very
-disturbing when you&rsquo;re working on something.</p>
-<p>Turns out it was quite easy to fix.  Create the following file, or
-modify it if it exists already (Ubuntu), so that the first line after
-comments is this:</p>
-<pre><code># sudo editor /etc/modprobe.d/iwlwifi.conf
-options iwlwifi led_mode=1
-</code></pre><p>Reboot et voilà! \o/</p>
+        <p>I blogged earlier about the awesome little ThinkPad X200 I found and its
+blinking WiFi LED.  Briefly I mentioned an odd issue with X/Wayland on
+LMDE 4.  This turned out to be a HW bug that can only be worked around
+by disabling hardware acceleration for virtualization:</p>
+<p><a href="https://forums.lenovo.com/t5/Windows-8-1-8-7-Vista-and-XP-Discussions/Bizarre-screen-artifacts-on-R400-Integrated-Graphics-running-Win-7-RTM/m-p/153980?page=1#199768">https://forums.lenovo.com/t5/Windows-8-1-8-7-Vista-and-XP-Discussions/Bizarre-screen-artifacts-on-R400-Integrated-Graphics-running-Win-7-RTM/m-p/153980?page=1#199768</a></p>
+<p>The post says it should be sufficient to <em>&ldquo;Disable Virtualization
+Technology for Directed-IO (VT-d)&quot;</em>, but that didn&rsquo;t work for me,
+and I wanted to keep the 8 GiB of RAM I managed to fit into it.
+What <em>did work</em>, however, was to disable all the virtualization
+options.</p>
+
 
         
 
@@ -362,13 +334,9 @@ options iwlwifi led_mode=1
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="/2020/02/HowTo-Install-pre-built-packages/" data-toggle="tooltip" data-placement="top" title="HowTo: Install pre-built packages">&larr; Previous Post</a>
+              <a href="/2020/07/Wireguard-and-DNS-Timeout/" data-toggle="tooltip" data-placement="top" title="Wireguard and DNS Timeout">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="/2020/06/sudo-tricks/" data-toggle="tooltip" data-placement="top" title="sudo tricks">Next Post &rarr;</a>
-            </li>
           
         </ul>
       

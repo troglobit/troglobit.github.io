@@ -214,6 +214,48 @@
           
           
             <article class="post-preview">
+              <a href="/2011/01/08/announcing-pimd-v2-dot-1-6/">
+                <h2 class="post-title">Announcing pimd v2.1.6</h2>
+                
+                
+                
+              </a>
+
+              <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on January 8, 2011
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Wiberg
+    
+  
+  
+</span>
+
+
+              <div class="post-entry">
+                
+                  <p>This is a security release of <a href="/pimd.html">pimd</a>, v2.1.6.  The following fixes
+are included:</p>
+<ul>
+<li><a href="https://security-tracker.debian.org/tracker/CVE-2011-0007">CVE-2011-0007</a>: <em>&ldquo;Insecure file creation in /var/tmp&rdquo;</em></li>
+<li>Build error on GNU/kFreeBSD</li>
+</ul>
+<p>Thanks to <a href="http://www.luffy.cx/">Vincent Bernat</a> this time for the CVE fix!</p>
+<p>As always, check the <a href="/pimd.html">homepage</a>, the <a href="https://github.com/troglobit/pimd/blob/master/ChangeLog">ChangeLog</a> and the
+<a href="https://github.com/troglobit/pimd/commits/2.1.6">GIT log</a> for more details.</p>
+
+                
+              </div>
+
+              
+            </article>
+          
+            <article class="post-preview">
               <a href="/2010/12/31/ubuntu-to-serve-music-to-itunes/">
                 <h2 class="post-title">Use Ubuntu to Serve iTunes</h2>
                 
@@ -531,51 +573,6 @@ $ echo &quot;Secret project, use ROT13 to decode source code&quot; &gt;projectX.
 $ git init project.git $ cd project.git $ bzr fast-export --export-marks=.git/bzr.mark ~/project.bzr | git fast-import --export-marks=.git/git.mark That worked for me. The output will likely be something like this:
 01:41:19 Calculating the revisions to include ... 01:41:19 Starting export of 33 revisions ... 01:41:20 Exported 33 revisions in 0:00:01 git-fast-import statistics: --------------------------------------------------------------------- Alloc'd objects: 5000 Total objects : 267 ( 0 duplicates ) blobs : 158 ( 0 duplicates 57 deltas) trees : 76 ( 0 duplicates 55 deltas) commits: 33 ( 0 duplicates 0 deltas) tags : 0 ( 0 duplicates 0 deltas) Total branches : 10 ( 1 loads ) marks : 1024 ( 33 unique ) atoms : 38 Memory total : 2344 KiB pools : 2110 KiB objects: 234 KiB --------------------------------------------------------------------- pack_report: getpagesize() = 4096 pack_report: core.
                   <a href="/2010/07/13/converting-from-bazaar-to-git/" class="post-read-more">[Read More]</a>
-                
-              </div>
-
-              
-            </article>
-          
-            <article class="post-preview">
-              <a href="/2010/05/09/syntax-highlighting-in-less/">
-                <h2 class="post-title">Syntax highlighting in less</h2>
-                
-                
-                
-              </a>
-
-              <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on May 9, 2010
-  
-  
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Joachim Wiberg
-    
-  
-  
-</span>
-
-
-              <div class="post-entry">
-                
-                  <!-- raw HTML omitted -->
-<p>Yes, it&rsquo;s certainly possible and source code becomes so much easier to
-read.  Try it out by:</p>
-<ol>
-<li><a href="https://github.com/troglobit/toolbox/blob/master/dot.lessfilter">downloading my .lessfilter</a></li>
-<li>save it as <code>~/.lessfilter</code> in your <code>$HOME</code></li>
-<li>Profit!</li>
-</ol>
-<p>Ahem &hellip;</p>
-<p>Just try it out on a C source file :-)</p>
-<pre><code>less -R myfile.c
-</code></pre>
-
                 
               </div>
 
