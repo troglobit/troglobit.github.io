@@ -35,7 +35,9 @@ enableEmoji = true
     colorscheme = "auto"
 
     math = true
-    custom_css = ["css/custom.css"]
+
+    # Custom CSS
+    #custom_css = ["css/override.min.css"]
 
 # Social links
 [[params.social]]

@@ -1,0 +1,19 @@
+@import 'https://fontlibrary.org/face/cmu-serif';
+@import 'https://fontlibrary.org/face/cmu-typewriter';
+
+body {
+    font-family: 'CMUSerifRoman', serif;
+    font-size:   2.1em;
+    font-weight: normal;
+    /* font-style:  normal; */
+    line-height: 110%;
+    font-variant-numeric: oldstyle-nums;
+}
+
+pre, code {
+    font-family: 'CMUTypewriterTextRegular', mono;
+    font-size:   90%;
+    font-weight: normal;
+    /* font-style:  normal;  */
+    line-height: 100%;
+}
