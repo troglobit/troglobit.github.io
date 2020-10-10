@@ -45,10 +45,11 @@ In 2010 this effort of bringing mrouted back to life was started. The
 Patches from all over the Internet, including OpenBSD, have been
 integrated.
 
-In 2020, v4.0 was finally released after another 10 years of hard work.
-The most important news include:
+In 2020, v4.0 and v4.1 were finally released after another 10 years of
+hard work.  The most important news include:
 
    * A new command line tool, `mroutectl` to control and query status
+   * Support for automatically detecting `altnet`, secondary addresses
    * Support for IGMPv3
 
 ----
@@ -56,10 +57,10 @@ The most important news include:
 Issue tracker and GIT repository available at GitHub:
 
    * [Repository](https://github.com/troglobit/mrouted)
-   * [ChangeLog](https://github.com/troglobit/mrouted/releases/tag/4.0)
+   * [ChangeLog](https://github.com/troglobit/mrouted/releases/tag/4.1)
    * [Issue Tracker](https://github.com/troglobit/mrouted/issues)
-   * [mrouted-4.0.tar.gz](https://ftp.troglobit.com/mrouted/mrouted-4.0.tar.gz),
-     [MD5](https://ftp.troglobit.com/mrouted/mrouted-4.0.tar.gz.md5)
+   * [mrouted-4.1.tar.gz](https://ftp.troglobit.com/mrouted/mrouted-4.1.tar.gz),
+     [MD5](https://ftp.troglobit.com/mrouted/mrouted-4.1.tar.gz.md5)
 
 Manual pages availale here:
 
