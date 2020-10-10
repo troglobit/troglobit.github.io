@@ -1,43 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>hacking on </title>
-    <link>/categories/hacking/</link>
-    <description>Recent content in hacking on </description>
+    <title>hacking on The Last Outpost</title>
+    <link>https://troglobit.com/categories/hacking/</link>
+    <description>Recent content in hacking on The Last Outpost</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
+    <language>en</language>
     <lastBuildDate>Wed, 09 Sep 2015 21:49:13 +0000</lastBuildDate>
     
-	<atom:link href="/categories/hacking/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://troglobit.com/categories/hacking/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Summer of Code 2015</title>
-      <link>/2015/09/09/summer-of-code-2015/</link>
+      <link>https://troglobit.com/2015/09/09/summer-of-code-2015/</link>
       <pubDate>Wed, 09 Sep 2015 21:49:13 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/2015/09/09/summer-of-code-2015/</guid>
+      
+      <guid>https://troglobit.com/2015/09/09/summer-of-code-2015/</guid>
       <description>Summer is now slowly fading away, and what a summer it has been here in Sweden! For someone who isn&amp;rsquo;t a fan of the summer heat it has been an awesome time for brain work, and in my case work on my open source projects! :-)
 Due to my not really taking much vacation previous years I had saved up for ten weeks (10) this year! It was really worth it, and for the first time in many years I actually feel rested.</description>
     </item>
     
     <item>
       <title>Weekend Hack: JSON vs CONF</title>
-      <link>/2014/02/23/weekend-hack-json-vs-conf/</link>
+      <link>https://troglobit.com/2014/02/23/weekend-hack-json-vs-conf/</link>
       <pubDate>Sun, 23 Feb 2014 00:00:00 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/2014/02/23/weekend-hack-json-vs-conf/</guid>
+      
+      <guid>https://troglobit.com/2014/02/23/weekend-hack-json-vs-conf/</guid>
       <description>It was time. I had been putting it off for far too long &amp;ndash; learning about JSON and deciding on a new .conf file format for Inadyn. So this weekend I sat myself down to read up on JSON and the multitude of parser libraries for both JSON and traditional .conf file parsers. I was looking for a human readable file format that a user could easily and reliably edit by themselves without it being too error prone or sensitive to mistyping.</description>
     </item>
     
     <item>
       <title>Micro Tetris™ v1.2.0</title>
-      <link>/2010/08/02/micro-tetris-1-dot-2-0/</link>
+      <link>https://troglobit.com/2010/08/02/micro-tetris-1-dot-2-0/</link>
       <pubDate>Mon, 02 Aug 2010 00:56:35 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/2010/08/02/micro-tetris-1-dot-2-0/</guid>
+      
+      <guid>https://troglobit.com/2010/08/02/micro-tetris-1-dot-2-0/</guid>
       <description>New release of Micro Tetris™, v1.2.0, available for download now! Noteworthy changes and additions:
  Preview display fixes by Mattias Walström Next level triggered after every 10 cleared lines Speed increase by each level Display high score at game over High score recorded to save file Pause key fixed, again by Mattias Walström  Online GIT repository and release tarball available at the usual places:
  github:tetris.git (Main GIT) vmlinux:tetris.</description>
@@ -45,40 +43,40 @@ Due to my not really taking much vacation previous years I had saved up for ten 
     
     <item>
       <title>Micro Tetris™</title>
-      <link>/2009/06/13/micro-tetris/</link>
+      <link>https://troglobit.com/2009/06/13/micro-tetris/</link>
       <pubDate>Sat, 13 Jun 2009 00:04:30 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/2009/06/13/micro-tetris/</guid>
+      
+      <guid>https://troglobit.com/2009/06/13/micro-tetris/</guid>
       <description>I just published the unobfuscated version of the 1989 IOCCC Best Game entry, Tetris™. See the original author&amp;rsquo;s, John Tromp, home page for the game for details. But suffice it to say, this is an extremely bare bones version of the classic game and very similar to the BSD games&amp;rsquo; version.
 Actually, this similarity in board layout, key combinations and feel led me to do some archaeological digging. I dowloaded the classic BSD games collection and, after having called GNU Indent on the obfuscated code, I started noticing such extreme similarities that just could not be coincidental.</description>
     </item>
     
     <item>
       <title>Moving to ISC</title>
-      <link>/2008/07/30/moving-to-isc/</link>
+      <link>https://troglobit.com/2008/07/30/moving-to-isc/</link>
       <pubDate>Wed, 30 Jul 2008 23:53:42 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/2008/07/30/moving-to-isc/</guid>
+      
+      <guid>https://troglobit.com/2008/07/30/moving-to-isc/</guid>
       <description>I hereby announce that all of the code I produce from now on will use the ISC license. Previously I&amp;rsquo;ve used the MIT license and the GNU GPL, or LGPL where applicable.
 The reason for changing this is two-fold. First, I like to be able to reuse much of what I do in proprietary settings. Yes, I&amp;rsquo;m one of those people who look upon the world with &amp;ldquo;grey&amp;rdquo; eyes rather than black &amp;amp; white.</description>
     </item>
     
     <item>
       <title>Bzrweb 0.1.2 Released</title>
-      <link>/2007/07/31/bzrweb-0-dot-1-2-released/</link>
+      <link>https://troglobit.com/2007/07/31/bzrweb-0-dot-1-2-released/</link>
       <pubDate>Tue, 31 Jul 2007 23:33:01 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/2007/07/31/bzrweb-0-dot-1-2-released/</guid>
+      
+      <guid>https://troglobit.com/2007/07/31/bzrweb-0-dot-1-2-released/</guid>
       <description>The end of my own &amp;ldquo;summer of code&amp;rdquo; is here. Seriously, this summer I took it upon myself to clean up my act and move whole heartedly to the Bazaar version control system for my private projects. Needless to say, I didn&amp;rsquo;t get far.
 Being quite lazy I haven&amp;rsquo;t upgraded this server yet to the latest shiny Debian 4.0. This made it a bit hard to setup the new shiny Loggerhead web gui (see it in action here) for Bazaar — so instead I started fixing up the old bzrweb that I already had setup a few years ago.</description>
     </item>
     
     <item>
       <title>Making bzrweb work again</title>
-      <link>/2007/07/11/making-bzrweb-work-again/</link>
+      <link>https://troglobit.com/2007/07/11/making-bzrweb-work-again/</link>
       <pubDate>Wed, 11 Jul 2007 10:35:00 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/2007/07/11/making-bzrweb-work-again/</guid>
+      
+      <guid>https://troglobit.com/2007/07/11/making-bzrweb-work-again/</guid>
       <description>During the past weekend and the last couple of evenings I&amp;rsquo;ve been studying the Python code in bzrweb — which I&amp;rsquo;ve been using for online repository browsing. It broke sometime last year due to not keeping up with the development of bzr. Yesterday I got it working again!
  Browse: http://vmlinux.org/jocke/bzr/ Branch: bzr branch http://vmlinux.org/jocke/bzr/bzrweb  Having only programmed Python very little earlier I must say that it&amp;rsquo;s really easy to get in to.</description>
     </item>

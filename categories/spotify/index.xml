@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>spotify on </title>
-    <link>/categories/spotify/</link>
-    <description>Recent content in spotify on </description>
+    <title>spotify on The Last Outpost</title>
+    <link>https://troglobit.com/categories/spotify/</link>
+    <description>Recent content in spotify on The Last Outpost</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
+    <language>en</language>
     <lastBuildDate>Tue, 10 Nov 2015 12:14:09 +0000</lastBuildDate>
     
-	<atom:link href="/categories/spotify/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://troglobit.com/categories/spotify/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Awesome: Changing Next/Prev Tune in Spotify</title>
-      <link>/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/</link>
+      <link>https://troglobit.com/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/</link>
       <pubDate>Tue, 10 Nov 2015 12:14:09 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/</guid>
+      
+      <guid>https://troglobit.com/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/</guid>
       <description>Back to using the Awesome WM in Ubuntu. This time I&amp;rsquo;m setting up everything from scratch and first up is fixing keybindings to control my main music player: Spotify!
 Edit your ~/.config/awesome/rc.lua with Emacs (obviously). If you do not have an rc file, simply copy the system /etc/xdb/awesome/rc.lua:
 globalkeys = awful.util.table.join(globalkeys, awful.key({}, &amp;quot;XF86AudioRaiseVolume&amp;quot;, function () awful.util.spawn(&amp;quot;amixer -D pulse sset Master 5%+&amp;quot;, false) end), awful.key({}, &amp;quot;XF86AudioLowerVolume&amp;quot;, function () awful.util.spawn(&amp;quot;amixer -D pulse sset Master 5%-&amp;quot;, false) end), awful.</description>

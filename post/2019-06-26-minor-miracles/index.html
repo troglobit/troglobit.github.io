@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="Joachim Wiberg">
+    <meta name="description" content="The last six months at work have been really stressful, so to finally get a week off for Swedish Midsummer celebrations was really what the doctor ordered! I&rsquo;ve managed to wind down and relax, spend time with my kids and my family, and even put in some time on my personal software projects!
+Three years ago I forked thttpd and began merging patches I&rsquo;d found scattered around the net. I&rsquo;ve also added a few features of my own, and to avoid any confusion with the original (bug free!">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Minor Miracles"/>
+<meta name="twitter:description" content="The last six months at work have been really stressful, so to finally get a week off for Swedish Midsummer celebrations was really what the doctor ordered! I&rsquo;ve managed to wind down and relax, spend time with my kids and my family, and even put in some time on my personal software projects!
+Three years ago I forked thttpd and began merging patches I&rsquo;d found scattered around the net. I&rsquo;ve also added a few features of my own, and to avoid any confusion with the original (bug free!"/>
+
+    <meta property="og:title" content="Minor Miracles" />
+<meta property="og:description" content="The last six months at work have been really stressful, so to finally get a week off for Swedish Midsummer celebrations was really what the doctor ordered! I&rsquo;ve managed to wind down and relax, spend time with my kids and my family, and even put in some time on my personal software projects!
+Three years ago I forked thttpd and began merging patches I&rsquo;d found scattered around the net. I&rsquo;ve also added a few features of my own, and to avoid any confusion with the original (bug free!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://troglobit.com/post/2019-06-26-minor-miracles/" />
+<meta property="article:published_time" content="2019-06-26T19:07:29+02:00" />
+<meta property="article:modified_time" content="2019-06-26T19:07:29+02:00" />
+
+
+    <title>
+  Minor Miracles · The Last Outpost
+</title>
+
+    
+      <link rel="canonical" href="https://troglobit.com/post/2019-06-26-minor-miracles/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://troglobit.com/css/coder.min.9836c03fe5c87d102278a33e86d0591ef36c89b1e17e8e547ebf84c05cee010e.css" integrity="sha256-mDbAP&#43;XIfRAieKM&#43;htBZHvNsibHhfo5Ufr&#43;EwFzuAQ4=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://troglobit.com/css/coder-dark.min.717236c74e0a5208ef73964a9f44c6b443b689a95b270d8b2a40d0c012460dac.css" integrity="sha256-cXI2x04KUgjvc5ZKn0TGtEO2ialbJw2LKkDQwBJGDaw=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+      <link rel="stylesheet" href="https://troglobit.com/css/custom.css" />
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://troglobit.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://troglobit.com/favicon.ico" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="https://troglobit.com/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://troglobit.com/images/apple-touch-icon.png">
+
+    
+
+    <meta name="generator" content="Hugo 0.68.3" />
+  </head>
+
+  
+  
+    
+  
+  <body class="colorscheme-auto"
+        onload=""
+  >
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://troglobit.com/">
+      The Last Outpost
+    </a>
+    
+      
+        <span id="dark-mode-toggle" class="float-right">
+          <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+        </span>
+      
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://troglobit.com/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://troglobit.com/post/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://troglobit.com/howto/">HowTos</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://troglobit.com/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://resume.troglobit.com">Resumé</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://ftp.troglobit.com">FTP</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://git.troglobit.com">GIT</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://deb.troglobit.com">DEB</a>
+            </li>
+          
+        
+        
+        
+          <li class="navigation-item separator">
+            <span>|</span>
+          </li>
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Minor Miracles</h1>
+    </header>
+
+    <p>The last six months at work have been really stressful, so to finally
+get a week off for Swedish Midsummer celebrations was really what the
+doctor ordered!  I&rsquo;ve managed to wind down and relax, spend time with my
+kids and my family, and even put in some time on my personal software
+projects!</p>
+<p>Three years ago I forked <a href="http://acme.com/software/thttpd/">thttpd</a> and began merging patches I&rsquo;d found
+scattered around the net.  I&rsquo;ve also added a few features of my own, and
+to avoid any confusion with the original (bug free!) project, I renamed
+the resulting monster <a href="https://merecat.troglobit.com/">Merecat</a> and it
+has served <a href="http://troglobit.com">http://troglobit.com</a> and its subdomains since then.  Test
+in production, yo!</p>
+<p>Last year I added native support for HTTPS to Merecat, but it was still
+not possible to serve both HTTP and HTTPS from the same httpd process,
+so I began a slow refactor which I&rsquo;ve now finalized! \o/</p>
+<p>With a little help from <a href="https://letsencrypt.org/">Let&rsquo;s Encrypt</a>, I now
+have <a href="https://troglobit.com">https://troglobit.com</a> up and running, and the HTTP site is also
+running &ndash; soon with automatic redirect to the HTTPS site.</p>
+<p>Vacation works, it really does.</p>
+<hr>
+<p><a href="http://acme.com/software/thttpd/">thttpd</a> is a web server made by <a href="http://acme.com/">Jef Poskanzer</a>.
+Jef is one of my big heroes, not only a great coder and over all nice
+guy, he&rsquo;s also a great photographer!  Follow his <a href="https://twitter.com/jef_poskanzer/">adventures on
+Twitter</a></p>
+
+  </article>
+</section>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'], ['\\(', '\\)']
+        ],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+      
+        ©
+        
+        2020
+         Joachim Wiberg 
+      
+      
+      
+    </section>
+  </footer>
+
+    </main>
+
+    
+      
+      <script src="https://troglobit.com/js/dark-mode.min.0213e1773e6d1c5a644f847c67a6f8abac49a3776e2976f6008038af8c5b76a1.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+  </body>
+
+</html>

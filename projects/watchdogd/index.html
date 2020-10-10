@@ -1,299 +1,155 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<html lang="en">
+
   <head>
-    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
 
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-
-  <title>System &amp; Process Supervisor for Linux - </title>
-  <meta property="og:title" content="System &amp; Process Supervisor for Linux" />
-  <meta name="twitter:title" content="System &amp; Process Supervisor for Linux" />
-  <meta name="description" content="watchdogd(8) is an advanced system and process supervisor daemon, primarily intended for embedded Linux and server systems. By default it periodically kicks the system watchdog timer (WDT) to prevent it from resetting the system. In its more advanced guise it monitors critical system resources, supervises the heartbeat of processes, records deadline transgressions, and initiates a controlled reset if needed.
+    <meta name="author" content="Joachim Wiberg">
+    <meta name="description" content="watchdogd(8) is an advanced system and process supervisor daemon, primarily intended for embedded Linux and server systems. By default it periodically kicks the system watchdog timer (WDT) to prevent it from resetting the system. In its more advanced guise it monitors critical system resources, supervises the heartbeat of processes, records deadline transgressions, and initiates a controlled reset if needed.
 When a system comes back up after a reset, watchdogd determines the reset cause and records it in a file for later analysis by an operator or network management system (NMS).">
-  <meta property="og:description" content="watchdogd(8) is an advanced system and process supervisor daemon, primarily intended for embedded Linux and server systems. By default it periodically kicks the system watchdog timer (WDT) to prevent it from resetting the system. In its more advanced guise it monitors critical system resources, supervises the heartbeat of processes, records deadline transgressions, and initiates a controlled reset if needed.
-When a system comes back up after a reset, watchdogd determines the reset cause and records it in a file for later analysis by an operator or network management system (NMS).">
-  <meta name="twitter:description" content="watchdogd(8) is an advanced system and process supervisor daemon, primarily intended for embedded Linux and server systems. By default it periodically kicks the system watchdog timer (WDT) to prevent …">
-  <meta name="author" content="Joachim Wiberg"/><script type="application/ld+json">
-{
-    "@context": "http://schema.org",
-    "@type": "WebSite",
-    "name": "",
-    
-    "url": "\/"
-}
-</script><script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Organization",
-  "name": "",
-  "url": "\/"
-  
-  
-  
-  
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "item": {
-          "@id": "\/",
-          "name": "home"
-        }
-    },{
-        "@type": "ListItem",
-        "position": 3,
-        "item": {
-          "@id": "\/projects\/watchdogd\/",
-          "name": "System \x26 process supervisor for linux"
-        }
-    }]
-}
-</script><script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Article",
-  "author": {
-    "name" : "Joachim Wiberg"
-  },
-  "headline": "System \x26 Process Supervisor for Linux",
-  "description" : "watchdogd(8) is an advanced system and process supervisor daemon, primarily intended for embedded Linux and server systems. By default it periodically kicks the system watchdog timer (WDT) to prevent it from resetting the system. In its more advanced guise it monitors critical system resources, supervises the heartbeat of processes, records deadline transgressions, and initiates a controlled reset if needed.\nWhen a system comes back up after a reset, watchdogd determines the reset cause and records it in a file for later analysis by an operator or network management system (NMS).",
-  "inLanguage" : "en",
-  "wordCount":  1761 ,
-  "datePublished" : "2019-05-27T21:46:00",
-  "dateModified" : "2019-05-27T21:46:00",
-  "image" : "\/images\/profile.jpg",
-  "keywords" : [ "" ],
-  "mainEntityOfPage" : "\/projects\/watchdogd\/",
-  "publisher" : {
-    "@type": "Organization",
-    "name" : "\/",
-    "logo" : {
-        "@type" : "ImageObject",
-        "url" : "\/images\/profile.jpg",
-        "height" :  60 ,
-        "width" :  60
-    }
-  }
-}
-</script>
+    <meta name="keywords" content="blog,developer,personal">
 
-<meta property="og:title" content="System &amp; Process Supervisor for Linux" />
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="System &amp; Process Supervisor for Linux"/>
+<meta name="twitter:description" content="watchdogd(8) is an advanced system and process supervisor daemon, primarily intended for embedded Linux and server systems. By default it periodically kicks the system watchdog timer (WDT) to prevent it from resetting the system. In its more advanced guise it monitors critical system resources, supervises the heartbeat of processes, records deadline transgressions, and initiates a controlled reset if needed.
+When a system comes back up after a reset, watchdogd determines the reset cause and records it in a file for later analysis by an operator or network management system (NMS)."/>
+
+    <meta property="og:title" content="System &amp; Process Supervisor for Linux" />
 <meta property="og:description" content="watchdogd(8) is an advanced system and process supervisor daemon, primarily intended for embedded Linux and server systems. By default it periodically kicks the system watchdog timer (WDT) to prevent it from resetting the system. In its more advanced guise it monitors critical system resources, supervises the heartbeat of processes, records deadline transgressions, and initiates a controlled reset if needed.
-When a system comes back up after a reset, watchdogd determines the reset cause and records it in a file for later analysis by an operator or network management system (NMS).">
-<meta property="og:image" content="/images/profile.jpg" />
-<meta property="og:url" content="/projects/watchdogd/" />
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content="" />
-
-  <meta name="twitter:title" content="System &amp; Process Supervisor for Linux" />
-  <meta name="twitter:description" content="watchdogd(8) is an advanced system and process supervisor daemon, primarily intended for embedded Linux and server systems. By default it periodically kicks the system watchdog timer (WDT) to prevent …">
-  <meta name="twitter:image" content="/images/profile.jpg" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@troglobit" />
-  <meta name="twitter:creator" content="@troglobit" />
-  <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
-  <meta property="og:image" content="/images/profile.jpg" />
-  <meta name="twitter:image" content="/images/profile.jpg" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@troglobit" />
-  <meta name="twitter:creator" content="@troglobit" />
-  <meta property="og:url" content="/projects/watchdogd/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="" />
-
-  <meta name="generator" content="Hugo 0.68.3" />
-  <link rel="alternate" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="/css/syntax.css" /><link rel="stylesheet" href="/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+When a system comes back up after a reset, watchdogd determines the reset cause and records it in a file for later analysis by an operator or network management system (NMS)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://troglobit.com/projects/watchdogd/" />
+<meta property="article:published_time" content="2019-05-27T21:46:00+02:00" />
+<meta property="article:modified_time" content="2019-05-27T21:46:00+02:00" />
 
 
+    <title>
+  System &amp; Process Supervisor for Linux · The Last Outpost
+</title>
 
+    
+      <link rel="canonical" href="https://troglobit.com/projects/watchdogd/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://troglobit.com/css/coder.min.9836c03fe5c87d102278a33e86d0591ef36c89b1e17e8e547ebf84c05cee010e.css" integrity="sha256-mDbAP&#43;XIfRAieKM&#43;htBZHvNsibHhfo5Ufr&#43;EwFzuAQ4=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://troglobit.com/css/coder-dark.min.717236c74e0a5208ef73964a9f44c6b443b689a95b270d8b2a40d0c012460dac.css" integrity="sha256-cXI2x04KUgjvc5ZKn0TGtEO2ialbJw2LKkDQwBJGDaw=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+      <link rel="stylesheet" href="https://troglobit.com/css/custom.css" />
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://troglobit.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://troglobit.com/favicon.ico" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="https://troglobit.com/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://troglobit.com/images/apple-touch-icon.png">
+
+    
+
+    <meta name="generator" content="Hugo 0.68.3" />
   </head>
-  <body>
-    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/"></a>
-    </div>
 
-    <div class="collapse navbar-collapse" id="main-navbar">
-      <ul class="nav navbar-nav navbar-right">
+  
+  
+    
+  
+  <body class="colorscheme-auto"
+        onload=""
+  >
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://troglobit.com/">
+      The Last Outpost
+    </a>
+    
+      
+        <span id="dark-mode-toggle" class="float-right">
+          <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+        </span>
+      
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
         
           
-            <li>
-              <a title="Archive" href="/archive/">Archive</a>
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://troglobit.com/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://troglobit.com/post/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://troglobit.com/howto/">HowTos</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://troglobit.com/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://resume.troglobit.com">Resumé</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://ftp.troglobit.com">FTP</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://git.troglobit.com">GIT</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://deb.troglobit.com">DEB</a>
             </li>
           
         
-          
-            <li>
-              <a title="DEB" href="https://deb.troglobit.com">DEB</a>
-            </li>
-          
         
-          
-            <li>
-              <a title="FTP" href="https://ftp.troglobit.com">FTP</a>
-            </li>
-          
         
-          
-            <li>
-              <a title="GIT" href="https://git.troglobit.com">GIT</a>
-            </li>
-          
-        
-          
-            <li>
-              <a title="HowTos" href="/howto/">HowTos</a>
-            </li>
-          
-        
-          
-            <li>
-              <a title="Projects" href="/projects/">Projects</a>
-            </li>
-          
-        
-          
-            <li>
-              <a title="Resumé" href="https://resume.troglobit.com">Resumé</a>
-            </li>
-          
-        
-          
-            <li>
-              <a title="About" href="/about/">About</a>
-            </li>
-          
-        
-
-        
-
+          <li class="navigation-item separator">
+            <span>|</span>
+          </li>
         
       </ul>
-    </div>
-
     
-      <div class="avatar-container">
-        <div class="avatar-img-border">
-          <a title="" href="/">
-            <img class="avatar-img" src="/images/profile.jpg" alt="" />
-          </a>
-        </div>
-      </div>
-    
-
-  </div>
+  </section>
 </nav>
 
 
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>System &amp; Process Supervisor for Linux</h1>
+    </header>
 
-
-    
-
-
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-<div class="pswp__bg"></div>
-
-<div class="pswp__scroll-wrap">
-    
-    <div class="pswp__container">
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-    </div>
-    
-    <div class="pswp__ui pswp__ui--hidden">
-    <div class="pswp__top-bar">
-      
-      <div class="pswp__counter"></div>
-      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-      <button class="pswp__button pswp__button--share" title="Share"></button>
-      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-      
-      
-      <div class="pswp__preloader">
-        <div class="pswp__preloader__icn">
-          <div class="pswp__preloader__cut">
-            <div class="pswp__preloader__donut"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-      <div class="pswp__share-tooltip"></div>
-    </div>
-    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-    </button>
-    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-    </button>
-    <div class="pswp__caption">
-      <div class="pswp__caption__center"></div>
-    </div>
-    </div>
-    </div>
-</div>
-
-
-  
-  
-  
-
-
-
-
-
-
-  
-
-  <header class="header-section ">
-    
-    <div class="intro-header no-img">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="projects-heading">
-              
-                <h1>System &amp; Process Supervisor for Linux</h1>
-              
-              
-                <hr class="small">
-              
-              
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-
-    
-<div class="container" role="main">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <article role="main" class="blog-post">
-	
-        <p><!-- raw HTML omitted --></p>
+    <p><!-- raw HTML omitted --></p>
 <p><code>watchdogd(8)</code> is an advanced system and process supervisor daemon,
 primarily intended for embedded Linux and server systems.  By default it
 periodically kicks the system watchdog timer (WDT) to prevent it from
@@ -344,7 +200,7 @@ aspects of the system, such as:</p>
 script where operators can do housekeeping checks.  For details on how
 to configure this, see the watchdogd.conf(5) man page.</p>
 <h2 id="usage">Usage</h2>
-<pre><code>watchdogd [-hnsVx] [-f FILE] [-T SEC] [-t SEC] [/dev/watchdog]
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">watchdogd [-hnsVx] [-f FILE] [-T SEC] [-t SEC] [/dev/watchdog]
 
 Options:
   -f, --config=FILE        Use FILE for daemon configuration
@@ -355,15 +211,15 @@ Options:
   -T, --timeout=SEC        HW watchdog timer (WDT) timeout in SEC seconds
   -t, --interval=SEC       WDT kick interval in SEC seconds, default: 10
   -x, --safe-exit          Disable watchdog on exit from SIGINT/SIGTERM
-                           &quot;magic&quot; exit may not be supported by HW/driver
+                           &#34;magic&#34; exit may not be supported by HW/driver
   
   -V, --version            Display version and exit
   -h, --help               Display this help message and exit
-</code></pre><p>Without any arguments, <code>watchdogd</code> opens <code>/dev/watchdog</code>, forks to the
+</code></pre></div><p>Without any arguments, <code>watchdogd</code> opens <code>/dev/watchdog</code>, forks to the
 background, tries to to set a 20 sec WDT timeout, and then kicks every
 10 sec.  See the <a href="#operation">Operation</a> section for more information.</p>
 <p><strong>Example</strong></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">watchdogd -T <span style="color:#099">120</span> -t <span style="color:#099">30</span> /dev/watchdog2
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">watchdogd -T <span style="color:#3677a9">120</span> -t <span style="color:#3677a9">30</span> /dev/watchdog2
 </code></pre></div><p><code>watchdogd</code> runs at the default UNIX priority (nice) level, unless the
 process monitor is activated, in which case it runs at an elevated real
 time priority.</p>
@@ -376,24 +232,24 @@ WDT timeout before announcing HW WDT failure and forcing a reboot.</p>
 <p><code>watchdogd(8)</code> supports optional monitoring of several system resources
 that can be enabled in the <code>.conf</code> file.  First, system load average
 monitoring can be enabled with:</p>
-<pre><code>loadavg {
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">loadavg {
     interval = 300       # Every 5 mins
     warning  = 1.5
     critical = 2.0
 }
-</code></pre><p>Second, the memory leak detector, a value of 1.0 means 100% memory use:</p>
-<pre><code>meminfo {
+</code></pre></div><p>Second, the memory leak detector, a value of 1.0 means 100% memory use:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">meminfo {
     interval = 3600       # Every hour
     warning  = 0.9
     critical = 0.95
 }
-</code></pre><p>Third, file descriptor leak detector:</p>
-<pre><code>filenr {
+</code></pre></div><p>Third, file descriptor leak detector:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">filenr {
     interval = 3600       # Every hour
     warning  = 0.8
     critical = 0.95
 }
-</code></pre><p>All of these monitors can be <em>very</em> useful on an embedded or headless
+</code></pre></div><p>All of these monitors can be <em>very</em> useful on an embedded or headless
 system with little or no operator.</p>
 <p>The two values, <code>warning</code> and <code>critical</code>, are the warning and reboot
 levels in percent.  The latter is optional, if it is omitted reboot is
@@ -413,21 +269,21 @@ detected by reading the file <code>/proc/meminfo</code>, looking for the
 called pmon).  When the supervisor is enabled the daemon runs as a
 real-time task with the configured priority, default 98.  Monitored
 clients connect to the supervisor using the libwdog API.</p>
-<pre><code>supervisor {
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">supervisor {
     enabled = true
     priority = 98
 }
-</code></pre><p><a href="#libwdog-api">See below</a> for details on how to have your process
+</code></pre></div><p><a href="#libwdog-api">See below</a> for details on how to have your process
 internal deadlines be supervised.</p>
 <p>When a process fails to meet its deadlines, or a monitor plugin reaches
 critical level, <code>watchdogd</code> initiates a controlled reset.  To see the
 reset cause after reboot, the following section must be enabled in the
 <code>/etc/watchdogd.conf</code> file:</p>
-<pre><code>reset-cause {
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">reset-cause {
     enabled = true
 #   file    = /var/lib/watchdogd.state
 }
-</code></pre><p>The <code>file</code> setting is optional, the default is usually sufficient, but
+</code></pre></div><p>The <code>file</code> setting is optional, the default is usually sufficient, but
 make sure the destination directory is writable if you change it.</p>
 <h2 id="libwdog-api">libwdog API</h2>
 <p>To use pmon a client must have its source code instrumented with at
@@ -436,41 +292,41 @@ adding the <code>wdog_kick2()</code> call to the main event loop.</p>
 <p>All API calls, except <code>wdog_ping()</code>, return POSIX OK(0) or negative
 value with <code>errno</code> set on error.  The <code>wdog_subscribe()</code> call returns a
 positive integer (including zero) for the watchdog <code>id</code>.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#998;font-style:italic">/*
-</span><span style="color:#998;font-style:italic"> * Enable or disable watchdogd at runtime.
-</span><span style="color:#998;font-style:italic"> */</span>
-<span style="color:#458;font-weight:bold">int</span> <span style="color:#900;font-weight:bold">wdog_enable</span>      (<span style="color:#458;font-weight:bold">int</span> enable);
-<span style="color:#458;font-weight:bold">int</span> <span style="color:#900;font-weight:bold">wdog_status</span>      (<span style="color:#458;font-weight:bold">int</span> <span style="color:#000;font-weight:bold">*</span>enabled);
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#999;font-style:italic">/*
+</span><span style="color:#999;font-style:italic"> * Enable or disable watchdogd at runtime.
+</span><span style="color:#999;font-style:italic"> */</span>
+<span style="color:#6ab825;font-weight:bold">int</span> <span style="color:#447fcf">wdog_enable</span>      (<span style="color:#6ab825;font-weight:bold">int</span> enable);
+<span style="color:#6ab825;font-weight:bold">int</span> <span style="color:#447fcf">wdog_status</span>      (<span style="color:#6ab825;font-weight:bold">int</span> *enabled);
 
-<span style="color:#998;font-style:italic">/*
-</span><span style="color:#998;font-style:italic"> * Check if watchdogd API is actively responding,
-</span><span style="color:#998;font-style:italic"> * returns %TRUE(1) or %FALSE(0)
-</span><span style="color:#998;font-style:italic"> */</span>
-<span style="color:#458;font-weight:bold">int</span> <span style="color:#900;font-weight:bold">wdog_ping</span>        (<span style="color:#458;font-weight:bold">void</span>);
+<span style="color:#999;font-style:italic">/*
+</span><span style="color:#999;font-style:italic"> * Check if watchdogd API is actively responding,
+</span><span style="color:#999;font-style:italic"> * returns %TRUE(1) or %FALSE(0)
+</span><span style="color:#999;font-style:italic"> */</span>
+<span style="color:#6ab825;font-weight:bold">int</span> <span style="color:#447fcf">wdog_ping</span>        (<span style="color:#6ab825;font-weight:bold">void</span>);
 
-<span style="color:#998;font-style:italic">/*
-</span><span style="color:#998;font-style:italic"> * Register with pmon, timeout in msec.  Return value is the `id`
-</span><span style="color:#998;font-style:italic"> * to be used with the `ack` in subsequent kick()/unsubscribe()
-</span><span style="color:#998;font-style:italic"> */</span>
-<span style="color:#458;font-weight:bold">int</span> <span style="color:#900;font-weight:bold">wdog_subscribe</span>   (<span style="color:#458;font-weight:bold">char</span> <span style="color:#000;font-weight:bold">*</span>label, <span style="color:#458;font-weight:bold">int</span> timeout, <span style="color:#458;font-weight:bold">int</span> <span style="color:#000;font-weight:bold">*</span>ack);
-<span style="color:#458;font-weight:bold">int</span> <span style="color:#900;font-weight:bold">wdog_unsubscribe</span> (<span style="color:#458;font-weight:bold">int</span> id, <span style="color:#458;font-weight:bold">int</span> ack);
-<span style="color:#458;font-weight:bold">int</span> <span style="color:#900;font-weight:bold">wdog_kick2</span>       (<span style="color:#458;font-weight:bold">int</span> id, <span style="color:#458;font-weight:bold">int</span> <span style="color:#000;font-weight:bold">*</span>ack);
+<span style="color:#999;font-style:italic">/*
+</span><span style="color:#999;font-style:italic"> * Register with pmon, timeout in msec.  Return value is the `id`
+</span><span style="color:#999;font-style:italic"> * to be used with the `ack` in subsequent kick()/unsubscribe()
+</span><span style="color:#999;font-style:italic"> */</span>
+<span style="color:#6ab825;font-weight:bold">int</span> <span style="color:#447fcf">wdog_subscribe</span>   (<span style="color:#6ab825;font-weight:bold">char</span> *label, <span style="color:#6ab825;font-weight:bold">int</span> timeout, <span style="color:#6ab825;font-weight:bold">int</span> *ack);
+<span style="color:#6ab825;font-weight:bold">int</span> <span style="color:#447fcf">wdog_unsubscribe</span> (<span style="color:#6ab825;font-weight:bold">int</span> id, <span style="color:#6ab825;font-weight:bold">int</span> ack);
+<span style="color:#6ab825;font-weight:bold">int</span> <span style="color:#447fcf">wdog_kick2</span>       (<span style="color:#6ab825;font-weight:bold">int</span> id, <span style="color:#6ab825;font-weight:bold">int</span> *ack);
 </code></pre></div><p>It is highly recommended to use an event loop like libev, <a href="https://github.com/troglobit/libuev/">libuev</a>, or
 similar.  For such libraries one can simply add a timer callback for the
 kick to run periodically to monitor proper operation of the client.</p>
 <h3 id="example">Example</h3>
 <p>For other applications, identify your main loop, its max period time and
 instrument it like this:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#458;font-weight:bold">int</span> ack, wid;
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#6ab825;font-weight:bold">int</span> ack, wid;
 
-<span style="color:#998;font-style:italic">/* Library will use process&#39; name on NULL first arg. */</span>
-wid <span style="color:#000;font-weight:bold">=</span> wdog_subscribe(<span style="color:#0086b3">NULL</span>, <span style="color:#099">10000</span>, <span style="color:#000;font-weight:bold">&amp;</span>ack);
-<span style="color:#000;font-weight:bold">if</span> (<span style="color:#000;font-weight:bold">-</span><span style="color:#099">1</span> <span style="color:#000;font-weight:bold">==</span> wid)
-        ;      <span style="color:#998;font-style:italic">/* Error handling */</span>
+<span style="color:#999;font-style:italic">/* Library will use process&#39; name on NULL first arg. */</span>
+wid = wdog_subscribe(<span style="color:#24909d">NULL</span>, <span style="color:#3677a9">10000</span>, &amp;ack);
+<span style="color:#6ab825;font-weight:bold">if</span> (-<span style="color:#3677a9">1</span> == wid)
+        ;      <span style="color:#999;font-style:italic">/* Error handling */</span>
 
-<span style="color:#000;font-weight:bold">while</span> (<span style="color:#099">1</span>) {
+<span style="color:#6ab825;font-weight:bold">while</span> (<span style="color:#3677a9">1</span>) {
         ...
-        wdog_kick2(wid, <span style="color:#000;font-weight:bold">&amp;</span>ack);
+        wdog_kick2(wid, &amp;ack);
         ...
 }
 </code></pre></div><p>This simple example subscribes to the watchdog with a 10 sec timeout.
@@ -508,7 +364,7 @@ header files.</p>
 <p>Hence, the regular <code>./configure &amp;&amp; make</code> is usually sufficient to build
 <code>watchdogd</code>.  But, if libraries are installed in non-standard locations
 you may need to provide their paths:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#008080">PKG_CONFIG_PATH</span><span style="color:#000;font-weight:bold">=</span>/opt/lib/pkgconfig:/home/ian/lib/pkgconfig ./configure
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#40ffff">PKG_CONFIG_PATH</span>=/opt/lib/pkgconfig:/home/ian/lib/pkgconfig ./configure
 make
 </code></pre></div><p>To build the source from GIT, see below.</p>
 <h2 id="origin--references">Origin &amp; References</h2>
@@ -533,8 +389,8 @@ the <code>watchdogd</code> project, copyright © <a href="http://toonclips.com/d
 <h2 id="contributing">Contributing</h2>
 <p>If you find bugs or want to contribute fixes or features, check out the
 code from GitHub:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone https://github.com/troglobit/watchdogd
-<span style="color:#0086b3">cd</span> watchdogd
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git clone https://github.com/troglobit/watchdogd
+<span style="color:#24909d">cd</span> watchdogd
 ./autogen.sh
 </code></pre></div><p>The <code>autogen.sh</code> script runs <code>autoconf</code>, <code>automake</code>, et al to create the
 configure script and such generated files not part of the VCS tree.  For
@@ -542,115 +398,60 @@ more details, see the file <a href="https://github.com/troglobit/watchdogd/blob/
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 
+  </article>
+</section>
 
-        
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'], ['\\(', '\\)']
+        ],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
 
-        
-
-        
-      </article>
-
-      
-        <ul class="pager blog-pager">
-          
-            <li class="previous">
-              <a href="/projects/pimd/" data-toggle="tooltip" data-placement="top" title="The original PIM-SM daemon">&larr; Previous Post</a>
-            </li>
-          
-          
-            <li class="next">
-              <a href="/projects/nemesis/" data-toggle="tooltip" data-placement="top" title="N E M E S I S">Next Post &rarr;</a>
-            </li>
-          
-        </ul>
-      
-
-
-      
-
-    </div>
-  </div>
-</div>
-
-    <footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <ul class="list-inline text-center footer-links">
-          
-              <li>
-                <a href="mailto:troglobit@gmail.com" title="Email me">
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/troglobit" title="GitHub">
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="https://twitter.com/troglobit" title="Twitter">
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-          
-          <li>
-            <a href="" title="RSS">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-        <p class="credits copyright text-muted">
-          
-            
-              <a href="https://troglobit.com">Joachim Wiberg</a>
-            
-          
-
-          &nbsp;&bull;&nbsp;&copy;
-          
-            2020
-          
-
-          
-        </p>
-        
-        <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
-          
-        </p>
       </div>
-    </div>
-  </div>
-</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-<script src="/js/main.js"></script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="/js/load-photoswipe.js"></script>
+      
+  <footer class="footer">
+    <section class="container">
+      
+      
+        ©
+        
+        2020
+         Joachim Wiberg 
+      
+      
+      
+    </section>
+  </footer>
 
+    </main>
 
+    
+      
+      <script src="https://troglobit.com/js/dark-mode.min.0213e1773e6d1c5a644f847c67a6f8abac49a3776e2976f6008038af8c5b76a1.js"></script>
+    
 
+    
 
+    
 
+    
 
+    
 
-
-
+    
   </body>
-</html>
 
+</html>

@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>submodules on </title>
-    <link>/categories/submodules/</link>
-    <description>Recent content in submodules on </description>
+    <title>submodules on The Last Outpost</title>
+    <link>https://troglobit.com/categories/submodules/</link>
+    <description>Recent content in submodules on The Last Outpost</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
+    <language>en</language>
     <lastBuildDate>Thu, 02 Jul 2015 17:11:55 +0000</lastBuildDate>
     
-	<atom:link href="/categories/submodules/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://troglobit.com/categories/submodules/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>HowTo: Using -lite with a GIT-based application</title>
-      <link>/2015/07/02/howto-using-lite-with-a-git-based-application/</link>
+      <link>https://troglobit.com/2015/07/02/howto-using-lite-with-a-git-based-application/</link>
       <pubDate>Thu, 02 Jul 2015 17:11:55 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/2015/07/02/howto-using-lite-with-a-git-based-application/</guid>
+      
+      <guid>https://troglobit.com/2015/07/02/howto-using-lite-with-a-git-based-application/</guid>
       <description>&lt;p&gt;Years ago while looking for a fast &lt;a href=&#34;https://en.wikipedia.org/wiki/Init&#34;&gt;init&lt;/a&gt; replacement for &lt;a href=&#34;http://westermo.com/&#34;&gt;work&lt;/a&gt;,
 I found &lt;a href=&#34;http://helllabs.org/finit/&#34;&gt;Finit&lt;/a&gt;.  Originally written by &lt;a href=&#34;https://github.com/cmatsuoka&#34;&gt;Claudio Matsuoka&lt;/a&gt; to act
 as a drop-in replacement for the &lt;a href=&#34;https://en.wikipedia.org/wiki/Asus_Eee_PC&#34;&gt;Asus EeePC&lt;/a&gt; &lt;a href=&#34;http://wiki.eeeuser.com/boot_process:the_boot_process&#34;&gt;fastinit&lt;/a&gt;, &lt;em&gt;&amp;ldquo;gaps

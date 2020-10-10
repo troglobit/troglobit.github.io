@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="Joachim Wiberg">
+    <meta name="description" content="Some time ago now I was in a meeting with a customer where I first learned of
+the new syslog standard, RFC5424.  I say &ldquo;new&rdquo; because, despite it being
+ten years old, it was new to me.
+Three weeks ago I started updating my fork of sysklogd to be RFC5424
+compliant.  I ended up ripping out most of the old code and replacing it with
+fresh DNA strands from FreeBSD and NetBSD.
+The result is a fully RFC compliant syslogd, and a libsyslog with a
+replacement syslog.h header for sending RFC5424 events from applications!
+https://github.com/troglobit/sysklogd/">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="BSD syslogd in Linux"/>
+<meta name="twitter:description" content="Some time ago now I was in a meeting with a customer where I first learned of
+the new syslog standard, RFC5424.  I say &ldquo;new&rdquo; because, despite it being
+ten years old, it was new to me.
+Three weeks ago I started updating my fork of sysklogd to be RFC5424
+compliant.  I ended up ripping out most of the old code and replacing it with
+fresh DNA strands from FreeBSD and NetBSD.
+The result is a fully RFC compliant syslogd, and a libsyslog with a
+replacement syslog.h header for sending RFC5424 events from applications!
+https://github.com/troglobit/sysklogd/"/>
+
+    <meta property="og:title" content="BSD syslogd in Linux" />
+<meta property="og:description" content="Some time ago now I was in a meeting with a customer where I first learned of
+the new syslog standard, RFC5424.  I say &ldquo;new&rdquo; because, despite it being
+ten years old, it was new to me.
+Three weeks ago I started updating my fork of sysklogd to be RFC5424
+compliant.  I ended up ripping out most of the old code and replacing it with
+fresh DNA strands from FreeBSD and NetBSD.
+The result is a fully RFC compliant syslogd, and a libsyslog with a
+replacement syslog.h header for sending RFC5424 events from applications!
+https://github.com/troglobit/sysklogd/" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://troglobit.com/post/2019-11-03-syslogd-and-standards/" />
+<meta property="article:published_time" content="2019-11-03T23:04:00+01:00" />
+<meta property="article:modified_time" content="2019-11-03T23:04:00+01:00" />
+
+
+    <title>
+  BSD syslogd in Linux · The Last Outpost
+</title>
+
+    
+      <link rel="canonical" href="https://troglobit.com/post/2019-11-03-syslogd-and-standards/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://troglobit.com/css/coder.min.9836c03fe5c87d102278a33e86d0591ef36c89b1e17e8e547ebf84c05cee010e.css" integrity="sha256-mDbAP&#43;XIfRAieKM&#43;htBZHvNsibHhfo5Ufr&#43;EwFzuAQ4=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://troglobit.com/css/coder-dark.min.717236c74e0a5208ef73964a9f44c6b443b689a95b270d8b2a40d0c012460dac.css" integrity="sha256-cXI2x04KUgjvc5ZKn0TGtEO2ialbJw2LKkDQwBJGDaw=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+      <link rel="stylesheet" href="https://troglobit.com/css/custom.css" />
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://troglobit.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://troglobit.com/favicon.ico" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="https://troglobit.com/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://troglobit.com/images/apple-touch-icon.png">
+
+    
+
+    <meta name="generator" content="Hugo 0.68.3" />
+  </head>
+
+  
+  
+    
+  
+  <body class="colorscheme-auto"
+        onload=""
+  >
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://troglobit.com/">
+      The Last Outpost
+    </a>
+    
+      
+        <span id="dark-mode-toggle" class="float-right">
+          <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+        </span>
+      
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://troglobit.com/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://troglobit.com/post/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://troglobit.com/howto/">HowTos</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://troglobit.com/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://resume.troglobit.com">Resumé</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://ftp.troglobit.com">FTP</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://git.troglobit.com">GIT</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://deb.troglobit.com">DEB</a>
+            </li>
+          
+        
+        
+        
+          <li class="navigation-item separator">
+            <span>|</span>
+          </li>
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>BSD syslogd in Linux</h1>
+    </header>
+
+    <p>Some time ago now I was in a meeting with a customer where I first learned of
+the new syslog standard, <a href="https://tools.ietf.org/html/rfc5424">RFC5424</a>.  I say &ldquo;new&rdquo; because, despite it being
+ten years old, it was new to me.</p>
+<p>Three weeks ago I started updating my fork of <a href="https://www.infodrom.org/projects/sysklogd/">sysklogd</a> to be <a href="https://tools.ietf.org/html/rfc5424">RFC5424</a>
+compliant.  I ended up ripping out most of the old code and replacing it with
+fresh DNA strands from FreeBSD and NetBSD.</p>
+<p>The result is a fully RFC compliant <code>syslogd</code>, <strong>and</strong> a <code>libsyslog</code> with a
+replacement <code>syslog.h</code> header for sending RFC5424 events from applications!</p>
+<p><a href="https://github.com/troglobit/sysklogd/">https://github.com/troglobit/sysklogd/</a></p>
+<p>When I first embarked on this journey I was very surprised to learn that Linux
+(GLIBC) did not have an RFC5424 compliant <code>syslog()</code> API.  As it turned out,
+neither did FreeBSD.  Only NetBSD had implemented a full stack, from C-library
+to syslog daemon.</p>
+<p>So the <code>libsyslog</code> and <code>syslog.h</code> replacements included now in sysklogd are
+taken from NetBSD, whereas the major parts of the <a href="https://tools.ietf.org/html/rfc3164">RFC3164</a> and <a href="https://tools.ietf.org/html/rfc5424">RFC5424</a>
+parsing code in syslogd are taken from FreeBSD.</p>
+<h2 id="differences">Differences</h2>
+<p>So what are the main differences between the two RFCs?  Well, there are in
+fact three different standards at play here.  The first is the original BSD
+implementation, which was later sort of standardized in <a href="https://tools.ietf.org/html/rfc3164">RFC3164</a>, this
+original BSD is what sysklogd was.</p>
+<p>One major difference from the original BSD code and RFC3164, I learned, is
+that when sending messages to a remote syslog server, there was no timestamp
+or hostname included.  So the receiving syslog server had to look up the host
+from the source address in the IP header and then also do the timestamping.
+In some respects this is good (and understandable): 1) early on many hosts did
+not properly set their hostname, and 2) these same hosts often did not even
+have the correct time.</p>
+<p>The first job of updating <code>sysklogd</code> was to update it to properly support
+RFC3164 formatting of remote syslog messages:</p>
+<pre><code>&lt;------- HEADER --------&gt; &lt;----------- MSG ------------&gt;
+Aug 24 05:14:15 192.0.2.1 myproc[8710]: Kilroy was here.
+ \                \        \      \      \
+  \                \        \      \      `-- What you think is the message
+   \                \        \      `-------- Convention for process ID (PID)
+    \				 \	      `-------------- Convention for process name
+     \                `---------------------- Hostname or IP address
+      `-------------------------------------- Notice lack of year ...
+</code></pre>
+<p>The second part was to add RFC5424 formatting:</p>
+<pre><code>&lt;---------------------- HEADER ------------------------&gt;   &lt;---- MSG -----&gt;
+2003-08-24T05:14:15.000003-07:00 192.0.2.1 myproc 8710 - - Kilroy was here.
+ \                                \         \      \    \ \ \
+  \                                \         \      \    \ \ `-- Actual message
+   \                                \         \      \    \ `--- Structured data
+    \                                \         \      \    `---- Message ID (MsgID)
+     \                                \         \      `-------- Process ID (ProcID)
+      \                                \         `-------------- Process name (App-Name)
+       \                                `----------------------- Hostname or IP address
+        `------------------------------------------------------- RFC3339 Timestamp
+</code></pre>
+<p>Yeah, what about those dashes (<code>-</code>)?  I had to fake it to begin with, because
+those dashes, if you disregard the difference in the timestamp, is what are
+the major differences between the two RFCs.  As you can see from the figures
+above, the RFC3164 world was empty and scary, and the RFC5424 world is full of
+confusing stuff??</p>
+<p>The first dash above is the new MsgID field, which is a free-form string that
+a receiver can use for quick and easy regexp filtering.  The second dash is
+<em>structured data</em> and is essentially name-value pairs in a <code>[ .. ]</code> container.
+See the RFC for more details and <a href="https://tools.ietf.org/html/rfc5424#section-6.3.5">an example in section
+6.3.5</a></p>
+<p>To distinguish between the two formats RFC5424 added a version field that
+comes right after the <code>&lt;PRI&gt;</code> field, which is at the very start of each syslog
+message.  I.e., RFC3164 starts with <code>&lt;PRI&gt;</code> and a space, and RFC5424 starts
+with <code>&lt;PRI&gt;1</code> and a space, before the timestamp.</p>
+<h2 id="netbsd-api">NetBSD API</h2>
+<p>The GLIBC, musl, and uClibc libraries all currently just support RFC3164.  So
+there is no way for a Linux application today to add a MsgID or any structured
+data to a syslog message &hellip; until now.</p>
+<p><code>sysklogd</code> comes with <code>libsyslog</code> and a <code>syslog.h</code> header replacement that
+has the NetBSD <code>syslogp()</code> family of APIs:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#6ab825;font-weight:bold">int</span>  <span style="color:#447fcf">setlogmask</span>  (<span style="color:#6ab825;font-weight:bold">int</span> maskpri);
+<span style="color:#6ab825;font-weight:bold">int</span>  <span style="color:#447fcf">setlogmask_r</span>(<span style="color:#6ab825;font-weight:bold">int</span> maskpri, <span style="color:#6ab825;font-weight:bold">struct</span> syslog_data *data);
+
+<span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">openlog</span>   (<span style="color:#6ab825;font-weight:bold">const</span> <span style="color:#6ab825;font-weight:bold">char</span> *ident, <span style="color:#6ab825;font-weight:bold">int</span> logopt, <span style="color:#6ab825;font-weight:bold">int</span> facility);
+<span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">openlog_r</span> (<span style="color:#6ab825;font-weight:bold">const</span> <span style="color:#6ab825;font-weight:bold">char</span> *ident, <span style="color:#6ab825;font-weight:bold">int</span> logopt, <span style="color:#6ab825;font-weight:bold">int</span> facility, <span style="color:#6ab825;font-weight:bold">struct</span> syslog_data *data);
+
+<span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">closelog</span>  (<span style="color:#6ab825;font-weight:bold">void</span>);
+<span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">closelog_r</span>(<span style="color:#6ab825;font-weight:bold">struct</span> syslog_data *data);
+
+<span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">syslog</span>    (<span style="color:#6ab825;font-weight:bold">int</span> priority, <span style="color:#6ab825;font-weight:bold">const</span> <span style="color:#6ab825;font-weight:bold">char</span> *message, ...);
+<span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">vsyslog</span>   (<span style="color:#6ab825;font-weight:bold">int</span> priority, <span style="color:#6ab825;font-weight:bold">const</span> <span style="color:#6ab825;font-weight:bold">char</span> *message, va_list args);
+
+<span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">syslogp</span>   (<span style="color:#6ab825;font-weight:bold">int</span> priority, <span style="color:#6ab825;font-weight:bold">const</span> <span style="color:#6ab825;font-weight:bold">char</span> *msgid, <span style="color:#6ab825;font-weight:bold">const</span> <span style="color:#6ab825;font-weight:bold">char</span> *sd, <span style="color:#6ab825;font-weight:bold">const</span> <span style="color:#6ab825;font-weight:bold">char</span> *message, ...);
+<span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">vsyslogp</span>  (<span style="color:#6ab825;font-weight:bold">int</span> priority, <span style="color:#6ab825;font-weight:bold">const</span> <span style="color:#6ab825;font-weight:bold">char</span> *msgid, <span style="color:#6ab825;font-weight:bold">const</span> <span style="color:#6ab825;font-weight:bold">char</span> *sd, <span style="color:#6ab825;font-weight:bold">const</span> <span style="color:#6ab825;font-weight:bold">char</span> *message, va_list args);
+
+<span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">syslog_r</span>  (<span style="color:#6ab825;font-weight:bold">int</span> priority, <span style="color:#6ab825;font-weight:bold">struct</span> syslog_data *data, <span style="color:#6ab825;font-weight:bold">const</span> <span style="color:#6ab825;font-weight:bold">char</span> *message, ...);
+<span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">vsyslog_r</span> (<span style="color:#6ab825;font-weight:bold">int</span> priority, <span style="color:#6ab825;font-weight:bold">struct</span> syslog_data *data, <span style="color:#6ab825;font-weight:bold">const</span> <span style="color:#6ab825;font-weight:bold">char</span> *message, va_list args);
+
+<span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">syslogp_r</span> (<span style="color:#6ab825;font-weight:bold">int</span> priority, <span style="color:#6ab825;font-weight:bold">struct</span> syslog_data *data, <span style="color:#6ab825;font-weight:bold">const</span> <span style="color:#6ab825;font-weight:bold">char</span> *msgid, <span style="color:#6ab825;font-weight:bold">const</span> <span style="color:#6ab825;font-weight:bold">char</span> *sd,
+                <span style="color:#6ab825;font-weight:bold">const</span> <span style="color:#6ab825;font-weight:bold">char</span> *message, ...);
+<span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">vsyslogp_r</span>(<span style="color:#6ab825;font-weight:bold">int</span> priority, <span style="color:#6ab825;font-weight:bold">struct</span> syslog_data *data, <span style="color:#6ab825;font-weight:bold">const</span> <span style="color:#6ab825;font-weight:bold">char</span> *msgid, <span style="color:#6ab825;font-weight:bold">const</span> <span style="color:#6ab825;font-weight:bold">char</span> *sd,
+                <span style="color:#6ab825;font-weight:bold">const</span> <span style="color:#6ab825;font-weight:bold">char</span> *message, va_list args);
+</code></pre></div><h2 id="example">Example</h2>
+<p>To use the new API on Linux we create an example application:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#999;font-style:italic">/* example.c - Example of how to use NetBSD syslogp() API */</span>
+<span style="color:#cd2828;font-weight:bold">#include</span> <span style="color:#cd2828;font-weight:bold">&lt;stdio.h&gt;</span><span style="color:#cd2828;font-weight:bold">
+</span><span style="color:#cd2828;font-weight:bold">#include</span> <span style="color:#cd2828;font-weight:bold">&lt;syslog/syslog.h&gt;</span><span style="color:#cd2828;font-weight:bold">
+</span><span style="color:#cd2828;font-weight:bold"></span>
+<span style="color:#6ab825;font-weight:bold">int</span> <span style="color:#447fcf">main</span>(<span style="color:#6ab825;font-weight:bold">void</span>)
+{
+        openlog(<span style="color:#ed9d13">&#34;example&#34;</span>, LOG_PID, LOG_USER);
+        syslogp(LOG_NOTICE, <span style="color:#ed9d13">&#34;MSGID&#34;</span>, <span style="color:#24909d">NULL</span>, <span style="color:#ed9d13">&#34;Kilroy was here.&#34;</span>);
+        closelog();
+}
+</code></pre></div><p>We build and run the application.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">jocke@troglobit:~/tmp $ gcc <span style="color:#ed9d13">`</span>pkg-config --libs --static --cflags libsyslog<span style="color:#ed9d13">`</span> <span style="color:#ed9d13">\
+</span><span style="color:#ed9d13"></span>                            -o example example.c
+jocke@troglobit:~/tmp $ ./example
+</code></pre></div><p>Provided <code>syslogd</code> is set up properly the following would be logged in your
+local log file, or sent to a remote syslog server:</p>
+<pre><code>2019-11-03T00:46:34.034324+01:00 troglobit example 1234 MSGID - Kilroy was here.
+</code></pre>
+  </article>
+</section>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'], ['\\(', '\\)']
+        ],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+      
+        ©
+        
+        2020
+         Joachim Wiberg 
+      
+      
+      
+    </section>
+  </footer>
+
+    </main>
+
+    
+      
+      <script src="https://troglobit.com/js/dark-mode.min.0213e1773e6d1c5a644f847c67a6f8abac49a3776e2976f6008038af8c5b76a1.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+  </body>
+
+</html>

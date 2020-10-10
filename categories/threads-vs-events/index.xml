@@ -1,31 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Threads vs Events on </title>
-    <link>/categories/threads-vs-events/</link>
-    <description>Recent content in Threads vs Events on </description>
+    <title>Threads vs Events on The Last Outpost</title>
+    <link>https://troglobit.com/categories/threads-vs-events/</link>
+    <description>Recent content in Threads vs Events on The Last Outpost</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <language>en</language>
     <lastBuildDate>Tue, 06 Aug 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/threads-vs-events/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://troglobit.com/categories/threads-vs-events/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Threads vs Events</title>
-      <link>/2013/08/06/event-handling/</link>
+      <link>https://troglobit.com/2013/08/06/event-handling/</link>
       <pubDate>Tue, 06 Aug 2013 00:00:00 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/2013/08/06/event-handling/</guid>
+      
+      <guid>https://troglobit.com/2013/08/06/event-handling/</guid>
       <description>&lt;p&gt;This is a rant about something I recently found to be a long standing
 battle line in the world of programming,
 &lt;a href=&#34;http://cgi.di.uoa.gr/~mema/courses/mde518/papers/lauer78.pdf&#34;&gt;Lau78&lt;/a&gt;.
 The event vs thread based approach to programming.  As rants go I do
 not aspire to deliver a clear or logical message, what so ever.  It&amp;rsquo;s
 basically just something I need to get off my chest.&lt;/p&gt;
-
 &lt;p&gt;It was not until 2007 I first learned about the event based approach
 to programming and event libraries like
 &lt;a href=&#34;http://libevent.org/&#34;&gt;libevent&lt;/a&gt; and

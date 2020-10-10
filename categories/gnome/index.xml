@@ -1,24 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Gnome on </title>
-    <link>/categories/gnome/</link>
-    <description>Recent content in Gnome on </description>
+    <title>Gnome on The Last Outpost</title>
+    <link>https://troglobit.com/categories/gnome/</link>
+    <description>Recent content in Gnome on The Last Outpost</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <language>en</language>
     <lastBuildDate>Sat, 07 Jul 2007 09:52:17 +0000</lastBuildDate>
     
-	<atom:link href="/categories/gnome/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://troglobit.com/categories/gnome/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Buggy Gnome Main Menu</title>
-      <link>/2007/07/07/buggy-gnome-main-menu/</link>
+      <link>https://troglobit.com/2007/07/07/buggy-gnome-main-menu/</link>
       <pubDate>Sat, 07 Jul 2007 09:52:17 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/2007/07/07/buggy-gnome-main-menu/</guid>
+      
+      <guid>https://troglobit.com/2007/07/07/buggy-gnome-main-menu/</guid>
       <description>I&amp;rsquo;ve been living with the new Gnome Main Menu for a while now. Like many others I run Ubuntu these days and I&amp;rsquo;ve found the version in Feisty Fawn to be extremely slow and buggy.
 I tried manually installing (dpkg -i) the latest version in Gutsy, but it had too many dependencies. So I decided to try and backport it, and it worked!
 I haven&amp;rsquo;t set up any repository, so just download the below two .</description>
@@ -26,10 +24,10 @@ I haven&amp;rsquo;t set up any repository, so just download the below two .</des
     
     <item>
       <title>Aaaah, the fish got a facelift! :)</title>
-      <link>/2006/08/13/aaaah/</link>
+      <link>https://troglobit.com/2006/08/13/aaaah/</link>
       <pubDate>Sun, 13 Aug 2006 10:43:13 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/2006/08/13/aaaah/</guid>
+      
+      <guid>https://troglobit.com/2006/08/13/aaaah/</guid>
       <description>This is just great! Wanda the fortune telling fish of the Gnome desktop got herself a face lift. Take a look at this:
 Add her new look to your applet by copying the file to /usr/share/gnome/panel/pixmaps/. Select it in the applet preferences and use 8 frames and 0.3 seconds per frame.</description>
     </item>

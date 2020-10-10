@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>git on </title>
-    <link>/categories/git/</link>
-    <description>Recent content in git on </description>
+    <title>git on The Last Outpost</title>
+    <link>https://troglobit.com/categories/git/</link>
+    <description>Recent content in git on The Last Outpost</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
+    <language>en</language>
     <lastBuildDate>Thu, 02 Jul 2015 17:11:55 +0000</lastBuildDate>
     
-	<atom:link href="/categories/git/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://troglobit.com/categories/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>HowTo: Using -lite with a GIT-based application</title>
-      <link>/2015/07/02/howto-using-lite-with-a-git-based-application/</link>
+      <link>https://troglobit.com/2015/07/02/howto-using-lite-with-a-git-based-application/</link>
       <pubDate>Thu, 02 Jul 2015 17:11:55 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/2015/07/02/howto-using-lite-with-a-git-based-application/</guid>
+      
+      <guid>https://troglobit.com/2015/07/02/howto-using-lite-with-a-git-based-application/</guid>
       <description>&lt;p&gt;Years ago while looking for a fast &lt;a href=&#34;https://en.wikipedia.org/wiki/Init&#34;&gt;init&lt;/a&gt; replacement for &lt;a href=&#34;http://westermo.com/&#34;&gt;work&lt;/a&gt;,
 I found &lt;a href=&#34;http://helllabs.org/finit/&#34;&gt;Finit&lt;/a&gt;.  Originally written by &lt;a href=&#34;https://github.com/cmatsuoka&#34;&gt;Claudio Matsuoka&lt;/a&gt; to act
 as a drop-in replacement for the &lt;a href=&#34;https://en.wikipedia.org/wiki/Asus_Eee_PC&#34;&gt;Asus EeePC&lt;/a&gt; &lt;a href=&#34;http://wiki.eeeuser.com/boot_process:the_boot_process&#34;&gt;fastinit&lt;/a&gt;, &lt;em&gt;&amp;ldquo;gaps
@@ -36,10 +34,10 @@ projects …&lt;/p&gt;</description>
     
     <item>
       <title>HowTo: Push to multiple GIT repos with one command</title>
-      <link>/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/</link>
+      <link>https://troglobit.com/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/</link>
       <pubDate>Wed, 01 Jul 2015 00:42:17 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/</guid>
+      
+      <guid>https://troglobit.com/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/</guid>
       <description>&lt;p&gt;So, now that I have &lt;a href=&#34;http://git.troglobit.com&#34;&gt;http://git.troglobit.com&lt;/a&gt; setup as a backup GIT repo
 to &lt;a href=&#34;https://github.com/troglobit,&#34;&gt;https://github.com/troglobit,&lt;/a&gt; I needed a &lt;em&gt;simple&lt;/em&gt; way to always push
 to both repos &amp;ndash; best way for me is to always hook into my regular work
@@ -53,10 +51,10 @@ pushed to both the GitHub repo as well as my own server!&lt;/p&gt;</description>
     
     <item>
       <title>HowTo: Apache with Gitweb on Debian 8.1</title>
-      <link>/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/</link>
+      <link>https://troglobit.com/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/</link>
       <pubDate>Tue, 30 Jun 2015 23:13:48 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/</guid>
+      
+      <guid>https://troglobit.com/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m posting this in case anyone else gets stuck setting up &lt;a href=&#34;http://www.apache.org&#34;&gt;Apache&lt;/a&gt;
 with &lt;a href=&#34;http://git-scm.com/docs/gitweb&#34;&gt;Gitweb&lt;/a&gt;.  Also as a reminder to myself in case I ever need to
 set up this all over again.&lt;/p&gt;
@@ -84,10 +82,10 @@ service apache2 reload
     
     <item>
       <title>Blog Restoration Project</title>
-      <link>/2015/01/02/blog-restoration-project-now-also-on-github-pages/</link>
+      <link>https://troglobit.com/2015/01/02/blog-restoration-project-now-also-on-github-pages/</link>
       <pubDate>Fri, 02 Jan 2015 14:12:59 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/2015/01/02/blog-restoration-project-now-also-on-github-pages/</guid>
+      
+      <guid>https://troglobit.com/2015/01/02/blog-restoration-project-now-also-on-github-pages/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve had this long-standing issue with backups.  It&amp;rsquo;s deadly boring to
 set up and maintain, so I don&amp;rsquo;t do any.  Until today!&lt;/p&gt;
 &lt;p&gt;Today I moved the sources for my &lt;a href=&#34;http://troglobit.com&#34;&gt;Octopress blag&lt;/a&gt;
@@ -100,37 +98,37 @@ the actual work took about 4h.&lt;/p&gt;</description>
     
     <item>
       <title>HowTo Rebase without an origin</title>
-      <link>/2014/08/27/howto-rebase-without-an-origin/</link>
+      <link>https://troglobit.com/2014/08/27/howto-rebase-without-an-origin/</link>
       <pubDate>Wed, 27 Aug 2014 10:00:13 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/2014/08/27/howto-rebase-without-an-origin/</guid>
+      
+      <guid>https://troglobit.com/2014/08/27/howto-rebase-without-an-origin/</guid>
       <description>OK, so you&amp;rsquo;ve just been handed the task to integrate a big piece of corporate software and it&amp;rsquo;s nowhere near as done and ready as project management thinks. Of course you&amp;rsquo;ve already started chugging away at it, fixing bugs, refactoring code and wrapping it in neat containers to keep the changeset against the base SW small &amp;ndash; you already know you&amp;rsquo;ll get another drop of the same stinking pieace of code in another six months, so you keep the changes small and track them in GIT with neatly formatted commit messages.</description>
     </item>
     
     <item>
       <title>HowTo Rebase without an origin</title>
-      <link>/howto/rebase-without-an-origin/</link>
+      <link>https://troglobit.com/howto/rebase-without-an-origin/</link>
       <pubDate>Wed, 27 Aug 2014 10:00:13 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/howto/rebase-without-an-origin/</guid>
+      
+      <guid>https://troglobit.com/howto/rebase-without-an-origin/</guid>
       <description>OK, so you&amp;rsquo;ve just been handed the task to integrate a big piece of corporate software and it&amp;rsquo;s nowhere near as done and ready as project management thinks. Of course you&amp;rsquo;ve already started chugging away at it, fixing bugs, refactoring code and wrapping it in neat containers to keep the changeset against the base SW small &amp;ndash; you already know you&amp;rsquo;ll get another drop of the same stinking pieace of code in another six months, so you keep the changes small and track them in GIT with neatly formatted commit messages.</description>
     </item>
     
     <item>
       <title>On commit messages ...</title>
-      <link>/2013/08/13/on-commit-messages-dot-dot-dot/</link>
+      <link>https://troglobit.com/2013/08/13/on-commit-messages-dot-dot-dot/</link>
       <pubDate>Tue, 13 Aug 2013 00:00:00 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/2013/08/13/on-commit-messages-dot-dot-dot/</guid>
+      
+      <guid>https://troglobit.com/2013/08/13/on-commit-messages-dot-dot-dot/</guid>
       <description>There&amp;rsquo;s just one thing to say on the topic of commit messages: ur doin it wrong if &amp;hellip;</description>
     </item>
     
     <item>
       <title>Git Quickie</title>
-      <link>/2010/07/13/git-quickie/</link>
+      <link>https://troglobit.com/2010/07/13/git-quickie/</link>
       <pubDate>Tue, 13 Jul 2010 20:45:49 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/2010/07/13/git-quickie/</guid>
+      
+      <guid>https://troglobit.com/2010/07/13/git-quickie/</guid>
       <description>This is a document I intend to maintain for my own purposes. It serves as a quick reminder for the steps needed when creating and working with git repositories.
 First setup a bare repository on the server.
 $ git --bare init projectX.git Initialized empty Git repository in /pub/git/projectX.git/  Set one-liner description, visible in gitweb.
@@ -139,21 +137,21 @@ $ echo &amp;quot;Secret project, use ROT13 to decode source code&amp;quot; &amp;
     
     <item>
       <title>Converting from Bazaar to GIT</title>
-      <link>/2010/07/13/converting-from-bazaar-to-git/</link>
+      <link>https://troglobit.com/2010/07/13/converting-from-bazaar-to-git/</link>
       <pubDate>Tue, 13 Jul 2010 01:56:11 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/2010/07/13/converting-from-bazaar-to-git/</guid>
+      
+      <guid>https://troglobit.com/2010/07/13/converting-from-bazaar-to-git/</guid>
       <description>You need git, and bazaar obviously. Also install bzr-fastimport, it contains the export plugin as well. The rest is a rip off from Frank&amp;rsquo;s page.
 $ git init project.git $ cd project.git $ bzr fast-export --export-marks=.git/bzr.mark ~/project.bzr | git fast-import --export-marks=.git/git.mark That worked for me. The output will likely be something like this:
-01:41:19 Calculating the revisions to include ... 01:41:19 Starting export of 33 revisions ... 01:41:20 Exported 33 revisions in 0:00:01 git-fast-import statistics: --------------------------------------------------------------------- Alloc&#39;d objects: 5000 Total objects : 267 ( 0 duplicates ) blobs : 158 ( 0 duplicates 57 deltas) trees : 76 ( 0 duplicates 55 deltas) commits: 33 ( 0 duplicates 0 deltas) tags : 0 ( 0 duplicates 0 deltas) Total branches : 10 ( 1 loads ) marks : 1024 ( 33 unique ) atoms : 38 Memory total : 2344 KiB pools : 2110 KiB objects: 234 KiB --------------------------------------------------------------------- pack_report: getpagesize() = 4096 pack_report: core.</description>
+01:41:19 Calculating the revisions to include ... 01:41:19 Starting export of 33 revisions ... 01:41:20 Exported 33 revisions in 0:00:01 git-fast-import statistics: --------------------------------------------------------------------- Alloc&amp;#39;d objects: 5000 Total objects : 267 ( 0 duplicates ) blobs : 158 ( 0 duplicates 57 deltas) trees : 76 ( 0 duplicates 55 deltas) commits: 33 ( 0 duplicates 0 deltas) tags : 0 ( 0 duplicates 0 deltas) Total branches : 10 ( 1 loads ) marks : 1024 ( 33 unique ) atoms : 38 Memory total : 2344 KiB pools : 2110 KiB objects: 234 KiB --------------------------------------------------------------------- pack_report: getpagesize() = 4096 pack_report: core.</description>
     </item>
     
     <item>
       <title>HowTo use Git for Collaborative Development</title>
-      <link>/2009/06/13/howto-use-git-for-collaborative-development/</link>
+      <link>https://troglobit.com/2009/06/13/howto-use-git-for-collaborative-development/</link>
       <pubDate>Sat, 13 Jun 2009 00:36:07 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/2009/06/13/howto-use-git-for-collaborative-development/</guid>
+      
+      <guid>https://troglobit.com/2009/06/13/howto-use-git-for-collaborative-development/</guid>
       <description>This is mainly some notes for myself so I don&amp;rsquo;t forget. Having worked with GNU Bazaar before much of Git is still alien to me.
 This HowTo is divided into two parts:
  what happens on your laptop, and what you must do on a remote server where you publish your changes  So, let&amp;rsquo;s start stimple:
@@ -162,20 +160,20 @@ laptop&amp;gt; mkdir projectX; cd projectX laptop&amp;gt; git init laptop&amp;gt
     
     <item>
       <title>More about Bzrweb and some about Git</title>
-      <link>/2009/06/12/more-about-bzrweb-and-some-about-git/</link>
+      <link>https://troglobit.com/2009/06/12/more-about-bzrweb-and-some-about-git/</link>
       <pubDate>Fri, 12 Jun 2009 19:50:27 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/2009/06/12/more-about-bzrweb-and-some-about-git/</guid>
+      
+      <guid>https://troglobit.com/2009/06/12/more-about-bzrweb-and-some-about-git/</guid>
       <description>OK, I admit it. I cannot decide what version control system (VCS) to use. I&amp;rsquo;m stuck between the speed and massive snow ball effect of Git and the ease of use and emotional attachment I have to Bazaar.
 I&amp;rsquo;ve been &amp;ldquo;maintaining&amp;rdquo; bzrweb for a while now, not doing a very good job of it though. It&amp;rsquo;s lagging behind considerably to the bzr API. After the upgrade of vmlinux.org to the latest Ubuntu server release bzrweb actually didn&amp;rsquo;t work at all.</description>
     </item>
     
     <item>
       <title>Learning About GIT</title>
-      <link>/2009/04/10/learning-about-git/</link>
+      <link>https://troglobit.com/2009/04/10/learning-about-git/</link>
       <pubDate>Fri, 10 Apr 2009 16:23:42 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/2009/04/10/learning-about-git/</guid>
+      
+      <guid>https://troglobit.com/2009/04/10/learning-about-git/</guid>
       <description>It has been a long time coming, but now I&amp;rsquo;m seriously starting to look at Git. Git is the content tracker used by the Linux kernel folks, initially developed by Torvalds.
 At Westermo R&amp;amp;D we use Subversion for our daily operations and today I started migrating the software to Git. Mainly just to get a comparison of performance, storage size and to explore how we can use Git on top of svn to become more productive when working in parallel in different teams.</description>
     </item>

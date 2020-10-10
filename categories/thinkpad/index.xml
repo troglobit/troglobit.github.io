@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>thinkpad on </title>
-    <link>/categories/thinkpad/</link>
-    <description>Recent content in thinkpad on </description>
+    <title>thinkpad on The Last Outpost</title>
+    <link>https://troglobit.com/categories/thinkpad/</link>
+    <description>Recent content in thinkpad on The Last Outpost</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
+    <language>en</language>
     <lastBuildDate>Sun, 03 Jul 2016 09:57:44 +0000</lastBuildDate>
     
-	<atom:link href="/categories/thinkpad/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://troglobit.com/categories/thinkpad/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Upgrade X1 Carbon BIOS from Linux</title>
-      <link>/2016/07/03/upgrade-x1-carbon-bios-from-linux/</link>
+      <link>https://troglobit.com/2016/07/03/upgrade-x1-carbon-bios-from-linux/</link>
       <pubDate>Sun, 03 Jul 2016 09:57:44 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/2016/07/03/upgrade-x1-carbon-bios-from-linux/</guid>
+      
+      <guid>https://troglobit.com/2016/07/03/upgrade-x1-carbon-bios-from-linux/</guid>
       <description>&lt;p&gt;This is a very brief writeup of how to upgrade the BIOS on a X1 Carbon
 (G1) from Linux.  For more information on this topic there is always the
 excellent &lt;a href=&#34;http://www.thinkwiki.org/wiki/BIOS_Upgrade&#34;&gt;ThinkWiki&lt;/a&gt;.&lt;/p&gt;
@@ -28,10 +26,10 @@ too much of a chicken to try &lt;a href=&#34;https://www.flashrom.org/Flashrom&#
     
     <item>
       <title>No Wireless LED on ThinkPad T61</title>
-      <link>/2008/07/19/no-wireless-led-on-thinkpad-t61/</link>
+      <link>https://troglobit.com/2008/07/19/no-wireless-led-on-thinkpad-t61/</link>
       <pubDate>Sat, 19 Jul 2008 11:09:25 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/2008/07/19/no-wireless-led-on-thinkpad-t61/</guid>
+      
+      <guid>https://troglobit.com/2008/07/19/no-wireless-led-on-thinkpad-t61/</guid>
       <description>I&amp;rsquo;ve got a ThinkPad T61 with Intel iwl3945 wireless chipset that I installed fresh with Ubuntu 8.04. Everything worked flawlessly out-of-the-box, except for the useless fingerprint scanner and the wireless LED. Don&amp;rsquo;t get me wrong, the wireless network worked fine, but the LED wasn&amp;rsquo;t on.
 At first I thought there was something wrong with the LED itself, but a couple of searches later I found that it was a known limitation of the 2.</description>
     </item>

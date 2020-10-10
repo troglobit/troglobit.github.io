@@ -1,34 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>freebsd on </title>
-    <link>/categories/freebsd/</link>
-    <description>Recent content in freebsd on </description>
+    <title>freebsd on The Last Outpost</title>
+    <link>https://troglobit.com/categories/freebsd/</link>
+    <description>Recent content in freebsd on The Last Outpost</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
+    <language>en</language>
     <lastBuildDate>Sun, 27 Sep 2015 18:45:00 +0200</lastBuildDate>
     
-	<atom:link href="/categories/freebsd/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://troglobit.com/categories/freebsd/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>HowTo run pimd on FreeBSD</title>
-      <link>/howto/pimd-on-freebsd/</link>
+      <link>https://troglobit.com/howto/pimd-on-freebsd/</link>
       <pubDate>Sun, 27 Sep 2015 18:45:00 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/howto/pimd-on-freebsd/</guid>
+      
+      <guid>https://troglobit.com/howto/pimd-on-freebsd/</guid>
       <description>This is not a proper HowTo, more of a &amp;ldquo;note to self&amp;rdquo; after having created a setup to test pimd issue #57. For these notes the following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and Qemu 2.3.0, is used:
- .--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | &#39;--------&#39; &#39;----&#39; &#39;----&#39; &#39;----------&#39; The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP/MLD snooping to get pimd to run smoothly.</description>
+.--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | &amp;#39;--------&amp;#39; &amp;#39;----&amp;#39; &amp;#39;----&amp;#39; &amp;#39;----------&amp;#39; The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP/MLD snooping to get pimd to run smoothly.</description>
     </item>
     
     <item>
       <title>HowTo: Add Multicast Routing to FreeBSD kernel</title>
-      <link>/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/</link>
+      <link>https://troglobit.com/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/</link>
       <pubDate>Tue, 23 Sep 2014 01:55:19 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/</guid>
+      
+      <guid>https://troglobit.com/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/</guid>
       <description>This is a very short blog post, mostly intended as a reminder to myself. Basically, there are two methods of adding multicast routing support to the FreeBSD kernel:
  Rebuild the kernel with options MROUTING Load the kernel module: kldload ip_mroute  The kernel rebuild assumes the src.txz set was installed previously.
 cd /usr/src cd sys/amd64/conf cat GENERIC | sed &#39;s/GENERIC$/MULTICAST/&#39; &amp;gt; MULTICAST echo &#39;options MROUTING # Multicast routing&#39; &amp;gt;&amp;gt; MULTICAST echo &#39;options PIM # Enable for pimd&#39; &amp;gt;&amp;gt; MULTICAST cd - make kernel KERNCONF=MULTICAST reboot  That&amp;rsquo;s it.</description>
@@ -36,10 +34,10 @@ cd /usr/src cd sys/amd64/conf cat GENERIC | sed &#39;s/GENERIC$/MULTICAST/&#39; 
     
     <item>
       <title>HowTo: Add Multicast Routing to FreeBSD kernel</title>
-      <link>/howto/mrouting-in-freebsd/</link>
+      <link>https://troglobit.com/howto/mrouting-in-freebsd/</link>
       <pubDate>Tue, 23 Sep 2014 01:55:19 +0200</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/howto/mrouting-in-freebsd/</guid>
+      
+      <guid>https://troglobit.com/howto/mrouting-in-freebsd/</guid>
       <description>This is a very short blog post, mostly intended as a reminder to myself. Basically, there are two methods of adding multicast routing support to the FreeBSD kernel:
  Rebuild the kernel with options MROUTING Load the kernel module: kldload ip_mroute  The kernel rebuild assumes the src.txz set was installed previously.
 cd /usr/src cd sys/amd64/conf cat GENERIC | sed &#39;s/GENERIC$/MULTICAST/&#39; &amp;gt; MULTICAST echo &#39;options MROUTING # Multicast routing&#39; &amp;gt;&amp;gt; MULTICAST echo &#39;options PIM # Enable for pimd&#39; &amp;gt;&amp;gt; MULTICAST cd - make kernel KERNCONF=MULTICAST reboot  That&amp;rsquo;s it.</description>

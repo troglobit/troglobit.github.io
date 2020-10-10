@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>misc on </title>
-    <link>/categories/misc/</link>
-    <description>Recent content in misc on </description>
+    <title>misc on The Last Outpost</title>
+    <link>https://troglobit.com/categories/misc/</link>
+    <description>Recent content in misc on The Last Outpost</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
+    <language>en</language>
     <lastBuildDate>Mon, 04 Apr 2016 00:14:28 +0000</lastBuildDate>
     
-	<atom:link href="/categories/misc/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://troglobit.com/categories/misc/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Lecture from the UNIX beards</title>
-      <link>/2016/04/04/lecture-from-the-unix-beards/</link>
+      <link>https://troglobit.com/2016/04/04/lecture-from-the-unix-beards/</link>
       <pubDate>Mon, 04 Apr 2016 00:14:28 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/2016/04/04/lecture-from-the-unix-beards/</guid>
+      
+      <guid>https://troglobit.com/2016/04/04/lecture-from-the-unix-beards/</guid>
       <description>After the rm -rf /* disaster that hit me a couple of weeks ago I&amp;rsquo;ve been rebuilding my setup, restoring the few files I&amp;rsquo;ve had backed up, and collecting advice from the elders.
 Turns out there are a few tricks that can save your home directory from accidents like mine. The first one is rather obvious, but I&amp;rsquo;m writing it down anyway:
  Keep separate accounts. If possible, use separate accounts (with different permissions obviously) for different projects.</description>
@@ -26,19 +24,19 @@ Turns out there are a few tricks that can save your home directory from accident
     
     <item>
       <title>On the Linearity of Time</title>
-      <link>/2013/08/09/on-the-linearity-of-time/</link>
+      <link>https://troglobit.com/2013/08/09/on-the-linearity-of-time/</link>
       <pubDate>Fri, 09 Aug 2013 00:00:00 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/2013/08/09/on-the-linearity-of-time/</guid>
+      
+      <guid>https://troglobit.com/2013/08/09/on-the-linearity-of-time/</guid>
       <description>&lt;p&gt;Don&amp;rsquo;t try this at home kids. (Disclaimer: I live in Sweden :)&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Proof of Life</title>
-      <link>/2013/06/07/proof-of-life/</link>
+      <link>https://troglobit.com/2013/06/07/proof-of-life/</link>
       <pubDate>Fri, 07 Jun 2013 00:00:00 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/2013/06/07/proof-of-life/</guid>
+      
+      <guid>https://troglobit.com/2013/06/07/proof-of-life/</guid>
       <description>There is a certain &amp;ldquo;burstyness&amp;rdquo; to the way I work on my open source projects. It seems it often coincides with intense work loads during new release cycles at work.
 However, I&amp;rsquo;ve just finished restoring two pages that got lost in the big server crash:
  mrouted pimd  Big thanks goes to the Wayback Machine for maintaining records of the original pages I lost!</description>
@@ -46,10 +44,10 @@ However, I&amp;rsquo;ve just finished restoring two pages that got lost in the b
     
     <item>
       <title>Resurrection</title>
-      <link>/2013/02/17/resurrection/</link>
+      <link>https://troglobit.com/2013/02/17/resurrection/</link>
       <pubDate>Sun, 17 Feb 2013 00:00:00 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/2013/02/17/resurrection/</guid>
+      
+      <guid>https://troglobit.com/2013/02/17/resurrection/</guid>
       <description>Quite some time has passed now since our old site, http://vmlinux.org, crashed and burned, and with it much of my previous Open Source work and blogs. Tech blog entries, archives for the projects I maintain, lost.
 Backups? Of course not.
 This all happened in 2011. Since then we also managed to lose the domain and I kind of lost myself for a while, including my motivation.
@@ -58,10 +56,10 @@ Fortunately, at this point in time I had migrated most of my projects from CVS a
     
     <item>
       <title>Link Collection 2009-02-28</title>
-      <link>/2009/02/28/link-collection-2009-02-28/</link>
+      <link>https://troglobit.com/2009/02/28/link-collection-2009-02-28/</link>
       <pubDate>Sat, 28 Feb 2009 23:36:37 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/2009/02/28/link-collection-2009-02-28/</guid>
+      
+      <guid>https://troglobit.com/2009/02/28/link-collection-2009-02-28/</guid>
       <description>This makes it possible to debug why a disk needs to spin up, and to increase battery life even more.
 Dislike NetworkManager? Try wicd &amp;hellip;
 Minimalistic distro Crush Bang Linux 8.10
@@ -70,10 +68,10 @@ Ah, what every FLOSS dad is looking for, a way to make your kids interested in y
     
     <item>
       <title>Reminder to Self</title>
-      <link>/2009/02/14/reminder-to-self/</link>
+      <link>https://troglobit.com/2009/02/14/reminder-to-self/</link>
       <pubDate>Sat, 14 Feb 2009 21:13:41 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/2009/02/14/reminder-to-self/</guid>
+      
+      <guid>https://troglobit.com/2009/02/14/reminder-to-self/</guid>
       <description>How to recode AVI-files to be able to write them to a Video CD.
 ffmpeg -i original.avi -target pal-vcd copy.mpg vcdimager -t vcd1 -l &amp;quot;Title&amp;quot; -c vcd.cue -b vcd.bin copy.mpg cdrdao write --device /dev/cdrw vcd.cue  Note: vcdimager is able to take multiple .mpg files as argument, very useful when burning multiple family videos to the same disc!
  Tip from Johan Risberg on how to be able to reattach a UTF-8 Linux screen session from Cygwin.</description>
@@ -81,10 +79,10 @@ ffmpeg -i original.avi -target pal-vcd copy.mpg vcdimager -t vcd1 -l &amp;quot;T
     
     <item>
       <title>Link Collection w31 2008</title>
-      <link>/2008/07/30/link-collection-w31-2008/</link>
+      <link>https://troglobit.com/2008/07/30/link-collection-w31-2008/</link>
       <pubDate>Wed, 30 Jul 2008 16:22:36 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/2008/07/30/link-collection-w31-2008/</guid>
+      
+      <guid>https://troglobit.com/2008/07/30/link-collection-w31-2008/</guid>
       <description>George Dyson, son of legendary Freeman Dyson, talks about the first computer, the first software bugs (both physical and logical) and the initial struggles of hackers. Fun history lesson for computer engineers and programmers alike. (Now, go crawl the web for &amp;ldquo;Dyson Sphere&amp;rdquo; and &amp;ldquo;Star Trek&amp;rdquo;! :-)
 Is Ubuntu 8.04 really that buggy as everyone suggest? My guess is that we&amp;rsquo;ve reached a breaking point where beginner users (&amp;lt; 1 year) are starting to outnumber the older &amp;ldquo;hard core&amp;rdquo; users.</description>
     </item>

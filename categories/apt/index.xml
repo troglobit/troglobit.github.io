@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>apt on </title>
-    <link>/categories/apt/</link>
-    <description>Recent content in apt on </description>
+    <title>apt on The Last Outpost</title>
+    <link>https://troglobit.com/categories/apt/</link>
+    <description>Recent content in apt on The Last Outpost</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
+    <language>en</language>
     <lastBuildDate>Sat, 22 Feb 2020 12:28:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/apt/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://troglobit.com/categories/apt/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Set up a Debian/Ubuntu APT Repository</title>
-      <link>/2017/09/30/set-up-a-debian-ubuntu-apt-repository/</link>
+      <link>https://troglobit.com/2017/09/30/set-up-a-debian-ubuntu-apt-repository/</link>
       <pubDate>Sat, 22 Feb 2020 12:28:00 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/2017/09/30/set-up-a-debian-ubuntu-apt-repository/</guid>
+      
+      <guid>https://troglobit.com/2017/09/30/set-up-a-debian-ubuntu-apt-repository/</guid>
       <description>&lt;p&gt;How to set up a Debian/Ubuntu APT repository with GPG signing.&lt;/p&gt;
 &lt;p&gt;At first I tried to use &lt;a href=&#34;https://debian-administration.org/article/717/Setting_up_a_personal_secure_apt_repository&#34;&gt;Bas Wijnen&amp;rsquo;s mini-dinstall howto&lt;/a&gt;, but never
 managed to get it working.  Probably due to problems with GPG.  Then I

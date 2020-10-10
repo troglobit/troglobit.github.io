@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="Joachim Wiberg">
+    <meta name="description" content="Had an interesting conversation with a buddy last night.  It started out
+as a shift-reduce problem with Bison and ended up a ping-pong of useful
+UNIX API:s.  We concluded that despite having worked professionally with
+UNIX for over two decades, it is still very satisfying finding gems like
+these.
+Most people are completely unaware they exist and end up rolling their
+own (buggy) implementations.  For instance, string manipulation and
+various forms of linked lists.  Which is why I many years ago extracted
+the frog DNA from Finit to a
+separate library called libite,
+or -lite for short.  It imports the OpenBSD strlcpy() family of API:s,
+up-to-date queue.h with the _SAFE iterators, and more.  Some people
+like libbsd for this, but I&rsquo;ve
+found many of the ports incomplete and unsafe and prefer to stay closer
+to the upstream *BSD versions.
+Update: This post was originally written Nov 14, 2015.  It was a
+Saturday and I remember being extremely inspired when I wrote it.  I&rsquo;ve
+continued adding to it over the years, and still do.  So, as of Jul 2,
+2017 I&rsquo;m bumping the modification date each time I add something new :-)">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Useful UNIX API:s"/>
+<meta name="twitter:description" content="Had an interesting conversation with a buddy last night.  It started out
+as a shift-reduce problem with Bison and ended up a ping-pong of useful
+UNIX API:s.  We concluded that despite having worked professionally with
+UNIX for over two decades, it is still very satisfying finding gems like
+these.
+Most people are completely unaware they exist and end up rolling their
+own (buggy) implementations.  For instance, string manipulation and
+various forms of linked lists.  Which is why I many years ago extracted
+the frog DNA from Finit to a
+separate library called libite,
+or -lite for short.  It imports the OpenBSD strlcpy() family of API:s,
+up-to-date queue.h with the _SAFE iterators, and more.  Some people
+like libbsd for this, but I&rsquo;ve
+found many of the ports incomplete and unsafe and prefer to stay closer
+to the upstream *BSD versions.
+Update: This post was originally written Nov 14, 2015.  It was a
+Saturday and I remember being extremely inspired when I wrote it.  I&rsquo;ve
+continued adding to it over the years, and still do.  So, as of Jul 2,
+2017 I&rsquo;m bumping the modification date each time I add something new :-)"/>
+
+    <meta property="og:title" content="Useful UNIX API:s" />
+<meta property="og:description" content="Had an interesting conversation with a buddy last night.  It started out
+as a shift-reduce problem with Bison and ended up a ping-pong of useful
+UNIX API:s.  We concluded that despite having worked professionally with
+UNIX for over two decades, it is still very satisfying finding gems like
+these.
+Most people are completely unaware they exist and end up rolling their
+own (buggy) implementations.  For instance, string manipulation and
+various forms of linked lists.  Which is why I many years ago extracted
+the frog DNA from Finit to a
+separate library called libite,
+or -lite for short.  It imports the OpenBSD strlcpy() family of API:s,
+up-to-date queue.h with the _SAFE iterators, and more.  Some people
+like libbsd for this, but I&rsquo;ve
+found many of the ports incomplete and unsafe and prefer to stay closer
+to the upstream *BSD versions.
+Update: This post was originally written Nov 14, 2015.  It was a
+Saturday and I remember being extremely inspired when I wrote it.  I&rsquo;ve
+continued adding to it over the years, and still do.  So, as of Jul 2,
+2017 I&rsquo;m bumping the modification date each time I add something new :-)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://troglobit.com/post/2015-11-14-useful-unix-api-s/" />
+<meta property="article:published_time" content="2020-02-22T09:45:00+00:00" />
+<meta property="article:modified_time" content="2020-02-22T09:45:00+00:00" />
+
+
+    <title>
+  Useful UNIX API:s · The Last Outpost
+</title>
+
+    
+      <link rel="canonical" href="https://troglobit.com/post/2015-11-14-useful-unix-api-s/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://troglobit.com/css/coder.min.9836c03fe5c87d102278a33e86d0591ef36c89b1e17e8e547ebf84c05cee010e.css" integrity="sha256-mDbAP&#43;XIfRAieKM&#43;htBZHvNsibHhfo5Ufr&#43;EwFzuAQ4=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://troglobit.com/css/coder-dark.min.717236c74e0a5208ef73964a9f44c6b443b689a95b270d8b2a40d0c012460dac.css" integrity="sha256-cXI2x04KUgjvc5ZKn0TGtEO2ialbJw2LKkDQwBJGDaw=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+      <link rel="stylesheet" href="https://troglobit.com/css/custom.css" />
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://troglobit.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://troglobit.com/favicon.ico" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="https://troglobit.com/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://troglobit.com/images/apple-touch-icon.png">
+
+    
+
+    <meta name="generator" content="Hugo 0.68.3" />
+  </head>
+
+  
+  
+    
+  
+  <body class="colorscheme-auto"
+        onload=""
+  >
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://troglobit.com/">
+      The Last Outpost
+    </a>
+    
+      
+        <span id="dark-mode-toggle" class="float-right">
+          <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+        </span>
+      
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://troglobit.com/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://troglobit.com/post/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://troglobit.com/howto/">HowTos</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://troglobit.com/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://resume.troglobit.com">Resumé</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://ftp.troglobit.com">FTP</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://git.troglobit.com">GIT</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://deb.troglobit.com">DEB</a>
+            </li>
+          
+        
+        
+        
+          <li class="navigation-item separator">
+            <span>|</span>
+          </li>
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Useful UNIX API:s</h1>
+    </header>
+
+    <p>Had an interesting conversation with a buddy last night.  It started out
+as a shift-reduce problem with Bison and ended up a ping-pong of useful
+UNIX API:s.  We concluded that despite having worked professionally with
+UNIX for over two decades, it is still very satisfying finding gems like
+these.</p>
+<p>Most people are completely unaware they exist and end up rolling their
+own (buggy) implementations.  For instance, string manipulation and
+various forms of linked lists.  Which is why I many years ago extracted
+the <em>frog DNA</em> from <a href="https://github.com/troglobit/finit/">Finit</a> to a
+separate library called <a href="https://github.com/troglobit/libite/">libite</a>,
+or -lite for short.  It imports the OpenBSD <code>strlcpy()</code> family of API:s,
+up-to-date <code>queue.h</code> with the <code>_SAFE</code> iterators, and more.  Some people
+like <a href="https://libbsd.freedesktop.org/wiki/">libbsd</a> for this, but I&rsquo;ve
+found many of the ports incomplete and unsafe and prefer to stay closer
+to the upstream *BSD versions.</p>
+<p><strong>Update:</strong> This post was originally written Nov 14, 2015.  It was a
+Saturday and I remember being extremely inspired when I wrote it.  I&rsquo;ve
+continued adding to it over the years, and still do.  So, as of Jul 2,
+2017 I&rsquo;m bumping the modification date each time I add something new :-)</p>
+<h2 id="sysv-searchh">SysV <code>search.h</code></h2>
+<p>Mangage a <a href="http://pubs.opengroup.org/onlinepubs/009695399/functions/insque.html">simple queue</a>:</p>
+<ul>
+<li><a href="http://man7.org/linux/man-pages/man3/insque.3.html"><code>insque()</code></a>,</li>
+<li><a href="http://man7.org/linux/man-pages/man3/remque.3.html"><code>remque()</code></a>,</li>
+</ul>
+<p>Manage <a href="http://pubs.opengroup.org/onlinepubs/009695399/functions/hcreate.html">hash search table</a>:</p>
+<ul>
+<li><a href="http://man7.org/linux/man-pages/man3/hsearch.3.html"><code>hsearch()</code></a></li>
+<li><a href="http://man7.org/linux/man-pages/man3/hcreate.3.html"><code>hcreate()</code></a></li>
+<li><a href="http://man7.org/linux/man-pages/man3/hdestroy.3.html"><code>hdestroy()</code></a></li>
+</ul>
+<p>Manage a <a href="http://pubs.opengroup.org/onlinepubs/009695399/functions/tsearch.html">binary search tree</a>:</p>
+<ul>
+<li><a href="http://man7.org/linux/man-pages/man3/tsearch.3.html"><code>tsearch()</code></a>,</li>
+<li><a href="http://man7.org/linux/man-pages/man3/tfind.3.html"><code>tfind()</code></a>,</li>
+<li><a href="http://man7.org/linux/man-pages/man3/tdelete.3.html"><code>tdelete()</code></a>,</li>
+<li><a href="http://man7.org/linux/man-pages/man3/twalk.3.html"><code>twalk()</code></a></li>
+<li><a href="http://man7.org/linux/man-pages/man3/tdestroy.3.html"><code>tdestroy()</code></a>,</li>
+</ul>
+<p><a href="http://pubs.opengroup.org/onlinepubs/009695399/functions/lsearch.html">Linear search</a> and update:</p>
+<ul>
+<li><a href="http://man7.org/linux/man-pages/man3/lfind.3.html"><code>lfind()</code></a></li>
+<li><a href="http://man7.org/linux/man-pages/man3/lsearch.3.html"><code>lsearch()</code></a></li>
+</ul>
+<h2 id="bsd-sysqueueh">BSD <code>sys/queue.h</code></h2>
+<p><a href="https://www.freebsd.org/cgi/man.cgi?query=queue&amp;sektion=3">This header</a> has lots of macros for handling various forms of
+linked lists.  The version in GLIBC is a bit behind the BSD&rsquo;s, because
+the latter also have <code>_safe()</code> versions of some macros to aid the user
+in some tricky cases, e.g. when removing entries while iterating.</p>
+<p>Several types of lists are supported:</p>
+<ul>
+<li>LIST: Doubly linked list</li>
+<li>SLIST: Single linked list</li>
+<li>STAILQ: Single linked tail queue</li>
+<li>SIMPLEQ: Simple queue</li>
+<li>TAILQ: Tail queue</li>
+</ul>
+<p>Here&rsquo;s a few of them, this example for doubly linked lists:</p>
+<ul>
+<li><code>LIST_INIT()</code></li>
+<li><code>LIST_EMPTY()</code></li>
+<li><code>LIST_FIRST()</code></li>
+<li><code>LIST_NEXT()</code></li>
+<li><code>LIST_REMOVE()</code></li>
+<li><code>LIST_FOREACH()</code></li>
+<li><code>LIST_INSERT_AFTER()</code></li>
+<li><code>LIST_INSERT_BEFORE()</code></li>
+<li><code>LIST_INSERT_HEAD()</code></li>
+</ul>
+<p>I wrote a <a href="https://github.com/troglobit/toolbox/blob/master/tailq-demo.c">demo of the TAILQ API</a> a couple of years ago.</p>
+<h2 id="other-noteworthy-apis">Other Noteworthy API&rsquo;s</h2>
+<p>Other (standard/POSIX) functions worthy of mentioning here are:</p>
+<h3 id="stdioh"><code>stdio.h</code></h3>
+<ul>
+<li><a href="http://man7.org/linux/man-pages/man3/fmemopen.3.html"><code>fmemopen()</code></a></li>
+<li><a href="http://man7.org/linux/man-pages/man3/getdelim.3.html"><code>getdelim()</code></a></li>
+<li><a href="http://man7.org/linux/man-pages/man3/getline.3.html"><code>getline()</code></a></li>
+</ul>
+<h3 id="stdlibh"><code>stdlib.h</code></h3>
+<ul>
+<li><a href="http://man7.org/linux/man-pages/man3/atexit.3.html"><code>atexit()</code></a></li>
+<li><a href="http://man7.org/linux/man-pages/man3/bsearch.3.html"><code>bsearch()</code></a></li>
+<li><a href="http://man7.org/linux/man-pages/man3/realpath.3.html"><code>realpath()</code></a></li>
+<li><a href="http://man7.org/linux/man-pages/man3/qsort.3.html"><code>qsort()</code></a></li>
+</ul>
+<h3 id="globh"><code>glob.h</code></h3>
+<ul>
+<li><a href="http://man7.org/linux/man-pages/man3/glob.3.html"><code>glob()</code></a></li>
+</ul>
+<h3 id="fnmatchh"><code>fnmatch.h</code></h3>
+<ul>
+<li><a href="http://man7.org/linux/man-pages/man3/fnmatch.3.html"><code>fnmatch()</code></a></li>
+</ul>
+<h3 id="ftsh"><code>fts.h</code></h3>
+<ul>
+<li><a href="http://man7.org/linux/man-pages/man3/fts_open.3.html"><code>fts_open()</code></a></li>
+<li><a href="http://man7.org/linux/man-pages/man3/fts_read.3.html"><code>fts_read()</code></a></li>
+<li><a href="http://man7.org/linux/man-pages/man3/fts_close.3.html"><code>fts_close()</code></a></li>
+</ul>
+<h3 id="ftwh"><code>ftw.h</code></h3>
+<ul>
+<li><a href="http://man7.org/linux/man-pages/man3/ftw.3.html"><code>ftw()</code></a></li>
+<li><a href="http://man7.org/linux/man-pages/man3/nftw.3.html"><code>nftw()</code></a></li>
+</ul>
+<h3 id="unistdh"><code>unistd.h</code></h3>
+<ul>
+<li><a href="http://man7.org/linux/man-pages/man2/access.2.html"><code>access()</code></a></li>
+<li><a href="http://man7.org/linux/man-pages/man2/alarm.2.html"><code>alarm()</code></a>,
+<a href="http://man7.org/linux/man-pages/man2/pause.2.html"><code>pause()</code></a></li>
+<li><a href="http://man7.org/linux/man-pages/man3/crypt.3.html"><code>crypt()</code></a></li>
+<li><a href="http://man7.org/linux/man-pages/man3/daemon.3.html"><code>daemon()</code></a></li>
+<li><a href="http://man7.org/linux/man-pages/man2/pipe.2.html"><code>pipe()</code></a></li>
+<li><a href="http://man7.org/linux/man-pages/man3/profil.3.html"><code>profil()</code></a></li>
+</ul>
+<h3 id="wordexph"><code>wordexp.h</code></h3>
+<ul>
+<li><a href="http://man7.org/linux/man-pages/man3/wordexp.3.html"><code>wordexp()</code></a></li>
+</ul>
+<p><strong>Note:</strong> API&rsquo;s specific to GNU or BSD are not included, but there are
+<em>many</em> more useful functions on your specific OS, in case you do not
+need to write code that is portable across different UNIX platforms.
+Examples can be <code>unshare()</code> and <code>clone()</code> on Linux and <code>pledge()</code> on
+OpenBSD, all highly useful but also very specific.</p>
+  </article>
+</section>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'], ['\\(', '\\)']
+        ],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+      
+        ©
+        
+        2020
+         Joachim Wiberg 
+      
+      
+      
+    </section>
+  </footer>
+
+    </main>
+
+    
+      
+      <script src="https://troglobit.com/js/dark-mode.min.0213e1773e6d1c5a644f847c67a6f8abac49a3776e2976f6008038af8c5b76a1.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+  </body>
+
+</html>

@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>sthttpd on </title>
-    <link>/categories/sthttpd/</link>
-    <description>Recent content in sthttpd on </description>
+    <title>sthttpd on The Last Outpost</title>
+    <link>https://troglobit.com/categories/sthttpd/</link>
+    <description>Recent content in sthttpd on The Last Outpost</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Wiberg)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Wiberg)</webMaster>
+    <language>en</language>
     <lastBuildDate>Sun, 06 Nov 2016 01:34:18 +0000</lastBuildDate>
     
-	<atom:link href="/categories/sthttpd/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://troglobit.com/categories/sthttpd/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Merecat - another stray kitten?</title>
-      <link>/2016/11/06/merecat-another-stray-kitten-/</link>
+      <link>https://troglobit.com/2016/11/06/merecat-another-stray-kitten-/</link>
       <pubDate>Sun, 06 Nov 2016 01:34:18 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Wiberg)</author>
-      <guid>/2016/11/06/merecat-another-stray-kitten-/</guid>
+      
+      <guid>https://troglobit.com/2016/11/06/merecat-another-stray-kitten-/</guid>
       <description>&lt;p&gt;This post is about my adoption, refactor, and rebranding of thttpd as
 &lt;a href=&#34;http://merecat.troglobit.com&#34;&gt;Merecat&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I code for recreation as well as work.  Most of the time I tinker around

@@ -1,24 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Gnu on </title>
-    <link>/categories/gnu/</link>
-    <description>Recent content in Gnu on </description>
+    <title>GNU on The Last Outpost</title>
+    <link>https://troglobit.com/categories/gnu/</link>
+    <description>Recent content in GNU on The Last Outpost</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <managingEditor>troglobit@gmail.com (Joachim Nilsson)</managingEditor>
-    <webMaster>troglobit@gmail.com (Joachim Nilsson)</webMaster>
+    <language>en</language>
     <lastBuildDate>Wed, 30 Jul 2008 23:53:42 +0000</lastBuildDate>
     
-	<atom:link href="/categories/gnu/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://troglobit.com/categories/gnu/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Moving to ISC</title>
-      <link>/2008/07/30/moving-to-isc/</link>
+      <link>https://troglobit.com/2008/07/30/moving-to-isc/</link>
       <pubDate>Wed, 30 Jul 2008 23:53:42 +0000</pubDate>
-      <author>troglobit@gmail.com (Joachim Nilsson)</author>
-      <guid>/2008/07/30/moving-to-isc/</guid>
+      
+      <guid>https://troglobit.com/2008/07/30/moving-to-isc/</guid>
       <description>I hereby announce that all of the code I produce from now on will use the ISC license. Previously I&amp;rsquo;ve used the MIT license and the GNU GPL, or LGPL where applicable.
 The reason for changing this is two-fold. First, I like to be able to reuse much of what I do in proprietary settings. Yes, I&amp;rsquo;m one of those people who look upon the world with &amp;ldquo;grey&amp;rdquo; eyes rather than black &amp;amp; white.</description>
     </item>
