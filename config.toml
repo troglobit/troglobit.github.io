@@ -1,75 +1,96 @@
-baseURL = "/"
-disablePathToLower = true
-languageCode = "en-us"
-theme = "beautifulhugo"
-contentDir = "content"
-publishDir = "public"
+baseurl = "https://troglobit.com"
+title = "The Last Outpost"
+theme = "hugo-coder"
+languagecode = "en"
+defaultcontentlanguage = "en"
 
-pygmentsCodefences = true
-pygmentsCodefencesGyessSyntax = true
-pygmentsStyle = "github"
+paginate = 20
+canonifyurls = true
+
+#pygmentsstyle = "bw"
+#pygmentsStyle = "github"
+pygmentsStyle = "native"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
 enableEmoji = true
 
-[permalinks]
-  post = "/:year/:month/:title/"
+[params]
+    author = "Joachim Wiberg"
+    info = "Help me Obi-Wan Troglobi, you're my only hope!"
+#    description = ""
+    keywords = "blog,developer,personal"
+    avatarurl = "images/profile.jpg"
 
-[Params]
-#  subtitle = "Help me Obi-Wan Troglobi, you're my only hope!"
-  brand = "Troglobit"
-  logo = "images/profile.jpg"
-  favicon = "favicon.ico"
-  commit = false
-  rss = true
+    favicon_16 = "favicon.ico"
+#    favicon_32 = "/img/favicon-32x32.png"
+#    favicon_16 = "/img/favicon-16x16.png"
 
-[Author]
-  name = "Joachim Wiberg"
-  website = "https://troglobit.com"
-  email = "troglobit@gmail.com"
-  github = "troglobit"
-  twitter = "troglobit"
+#    footercontent = "Help me Obi-Wan Troglobi, you're my only hope!"
 
-[social]
-  github = "troglobit"
-  twitter = "troglobit"
+    hidecredits = true
+    hidecopyright = false
 
-[menu]
-  [[menu.main]]
-    name = "Projects"
-    url = "/projects/"
+    rtl = false
+
+    colorscheme = "auto"
+
+    math = true
+    custom_css = ["css/custom.css"]
+
+# Social links
+[[params.social]]
+    name = "Email"
+    icon = "fa fa-envelope"
     weight = 1
+    url = "mailto:Joachim Wiberg <troglobit+spam@gmail.com>"
+[[params.social]]
+    name = "Github"
+    icon = "fa fa-github"
+    weight = 2
+    url = "https://github.com/troglobit/"
+[[params.social]]
+    name = "Twitter"
+    icon = "fa fa-twitter"
+    weight = 3
+    url = "https://twitter.com/troglobit/"
+[[params.social]]
+    name = "RSS"
+    icon = "fa fa-rss"
+    weight = 6
+    url = "https://troglobit.com/index.xml"
+    rel = "alternate"
+    type = "application/rss+xml"
 
-  [[menu.main]]
-    name = "Archive"
-    url = "/archive/"
+# Menu links
+[[menu.main]]
+    name = "About"
     weight = 1
-
-  [[menu.main]]
+    url = "/about/"
+[[menu.main]]
+    name = "Blog"
+    weight = 1
+    url  = "/post/"
+[[menu.main]]
     name = "HowTos"
-    url = "/howto/"
-    weight = 1
-
-  [[menu.main]]
+    weight = 2
+    url  = "/howto/"
+[[menu.main]]
+    name = "Projects"
+    weight = 3
+    url  = "/projects/"
+[[menu.main]]
     name = "Resumé"
     url = "https://resume.troglobit.com"
-    weight = 1
-
-  [[menu.main]]
+    weight = 4
+[[menu.main]]
     name = "FTP"
+    weight = 5
     url = "https://ftp.troglobit.com"
-    weight = 1
-
-  [[menu.main]]
+[[menu.main]]
     name = "GIT"
+    weight = 6
     url = "https://git.troglobit.com"
-    weight = 1
-
-  [[menu.main]]
+[[menu.main]]
     name = "DEB"
+    weight = 7
     url = "https://deb.troglobit.com"
-    weight = 1
-
-  [[menu.main]]
-    name = "About"
-    url = "/about/"
-    weight = 3
-
