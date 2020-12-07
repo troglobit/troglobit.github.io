@@ -12,6 +12,17 @@
     
     
     <item>
+      <title>Backtrace in C</title>
+      <link>https://troglobit.com/post/2020-11-15-backtrace-in-c/</link>
+      <pubDate>Sun, 15 Nov 2020 17:25:00 +0100</pubDate>
+      
+      <guid>https://troglobit.com/post/2020-11-15-backtrace-in-c/</guid>
+      <description>&lt;p&gt;Reminder to self: remember &lt;code&gt;CFLAGS=-g -Og -rdynamic&lt;/code&gt; to allow
+&lt;code&gt;backtrace_symbols()&lt;/code&gt; to actually pretty print function names
+in stack traces.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Weird Screen Artifacts on X200</title>
       <link>https://troglobit.com/post/2020-08-23-weird-screen-artifacts-x200/</link>
       <pubDate>Sun, 23 Aug 2020 14:02:00 +0000</pubDate>

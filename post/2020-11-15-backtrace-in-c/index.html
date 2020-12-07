@@ -7,24 +7,33 @@
     <meta http-equiv="Content-Language" content="en">
 
     <meta name="author" content="Joachim Wiberg">
-    <meta name="description" content="">
+    <meta name="description" content="Reminder to self: remember CFLAGS=-g -Og -rdynamic to allow
+backtrace_symbols() to actually pretty print function names
+in stack traces.">
     <meta name="keywords" content="blog,developer,personal">
 
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Backtrace in C"/>
+<meta name="twitter:description" content="Reminder to self: remember CFLAGS=-g -Og -rdynamic to allow
+backtrace_symbols() to actually pretty print function names
+in stack traces."/>
 
-    <meta property="og:title" content="Posts" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://troglobit.com/post/" />
-<meta property="og:updated_time" content="2020-11-15T17:25:00+01:00" />
+    <meta property="og:title" content="Backtrace in C" />
+<meta property="og:description" content="Reminder to self: remember CFLAGS=-g -Og -rdynamic to allow
+backtrace_symbols() to actually pretty print function names
+in stack traces." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://troglobit.com/post/2020-11-15-backtrace-in-c/" />
+<meta property="article:published_time" content="2020-11-15T17:25:00+01:00" />
+<meta property="article:modified_time" content="2020-11-15T17:25:00+01:00" />
 
 
-    <title>Posts · The Last Outpost</title>
+    <title>
+  Backtrace in C · The Last Outpost
+</title>
 
     
-      <link rel="canonical" href="https://troglobit.com/post/">
+      <link rel="canonical" href="https://troglobit.com/post/2020-11-15-backtrace-in-c/">
     
 
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
@@ -57,7 +66,6 @@
     <link rel="apple-touch-icon" href="https://troglobit.com/images/apple-touch-icon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="https://troglobit.com/images/apple-touch-icon.png">
 
-    <link rel="alternate" type="application/rss+xml" href="https://troglobit.com/post/index.xml" title="The Last Outpost" />
     
 
     <meta name="generator" content="Hugo 0.68.3" />
@@ -136,196 +144,58 @@
 
       <div class="content">
         
-  <section class="container list">
-  <h1 class="title">Posts</h1>
-  
-  <ul>
-    
-    <li>
-      <span class="date">March 25, 2007</span>
-      <a class="title" href="https://troglobit.com/2007/03/25/vmware-kernel-modules-for-your-new-kernel/">VMWare Kernel Modules for Your New Kernel</a>
-    </li>
-    
-    <li>
-      <span class="date">February 3, 2007</span>
-      <a class="title" href="https://troglobit.com/2007/02/03/building-debian-slash-ubuntu-kernels/">HowTo: Building Debian/Ubuntu Kernels</a>
-    </li>
-    
-    <li>
-      <span class="date">February 3, 2007</span>
-      <a class="title" href="https://troglobit.com/2007/02/03/moved/">Moved</a>
-    </li>
-    
-    <li>
-      <span class="date">September 23, 2006</span>
-      <a class="title" href="https://troglobit.com/2006/09/23/top-ten-unix-shell-commands/">Top Ten UNIX Shell Commands</a>
-    </li>
-    
-    <li>
-      <span class="date">August 13, 2006</span>
-      <a class="title" href="https://troglobit.com/2006/08/13/aaaah/">Aaaah, the fish got a facelift! :)</a>
-    </li>
-    
-    <li>
-      <span class="date">August 5, 2006</span>
-      <a class="title" href="https://troglobit.com/2006/08/05/test-posting-using-blosxom/">Test posting using blosxom</a>
-    </li>
-    
-    <li>
-      <span class="date">July 24, 2006</span>
-      <a class="title" href="https://troglobit.com/2006/07/24/besiktning/">Besiktning</a>
-    </li>
-    
-    <li>
-      <span class="date">July 23, 2006</span>
-      <a class="title" href="https://troglobit.com/2006/07/23/atari-st-e-emulation-with-steem/">Atari ST(E) Emulation with Steem</a>
-    </li>
-    
-    <li>
-      <span class="date">July 21, 2006</span>
-      <a class="title" href="https://troglobit.com/2006/07/21/bromsbyte-passat/">Bromsbyte Passat</a>
-    </li>
-    
-    <li>
-      <span class="date">July 17, 2006</span>
-      <a class="title" href="https://troglobit.com/2006/07/17/make-kpkg-and-dirty-modules/">make-kpkg and dirty modules</a>
-    </li>
-    
-    <li>
-      <span class="date">July 17, 2006</span>
-      <a class="title" href="https://troglobit.com/2006/07/17/quick-note/">Quick Note</a>
-    </li>
-    
-    <li>
-      <span class="date">June 6, 2006</span>
-      <a class="title" href="https://troglobit.com/2006/06/06/swedish-national-day-deep-thoughts-dot-dot-dot/">Swedish National Day: Deep thoughts ...</a>
-    </li>
-    
-    <li>
-      <span class="date">June 6, 2006</span>
-      <a class="title" href="https://troglobit.com/2006/06/06/laptop-network-configuration-in-debian-slash-ubuntu/">Laptop Network Configuration in Debian/Ubuntu</a>
-    </li>
-    
-    <li>
-      <span class="date">May 26, 2006</span>
-      <a class="title" href="https://troglobit.com/2006/05/26/no-news-are-good-news/">No news are good news?</a>
-    </li>
-    
-  </ul>
-  
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Backtrace in C</h1>
+    </header>
 
+    <p>Reminder to self: remember <code>CFLAGS=-g -Og -rdynamic</code> to allow
+<code>backtrace_symbols()</code> to actually pretty print function names
+in stack traces.</p>
+<p>Full example:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">jocke@luthien:~/src/pim6sd [master]$ ./configure <span style="color:#40ffff">CFLAGS</span>=<span style="color:#ed9d13">&#34;-g -Og -rdynamic&#34;</span> &amp;&amp; make <span style="color:#40ffff">V</span>=<span style="color:#3677a9">1</span> clean all
+</code></pre></div><p>Source code for stack tracer to instrument your code with:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#cd2828;font-weight:bold">#include</span> <span style="color:#cd2828;font-weight:bold">&lt;execinfo.h&gt;</span><span style="color:#cd2828;font-weight:bold">
+</span><span style="color:#cd2828;font-weight:bold"></span>
+<span style="color:#6ab825;font-weight:bold">void</span> <span style="color:#447fcf">print_trace</span>(<span style="color:#6ab825;font-weight:bold">void</span>)
+{
+    <span style="color:#6ab825;font-weight:bold">void</span> *array[<span style="color:#3677a9">10</span>];
+    <span style="color:#6ab825;font-weight:bold">char</span> **strings;
+    <span style="color:#6ab825;font-weight:bold">int</span> size, i;
 
+    size = backtrace(array, <span style="color:#3677a9">10</span>);
+    strings = backtrace_symbols(array, size);
+    <span style="color:#6ab825;font-weight:bold">if</span> (strings != <span style="color:#24909d">NULL</span>)
+    {
+        printf(<span style="color:#ed9d13">&#34;Obtained %d stack frames.</span><span style="color:#ed9d13">\n</span><span style="color:#ed9d13">&#34;</span>, size);
+        <span style="color:#6ab825;font-weight:bold">for</span> (i = <span style="color:#3677a9">0</span>; i &lt; size; i++)
+            printf(<span style="color:#ed9d13">&#34;%s</span><span style="color:#ed9d13">\n</span><span style="color:#ed9d13">&#34;</span>, strings[i]);
+    }
 
-
-
-<ul class="pagination">
-  
-    
-    <li><a href="https://troglobit.com/post/">&laquo;</a></li>
-    
-    <li class="hidden"><a href="https://troglobit.com/post/page/7/">&lsaquo;</a></li>
-  
-  
-    
-    
-      
-        
-      
-    
-    
-  
-    
-    
-      
-        
-      
-    
-    
-  
-    
-    
-      
-        
-      
-    
-    
-  
-    
-    
-      
-        
-          
-        
-      
-    
-    
-      
-      <li><a href="https://troglobit.com/post/page/4/">4</a></li>
-      
-    
-  
-    
-    
-      
-        
-          
-        
-      
-    
-    
-      
-      <li><a href="https://troglobit.com/post/page/5/">5</a></li>
-      
-    
-  
-    
-    
-      
-        
-          
-        
-      
-    
-    
-      
-      <li><a href="https://troglobit.com/post/page/6/">6</a></li>
-      
-    
-  
-    
-    
-      
-        
-          
-        
-      
-    
-    
-      
-      <li><a href="https://troglobit.com/post/page/7/">7</a></li>
-      
-    
-  
-    
-    
-      
-        
-          
-        
-      
-    
-    
-      
-      <li>8</li>
-      
-    
-  
-  
-</ul>
-
-
+    free(strings);
+}
+</code></pre></div>
+  </article>
 </section>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'], ['\\(', '\\)']
+        ],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
 
       </div>
 

@@ -172,14 +172,12 @@ wants to run <code>tcpdump</code> he is granted the capability:</p>
 </code></pre>
 <p>Some applications require multiple capabilities, like Qemu when you use
 tap networking.  Update <code>/etc/security/capability.conf</code></p>
-<pre><code>cap_net_raw     joachim
-cap_net_admin   joachim
+<pre><code>cap_net_raw,cap_net_admin     joachim
 </code></pre>
-<p>Then add both capabilities to qemu, like this:</p>
+<p>Place all capabilities on one line, separated with comma.  Then add both
+capabilities to qemu, like this:</p>
 <pre><code>$ sudo /sbin/setcap cap_net_raw,cap_net_admin+ep /usr/bin/qemu-system-arm
 </code></pre>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
 
   </article>
 </section>
