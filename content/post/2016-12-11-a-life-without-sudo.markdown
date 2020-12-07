@@ -40,15 +40,10 @@ wants to run `tcpdump` he is granted the capability:
 Some applications require multiple capabilities, like Qemu when you use
 tap networking.  Update `/etc/security/capability.conf`
 
-    cap_net_raw     joachim
-    cap_net_admin   joachim
+    cap_net_raw,cap_net_admin     joachim
 
-Then add both capabilities to qemu, like this:
+Place all capabilities on one line, separated with comma.  Then add both
+capabilities to qemu, like this:
 
     $ sudo /sbin/setcap cap_net_raw,cap_net_admin+ep /usr/bin/qemu-system-arm
 
-<!--
-  -- Local Variables:
-  -- mode: markdown
-  -- End:
-  -->
