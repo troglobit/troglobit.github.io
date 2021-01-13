@@ -13,12 +13,12 @@ sudo apt install notmuch isync  Do initial setup of notmuch for your user. I&rsq
     <meta name="keywords" content="blog,developer,personal">
 
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Reading GMail and Lore Mailing Lists with Emacs"/>
+<meta name="twitter:title" content="Emacs: GMail and Lore Mailing Lists"/>
 <meta name="twitter:description" content="With lots of help from the tireless Tobias Waldekranz, I think I&rsquo;ve finally found the perfect &ldquo;magit like&rdquo; email setup. With Emacs, of course. This is the story of how I did it.
 First install notmuch and mbsync (from the isync package):
 sudo apt install notmuch isync  Do initial setup of notmuch for your user. I&rsquo;ve opted to store my mail in ~/mail, this is used throughout the text below, ymmv."/>
 
-    <meta property="og:title" content="Reading GMail and Lore Mailing Lists with Emacs" />
+    <meta property="og:title" content="Emacs: GMail and Lore Mailing Lists" />
 <meta property="og:description" content="With lots of help from the tireless Tobias Waldekranz, I think I&rsquo;ve finally found the perfect &ldquo;magit like&rdquo; email setup. With Emacs, of course. This is the story of how I did it.
 First install notmuch and mbsync (from the isync package):
 sudo apt install notmuch isync  Do initial setup of notmuch for your user. I&rsquo;ve opted to store my mail in ~/mail, this is used throughout the text below, ymmv." />
@@ -29,7 +29,7 @@ sudo apt install notmuch isync  Do initial setup of notmuch for your user. I&rsq
 
 
     <title>
-  Reading GMail and Lore Mailing Lists with Emacs · The Last Outpost
+  Emacs: GMail and Lore Mailing Lists · The Last Outpost
 </title>
 
     
@@ -147,7 +147,7 @@ sudo apt install notmuch isync  Do initial setup of notmuch for your user. I&rsq
   <section class="container page">
   <article>
     <header>
-      <h1>Reading GMail and Lore Mailing Lists with Emacs</h1>
+      <h1>Emacs: GMail and Lore Mailing Lists</h1>
     </header>
 
     <p>With lots of help from the tireless Tobias Waldekranz, I think I&rsquo;ve
@@ -254,7 +254,7 @@ url=https://lore.kernel.org/linux-mtd
 </code></pre></div><p>Now we can proceed to combine it all in notmuch!  After <code>notmuch setup</code>
 you should have a <code>~/mail/.notmuch/hooks/</code> directory.  Let&rsquo;s create a
 <code>pre-hook</code> to fetch gmail and mailing lists from lore:</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#cd2828;font-weight:bold">#!/bin/sh
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#cd2828;font-weight:bold">#!/bin/sh
 </span><span style="color:#cd2828;font-weight:bold"></span><span style="color:#999;font-style:italic"># ~/mail/.notmuch/hooks/pre-new</span>
 
 <span style="color:#999;font-style:italic"># Fetch mail from Gmail</span>
@@ -268,7 +268,7 @@ mbsync -a
 <p>Set up my own <code>post-new</code> for notmuch, OK mostly stolen from Tobias, this
 does tagging of new mail and should be suited to your own preferences.
 It goes the same directory as <code>pre-new</code>:</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#cd2828;font-weight:bold">#!/bin/sh
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#cd2828;font-weight:bold">#!/bin/sh
 </span><span style="color:#cd2828;font-weight:bold"></span><span style="color:#999;font-style:italic"># ~/mail/.notmuch/hooks/post-new</span>
 
 nmsort()
@@ -299,26 +299,26 @@ nmsort <span style="color:#ed9d13">&#34;+microchip +vendor&#34;</span> <span sty
 
 nmsort <span style="color:#ed9d13">&#34;&#34;</span> <span style="color:#ed9d13">&#34;*&#34;</span>
 </code></pre></div><p>Set up SMTP in Emacs, also stolen from Tobias.</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">;; Who am I?
-(setq user-full-name &#34;Joachim Wiberg&#34;)
-(setq user-mail-address &#34;troglobit@gmail.com&#34;)
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lisp" data-lang="lisp"><span style="color:#999;font-style:italic">;; Who am I?</span>
+(<span style="color:#6ab825;font-weight:bold">setq</span> <span style="color:#40ffff">user-full-name</span> <span style="color:#ed9d13">&#34;Joachim Wiberg&#34;</span>)
+(<span style="color:#6ab825;font-weight:bold">setq</span> <span style="color:#40ffff">user-mail-address</span> <span style="color:#ed9d13">&#34;troglobit@gmail.com&#34;</span>)
 
-;; Email setup
-(setq message-directory &#34;~/.mail&#34;
-      mail-host-address &#34;gmail.com&#34;
-      user-full-name &#34;Joachim Wiberg&#34;
-      message-citation-line-format &#34;On %a, %b %d, %Y at %R, %f wrote:&#34;
-      message-citation-line-function &#39;message-insert-formatted-citation-line
+<span style="color:#999;font-style:italic">;; Email setup</span>
+(<span style="color:#6ab825;font-weight:bold">setq</span> <span style="color:#40ffff">message-directory</span> <span style="color:#ed9d13">&#34;~/.mail&#34;</span>
+      <span style="color:#40ffff">mail-host-address</span> <span style="color:#ed9d13">&#34;gmail.com&#34;</span>
+      <span style="color:#40ffff">user-full-name</span> <span style="color:#ed9d13">&#34;Joachim Wiberg&#34;</span>
+      <span style="color:#40ffff">message-citation-line-format</span> <span style="color:#ed9d13">&#34;On %a, %b %d, %Y at %R, %f wrote:&#34;</span>
+      <span style="color:#40ffff">message-citation-line-function</span> <span style="color:#ed9d13">&#39;message-insert-formatted-citation-line</span>
       )
 
-;; Currently gmail as SMTP server
-(setq message-send-mail-function &#39;smtpmail-send-it
-      smtpmail-starttls-credentials &#39;((&#34;smtp.gmail.com&#34; 587 nil nil))
-      smtpmail-auth-credentials &#39;((&#34;smtp.gmail.com&#34; 587 &#34;troglobit@gmail.com&#34; nil))
-      smtpmail-default-smtp-server &#34;smtp.gmail.com&#34;
-      smtpmail-smtp-server &#34;smtp.gmail.com&#34;
-      smtpmail-smtp-service 587
-      starttls-use-gnutls t
+<span style="color:#999;font-style:italic">;; Currently gmail as SMTP server</span>
+(<span style="color:#6ab825;font-weight:bold">setq</span> <span style="color:#40ffff">message-send-mail-function</span> <span style="color:#ed9d13">&#39;smtpmail-send-it</span>
+      <span style="color:#40ffff">smtpmail-starttls-credentials</span> &#39;((<span style="color:#ed9d13">&#34;smtp.gmail.com&#34;</span> <span style="color:#3677a9">587</span> <span style="color:#40ffff">nil</span> <span style="color:#40ffff">nil</span>))
+      <span style="color:#40ffff">smtpmail-auth-credentials</span> &#39;((<span style="color:#ed9d13">&#34;smtp.gmail.com&#34;</span> <span style="color:#3677a9">587</span> <span style="color:#ed9d13">&#34;troglobit@gmail.com&#34;</span> <span style="color:#40ffff">nil</span>))
+      <span style="color:#40ffff">smtpmail-default-smtp-server</span> <span style="color:#ed9d13">&#34;smtp.gmail.com&#34;</span>
+      <span style="color:#40ffff">smtpmail-smtp-server</span> <span style="color:#ed9d13">&#34;smtp.gmail.com&#34;</span>
+      <span style="color:#40ffff">smtpmail-smtp-service</span> <span style="color:#3677a9">587</span>
+      <span style="color:#40ffff">starttls-use-gnutls</span> <span style="color:#40ffff">t</span>
       )
 </code></pre></div><p>Done.</p>
 
