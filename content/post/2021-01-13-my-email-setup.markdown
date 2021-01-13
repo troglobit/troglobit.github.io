@@ -1,5 +1,5 @@
 ---
-title: "Reading GMail and Lore Mailing Lists with Emacs"
+title: "Emacs: GMail and Lore Mailing Lists"
 subtitle: ""
 date: 2021-01-13 09:29:00 +0100
 tags: []
@@ -11,19 +11,25 @@ course.  This is the story of how I did it.
 
 First install notmuch and mbsync (from the isync package):
 
+```sh
     sudo apt install notmuch isync
+```
 
 Do initial setup of notmuch for your user.  I've opted to store my
 mail in` ~/mail`, this is used throughout the text below, ymmv.
 
+```sh
 	notmuch setup
+```
 
 Clone Tobias' GitHub notmuch-lore repo, we will be using his `pre-new`
 hook later on to fetch mailing lists from lore, along with a `post-new`
 hook to do some tagging of new mail.
 
+```sh
     cd ~/src
 	git clone https://github.com/wkz/notmuch-lore
+```
 
 Set up isync/mbsync to fetch my own email from Gmail.  Here a note on
 Gmail folder structure may be in order.  The view you see in the Google
@@ -31,6 +37,7 @@ web interface does not reflect the IMAP hierarchy.  Here's what it looks
 like, with exception for countries where Google had to change `[Gmail]`
 to use `[Google Mail]` instead, e.g., Germany:
 
+```
     /
 	|-- Drafts
 	|-- [Gmail]/
@@ -41,6 +48,7 @@ to use `[Google Mail]` instead, e.g., Germany:
 	|-- INBOX
 	|--	Sent
 	`-- Trash
+```
 
 Most of the standard standard folders are available in the root, in my
 case only `Spam` goes in the same `[Gmail]/` folder as my own folders
@@ -53,7 +61,7 @@ that list is done by GMail, not documented here.  Please notice that
 I've removed my application-specific password, you'll have to get your
 own for you account.
 
-```
+```cfg
 IMAPAccount gmail
 Host imap.gmail.com
 User troglobit@gmail.com
@@ -110,9 +118,8 @@ As you've probably already learned from the GitHub repo, to fetch mail
 from the public inbox mailing lists on lore, you need small .ini file
 detailing which subsystems you're interested in:
 
-```
+```cfg
 # ~/mail/.notmuch/.lore/sources
-
 [netdev]
 url=https://lore.kernel.org/netdev
 
@@ -124,7 +131,7 @@ Now we can proceed to combine it all in notmuch!  After `notmuch setup`
 you should have a `~/mail/.notmuch/hooks/` directory.  Let's create a
 `pre-hook` to fetch gmail and mailing lists from lore:
 
-```
+```sh
 #!/bin/sh
 # ~/mail/.notmuch/hooks/pre-new
 
@@ -141,7 +148,7 @@ Set up my own `post-new` for notmuch, OK mostly stolen from Tobias, this
 does tagging of new mail and should be suited to your own preferences.
 It goes the same directory as `pre-new`:
 
-```
+```sh
 #!/bin/sh
 # ~/mail/.notmuch/hooks/post-new
 
@@ -176,7 +183,7 @@ nmsort "" "*"
 
 Set up SMTP in Emacs, also stolen from Tobias.
 
-```
+```lisp
 ;; Who am I?
 (setq user-full-name "Joachim Wiberg")
 (setq user-mail-address "troglobit@gmail.com")
