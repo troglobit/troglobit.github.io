@@ -19,7 +19,7 @@
       <guid>https://troglobit.com/post/2021-01-13-my-email-setup/</guid>
       <description>With lots of help from the tireless Tobias Waldekranz, I think I&amp;rsquo;ve finally found the perfect &amp;ldquo;magit like&amp;rdquo; email setup. With Emacs, of course. This is the story of how I did it.
 First install notmuch and mbsync (from the isync package):
-sudo apt install notmuch isync  Do initial setup of notmuch for your user. I&amp;rsquo;ve opted to store my mail in ~/mail, this is used throughout the text below, ymmv.</description>
+sudo apt install notmuch isync Do initial setup of notmuch for your user. I&amp;rsquo;ve opted to store my mail in ~/mail, this is used throughout the text below, ymmv.</description>
     </item>
     
     <item>

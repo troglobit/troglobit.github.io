@@ -9,19 +9,19 @@
     <meta name="author" content="Joachim Wiberg">
     <meta name="description" content="With lots of help from the tireless Tobias Waldekranz, I think I&rsquo;ve finally found the perfect &ldquo;magit like&rdquo; email setup. With Emacs, of course. This is the story of how I did it.
 First install notmuch and mbsync (from the isync package):
-sudo apt install notmuch isync  Do initial setup of notmuch for your user. I&rsquo;ve opted to store my mail in ~/mail, this is used throughout the text below, ymmv.">
+sudo apt install notmuch isync Do initial setup of notmuch for your user. I&rsquo;ve opted to store my mail in ~/mail, this is used throughout the text below, ymmv.">
     <meta name="keywords" content="blog,developer,personal">
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Emacs: GMail and Lore Mailing Lists"/>
 <meta name="twitter:description" content="With lots of help from the tireless Tobias Waldekranz, I think I&rsquo;ve finally found the perfect &ldquo;magit like&rdquo; email setup. With Emacs, of course. This is the story of how I did it.
 First install notmuch and mbsync (from the isync package):
-sudo apt install notmuch isync  Do initial setup of notmuch for your user. I&rsquo;ve opted to store my mail in ~/mail, this is used throughout the text below, ymmv."/>
+sudo apt install notmuch isync Do initial setup of notmuch for your user. I&rsquo;ve opted to store my mail in ~/mail, this is used throughout the text below, ymmv."/>
 
     <meta property="og:title" content="Emacs: GMail and Lore Mailing Lists" />
 <meta property="og:description" content="With lots of help from the tireless Tobias Waldekranz, I think I&rsquo;ve finally found the perfect &ldquo;magit like&rdquo; email setup. With Emacs, of course. This is the story of how I did it.
 First install notmuch and mbsync (from the isync package):
-sudo apt install notmuch isync  Do initial setup of notmuch for your user. I&rsquo;ve opted to store my mail in ~/mail, this is used throughout the text below, ymmv." />
+sudo apt install notmuch isync Do initial setup of notmuch for your user. I&rsquo;ve opted to store my mail in ~/mail, this is used throughout the text below, ymmv." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://troglobit.com/post/2021-01-13-my-email-setup/" />
 <meta property="article:published_time" content="2021-01-13T09:29:00+01:00" />
@@ -154,35 +154,31 @@ sudo apt install notmuch isync  Do initial setup of notmuch for your user. I&rsq
 finally found the perfect &ldquo;magit like&rdquo; email setup.  With Emacs, of
 course.  This is the story of how I did it.</p>
 <p>First install notmuch and mbsync (from the isync package):</p>
-<pre><code>sudo apt install notmuch isync
-</code></pre>
-<p>Do initial setup of notmuch for your user.  I&rsquo;ve opted to store my
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">    sudo apt install notmuch isync
+</code></pre></div><p>Do initial setup of notmuch for your user.  I&rsquo;ve opted to store my
 mail in<code> ~/mail</code>, this is used throughout the text below, ymmv.</p>
-<pre><code>notmuch setup
-</code></pre>
-<p>Clone Tobias&rsquo; GitHub notmuch-lore repo, we will be using his <code>pre-new</code>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">	notmuch setup
+</code></pre></div><p>Clone Tobias&rsquo; GitHub notmuch-lore repo, we will be using his <code>pre-new</code>
 hook later on to fetch mailing lists from lore, along with a <code>post-new</code>
 hook to do some tagging of new mail.</p>
-<pre><code>cd ~/src
-git clone https://github.com/wkz/notmuch-lore
-</code></pre>
-<p>Set up isync/mbsync to fetch my own email from Gmail.  Here a note on
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">    <span style="color:#24909d">cd</span> ~/src
+	git clone https://github.com/wkz/notmuch-lore
+</code></pre></div><p>Set up isync/mbsync to fetch my own email from Gmail.  Here a note on
 Gmail folder structure may be in order.  The view you see in the Google
 web interface does not reflect the IMAP hierarchy.  Here&rsquo;s what it looks
 like, with exception for countries where Google had to change <code>[Gmail]</code>
 to use <code>[Google Mail]</code> instead, e.g., Germany:</p>
-<pre><code>/
-|-- Drafts
-|-- [Gmail]/
-|     |-- Spam
-|     |-- your-own
-|     |-- folders-here
-|     `-- ...
-|-- INBOX
-|--	Sent
-`-- Trash
-</code></pre>
-<p>Most of the standard standard folders are available in the root, in my
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">    /
+	|-- Drafts
+	|-- [Gmail]/
+	|     |-- Spam
+	|     |-- your-own
+	|     |-- folders-here
+	|     `-- ...
+	|-- INBOX
+	|--	Sent
+	`-- Trash
+</code></pre></div><p>Most of the standard standard folders are available in the root, in my
 case only <code>Spam</code> goes in the same <code>[Gmail]/</code> folder as my own folders
 do.  This is important to keep track of when configuring your channels
 in <code>mbsync</code>.</p>
@@ -191,50 +187,50 @@ which is that project&rsquo;s mailing list.  Filtering of incoming mail to
 that list is done by GMail, not documented here.  Please notice that
 I&rsquo;ve removed my application-specific password, you&rsquo;ll have to get your
 own for you account.</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">IMAPAccount gmail
-Host imap.gmail.com
-User troglobit@gmail.com
-Pass heresyourappassword
-SSLType IMAPS
-SSLVersion TLSv1.2
-CertificateFile /etc/ssl/certs/ca-certificates.crt
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cfg" data-lang="cfg"><span style="color:#bbb">IMAPAccount gmail</span>
+<span style="color:#bbb">Host imap.gmail.com</span>
+<span style="color:#bbb">User troglobit@gmail.com</span>
+<span style="color:#bbb">Pass heresyourappassword</span>
+<span style="color:#bbb">SSLType IMAPS</span>
+<span style="color:#bbb">SSLVersion TLSv1.2</span>
+<span style="color:#bbb">CertificateFile /etc/ssl/certs/ca-certificates.crt</span>
 
-IMAPStore gmail-remote
-Account gmail
+<span style="color:#bbb">IMAPStore gmail-remote</span>
+<span style="color:#bbb">Account gmail</span>
 
-MaildirStore gmail-local
-SubFolders Verbatim
-# The trailing &#34;/&#34; is important
-Path ~/mail/gmail/
-Inbox ~/mail/gmail/Inbox
+<span style="color:#bbb">MaildirStore gmail-local</span>
+<span style="color:#bbb">SubFolders Verbatim</span>
+<span style="color:#999;font-style:italic"># The trailing &#34;/&#34; is important</span>
+<span style="color:#bbb">Path ~/mail/gmail/</span>
+<span style="color:#bbb">Inbox ~/mail/gmail/Inbox</span>
 
-Channel sync-gmail-default
-Master :gmail-remote:
-Slave :gmail-local:
-# Select some mailboxes to sync
-Patterns &#34;INBOX&#34;
+<span style="color:#bbb">Channel sync-gmail-default</span>
+<span style="color:#bbb">Master :gmail-remote:</span>
+<span style="color:#bbb">Slave :gmail-local:</span>
+<span style="color:#999;font-style:italic"># Select some mailboxes to sync</span>
+<span style="color:#bbb">Patterns &#34;INBOX&#34;</span>
 
-Channel sync-gmail-sent
-Master :gmail-remote:&#34;Sent&#34;
-Slave :gmail-local:sent
-Create Slave
+<span style="color:#bbb">Channel sync-gmail-sent</span>
+<span style="color:#bbb">Master :gmail-remote:&#34;Sent&#34;</span>
+<span style="color:#bbb">Slave :gmail-local:sent</span>
+<span style="color:#bbb">Create Slave</span>
 
-Channel sync-gmail-trash
-Master :gmail-remote:&#34;Trash&#34;
-Slave :gmail-local:trash
-Create Slave
+<span style="color:#bbb">Channel sync-gmail-trash</span>
+<span style="color:#bbb">Master :gmail-remote:&#34;Trash&#34;</span>
+<span style="color:#bbb">Slave :gmail-local:trash</span>
+<span style="color:#bbb">Create Slave</span>
 
-Channel sync-gmail-busybox
-Master :gmail-remote:&#34;[Gmail]/BusyBox&#34;
-Slave :gmail-local:busybox
-Create Slave
+<span style="color:#bbb">Channel sync-gmail-busybox</span>
+<span style="color:#bbb">Master :gmail-remote:&#34;[Gmail]/BusyBox&#34;</span>
+<span style="color:#bbb">Slave :gmail-local:busybox</span>
+<span style="color:#bbb">Create Slave</span>
 
-# Get all the channels together into a group.
-Group gmail
-Channel sync-gmail-default
-Channel sync-gmail-busybox
-Channel sync-gmail-sent
-Channel sync-gmail-trash
+<span style="color:#999;font-style:italic"># Get all the channels together into a group.</span>
+<span style="color:#bbb">Group gmail</span>
+<span style="color:#bbb">Channel sync-gmail-default</span>
+<span style="color:#bbb">Channel sync-gmail-busybox</span>
+<span style="color:#bbb">Channel sync-gmail-sent</span>
+<span style="color:#bbb">Channel sync-gmail-trash</span>
 </code></pre></div><blockquote>
 <p><strong>NOTE:</strong> empty lines in <code>.mbsyncrc</code> <em>not allowed</em> just anywhere.
 This bit me initially and is likely a common error for
@@ -244,13 +240,13 @@ others as well.</p>
 <p>As you&rsquo;ve probably already learned from the GitHub repo, to fetch mail
 from the public inbox mailing lists on lore, you need small .ini file
 detailing which subsystems you&rsquo;re interested in:</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"># ~/mail/.notmuch/.lore/sources
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cfg" data-lang="cfg"><span style="color:#999;font-style:italic"># ~/mail/.notmuch/.lore/sources</span>
 
-[netdev]
-url=https://lore.kernel.org/netdev
+<span style="color:#6ab825;font-weight:bold">[netdev]</span>
+<span style="color:#bbb">url</span>=<span style="color:#ed9d13">https://lore.kernel.org/netdev</span>
 
-[mtd]
-url=https://lore.kernel.org/linux-mtd
+<span style="color:#6ab825;font-weight:bold">[mtd]</span>
+<span style="color:#bbb">url</span>=<span style="color:#ed9d13">https://lore.kernel.org/linux-mtd</span>
 </code></pre></div><p>Now we can proceed to combine it all in notmuch!  After <code>notmuch setup</code>
 you should have a <code>~/mail/.notmuch/hooks/</code> directory.  Let&rsquo;s create a
 <code>pre-hook</code> to fetch gmail and mailing lists from lore:</p>
