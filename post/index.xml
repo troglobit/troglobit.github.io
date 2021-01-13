@@ -6,10 +6,21 @@
     <description>Recent content in Posts on The Last Outpost</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 15 Nov 2020 17:25:00 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 13 Jan 2021 09:29:00 +0100</lastBuildDate>
     
 	<atom:link href="https://troglobit.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Reading GMail and Lore Mailing Lists with Emacs</title>
+      <link>https://troglobit.com/post/2021-01-13-my-email-setup/</link>
+      <pubDate>Wed, 13 Jan 2021 09:29:00 +0100</pubDate>
+      
+      <guid>https://troglobit.com/post/2021-01-13-my-email-setup/</guid>
+      <description>With lots of help from the tireless Tobias Waldekranz, I think I&amp;rsquo;ve finally found the perfect &amp;ldquo;magit like&amp;rdquo; email setup. With Emacs, of course. This is the story of how I did it.
+First install notmuch and mbsync (from the isync package):
+sudo apt install notmuch isync  Do initial setup of notmuch for your user. I&amp;rsquo;ve opted to store my mail in ~/mail, this is used throughout the text below, ymmv.</description>
+    </item>
     
     <item>
       <title>Backtrace in C</title>

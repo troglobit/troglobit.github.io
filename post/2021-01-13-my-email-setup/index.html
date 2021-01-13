@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="Joachim Wiberg">
+    <meta name="description" content="With lots of help from the tireless Tobias Waldekranz, I think I&rsquo;ve finally found the perfect &ldquo;magit like&rdquo; email setup. With Emacs, of course. This is the story of how I did it.
+First install notmuch and mbsync (from the isync package):
+sudo apt install notmuch isync  Do initial setup of notmuch for your user. I&rsquo;ve opted to store my mail in ~/mail, this is used throughout the text below, ymmv.">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Reading GMail and Lore Mailing Lists with Emacs"/>
+<meta name="twitter:description" content="With lots of help from the tireless Tobias Waldekranz, I think I&rsquo;ve finally found the perfect &ldquo;magit like&rdquo; email setup. With Emacs, of course. This is the story of how I did it.
+First install notmuch and mbsync (from the isync package):
+sudo apt install notmuch isync  Do initial setup of notmuch for your user. I&rsquo;ve opted to store my mail in ~/mail, this is used throughout the text below, ymmv."/>
+
+    <meta property="og:title" content="Reading GMail and Lore Mailing Lists with Emacs" />
+<meta property="og:description" content="With lots of help from the tireless Tobias Waldekranz, I think I&rsquo;ve finally found the perfect &ldquo;magit like&rdquo; email setup. With Emacs, of course. This is the story of how I did it.
+First install notmuch and mbsync (from the isync package):
+sudo apt install notmuch isync  Do initial setup of notmuch for your user. I&rsquo;ve opted to store my mail in ~/mail, this is used throughout the text below, ymmv." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://troglobit.com/post/2021-01-13-my-email-setup/" />
+<meta property="article:published_time" content="2021-01-13T09:29:00+01:00" />
+<meta property="article:modified_time" content="2021-01-13T09:29:00+01:00" />
+
+
+    <title>
+  Reading GMail and Lore Mailing Lists with Emacs · The Last Outpost
+</title>
+
+    
+      <link rel="canonical" href="https://troglobit.com/post/2021-01-13-my-email-setup/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://troglobit.com/css/coder.min.9836c03fe5c87d102278a33e86d0591ef36c89b1e17e8e547ebf84c05cee010e.css" integrity="sha256-mDbAP&#43;XIfRAieKM&#43;htBZHvNsibHhfo5Ufr&#43;EwFzuAQ4=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://troglobit.com/css/coder-dark.min.717236c74e0a5208ef73964a9f44c6b443b689a95b270d8b2a40d0c012460dac.css" integrity="sha256-cXI2x04KUgjvc5ZKn0TGtEO2ialbJw2LKkDQwBJGDaw=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://troglobit.com/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://troglobit.com/favicon.ico" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="https://troglobit.com/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://troglobit.com/images/apple-touch-icon.png">
+
+    
+
+    <meta name="generator" content="Hugo 0.68.3" />
+  </head>
+
+  
+  
+    
+  
+  <body class="colorscheme-auto"
+        onload=""
+  >
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://troglobit.com/">
+      The Last Outpost
+    </a>
+    
+      
+        <span id="dark-mode-toggle" class="float-right">
+          <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+        </span>
+      
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://troglobit.com/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://troglobit.com/post/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://troglobit.com/howto/">HowTos</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://troglobit.com/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://resume.troglobit.com">Resumé</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://ftp.troglobit.com">FTP</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://git.troglobit.com">GIT</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="https://deb.troglobit.com">DEB</a>
+            </li>
+          
+        
+        
+        
+          <li class="navigation-item separator">
+            <span>|</span>
+          </li>
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container page">
+  <article>
+    <header>
+      <h1>Reading GMail and Lore Mailing Lists with Emacs</h1>
+    </header>
+
+    <p>With lots of help from the tireless Tobias Waldekranz, I think I&rsquo;ve
+finally found the perfect &ldquo;magit like&rdquo; email setup.  With Emacs, of
+course.  This is the story of how I did it.</p>
+<p>First install notmuch and mbsync (from the isync package):</p>
+<pre><code>sudo apt install notmuch isync
+</code></pre>
+<p>Do initial setup of notmuch for your user.  I&rsquo;ve opted to store my
+mail in<code> ~/mail</code>, this is used throughout the text below, ymmv.</p>
+<pre><code>notmuch setup
+</code></pre>
+<p>Clone Tobias&rsquo; GitHub notmuch-lore repo, we will be using his <code>pre-new</code>
+hook later on to fetch mailing lists from lore, along with a <code>post-new</code>
+hook to do some tagging of new mail.</p>
+<pre><code>cd ~/src
+git clone https://github.com/wkz/notmuch-lore
+</code></pre>
+<p>Set up isync/mbsync to fetch my own email from Gmail.  Here a note on
+Gmail folder structure may be in order.  The view you see in the Google
+web interface does not reflect the IMAP hierarchy.  Here&rsquo;s what it looks
+like, with exception for countries where Google had to change <code>[Gmail]</code>
+to use <code>[Google Mail]</code> instead, e.g., Germany:</p>
+<pre><code>/
+|-- Drafts
+|-- [Gmail]/
+|     |-- Spam
+|     |-- your-own
+|     |-- folders-here
+|     `-- ...
+|-- INBOX
+|--	Sent
+`-- Trash
+</code></pre>
+<p>Most of the standard standard folders are available in the root, in my
+case only <code>Spam</code> goes in the same <code>[Gmail]/</code> folder as my own folders
+do.  This is important to keep track of when configuring your channels
+in <code>mbsync</code>.</p>
+<p>Here&rsquo;s my <code>~/.mbsyncrc</code> for GMail, I&rsquo;ve included the BusyBox folder,
+which is that project&rsquo;s mailing list.  Filtering of incoming mail to
+that list is done by GMail, not documented here.  Please notice that
+I&rsquo;ve removed my application-specific password, you&rsquo;ll have to get your
+own for you account.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">IMAPAccount gmail
+Host imap.gmail.com
+User troglobit@gmail.com
+Pass heresyourappassword
+SSLType IMAPS
+SSLVersion TLSv1.2
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore gmail-remote
+Account gmail
+
+MaildirStore gmail-local
+SubFolders Verbatim
+# The trailing &#34;/&#34; is important
+Path ~/mail/gmail/
+Inbox ~/mail/gmail/Inbox
+
+Channel sync-gmail-default
+Master :gmail-remote:
+Slave :gmail-local:
+# Select some mailboxes to sync
+Patterns &#34;INBOX&#34;
+
+Channel sync-gmail-sent
+Master :gmail-remote:&#34;Sent&#34;
+Slave :gmail-local:sent
+Create Slave
+
+Channel sync-gmail-trash
+Master :gmail-remote:&#34;Trash&#34;
+Slave :gmail-local:trash
+Create Slave
+
+Channel sync-gmail-busybox
+Master :gmail-remote:&#34;[Gmail]/BusyBox&#34;
+Slave :gmail-local:busybox
+Create Slave
+
+# Get all the channels together into a group.
+Group gmail
+Channel sync-gmail-default
+Channel sync-gmail-busybox
+Channel sync-gmail-sent
+Channel sync-gmail-trash
+</code></pre></div><blockquote>
+<p><strong>NOTE:</strong> empty lines in <code>.mbsyncrc</code> <em>not allowed</em> just anywhere.
+This bit me initially and is likely a common error for
+others as well.</p>
+</blockquote>
+<p>Test your mbsync setup first, see the manual page for details.</p>
+<p>As you&rsquo;ve probably already learned from the GitHub repo, to fetch mail
+from the public inbox mailing lists on lore, you need small .ini file
+detailing which subsystems you&rsquo;re interested in:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback"># ~/mail/.notmuch/.lore/sources
+
+[netdev]
+url=https://lore.kernel.org/netdev
+
+[mtd]
+url=https://lore.kernel.org/linux-mtd
+</code></pre></div><p>Now we can proceed to combine it all in notmuch!  After <code>notmuch setup</code>
+you should have a <code>~/mail/.notmuch/hooks/</code> directory.  Let&rsquo;s create a
+<code>pre-hook</code> to fetch gmail and mailing lists from lore:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#cd2828;font-weight:bold">#!/bin/sh
+</span><span style="color:#cd2828;font-weight:bold"></span><span style="color:#999;font-style:italic"># ~/mail/.notmuch/hooks/pre-new</span>
+
+<span style="color:#999;font-style:italic"># Fetch mail from Gmail</span>
+mbsync -a
+
+<span style="color:#999;font-style:italic"># Pull relevant kernel mailing lists using git, of course</span>
+~/src/notmuch-lore/pre-new
+</code></pre></div><blockquote>
+<p>Remember to <code>chown +x pre-new</code> and the <code>post-new</code>, below!</p>
+</blockquote>
+<p>Set up my own <code>post-new</code> for notmuch, OK mostly stolen from Tobias, this
+does tagging of new mail and should be suited to your own preferences.
+It goes the same directory as <code>pre-new</code>:</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#cd2828;font-weight:bold">#!/bin/sh
+</span><span style="color:#cd2828;font-weight:bold"></span><span style="color:#999;font-style:italic"># ~/mail/.notmuch/hooks/post-new</span>
+
+nmsort()
+{
+    notmuch tag -new <span style="color:#40ffff">$1</span> -- tag:new <span style="color:#ed9d13">&#34;</span><span style="color:#40ffff">$2</span><span style="color:#ed9d13">&#34;</span>
+}
+
+<span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;Various Mailing Lists&#34;</span> &gt;&amp;<span style="color:#3677a9">2</span>
+nmsort <span style="color:#ed9d13">&#34;+busybox&#34;</span> <span style="color:#ed9d13">&#34;list:busybox&#34;</span>
+
+<span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;Subsystems&#34;</span> &gt;&amp;<span style="color:#3677a9">2</span>
+nmsort     <span style="color:#ed9d13">&#34;+bridge +subsys&#34;</span> <span style="color:#ed9d13">&#34;subject:bridge:&#34;</span>
+nmsort  <span style="color:#ed9d13">&#34;+switchdev +subsys&#34;</span> <span style="color:#ed9d13">&#34;subject:switchdev:&#34;</span>
+nmsort    <span style="color:#ed9d13">&#34;+ethtool +subsys&#34;</span> <span style="color:#ed9d13">&#34;subject:ethtool:&#34;</span>
+nmsort    <span style="color:#ed9d13">&#34;+phylink +subsys&#34;</span> <span style="color:#ed9d13">&#34;subject:phylink:&#34;</span>
+nmsort    <span style="color:#ed9d13">&#34;+devlink +subsys&#34;</span> <span style="color:#ed9d13">&#34;subject:devlink:&#34;</span>
+nmsort        <span style="color:#ed9d13">&#34;+dsa +subsys&#34;</span> <span style="color:#ed9d13">&#34;subject:dsa&#34;</span>
+
+<span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;Hardware&#34;</span> &gt;&amp;<span style="color:#3677a9">2</span>
+nmsort    <span style="color:#ed9d13">&#34;+dsa +hw&#34;</span> <span style="color:#ed9d13">&#34;subject:mv88e6&#34;</span>
+nmsort   <span style="color:#ed9d13">&#34;+mdio +hw&#34;</span> <span style="color:#ed9d13">&#34;subject:mdio&#34;</span>
+nmsort    <span style="color:#ed9d13">&#34;+phy +hw&#34;</span> <span style="color:#ed9d13">&#34;subject:phy&#34;</span>
+nmsort  <span style="color:#ed9d13">&#34;+mlxsw +hw&#34;</span> <span style="color:#ed9d13">&#34;subject:mlxsw&#34;</span>
+
+<span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;Vendors&#34;</span> &gt;&amp;<span style="color:#3677a9">2</span>
+nmsort   <span style="color:#ed9d13">&#34;+marvell +vendor&#34;</span> <span style="color:#ed9d13">&#34;subject:marvell&#34;</span>
+nmsort <span style="color:#ed9d13">&#34;+microchip +vendor&#34;</span> <span style="color:#ed9d13">&#34;subject:microchip&#34;</span>
+
+nmsort <span style="color:#ed9d13">&#34;&#34;</span> <span style="color:#ed9d13">&#34;*&#34;</span>
+</code></pre></div><p>Set up SMTP in Emacs, also stolen from Tobias.</p>
+<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">;; Who am I?
+(setq user-full-name &#34;Joachim Wiberg&#34;)
+(setq user-mail-address &#34;troglobit@gmail.com&#34;)
+
+;; Email setup
+(setq message-directory &#34;~/.mail&#34;
+      mail-host-address &#34;gmail.com&#34;
+      user-full-name &#34;Joachim Wiberg&#34;
+      message-citation-line-format &#34;On %a, %b %d, %Y at %R, %f wrote:&#34;
+      message-citation-line-function &#39;message-insert-formatted-citation-line
+      )
+
+;; Currently gmail as SMTP server
+(setq message-send-mail-function &#39;smtpmail-send-it
+      smtpmail-starttls-credentials &#39;((&#34;smtp.gmail.com&#34; 587 nil nil))
+      smtpmail-auth-credentials &#39;((&#34;smtp.gmail.com&#34; 587 &#34;troglobit@gmail.com&#34; nil))
+      smtpmail-default-smtp-server &#34;smtp.gmail.com&#34;
+      smtpmail-smtp-server &#34;smtp.gmail.com&#34;
+      smtpmail-smtp-service 587
+      starttls-use-gnutls t
+      )
+</code></pre></div><p>Done.</p>
+
+  </article>
+</section>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'], ['\\(', '\\)']
+        ],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+      
+        ©
+        
+        2021
+         Joachim Wiberg 
+      
+      
+      
+    </section>
+  </footer>
+
+    </main>
+
+    
+      
+      <script src="https://troglobit.com/js/dark-mode.min.0213e1773e6d1c5a644f847c67a6f8abac49a3776e2976f6008038af8c5b76a1.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+  </body>
+
+</html>
