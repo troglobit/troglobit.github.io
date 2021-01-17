@@ -9,10 +9,10 @@ With lots of help from the tireless Tobias Waldekranz, I think I've
 finally found the perfect "magit like" email setup.  With Emacs, of
 course.  This is the story of how I did it.
 
-First install notmuch and mbsync (from the isync package):
+First install notmuch, mbsync (from the isync package), and afew:
 
 ```sh
-    sudo apt install notmuch isync
+    sudo apt install notmuch isync afew
 ```
 
 Do initial setup of notmuch for your user.  I've opted to store my
@@ -57,9 +57,11 @@ in `mbsync`.
 
 Here's my `~/.mbsyncrc` for GMail, I've included the BusyBox folder,
 which is that project's mailing list.  Filtering of incoming mail to
-that list is done by GMail, not documented here.  Please notice that
-I've removed my application-specific password, you'll have to get your
-own for you account.
+that list is done by GMail, not documented here.  Make sure to create
+the parent directory `~/mail/gmail`.
+
+> Please notice that I've removed my application-specific password,
+> you'll have to get your own for you account.
 
 ```cfg
 IMAPAccount gmail
@@ -144,9 +146,22 @@ mbsync -a
 
 > Remember to `chown +x pre-new` and the `post-new`, below!
 
-Set up my own `post-new` for notmuch, OK mostly stolen from Tobias, this
-does tagging of new mail and should be suited to your own preferences.
-It goes the same directory as `pre-new`:
+For help with tagging, or sorting, you can either use the `nmsort()`
+shell script function that Tobias made, or other tools like `afew`.
+The latter needs a small configuration file:
+
+```cfg
+# ~/.config/afew/config
+# This is the default filter chain
+[SpamFilter]
+[KillThreadsFilter]
+[ListMailsFilter]
+[ArchiveSentMailsFilter]
+[InboxFilter]
+```
+
+Set up the `post-new` for notmuch as follows.  It goes the same
+directory as `pre-new`:
 
 ```sh
 #!/bin/sh
@@ -156,6 +171,10 @@ nmsort()
 {
     notmuch tag -new $1 -- tag:new "$2"
 }
+
+echo "Me" >&2
+nmsort "+me" "to:troglobit OR cc:troglobit"
+nmsort "+me" "troglobit"
 
 echo "Various Mailing Lists" >&2
 nmsort "+busybox" "list:busybox"
@@ -178,7 +197,11 @@ echo "Vendors" >&2
 nmsort   "+marvell +vendor" "subject:marvell"
 nmsort "+microchip +vendor" "subject:microchip"
 
-nmsort "" "*"
+# If you don't use afew, uncomment this
+#nmsort "" "*"
+
+echo "Let afew handle the remaining ... " >&2
+afew --tag --new
 ```
 
 Set up SMTP in Emacs, also stolen from Tobias.
@@ -190,8 +213,8 @@ Set up SMTP in Emacs, also stolen from Tobias.
 
 ;; Email setup
 (setq message-directory "~/.mail"
-      mail-host-address "gmail.com"
-      user-full-name "Joachim Wiberg"
+      notmuch-fcc-dirs nil
+      read-mail-command (quote notmuch)
       message-citation-line-format "On %a, %b %d, %Y at %R, %f wrote:"
       message-citation-line-function 'message-insert-formatted-citation-line
       )
