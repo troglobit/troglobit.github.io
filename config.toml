@@ -17,15 +17,10 @@ enableEmoji = true
 [params]
     author = "Joachim Wiberg"
     info = "Help me Obi-Wan Troglobi, you're my only hope!"
-#    description = ""
     keywords = "blog,developer,personal"
     avatarurl = "images/profile.jpg"
 
     favicon_16 = "favicon.ico"
-#    favicon_32 = "/img/favicon-32x32.png"
-#    favicon_16 = "/img/favicon-16x16.png"
-
-#    footercontent = "Help me Obi-Wan Troglobi, you're my only hope!"
 
     hidecredits = true
     hidecopyright = false
@@ -35,9 +30,6 @@ enableEmoji = true
     colorscheme = "auto"
 
     math = true
-
-    # Custom CSS
-    #custom_css = ["css/override.min.css"]
 
 # Social links
 [[params.social]]
