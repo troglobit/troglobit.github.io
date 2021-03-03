@@ -1,0 +1,23 @@
+/* http://www.ebadf.net/2016/10/19/centering-images-in-hugo/ */
+img[src$='#center']
+{
+    display: block;
+    margin: 1.3rem auto; /* you can replace the vertical '0.7rem' by
+                            whatever floats your boat, but keep the
+                            horizontal 'auto' for this to work */
+    /* whatever else styles you fancy here */
+}
+
+img[src$='#floatleft']
+{
+    float:left;
+    margin: 1.3rem;      /* this margin is totally up to you */
+    /* whatever else styles you fancy here */
+}
+
+img[src$='#floatright']
+{
+    float:right;
+    margin: 1.3rem;      /* this margin is totally up to you */
+    /* whatever else styles you fancy here */
+}

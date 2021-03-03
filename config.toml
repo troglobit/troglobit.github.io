@@ -28,6 +28,7 @@ enableEmoji = true
     rtl = false
 
     colorscheme = "auto"
+    custom_css = [ "css/extra.css" ]
 
     math = true
 
