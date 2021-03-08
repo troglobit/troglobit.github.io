@@ -6,19 +6,21 @@
     <description>Recent content in Projects on The Last Outpost</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 08 Aug 2020 17:50:00 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 01 Mar 2021 13:26:00 +0100</lastBuildDate>
     
 	<atom:link href="https://troglobit.com/projects/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Zoo Archiver</title>
-      <link>https://troglobit.com/projects/zoo/</link>
-      <pubDate>Sat, 08 Aug 2020 17:50:00 +0100</pubDate>
+      <title>Fast init for Linux systems</title>
+      <link>https://troglobit.com/projects/finit/</link>
+      <pubDate>Mon, 01 Mar 2021 13:26:00 +0100</pubDate>
       
-      <guid>https://troglobit.com/projects/zoo/</guid>
-      <description>Issue tracker and GIT repository available at GitHub:
- Repository Issue Tracker zoo-1.21.tar.gz, MD5  </description>
+      <guid>https://troglobit.com/projects/finit/</guid>
+      <description>Finit is a simple alternative to SysV init and systemd, originally reverse engineered from the EeePC fastinit by Claudio Matsuoka — &amp;ldquo;gaps filled with frog DNA …&amp;rdquo;
+Finit supports runlevels, process monitoring, as well as task and network condition dependencies. E.g., &amp;ldquo;start this service when basic networking is available&amp;rdquo;, or &amp;ldquo;wait until syslogd has started&amp;rdquo;.
+For more details, see the online documentation.
+Example The GitHub finit/contrib/ section, also part of the tarball, includes examples, with sample configurations for Debian, Void, and Alpine Linux.</description>
     </item>
     
     <item>
@@ -124,17 +126,6 @@ pimd is a lightweight standalone PIM-SM/SSM v2 multicast routing daemon. It is t
       <description>SMCRoute is a daemon and command line tool to manipulate the multicast routing table in the UNIX kernel. Both FreeBSD and Linux kernels are supported, but it may work on other systems as well.
 SMCRoute can be used as an alternative to dynamic multicast routing daemons like mrouted or pimd when (only) static multicast routes should be maintained or no proper signalling exists.
  Problems? See the Multicast HowTo for help!</description>
-    </item>
-    
-    <item>
-      <title>Fast init for Linux systems</title>
-      <link>https://troglobit.com/projects/finit/</link>
-      <pubDate>Fri, 23 Feb 2018 20:16:00 +0200</pubDate>
-      
-      <guid>https://troglobit.com/projects/finit/</guid>
-      <description>Finit is a simple alternative to SysV init and systemd, reverse engineered from the EeePC fastinit ten years ago by Claudio Matsuoka — &amp;ldquo;gaps filled with frog DNA …&amp;rdquo;
-Finit supports runlevels, process monitoring, and starting services on demand using the built-in inetd, or by triggering a condition. E.g., &amp;ldquo;don&amp;rsquo;t start this service until basic networking is available&amp;rdquo;, or &amp;ldquo;wait until syslogd has started&amp;rdquo;.
-For more details, see the online documentation.</description>
     </item>
     
     <item>

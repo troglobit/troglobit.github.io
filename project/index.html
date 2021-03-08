@@ -7,18 +7,21 @@
     <meta http-equiv="Content-Language" content="en">
 
     <meta name="author" content="Joachim Wiberg">
-    <meta name="description" content="{% if page.name %}
-{% endfor %}">
+    <meta name="description" content="{% for page in site.projects %} {% if page.name %}
+ {{ page.name }}  {% if page.description %}  {{ page.description }}  {% else if page.title %}  {{ page.title }}  {% endif %} {% endif %} {% endfor %}
+ Merecat   Simple, small and fast HTTP server   ">
     <meta name="keywords" content="blog,developer,personal">
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Projects"/>
-<meta name="twitter:description" content="{% if page.name %}
-{% endfor %}"/>
+<meta name="twitter:description" content="{% for page in site.projects %} {% if page.name %}
+ {{ page.name }}  {% if page.description %}  {{ page.description }}  {% else if page.title %}  {{ page.title }}  {% endif %} {% endif %} {% endfor %}
+ Merecat   Simple, small and fast HTTP server   "/>
 
     <meta property="og:title" content="Projects" />
-<meta property="og:description" content="{% if page.name %}
-{% endfor %}" />
+<meta property="og:description" content="{% for page in site.projects %} {% if page.name %}
+ {{ page.name }}  {% if page.description %}  {{ page.description }}  {% else if page.title %}  {{ page.title }}  {% endif %} {% endif %} {% endfor %}
+ Merecat   Simple, small and fast HTTP server   " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://troglobit.com/project/" />
 
@@ -52,6 +55,8 @@
       
     
 
+    
+      <link rel="stylesheet" href="https://troglobit.com/css/extra.css" />
     
 
     
@@ -146,11 +151,30 @@
       <h1>Projects</h1>
     </header>
 
-    <!-- raw HTML omitted -->
+    <dl class="tags-box">
+{% for page in site.projects %}
 <p>{% if page.name %}</p>
-<!-- raw HTML omitted -->
+<dt>
+  <a class="page-link" href="{{ site.baseurl }}{{ page.url }}" title="{{ page.title }}">{{ page.name }}</a>
+</dt>
+{% if page.description %}
+<dd>
+  {{ page.description }}
+</dd>
+{% else if page.title %}
+<dd>
+  {{ page.title }}
+</dd>
+{% endif %}
+{% endif %}
 <p>{% endfor %}</p>
-<!-- raw HTML omitted -->
+<dt>
+  <a class="page-lin" href="http://merecat.troglobit.com" title="Merecat httpd">Merecat</a>
+</dt>
+<dd>
+  Simple, small and fast HTTP server
+</dd>
+</dl>
 
   </article>
 </section>
@@ -178,6 +202,8 @@
       
   <footer class="footer">
     <section class="container">
+      
+        <p>Proudly hosted by Fosshost :: <a href="https://fosshost.org/">https://fosshost.org/</a></p>
       
       
         ©

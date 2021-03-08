@@ -9,22 +9,28 @@
     <meta name="author" content="Joachim Wiberg">
     <meta name="description" content="{% if site.posts != empty %}
 {% for post in site.posts %} {% capture this_year %}{{ post.date | date: &ldquo;%Y&rdquo; }}{% endcapture %} {% unless year == this_year %} {% assign year = this_year %} {% unless post == site.posts.first %} {% endunless %}
-{% else %}
-No posts{% endif %}">
+{{ year }} {% endunless %} {{ post.date | date:&#34;%Y-%m-%d&#34; }}  &raquo; {{ post.title }}
+{% endfor %} {% else %}
+No posts
+{% endif %}">
     <meta name="keywords" content="blog,developer,personal">
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Archives"/>
 <meta name="twitter:description" content="{% if site.posts != empty %}
 {% for post in site.posts %} {% capture this_year %}{{ post.date | date: &ldquo;%Y&rdquo; }}{% endcapture %} {% unless year == this_year %} {% assign year = this_year %} {% unless post == site.posts.first %} {% endunless %}
-{% else %}
-No posts{% endif %}"/>
+{{ year }} {% endunless %} {{ post.date | date:&#34;%Y-%m-%d&#34; }}  &raquo; {{ post.title }}
+{% endfor %} {% else %}
+No posts
+{% endif %}"/>
 
     <meta property="og:title" content="Archives" />
 <meta property="og:description" content="{% if site.posts != empty %}
 {% for post in site.posts %} {% capture this_year %}{{ post.date | date: &ldquo;%Y&rdquo; }}{% endcapture %} {% unless year == this_year %} {% assign year = this_year %} {% unless post == site.posts.first %} {% endunless %}
-{% else %}
-No posts{% endif %}" />
+{{ year }} {% endunless %} {{ post.date | date:&#34;%Y-%m-%d&#34; }}  &raquo; {{ post.title }}
+{% endfor %} {% else %}
+No posts
+{% endif %}" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://troglobit.com/archives/" />
 
@@ -58,6 +64,8 @@ No posts{% endif %}" />
       
     
 
+    
+      <link rel="stylesheet" href="https://troglobit.com/css/extra.css" />
     
 
     
@@ -152,7 +160,7 @@ No posts{% endif %}" />
       <h1>Archives</h1>
     </header>
 
-    <!-- raw HTML omitted -->
+    <ul class="tags-box">
 <p>{% if site.posts != empty %}</p>
 <p>{% for post in site.posts %}
 {% capture this_year %}{{ post.date | date: &ldquo;%Y&rdquo; }}{% endcapture %}
@@ -160,11 +168,17 @@ No posts{% endif %}" />
 {% assign year = this_year %}
 {% unless post == site.posts.first %}
 {% endunless %}</p>
-<!-- raw HTML omitted -->
+<li id="{{ year }}">{{ year }}</li>
+{% endunless %}
+<time datetime="{{ post.date | date:"%Y-%m-%d" }}">
+{{ post.date | date:"%Y-%m-%d" }}
+</time>
+&raquo; <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><br />
+{% endfor %}
 <p>{% else %}</p>
-<p><!-- raw HTML omitted -->No posts<!-- raw HTML omitted --></p>
+<p><span>No posts</span></p>
 <p>{% endif %}</p>
-<!-- raw HTML omitted -->
+</ul>
 
   </article>
 </section>
@@ -192,6 +206,8 @@ No posts{% endif %}" />
       
   <footer class="footer">
     <section class="container">
+      
+        <p>Proudly hosted by Fosshost :: <a href="https://fosshost.org/">https://fosshost.org/</a></p>
       
       
         ©

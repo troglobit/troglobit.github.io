@@ -7,18 +7,21 @@
     <meta http-equiv="Content-Language" content="en">
 
     <meta name="author" content="Joachim Wiberg">
-    <meta name="description" content="{% if page.name %}
-{% endfor %}">
+    <meta name="description" content="{% for page in site.howtos %} {% if page.name %}
+ {{ page.name }}  {% if page.title %}  {{ page.title }}  {% endif %} {% endif %} {% endfor %}
+ ">
     <meta name="keywords" content="blog,developer,personal">
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="HowTos"/>
-<meta name="twitter:description" content="{% if page.name %}
-{% endfor %}"/>
+<meta name="twitter:description" content="{% for page in site.howtos %} {% if page.name %}
+ {{ page.name }}  {% if page.title %}  {{ page.title }}  {% endif %} {% endif %} {% endfor %}
+ "/>
 
     <meta property="og:title" content="HowTos" />
-<meta property="og:description" content="{% if page.name %}
-{% endfor %}" />
+<meta property="og:description" content="{% for page in site.howtos %} {% if page.name %}
+ {{ page.name }}  {% if page.title %}  {{ page.title }}  {% endif %} {% endif %} {% endfor %}
+ " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://troglobit.com/howtos/" />
 
@@ -52,6 +55,8 @@
       
     
 
+    
+      <link rel="stylesheet" href="https://troglobit.com/css/extra.css" />
     
 
     
@@ -146,11 +151,20 @@
       <h1>HowTos</h1>
     </header>
 
-    <!-- raw HTML omitted -->
+    <dl class="tags-box">
+{% for page in site.howtos %}
 <p>{% if page.name %}</p>
-<!-- raw HTML omitted -->
+<dt>
+  <a class="page-link" href="{{ site.baseurl }}{{ page.url }}" title="{{ page.title }}">{{ page.name }}</a>
+</dt>
+{% if page.title %}
+<dd>
+  {{ page.title }}
+</dd>
+{% endif %}
+{% endif %}
 <p>{% endfor %}</p>
-<!-- raw HTML omitted -->
+</dl>
 
   </article>
 </section>
@@ -178,6 +192,8 @@
       
   <footer class="footer">
     <section class="container">
+      
+        <p>Proudly hosted by Fosshost :: <a href="https://fosshost.org/">https://fosshost.org/</a></p>
       
       
         ©

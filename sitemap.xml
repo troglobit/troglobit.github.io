@@ -3,12 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://troglobit.com/post/2021-01-13-my-email-setup/</loc>
-    <lastmod>2021-01-13T09:29:00+01:00</lastmod>
+    <loc>https://troglobit.com/projects/finit/</loc>
+    <lastmod>2021-03-01T13:26:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://troglobit.com/projects/</loc>
+    <lastmod>2021-03-01T13:26:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://troglobit.com/post/2021-02-12-alpine-linux-with-finit/</loc>
+    <lastmod>2021-02-12T07:24:06+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://troglobit.com/post/</loc>
+    <lastmod>2021-02-12T07:24:06+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://troglobit.com/post/2021-01-13-my-email-setup/</loc>
     <lastmod>2021-01-13T09:29:00+01:00</lastmod>
   </url>
   
@@ -55,16 +70,6 @@
   <url>
     <loc>https://troglobit.com/howto/howto-build-and-use-my-projects/</loc>
     <lastmod>2020-08-16T16:36:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://troglobit.com/projects/</loc>
-    <lastmod>2020-08-08T17:50:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://troglobit.com/projects/zoo/</loc>
-    <lastmod>2020-08-08T17:50:00+01:00</lastmod>
   </url>
   
   <url>
@@ -340,11 +345,6 @@
   <url>
     <loc>https://troglobit.com/post/2018-03-30-cgit-with-merecat-httpd/</loc>
     <lastmod>2018-03-30T19:41:26+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://troglobit.com/projects/finit/</loc>
-    <lastmod>2018-02-23T20:16:00+02:00</lastmod>
   </url>
   
   <url>

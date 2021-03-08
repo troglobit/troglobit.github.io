@@ -12,6 +12,32 @@
     
     
     <item>
+      <title>Fast init for Linux systems</title>
+      <link>https://troglobit.com/projects/finit/</link>
+      <pubDate>Mon, 01 Mar 2021 13:26:00 +0100</pubDate>
+      
+      <guid>https://troglobit.com/projects/finit/</guid>
+      <description>Finit is a simple alternative to SysV init and systemd, originally reverse engineered from the EeePC fastinit by Claudio Matsuoka — &amp;ldquo;gaps filled with frog DNA …&amp;rdquo;
+Finit supports runlevels, process monitoring, as well as task and network condition dependencies. E.g., &amp;ldquo;start this service when basic networking is available&amp;rdquo;, or &amp;ldquo;wait until syslogd has started&amp;rdquo;.
+For more details, see the online documentation.
+Example The GitHub finit/contrib/ section, also part of the tarball, includes examples, with sample configurations for Debian, Void, and Alpine Linux.</description>
+    </item>
+    
+    <item>
+      <title>Alpine Linux with Finit</title>
+      <link>https://troglobit.com/post/2021-02-12-alpine-linux-with-finit/</link>
+      <pubDate>Fri, 12 Feb 2021 07:24:06 +0100</pubDate>
+      
+      <guid>https://troglobit.com/post/2021-02-12-alpine-linux-with-finit/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://alpinelinux.org/&#34;&gt;Alpine Linux&lt;/a&gt; is an amazing little operating
+system.  It&amp;rsquo;s small, boots quick, and easy to use.  The size alone makes
+it very attractive to container builders.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troglobit.com/images/finit4-screenshot.png#center&#34; alt=&#34;Alpine Linux started with Finit&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This blog post details how to set Alpine up with the Finit init system,
+replacing the default OpenRC.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Emacs: GMail and Lore Mailing Lists</title>
       <link>https://troglobit.com/post/2021-01-13-my-email-setup/</link>
       <pubDate>Wed, 13 Jan 2021 09:29:00 +0100</pubDate>
@@ -85,16 +111,6 @@ over what they do.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Cheers&lt;br&gt;
 /Joachim&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Zoo Archiver</title>
-      <link>https://troglobit.com/projects/zoo/</link>
-      <pubDate>Sat, 08 Aug 2020 17:50:00 +0100</pubDate>
-      
-      <guid>https://troglobit.com/projects/zoo/</guid>
-      <description>Issue tracker and GIT repository available at GitHub:
- Repository Issue Tracker zoo-1.21.tar.gz, MD5  </description>
     </item>
     
     <item>
@@ -517,17 +533,6 @@ into problems setting it up.  I&amp;rsquo;m posting it here for others to see.&l
     </item>
     
     <item>
-      <title>Fast init for Linux systems</title>
-      <link>https://troglobit.com/projects/finit/</link>
-      <pubDate>Fri, 23 Feb 2018 20:16:00 +0200</pubDate>
-      
-      <guid>https://troglobit.com/projects/finit/</guid>
-      <description>Finit is a simple alternative to SysV init and systemd, reverse engineered from the EeePC fastinit ten years ago by Claudio Matsuoka — &amp;ldquo;gaps filled with frog DNA …&amp;rdquo;
-Finit supports runlevels, process monitoring, and starting services on demand using the built-in inetd, or by triggering a condition. E.g., &amp;ldquo;don&amp;rsquo;t start this service until basic networking is available&amp;rdquo;, or &amp;ldquo;wait until syslogd has started&amp;rdquo;.
-For more details, see the online documentation.</description>
-    </item>
-    
-    <item>
       <title>Slow Down</title>
       <link>https://troglobit.com/post/2018-02-15-slow-down/</link>
       <pubDate>Thu, 15 Feb 2018 20:05:25 +0100</pubDate>
@@ -697,7 +702,7 @@ why I created &lt;a href=&#34;https://github.com/troglobit/troglos&#34;&gt;Trogl
 1992 for MS-DOS, made by the now legendary id Software.  OK, admittedly
 I&amp;rsquo;ve played other games since then, but I&amp;rsquo;ve never again been so manic
 about a game since Wolfenstein.&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;img style=&#34;width:50%;height:auto;&#34; class=&#34;center&#34; src=&#34;https://troglobit.com/images/wolf3d.png&#34;&gt;
 &lt;p&gt;This post is about how to build, install and set up Wolfenstein 3D on a
 Raspberry Pi running &lt;a href=&#34;https://retropie.org.uk/&#34;&gt;RetroPie&lt;/a&gt; &amp;hellip; on a &lt;a href=&#34;https://shop.pimoroni.com/products/picade&#34;&gt;Picade&lt;/a&gt; :-)&lt;/p&gt;</description>
     </item>
@@ -746,7 +751,12 @@ Example:
 with my various &lt;a href=&#34;https://github.com/troglobit&#34;&gt;projects&lt;/a&gt; simply to learn
 and sometimes these little projects turn into something useful for other
 people as well, which is great!&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;p data-pullquote=&#34;not all things can be simplified, and not all simple
+things are correct&#34;&gt; Recently I discovered my method to get started:
+refactoring, or just simple code cleanup.  You see I&#39;ve got this crazy
+idea that &lt;em&gt;all simple things are correct&lt;/em&gt;.  Although things
+usually tend to require a certain balance &amp;mdash; not all things can be
+simplified, and not all simple things are correct.&lt;/p&gt;
 &lt;p&gt;When I recently had to migrate my personal blog, FTP, and GIT server, I
 set out to run everything from an old RasPi2.  This put my private life
 in just about the same niche as my work life, embedded.  On a resource
@@ -844,7 +854,7 @@ couldn&amp;rsquo;t set up root access (defaulted to nobody).&lt;/li&gt;
 servers.  I plan to use them as build and embedded target emulation
 servers for my &lt;a href=&#34;https://github.com/troglobit&#34;&gt;open source projects&lt;/a&gt;
 as well as Minecraft server for my kids :)&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;</description>
+&lt;img src=&#34;http://eitc.in/yahoo_site_admin/assets/docs/Supermicro_SuperServer_SC512L_small.324203750.JPG&#34;&gt;</description>
     </item>
     
     <item>
@@ -2324,8 +2334,10 @@ Today we&amp;rsquo;re going to Stenby TV-service with our broken Hitachi 32&amp;
       <guid>https://troglobit.com/archives/</guid>
       <description>{% if site.posts != empty %}
 {% for post in site.posts %} {% capture this_year %}{{ post.date | date: &amp;ldquo;%Y&amp;rdquo; }}{% endcapture %} {% unless year == this_year %} {% assign year = this_year %} {% unless post == site.posts.first %} {% endunless %}
-{% else %}
-No posts{% endif %}</description>
+{{ year }} {% endunless %} {{ post.date | date:&#34;%Y-%m-%d&#34; }}  &amp;raquo; {{ post.title }}
+{% endfor %} {% else %}
+No posts
+{% endif %}</description>
     </item>
     
     <item>
@@ -2334,7 +2346,8 @@ No posts{% endif %}</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://troglobit.com/categories/</guid>
-      <description></description>
+      <description>{% if site.posts != empty %} {% for cat in site.categories %} {{ cat[0] | join: &#34;/&#34;}}{{ cat[1].size }} {% endfor %}  {% for cat in site.categories %} {{ cat[0]}} {% for post in cat[1] %} {{ post.date | date:&#34;%Y-%m-%d&#34; }} &amp;raquo; {{ post.title }}
+{% endfor %} {% endfor %} {% else %} No posts {% endif %}  </description>
     </item>
     
     <item>
@@ -2343,8 +2356,9 @@ No posts{% endif %}</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://troglobit.com/howtos/</guid>
-      <description>{% if page.name %}
-{% endfor %}</description>
+      <description>{% for page in site.howtos %} {% if page.name %}
+ {{ page.name }}  {% if page.title %}  {{ page.title }}  {% endif %} {% endif %} {% endfor %}
+ </description>
     </item>
     
     <item>
@@ -2353,8 +2367,9 @@ No posts{% endif %}</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://troglobit.com/project/</guid>
-      <description>{% if page.name %}
-{% endfor %}</description>
+      <description>{% for page in site.projects %} {% if page.name %}
+ {{ page.name }}  {% if page.description %}  {{ page.description }}  {% else if page.title %}  {{ page.title }}  {% endif %} {% endif %} {% endfor %}
+ Merecat   Simple, small and fast HTTP server   </description>
     </item>
     
   </channel>
