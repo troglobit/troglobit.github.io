@@ -9,6 +9,8 @@ tags: []
 system.  It's small, boots quick, and easy to use.  The size alone makes
 it very attractive to container builders. 
 
+![Alpine Linux started with Finit](/images/finit4-screenshot.png#center)
+
 This blog post details how to set Alpine up with the Finit init system,
 replacing the default OpenRC.
 
