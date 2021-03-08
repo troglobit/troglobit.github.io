@@ -24,7 +24,7 @@ enableEmoji = true
     info = "Help me Obi-Wan Troglobi, you're my only hope!"
     keywords = "blog,developer,personal"
     avatarurl = "images/profile.jpg"
-
+    footercontent = "Proudly hosted by Fosshost :: <a href=\"https://fosshost.org/\">https://fosshost.org/</a>"
     favicon_16 = "favicon.ico"
 
     hidecredits = true
