@@ -1,96 +1,192 @@
-baseurl = "https://troglobit.com"
-title = "The Last Outpost"
-theme = "hugo-coder"
-languagecode = "en"
-defaultcontentlanguage = "en"
+baseurl = "https://troglobit.com/"
+title = "Joachim Wiberg"
+languageCode = "en-us"
+theme = "hello-friend-ng"
 
-paginate = 20
-canonifyurls = true
+# Syntax highlighting
+pygmentsUseClasses = true
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
+#PygmentsStyle = "monokai"
+PygmentsStyle = "native"
 
-#pygmentsstyle = "bw"
-#pygmentsStyle = "github"
-pygmentsStyle = "native"
-pygmentscodefences = true
-pygmentscodefencesguesssyntax = true
-enableEmoji = true
+paginate  = 10
+rssLimit  = 10  # Maximum number of items in the RSS feed.
+copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
 
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
+# googleAnalytics = ""
+# disqusShortname = ""
+
+archetypeDir = "archetypes"
+contentDir   = "content"
+dataDir      = "data"
+layoutDir    = "layouts"
+publishDir   = "public"
+
+buildDrafts  = false
+buildFuture  = false
+buildExpired = false
+canonifyURLs = true
+
+enableRobotsTXT = true
+enableGitInfo   = false
+enableEmoji     = true
+enableMissingTranslationPlaceholders = false
+disableRSS     = false
+disableSitemap = false
+disable404     = false
+disableHugoGeneratorInject = false
+
+[permalinks]
+  # compat urls for search engines
+  posts = "/post/:year-:month-:day-:title/"
+
+[author]
+  name = "Joachim Wiberg"
+
+[blackfriday]
+  hrefTargetBlank = true
+
+[taxonomies]
+  tag      = "tags"
+  category = "categories"
+  series   = "series"
 
 [params]
-    author = "Joachim Wiberg"
-    info = "Help me Obi-Wan Troglobi, you're my only hope!"
-    keywords = "blog,developer,personal"
-    avatarurl = "images/profile.jpg"
-    footercontent = "Proudly hosted by Fosshost :: <a href=\"https://fosshost.org/\">https://fosshost.org/</a>"
-    favicon_16 = "favicon.ico"
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNum     = "2006-01-02"
+  dateformNumTime = "2006-01-02 15:04"
 
-    hidecredits = true
-    hidecopyright = false
+  # Metadata mostly used in document's head
+  # 
+  #description = "Nice theme for homepages and blogs"
+  #keywords = ""
+  #images = [""]
 
-    rtl = false
+  #homeSubtitle = "The Last Outpost"
 
-    colorscheme = "auto"
-    custom_css = [ "css/extra.css" ]
+  # Set a background for the homepage
+  # backgroundImage = "assets/images/background.jpg"
 
-    math = true
+  # Prefix of link to the git commit detail page. GitInfo must be enabled.
+  #
+  # gitUrl = ""
 
-# Social links
-[[params.social]]
-    name = "Email"
-    icon = "fa fa-envelope"
-    weight = 1
-    url = "mailto:Joachim Wiberg <troglobit+spam@gmail.com>"
-[[params.social]]
-    name = "Github"
-    icon = "fa fa-github"
-    weight = 2
-    url = "https://github.com/troglobit/"
-[[params.social]]
-    name = "Twitter"
-    icon = "fa fa-twitter"
-    weight = 3
-    url = "https://twitter.com/troglobit/"
-[[params.social]]
-    name = "RSS"
-    icon = "fa fa-rss"
-    weight = 6
-    url = "https://troglobit.com/index.xml"
-    rel = "alternate"
-    type = "application/rss+xml"
+  # Set disableReadOtherPosts to true in order to hide the links to other posts.
+  #
+  disableReadOtherPosts = false
 
-# Menu links
-[[menu.main]]
-    name = "About"
-    weight = 1
-    url = "/about/"
-[[menu.main]]
-    name = "Blog"
-    weight = 1
-    url  = "/post/"
-[[menu.main]]
-    name = "HowTos"
-    weight = 2
-    url  = "/howto/"
-[[menu.main]]
-    name = "Projects"
-    weight = 3
-    url  = "/projects/"
-[[menu.main]]
-    name = "Resumé"
-    url = "https://resume.troglobit.com"
-    weight = 4
-[[menu.main]]
-    name = "FTP"
-    weight = 5
-    url = "https://ftp.troglobit.com"
-[[menu.main]]
-    name = "GIT"
-    weight = 6
-    url = "https://git.troglobit.com"
-[[menu.main]]
-    name = "DEB"
-    weight = 7
-    url = "https://deb.troglobit.com"
+  # Sharing buttons
+  #
+  # There are a lot of buttons preconfigured. If you want to change them,
+  # generate the buttons here: https://sharingbuttons.io
+  # and add them into your own `layouts/partials/sharing-buttons.html`
+  #
+  enableSharingButtons = true
+
+  # Integrate Javascript files or stylesheets by adding the url to the external assets or by
+  # linking local files with their path relative to the static folder, e.g. "css/styles.css"
+  #
+  customCSS = [ "/css/extra.css" ]
+  customJS  = []
+
+  # Toggle this option need to rebuild SCSS, requires extended version of Hugo
+  #
+  justifyContent = true  # Set "text-align: justify" to .post-content.
+
+  # Custom footer 
+  # If you want, you can easily override the default footer with your own content. 
+  #
+  footerLeft = "Proudly hosted by Fosshost"
+  footerRight = "<a href=\"https://fosshost.org/\">https://fosshost.org/</a>"
+
+  # Colors for favicons
+  #
+  [params.favicon.color]
+    mask = "#1b1c1d"
+    msapplication = "#1b1c1d"
+    theme = "#1b1c1d"
+
+  [params.logo]
+    logoMark     = ">"
+    logoText     = "$ cd /home/"
+    logoHomeLink = "/"
+    # Set true to remove the logo cursor entirely.
+    # logoCursorDisabled = false
+    # Set to a valid CSS color to change the cursor in the logo.
+    # logoCursorColor    = "#67a2c9"
+    # Set to a valid CSS time value to change the animation duration, "0s" to disable.
+    # logoCursorAnimate  = "2s"
+
+  # Commento is more than just a comments widget you can embed — 
+  # it’s a return to the roots of the internet. 
+  # An internet without the tracking and invasions of privacy. 
+  # An internet that is simple and lightweight. 
+  # An internet that is focused on interesting discussions, not ads. 
+  # A better internet.
+  # Uncomment this to enable Commento.
+  #
+  # [params.commento]
+  #   url = ""
+
+  # Uncomment this if you want a portrait on your start page
+  #
+  [params.portrait]
+     path     = "images/profile.jpg"
+     alt      = "Portrait"
+     maxWidth = "320px"
+
+  # Social icons
+  # use 'fab' when brand icons, use 'fas' when standard solid icons.
+  [[params.social]]
+    name = "twitter"
+    url  = "https://twitter.com/troglobit"
+
+  [[params.social]]
+    name = "git"
+    url  = "https://git.troglobit.com"
+
+  [[params.social]]
+    name = "email"
+    url  = "mailto:Joachim Wiberg <troglobit+spam@gmail.com>"
+
+  [[params.social]]
+    name = "github"
+    url  = "https://github.com/troglobit"
+
+[languages]
+  [languages.en]
+    subtitle  = "The Last Outpost"
+    weight    = 1
+    copyright = 'UNIX&trade; 4Life! &#9994;'
+
+[menu]
+  [[menu.main]]
+    weight     = 1
+    name       = "About"
+    url        = "about/"
+  [[menu.main]]
+    weight     = 1
+    name       = "Blog"
+    url        = "posts/"
+  [[menu.main]]
+    weight     = 2
+    name       = "HowTos"
+    url        = "howtos/"
+  [[menu.main]]
+    weight     = 3
+    name       = "Projects"
+    url        = "projects/"
+  [[menu.main]]
+    weight     = 4
+    name       = "Resumé"
+    url        = "https://resume.troglobit.com"
+  [[menu.main]]
+    weight     = 5
+    name       = "FTP"
+    url        = "https://ftp.troglobit.com"
+  [[menu.main]]
+    weight     = 6
+    name       = "DEB"
+    url        = "https://deb.troglobit.com"
