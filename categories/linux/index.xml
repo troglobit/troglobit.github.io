@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Linux on The Last Outpost</title>
+    <title>Linux on Joachim Wiberg</title>
     <link>https://troglobit.com/categories/linux/</link>
-    <description>Recent content in Linux on The Last Outpost</description>
+    <description>Recent content in Linux on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>en-us</language>
+    <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
     <lastBuildDate>Tue, 09 Jun 2020 22:48:52 +0200</lastBuildDate>
     
 	<atom:link href="https://troglobit.com/categories/linux/index.xml" rel="self" type="application/rss+xml" />
@@ -96,7 +97,7 @@ I have no clue if this will actually work, may even try porting my own little th
 servers.  I plan to use them as build and embedded target emulation
 servers for my &lt;a href=&#34;https://github.com/troglobit&#34;&gt;open source projects&lt;/a&gt;
 as well as Minecraft server for my kids :)&lt;/p&gt;
-&lt;img src=&#34;http://eitc.in/yahoo_site_admin/assets/docs/Supermicro_SuperServer_SC512L_small.324203750.JPG&#34;&gt;</description>
+&lt;!-- raw HTML omitted --&gt;</description>
     </item>
     
     <item>

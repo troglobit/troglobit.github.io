@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>opensource on The Last Outpost</title>
+    <title>opensource on Joachim Wiberg</title>
     <link>https://troglobit.com/tags/opensource/</link>
-    <description>Recent content in opensource on The Last Outpost</description>
+    <description>Recent content in opensource on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>en-us</language>
+    <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
     <lastBuildDate>Sun, 03 Nov 2019 23:04:00 +0100</lastBuildDate>
     
 	<atom:link href="https://troglobit.com/tags/opensource/index.xml" rel="self" type="application/rss+xml" />
@@ -13,10 +14,10 @@
     
     <item>
       <title>BSD syslogd in Linux</title>
-      <link>https://troglobit.com/post/2019-11-03-syslogd-and-standards/</link>
+      <link>https://troglobit.com/post/2019-11-03-bsd-syslogd-in-linux/</link>
       <pubDate>Sun, 03 Nov 2019 23:04:00 +0100</pubDate>
       
-      <guid>https://troglobit.com/post/2019-11-03-syslogd-and-standards/</guid>
+      <guid>https://troglobit.com/post/2019-11-03-bsd-syslogd-in-linux/</guid>
       <description>&lt;p&gt;Some time ago now I was in a meeting with a customer where I first learned of
 the new syslog standard, &lt;a href=&#34;https://tools.ietf.org/html/rfc5424&#34;&gt;RFC5424&lt;/a&gt;.  I say &amp;ldquo;new&amp;rdquo; because, despite it being
 ten years old, it was new to me.&lt;/p&gt;

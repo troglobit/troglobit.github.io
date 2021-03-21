@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>shell on The Last Outpost</title>
+    <title>shell on Joachim Wiberg</title>
     <link>https://troglobit.com/categories/shell/</link>
-    <description>Recent content in shell on The Last Outpost</description>
+    <description>Recent content in shell on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>en-us</language>
+    <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
     <lastBuildDate>Sun, 09 May 2010 19:53:19 +0000</lastBuildDate>
     
 	<atom:link href="https://troglobit.com/categories/shell/index.xml" rel="self" type="application/rss+xml" />

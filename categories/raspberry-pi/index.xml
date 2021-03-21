@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>raspberry pi on The Last Outpost</title>
+    <title>raspberry pi on Joachim Wiberg</title>
     <link>https://troglobit.com/categories/raspberry-pi/</link>
-    <description>Recent content in raspberry pi on The Last Outpost</description>
+    <description>Recent content in raspberry pi on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>en-us</language>
+    <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
     <lastBuildDate>Sun, 15 Jan 2017 13:13:15 +0000</lastBuildDate>
     
 	<atom:link href="https://troglobit.com/categories/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
@@ -21,7 +22,7 @@
 1992 for MS-DOS, made by the now legendary id Software.  OK, admittedly
 I&amp;rsquo;ve played other games since then, but I&amp;rsquo;ve never again been so manic
 about a game since Wolfenstein.&lt;/p&gt;
-&lt;img style=&#34;width:50%;height:auto;&#34; class=&#34;center&#34; src=&#34;https://troglobit.com/images/wolf3d.png&#34;&gt;
+&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;This post is about how to build, install and set up Wolfenstein 3D on a
 Raspberry Pi running &lt;a href=&#34;https://retropie.org.uk/&#34;&gt;RetroPie&lt;/a&gt; &amp;hellip; on a &lt;a href=&#34;https://shop.pimoroni.com/products/picade&#34;&gt;Picade&lt;/a&gt; :-)&lt;/p&gt;</description>
     </item>

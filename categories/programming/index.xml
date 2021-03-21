@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>programming on The Last Outpost</title>
+    <title>programming on Joachim Wiberg</title>
     <link>https://troglobit.com/categories/programming/</link>
-    <description>Recent content in programming on The Last Outpost</description>
+    <description>Recent content in programming on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>en-us</language>
+    <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
     <lastBuildDate>Sat, 22 Feb 2020 09:45:00 +0000</lastBuildDate>
     
 	<atom:link href="https://troglobit.com/categories/programming/index.xml" rel="self" type="application/rss+xml" />
@@ -13,10 +14,10 @@
     
     <item>
       <title>Useful UNIX API:s</title>
-      <link>https://troglobit.com/post/2015-11-14-useful-unix-api-s/</link>
+      <link>https://troglobit.com/post/2020-02-22-useful-unix-apis/</link>
       <pubDate>Sat, 22 Feb 2020 09:45:00 +0000</pubDate>
       
-      <guid>https://troglobit.com/post/2015-11-14-useful-unix-api-s/</guid>
+      <guid>https://troglobit.com/post/2020-02-22-useful-unix-apis/</guid>
       <description>&lt;p&gt;Had an interesting conversation with a buddy last night.  It started out
 as a shift-reduce problem with Bison and ended up a ping-pong of useful
 UNIX API:s.  We concluded that despite having worked professionally with

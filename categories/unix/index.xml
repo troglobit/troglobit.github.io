@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>unix on The Last Outpost</title>
+    <title>unix on Joachim Wiberg</title>
     <link>https://troglobit.com/categories/unix/</link>
-    <description>Recent content in unix on The Last Outpost</description>
+    <description>Recent content in unix on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>en-us</language>
+    <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
     <lastBuildDate>Tue, 09 Jun 2020 22:48:52 +0200</lastBuildDate>
     
 	<atom:link href="https://troglobit.com/categories/unix/index.xml" rel="self" type="application/rss+xml" />
@@ -25,10 +26,10 @@ uneccessary death.&lt;/p&gt;</description>
     
     <item>
       <title>Useful UNIX API:s</title>
-      <link>https://troglobit.com/post/2015-11-14-useful-unix-api-s/</link>
+      <link>https://troglobit.com/post/2020-02-22-useful-unix-apis/</link>
       <pubDate>Sat, 22 Feb 2020 09:45:00 +0000</pubDate>
       
-      <guid>https://troglobit.com/post/2015-11-14-useful-unix-api-s/</guid>
+      <guid>https://troglobit.com/post/2020-02-22-useful-unix-apis/</guid>
       <description>&lt;p&gt;Had an interesting conversation with a buddy last night.  It started out
 as a shift-reduce problem with Bison and ended up a ping-pong of useful
 UNIX API:s.  We concluded that despite having worked professionally with
@@ -61,7 +62,7 @@ multicast routing with &lt;a href=&#34;https://github.com/troglobit/pimd/&#34;&g
 GRE tunnel.  To achieve this we will also set up OSPF over GRE with
 &lt;a href=&#34;http://www.quagga.net&#34;&gt;Quagga&lt;/a&gt;, because PIM, unlike DVMRP (&lt;code&gt;mrouted&lt;/code&gt;),
 require unicast routing rules to be established.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;       .----{ Intranet }----.
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;       .----{ Intranet }----.
       /    192.168.1.0/24    \
      /                        \
 .10 /                          \.20
@@ -209,46 +210,6 @@ improving and adding features to it over the years.&lt;/p&gt;</description>
       <description>Back to using the Awesome WM in Ubuntu. This time I&amp;rsquo;m setting up everything from scratch and first up is fixing keybindings to control my main music player: Spotify!
 Edit your ~/.config/awesome/rc.lua with Emacs (obviously). If you do not have an rc file, simply copy the system /etc/xdb/awesome/rc.lua:
 globalkeys = awful.util.table.join(globalkeys, awful.key({}, &amp;quot;XF86AudioRaiseVolume&amp;quot;, function () awful.util.spawn(&amp;quot;amixer -D pulse sset Master 5%+&amp;quot;, false) end), awful.key({}, &amp;quot;XF86AudioLowerVolume&amp;quot;, function () awful.util.spawn(&amp;quot;amixer -D pulse sset Master 5%-&amp;quot;, false) end), awful.</description>
-    </item>
-    
-    <item>
-      <title>Weekend Hack: JSON vs CONF</title>
-      <link>https://troglobit.com/2014/02/23/weekend-hack-json-vs-conf/</link>
-      <pubDate>Sun, 23 Feb 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2014/02/23/weekend-hack-json-vs-conf/</guid>
-      <description>It was time. I had been putting it off for far too long &amp;ndash; learning about JSON and deciding on a new .conf file format for Inadyn. So this weekend I sat myself down to read up on JSON and the multitude of parser libraries for both JSON and traditional .conf file parsers. I was looking for a human readable file format that a user could easily and reliably edit by themselves without it being too error prone or sensitive to mistyping.</description>
-    </item>
-    
-    <item>
-      <title>Syntax highlighting in less</title>
-      <link>https://troglobit.com/2010/05/09/syntax-highlighting-in-less/</link>
-      <pubDate>Sun, 09 May 2010 19:53:19 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2010/05/09/syntax-highlighting-in-less/</guid>
-      <description>Yes, it&amp;rsquo;s certainly possible and source code becomes so much easier to read. Try it out by:
- downloading my .lessfilter save it as ~/.lessfilter in your $HOME Profit!  Ahem &amp;hellip;
-Just try it out on a C source file :-)
-less -R myfile.c  </description>
-    </item>
-    
-    <item>
-      <title>Regexp replace in many files</title>
-      <link>https://troglobit.com/2008/07/13/regexp-replace-in-many-files/</link>
-      <pubDate>Sun, 13 Jul 2008 21:38:33 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2008/07/13/regexp-replace-in-many-files/</guid>
-      <description>I just have to blog about this exceptional tool I just found. It is called regexxer and is a tool in the true UNIX spirit — it does one job only, and does it well.</description>
-    </item>
-    
-    <item>
-      <title>Top Ten UNIX Shell Commands</title>
-      <link>https://troglobit.com/2006/09/23/top-ten-unix-shell-commands/</link>
-      <pubDate>Sat, 23 Sep 2006 23:02:42 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2006/09/23/top-ten-unix-shell-commands/</guid>
-      <description>Current trend is to run the following one-liner from IBM. I&amp;rsquo;m usually logged in to the following three systems, with very different results.
-vmlinux.org $ history |awk &#39;{print $2}&#39;|sort|uniq -c|sort -nr|head -10 144 ls 61 cd 58 sudo 29 less 23 emacs 19 bzr 16 vim 11 rm 10 wget 10 mv  My personal life. Not much different from my professional dito. Most visible difference maybe is my use of bzr instead of svn.</description>
     </item>
     
   </channel>

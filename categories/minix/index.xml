@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Minix on The Last Outpost</title>
+    <title>Minix on Joachim Wiberg</title>
     <link>https://troglobit.com/categories/minix/</link>
-    <description>Recent content in Minix on The Last Outpost</description>
+    <description>Recent content in Minix on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>en-us</language>
+    <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
     <lastBuildDate>Thu, 12 Aug 2010 18:17:40 +0000</lastBuildDate>
     
 	<atom:link href="https://troglobit.com/categories/minix/index.xml" rel="self" type="application/rss+xml" />

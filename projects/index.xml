@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Projects on The Last Outpost</title>
+    <title>Projects on Joachim Wiberg</title>
     <link>https://troglobit.com/projects/</link>
-    <description>Recent content in Projects on The Last Outpost</description>
+    <description>Recent content in Projects on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>en-us</language>
+    <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
     <lastBuildDate>Mon, 01 Mar 2021 13:26:00 +0100</lastBuildDate>
     
 	<atom:link href="https://troglobit.com/projects/index.xml" rel="self" type="application/rss+xml" />
@@ -115,46 +116,6 @@ When a system comes back up after a reset, watchdogd determines the reset cause 
       <guid>https://troglobit.com/projects/pimd/</guid>
       <description>Protocol Independent Multicast, PIM, allows existing networks to route IP multicast, regardless of what unicast routing protocol is in use. It is designed to use existing routing tables to make its multicast routing decisions. PIM-SM is suitable for sparsely located multicast subscribers, for dense mode operation mrouted is recommended, and for static multicast routing smcroute may be used.
 pimd is a lightweight standalone PIM-SM/SSM v2 multicast routing daemon. It is the original USC (netweb/catarina.</description>
-    </item>
-    
-    <item>
-      <title>Static Multicast Routing Daemon</title>
-      <link>https://troglobit.com/projects/smcroute/</link>
-      <pubDate>Mon, 11 Feb 2019 20:46:00 +0200</pubDate>
-      
-      <guid>https://troglobit.com/projects/smcroute/</guid>
-      <description>SMCRoute is a daemon and command line tool to manipulate the multicast routing table in the UNIX kernel. Both FreeBSD and Linux kernels are supported, but it may work on other systems as well.
-SMCRoute can be used as an alternative to dynamic multicast routing daemons like mrouted or pimd when (only) static multicast routes should be maintained or no proper signalling exists.
- Problems? See the Multicast HowTo for help!</description>
-    </item>
-    
-    <item>
-      <title>smcroute.conf example</title>
-      <link>https://troglobit.com/project/smcroute/smcroute-conf.html</link>
-      <pubDate>Tue, 13 Jun 2017 23:15:00 +0200</pubDate>
-      
-      <guid>https://troglobit.com/project/smcroute/smcroute-conf.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Micro Tetris™</title>
-      <link>https://troglobit.com/projects/tetris/</link>
-      <pubDate>Thu, 08 Jan 2015 01:50:00 +0200</pubDate>
-      
-      <guid>https://troglobit.com/projects/tetris/</guid>
-      <description>Micro Tetris — one of the smallest Tetris implementations in the world! Utilizing only ANSI escape sequences to draw the board, no external library dependencys other than a standard C-library, like uClibc or musl libc. Hence, it is very suitable for small embedded devices in need of an easter egg ;-)
-The game is based on a 1989 International Obfuscated C Code Contest (IOCCC) entry made by John Tromp.</description>
-    </item>
-    
-    <item>
-      <title>Micro Snake</title>
-      <link>https://troglobit.com/projects/snake/</link>
-      <pubDate>Sun, 07 Jul 2013 10:28:00 +0200</pubDate>
-      
-      <guid>https://troglobit.com/projects/snake/</guid>
-      <description>Welcome to Micro Snake, based on an original implementation by Simon Huggins. This version of the snake game is very small, utilizing only ANSI escape sequences to draw the board, no external library dependencys other than a standard C-library, like uClibc. Hence, it is very suitable for todays small embedded devices.
-The aim of the game is to collect the gold ($), avoid cactuses (*), borders, and colliding with the snake itself.</description>
     </item>
     
   </channel>

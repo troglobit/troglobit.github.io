@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>git on The Last Outpost</title>
+    <title>git on Joachim Wiberg</title>
     <link>https://troglobit.com/categories/git/</link>
-    <description>Recent content in git on The Last Outpost</description>
+    <description>Recent content in git on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>en-us</language>
+    <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
     <lastBuildDate>Thu, 02 Jul 2015 17:11:55 +0000</lastBuildDate>
     
 	<atom:link href="https://troglobit.com/categories/git/index.xml" rel="self" type="application/rss+xml" />
@@ -156,26 +157,6 @@ $ git init project.git $ cd project.git $ bzr fast-export --export-marks=.git/bz
 This HowTo is divided into two parts:
  what happens on your laptop, and what you must do on a remote server where you publish your changes  So, let&amp;rsquo;s start stimple:
 laptop&amp;gt; mkdir projectX; cd projectX laptop&amp;gt; git init laptop&amp;gt; emacs file1.txt laptop&amp;gt; git add file1.</description>
-    </item>
-    
-    <item>
-      <title>More about Bzrweb and some about Git</title>
-      <link>https://troglobit.com/2009/06/12/more-about-bzrweb-and-some-about-git/</link>
-      <pubDate>Fri, 12 Jun 2009 19:50:27 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2009/06/12/more-about-bzrweb-and-some-about-git/</guid>
-      <description>OK, I admit it. I cannot decide what version control system (VCS) to use. I&amp;rsquo;m stuck between the speed and massive snow ball effect of Git and the ease of use and emotional attachment I have to Bazaar.
-I&amp;rsquo;ve been &amp;ldquo;maintaining&amp;rdquo; bzrweb for a while now, not doing a very good job of it though. It&amp;rsquo;s lagging behind considerably to the bzr API. After the upgrade of vmlinux.org to the latest Ubuntu server release bzrweb actually didn&amp;rsquo;t work at all.</description>
-    </item>
-    
-    <item>
-      <title>Learning About GIT</title>
-      <link>https://troglobit.com/2009/04/10/learning-about-git/</link>
-      <pubDate>Fri, 10 Apr 2009 16:23:42 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2009/04/10/learning-about-git/</guid>
-      <description>It has been a long time coming, but now I&amp;rsquo;m seriously starting to look at Git. Git is the content tracker used by the Linux kernel folks, initially developed by Torvalds.
-At Westermo R&amp;amp;D we use Subversion for our daily operations and today I started migrating the software to Git. Mainly just to get a comparison of performance, storage size and to explore how we can use Git on top of svn to become more productive when working in parallel in different teams.</description>
     </item>
     
   </channel>

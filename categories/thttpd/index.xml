@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>thttpd on The Last Outpost</title>
+    <title>thttpd on Joachim Wiberg</title>
     <link>https://troglobit.com/categories/thttpd/</link>
-    <description>Recent content in thttpd on The Last Outpost</description>
+    <description>Recent content in thttpd on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>en-us</language>
+    <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
     <lastBuildDate>Sun, 12 Feb 2017 00:07:44 +0000</lastBuildDate>
     
 	<atom:link href="https://troglobit.com/categories/thttpd/index.xml" rel="self" type="application/rss+xml" />
@@ -36,12 +37,7 @@ mkdir ~/certs cd ~/certs openssl req -x509 -newkey rsa:4096 -keyout key.pem -out
 with my various &lt;a href=&#34;https://github.com/troglobit&#34;&gt;projects&lt;/a&gt; simply to learn
 and sometimes these little projects turn into something useful for other
 people as well, which is great!&lt;/p&gt;
-&lt;p data-pullquote=&#34;not all things can be simplified, and not all simple
-things are correct&#34;&gt; Recently I discovered my method to get started:
-refactoring, or just simple code cleanup.  You see I&#39;ve got this crazy
-idea that &lt;em&gt;all simple things are correct&lt;/em&gt;.  Although things
-usually tend to require a certain balance &amp;mdash; not all things can be
-simplified, and not all simple things are correct.&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;When I recently had to migrate my personal blog, FTP, and GIT server, I
 set out to run everything from an old RasPi2.  This put my private life
 in just about the same niche as my work life, embedded.  On a resource

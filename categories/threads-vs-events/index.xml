@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Threads vs Events on The Last Outpost</title>
+    <title>Threads vs Events on Joachim Wiberg</title>
     <link>https://troglobit.com/categories/threads-vs-events/</link>
-    <description>Recent content in Threads vs Events on The Last Outpost</description>
+    <description>Recent content in Threads vs Events on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>en-us</language>
+    <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
     <lastBuildDate>Tue, 06 Aug 2013 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://troglobit.com/categories/threads-vs-events/index.xml" rel="self" type="application/rss+xml" />

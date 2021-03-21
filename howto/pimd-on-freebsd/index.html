@@ -1,20 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Joachim Wiberg ">
+<meta name="description" content="This is not a proper HowTo, more of a &amp;ldquo;note to self&amp;rdquo; after having created a setup to test pimd issue #57. For these notes the following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and Qemu 2.3.0, is used:
+.--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | &amp;#39;--------&amp;#39; &amp;#39;----&amp;#39; &amp;#39;----&amp;#39; &amp;#39;----------&amp;#39; The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP/MLD snooping to get pimd to run smoothly." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://troglobit.com/howto/pimd-on-freebsd/" />
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Language" content="en">
 
-    <meta name="author" content="Joachim Wiberg">
-    <meta name="description" content="This is not a proper HowTo, more of a &ldquo;note to self&rdquo; after having created a setup to test pimd issue #57. For these notes the following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and Qemu 2.3.0, is used:
+    <title>
+        
+            HowTo run pimd on FreeBSD :: Joachim Wiberg  — The Last Outpost
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://troglobit.com/main.de188b3201233c251f4fd6306dbd2cb41e408fb8846c09781b2925de7df5025c.css">
+
+
+    
+        <link rel="stylesheet" type="text/css" href="https://troglobit.com/css/extra.css">
+    
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://troglobit.com/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://troglobit.com/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://troglobit.com/favicon-16x16.png">
+    <link rel="manifest" href="https://troglobit.com/site.webmanifest">
+    <link rel="mask-icon" href="https://troglobit.com/safari-pinned-tab.svg" color="#1b1c1d">
+    <link rel="shortcut icon" href="https://troglobit.com/favicon.ico">
+    <meta name="msapplication-TileColor" content="#1b1c1d">
+    <meta name="theme-color" content="#1b1c1d">
+
+
+
+<meta itemprop="name" content="HowTo run pimd on FreeBSD">
+<meta itemprop="description" content="This is not a proper HowTo, more of a &ldquo;note to self&rdquo; after having created a setup to test pimd issue #57. For these notes the following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and Qemu 2.3.0, is used:
 .--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | &#39;--------&#39; &#39;----&#39; &#39;----&#39; &#39;----------&#39; The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP/MLD snooping to get pimd to run smoothly.">
-    <meta name="keywords" content="blog,developer,personal">
+<meta itemprop="datePublished" content="2015-09-27T18:45:00&#43;02:00" />
+<meta itemprop="dateModified" content="2015-09-27T18:45:00&#43;02:00" />
+<meta itemprop="wordCount" content="354">
 
-    <meta name="twitter:card" content="summary"/>
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="HowTo run pimd on FreeBSD"/>
 <meta name="twitter:description" content="This is not a proper HowTo, more of a &ldquo;note to self&rdquo; after having created a setup to test pimd issue #57. For these notes the following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and Qemu 2.3.0, is used:
 .--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | &#39;--------&#39; &#39;----&#39; &#39;----&#39; &#39;----------&#39; The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP/MLD snooping to get pimd to run smoothly."/>
+
+
+
 
     <meta property="og:title" content="HowTo run pimd on FreeBSD" />
 <meta property="og:description" content="This is not a proper HowTo, more of a &ldquo;note to self&rdquo; after having created a setup to test pimd issue #57. For these notes the following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and Qemu 2.3.0, is used:
@@ -25,135 +73,94 @@
 <meta property="article:modified_time" content="2015-09-27T18:45:00+02:00" />
 
 
-    <title>
-  HowTo run pimd on FreeBSD · The Last Outpost
-</title>
+
+
+    <meta property="article:section" content="multicast" />
+
+    <meta property="article:section" content="pimd" />
+
+    <meta property="article:section" content="freebsd" />
+
+    <meta property="article:section" content="bsd" />
+
+    <meta property="article:section" content="howto" />
+
+
+
+    <meta property="article:published_time" content="2015-09-27 18:45:00 &#43;0200 CEST" />
+
+
+
+
+
+
+
+
+    </head>
 
     
-      <link rel="canonical" href="https://troglobit.com/howto/pimd-on-freebsd/">
+        <body>
     
-
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
-
     
-      
-      
-      <link rel="stylesheet" href="https://troglobit.com/css/coder.min.9836c03fe5c87d102278a33e86d0591ef36c89b1e17e8e547ebf84c05cee010e.css" integrity="sha256-mDbAP&#43;XIfRAieKM&#43;htBZHvNsibHhfo5Ufr&#43;EwFzuAQ4=" crossorigin="anonymous" media="screen" />
-    
-
-    
-
-    
-      
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://troglobit.com/" style="text-decoration: none;">
+    <div class="logo">
         
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text">$ cd /home/</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
         
-        <link rel="stylesheet" href="https://troglobit.com/css/coder-dark.min.717236c74e0a5208ef73964a9f44c6b443b689a95b270d8b2a40d0c012460dac.css" integrity="sha256-cXI2x04KUgjvc5ZKn0TGtEO2ialbJw2LKkDQwBJGDaw=" crossorigin="anonymous" media="screen" />
-      
-    
+    </div>
+</a>
 
-    
-      <link rel="stylesheet" href="https://troglobit.com/css/extra.css" />
-    
 
-    
-
-    <link rel="icon" type="image/png" href="https://troglobit.com/images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="https://troglobit.com/favicon.ico" sizes="16x16">
-
-    <link rel="apple-touch-icon" href="https://troglobit.com/images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://troglobit.com/images/apple-touch-icon.png">
-
-    
-
-    <meta name="generator" content="Hugo 0.68.3" />
-  </head>
-
-  
-  
-    
-  
-  <body class="colorscheme-auto"
-        onload=""
-  >
-    <main class="wrapper">
-      <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="https://troglobit.com/">
-      The Last Outpost
-    </a>
-    
-      
-        <span id="dark-mode-toggle" class="float-right">
-          <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
-        </span>
-      
-      <input type="checkbox" id="menu-toggle" />
-      <label class="menu-button float-right" for="menu-toggle">
-        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
-      </label>
-      <ul class="navigation-list">
-        
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="https://troglobit.com/about/">About</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="https://troglobit.com/post/">Blog</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="https://troglobit.com/howto/">HowTos</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="https://troglobit.com/projects/">Projects</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="https://resume.troglobit.com">Resumé</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="https://ftp.troglobit.com">FTP</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="https://git.troglobit.com">GIT</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="https://deb.troglobit.com">DEB</a>
-            </li>
-          
-        
-        
-        
-          <li class="navigation-item separator">
-            <span>|</span>
-          </li>
-        
-      </ul>
-    
-  </section>
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://troglobit.com/about/">About</a></li><li><a href="https://troglobit.com/posts/">Blog</a></li><li><a href="https://troglobit.com/howtos/">HowTos</a></li><li><a href="https://troglobit.com/projects/">Projects</a></li><li><a href="https://resume.troglobit.com">Resumé</a></li><li><a href="https://ftp.troglobit.com">FTP</a></li><li><a href="https://deb.troglobit.com">DEB</a></li>
+    </ul>
 </nav>
 
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
 
-      <div class="content">
-        
-  <section class="container page">
-  <article>
-    <header>
-      <h1>HowTo run pimd on FreeBSD</h1>
-    </header>
 
-    <p>This is not a proper HowTo, more of a &ldquo;note to self&rdquo; after having
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://troglobit.com/howto/pimd-on-freebsd/">HowTo run pimd on FreeBSD</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>This is not a proper HowTo, more of a &ldquo;note to self&rdquo; after having
 created a setup to test pimd <a href="https://github.com/troglobit/pimd/issues/57">issue #57</a>.  For these notes the
 following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and
 Qemu 2.3.0, is used:</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">    .--------. net1 .----. net2 .----. net3 .----------.
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">    .--------. net1 .----. net2 .----. net3 .----------.
     | Sender |------| R2 |------| R3 |------| Receiver |
     &#39;--------&#39;      &#39;----&#39;      &#39;----&#39;      &#39;----------&#39;
 </code></pre></div><p>The networks between the boxes are actually Linux bridge devices (br),
@@ -167,11 +174,11 @@ server running.  Only <code>net2</code> between the two routers is static, using
 <p>You need a few things set up in FreeBSD before starting <code>pimd</code>.</p>
 <p>In <code>/boot/loader.conf</code> add the following line to load the MROUTING
 kernel module:</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">    ip_mroute_load=&#34;yes&#34;
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">    ip_mroute_load=&#34;yes&#34;
 </code></pre></div><p>If you want to serial console access to your FreeBSD, or run FreeBSD in
 Qemu (virt-manager), you may want to add the following lines as well to
 <code>/boot/loader.conf</code>:</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">    boot_multicons=&#34;YES&#34;
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">    boot_multicons=&#34;YES&#34;
     boot_serial=&#34;YES&#34;
     comconsole_speed=&#34;115200&#34;
     console=&#34;comconsole,vidconsole&#34;
@@ -180,87 +187,82 @@ enable router/gateway mode and to enable RIP to resolve the unicast
 forwarding table.  The <code>Sender</code> and <code>Recieiver</code> nodes, which run
 Ubuntu 14.04, employ Quagga <code>ripd</code> for this, but on FreeBSD we employ
 the god &lsquo;ol <code>routed</code> :-)</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">    gateway_enable=&#34;YES&#34;
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">    gateway_enable=&#34;YES&#34;
     routed_enable=&#34;YES&#34;
     routed_flags=&#34;-s&#34;
 </code></pre></div><p>Notice how we change the <code>routed_flags</code> from quiet mode! Now, for
 interop with the rest of the network we enable RIP v2 mode by adding the
 following line to <code>/etc/gateways</code>:</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">    ripv2
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">    ripv2
 </code></pre></div><h2 id="download-pimd">Download pimd</h2>
 <p>Next we need to download and build <code>pimd</code>.  It is available on GitHub if
 you want the latest bleeding edge stuff, or use the latest tarball:</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">    wget http://ftp.troglobit.com/pimd/pimd-2.3.2.tar.gz
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">    wget http://ftp.troglobit.com/pimd/pimd-2.3.2.tar.gz
     tar xfz pimd-2.3.2.tar.gz
-    <span style="color:#24909d">cd</span> pimd-2.3.2/
+    <span class="nb">cd</span> pimd-2.3.2/
     ./configure
     make
 </code></pre></div><h2 id="running-pimd">Running pimd</h2>
 <p>Now we can start pimd on both routers:</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">    ./pimd -c pimd.conf
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">    ./pimd -c pimd.conf
 </code></pre></div><p>After a while you should be able to see some interesting output in both</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">    ./pimd -r
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">    ./pimd -r
 </code></pre></div><p>and</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">    netstat -rn
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">    netstat -rn
 </code></pre></div><p>See the <a href="https://troglobit.com/howto-run-pimd-on-openbsd.html">OpenBSD HowTo</a> for example
 output and troubleshooting.</p>
 
-  </article>
-</section>
+            </div>
+        </article>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
-  <script>
-    MathJax = {
-      tex: {
-        inlineMath: [
-          ['$', '$'], ['\\(', '\\)']
-        ],
-        processEscapes: true,
-        processEnvironments: true
-      },
-      options: {
-        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-      }
-    };
-  </script>
+        <hr />
 
-      </div>
+        <div class="post-info">
+            
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
 
-      
-  <footer class="footer">
-    <section class="container">
-      
-        <p>Proudly hosted by Fosshost :: <a href="https://fosshost.org/">https://fosshost.org/</a></p>
-      
-      
-        ©
+        <span class="tag"><a href="https://troglobit.com/categories/multicast/">multicast</a></span>
+        <span class="tag"><a href="https://troglobit.com/categories/pimd/">pimd</a></span>
+        <span class="tag"><a href="https://troglobit.com/categories/freebsd/">freebsd</a></span>
+        <span class="tag"><a href="https://troglobit.com/categories/bsd/">bsd</a></span>
+        <span class="tag"><a href="https://troglobit.com/categories/howto/">howto</a></span>
         
-        2021
-         Joachim Wiberg 
-      
-      
-      
-    </section>
-  </footer>
+    </p>
 
+  		</div>
     </main>
 
-    
-      
-      <script src="https://troglobit.com/js/dark-mode.min.0213e1773e6d1c5a644f847c67a6f8abac49a3776e2976f6008038af8c5b76a1.js"></script>
-    
+            </div>
 
-    
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2021</span>
+            <span><a href="https://troglobit.com/">Joachim Wiberg</a></span>
+            <span>UNIX&trade; 4Life! &#9994;</span><span><a href="https://troglobit.com/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Proudly hosted by Fosshost</span>
+            <span><a href="https://fosshost.org/">https://fosshost.org/</a></span>
+          </div>
+    </div>
+</footer>
 
-    
+            
+        </div>
 
-    
+        
 
-    
 
-    
-  </body>
 
+<script type="text/javascript" src="https://troglobit.com/bundle.min.af435e44374f1e99a669ea8cd5bb9a2fceed80588941a451bfddb66b86a67c9f40b0f417e9543a763f809aa7e9300d7b1d69bf99615810ba02ac70396d50fad5.js" integrity="sha512-r0NeRDdPHpmmaeqM1buaL87tgFiJQaRRv922a4amfJ9AsPQX6VQ6dj&#43;AmqfpMA17HWm/mWFYELoCrHA5bVD61Q=="></script>
+
+
+
+    </body>
 </html>

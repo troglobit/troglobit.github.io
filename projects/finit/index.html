@@ -1,24 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Joachim Wiberg ">
+<meta name="description" content="Finit is a simple alternative to SysV init and systemd, originally reverse engineered from the EeePC fastinit by Claudio Matsuoka — &amp;ldquo;gaps filled with frog DNA …&amp;rdquo;
+Finit supports runlevels, process monitoring, as well as task and network condition dependencies. E.g., &amp;ldquo;start this service when basic networking is available&amp;rdquo;, or &amp;ldquo;wait until syslogd has started&amp;rdquo;.
+For more details, see the online documentation.
+Example The GitHub finit/contrib/ section, also part of the tarball, includes examples, with sample configurations for Debian, Void, and Alpine Linux." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://troglobit.com/projects/finit/" />
 
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Language" content="en">
 
-    <meta name="author" content="Joachim Wiberg">
-    <meta name="description" content="Finit is a simple alternative to SysV init and systemd, originally reverse engineered from the EeePC fastinit by Claudio Matsuoka — &ldquo;gaps filled with frog DNA …&rdquo;
+    <title>
+        
+            Fast init for Linux systems :: Joachim Wiberg  — The Last Outpost
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://troglobit.com/main.de188b3201233c251f4fd6306dbd2cb41e408fb8846c09781b2925de7df5025c.css">
+
+
+    
+        <link rel="stylesheet" type="text/css" href="https://troglobit.com/css/extra.css">
+    
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://troglobit.com/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://troglobit.com/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://troglobit.com/favicon-16x16.png">
+    <link rel="manifest" href="https://troglobit.com/site.webmanifest">
+    <link rel="mask-icon" href="https://troglobit.com/safari-pinned-tab.svg" color="#1b1c1d">
+    <link rel="shortcut icon" href="https://troglobit.com/favicon.ico">
+    <meta name="msapplication-TileColor" content="#1b1c1d">
+    <meta name="theme-color" content="#1b1c1d">
+
+
+
+<meta itemprop="name" content="Fast init for Linux systems">
+<meta itemprop="description" content="Finit is a simple alternative to SysV init and systemd, originally reverse engineered from the EeePC fastinit by Claudio Matsuoka — &ldquo;gaps filled with frog DNA …&rdquo;
 Finit supports runlevels, process monitoring, as well as task and network condition dependencies. E.g., &ldquo;start this service when basic networking is available&rdquo;, or &ldquo;wait until syslogd has started&rdquo;.
 For more details, see the online documentation.
 Example The GitHub finit/contrib/ section, also part of the tarball, includes examples, with sample configurations for Debian, Void, and Alpine Linux.">
-    <meta name="keywords" content="blog,developer,personal">
+<meta itemprop="datePublished" content="2021-03-01T13:26:00&#43;01:00" />
+<meta itemprop="dateModified" content="2021-03-01T13:26:00&#43;01:00" />
+<meta itemprop="wordCount" content="2565">
 
-    <meta name="twitter:card" content="summary"/>
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Fast init for Linux systems"/>
 <meta name="twitter:description" content="Finit is a simple alternative to SysV init and systemd, originally reverse engineered from the EeePC fastinit by Claudio Matsuoka — &ldquo;gaps filled with frog DNA …&rdquo;
 Finit supports runlevels, process monitoring, as well as task and network condition dependencies. E.g., &ldquo;start this service when basic networking is available&rdquo;, or &ldquo;wait until syslogd has started&rdquo;.
 For more details, see the online documentation.
 Example The GitHub finit/contrib/ section, also part of the tarball, includes examples, with sample configurations for Debian, Void, and Alpine Linux."/>
+
+
+
 
     <meta property="og:title" content="Fast init for Linux systems" />
 <meta property="og:description" content="Finit is a simple alternative to SysV init and systemd, originally reverse engineered from the EeePC fastinit by Claudio Matsuoka — &ldquo;gaps filled with frog DNA …&rdquo;
@@ -31,131 +81,80 @@ Example The GitHub finit/contrib/ section, also part of the tarball, includes ex
 <meta property="article:modified_time" content="2021-03-01T13:26:00+01:00" />
 
 
-    <title>
-  Fast init for Linux systems · The Last Outpost
-</title>
+
+
+
+
+    <meta property="article:published_time" content="2021-03-01 13:26:00 &#43;0100 CET" />
+
+
+
+
+
+
+
+
+    </head>
 
     
-      <link rel="canonical" href="https://troglobit.com/projects/finit/">
+        <body>
     
-
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
-
     
-      
-      
-      <link rel="stylesheet" href="https://troglobit.com/css/coder.min.9836c03fe5c87d102278a33e86d0591ef36c89b1e17e8e547ebf84c05cee010e.css" integrity="sha256-mDbAP&#43;XIfRAieKM&#43;htBZHvNsibHhfo5Ufr&#43;EwFzuAQ4=" crossorigin="anonymous" media="screen" />
-    
-
-    
-
-    
-      
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://troglobit.com/" style="text-decoration: none;">
+    <div class="logo">
         
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text">$ cd /home/</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
         
-        <link rel="stylesheet" href="https://troglobit.com/css/coder-dark.min.717236c74e0a5208ef73964a9f44c6b443b689a95b270d8b2a40d0c012460dac.css" integrity="sha256-cXI2x04KUgjvc5ZKn0TGtEO2ialbJw2LKkDQwBJGDaw=" crossorigin="anonymous" media="screen" />
-      
-    
+    </div>
+</a>
 
-    
-      <link rel="stylesheet" href="https://troglobit.com/css/extra.css" />
-    
 
-    
-
-    <link rel="icon" type="image/png" href="https://troglobit.com/images/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="https://troglobit.com/favicon.ico" sizes="16x16">
-
-    <link rel="apple-touch-icon" href="https://troglobit.com/images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://troglobit.com/images/apple-touch-icon.png">
-
-    
-
-    <meta name="generator" content="Hugo 0.68.3" />
-  </head>
-
-  
-  
-    
-  
-  <body class="colorscheme-auto"
-        onload=""
-  >
-    <main class="wrapper">
-      <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="https://troglobit.com/">
-      The Last Outpost
-    </a>
-    
-      
-        <span id="dark-mode-toggle" class="float-right">
-          <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
-        </span>
-      
-      <input type="checkbox" id="menu-toggle" />
-      <label class="menu-button float-right" for="menu-toggle">
-        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
-      </label>
-      <ul class="navigation-list">
-        
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="https://troglobit.com/about/">About</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="https://troglobit.com/post/">Blog</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="https://troglobit.com/howto/">HowTos</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="https://troglobit.com/projects/">Projects</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="https://resume.troglobit.com">Resumé</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="https://ftp.troglobit.com">FTP</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="https://git.troglobit.com">GIT</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="https://deb.troglobit.com">DEB</a>
-            </li>
-          
-        
-        
-        
-          <li class="navigation-item separator">
-            <span>|</span>
-          </li>
-        
-      </ul>
-    
-  </section>
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://troglobit.com/about/">About</a></li><li><a href="https://troglobit.com/posts/">Blog</a></li><li><a href="https://troglobit.com/howtos/">HowTos</a></li><li><a href="https://troglobit.com/projects/">Projects</a></li><li><a href="https://resume.troglobit.com">Resumé</a></li><li><a href="https://ftp.troglobit.com">FTP</a></li><li><a href="https://deb.troglobit.com">DEB</a></li>
+    </ul>
 </nav>
 
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
 
-      <div class="content">
-        
-  <section class="container page">
-  <article>
-    <header>
-      <h1>Fast init for Linux systems</h1>
-    </header>
 
-    <p><img src="https://troglobit.com/images/finit3.png#floatright" alt="finit logo"></p>
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://troglobit.com/projects/finit/">Fast init for Linux systems</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p><img src="https://troglobit.com/images/finit3.png#floatright" alt="finit logo"></p>
 <p>Finit is a simple alternative to <a href="https://en.wikipedia.org/wiki/Init">SysV init</a> and <a href="https://www.freedesktop.org/wiki/Software/systemd/">systemd</a>,
 originally reverse engineered from the EeePC fastinit by Claudio
 Matsuoka — &ldquo;gaps filled with frog DNA …&rdquo;</p>
@@ -175,57 +174,57 @@ examples of how to boot embedded systems with Finit.</p>
 files in <code>/etc/finit.d</code>.  Available, but not yet enabled, services can
 be placed in <code>/etc/finit.d/available</code> and enabled by an operator using
 the <a href="#commands--status">initctl</a> tool.</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ApacheConf" data-lang="ApacheConf"><span style="color:#999;font-style:italic"># Fallback if /etc/hostname is missing</span>
-<span style="color:#24909d">host</span> default
+<div class="highlight"><pre class="chroma"><code class="language-ApacheConf" data-lang="ApacheConf"><span class="c"># Fallback if /etc/hostname is missing</span>
+<span class="nb">host</span> default
 
-<span style="color:#999;font-style:italic"># Runlevel to start after bootstrap, &#39;S&#39;, default: 2</span>
-<span style="color:#24909d">runlevel</span> <span style="color:#3677a9">2</span>
+<span class="c"># Runlevel to start after bootstrap, &#39;S&#39;, default: 2</span>
+<span class="nb">runlevel</span> <span class="m">2</span>
 
-<span style="color:#999;font-style:italic"># Max file size for each log file: 100 kiB, rotate max 4 copies:</span>
-<span style="color:#999;font-style:italic"># log =&gt; log.1 =&gt; log.2.gz =&gt; log.3.gz =&gt; log.4.gz</span>
-<span style="color:#24909d">log</span> size=100k count=4
+<span class="c"># Max file size for each log file: 100 kiB, rotate max 4 copies:</span>
+<span class="c"># log =&gt; log.1 =&gt; log.2.gz =&gt; log.3.gz =&gt; log.4.gz</span>
+<span class="nb">log</span> size=100k count=4
 
-<span style="color:#999;font-style:italic"># Services to be monitored and respawned as needed</span>
-<span style="color:#24909d">service</span> [S12345] watchdogd -L -f                 -- System watchdog daemon
-<span style="color:#24909d">service</span> [S12345] syslogd -n -b <span style="color:#3677a9">3</span> -D              -- System log daemon
-<span style="color:#24909d">service</span> [S12345] &lt;pid/syslogd&gt; klogd -n          -- Kernel log daemon
-<span style="color:#24909d">service</span>   [2345] lldpd -d -c -M1 -H0 -i          -- LLDP daemon (IEEE <span style="color:#3677a9">802</span>.1ab)
+<span class="c"># Services to be monitored and respawned as needed</span>
+<span class="nb">service</span> [S12345] watchdogd -L -f                 -- System watchdog daemon
+<span class="nb">service</span> [S12345] syslogd -n -b <span class="m">3</span> -D              -- System log daemon
+<span class="nb">service</span> [S12345] &lt;pid/syslogd&gt; klogd -n          -- Kernel log daemon
+<span class="nb">service</span>   [2345] lldpd -d -c -M1 -H0 -i          -- LLDP daemon (IEEE <span class="m">802</span>.1ab)
 
-<span style="color:#999;font-style:italic"># The BusyBox ntpd does not use syslog when running in the foreground</span>
-<span style="color:#999;font-style:italic"># So we use this trick to redirect stdout/stderr to a log file.  The</span>
-<span style="color:#999;font-style:italic"># log file is rotated with the above settings.  The condition declares</span>
-<span style="color:#999;font-style:italic"># a dependency on a system default route (gateway) to be set.  A single</span>
-<span style="color:#999;font-style:italic"># &lt;!&gt; at the beginning means ntpd does not respect SIGHUP for restart.</span>
-<span style="color:#24909d">service</span> [2345] log:/var/log/ntpd.log &lt;!net/route/default&gt; ntpd -n -l -I eth0 -- NTP daemon
+<span class="c"># The BusyBox ntpd does not use syslog when running in the foreground</span>
+<span class="c"># So we use this trick to redirect stdout/stderr to a log file.  The</span>
+<span class="c"># log file is rotated with the above settings.  The condition declares</span>
+<span class="c"># a dependency on a system default route (gateway) to be set.  A single</span>
+<span class="c"># &lt;!&gt; at the beginning means ntpd does not respect SIGHUP for restart.</span>
+<span class="nb">service</span> [2345] log:/var/log/ntpd.log &lt;!net/route/default&gt; ntpd -n -l -I eth0 -- NTP daemon
 
-<span style="color:#999;font-style:italic"># For multiple instances of the same service, add :ID somewhere between</span>
-<span style="color:#999;font-style:italic"># the service/run/task keyword and the command.</span>
-<span style="color:#24909d">service</span> :80   [2345] merecat -n -p <span style="color:#3677a9">80</span>   <span style="color:#ffa500">/var/www</span> -- Web server
-<span style="color:#24909d">service</span> :8080 [2345] merecat -n -p <span style="color:#3677a9">8080</span> <span style="color:#ffa500">/var/www</span> -- Old web server
+<span class="c"># For multiple instances of the same service, add :ID somewhere between</span>
+<span class="c"># the service/run/task keyword and the command.</span>
+<span class="nb">service</span> :80   [2345] merecat -n -p <span class="m">80</span>   <span class="sx">/var/www</span> -- Web server
+<span class="nb">service</span> :8080 [2345] merecat -n -p <span class="m">8080</span> <span class="sx">/var/www</span> -- Old web server
 
-<span style="color:#999;font-style:italic"># Alternative method instead of below runparts, can also use /etc/rc.local</span>
-<span style="color:#999;font-style:italic">#task [S] /etc/init.d/keyboard-setup start       -- Setting up preliminary keymap</span>
-<span style="color:#999;font-style:italic">#task [S] /etc/init.d/acpid start                -- Starting ACPI Daemon</span>
-<span style="color:#999;font-style:italic">#task [S] /etc/init.d/kbd start                  -- Preparing console</span>
+<span class="c"># Alternative method instead of below runparts, can also use /etc/rc.local</span>
+<span class="c">#task [S] /etc/init.d/keyboard-setup start       -- Setting up preliminary keymap</span>
+<span class="c">#task [S] /etc/init.d/acpid start                -- Starting ACPI Daemon</span>
+<span class="c">#task [S] /etc/init.d/kbd start                  -- Preparing console</span>
 
-<span style="color:#999;font-style:italic"># Run start scripts from this directory</span>
-<span style="color:#999;font-style:italic"># runparts /etc/start.d</span>
+<span class="c"># Run start scripts from this directory</span>
+<span class="c"># runparts /etc/start.d</span>
 
-<span style="color:#999;font-style:italic"># Virtual consoles run BusyBox getty, keep kernel default speed</span>
-<span style="color:#24909d">tty</span> [12345] <span style="color:#ffa500">/sbin/getty</span> -L <span style="color:#3677a9">0</span> <span style="color:#ffa500">/dev/tty1</span> linux
-<span style="color:#24909d">tty</span> [12345] <span style="color:#ffa500">/sbin/getty</span> -L <span style="color:#3677a9">0</span> <span style="color:#ffa500">/dev/tty2</span> linux
-<span style="color:#24909d">tty</span> [12345] <span style="color:#ffa500">/sbin/getty</span> -L <span style="color:#3677a9">0</span> <span style="color:#ffa500">/dev/tty3</span> linux
+<span class="c"># Virtual consoles run BusyBox getty, keep kernel default speed</span>
+<span class="nb">tty</span> [12345] <span class="sx">/sbin/getty</span> -L <span class="m">0</span> <span class="sx">/dev/tty1</span> linux
+<span class="nb">tty</span> [12345] <span class="sx">/sbin/getty</span> -L <span class="m">0</span> <span class="sx">/dev/tty2</span> linux
+<span class="nb">tty</span> [12345] <span class="sx">/sbin/getty</span> -L <span class="m">0</span> <span class="sx">/dev/tty3</span> linux
 
-<span style="color:#999;font-style:italic"># Use built-in getty for serial port and USB serial</span>
-<span style="color:#24909d">tty</span> [12345] <span style="color:#ffa500">/dev/ttyAMA0</span> noclear nowait
-<span style="color:#24909d">tty</span> [12345] <span style="color:#ffa500">/dev/ttyUSB0</span> noclear
+<span class="c"># Use built-in getty for serial port and USB serial</span>
+<span class="nb">tty</span> [12345] <span class="sx">/dev/ttyAMA0</span> noclear nowait
+<span class="nb">tty</span> [12345] <span class="sx">/dev/ttyUSB0</span> noclear
 
-<span style="color:#999;font-style:italic"># Just give me a shell, I need to debug this embedded system!</span>
-<span style="color:#24909d">tty</span> [12345] @console noclear nologin
+<span class="c"># Just give me a shell, I need to debug this embedded system!</span>
+<span class="nb">tty</span> [12345] @console noclear nologin
 </code></pre></div><p>The <code>service</code> stanza, as well as <code>task</code>, <code>run</code> and others are described
 in full in <a href="doc/config.md">doc/config.md</a>.  Here&rsquo;s a quick overview of
 some of the most common components needed to start a UNIX daemon:</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">service [LVLS] &lt;COND&gt; log env:[-]/etc/default/daemon daemon ARGS -- Daemon daemon
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">service [LVLS] &lt;COND&gt; log env:[-]/etc/default/daemon daemon ARGS -- Daemon daemon
 ^       ^      ^      ^   ^                          ^              ^       ^
 |       |      |      |   |                          |              |        `-- Optional description
 |       |      |      |   |                          |              `----------- Daemon arguments
@@ -272,14 +271,14 @@ will instead try to restart it.</p>
 Getty, useful for really small systems.  A getty sets up the TTY and
 waits for user input before handing over to <code>/bin/login</code>, which is
 responsible for handling the actual authentication.</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">tty [12345] /dev/tty1    nowait  linux
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">tty [12345] /dev/tty1    nowait  linux
 tty [12345] /dev/ttyAMA0 noclear vt100
 tty [12345] /sbin/getty  -L /dev/ttyAMA0 vt100
 </code></pre></div><p>Users of embedded systems may want to enable automatic serial console
 with the special <code>@console</code> device.  This works regardless weather the
 system uses <code>ttyS0</code>, <code>ttyAMA0</code>, <code>ttyMXC0</code>, or anything else.  Finit
 figures it out by querying sysfs: <code>/sys/class/tty/console/active</code>.</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">tty [12345] @console linux noclear
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">tty [12345] @console linux noclear
 </code></pre></div><p>Notice the optional <code>noclear</code>, <code>nowait</code>, and <code>nologin</code> flags.  The
 latter is for skipping the login process entirely. For more information,
 see <a href="doc/config.md#syntax">doc/config.md</a>.</p>
@@ -296,7 +295,7 @@ given on the kernel cmdline, in which case runlevel 1 is started.</p>
 <p>All services in runlevel S(0) are started first, followed by the desired
 run-time runlevel.  Run tasks in runlevel S can be started in sequence
 by using <code>run [S] cmd</code>.  Changing runlevels at runtime is done like any
-other init, e.g. <kbd>init 4</kbd>, but also using the more advanced
+other init, e.g. <!-- raw HTML omitted -->init 4<!-- raw HTML omitted -->, but also using the more advanced
 <code>intictl</code> tool.</p>
 <p><strong>Plugins</strong></p>
 <p>Plugins can <em>extend</em> the functionality of Finit and <em>hook into</em> the
@@ -331,7 +330,7 @@ started, but not networking, Finit calls its built-in [run-parts(8)][]
 command on any configured <code>runparts &lt;DIR&gt;</code> directory.  This happens just
 before changing to the configured runlevel (default 2).  (Networking is
 enabled just prior to changing from single user mode.)</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">runparts /etc/rc.d/
+<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">runparts /etc/rc.d/
 </code></pre></div><p>Right after the runlevel change when all services have started properly,
 <code>/etc/rc.local</code> is called.</p>
 <p>No configuration stanza in <code>/etc/finit.conf</code> is required for <code>rc.local</code>.
@@ -351,7 +350,7 @@ more of a policy for the user to define.  Normally only runlevels 1-6
 are used, and even more commonly, only the default runlevel is used.</p>
 <p>To specify an allowed set of runlevels for a <code>service</code>, <code>run</code> command,
 <code>task</code>, or <code>tty</code>, add <code>[NNN]</code> to your <code>/etc/finit.conf</code>, like this:</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">service [S12345] syslogd -n -x             -- System log daemon
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">service [S12345] syslogd -n -x             -- System log daemon
 run     [S]      /etc/init.d/acpid start   -- Starting ACPI Daemon
 task    [S]      /etc/init.d/kbd start     -- Preparing console
 service [S12345] &lt;pid/syslogd&gt; klogd -n -x -- Kernel log daemon
@@ -375,10 +374,10 @@ in a shell, so pipes and redirects can be used.</p>
 <p>The following examples illustrate this.  Bootstrap task and run commands
 are also removed when they have completed, <code>initctl show</code> will not list
 them.</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">task [S] echo &#34;foo&#34; | cat &gt;/tmp/bar
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">task [S] echo &#34;foo&#34; | cat &gt;/tmp/bar
 run  [S] echo &#34;$HOME&#34; &gt;/tmp/secret
 </code></pre></div><p>Switching between runlevels can be done by calling init with a single
-argument, e.g. <kbd>init 5</kbd>, or using <code>initctl runlevel 5</code>, both
+argument, e.g. <!-- raw HTML omitted -->init 5<!-- raw HTML omitted -->, or using <code>initctl runlevel 5</code>, both
 switch to runlevel 5.  When changing runlevels Finit also automatically
 reloads all <code>.conf</code> files in the <code>/etc/finit.d/</code> directory.  So if you
 want to set a new system config, switch to runlevel 1, change all config
@@ -399,7 +398,7 @@ the more common combination for Finit.  For more details, see
 <p>Finit also implements a modern API to query status, and start/stop
 services, called <code>initctl</code>.  Unlike <code>telinit</code> the <code>initctl</code> tool does
 not return until the given command has fully completed.</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">alpine:~# initctl help
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">alpine:~# initctl help
 Usage: initctl [OPTIONS] [COMMAND]
 
 Options:
@@ -450,7 +449,7 @@ these will also affect how a service is maintained.</p>
 the current runlevel these services will not be respawned automatically
 by Finit if they exit (crash).  Hence, if the runlevel is 2, the below
 Dropbear SSH service will not be restarted if it is killed or exits.</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">alpine:~# initctl 
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">alpine:~# initctl 
 PID   IDENT     STATUS   RUNLEVELS    DESCRIPTION
 ======================================================================
 1506  acpid     running  [--2345----] ACPI daemon
@@ -484,7 +483,7 @@ results.</p>
 <p>At boot Finit calls either <code>mdev</code> or <code>udevd</code> to populate <code>/dev</code>, this is
 done slightly differently and on systems with udev you might want to add
 the following one-shot task early in your <code>/etc/finit.conf</code>:</p>
-<div class="highlight"><pre style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">run [S] udevadm settle --timeout=120 -- Waiting for udev
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">run [S] udevadm settle --timeout=120 -- Waiting for udev
 </code></pre></div><p>Finit has a built-in Getty for TTYs, but requires a working <code>/bin/login</code>
 or <code>/bin/sh</code>, if no TTYs are configured in <code>/etc/finit.conf</code>.</p>
 <p>For a fully operational system <code>/var</code>, <code>/run</code> and <code>/tmp</code> must be set up
@@ -505,62 +504,46 @@ and proposed extensions using GitHub:</p>
 <a href="ftp://ftp.troglobit.com/finit/finit-4.0-rc2.tar.gz.md5">MD5</a></li>
 </ul>
 
-  </article>
-</section>
+            </div>
+        </article>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
-  <script>
-    MathJax = {
-      tex: {
-        inlineMath: [
-          ['$', '$'], ['\\(', '\\)']
-        ],
-        processEscapes: true,
-        processEnvironments: true
-      },
-      options: {
-        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-      }
-    };
-  </script>
+        <hr />
 
-      </div>
-
-      
-  <footer class="footer">
-    <section class="container">
-      
-        <p>Proudly hosted by Fosshost :: <a href="https://fosshost.org/">https://fosshost.org/</a></p>
-      
-      
-        ©
-        
-        2021
-         Joachim Wiberg 
-      
-      
-      
-    </section>
-  </footer>
-
+        <div class="post-info">
+            
+            
+  		</div>
     </main>
 
-    
-      
-      <script src="https://troglobit.com/js/dark-mode.min.0213e1773e6d1c5a644f847c67a6f8abac49a3776e2976f6008038af8c5b76a1.js"></script>
-    
+            </div>
 
-    
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2021</span>
+            <span><a href="https://troglobit.com/">Joachim Wiberg</a></span>
+            <span>UNIX&trade; 4Life! &#9994;</span><span><a href="https://troglobit.com/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Proudly hosted by Fosshost</span>
+            <span><a href="https://fosshost.org/">https://fosshost.org/</a></span>
+          </div>
+    </div>
+</footer>
 
-    
+            
+        </div>
 
-    
+        
 
-    
 
-    
-  </body>
 
+<script type="text/javascript" src="https://troglobit.com/bundle.min.af435e44374f1e99a669ea8cd5bb9a2fceed80588941a451bfddb66b86a67c9f40b0f417e9543a763f809aa7e9300d7b1d69bf99615810ba02ac70396d50fad5.js" integrity="sha512-r0NeRDdPHpmmaeqM1buaL87tgFiJQaRRv922a4amfJ9AsPQX6VQ6dj&#43;AmqfpMA17HWm/mWFYELoCrHA5bVD61Q=="></script>
+
+
+
+    </body>
 </html>

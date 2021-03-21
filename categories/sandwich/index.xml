@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>sandwich on The Last Outpost</title>
+    <title>sandwich on Joachim Wiberg</title>
     <link>https://troglobit.com/categories/sandwich/</link>
-    <description>Recent content in sandwich on The Last Outpost</description>
+    <description>Recent content in sandwich on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>en-us</language>
+    <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
     <lastBuildDate>Sun, 11 Dec 2016 20:26:12 +0000</lastBuildDate>
     
 	<atom:link href="https://troglobit.com/categories/sandwich/index.xml" rel="self" type="application/rss+xml" />
