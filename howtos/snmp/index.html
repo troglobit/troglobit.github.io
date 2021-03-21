@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Joachim Wiberg ">
+<meta name="description" content="This mini HowTo describes how to use the SNMP client tools to retrieve human readable information from devices running an SNMP daemon. In the examples below mini-snmpd is used as the daemon and as client both the command line net-snmp tool and the snmpB GUI are used.
+Personally I use both Ubuntu and Debian, so the tools I use to download the clients will reflect that. See your respective UNIX distro&amp;rsquo;s help pages for how to install these client tools in your operating system." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://troglobit.com/howtos/snmp/" />
+
+
+    <title>
+        
+            HowTo play with SNMP :: Joachim Wiberg  — The Last Outpost
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://troglobit.com/main.de188b3201233c251f4fd6306dbd2cb41e408fb8846c09781b2925de7df5025c.css">
+
+
+    
+        <link rel="stylesheet" type="text/css" href="https://troglobit.com/css/extra.css">
+    
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://troglobit.com/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://troglobit.com/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://troglobit.com/favicon-16x16.png">
+    <link rel="manifest" href="https://troglobit.com/site.webmanifest">
+    <link rel="mask-icon" href="https://troglobit.com/safari-pinned-tab.svg" color="#1b1c1d">
+    <link rel="shortcut icon" href="https://troglobit.com/favicon.ico">
+    <meta name="msapplication-TileColor" content="#1b1c1d">
+    <meta name="theme-color" content="#1b1c1d">
+
+
+
+<meta itemprop="name" content="HowTo play with SNMP">
+<meta itemprop="description" content="This mini HowTo describes how to use the SNMP client tools to retrieve human readable information from devices running an SNMP daemon. In the examples below mini-snmpd is used as the daemon and as client both the command line net-snmp tool and the snmpB GUI are used.
+Personally I use both Ubuntu and Debian, so the tools I use to download the clients will reflect that. See your respective UNIX distro&rsquo;s help pages for how to install these client tools in your operating system.">
+<meta itemprop="datePublished" content="2018-05-05T13:57:00&#43;02:00" />
+<meta itemprop="dateModified" content="2018-05-05T13:57:00&#43;02:00" />
+<meta itemprop="wordCount" content="322">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HowTo play with SNMP"/>
+<meta name="twitter:description" content="This mini HowTo describes how to use the SNMP client tools to retrieve human readable information from devices running an SNMP daemon. In the examples below mini-snmpd is used as the daemon and as client both the command line net-snmp tool and the snmpB GUI are used.
+Personally I use both Ubuntu and Debian, so the tools I use to download the clients will reflect that. See your respective UNIX distro&rsquo;s help pages for how to install these client tools in your operating system."/>
+
+
+
+
+    <meta property="og:title" content="HowTo play with SNMP" />
+<meta property="og:description" content="This mini HowTo describes how to use the SNMP client tools to retrieve human readable information from devices running an SNMP daemon. In the examples below mini-snmpd is used as the daemon and as client both the command line net-snmp tool and the snmpB GUI are used.
+Personally I use both Ubuntu and Debian, so the tools I use to download the clients will reflect that. See your respective UNIX distro&rsquo;s help pages for how to install these client tools in your operating system." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://troglobit.com/howtos/snmp/" />
+<meta property="article:published_time" content="2018-05-05T13:57:00+02:00" />
+<meta property="article:modified_time" content="2018-05-05T13:57:00+02:00" />
+
+
+
+
+    <meta property="article:section" content="snmp" />
+
+    <meta property="article:section" content="debian" />
+
+    <meta property="article:section" content="ubuntu" />
+
+    <meta property="article:section" content="howto" />
+
+
+
+    <meta property="article:published_time" content="2018-05-05 13:57:00 &#43;0200 CEST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://troglobit.com/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text">$ cd /home/</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://troglobit.com/about/">About</a></li><li><a href="https://troglobit.com/posts/">Blog</a></li><li><a href="https://troglobit.com/howtos/">HowTos</a></li><li><a href="https://troglobit.com/projects/">Projects</a></li><li><a href="https://resume.troglobit.com">Resumé</a></li><li><a href="https://ftp.troglobit.com">FTP</a></li><li><a href="https://deb.troglobit.com">DEB</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://troglobit.com/howtos/snmp/">HowTo play with SNMP</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>This mini HowTo describes how to use the SNMP client tools to retrieve
+<em>human readable</em> information from devices running an SNMP daemon.  In
+the examples below <a href="https://troglobit.com/mini-snmpd.html">mini-snmpd</a> is used as the daemon
+and as client both the command line <a href="http://www.net-snmp.org">net-snmp</a>
+tool and the <a href="http://sourceforge.net/projects/snmpb/">snmpB</a> GUI are
+used.</p>
+<p>Personally I use both Ubuntu and Debian, so the tools I use to download
+the clients will reflect that.  See your respective UNIX distro&rsquo;s help
+pages for how to install these client tools in your operating system.</p>
+<h2 id="installing-snmp-in-ubuntu">Installing SNMP in Ubuntu</h2>
+<p>The following commands installs snmpset/get/walk, base MIBs and all the
+standard MIBs needed:</p>
+<pre><code>sudo apt-get install snmp libsnmp-base snmp-mibs-downloader
+sudo download-mibs
+</code></pre>
+<p>On Debian/Ubuntu you have to also edit the file <code>/etc/snmp/snmp.conf</code> to
+enable automatic loading of the downloaded MIBs, which is disabled by
+default.  <em>Comment out</em> the line that reads:</p>
+<pre><code>mibs :
+</code></pre>
+<p>Assuming you have already started <code>mini_snmpd</code>, say using port 16161 so
+it doesn&rsquo;t have to run as root, you can now talk to it using:</p>
+<pre><code>snmpwalk -v2c -c public 127.0.0.1:16161
+snmpget -c public -v 2c 127.0.0.1:16161 system.sysUpTime.0
+</code></pre>
+<p>On earlier versions of Ubuntu (pre 18.04) I&rsquo;ve had trouble getting
+net-snmp to use the UCD-SNMP-MIB, so I&rsquo;ve added it explicitly to my
+<code>~/snmp/snmp.conf</code>:</p>
+<pre><code>mibs +UCD-SNMP-MIB
+</code></pre>
+<p>This MIB is in <code>/usr/share/snmp/mibs/</code> on my system &hellip;</p>
+<h2 id="installing-private-mib-files">Installing Private MIB files</h2>
+<p>If you want to access a router/switch which uses private MIBs you can do
+the same as I did for the UCD-SNMP-MIB:</p>
+<pre><code>mkdir -p ~/.snmp/mibs
+cp COMPANY-SOME-MIB COMPANY-OID-MIB ~/.snmp/mibs/
+cat &lt;&lt; EOF &gt; ~/.snmp/snmp.conf
+# mibdirs /usr/share/snmp/mibs:/usr/share/mibs/ietf:/usr/share/mibs/iana:/usr/share/mibs/irtf:/usr/share/mibs/tubs
+mibdirs $HOME/.snmp/mibs
+mibs +COMPANY-SOME-MIB
+mibs +COMPANY-OID-MIB
+EOF
+</code></pre>
+<p>Now you should be able to do this:</p>
+<pre><code>snmpset -c private -v 2c 192.168.2.200 COMPANY-SOME-MIB::reboot.0 i 1
+</code></pre>
+<p>which is quite an improvement over:</p>
+<pre><code>snmpset -c private -v 2c 192.168.2.200 1.3.6.1.4.1.16177.2.1.1.1.0 i 1
+</code></pre>
+<h2 id="useful-tests">Useful Tests</h2>
+<p>Walk all IP addresses</p>
+<pre><code>snmpwalk -v2c -c public 192.168.2.20 1.3.6.1.2.1.4.20 
+</code></pre>
+<p>Get loadavg</p>
+<pre><code>snmpwalk -v2c -c public 127.0.0.1:16161 UCD-SNMP-MIB::laLoad
+</code></pre>
+<p>For more tips on using <code>snmpwalk</code>, see the
+<a href="http://www.net-snmp.org/wiki/index.php/TUT:snmpwalk">Net-SNMP wiki</a></p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://troglobit.com/categories/snmp/">snmp</a></span>
+        <span class="tag"><a href="https://troglobit.com/categories/debian/">debian</a></span>
+        <span class="tag"><a href="https://troglobit.com/categories/ubuntu/">ubuntu</a></span>
+        <span class="tag"><a href="https://troglobit.com/categories/howto/">howto</a></span>
+        
+    </p>
+
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2021</span>
+            <span><a href="https://troglobit.com/">Joachim Wiberg</a></span>
+            <span>UNIX&trade; 4Life! &#9994;</span><span><a href="https://troglobit.com/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Proudly hosted by Fosshost</span>
+            <span><a href="https://fosshost.org/">https://fosshost.org/</a></span>
+          </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://troglobit.com/bundle.min.af435e44374f1e99a669ea8cd5bb9a2fceed80588941a451bfddb66b86a67c9f40b0f417e9543a763f809aa7e9300d7b1d69bf99615810ba02ac70396d50fad5.js" integrity="sha512-r0NeRDdPHpmmaeqM1buaL87tgFiJQaRRv922a4amfJ9AsPQX6VQ6dj&#43;AmqfpMA17HWm/mWFYELoCrHA5bVD61Q=="></script>
+
+
+
+    </body>
+</html>

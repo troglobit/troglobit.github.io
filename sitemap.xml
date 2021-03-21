@@ -53,12 +53,12 @@
   </url>
   
   <url>
-    <loc>https://troglobit.com/howto/netbsd-pkgsrc/</loc>
+    <loc>https://troglobit.com/howtos/netbsd-pkgsrc/</loc>
     <lastmod>2020-08-22T21:39:00+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://troglobit.com/howto/</loc>
+    <loc>https://troglobit.com/howtos/</loc>
     <lastmod>2020-08-22T21:39:00+01:00</lastmod>
   </url>
   
@@ -68,7 +68,7 @@
   </url>
   
   <url>
-    <loc>https://troglobit.com/howto/howto-build-and-use-my-projects/</loc>
+    <loc>https://troglobit.com/howtos/howto-build-and-use-my-projects/</loc>
     <lastmod>2020-08-16T16:36:00+01:00</lastmod>
   </url>
   
@@ -278,7 +278,7 @@
   </url>
   
   <url>
-    <loc>https://troglobit.com/howto/multicast/</loc>
+    <loc>https://troglobit.com/howtos/multicast/</loc>
     <lastmod>2019-03-27T15:54:00+02:00</lastmod>
   </url>
   
@@ -328,7 +328,7 @@
   </url>
   
   <url>
-    <loc>https://troglobit.com/howto/snmp/</loc>
+    <loc>https://troglobit.com/howtos/snmp/</loc>
     <lastmod>2018-05-05T13:57:00+02:00</lastmod>
   </url>
   
@@ -728,7 +728,7 @@
   </url>
   
   <url>
-    <loc>https://troglobit.com/howto/pimd-on-freebsd/</loc>
+    <loc>https://troglobit.com/howtos/pimd-on-freebsd/</loc>
     <lastmod>2015-09-27T18:45:00+02:00</lastmod>
   </url>
   
@@ -743,7 +743,7 @@
   </url>
   
   <url>
-    <loc>https://troglobit.com/howto/pimd-on-openbsd/</loc>
+    <loc>https://troglobit.com/howtos/pimd-on-openbsd/</loc>
     <lastmod>2015-07-19T00:32:00+02:00</lastmod>
   </url>
   
@@ -863,7 +863,7 @@
   </url>
   
   <url>
-    <loc>https://troglobit.com/howto/mrouting-in-freebsd/</loc>
+    <loc>https://troglobit.com/howtos/mrouting-in-freebsd/</loc>
     <lastmod>2014-09-23T01:55:19+02:00</lastmod>
   </url>
   
@@ -893,7 +893,7 @@
   </url>
   
   <url>
-    <loc>https://troglobit.com/howto/rebase-without-an-origin/</loc>
+    <loc>https://troglobit.com/howtos/rebase-without-an-origin/</loc>
     <lastmod>2014-08-27T10:00:13+02:00</lastmod>
   </url>
   

@@ -14,10 +14,10 @@
     
     <item>
       <title>HowTo play with SNMP</title>
-      <link>https://troglobit.com/howto/snmp/</link>
+      <link>https://troglobit.com/howtos/snmp/</link>
       <pubDate>Sat, 05 May 2018 13:57:00 +0200</pubDate>
       
-      <guid>https://troglobit.com/howto/snmp/</guid>
+      <guid>https://troglobit.com/howtos/snmp/</guid>
       <description>This mini HowTo describes how to use the SNMP client tools to retrieve human readable information from devices running an SNMP daemon. In the examples below mini-snmpd is used as the daemon and as client both the command line net-snmp tool and the snmpB GUI are used.
 Personally I use both Ubuntu and Debian, so the tools I use to download the clients will reflect that. See your respective UNIX distro&amp;rsquo;s help pages for how to install these client tools in your operating system.</description>
     </item>

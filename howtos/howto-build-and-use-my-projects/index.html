@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Joachim Wiberg">
+<meta name="description" content="Ever so often someone new to Open Source show up on GitHub or in my inbox. It usually starts something like this:
+ &amp;ldquo;Hey, I just downloaded your software, what&amp;rsquo;s next?&amp;quot; &amp;ldquo;Your crappy software doesn&amp;rsquo;t work on my system!!!!&amp;quot; &amp;ldquo;How can I do that weird-thing that fits my odd use-case?&amp;quot;  This HowTo is for you.
+0. Short Version  Download the versioned archive from the project&amp;rsquo;s Releases page Extract archive and change to its directory ./configure --help, or just ./configure &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo make install   Some projects of mine are available in Debian/Ubuntu/FreeBSD, if you use that, please report bugs to them and not me. I have no control over what they do.
+ Cheers
+/Joachim
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://troglobit.com/howtos/howto-build-and-use-my-projects/" />
+
+
+    <title>
+        
+            HowTo: Build &amp; Use My Projects :: Joachim Wiberg  — The Last Outpost
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://troglobit.com/main.de188b3201233c251f4fd6306dbd2cb41e408fb8846c09781b2925de7df5025c.css">
+
+
+    
+        <link rel="stylesheet" type="text/css" href="https://troglobit.com/css/extra.css">
+    
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://troglobit.com/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://troglobit.com/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://troglobit.com/favicon-16x16.png">
+    <link rel="manifest" href="https://troglobit.com/site.webmanifest">
+    <link rel="mask-icon" href="https://troglobit.com/safari-pinned-tab.svg" color="#1b1c1d">
+    <link rel="shortcut icon" href="https://troglobit.com/favicon.ico">
+    <meta name="msapplication-TileColor" content="#1b1c1d">
+    <meta name="theme-color" content="#1b1c1d">
+
+
+
+<meta itemprop="name" content="HowTo: Build &amp; Use My Projects">
+<meta itemprop="description" content="Ever so often someone new to Open Source show up on GitHub or in my
+inbox.  It usually starts something like this:
+
+&ldquo;Hey, I just downloaded your software, what&rsquo;s next?&quot;
+&ldquo;Your crappy software doesn&rsquo;t work on my system!!!!&quot;
+&ldquo;How can I do that weird-thing that fits my odd use-case?&quot;
+
+This HowTo is for you.
+0. Short Version
+
+Download the versioned archive from the project&rsquo;s Releases page
+Extract archive and change to its directory
+./configure --help, or just
+./configure &amp;&amp; make &amp;&amp; sudo make install
+
+
+Some projects of mine are available in Debian/Ubuntu/FreeBSD, if you
+use that, please report bugs to them and not me.  I have no control
+over what they do.
+
+Cheers
+/Joachim">
+<meta itemprop="datePublished" content="2020-08-16T16:36:00&#43;01:00" />
+<meta itemprop="dateModified" content="2020-08-16T16:36:00&#43;01:00" />
+<meta itemprop="wordCount" content="805">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HowTo: Build &amp; Use My Projects"/>
+<meta name="twitter:description" content="Ever so often someone new to Open Source show up on GitHub or in my
+inbox.  It usually starts something like this:
+
+&ldquo;Hey, I just downloaded your software, what&rsquo;s next?&quot;
+&ldquo;Your crappy software doesn&rsquo;t work on my system!!!!&quot;
+&ldquo;How can I do that weird-thing that fits my odd use-case?&quot;
+
+This HowTo is for you.
+0. Short Version
+
+Download the versioned archive from the project&rsquo;s Releases page
+Extract archive and change to its directory
+./configure --help, or just
+./configure &amp;&amp; make &amp;&amp; sudo make install
+
+
+Some projects of mine are available in Debian/Ubuntu/FreeBSD, if you
+use that, please report bugs to them and not me.  I have no control
+over what they do.
+
+Cheers
+/Joachim"/>
+
+
+
+
+    <meta property="og:title" content="HowTo: Build &amp; Use My Projects" />
+<meta property="og:description" content="Ever so often someone new to Open Source show up on GitHub or in my
+inbox.  It usually starts something like this:
+
+&ldquo;Hey, I just downloaded your software, what&rsquo;s next?&quot;
+&ldquo;Your crappy software doesn&rsquo;t work on my system!!!!&quot;
+&ldquo;How can I do that weird-thing that fits my odd use-case?&quot;
+
+This HowTo is for you.
+0. Short Version
+
+Download the versioned archive from the project&rsquo;s Releases page
+Extract archive and change to its directory
+./configure --help, or just
+./configure &amp;&amp; make &amp;&amp; sudo make install
+
+
+Some projects of mine are available in Debian/Ubuntu/FreeBSD, if you
+use that, please report bugs to them and not me.  I have no control
+over what they do.
+
+Cheers
+/Joachim" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://troglobit.com/howtos/howto-build-and-use-my-projects/" />
+<meta property="article:published_time" content="2020-08-16T16:36:00+01:00" />
+<meta property="article:modified_time" content="2020-08-16T16:36:00+01:00" />
+
+
+
+
+
+
+    <meta property="article:published_time" content="2020-08-16 16:36:00 &#43;0100 &#43;0100" />
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://troglobit.com/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text">$ cd /home/</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://troglobit.com/about/">About</a></li><li><a href="https://troglobit.com/posts/">Blog</a></li><li><a href="https://troglobit.com/howtos/">HowTos</a></li><li><a href="https://troglobit.com/projects/">Projects</a></li><li><a href="https://resume.troglobit.com">Resumé</a></li><li><a href="https://ftp.troglobit.com">FTP</a></li><li><a href="https://deb.troglobit.com">DEB</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://troglobit.com/howtos/howto-build-and-use-my-projects/">HowTo: Build &amp; Use My Projects</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>Ever so often someone new to Open Source show up on GitHub or in my
+inbox.  It usually starts something like this:</p>
+<ul>
+<li><em>&ldquo;Hey, I just downloaded your software, what&rsquo;s next?&quot;</em></li>
+<li><em>&ldquo;Your crappy software doesn&rsquo;t work on my system!!!!&quot;</em></li>
+<li><em>&ldquo;How can I do that weird-thing that fits my odd use-case?&quot;</em></li>
+</ul>
+<p>This HowTo is for you.</p>
+<h2 id="0-short-version">0. Short Version</h2>
+<ul>
+<li>Download the <em>versioned</em> archive from the project&rsquo;s Releases page</li>
+<li>Extract archive and change to its directory</li>
+<li><code>./configure --help</code>, or just</li>
+<li><code>./configure &amp;&amp; make &amp;&amp; sudo make install</code></li>
+</ul>
+<blockquote>
+<p>Some projects of mine are available in Debian/Ubuntu/FreeBSD, if you
+use that, please report bugs to them and not me.  I have no control
+over what they do.</p>
+</blockquote>
+<p>Cheers<br>
+/Joachim</p>
+<h2 id="1-i-dont-owe-you-free-support">1. I don&rsquo;t owe you free support</h2>
+<p>Just because the software is published for free, and often without any
+restrictions<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> on use, doesn&rsquo;t mean I must provide you with any support.</p>
+<p>If you use my software packaged by a 3rd party, e.g., Debian, FreeBSD,
+or similar, please report the bug/problem to them first.  They become
+first line support when publishing my work.</p>
+<h2 id="2-use-released-software-not-git-sources-please">2. Use <strong>released</strong> software, not GIT sources please</h2>
+<p>There are some important caveats to consider if you&rsquo;re new to Open
+Source software:</p>
+<ul>
+<li>Released software is stable software, use versioned tarballs/zip files</li>
+<li>Software in GIT may be missing important files/scripts</li>
+<li>Software in GIT, even on the master branch, may be unstable/unfinished</li>
+</ul>
+<p>When I release software on GitHub I first do a &ldquo;tag&rdquo;, then build the
+release from that tag.  This results in artifacts such as an archive in
+the form of a tarball, or zipfile, with a <em>version</em> in the name.</p>
+<blockquote>
+<p>GitHub has the bad habit of automatically creating archives for a
+&ldquo;tag&rdquo;, don&rsquo;t use those.  They typically <strong>miss important files</strong>.</p>
+</blockquote>
+<p>Released archives, in most of my projects, include a <code>configure</code> script,
+which usually is not available in raw GIT.</p>
+<h3 id="please-note">Please note</h3>
+<p>Every project on GitHub has a <em>Releases Page</em>, e.g.</p>
+<p><a href="https://github.com/troglobit/finit/releases">https://github.com/troglobit/finit/releases</a></p>
+<p>Unless you want to contribute to the project, use released software!</p>
+<h2 id="3-some-assembly-required">3. Some assembly required</h2>
+<p>Pun intended, but don&rsquo;t worry I don&rsquo;t use any assembly language in my
+software.  It&rsquo;s more like building furniture from IKEA.</p>
+<p>As mentioned previously, and for reasons between different operating
+systems, as well as to facilitate cross-compilation to embedded targets
+(biggest audience by far!), most of my projects include a configure
+script.  This script is generated at release time and is <em>not available</em>
+from GIT sources.</p>
+<p>From the project release page, download the <em>versioned archive</em> (means
+it has a version number in the name and ends in tar/zip) which includes
+the configure script, extract the archive, run the <code>configure</code> script
+and then run <code>make</code>.</p>
+<p>Other requirements is a C compiler (I&rsquo;m old so that&rsquo;s still my jam) and
+the header files and .a file(s) for the C library in you system.  Some
+of my projects also have other requirements, see the README file or the
+output from a failing configure script for details.</p>
+<h3 id="example">Example</h3>
+<pre><code>wget https://github.com/troglobit/ssdp-responder/releases/download/v1.7/ssdp-responder-1.7.tar.gz
+tar xf ssdp-responder-1.7.tar.gz
+cd ssdp-responder-1.7/
+./configure
+make
+</code></pre>
+<p>When that is done you have the built <code>ssdp-scan</code> tool and the <code>ssdpd</code>
+daemon (UNIX service) available in the <code>src/</code> directory.  You can now
+either run the programs from there, or install them on your system
+using:</p>
+<pre><code>make install
+</code></pre>
+<p>This installs them into the default prefix <code>/usr/local</code>, which you can
+change by supplying a different prefix path to the configure script.
+See <code>./configure --help</code> for details.</p>
+<h2 id="4-building-from-git">4. Building from GIT</h2>
+<p>I always recommend users to run released software.  However, sometimes
+new features are not released yet, or (new) users want to try out the
+latest upcoming software.</p>
+<ol>
+<li>In 95% of the cases you need <code>autoconf</code> and <code>automake</code>.  Sometimes
+you also need (GNU) <code>libtool</code>, sometimes more tools are required,
+see the README for each project for details.</li>
+<li>Usually I never put generated files under version control.  This
+means <code>configure</code> et al is not available in GIT.</li>
+</ol>
+<p>To generate <code>configure</code>, for projects that use the GNU Configure &amp; Build
+system, run.</p>
+<pre><code>./autogen.sh
+</code></pre>
+<p>When refreshing your <code>git clone</code> with <code>git pull</code>, you may have to run
+the <code>autogen.sh</code> script again, but most of the time <code>make</code> handles this
+for you.</p>
+<h2 id="5-a-note-on-paths">5. A note on paths</h2>
+<p>With <code>configure</code> everything is about <code>--prefix</code>.  Everything is derived
+from that path, which traditionally defaults to <code>/usr/local</code>.  A few of
+the default directories are listed here:</p>
+<pre><code>prefix        = /usr/local           # default, use --prefix=/foo
+sysconfdir    = $prefix/etc
+datadir       = $prefix/share
+docdir        = $datadir/doc/PACKAGE
+localstatedir = $prefix/var
+runstatedir   = $localstatedir/run   # only in recent autoconf versions
+</code></pre>
+<p>All of the above (except <code>$runstatedir</code>, depending on autoconf version)
+are possible to override from the configure script.  For details, see
+the usage text with:</p>
+<pre><code>./configure --help
+</code></pre>
+<p>Most, if not all, of my projects use these directories also in the
+binary/daemon.  E.g., <code>$runstatedir</code> (or equivalent) is used for
+PID files and <code>.sock</code> files.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>see the file LICENSE or COPYING included with the software. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2021</span>
+            <span><a href="https://troglobit.com/">Joachim Wiberg</a></span>
+            <span>UNIX&trade; 4Life! &#9994;</span><span><a href="https://troglobit.com/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Proudly hosted by Fosshost</span>
+            <span><a href="https://fosshost.org/">https://fosshost.org/</a></span>
+          </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://troglobit.com/bundle.min.af435e44374f1e99a669ea8cd5bb9a2fceed80588941a451bfddb66b86a67c9f40b0f417e9543a763f809aa7e9300d7b1d69bf99615810ba02ac70396d50fad5.js" integrity="sha512-r0NeRDdPHpmmaeqM1buaL87tgFiJQaRRv922a4amfJ9AsPQX6VQ6dj&#43;AmqfpMA17HWm/mWFYELoCrHA5bVD61Q=="></script>
+
+
+
+    </body>
+</html>

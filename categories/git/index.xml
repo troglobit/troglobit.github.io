@@ -108,10 +108,10 @@ the actual work took about 4h.&lt;/p&gt;</description>
     
     <item>
       <title>HowTo Rebase without an origin</title>
-      <link>https://troglobit.com/howto/rebase-without-an-origin/</link>
+      <link>https://troglobit.com/howtos/rebase-without-an-origin/</link>
       <pubDate>Wed, 27 Aug 2014 10:00:13 +0200</pubDate>
       
-      <guid>https://troglobit.com/howto/rebase-without-an-origin/</guid>
+      <guid>https://troglobit.com/howtos/rebase-without-an-origin/</guid>
       <description>OK, so you&amp;rsquo;ve just been handed the task to integrate a big piece of corporate software and it&amp;rsquo;s nowhere near as done and ready as project management thinks. Of course you&amp;rsquo;ve already started chugging away at it, fixing bugs, refactoring code and wrapping it in neat containers to keep the changeset against the base SW small &amp;ndash; you already know you&amp;rsquo;ll get another drop of the same stinking pieace of code in another six months, so you keep the changes small and track them in GIT with neatly formatted commit messages.</description>
     </item>
     

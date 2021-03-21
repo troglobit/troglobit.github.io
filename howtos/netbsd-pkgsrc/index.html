@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Joachim Wiberg ">
+<meta name="description" content="Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.
+Here it is, you&amp;rsquo;d think this be something the installer could set up a default for &amp;hellip;
+PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/  or if you use the latest on an old ThinkPad T42:
+PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/i386/9.0/All/  The simply
+pkg_add -v git  Or so you might think!" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://troglobit.com/howtos/netbsd-pkgsrc/" />
+
+
+    <title>
+        
+            HowTo use NetBSD pre-built packages :: Joachim Wiberg  — The Last Outpost
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://troglobit.com/main.de188b3201233c251f4fd6306dbd2cb41e408fb8846c09781b2925de7df5025c.css">
+
+
+    
+        <link rel="stylesheet" type="text/css" href="https://troglobit.com/css/extra.css">
+    
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://troglobit.com/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://troglobit.com/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://troglobit.com/favicon-16x16.png">
+    <link rel="manifest" href="https://troglobit.com/site.webmanifest">
+    <link rel="mask-icon" href="https://troglobit.com/safari-pinned-tab.svg" color="#1b1c1d">
+    <link rel="shortcut icon" href="https://troglobit.com/favicon.ico">
+    <meta name="msapplication-TileColor" content="#1b1c1d">
+    <meta name="theme-color" content="#1b1c1d">
+
+
+
+<meta itemprop="name" content="HowTo use NetBSD pre-built packages">
+<meta itemprop="description" content="Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.
+Here it is, you&rsquo;d think this be something the installer could set up a default for &hellip;
+PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/  or if you use the latest on an old ThinkPad T42:
+PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/i386/9.0/All/  The simply
+pkg_add -v git  Or so you might think!">
+<meta itemprop="datePublished" content="2020-08-22T21:39:00&#43;01:00" />
+<meta itemprop="dateModified" content="2020-08-22T21:39:00&#43;01:00" />
+<meta itemprop="wordCount" content="180">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HowTo use NetBSD pre-built packages"/>
+<meta name="twitter:description" content="Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.
+Here it is, you&rsquo;d think this be something the installer could set up a default for &hellip;
+PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/  or if you use the latest on an old ThinkPad T42:
+PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/i386/9.0/All/  The simply
+pkg_add -v git  Or so you might think!"/>
+
+
+
+
+    <meta property="og:title" content="HowTo use NetBSD pre-built packages" />
+<meta property="og:description" content="Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.
+Here it is, you&rsquo;d think this be something the installer could set up a default for &hellip;
+PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/  or if you use the latest on an old ThinkPad T42:
+PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/i386/9.0/All/  The simply
+pkg_add -v git  Or so you might think!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://troglobit.com/howtos/netbsd-pkgsrc/" />
+<meta property="article:published_time" content="2020-08-22T21:39:00+01:00" />
+<meta property="article:modified_time" content="2020-08-22T21:39:00+01:00" />
+
+
+
+
+    <meta property="article:section" content="netbsd" />
+
+    <meta property="article:section" content="bsd" />
+
+    <meta property="article:section" content="howto" />
+
+
+
+    <meta property="article:published_time" content="2020-08-22 21:39:00 &#43;0100 &#43;0100" />
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://troglobit.com/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text">$ cd /home/</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://troglobit.com/about/">About</a></li><li><a href="https://troglobit.com/posts/">Blog</a></li><li><a href="https://troglobit.com/howtos/">HowTos</a></li><li><a href="https://troglobit.com/projects/">Projects</a></li><li><a href="https://resume.troglobit.com">Resumé</a></li><li><a href="https://ftp.troglobit.com">FTP</a></li><li><a href="https://deb.troglobit.com">DEB</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://troglobit.com/howtos/netbsd-pkgsrc/">HowTo use NetBSD pre-built packages</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p><em>Reminder to self:</em> you need to set up the <code>PKG_PATH</code> to the correct FTP
+URI.  Also, use the correct ARCH, otherwise the installer complains.  Do
+not use <code>amd64</code>, but rather <code>x86_64</code>.</p>
+<p>Here it is, you&rsquo;d think this be something the installer could set up a
+default for &hellip;</p>
+<pre><code>PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/
+</code></pre>
+<p>or if you use the latest on an old ThinkPad T42:</p>
+<pre><code>PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/i386/9.0/All/
+</code></pre>
+<p>The simply</p>
+<pre><code>pkg_add -v git
+</code></pre>
+<p>Or so you might think!  As <a href="http://www.cambus.net/installing-ca-certificates-on-netbsd/">this blog</a> points out, you also need to
+install some root certificates to get HTTPS/SSL working. <em>sigh</em></p>
+<pre><code>pkg_add -v openssl
+pkg_add -v mozilla-rootcerts
+</code></pre>
+<p>Followed by</p>
+<pre><code>touch /etc/openssl/openssl.cnf
+cd /etc/openssl/certs
+mozilla-rootcerts extract
+mozilla-rootcerts rehash
+</code></pre>
+<p>on newer NetBSD you only need to do:</p>
+<pre><code>mozilla-rootcerts install
+</code></pre>
+<p>Then you can clone your GitHub repo and start working &hellip;</p>
+<pre><code>cd
+git clone https://github.com/troglobit/pimd
+</code></pre>
+<p>On FreeBSD it&rsquo;s a lot simpler, type <code>pkg dasdastradf</code> and the OS asks
+you nicely if you want to install the pkgsrc system?   Reply and then
+simply do <code>pkg add git</code>.</p>
+<hr>
+<blockquote>
+<p>P.S.  Modern NetBSD have <code>pkgin</code>, so use the above only to bootstrap
+pkgin, then use that for the rest.</p>
+</blockquote>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://troglobit.com/categories/netbsd/">netbsd</a></span>
+        <span class="tag"><a href="https://troglobit.com/categories/bsd/">bsd</a></span>
+        <span class="tag"><a href="https://troglobit.com/categories/howto/">howto</a></span>
+        
+    </p>
+
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2021</span>
+            <span><a href="https://troglobit.com/">Joachim Wiberg</a></span>
+            <span>UNIX&trade; 4Life! &#9994;</span><span><a href="https://troglobit.com/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Proudly hosted by Fosshost</span>
+            <span><a href="https://fosshost.org/">https://fosshost.org/</a></span>
+          </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="https://troglobit.com/bundle.min.af435e44374f1e99a669ea8cd5bb9a2fceed80588941a451bfddb66b86a67c9f40b0f417e9543a763f809aa7e9300d7b1d69bf99615810ba02ac70396d50fad5.js" integrity="sha512-r0NeRDdPHpmmaeqM1buaL87tgFiJQaRRv922a4amfJ9AsPQX6VQ6dj&#43;AmqfpMA17HWm/mWFYELoCrHA5bVD61Q=="></script>
+
+
+
+    </body>
+</html>

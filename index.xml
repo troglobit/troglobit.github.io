@@ -73,10 +73,10 @@ The post says it should be sufficient to &amp;ldquo;Disable Virtualization Techn
     
     <item>
       <title>HowTo use NetBSD pre-built packages</title>
-      <link>https://troglobit.com/howto/netbsd-pkgsrc/</link>
+      <link>https://troglobit.com/howtos/netbsd-pkgsrc/</link>
       <pubDate>Sat, 22 Aug 2020 21:39:00 +0100</pubDate>
       
-      <guid>https://troglobit.com/howto/netbsd-pkgsrc/</guid>
+      <guid>https://troglobit.com/howtos/netbsd-pkgsrc/</guid>
       <description>Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.
 Here it is, you&amp;rsquo;d think this be something the installer could set up a default for &amp;hellip;
 PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/  or if you use the latest on an old ThinkPad T42:
@@ -86,10 +86,10 @@ pkg_add -v git  Or so you might think!</description>
     
     <item>
       <title>HowTo: Build &amp; Use My Projects</title>
-      <link>https://troglobit.com/howto/howto-build-and-use-my-projects/</link>
+      <link>https://troglobit.com/howtos/howto-build-and-use-my-projects/</link>
       <pubDate>Sun, 16 Aug 2020 16:36:00 +0100</pubDate>
       
-      <guid>https://troglobit.com/howto/howto-build-and-use-my-projects/</guid>
+      <guid>https://troglobit.com/howtos/howto-build-and-use-my-projects/</guid>
       <description>&lt;p&gt;Ever so often someone new to Open Source show up on GitHub or in my
 inbox.  It usually starts something like this:&lt;/p&gt;
 &lt;ul&gt;
