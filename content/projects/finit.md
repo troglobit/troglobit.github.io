@@ -1,6 +1,6 @@
 ---
 title: "Fast init for Linux systems"
-date: 2021-03-01 13:26:00 +0100
+date: 2021-03-22 07:59:00 +0100
 aliases: /finit.html
 ---
 ![finit logo](/images/finit3.png#floatright)
@@ -464,8 +464,8 @@ and proposed extensions using GitHub:
 * [README][]
 * [TODO](https://github.com/troglobit/finit/blob/master/TODO.md)
 * [ChangeLog](https://github.com/troglobit/finit/blob/master/ChangeLog.md)
-* [finit-4.0-rc2.tar.gz](ftp://ftp.troglobit.com/finit/finit-4.0-rc2.tar.gz),
-  [MD5](ftp://ftp.troglobit.com/finit/finit-4.0-rc2.tar.gz.md5)
+* [finit-4.0-rc3.tar.gz](ftp://ftp.troglobit.com/finit/finit-4.0-rc3.tar.gz),
+  [MD5](ftp://ftp.troglobit.com/finit/finit-4.0-rc3.tar.gz.md5)
 
 
 [1]: https://en.wikipedia.org/wiki/Init
