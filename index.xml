@@ -15,7 +15,7 @@
     <item>
       <title>Fast init for Linux systems</title>
       <link>https://troglobit.com/projects/finit/</link>
-      <pubDate>Mon, 01 Mar 2021 13:26:00 +0100</pubDate>
+      <pubDate>Mon, 22 Mar 2021 07:59:00 +0100</pubDate>
       
       <guid>https://troglobit.com/projects/finit/</guid>
       <description>Finit is a simple alternative to SysV init and systemd, originally reverse engineered from the EeePC fastinit by Claudio Matsuoka — &amp;ldquo;gaps filled with frog DNA …&amp;rdquo;
