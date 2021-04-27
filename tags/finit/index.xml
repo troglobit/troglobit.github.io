@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>finit on Joachim Wiberg</title>
+    <link>https://troglobit.com/tags/finit/</link>
+    <description>Recent content in finit on Joachim Wiberg</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
+    <lastBuildDate>Tue, 27 Apr 2021 20:18:06 +0100</lastBuildDate>
+    
+	<atom:link href="https://troglobit.com/tags/finit/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>It&#39;s Here! ♥</title>
+      <link>https://troglobit.com/post/2021-04-27-its-here/</link>
+      <pubDate>Tue, 27 Apr 2021 20:18:06 +0100</pubDate>
+      
+      <guid>https://troglobit.com/post/2021-04-27-its-here/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://troglobit.com/images/finit3.png#floatright&#34; alt=&#34;finit logo&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Finit v4 was finally released the other day! \o/&lt;/p&gt;
+&lt;p&gt;It represents the culmination of many years of hard work and careful
+thought put in by many people.  There&amp;rsquo;s so much to tell, hardly know
+where to begin &amp;hellip; the plan anyway is to use this blog for a series of
+posts detailing different aspects and important features.&lt;/p&gt;
+&lt;p&gt;The impatient reader can either scroll down to the &lt;strong&gt;video&lt;/strong&gt; below, or
+move on to the project home page: &lt;a href=&#34;https://troglobit.com/projects/finit/&#34;&gt;https://troglobit.com/projects/finit/&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

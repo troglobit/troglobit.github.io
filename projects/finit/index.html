@@ -310,7 +310,7 @@ given on the kernel cmdline, in which case runlevel 1 is started.</p>
 <p>All services in runlevel S(0) are started first, followed by the desired
 run-time runlevel.  Run tasks in runlevel S can be started in sequence
 by using <code>run [S] cmd</code>.  Changing runlevels at runtime is done like any
-other init, e.g. <!-- raw HTML omitted -->init 4<!-- raw HTML omitted -->, but also using the more advanced
+other init, e.g. <kbd>init 4</kbd>, but also using the more advanced
 <code>intictl</code> tool.</p>
 <p><strong>Plugins</strong></p>
 <p>Plugins can <em>extend</em> the functionality of Finit and <em>hook into</em> the
@@ -392,7 +392,7 @@ them.</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">task [S] echo &#34;foo&#34; | cat &gt;/tmp/bar
 run  [S] echo &#34;$HOME&#34; &gt;/tmp/secret
 </code></pre></div><p>Switching between runlevels can be done by calling init with a single
-argument, e.g. <!-- raw HTML omitted -->init 5<!-- raw HTML omitted -->, or using <code>initctl runlevel 5</code>, both
+argument, e.g. <kbd>init 5</kbd>, or using <code>initctl runlevel 5</code>, both
 switch to runlevel 5.  When changing runlevels Finit also automatically
 reloads all <code>.conf</code> files in the <code>/etc/finit.d/</code> directory.  So if you
 want to set a new system config, switch to runlevel 1, change all config

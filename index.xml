@@ -13,6 +13,22 @@
     
     
     <item>
+      <title>It&#39;s Here! ♥</title>
+      <link>https://troglobit.com/post/2021-04-27-its-here/</link>
+      <pubDate>Tue, 27 Apr 2021 20:18:06 +0100</pubDate>
+      
+      <guid>https://troglobit.com/post/2021-04-27-its-here/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://troglobit.com/images/finit3.png#floatright&#34; alt=&#34;finit logo&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Finit v4 was finally released the other day! \o/&lt;/p&gt;
+&lt;p&gt;It represents the culmination of many years of hard work and careful
+thought put in by many people.  There&amp;rsquo;s so much to tell, hardly know
+where to begin &amp;hellip; the plan anyway is to use this blog for a series of
+posts detailing different aspects and important features.&lt;/p&gt;
+&lt;p&gt;The impatient reader can either scroll down to the &lt;strong&gt;video&lt;/strong&gt; below, or
+move on to the project home page: &lt;a href=&#34;https://troglobit.com/projects/finit/&#34;&gt;https://troglobit.com/projects/finit/&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Fast init for Linux systems</title>
       <link>https://troglobit.com/projects/finit/</link>
       <pubDate>Tue, 27 Apr 2021 06:39:00 +0100</pubDate>
@@ -138,22 +154,6 @@ serving more than one Internet port.  This is highly useful for those
 who want to serve both HTTPS and HTTP content.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; now with support for &lt;code&gt;--webroot&lt;/code&gt; and HTTP-01 renewal!&lt;/p&gt;
-&lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>Fixing file sharing in Debian/Ubuntu/Mint</title>
-      <link>https://troglobit.com/post/2020-07-13-fixing-file-sharing-in-debian/ubuntu/mint/</link>
-      <pubDate>Mon, 13 Jul 2020 17:37:00 +0100</pubDate>
-      
-      <guid>https://troglobit.com/post/2020-07-13-fixing-file-sharing-in-debian/ubuntu/mint/</guid>
-      <description>&lt;p&gt;Mounting my ReadyNAS from Nautilus stopped working after upgrading to
-Ubuntu 20.04.  Turns out there was a change in behavior in Sambva v4.11
-that disabled SMB1 protocol by default.  It&amp;rsquo;ll be interesting to see how
-this pans out in the rest of the Linux community &amp;hellip; fortunately there&amp;rsquo;s
-a workaround!&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; same on Debian 11 (&lt;em&gt;bullseye&lt;/em&gt;) and Linux Mint 20 (&lt;em&gt;Ulyana&lt;/em&gt;)&lt;/p&gt;
 &lt;/blockquote&gt;</description>
     </item>
     

@@ -165,7 +165,7 @@ to use numerical OIDs.</p>
 <li>Supports the most important disk data (disk space/inodes available/used/free)</li>
 <li>Tested with <a href="http://net-snmp.org">net-snmp</a>, <a href="http://net-snmp.net">cacti</a>, and <a href="http://oss.oetiker.ch/mrtg/">MRTG</a></li>
 </ul>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a id="example"></a></p>
 <h2 id="example">Example</h2>
 <p>First start the daemon:</p>
 <pre><code>$ sudo ./mini-snmpd -i eth0,eth1,wlan0
@@ -248,7 +248,7 @@ UCD-SNMP-MIB::ssRawInterrupts.0 = Counter32: 50186444
 UCD-SNMP-MIB::ssRawContexts.0 = Counter32: 243678129
 UCD-SNMP-MIB::ssRawContexts.0 = No more variables left in this MIB View (It is past the end of the MIB tree)
 </code></pre>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a id="small"></a></p>
 <h2 id="building-really-small-binaries">Building Really Small Binaries</h2>
 <p>By simply calling <code>./configure &amp;&amp; make</code> you don&rsquo;t really get a small
 mini-snmpd binary.  Sure, most people know about setting <code>CFLAGS=-Os</code>
@@ -293,7 +293,7 @@ bugs to be found just by changing optimization level to <code>-Os</code>.  So wh
 it comes to embedded I always recommend playing it safe and going with
 <code>-O2</code> and no further optimizations, unless you want to spend a lot of
 time looking for weird bugs!</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a id="info"></a></p>
 <h2 id="project-info">Project Info</h2>
 <p>This is the continuation of the hard work on mini-snmpd by Robert Ernst.
 Unfortunately his <a href="https://web.archive.org/web/20150522170054/http://members.aon.at/linuxfreak/linux/mini_snmpd.html">mini-snmpd homepage</a> has gone offline, so that and

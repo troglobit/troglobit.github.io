@@ -6,8 +6,36 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-        <lastBuildDate>Fri, 12 Feb 2021 07:24:06 +0100</lastBuildDate>
+        <lastBuildDate>Tue, 27 Apr 2021 20:18:06 +0100</lastBuildDate>
         <atom:link href="https://troglobit.com/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>It&#39;s Here! ♥</title>
+            <link>https://troglobit.com/post/2021-04-27-its-here/</link>
+            <pubDate>Tue, 27 Apr 2021 20:18:06 +0100</pubDate>
+            
+            <guid>https://troglobit.com/post/2021-04-27-its-here/</guid>
+            <description>&lt;p&gt;&lt;img src=&#34;https://troglobit.com/images/finit3.png#floatright&#34; alt=&#34;finit logo&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Finit v4 was finally released the other day! \o/&lt;/p&gt;
+&lt;p&gt;It represents the culmination of many years of hard work and careful
+thought put in by many people.  There&amp;rsquo;s so much to tell, hardly know
+where to begin &amp;hellip; the plan anyway is to use this blog for a series of
+posts detailing different aspects and important features.&lt;/p&gt;
+&lt;p&gt;The impatient reader can either scroll down to the &lt;strong&gt;video&lt;/strong&gt; below, or
+move on to the project home page: &lt;a href=&#34;https://troglobit.com/projects/finit/&#34;&gt;https://troglobit.com/projects/finit/&lt;/a&gt;&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p><img src="/images/finit3.png#floatright" alt="finit logo"></p>
+<p>Finit v4 was finally released the other day! \o/</p>
+<p>It represents the culmination of many years of hard work and careful
+thought put in by many people.  There&rsquo;s so much to tell, hardly know
+where to begin &hellip; the plan anyway is to use this blog for a series of
+posts detailing different aspects and important features.</p>
+<p>The impatient reader can either scroll down to the <strong>video</strong> below, or
+move on to the project home page: <a href="https://troglobit.com/projects/finit/">https://troglobit.com/projects/finit/</a></p>
+<p>Here&rsquo;s a video showing it in action, booting Alpine Linux 3.13</p>
+<script id="asciicast-410316" src="https://asciinema.org/a/410316.js" async></script>  
+<p>Join the <a href="https://github.com/troglobit/finit/discussions/169">discussion on GitHub</a> or #troglobit on Freenode if IRC is
+more your thing.</p>]]></content>
+        </item>
         
         <item>
             <title>Alpine Linux with Finit</title>
@@ -431,20 +459,125 @@ sudo dpkg -i ../merecat_2.32-1_amd64.deb
 can begin the process of getting a Let&rsquo;s Encrypt certificate.  This
 HowTo use the EFF&rsquo;s certbot, which is available in Ubuntu or from the
 Let&rsquo;s Encrypt homepage:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre>
+root@example:/var/www# <b>systemctl stop merecat.service</b>
+root@example:/var/www# <b>certbot certonly --standalone</b>
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+Plugins selected: Authenticator standalone, Installer None
+Enter email address (used for urgent renewal and security notices)  (Enter 'c'
+to cancel): <b>admin@example.com</b>
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Please read the Terms of Service at
+https://letsencrypt.org/documents/LE-SA-v1.2-November-15-2017.pdf. You must
+agree in order to register with the ACME server at
+https://acme-v02.api.letsencrypt.org/directory
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+(A)gree/(C)ancel: <b>a</b>
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Would you be willing to share your email address with the Electronic Frontier
+Foundation, a founding partner of the Let's Encrypt project and the non-profit
+organization that develops Certbot? We'd like to send you email about our work
+encrypting the web, EFF news, campaigns, and ways to support digital freedom.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+(Y)es/(N)o: <b>y</b>
+Please enter in your domain name(s) (comma and/or space separated)  (Enter 'c'
+to cancel): example.com *.example.com
+Obtaining a new certificate
+Performing the following challenges:
+Client with the currently selected authenticator does not support any combination of challenges that will satisfy the CA. You may need to use an authenticator plugin that can do challenges over DNS.
+Client with the currently selected authenticator does not support any combination of challenges that will satisfy the CA. You may need to use an authenticator plugin that can do challenges over DNS.
+
+IMPORTANT NOTES:
+ - Your account credentials have been saved in your Certbot
+   configuration directory at /etc/letsencrypt. You should make a
+   secure backup of this folder now. This configuration directory will
+   also contain certificates and private keys obtained by Certbot so
+   making regular backups of this folder is ideal.
+</pre>
 <p>Oups, that didn&rsquo;t go as planned &hellip; well, it turns out the version of
 certbot in Ubuntu 18.04 lacks support for <em>wildcard certificates</em>.  We
 can either go to their homepage and get the latest version, or list all
 the domains we need:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre>
+root@example:/var/www# <b>certbot certonly --standalone</b>
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+Plugins selected: Authenticator standalone, Installer None
+Please enter in your domain name(s) (comma and/or space separated)  (Enter 'c'
+to cancel): <b>example.com www.example.com git.example.com ftp.example.com deb.example.com</b>
+Obtaining a new certificate
+Performing the following challenges:
+http-01 challenge for example.com
+http-01 challenge for deb.example.com
+http-01 challenge for ftp.example.com
+http-01 challenge for git.example.com
+http-01 challenge for www.example.com
+Waiting for verification...
+Cleaning up challenges
+
+IMPORTANT NOTES:
+ - Congratulations! Your certificate and chain have been saved at:
+   /etc/letsencrypt/live/example.com/fullchain.pem
+   Your key file has been saved at:
+   /etc/letsencrypt/live/example.com/privkey.pem
+   Your cert will expire on 2019-09-24. To obtain a new or tweaked
+   version of this certificate in the future, simply run certbot
+   again. To non-interactively renew *all* of your certificates, run
+   "certbot renew"
+ - If you like Certbot, please consider supporting our work by:
+
+   Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
+   Donating to EFF:                    https://eff.org/donate-le
+</pre>
 <p>The <a href="https://certbot.eff.org/lets-encrypt/ubuntubionic-other">Let&rsquo;s Encrypt setup guide</a> at this point recommends that
 we verify that automatic certificate renewal works (cronjob or systemd
 timer).  If this doesn&rsquo;t work, your certificate will expire after only
 six months!  So let&rsquo;s check that now:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre>
+root@example:/var/www# <b>certbot renew --dry-run</b>
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Processing /etc/letsencrypt/renewal/example.com.conf
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Cert not due for renewal, but simulating renewal for dry run
+Plugins selected: Authenticator standalone, Installer None
+Renewing an existing certificate
+Performing the following challenges:
+http-01 challenge for deb.example.com
+http-01 challenge for ftp.example.com
+http-01 challenge for git.example.com
+http-01 challenge for merecat.example.com
+http-01 challenge for example.com
+http-01 challenge for www.example.com
+Waiting for verification...
+Cleaning up challenges
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+new certificate deployed without reload, fullchain is
+/etc/letsencrypt/live/example.com/fullchain.pem
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+** DRY RUN: simulating 'certbot renew' close to cert expiry
+**          (The test certificates below have not been saved.)
+
+Congratulations, all renewals succeeded. The following certs have been renewed:
+  /etc/letsencrypt/live/example.com/fullchain.pem (success)
+** DRY RUN: simulating 'certbot renew' close to cert expiry
+**          (The test certificates above have not been saved.)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+IMPORTANT NOTES:
+ - Your account credentials have been saved in your Certbot
+   configuration directory at /etc/letsencrypt. You should make a
+   secure backup of this folder now. This configuration directory will
+   also contain certificates and private keys obtained by Certbot so
+   making regular backups of this folder is ideal.
+
+root@example:/var/www#
+</pre>
 <p>It is recommended to also set up Diffie-Hellman paramaters.  For this
 you need to genereate a site specific file:</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">root@example:/var/www# openssl dhparam -out certs/dhparam.pem <span class="m">2048</span>
@@ -487,8 +620,9 @@ shouldn&rsquo;t have to bother with, and unlike other web servers the virtual
 host setup is done in the file system rather than in the configuration
 file.  See <a href="https://merecat.troglobit.com">Merecat</a> docs for details.</p>
 <p>With everything set up we can fire it up:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre>
+root@example:/var/www# <b>systemctl start merecat.service</b>
+</pre>
 <h2 id="http-01-renewal">HTTP-01 Renewal</h2>
 <p>For automatic renewal to work you need a new (July 2020) feature of
 Merecat, called location matching:</p>
@@ -1593,7 +1727,7 @@ on something I finish it.  The last couple of years I&rsquo;ve been quite busy
 on GitHub, making at least one commit per day.  I&rsquo;ve had a lot of things
 I&rsquo;ve wanted to do and complete, and this commit regimen has kept me on
 track to do just that.</p>
-<!-- raw HTML omitted -->
+<img src="/images/github-activity-2017.png" class="center">
 <p>However, nothing comes for free, and although I&rsquo;ve achieved my goals,
 I&rsquo;ve also had to make a lot of sacrifices.  Ask my kids, or my ex-wife
 &hellip; So as a New Year&rsquo;s resolution to myself I&rsquo;ve begun a new journey
@@ -2005,8 +2139,11 @@ www-browser localhost
 </code></pre>
 <p>You should now see the FTP server contents, provided of course your host
 has an <code>/srv/ftp</code> directory.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->]]></content>
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->]]></content>
         </item>
         
         <item>
@@ -2057,8 +2194,11 @@ you want LXDM to work properly you need to modify <code>/etc/lxdm/lxdm.conf</cod
 Find a commented row that says <code>sessions</code>, add a new one that is:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">session /usr/bin/startxfce4
 </code></pre></div><p>For more help with LXDM, see <a href="https://wiki.archlinux.org/index.php/LXDM">https://wiki.archlinux.org/index.php/LXDM</a></p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->]]></content>
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->]]></content>
         </item>
         
         <item>
@@ -2093,8 +2233,11 @@ alpine:~# cat <span class="s">&lt;&lt;EOF &gt;&gt; /etc/grub.d/40_custom
 <code>menuentry</code>.</p>
 <p>Now create the <code>grub.cfg</code> file from the templates in <code>/etc/grub.d/*</code>:</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">alpine:~# grub-mkconfig -o /boot/grub/grub.cfg
-</code></pre></div><!-- raw HTML omitted -->
-<!-- raw HTML omitted -->]]></content>
+</code></pre></div><!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->]]></content>
         </item>
         
         <item>
@@ -2114,8 +2257,11 @@ pkg_add git autoconf automake libtool
 <span class="nv">AUTOMAKE_VERSION</span><span class="o">=</span>1.15
 <span class="nb">export</span> AUTOCONF_VERSION AUTOMAKE_VERSION
 </code></pre></div><p>With your selected versions, of course.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->
 ]]></content>
         </item>
         
@@ -2189,8 +2335,11 @@ Content-Type: text/html;charset=utf-8
 &lt;/body&gt;&lt;/html&gt;
 </code></pre>
 <p>All done. Good Luck!</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->
 ]]></content>
         </item>
         
@@ -2382,8 +2531,11 @@ Date:   Wed Nov 18 16:38:13 2015 +0100
 </span><span class="gi"></span> 
  static int __init block2mtd_init(void)
  {
-</code></pre></div><!-- raw HTML omitted -->
-<!-- raw HTML omitted -->]]></content>
+</code></pre></div><!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->]]></content>
         </item>
         
         <item>
@@ -2396,14 +2548,14 @@ Date:   Wed Nov 18 16:38:13 2015 +0100
 1992 for MS-DOS, made by the now legendary id Software.  OK, admittedly
 I&amp;rsquo;ve played other games since then, but I&amp;rsquo;ve never again been so manic
 about a game since Wolfenstein.&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;img style=&#34;width:50%;height:auto;&#34; class=&#34;center&#34; src=&#34;https://troglobit.com/images/wolf3d.png&#34;&gt;
 &lt;p&gt;This post is about how to build, install and set up Wolfenstein 3D on a
 Raspberry Pi running &lt;a href=&#34;https://retropie.org.uk/&#34;&gt;RetroPie&lt;/a&gt; &amp;hellip; on a &lt;a href=&#34;https://shop.pimoroni.com/products/picade&#34;&gt;Picade&lt;/a&gt; :-)&lt;/p&gt;</description>
             <content type="html"><![CDATA[<p>The last game I ever played was <a href="https://en.wikipedia.org/wiki/Wolfenstein_3D">Castle Wolfenstein 3D</a>, released in
 1992 for MS-DOS, made by the now legendary id Software.  OK, admittedly
 I&rsquo;ve played other games since then, but I&rsquo;ve never again been so manic
 about a game since Wolfenstein.</p>
-<!-- raw HTML omitted -->
+<img style="width:50%;height:auto;" class="center" src="/images/wolf3d.png">
 <p>This post is about how to build, install and set up Wolfenstein 3D on a
 Raspberry Pi running <a href="https://retropie.org.uk/">RetroPie</a> &hellip; on a <a href="https://shop.pimoroni.com/products/picade">Picade</a> :-)</p>
 <p>You need the original WAD files to play the game.  It&rsquo;s really worth
@@ -2454,13 +2606,18 @@ Emulation Station GUI:</p>
 </code></pre>
 <p>Done.</p>
 <p>Restart and enjoy the game on your Picade like I do :-)</p>
-<!-- raw HTML omitted -->
-<p>Wolfenstein 3D on the <!-- raw HTML omitted -->#Picade<!-- raw HTML omitted --> 😍
-<!-- raw HTML omitted -->pic.twitter.com/8RUY4gidSv<!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->]]></content>
+<blockquote class="twitter-tweet" data-lang="en">
+<p lang="en" dir="ltr">
+<p>Wolfenstein 3D on the <a href="https://twitter.com/hashtag/Picade?src=hash">#Picade</a> 😍
+<a href="https://t.co/8RUY4gidSv">pic.twitter.com/8RUY4gidSv</a></p>
+</p>&mdash; Troglobit (@troglobit) <a href="https://twitter.com/troglobit/status/820614016498331648">January 15, 2017</a>
+</blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->]]></content>
         </item>
         
         <item>
@@ -2507,8 +2664,11 @@ Devices:
        hci0	00:1A:7D:DA:71:13
 </code></pre>
 <p>Good Luck! :)</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->]]></content>
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->]]></content>
         </item>
         
         <item>
@@ -2564,7 +2724,7 @@ Example:
 working on <a href="https://github.com/troglobit/libicmp/">libICMP</a>.  It&rsquo;s now almost seven years since I first
 adopted Tim Lawless&rsquo; public domain <a href="https://packetstormsecurity.com/files/10728/libicmp.tar.gz.html">version</a>, and today I picked
 up where I left off and started refactoring and cleaning up.</p>
-<!-- raw HTML omitted -->
+<img src="/images/one-ping-only.jpg" style="width:50%;height:auto;" title="Sean Connery vs USS ICMP" class="center">
 <p><strong>Example:</strong></p>
 <div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&#34;icmp/icmp.h&#34;</span><span class="cp">
 </span><span class="cp"></span>
@@ -2585,8 +2745,11 @@ up where I left off and started refactoring and cleaning up.</p>
 smaller with a more liberal license (<a href="https://en.wikipedia.org/wiki/ISC_license">ISC</a>).  The <a href="https://github.com/troglobit/libicmp/releases/v1.0">first release</a>
 is however available from GitHub.  Pull requests are as usual most
 welcome! 😃</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->
 ]]></content>
         </item>
         
@@ -2602,7 +2765,12 @@ welcome! 😃</p>
 with my various &lt;a href=&#34;https://github.com/troglobit&#34;&gt;projects&lt;/a&gt; simply to learn
 and sometimes these little projects turn into something useful for other
 people as well, which is great!&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;p data-pullquote=&#34;not all things can be simplified, and not all simple
+things are correct&#34;&gt; Recently I discovered my method to get started:
+refactoring, or just simple code cleanup.  You see I&#39;ve got this crazy
+idea that &lt;em&gt;all simple things are correct&lt;/em&gt;.  Although things
+usually tend to require a certain balance &amp;mdash; not all things can be
+simplified, and not all simple things are correct.&lt;/p&gt;
 &lt;p&gt;When I recently had to migrate my personal blog, FTP, and GIT server, I
 set out to run everything from an old RasPi2.  This put my private life
 in just about the same niche as my work life, embedded.  On a resource
@@ -2624,7 +2792,12 @@ started my career in embedded in the first place!&lt;/p&gt;</description>
 with my various <a href="https://github.com/troglobit">projects</a> simply to learn
 and sometimes these little projects turn into something useful for other
 people as well, which is great!</p>
-<!-- raw HTML omitted -->
+<p data-pullquote="not all things can be simplified, and not all simple
+things are correct"> Recently I discovered my method to get started:
+refactoring, or just simple code cleanup.  You see I've got this crazy
+idea that <em>all simple things are correct</em>.  Although things
+usually tend to require a certain balance &mdash; not all things can be
+simplified, and not all simple things are correct.</p>
 <p>When I recently had to migrate my personal blog, FTP, and GIT server, I
 set out to run everything from an old RasPi2.  This put my private life
 in just about the same niche as my work life, embedded.  On a resource
@@ -2713,8 +2886,11 @@ dpkg-buildpackage -uc -us -B -d
 <p>I&rsquo;d like to take this opportunity to thank a couple of friends who
 helped out with the auditing and layout testing of the new default
 landing page.  Thank you Anders Bornäs and Martin Olsson :-)</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->]]></content>
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->]]></content>
         </item>
         
         <item>
@@ -2745,8 +2921,11 @@ prefix followed by <code>-ct-ng.config</code>, e.g.:</p>
 </code></pre>
 <p>This revision only contains C and C++ cross-toolchains, but the next
 revision will likely also include Go.  Enjoy! 😃</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->
 ]]></content>
         </item>
         
@@ -2777,8 +2956,11 @@ the included crosstool.config file and the encoded GIT hash.</p>
 <p>Next up is a PowerPC (32-bit) and x86 (64-bit) toolchain, also with GLIBC
 2.23.  Then I may venture into the realm of musl libc based toolchains,
 possibly the guise of <a href="https://github.com/cobble-os/">CobbleOS</a> &hellip;</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->
 ]]></content>
         </item>
         
@@ -2799,8 +2981,11 @@ This fancy artwork means we&amp;rsquo;re nearing the end of a long and agonizing
 release cycle where a lot of the internals of Finit have been rewritten
 and new exciting features have been added!  More on this in an upcoming
 post 😃</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->
 ]]></content>
         </item>
         
@@ -2816,13 +3001,16 @@ I have no clue if this will actually work, may even try porting my own little th
 with Marvell chips you know well, add an awesome WiFi hotspot with USB
 connection, stir feverishly for several weekends in a row, then sprinkle
 some AlpineLinux and a custom kernel on top.  Enjoy!</p>
-<!-- raw HTML omitted -->
+<img src="/images/recipe.png" class="center">
 <p>I have no clue if this will actually work, may even try porting my own
 little thing called <a href="https://github.com/troglobit/troglos">TroglOS</a> to
 the ClearFog first, I don&rsquo;t know, but it will definitely be awesome!
 😃</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->
 ]]></content>
         </item>
         
@@ -2897,15 +3085,18 @@ you warnings along the way.</p>
 It is located in the Details view:</p>
 <pre><code>IDE Disk 1 --&gt; Advanced --&gt; Performance --&gt; Cache mode: none
 </code></pre>
-<!-- raw HTML omitted -->
+<img class="center" src="/images/migrate-disk-nocache.png">
 <p>Second, set CPU model to Hypervisor default:</p>
 <pre><code>CPUs --&gt; Configuration --&gt; Model: Hypervisor Default
 </code></pre>
-<!-- raw HTML omitted -->
+<img class="center" src="/images/migrate-cpu-default.png">
 <h2 id="profit">Profit!</h2>
 <p>That&rsquo;s it, now live migration from your laptop to the server should work.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->]]></content>
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->]]></content>
         </item>
         
         <item>
@@ -2918,12 +3109,12 @@ It is located in the Details view:</p>
 servers.  I plan to use them as build and embedded target emulation
 servers for my &lt;a href=&#34;https://github.com/troglobit&#34;&gt;open source projects&lt;/a&gt;
 as well as Minecraft server for my kids :)&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;</description>
+&lt;img src=&#34;http://eitc.in/yahoo_site_admin/assets/docs/Supermicro_SuperServer_SC512L_small.324203750.JPG&#34;&gt;</description>
             <content type="html"><![CDATA[<p>The other day I got my geeky hands on two old SuperMicro X8STI-F 1U
 servers.  I plan to use them as build and embedded target emulation
 servers for my <a href="https://github.com/troglobit">open source projects</a>
 as well as Minecraft server for my kids :)</p>
-<!-- raw HTML omitted -->
+<img src="http://eitc.in/yahoo_site_admin/assets/docs/Supermicro_SuperServer_SC512L_small.324203750.JPG">
 <p>During the install of Ubuntu Server 16.04 I realized I wanted try to use
 the Intel PCH &ldquo;Fake Raid&rdquo; on the two 1 TB disks, RAID-1.  The support
 Intel has in Linux and <code>mdadm</code> for their southbridge RAID controller is
@@ -2999,8 +3190,11 @@ unused devices: &lt;none&gt;
 </code></pre>
 <p>Which is very useful with the <code>watch</code> command!</p>
 <p>Good Luck!</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->]]></content>
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->]]></content>
         </item>
         
         <item>
@@ -3064,8 +3258,11 @@ file manager&rsquo;s eject thingy!</p>
 <p>Reboot your laptop and select UEFI First in BIOS startup order, then F12
 and select boot from Generic USB mass storage device.  Done.</p>
 <p>Follow the instructions in the tool to upgrade your BIOS.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->]]></content>
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->]]></content>
         </item>
         
         <item>
@@ -3130,8 +3327,11 @@ uredir 0.0.0.0:7                   # Echo mode
 </code></pre>
 <p>See the <code>README</code> and man pages for each of the two commands for more
 information.  Enjoy!</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->]]></content>
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->]]></content>
         </item>
         
         <item>
@@ -3503,8 +3703,11 @@ receiver$
 </code></pre>
 <p>If you ever need anything else, e.g. routing multicast, there&rsquo;s even a
 man page.  It mentions setting the TTL and other such nastiness :)</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->]]></content>
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->]]></content>
         </item>
         
         <item>
@@ -3663,8 +3866,11 @@ making, it is being converted to support multiple instances of services
 and to be fully event driven.  I&rsquo;m extremely excited about Finit!</p>
 <p>Oh, and don&rsquo;t worry &hellip; I did manage to get some actual real downtime on
 the beach as well! ;-)</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->
 ]]></content>
         </item>
         
@@ -4841,7 +5047,7 @@ major pieces of configuration between different platforms.</p>
             <guid>https://troglobit.com/2014/03/18/finally-google-movies-and-music-in-sweden/</guid>
             <description>So, we finally got Google Music &amp;amp; Movies services in Sweden! The prices seem a bit on the steep side, apart from maybe the Music service, which is slightly cheaper than Spotify. Will try it out for a month or so to see which one I like better.
 For some reason I chose Gravity as my first rental, at 39 Skr. I&amp;rsquo;ve heard so many bad reviews of it but for better or worse it&amp;rsquo;ll now be my introduction to Google Movies :-)</description>
-            <content type="html"><![CDATA[<!-- raw HTML omitted -->
+            <content type="html"><![CDATA[<img src="/images/play-movies.png" style="width: 364px; float: right">
 <p>So, we finally got Google Music &amp; Movies services in Sweden!  The
 prices seem a bit on the steep side, apart from maybe the Music
 service, which is slightly cheaper than Spotify.  Will try it out for
@@ -4915,7 +5121,7 @@ Sometimes I say: &ldquo;I&rsquo;m a software architect.&quot;, because people se
 know what architects do for a living, they draw houses, design stuff
 and drive SAAB&rsquo;s.  Much like dentists.  The prefix &ldquo;software&rdquo; however
 does confuse people.</p>
-<!-- raw HTML omitted -->
+<img style="float: right" src="/images/programming-in-a-nutshell.gif">
 <p>In reality I&rsquo;m <a href="http://c2.com/cgi/wiki?JustaProgrammer">just a programmer</a> with a little bit more
 responsibility.  A day starts with coming in to the office, or sitting
 down in my home office, connecting to the company VPN, meanwhile
@@ -4996,7 +5202,12 @@ revolution, the first NPTL release with GLIBC, Java or Solaris.
 Nevertheless, from my point of view it was sometime in the mid 90&rsquo;s
 during my time at university that the use of threads was starting to
 become prevalent.</p>
-<!-- raw HTML omitted -->
+<p data-pullquote='"With the rise of the thread based model of
+programming we now had a hammer, and every problem looked like a
+nail."'>I had a gut feeling there was something really wrong with using
+threads for every conceivable program, but I could not find a way to
+express it, so I chugged away with my threads, semaphores and condition
+variables.  I convinced myself I was happy like this.</p>
 <p>Of course I knew about the event based approach, but it was more or
 less dismissed as a thing of the past, a while(1) loop to mimic the
 behavior of PLC&rsquo;s.  So almost every program I wrote, and every program
@@ -5134,7 +5345,7 @@ the details of your VM, or in the process listing on the host: <code>ps fax | gr
 from the given profile and just complain in the log.  The default is
 <code>aa-enforce</code>.  For more info on AppArmor, see the
 <a href="http://wiki.apparmor.net/index.php/Documentation">excellent upstream docs</a></p>
-<!-- raw HTML omitted -->
+<img src="/images/filesystem-pass-through.png" style="width: 500px; float: right">
 <p>Now, how to do it.  I like virsh, but for most of the time the vmware
 like
 <a href="http://virt-manager.org/">virt-manager is a lot more user friendly</a>.
@@ -5172,8 +5383,11 @@ to your <code>guest:/etc/fstab</code>:</p>
 <pre><code>share	/mnt	9p	trans=virtio,version=9p2000.L,rw	0	0
 </code></pre>
 <p>That&rsquo;s it. Good Luck!</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->]]></content>
+<!--
+  -- Local Variables:
+  -- mode: markdown
+  -- End:
+  -->]]></content>
         </item>
         
         <item>
@@ -5204,7 +5418,7 @@ instance, was for a while a bit of an obsession of mine, and it sort of
 is still.  But today I am more concerned with the overall structure and
 how components interact.  Even though I can still get very annoyed at
 people naming their local variables obtrusively.</p>
-<p><a href="http://www.amazon.com/Practice-Programming-Addison-Wesley-Professional-Computing/dp/020161586X"><!-- raw HTML omitted --></a></p>
+<p><a href="http://www.amazon.com/Practice-Programming-Addison-Wesley-Professional-Computing/dp/020161586X"><img src="/images/Practice_of_Programming.jpeg" style="width: 300px; float: right"></a></p>
 <p>I still do most of my work, professional and hobby, using plain old C.
 I&rsquo;ve read many books and style guides on the subject and the one that
 really stood out as being extremely helpful, apart from reading a LOT of
@@ -5558,7 +5772,7 @@ applied to recover fixes and improvements developed independently over
 several decades by the following projects: <a href="http://www.h5l.org">Heimdal</a>,
 <a href="http://festvox.org/festival/">Festival speech-tools</a>, <a href="http://packages.qa.debian.org/e/editline.html">Debian</a>, as well as patches by
 Mr. <a href="http://www.cs.unc.edu/~tell/dist.html">Steve Tell</a>.</p>
-<!-- raw HTML omitted -->
+<img class="center noborder" src="/images/peeking.gif">
 <p>Noteworthy changes and additions:</p>
 <ul>
 <li>The symbols <code>rl_complete()</code> and <code>rl_list_possib()</code> are no longer
@@ -5578,7 +5792,7 @@ Mr. Steve Tell.</li>
 <li>Several more APIs for increased compatibility with FSF libreadline
 have also been added. See the file <code>include/editline.h</code> for details.</li>
 </ul>
-<!-- raw HTML omitted -->
+<img class="center noborder" src="/images/peeking.gif">
 <p>Online GIT repository and release tarball available at the usual places:</p>
 <ul>
 <li><a href="http://github.com/troglobit/editline">github:editline.git</a>  (Main GIT)</li>
@@ -5599,7 +5813,7 @@ have also been added. See the file <code>include/editline.h</code> for details.<
             <description>New release of Micro Tetris™, v1.2.0, available for download now! Noteworthy changes and additions:
  Preview display fixes by Mattias Walström Next level triggered after every 10 cleared lines Speed increase by each level Display high score at game over High score recorded to save file Pause key fixed, again by Mattias Walström  Online GIT repository and release tarball available at the usual places:
  github:tetris.git (Main GIT) vmlinux:tetris.</description>
-            <content type="html"><![CDATA[<p><a href="http://erikjohanssonphoto.com/work/tetris/"><!-- raw HTML omitted --></a></p>
+            <content type="html"><![CDATA[<p><a href="http://erikjohanssonphoto.com/work/tetris/"><img src="/images/TetrisConstruction.jpg" style="width: 230px; float: right"></a></p>
 <p>New release of <a href="/tetris.html">Micro Tetris™</a>, v1.2.0, available for
 download now!  Noteworthy changes and additions:</p>
 <ul>
@@ -5742,7 +5956,7 @@ pack_report: pack_mapped              =     977484 /     977484
  downloading my .lessfilter save it as ~/.lessfilter in your $HOME Profit!  Ahem &amp;hellip;
 Just try it out on a C source file :-)
 less -R myfile.c  </description>
-            <content type="html"><![CDATA[<!-- raw HTML omitted -->
+            <content type="html"><![CDATA[<img style="float: right" src="/images/lessfilter.png">
 <p>Yes, it&rsquo;s certainly possible and source code becomes so much easier to
 read.  Try it out by:</p>
 <ol>
@@ -7234,7 +7448,7 @@ which I only had to bashify!  Thanks Erich!</p>
 Add her new look to your applet by copying the file to /usr/share/gnome/panel/pixmaps/. Select it in the applet preferences and use 8 frames and 0.3 seconds per frame.</description>
             <content type="html"><![CDATA[<p>This is just great!  Wanda the fortune telling fish of the Gnome desktop
 got herself a face lift.  Take a look at this:</p>
-<!-- raw HTML omitted -->
+<img class="center" src="/images/newwanda.png">
 <p>Add her new look to your applet by copying the file to
 <code>/usr/share/gnome/panel/pixmaps/</code>.  Select it in the applet preferences
 and use 8 frames and 0.3 seconds per frame.</p>

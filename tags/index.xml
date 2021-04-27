@@ -7,15 +7,33 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Sun, 03 Nov 2019 23:04:00 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 27 Apr 2021 20:18:06 +0100</lastBuildDate>
     
 	<atom:link href="https://troglobit.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>finit</title>
+      <link>https://troglobit.com/tags/finit/</link>
+      <pubDate>Tue, 27 Apr 2021 20:18:06 +0100</pubDate>
+      
+      <guid>https://troglobit.com/tags/finit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>init</title>
+      <link>https://troglobit.com/tags/init/</link>
+      <pubDate>Tue, 27 Apr 2021 20:18:06 +0100</pubDate>
+      
+      <guid>https://troglobit.com/tags/init/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>opensource</title>
       <link>https://troglobit.com/tags/opensource/</link>
-      <pubDate>Sun, 03 Nov 2019 23:04:00 +0100</pubDate>
+      <pubDate>Tue, 27 Apr 2021 20:18:06 +0100</pubDate>
       
       <guid>https://troglobit.com/tags/opensource/</guid>
       <description></description>
