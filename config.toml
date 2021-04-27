@@ -44,6 +44,11 @@ disableHugoGeneratorInject = false
 [author]
   name = "Joachim Wiberg"
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [blackfriday]
   hrefTargetBlank = true
 
