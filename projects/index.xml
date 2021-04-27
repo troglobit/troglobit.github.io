@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Mon, 22 Mar 2021 07:59:00 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 27 Apr 2021 06:39:00 +0100</lastBuildDate>
     
 	<atom:link href="https://troglobit.com/projects/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,13 +15,12 @@
     <item>
       <title>Fast init for Linux systems</title>
       <link>https://troglobit.com/projects/finit/</link>
-      <pubDate>Mon, 22 Mar 2021 07:59:00 +0100</pubDate>
+      <pubDate>Tue, 27 Apr 2021 06:39:00 +0100</pubDate>
       
       <guid>https://troglobit.com/projects/finit/</guid>
-      <description>Finit is a simple alternative to SysV init and systemd, originally reverse engineered from the EeePC fastinit by Claudio Matsuoka — &amp;ldquo;gaps filled with frog DNA …&amp;rdquo;
-Finit supports runlevels, process monitoring, as well as task and network condition dependencies. E.g., &amp;ldquo;start this service when basic networking is available&amp;rdquo;, or &amp;ldquo;wait until syslogd has started&amp;rdquo;.
-For more details, see the online documentation.
-Example The GitHub finit/contrib/ section, also part of the tarball, includes examples, with sample configurations for Debian, Void, and Alpine Linux.</description>
+      <description>Finit is an alternative to SysV init and systemd, originally reverse engineered from the EeePC fastinit by Claudio Matsuoka — &amp;ldquo;gaps filled with frog DNA …&amp;rdquo;
+Features include:
+ Standard runlevels Starting processes in parallel Process monitoring (supervision) Sourcing environment files Pre/Post script actions Tooling to enable/disable services Runparts and SysV /etc/rc.local One-shot tasks, daemons, or SysV init scripts Dependencies, in Finit called conditions, e.g., start service network is up, or wait until syslogd has started Built-in getty with made-easy board-bringup support Built-in watchdog, with support for hand-over to watchdogd Built-in support for Debian/BusyBox /etc/network/interfaces Cgroups v2, both configuration and monitoring in initctl top Plugin support for extensive customization Proper rescue mode with bundled sulogin for protected maintenance shell  Some of these feature are presented below, for more, see the online documentation.</description>
     </item>
     
     <item>
