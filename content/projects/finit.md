@@ -1,27 +1,43 @@
 ---
 title: "Fast init for Linux systems"
-date: 2021-03-22 07:59:00 +0100
+date: 2021-04-27 06:39:00 +0100
 aliases: /finit.html
 ---
 ![finit logo](/images/finit3.png#floatright)
 
-Finit is a simple alternative to [SysV init][1] and [systemd][7],
-originally reverse engineered from the EeePC fastinit by Claudio
-Matsuoka — "gaps filled with frog DNA …"
+Finit is an alternative to [SysV init][1] and [systemd][7], originally
+reverse engineered from the EeePC fastinit by Claudio Matsuoka — "gaps
+filled with frog DNA …"
 
-Finit supports runlevels, [process monitoring][2], as well as task and
-network condition dependencies.  E.g., *"start this service when basic
-networking is available"*, or *"wait until syslogd has started"*.
+Features include:
 
-For more details, see the online [documentation][README].
+  * Standard [runlevels][8]
+  * Starting processes in parallel
+  * [Process monitoring][2] (supervision)
+  * Sourcing environment files
+  * Pre/Post script actions
+  * Tooling to enable/disable services
+  * [Runparts](https://www.unix.com/man-page/Linux/8/RUN-PARTS/) and SysV `/etc/rc.local`
+  * One-shot tasks, daemons, or SysV init scripts
+  * Dependencies, in Finit called conditions, e.g., start service
+    network is up, or wait until syslogd has started
+  * Built-in getty with made-easy board-bringup support
+  * Built-in watchdog, with support for hand-over to [watchdogd](https://troglobit.com/watchdogd.html)
+  * Built-in support for Debian/BusyBox `/etc/network/interfaces`
+  * Cgroups v2, both configuration and monitoring in `initctl top`
+  * Plugin support for extensive customization
+  * Proper rescue mode with bundled `sulogin` for protected maintenance shell
+
+Some of these feature are presented below, for more, see the [online
+documentation][README].
 
 
 Example
 -------
 
-The [GitHub finit/contrib/ section][contrib], also part of the tarball,
-includes examples, with sample configurations for Debian, Void, and
-Alpine Linux.
+The [GitHub finit/contrib/ section][contrib], also part of the release
+tarball, include sample configurations for Debian, Void, and Alpine
+Linux.
 
 ![Alpine Linux started with Finit](/images/finit4-screenshot.png#center)
 
@@ -32,15 +48,15 @@ examples of how to boot embedded systems with Finit.
 Configuration
 -------------
 
-This example `/etc/finit.conf` can also be split up in multiple `.conf`
-files in `/etc/finit.d`.  Available, but not yet enabled, services can
-be placed in `/etc/finit.d/available` and enabled by an operator using
-the [initctl](#commands--status) tool.
+This example `/etc/finit.conf` is for Alpine Linux.  The release tarball
+contains the recommended (and fairly up to date) "split layout" in the
+[contrib/alpine][contrib] section.  A split layout is where each
+service, or set of related services, are defined in their own `foo.conf`
+file in the `/etc/finit.d` directory.  Available, but not yet enabled,
+services can be placed in `/etc/finit.d/available` and enabled by an
+operator using the initctl tool.
 
 ```ApacheConf
-# Fallback if /etc/hostname is missing
-host default
-
 # Runlevel to start after bootstrap, 'S', default: 2
 runlevel 2
 
@@ -49,10 +65,10 @@ runlevel 2
 log size=100k count=4
 
 # Services to be monitored and respawned as needed
-service [S12345] watchdogd -L -f                 -- System watchdog daemon
-service [S12345] syslogd -n -b 3 -D              -- System log daemon
-service [S12345] <pid/syslogd> klogd -n          -- Kernel log daemon
-service   [2345] lldpd -d -c -M1 -H0 -i          -- LLDP daemon (IEEE 802.1ab)
+service [S12345] watchdogd -L -f                             -- System watchdog daemon
+service [S12345] syslogd -n -b 3 -D                          -- System log daemon
+service [S12345] <pid/syslogd> klogd -n                      -- Kernel log daemon
+service   [2345] env:-/etc/conf.d/lldpd lldpd -d $LLDPD_OPTS -- LLDP daemon (IEEE 802.1ab)
 
 # The BusyBox ntpd does not use syslog when running in the foreground
 # So we use this trick to redirect stdout/stderr to a log file.  The
@@ -84,12 +100,14 @@ tty [12345] /dev/ttyAMA0 noclear nowait
 tty [12345] /dev/ttyUSB0 noclear
 
 # Just give me a shell, I need to debug this embedded system!
-tty [12345] @console noclear nologin
+#tty [12345] @console noclear nologin
+#tty [12345] notty
+#tty [12345] rescue
 ```
 
 The `service` stanza, as well as `task`, `run` and others are described
-in full in [doc/config.md](doc/config.md).  Here's a quick overview of
-some of the most common components needed to start a UNIX daemon:
+in full in [doc/config.md][13].  Here's a quick overview of some of the
+most common components needed to start a UNIX daemon:
 
 ```
 service [LVLS] <COND> log env:[-]/etc/default/daemon daemon ARGS -- Daemon daemon
@@ -108,7 +126,7 @@ Some components are optional: runlevel(s), condition(s) and description,
 making it easy to create simple start scripts and still possible for more
 advanced uses as well:
 
-    service sshd -D
+    service /usr/sbin/sshd -D
 
 Dependencies are handled using [conditions](doc/conditions.md).  One of
 the most common conditions is to wait for basic networking to become
@@ -173,7 +191,7 @@ tty [12345] @console linux noclear
 
 Notice the optional `noclear`, `nowait`, and `nologin` flags.  The
 latter is for skipping the login process entirely. For more information,
-see [doc/config.md](doc/config.md#syntax).
+see [doc/config.md][13].
 
 
 **Runlevels**
@@ -329,7 +347,7 @@ detailed in the next section.
 For compatibility reasons Finit listens to the same set of signals as
 BusyBox init.  This is not 100% compatible with SysV init, but clearly
 the more common combination for Finit.  For more details, see
-[doc/signals.md](doc/signals.md).
+[doc/signals.md][15].
 
 
 Commands & Status
@@ -347,6 +365,9 @@ Options:
   -b, --batch               Batch mode, no screen size probing
   -c, --create              Create missing paths (and files) as needed
   -f, --force               Ignore missing files and arguments, never prompt
+  -1, --once                Only one lap in commands like 'top'
+  -p, --plain               Use plain table headings, no ctrl chars
+  -q, --quiet               Silent, only return status of command
   -t, --no-heading          Skip table headings
   -v, --verbose             Verbose output
   -h, --help                This help text
@@ -366,17 +387,22 @@ Commands:
   disable  <CONF>           Disable  .conf in /etc/finit.d/enabled
   reload                    Reload  *.conf in /etc/finit.d (activate changes)
 
-  cond     show             Show condition status
+  cond     set   <COND>     Set (assert) user-defined condition     +usr/COND
+  cond     clear <COND>     Clear (deassert) user-defined condition -usr/COND
+  cond     status           Show condition status, default cond command
   cond     dump             Dump all conditions and their status
 
   log      [NAME]           Show ten last Finit, or NAME, messages from syslog
   start    <NAME>[:ID]      Start service by name, with optional ID
   stop     <NAME>[:ID]      Stop/Pause a running service by name
+  reload   <NAME>[:ID]      Reload service by name (SIGHUP or restart)
   restart  <NAME>[:ID]      Restart (stop/start) service by name
   status   <NAME>[:ID]      Show service status, by name
   status                    Show status of services, default command
 
+  cgroup                    List cgroup config overview
   ps                        List processes based on cgroups
+  top                       Show top-like listing based on cgroups
 
   runlevel [0-9]            Show or set runlevel: 0 halt, 6 reboot
   reboot                    Reboot system
@@ -387,8 +413,8 @@ Commands:
 
 For services *not* supporting `SIGHUP` the `<!>` notation in the .conf
 file must be used to tell Finit to stop and start it on `reload` and
-`runlevel` changes.  If `<>` holds more [conditions](doc/conditions.md),
-these will also affect how a service is maintained.
+`runlevel` changes.  If `<>` holds more [conditions][14], these will
+also affect how a service is maintained.
 
 **Note:** even though it is possible to start services not belonging in
 the current runlevel these services will not be respawned automatically
@@ -464,8 +490,9 @@ and proposed extensions using GitHub:
 * [README][]
 * [TODO](https://github.com/troglobit/finit/blob/master/TODO.md)
 * [ChangeLog](https://github.com/troglobit/finit/blob/master/ChangeLog.md)
-* [finit-4.0-rc3.tar.gz](ftp://ftp.troglobit.com/finit/finit-4.0-rc3.tar.gz),
-  [MD5](ftp://ftp.troglobit.com/finit/finit-4.0-rc3.tar.gz.md5)
+* [finit-4.0.tar.gz](ftp://ftp.troglobit.com/finit/finit-4.0.tar.gz),
+  [MD5](ftp://ftp.troglobit.com/finit/finit-4.0.tar.gz.md5),
+  [SHA256](ftp://ftp.troglobit.com/finit/finit-4.0.tar.gz.sha256)
 
 
 [1]: https://en.wikipedia.org/wiki/Init
@@ -475,8 +502,13 @@ and proposed extensions using GitHub:
 [5]: http://helllabs.org/finit/
 [6]: http://wiki.eeeuser.com/boot_process:the_boot_process
 [7]: https://www.freedesktop.org/wiki/Software/systemd/
+[8]: https://en.wikipedia.org/wiki/Runlevel
 [9]: https://github.com/troglobit/myLinux
 [10]: https://github.com/troglobit/troglos/blob/master/packages/finit/plugins/mtd.c
 [11]: https://github.com/westermo/netbox
+[12]: https://github.com/troglobit/finit/tree/master/doc
+[13]: https://github.com/troglobit/finit/blob/master/doc/config.md
+[14]: https://github.com/troglobit/finit/blob/master/doc/conditions.md
+[15]: https://github.com/troglobit/finit/blob/master/doc/signals.md
 [README]: https://github.com/troglobit/finit/blob/master/README.md
 [contrib]: https://github.com/troglobit/finit/tree/master/contrib
