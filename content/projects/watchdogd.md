@@ -1,7 +1,7 @@
 ---
 name: watchdogd
 title: "System & Process Supervisor for Linux"
-date: 2019-05-27 21:46:00 +02:00
+date: 2021-04-30 17:02:00 +01:00
 aliases: /watchdogd.html
 ---
 
@@ -122,6 +122,7 @@ monitoring can be enabled with:
 
 ```
 loadavg {
+    enabled  = true
     interval = 300       # Every 5 mins
     warning  = 1.5
     critical = 2.0
@@ -132,6 +133,7 @@ Second, the memory leak detector, a value of 1.0 means 100% memory use:
 
 ```
 meminfo {
+    enabled  = true
     interval = 3600       # Every hour
     warning  = 0.9
     critical = 0.95
@@ -142,6 +144,7 @@ Third, file descriptor leak detector:
 
 ```
 filenr {
+    enabled  = true
     interval = 3600       # Every hour
     warning  = 0.8
     critical = 0.95
@@ -169,16 +172,19 @@ detected by reading the file `/proc/meminfo`, looking for the
 `SwapTotal:` value.
 
 `watchdogd` v2.0 and later comes with a process supervisor (previously
-called pmon).  When the supervisor is enabled the daemon runs as a
-real-time task with the configured priority, default 98.  Monitored
-clients connect to the supervisor using the libwdog API.
+called pmon).  When the supervisor is enabled, and the priority is set
+to a value > 0, the daemon runs as a real-time task with the configured
+priority.  Monitored clients connect to the supervisor using the libwdog
+API.
 
 ```
 supervisor {
-    enabled = true
+    enabled  = true
     priority = 98
 }
 ```
+
+> **Note:** Linux cgroup v2 do not support realtime tasks in sub-groups.
 
 [See below](#libwdog-api) for details on how to have your process
 internal deadlines be supervised.
@@ -191,7 +197,7 @@ reset cause after reboot, the following section must be enabled in the
 ```
 reset-cause {
     enabled = true
-#   file    = /var/lib/watchdogd.state
+    file    = /var/lib/watchdogd.state
 }
 ```
 
@@ -325,8 +331,8 @@ Michele d'Amico and adapted to [uClinux-dist][] by Mike Frysinger.  It
 is maintained by [Joachim Nilsson][] collaboratively at [GitHub][].
 
 The [original code][] in uClinux-dist is available in the public domain,
-whereas this version is distributed under the ISC license.  See the
-file [LICENSE][] for more details on this.
+whereas this version is distributed under the [ISC license][].  See the
+file [LICENSE][] for details.
 
 The [logo][], "Watch Dog Detective Taking Notes", is licensed for use by
 the `watchdogd` project, copyright © [Ron Leishman][].
@@ -338,8 +344,9 @@ Issue tracker and GIT repository available at GitHub:
 * [README](https://github.com/troglobit/watchdogd/blob/master/README.md)
 * [TODO](https://github.com/troglobit/watchdogd/blob/master/docs/TODO.md)
 * [Issue Tracker](http://github.com/troglobit/watchdogd/issues)
-* [watchdogd-3.2.tar.xz](ftp://ftp.troglobit.com/watchdogd/watchdogd-3.2.tar.xz),
-  [MD5](ftp://ftp.troglobit.com/watchdogd/watchdogd-3.2.tar.xz.md5)
+* [watchdogd-3.4.tar.xz](ftp://ftp.troglobit.com/watchdogd/watchdogd-3.4.tar.gz), [
+  [MD5](ftp://ftp.troglobit.com/watchdogd/watchdogd-3.4.tar.gz.md5),
+  [SHA256](ftp://ftp.troglobit.com/watchdogd/watchdogd-3.4.tar.gz.sha256) ]
 
 
 Contributing
@@ -373,14 +380,9 @@ more details, see the file [CONTRIBUTING][contrib].
 [Coverity Status]: https://scan.coverity.com/projects/6458/badge.svg
 [GitHub]:          http://github.com/troglobit/watchdogd
 [ex1]:             https://github.com/troglobit/watchdogd/blob/master/examples/ex1.c
+[ISC license]:     https://en.wikipedia.org/wiki/ISC_license
 [LICENSE]:         https://github.com/troglobit/watchdogd/blob/master/LICENSE
 [contrib]:         https://github.com/troglobit/watchdogd/blob/master/CONTRIBUTING.md
 [Joachim Nilsson]: http://troglobit.com
 [logo]:            https://www.clipartof.com/435776
 [Ron Leishman]:    http://toonclips.com/design/788
-
-<!--
-  -- Local Variables:
-  -- mode: markdown
-  -- End:
-  -->
