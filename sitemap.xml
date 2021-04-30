@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://troglobit.com/projects/</loc>
+    <lastmod>2021-04-30T17:02:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://troglobit.com/projects/watchdogd/</loc>
+    <lastmod>2021-04-30T17:02:00+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://troglobit.com/tags/finit/</loc>
     <lastmod>2021-04-27T20:18:06+01:00</lastmod>
   </url>
@@ -34,11 +44,6 @@
   
   <url>
     <loc>https://troglobit.com/projects/finit/</loc>
-    <lastmod>2021-04-27T06:39:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://troglobit.com/projects/</loc>
     <lastmod>2021-04-27T06:39:00+01:00</lastmod>
   </url>
   
@@ -260,11 +265,6 @@
   <url>
     <loc>https://troglobit.com/projects/nemesis/</loc>
     <lastmod>2019-06-16T15:39:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://troglobit.com/projects/watchdogd/</loc>
-    <lastmod>2019-05-27T21:46:00+02:00</lastmod>
   </url>
   
   <url>

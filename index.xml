@@ -13,6 +13,16 @@
     
     
     <item>
+      <title>System &amp; Process Supervisor for Linux</title>
+      <link>https://troglobit.com/projects/watchdogd/</link>
+      <pubDate>Fri, 30 Apr 2021 17:02:00 +0100</pubDate>
+      
+      <guid>https://troglobit.com/projects/watchdogd/</guid>
+      <description>watchdogd(8) is an advanced system and process supervisor daemon, primarily intended for embedded Linux and server systems. By default it periodically kicks the system watchdog timer (WDT) to prevent it from resetting the system. In its more advanced guise it monitors critical system resources, supervises the heartbeat of processes, records deadline transgressions, and initiates a controlled reset if needed.
+When a system comes back up after a reset, watchdogd determines the reset cause and records it in a file for later analysis by an operator or network management system (NMS).</description>
+    </item>
+    
+    <item>
       <title>It&#39;s Here! ♥</title>
       <link>https://troglobit.com/post/2021-04-27-its-here/</link>
       <pubDate>Tue, 27 Apr 2021 20:18:06 +0100</pubDate>
@@ -139,22 +149,6 @@ over what they do.&lt;/p&gt;
 server.  So whenever I do a DNS lookup it takes five (5!) seconds timing
 out, which is quite annoying.&lt;/p&gt;
 &lt;p&gt;This blog post is about how you can fix this with &lt;code&gt;openresolv&lt;/code&gt; in Ubuntu.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>HowTo: Set up Merecat with Let&#39;s Encrypt certificate</title>
-      <link>https://troglobit.com/post/2020-07-15-howto-set-up-merecat-with-lets-encrypt-certificate/</link>
-      <pubDate>Wed, 15 Jul 2020 14:10:00 +0000</pubDate>
-      
-      <guid>https://troglobit.com/post/2020-07-15-howto-set-up-merecat-with-lets-encrypt-certificate/</guid>
-      <description>&lt;p&gt;This is a HowTo for setting up &lt;a href=&#34;https://merecat.troglobit.com&#34;&gt;Merecat httpd&lt;/a&gt; with &lt;a href=&#34;https://letsencrypt.org/&#34;&gt;Let&amp;rsquo;s
-Encrypt&lt;/a&gt; HTTPS certificates.&lt;/p&gt;
-&lt;p&gt;The upcoming v2.32 release of &lt;a href=&#34;https://merecat.troglobit.com&#34;&gt;Merecat&lt;/a&gt; supports HTTPS as well as
-serving more than one Internet port.  This is highly useful for those
-who want to serve both HTTPS and HTTP content.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; now with support for &lt;code&gt;--webroot&lt;/code&gt; and HTTP-01 renewal!&lt;/p&gt;
-&lt;/blockquote&gt;</description>
     </item>
     
   </channel>

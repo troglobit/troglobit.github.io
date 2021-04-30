@@ -49,9 +49,9 @@ When a system comes back up after a reset, watchdogd determines the reset cause 
 <meta itemprop="name" content="System &amp; Process Supervisor for Linux">
 <meta itemprop="description" content="watchdogd(8) is an advanced system and process supervisor daemon, primarily intended for embedded Linux and server systems. By default it periodically kicks the system watchdog timer (WDT) to prevent it from resetting the system. In its more advanced guise it monitors critical system resources, supervises the heartbeat of processes, records deadline transgressions, and initiates a controlled reset if needed.
 When a system comes back up after a reset, watchdogd determines the reset cause and records it in a file for later analysis by an operator or network management system (NMS).">
-<meta itemprop="datePublished" content="2019-05-27T21:46:00&#43;02:00" />
-<meta itemprop="dateModified" content="2019-05-27T21:46:00&#43;02:00" />
-<meta itemprop="wordCount" content="1761">
+<meta itemprop="datePublished" content="2021-04-30T17:02:00&#43;01:00" />
+<meta itemprop="dateModified" content="2021-04-30T17:02:00&#43;01:00" />
+<meta itemprop="wordCount" content="1788">
 
 
 
@@ -69,15 +69,15 @@ When a system comes back up after a reset, watchdogd determines the reset cause 
 When a system comes back up after a reset, watchdogd determines the reset cause and records it in a file for later analysis by an operator or network management system (NMS)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://troglobit.com/projects/watchdogd/" />
-<meta property="article:published_time" content="2019-05-27T21:46:00+02:00" />
-<meta property="article:modified_time" content="2019-05-27T21:46:00+02:00" />
+<meta property="article:published_time" content="2021-04-30T17:02:00+01:00" />
+<meta property="article:modified_time" content="2021-04-30T17:02:00+01:00" />
 
 
 
 
 
 
-    <meta property="article:published_time" content="2019-05-27 21:46:00 &#43;0200 CEST" />
+    <meta property="article:published_time" content="2021-04-30 17:02:00 &#43;0100 &#43;0100" />
 
 
 
@@ -231,18 +231,21 @@ WDT timeout before announcing HW WDT failure and forcing a reboot.</p>
 that can be enabled in the <code>.conf</code> file.  First, system load average
 monitoring can be enabled with:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">loadavg {
+    enabled  = true
     interval = 300       # Every 5 mins
     warning  = 1.5
     critical = 2.0
 }
 </code></pre></div><p>Second, the memory leak detector, a value of 1.0 means 100% memory use:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">meminfo {
+    enabled  = true
     interval = 3600       # Every hour
     warning  = 0.9
     critical = 0.95
 }
 </code></pre></div><p>Third, file descriptor leak detector:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">filenr {
+    enabled  = true
     interval = 3600       # Every hour
     warning  = 0.8
     critical = 0.95
@@ -264,14 +267,18 @@ first two load average values, the one (1) and five (5) minute.</p>
 detected by reading the file <code>/proc/meminfo</code>, looking for the
 <code>SwapTotal:</code> value.</p>
 <p><code>watchdogd</code> v2.0 and later comes with a process supervisor (previously
-called pmon).  When the supervisor is enabled the daemon runs as a
-real-time task with the configured priority, default 98.  Monitored
-clients connect to the supervisor using the libwdog API.</p>
+called pmon).  When the supervisor is enabled, and the priority is set
+to a value &gt; 0, the daemon runs as a real-time task with the configured
+priority.  Monitored clients connect to the supervisor using the libwdog
+API.</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">supervisor {
-    enabled = true
+    enabled  = true
     priority = 98
 }
-</code></pre></div><p><a href="#libwdog-api">See below</a> for details on how to have your process
+</code></pre></div><blockquote>
+<p><strong>Note:</strong> Linux cgroup v2 do not support realtime tasks in sub-groups.</p>
+</blockquote>
+<p><a href="#libwdog-api">See below</a> for details on how to have your process
 internal deadlines be supervised.</p>
 <p>When a process fails to meet its deadlines, or a monitor plugin reaches
 critical level, <code>watchdogd</code> initiates a controlled reset.  To see the
@@ -279,7 +286,7 @@ reset cause after reboot, the following section must be enabled in the
 <code>/etc/watchdogd.conf</code> file:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">reset-cause {
     enabled = true
-#   file    = /var/lib/watchdogd.state
+    file    = /var/lib/watchdogd.state
 }
 </code></pre></div><p>The <code>file</code> setting is optional, the default is usually sufficient, but
 make sure the destination directory is writable if you change it.</p>
@@ -370,8 +377,8 @@ make
 Michele d&rsquo;Amico and adapted to <a href="http://www.uclinux.org/pub/uClinux/dist/">uClinux-dist</a> by Mike Frysinger.  It
 is maintained by <a href="http://troglobit.com">Joachim Nilsson</a> collaboratively at <a href="http://github.com/troglobit/watchdogd">GitHub</a>.</p>
 <p>The <a href="http://www.mail-archive.com/uclinux-dev@uclinux.org/msg04191.html">original code</a> in uClinux-dist is available in the public domain,
-whereas this version is distributed under the ISC license.  See the
-file <a href="https://github.com/troglobit/watchdogd/blob/master/LICENSE">LICENSE</a> for more details on this.</p>
+whereas this version is distributed under the <a href="https://en.wikipedia.org/wiki/ISC_license">ISC license</a>.  See the
+file <a href="https://github.com/troglobit/watchdogd/blob/master/LICENSE">LICENSE</a> for details.</p>
 <p>The <a href="https://www.clipartof.com/435776">logo</a>, &ldquo;Watch Dog Detective Taking Notes&rdquo;, is licensed for use by
 the <code>watchdogd</code> project, copyright © <a href="http://toonclips.com/design/788">Ron Leishman</a>.</p>
 <p>Issue tracker and GIT repository available at GitHub:</p>
@@ -381,8 +388,9 @@ the <code>watchdogd</code> project, copyright © <a href="http://toonclips.com/d
 <li><a href="https://github.com/troglobit/watchdogd/blob/master/README.md">README</a></li>
 <li><a href="https://github.com/troglobit/watchdogd/blob/master/docs/TODO.md">TODO</a></li>
 <li><a href="http://github.com/troglobit/watchdogd/issues">Issue Tracker</a></li>
-<li><a href="ftp://ftp.troglobit.com/watchdogd/watchdogd-3.2.tar.xz">watchdogd-3.2.tar.xz</a>,
-<a href="ftp://ftp.troglobit.com/watchdogd/watchdogd-3.2.tar.xz.md5">MD5</a></li>
+<li><a href="ftp://ftp.troglobit.com/watchdogd/watchdogd-3.4.tar.gz">watchdogd-3.4.tar.xz</a>, [
+<a href="ftp://ftp.troglobit.com/watchdogd/watchdogd-3.4.tar.gz.md5">MD5</a>,
+<a href="ftp://ftp.troglobit.com/watchdogd/watchdogd-3.4.tar.gz.sha256">SHA256</a> ]</li>
 </ul>
 <h2 id="contributing">Contributing</h2>
 <p>If you find bugs or want to contribute fixes or features, check out the
@@ -393,11 +401,6 @@ code from GitHub:</p>
 </code></pre></div><p>The <code>autogen.sh</code> script runs <code>autoconf</code>, <code>automake</code>, et al to create the
 configure script and such generated files not part of the VCS tree.  For
 more details, see the file <a href="https://github.com/troglobit/watchdogd/blob/master/CONTRIBUTING.md">CONTRIBUTING</a>.</p>
-<!--
-  -- Local Variables:
-  -- mode: markdown
-  -- End:
-  -->
 
             </div>
         </article>
