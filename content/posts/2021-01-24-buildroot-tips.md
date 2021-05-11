@@ -30,7 +30,7 @@ Because I always forget, here's a reminder to myself.
    The `.config` file is a menuconfig snippet enabling the package to
    test:
 
-        ./utils/test-pkg -c foobar.config -p sysklogd
+        ./utils/test-pkg -c foobar.config -p foobar
 
 6. Format your patches, with the optional `--cover-letter`, very useful
    to explain a series of patches:
