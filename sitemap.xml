@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://troglobit.com/tags/emacs/</loc>
+    <lastmod>2021-05-11T19:12:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://troglobit.com/post/2021-05-11-emacs-gmail-and-lore-mailing-lists/</loc>
+    <lastmod>2021-05-11T19:12:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://troglobit.com/tags/gmail/</loc>
+    <lastmod>2021-05-11T19:12:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://troglobit.com/tags/lore/</loc>
+    <lastmod>2021-05-11T19:12:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://troglobit.com/tags/notmuch/</loc>
+    <lastmod>2021-05-11T19:12:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://troglobit.com/posts/</loc>
+    <lastmod>2021-05-11T19:12:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://troglobit.com/tags/</loc>
+    <lastmod>2021-05-11T19:12:00+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://troglobit.com/tags/buildroot/</loc>
     <lastmod>2021-05-11T18:41:00+01:00</lastmod>
   </url>
@@ -19,16 +54,6 @@
   
   <url>
     <loc>https://troglobit.com/tags/opensource/</loc>
-    <lastmod>2021-05-11T18:41:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://troglobit.com/posts/</loc>
-    <lastmod>2021-05-11T18:41:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://troglobit.com/tags/</loc>
     <lastmod>2021-05-11T18:41:00+01:00</lastmod>
   </url>
   
@@ -65,11 +90,6 @@
   <url>
     <loc>https://troglobit.com/post/2021-02-12-alpine-linux-with-finit/</loc>
     <lastmod>2021-02-12T07:24:06+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://troglobit.com/post/2021-01-13-emacs-gmail-and-lore-mailing-lists/</loc>
-    <lastmod>2021-01-13T09:29:00+01:00</lastmod>
   </url>
   
   <url>

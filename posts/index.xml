@@ -6,8 +6,217 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-        <lastBuildDate>Tue, 11 May 2021 18:41:00 +0100</lastBuildDate>
+        <lastBuildDate>Tue, 11 May 2021 19:12:00 +0100</lastBuildDate>
         <atom:link href="https://troglobit.com/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Emacs: GMail and Lore Mailing Lists</title>
+            <link>https://troglobit.com/post/2021-05-11-emacs-gmail-and-lore-mailing-lists/</link>
+            <pubDate>Tue, 11 May 2021 19:12:00 +0100</pubDate>
+            
+            <guid>https://troglobit.com/post/2021-05-11-emacs-gmail-and-lore-mailing-lists/</guid>
+            <description>With lots of help from the tireless Tobias Waldekranz, I think I&amp;rsquo;ve finally found the perfect &amp;ldquo;magit like&amp;rdquo; email setup. With Emacs, of course. This is the story of how I did it.
+First install notmuch, mbsync (from the isync package), and afew:
+sudo apt install notmuch isync afew Do initial setup of notmuch for your user. I&amp;rsquo;ve opted to store my mail in ~/mail, this is used throughout the text below, ymmv.</description>
+            <content type="html"><![CDATA[<p>With lots of help from the tireless Tobias Waldekranz, I think I&rsquo;ve
+finally found the perfect &ldquo;magit like&rdquo; email setup.  With Emacs, of
+course.  This is the story of how I did it.</p>
+<p>First install notmuch, mbsync (from the isync package), and afew:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">    sudo apt install notmuch isync afew
+</code></pre></div><p>Do initial setup of notmuch for your user.  I&rsquo;ve opted to store my
+mail in<code> ~/mail</code>, this is used throughout the text below, ymmv.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">	notmuch setup
+</code></pre></div><p>Clone Tobias&rsquo; GitHub <a href="https://github.com/wkz/notmuch-lore">notmuch-lore</a>
+repo, we will be using his <code>pre-new</code> hook later on to fetch mailing
+lists from lore, along with a <code>post-new</code> hook to do some tagging of new
+mail.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">    <span class="nb">cd</span> ~/src
+	git clone https://github.com/wkz/notmuch-lore
+</code></pre></div><p>Set up isync/mbsync to fetch my own email from Gmail.  Here a note on
+Gmail folder structure may be in order.  The view you see in the Google
+web interface does not reflect the IMAP hierarchy.  Here&rsquo;s what it looks
+like, with exception for countries where Google had to change <code>[Gmail]</code>
+to use <code>[Google Mail]</code> instead, e.g., Germany:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">    /
+	|-- Drafts
+	|-- [Gmail]/
+	|     |-- Spam
+	|     |-- your-own
+	|     |-- folders-here
+	|     `-- ...
+	|-- INBOX
+	|--	Sent
+	`-- Trash
+</code></pre></div><p>Most of the standard standard folders are available in the root, in my
+case only <code>Spam</code> goes in the same <code>[Gmail]/</code> folder as my own folders
+do.  This is important to keep track of when configuring your channels
+in <code>mbsync</code>.</p>
+<p>Here&rsquo;s my <code>~/.mbsyncrc</code> for GMail, I&rsquo;ve included the BusyBox folder,
+which is that project&rsquo;s mailing list.  Filtering of incoming mail to
+that list is done by GMail, not documented here.  Make sure to create
+the parent directory <code>~/mail/gmail</code>.</p>
+<blockquote>
+<p>Please notice that I&rsquo;ve removed my application-specific password,
+you&rsquo;ll have to get your own for you account.</p>
+</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-cfg" data-lang="cfg"><span class="na">IMAPAccount gmail</span>
+<span class="na">Host imap.gmail.com</span>
+<span class="na">User troglobit@gmail.com</span>
+<span class="na">Pass heresyourappassword</span>
+<span class="na">SSLType IMAPS</span>
+<span class="na">SSLVersion TLSv1.2</span>
+<span class="na">CertificateFile /etc/ssl/certs/ca-certificates.crt</span>
+
+<span class="na">IMAPStore gmail-remote</span>
+<span class="na">Account gmail</span>
+
+<span class="na">MaildirStore gmail-local</span>
+<span class="na">SubFolders Verbatim</span>
+<span class="c1"># The trailing &#34;/&#34; is important</span>
+<span class="na">Path ~/mail/gmail/</span>
+<span class="na">Inbox ~/mail/gmail/Inbox</span>
+<span class="na">Trash ~/mail/gmail/trash</span>
+
+<span class="na">Channel sync-gmail-default</span>
+<span class="na">Master :gmail-remote:</span>
+<span class="na">Slave :gmail-local:</span>
+<span class="c1"># Select some mailboxes to sync</span>
+<span class="na">Patterns &#34;INBOX&#34;</span>
+<span class="na">Remove Both</span>
+
+<span class="na">Channel sync-gmail-sent</span>
+<span class="na">Master :gmail-remote:&#34;Sent&#34;</span>
+<span class="na">Slave :gmail-local:sent</span>
+<span class="na">Create Slave</span>
+
+<span class="na">Channel sync-gmail-trash</span>
+<span class="na">Master :gmail-remote:&#34;Trash&#34;</span>
+<span class="na">Slave :gmail-local:trash</span>
+<span class="na">Create Slave</span>
+
+<span class="na">Channel sync-gmail-busybox</span>
+<span class="na">Master :gmail-remote:&#34;[Gmail]/BusyBox&#34;</span>
+<span class="na">Slave :gmail-local:busybox</span>
+<span class="na">Create Slave</span>
+
+<span class="na">Channel sync-gmail-buildroot</span>
+<span class="na">Master :gmail-remote:&#34;[Gmail]/Buildroot&#34;</span>
+<span class="na">Slave :gmail-local:buildroot</span>
+<span class="na">Create Slave</span>
+<span class="na">Remove Both</span>
+
+<span class="c1"># Get all the channels together into a group.</span>
+<span class="na">Group gmail</span>
+<span class="na">Channel sync-gmail-default</span>
+<span class="na">Channel sync-gmail-busybox</span>
+<span class="na">Channel sync-gmail-sent</span>
+<span class="na">Channel sync-gmail-trash</span>
+</code></pre></div><blockquote>
+<p><strong>NOTE:</strong> empty lines in <code>.mbsyncrc</code> <em>not allowed</em> just anywhere.
+This bit me initially and is likely a common error for
+others as well.</p>
+</blockquote>
+<p>Test your mbsync setup first, see the manual page for details.</p>
+<p>As you&rsquo;ve probably already learned from the GitHub repo, to fetch mail
+from the public inbox mailing lists on lore, you need small .ini file
+detailing which subsystems you&rsquo;re interested in:</p>
+<div class="highlight"><pre class="chroma"><code class="language-cfg" data-lang="cfg"><span class="c1"># ~/mail/.notmuch/.lore/sources</span>
+<span class="k">[netdev]</span>
+<span class="na">url</span><span class="o">=</span><span class="s">https://lore.kernel.org/netdev</span>
+
+<span class="k">[mtd]</span>
+<span class="na">url</span><span class="o">=</span><span class="s">https://lore.kernel.org/linux-mtd</span>
+</code></pre></div><p>Now we can proceed to combine it all in notmuch!  After <code>notmuch setup</code>
+you should have a <code>~/mail/.notmuch/hooks/</code> directory.  Let&rsquo;s create a
+<code>pre-hook</code> to fetch gmail and mailing lists from lore:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#!/bin/sh
+</span><span class="cp"></span><span class="c1"># ~/mail/.notmuch/hooks/pre-new</span>
+
+<span class="c1"># Fetch mail from Gmail</span>
+mbsync -a
+
+<span class="c1"># Pull relevant kernel mailing lists using git, of course</span>
+~/src/notmuch-lore/pre-new
+</code></pre></div><blockquote>
+<p>Remember to <code>chown +x pre-new</code> and the <code>post-new</code>, below!</p>
+</blockquote>
+<p>For help with tagging, or sorting, you can either use the <code>nmsort()</code>
+shell script function that Tobias made, or other tools like <code>afew</code>.
+The latter needs a small configuration file:</p>
+<div class="highlight"><pre class="chroma"><code class="language-cfg" data-lang="cfg"><span class="c1"># ~/.config/afew/config</span>
+<span class="c1"># This is the default filter chain</span>
+<span class="k">[SpamFilter]</span>
+<span class="k">[KillThreadsFilter]</span>
+<span class="k">[ListMailsFilter]</span>
+<span class="k">[ArchiveSentMailsFilter]</span>
+<span class="k">[InboxFilter]</span>
+</code></pre></div><p>Set up the <code>post-new</code> for notmuch as follows.  It goes the same
+directory as <code>pre-new</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#!/bin/sh
+</span><span class="cp"></span><span class="c1"># ~/mail/.notmuch/hooks/post-new</span>
+
+nmsort<span class="o">()</span>
+<span class="o">{</span>
+    notmuch tag -new <span class="nv">$1</span> -- tag:new <span class="s2">&#34;</span><span class="nv">$2</span><span class="s2">&#34;</span>
+<span class="o">}</span>
+
+<span class="nb">echo</span> <span class="s2">&#34;Me&#34;</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
+nmsort <span class="s2">&#34;+me +unread&#34;</span> <span class="s2">&#34;to:troglobit OR cc:troglobit&#34;</span>
+nmsort <span class="s2">&#34;+me +unread&#34;</span> <span class="s2">&#34;troglobit&#34;</span>
+
+<span class="nb">echo</span> <span class="s2">&#34;Various Mailing Lists&#34;</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
+nmsort <span class="s2">&#34;+lists/pidp-11&#34;</span> <span class="s2">&#34;subject:[PiDP-11]&#34;</span>
+<span class="c1">#nmsort &#34;+busybox&#34;    &#34;list:busybox&#34;</span>
+<span class="c1">#nmsort &#34;+buildroot&#34;  &#34;list:buildroot&#34;</span>
+
+<span class="nb">echo</span> <span class="s2">&#34;Subsystems&#34;</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
+nmsort     <span class="s2">&#34;+bridge +subsys&#34;</span> <span class="s2">&#34;subject:bridge:&#34;</span>
+nmsort  <span class="s2">&#34;+switchdev +subsys&#34;</span> <span class="s2">&#34;subject:switchdev:&#34;</span>
+nmsort    <span class="s2">&#34;+ethtool +subsys&#34;</span> <span class="s2">&#34;subject:ethtool:&#34;</span>
+nmsort    <span class="s2">&#34;+phylink +subsys&#34;</span> <span class="s2">&#34;subject:phylink:&#34;</span>
+nmsort    <span class="s2">&#34;+devlink +subsys&#34;</span> <span class="s2">&#34;subject:devlink:&#34;</span>
+nmsort        <span class="s2">&#34;+dsa +subsys&#34;</span> <span class="s2">&#34;subject:dsa&#34;</span>
+
+<span class="nb">echo</span> <span class="s2">&#34;Hardware&#34;</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
+nmsort    <span class="s2">&#34;+dsa +hw&#34;</span> <span class="s2">&#34;subject:mv88e6&#34;</span>
+nmsort   <span class="s2">&#34;+mdio +hw&#34;</span> <span class="s2">&#34;subject:mdio&#34;</span>
+nmsort    <span class="s2">&#34;+phy +hw&#34;</span> <span class="s2">&#34;subject:phy&#34;</span>
+nmsort  <span class="s2">&#34;+mlxsw +hw&#34;</span> <span class="s2">&#34;subject:mlxsw&#34;</span>
+
+<span class="nb">echo</span> <span class="s2">&#34;Vendors&#34;</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
+nmsort   <span class="s2">&#34;+marvell +vendor&#34;</span> <span class="s2">&#34;subject:marvell&#34;</span>
+nmsort <span class="s2">&#34;+microchip +vendor&#34;</span> <span class="s2">&#34;subject:microchip&#34;</span>
+
+<span class="c1"># If you don&#39;t use afew, uncomment this</span>
+<span class="c1">#nmsort &#34;&#34; &#34;*&#34;</span>
+
+<span class="nb">echo</span> <span class="s2">&#34;Let afew handle the remaining ... &#34;</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
+afew --tag --new
+</code></pre></div><p>Set up SMTP in Emacs, also stolen from Tobias.</p>
+<div class="highlight"><pre class="chroma"><code class="language-lisp" data-lang="lisp"><span class="c1">;; Who am I?</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">user-full-name</span> <span class="s">&#34;Joachim Wiberg&#34;</span><span class="p">)</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">user-mail-address</span> <span class="s">&#34;troglobit@gmail.com&#34;</span><span class="p">)</span>
+
+<span class="c1">;; Email setup</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">message-directory</span> <span class="s">&#34;~/.mail&#34;</span>
+      <span class="nv">notmuch-fcc-dirs</span> <span class="no">nil</span>
+      <span class="nv">read-mail-command</span> <span class="p">(</span><span class="k">quote</span> <span class="nv">notmuch</span><span class="p">)</span>
+      <span class="nv">message-citation-line-format</span> <span class="s">&#34;On %a, %b %d, %Y at %R, %f wrote:&#34;</span>
+      <span class="nv">message-citation-line-function</span> <span class="ss">&#39;message-insert-formatted-citation-line</span>
+      <span class="p">)</span>
+
+<span class="c1">;; Currently gmail as SMTP server</span>
+<span class="p">(</span><span class="k">setq</span> <span class="nv">message-send-mail-function</span> <span class="ss">&#39;smtpmail-send-it</span>
+      <span class="nv">smtpmail-starttls-credentials</span> <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;smtp.gmail.com&#34;</span> <span class="mi">587</span> <span class="no">nil</span> <span class="no">nil</span><span class="p">))</span>
+      <span class="nv">smtpmail-auth-credentials</span> <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;smtp.gmail.com&#34;</span> <span class="mi">587</span> <span class="s">&#34;troglobit@gmail.com&#34;</span> <span class="no">nil</span><span class="p">))</span>
+      <span class="nv">smtpmail-default-smtp-server</span> <span class="s">&#34;smtp.gmail.com&#34;</span>
+      <span class="nv">smtpmail-smtp-server</span> <span class="s">&#34;smtp.gmail.com&#34;</span>
+      <span class="nv">smtpmail-smtp-service</span> <span class="mi">587</span>
+      <span class="nv">starttls-use-gnutls</span> <span class="no">t</span>
+      <span class="p">)</span>
+</code></pre></div><p>Done.</p>
+]]></content>
+        </item>
         
         <item>
             <title>Buildroot Development Checklist</title>
@@ -183,204 +392,6 @@ and this time answer Yes to the last question.</p>
 <p>Use the <code>initctl</code> companion tool to Finit to start/stop, activate and
 reload new configurations.</p>
 <p>Good luck and have fun! :)</p>]]></content>
-        </item>
-        
-        <item>
-            <title>Emacs: GMail and Lore Mailing Lists</title>
-            <link>https://troglobit.com/post/2021-01-13-emacs-gmail-and-lore-mailing-lists/</link>
-            <pubDate>Wed, 13 Jan 2021 09:29:00 +0100</pubDate>
-            
-            <guid>https://troglobit.com/post/2021-01-13-emacs-gmail-and-lore-mailing-lists/</guid>
-            <description>With lots of help from the tireless Tobias Waldekranz, I think I&amp;rsquo;ve finally found the perfect &amp;ldquo;magit like&amp;rdquo; email setup. With Emacs, of course. This is the story of how I did it.
-First install notmuch, mbsync (from the isync package), and afew:
-sudo apt install notmuch isync afew Do initial setup of notmuch for your user. I&amp;rsquo;ve opted to store my mail in ~/mail, this is used throughout the text below, ymmv.</description>
-            <content type="html"><![CDATA[<p>With lots of help from the tireless Tobias Waldekranz, I think I&rsquo;ve
-finally found the perfect &ldquo;magit like&rdquo; email setup.  With Emacs, of
-course.  This is the story of how I did it.</p>
-<p>First install notmuch, mbsync (from the isync package), and afew:</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">    sudo apt install notmuch isync afew
-</code></pre></div><p>Do initial setup of notmuch for your user.  I&rsquo;ve opted to store my
-mail in<code> ~/mail</code>, this is used throughout the text below, ymmv.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">	notmuch setup
-</code></pre></div><p>Clone Tobias&rsquo; GitHub notmuch-lore repo, we will be using his <code>pre-new</code>
-hook later on to fetch mailing lists from lore, along with a <code>post-new</code>
-hook to do some tagging of new mail.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">    <span class="nb">cd</span> ~/src
-	git clone https://github.com/wkz/notmuch-lore
-</code></pre></div><p>Set up isync/mbsync to fetch my own email from Gmail.  Here a note on
-Gmail folder structure may be in order.  The view you see in the Google
-web interface does not reflect the IMAP hierarchy.  Here&rsquo;s what it looks
-like, with exception for countries where Google had to change <code>[Gmail]</code>
-to use <code>[Google Mail]</code> instead, e.g., Germany:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">    /
-	|-- Drafts
-	|-- [Gmail]/
-	|     |-- Spam
-	|     |-- your-own
-	|     |-- folders-here
-	|     `-- ...
-	|-- INBOX
-	|--	Sent
-	`-- Trash
-</code></pre></div><p>Most of the standard standard folders are available in the root, in my
-case only <code>Spam</code> goes in the same <code>[Gmail]/</code> folder as my own folders
-do.  This is important to keep track of when configuring your channels
-in <code>mbsync</code>.</p>
-<p>Here&rsquo;s my <code>~/.mbsyncrc</code> for GMail, I&rsquo;ve included the BusyBox folder,
-which is that project&rsquo;s mailing list.  Filtering of incoming mail to
-that list is done by GMail, not documented here.  Make sure to create
-the parent directory <code>~/mail/gmail</code>.</p>
-<blockquote>
-<p>Please notice that I&rsquo;ve removed my application-specific password,
-you&rsquo;ll have to get your own for you account.</p>
-</blockquote>
-<div class="highlight"><pre class="chroma"><code class="language-cfg" data-lang="cfg"><span class="na">IMAPAccount gmail</span>
-<span class="na">Host imap.gmail.com</span>
-<span class="na">User troglobit@gmail.com</span>
-<span class="na">Pass heresyourappassword</span>
-<span class="na">SSLType IMAPS</span>
-<span class="na">SSLVersion TLSv1.2</span>
-<span class="na">CertificateFile /etc/ssl/certs/ca-certificates.crt</span>
-
-<span class="na">IMAPStore gmail-remote</span>
-<span class="na">Account gmail</span>
-
-<span class="na">MaildirStore gmail-local</span>
-<span class="na">SubFolders Verbatim</span>
-<span class="c1"># The trailing &#34;/&#34; is important</span>
-<span class="na">Path ~/mail/gmail/</span>
-<span class="na">Inbox ~/mail/gmail/Inbox</span>
-
-<span class="na">Channel sync-gmail-default</span>
-<span class="na">Master :gmail-remote:</span>
-<span class="na">Slave :gmail-local:</span>
-<span class="c1"># Select some mailboxes to sync</span>
-<span class="na">Patterns &#34;INBOX&#34;</span>
-
-<span class="na">Channel sync-gmail-sent</span>
-<span class="na">Master :gmail-remote:&#34;Sent&#34;</span>
-<span class="na">Slave :gmail-local:sent</span>
-<span class="na">Create Slave</span>
-
-<span class="na">Channel sync-gmail-trash</span>
-<span class="na">Master :gmail-remote:&#34;Trash&#34;</span>
-<span class="na">Slave :gmail-local:trash</span>
-<span class="na">Create Slave</span>
-
-<span class="na">Channel sync-gmail-busybox</span>
-<span class="na">Master :gmail-remote:&#34;[Gmail]/BusyBox&#34;</span>
-<span class="na">Slave :gmail-local:busybox</span>
-<span class="na">Create Slave</span>
-
-<span class="c1"># Get all the channels together into a group.</span>
-<span class="na">Group gmail</span>
-<span class="na">Channel sync-gmail-default</span>
-<span class="na">Channel sync-gmail-busybox</span>
-<span class="na">Channel sync-gmail-sent</span>
-<span class="na">Channel sync-gmail-trash</span>
-</code></pre></div><blockquote>
-<p><strong>NOTE:</strong> empty lines in <code>.mbsyncrc</code> <em>not allowed</em> just anywhere.
-This bit me initially and is likely a common error for
-others as well.</p>
-</blockquote>
-<p>Test your mbsync setup first, see the manual page for details.</p>
-<p>As you&rsquo;ve probably already learned from the GitHub repo, to fetch mail
-from the public inbox mailing lists on lore, you need small .ini file
-detailing which subsystems you&rsquo;re interested in:</p>
-<div class="highlight"><pre class="chroma"><code class="language-cfg" data-lang="cfg"><span class="c1"># ~/mail/.notmuch/.lore/sources</span>
-<span class="k">[netdev]</span>
-<span class="na">url</span><span class="o">=</span><span class="s">https://lore.kernel.org/netdev</span>
-
-<span class="k">[mtd]</span>
-<span class="na">url</span><span class="o">=</span><span class="s">https://lore.kernel.org/linux-mtd</span>
-</code></pre></div><p>Now we can proceed to combine it all in notmuch!  After <code>notmuch setup</code>
-you should have a <code>~/mail/.notmuch/hooks/</code> directory.  Let&rsquo;s create a
-<code>pre-hook</code> to fetch gmail and mailing lists from lore:</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#!/bin/sh
-</span><span class="cp"></span><span class="c1"># ~/mail/.notmuch/hooks/pre-new</span>
-
-<span class="c1"># Fetch mail from Gmail</span>
-mbsync -a
-
-<span class="c1"># Pull relevant kernel mailing lists using git, of course</span>
-~/src/notmuch-lore/pre-new
-</code></pre></div><blockquote>
-<p>Remember to <code>chown +x pre-new</code> and the <code>post-new</code>, below!</p>
-</blockquote>
-<p>For help with tagging, or sorting, you can either use the <code>nmsort()</code>
-shell script function that Tobias made, or other tools like <code>afew</code>.
-The latter needs a small configuration file:</p>
-<div class="highlight"><pre class="chroma"><code class="language-cfg" data-lang="cfg"><span class="c1"># ~/.config/afew/config</span>
-<span class="c1"># This is the default filter chain</span>
-<span class="k">[SpamFilter]</span>
-<span class="k">[KillThreadsFilter]</span>
-<span class="k">[ListMailsFilter]</span>
-<span class="k">[ArchiveSentMailsFilter]</span>
-<span class="k">[InboxFilter]</span>
-</code></pre></div><p>Set up the <code>post-new</code> for notmuch as follows.  It goes the same
-directory as <code>pre-new</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#!/bin/sh
-</span><span class="cp"></span><span class="c1"># ~/mail/.notmuch/hooks/post-new</span>
-
-nmsort<span class="o">()</span>
-<span class="o">{</span>
-    notmuch tag -new <span class="nv">$1</span> -- tag:new <span class="s2">&#34;</span><span class="nv">$2</span><span class="s2">&#34;</span>
-<span class="o">}</span>
-
-<span class="nb">echo</span> <span class="s2">&#34;Me&#34;</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
-nmsort <span class="s2">&#34;+me&#34;</span> <span class="s2">&#34;to:troglobit OR cc:troglobit&#34;</span>
-nmsort <span class="s2">&#34;+me&#34;</span> <span class="s2">&#34;troglobit&#34;</span>
-
-<span class="nb">echo</span> <span class="s2">&#34;Various Mailing Lists&#34;</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
-nmsort <span class="s2">&#34;+busybox&#34;</span> <span class="s2">&#34;list:busybox&#34;</span>
-
-<span class="nb">echo</span> <span class="s2">&#34;Subsystems&#34;</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
-nmsort     <span class="s2">&#34;+bridge +subsys&#34;</span> <span class="s2">&#34;subject:bridge:&#34;</span>
-nmsort  <span class="s2">&#34;+switchdev +subsys&#34;</span> <span class="s2">&#34;subject:switchdev:&#34;</span>
-nmsort    <span class="s2">&#34;+ethtool +subsys&#34;</span> <span class="s2">&#34;subject:ethtool:&#34;</span>
-nmsort    <span class="s2">&#34;+phylink +subsys&#34;</span> <span class="s2">&#34;subject:phylink:&#34;</span>
-nmsort    <span class="s2">&#34;+devlink +subsys&#34;</span> <span class="s2">&#34;subject:devlink:&#34;</span>
-nmsort        <span class="s2">&#34;+dsa +subsys&#34;</span> <span class="s2">&#34;subject:dsa&#34;</span>
-
-<span class="nb">echo</span> <span class="s2">&#34;Hardware&#34;</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
-nmsort    <span class="s2">&#34;+dsa +hw&#34;</span> <span class="s2">&#34;subject:mv88e6&#34;</span>
-nmsort   <span class="s2">&#34;+mdio +hw&#34;</span> <span class="s2">&#34;subject:mdio&#34;</span>
-nmsort    <span class="s2">&#34;+phy +hw&#34;</span> <span class="s2">&#34;subject:phy&#34;</span>
-nmsort  <span class="s2">&#34;+mlxsw +hw&#34;</span> <span class="s2">&#34;subject:mlxsw&#34;</span>
-
-<span class="nb">echo</span> <span class="s2">&#34;Vendors&#34;</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
-nmsort   <span class="s2">&#34;+marvell +vendor&#34;</span> <span class="s2">&#34;subject:marvell&#34;</span>
-nmsort <span class="s2">&#34;+microchip +vendor&#34;</span> <span class="s2">&#34;subject:microchip&#34;</span>
-
-<span class="c1"># If you don&#39;t use afew, uncomment this</span>
-<span class="c1">#nmsort &#34;&#34; &#34;*&#34;</span>
-
-<span class="nb">echo</span> <span class="s2">&#34;Let afew handle the remaining ... &#34;</span> &gt;<span class="p">&amp;</span><span class="m">2</span>
-afew --tag --new
-</code></pre></div><p>Set up SMTP in Emacs, also stolen from Tobias.</p>
-<div class="highlight"><pre class="chroma"><code class="language-lisp" data-lang="lisp"><span class="c1">;; Who am I?</span>
-<span class="p">(</span><span class="k">setq</span> <span class="nv">user-full-name</span> <span class="s">&#34;Joachim Wiberg&#34;</span><span class="p">)</span>
-<span class="p">(</span><span class="k">setq</span> <span class="nv">user-mail-address</span> <span class="s">&#34;troglobit@gmail.com&#34;</span><span class="p">)</span>
-
-<span class="c1">;; Email setup</span>
-<span class="p">(</span><span class="k">setq</span> <span class="nv">message-directory</span> <span class="s">&#34;~/.mail&#34;</span>
-      <span class="nv">notmuch-fcc-dirs</span> <span class="no">nil</span>
-      <span class="nv">read-mail-command</span> <span class="p">(</span><span class="k">quote</span> <span class="nv">notmuch</span><span class="p">)</span>
-      <span class="nv">message-citation-line-format</span> <span class="s">&#34;On %a, %b %d, %Y at %R, %f wrote:&#34;</span>
-      <span class="nv">message-citation-line-function</span> <span class="ss">&#39;message-insert-formatted-citation-line</span>
-      <span class="p">)</span>
-
-<span class="c1">;; Currently gmail as SMTP server</span>
-<span class="p">(</span><span class="k">setq</span> <span class="nv">message-send-mail-function</span> <span class="ss">&#39;smtpmail-send-it</span>
-      <span class="nv">smtpmail-starttls-credentials</span> <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;smtp.gmail.com&#34;</span> <span class="mi">587</span> <span class="no">nil</span> <span class="no">nil</span><span class="p">))</span>
-      <span class="nv">smtpmail-auth-credentials</span> <span class="o">&#39;</span><span class="p">((</span><span class="s">&#34;smtp.gmail.com&#34;</span> <span class="mi">587</span> <span class="s">&#34;troglobit@gmail.com&#34;</span> <span class="no">nil</span><span class="p">))</span>
-      <span class="nv">smtpmail-default-smtp-server</span> <span class="s">&#34;smtp.gmail.com&#34;</span>
-      <span class="nv">smtpmail-smtp-server</span> <span class="s">&#34;smtp.gmail.com&#34;</span>
-      <span class="nv">smtpmail-smtp-service</span> <span class="mi">587</span>
-      <span class="nv">starttls-use-gnutls</span> <span class="no">t</span>
-      <span class="p">)</span>
-</code></pre></div><p>Done.</p>
-]]></content>
         </item>
         
         <item>
