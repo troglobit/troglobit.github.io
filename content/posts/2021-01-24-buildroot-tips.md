@@ -24,7 +24,8 @@ Because I always forget, here's a reminder to myself.
 
         Signed-off-by: Your Name <your.name@example.com>
 
-4.  Run `make check-package` to verify formatting of files etc.
+4.  Run `./utils/check-package package/foobar` to verify formatting of
+    files etc.
 
 5. Test your package/change with a set of cross-compilation toolchains.
    The `.config` file is a menuconfig snippet enabling the package to
