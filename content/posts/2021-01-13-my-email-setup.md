@@ -1,8 +1,9 @@
 ---
 title: "Emacs: GMail and Lore Mailing Lists"
 subtitle: ""
-date: 2021-01-13 09:29:00 +0100
-tags: []
+orig-date: 2021-01-13 09:29:00 +0100
+date: 2021-05-11 19:12:00 +0100
+tags: [ notmuch, emacs, gmail, lore ]
 ---
 
 With lots of help from the tireless Tobias Waldekranz, I think I've
@@ -22,9 +23,10 @@ mail in` ~/mail`, this is used throughout the text below, ymmv.
 	notmuch setup
 ```
 
-Clone Tobias' GitHub notmuch-lore repo, we will be using his `pre-new`
-hook later on to fetch mailing lists from lore, along with a `post-new`
-hook to do some tagging of new mail.
+Clone Tobias' GitHub [notmuch-lore](https://github.com/wkz/notmuch-lore)
+repo, we will be using his `pre-new` hook later on to fetch mailing
+lists from lore, along with a `post-new` hook to do some tagging of new
+mail.
 
 ```sh
     cd ~/src
@@ -80,12 +82,14 @@ SubFolders Verbatim
 # The trailing "/" is important
 Path ~/mail/gmail/
 Inbox ~/mail/gmail/Inbox
+Trash ~/mail/gmail/trash
 
 Channel sync-gmail-default
 Master :gmail-remote:
 Slave :gmail-local:
 # Select some mailboxes to sync
 Patterns "INBOX"
+Remove Both
 
 Channel sync-gmail-sent
 Master :gmail-remote:"Sent"
@@ -101,6 +105,12 @@ Channel sync-gmail-busybox
 Master :gmail-remote:"[Gmail]/BusyBox"
 Slave :gmail-local:busybox
 Create Slave
+
+Channel sync-gmail-buildroot
+Master :gmail-remote:"[Gmail]/Buildroot"
+Slave :gmail-local:buildroot
+Create Slave
+Remove Both
 
 # Get all the channels together into a group.
 Group gmail
@@ -173,11 +183,13 @@ nmsort()
 }
 
 echo "Me" >&2
-nmsort "+me" "to:troglobit OR cc:troglobit"
-nmsort "+me" "troglobit"
+nmsort "+me +unread" "to:troglobit OR cc:troglobit"
+nmsort "+me +unread" "troglobit"
 
 echo "Various Mailing Lists" >&2
-nmsort "+busybox" "list:busybox"
+nmsort "+lists/pidp-11" "subject:[PiDP-11]"
+#nmsort "+busybox"    "list:busybox"
+#nmsort "+buildroot"  "list:buildroot"
 
 echo "Subsystems" >&2
 nmsort     "+bridge +subsys" "subject:bridge:"
