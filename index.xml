@@ -13,6 +13,18 @@
     
     
     <item>
+      <title>Buildroot Development Checklist</title>
+      <link>https://troglobit.com/post/2021-05-11-buildroot-development-checklist/</link>
+      <pubDate>Tue, 11 May 2021 18:41:00 +0100</pubDate>
+      
+      <guid>https://troglobit.com/post/2021-05-11-buildroot-development-checklist/</guid>
+      <description>Because I always forget, here&amp;rsquo;s a reminder to myself.
+  Make your changes on an up-to-date branch from Buildroot master
+ git checkout -b package/foobar git fetch --all --tags git rebase origin/master    Use logical commits; upgrade package as one, changing/extending behavior as another, etc.
+  Use commit messages to record why changes are made. The first line is usally a (very) brief summary referencing the sub-system:</description>
+    </item>
+    
+    <item>
       <title>System &amp; Process Supervisor for Linux</title>
       <link>https://troglobit.com/projects/watchdogd/</link>
       <pubDate>Fri, 30 Apr 2021 17:02:00 +0100</pubDate>
@@ -137,18 +149,6 @@ over what they do.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Cheers&lt;br&gt;
 /Joachim&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Wireguard and DNS Timeout</title>
-      <link>https://troglobit.com/post/2020-07-17-wireguard-and-dns-timeout/</link>
-      <pubDate>Fri, 17 Jul 2020 11:04:09 +0200</pubDate>
-      
-      <guid>https://troglobit.com/post/2020-07-17-wireguard-and-dns-timeout/</guid>
-      <description>&lt;p&gt;For a while now my Wireguard VPN provider has been handing out a bad DNS
-server.  So whenever I do a DNS lookup it takes five (5!) seconds timing
-out, which is quite annoying.&lt;/p&gt;
-&lt;p&gt;This blog post is about how you can fix this with &lt;code&gt;openresolv&lt;/code&gt; in Ubuntu.&lt;/p&gt;</description>
     </item>
     
   </channel>

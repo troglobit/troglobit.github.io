@@ -6,8 +6,69 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-        <lastBuildDate>Tue, 27 Apr 2021 20:18:06 +0100</lastBuildDate>
+        <lastBuildDate>Tue, 11 May 2021 18:41:00 +0100</lastBuildDate>
         <atom:link href="https://troglobit.com/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Buildroot Development Checklist</title>
+            <link>https://troglobit.com/post/2021-05-11-buildroot-development-checklist/</link>
+            <pubDate>Tue, 11 May 2021 18:41:00 +0100</pubDate>
+            
+            <guid>https://troglobit.com/post/2021-05-11-buildroot-development-checklist/</guid>
+            <description>Because I always forget, here&amp;rsquo;s a reminder to myself.
+  Make your changes on an up-to-date branch from Buildroot master
+ git checkout -b package/foobar git fetch --all --tags git rebase origin/master    Use logical commits; upgrade package as one, changing/extending behavior as another, etc.
+  Use commit messages to record why changes are made. The first line is usally a (very) brief summary referencing the sub-system:</description>
+            <content type="html"><![CDATA[<p>Because I always forget, here&rsquo;s a reminder to myself.</p>
+<ol>
+<li>
+<p>Make your changes on an up-to-date branch from Buildroot master</p>
+<pre><code> git checkout -b package/foobar
+ git fetch --all --tags
+ git rebase origin/master
+</code></pre>
+</li>
+<li>
+<p>Use <em>logical commits</em>; upgrade package as one, changing/extending
+behavior as another, etc.</p>
+</li>
+<li>
+<p>Use commit messages to record <em>why</em> changes are made.  The first
+line is usally a (very) brief summary referencing the sub-system:</p>
+<pre><code> package/foobar: bump version to v1.2.3
+
+ Signed-off-by: Your Name &lt;your.name@example.com&gt;
+</code></pre>
+</li>
+<li>
+<p>Run <code>make check-package</code> to verify formatting of files etc.</p>
+</li>
+<li>
+<p>Test your package/change with a set of cross-compilation toolchains.
+The <code>.config</code> file is a menuconfig snippet enabling the package to
+test:</p>
+<pre><code> ./utils/test-pkg -c foobar.config -p sysklogd
+</code></pre>
+</li>
+<li>
+<p>Format your patches, with the optional <code>--cover-letter</code>, very useful
+to explain a series of patches:</p>
+<pre><code> git format-patch --cover-letter -M -n -s -o outgoing origin/master
+</code></pre>
+</li>
+<li>
+<p>Figure out DEVELOPERS to Cc in your correspondence to the mailing list:</p>
+<pre><code> ./utils/get-developers outgoing/*
+</code></pre>
+</li>
+<li>
+<p>At the very least, the following should be output:</p>
+<pre><code> git send-email --to buildroot@buildroot.org --cc &quot;Your Name &lt;your.name@example.com&gt;&quot;
+</code></pre>
+</li>
+</ol>
+]]></content>
+        </item>
         
         <item>
             <title>It&#39;s Here! ♥</title>

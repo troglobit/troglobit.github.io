@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on Joachim Wiberg</title>
+    <link>https://troglobit.com/tags/git/</link>
+    <description>Recent content in git on Joachim Wiberg</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
+    <lastBuildDate>Tue, 11 May 2021 18:41:00 +0100</lastBuildDate>
+    
+	<atom:link href="https://troglobit.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Buildroot Development Checklist</title>
+      <link>https://troglobit.com/post/2021-05-11-buildroot-development-checklist/</link>
+      <pubDate>Tue, 11 May 2021 18:41:00 +0100</pubDate>
+      
+      <guid>https://troglobit.com/post/2021-05-11-buildroot-development-checklist/</guid>
+      <description>Because I always forget, here&amp;rsquo;s a reminder to myself.
+  Make your changes on an up-to-date branch from Buildroot master
+ git checkout -b package/foobar git fetch --all --tags git rebase origin/master    Use logical commits; upgrade package as one, changing/extending behavior as another, etc.
+  Use commit messages to record why changes are made. The first line is usally a (very) brief summary referencing the sub-system:</description>
+    </item>
+    
+  </channel>
+</rss>
