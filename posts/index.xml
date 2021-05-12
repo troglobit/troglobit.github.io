@@ -250,8 +250,9 @@ line is usally a (very) brief summary referencing the sub-system:</p>
 </code></pre>
 </li>
 <li>
-<p>Run <code>./utils/check-package package/foobar</code> to verify formatting of
-files etc.</p>
+<p>Verify formatting of package files; .in, .mk, etc.</p>
+<pre><code>./utils/check-package package/foobar/*
+</code></pre>
 </li>
 <li>
 <p>Test your package/change with a set of cross-compilation toolchains.
