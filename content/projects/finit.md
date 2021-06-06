@@ -1,6 +1,6 @@
 ---
 title: "Fast init for Linux systems"
-date: 2021-04-27 06:39:00 +0100
+date: 2021-06-06 19:01:00 +0100
 aliases: /finit.html
 ---
 ![finit logo](/images/finit3.png#floatright)
@@ -11,21 +11,19 @@ filled with frog DNA …"
 
 Features include:
 
-  * Standard [runlevels][8]
-  * Starting processes in parallel
-  * [Process monitoring][2] (supervision)
+  * Runlevels, defined per service
+  * One-shot tasks, services (daemons), or [SysV init][1] start/stop scripts
+  * Runparts and `/etc/rc.local` support
+  * Process supervision similar to [systemd][7]
   * Sourcing environment files
+  * Conditions for network/process/custom dependencies
   * Pre/Post script actions
   * Tooling to enable/disable services
-  * [Runparts](https://www.unix.com/man-page/Linux/8/RUN-PARTS/) and SysV `/etc/rc.local`
-  * One-shot tasks, daemons, or SysV init scripts
-  * Dependencies, in Finit called conditions, e.g., start service
-    network is up, or wait until syslogd has started
-  * Built-in getty with made-easy board-bringup support
+  * Built-in getty
   * Built-in watchdog, with support for hand-over to [watchdogd](https://troglobit.com/watchdogd.html)
   * Built-in support for Debian/BusyBox `/etc/network/interfaces`
   * Cgroups v2, both configuration and monitoring in `initctl top`
-  * Plugin support for extensive customization
+  * Plugin support for customization
   * Proper rescue mode with bundled `sulogin` for protected maintenance shell
 
 Some of these feature are presented below, for more, see the [online
@@ -56,7 +54,7 @@ file in the `/etc/finit.d` directory.  Available, but not yet enabled,
 services can be placed in `/etc/finit.d/available` and enabled by an
 operator using the initctl tool.
 
-```ApacheConf
+```
 # Runlevel to start after bootstrap, 'S', default: 2
 runlevel 2
 
@@ -490,9 +488,9 @@ and proposed extensions using GitHub:
 * [README][]
 * [TODO](https://github.com/troglobit/finit/blob/master/TODO.md)
 * [ChangeLog](https://github.com/troglobit/finit/blob/master/ChangeLog.md)
-* [finit-4.0.tar.gz](ftp://ftp.troglobit.com/finit/finit-4.0.tar.gz),
-  [MD5](ftp://ftp.troglobit.com/finit/finit-4.0.tar.gz.md5),
-  [SHA256](ftp://ftp.troglobit.com/finit/finit-4.0.tar.gz.sha256)
+* [finit-4.1.tar.gz](ftp://ftp.troglobit.com/finit/finit-4.1.tar.gz),
+  [MD5](ftp://ftp.troglobit.com/finit/finit-4.1.tar.gz.md5),
+  [SHA256](ftp://ftp.troglobit.com/finit/finit-4.1.tar.gz.sha256)
 
 
 [1]: https://en.wikipedia.org/wiki/Init
