@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Fri, 30 Apr 2021 17:02:00 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 06 Jun 2021 19:01:00 +0100</lastBuildDate>
     
 	<atom:link href="https://troglobit.com/projects/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Fast init for Linux systems</title>
+      <link>https://troglobit.com/projects/finit/</link>
+      <pubDate>Sun, 06 Jun 2021 19:01:00 +0100</pubDate>
+      
+      <guid>https://troglobit.com/projects/finit/</guid>
+      <description>Finit is an alternative to SysV init and systemd, originally reverse engineered from the EeePC fastinit by Claudio Matsuoka — &amp;ldquo;gaps filled with frog DNA …&amp;rdquo;
+Features include:
+ Runlevels, defined per service One-shot tasks, services (daemons), or SysV init start/stop scripts Runparts and /etc/rc.local support Process supervision similar to systemd Sourcing environment files Conditions for network/process/custom dependencies Pre/Post script actions Tooling to enable/disable services Built-in getty Built-in watchdog, with support for hand-over to watchdogd Built-in support for Debian/BusyBox /etc/network/interfaces Cgroups v2, both configuration and monitoring in initctl top Plugin support for customization Proper rescue mode with bundled sulogin for protected maintenance shell  Some of these feature are presented below, for more, see the online documentation.</description>
+    </item>
     
     <item>
       <title>System &amp; Process Supervisor for Linux</title>
@@ -20,17 +31,6 @@
       <guid>https://troglobit.com/projects/watchdogd/</guid>
       <description>watchdogd(8) is an advanced system and process supervisor daemon, primarily intended for embedded Linux and server systems. By default it periodically kicks the system watchdog timer (WDT) to prevent it from resetting the system. In its more advanced guise it monitors critical system resources, supervises the heartbeat of processes, records deadline transgressions, and initiates a controlled reset if needed.
 When a system comes back up after a reset, watchdogd determines the reset cause and records it in a file for later analysis by an operator or network management system (NMS).</description>
-    </item>
-    
-    <item>
-      <title>Fast init for Linux systems</title>
-      <link>https://troglobit.com/projects/finit/</link>
-      <pubDate>Tue, 27 Apr 2021 06:39:00 +0100</pubDate>
-      
-      <guid>https://troglobit.com/projects/finit/</guid>
-      <description>Finit is an alternative to SysV init and systemd, originally reverse engineered from the EeePC fastinit by Claudio Matsuoka — &amp;ldquo;gaps filled with frog DNA …&amp;rdquo;
-Features include:
- Standard runlevels Starting processes in parallel Process monitoring (supervision) Sourcing environment files Pre/Post script actions Tooling to enable/disable services Runparts and SysV /etc/rc.local One-shot tasks, daemons, or SysV init scripts Dependencies, in Finit called conditions, e.g., start service network is up, or wait until syslogd has started Built-in getty with made-easy board-bringup support Built-in watchdog, with support for hand-over to watchdogd Built-in support for Debian/BusyBox /etc/network/interfaces Cgroups v2, both configuration and monitoring in initctl top Plugin support for extensive customization Proper rescue mode with bundled sulogin for protected maintenance shell  Some of these feature are presented below, for more, see the online documentation.</description>
     </item>
     
     <item>

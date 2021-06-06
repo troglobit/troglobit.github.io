@@ -13,6 +13,17 @@
     
     
     <item>
+      <title>Fast init for Linux systems</title>
+      <link>https://troglobit.com/projects/finit/</link>
+      <pubDate>Sun, 06 Jun 2021 19:01:00 +0100</pubDate>
+      
+      <guid>https://troglobit.com/projects/finit/</guid>
+      <description>Finit is an alternative to SysV init and systemd, originally reverse engineered from the EeePC fastinit by Claudio Matsuoka — &amp;ldquo;gaps filled with frog DNA …&amp;rdquo;
+Features include:
+ Runlevels, defined per service One-shot tasks, services (daemons), or SysV init start/stop scripts Runparts and /etc/rc.local support Process supervision similar to systemd Sourcing environment files Conditions for network/process/custom dependencies Pre/Post script actions Tooling to enable/disable services Built-in getty Built-in watchdog, with support for hand-over to watchdogd Built-in support for Debian/BusyBox /etc/network/interfaces Cgroups v2, both configuration and monitoring in initctl top Plugin support for customization Proper rescue mode with bundled sulogin for protected maintenance shell  Some of these feature are presented below, for more, see the online documentation.</description>
+    </item>
+    
+    <item>
       <title>Emacs: GMail and Lore Mailing Lists</title>
       <link>https://troglobit.com/post/2021-05-11-emacs-gmail-and-lore-mailing-lists/</link>
       <pubDate>Tue, 11 May 2021 19:12:00 +0100</pubDate>
@@ -59,17 +70,6 @@ where to begin &amp;hellip; the plan anyway is to use this blog for a series of
 posts detailing different aspects and important features.&lt;/p&gt;
 &lt;p&gt;The impatient reader can either scroll down to the &lt;strong&gt;video&lt;/strong&gt; below, or
 move on to the project home page: &lt;a href=&#34;https://troglobit.com/finit.html&#34;&gt;https://troglobit.com/finit.html&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Fast init for Linux systems</title>
-      <link>https://troglobit.com/projects/finit/</link>
-      <pubDate>Tue, 27 Apr 2021 06:39:00 +0100</pubDate>
-      
-      <guid>https://troglobit.com/projects/finit/</guid>
-      <description>Finit is an alternative to SysV init and systemd, originally reverse engineered from the EeePC fastinit by Claudio Matsuoka — &amp;ldquo;gaps filled with frog DNA …&amp;rdquo;
-Features include:
- Standard runlevels Starting processes in parallel Process monitoring (supervision) Sourcing environment files Pre/Post script actions Tooling to enable/disable services Runparts and SysV /etc/rc.local One-shot tasks, daemons, or SysV init scripts Dependencies, in Finit called conditions, e.g., start service network is up, or wait until syslogd has started Built-in getty with made-easy board-bringup support Built-in watchdog, with support for hand-over to watchdogd Built-in support for Debian/BusyBox /etc/network/interfaces Cgroups v2, both configuration and monitoring in initctl top Plugin support for extensive customization Proper rescue mode with bundled sulogin for protected maintenance shell  Some of these feature are presented below, for more, see the online documentation.</description>
     </item>
     
     <item>

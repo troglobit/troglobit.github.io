@@ -7,7 +7,7 @@
 <meta name="author" content="Joachim Wiberg ">
 <meta name="description" content="Finit is an alternative to SysV init and systemd, originally reverse engineered from the EeePC fastinit by Claudio Matsuoka — &amp;ldquo;gaps filled with frog DNA …&amp;rdquo;
 Features include:
- Standard runlevels Starting processes in parallel Process monitoring (supervision) Sourcing environment files Pre/Post script actions Tooling to enable/disable services Runparts and SysV /etc/rc.local One-shot tasks, daemons, or SysV init scripts Dependencies, in Finit called conditions, e.g., start service network is up, or wait until syslogd has started Built-in getty with made-easy board-bringup support Built-in watchdog, with support for hand-over to watchdogd Built-in support for Debian/BusyBox /etc/network/interfaces Cgroups v2, both configuration and monitoring in initctl top Plugin support for extensive customization Proper rescue mode with bundled sulogin for protected maintenance shell  Some of these feature are presented below, for more, see the online documentation." />
+ Runlevels, defined per service One-shot tasks, services (daemons), or SysV init start/stop scripts Runparts and /etc/rc.local support Process supervision similar to systemd Sourcing environment files Conditions for network/process/custom dependencies Pre/Post script actions Tooling to enable/disable services Built-in getty Built-in watchdog, with support for hand-over to watchdogd Built-in support for Debian/BusyBox /etc/network/interfaces Cgroups v2, both configuration and monitoring in initctl top Plugin support for customization Proper rescue mode with bundled sulogin for protected maintenance shell  Some of these feature are presented below, for more, see the online documentation." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -50,10 +50,10 @@ Features include:
 <meta itemprop="name" content="Fast init for Linux systems">
 <meta itemprop="description" content="Finit is an alternative to SysV init and systemd, originally reverse engineered from the EeePC fastinit by Claudio Matsuoka — &ldquo;gaps filled with frog DNA …&rdquo;
 Features include:
- Standard runlevels Starting processes in parallel Process monitoring (supervision) Sourcing environment files Pre/Post script actions Tooling to enable/disable services Runparts and SysV /etc/rc.local One-shot tasks, daemons, or SysV init scripts Dependencies, in Finit called conditions, e.g., start service network is up, or wait until syslogd has started Built-in getty with made-easy board-bringup support Built-in watchdog, with support for hand-over to watchdogd Built-in support for Debian/BusyBox /etc/network/interfaces Cgroups v2, both configuration and monitoring in initctl top Plugin support for extensive customization Proper rescue mode with bundled sulogin for protected maintenance shell  Some of these feature are presented below, for more, see the online documentation.">
-<meta itemprop="datePublished" content="2021-04-27T06:39:00&#43;01:00" />
-<meta itemprop="dateModified" content="2021-04-27T06:39:00&#43;01:00" />
-<meta itemprop="wordCount" content="2729">
+ Runlevels, defined per service One-shot tasks, services (daemons), or SysV init start/stop scripts Runparts and /etc/rc.local support Process supervision similar to systemd Sourcing environment files Conditions for network/process/custom dependencies Pre/Post script actions Tooling to enable/disable services Built-in getty Built-in watchdog, with support for hand-over to watchdogd Built-in support for Debian/BusyBox /etc/network/interfaces Cgroups v2, both configuration and monitoring in initctl top Plugin support for customization Proper rescue mode with bundled sulogin for protected maintenance shell  Some of these feature are presented below, for more, see the online documentation.">
+<meta itemprop="datePublished" content="2021-06-06T19:01:00&#43;01:00" />
+<meta itemprop="dateModified" content="2021-06-06T19:01:00&#43;01:00" />
+<meta itemprop="wordCount" content="2713">
 
 
 
@@ -62,7 +62,7 @@ Features include:
 <meta name="twitter:title" content="Fast init for Linux systems"/>
 <meta name="twitter:description" content="Finit is an alternative to SysV init and systemd, originally reverse engineered from the EeePC fastinit by Claudio Matsuoka — &ldquo;gaps filled with frog DNA …&rdquo;
 Features include:
- Standard runlevels Starting processes in parallel Process monitoring (supervision) Sourcing environment files Pre/Post script actions Tooling to enable/disable services Runparts and SysV /etc/rc.local One-shot tasks, daemons, or SysV init scripts Dependencies, in Finit called conditions, e.g., start service network is up, or wait until syslogd has started Built-in getty with made-easy board-bringup support Built-in watchdog, with support for hand-over to watchdogd Built-in support for Debian/BusyBox /etc/network/interfaces Cgroups v2, both configuration and monitoring in initctl top Plugin support for extensive customization Proper rescue mode with bundled sulogin for protected maintenance shell  Some of these feature are presented below, for more, see the online documentation."/>
+ Runlevels, defined per service One-shot tasks, services (daemons), or SysV init start/stop scripts Runparts and /etc/rc.local support Process supervision similar to systemd Sourcing environment files Conditions for network/process/custom dependencies Pre/Post script actions Tooling to enable/disable services Built-in getty Built-in watchdog, with support for hand-over to watchdogd Built-in support for Debian/BusyBox /etc/network/interfaces Cgroups v2, both configuration and monitoring in initctl top Plugin support for customization Proper rescue mode with bundled sulogin for protected maintenance shell  Some of these feature are presented below, for more, see the online documentation."/>
 
 
 
@@ -70,18 +70,18 @@ Features include:
     <meta property="og:title" content="Fast init for Linux systems" />
 <meta property="og:description" content="Finit is an alternative to SysV init and systemd, originally reverse engineered from the EeePC fastinit by Claudio Matsuoka — &ldquo;gaps filled with frog DNA …&rdquo;
 Features include:
- Standard runlevels Starting processes in parallel Process monitoring (supervision) Sourcing environment files Pre/Post script actions Tooling to enable/disable services Runparts and SysV /etc/rc.local One-shot tasks, daemons, or SysV init scripts Dependencies, in Finit called conditions, e.g., start service network is up, or wait until syslogd has started Built-in getty with made-easy board-bringup support Built-in watchdog, with support for hand-over to watchdogd Built-in support for Debian/BusyBox /etc/network/interfaces Cgroups v2, both configuration and monitoring in initctl top Plugin support for extensive customization Proper rescue mode with bundled sulogin for protected maintenance shell  Some of these feature are presented below, for more, see the online documentation." />
+ Runlevels, defined per service One-shot tasks, services (daemons), or SysV init start/stop scripts Runparts and /etc/rc.local support Process supervision similar to systemd Sourcing environment files Conditions for network/process/custom dependencies Pre/Post script actions Tooling to enable/disable services Built-in getty Built-in watchdog, with support for hand-over to watchdogd Built-in support for Debian/BusyBox /etc/network/interfaces Cgroups v2, both configuration and monitoring in initctl top Plugin support for customization Proper rescue mode with bundled sulogin for protected maintenance shell  Some of these feature are presented below, for more, see the online documentation." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://troglobit.com/projects/finit/" />
-<meta property="article:published_time" content="2021-04-27T06:39:00+01:00" />
-<meta property="article:modified_time" content="2021-04-27T06:39:00+01:00" />
+<meta property="article:published_time" content="2021-06-06T19:01:00+01:00" />
+<meta property="article:modified_time" content="2021-06-06T19:01:00+01:00" />
 
 
 
 
 
 
-    <meta property="article:published_time" content="2021-04-27 06:39:00 &#43;0100 &#43;0100" />
+    <meta property="article:published_time" content="2021-06-06 19:01:00 &#43;0100 &#43;0100" />
 
 
 
@@ -156,21 +156,19 @@ reverse engineered from the EeePC fastinit by Claudio Matsuoka — &ldquo;gaps
 filled with frog DNA …&rdquo;</p>
 <p>Features include:</p>
 <ul>
-<li>Standard <a href="https://en.wikipedia.org/wiki/Runlevel">runlevels</a></li>
-<li>Starting processes in parallel</li>
-<li><a href="https://en.wikipedia.org/wiki/Process_supervision">Process monitoring</a> (supervision)</li>
+<li>Runlevels, defined per service</li>
+<li>One-shot tasks, services (daemons), or <a href="https://en.wikipedia.org/wiki/Init">SysV init</a> start/stop scripts</li>
+<li>Runparts and <code>/etc/rc.local</code> support</li>
+<li>Process supervision similar to <a href="https://www.freedesktop.org/wiki/Software/systemd/">systemd</a></li>
 <li>Sourcing environment files</li>
+<li>Conditions for network/process/custom dependencies</li>
 <li>Pre/Post script actions</li>
 <li>Tooling to enable/disable services</li>
-<li><a href="https://www.unix.com/man-page/Linux/8/RUN-PARTS/">Runparts</a> and SysV <code>/etc/rc.local</code></li>
-<li>One-shot tasks, daemons, or SysV init scripts</li>
-<li>Dependencies, in Finit called conditions, e.g., start service
-network is up, or wait until syslogd has started</li>
-<li>Built-in getty with made-easy board-bringup support</li>
+<li>Built-in getty</li>
 <li>Built-in watchdog, with support for hand-over to <a href="https://troglobit.com/watchdogd.html">watchdogd</a></li>
 <li>Built-in support for Debian/BusyBox <code>/etc/network/interfaces</code></li>
 <li>Cgroups v2, both configuration and monitoring in <code>initctl top</code></li>
-<li>Plugin support for extensive customization</li>
+<li>Plugin support for customization</li>
 <li>Proper rescue mode with bundled <code>sulogin</code> for protected maintenance shell</li>
 </ul>
 <p>Some of these feature are presented below, for more, see the <a href="https://github.com/troglobit/finit/blob/master/README.md">online
@@ -190,52 +188,52 @@ service, or set of related services, are defined in their own <code>foo.conf</co
 file in the <code>/etc/finit.d</code> directory.  Available, but not yet enabled,
 services can be placed in <code>/etc/finit.d/available</code> and enabled by an
 operator using the initctl tool.</p>
-<div class="highlight"><pre class="chroma"><code class="language-ApacheConf" data-lang="ApacheConf"><span class="c"># Runlevel to start after bootstrap, &#39;S&#39;, default: 2</span>
-<span class="nb">runlevel</span> <span class="m">2</span>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback"># Runlevel to start after bootstrap, &#39;S&#39;, default: 2
+runlevel 2
 
-<span class="c"># Max file size for each log file: 100 kiB, rotate max 4 copies:</span>
-<span class="c"># log =&gt; log.1 =&gt; log.2.gz =&gt; log.3.gz =&gt; log.4.gz</span>
-<span class="nb">log</span> size=100k count=4
+# Max file size for each log file: 100 kiB, rotate max 4 copies:
+# log =&gt; log.1 =&gt; log.2.gz =&gt; log.3.gz =&gt; log.4.gz
+log size=100k count=4
 
-<span class="c"># Services to be monitored and respawned as needed</span>
-<span class="nb">service</span> [S12345] watchdogd -L -f                             -- System watchdog daemon
-<span class="nb">service</span> [S12345] syslogd -n -b <span class="m">3</span> -D                          -- System log daemon
-<span class="nb">service</span> [S12345] &lt;pid/syslogd&gt; klogd -n                      -- Kernel log daemon
-<span class="nb">service</span>   [2345] env:-/etc/conf.d/lldpd lldpd -d $LLDPD_OPTS -- LLDP daemon (IEEE <span class="m">802</span>.1ab)
+# Services to be monitored and respawned as needed
+service [S12345] watchdogd -L -f                             -- System watchdog daemon
+service [S12345] syslogd -n -b 3 -D                          -- System log daemon
+service [S12345] &lt;pid/syslogd&gt; klogd -n                      -- Kernel log daemon
+service   [2345] env:-/etc/conf.d/lldpd lldpd -d $LLDPD_OPTS -- LLDP daemon (IEEE 802.1ab)
 
-<span class="c"># The BusyBox ntpd does not use syslog when running in the foreground</span>
-<span class="c"># So we use this trick to redirect stdout/stderr to a log file.  The</span>
-<span class="c"># log file is rotated with the above settings.  The condition declares</span>
-<span class="c"># a dependency on a system default route (gateway) to be set.  A single</span>
-<span class="c"># &lt;!&gt; at the beginning means ntpd does not respect SIGHUP for restart.</span>
-<span class="nb">service</span> [2345] log:/var/log/ntpd.log &lt;!net/route/default&gt; ntpd -n -l -I eth0 -- NTP daemon
+# The BusyBox ntpd does not use syslog when running in the foreground
+# So we use this trick to redirect stdout/stderr to a log file.  The
+# log file is rotated with the above settings.  The condition declares
+# a dependency on a system default route (gateway) to be set.  A single
+# &lt;!&gt; at the beginning means ntpd does not respect SIGHUP for restart.
+service [2345] log:/var/log/ntpd.log &lt;!net/route/default&gt; ntpd -n -l -I eth0 -- NTP daemon
 
-<span class="c"># For multiple instances of the same service, add :ID somewhere between</span>
-<span class="c"># the service/run/task keyword and the command.</span>
-<span class="nb">service</span> :80   [2345] merecat -n -p <span class="m">80</span>   <span class="sx">/var/www</span> -- Web server
-<span class="nb">service</span> :8080 [2345] merecat -n -p <span class="m">8080</span> <span class="sx">/var/www</span> -- Old web server
+# For multiple instances of the same service, add :ID somewhere between
+# the service/run/task keyword and the command.
+service :80   [2345] merecat -n -p 80   /var/www -- Web server
+service :8080 [2345] merecat -n -p 8080 /var/www -- Old web server
 
-<span class="c"># Alternative method instead of below runparts, can also use /etc/rc.local</span>
-<span class="c">#task [S] /etc/init.d/keyboard-setup start       -- Setting up preliminary keymap</span>
-<span class="c">#task [S] /etc/init.d/acpid start                -- Starting ACPI Daemon</span>
-<span class="c">#task [S] /etc/init.d/kbd start                  -- Preparing console</span>
+# Alternative method instead of below runparts, can also use /etc/rc.local
+#task [S] /etc/init.d/keyboard-setup start       -- Setting up preliminary keymap
+#task [S] /etc/init.d/acpid start                -- Starting ACPI Daemon
+#task [S] /etc/init.d/kbd start                  -- Preparing console
 
-<span class="c"># Run start scripts from this directory</span>
-<span class="c"># runparts /etc/start.d</span>
+# Run start scripts from this directory
+# runparts /etc/start.d
 
-<span class="c"># Virtual consoles run BusyBox getty, keep kernel default speed</span>
-<span class="nb">tty</span> [12345] <span class="sx">/sbin/getty</span> -L <span class="m">0</span> <span class="sx">/dev/tty1</span> linux
-<span class="nb">tty</span> [12345] <span class="sx">/sbin/getty</span> -L <span class="m">0</span> <span class="sx">/dev/tty2</span> linux
-<span class="nb">tty</span> [12345] <span class="sx">/sbin/getty</span> -L <span class="m">0</span> <span class="sx">/dev/tty3</span> linux
+# Virtual consoles run BusyBox getty, keep kernel default speed
+tty [12345] /sbin/getty -L 0 /dev/tty1 linux
+tty [12345] /sbin/getty -L 0 /dev/tty2 linux
+tty [12345] /sbin/getty -L 0 /dev/tty3 linux
 
-<span class="c"># Use built-in getty for serial port and USB serial</span>
-<span class="nb">tty</span> [12345] <span class="sx">/dev/ttyAMA0</span> noclear nowait
-<span class="nb">tty</span> [12345] <span class="sx">/dev/ttyUSB0</span> noclear
+# Use built-in getty for serial port and USB serial
+tty [12345] /dev/ttyAMA0 noclear nowait
+tty [12345] /dev/ttyUSB0 noclear
 
-<span class="c"># Just give me a shell, I need to debug this embedded system!</span>
-<span class="c">#tty [12345] @console noclear nologin</span>
-<span class="c">#tty [12345] notty</span>
-<span class="c">#tty [12345] rescue</span>
+# Just give me a shell, I need to debug this embedded system!
+#tty [12345] @console noclear nologin
+#tty [12345] notty
+#tty [12345] rescue
 </code></pre></div><p>The <code>service</code> stanza, as well as <code>task</code>, <code>run</code> and others are described
 in full in <a href="https://github.com/troglobit/finit/blob/master/doc/config.md">doc/config.md</a>.  Here&rsquo;s a quick overview of some of the
 most common components needed to start a UNIX daemon:</p>
@@ -523,9 +521,9 @@ and proposed extensions using GitHub:</p>
 <li><a href="https://github.com/troglobit/finit/blob/master/README.md">README</a></li>
 <li><a href="https://github.com/troglobit/finit/blob/master/TODO.md">TODO</a></li>
 <li><a href="https://github.com/troglobit/finit/blob/master/ChangeLog.md">ChangeLog</a></li>
-<li><a href="ftp://ftp.troglobit.com/finit/finit-4.0.tar.gz">finit-4.0.tar.gz</a>,
-<a href="ftp://ftp.troglobit.com/finit/finit-4.0.tar.gz.md5">MD5</a>,
-<a href="ftp://ftp.troglobit.com/finit/finit-4.0.tar.gz.sha256">SHA256</a></li>
+<li><a href="ftp://ftp.troglobit.com/finit/finit-4.1.tar.gz">finit-4.1.tar.gz</a>,
+<a href="ftp://ftp.troglobit.com/finit/finit-4.1.tar.gz.md5">MD5</a>,
+<a href="ftp://ftp.troglobit.com/finit/finit-4.1.tar.gz.sha256">SHA256</a></li>
 </ul>
 
             </div>
