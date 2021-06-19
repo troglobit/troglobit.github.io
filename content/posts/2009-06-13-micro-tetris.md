@@ -9,11 +9,11 @@ url: /2009/06/13/micro-tetris/
 aliases: /blog/2009/06/13/micro-tetris/
 ---
 
-I just published the [unobfuscated version][1] of the
-[1989 IOCCC Best Game][2] entry, Tetris™.  See the original author's,
-[John Tromp][3], home page for the game for details.  But suffice it to
-say, this is an extremely bare bones version of the classic game and
-very similar to the [BSD games'][4] version.
+I just published the [unobfuscated version][1] of the [1989 IOCCC Best
+Game][2] entry, Tetris™.  See the original author's, [John Tromp][3],
+home page for the game for details.  But suffice it to say, this is an
+extremely bare bones version of the classic game and very similar to the
+[BSD games'][4] version.
 
 Actually, this similarity in board layout, key combinations and feel led
 me to do some archaeological digging.  I dowloaded the classic BSD games
@@ -30,10 +30,10 @@ See for yourself.
 * [tetris.git][6]
 * [BSD Games][4]
 
-[1]: http://git.troglobit.com/tetris.git
-[2]: http://www.ioccc.org/1989/tromp.hint
-[3]: http://tromp.github.io/tetris.html
-[4]: http://www.ibiblio.org/pub/linux/games/bsd-games-2.17.tar.gz
-[5]: http://www.gnu.org/software/indent/
-[6]: http://git.troglobit.com/tetris.git
+[1]: https://troglobit.com/projects/tetris/
+[2]: https://www.ioccc.org/1989/tromp.hint
+[3]: https://tromp.github.io/tetris.html
+[4]: https://www.ibiblio.org/pub/linux/games/bsd-games-2.17.tar.gz
+[5]: https://www.gnu.org/software/indent/
+[6]: https://github.com/troglobit/tetris
 
