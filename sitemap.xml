@@ -3,12 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://troglobit.com/projects/finit/</loc>
-    <lastmod>2021-06-06T19:01:00+01:00</lastmod>
+    <loc>https://troglobit.com/projects/tetris/</loc>
+    <lastmod>2021-06-30T20:37:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://troglobit.com/projects/</loc>
+    <lastmod>2021-06-30T20:37:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://troglobit.com/projects/finit/</loc>
     <lastmod>2021-06-06T19:01:00+01:00</lastmod>
   </url>
   
@@ -855,11 +860,6 @@
   <url>
     <loc>https://troglobit.com/2015/01/08/recent-open-source-work/</loc>
     <lastmod>2015-01-08T01:57:14+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://troglobit.com/projects/tetris/</loc>
-    <lastmod>2015-01-08T01:50:00+02:00</lastmod>
   </url>
   
   <url>

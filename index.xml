@@ -13,6 +13,16 @@
     
     
     <item>
+      <title>Micro Tetris™</title>
+      <link>https://troglobit.com/projects/tetris/</link>
+      <pubDate>Wed, 30 Jun 2021 20:37:00 +0200</pubDate>
+      
+      <guid>https://troglobit.com/projects/tetris/</guid>
+      <description>Micro Tetris — one of the smallest Tetris implementations in the world! Utilizing only ANSI escape sequences to draw the board, no external library dependencys other than a standard C-library, like uClibc or musl libc. Hence, it is very suitable for small embedded devices in need of an easter egg ;-)
+The game is based on a 1989 International Obfuscated C Code Contest (IOCCC) entry made by John Tromp.</description>
+    </item>
+    
+    <item>
       <title>Fast init for Linux systems</title>
       <link>https://troglobit.com/projects/finit/</link>
       <pubDate>Sun, 06 Jun 2021 19:01:00 +0100</pubDate>
@@ -119,36 +129,6 @@ Here it is, you&amp;rsquo;d think this be something the installer could set up a
 PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/  or if you use the latest on an old ThinkPad T42:
 PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/i386/9.0/All/  The simply
 pkg_add -v git  Or so you might think!</description>
-    </item>
-    
-    <item>
-      <title>HowTo: Build &amp; Use My Projects</title>
-      <link>https://troglobit.com/howtos/howto-build-and-use-my-projects/</link>
-      <pubDate>Sun, 16 Aug 2020 16:36:00 +0100</pubDate>
-      
-      <guid>https://troglobit.com/howtos/howto-build-and-use-my-projects/</guid>
-      <description>&lt;p&gt;Ever so often someone new to Open Source show up on GitHub or in my
-inbox.  It usually starts something like this:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;&amp;ldquo;Hey, I just downloaded your software, what&amp;rsquo;s next?&amp;quot;&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;&amp;ldquo;Your crappy software doesn&amp;rsquo;t work on my system!!!!&amp;quot;&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;&amp;ldquo;How can I do that weird-thing that fits my odd use-case?&amp;quot;&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;This HowTo is for you.&lt;/p&gt;
-&lt;h2 id=&#34;0-short-version&#34;&gt;0. Short Version&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Download the &lt;em&gt;versioned&lt;/em&gt; archive from the project&amp;rsquo;s Releases page&lt;/li&gt;
-&lt;li&gt;Extract archive and change to its directory&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;./configure --help&lt;/code&gt;, or just&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;./configure &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo make install&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Some projects of mine are available in Debian/Ubuntu/FreeBSD, if you
-use that, please report bugs to them and not me.  I have no control
-over what they do.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Cheers&lt;br&gt;
-/Joachim&lt;/p&gt;</description>
     </item>
     
   </channel>

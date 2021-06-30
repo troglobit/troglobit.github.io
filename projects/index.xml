@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Sun, 06 Jun 2021 19:01:00 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 30 Jun 2021 20:37:00 +0200</lastBuildDate>
     
 	<atom:link href="https://troglobit.com/projects/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Micro Tetris™</title>
+      <link>https://troglobit.com/projects/tetris/</link>
+      <pubDate>Wed, 30 Jun 2021 20:37:00 +0200</pubDate>
+      
+      <guid>https://troglobit.com/projects/tetris/</guid>
+      <description>Micro Tetris — one of the smallest Tetris implementations in the world! Utilizing only ANSI escape sequences to draw the board, no external library dependencys other than a standard C-library, like uClibc or musl libc. Hence, it is very suitable for small embedded devices in need of an easter egg ;-)
+The game is based on a 1989 International Obfuscated C Code Contest (IOCCC) entry made by John Tromp.</description>
+    </item>
     
     <item>
       <title>Fast init for Linux systems</title>
@@ -105,16 +115,6 @@ Merecat expands on the features originally offered by thttpd, but still has a li
       <guid>https://troglobit.com/projects/nemesis/</guid>
       <description>Nemesis is a command-line network packet crafting and injection utility for UNIX-like and Windows systems. Well suited for testing Network Intrusion Detection Systems, firewalls, IP stacks and a variety of other tasks. As a command-line driven utility, it is perfect for automation and scripting.
 Nemesis can natively craft and inject ARP, DNS, ETHERNET, ICMP, IGMP, IP, OSPF, RIP, TCP and UDP packets. Using the IP and the Ethernet injection modes, almost any custom packet can be crafted and injected.</description>
-    </item>
-    
-    <item>
-      <title>The original PIM-SM daemon</title>
-      <link>https://troglobit.com/projects/pimd/</link>
-      <pubDate>Sun, 28 Apr 2019 08:50:00 +0200</pubDate>
-      
-      <guid>https://troglobit.com/projects/pimd/</guid>
-      <description>Protocol Independent Multicast, PIM, allows existing networks to route IP multicast, regardless of what unicast routing protocol is in use. It is designed to use existing routing tables to make its multicast routing decisions. PIM-SM is suitable for sparsely located multicast subscribers, for dense mode operation mrouted is recommended, and for static multicast routing smcroute may be used.
-pimd is a lightweight standalone PIM-SM/SSM v2 multicast routing daemon. It is the original USC (netweb/catarina.</description>
     </item>
     
   </channel>
