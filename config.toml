@@ -103,8 +103,8 @@ disableHugoGeneratorInject = false
   # Custom footer 
   # If you want, you can easily override the default footer with your own content. 
   #
-  footerLeft = "Proudly hosted by Fosshost"
-  footerRight = "<a href=\"https://fosshost.org/\">https://fosshost.org/</a>"
+  #footerLeft = ""
+  #footerRight = ""
 
   # Colors for favicons
   #
