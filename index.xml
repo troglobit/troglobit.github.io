@@ -13,6 +13,17 @@
     
     
     <item>
+      <title>HowTo: Add Multicast Routing to FreeBSD kernel</title>
+      <link>https://troglobit.com/howtos/mrouting-in-freebsd/</link>
+      <pubDate>Sun, 01 Aug 2021 08:31:12 +0200</pubDate>
+      
+      <guid>https://troglobit.com/howtos/mrouting-in-freebsd/</guid>
+      <description>This is a very short blog post, mostly intended as a reminder to myself. Basically, there are two methods of adding multicast routing support to the FreeBSD kernel:
+ Rebuild the kernel with options MROUTING Load the kernel module: kldload ip_mroute  The kernel rebuild assumes the src.txz set was installed previously.
+cd /usr/src cd sys/amd64/conf cat GENERIC | sed &#39;s/GENERIC$/MULTICAST/&#39; &amp;gt; MULTICAST echo &#39;options MROUTING # Multicast routing&#39; &amp;gt;&amp;gt; MULTICAST echo &#39;options PIM # Enable for pimd&#39; &amp;gt;&amp;gt; MULTICAST cd - make kernel KERNCONF=MULTICAST reboot  That&amp;rsquo;s it.</description>
+    </item>
+    
+    <item>
       <title>Micro Tetris™</title>
       <link>https://troglobit.com/projects/tetris/</link>
       <pubDate>Wed, 30 Jun 2021 20:37:00 +0200</pubDate>
@@ -116,19 +127,6 @@ in stack traces.&lt;/p&gt;</description>
       <description>I blogged earlier about the awesome little ThinkPad X200 I found and its blinking WiFi LED. Briefly I mentioned an odd issue with X/Wayland on LMDE 4. This turned out to be a HW bug that can only be worked around by disabling hardware acceleration for virtualization:
 https://forums.lenovo.com/t5/Windows-8-1-8-7-Vista-and-XP-Discussions/Bizarre-screen-artifacts-on-R400-Integrated-Graphics-running-Win-7-RTM/m-p/153980?page=1#199768
 The post says it should be sufficient to &amp;ldquo;Disable Virtualization Technology for Directed-IO (VT-d)&amp;quot;, but that didn&amp;rsquo;t work for me, and I wanted to keep the 8 GiB of RAM I managed to fit into it.</description>
-    </item>
-    
-    <item>
-      <title>HowTo use NetBSD pre-built packages</title>
-      <link>https://troglobit.com/howtos/netbsd-pkgsrc/</link>
-      <pubDate>Sat, 22 Aug 2020 21:39:00 +0100</pubDate>
-      
-      <guid>https://troglobit.com/howtos/netbsd-pkgsrc/</guid>
-      <description>Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.
-Here it is, you&amp;rsquo;d think this be something the installer could set up a default for &amp;hellip;
-PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/  or if you use the latest on an old ThinkPad T42:
-PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/i386/9.0/All/  The simply
-pkg_add -v git  Or so you might think!</description>
     </item>
     
   </channel>
