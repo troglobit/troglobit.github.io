@@ -64,7 +64,7 @@ disabling ALL interfaces except the few used for multicast routing.
 Issue tracker and GIT repository available at [GitHub][].
 
 * [Repository][GitHub]
-* [smcroute-2.5.0.tar.xz](https://ftp.troglobit.com/smcroute/smcroute-2.5.0.tar.gz),
+* [smcroute-2.5.0.tar.gz](https://ftp.troglobit.com/smcroute/smcroute-2.5.0.tar.gz),
   [MD5](https://ftp.troglobit.com/smcroute/smcroute-2.5.0.tar.gz.md5)
 * [Issue Tracker](https://github.com/troglobit/smcroute/issues)
 * [Debian packages](https://packages.debian.org/smcroute)
