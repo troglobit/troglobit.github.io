@@ -13,6 +13,26 @@
     
     
     <item>
+      <title>smcroute.conf example</title>
+      <link>https://troglobit.com/project/smcroute/smcroute-conf.html</link>
+      <pubDate>Thu, 19 Aug 2021 15:46:00 +0200</pubDate>
+      
+      <guid>https://troglobit.com/project/smcroute/smcroute-conf.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Static Multicast Routing Daemon</title>
+      <link>https://troglobit.com/projects/smcroute/</link>
+      <pubDate>Thu, 19 Aug 2021 15:46:00 +0200</pubDate>
+      
+      <guid>https://troglobit.com/projects/smcroute/</guid>
+      <description>SMCRoute is a daemon and command line tool to manipulate the multicast routing table in the UNIX kernel. Both FreeBSD and Linux kernels are supported, but it may work on other systems as well.
+SMCRoute can be used as an alternative to dynamic multicast routing daemons like mrouted or pimd when (only) static multicast routes should be maintained or no proper signalling exists.
+The full documentation of SMCRoute is available in the manual pages, see smcrouted(8), smcroutectl(8), and smcroute.</description>
+    </item>
+    
+    <item>
       <title>HowTo: Add Multicast Routing to FreeBSD kernel</title>
       <link>https://troglobit.com/howtos/mrouting-in-freebsd/</link>
       <pubDate>Sun, 01 Aug 2021 08:31:12 +0200</pubDate>
@@ -105,28 +125,6 @@ it very attractive to container builders.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://troglobit.com/images/finit4-screenshot.png#center&#34; alt=&#34;Alpine Linux started with Finit&#34;&gt;&lt;/p&gt;
 &lt;p&gt;This blog post details how to set Alpine up with the Finit init system,
 replacing the default OpenRC.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Backtrace in C</title>
-      <link>https://troglobit.com/post/2020-11-15-backtrace-in-c/</link>
-      <pubDate>Sun, 15 Nov 2020 17:25:00 +0100</pubDate>
-      
-      <guid>https://troglobit.com/post/2020-11-15-backtrace-in-c/</guid>
-      <description>&lt;p&gt;Reminder to self: remember &lt;code&gt;CFLAGS=-g -Og -rdynamic&lt;/code&gt; to allow
-&lt;code&gt;backtrace_symbols()&lt;/code&gt; to actually pretty print function names
-in stack traces.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Weird Screen Artifacts on X200</title>
-      <link>https://troglobit.com/post/2020-08-23-weird-screen-artifacts-on-x200/</link>
-      <pubDate>Sun, 23 Aug 2020 14:02:00 +0000</pubDate>
-      
-      <guid>https://troglobit.com/post/2020-08-23-weird-screen-artifacts-on-x200/</guid>
-      <description>I blogged earlier about the awesome little ThinkPad X200 I found and its blinking WiFi LED. Briefly I mentioned an odd issue with X/Wayland on LMDE 4. This turned out to be a HW bug that can only be worked around by disabling hardware acceleration for virtualization:
-https://forums.lenovo.com/t5/Windows-8-1-8-7-Vista-and-XP-Discussions/Bizarre-screen-artifacts-on-R400-Integrated-Graphics-running-Win-7-RTM/m-p/153980?page=1#199768
-The post says it should be sufficient to &amp;ldquo;Disable Virtualization Technology for Directed-IO (VT-d)&amp;quot;, but that didn&amp;rsquo;t work for me, and I wanted to keep the 8 GiB of RAM I managed to fit into it.</description>
     </item>
     
   </channel>

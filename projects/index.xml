@@ -7,10 +7,30 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Wed, 30 Jun 2021 20:37:00 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 19 Aug 2021 15:46:00 +0200</lastBuildDate>
     
 	<atom:link href="https://troglobit.com/projects/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>smcroute.conf example</title>
+      <link>https://troglobit.com/project/smcroute/smcroute-conf.html</link>
+      <pubDate>Thu, 19 Aug 2021 15:46:00 +0200</pubDate>
+      
+      <guid>https://troglobit.com/project/smcroute/smcroute-conf.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Static Multicast Routing Daemon</title>
+      <link>https://troglobit.com/projects/smcroute/</link>
+      <pubDate>Thu, 19 Aug 2021 15:46:00 +0200</pubDate>
+      
+      <guid>https://troglobit.com/projects/smcroute/</guid>
+      <description>SMCRoute is a daemon and command line tool to manipulate the multicast routing table in the UNIX kernel. Both FreeBSD and Linux kernels are supported, but it may work on other systems as well.
+SMCRoute can be used as an alternative to dynamic multicast routing daemons like mrouted or pimd when (only) static multicast routes should be maintained or no proper signalling exists.
+The full documentation of SMCRoute is available in the manual pages, see smcrouted(8), smcroutectl(8), and smcroute.</description>
+    </item>
     
     <item>
       <title>Micro Tetris™</title>
@@ -94,27 +114,6 @@ Supported Providers The following is a curated list of some of the natively supp
       <description>Tired of confusing configuration files and security features you don&amp;rsquo;t need?
 Try uftpd!
  Supports FTP and TFTP No configuration file Defaults to port ftp/tcp and tftp/udp found in /etc/services, or custom port(s) Serves files from the ftp user&amp;rsquo;s $HOME, as specified in /etc/passwd, or custom path Can run from inetd(8) or as a standalone daemon Can be built and installed as a .deb file, with debconf support Can run as root, with chroot and privsep, or as a regular user Supports TFTP blocksize negotiation, RFC 2348  Basically, it just works!</description>
-    </item>
-    
-    <item>
-      <title>Merecat httpd</title>
-      <link>https://troglobit.com/projects/merecat/</link>
-      <pubDate>Fri, 19 Jul 2019 12:35:00 +0200</pubDate>
-      
-      <guid>https://troglobit.com/projects/merecat/</guid>
-      <description>Merecat started out as a pun at Mongoose, but is now useful for actual web serving purposes. It is however not a real Meerkat, merely yet another copycat, forked from the great thttpd created by Jef Poskanzer.
-Merecat expands on the features originally offered by thttpd, but still has a limited feature set:
- Virtual hosts Basic .htpassd and .htaccess support URL-traffic-based throttling CGI/1.1 HTTP/1.1 Keep-alive Built-in gzip deflate using zlib HTTPS support using OpenSSL/LibreSSL, works with Let&amp;rsquo;s Encrypt!</description>
-    </item>
-    
-    <item>
-      <title>N E M E S I S</title>
-      <link>https://troglobit.com/projects/nemesis/</link>
-      <pubDate>Sun, 16 Jun 2019 15:39:00 +0200</pubDate>
-      
-      <guid>https://troglobit.com/projects/nemesis/</guid>
-      <description>Nemesis is a command-line network packet crafting and injection utility for UNIX-like and Windows systems. Well suited for testing Network Intrusion Detection Systems, firewalls, IP stacks and a variety of other tasks. As a command-line driven utility, it is perfect for automation and scripting.
-Nemesis can natively craft and inject ARP, DNS, ETHERNET, ICMP, IGMP, IP, OSPF, RIP, TCP and UDP packets. Using the IP and the Ethernet injection modes, almost any custom packet can be crafted and injected.</description>
     </item>
     
   </channel>

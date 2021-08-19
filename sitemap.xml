@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://troglobit.com/projects/</loc>
+    <lastmod>2021-08-19T15:46:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://troglobit.com/project/smcroute/smcroute-conf.html</loc>
+    <lastmod>2021-08-19T15:46:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://troglobit.com/projects/smcroute/</loc>
+    <lastmod>2021-08-19T15:46:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://troglobit.com/categories/</loc>
     <lastmod>2021-08-01T08:31:12+02:00</lastmod>
   </url>
@@ -39,11 +54,6 @@
   
   <url>
     <loc>https://troglobit.com/projects/tetris/</loc>
-    <lastmod>2021-06-30T20:37:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://troglobit.com/projects/</loc>
     <lastmod>2021-06-30T20:37:00+02:00</lastmod>
   </url>
   
@@ -378,11 +388,6 @@
   </url>
   
   <url>
-    <loc>https://troglobit.com/projects/smcroute/</loc>
-    <lastmod>2019-02-11T20:46:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://troglobit.com/post/2018-08-12-dark-themes-ahead/</loc>
     <lastmod>2018-08-12T23:51:52+02:00</lastmod>
   </url>
@@ -470,11 +475,6 @@
   <url>
     <loc>https://troglobit.com/2017/09/09/boot-alpine-linux-with-grub/</loc>
     <lastmod>2017-09-09T21:37:10+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://troglobit.com/project/smcroute/smcroute-conf.html</loc>
-    <lastmod>2017-06-13T23:15:00+02:00</lastmod>
   </url>
   
   <url>
