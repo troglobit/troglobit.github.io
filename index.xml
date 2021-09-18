@@ -13,6 +13,17 @@
     
     
     <item>
+      <title>The original multicast routing daemon</title>
+      <link>https://troglobit.com/projects/mrouted/</link>
+      <pubDate>Sun, 19 Sep 2021 01:16:31 +0200</pubDate>
+      
+      <guid>https://troglobit.com/projects/mrouted/</guid>
+      <description>mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, RFC 1075. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunneling support.
+ Tunneling may be required to cross non-multicast-aware routers.
+ The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is suitable for smaller/dense networks. It employs the &amp;ldquo;flood and prune&amp;rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups.</description>
+    </item>
+    
+    <item>
       <title>smcroute.conf example</title>
       <link>https://troglobit.com/project/smcroute/smcroute-conf.html</link>
       <pubDate>Thu, 19 Aug 2021 15:46:00 +0200</pubDate>
@@ -111,20 +122,6 @@ where to begin &amp;hellip; the plan anyway is to use this blog for a series of
 posts detailing different aspects and important features.&lt;/p&gt;
 &lt;p&gt;The impatient reader can either scroll down to the &lt;strong&gt;video&lt;/strong&gt; below, or
 move on to the project home page: &lt;a href=&#34;https://troglobit.com/finit.html&#34;&gt;https://troglobit.com/finit.html&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Alpine Linux with Finit</title>
-      <link>https://troglobit.com/post/2021-02-12-alpine-linux-with-finit/</link>
-      <pubDate>Fri, 12 Feb 2021 07:24:06 +0100</pubDate>
-      
-      <guid>https://troglobit.com/post/2021-02-12-alpine-linux-with-finit/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://alpinelinux.org/&#34;&gt;Alpine Linux&lt;/a&gt; is an amazing little operating
-system.  It&amp;rsquo;s small, boots quick, and easy to use.  The size alone makes
-it very attractive to container builders.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://troglobit.com/images/finit4-screenshot.png#center&#34; alt=&#34;Alpine Linux started with Finit&#34;&gt;&lt;/p&gt;
-&lt;p&gt;This blog post details how to set Alpine up with the Finit init system,
-replacing the default OpenRC.&lt;/p&gt;</description>
     </item>
     
   </channel>

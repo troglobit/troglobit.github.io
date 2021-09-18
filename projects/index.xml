@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Thu, 19 Aug 2021 15:46:00 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 19 Sep 2021 01:16:31 +0200</lastBuildDate>
     
 	<atom:link href="https://troglobit.com/projects/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The original multicast routing daemon</title>
+      <link>https://troglobit.com/projects/mrouted/</link>
+      <pubDate>Sun, 19 Sep 2021 01:16:31 +0200</pubDate>
+      
+      <guid>https://troglobit.com/projects/mrouted/</guid>
+      <description>mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, RFC 1075. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunneling support.
+ Tunneling may be required to cross non-multicast-aware routers.
+ The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is suitable for smaller/dense networks. It employs the &amp;ldquo;flood and prune&amp;rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups.</description>
+    </item>
     
     <item>
       <title>smcroute.conf example</title>
@@ -61,17 +72,6 @@ Features include:
       <guid>https://troglobit.com/projects/watchdogd/</guid>
       <description>watchdogd(8) is an advanced system and process supervisor daemon, primarily intended for embedded Linux and server systems. By default it periodically kicks the system watchdog timer (WDT) to prevent it from resetting the system. In its more advanced guise it monitors critical system resources, supervises the heartbeat of processes, records deadline transgressions, and initiates a controlled reset if needed.
 When a system comes back up after a reset, watchdogd determines the reset cause and records it in a file for later analysis by an operator or network management system (NMS).</description>
-    </item>
-    
-    <item>
-      <title>The original multicast routing daemon</title>
-      <link>https://troglobit.com/projects/mrouted/</link>
-      <pubDate>Sun, 07 Jun 2020 22:27:31 +0100</pubDate>
-      
-      <guid>https://troglobit.com/projects/mrouted/</guid>
-      <description>mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, RFC 1075. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunneling support.
- Tunneling may be required to cross non-multicast-aware routers.
- The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is suitable for smaller/dense networks. It employs the &amp;ldquo;flood and prune&amp;rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups.</description>
     </item>
     
     <item>

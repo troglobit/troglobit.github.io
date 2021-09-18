@@ -51,9 +51,9 @@
 <meta itemprop="description" content="mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, RFC 1075. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunneling support.
  Tunneling may be required to cross non-multicast-aware routers.
  The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is suitable for smaller/dense networks. It employs the &ldquo;flood and prune&rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups.">
-<meta itemprop="datePublished" content="2020-06-07T22:27:31&#43;01:00" />
-<meta itemprop="dateModified" content="2020-06-07T22:27:31&#43;01:00" />
-<meta itemprop="wordCount" content="360">
+<meta itemprop="datePublished" content="2021-09-19T01:16:31&#43;02:00" />
+<meta itemprop="dateModified" content="2021-09-19T01:16:31&#43;02:00" />
+<meta itemprop="wordCount" content="390">
 
 
 
@@ -73,15 +73,15 @@
  The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is suitable for smaller/dense networks. It employs the &ldquo;flood and prune&rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://troglobit.com/projects/mrouted/" />
-<meta property="article:published_time" content="2020-06-07T22:27:31+01:00" />
-<meta property="article:modified_time" content="2020-06-07T22:27:31+01:00" />
+<meta property="article:published_time" content="2021-09-19T01:16:31+02:00" />
+<meta property="article:modified_time" content="2021-09-19T01:16:31+02:00" />
 
 
 
 
 
 
-    <meta property="article:published_time" content="2020-06-07 22:27:31 &#43;0100 &#43;0100" />
+    <meta property="article:published_time" content="2021-09-19 01:16:31 &#43;0200 CEST" />
 
 
 
@@ -185,20 +185,24 @@ project.</p>
 Patches from all over the Internet, including OpenBSD, have been
 integrated.</p>
 <p>In 2020, v4.0 and v4.1 were finally released after another 10 years of
-hard work.  The most important news include:</p>
+hard work.  In 2021, v4.2 and v4.3 were released.  The most important
+news include:</p>
 <ul>
 <li>A new command line tool, <code>mroutectl</code> to control and query status</li>
 <li>Support for automatically detecting <code>altnet</code>, secondary addresses</li>
-<li>Support for IGMPv3</li>
+<li>Support for IGMPv3 and many config options to control IGMP</li>
+<li>Static multicast routes, <code>phyint foo0 static-group GROUP</code></li>
+<li>Support for multiple multicast routing tables, <code>-t ID</code></li>
 </ul>
 <hr>
 <p>Issue tracker and GIT repository available at GitHub:</p>
 <ul>
 <li><a href="https://github.com/troglobit/mrouted">Repository</a></li>
-<li><a href="https://github.com/troglobit/mrouted/releases/tag/4.1">ChangeLog</a></li>
+<li><a href="https://github.com/troglobit/mrouted/releases/tag/4.3">ChangeLog</a></li>
 <li><a href="https://github.com/troglobit/mrouted/issues">Issue Tracker</a></li>
-<li><a href="https://ftp.troglobit.com/mrouted/mrouted-4.1.tar.gz">mrouted-4.1.tar.gz</a>,
-<a href="https://ftp.troglobit.com/mrouted/mrouted-4.1.tar.gz.md5">MD5</a></li>
+<li><a href="https://ftp.troglobit.com/mrouted/mrouted-4.3.tar.gz">mrouted-4.3.tar.gz</a>,
+<a href="https://ftp.troglobit.com/mrouted/mrouted-4.3.tar.gz.md5">MD5</a>,
+<a href="https://ftp.troglobit.com/mrouted/mrouted-4.3.tar.gz.sha256">SHA256</a>,</li>
 </ul>
 <p>Manual pages availale here:</p>
 <ul>
