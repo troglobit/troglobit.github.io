@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://troglobit.com/howtos/howto-build-and-use-my-projects/</loc>
+    <lastmod>2021-10-05T21:03:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://troglobit.com/howtos/</loc>
+    <lastmod>2021-10-05T21:03:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://troglobit.com/projects/</loc>
     <lastmod>2021-09-19T01:16:31+02:00</lastmod>
   </url>
@@ -39,11 +49,6 @@
   
   <url>
     <loc>https://troglobit.com/howtos/mrouting-in-freebsd/</loc>
-    <lastmod>2021-08-01T08:31:12+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://troglobit.com/howtos/</loc>
     <lastmod>2021-08-01T08:31:12+02:00</lastmod>
   </url>
   
@@ -170,11 +175,6 @@
   <url>
     <loc>https://troglobit.com/categories/netbsd/</loc>
     <lastmod>2020-08-22T21:39:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://troglobit.com/howtos/howto-build-and-use-my-projects/</loc>
-    <lastmod>2020-08-16T16:36:00+01:00</lastmod>
   </url>
   
   <url>

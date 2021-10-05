@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="Joachim Wiberg">
 <meta name="description" content="Ever so often someone new to Open Source show up on GitHub or in my inbox. It usually starts something like this:
- &amp;ldquo;Hey, I just downloaded your software, what&amp;rsquo;s next?&amp;quot; &amp;ldquo;Your crappy software doesn&amp;rsquo;t work on my system!!!!&amp;quot; &amp;ldquo;How can I do that weird-thing that fits my odd use-case?&amp;quot;  This HowTo is for you.
-0. Short Version  Download the versioned archive from the project&amp;rsquo;s Releases page Extract archive and change to its directory ./configure --help, or just ./configure &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo make install   Some projects of mine are available in Debian/Ubuntu/FreeBSD, if you use that, please report bugs to them and not me. I have no control over what they do.
+ &amp;ldquo;Hey, I just downloaded your software, what&amp;rsquo;s next?&amp;quot; &amp;ldquo;Your software doesn&amp;rsquo;t work on my system!!!!&amp;quot; &amp;ldquo;How can I do that weird-thing that fits my odd use-case?&amp;quot; &amp;ldquo;I have zero documented experience but I think you should fix your build system!&amp;quot;  This HowTo is for you.
+0. Short Version  Download a versioned archive from the project&amp;rsquo;s Releases page Extract archive for v1.2.3 and change to its directory, cd archive-1.2.3/ ./configure --help, or use something like the following &amp;hellip; ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo make install   Some projects of mine are available in Debian/Ubuntu/FreeBSD, if you use that, please report bugs to them and not me. I have no control over what they do.
  Cheers
 /Joachim
 " />
@@ -55,16 +55,17 @@
 inbox.  It usually starts something like this:
 
 &ldquo;Hey, I just downloaded your software, what&rsquo;s next?&quot;
-&ldquo;Your crappy software doesn&rsquo;t work on my system!!!!&quot;
+&ldquo;Your software doesn&rsquo;t work on my system!!!!&quot;
 &ldquo;How can I do that weird-thing that fits my odd use-case?&quot;
+&ldquo;I have zero documented experience but I think you should fix your build system!&quot;
 
 This HowTo is for you.
 0. Short Version
 
-Download the versioned archive from the project&rsquo;s Releases page
-Extract archive and change to its directory
-./configure --help, or just
-./configure &amp;&amp; make &amp;&amp; sudo make install
+Download a versioned archive from the project&rsquo;s Releases page
+Extract archive for v1.2.3 and change to its directory, cd archive-1.2.3/
+./configure --help, or use something like the following &hellip;
+./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var &amp;&amp; make &amp;&amp; sudo make install
 
 
 Some projects of mine are available in Debian/Ubuntu/FreeBSD, if you
@@ -73,9 +74,9 @@ over what they do.
 
 Cheers
 /Joachim">
-<meta itemprop="datePublished" content="2020-08-16T16:36:00&#43;01:00" />
-<meta itemprop="dateModified" content="2020-08-16T16:36:00&#43;01:00" />
-<meta itemprop="wordCount" content="805">
+<meta itemprop="datePublished" content="2021-10-05T21:03:00&#43;02:00" />
+<meta itemprop="dateModified" content="2021-10-05T21:03:00&#43;02:00" />
+<meta itemprop="wordCount" content="859">
 
 
 
@@ -86,16 +87,17 @@ Cheers
 inbox.  It usually starts something like this:
 
 &ldquo;Hey, I just downloaded your software, what&rsquo;s next?&quot;
-&ldquo;Your crappy software doesn&rsquo;t work on my system!!!!&quot;
+&ldquo;Your software doesn&rsquo;t work on my system!!!!&quot;
 &ldquo;How can I do that weird-thing that fits my odd use-case?&quot;
+&ldquo;I have zero documented experience but I think you should fix your build system!&quot;
 
 This HowTo is for you.
 0. Short Version
 
-Download the versioned archive from the project&rsquo;s Releases page
-Extract archive and change to its directory
-./configure --help, or just
-./configure &amp;&amp; make &amp;&amp; sudo make install
+Download a versioned archive from the project&rsquo;s Releases page
+Extract archive for v1.2.3 and change to its directory, cd archive-1.2.3/
+./configure --help, or use something like the following &hellip;
+./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var &amp;&amp; make &amp;&amp; sudo make install
 
 
 Some projects of mine are available in Debian/Ubuntu/FreeBSD, if you
@@ -113,16 +115,17 @@ Cheers
 inbox.  It usually starts something like this:
 
 &ldquo;Hey, I just downloaded your software, what&rsquo;s next?&quot;
-&ldquo;Your crappy software doesn&rsquo;t work on my system!!!!&quot;
+&ldquo;Your software doesn&rsquo;t work on my system!!!!&quot;
 &ldquo;How can I do that weird-thing that fits my odd use-case?&quot;
+&ldquo;I have zero documented experience but I think you should fix your build system!&quot;
 
 This HowTo is for you.
 0. Short Version
 
-Download the versioned archive from the project&rsquo;s Releases page
-Extract archive and change to its directory
-./configure --help, or just
-./configure &amp;&amp; make &amp;&amp; sudo make install
+Download a versioned archive from the project&rsquo;s Releases page
+Extract archive for v1.2.3 and change to its directory, cd archive-1.2.3/
+./configure --help, or use something like the following &hellip;
+./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var &amp;&amp; make &amp;&amp; sudo make install
 
 
 Some projects of mine are available in Debian/Ubuntu/FreeBSD, if you
@@ -133,15 +136,15 @@ Cheers
 /Joachim" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://troglobit.com/howtos/howto-build-and-use-my-projects/" />
-<meta property="article:published_time" content="2020-08-16T16:36:00+01:00" />
-<meta property="article:modified_time" content="2020-08-16T16:36:00+01:00" />
+<meta property="article:published_time" content="2021-10-05T21:03:00+02:00" />
+<meta property="article:modified_time" content="2021-10-05T21:03:00+02:00" />
 
 
 
 
 
 
-    <meta property="article:published_time" content="2020-08-16 16:36:00 &#43;0100 &#43;0100" />
+    <meta property="article:published_time" content="2021-10-05 21:03:00 &#43;0200 CEST" />
 
 
 
@@ -214,16 +217,17 @@ Cheers
 inbox.  It usually starts something like this:</p>
 <ul>
 <li><em>&ldquo;Hey, I just downloaded your software, what&rsquo;s next?&quot;</em></li>
-<li><em>&ldquo;Your crappy software doesn&rsquo;t work on my system!!!!&quot;</em></li>
+<li><em>&ldquo;Your software doesn&rsquo;t work on my system!!!!&quot;</em></li>
 <li><em>&ldquo;How can I do that weird-thing that fits my odd use-case?&quot;</em></li>
+<li><em>&ldquo;I have zero documented experience but I think you should fix your build system!&quot;</em></li>
 </ul>
 <p>This HowTo is for you.</p>
 <h2 id="0-short-version">0. Short Version</h2>
 <ul>
-<li>Download the <em>versioned</em> archive from the project&rsquo;s Releases page</li>
-<li>Extract archive and change to its directory</li>
-<li><code>./configure --help</code>, or just</li>
-<li><code>./configure &amp;&amp; make &amp;&amp; sudo make install</code></li>
+<li>Download a <em>versioned</em> archive from the project&rsquo;s Releases page</li>
+<li>Extract archive for v1.2.3 and change to its directory, <code>cd archive-1.2.3/</code></li>
+<li><code>./configure --help</code>, or use something like the following &hellip;</li>
+<li><code>./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var &amp;&amp; make &amp;&amp; sudo make install</code></li>
 </ul>
 <blockquote>
 <p>Some projects of mine are available in Debian/Ubuntu/FreeBSD, if you
@@ -234,7 +238,8 @@ over what they do.</p>
 /Joachim</p>
 <h2 id="1-i-dont-owe-you-free-support">1. I don&rsquo;t owe you free support</h2>
 <p>Just because the software is published for free, and often without any
-restrictions<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> on use, doesn&rsquo;t mean I must provide you with any support.</p>
+restrictions<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> on use, doesn&rsquo;t mean I must provide you with any (free)
+support.</p>
 <p>If you use my software packaged by a 3rd party, e.g., Debian, FreeBSD,
 or similar, please report the bug/problem to them first.  They become
 first line support when publishing my work.</p>
@@ -244,7 +249,8 @@ Source software:</p>
 <ul>
 <li>Released software is stable software, use versioned tarballs/zip files</li>
 <li>Software in GIT may be missing important files/scripts</li>
-<li>Software in GIT, even on the master branch, may be unstable/unfinished</li>
+<li>Software in GIT, even on the master branch, may be <em>unstable</em> or unfinished</li>
+<li>Only use GIT sources if you know what you&rsquo;re doing and want to contribute</li>
 </ul>
 <p>When I release software on GitHub I first do a &ldquo;tag&rdquo;, then build the
 release from that tag.  This results in artifacts such as an archive in
@@ -266,7 +272,7 @@ software.  It&rsquo;s more like building furniture from IKEA.</p>
 systems, as well as to facilitate cross-compilation to embedded targets
 (biggest audience by far!), most of my projects include a configure
 script.  This script is generated at release time and is <em>not available</em>
-from GIT sources.</p>
+from GIT sources. (See below for how to build from GIT sources.)</p>
 <p>From the project release page, download the <em>versioned archive</em> (means
 it has a version number in the name and ends in tar/zip) which includes
 the configure script, extract the archive, run the <code>configure</code> script
@@ -279,7 +285,7 @@ output from a failing configure script for details.</p>
 <pre><code>wget https://github.com/troglobit/ssdp-responder/releases/download/v1.7/ssdp-responder-1.7.tar.gz
 tar xf ssdp-responder-1.7.tar.gz
 cd ssdp-responder-1.7/
-./configure
+./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var
 make
 </code></pre>
 <p>When that is done you have the built <code>ssdp-scan</code> tool and the <code>ssdpd</code>

@@ -13,6 +13,37 @@
     
     
     <item>
+      <title>HowTo: Build &amp; Use My Projects</title>
+      <link>https://troglobit.com/howtos/howto-build-and-use-my-projects/</link>
+      <pubDate>Tue, 05 Oct 2021 21:03:00 +0200</pubDate>
+      
+      <guid>https://troglobit.com/howtos/howto-build-and-use-my-projects/</guid>
+      <description>&lt;p&gt;Ever so often someone new to Open Source show up on GitHub or in my
+inbox.  It usually starts something like this:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&amp;ldquo;Hey, I just downloaded your software, what&amp;rsquo;s next?&amp;quot;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&amp;ldquo;Your software doesn&amp;rsquo;t work on my system!!!!&amp;quot;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&amp;ldquo;How can I do that weird-thing that fits my odd use-case?&amp;quot;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&amp;ldquo;I have zero documented experience but I think you should fix your build system!&amp;quot;&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This HowTo is for you.&lt;/p&gt;
+&lt;h2 id=&#34;0-short-version&#34;&gt;0. Short Version&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Download a &lt;em&gt;versioned&lt;/em&gt; archive from the project&amp;rsquo;s Releases page&lt;/li&gt;
+&lt;li&gt;Extract archive for v1.2.3 and change to its directory, &lt;code&gt;cd archive-1.2.3/&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;./configure --help&lt;/code&gt;, or use something like the following &amp;hellip;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo make install&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Some projects of mine are available in Debian/Ubuntu/FreeBSD, if you
+use that, please report bugs to them and not me.  I have no control
+over what they do.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Cheers&lt;br&gt;
+/Joachim&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>The original multicast routing daemon</title>
       <link>https://troglobit.com/projects/mrouted/</link>
       <pubDate>Sun, 19 Sep 2021 01:16:31 +0200</pubDate>
@@ -106,22 +137,6 @@ sudo apt install notmuch isync afew Do initial setup of notmuch for your user. I
       <guid>https://troglobit.com/projects/watchdogd/</guid>
       <description>watchdogd(8) is an advanced system and process supervisor daemon, primarily intended for embedded Linux and server systems. By default it periodically kicks the system watchdog timer (WDT) to prevent it from resetting the system. In its more advanced guise it monitors critical system resources, supervises the heartbeat of processes, records deadline transgressions, and initiates a controlled reset if needed.
 When a system comes back up after a reset, watchdogd determines the reset cause and records it in a file for later analysis by an operator or network management system (NMS).</description>
-    </item>
-    
-    <item>
-      <title>It&#39;s Here! ♥</title>
-      <link>https://troglobit.com/post/2021-04-27-its-here/</link>
-      <pubDate>Tue, 27 Apr 2021 20:18:06 +0100</pubDate>
-      
-      <guid>https://troglobit.com/post/2021-04-27-its-here/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://troglobit.com/images/finit3.png#floatright&#34; alt=&#34;finit logo&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Finit v4 was finally released the other day! \o/&lt;/p&gt;
-&lt;p&gt;It represents the culmination of many years of hard work and careful
-thought put in by many people.  There&amp;rsquo;s so much to tell, hardly know
-where to begin &amp;hellip; the plan anyway is to use this blog for a series of
-posts detailing different aspects and important features.&lt;/p&gt;
-&lt;p&gt;The impatient reader can either scroll down to the &lt;strong&gt;video&lt;/strong&gt; below, or
-move on to the project home page: &lt;a href=&#34;https://troglobit.com/finit.html&#34;&gt;https://troglobit.com/finit.html&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>
