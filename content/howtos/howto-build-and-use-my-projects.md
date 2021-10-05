@@ -3,7 +3,7 @@ title: "HowTo: Build & Use My Projects"
 author: "Joachim Wiberg"
 type: ""
 orig-date: 2020-08-14T07:38:09+01:00
-date: 2020-08-16T16:36:00+01:00
+date: 2021-10-05T21:03:00+02:00
 subtitle: "#include <stddisclaimer.h>"
 image: ""
 tags: []
@@ -13,17 +13,18 @@ Ever so often someone new to Open Source show up on GitHub or in my
 inbox.  It usually starts something like this:
 
 - *"Hey, I just downloaded your software, what's next?"*
-- *"Your crappy software doesn't work on my system!!!!"*
+- *"Your software doesn't work on my system!!!!"*
 - *"How can I do that weird-thing that fits my odd use-case?"*
+- *"I have zero documented experience but I think you should fix your build system!"*
 
 This HowTo is for you.
 
 ## 0. Short Version
 
-- Download the *versioned* archive from the project's Releases page
-- Extract archive and change to its directory
-- `./configure --help`, or just
-- `./configure && make && sudo make install`
+- Download a *versioned* archive from the project's Releases page
+- Extract archive for v1.2.3 and change to its directory, `cd archive-1.2.3/`
+- `./configure --help`, or use something like the following ...
+- `./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var && make && sudo make install`
 
 > Some projects of mine are available in Debian/Ubuntu/FreeBSD, if you
 > use that, please report bugs to them and not me.  I have no control
@@ -37,7 +38,8 @@ Cheers
 ## 1. I don't owe you free support
 
 Just because the software is published for free, and often without any
-restrictions[^1] on use, doesn't mean I must provide you with any support.
+restrictions[^1] on use, doesn't mean I must provide you with any (free)
+support.
 
 If you use my software packaged by a 3rd party, e.g., Debian, FreeBSD,
 or similar, please report the bug/problem to them first.  They become
@@ -53,7 +55,8 @@ Source software:
 
 - Released software is stable software, use versioned tarballs/zip files
 - Software in GIT may be missing important files/scripts
-- Software in GIT, even on the master branch, may be unstable/unfinished
+- Software in GIT, even on the master branch, may be *unstable* or unfinished
+- Only use GIT sources if you know what you're doing and want to contribute
 
 When I release software on GitHub I first do a "tag", then build the
 release from that tag.  This results in artifacts such as an archive in
@@ -83,7 +86,7 @@ As mentioned previously, and for reasons between different operating
 systems, as well as to facilitate cross-compilation to embedded targets
 (biggest audience by far!), most of my projects include a configure
 script.  This script is generated at release time and is *not available*
-from GIT sources.
+from GIT sources. (See below for how to build from GIT sources.)
 
 From the project release page, download the *versioned archive* (means
 it has a version number in the name and ends in tar/zip) which includes
@@ -100,7 +103,7 @@ output from a failing configure script for details.
     wget https://github.com/troglobit/ssdp-responder/releases/download/v1.7/ssdp-responder-1.7.tar.gz
     tar xf ssdp-responder-1.7.tar.gz
     cd ssdp-responder-1.7/
-    ./configure
+    ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var
     make
 
 When that is done you have the built `ssdp-scan` tool and the `ssdpd`
