@@ -1,4 +1,4 @@
-baseurl = "https://troglobit.com/"
+#baseurl = "https://troglobit.com/"
 title = "Joachim Wiberg"
 languageCode = "en-us"
 theme = "hello-friend-ng"
