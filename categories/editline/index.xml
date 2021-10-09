@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Editline on Joachim Wiberg</title>
-    <link>https://troglobit.com/categories/editline/</link>
+    <link>/categories/editline/</link>
     <description>Recent content in Editline on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
     <lastBuildDate>Fri, 12 Jul 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://troglobit.com/categories/editline/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/editline/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>New Open Source Releases</title>
-      <link>https://troglobit.com/2013/07/12/new-open-source-releases/</link>
+      <link>/2013/07/12/new-open-source-releases/</link>
       <pubDate>Fri, 12 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://troglobit.com/2013/07/12/new-open-source-releases/</guid>
+      <guid>/2013/07/12/new-open-source-releases/</guid>
       <description>Vacation time means catching up on my Open Source projects! :)
 Currently I&amp;rsquo;m shaping up the home pages and this blog to improve the easy access and overview of all the packages I maintain. The following packages have new releases, or can expect new releases soon:
  Minix Editline v1.14.1 SMCRoute v1.99.1 &amp;ndash; There&amp;rsquo;s even a v2.0.0 being planned, with the core of SMCRoute available as a library mrouted minor cleanup an sync with OpenBSD pimd cleanups and bug fixes, needs testing inadyn is in dire need of a release, but needs more testing and fixes  As usual, see my GitHub for the latest commits if you want to try anything out, file an issue report, or if you want to contribute.</description>
@@ -25,19 +25,19 @@ Currently I&amp;rsquo;m shaping up the home pages and this blog to improve the e
     
     <item>
       <title>Minix editline v1.14.0</title>
-      <link>https://troglobit.com/2010/08/12/minix-editline-1-dot-14-dot-0/</link>
+      <link>/2010/08/12/minix-editline-1-dot-14-dot-0/</link>
       <pubDate>Thu, 12 Aug 2010 18:17:40 +0000</pubDate>
       
-      <guid>https://troglobit.com/2010/08/12/minix-editline-1-dot-14-dot-0/</guid>
+      <guid>/2010/08/12/minix-editline-1-dot-14-dot-0/</guid>
       <description>It is with great pleasure I announce the next release of the editline library by Simmule Turner and Rich Salz! This is a popular library, it exists in several forked versions. This release marks the end of a huge effort where archaeological methods have been applied to recover fixes and improvements developed independently over several decades by the following projects: Heimdal, Festival speech-tools, Debian, as well as patches by Mr. Steve Tell.</description>
     </item>
     
     <item>
       <title>Minix editline moves to GIT</title>
-      <link>https://troglobit.com/2010/07/19/minix-editline-moves-to-git/</link>
+      <link>/2010/07/19/minix-editline-moves-to-git/</link>
       <pubDate>Mon, 19 Jul 2010 02:40:36 +0000</pubDate>
       
-      <guid>https://troglobit.com/2010/07/19/minix-editline-moves-to-git/</guid>
+      <guid>/2010/07/19/minix-editline-moves-to-git/</guid>
       <description>A small heads-up, I&amp;rsquo;ve migrated the Minix editline project from Bazaar to GIT. The new URL for keeping tabs on your favourite free readline() clone is:
  http://git.vmlinux.org/editline.git/
  I&amp;rsquo;m currently working on fixing up the tree and doing some house cleaning — including making more stuff configurable — before releasing a 1.14.0 later on.
@@ -46,20 +46,20 @@ One such item is the integration of libtool with our autoconf friends. This shou
     
     <item>
       <title>Editline First Post</title>
-      <link>https://troglobit.com/2009/06/14/editline-first-post/</link>
+      <link>/2009/06/14/editline-first-post/</link>
       <pubDate>Sun, 14 Jun 2009 20:44:45 +0000</pubDate>
       
-      <guid>https://troglobit.com/2009/06/14/editline-first-post/</guid>
+      <guid>/2009/06/14/editline-first-post/</guid>
       <description>For a while now I&amp;rsquo;ve been maintaining a port of the Minix editline library libedit. Mainly for my own purposes, or rather on behalf of Westermo WeOS, where it is used in the CLI. This library is the same as the Debian editline package, even though the origin of that package is somewhat unclear to me.
 Today I decided to adjust the package name and bump the version number to indicate that my port is the same, and now slightly more advanced, than the Debian version.</description>
     </item>
     
     <item>
       <title>Minix editline v0.3.0</title>
-      <link>https://troglobit.com/2009/02/08/minix-editline-v0-dot-3-0/</link>
+      <link>/2009/02/08/minix-editline-v0-dot-3-0/</link>
       <pubDate>Sun, 08 Feb 2009 22:35:22 +0000</pubDate>
       
-      <guid>https://troglobit.com/2009/02/08/minix-editline-v0-dot-3-0/</guid>
+      <guid>/2009/02/08/minix-editline-v0-dot-3-0/</guid>
       <description>It&amp;rsquo;s here! Fresh, new and packed with new features! Well, really just one new major feature — support for ANSI arrow keys. A good enough reason to bump the minor version number :-)
 Get it from the usual FTP location:
  http://ftp.vmlinux.org/pub/People/jocke/minix-editline/  </description>
@@ -67,20 +67,20 @@ Get it from the usual FTP location:
     
     <item>
       <title>Minix editline v0.2.2</title>
-      <link>https://troglobit.com/2008/11/08/minix-editline-v0-dot-2-2/</link>
+      <link>/2008/11/08/minix-editline-v0-dot-2-2/</link>
       <pubDate>Sat, 08 Nov 2008 20:24:22 +0000</pubDate>
       
-      <guid>https://troglobit.com/2008/11/08/minix-editline-v0-dot-2-2/</guid>
+      <guid>/2008/11/08/minix-editline-v0-dot-2-2/</guid>
       <description>Oups, it seems I forgot to announce the v0.2.2 release of the Minix editline library! It was made official in Bazaar over a month ago, 2008-10-02, but it was not until today that the tarball was created and uploaded to the FTP.
 The most noteworthy in this release is support for command completion with the addition of rl_complete() and rl_list_possib(). Two function pointers that easily can be overloaded by the user.</description>
     </item>
     
     <item>
       <title>Minix editline v0.2.1</title>
-      <link>https://troglobit.com/2008/06/09/minix-editline-v0-dot-2-1/</link>
+      <link>/2008/06/09/minix-editline-v0-dot-2-1/</link>
       <pubDate>Mon, 09 Jun 2008 23:02:22 +0000</pubDate>
       
-      <guid>https://troglobit.com/2008/06/09/minix-editline-v0-dot-2-1/</guid>
+      <guid>/2008/06/09/minix-editline-v0-dot-2-1/</guid>
       <description>The v0.2.0 release included some Debian patches, tcgetattr() and a batch mode (when reading from file) line reader. This release fixes a bug in the Debian patch that caused the batch mode version of readline() to actually truncate lines longer than 64 chars.
 Get it from the usual FTP location:
  http://ftp.vmlinux.org/pub/People/jocke/minix-editline/  </description>
@@ -88,10 +88,10 @@ Get it from the usual FTP location:
     
     <item>
       <title>Minix editline v0.1.4</title>
-      <link>https://troglobit.com/2008/06/09/minix-editline-v0-dot-1-4/</link>
+      <link>/2008/06/09/minix-editline-v0-dot-1-4/</link>
       <pubDate>Mon, 09 Jun 2008 00:49:22 +0000</pubDate>
       
-      <guid>https://troglobit.com/2008/06/09/minix-editline-v0-dot-1-4/</guid>
+      <guid>/2008/06/09/minix-editline-v0-dot-1-4/</guid>
       <description>Another day another release, I guess. :-)
 Lots of small fixes — it can now be cross-built for Arm (Xscale) without any serious warnings. Get it from the usual FTP location:
  http://ftp.vmlinux.org/pub/People/jocke/minix-editline/  </description>
@@ -99,20 +99,20 @@ Lots of small fixes — it can now be cross-built for Arm (Xscale) without any s
     
     <item>
       <title>Minix editline v0.1.1</title>
-      <link>https://troglobit.com/2008/06/08/minix-editline-v0-dot-1-1/</link>
+      <link>/2008/06/08/minix-editline-v0-dot-1-1/</link>
       <pubDate>Sun, 08 Jun 2008 00:56:22 +0000</pubDate>
       
-      <guid>https://troglobit.com/2008/06/08/minix-editline-v0-dot-1-1/</guid>
+      <guid>/2008/06/08/minix-editline-v0-dot-1-1/</guid>
       <description>Hot on the heels of the first one, only minor build fixes but this one should actually be usable by others. Now installs both library, include file and man page into the given --prefix.
  http://ftp.vmlinux.org/pub/People/jocke/minix-editline/  </description>
     </item>
     
     <item>
       <title>Minix editline v0.1.0</title>
-      <link>https://troglobit.com/2008/06/07/minix-editline-v0-dot-1-0/</link>
+      <link>/2008/06/07/minix-editline-v0-dot-1-0/</link>
       <pubDate>Sat, 07 Jun 2008 21:45:05 +0000</pubDate>
       
-      <guid>https://troglobit.com/2008/06/07/minix-editline-v0-dot-1-0/</guid>
+      <guid>/2008/06/07/minix-editline-v0-dot-1-0/</guid>
       <description>I&amp;rsquo;ve been looking long and hard for a small and useful GNU readline replacement. Oddly enough, all the time I was looking for one I never even once considered looking at the Minix sources!
 Currently I&amp;rsquo;m using the NetBSD editline derivative (readline compatible) from Jess Thrysoee, but it requires ncurses, which is huge!
 All I really wanted was a bare bones readline() suitable for small embedded systems. One which could record history and preferably, but not required to, support completion.</description>

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>PIM on Joachim Wiberg</title>
-    <link>https://troglobit.com/categories/pim/</link>
+    <link>/categories/pim/</link>
     <description>Recent content in PIM on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
     <lastBuildDate>Wed, 27 Mar 2019 15:54:00 +0200</lastBuildDate>
     
-	<atom:link href="https://troglobit.com/categories/pim/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/pim/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Multicast routing with PIM-SM over GRE</title>
-      <link>https://troglobit.com/2016/07/05/multicast-routing-with-pim-sm-over-gre/</link>
+      <link>/2016/07/05/multicast-routing-with-pim-sm-over-gre/</link>
       <pubDate>Tue, 23 Jan 2018 20:39:36 +0000</pubDate>
       
-      <guid>https://troglobit.com/2016/07/05/multicast-routing-with-pim-sm-over-gre/</guid>
+      <guid>/2016/07/05/multicast-routing-with-pim-sm-over-gre/</guid>
       <description>&lt;p&gt;GRE tunnels are useful in many ways.  This blog post shows how to set up
 multicast routing with &lt;a href=&#34;https://github.com/troglobit/pimd/&#34;&gt;pimd&lt;/a&gt; over a
 GRE tunnel.  To achieve this we will also set up OSPF over GRE with

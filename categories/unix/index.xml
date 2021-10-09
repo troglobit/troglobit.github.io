@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>unix on Joachim Wiberg</title>
-    <link>https://troglobit.com/categories/unix/</link>
+    <link>/categories/unix/</link>
     <description>Recent content in unix on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
     <lastBuildDate>Tue, 09 Jun 2020 22:48:52 +0200</lastBuildDate>
     
-	<atom:link href="https://troglobit.com/categories/unix/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/unix/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Open Source Releases</title>
-      <link>https://troglobit.com/post/2020-06-09-open-source-releases/</link>
+      <link>/post/2020-06-09-open-source-releases/</link>
       <pubDate>Tue, 09 Jun 2020 22:48:52 +0200</pubDate>
       
-      <guid>https://troglobit.com/post/2020-06-09-open-source-releases/</guid>
+      <guid>/post/2020-06-09-open-source-releases/</guid>
       <description>&lt;p&gt;The last couple of months have been crazy.  The downturn in the economy
 due to Covid-19, mass layoffs, social distancing and quarantine.  Not
 to mention the unrest in US and Europe in the wake of George Floyd&amp;rsquo;s
@@ -26,10 +26,10 @@ uneccessary death.&lt;/p&gt;</description>
     
     <item>
       <title>Useful UNIX API:s</title>
-      <link>https://troglobit.com/post/2020-02-22-useful-unix-apis/</link>
+      <link>/post/2020-02-22-useful-unix-apis/</link>
       <pubDate>Sat, 22 Feb 2020 09:45:00 +0000</pubDate>
       
-      <guid>https://troglobit.com/post/2020-02-22-useful-unix-apis/</guid>
+      <guid>/post/2020-02-22-useful-unix-apis/</guid>
       <description>&lt;p&gt;Had an interesting conversation with a buddy last night.  It started out
 as a shift-reduce problem with Bison and ended up a ping-pong of useful
 UNIX API:s.  We concluded that despite having worked professionally with
@@ -53,10 +53,10 @@ continued adding to it over the years, and still do.  So, as of Jul 2,
     
     <item>
       <title>Multicast routing with PIM-SM over GRE</title>
-      <link>https://troglobit.com/2016/07/05/multicast-routing-with-pim-sm-over-gre/</link>
+      <link>/2016/07/05/multicast-routing-with-pim-sm-over-gre/</link>
       <pubDate>Tue, 23 Jan 2018 20:39:36 +0000</pubDate>
       
-      <guid>https://troglobit.com/2016/07/05/multicast-routing-with-pim-sm-over-gre/</guid>
+      <guid>/2016/07/05/multicast-routing-with-pim-sm-over-gre/</guid>
       <description>&lt;p&gt;GRE tunnels are useful in many ways.  This blog post shows how to set up
 multicast routing with &lt;a href=&#34;https://github.com/troglobit/pimd/&#34;&gt;pimd&lt;/a&gt; over a
 GRE tunnel.  To achieve this we will also set up OSPF over GRE with
@@ -88,10 +88,10 @@ that the GRE tunnel can be established.&lt;/p&gt;</description>
     
     <item>
       <title>Redirecting Ports For Fun and Profit</title>
-      <link>https://troglobit.com/2016/07/02/redirecting-tcp-udp-ports-for-fun-and-profit/</link>
+      <link>/2016/07/02/redirecting-tcp-udp-ports-for-fun-and-profit/</link>
       <pubDate>Sat, 02 Jul 2016 12:54:37 +0000</pubDate>
       
-      <guid>https://troglobit.com/2016/07/02/redirecting-tcp-udp-ports-for-fun-and-profit/</guid>
+      <guid>/2016/07/02/redirecting-tcp-udp-ports-for-fun-and-profit/</guid>
       <description>&lt;p&gt;Recently I needed a simple TCP/UDP port redirector and stumbled upon
 &lt;a href=&#34;https://serverfault.com/questions/252150/port-forwarding-on-linux-without-iptables/&#34;&gt;this Stackoverflow post&lt;/a&gt;.  As usual I wasn&amp;rsquo;t first wanting to this
 without using &lt;code&gt;iptables&lt;/code&gt;.&lt;/p&gt;
@@ -105,15 +105,15 @@ look and feel.&lt;/p&gt;
 &lt;p&gt;Currently they are two separate applications, which in some use-cases
 can be beneficial (small size), but I may in the future transplant the
 UDP functionality of &lt;code&gt;uredir&lt;/code&gt; into &lt;code&gt;redir&lt;/code&gt;.  We&amp;rsquo;ll see, right now though
-I have several other &lt;a href=&#34;https://troglobit.com/projects/&#34;&gt;projects&lt;/a&gt; to attend to :-)&lt;/p&gt;</description>
+I have several other &lt;a href=&#34;/projects/&#34;&gt;projects&lt;/a&gt; to attend to :-)&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Using netcat to test your Internet daemon</title>
-      <link>https://troglobit.com/2016/04/21/using-netcat-to-test-your-internet-daemon/</link>
+      <link>/2016/04/21/using-netcat-to-test-your-internet-daemon/</link>
       <pubDate>Thu, 21 Apr 2016 14:21:49 +0000</pubDate>
       
-      <guid>https://troglobit.com/2016/04/21/using-netcat-to-test-your-internet-daemon/</guid>
+      <guid>/2016/04/21/using-netcat-to-test-your-internet-daemon/</guid>
       <description>So you&amp;rsquo;re having a problem with the Internet daemon you wrote. You&amp;rsquo;re convinced the firewall, or some other magic, in your modern Linux distribution is eating your packets.
 No.
 First, make sure your daemon is actually running and has successfully bound to the address and port in question:
@@ -122,10 +122,10 @@ sudo netstat -atnup  If your application is not listed there you have a problem 
     
     <item>
       <title>The key to successful boot</title>
-      <link>https://troglobit.com/2016/04/11/the-key-to-successful-boot/</link>
+      <link>/2016/04/11/the-key-to-successful-boot/</link>
       <pubDate>Mon, 11 Apr 2016 01:28:27 +0000</pubDate>
       
-      <guid>https://troglobit.com/2016/04/11/the-key-to-successful-boot/</guid>
+      <guid>/2016/04/11/the-key-to-successful-boot/</guid>
       <description>&lt;p&gt;How do you know when your UNIX service (daemon) is ready?  Simple, it
 has created a PID file, signalling to you how to reach it.  Usually this
 file is created as &lt;code&gt;/var/run/daemon.pid&lt;/code&gt;, or &lt;code&gt;/run/daemon.pid&lt;/code&gt;, and has
@@ -143,10 +143,10 @@ Simply touch the PID file instead.&lt;/p&gt;</description>
     
     <item>
       <title>Lecture from the UNIX beards</title>
-      <link>https://troglobit.com/2016/04/04/lecture-from-the-unix-beards/</link>
+      <link>/2016/04/04/lecture-from-the-unix-beards/</link>
       <pubDate>Mon, 04 Apr 2016 00:14:28 +0000</pubDate>
       
-      <guid>https://troglobit.com/2016/04/04/lecture-from-the-unix-beards/</guid>
+      <guid>/2016/04/04/lecture-from-the-unix-beards/</guid>
       <description>After the rm -rf /* disaster that hit me a couple of weeks ago I&amp;rsquo;ve been rebuilding my setup, restoring the few files I&amp;rsquo;ve had backed up, and collecting advice from the elders.
 Turns out there are a few tricks that can save your home directory from accidents like mine. The first one is rather obvious, but I&amp;rsquo;m writing it down anyway:
  Keep separate accounts. If possible, use separate accounts (with different permissions obviously) for different projects.</description>
@@ -154,10 +154,10 @@ Turns out there are a few tricks that can save your home directory from accident
     
     <item>
       <title>Testing multicast with Docker</title>
-      <link>https://troglobit.com/2016/03/07/testing-multicast-with-docker/</link>
+      <link>/2016/03/07/testing-multicast-with-docker/</link>
       <pubDate>Mon, 07 Mar 2016 01:37:04 +0000</pubDate>
       
-      <guid>https://troglobit.com/2016/03/07/testing-multicast-with-docker/</guid>
+      <guid>/2016/03/07/testing-multicast-with-docker/</guid>
       <description>&lt;p&gt;Recently &lt;a href=&#34;https://github.com/troglobit/pimd/issues/70&#34;&gt;issue #70&lt;/a&gt; was
 reported to &lt;a href=&#34;https://github.com/troglobit/pimd/&#34;&gt;pimd&lt;/a&gt;.  That number of
 issues reported is cool in itself, but this was a question about
@@ -185,10 +185,10 @@ work properly with &lt;code&gt;pimd&lt;/code&gt; running on the host:&lt;/p&gt;
     
     <item>
       <title>Multicast testing, made easy!</title>
-      <link>https://troglobit.com/2016/03/07/multicast-testing/</link>
+      <link>/2016/03/07/multicast-testing/</link>
       <pubDate>Mon, 07 Mar 2016 01:06:02 +0000</pubDate>
       
-      <guid>https://troglobit.com/2016/03/07/multicast-testing/</guid>
+      <guid>/2016/03/07/multicast-testing/</guid>
       <description>&lt;p&gt;For the better part of the last ten years I have been working with
 multicast in one way or another.  I&amp;rsquo;ve used many different tools for
 testing, but on most systems I usually resort to &lt;code&gt;ping(1)&lt;/code&gt; and
@@ -203,10 +203,10 @@ improving and adding features to it over the years.&lt;/p&gt;</description>
     
     <item>
       <title>Awesome: Changing Next/Prev Tune in Spotify</title>
-      <link>https://troglobit.com/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/</link>
+      <link>/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/</link>
       <pubDate>Tue, 10 Nov 2015 12:14:09 +0000</pubDate>
       
-      <guid>https://troglobit.com/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/</guid>
+      <guid>/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/</guid>
       <description>Back to using the Awesome WM in Ubuntu. This time I&amp;rsquo;m setting up everything from scratch and first up is fixing keybindings to control my main music player: Spotify!
 Edit your ~/.config/awesome/rc.lua with Emacs (obviously). If you do not have an rc file, simply copy the system /etc/xdb/awesome/rc.lua:
 globalkeys = awful.util.table.join(globalkeys, awful.key({}, &amp;quot;XF86AudioRaiseVolume&amp;quot;, function () awful.util.spawn(&amp;quot;amixer -D pulse sset Master 5%+&amp;quot;, false) end), awful.key({}, &amp;quot;XF86AudioLowerVolume&amp;quot;, function () awful.util.spawn(&amp;quot;amixer -D pulse sset Master 5%-&amp;quot;, false) end), awful.</description>

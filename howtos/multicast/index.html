@@ -11,7 +11,7 @@ For some use-cases, in particular link-local multicast, it may not be possible t
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
-<link rel="canonical" href="https://troglobit.com/howtos/multicast/" />
+<link rel="canonical" href="/howtos/multicast/" />
 
 
     <title>
@@ -27,21 +27,21 @@ For some use-cases, in particular link-local multicast, it may not be possible t
 
 
 
-<link rel="stylesheet" href="https://troglobit.com/main.de188b3201233c251f4fd6306dbd2cb41e408fb8846c09781b2925de7df5025c.css">
+<link rel="stylesheet" href="/main.de188b3201233c251f4fd6306dbd2cb41e408fb8846c09781b2925de7df5025c.css">
 
 
     
-        <link rel="stylesheet" type="text/css" href="https://troglobit.com/css/extra.css">
+        <link rel="stylesheet" type="text/css" href="/css/extra.css">
     
 
 
 
-    <link rel="apple-touch-icon" sizes="180x180" href="https://troglobit.com/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://troglobit.com/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://troglobit.com/favicon-16x16.png">
-    <link rel="manifest" href="https://troglobit.com/site.webmanifest">
-    <link rel="mask-icon" href="https://troglobit.com/safari-pinned-tab.svg" color="#1b1c1d">
-    <link rel="shortcut icon" href="https://troglobit.com/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1b1c1d">
+    <link rel="shortcut icon" href="/favicon.ico">
     <meta name="msapplication-TileColor" content="#1b1c1d">
     <meta name="theme-color" content="#1b1c1d">
 
@@ -72,7 +72,7 @@ For some use-cases, in particular link-local multicast, it may not be possible t
 For some use-cases, in particular link-local multicast, it may not be possible to use multicast routing, then I recommend trying out:
  Bridging networks, see bridge(8) or Linux bridge - how it works igmproxy, mcproxy, or OpenVPN in Layer-2, bridged mode  Make sure to check out the FAQ for the most common problems." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://troglobit.com/howtos/multicast/" />
+<meta property="og:url" content="/howtos/multicast/" />
 <meta property="article:published_time" content="2019-03-27T15:54:00+02:00" />
 <meta property="article:modified_time" content="2019-03-27T15:54:00+02:00" />
 
@@ -113,7 +113,7 @@ For some use-cases, in particular link-local multicast, it may not be possible t
         <div class="container">
             <header class="header">
     <span class="header__inner">
-        <a href="https://troglobit.com/" style="text-decoration: none;">
+        <a href="/" style="text-decoration: none;">
     <div class="logo">
         
             <span class="logo__mark">&gt;</span>
@@ -131,7 +131,7 @@ For some use-cases, in particular link-local multicast, it may not be possible t
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://troglobit.com/about/">About</a></li><li><a href="https://troglobit.com/posts/">Blog</a></li><li><a href="https://troglobit.com/howtos/">HowTos</a></li><li><a href="https://troglobit.com/projects/">Projects</a></li><li><a href="https://resume.troglobit.com">Resumé</a></li><li><a href="https://ftp.troglobit.com">FTP</a></li><li><a href="https://deb.troglobit.com">DEB</a></li>
+    <ul class="menu__inner"><li><a href="/about/">About</a></li><li><a href="/posts/">Blog</a></li><li><a href="/howtos/">HowTos</a></li><li><a href="/projects/">Projects</a></li><li><a href="/https://resume.troglobit.com">Resumé</a></li><li><a href="/https://ftp.troglobit.com">FTP</a></li><li><a href="/https://deb.troglobit.com">DEB</a></li>
     </ul>
 </nav>
 
@@ -157,7 +157,7 @@ For some use-cases, in particular link-local multicast, it may not be possible t
         </div>
 
         <article>
-            <h2 class="post-title"><a href="https://troglobit.com/howtos/multicast/">Multicast HowTo</a></h2>
+            <h2 class="post-title"><a href="/howtos/multicast/">Multicast HowTo</a></h2>
 
             
             
@@ -341,9 +341,9 @@ for instance, see <a href="http://www.brianlinkletter.com/open-source-network-si
 <h1 id="roll-your-own-cloud">Roll your own Cloud</h1>
 <p>The below setup is done using four Ubuntu 12.04 LTS virtual machines
 running the linux-virtual kernel package.  In the HowTo I mention both
-<a href="https://troglobit.com/pimd.html">pimd</a> and <a href="https://troglobit.com/mrouted.html">mrouted</a>, since they work
+<a href="/pimd.html">pimd</a> and <a href="/mrouted.html">mrouted</a>, since they work
 out-of-the-box w/o any config changes, but you could just as easily
-use <a href="https://troglobit.com/smcroute.html">SMCRoute</a> for the same purpose.</p>
+use <a href="/smcroute.html">SMCRoute</a> for the same purpose.</p>
 <p>When setting up virtual machines and virtual networking there are many
 pitfalls and several requirements for the host to consider.  The most
 important one, that needs pointing out, is a <em>bug in the IGMP snooping
@@ -431,7 +431,7 @@ UDP buffer size:  160 KByte (default)
 [ ID] Interval       Transfer     Bandwidth        Jitter   Lost/Total Datagrams
 [  3]  0.0-10.0 sec  1.25 MBytes  1.05 Mbits/sec   0.268 ms    0/  893 (0%)
 </code></pre>
-<p>To achieve the same using <a href="https://troglobit.com/smcroute.html">SMCRoute</a> you need to setup
+<p>To achieve the same using <a href="/smcroute.html">SMCRoute</a> you need to setup
 the multicast routing rules manually.  The easiest way to do this is to
 update <code>/etc/smcroute.conf</code> and and start/restart <code>smcroute</code>, or send
 <code>SIGHUP</code> to an already running daemon.  The below example makes use of
@@ -518,7 +518,7 @@ kernel.</p>
 <li>
 <p><em>Do you have any example of how to set up GRE and <code>pimd</code>?</em></p>
 <p>Yes, for all the gory details see
-<a href="https://troglobit.com/blog/2016/07/05/multicast-routing-with-pim-sm-over-gre/">this howto</a></p>
+<a href="/blog/2016/07/05/multicast-routing-with-pim-sm-over-gre/">this howto</a></p>
 </li>
 </ol>
 
@@ -533,13 +533,13 @@ kernel.</p>
     <p>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
 
-        <span class="tag"><a href="https://troglobit.com/categories/multicast/">multicast</a></span>
-        <span class="tag"><a href="https://troglobit.com/categories/pimd/">pimd</a></span>
-        <span class="tag"><a href="https://troglobit.com/categories/mrouted/">mrouted</a></span>
-        <span class="tag"><a href="https://troglobit.com/categories/smcroute/">SMCRoute</a></span>
-        <span class="tag"><a href="https://troglobit.com/categories/igmp/">IGMP</a></span>
-        <span class="tag"><a href="https://troglobit.com/categories/igmpproxy/">igmpproxy</a></span>
-        <span class="tag"><a href="https://troglobit.com/categories/mcproxy/">mcproxy</a></span>
+        <span class="tag"><a href="categories/multicast/">multicast</a></span>
+        <span class="tag"><a href="categories/pimd/">pimd</a></span>
+        <span class="tag"><a href="categories/mrouted/">mrouted</a></span>
+        <span class="tag"><a href="categories/smcroute/">SMCRoute</a></span>
+        <span class="tag"><a href="categories/igmp/">IGMP</a></span>
+        <span class="tag"><a href="categories/igmpproxy/">igmpproxy</a></span>
+        <span class="tag"><a href="categories/mcproxy/">mcproxy</a></span>
         
     </p>
 
@@ -553,8 +553,8 @@ kernel.</p>
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2021</span>
-            <span><a href="https://troglobit.com/">Joachim Wiberg</a></span>
-            <span>UNIX&trade; 4Life! &#9994;</span><span><a href="https://troglobit.com/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+            <span><a href="">Joachim Wiberg</a></span>
+            <span>UNIX&trade; 4Life! &#9994;</span><span><a href="posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
         </div>
     </div>
     <div class="footer__inner">
@@ -572,7 +572,7 @@ kernel.</p>
 
 
 
-<script type="text/javascript" src="https://troglobit.com/bundle.min.af435e44374f1e99a669ea8cd5bb9a2fceed80588941a451bfddb66b86a67c9f40b0f417e9543a763f809aa7e9300d7b1d69bf99615810ba02ac70396d50fad5.js" integrity="sha512-r0NeRDdPHpmmaeqM1buaL87tgFiJQaRRv922a4amfJ9AsPQX6VQ6dj&#43;AmqfpMA17HWm/mWFYELoCrHA5bVD61Q=="></script>
+<script type="text/javascript" src="/bundle.min.af435e44374f1e99a669ea8cd5bb9a2fceed80588941a451bfddb66b86a67c9f40b0f417e9543a763f809aa7e9300d7b1d69bf99615810ba02ac70396d50fad5.js" integrity="sha512-r0NeRDdPHpmmaeqM1buaL87tgFiJQaRRv922a4amfJ9AsPQX6VQ6dj&#43;AmqfpMA17HWm/mWFYELoCrHA5bVD61Q=="></script>
 
 
 

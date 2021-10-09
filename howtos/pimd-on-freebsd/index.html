@@ -10,7 +10,7 @@
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
-<link rel="canonical" href="https://troglobit.com/howtos/pimd-on-freebsd/" />
+<link rel="canonical" href="/howtos/pimd-on-freebsd/" />
 
 
     <title>
@@ -26,21 +26,21 @@
 
 
 
-<link rel="stylesheet" href="https://troglobit.com/main.de188b3201233c251f4fd6306dbd2cb41e408fb8846c09781b2925de7df5025c.css">
+<link rel="stylesheet" href="/main.de188b3201233c251f4fd6306dbd2cb41e408fb8846c09781b2925de7df5025c.css">
 
 
     
-        <link rel="stylesheet" type="text/css" href="https://troglobit.com/css/extra.css">
+        <link rel="stylesheet" type="text/css" href="/css/extra.css">
     
 
 
 
-    <link rel="apple-touch-icon" sizes="180x180" href="https://troglobit.com/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://troglobit.com/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://troglobit.com/favicon-16x16.png">
-    <link rel="manifest" href="https://troglobit.com/site.webmanifest">
-    <link rel="mask-icon" href="https://troglobit.com/safari-pinned-tab.svg" color="#1b1c1d">
-    <link rel="shortcut icon" href="https://troglobit.com/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1b1c1d">
+    <link rel="shortcut icon" href="/favicon.ico">
     <meta name="msapplication-TileColor" content="#1b1c1d">
     <meta name="theme-color" content="#1b1c1d">
 
@@ -68,7 +68,7 @@
 <meta property="og:description" content="This is not a proper HowTo, more of a &ldquo;note to self&rdquo; after having created a setup to test pimd issue #57. For these notes the following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and Qemu 2.3.0, is used:
 .--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | &#39;--------&#39; &#39;----&#39; &#39;----&#39; &#39;----------&#39; The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP/MLD snooping to get pimd to run smoothly." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://troglobit.com/howtos/pimd-on-freebsd/" />
+<meta property="og:url" content="/howtos/pimd-on-freebsd/" />
 <meta property="article:published_time" content="2015-09-27T18:45:00+02:00" />
 <meta property="article:modified_time" content="2015-09-27T18:45:00+02:00" />
 
@@ -105,7 +105,7 @@
         <div class="container">
             <header class="header">
     <span class="header__inner">
-        <a href="https://troglobit.com/" style="text-decoration: none;">
+        <a href="/" style="text-decoration: none;">
     <div class="logo">
         
             <span class="logo__mark">&gt;</span>
@@ -123,7 +123,7 @@
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://troglobit.com/about/">About</a></li><li><a href="https://troglobit.com/posts/">Blog</a></li><li><a href="https://troglobit.com/howtos/">HowTos</a></li><li><a href="https://troglobit.com/projects/">Projects</a></li><li><a href="https://resume.troglobit.com">Resumé</a></li><li><a href="https://ftp.troglobit.com">FTP</a></li><li><a href="https://deb.troglobit.com">DEB</a></li>
+    <ul class="menu__inner"><li><a href="/about/">About</a></li><li><a href="/posts/">Blog</a></li><li><a href="/howtos/">HowTos</a></li><li><a href="/projects/">Projects</a></li><li><a href="/https://resume.troglobit.com">Resumé</a></li><li><a href="/https://ftp.troglobit.com">FTP</a></li><li><a href="/https://deb.troglobit.com">DEB</a></li>
     </ul>
 </nav>
 
@@ -149,7 +149,7 @@
         </div>
 
         <article>
-            <h2 class="post-title"><a href="https://troglobit.com/howtos/pimd-on-freebsd/">HowTo run pimd on FreeBSD</a></h2>
+            <h2 class="post-title"><a href="/howtos/pimd-on-freebsd/">HowTo run pimd on FreeBSD</a></h2>
 
             
             
@@ -164,7 +164,7 @@ Qemu 2.3.0, is used:</p>
     | Sender |------| R2 |------| R3 |------| Receiver |
     &#39;--------&#39;      &#39;----&#39;      &#39;----&#39;      &#39;----------&#39;
 </code></pre></div><p>The networks between the boxes are actually Linux bridge devices (br),
-on which you may have to <a href="https://troglobit.com/multicast-howto.html#roll-your-own">disable IGMP/MLD snooping</a> to get <code>pimd</code>
+on which you may have to <a href="/multicast-howto.html#roll-your-own">disable IGMP/MLD snooping</a> to get <code>pimd</code>
 to run smoothly.  Only R2 and R3 run FreeBSD v10.2, 64-bit.  The <code>net1</code>,
 between sender and <code>R2</code>, and <code>net3</code>, between <code>R3</code> and the receiver, are
 both setup using simple DHCP client.  The Linux bridges have a DHCP
@@ -209,7 +209,7 @@ you want the latest bleeding edge stuff, or use the latest tarball:</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">    ./pimd -r
 </code></pre></div><p>and</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">    netstat -rn
-</code></pre></div><p>See the <a href="https://troglobit.com/howto-run-pimd-on-openbsd.html">OpenBSD HowTo</a> for example
+</code></pre></div><p>See the <a href="/howto-run-pimd-on-openbsd.html">OpenBSD HowTo</a> for example
 output and troubleshooting.</p>
 
             </div>
@@ -223,11 +223,11 @@ output and troubleshooting.</p>
     <p>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
 
-        <span class="tag"><a href="https://troglobit.com/categories/multicast/">multicast</a></span>
-        <span class="tag"><a href="https://troglobit.com/categories/pimd/">pimd</a></span>
-        <span class="tag"><a href="https://troglobit.com/categories/freebsd/">freebsd</a></span>
-        <span class="tag"><a href="https://troglobit.com/categories/bsd/">bsd</a></span>
-        <span class="tag"><a href="https://troglobit.com/categories/howto/">howto</a></span>
+        <span class="tag"><a href="categories/multicast/">multicast</a></span>
+        <span class="tag"><a href="categories/pimd/">pimd</a></span>
+        <span class="tag"><a href="categories/freebsd/">freebsd</a></span>
+        <span class="tag"><a href="categories/bsd/">bsd</a></span>
+        <span class="tag"><a href="categories/howto/">howto</a></span>
         
     </p>
 
@@ -241,8 +241,8 @@ output and troubleshooting.</p>
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2021</span>
-            <span><a href="https://troglobit.com/">Joachim Wiberg</a></span>
-            <span>UNIX&trade; 4Life! &#9994;</span><span><a href="https://troglobit.com/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+            <span><a href="">Joachim Wiberg</a></span>
+            <span>UNIX&trade; 4Life! &#9994;</span><span><a href="posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
         </div>
     </div>
     <div class="footer__inner">
@@ -260,7 +260,7 @@ output and troubleshooting.</p>
 
 
 
-<script type="text/javascript" src="https://troglobit.com/bundle.min.af435e44374f1e99a669ea8cd5bb9a2fceed80588941a451bfddb66b86a67c9f40b0f417e9543a763f809aa7e9300d7b1d69bf99615810ba02ac70396d50fad5.js" integrity="sha512-r0NeRDdPHpmmaeqM1buaL87tgFiJQaRRv922a4amfJ9AsPQX6VQ6dj&#43;AmqfpMA17HWm/mWFYELoCrHA5bVD61Q=="></script>
+<script type="text/javascript" src="/bundle.min.af435e44374f1e99a669ea8cd5bb9a2fceed80588941a451bfddb66b86a67c9f40b0f417e9543a763f809aa7e9300d7b1d69bf99615810ba02ac70396d50fad5.js" integrity="sha512-r0NeRDdPHpmmaeqM1buaL87tgFiJQaRRv922a4amfJ9AsPQX6VQ6dj&#43;AmqfpMA17HWm/mWFYELoCrHA5bVD61Q=="></script>
 
 
 

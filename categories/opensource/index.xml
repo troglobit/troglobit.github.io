@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>opensource on Joachim Wiberg</title>
-    <link>https://troglobit.com/categories/opensource/</link>
+    <link>/categories/opensource/</link>
     <description>Recent content in opensource on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
     <lastBuildDate>Tue, 09 Jun 2020 22:48:52 +0200</lastBuildDate>
     
-	<atom:link href="https://troglobit.com/categories/opensource/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/opensource/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Open Source Releases</title>
-      <link>https://troglobit.com/post/2020-06-09-open-source-releases/</link>
+      <link>/post/2020-06-09-open-source-releases/</link>
       <pubDate>Tue, 09 Jun 2020 22:48:52 +0200</pubDate>
       
-      <guid>https://troglobit.com/post/2020-06-09-open-source-releases/</guid>
+      <guid>/post/2020-06-09-open-source-releases/</guid>
       <description>&lt;p&gt;The last couple of months have been crazy.  The downturn in the economy
 due to Covid-19, mass layoffs, social distancing and quarantine.  Not
 to mention the unrest in US and Europe in the wake of George Floyd&amp;rsquo;s
@@ -26,10 +26,10 @@ uneccessary death.&lt;/p&gt;</description>
     
     <item>
       <title>HowTo: Using -lite with a GIT-based application</title>
-      <link>https://troglobit.com/2015/07/02/howto-using-lite-with-a-git-based-application/</link>
+      <link>/2015/07/02/howto-using-lite-with-a-git-based-application/</link>
       <pubDate>Thu, 02 Jul 2015 17:11:55 +0000</pubDate>
       
-      <guid>https://troglobit.com/2015/07/02/howto-using-lite-with-a-git-based-application/</guid>
+      <guid>/2015/07/02/howto-using-lite-with-a-git-based-application/</guid>
       <description>&lt;p&gt;Years ago while looking for a fast &lt;a href=&#34;https://en.wikipedia.org/wiki/Init&#34;&gt;init&lt;/a&gt; replacement for &lt;a href=&#34;http://westermo.com/&#34;&gt;work&lt;/a&gt;,
 I found &lt;a href=&#34;http://helllabs.org/finit/&#34;&gt;Finit&lt;/a&gt;.  Originally written by &lt;a href=&#34;https://github.com/cmatsuoka&#34;&gt;Claudio Matsuoka&lt;/a&gt; to act
 as a drop-in replacement for the &lt;a href=&#34;https://en.wikipedia.org/wiki/Asus_Eee_PC&#34;&gt;Asus EeePC&lt;/a&gt; &lt;a href=&#34;http://wiki.eeeuser.com/boot_process:the_boot_process&#34;&gt;fastinit&lt;/a&gt;, &lt;em&gt;&amp;ldquo;gaps
@@ -47,12 +47,12 @@ projects …&lt;/p&gt;</description>
     
     <item>
       <title>Inetd Support in Finit v1.12</title>
-      <link>https://troglobit.com/2015/03/06/inetd-support-in-finit-v1-dot-12/</link>
+      <link>/2015/03/06/inetd-support-in-finit-v1-dot-12/</link>
       <pubDate>Fri, 06 Mar 2015 22:34:45 +0000</pubDate>
       
-      <guid>https://troglobit.com/2015/03/06/inetd-support-in-finit-v1-dot-12/</guid>
+      <guid>/2015/03/06/inetd-support-in-finit-v1-dot-12/</guid>
       <description>&lt;p&gt;A steady flow of features, and releases, is key to keeping any project
-alive.  Recently I ticked off another item in the &lt;a href=&#34;https://troglobit.com/finit.html&#34;&gt;Finit&lt;/a&gt;
+alive.  Recently I ticked off another item in the &lt;a href=&#34;/finit.html&#34;&gt;Finit&lt;/a&gt;
 TODO list &amp;hellip;&lt;/p&gt;
 &lt;p&gt;Finit v1.12 now comes with a built-in inetd!  You no longer need an
 external inetd daemon to launch services on demand.&lt;/p&gt;
@@ -110,21 +110,21 @@ Sat Mar  7 08:48:58 CET 2015
     
     <item>
       <title>Finit v1.11 released!</title>
-      <link>https://troglobit.com/2015/01/24/finit-v1-dot-11-released/</link>
+      <link>/2015/01/24/finit-v1-dot-11-released/</link>
       <pubDate>Sat, 24 Jan 2015 16:54:23 +0000</pubDate>
       
-      <guid>https://troglobit.com/2015/01/24/finit-v1-dot-11-released/</guid>
+      <guid>/2015/01/24/finit-v1-dot-11-released/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Update 2015-03-09&lt;/strong&gt;: This release has unfortunately been &lt;em&gt;yanked&lt;/em&gt; due
 to serious regressions in launching background processes.  It has been
-replaced by &lt;a href=&#34;https://troglobit.com/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/&#34;&gt;v1.12&lt;/a&gt;&lt;/p&gt;</description>
+replaced by &lt;a href=&#34;/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/&#34;&gt;v1.12&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Recent Open Source Work</title>
-      <link>https://troglobit.com/2015/01/08/recent-open-source-work/</link>
+      <link>/2015/01/08/recent-open-source-work/</link>
       <pubDate>Thu, 08 Jan 2015 01:57:14 +0000</pubDate>
       
-      <guid>https://troglobit.com/2015/01/08/recent-open-source-work/</guid>
+      <guid>/2015/01/08/recent-open-source-work/</guid>
       <description>I&amp;rsquo;m a coder, not a writer. Here&amp;rsquo;s what I&amp;rsquo;ve been working on during the winter holidays:
   A new feature release of Finit is coming shortly, which will use libuEv and feature inetd support built-in!
   Another minor release of my own take on event loops, libuEv v1.0.3. This time with a heavy focus on documentation and Q&amp;amp;A, extensive validation testing have been done on this release.
@@ -133,22 +133,22 @@ replaced by &lt;a href=&#34;https://troglobit.com/blog/2015/03/06/inetd-support-
     
     <item>
       <title>mrouted v3.9.7</title>
-      <link>https://troglobit.com/2014/12/28/mrouted-v3-dot-9-7/</link>
+      <link>/2014/12/28/mrouted-v3-dot-9-7/</link>
       <pubDate>Sun, 28 Dec 2014 19:38:06 +0000</pubDate>
       
-      <guid>https://troglobit.com/2014/12/28/mrouted-v3-dot-9-7/</guid>
-      <description>&lt;p&gt;Another release today is the venerable &lt;a href=&#34;https://troglobit.com/mrouted.html&#34;&gt;mrouted&lt;/a&gt;, now
+      <guid>/2014/12/28/mrouted-v3-dot-9-7/</guid>
+      <description>&lt;p&gt;Another release today is the venerable &lt;a href=&#34;/mrouted.html&#34;&gt;mrouted&lt;/a&gt;, now
 available as
 &lt;a href=&#34;https://github.com/troglobit/mrouted/releases/tag/3.9.7&#34;&gt;v3.9.7 on GitHub&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>pimd v2.2.0 -- The last release of pimd?</title>
-      <link>https://troglobit.com/2014/12/28/last-release-of-pimd/</link>
+      <link>/2014/12/28/last-release-of-pimd/</link>
       <pubDate>Sun, 28 Dec 2014 13:42:18 +0000</pubDate>
       
-      <guid>https://troglobit.com/2014/12/28/last-release-of-pimd/</guid>
-      <description>&lt;p&gt;On one of the last days of 2014 I release &lt;a href=&#34;https://troglobit.com/pimd.html&#34;&gt;pimd&lt;/a&gt;
+      <guid>/2014/12/28/last-release-of-pimd/</guid>
+      <description>&lt;p&gt;On one of the last days of 2014 I release &lt;a href=&#34;/pimd.html&#34;&gt;pimd&lt;/a&gt;
 &lt;a href=&#34;https://github.com/troglobit/pimd/releases/tag/2.2.0&#34;&gt;v2.2.0&lt;/a&gt;, which
 is an awesome release with a lot of new features and bug fixes!&lt;/p&gt;
 &lt;p&gt;However, it could very well be the last release I do.  Even though its
@@ -170,20 +170,20 @@ little proggy! :-)&lt;/p&gt;</description>
     
     <item>
       <title>TFTP blocksize negotiation in uftpd v1.7</title>
-      <link>https://troglobit.com/2014/12/21/tftp-blocksize-negotiation-in-uftpd-v1-dot-7/</link>
+      <link>/2014/12/21/tftp-blocksize-negotiation-in-uftpd-v1-dot-7/</link>
       <pubDate>Sun, 21 Dec 2014 19:42:17 +0000</pubDate>
       
-      <guid>https://troglobit.com/2014/12/21/tftp-blocksize-negotiation-in-uftpd-v1-dot-7/</guid>
+      <guid>/2014/12/21/tftp-blocksize-negotiation-in-uftpd-v1-dot-7/</guid>
       <description>New release of uftpd, this time with TFTP blocksize negotiation, RFC 2348. Making it a lot faster to transfer files over TFTP.
 Try it out!</description>
     </item>
     
     <item>
       <title>GnuTLS support in Inadyn and fixes to uftpd</title>
-      <link>https://troglobit.com/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/</link>
+      <link>/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/</link>
       <pubDate>Sat, 13 Sep 2014 19:18:56 +0000</pubDate>
       
-      <guid>https://troglobit.com/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/</guid>
+      <guid>/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/</guid>
       <description>Quite a few changes lately. I finally got around to adding support for GnuTLS to Inadyn, hopefully this will get into Debian &amp;hellip; unless the Jessie freeze prevents that.
 Also, thanks to a friend of mine trying out uftpd recently I discovered that libuev has been missing from the tarball since the release of the TFTP support. Fixed.
 Another great piece of news is that Coverity accepted uftpd as an Open Source project, I&amp;rsquo;ve been hard at work fixing nasty bugs uncovered by the Coverity Scan.</description>
@@ -191,10 +191,10 @@ Another great piece of news is that Coverity accepted uftpd as an Open Source pr
     
     <item>
       <title>Bugfix release of uftpd</title>
-      <link>https://troglobit.com/2014/09/04/bugfix-release-of-uftpd/</link>
+      <link>/2014/09/04/bugfix-release-of-uftpd/</link>
       <pubDate>Thu, 04 Sep 2014 22:22:09 +0000</pubDate>
       
-      <guid>https://troglobit.com/2014/09/04/bugfix-release-of-uftpd/</guid>
+      <guid>/2014/09/04/bugfix-release-of-uftpd/</guid>
       <description>So them pesky details of /etc/inetd.conf really are important?
  This is a small bugfix release of uftpd. Version 1.4 is basically just to change nowait to wait for the TFTP service in /etc/inetd.conf, but there&amp;rsquo;s also a minor man page update.
 Enjoy! :)</description>

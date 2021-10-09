@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Joachim Wiberg</title>
-    <link>https://troglobit.com/</link>
+    <link>/</link>
     <description>Recent content on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
     <lastBuildDate>Sat, 20 Jun 2020 08:57:00 +0100</lastBuildDate>
     
-	<atom:link href="https://troglobit.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Buildroot Development Checklist</title>
-      <link>https://troglobit.com/post/2021-10-09-buildroot-development-checklist/</link>
+      <link>/post/2021-10-09-buildroot-development-checklist/</link>
       <pubDate>Sat, 09 Oct 2021 10:15:00 +0200</pubDate>
       
-      <guid>https://troglobit.com/post/2021-10-09-buildroot-development-checklist/</guid>
+      <guid>/post/2021-10-09-buildroot-development-checklist/</guid>
       <description>&lt;p&gt;Because I always forget, here&amp;rsquo;s a reminder to myself on how to use &lt;code&gt;git format-patch&lt;/code&gt; and &lt;code&gt;git send-email&lt;/code&gt; from the command line.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>HowTo: Build &amp; Use My Projects</title>
-      <link>https://troglobit.com/howtos/howto-build-and-use-my-projects/</link>
+      <link>/howtos/howto-build-and-use-my-projects/</link>
       <pubDate>Tue, 05 Oct 2021 21:03:00 +0200</pubDate>
       
-      <guid>https://troglobit.com/howtos/howto-build-and-use-my-projects/</guid>
+      <guid>/howtos/howto-build-and-use-my-projects/</guid>
       <description>&lt;p&gt;Ever so often someone new to Open Source show up on GitHub or in my
 inbox.  It usually starts something like this:&lt;/p&gt;
 &lt;ul&gt;
@@ -54,10 +54,10 @@ over what they do.&lt;/p&gt;
     
     <item>
       <title>The original multicast routing daemon</title>
-      <link>https://troglobit.com/projects/mrouted/</link>
+      <link>/projects/mrouted/</link>
       <pubDate>Sun, 19 Sep 2021 01:16:31 +0200</pubDate>
       
-      <guid>https://troglobit.com/projects/mrouted/</guid>
+      <guid>/projects/mrouted/</guid>
       <description>mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, RFC 1075. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunneling support.
  Tunneling may be required to cross non-multicast-aware routers.
  The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is suitable for smaller/dense networks. It employs the &amp;ldquo;flood and prune&amp;rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups.</description>
@@ -65,19 +65,19 @@ over what they do.&lt;/p&gt;
     
     <item>
       <title>smcroute.conf example</title>
-      <link>https://troglobit.com/project/smcroute/smcroute-conf.html</link>
+      <link>/project/smcroute/smcroute-conf.html</link>
       <pubDate>Thu, 19 Aug 2021 15:46:00 +0200</pubDate>
       
-      <guid>https://troglobit.com/project/smcroute/smcroute-conf.html</guid>
+      <guid>/project/smcroute/smcroute-conf.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Static Multicast Routing Daemon</title>
-      <link>https://troglobit.com/projects/smcroute/</link>
+      <link>/projects/smcroute/</link>
       <pubDate>Thu, 19 Aug 2021 15:46:00 +0200</pubDate>
       
-      <guid>https://troglobit.com/projects/smcroute/</guid>
+      <guid>/projects/smcroute/</guid>
       <description>SMCRoute is a daemon and command line tool to manipulate the multicast routing table in the UNIX kernel. Both FreeBSD and Linux kernels are supported, but it may work on other systems as well.
 SMCRoute can be used as an alternative to dynamic multicast routing daemons like mrouted or pimd when (only) static multicast routes should be maintained or no proper signalling exists.
 The full documentation of SMCRoute is available in the manual pages, see smcrouted(8), smcroutectl(8), and smcroute.</description>
@@ -85,10 +85,10 @@ The full documentation of SMCRoute is available in the manual pages, see smcrout
     
     <item>
       <title>HowTo: Add Multicast Routing to FreeBSD kernel</title>
-      <link>https://troglobit.com/howtos/mrouting-in-freebsd/</link>
+      <link>/howtos/mrouting-in-freebsd/</link>
       <pubDate>Sun, 01 Aug 2021 08:31:12 +0200</pubDate>
       
-      <guid>https://troglobit.com/howtos/mrouting-in-freebsd/</guid>
+      <guid>/howtos/mrouting-in-freebsd/</guid>
       <description>This is a very short blog post, mostly intended as a reminder to myself. Basically, there are two methods of adding multicast routing support to the FreeBSD kernel:
  Rebuild the kernel with options MROUTING Load the kernel module: kldload ip_mroute  The kernel rebuild assumes the src.txz set was installed previously.
 cd /usr/src cd sys/amd64/conf cat GENERIC | sed &#39;s/GENERIC$/MULTICAST/&#39; &amp;gt; MULTICAST echo &#39;options MROUTING # Multicast routing&#39; &amp;gt;&amp;gt; MULTICAST echo &#39;options PIM # Enable for pimd&#39; &amp;gt;&amp;gt; MULTICAST cd - make kernel KERNCONF=MULTICAST reboot  That&amp;rsquo;s it.</description>
@@ -96,20 +96,20 @@ cd /usr/src cd sys/amd64/conf cat GENERIC | sed &#39;s/GENERIC$/MULTICAST/&#39; 
     
     <item>
       <title>Micro Tetris™</title>
-      <link>https://troglobit.com/projects/tetris/</link>
+      <link>/projects/tetris/</link>
       <pubDate>Wed, 30 Jun 2021 20:37:00 +0200</pubDate>
       
-      <guid>https://troglobit.com/projects/tetris/</guid>
+      <guid>/projects/tetris/</guid>
       <description>Micro Tetris — one of the smallest Tetris implementations in the world! Utilizing only ANSI escape sequences to draw the board, no external library dependencys other than a standard C-library, like uClibc or musl libc. Hence, it is very suitable for small embedded devices in need of an easter egg ;-)
 The game is based on a 1989 International Obfuscated C Code Contest (IOCCC) entry made by John Tromp.</description>
     </item>
     
     <item>
       <title>Fast init for Linux systems</title>
-      <link>https://troglobit.com/projects/finit/</link>
+      <link>/projects/finit/</link>
       <pubDate>Sun, 06 Jun 2021 19:01:00 +0100</pubDate>
       
-      <guid>https://troglobit.com/projects/finit/</guid>
+      <guid>/projects/finit/</guid>
       <description>Finit is an alternative to SysV init and systemd, originally reverse engineered from the EeePC fastinit by Claudio Matsuoka — &amp;ldquo;gaps filled with frog DNA …&amp;rdquo;
 Features include:
  Runlevels, defined per service One-shot tasks, services (daemons), or SysV init start/stop scripts Runparts and /etc/rc.local support Process supervision similar to systemd Sourcing environment files Conditions for network/process/custom dependencies Pre/Post script actions Tooling to enable/disable services Built-in getty Built-in watchdog, with support for hand-over to watchdogd Built-in support for Debian/BusyBox /etc/network/interfaces Cgroups v2, both configuration and monitoring in initctl top Plugin support for customization Proper rescue mode with bundled sulogin for protected maintenance shell  Some of these feature are presented below, for more, see the online documentation.</description>
@@ -117,10 +117,10 @@ Features include:
     
     <item>
       <title>Emacs: GMail and Lore Mailing Lists</title>
-      <link>https://troglobit.com/post/2021-05-11-emacs-gmail-and-lore-mailing-lists/</link>
+      <link>/post/2021-05-11-emacs-gmail-and-lore-mailing-lists/</link>
       <pubDate>Tue, 11 May 2021 19:12:00 +0100</pubDate>
       
-      <guid>https://troglobit.com/post/2021-05-11-emacs-gmail-and-lore-mailing-lists/</guid>
+      <guid>/post/2021-05-11-emacs-gmail-and-lore-mailing-lists/</guid>
       <description>With lots of help from the tireless Tobias Waldekranz, I think I&amp;rsquo;ve finally found the perfect &amp;ldquo;magit like&amp;rdquo; email setup. With Emacs, of course. This is the story of how I did it.
 First install notmuch, mbsync (from the isync package), and afew:
 sudo apt install notmuch isync afew Do initial setup of notmuch for your user. I&amp;rsquo;ve opted to store my mail in ~/mail, this is used throughout the text below, ymmv.</description>
@@ -128,10 +128,10 @@ sudo apt install notmuch isync afew Do initial setup of notmuch for your user. I
     
     <item>
       <title>System &amp; Process Supervisor for Linux</title>
-      <link>https://troglobit.com/projects/watchdogd/</link>
+      <link>/projects/watchdogd/</link>
       <pubDate>Fri, 30 Apr 2021 17:02:00 +0100</pubDate>
       
-      <guid>https://troglobit.com/projects/watchdogd/</guid>
+      <guid>/projects/watchdogd/</guid>
       <description>watchdogd(8) is an advanced system and process supervisor daemon, primarily intended for embedded Linux and server systems. By default it periodically kicks the system watchdog timer (WDT) to prevent it from resetting the system. In its more advanced guise it monitors critical system resources, supervises the heartbeat of processes, records deadline transgressions, and initiates a controlled reset if needed.
 When a system comes back up after a reset, watchdogd determines the reset cause and records it in a file for later analysis by an operator or network management system (NMS).</description>
     </item>

@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>inetd on Joachim Wiberg</title>
-    <link>https://troglobit.com/categories/inetd/</link>
+    <link>/categories/inetd/</link>
     <description>Recent content in inetd on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
     <lastBuildDate>Fri, 06 Mar 2015 22:34:45 +0000</lastBuildDate>
     
-	<atom:link href="https://troglobit.com/categories/inetd/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/inetd/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Inetd Support in Finit v1.12</title>
-      <link>https://troglobit.com/2015/03/06/inetd-support-in-finit-v1-dot-12/</link>
+      <link>/2015/03/06/inetd-support-in-finit-v1-dot-12/</link>
       <pubDate>Fri, 06 Mar 2015 22:34:45 +0000</pubDate>
       
-      <guid>https://troglobit.com/2015/03/06/inetd-support-in-finit-v1-dot-12/</guid>
+      <guid>/2015/03/06/inetd-support-in-finit-v1-dot-12/</guid>
       <description>&lt;p&gt;A steady flow of features, and releases, is key to keeping any project
-alive.  Recently I ticked off another item in the &lt;a href=&#34;https://troglobit.com/finit.html&#34;&gt;Finit&lt;/a&gt;
+alive.  Recently I ticked off another item in the &lt;a href=&#34;/finit.html&#34;&gt;Finit&lt;/a&gt;
 TODO list &amp;hellip;&lt;/p&gt;
 &lt;p&gt;Finit v1.12 now comes with a built-in inetd!  You no longer need an
 external inetd daemon to launch services on demand.&lt;/p&gt;

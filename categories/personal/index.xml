@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Personal on Joachim Wiberg</title>
-    <link>https://troglobit.com/categories/personal/</link>
+    <link>/categories/personal/</link>
     <description>Recent content in Personal on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
     <lastBuildDate>Sat, 07 Nov 2015 02:32:12 +0000</lastBuildDate>
     
-	<atom:link href="https://troglobit.com/categories/personal/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/personal/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Stray Puppies</title>
-      <link>https://troglobit.com/2015/11/07/stray-puppies/</link>
+      <link>/2015/11/07/stray-puppies/</link>
       <pubDate>Sat, 07 Nov 2015 02:32:12 +0000</pubDate>
       
-      <guid>https://troglobit.com/2015/11/07/stray-puppies/</guid>
+      <guid>/2015/11/07/stray-puppies/</guid>
       <description>Sometimes I just cannot help myself. It&amp;rsquo;s like finding a stray puppy, or abandonded kitten &amp;hellip;
 &amp;hellip; I recently decided to adopt mini-snmpd since the original upstream site had passed into the great beyond. At this point in my life almost everyone I know can tell you I have no warm fuzzy feels for SNMP, at all. So why did I even consider this to begin with?!
 Well, I have to confess that there are certain things that SNMP can be really useful for.</description>
@@ -25,20 +25,20 @@ Well, I have to confess that there are certain things that SNMP can be really us
     
     <item>
       <title>Finally — Google Movies &amp; Music in Sweden</title>
-      <link>https://troglobit.com/2014/03/18/finally-google-movies-and-music-in-sweden/</link>
+      <link>/2014/03/18/finally-google-movies-and-music-in-sweden/</link>
       <pubDate>Tue, 18 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://troglobit.com/2014/03/18/finally-google-movies-and-music-in-sweden/</guid>
+      <guid>/2014/03/18/finally-google-movies-and-music-in-sweden/</guid>
       <description>So, we finally got Google Music &amp;amp; Movies services in Sweden! The prices seem a bit on the steep side, apart from maybe the Music service, which is slightly cheaper than Spotify. Will try it out for a month or so to see which one I like better.
 For some reason I chose Gravity as my first rental, at 39 Skr. I&amp;rsquo;ve heard so many bad reviews of it but for better or worse it&amp;rsquo;ll now be my introduction to Google Movies :-)</description>
     </item>
     
     <item>
       <title>Just a Programmer</title>
-      <link>https://troglobit.com/2013/08/13/just-a-programmer/</link>
+      <link>/2013/08/13/just-a-programmer/</link>
       <pubDate>Tue, 13 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://troglobit.com/2013/08/13/just-a-programmer/</guid>
+      <guid>/2013/08/13/just-a-programmer/</guid>
       <description>&lt;p&gt;Sometimes people ask me what I do for a living.  Usually I tend to
 pause and think, real hard, becuase the people asking me this aren&amp;rsquo;t
 programmers.  They use computers, but are mostly limited to a Windows
@@ -54,10 +54,10 @@ does confuse people.&lt;/p&gt;</description>
     
     <item>
       <title>Proof of Life</title>
-      <link>https://troglobit.com/2013/06/07/proof-of-life/</link>
+      <link>/2013/06/07/proof-of-life/</link>
       <pubDate>Fri, 07 Jun 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://troglobit.com/2013/06/07/proof-of-life/</guid>
+      <guid>/2013/06/07/proof-of-life/</guid>
       <description>There is a certain &amp;ldquo;burstyness&amp;rdquo; to the way I work on my open source projects. It seems it often coincides with intense work loads during new release cycles at work.
 However, I&amp;rsquo;ve just finished restoring two pages that got lost in the big server crash:
  mrouted pimd  Big thanks goes to the Wayback Machine for maintaining records of the original pages I lost!</description>
@@ -65,58 +65,58 @@ However, I&amp;rsquo;ve just finished restoring two pages that got lost in the b
     
     <item>
       <title>Oona 6 years old!</title>
-      <link>https://troglobit.com/2009/06/14/oona-6-years-old/</link>
+      <link>/2009/06/14/oona-6-years-old/</link>
       <pubDate>Sun, 14 Jun 2009 21:04:34 +0000</pubDate>
       
-      <guid>https://troglobit.com/2009/06/14/oona-6-years-old/</guid>
+      <guid>/2009/06/14/oona-6-years-old/</guid>
       <description>Wow, this friday (June 12th) my daughter turned six! I can hardly believe it is six years since she came into our lives, time has gone by so quick &amp;hellip; when she was born we still lived in Västerås, now she has a younger brother and we live in a great house in Skultuna.
 Happy birthday, Oona! I wish you all the best now that you&amp;rsquo;re starting first year of school after the summer vacation.</description>
     </item>
     
     <item>
       <title>The joy of colors</title>
-      <link>https://troglobit.com/2008/11/09/the-joy-of-colors/</link>
+      <link>/2008/11/09/the-joy-of-colors/</link>
       <pubDate>Sun, 09 Nov 2008 00:39:27 +0000</pubDate>
       
-      <guid>https://troglobit.com/2008/11/09/the-joy-of-colors/</guid>
+      <guid>/2008/11/09/the-joy-of-colors/</guid>
       <description>Ever so often, as I have mentioned before, I lose myself in trying to find new ways of working and doing my daily tasks. One such digression is the topic of editors. I mainly use GNU Emacs for development and other major tasks, for everything else I use Vim.
 Vim is quick to start, capable, good looking and easy to use, contrary to other vi implementations. (Most notably nvi, which I hate with a passion!</description>
     </item>
     
     <item>
       <title>Moved</title>
-      <link>https://troglobit.com/2007/02/03/moved/</link>
+      <link>/2007/02/03/moved/</link>
       <pubDate>Sat, 03 Feb 2007 10:52:15 +0000</pubDate>
       
-      <guid>https://troglobit.com/2007/02/03/moved/</guid>
+      <guid>/2007/02/03/moved/</guid>
       <description>Yep, we finally did it, we bought ourselves a house. Last year in October we moved from our small three-room flat in central Västerås to the new house in Skultuna. Everything went really fast from finding it up for sale, deciding on it down to getting a loan and moving in. Worst part of it all was getting a decent broadband connection. We actually moved from a 100 Mbps dedicated copper line to a 24/2 Mbps ADSL line.</description>
     </item>
     
     <item>
       <title>Besiktning</title>
-      <link>https://troglobit.com/2006/07/24/besiktning/</link>
+      <link>/2006/07/24/besiktning/</link>
       <pubDate>Mon, 24 Jul 2006 22:10:27 +0000</pubDate>
       
-      <guid>https://troglobit.com/2006/07/24/besiktning/</guid>
+      <guid>/2006/07/24/besiktning/</guid>
       <description>Yes, bilen gick igenom besiktningen!</description>
     </item>
     
     <item>
       <title>Atari ST(E) Emulation with Steem</title>
-      <link>https://troglobit.com/2006/07/23/atari-st-e-emulation-with-steem/</link>
+      <link>/2006/07/23/atari-st-e-emulation-with-steem/</link>
       <pubDate>Sun, 23 Jul 2006 22:10:50 +0000</pubDate>
       
-      <guid>https://troglobit.com/2006/07/23/atari-st-e-emulation-with-steem/</guid>
+      <guid>/2006/07/23/atari-st-e-emulation-with-steem/</guid>
       <description>This is is really great! Today, on my 32nd birthday I found a really golden piece of software - Steem - even though it&amp;rsquo;s not free software, it has a Linux port which runs almost all of my alltime Atari ST classics: Thrust, Virus, Speedball I &amp;amp; II, Xenon I &amp;amp; II, Great Giana Sisters, The Union Demo, The &amp;ldquo;Oh crikey what a scorcer&amp;rdquo; demo, Nebulus and lots more!
 Since today is also my birthday I received a gift.</description>
     </item>
     
     <item>
       <title>Bromsbyte Passat</title>
-      <link>https://troglobit.com/2006/07/21/bromsbyte-passat/</link>
+      <link>/2006/07/21/bromsbyte-passat/</link>
       <pubDate>Fri, 21 Jul 2006 22:10:48 +0000</pubDate>
       
-      <guid>https://troglobit.com/2006/07/21/bromsbyte-passat/</guid>
+      <guid>/2006/07/21/bromsbyte-passat/</guid>
       <description>Igår bytte jag bromsskivor på vår gamla Passat Variant -00. Det var definitivt dags efter över 15000 mil så var skivorna och beläggen så slitna att tom. Bilprovningen nog hade klagat i år. Dessutom var det fjärde service:en som VW-verkstaden tyckte det var dags att byta. VW var mer än villiga och gav mig ett anbud på 5500:- vilket jag var väldigt nära att nappa på. Efter en liten reality check så insåg jag dock att vi inte skulle ha råd med det, så jag fick loss delar från Mekonomen för 2400:- och började själv &amp;hellip;</description>
     </item>
     

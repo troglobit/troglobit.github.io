@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>json on Joachim Wiberg</title>
-    <link>https://troglobit.com/categories/json/</link>
+    <link>/categories/json/</link>
     <description>Recent content in json on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
     <lastBuildDate>Sun, 23 Feb 2014 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://troglobit.com/categories/json/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/json/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Weekend Hack: JSON vs CONF</title>
-      <link>https://troglobit.com/2014/02/23/weekend-hack-json-vs-conf/</link>
+      <link>/2014/02/23/weekend-hack-json-vs-conf/</link>
       <pubDate>Sun, 23 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://troglobit.com/2014/02/23/weekend-hack-json-vs-conf/</guid>
+      <guid>/2014/02/23/weekend-hack-json-vs-conf/</guid>
       <description>It was time. I had been putting it off for far too long &amp;ndash; learning about JSON and deciding on a new .conf file format for Inadyn. So this weekend I sat myself down to read up on JSON and the multitude of parser libraries for both JSON and traditional .conf file parsers. I was looking for a human readable file format that a user could easily and reliably edit by themselves without it being too error prone or sensitive to mistyping.</description>
     </item>
     

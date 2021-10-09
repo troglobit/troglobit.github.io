@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>opensource on Joachim Wiberg</title>
-    <link>https://troglobit.com/tags/opensource/</link>
+    <link>/tags/opensource/</link>
     <description>Recent content in opensource on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
     <lastBuildDate>Sat, 09 Oct 2021 10:15:00 +0200</lastBuildDate>
     
-	<atom:link href="https://troglobit.com/tags/opensource/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/opensource/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Buildroot Development Checklist</title>
-      <link>https://troglobit.com/post/2021-10-09-buildroot-development-checklist/</link>
+      <link>/post/2021-10-09-buildroot-development-checklist/</link>
       <pubDate>Sat, 09 Oct 2021 10:15:00 +0200</pubDate>
       
-      <guid>https://troglobit.com/post/2021-10-09-buildroot-development-checklist/</guid>
+      <guid>/post/2021-10-09-buildroot-development-checklist/</guid>
       <description>&lt;p&gt;Because I always forget, here&amp;rsquo;s a reminder to myself on how to use &lt;code&gt;git format-patch&lt;/code&gt; and &lt;code&gt;git send-email&lt;/code&gt; from the command line.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>It&#39;s Here! ♥</title>
-      <link>https://troglobit.com/post/2021-04-27-its-here/</link>
+      <link>/post/2021-04-27-its-here/</link>
       <pubDate>Tue, 27 Apr 2021 20:18:06 +0100</pubDate>
       
-      <guid>https://troglobit.com/post/2021-04-27-its-here/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://troglobit.com/images/finit3.png#floatright&#34; alt=&#34;finit logo&#34;&gt;&lt;/p&gt;
+      <guid>/post/2021-04-27-its-here/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;/images/finit3.png#floatright&#34; alt=&#34;finit logo&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Finit v4 was finally released the other day! \o/&lt;/p&gt;
 &lt;p&gt;It represents the culmination of many years of hard work and careful
 thought put in by many people.  There&amp;rsquo;s so much to tell, hardly know
@@ -39,10 +39,10 @@ move on to the project home page: &lt;a href=&#34;https://troglobit.com/finit.ht
     
     <item>
       <title>BSD syslogd in Linux</title>
-      <link>https://troglobit.com/post/2019-11-03-bsd-syslogd-in-linux/</link>
+      <link>/post/2019-11-03-bsd-syslogd-in-linux/</link>
       <pubDate>Sun, 03 Nov 2019 23:04:00 +0100</pubDate>
       
-      <guid>https://troglobit.com/post/2019-11-03-bsd-syslogd-in-linux/</guid>
+      <guid>/post/2019-11-03-bsd-syslogd-in-linux/</guid>
       <description>&lt;p&gt;Some time ago now I was in a meeting with a customer where I first learned of
 the new syslog standard, &lt;a href=&#34;https://tools.ietf.org/html/rfc5424&#34;&gt;RFC5424&lt;/a&gt;.  I say &amp;ldquo;new&amp;rdquo; because, despite it being
 ten years old, it was new to me.&lt;/p&gt;

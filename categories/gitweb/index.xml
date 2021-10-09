@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>gitweb on Joachim Wiberg</title>
-    <link>https://troglobit.com/categories/gitweb/</link>
+    <link>/categories/gitweb/</link>
     <description>Recent content in gitweb on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
     <lastBuildDate>Tue, 30 Jun 2015 23:13:48 +0000</lastBuildDate>
     
-	<atom:link href="https://troglobit.com/categories/gitweb/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/gitweb/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>HowTo: Apache with Gitweb on Debian 8.1</title>
-      <link>https://troglobit.com/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/</link>
+      <link>/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/</link>
       <pubDate>Tue, 30 Jun 2015 23:13:48 +0000</pubDate>
       
-      <guid>https://troglobit.com/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/</guid>
+      <guid>/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m posting this in case anyone else gets stuck setting up &lt;a href=&#34;http://www.apache.org&#34;&gt;Apache&lt;/a&gt;
 with &lt;a href=&#34;http://git-scm.com/docs/gitweb&#34;&gt;Gitweb&lt;/a&gt;.  Also as a reminder to myself in case I ever need to
 set up this all over again.&lt;/p&gt;

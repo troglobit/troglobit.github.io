@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Minix on Joachim Wiberg</title>
-    <link>https://troglobit.com/categories/minix/</link>
+    <link>/categories/minix/</link>
     <description>Recent content in Minix on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
     <lastBuildDate>Thu, 12 Aug 2010 18:17:40 +0000</lastBuildDate>
     
-	<atom:link href="https://troglobit.com/categories/minix/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/minix/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Minix editline v1.14.0</title>
-      <link>https://troglobit.com/2010/08/12/minix-editline-1-dot-14-dot-0/</link>
+      <link>/2010/08/12/minix-editline-1-dot-14-dot-0/</link>
       <pubDate>Thu, 12 Aug 2010 18:17:40 +0000</pubDate>
       
-      <guid>https://troglobit.com/2010/08/12/minix-editline-1-dot-14-dot-0/</guid>
+      <guid>/2010/08/12/minix-editline-1-dot-14-dot-0/</guid>
       <description>It is with great pleasure I announce the next release of the editline library by Simmule Turner and Rich Salz! This is a popular library, it exists in several forked versions. This release marks the end of a huge effort where archaeological methods have been applied to recover fixes and improvements developed independently over several decades by the following projects: Heimdal, Festival speech-tools, Debian, as well as patches by Mr. Steve Tell.</description>
     </item>
     
     <item>
       <title>Minix editline moves to GIT</title>
-      <link>https://troglobit.com/2010/07/19/minix-editline-moves-to-git/</link>
+      <link>/2010/07/19/minix-editline-moves-to-git/</link>
       <pubDate>Mon, 19 Jul 2010 02:40:36 +0000</pubDate>
       
-      <guid>https://troglobit.com/2010/07/19/minix-editline-moves-to-git/</guid>
+      <guid>/2010/07/19/minix-editline-moves-to-git/</guid>
       <description>A small heads-up, I&amp;rsquo;ve migrated the Minix editline project from Bazaar to GIT. The new URL for keeping tabs on your favourite free readline() clone is:
  http://git.vmlinux.org/editline.git/
  I&amp;rsquo;m currently working on fixing up the tree and doing some house cleaning — including making more stuff configurable — before releasing a 1.14.0 later on.
@@ -35,10 +35,10 @@ One such item is the integration of libtool with our autoconf friends. This shou
     
     <item>
       <title>Minix editline v0.1.0</title>
-      <link>https://troglobit.com/2008/06/07/minix-editline-v0-dot-1-0/</link>
+      <link>/2008/06/07/minix-editline-v0-dot-1-0/</link>
       <pubDate>Sat, 07 Jun 2008 21:45:05 +0000</pubDate>
       
-      <guid>https://troglobit.com/2008/06/07/minix-editline-v0-dot-1-0/</guid>
+      <guid>/2008/06/07/minix-editline-v0-dot-1-0/</guid>
       <description>I&amp;rsquo;ve been looking long and hard for a small and useful GNU readline replacement. Oddly enough, all the time I was looking for one I never even once considered looking at the Minix sources!
 Currently I&amp;rsquo;m using the NetBSD editline derivative (readline compatible) from Jess Thrysoee, but it requires ncurses, which is huge!
 All I really wanted was a bare bones readline() suitable for small embedded systems. One which could record history and preferably, but not required to, support completion.</description>

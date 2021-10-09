@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>bsd on Joachim Wiberg</title>
-    <link>https://troglobit.com/categories/bsd/</link>
+    <link>/categories/bsd/</link>
     <description>Recent content in bsd on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
     <lastBuildDate>Sat, 22 Aug 2020 21:39:00 +0100</lastBuildDate>
     
-	<atom:link href="https://troglobit.com/categories/bsd/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/bsd/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>HowTo use NetBSD pre-built packages</title>
-      <link>https://troglobit.com/howtos/netbsd-pkgsrc/</link>
+      <link>/howtos/netbsd-pkgsrc/</link>
       <pubDate>Sat, 22 Aug 2020 21:39:00 +0100</pubDate>
       
-      <guid>https://troglobit.com/howtos/netbsd-pkgsrc/</guid>
+      <guid>/howtos/netbsd-pkgsrc/</guid>
       <description>Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.
 Here it is, you&amp;rsquo;d think this be something the installer could set up a default for &amp;hellip;
 PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/  or if you use the latest on an old ThinkPad T42:
@@ -27,20 +27,20 @@ pkg_add -v git  Or so you might think!</description>
     
     <item>
       <title>HowTo run pimd on FreeBSD</title>
-      <link>https://troglobit.com/howtos/pimd-on-freebsd/</link>
+      <link>/howtos/pimd-on-freebsd/</link>
       <pubDate>Sun, 27 Sep 2015 18:45:00 +0200</pubDate>
       
-      <guid>https://troglobit.com/howtos/pimd-on-freebsd/</guid>
+      <guid>/howtos/pimd-on-freebsd/</guid>
       <description>This is not a proper HowTo, more of a &amp;ldquo;note to self&amp;rdquo; after having created a setup to test pimd issue #57. For these notes the following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and Qemu 2.3.0, is used:
 .--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | &amp;#39;--------&amp;#39; &amp;#39;----&amp;#39; &amp;#39;----&amp;#39; &amp;#39;----------&amp;#39; The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP/MLD snooping to get pimd to run smoothly.</description>
     </item>
     
     <item>
       <title>HowTo run pimd on OpenBSD</title>
-      <link>https://troglobit.com/howtos/pimd-on-openbsd/</link>
+      <link>/howtos/pimd-on-openbsd/</link>
       <pubDate>Sun, 19 Jul 2015 00:32:00 +0200</pubDate>
       
-      <guid>https://troglobit.com/howtos/pimd-on-openbsd/</guid>
+      <guid>/howtos/pimd-on-openbsd/</guid>
       <description>This is an introduction to HowTo run pimd on OpenBSD. I keep it around mostly as a reminder to myself when testing new pimd releases, maybe someone else can make use of it as well.
 First of all, my sincere thanks to the OpenBSD team for, not just an awesome UNIX distribution, but also for their good taste in shipping a MULTICAST enabled kernel in the base distribution! On both NetBSD and FreeBSD there is a bit of work to get multicast support, which is one of the reasons for my not writing a HowTo for either of them atm.</description>
     </item>

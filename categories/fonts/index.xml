@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fonts on Joachim Wiberg</title>
-    <link>https://troglobit.com/categories/fonts/</link>
+    <link>/categories/fonts/</link>
     <description>Recent content in Fonts on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
     <lastBuildDate>Mon, 26 Apr 2010 22:44:19 +0000</lastBuildDate>
     
-	<atom:link href="https://troglobit.com/categories/fonts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/fonts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Best. Programming. Font. Ever.</title>
-      <link>https://troglobit.com/2010/04/26/best-programming-font-ever/</link>
+      <link>/2010/04/26/best-programming-font-ever/</link>
       <pubDate>Mon, 26 Apr 2010 22:44:19 +0000</pubDate>
       
-      <guid>https://troglobit.com/2010/04/26/best-programming-font-ever/</guid>
+      <guid>/2010/04/26/best-programming-font-ever/</guid>
       <description>This is not only a reminder to myself, it is appraisal to the probably best programming font ever: Inconsolata. Thank you so much, Mr Raph Levien!
 On the previous laptop I used ProFont quite extensively, but its screen was only 1280x800, on the new laptop I have 1680x1050 and ProFont just got too small for my aging eyes.
 For more tips on fonts, see Top-10 Programming Fonts and KeithDevens.com.</description>

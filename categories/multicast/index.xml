@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>multicast on Joachim Wiberg</title>
-    <link>https://troglobit.com/categories/multicast/</link>
+    <link>/categories/multicast/</link>
     <description>Recent content in multicast on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
     <lastBuildDate>Sun, 01 Aug 2021 08:31:12 +0200</lastBuildDate>
     
-	<atom:link href="https://troglobit.com/categories/multicast/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/multicast/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>HowTo: Add Multicast Routing to FreeBSD kernel</title>
-      <link>https://troglobit.com/howtos/mrouting-in-freebsd/</link>
+      <link>/howtos/mrouting-in-freebsd/</link>
       <pubDate>Sun, 01 Aug 2021 08:31:12 +0200</pubDate>
       
-      <guid>https://troglobit.com/howtos/mrouting-in-freebsd/</guid>
+      <guid>/howtos/mrouting-in-freebsd/</guid>
       <description>This is a very short blog post, mostly intended as a reminder to myself. Basically, there are two methods of adding multicast routing support to the FreeBSD kernel:
  Rebuild the kernel with options MROUTING Load the kernel module: kldload ip_mroute  The kernel rebuild assumes the src.txz set was installed previously.
 cd /usr/src cd sys/amd64/conf cat GENERIC | sed &#39;s/GENERIC$/MULTICAST/&#39; &amp;gt; MULTICAST echo &#39;options MROUTING # Multicast routing&#39; &amp;gt;&amp;gt; MULTICAST echo &#39;options PIM # Enable for pimd&#39; &amp;gt;&amp;gt; MULTICAST cd - make kernel KERNCONF=MULTICAST reboot  That&amp;rsquo;s it.</description>
@@ -25,10 +25,10 @@ cd /usr/src cd sys/amd64/conf cat GENERIC | sed &#39;s/GENERIC$/MULTICAST/&#39; 
     
     <item>
       <title>Open Source Releases</title>
-      <link>https://troglobit.com/post/2020-06-09-open-source-releases/</link>
+      <link>/post/2020-06-09-open-source-releases/</link>
       <pubDate>Tue, 09 Jun 2020 22:48:52 +0200</pubDate>
       
-      <guid>https://troglobit.com/post/2020-06-09-open-source-releases/</guid>
+      <guid>/post/2020-06-09-open-source-releases/</guid>
       <description>&lt;p&gt;The last couple of months have been crazy.  The downturn in the economy
 due to Covid-19, mass layoffs, social distancing and quarantine.  Not
 to mention the unrest in US and Europe in the wake of George Floyd&amp;rsquo;s
@@ -37,10 +37,10 @@ uneccessary death.&lt;/p&gt;</description>
     
     <item>
       <title>Multicast HowTo</title>
-      <link>https://troglobit.com/howtos/multicast/</link>
+      <link>/howtos/multicast/</link>
       <pubDate>Wed, 27 Mar 2019 15:54:00 +0200</pubDate>
       
-      <guid>https://troglobit.com/howtos/multicast/</guid>
+      <guid>/howtos/multicast/</guid>
       <description>Introduction This HowTo attempts to give some insight into the basics of setting up multicast routing. Both static multicast routing, with SMCRoute, and dynamic multicast routing, with mrouted and pimd.
 For some use-cases, in particular link-local multicast, it may not be possible to use multicast routing, then I recommend trying out:
  Bridging networks, see bridge(8) or Linux bridge - how it works igmproxy, mcproxy, or OpenVPN in Layer-2, bridged mode  Make sure to check out the FAQ for the most common problems.</description>
@@ -48,10 +48,10 @@ For some use-cases, in particular link-local multicast, it may not be possible t
     
     <item>
       <title>Multicast routing with PIM-SM over GRE</title>
-      <link>https://troglobit.com/2016/07/05/multicast-routing-with-pim-sm-over-gre/</link>
+      <link>/2016/07/05/multicast-routing-with-pim-sm-over-gre/</link>
       <pubDate>Tue, 23 Jan 2018 20:39:36 +0000</pubDate>
       
-      <guid>https://troglobit.com/2016/07/05/multicast-routing-with-pim-sm-over-gre/</guid>
+      <guid>/2016/07/05/multicast-routing-with-pim-sm-over-gre/</guid>
       <description>&lt;p&gt;GRE tunnels are useful in many ways.  This blog post shows how to set up
 multicast routing with &lt;a href=&#34;https://github.com/troglobit/pimd/&#34;&gt;pimd&lt;/a&gt; over a
 GRE tunnel.  To achieve this we will also set up OSPF over GRE with
@@ -83,10 +83,10 @@ that the GRE tunnel can be established.&lt;/p&gt;</description>
     
     <item>
       <title>Testing multicast with Docker</title>
-      <link>https://troglobit.com/2016/03/07/testing-multicast-with-docker/</link>
+      <link>/2016/03/07/testing-multicast-with-docker/</link>
       <pubDate>Mon, 07 Mar 2016 01:37:04 +0000</pubDate>
       
-      <guid>https://troglobit.com/2016/03/07/testing-multicast-with-docker/</guid>
+      <guid>/2016/03/07/testing-multicast-with-docker/</guid>
       <description>&lt;p&gt;Recently &lt;a href=&#34;https://github.com/troglobit/pimd/issues/70&#34;&gt;issue #70&lt;/a&gt; was
 reported to &lt;a href=&#34;https://github.com/troglobit/pimd/&#34;&gt;pimd&lt;/a&gt;.  That number of
 issues reported is cool in itself, but this was a question about
@@ -114,10 +114,10 @@ work properly with &lt;code&gt;pimd&lt;/code&gt; running on the host:&lt;/p&gt;
     
     <item>
       <title>Multicast testing, made easy!</title>
-      <link>https://troglobit.com/2016/03/07/multicast-testing/</link>
+      <link>/2016/03/07/multicast-testing/</link>
       <pubDate>Mon, 07 Mar 2016 01:06:02 +0000</pubDate>
       
-      <guid>https://troglobit.com/2016/03/07/multicast-testing/</guid>
+      <guid>/2016/03/07/multicast-testing/</guid>
       <description>&lt;p&gt;For the better part of the last ten years I have been working with
 multicast in one way or another.  I&amp;rsquo;ve used many different tools for
 testing, but on most systems I usually resort to &lt;code&gt;ping(1)&lt;/code&gt; and
@@ -132,42 +132,42 @@ improving and adding features to it over the years.&lt;/p&gt;</description>
     
     <item>
       <title>HowTo run pimd on FreeBSD</title>
-      <link>https://troglobit.com/howtos/pimd-on-freebsd/</link>
+      <link>/howtos/pimd-on-freebsd/</link>
       <pubDate>Sun, 27 Sep 2015 18:45:00 +0200</pubDate>
       
-      <guid>https://troglobit.com/howtos/pimd-on-freebsd/</guid>
+      <guid>/howtos/pimd-on-freebsd/</guid>
       <description>This is not a proper HowTo, more of a &amp;ldquo;note to self&amp;rdquo; after having created a setup to test pimd issue #57. For these notes the following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and Qemu 2.3.0, is used:
 .--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | &amp;#39;--------&amp;#39; &amp;#39;----&amp;#39; &amp;#39;----&amp;#39; &amp;#39;----------&amp;#39; The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP/MLD snooping to get pimd to run smoothly.</description>
     </item>
     
     <item>
       <title>HowTo run pimd on OpenBSD</title>
-      <link>https://troglobit.com/howtos/pimd-on-openbsd/</link>
+      <link>/howtos/pimd-on-openbsd/</link>
       <pubDate>Sun, 19 Jul 2015 00:32:00 +0200</pubDate>
       
-      <guid>https://troglobit.com/howtos/pimd-on-openbsd/</guid>
+      <guid>/howtos/pimd-on-openbsd/</guid>
       <description>This is an introduction to HowTo run pimd on OpenBSD. I keep it around mostly as a reminder to myself when testing new pimd releases, maybe someone else can make use of it as well.
 First of all, my sincere thanks to the OpenBSD team for, not just an awesome UNIX distribution, but also for their good taste in shipping a MULTICAST enabled kernel in the base distribution! On both NetBSD and FreeBSD there is a bit of work to get multicast support, which is one of the reasons for my not writing a HowTo for either of them atm.</description>
     </item>
     
     <item>
       <title>mrouted v3.9.7</title>
-      <link>https://troglobit.com/2014/12/28/mrouted-v3-dot-9-7/</link>
+      <link>/2014/12/28/mrouted-v3-dot-9-7/</link>
       <pubDate>Sun, 28 Dec 2014 19:38:06 +0000</pubDate>
       
-      <guid>https://troglobit.com/2014/12/28/mrouted-v3-dot-9-7/</guid>
-      <description>&lt;p&gt;Another release today is the venerable &lt;a href=&#34;https://troglobit.com/mrouted.html&#34;&gt;mrouted&lt;/a&gt;, now
+      <guid>/2014/12/28/mrouted-v3-dot-9-7/</guid>
+      <description>&lt;p&gt;Another release today is the venerable &lt;a href=&#34;/mrouted.html&#34;&gt;mrouted&lt;/a&gt;, now
 available as
 &lt;a href=&#34;https://github.com/troglobit/mrouted/releases/tag/3.9.7&#34;&gt;v3.9.7 on GitHub&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>pimd v2.2.0 -- The last release of pimd?</title>
-      <link>https://troglobit.com/2014/12/28/last-release-of-pimd/</link>
+      <link>/2014/12/28/last-release-of-pimd/</link>
       <pubDate>Sun, 28 Dec 2014 13:42:18 +0000</pubDate>
       
-      <guid>https://troglobit.com/2014/12/28/last-release-of-pimd/</guid>
-      <description>&lt;p&gt;On one of the last days of 2014 I release &lt;a href=&#34;https://troglobit.com/pimd.html&#34;&gt;pimd&lt;/a&gt;
+      <guid>/2014/12/28/last-release-of-pimd/</guid>
+      <description>&lt;p&gt;On one of the last days of 2014 I release &lt;a href=&#34;/pimd.html&#34;&gt;pimd&lt;/a&gt;
 &lt;a href=&#34;https://github.com/troglobit/pimd/releases/tag/2.2.0&#34;&gt;v2.2.0&lt;/a&gt;, which
 is an awesome release with a lot of new features and bug fixes!&lt;/p&gt;
 &lt;p&gt;However, it could very well be the last release I do.  Even though its

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>eventloop on Joachim Wiberg</title>
-    <link>https://troglobit.com/categories/eventloop/</link>
+    <link>/categories/eventloop/</link>
     <description>Recent content in eventloop on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
     <lastBuildDate>Tue, 19 Sep 2017 08:51:38 +0000</lastBuildDate>
     
-	<atom:link href="https://troglobit.com/categories/eventloop/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/eventloop/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Threads vs Event Loop, Again ...</title>
-      <link>https://troglobit.com/2017/09/19/threads-vs-event-loop-again/</link>
+      <link>/2017/09/19/threads-vs-event-loop-again/</link>
       <pubDate>Tue, 19 Sep 2017 08:51:38 +0000</pubDate>
       
-      <guid>https://troglobit.com/2017/09/19/threads-vs-event-loop-again/</guid>
+      <guid>/2017/09/19/threads-vs-event-loop-again/</guid>
       <description>&lt;p&gt;I still get asked this, from time to time.  Maybe it&amp;rsquo;s because I only
 use event loops, maybe it&amp;rsquo;s because I&amp;rsquo;ve written &lt;a href=&#34;https://github.com/troglobit/libuev&#34;&gt;libuEv&lt;/a&gt;, or maybe
 people still don&amp;rsquo;t understand:&lt;/p&gt;
@@ -29,10 +29,10 @@ people still don&amp;rsquo;t understand:&lt;/p&gt;
     
     <item>
       <title>Brief libev update</title>
-      <link>https://troglobit.com/2009/04/05/brief-libev-update/</link>
+      <link>/2009/04/05/brief-libev-update/</link>
       <pubDate>Sun, 05 Apr 2009 23:53:47 +0000</pubDate>
       
-      <guid>https://troglobit.com/2009/04/05/brief-libev-update/</guid>
+      <guid>/2009/04/05/brief-libev-update/</guid>
       <description>I have now updated the libev examples. It took me a while, but during that time I have been hard at work converting two of our network daemons to use libev. As of today the upcoming Westermo WeOS uses libev in both its rstpd and igmpd implementations.
 Updated example code:
  timer test message queue test  Enjoy, and feel free to [contact me][6] if you have any questions or comments on the code.</description>
@@ -40,10 +40,10 @@ Updated example code:
     
     <item>
       <title>The Marvellous libev</title>
-      <link>https://troglobit.com/2009/03/28/the-marvellous-libev/</link>
+      <link>/2009/03/28/the-marvellous-libev/</link>
       <pubDate>Sat, 28 Mar 2009 23:00:00 +0000</pubDate>
       
-      <guid>https://troglobit.com/2009/03/28/the-marvellous-libev/</guid>
+      <guid>/2009/03/28/the-marvellous-libev/</guid>
       <description>A very good friend mine recently told me about a neat event library, libev. Usually when he drops me links like that it takes me a couple of years to react and finally adopt.
 This time it only took me about a month.
 He has actually showed me lots of very useful stuff throughout the years, and even though we used GNU/Linux at university, he was one those hard core people who showed me the path into a successful full-time career as a Linux developer.</description>

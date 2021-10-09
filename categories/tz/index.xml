@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>tz on Joachim Wiberg</title>
-    <link>https://troglobit.com/categories/tz/</link>
+    <link>/categories/tz/</link>
     <description>Recent content in tz on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
     <lastBuildDate>Fri, 09 Aug 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://troglobit.com/categories/tz/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/tz/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>On the Linearity of Time</title>
-      <link>https://troglobit.com/2013/08/09/on-the-linearity-of-time/</link>
+      <link>/2013/08/09/on-the-linearity-of-time/</link>
       <pubDate>Fri, 09 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://troglobit.com/2013/08/09/on-the-linearity-of-time/</guid>
+      <guid>/2013/08/09/on-the-linearity-of-time/</guid>
       <description>&lt;p&gt;Don&amp;rsquo;t try this at home kids. (Disclaimer: I live in Sweden :)&lt;/p&gt;</description>
     </item>
     

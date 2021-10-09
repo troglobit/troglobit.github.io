@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>reminder on Joachim Wiberg</title>
-    <link>https://troglobit.com/categories/reminder/</link>
+    <link>/categories/reminder/</link>
     <description>Recent content in reminder on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
     <lastBuildDate>Sat, 14 Feb 2009 21:13:41 +0000</lastBuildDate>
     
-	<atom:link href="https://troglobit.com/categories/reminder/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/reminder/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Reminder to Self</title>
-      <link>https://troglobit.com/2009/02/14/reminder-to-self/</link>
+      <link>/2009/02/14/reminder-to-self/</link>
       <pubDate>Sat, 14 Feb 2009 21:13:41 +0000</pubDate>
       
-      <guid>https://troglobit.com/2009/02/14/reminder-to-self/</guid>
+      <guid>/2009/02/14/reminder-to-self/</guid>
       <description>How to recode AVI-files to be able to write them to a Video CD.
 ffmpeg -i original.avi -target pal-vcd copy.mpg vcdimager -t vcd1 -l &amp;quot;Title&amp;quot; -c vcd.cue -b vcd.bin copy.mpg cdrdao write --device /dev/cdrw vcd.cue  Note: vcdimager is able to take multiple .mpg files as argument, very useful when burning multiple family videos to the same disc!
  Tip from Johan Risberg on how to be able to reattach a UTF-8 Linux screen session from Cygwin.</description>

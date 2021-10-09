@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>backup on Joachim Wiberg</title>
-    <link>https://troglobit.com/categories/backup/</link>
+    <link>/categories/backup/</link>
     <description>Recent content in backup on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
     <lastBuildDate>Thu, 24 Mar 2016 22:39:00 +0000</lastBuildDate>
     
-	<atom:link href="https://troglobit.com/categories/backup/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/backup/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Disaster Recovery</title>
-      <link>https://troglobit.com/2016/03/24/disaster-recovery/</link>
+      <link>/2016/03/24/disaster-recovery/</link>
       <pubDate>Thu, 24 Mar 2016 22:39:00 +0000</pubDate>
       
-      <guid>https://troglobit.com/2016/03/24/disaster-recovery/</guid>
+      <guid>/2016/03/24/disaster-recovery/</guid>
       <description>&lt;p&gt;Days like these inconspicuously start out just like any other day,
 except on days like these you accidentally manage to erase &lt;code&gt;$HOME&lt;/code&gt; and
 have no real backup to rely on &amp;hellip; Maundy Thursday will forever be Black
@@ -37,10 +37,10 @@ take heed young people!&lt;/p&gt;</description>
     
     <item>
       <title>Blog Restoration Project</title>
-      <link>https://troglobit.com/2015/01/02/blog-restoration-project-now-also-on-github-pages/</link>
+      <link>/2015/01/02/blog-restoration-project-now-also-on-github-pages/</link>
       <pubDate>Fri, 02 Jan 2015 14:12:59 +0000</pubDate>
       
-      <guid>https://troglobit.com/2015/01/02/blog-restoration-project-now-also-on-github-pages/</guid>
+      <guid>/2015/01/02/blog-restoration-project-now-also-on-github-pages/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve had this long-standing issue with backups.  It&amp;rsquo;s deadly boring to
 set up and maintain, so I don&amp;rsquo;t do any.  Until today!&lt;/p&gt;
 &lt;p&gt;Today I moved the sources for my &lt;a href=&#34;http://troglobit.com&#34;&gt;Octopress blag&lt;/a&gt;
