@@ -13,6 +13,15 @@
     
     
     <item>
+      <title>Buildroot Development Checklist</title>
+      <link>https://troglobit.com/post/2021-10-09-buildroot-development-checklist/</link>
+      <pubDate>Sat, 09 Oct 2021 10:15:00 +0200</pubDate>
+      
+      <guid>https://troglobit.com/post/2021-10-09-buildroot-development-checklist/</guid>
+      <description>&lt;p&gt;Because I always forget, here&amp;rsquo;s a reminder to myself on how to use &lt;code&gt;git format-patch&lt;/code&gt; and &lt;code&gt;git send-email&lt;/code&gt; from the command line.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>HowTo: Build &amp; Use My Projects</title>
       <link>https://troglobit.com/howtos/howto-build-and-use-my-projects/</link>
       <pubDate>Tue, 05 Oct 2021 21:03:00 +0200</pubDate>
@@ -115,18 +124,6 @@ Features include:
       <description>With lots of help from the tireless Tobias Waldekranz, I think I&amp;rsquo;ve finally found the perfect &amp;ldquo;magit like&amp;rdquo; email setup. With Emacs, of course. This is the story of how I did it.
 First install notmuch, mbsync (from the isync package), and afew:
 sudo apt install notmuch isync afew Do initial setup of notmuch for your user. I&amp;rsquo;ve opted to store my mail in ~/mail, this is used throughout the text below, ymmv.</description>
-    </item>
-    
-    <item>
-      <title>Buildroot Development Checklist</title>
-      <link>https://troglobit.com/post/2021-05-11-buildroot-development-checklist/</link>
-      <pubDate>Tue, 11 May 2021 18:41:00 +0100</pubDate>
-      
-      <guid>https://troglobit.com/post/2021-05-11-buildroot-development-checklist/</guid>
-      <description>Because I always forget, here&amp;rsquo;s a reminder to myself.
-  Make your changes on an up-to-date branch from Buildroot master
- git checkout -b package/foobar git fetch --all --tags git rebase origin/master    Use logical commits; upgrade package as one, changing/extending behavior as another, etc.
-  Use commit messages to record why changes are made. The first line is usally a (very) brief summary referencing the sub-system:</description>
     </item>
     
     <item>

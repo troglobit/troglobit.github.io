@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Tue, 11 May 2021 19:12:00 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 09 Oct 2021 10:15:00 +0200</lastBuildDate>
     
 	<atom:link href="https://troglobit.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>buildroot</title>
+      <link>https://troglobit.com/tags/buildroot/</link>
+      <pubDate>Sat, 09 Oct 2021 10:15:00 +0200</pubDate>
+      
+      <guid>https://troglobit.com/tags/buildroot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://troglobit.com/tags/git/</link>
+      <pubDate>Sat, 09 Oct 2021 10:15:00 +0200</pubDate>
+      
+      <guid>https://troglobit.com/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>opensource</title>
+      <link>https://troglobit.com/tags/opensource/</link>
+      <pubDate>Sat, 09 Oct 2021 10:15:00 +0200</pubDate>
+      
+      <guid>https://troglobit.com/tags/opensource/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>emacs</title>
@@ -45,33 +72,6 @@
       <pubDate>Tue, 11 May 2021 19:12:00 +0100</pubDate>
       
       <guid>https://troglobit.com/tags/notmuch/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>buildroot</title>
-      <link>https://troglobit.com/tags/buildroot/</link>
-      <pubDate>Tue, 11 May 2021 18:41:00 +0100</pubDate>
-      
-      <guid>https://troglobit.com/tags/buildroot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>git</title>
-      <link>https://troglobit.com/tags/git/</link>
-      <pubDate>Tue, 11 May 2021 18:41:00 +0100</pubDate>
-      
-      <guid>https://troglobit.com/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>opensource</title>
-      <link>https://troglobit.com/tags/opensource/</link>
-      <pubDate>Tue, 11 May 2021 18:41:00 +0100</pubDate>
-      
-      <guid>https://troglobit.com/tags/opensource/</guid>
       <description></description>
     </item>
     
