@@ -170,19 +170,19 @@ disableHugoGeneratorInject = false
   [[menu.main]]
     weight     = 1
     name       = "About"
-    url        = "about/"
+    url        = "/about/"
   [[menu.main]]
     weight     = 1
     name       = "Blog"
-    url        = "posts/"
+    url        = "/posts/"
   [[menu.main]]
     weight     = 2
     name       = "HowTos"
-    url        = "howtos/"
+    url        = "/howtos/"
   [[menu.main]]
     weight     = 3
     name       = "Projects"
-    url        = "projects/"
+    url        = "/projects/"
   [[menu.main]]
     weight     = 4
     name       = "Resumé"
