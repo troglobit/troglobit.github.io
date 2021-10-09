@@ -103,8 +103,8 @@ disableHugoGeneratorInject = false
   # Custom footer 
   # If you want, you can easily override the default footer with your own content. 
   #
-  #footerLeft = ""
-  #footerRight = ""
+  footerLeft = ""
+  footerRight = ""
 
   # Colors for favicons
   #
