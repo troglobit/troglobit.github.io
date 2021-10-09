@@ -24,8 +24,8 @@ layoutDir    = "layouts"
 publishDir   = "public"
 
 buildDrafts  = false
-buildFuture  = false
-buildExpired = false
+buildFuture  = true
+buildExpired = true
 canonifyURLs = true
 
 enableRobotsTXT = true
