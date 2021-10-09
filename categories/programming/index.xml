@@ -41,10 +41,10 @@ continued adding to it over the years, and still do.  So, as of Jul 2,
     
     <item>
       <title>Threads vs Event Loop, Again ...</title>
-      <link>https://troglobit.com/2017/09/19/threads-vs-event-loop-again-.../</link>
+      <link>https://troglobit.com/2017/09/19/threads-vs-event-loop-again/</link>
       <pubDate>Tue, 19 Sep 2017 08:51:38 +0000</pubDate>
       
-      <guid>https://troglobit.com/2017/09/19/threads-vs-event-loop-again-.../</guid>
+      <guid>https://troglobit.com/2017/09/19/threads-vs-event-loop-again/</guid>
       <description>&lt;p&gt;I still get asked this, from time to time.  Maybe it&amp;rsquo;s because I only
 use event loops, maybe it&amp;rsquo;s because I&amp;rsquo;ve written &lt;a href=&#34;https://github.com/troglobit/libuev&#34;&gt;libuEv&lt;/a&gt;, or maybe
 people still don&amp;rsquo;t understand:&lt;/p&gt;
