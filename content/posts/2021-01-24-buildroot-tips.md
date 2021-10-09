@@ -47,7 +47,7 @@ but the process is much the same for other mailing list-based projects.
 
 7. Figure out DEVELOPERS to Cc in your correspondence to the mailing list:
 
-        ./utils/get-developers outgoing/*
+        ./utils/get-developers mail/*
 
 8. At the very least, the following should be output:
 
