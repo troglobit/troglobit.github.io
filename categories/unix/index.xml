@@ -212,5 +212,45 @@ Edit your ~/.config/awesome/rc.lua with Emacs (obviously). If you do not have an
 globalkeys = awful.util.table.join(globalkeys, awful.key({}, &amp;quot;XF86AudioRaiseVolume&amp;quot;, function () awful.util.spawn(&amp;quot;amixer -D pulse sset Master 5%+&amp;quot;, false) end), awful.key({}, &amp;quot;XF86AudioLowerVolume&amp;quot;, function () awful.util.spawn(&amp;quot;amixer -D pulse sset Master 5%-&amp;quot;, false) end), awful.</description>
     </item>
     
+    <item>
+      <title>Weekend Hack: JSON vs CONF</title>
+      <link>/2014/02/23/weekend-hack-json-vs-conf/</link>
+      <pubDate>Sun, 23 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/2014/02/23/weekend-hack-json-vs-conf/</guid>
+      <description>It was time. I had been putting it off for far too long &amp;ndash; learning about JSON and deciding on a new .conf file format for Inadyn. So this weekend I sat myself down to read up on JSON and the multitude of parser libraries for both JSON and traditional .conf file parsers. I was looking for a human readable file format that a user could easily and reliably edit by themselves without it being too error prone or sensitive to mistyping.</description>
+    </item>
+    
+    <item>
+      <title>Syntax highlighting in less</title>
+      <link>/2010/05/09/syntax-highlighting-in-less/</link>
+      <pubDate>Sun, 09 May 2010 19:53:19 +0000</pubDate>
+      
+      <guid>/2010/05/09/syntax-highlighting-in-less/</guid>
+      <description>Yes, it&amp;rsquo;s certainly possible and source code becomes so much easier to read. Try it out by:
+ downloading my .lessfilter save it as ~/.lessfilter in your $HOME Profit!  Ahem &amp;hellip;
+Just try it out on a C source file :-)
+less -R myfile.c  </description>
+    </item>
+    
+    <item>
+      <title>Regexp replace in many files</title>
+      <link>/2008/07/13/regexp-replace-in-many-files/</link>
+      <pubDate>Sun, 13 Jul 2008 21:38:33 +0000</pubDate>
+      
+      <guid>/2008/07/13/regexp-replace-in-many-files/</guid>
+      <description>I just have to blog about this exceptional tool I just found. It is called regexxer and is a tool in the true UNIX spirit — it does one job only, and does it well.</description>
+    </item>
+    
+    <item>
+      <title>Top Ten UNIX Shell Commands</title>
+      <link>/2006/09/23/top-ten-unix-shell-commands/</link>
+      <pubDate>Sat, 23 Sep 2006 23:02:42 +0000</pubDate>
+      
+      <guid>/2006/09/23/top-ten-unix-shell-commands/</guid>
+      <description>Current trend is to run the following one-liner from IBM. I&amp;rsquo;m usually logged in to the following three systems, with very different results.
+vmlinux.org $ history |awk &#39;{print $2}&#39;|sort|uniq -c|sort -nr|head -10 144 ls 61 cd 58 sudo 29 less 23 emacs 19 bzr 16 vim 11 rm 10 wget 10 mv  My personal life. Not much different from my professional dito. Most visible difference maybe is my use of bzr instead of svn.</description>
+    </item>
+    
   </channel>
 </rss>

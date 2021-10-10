@@ -159,5 +159,25 @@ This HowTo is divided into two parts:
 laptop&amp;gt; mkdir projectX; cd projectX laptop&amp;gt; git init laptop&amp;gt; emacs file1.txt laptop&amp;gt; git add file1.</description>
     </item>
     
+    <item>
+      <title>More about Bzrweb and some about Git</title>
+      <link>/2009/06/12/more-about-bzrweb-and-some-about-git/</link>
+      <pubDate>Fri, 12 Jun 2009 19:50:27 +0000</pubDate>
+      
+      <guid>/2009/06/12/more-about-bzrweb-and-some-about-git/</guid>
+      <description>OK, I admit it. I cannot decide what version control system (VCS) to use. I&amp;rsquo;m stuck between the speed and massive snow ball effect of Git and the ease of use and emotional attachment I have to Bazaar.
+I&amp;rsquo;ve been &amp;ldquo;maintaining&amp;rdquo; bzrweb for a while now, not doing a very good job of it though. It&amp;rsquo;s lagging behind considerably to the bzr API. After the upgrade of vmlinux.org to the latest Ubuntu server release bzrweb actually didn&amp;rsquo;t work at all.</description>
+    </item>
+    
+    <item>
+      <title>Learning About GIT</title>
+      <link>/2009/04/10/learning-about-git/</link>
+      <pubDate>Fri, 10 Apr 2009 16:23:42 +0000</pubDate>
+      
+      <guid>/2009/04/10/learning-about-git/</guid>
+      <description>It has been a long time coming, but now I&amp;rsquo;m seriously starting to look at Git. Git is the content tracker used by the Linux kernel folks, initially developed by Torvalds.
+At Westermo R&amp;amp;D we use Subversion for our daily operations and today I started migrating the software to Git. Mainly just to get a comparison of performance, storage size and to explore how we can use Git on top of svn to become more productive when working in parallel in different teams.</description>
+    </item>
+    
   </channel>
 </rss>

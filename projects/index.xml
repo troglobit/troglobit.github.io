@@ -116,5 +116,46 @@ Try uftpd!
  Supports FTP and TFTP No configuration file Defaults to port ftp/tcp and tftp/udp found in /etc/services, or custom port(s) Serves files from the ftp user&amp;rsquo;s $HOME, as specified in /etc/passwd, or custom path Can run from inetd(8) or as a standalone daemon Can be built and installed as a .deb file, with debconf support Can run as root, with chroot and privsep, or as a regular user Supports TFTP blocksize negotiation, RFC 2348  Basically, it just works!</description>
     </item>
     
+    <item>
+      <title>Merecat httpd</title>
+      <link>/projects/merecat/</link>
+      <pubDate>Fri, 19 Jul 2019 12:35:00 +0200</pubDate>
+      
+      <guid>/projects/merecat/</guid>
+      <description>Merecat started out as a pun at Mongoose, but is now useful for actual web serving purposes. It is however not a real Meerkat, merely yet another copycat, forked from the great thttpd created by Jef Poskanzer.
+Merecat expands on the features originally offered by thttpd, but still has a limited feature set:
+ Virtual hosts Basic .htpassd and .htaccess support URL-traffic-based throttling CGI/1.1 HTTP/1.1 Keep-alive Built-in gzip deflate using zlib HTTPS support using OpenSSL/LibreSSL, works with Let&amp;rsquo;s Encrypt!</description>
+    </item>
+    
+    <item>
+      <title>N E M E S I S</title>
+      <link>/projects/nemesis/</link>
+      <pubDate>Sun, 16 Jun 2019 15:39:00 +0200</pubDate>
+      
+      <guid>/projects/nemesis/</guid>
+      <description>Nemesis is a command-line network packet crafting and injection utility for UNIX-like and Windows systems. Well suited for testing Network Intrusion Detection Systems, firewalls, IP stacks and a variety of other tasks. As a command-line driven utility, it is perfect for automation and scripting.
+Nemesis can natively craft and inject ARP, DNS, ETHERNET, ICMP, IGMP, IP, OSPF, RIP, TCP and UDP packets. Using the IP and the Ethernet injection modes, almost any custom packet can be crafted and injected.</description>
+    </item>
+    
+    <item>
+      <title>The original PIM-SM daemon</title>
+      <link>/projects/pimd/</link>
+      <pubDate>Sun, 28 Apr 2019 08:50:00 +0200</pubDate>
+      
+      <guid>/projects/pimd/</guid>
+      <description>Protocol Independent Multicast, PIM, allows existing networks to route IP multicast, regardless of what unicast routing protocol is in use. It is designed to use existing routing tables to make its multicast routing decisions. PIM-SM is suitable for sparsely located multicast subscribers, for dense mode operation mrouted is recommended, and for static multicast routing smcroute may be used.
+pimd is a lightweight standalone PIM-SM/SSM v2 multicast routing daemon. It is the original USC (netweb/catarina.</description>
+    </item>
+    
+    <item>
+      <title>Micro Snake</title>
+      <link>/projects/snake/</link>
+      <pubDate>Sun, 07 Jul 2013 10:28:00 +0200</pubDate>
+      
+      <guid>/projects/snake/</guid>
+      <description>Welcome to Micro Snake, based on an original implementation by Simon Huggins. This version of the snake game is very small, utilizing only ANSI escape sequences to draw the board, no external library dependencys other than a standard C-library, like uClibc. Hence, it is very suitable for todays small embedded devices.
+The aim of the game is to collect the gold ($), avoid cactuses (*), borders, and colliding with the snake itself.</description>
+    </item>
+    
   </channel>
 </rss>
