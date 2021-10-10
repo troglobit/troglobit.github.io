@@ -1,4 +1,5 @@
 #baseurl = "https://troglobit.com/"
+baseurl = "/"
 title = "Joachim Wiberg"
 languageCode = "en-us"
 theme = "hello-friend-ng"
@@ -11,11 +12,6 @@ pygmentsCodefencesGuessSyntax = true
 PygmentsStyle = "native"
 
 paginate  = 10
-rssLimit  = 10  # Maximum number of items in the RSS feed.
-copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
-
-# googleAnalytics = ""
-# disqusShortname = ""
 
 archetypeDir = "archetypes"
 contentDir   = "content"
@@ -32,7 +28,6 @@ enableRobotsTXT = true
 enableGitInfo   = false
 enableEmoji     = true
 enableMissingTranslationPlaceholders = false
-disableRSS     = false
 disableSitemap = false
 disable404     = false
 disableHugoGeneratorInject = false
@@ -105,7 +100,7 @@ disableHugoGeneratorInject = false
   #
   [params.footer]
     trademark = true
-    rss = true
+    rss = false
     copyright = true
     author = true
 
