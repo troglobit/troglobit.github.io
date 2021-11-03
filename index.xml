@@ -13,6 +13,17 @@
     
     
     <item>
+      <title>The original multicast routing daemon</title>
+      <link>/projects/mrouted/</link>
+      <pubDate>Wed, 03 Nov 2021 12:39:12 +0100</pubDate>
+      
+      <guid>/projects/mrouted/</guid>
+      <description>mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, RFC 1075. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunneling support.
+ Tunneling may be required to cross non-multicast-aware routers.
+ The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is suitable for smaller/dense networks. It employs the &amp;ldquo;flood and prune&amp;rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups.</description>
+    </item>
+    
+    <item>
       <title>Buildroot Development Checklist</title>
       <link>/post/2021-10-09-buildroot-development-checklist/</link>
       <pubDate>Sat, 09 Oct 2021 10:15:00 +0200</pubDate>
@@ -50,17 +61,6 @@ over what they do.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Cheers&lt;br&gt;
 /Joachim&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>The original multicast routing daemon</title>
-      <link>/projects/mrouted/</link>
-      <pubDate>Sun, 19 Sep 2021 01:16:31 +0200</pubDate>
-      
-      <guid>/projects/mrouted/</guid>
-      <description>mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, RFC 1075. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunneling support.
- Tunneling may be required to cross non-multicast-aware routers.
- The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is suitable for smaller/dense networks. It employs the &amp;ldquo;flood and prune&amp;rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups.</description>
     </item>
     
     <item>

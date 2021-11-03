@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/projects/</loc>
+    <lastmod>2021-11-03T12:39:12+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/mrouted/</loc>
+    <lastmod>2021-11-03T12:39:12+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/buildroot/</loc>
     <lastmod>2021-10-09T10:15:00+02:00</lastmod>
   </url>
@@ -40,16 +50,6 @@
   <url>
     <loc>/howtos/</loc>
     <lastmod>2021-10-05T21:03:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/</loc>
-    <lastmod>2021-09-19T01:16:31+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/mrouted/</loc>
-    <lastmod>2021-09-19T01:16:31+02:00</lastmod>
   </url>
   
   <url>
