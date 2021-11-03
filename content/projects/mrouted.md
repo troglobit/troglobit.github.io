@@ -1,7 +1,7 @@
 ---
 name: mrouted
 title: The original multicast routing daemon
-date: 2021-09-19 01:16:31 +02:00
+date: 2021-11-03 12:39:12 +01:00
 aliases: /mrouted.html
 ---
 ![DVRMP](/images/dvmrp.png#floatright)
@@ -46,8 +46,8 @@ Patches from all over the Internet, including OpenBSD, have been
 integrated.
 
 In 2020, v4.0 and v4.1 were finally released after another 10 years of
-hard work.  In 2021, v4.2 and v4.3 were released.  The most important
-news include:
+hard work.  In 2021, v4.2, v4.3, and v4.4 were released.  The most
+important news include:
 
    * A new command line tool, `mroutectl` to control and query status
    * Support for automatically detecting `altnet`, secondary addresses
@@ -60,11 +60,11 @@ news include:
 Issue tracker and GIT repository available at GitHub:
 
    * [Repository](https://github.com/troglobit/mrouted)
-   * [ChangeLog](https://github.com/troglobit/mrouted/releases/tag/4.3)
+   * [ChangeLog](https://github.com/troglobit/mrouted/releases/tag/4.4)
    * [Issue Tracker](https://github.com/troglobit/mrouted/issues)
-   * [mrouted-4.3.tar.gz](https://ftp.troglobit.com/mrouted/mrouted-4.3.tar.gz),
-     [MD5](https://ftp.troglobit.com/mrouted/mrouted-4.3.tar.gz.md5),
-     [SHA256](https://ftp.troglobit.com/mrouted/mrouted-4.3.tar.gz.sha256),
+   * [mrouted-4.4.tar.gz](https://ftp.troglobit.com/mrouted/mrouted-4.4.tar.gz),
+     [MD5](https://ftp.troglobit.com/mrouted/mrouted-4.4.tar.gz.md5),
+     [SHA256](https://ftp.troglobit.com/mrouted/mrouted-4.4.tar.gz.sha256),
 
 Manual pages availale here:
 
