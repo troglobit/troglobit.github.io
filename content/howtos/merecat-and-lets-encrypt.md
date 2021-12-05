@@ -3,7 +3,8 @@ title: "HowTo: Set up Merecat with Let's Encrypt certificate"
 date: 2020-07-15T14:10:00Z
 orig-date: 2019-06-27T16:27:39Z
 subtitle: ""
-tags: []
+aliases: [/post/2020-07-15-howto-set-up-merecat-with-lets-encrypt-certificate/]
+tags: [merecat]
 ---
 
 This is a HowTo for setting up [Merecat httpd][merecat] with [Let's

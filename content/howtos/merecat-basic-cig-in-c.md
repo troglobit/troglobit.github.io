@@ -2,7 +2,8 @@
 title: "Basic CGI in C with Merecat httpd"
 subtitle: ""
 date: 2019-08-05 22:00:25 +0200
-tags: []
+aliases: [/posts/2019-08-05-basic-cgi-in-c-with-merecat-httpd/]
+tags: [merecat]
 ---
 
 
@@ -65,4 +66,4 @@ cd ~/merecat/
 We can now open our browser at http://127.0.0.1:8080/ and there is the
 CGI!  Remember to check out http://127.0.0.1:8080/cgi-bin/printenv too.
 
-[howto]: {{< relref "/2019-06-27-Merecat-and-Lets-Encrypt.md" >}}
+[howto]: {{< relref "/howtos/merecat-and-lets-encrypt.md" >}}
