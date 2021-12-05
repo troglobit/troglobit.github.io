@@ -215,10 +215,10 @@ out, which is quite annoying.&lt;/p&gt;
     
     <item>
       <title>HowTo: Set up Merecat with Let&#39;s Encrypt certificate</title>
-      <link>/post/2020-07-15-howto-set-up-merecat-with-lets-encrypt-certificate/</link>
+      <link>/howtos/merecat-and-lets-encrypt/</link>
       <pubDate>Wed, 15 Jul 2020 14:10:00 +0000</pubDate>
       
-      <guid>/post/2020-07-15-howto-set-up-merecat-with-lets-encrypt-certificate/</guid>
+      <guid>/howtos/merecat-and-lets-encrypt/</guid>
       <description>&lt;p&gt;This is a HowTo for setting up &lt;a href=&#34;https://merecat.troglobit.com&#34;&gt;Merecat httpd&lt;/a&gt; with &lt;a href=&#34;https://letsencrypt.org/&#34;&gt;Let&amp;rsquo;s
 Encrypt&lt;/a&gt; HTTPS certificates.&lt;/p&gt;
 &lt;p&gt;The upcoming v2.32 release of &lt;a href=&#34;https://merecat.troglobit.com&#34;&gt;Merecat&lt;/a&gt; supports HTTPS as well as
@@ -398,10 +398,10 @@ replacement &lt;code&gt;syslog.h&lt;/code&gt; header for sending RFC5424 events 
     
     <item>
       <title>Basic CGI in C with Merecat httpd</title>
-      <link>/post/2019-08-05-basic-cgi-in-c-with-merecat-httpd/</link>
+      <link>/howtos/merecat-basic-cig-in-c/</link>
       <pubDate>Mon, 05 Aug 2019 22:00:25 +0200</pubDate>
       
-      <guid>/post/2019-08-05-basic-cgi-in-c-with-merecat-httpd/</guid>
+      <guid>/howtos/merecat-basic-cig-in-c/</guid>
       <description>&lt;p&gt;This post is a writeup of how to use basic CGI programs in Merecat httpd v2.32.&lt;/p&gt;</description>
     </item>
     
