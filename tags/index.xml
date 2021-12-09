@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Sat, 09 Oct 2021 10:15:00 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 09 Dec 2021 05:51:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>merecat</title>
+      <link>/tags/merecat/</link>
+      <pubDate>Thu, 09 Dec 2021 05:51:00 +0000</pubDate>
+      
+      <guid>/tags/merecat/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>buildroot</title>
@@ -90,15 +99,6 @@
       <pubDate>Tue, 27 Apr 2021 20:18:06 +0100</pubDate>
       
       <guid>/tags/init/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>merecat</title>
-      <link>/tags/merecat/</link>
-      <pubDate>Wed, 15 Jul 2020 14:10:00 +0000</pubDate>
-      
-      <guid>/tags/merecat/</guid>
       <description></description>
     </item>
     
