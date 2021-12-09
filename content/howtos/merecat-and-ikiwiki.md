@@ -1,12 +1,12 @@
 ---
-title: Running ikiwiki in Merecat httpd
-date: 2017-02-11T16:03:39Z
-url: /2017/02/11/running-ikiwiki-in-merecat-httpd/
-aliases: /blog/2017/02/11/running-ikiwiki-in-merecat-httpd/
+title: "HowTo: Set up Merecat with Ikiwiki"
+date: 2021-12-09T05:51:00Z 
+orig-date: 2017-02-11T16:03:39Z
+aliases: [ "/blog/2017/02/11/running-ikiwiki-in-merecat-httpd/", "/2017/02/11/running-ikiwiki-in-merecat-httpd/" ]
+tags: [merecat]
 ---
 
-This is a HowTo for setting up [ikiwiki][] with
-[Merecat httpd][merecat].
+This is a HowTo for setting up [ikiwiki][] with [Merecat httpd][merecat].
 
 First install ikiwiki
 
