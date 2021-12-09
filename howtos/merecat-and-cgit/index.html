@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Joachim Wiberg ">
+<meta name="description" content="This post details how to set up cgit with Merecat httpd. It began as a GitHub issue report by Mr Alok G. Singh, who had run into problems setting it up, and ended up as a HowTo.
+" />
+<meta name="keywords" content=", merecat" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="/howtos/merecat-and-cgit/" />
+
+
+    <title>
+        
+            HowTo: Set up Merecat with cgit :: Joachim Wiberg  — The Last Outpost
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.29c2c8c3fc9cf748254138351f142ac2833b208a68e83aec126edc98b59efef2.css">
+
+
+    
+        <link rel="stylesheet" type="text/css" href="/css/extra.css">
+    
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1b1c1d">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="#1b1c1d">
+    <meta name="theme-color" content="#1b1c1d">
+
+
+
+<meta itemprop="name" content="HowTo: Set up Merecat with cgit">
+<meta itemprop="description" content="This post details how to set up cgit with Merecat httpd.  It
+began as a GitHub issue report by Mr Alok G. Singh, who had run
+into problems setting it up, and ended up as a HowTo.">
+<meta itemprop="datePublished" content="2018-03-30T19:41:26&#43;02:00" />
+<meta itemprop="dateModified" content="2018-03-30T19:41:26&#43;02:00" />
+<meta itemprop="wordCount" content="273">
+
+
+
+<meta itemprop="keywords" content="merecat," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HowTo: Set up Merecat with cgit"/>
+<meta name="twitter:description" content="This post details how to set up cgit with Merecat httpd.  It
+began as a GitHub issue report by Mr Alok G. Singh, who had run
+into problems setting it up, and ended up as a HowTo."/>
+
+
+
+
+    <meta property="og:title" content="HowTo: Set up Merecat with cgit" />
+<meta property="og:description" content="This post details how to set up cgit with Merecat httpd.  It
+began as a GitHub issue report by Mr Alok G. Singh, who had run
+into problems setting it up, and ended up as a HowTo." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/howtos/merecat-and-cgit/" />
+<meta property="article:published_time" content="2018-03-30T19:41:26+02:00" />
+<meta property="article:modified_time" content="2018-03-30T19:41:26+02:00" />
+
+
+
+
+
+
+    <meta property="article:published_time" content="2018-03-30 19:41:26 &#43;0200 CEST" />
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text">$ cd /home/</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about/">About</a></li><li><a href="/posts/">Blog</a></li><li><a href="/howtos/">HowTos</a></li><li><a href="/projects/">Projects</a></li><li><a href="https://resume.troglobit.com">Resumé</a></li><li><a href="https://ftp.troglobit.com">FTP</a></li><li><a href="https://deb.troglobit.com">DEB</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="/howtos/merecat-and-cgit/">HowTo: Set up Merecat with cgit</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>This post details how to set up <a href="https://git.zx2c4.com/cgit/">cgit</a> with <a href="http://merecat.troglobit.com">Merecat httpd</a>.  It
+began as a <a href="https://github.com/troglobit/merecat/issues/3">GitHub issue</a> report by Mr Alok G. Singh, who had run
+into problems setting it up, and ended up as a HowTo.</p>
+<p>My server has several sub-domains set up, hence I run <a href="http://merecat.troglobit.com">Merecat</a> with
+the <code>virtual-host = true</code> setting and bind mounts in <code>/var/www/</code>.
+Detailed in the <a href="http://merecat.troglobit.com">online documentation</a>.</p>
+<p>Setting up <a href="https://git.zx2c4.com/cgit/">cgit</a> requires a bit of linking &amp; symlinking on top of
+the bind mounts, at least on Debian/Ubuntu.  The bundled cgit package is
+installed into both <code>/usr/share</code> and <code>/usr/lib</code>, and when Merecat has
+chrooted those directories will not be available.  I&rsquo;ve bind mounted my
+<code>/usr/share/cgit</code> to <code>/var/www/cgit.troglobit.com</code> and linked the
+<code>cgit.cgi</code> from <code>../../lib/cgit/</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">root@example:/usr/share/cgit# ll
+total <span class="m">1000</span>
+drwxr-xr-x   <span class="m">2</span> root root   <span class="m">4096</span> Mar <span class="m">30</span> 11:16 ./
+drwxr-xr-x <span class="m">140</span> root root   <span class="m">4096</span> Mar <span class="m">30</span> 09:39 ../
+-rwxr-xr-x   <span class="m">2</span> root root <span class="m">986800</span> Feb <span class="m">12</span>  <span class="m">2016</span> cgit.cgi*
+-rw-r--r--   <span class="m">1</span> root root  <span class="m">13312</span> Feb <span class="m">12</span>  <span class="m">2016</span> cgit.css
+-rw-r--r--   <span class="m">1</span> root root   <span class="m">1278</span> Feb <span class="m">12</span>  <span class="m">2016</span> cgit.png
+-rw-r--r--   <span class="m">1</span> root root   <span class="m">1078</span> Feb <span class="m">12</span>  <span class="m">2016</span> favicon.ico
+lrwxrwxrwx   <span class="m">1</span> root root     <span class="m">22</span> Mar <span class="m">30</span> 11:16 filters -&gt; ../../lib/cgit/filters/
+lrwxrwxrwx   <span class="m">1</span> root root      <span class="m">8</span> Mar <span class="m">30</span> 10:16 index.cgi -&gt; cgit.cgi*
+-rw-r--r--   <span class="m">1</span> root root     <span class="m">47</span> Feb <span class="m">12</span>  <span class="m">2016</span> robots.txt
+</code></pre></div><p>Merecat httpd currently does not support URL rewrite, so I&rsquo;ve set up
+cgit as follows, <code>/etc/cgitrc</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-cfg" data-lang="cfg"><span class="c1"># cgit config</span>
+
+<span class="na">css</span><span class="o">=</span><span class="s">/cgit.css</span>
+<span class="na">logo</span><span class="o">=</span><span class="s">/cgit.png</span>
+
+<span class="c1"># Prepend this to all URLs</span>
+<span class="na">virtual-root</span><span class="o">=</span><span class="s">/cgit.cgi/</span>
+
+<span class="c1"># Home of all GIT repos</span>
+<span class="na">scan-path</span><span class="o">=</span><span class="s">/srv/git/</span>
+
+<span class="c1"># if you do not want that webcrawler (like google) index your site</span>
+<span class="na">robots</span><span class="o">=</span><span class="s">noindex, nofollow</span>
+</code></pre></div><p><em>Note the leading slash</em> in the <code>virtual-root</code>.  The resulting site can
+be viewed here: <a href="http://cgit.troglobit.com">http://cgit.troglobit.com</a></p>
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="/tags/merecat/">merecat</a></span>
+        
+    </p>
+
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2021</span>
+            <span><a href="/">Joachim Wiberg</a></span>
+            <span>UNIX&trade; 4Life! &#9994;</span>
+            
+            
+        </div>
+    </div>
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+
+
+
+    </body>
+</html>

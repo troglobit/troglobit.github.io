@@ -127,6 +127,17 @@ Personally I use both Ubuntu and Debian, so the tools I use to download the clie
     </item>
     
     <item>
+      <title>HowTo: Set up Merecat with cgit</title>
+      <link>/howtos/merecat-and-cgit/</link>
+      <pubDate>Fri, 30 Mar 2018 19:41:26 +0200</pubDate>
+      
+      <guid>/howtos/merecat-and-cgit/</guid>
+      <description>&lt;p&gt;This post details how to set up &lt;a href=&#34;https://git.zx2c4.com/cgit/&#34;&gt;cgit&lt;/a&gt; with &lt;a href=&#34;http://merecat.troglobit.com&#34;&gt;Merecat httpd&lt;/a&gt;.  It
+began as a &lt;a href=&#34;https://github.com/troglobit/merecat/issues/3&#34;&gt;GitHub issue&lt;/a&gt; report by Mr Alok G. Singh, who had run
+into problems setting it up, and ended up as a HowTo.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>HowTo run pimd on FreeBSD</title>
       <link>/howtos/pimd-on-freebsd/</link>
       <pubDate>Sun, 27 Sep 2015 18:45:00 +0200</pubDate>
