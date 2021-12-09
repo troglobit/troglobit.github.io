@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>merecat on Joachim Wiberg</title>
+    <link>/tags/merecat/</link>
+    <description>Recent content in merecat on Joachim Wiberg</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
+    <lastBuildDate>Wed, 15 Jul 2020 14:10:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/merecat/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HowTo: Set up Merecat with Let&#39;s Encrypt certificate</title>
+      <link>/howtos/merecat-and-lets-encrypt/</link>
+      <pubDate>Wed, 15 Jul 2020 14:10:00 +0000</pubDate>
+      
+      <guid>/howtos/merecat-and-lets-encrypt/</guid>
+      <description>&lt;p&gt;This is a HowTo for setting up &lt;a href=&#34;https://merecat.troglobit.com&#34;&gt;Merecat httpd&lt;/a&gt; with &lt;a href=&#34;https://letsencrypt.org/&#34;&gt;Let&amp;rsquo;s
+Encrypt&lt;/a&gt; HTTPS certificates.&lt;/p&gt;
+&lt;p&gt;The upcoming v2.32 release of &lt;a href=&#34;https://merecat.troglobit.com&#34;&gt;Merecat&lt;/a&gt; supports HTTPS as well as
+serving more than one Internet port.  This is highly useful for those
+who want to serve both HTTPS and HTTP content.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; now with support for &lt;code&gt;--webroot&lt;/code&gt; and HTTP-01 renewal!&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Basic CGI in C with Merecat httpd</title>
+      <link>/howtos/merecat-basic-cig-in-c/</link>
+      <pubDate>Mon, 05 Aug 2019 22:00:25 +0200</pubDate>
+      
+      <guid>/howtos/merecat-basic-cig-in-c/</guid>
+      <description>&lt;p&gt;This post is a writeup of how to use basic CGI programs in Merecat httpd v2.32.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

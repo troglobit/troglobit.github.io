@@ -2146,51 +2146,6 @@ Content-Type: text/html;charset=utf-8
         </item>
         
         <item>
-            <title>Running ikiwiki in Merecat httpd</title>
-            <link>/2017/02/11/running-ikiwiki-in-merecat-httpd/</link>
-            <pubDate>Sat, 11 Feb 2017 16:03:39 +0000</pubDate>
-            
-            <guid>/2017/02/11/running-ikiwiki-in-merecat-httpd/</guid>
-            <description>This is a HowTo for setting up ikiwiki with Merecat httpd.
-First install ikiwiki
-$ sudo apt install ikiwiki libcgi-session-perl libcgi-formbuilder-perl Follow the steps to setup a new Wiki or Blog. In this example we set up a wiki in our ~/public_html:
-$ ikiwiki --setup /etc/ikiwiki/auto.setup ... Successfully set up wiki: url: http://localhost/~jocke/wiki srcdir: ~/wiki destdir: ~/public_html/wiki repository: ~/wiki.git To modify settings, edit ~/home.setup and then run:
-$ ikiwiki --setup ~/home.</description>
-            <content type="html"><![CDATA[<p>This is a HowTo for setting up <a href="http://ikiwiki.info/">ikiwiki</a> with
-<a href="https://merecat.troglobit.com">Merecat httpd</a>.</p>
-<p>First install ikiwiki</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ sudo apt install ikiwiki libcgi-session-perl libcgi-formbuilder-perl
-</code></pre></div><p>Follow the steps to setup a new Wiki or Blog.  In this example we set up a
-wiki in our <code>~/public_html</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ ikiwiki --setup /etc/ikiwiki/auto.setup
-...
-Successfully <span class="nb">set</span> up wiki:
-url:         http://localhost/~jocke/wiki
-srcdir:      ~/wiki
-destdir:     ~/public_html/wiki
-repository:  ~/wiki.git
-</code></pre></div><p>To modify settings, edit ~/home.setup and then run:</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ ikiwiki --setup ~/home.setup
-</code></pre></div><p>By default Merecat has per-user <code>~/public_html</code> support disabled, this
-is for safety purposes.  To build from source, here from GIT, use:</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">git clone https://github.com/troglobit/merecat
-./autogen.sh
-./configure --enable-public-html
-make
-sudo make install
-</code></pre></div><p>Now, to start playing with Ikiwiki, simply start the httpd as your user
-on a non-priviliged port:</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ merecat -n -p <span class="m">8080</span>
-</code></pre></div><p>&hellip; and open http://localhost:8080/~jocke/wiki/ in your browser 😃</p>
-<p><strong>NOTE:</strong> Although Merecat httpd is a fork of <a href="http://acme.com/software/thttpd/">thttpd</a>.  Compared to
-its forefather Mercat is fully capable of running ikiwiki without any
-patches.  Problems with port not being included in <code>HTTP_HOST</code> or
-missing trailing slash in <code>PATH_INFO</code>, have all been fixed.</p>
-<p>Cheers!</p>
-]]></content>
-        </item>
-        
-        <item>
             <title>Emulate an actual MTD device in Qemu</title>
             <link>/2017/02/02/emulate-an-actual-mtd-device-in-qemu/</link>
             <pubDate>Thu, 02 Feb 2017 18:52:18 +0000</pubDate>
