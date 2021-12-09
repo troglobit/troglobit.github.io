@@ -1,13 +1,14 @@
 ---
-title: "cgit with merecat httpd"
-subtitle: ""
-date: 2018-03-30 19:41:26 +0200
-tags: []
+title: "HowTo: Set up Merecat with cgit"
+date: 2021-12-09T05:56:00Z 
+orig-date: 2018-03-30 19:41:26 +0200
+aliases: [ "/2018/03/30/cgit-with-merecat-httpd/" ]
+tags: [merecat]
 ---
 
 This post details how to set up [cgit][1] with [Merecat httpd][2].  It
-begins as a [GitHub issue][3] report by Mr Alok G. Singh, who had run
-into problems setting it up.  I'm posting it here for others to see.
+began as a [GitHub issue][3] report by Mr Alok G. Singh, who had run
+into problems setting it up, and ended up as a HowTo.
 
 <!--more-->
 
