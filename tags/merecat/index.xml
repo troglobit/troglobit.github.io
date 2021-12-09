@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Thu, 09 Dec 2021 05:51:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 09 Dec 2021 05:56:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/merecat/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HowTo: Set up Merecat with cgit</title>
+      <link>/howtos/merecat-and-cgit/</link>
+      <pubDate>Thu, 09 Dec 2021 05:56:00 +0000</pubDate>
+      
+      <guid>/howtos/merecat-and-cgit/</guid>
+      <description>&lt;p&gt;This post details how to set up &lt;a href=&#34;https://git.zx2c4.com/cgit/&#34;&gt;cgit&lt;/a&gt; with &lt;a href=&#34;http://merecat.troglobit.com&#34;&gt;Merecat httpd&lt;/a&gt;.  It
+began as a &lt;a href=&#34;https://github.com/troglobit/merecat/issues/3&#34;&gt;GitHub issue&lt;/a&gt; report by Mr Alok G. Singh, who had run
+into problems setting it up, and ended up as a HowTo.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>HowTo: Set up Merecat with Ikiwiki</title>
@@ -48,17 +59,6 @@ who want to serve both HTTPS and HTTP content.&lt;/p&gt;
       
       <guid>/howtos/merecat-basic-cig-in-c/</guid>
       <description>&lt;p&gt;This post is a writeup of how to use basic CGI programs in Merecat httpd v2.32.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>HowTo: Set up Merecat with cgit</title>
-      <link>/howtos/merecat-and-cgit/</link>
-      <pubDate>Fri, 30 Mar 2018 19:41:26 +0200</pubDate>
-      
-      <guid>/howtos/merecat-and-cgit/</guid>
-      <description>&lt;p&gt;This post details how to set up &lt;a href=&#34;https://git.zx2c4.com/cgit/&#34;&gt;cgit&lt;/a&gt; with &lt;a href=&#34;http://merecat.troglobit.com&#34;&gt;Merecat httpd&lt;/a&gt;.  It
-began as a &lt;a href=&#34;https://github.com/troglobit/merecat/issues/3&#34;&gt;GitHub issue&lt;/a&gt; report by Mr Alok G. Singh, who had run
-into problems setting it up, and ended up as a HowTo.&lt;/p&gt;</description>
     </item>
     
   </channel>
