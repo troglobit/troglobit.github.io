@@ -2,7 +2,7 @@
 title: "Alpine Linux with Finit"
 subtitle: ""
 date: 2021-02-12 07:24:06 +0100
-tags: []
+tags: [ finit, init, opensource ]
 ---
 
 [Alpine Linux](https://alpinelinux.org/) is an amazing little operating

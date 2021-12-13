@@ -7,6 +7,7 @@ date: 2015-01-24T16:54:23Z
 title: Finit v1.11 released!
 url: /2015/01/24/finit-v1-dot-11-released/
 aliases: /blog/2015/01/24/finit-v1-dot-11-released/
+tags: [ finit, init, opensource ]
 ---
 
 **Update 2015-03-09**: This release has unfortunately been *yanked* due

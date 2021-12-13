@@ -8,6 +8,7 @@ date: 2015-03-06T22:34:45Z
 title: Inetd Support in Finit v1.12
 url: /2015/03/06/inetd-support-in-finit-v1-dot-12/
 aliases: /blog/2015/03/06/inetd-support-in-finit-v1-dot-12/
+tags: [ finit, init, opensource ]
 ---
 
 A steady flow of features, and releases, is key to keeping any project
