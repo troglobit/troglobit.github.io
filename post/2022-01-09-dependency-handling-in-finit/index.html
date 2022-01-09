@@ -7,9 +7,9 @@
 <meta name="author" content="Joachim Wiberg ">
 <meta name="description" content="
 This is a blog post about Finit. Each post is concluded with a video summarizing the topic. The impatient reader can scroll down to the video.
+Most non-trivial systems require dependency tracking between services. Not only does it help ensure correct operation, it is also an enabler for starting services in parallel. Less known, but just as important, is handling dependencies at system reconfiguration.
 Let&amp;#39;s boot up. pic.twitter.com/AKpDXoh3Vh
-&amp;mdash; ＨＡＣＫＥＲＳＢＯＴ (@Hackers_bot) May 1, 2021  Most non-trivial systems require dependency tracking between services. Not only does it help ensure correct operation, it is also an enabler for starting services in parallel. Less known, but just as important, is handling dependencies at system reconfiguration.
-Finit handles dependencies between services with a condition subsystem comprising three major types:
+&amp;mdash; ＨＡＣＫＥＲＳＢＯＴ (@Hackers_bot) May 1, 2021  Finit handles dependencies between services with a condition subsystem comprising three major types:
  pid net usr   For more information about the condition subsystem in Finit, see: https://github.com/troglobit/finit/blob/master/doc/conditions.md
  PID Conditions A &amp;lt;pid/foo&amp;gt; condition ensures that the service foo has started and created its PID file in /var/run/foo.pid. Finit tracks all files created below /var/run that ends in .pid, or /pid for any sub-directory. If the PID in the file matches a service started by Finit that service&amp;rsquo;s provided condition is asserted.
  At reconfiguration it is expected that services &amp;ldquo;touch&amp;rdquo; their PID files to reassert the condition they provide.
@@ -64,11 +64,11 @@ initctl cond set baz " />
 This is a blog post about Finit.  Each post is concluded with a video
 summarizing the topic.  The impatient reader can scroll down to the
 video.
-Let&#39;s boot up. pic.twitter.com/AKpDXoh3Vh&mdash; ＨＡＣＫＥＲＳＢＯＴ (@Hackers_bot) May 1, 2021  
 Most non-trivial systems require dependency tracking between services.
 Not only does it help ensure correct operation, it is also an enabler
 for starting services in parallel.  Less known, but just as important,
 is handling dependencies at system reconfiguration.
+Let&#39;s boot up. pic.twitter.com/AKpDXoh3Vh&mdash; ＨＡＣＫＥＲＳＢＯＴ (@Hackers_bot) May 1, 2021  
 Finit handles dependencies between services with a condition subsystem
 comprising three major types:
 
@@ -140,11 +140,11 @@ initctl cond set baz
 This is a blog post about Finit.  Each post is concluded with a video
 summarizing the topic.  The impatient reader can scroll down to the
 video.
-Let&#39;s boot up. pic.twitter.com/AKpDXoh3Vh&mdash; ＨＡＣＫＥＲＳＢＯＴ (@Hackers_bot) May 1, 2021  
 Most non-trivial systems require dependency tracking between services.
 Not only does it help ensure correct operation, it is also an enabler
 for starting services in parallel.  Less known, but just as important,
 is handling dependencies at system reconfiguration.
+Let&#39;s boot up. pic.twitter.com/AKpDXoh3Vh&mdash; ＨＡＣＫＥＲＳＢＯＴ (@Hackers_bot) May 1, 2021  
 Finit handles dependencies between services with a condition subsystem
 comprising three major types:
 
@@ -212,11 +212,11 @@ initctl cond set baz
 This is a blog post about Finit.  Each post is concluded with a video
 summarizing the topic.  The impatient reader can scroll down to the
 video.
-Let&#39;s boot up. pic.twitter.com/AKpDXoh3Vh&mdash; ＨＡＣＫＥＲＳＢＯＴ (@Hackers_bot) May 1, 2021  
 Most non-trivial systems require dependency tracking between services.
 Not only does it help ensure correct operation, it is also an enabler
 for starting services in parallel.  Less known, but just as important,
 is handling dependencies at system reconfiguration.
+Let&#39;s boot up. pic.twitter.com/AKpDXoh3Vh&mdash; ＨＡＣＫＥＲＳＢＯＴ (@Hackers_bot) May 1, 2021  
 Finit handles dependencies between services with a condition subsystem
 comprising three major types:
 
@@ -371,11 +371,11 @@ initctl cond set baz
 <p>This is a blog post about Finit.  Each post is concluded with a video
 summarizing the topic.  The impatient reader can scroll down to the
 <a href="#video">video</a>.</p>
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Let&#39;s boot up. <a href="https://t.co/AKpDXoh3Vh">pic.twitter.com/AKpDXoh3Vh</a></p>&mdash; ＨＡＣＫＥＲＳＢＯＴ (@Hackers_bot) <a href="https://twitter.com/Hackers_bot/status/1388605672024154114?ref_src=twsrc%5Etfw">May 1, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 <p>Most non-trivial systems require dependency tracking between services.
 Not only does it help ensure correct operation, it is also an enabler
 for starting services in parallel.  Less known, but just as important,
 is handling dependencies at system reconfiguration.</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Let&#39;s boot up. <a href="https://t.co/AKpDXoh3Vh">pic.twitter.com/AKpDXoh3Vh</a></p>&mdash; ＨＡＣＫＥＲＳＢＯＴ (@Hackers_bot) <a href="https://twitter.com/Hackers_bot/status/1388605672024154114?ref_src=twsrc%5Etfw">May 1, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 <p>Finit handles dependencies between services with a condition subsystem
 comprising three major types:</p>
 <ul>

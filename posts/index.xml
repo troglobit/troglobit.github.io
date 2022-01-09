@@ -19,11 +19,11 @@
 &lt;p&gt;This is a blog post about Finit.  Each post is concluded with a video
 summarizing the topic.  The impatient reader can scroll down to the
 &lt;a href=&#34;#video&#34;&gt;video&lt;/a&gt;.&lt;/p&gt;
-&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Let&amp;#39;s boot up. &lt;a href=&#34;https://t.co/AKpDXoh3Vh&#34;&gt;pic.twitter.com/AKpDXoh3Vh&lt;/a&gt;&lt;/p&gt;&amp;mdash; ＨＡＣＫＥＲＳＢＯＴ (@Hackers_bot) &lt;a href=&#34;https://twitter.com/Hackers_bot/status/1388605672024154114?ref_src=twsrc%5Etfw&#34;&gt;May 1, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt; 
 &lt;p&gt;Most non-trivial systems require dependency tracking between services.
 Not only does it help ensure correct operation, it is also an enabler
 for starting services in parallel.  Less known, but just as important,
 is handling dependencies at system reconfiguration.&lt;/p&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Let&amp;#39;s boot up. &lt;a href=&#34;https://t.co/AKpDXoh3Vh&#34;&gt;pic.twitter.com/AKpDXoh3Vh&lt;/a&gt;&lt;/p&gt;&amp;mdash; ＨＡＣＫＥＲＳＢＯＴ (@Hackers_bot) &lt;a href=&#34;https://twitter.com/Hackers_bot/status/1388605672024154114?ref_src=twsrc%5Etfw&#34;&gt;May 1, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt; 
 &lt;p&gt;Finit handles dependencies between services with a condition subsystem
 comprising three major types:&lt;/p&gt;
 &lt;ul&gt;
@@ -86,11 +86,11 @@ initctl cond clr baz   # Clear (deassert) user-defined condition
 <p>This is a blog post about Finit.  Each post is concluded with a video
 summarizing the topic.  The impatient reader can scroll down to the
 <a href="#video">video</a>.</p>
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Let&#39;s boot up. <a href="https://t.co/AKpDXoh3Vh">pic.twitter.com/AKpDXoh3Vh</a></p>&mdash; ＨＡＣＫＥＲＳＢＯＴ (@Hackers_bot) <a href="https://twitter.com/Hackers_bot/status/1388605672024154114?ref_src=twsrc%5Etfw">May 1, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 <p>Most non-trivial systems require dependency tracking between services.
 Not only does it help ensure correct operation, it is also an enabler
 for starting services in parallel.  Less known, but just as important,
 is handling dependencies at system reconfiguration.</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Let&#39;s boot up. <a href="https://t.co/AKpDXoh3Vh">pic.twitter.com/AKpDXoh3Vh</a></p>&mdash; ＨＡＣＫＥＲＳＢＯＴ (@Hackers_bot) <a href="https://twitter.com/Hackers_bot/status/1388605672024154114?ref_src=twsrc%5Etfw">May 1, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 <p>Finit handles dependencies between services with a condition subsystem
 comprising three major types:</p>
 <ul>
