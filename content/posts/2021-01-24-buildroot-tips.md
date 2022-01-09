@@ -1,7 +1,7 @@
 ---
 title: "Buildroot Development Checklist"
 orig-date: 2021-01-24 13:26:00 +0100
-date: 2021-10-09 10:15:00 +0200
+date: 2022-01-04 10:15:00 +0200
 tags: [ buildroot, git, opensource ]
 draft: false
 ---
@@ -30,15 +30,27 @@ but the process is much the same for other mailing list-based projects.
 
         Signed-off-by: Your Name <your.name@example.com>
 
-4.  Verify formatting of package files; .in, .mk, etc.
+4. Verify formatting of package files; .in, .mk, etc.
 
         ./utils/check-package package/foobar/*
+
+   If you change or add a new package, verify you don't introduce any
+   recursive dependencies, or other nasty surprises.  Remember, the
+   build systems includes *all* `.mk` files into one big Makefile, so
+   any changes you make are seen by *all* other packages.
+
+        make menuconfig         # complains if you have recursive deps.
+        make <pkg>-rebuild      # check output of build
 
 5. Test your package/change with a set of cross-compilation toolchains.
    The `.config` file is a menuconfig snippet enabling the package to
    test:
 
         ./utils/test-pkg -c foobar.config -p foobar
+
+   Output goes in `~/br-test-pkg/`, check all logs.  Some toolchains
+   can help you track down issues with your package you won't see
+   elsewhere.
 
 6. Format your patches, with the optional `--cover-letter`, very useful
    to explain a series of patches:
