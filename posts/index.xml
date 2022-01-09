@@ -96,7 +96,7 @@ initctl cond clr baz   # Clear (deassert) user-defined condition
 and how other conditions can be added.  Worth noting is how dependant
 processes are stopped if their dependencies are not satisfied.</p>
 <script id="asciicast-460832" src="https://asciinema.org/a/460832.js" async></script>  
-<p>Join the <a href="https://github.com/troglobit/finit/discussions/169">discussion on GitHub</a> or #troglobit on Freenode if IRC is
+<p>Join the <a href="https://github.com/troglobit/finit/discussions/">discussion on GitHub</a> or #troglobit on Freenode if IRC is
 more your thing.</p>]]></content>
         </item>
         
