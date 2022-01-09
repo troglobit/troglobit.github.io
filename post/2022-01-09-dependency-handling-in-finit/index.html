@@ -8,18 +8,7 @@
 <meta name="description" content="
 This is a blog post about Finit. Each post is concluded with a video summarizing the topic. The impatient reader can scroll down to the video.
 Most non-trivial systems require dependency tracking between services. Not only does it help ensure correct operation, it is also an enabler for starting services in parallel. Less known, but just as important, is handling dependencies at system reconfiguration.
-Let&amp;#39;s boot up. pic.twitter.com/AKpDXoh3Vh
-&amp;mdash; ＨＡＣＫＥＲＳＢＯＴ (@Hackers_bot) May 1, 2021  Finit handles dependencies between services with a condition subsystem comprising three major types:
- pid net usr   For more information about the condition subsystem in Finit, see: https://github.com/troglobit/finit/blob/master/doc/conditions.md
- PID Conditions A &amp;lt;pid/foo&amp;gt; condition ensures that the service foo has started and created its PID file in /var/run/foo.pid. Finit tracks all files created below /var/run that ends in .pid, or /pid for any sub-directory. If the PID in the file matches a service started by Finit that service&amp;rsquo;s provided condition is asserted.
- At reconfiguration it is expected that services &amp;ldquo;touch&amp;rdquo; their PID files to reassert the condition they provide.
- Example /etc/finit.d/foo.conf service manual:yes foo -fooargs -- Foo service /etc/finit.d/bar.conf service &amp;lt;pid/foo&amp;gt; bar -barargs -- Bar service Bar service is started only when foo is up and ready.
-Net Conditions A &amp;lt;net/...&amp;gt; condition is for various basic network conditions, e.g.,
- &amp;lt;net/route/default&amp;gt; &amp;lt;net/&amp;lt;IFNAME&amp;gt;/exist&amp;gt; &amp;lt;net/&amp;lt;IFNAME&amp;gt;/up&amp;gt; &amp;lt;net/&amp;lt;IFNAME&amp;gt;/running&amp;gt;  Example /etc/finit.d/inadyn.conf service &amp;lt;net/route/default&amp;gt; inadyn -ns -- In-a-Dyn DDNS Client In-a-Dyn is started only when the system has a default route. Conversely, it is stopped (SIGTERM) when the default route is removed.
-User Conditions A &amp;lt;usr/baz&amp;gt; condition is completely controlled by the user. These are static (one-shot) conditions that persist across initctl reload calls, but do not survive a reboot.
-All User conditions are controlled using the initctl cond .. commands:
-initctl cond set baz # Set (assert) user-defined condition initctl cond clr baz # Clear (deassert) user-defined condition Example /etc/finit.d/foo.conf service &amp;lt;usr/baz&amp;gt; foo -foargs -- Foo service Foo service is not started until the following command is called:
-initctl cond set baz " />
+" />
 <meta name="keywords" content=", finit, init, opensource" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -67,69 +56,10 @@ video.
 Most non-trivial systems require dependency tracking between services.
 Not only does it help ensure correct operation, it is also an enabler
 for starting services in parallel.  Less known, but just as important,
-is handling dependencies at system reconfiguration.
-Let&#39;s boot up. pic.twitter.com/AKpDXoh3Vh&mdash; ＨＡＣＫＥＲＳＢＯＴ (@Hackers_bot) May 1, 2021  
-Finit handles dependencies between services with a condition subsystem
-comprising three major types:
-
-pid
-net
-usr
-
-
-For more information about the condition subsystem in Finit, see:
-https://github.com/troglobit/finit/blob/master/doc/conditions.md
-
-PID Conditions
-A &lt;pid/foo&gt; condition ensures that the service foo has started and
-created its PID file in /var/run/foo.pid.  Finit tracks all files
-created below /var/run that ends in .pid, or /pid for any
-sub-directory.  If the PID in the file matches a service started by
-Finit that service&rsquo;s provided condition is asserted.
-
-At reconfiguration it is expected that services &ldquo;touch&rdquo; their PID
-files to reassert the condition they provide.
-
-Example
-/etc/finit.d/foo.conf
-
-    service manual:yes foo -fooargs -- Foo service
-   
-/etc/finit.d/bar.conf
-
-    service &lt;pid/foo&gt; bar -barargs -- Bar service
-Bar service is started only when foo is up and ready.
-Net Conditions
-A &lt;net/...&gt; condition is for various basic network conditions, e.g.,
-
-&lt;net/route/default&gt;
-&lt;net/&lt;IFNAME&gt;/exist&gt;
-&lt;net/&lt;IFNAME&gt;/up&gt;
-&lt;net/&lt;IFNAME&gt;/running&gt;
-
-Example
-/etc/finit.d/inadyn.conf
-
-    service &lt;net/route/default&gt; inadyn -ns -- In-a-Dyn DDNS Client
-In-a-Dyn is started only when the system has a default route.  Conversely,
-it is stopped (SIGTERM) when the default route is removed.
-User Conditions
-A &lt;usr/baz&gt; condition is completely controlled by the user.  These are
-static (one-shot) conditions that persist across initctl reload
-calls, but do not survive a reboot.
-All User conditions are controlled using the initctl cond .. commands:
-initctl cond set baz   # Set (assert) user-defined condition
-initctl cond clr baz   # Clear (deassert) user-defined condition
-Example
-/etc/finit.d/foo.conf
-
-    service &lt;usr/baz&gt; foo -foargs -- Foo service
-Foo service is not started until the following command is called:
-initctl cond set baz
-">
+is handling dependencies at system reconfiguration.">
 <meta itemprop="datePublished" content="2022-01-09T18:46:23&#43;01:00" />
 <meta itemprop="dateModified" content="2022-01-09T18:46:23&#43;01:00" />
-<meta itemprop="wordCount" content="387">
+<meta itemprop="wordCount" content="398">
 
 
 
@@ -143,66 +73,7 @@ video.
 Most non-trivial systems require dependency tracking between services.
 Not only does it help ensure correct operation, it is also an enabler
 for starting services in parallel.  Less known, but just as important,
-is handling dependencies at system reconfiguration.
-Let&#39;s boot up. pic.twitter.com/AKpDXoh3Vh&mdash; ＨＡＣＫＥＲＳＢＯＴ (@Hackers_bot) May 1, 2021  
-Finit handles dependencies between services with a condition subsystem
-comprising three major types:
-
-pid
-net
-usr
-
-
-For more information about the condition subsystem in Finit, see:
-https://github.com/troglobit/finit/blob/master/doc/conditions.md
-
-PID Conditions
-A &lt;pid/foo&gt; condition ensures that the service foo has started and
-created its PID file in /var/run/foo.pid.  Finit tracks all files
-created below /var/run that ends in .pid, or /pid for any
-sub-directory.  If the PID in the file matches a service started by
-Finit that service&rsquo;s provided condition is asserted.
-
-At reconfiguration it is expected that services &ldquo;touch&rdquo; their PID
-files to reassert the condition they provide.
-
-Example
-/etc/finit.d/foo.conf
-
-    service manual:yes foo -fooargs -- Foo service
-   
-/etc/finit.d/bar.conf
-
-    service &lt;pid/foo&gt; bar -barargs -- Bar service
-Bar service is started only when foo is up and ready.
-Net Conditions
-A &lt;net/...&gt; condition is for various basic network conditions, e.g.,
-
-&lt;net/route/default&gt;
-&lt;net/&lt;IFNAME&gt;/exist&gt;
-&lt;net/&lt;IFNAME&gt;/up&gt;
-&lt;net/&lt;IFNAME&gt;/running&gt;
-
-Example
-/etc/finit.d/inadyn.conf
-
-    service &lt;net/route/default&gt; inadyn -ns -- In-a-Dyn DDNS Client
-In-a-Dyn is started only when the system has a default route.  Conversely,
-it is stopped (SIGTERM) when the default route is removed.
-User Conditions
-A &lt;usr/baz&gt; condition is completely controlled by the user.  These are
-static (one-shot) conditions that persist across initctl reload
-calls, but do not survive a reboot.
-All User conditions are controlled using the initctl cond .. commands:
-initctl cond set baz   # Set (assert) user-defined condition
-initctl cond clr baz   # Clear (deassert) user-defined condition
-Example
-/etc/finit.d/foo.conf
-
-    service &lt;usr/baz&gt; foo -foargs -- Foo service
-Foo service is not started until the following command is called:
-initctl cond set baz
-"/>
+is handling dependencies at system reconfiguration."/>
 
 
 
@@ -215,66 +86,7 @@ video.
 Most non-trivial systems require dependency tracking between services.
 Not only does it help ensure correct operation, it is also an enabler
 for starting services in parallel.  Less known, but just as important,
-is handling dependencies at system reconfiguration.
-Let&#39;s boot up. pic.twitter.com/AKpDXoh3Vh&mdash; ＨＡＣＫＥＲＳＢＯＴ (@Hackers_bot) May 1, 2021  
-Finit handles dependencies between services with a condition subsystem
-comprising three major types:
-
-pid
-net
-usr
-
-
-For more information about the condition subsystem in Finit, see:
-https://github.com/troglobit/finit/blob/master/doc/conditions.md
-
-PID Conditions
-A &lt;pid/foo&gt; condition ensures that the service foo has started and
-created its PID file in /var/run/foo.pid.  Finit tracks all files
-created below /var/run that ends in .pid, or /pid for any
-sub-directory.  If the PID in the file matches a service started by
-Finit that service&rsquo;s provided condition is asserted.
-
-At reconfiguration it is expected that services &ldquo;touch&rdquo; their PID
-files to reassert the condition they provide.
-
-Example
-/etc/finit.d/foo.conf
-
-    service manual:yes foo -fooargs -- Foo service
-   
-/etc/finit.d/bar.conf
-
-    service &lt;pid/foo&gt; bar -barargs -- Bar service
-Bar service is started only when foo is up and ready.
-Net Conditions
-A &lt;net/...&gt; condition is for various basic network conditions, e.g.,
-
-&lt;net/route/default&gt;
-&lt;net/&lt;IFNAME&gt;/exist&gt;
-&lt;net/&lt;IFNAME&gt;/up&gt;
-&lt;net/&lt;IFNAME&gt;/running&gt;
-
-Example
-/etc/finit.d/inadyn.conf
-
-    service &lt;net/route/default&gt; inadyn -ns -- In-a-Dyn DDNS Client
-In-a-Dyn is started only when the system has a default route.  Conversely,
-it is stopped (SIGTERM) when the default route is removed.
-User Conditions
-A &lt;usr/baz&gt; condition is completely controlled by the user.  These are
-static (one-shot) conditions that persist across initctl reload
-calls, but do not survive a reboot.
-All User conditions are controlled using the initctl cond .. commands:
-initctl cond set baz   # Set (assert) user-defined condition
-initctl cond clr baz   # Clear (deassert) user-defined condition
-Example
-/etc/finit.d/foo.conf
-
-    service &lt;usr/baz&gt; foo -foargs -- Foo service
-Foo service is not started until the following command is called:
-initctl cond set baz
-" />
+is handling dependencies at system reconfiguration." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/2022-01-09-dependency-handling-in-finit/" />
 <meta property="article:published_time" content="2022-01-09T18:46:23+01:00" />
@@ -395,7 +207,8 @@ sub-directory.  If the PID in the file matches a service started by
 Finit that service&rsquo;s provided condition is asserted.</p>
 <blockquote>
 <p>At reconfiguration it is expected that services &ldquo;touch&rdquo; their PID
-files to reassert the condition they provide.</p>
+files to reassert the condition they provide.  See the documentation
+for details and how to handle non-conformant services.</p>
 </blockquote>
 <h3 id="example">Example</h3>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">/etc/finit.d/foo.conf
@@ -467,7 +280,7 @@ more your thing.</p>
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        387 Words
+        398 Words
       </p>
 
       <p>
