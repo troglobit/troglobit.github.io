@@ -3,6 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/tags/buildroot/</loc>
+    <lastmod>2022-01-04T10:15:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2022-01-04-buildroot-development-checklist/</loc>
+    <lastmod>2022-01-04T10:15:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/git/</loc>
+    <lastmod>2022-01-04T10:15:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/opensource/</loc>
+    <lastmod>2022-01-04T10:15:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/</loc>
+    <lastmod>2022-01-04T10:15:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2022-01-04T10:15:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/howtos/merecat-and-cgit/</loc>
     <lastmod>2021-12-09T05:56:00+00:00</lastmod>
   </url>
@@ -14,11 +44,6 @@
   
   <url>
     <loc>/tags/merecat/</loc>
-    <lastmod>2021-12-09T05:56:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
     <lastmod>2021-12-09T05:56:00+00:00</lastmod>
   </url>
   
@@ -35,31 +60,6 @@
   <url>
     <loc>/projects/mrouted/</loc>
     <lastmod>2021-11-03T12:39:12+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/buildroot/</loc>
-    <lastmod>2021-10-09T10:15:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2021-10-09-buildroot-development-checklist/</loc>
-    <lastmod>2021-10-09T10:15:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/git/</loc>
-    <lastmod>2021-10-09T10:15:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/opensource/</loc>
-    <lastmod>2021-10-09T10:15:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/</loc>
-    <lastmod>2021-10-09T10:15:00+02:00</lastmod>
   </url>
   
   <url>
