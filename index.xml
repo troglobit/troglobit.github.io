@@ -13,6 +13,81 @@
     
     
     <item>
+      <title>Dependency handling in Finit</title>
+      <link>/post/2022-01-09-dependency-handling-in-finit/</link>
+      <pubDate>Sun, 09 Jan 2022 18:46:23 +0100</pubDate>
+      
+      <guid>/post/2022-01-09-dependency-handling-in-finit/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://troglobit.com/finit.html&#34;&gt;&lt;img src=&#34;/images/finit3.png#floatright&#34; alt=&#34;finit logo&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This is a blog post about Finit.  Each post is concluded with a video
+summarizing the topic.  The impatient reader can scroll down to the
+&lt;a href=&#34;#video&#34;&gt;video&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Let&amp;#39;s boot up. &lt;a href=&#34;https://t.co/AKpDXoh3Vh&#34;&gt;pic.twitter.com/AKpDXoh3Vh&lt;/a&gt;&lt;/p&gt;&amp;mdash; ＨＡＣＫＥＲＳＢＯＴ (@Hackers_bot) &lt;a href=&#34;https://twitter.com/Hackers_bot/status/1388605672024154114?ref_src=twsrc%5Etfw&#34;&gt;May 1, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt; 
+&lt;p&gt;Most non-trivial systems require dependency tracking between services.
+Not only does it help ensure correct operation, it is also an enabler
+for starting services in parallel.  Less known, but just as important,
+is handling dependencies at system reconfiguration.&lt;/p&gt;
+&lt;p&gt;Finit handles dependencies between services with a condition subsystem
+comprising three major types:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;pid&lt;/li&gt;
+&lt;li&gt;net&lt;/li&gt;
+&lt;li&gt;usr&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For more information about the condition subsystem in Finit, see:
+&lt;a href=&#34;https://github.com/troglobit/finit/blob/master/doc/conditions.md&#34;&gt;https://github.com/troglobit/finit/blob/master/doc/conditions.md&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;pid-conditions&#34;&gt;PID Conditions&lt;/h2&gt;
+&lt;p&gt;A &lt;code&gt;&amp;lt;pid/foo&amp;gt;&lt;/code&gt; condition ensures that the service &lt;code&gt;foo&lt;/code&gt; has started and
+created its PID file in &lt;code&gt;/var/run/foo.pid&lt;/code&gt;.  Finit tracks all files
+created below &lt;code&gt;/var/run&lt;/code&gt; that ends in &lt;code&gt;.pid&lt;/code&gt;, or &lt;code&gt;/pid&lt;/code&gt; for any
+sub-directory.  If the PID in the file matches a service started by
+Finit that service&amp;rsquo;s provided condition is asserted.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;At reconfiguration it is expected that services &amp;ldquo;touch&amp;rdquo; their PID
+files to reassert the condition they provide.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;example&#34;&gt;Example&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;/etc/finit.d/foo.conf
+
+    service manual:yes foo -fooargs -- Foo service
+   
+/etc/finit.d/bar.conf
+
+    service &amp;lt;pid/foo&amp;gt; bar -barargs -- Bar service
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Bar service is started only when &lt;code&gt;foo&lt;/code&gt; is up and ready.&lt;/p&gt;
+&lt;h2 id=&#34;net-conditions&#34;&gt;Net Conditions&lt;/h2&gt;
+&lt;p&gt;A &lt;code&gt;&amp;lt;net/...&amp;gt;&lt;/code&gt; condition is for various &lt;em&gt;basic&lt;/em&gt; network conditions, e.g.,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;net/route/default&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;net/&amp;lt;IFNAME&amp;gt;/exist&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;net/&amp;lt;IFNAME&amp;gt;/up&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;net/&amp;lt;IFNAME&amp;gt;/running&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;example-1&#34;&gt;Example&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;/etc/finit.d/inadyn.conf
+
+    service &amp;lt;net/route/default&amp;gt; inadyn -ns -- In-a-Dyn DDNS Client
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In-a-Dyn is started only when the system has a default route.  Conversely,
+it is stopped (SIGTERM) when the default route is removed.&lt;/p&gt;
+&lt;h3 id=&#34;user-conditions&#34;&gt;User Conditions&lt;/h3&gt;
+&lt;p&gt;A &lt;code&gt;&amp;lt;usr/baz&amp;gt;&lt;/code&gt; condition is completely controlled by the user.  These are
+&lt;em&gt;static&lt;/em&gt; (one-shot) conditions that persist across &lt;code&gt;initctl reload&lt;/code&gt;
+calls, but do not survive a reboot.&lt;/p&gt;
+&lt;p&gt;All User conditions are controlled using the &lt;code&gt;initctl cond ..&lt;/code&gt; commands:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;initctl cond set baz   # Set (assert) user-defined condition
+initctl cond clr baz   # Clear (deassert) user-defined condition
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;example-2&#34;&gt;Example&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;/etc/finit.d/foo.conf
+
+    service &amp;lt;usr/baz&amp;gt; foo -foargs -- Foo service
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Foo service is not started until the following command is called:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;initctl cond set baz
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
       <title>Buildroot Development Checklist</title>
       <link>/post/2022-01-04-buildroot-development-checklist/</link>
       <pubDate>Tue, 04 Jan 2022 10:15:00 +0200</pubDate>

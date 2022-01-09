@@ -3,6 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/post/2022-01-09-dependency-handling-in-finit/</loc>
+    <lastmod>2022-01-09T18:46:23+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/finit/</loc>
+    <lastmod>2022-01-09T18:46:23+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/init/</loc>
+    <lastmod>2022-01-09T18:46:23+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/opensource/</loc>
+    <lastmod>2022-01-09T18:46:23+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/</loc>
+    <lastmod>2022-01-09T18:46:23+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2022-01-09T18:46:23+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/buildroot/</loc>
     <lastmod>2022-01-04T10:15:00+02:00</lastmod>
   </url>
@@ -14,21 +44,6 @@
   
   <url>
     <loc>/tags/git/</loc>
-    <lastmod>2022-01-04T10:15:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/opensource/</loc>
-    <lastmod>2022-01-04T10:15:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/</loc>
-    <lastmod>2022-01-04T10:15:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
     <lastmod>2022-01-04T10:15:00+02:00</lastmod>
   </url>
   
@@ -145,16 +160,6 @@
   <url>
     <loc>/projects/watchdogd/</loc>
     <lastmod>2021-04-30T17:02:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/finit/</loc>
-    <lastmod>2021-04-27T20:18:06+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/init/</loc>
-    <lastmod>2021-04-27T20:18:06+01:00</lastmod>
   </url>
   
   <url>

@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Tue, 04 Jan 2022 10:15:00 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 09 Jan 2022 18:46:23 +0100</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>finit</title>
+      <link>/tags/finit/</link>
+      <pubDate>Sun, 09 Jan 2022 18:46:23 +0100</pubDate>
+      
+      <guid>/tags/finit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>init</title>
+      <link>/tags/init/</link>
+      <pubDate>Sun, 09 Jan 2022 18:46:23 +0100</pubDate>
+      
+      <guid>/tags/init/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>opensource</title>
+      <link>/tags/opensource/</link>
+      <pubDate>Sun, 09 Jan 2022 18:46:23 +0100</pubDate>
+      
+      <guid>/tags/opensource/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>buildroot</title>
@@ -27,15 +54,6 @@
       <pubDate>Tue, 04 Jan 2022 10:15:00 +0200</pubDate>
       
       <guid>/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>opensource</title>
-      <link>/tags/opensource/</link>
-      <pubDate>Tue, 04 Jan 2022 10:15:00 +0200</pubDate>
-      
-      <guid>/tags/opensource/</guid>
       <description></description>
     </item>
     
@@ -81,24 +99,6 @@
       <pubDate>Tue, 11 May 2021 19:12:00 +0100</pubDate>
       
       <guid>/tags/notmuch/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>finit</title>
-      <link>/tags/finit/</link>
-      <pubDate>Tue, 27 Apr 2021 20:18:06 +0100</pubDate>
-      
-      <guid>/tags/finit/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>init</title>
-      <link>/tags/init/</link>
-      <pubDate>Tue, 27 Apr 2021 20:18:06 +0100</pubDate>
-      
-      <guid>/tags/init/</guid>
       <description></description>
     </item>
     
