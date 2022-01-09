@@ -119,4 +119,4 @@ processes are stopped if their dependencies are not satisfied.
 Join the [discussion on GitHub][1] or #troglobit on Freenode if IRC is
 more your thing.
 
-[1]: https://github.com/troglobit/finit/discussions/169
+[1]: https://github.com/troglobit/finit/discussions/
