@@ -54,7 +54,7 @@ after the last release, v4.1, with a bunch of fixes and some new
 features.  See the release notes for details.">
 <meta itemprop="datePublished" content="2022-01-16T15:30:23&#43;01:00" />
 <meta itemprop="dateModified" content="2022-01-16T15:30:23&#43;01:00" />
-<meta itemprop="wordCount" content="424">
+<meta itemprop="wordCount" content="439">
 
 
 
@@ -148,7 +148,7 @@ features.  See the release notes for details." />
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        2 minutes
+        3 minutes
 
         
       </p>
@@ -219,8 +219,10 @@ this devie, and press enter &ndash; you are presented with a login prompt.
 The default username is <code>root</code> and for the first time login there is
 no password:</p>
 <p><img src="/images/finit-v4.2-first-boot.png" alt=""></p>
-<p>To allow SSH login, you must set a password, use <code>passwd</code>.</p>
-<p>Now you&rsquo;re settled in and it&rsquo;s time to get to know Finit.  Play around
+<p>To allow SSH login, you must set a password, use <code>passwd</code>.  When set
+you can connect to the QEMU virtual machine using:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">    ssh -p <span class="m">2222</span> root@localhost
+</code></pre></div><p>Now you&rsquo;re settled in and it&rsquo;s time to get to know Finit.  Play around
 a bit with <code>initctl</code>, it comes with limited built-in help <code>initctl help</code>, and there is much <a href="https://github.com/troglobit/finit/tree/master/doc">documentation available online</a>, including man pages: <a href="https://man.troglobit.com/man8/initctl.8.html">initctl(8)</a>, <a href="https://man.troglobit.com/man8/finit.8.html">finit(8)</a>, and <a href="https://man.troglobit.com/man5/finit.conf.5.html">finit.conf(5)</a>.</p>
 <p><img src="/images/finit-v4.2-initctl.png" alt=""></p>
 <p>Try stopping and starting services.  For instance, check the status of
@@ -256,7 +258,7 @@ in another blog post.</p>
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        424 Words
+        439 Words
       </p>
 
       <p>
