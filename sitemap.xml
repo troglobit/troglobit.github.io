@@ -3,32 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/post/2022-01-09-dependency-handling-in-finit/</loc>
-    <lastmod>2022-01-09T18:46:23+01:00</lastmod>
+    <loc>/tags/finit/</loc>
+    <lastmod>2022-01-16T15:30:23+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/finit/</loc>
-    <lastmod>2022-01-09T18:46:23+01:00</lastmod>
+    <loc>/post/2022-01-16-finit-v4.2-released/</loc>
+    <lastmod>2022-01-16T15:30:23+01:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/init/</loc>
-    <lastmod>2022-01-09T18:46:23+01:00</lastmod>
+    <lastmod>2022-01-16T15:30:23+01:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/opensource/</loc>
-    <lastmod>2022-01-09T18:46:23+01:00</lastmod>
+    <lastmod>2022-01-16T15:30:23+01:00</lastmod>
   </url>
   
   <url>
     <loc>/posts/</loc>
-    <lastmod>2022-01-09T18:46:23+01:00</lastmod>
+    <lastmod>2022-01-16T15:30:23+01:00</lastmod>
   </url>
   
   <url>
     <loc>/tags/</loc>
+    <lastmod>2022-01-16T15:30:23+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2022-01-09-dependency-handling-in-finit/</loc>
     <lastmod>2022-01-09T18:46:23+01:00</lastmod>
   </url>
   

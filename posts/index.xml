@@ -6,8 +6,88 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-        <lastBuildDate>Sun, 09 Jan 2022 18:46:23 +0100</lastBuildDate>
+        <lastBuildDate>Sun, 16 Jan 2022 15:30:23 +0100</lastBuildDate>
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Finit v4.2 Released!</title>
+            <link>/post/2022-01-16-finit-v4.2-released/</link>
+            <pubDate>Sun, 16 Jan 2022 15:30:23 +0100</pubDate>
+            
+            <guid>/post/2022-01-16-finit-v4.2-released/</guid>
+            <description>&lt;p&gt;&lt;a href=&#34;https://troglobit.com/finit.html&#34;&gt;&lt;img src=&#34;/images/finit3.png#floatright&#34; alt=&#34;finit logo&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m very pleased to announce &lt;a href=&#34;https://github.com/troglobit/finit/releases/tag/4.2&#34;&gt;Finit v4.2&lt;/a&gt;!  It comes seven months
+after the last release, v4.1, with a bunch of fixes and some new
+features.  See the release notes for details.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p><a href="https://troglobit.com/finit.html"><img src="/images/finit3.png#floatright" alt="finit logo"></a></p>
+<p>I&rsquo;m very pleased to announce <a href="https://github.com/troglobit/finit/releases/tag/4.2">Finit v4.2</a>!  It comes seven months
+after the last release, v4.1, with a bunch of fixes and some new
+features.  See the release notes for details.</p>
+<p>One of the most notable fixes is legacy support for old vendor kernels
+that do not yet support cgroups v2 &ndash; this is now detected and
+disabled automatically by Finit.</p>
+<p>Another neat feature is the support for early logging, using the
+kernel ring buffer, before any syslog daemon has started.  This
+support is synchronized with the <a href="https://github.com/troglobit/sysklogd/releases/tag/v2.3.0">sysklogd v2.3</a> release which adds
+support for extracting non-kernel log messages from <code>/dev/kmsg</code> &ndash;
+other syslog daemons support this too, but sysklogd is the recommended
+syslog with Finit.</p>
+<h2 id="try-before-you-buy">Try before you buy!</h2>
+<p>If you&rsquo;re interesting in trying Finit out yourself, but haven&rsquo;t got
+the time or patience to set it up.  Here is a x86_64 VM image for QEMU
+on, based on <a href="https://github.com/troglobit/myLinux">myLinux</a>.</p>
+<ul>
+<li><strong>Download</strong> <a href="https://ftp.troglobit.com/myLinux/myLinux-2.0-dev.tar.xz">myLinux-2.0-dev.tar.xz</a><br>
+(13 MiB, expands to 62 MiB; Fint v4.2)</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> this is an example, with a limited number of services
+included.  To use in a full-blown production system, you
+can quickly build your own image from a <a href="https://github.com/troglobit/myLinux">myLinux</a> base.
+I recommend the <a href="https://buildroot.org/">Buildroot</a> manual for help on how to
+extract the full potential of your system.</p>
+</blockquote>
+<p>To start it up:</p>
+<ol>
+<li>
+<p>Ensure you have QEMU installed, this varies depending on your
+preferred Linux distribution, on Linux Mint and other Debian
+derivatives: <code>sudo apt install qemu-system-x86</code></p>
+</li>
+<li>
+<p>Download the image and untar it:</p>
+<p>cd ~/Downloads
+tar xf myLinux-2.0-dev.tar.xz</p>
+</li>
+<li>
+<p>Run the <code>qemu.sh</code> script, you can modify it to suit your needs:</p>
+<p>cd myLinux-2.0-dev
+./qemu.sh</p>
+</li>
+</ol>
+<p>You should see the bootstrap messages and a message at the end:</p>
+<blockquote>
+<p>&ldquo;Please press Enter to activate this console.&rdquo;</p>
+</blockquote>
+<p>No getty is spawned unless a user is active at the console, which in
+most headless deployments there isn&rsquo;t.  Let&rsquo;s pretend we&rsquo;re servicing
+this devie, and press enter &ndash; you are presented with a login prompt.
+The default username is <code>root</code> and for the first time login there is
+no password:</p>
+<p><img src="/images/finit-v4.2-first-boot.png" alt=""></p>
+<p>To allow SSH login, you must set a password, use <code>passwd</code>.</p>
+<p>Now you&rsquo;re settled in and it&rsquo;s time to get to know Finit.  Play around
+a bit with <code>initctl</code>, it comes with limited built-in help, and there
+is much <a href="https://github.com/troglobit/finit/tree/master/doc">documentation available online</a>:</p>
+<p><img src="/images/finit-v4.2-initctl.png" alt=""></p>
+<p>Try stopping and starting services.  For instance, check the status of
+the <code>sntpd</code> service, notice the condition on a default route &ndash; check
+what happens when you remove the default route.</p>
+<p><a href="/post/2022-01-09-dependency-handling-in-finit/">More on conditions</a>
+in another blog post.</p>
+<p>Have fun! :-)<br>
+/Joachim</p>]]></content>
+        </item>
         
         <item>
             <title>Dependency handling in Finit</title>
