@@ -49,30 +49,24 @@ extract the full potential of your system.</p>
 </blockquote>
 <p>To start it up:</p>
 <ol>
-<li>
-<p>Ensure you have QEMU installed, this varies depending on your
+<li>Ensure you have QEMU installed, this varies depending on your
 preferred Linux distribution, on Linux Mint and other Debian
-derivatives:</p>
-<pre><code>   sudo apt install qemu-system-x86
-</code></pre>
-</li>
-<li>
-<p>Download the image and untar it:</p>
-<pre><code>   cd ~/Downloads
-   tar xf myLinux-2.0-dev.tar.xz
-</code></pre>
-</li>
-<li>
-<p>Run the <code>qemu.sh</code> script, you can modify it to suit your needs:</p>
-<pre><code>   cd myLinux-2.0-dev
-   ./qemu.sh
-</code></pre>
-</li>
+derivatives:</li>
 </ol>
-<p>You should see the bootstrap messages and a message at the end:</p>
-<pre><code>Please press Enter to activate this console.
-</code></pre>
-<p>No getty is spawned unless a user is active at the console, which in
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">    sudo apt install qemu-system-x86
+</code></pre></div><ol start="2">
+<li>Download the image and untar it:</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">    <span class="nb">cd</span> ~/Downloads
+    tar xf myLinux-2.0-dev.tar.xz
+</code></pre></div><ol start="3">
+<li>Run the <code>qemu.sh</code> script, you can modify it to suit your needs:</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">    <span class="nb">cd</span> myLinux-2.0-dev
+    ./qemu.sh
+</code></pre></div><p>You should see the bootstrap messages and a message at the end:</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">    Please press Enter to activate this console.
+</code></pre></div><p>No getty is spawned unless a user is active at the console, which in
 most headless deployments there isn&rsquo;t.  Let&rsquo;s pretend we&rsquo;re servicing
 this devie, and press enter &ndash; you are presented with a login prompt.
 The default username is <code>root</code> and for the first time login there is
