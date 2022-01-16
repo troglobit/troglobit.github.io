@@ -66,7 +66,11 @@ derivatives:</li>
     ./qemu.sh
 </code></pre></div><p>You should see the bootstrap messages and a message at the end:</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">    Please press Enter to activate this console.
-</code></pre></div><p>No getty is spawned unless a user is active at the console, which in
+</code></pre></div><blockquote>
+<p>Ctrl-a x &ndash; exit Qemu<br>
+Ctrl-a c &ndash; toggle Qemu console/monitor</p>
+</blockquote>
+<p>No getty is spawned unless a user is active at the console, which in
 most headless deployments there isn&rsquo;t.  Let&rsquo;s pretend we&rsquo;re servicing
 this devie, and press enter &ndash; you are presented with a login prompt.
 The default username is <code>root</code> and for the first time login there is

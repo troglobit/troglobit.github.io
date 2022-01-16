@@ -54,7 +54,7 @@ after the last release, v4.1, with a bunch of fixes and some new
 features.  See the release notes for details.">
 <meta itemprop="datePublished" content="2022-01-16T15:30:23&#43;01:00" />
 <meta itemprop="dateModified" content="2022-01-16T15:30:23&#43;01:00" />
-<meta itemprop="wordCount" content="439">
+<meta itemprop="wordCount" content="450">
 
 
 
@@ -213,7 +213,11 @@ derivatives:</li>
     ./qemu.sh
 </code></pre></div><p>You should see the bootstrap messages and a message at the end:</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">    Please press Enter to activate this console.
-</code></pre></div><p>No getty is spawned unless a user is active at the console, which in
+</code></pre></div><blockquote>
+<p>Ctrl-a x &ndash; exit Qemu<br>
+Ctrl-a c &ndash; toggle Qemu console/monitor</p>
+</blockquote>
+<p>No getty is spawned unless a user is active at the console, which in
 most headless deployments there isn&rsquo;t.  Let&rsquo;s pretend we&rsquo;re servicing
 this devie, and press enter &ndash; you are presented with a login prompt.
 The default username is <code>root</code> and for the first time login there is
@@ -258,7 +262,7 @@ in another blog post.</p>
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        439 Words
+        450 Words
       </p>
 
       <p>
