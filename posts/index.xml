@@ -52,23 +52,26 @@ extract the full potential of your system.</p>
 <li>
 <p>Ensure you have QEMU installed, this varies depending on your
 preferred Linux distribution, on Linux Mint and other Debian
-derivatives: <code>sudo apt install qemu-system-x86</code></p>
+derivatives:</p>
+<pre><code>   sudo apt install qemu-system-x86
+</code></pre>
 </li>
 <li>
 <p>Download the image and untar it:</p>
-<p>cd ~/Downloads
-tar xf myLinux-2.0-dev.tar.xz</p>
+<pre><code>   cd ~/Downloads
+   tar xf myLinux-2.0-dev.tar.xz
+</code></pre>
 </li>
 <li>
 <p>Run the <code>qemu.sh</code> script, you can modify it to suit your needs:</p>
-<p>cd myLinux-2.0-dev
-./qemu.sh</p>
+<pre><code>   cd myLinux-2.0-dev
+   ./qemu.sh
+</code></pre>
 </li>
 </ol>
 <p>You should see the bootstrap messages and a message at the end:</p>
-<blockquote>
-<p>&ldquo;Please press Enter to activate this console.&rdquo;</p>
-</blockquote>
+<pre><code>Please press Enter to activate this console.
+</code></pre>
 <p>No getty is spawned unless a user is active at the console, which in
 most headless deployments there isn&rsquo;t.  Let&rsquo;s pretend we&rsquo;re servicing
 this devie, and press enter &ndash; you are presented with a login prompt.
@@ -77,8 +80,7 @@ no password:</p>
 <p><img src="/images/finit-v4.2-first-boot.png" alt=""></p>
 <p>To allow SSH login, you must set a password, use <code>passwd</code>.</p>
 <p>Now you&rsquo;re settled in and it&rsquo;s time to get to know Finit.  Play around
-a bit with <code>initctl</code>, it comes with limited built-in help, and there
-is much <a href="https://github.com/troglobit/finit/tree/master/doc">documentation available online</a>:</p>
+a bit with <code>initctl</code>, it comes with limited built-in help <code>initctl help</code>, and there is much <a href="https://github.com/troglobit/finit/tree/master/doc">documentation available online</a>, including man pages: <a href="https://man.troglobit.com/man8/initctl.8.html">initctl(8)</a>, <a href="https://man.troglobit.com/man8/finit.8.html">finit(8)</a>, and <a href="https://man.troglobit.com/man5/finit.conf.5.html">finit.conf(5)</a>.</p>
 <p><img src="/images/finit-v4.2-initctl.png" alt=""></p>
 <p>Try stopping and starting services.  For instance, check the status of
 the <code>sntpd</code> service, notice the condition on a default route &ndash; check
