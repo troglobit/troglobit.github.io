@@ -1,6 +1,6 @@
 ---
 title: "Fast init for Linux systems"
-date: 2021-06-06 19:01:00 +0100
+date: 2022-01-17 06:35:00 +0100
 aliases: /finit.html
 ---
 ![finit logo](/images/finit3.png#floatright)
@@ -27,7 +27,12 @@ Features include:
   * Proper rescue mode with bundled `sulogin` for protected maintenance shell
 
 Some of these feature are presented below, for more, see the [online
-documentation][README].
+documentation][README] and the following blog posts:
+
+  * [Finit v4.2 -- Try before you buy!](/2022-01-16-finit-v4.2-released/)
+  * [Dependency handling in Finit](/post/2022-01-09-dependency-handling-in-finit/)
+  * [It's here! ♥](/post/2021-04-27-its-here/) -- Finit v4 release post
+  * [Alpine Linux with Finit](/post/2021-02-12-alpine-linux-with-finit/)
 
 
 Example
@@ -488,9 +493,9 @@ and proposed extensions using GitHub:
 * [README][]
 * [TODO](https://github.com/troglobit/finit/blob/master/TODO.md)
 * [ChangeLog](https://github.com/troglobit/finit/blob/master/ChangeLog.md)
-* [finit-4.1.tar.gz](ftp://ftp.troglobit.com/finit/finit-4.1.tar.gz),
-  [MD5](ftp://ftp.troglobit.com/finit/finit-4.1.tar.gz.md5),
-  [SHA256](ftp://ftp.troglobit.com/finit/finit-4.1.tar.gz.sha256)
+* [finit-4.2.tar.gz](ftp://ftp.troglobit.com/finit/finit-4.2.tar.gz),
+  [MD5](ftp://ftp.troglobit.com/finit/finit-4.2.tar.gz.md5),
+  [SHA256](ftp://ftp.troglobit.com/finit/finit-4.2.tar.gz.sha256)
 
 
 [1]: https://en.wikipedia.org/wiki/Init
