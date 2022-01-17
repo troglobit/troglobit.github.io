@@ -29,7 +29,7 @@ Features include:
 Some of these feature are presented below, for more, see the [online
 documentation][README] and the following blog posts:
 
-  * [Finit v4.2 -- Try before you buy!](/2022-01-16-finit-v4.2-released/)
+  * [Finit v4.2 -- Try before you buy!](/post/2022-01-16-finit-v4.2-released/)
   * [Dependency handling in Finit](/post/2022-01-09-dependency-handling-in-finit/)
   * [It's here! ♥](/post/2021-04-27-its-here/) -- Finit v4 release post
   * [Alpine Linux with Finit](/post/2021-02-12-alpine-linux-with-finit/)
