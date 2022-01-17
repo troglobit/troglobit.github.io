@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/projects/finit/</loc>
+    <lastmod>2022-01-17T06:35:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/projects/</loc>
+    <lastmod>2022-01-17T06:35:00+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/finit/</loc>
     <lastmod>2022-01-16T15:30:23+01:00</lastmod>
   </url>
@@ -73,11 +83,6 @@
   </url>
   
   <url>
-    <loc>/projects/</loc>
-    <lastmod>2021-11-03T12:39:12+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/projects/mrouted/</loc>
     <lastmod>2021-11-03T12:39:12+01:00</lastmod>
   </url>
@@ -130,11 +135,6 @@
   <url>
     <loc>/projects/tetris/</loc>
     <lastmod>2021-06-30T20:37:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/finit/</loc>
-    <lastmod>2021-06-06T19:01:00+01:00</lastmod>
   </url>
   
   <url>
