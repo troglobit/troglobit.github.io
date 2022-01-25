@@ -30,6 +30,11 @@ as an alternative.
     - Get [application specific password](https://myaccount.google.com/apppasswords)
     - Enable [IMAP for fetching email](https://mail.google.com/mail/u/0/#settings/fwdandpop)
 
+> Tips for how to set up your external email client are available here
+> <https://www.kernel.org/doc/html/latest/process/email-clients.html>,
+> or check out another blog post about using Emacs with Notmuch Mail:
+> https://troglobit.com/post/2021-05-11-emacs-gmail-and-lore-mailing-lists/
+
 Then edit your `~/.gitconfig` using your favorite editor:
 
 ```
