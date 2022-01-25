@@ -18,7 +18,11 @@
       <pubDate>Tue, 04 Jan 2022 10:15:00 +0200</pubDate>
       
       <guid>/post/2022-01-04-buildroot-development-checklist/</guid>
-      <description>&lt;p&gt;Because I always forget, here&amp;rsquo;s a reminder to myself on how to use &lt;code&gt;git format-patch&lt;/code&gt; and &lt;code&gt;git send-email&lt;/code&gt; from the command line.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Because I always forget, here&amp;rsquo;s a reminder to myself on how to use &lt;code&gt;git format-patch&lt;/code&gt; and &lt;code&gt;git send-email&lt;/code&gt; from the command line.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The following process applies to many other mailing-list based
+projects as well, with local differences in helper scripts.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
   </channel>

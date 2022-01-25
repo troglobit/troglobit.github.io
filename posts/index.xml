@@ -188,16 +188,24 @@ more your thing.</p>]]></content>
             <pubDate>Tue, 04 Jan 2022 10:15:00 +0200</pubDate>
             
             <guid>/post/2022-01-04-buildroot-development-checklist/</guid>
-            <description>&lt;p&gt;Because I always forget, here&amp;rsquo;s a reminder to myself on how to use &lt;code&gt;git format-patch&lt;/code&gt; and &lt;code&gt;git send-email&lt;/code&gt; from the command line.&lt;/p&gt;</description>
+            <description>&lt;p&gt;Because I always forget, here&amp;rsquo;s a reminder to myself on how to use &lt;code&gt;git format-patch&lt;/code&gt; and &lt;code&gt;git send-email&lt;/code&gt; from the command line.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The following process applies to many other mailing-list based
+projects as well, with local differences in helper scripts.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
             <content type="html"><![CDATA[<p>Because I always forget, here&rsquo;s a reminder to myself on how to use <code>git format-patch</code> and <code>git send-email</code> from the command line.</p>
+<blockquote>
+<p>The following process applies to many other mailing-list based
+projects as well, with local differences in helper scripts.</p>
+</blockquote>
 <p>The following example is for contributing to the [Buildroot Project][1],
 but the process is much the same for other mailing list-based projects.</p>
 <ol>
 <li>
 <p>Make your changes on an up-to-date branch from Buildroot master</p>
-<pre><code> git checkout -b package/foobar
- git fetch --all --tags
- git rebase origin/master
+<pre><code> $ git checkout -b package/foo
+ $ git fetch --all --tags
+ $ git rebase origin/master
 </code></pre>
 </li>
 <li>
@@ -205,30 +213,31 @@ but the process is much the same for other mailing list-based projects.</p>
 behavior as another, etc.</p>
 </li>
 <li>
-<p>Use commit messages to record <em>why</em> changes are made.  The first
-line is usally a (very) brief summary referencing the sub-system:</p>
-<pre><code> package/foobar: bump version to v1.2.3
+<p>Use commit messages to record <em>why</em> changes are made.  First line is
+a summary referencing the sub-system, followed by an empty line and
+the message body, and concluded by your sign-off:</p>
+<pre><code> package/foo: bump version to v1.2.3
 
  Signed-off-by: Your Name &lt;your.name@example.com&gt;
 </code></pre>
 </li>
 <li>
 <p>Verify formatting of package files; .in, .mk, etc.</p>
-<pre><code> ./utils/check-package package/foobar/*
+<pre><code> $ ./utils/check-package package/foo/*
 </code></pre>
 <p>If you change or add a new package, verify you don&rsquo;t introduce any
 recursive dependencies, or other nasty surprises.  Remember, the
 build systems includes <em>all</em> <code>.mk</code> files into one big Makefile, so
 any changes you make are seen by <em>all</em> other packages.</p>
-<pre><code> make menuconfig         # complains if you have recursive deps.
- make &lt;pkg&gt;-rebuild      # check output of build
+<pre><code> $  make menuconfig         # complains if you have recursive deps.
+ $  make &lt;pkg&gt;-rebuild      # check output of build
 </code></pre>
 </li>
 <li>
 <p>Test your package/change with a set of cross-compilation toolchains.
 The <code>.config</code> file is a menuconfig snippet enabling the package to
 test:</p>
-<pre><code> ./utils/test-pkg -c foobar.config -p foobar
+<pre><code> $ ./utils/test-pkg -c foo.config -p foo
 </code></pre>
 <p>Output goes in <code>~/br-test-pkg/</code>, check all logs.  Some toolchains
 can help you track down issues with your package you won&rsquo;t see
@@ -237,12 +246,16 @@ elsewhere.</p>
 <li>
 <p>Format your patches, with the optional <code>--cover-letter</code>, very useful
 to explain a series of patches:</p>
-<pre><code> git format-patch --cover-letter -M -n -s -o mail origin/master
+<pre><code> $  git format-patch --cover-letter -M -n -s -o mail origin/master
 </code></pre>
+<p>Remember to <strong>edit the cover letter</strong> &mdash; it serves as an
+introduction and explains the reasoning behind your changes.  Focus
+on <em>the why, not the how,</em> the patches have separate commit messages</p>
 </li>
 <li>
 <p>Figure out DEVELOPERS to Cc in your correspondence to the mailing list:</p>
-<pre><code> ./utils/get-developers mail/*
+<pre><code> $ ./utils/get-developers mail/*
+ git send-email --to buildroot@buildroot.org --cc foo@example.com
 </code></pre>
 </li>
 <li>
@@ -251,11 +264,12 @@ to explain a series of patches:</p>
 </code></pre>
 </li>
 <li>
-<p>Send the email(s) by copy-pasting the output and appending <code>mail/*</code></p>
-<pre><code> git send-email --to buildroot@buildroot.org mail/*
+<p>Append <code>mail/*</code> to send.  You and others in Signed-off-by,
+Reviewed-by: are Cc:ed by default</p>
+<pre><code> $ git send-email --to --cc foo@example.com buildroot@buildroot.org mail/*
 </code></pre>
-<p>Git now adds a Cc to you and offers you one last chance to proofread
-the contents (remember the email headers!) before you send.</p>
+<p>You are offered one last chance to proofread the contents (remember
+to check the email headers!) before you send.</p>
 </li>
 </ol>
 <blockquote>
