@@ -83,4 +83,6 @@ but the process is much the same for other mailing list-based projects.
    to check the email headers!) before you send.
 
 > **Note:** if you haven't set up your `~/.gitconfig` yet for sending
-> email, please see https://git-scm.com/docs/git-send-email for help.
+> email, please see https://git-scm.com/docs/git-send-email or my blog
+> post https://troglobit.com/post/2022-01-24-gmail-and-git-send-email/
+> for details.
