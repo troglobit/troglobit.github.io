@@ -6,8 +6,92 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-        <lastBuildDate>Sun, 16 Jan 2022 15:30:23 +0100</lastBuildDate>
+        <lastBuildDate>Mon, 24 Jan 2022 19:37:44 +0200</lastBuildDate>
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Gmail and git send-email</title>
+            <link>/post/2022-01-24-gmail-and-git-send-email/</link>
+            <pubDate>Mon, 24 Jan 2022 19:37:44 +0200</pubDate>
+            
+            <guid>/post/2022-01-24-gmail-and-git-send-email/</guid>
+            <description>&lt;p&gt;As a follow-up to my previous Buildroot mailing-list post about the
+&lt;code&gt;git format-patch&lt;/code&gt; and &lt;code&gt;git send-email&lt;/code&gt; commands, this post covers how
+to set up the latter.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>As a follow-up to my previous Buildroot mailing-list post about the
+<code>git format-patch</code> and <code>git send-email</code> commands, this post covers how
+to set up the latter.</p>
+<p>In many corporate settings it&rsquo;s either hard or close to impossible to
+rely on the services of the IT dept. to send email to Open Source
+mailing lists.  In this blog post we will set up Google Mail (Gmail)
+as an alternative.</p>
+<ul>
+<li>Gmail, because many people already have an account</li>
+<li>Easy to add &ldquo;another&rdquo; account: <code>yourusername+oss@gmail.com</code></li>
+<li>Doesn&rsquo;t add any obnoxious corporate &ldquo;CONFIDENTIAL&rdquo; footer</li>
+<li>Your contributions are yours:
+<ul>
+<li>Remember attribution to your Company, this is usually a good
+idea for several reasons, set the <code>Organization:</code> email header</li>
+</ul>
+</li>
+<li>However, <strong>avoid the web client:</strong>
+<ul>
+<li>Changes tabs to spaces</li>
+<li>Wraps text (patch text) unconditionally</li>
+<li>Base64 encodes messages with non US ASCII characters: åäö</li>
+</ul>
+</li>
+<li>Instead, <strong>use with external client</strong>:
+<ul>
+<li>Get <a href="https://myaccount.google.com/apppasswords">application specific password</a></li>
+<li>Enable <a href="https://mail.google.com/mail/u/0/#settings/fwdandpop">IMAP for fetching email</a></li>
+</ul>
+</li>
+</ul>
+<p>Then edit your <code>~/.gitconfig</code> using your favorite editor:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">[user]
+    name           = YOUR NAME
+    email          = yourusername+oss@gmail.com
+[format]
+    headers        = &#34;Organization: Company Inc\n&#34;
+    signoff        = true
+[sendemail]
+    chainreplyto   = false
+    smtpserver     = smtp.gmail.com
+    smtpuser       = yourusername@gmail.com
+    smtpencryption = tls
+    smtpserverport = 587
+    smtpPass       = yourapplicationspecificpassword
+    aliasesfile    = ~/.config/mutt/aliases
+    aliasfiletype  = mutt
+[sendemail.netdev]
+    to             = &#34;davem@davemloft.net, kuba@kernel.org&#34;
+    cc             = &#34;netdev@vger.kernel.org&#34;
+    cccmd          = &#34;./scripts/get_maintainer.pl --nogit --nogit-fallback --norolestats&#34;
+
+# You can also use &#34;alias-foo&#34; in to= and cc=, expands from ~/.config/mutt/aliases
+</code></pre></div><p>This fils applies to all your GIT repositories.  If you want to have a
+different behavior or setting for a repoistory, see the <code>.git/config</code>
+file for that specific working copy.  These file holds other settings,
+see the man page <a href="https://git-scm.com/docs/git-config">git-config(1)</a>
+for details.</p>
+<p>One specific detail deserves to be highlighted.  In the <code>.gitconfig</code>
+above, there is a section <code>[sendemail.netdev]</code>.  It is triggered by
+the <code>--identity</code> argument:</p>
+<pre><code>$ git send-email --identity netdev mail/*
+</code></pre>
+<p>The extra settings (or overrides) defined for <code>netdev</code> are then used
+for all <code>git send-email</code> commands with that identity.  This is useful
+in particular if you interact with many mailing-lists, but also when
+you are old and forgetful like yours truly.</p>
+<p>Good Luck!</p>
+<blockquote>
+<p><strong>Note:</strong> see my previous post, the <a href="https://troglobit.com/post/2022-01-04-buildroot-development-checklist/">Buildroot Checklist</a>, for an
+introduction to how to use <code>git format-patch</code>.  It applies to many
+other mail-list based Open Source projects as well.</p>
+</blockquote>]]></content>
+        </item>
         
         <item>
             <title>Finit v4.2 Released!</title>

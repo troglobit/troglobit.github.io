@@ -13,6 +13,17 @@
     
     
     <item>
+      <title>Gmail and git send-email</title>
+      <link>/post/2022-01-24-gmail-and-git-send-email/</link>
+      <pubDate>Mon, 24 Jan 2022 19:37:44 +0200</pubDate>
+      
+      <guid>/post/2022-01-24-gmail-and-git-send-email/</guid>
+      <description>&lt;p&gt;As a follow-up to my previous Buildroot mailing-list post about the
+&lt;code&gt;git format-patch&lt;/code&gt; and &lt;code&gt;git send-email&lt;/code&gt; commands, this post covers how
+to set up the latter.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Fast init for Linux systems</title>
       <link>/projects/finit/</link>
       <pubDate>Mon, 17 Jan 2022 06:35:00 +0100</pubDate>

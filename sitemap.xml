@@ -3,6 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/tags/git/</loc>
+    <lastmod>2022-01-24T19:37:44+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2022-01-24-gmail-and-git-send-email/</loc>
+    <lastmod>2022-01-24T19:37:44+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/howto/</loc>
+    <lastmod>2022-01-24T19:37:44+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/opensource/</loc>
+    <lastmod>2022-01-24T19:37:44+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/</loc>
+    <lastmod>2022-01-24T19:37:44+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2022-01-24T19:37:44+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/projects/finit/</loc>
     <lastmod>2022-01-17T06:35:00+01:00</lastmod>
   </url>
@@ -28,21 +58,6 @@
   </url>
   
   <url>
-    <loc>/tags/opensource/</loc>
-    <lastmod>2022-01-16T15:30:23+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/</loc>
-    <lastmod>2022-01-16T15:30:23+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2022-01-16T15:30:23+01:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/post/2022-01-09-dependency-handling-in-finit/</loc>
     <lastmod>2022-01-09T18:46:23+01:00</lastmod>
   </url>
@@ -54,11 +69,6 @@
   
   <url>
     <loc>/post/2022-01-04-buildroot-development-checklist/</loc>
-    <lastmod>2022-01-04T10:15:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/git/</loc>
     <lastmod>2022-01-04T10:15:00+02:00</lastmod>
   </url>
   

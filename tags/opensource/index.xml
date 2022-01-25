@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Sun, 16 Jan 2022 15:30:23 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 24 Jan 2022 19:37:44 +0200</lastBuildDate>
     
 	<atom:link href="/tags/opensource/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Gmail and git send-email</title>
+      <link>/post/2022-01-24-gmail-and-git-send-email/</link>
+      <pubDate>Mon, 24 Jan 2022 19:37:44 +0200</pubDate>
+      
+      <guid>/post/2022-01-24-gmail-and-git-send-email/</guid>
+      <description>&lt;p&gt;As a follow-up to my previous Buildroot mailing-list post about the
+&lt;code&gt;git format-patch&lt;/code&gt; and &lt;code&gt;git send-email&lt;/code&gt; commands, this post covers how
+to set up the latter.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Finit v4.2 Released!</title>

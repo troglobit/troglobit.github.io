@@ -5,18 +5,17 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="Joachim Wiberg ">
-<meta name="description" content="
-I&amp;rsquo;m very pleased to announce Finit v4.2! It comes seven months after the last release, v4.1, with a bunch of fixes and some new features. See the release notes for details.
+<meta name="description" content="As a follow-up to my previous Buildroot mailing-list post about the git format-patch and git send-email commands, this post covers how to set up the latter.
 " />
-<meta name="keywords" content=", finit, init, opensource" />
+<meta name="keywords" content=", howto, git, opensource" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
-<link rel="canonical" href="/post/2022-01-16-finit-v4.2-released/" />
+<link rel="canonical" href="/post/2022-01-24-gmail-and-git-send-email/" />
 
 
     <title>
         
-            Finit v4.2 Released! :: Joachim Wiberg  — The Last Outpost
+            Gmail and git send-email :: Joachim Wiberg  — The Last Outpost
         
     </title>
 
@@ -47,44 +46,41 @@ I&amp;rsquo;m very pleased to announce Finit v4.2! It comes seven months after t
 
 
 
-<meta itemprop="name" content="Finit v4.2 Released!">
-<meta itemprop="description" content="
-I&rsquo;m very pleased to announce Finit v4.2!  It comes seven months
-after the last release, v4.1, with a bunch of fixes and some new
-features.  See the release notes for details.">
-<meta itemprop="datePublished" content="2022-01-16T15:30:23&#43;01:00" />
-<meta itemprop="dateModified" content="2022-01-16T15:30:23&#43;01:00" />
-<meta itemprop="wordCount" content="450">
+<meta itemprop="name" content="Gmail and git send-email">
+<meta itemprop="description" content="As a follow-up to my previous Buildroot mailing-list post about the
+git format-patch and git send-email commands, this post covers how
+to set up the latter.">
+<meta itemprop="datePublished" content="2022-01-24T19:37:44&#43;02:00" />
+<meta itemprop="dateModified" content="2022-01-24T19:37:44&#43;02:00" />
+<meta itemprop="wordCount" content="369">
 
 
 
-<meta itemprop="keywords" content="finit,init,opensource," />
+<meta itemprop="keywords" content="howto,git,opensource," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Finit v4.2 Released!"/>
-<meta name="twitter:description" content="
-I&rsquo;m very pleased to announce Finit v4.2!  It comes seven months
-after the last release, v4.1, with a bunch of fixes and some new
-features.  See the release notes for details."/>
+<meta name="twitter:title" content="Gmail and git send-email"/>
+<meta name="twitter:description" content="As a follow-up to my previous Buildroot mailing-list post about the
+git format-patch and git send-email commands, this post covers how
+to set up the latter."/>
 
 
 
 
-    <meta property="og:title" content="Finit v4.2 Released!" />
-<meta property="og:description" content="
-I&rsquo;m very pleased to announce Finit v4.2!  It comes seven months
-after the last release, v4.1, with a bunch of fixes and some new
-features.  See the release notes for details." />
+    <meta property="og:title" content="Gmail and git send-email" />
+<meta property="og:description" content="As a follow-up to my previous Buildroot mailing-list post about the
+git format-patch and git send-email commands, this post covers how
+to set up the latter." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/post/2022-01-16-finit-v4.2-released/" />
-<meta property="article:published_time" content="2022-01-16T15:30:23+01:00" />
-<meta property="article:modified_time" content="2022-01-16T15:30:23+01:00" />
+<meta property="og:url" content="/post/2022-01-24-gmail-and-git-send-email/" />
+<meta property="article:published_time" content="2022-01-24T19:37:44+02:00" />
+<meta property="article:modified_time" content="2022-01-24T19:37:44+02:00" />
 
 
 
 
 
 
-    <meta property="article:published_time" content="2022-01-16 15:30:23 &#43;0100 CET" />
+    <meta property="article:published_time" content="2022-01-24 19:37:44 &#43;0200 &#43;0200" />
 
 
 
@@ -148,7 +144,7 @@ features.  See the release notes for details." />
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        3 minutes
+        2 minutes
 
         
       </p>
@@ -156,7 +152,7 @@ features.  See the release notes for details." />
 
     <article>
       <h1 class="post-title">
-        <a href="/post/2022-01-16-finit-v4.2-released/">Finit v4.2 Released!</a>
+        <a href="/post/2022-01-24-gmail-and-git-send-email/">Gmail and git send-email</a>
       </h1>
 
       
@@ -166,76 +162,79 @@ features.  See the release notes for details." />
       
 
       <div class="post-content">
-        <p><a href="https://troglobit.com/finit.html"><img src="/images/finit3.png#floatright" alt="finit logo"></a></p>
-<p>I&rsquo;m very pleased to announce <a href="https://github.com/troglobit/finit/releases/tag/4.2">Finit v4.2</a>!  It comes seven months
-after the last release, v4.1, with a bunch of fixes and some new
-features.  See the release notes for details.</p>
-<p>One of the most notable fixes is legacy support for old vendor kernels
-that do not yet support cgroups v2 &ndash; this is now detected and
-disabled automatically by Finit.</p>
-<p>Another neat feature is the support for early logging, using the
-kernel ring buffer, before any syslog daemon has started.  This
-support is synchronized with the <a href="https://github.com/troglobit/sysklogd/releases/tag/v2.3.0">sysklogd v2.3</a> release which adds
-support for extracting non-kernel log messages from <code>/dev/kmsg</code> &ndash;
-other syslog daemons support this too, but sysklogd is the recommended
-syslog with Finit.</p>
-<h2 id="try-before-you-buy">Try before you buy!</h2>
-<p>If you&rsquo;re interesting in trying Finit out yourself, but haven&rsquo;t got
-the time or patience to set it up.  Here is a x86_64 VM image for QEMU
-on, based on <a href="https://github.com/troglobit/myLinux">myLinux</a>.</p>
+        <p>As a follow-up to my previous Buildroot mailing-list post about the
+<code>git format-patch</code> and <code>git send-email</code> commands, this post covers how
+to set up the latter.</p>
+<p>In many corporate settings it&rsquo;s either hard or close to impossible to
+rely on the services of the IT dept. to send email to Open Source
+mailing lists.  In this blog post we will set up Google Mail (Gmail)
+as an alternative.</p>
 <ul>
-<li><strong>Download</strong> <a href="https://ftp.troglobit.com/myLinux/myLinux-2.0-dev.tar.xz">myLinux-2.0-dev.tar.xz</a><br>
-(13 MiB, expands to 62 MiB; Fint v4.2)</li>
+<li>Gmail, because many people already have an account</li>
+<li>Easy to add &ldquo;another&rdquo; account: <code>yourusername+oss@gmail.com</code></li>
+<li>Doesn&rsquo;t add any obnoxious corporate &ldquo;CONFIDENTIAL&rdquo; footer</li>
+<li>Your contributions are yours:
+<ul>
+<li>Remember attribution to your Company, this is usually a good
+idea for several reasons, set the <code>Organization:</code> email header</li>
 </ul>
+</li>
+<li>However, <strong>avoid the web client:</strong>
+<ul>
+<li>Changes tabs to spaces</li>
+<li>Wraps text (patch text) unconditionally</li>
+<li>Base64 encodes messages with non US ASCII characters: åäö</li>
+</ul>
+</li>
+<li>Instead, <strong>use with external client</strong>:
+<ul>
+<li>Get <a href="https://myaccount.google.com/apppasswords">application specific password</a></li>
+<li>Enable <a href="https://mail.google.com/mail/u/0/#settings/fwdandpop">IMAP for fetching email</a></li>
+</ul>
+</li>
+</ul>
+<p>Then edit your <code>~/.gitconfig</code> using your favorite editor:</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">[user]
+    name           = YOUR NAME
+    email          = yourusername+oss@gmail.com
+[format]
+    headers        = &#34;Organization: Company Inc\n&#34;
+    signoff        = true
+[sendemail]
+    chainreplyto   = false
+    smtpserver     = smtp.gmail.com
+    smtpuser       = yourusername@gmail.com
+    smtpencryption = tls
+    smtpserverport = 587
+    smtpPass       = yourapplicationspecificpassword
+    aliasesfile    = ~/.config/mutt/aliases
+    aliasfiletype  = mutt
+[sendemail.netdev]
+    to             = &#34;davem@davemloft.net, kuba@kernel.org&#34;
+    cc             = &#34;netdev@vger.kernel.org&#34;
+    cccmd          = &#34;./scripts/get_maintainer.pl --nogit --nogit-fallback --norolestats&#34;
+
+# You can also use &#34;alias-foo&#34; in to= and cc=, expands from ~/.config/mutt/aliases
+</code></pre></div><p>This fils applies to all your GIT repositories.  If you want to have a
+different behavior or setting for a repoistory, see the <code>.git/config</code>
+file for that specific working copy.  These file holds other settings,
+see the man page <a href="https://git-scm.com/docs/git-config">git-config(1)</a>
+for details.</p>
+<p>One specific detail deserves to be highlighted.  In the <code>.gitconfig</code>
+above, there is a section <code>[sendemail.netdev]</code>.  It is triggered by
+the <code>--identity</code> argument:</p>
+<pre><code>$ git send-email --identity netdev mail/*
+</code></pre>
+<p>The extra settings (or overrides) defined for <code>netdev</code> are then used
+for all <code>git send-email</code> commands with that identity.  This is useful
+in particular if you interact with many mailing-lists, but also when
+you are old and forgetful like yours truly.</p>
+<p>Good Luck!</p>
 <blockquote>
-<p><strong>Note:</strong> this is an example, with a limited number of services
-included.  To use in a full-blown production system, you
-can quickly build your own image from a <a href="https://github.com/troglobit/myLinux">myLinux</a> base.
-I recommend the <a href="https://buildroot.org/">Buildroot</a> manual for help on how to
-extract the full potential of your system.</p>
+<p><strong>Note:</strong> see my previous post, the <a href="https://troglobit.com/post/2022-01-04-buildroot-development-checklist/">Buildroot Checklist</a>, for an
+introduction to how to use <code>git format-patch</code>.  It applies to many
+other mail-list based Open Source projects as well.</p>
 </blockquote>
-<p>To start it up:</p>
-<ol>
-<li>Ensure you have QEMU installed, this varies depending on your
-preferred Linux distribution, on Linux Mint and other Debian
-derivatives:</li>
-</ol>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">    sudo apt install qemu-system-x86
-</code></pre></div><ol start="2">
-<li>Download the image and untar it:</li>
-</ol>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">    <span class="nb">cd</span> ~/Downloads
-    tar xf myLinux-2.0-dev.tar.xz
-</code></pre></div><ol start="3">
-<li>Run the <code>qemu.sh</code> script, you can modify it to suit your needs:</li>
-</ol>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">    <span class="nb">cd</span> myLinux-2.0-dev
-    ./qemu.sh
-</code></pre></div><p>You should see the bootstrap messages and a message at the end:</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">    Please press Enter to activate this console.
-</code></pre></div><blockquote>
-<p>Ctrl-a x &ndash; exit Qemu<br>
-Ctrl-a c &ndash; toggle Qemu console/monitor</p>
-</blockquote>
-<p>No getty is spawned unless a user is active at the console, which in
-most headless deployments there isn&rsquo;t.  Let&rsquo;s pretend we&rsquo;re servicing
-this devie, and press enter &ndash; you are presented with a login prompt.
-The default username is <code>root</code> and for the first time login there is
-no password:</p>
-<p><img src="/images/finit-v4.2-first-boot.png" alt=""></p>
-<p>To allow SSH login, you must set a password, use <code>passwd</code>.  When set
-you can connect to the QEMU virtual machine using:</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">    ssh -p <span class="m">2222</span> root@localhost
-</code></pre></div><p>Now you&rsquo;re settled in and it&rsquo;s time to get to know Finit.  Play around
-a bit with <code>initctl</code>, it comes with limited built-in help <code>initctl help</code>, and there is much <a href="https://github.com/troglobit/finit/tree/master/doc">documentation available online</a>, including man pages: <a href="https://man.troglobit.com/man8/initctl.8.html">initctl(8)</a>, <a href="https://man.troglobit.com/man8/finit.8.html">finit(8)</a>, and <a href="https://man.troglobit.com/man5/finit.conf.5.html">finit.conf(5)</a>.</p>
-<p><img src="/images/finit-v4.2-initctl.png" alt=""></p>
-<p>Try stopping and starting services.  For instance, check the status of
-the <code>sntpd</code> service, notice the condition on a default route &ndash; check
-what happens when you remove the default route.</p>
-<p><a href="/post/2022-01-09-dependency-handling-in-finit/">More on conditions</a>
-in another blog post.</p>
-<p>Have fun! :-)<br>
-/Joachim</p>
       </div>
     </article>
 
@@ -246,8 +245,8 @@ in another blog post.</p>
     <p>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
 
-        <span class="tag"><a href="/tags/finit/">finit</a></span>
-        <span class="tag"><a href="/tags/init/">init</a></span>
+        <span class="tag"><a href="/tags/howto/">howto</a></span>
+        <span class="tag"><a href="/tags/git/">git</a></span>
         <span class="tag"><a href="/tags/opensource/">opensource</a></span>
         
     </p>
@@ -262,7 +261,7 @@ in another blog post.</p>
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        450 Words
+        369 Words
       </p>
 
       <p>
@@ -273,7 +272,7 @@ in another blog post.</p>
           <line x1="3" y1="10" x2="21" y2="10"></line>
         </svg>
         
-          2022-01-16 15:30
+          2022-01-24 18:37
         
 
          
@@ -284,7 +283,7 @@ in another blog post.</p>
       <hr />
       <div class="sharing-buttons">
         
-<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2fpost%2f2022-01-16-finit-v4.2-released%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=%2fpost%2f2022-01-24-gmail-and-git-send-email%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
   <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
     </div>
@@ -292,7 +291,7 @@ in another blog post.</p>
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?url=%2fpost%2f2022-01-16-finit-v4.2-released%2f" target="_blank" rel="noopener" aria-label="" title="Share on twitter">
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?url=%2fpost%2f2022-01-24-gmail-and-git-send-email%2f" target="_blank" rel="noopener" aria-label="" title="Share on twitter">
   <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
       <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
@@ -301,7 +300,7 @@ in another blog post.</p>
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=Finit%20v4.2%20Released%21&amp;caption=Finit%20v4.2%20Released%21&amp;canonicalUrl=%2fpost%2f2022-01-16-finit-v4.2-released%2f" target="_blank" rel="noopener" aria-label="" title="Share on tumblr">
+<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=Gmail%20and%20git%20send-email&amp;caption=Gmail%20and%20git%20send-email&amp;canonicalUrl=%2fpost%2f2022-01-24-gmail-and-git-send-email%2f" target="_blank" rel="noopener" aria-label="" title="Share on tumblr">
   <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small">
     <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941 0 9.999 0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.207 2.371h.09c.631-.02 1.486-.205 1.936-.419l1.156 3.425c-.436.636-2.4 1.374-4.156 1.404h-.178l.011.002z"/></svg>
@@ -310,7 +309,7 @@ in another blog post.</p>
 </a>
 
 
-<a class="resp-sharing-button__link" href="mailto:?subject=Finit%20v4.2%20Released%21&amp;body=%2fpost%2f2022-01-16-finit-v4.2-released%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
+<a class="resp-sharing-button__link" href="mailto:?subject=Gmail%20and%20git%20send-email&amp;body=%2fpost%2f2022-01-24-gmail-and-git-send-email%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
   <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
     </div>
@@ -318,7 +317,7 @@ in another blog post.</p>
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=%2fpost%2f2022-01-16-finit-v4.2-released%2f&amp;media=%2fpost%2f2022-01-16-finit-v4.2-released%2f;description=Finit%20v4.2%20Released%21" target="_blank" rel="noopener" aria-label="" title="Share on pinterest">
+<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=%2fpost%2f2022-01-24-gmail-and-git-send-email%2f&amp;media=%2fpost%2f2022-01-24-gmail-and-git-send-email%2f;description=Gmail%20and%20git%20send-email" target="_blank" rel="noopener" aria-label="" title="Share on pinterest">
   <div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg>
     </div>
@@ -326,7 +325,7 @@ in another blog post.</p>
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2f2022-01-16-finit-v4.2-released%2f&amp;title=Finit%20v4.2%20Released%21&amp;summary=Finit%20v4.2%20Released%21&amp;source=%2fpost%2f2022-01-16-finit-v4.2-released%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fpost%2f2022-01-24-gmail-and-git-send-email%2f&amp;title=Gmail%20and%20git%20send-email&amp;summary=Gmail%20and%20git%20send-email&amp;source=%2fpost%2f2022-01-24-gmail-and-git-send-email%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
   <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
     </div>
@@ -334,7 +333,7 @@ in another blog post.</p>
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=%2fpost%2f2022-01-16-finit-v4.2-released%2f&amp;resubmit=true&amp;title=Finit%20v4.2%20Released%21" target="_blank" rel="noopener" aria-label="" title="Share on reddit">
+<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=%2fpost%2f2022-01-24-gmail-and-git-send-email%2f&amp;resubmit=true&amp;title=Gmail%20and%20git%20send-email" target="_blank" rel="noopener" aria-label="" title="Share on reddit">
   <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
     </div>
@@ -342,7 +341,7 @@ in another blog post.</p>
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://www.xing.com/app/user?op=share;url=%2fpost%2f2022-01-16-finit-v4.2-released%2f;title=Finit%20v4.2%20Released%21" target="_blank" rel="noopener" aria-label="" title="Share on xing">
+<a class="resp-sharing-button__link" href="https://www.xing.com/app/user?op=share;url=%2fpost%2f2022-01-24-gmail-and-git-send-email%2f;title=Gmail%20and%20git%20send-email" target="_blank" rel="noopener" aria-label="" title="Share on xing">
   <div class="resp-sharing-button resp-sharing-button--xing resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L1.86 16.051c-.099.188-.093.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"/></svg>
     </div>
@@ -350,7 +349,7 @@ in another blog post.</p>
 </a>
 
 
-<a class="resp-sharing-button__link" href="whatsapp://send?text=Finit%20v4.2%20Released%21%20%2fpost%2f2022-01-16-finit-v4.2-released%2f" target="_blank" rel="noopener" aria-label="" title="Share on whatsapp">
+<a class="resp-sharing-button__link" href="whatsapp://send?text=Gmail%20and%20git%20send-email%20%2fpost%2f2022-01-24-gmail-and-git-send-email%2f" target="_blank" rel="noopener" aria-label="" title="Share on whatsapp">
   <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
     </div>
@@ -358,7 +357,7 @@ in another blog post.</p>
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=%2fpost%2f2022-01-16-finit-v4.2-released%2f&amp;t=Finit%20v4.2%20Released%21" target="_blank" rel="noopener" aria-label="" title="Share on hacker news">
+<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=%2fpost%2f2022-01-24-gmail-and-git-send-email%2f&amp;t=Gmail%20and%20git%20send-email" target="_blank" rel="noopener" aria-label="" title="Share on hacker news">
   <div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
 			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z"/></svg>
     </div>
@@ -366,7 +365,7 @@ in another blog post.</p>
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=Finit%20v4.2%20Released%21&amp;url=%2fpost%2f2022-01-16-finit-v4.2-released%2f" target="_blank" rel="noopener" aria-label="" title="Share on telegram">
+<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=Gmail%20and%20git%20send-email&amp;url=%2fpost%2f2022-01-24-gmail-and-git-send-email%2f" target="_blank" rel="noopener" aria-label="" title="Share on telegram">
   <div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
     </div>
@@ -384,18 +383,11 @@ in another blog post.</p>
 
         <div class="pagination__buttons">
             
-            <span class="button previous">
-                <a href="/post/2022-01-24-gmail-and-git-send-email/">
-                    <span class="button__icon">←</span>
-                    <span class="button__text">Gmail and git send-email</span>
-                </a>
-            </span>
-            
 
             
             <span class="button next">
-                <a href="/post/2022-01-09-dependency-handling-in-finit/">
-                    <span class="button__text">Dependency handling in Finit</span>
+                <a href="/post/2022-01-16-finit-v4.2-released/">
+                    <span class="button__text">Finit v4.2 Released!</span>
                     <span class="button__icon">→</span>
                 </a>
             </span>
