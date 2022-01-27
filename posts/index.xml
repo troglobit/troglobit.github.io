@@ -74,7 +74,7 @@ or check out another blog post about using Emacs with Notmuch Mail:
 [sendemail.netdev]
     to             = &#34;davem@davemloft.net, kuba@kernel.org&#34;
     cc             = &#34;netdev@vger.kernel.org&#34;
-    cccmd          = &#34;./scripts/get_maintainer.pl --nogit --nogit-fallback --norolestats&#34;
+    cccmd          = &#34;./scripts/get_maintainer.pl --norolestats&#34;
 
 # You can also use &#34;alias-foo&#34; in to= and cc=, expands from ~/.config/mutt/aliases
 </code></pre></div><p>This fils applies to all your GIT repositories.  If you want to have a
