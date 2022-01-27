@@ -56,7 +56,7 @@ Then edit your `~/.gitconfig` using your favorite editor:
 [sendemail.netdev]
     to             = "davem@davemloft.net, kuba@kernel.org"
     cc             = "netdev@vger.kernel.org"
-    cccmd          = "./scripts/get_maintainer.pl --nogit --nogit-fallback --norolestats"
+    cccmd          = "./scripts/get_maintainer.pl --norolestats"
 
 # You can also use "alias-foo" in to= and cc=, expands from ~/.config/mutt/aliases
 ```
