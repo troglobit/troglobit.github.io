@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Sat, 20 Jun 2020 08:57:00 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 28 Jan 2022 16:47:00 +0100</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Fri, 28 Jan 2022 16:47:00 +0100</pubDate>
+      
+      <guid>/about/</guid>
+      <description>Welcome to my blog, my name is Joachim Wiberg, formerly Nilsson. The nick troglobit is a tribute to my childhood friend Henrik Flordal, for being a good friend and inspiring me to become a hacker. It is also the first password to a Linux server (Henrik&amp;rsquo;s) I got a login to, back in 1995.
+I work a Addiva Elektronik in Västerås, Sweden, as a software architect and embedded systems consultant. My specialty is Linux and networking, primarily on OSI layer-2.</description>
+    </item>
     
     <item>
       <title>Gmail and git send-email</title>
@@ -310,16 +320,6 @@ a workaround!&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; same on Debian 11 (&lt;em&gt;bullseye&lt;/em&gt;) and Linux Mint 20 (&lt;em&gt;Ulyana&lt;/em&gt;)&lt;/p&gt;
 &lt;/blockquote&gt;</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>/about/</link>
-      <pubDate>Sat, 20 Jun 2020 08:57:00 +0100</pubDate>
-      
-      <guid>/about/</guid>
-      <description>Welcome to my blog, my name is Joachim Wiberg, formerly Nilsson. The nick troglobit is a tribute to my childhood friend Henrik Flordal, for being a good friend and inspiring me to become a hacker. It is also the first password to a Linux server (Henrik&amp;rsquo;s) I got a login to, back in 1995.
-I work at Westermo R&amp;amp;D as a software architect for WeOS, a Linux-based network operating system for switches and routers.</description>
     </item>
     
     <item>
