@@ -77,7 +77,7 @@ but the process is much the same for other mailing list-based projects.
 9. Append `mail/*` to send.  You and others in Signed-off-by,
    Reviewed-by: are Cc:ed by default
 
-        $ git send-email --to --cc foo@example.com buildroot@buildroot.org mail/*
+        $ git send-email --to buildroot@buildroot.org --cc foo@example.com mail/*
 		
    You are offered one last chance to proofread the contents (remember
    to check the email headers!) before you send.
