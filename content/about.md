@@ -9,11 +9,12 @@ for being a good friend and inspiring me to become a hacker.  It is
 also the first password to a Linux server (Henrik's) I got a login to,
 back in 1995.
 
-I work a Addiva Elektronik in Västerås, Sweden, as a software architect
-and embedded systems consultant.  My specialty is Linux and networking,
-primarily on OSI layer-2.  I used to work at [Westermo R&D][westermo],
-also as a software architect, for [WeOS][], which is a Linux-based
-network operating system for switches and routers.
+I work a [Addiva Elektronik](https://addiva.se) in Västerås, Sweden,
+as a software architect and embedded systems consultant.  My specialty
+is embedded Linux, preferably [Buildroot](https://buildroot.org), and
+networking.  For a long time I worked at [Westermo R&D][westermo], as
+a software architect for [WeOS][], a Linux-based network operating
+system for switches and routers.
 
 In my spare time I write Free/Libre Open Source Software ([FLOSS][]).
 For example, I maintain [Finit][], [Inadyn][], [pimd][], [mrouted][],
