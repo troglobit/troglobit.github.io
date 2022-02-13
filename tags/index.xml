@@ -7,10 +7,46 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Mon, 24 Jan 2022 19:37:44 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 13 Feb 2022 17:55:44 +0200</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>finit</title>
+      <link>/tags/finit/</link>
+      <pubDate>Sun, 13 Feb 2022 17:55:44 +0200</pubDate>
+      
+      <guid>/tags/finit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>howto</title>
+      <link>/tags/howto/</link>
+      <pubDate>Sun, 13 Feb 2022 17:55:44 +0200</pubDate>
+      
+      <guid>/tags/howto/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>init</title>
+      <link>/tags/init/</link>
+      <pubDate>Sun, 13 Feb 2022 17:55:44 +0200</pubDate>
+      
+      <guid>/tags/init/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>opensource</title>
+      <link>/tags/opensource/</link>
+      <pubDate>Sun, 13 Feb 2022 17:55:44 +0200</pubDate>
+      
+      <guid>/tags/opensource/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>git</title>
@@ -18,42 +54,6 @@
       <pubDate>Mon, 24 Jan 2022 19:37:44 +0200</pubDate>
       
       <guid>/tags/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>howto</title>
-      <link>/tags/howto/</link>
-      <pubDate>Mon, 24 Jan 2022 19:37:44 +0200</pubDate>
-      
-      <guid>/tags/howto/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>opensource</title>
-      <link>/tags/opensource/</link>
-      <pubDate>Mon, 24 Jan 2022 19:37:44 +0200</pubDate>
-      
-      <guid>/tags/opensource/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>finit</title>
-      <link>/tags/finit/</link>
-      <pubDate>Sun, 16 Jan 2022 15:30:23 +0100</pubDate>
-      
-      <guid>/tags/finit/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>init</title>
-      <link>/tags/init/</link>
-      <pubDate>Sun, 16 Jan 2022 15:30:23 +0100</pubDate>
-      
-      <guid>/tags/init/</guid>
       <description></description>
     </item>
     

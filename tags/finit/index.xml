@@ -7,10 +7,26 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Sun, 16 Jan 2022 15:30:23 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 13 Feb 2022 17:55:44 +0200</lastBuildDate>
     
 	<atom:link href="/tags/finit/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Finit in Linux Containers (LXC)</title>
+      <link>/post/2022-02-13-finit-in-linux-containers-lxc/</link>
+      <pubDate>Sun, 13 Feb 2022 17:55:44 +0200</pubDate>
+      
+      <guid>/post/2022-02-13-finit-in-linux-containers-lxc/</guid>
+      <description>&lt;p&gt;This is a mini-HowTo on running Finit in an LXC system container.  We
+will be using a variant (external) of Buildroot, called &lt;a href=&#34;https://github.com/westermo/netbox&#34;&gt;NetBox&lt;/a&gt; to
+create a squashfs (read-only) image for the root filesystem.  Then we
+will give the container a single writable directory from which it then
+uses bind mount to emulate a full-blown system.&lt;/p&gt;
+&lt;p&gt;It is expected you have LXC installed and all the relevant build tools
+needed to create the image.  How to set that up is not covered by this
+tutorial.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Finit v4.2 Released!</title>
