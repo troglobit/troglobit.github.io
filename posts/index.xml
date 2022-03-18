@@ -473,16 +473,16 @@ sudo apt install notmuch isync afew Do initial setup of notmuch for your user. I
 finally found the perfect &ldquo;magit like&rdquo; email setup.  With Emacs, of
 course.  This is the story of how I did it.</p>
 <p>First install notmuch, mbsync (from the isync package), and afew:</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">    sudo apt install notmuch isync afew
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">sudo apt install notmuch isync afew
 </code></pre></div><p>Do initial setup of notmuch for your user.  I&rsquo;ve opted to store my
 mail in<code> ~/mail</code>, this is used throughout the text below, ymmv.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">	notmuch setup
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">notmuch setup
 </code></pre></div><p>Clone Tobias&rsquo; GitHub <a href="https://github.com/wkz/notmuch-lore">notmuch-lore</a>
 repo, we will be using his <code>pre-new</code> hook later on to fetch mailing
 lists from lore, along with a <code>post-new</code> hook to do some tagging of new
 mail.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">    <span class="nb">cd</span> ~/src
-	git clone https://github.com/wkz/notmuch-lore
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="nb">cd</span> ~/src
+git clone https://github.com/wkz/notmuch-lore
 </code></pre></div><p>Set up isync/mbsync to fetch my own email from Gmail.  Here a note on
 Gmail folder structure may be in order.  The view you see in the Google
 web interface does not reflect the IMAP hierarchy.  Here&rsquo;s what it looks
