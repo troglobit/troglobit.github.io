@@ -13,14 +13,14 @@ course.  This is the story of how I did it.
 First install notmuch, mbsync (from the isync package), and afew:
 
 ```sh
-    sudo apt install notmuch isync afew
+sudo apt install notmuch isync afew
 ```
 
 Do initial setup of notmuch for your user.  I've opted to store my
 mail in` ~/mail`, this is used throughout the text below, ymmv.
 
 ```sh
-	notmuch setup
+notmuch setup
 ```
 
 Clone Tobias' GitHub [notmuch-lore](https://github.com/wkz/notmuch-lore)
@@ -29,8 +29,8 @@ lists from lore, along with a `post-new` hook to do some tagging of new
 mail.
 
 ```sh
-    cd ~/src
-	git clone https://github.com/wkz/notmuch-lore
+cd ~/src
+git clone https://github.com/wkz/notmuch-lore
 ```
 
 Set up isync/mbsync to fetch my own email from Gmail.  Here a note on
