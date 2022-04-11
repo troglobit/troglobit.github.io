@@ -13,6 +13,18 @@
     
     
     <item>
+      <title>Linux Kernel Development Checklist</title>
+      <link>/post/2022-04-11-linux-kernel-development-checklist/</link>
+      <pubDate>Mon, 11 Apr 2022 17:19:00 +0200</pubDate>
+      
+      <guid>/post/2022-04-11-linux-kernel-development-checklist/</guid>
+      <description>&lt;p&gt;Because I always tend to forget steps, and haven&amp;rsquo;t half replaced myself
+with a shell script (yet), here&amp;rsquo;s a reminder to myself on how to post a
+patch to the &lt;a href=&#34;https://lore.kernel.org/netdev/&#34;&gt;Linux netdev&lt;/a&gt; mailing
+list.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Finit in Linux Containers (LXC)</title>
       <link>/post/2022-02-13-finit-in-linux-containers-lxc/</link>
       <pubDate>Sun, 13 Feb 2022 17:55:44 +0200</pubDate>

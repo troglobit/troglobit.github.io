@@ -6,8 +6,102 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-        <lastBuildDate>Sun, 13 Feb 2022 17:55:44 +0200</lastBuildDate>
+        <lastBuildDate>Mon, 11 Apr 2022 17:19:00 +0200</lastBuildDate>
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Linux Kernel Development Checklist</title>
+            <link>/post/2022-04-11-linux-kernel-development-checklist/</link>
+            <pubDate>Mon, 11 Apr 2022 17:19:00 +0200</pubDate>
+            
+            <guid>/post/2022-04-11-linux-kernel-development-checklist/</guid>
+            <description>&lt;p&gt;Because I always tend to forget steps, and haven&amp;rsquo;t half replaced myself
+with a shell script (yet), here&amp;rsquo;s a reminder to myself on how to post a
+patch to the &lt;a href=&#34;https://lore.kernel.org/netdev/&#34;&gt;Linux netdev&lt;/a&gt; mailing
+list.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>Because I always tend to forget steps, and haven&rsquo;t half replaced myself
+with a shell script (yet), here&rsquo;s a reminder to myself on how to post a
+patch to the <a href="https://lore.kernel.org/netdev/">Linux netdev</a> mailing
+list.</p>
+<ol>
+<li>
+<p>Make your changes on an up-to-date branch from net-next master:</p>
+<pre><code> $ git checkout -b my-patch-series
+ $ git fetch --all --tags
+ $ git rebase net-next/master
+</code></pre>
+</li>
+<li>
+<p>Use <em>logical commits</em>; upgrade package as one, changing/extending
+behavior as another, etc.</p>
+</li>
+<li>
+<p>Use commit messages to record <em>why</em> changes are made.  First line is
+a summary referencing the sub-system, followed by an empty line and
+the message body, and concluded by your sign-off:</p>
+<pre><code> net bridge: add support for foo bar
+
+ Signed-off-by: Your Name &lt;your.name@example.com&gt;
+</code></pre>
+</li>
+<li>
+<p>Maybe consider adding a selftest.  Better than having to answer any
+question later on how your feature is supposed to work.  Or even to
+give a maintainer a before-after test to see your patch actually
+does fix what you say it does.</p>
+</li>
+<li>
+<p>Format your patches, with the optional <code>--cover-letter</code>, very useful
+to explain a series of patches:</p>
+<pre><code> $  git format-patch --cover-letter -M -n -s -o mail net-next/master
+</code></pre>
+<p>Remember: <strong>edit the cover letter</strong> &mdash; it serves as an introduction
+and explains the reasoning behind your changes.  Focus on <em>the why,
+not the how,</em> the patches have separate commit messages</p>
+</li>
+<li>
+<p>Check your patch(es), this is one of the most important steps.  The
+<code>checkpatch.pl</code> script is the collected wisdom of the ancients, the
+oracle that you can ask free of shame before submitting yourself to
+the wrath of the maintainers:</p>
+<pre><code> $ ./scripts/checkpatch.pl mail/*
+</code></pre>
+</li>
+<li>
+<p>Figure out maintainers to Cc in your correspondence to the mailing
+list.  Please note, it is <em>up to you</em> to figure out the relevant
+people and lists to Cc.  The script gives you an idea of who have
+recently traveled beyond the rim like you, as well as those who do
+live there permanently.</p>
+<pre><code> $ ./scripts/get_maintainer.pl mail/*
+</code></pre>
+</li>
+<li>
+<p>Inspect the cover letter and patches one last time:</p>
+<ul>
+<li>
+<p>Did you remember to add all <code>Reviewed-by:</code> and <code>Acked-by:</code> tags
+from a previous version you sent?</p>
+</li>
+<li>
+<p>Did you double-check any updated email addresses for maintainers?</p>
+</li>
+<li>
+<p>OK, time to send &hellip;</p>
+<p>$ git send-email &ndash;to netdev@vger,kernel.org &ndash;cc <a href="mailto:foo@example.com">foo@example.com</a> mail/*</p>
+</li>
+</ul>
+<p>You are offered one last chance to proofread the contents (remember
+to check the email headers!) before you send.</p>
+</li>
+</ol>
+<blockquote>
+<p><strong>Note:</strong> if you haven&rsquo;t set up your <code>~/.gitconfig</code> yet for sending
+email, please see <a href="https://git-scm.com/docs/git-send-email">https://git-scm.com/docs/git-send-email</a> or my blog
+post <a href="https://troglobit.com/post/2022-01-24-gmail-and-git-send-email/">https://troglobit.com/post/2022-01-24-gmail-and-git-send-email/</a>
+for details.</p>
+</blockquote>]]></content>
+        </item>
         
         <item>
             <title>Finit in Linux Containers (LXC)</title>

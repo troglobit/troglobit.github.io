@@ -3,6 +3,41 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/tags/git/</loc>
+    <lastmod>2022-04-11T17:19:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/kernel/</loc>
+    <lastmod>2022-04-11T17:19:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/linux/</loc>
+    <lastmod>2022-04-11T17:19:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2022-04-11-linux-kernel-development-checklist/</loc>
+    <lastmod>2022-04-11T17:19:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/opensource/</loc>
+    <lastmod>2022-04-11T17:19:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/</loc>
+    <lastmod>2022-04-11T17:19:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2022-04-11T17:19:00+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/finit/</loc>
     <lastmod>2022-02-13T17:55:44+02:00</lastmod>
   </url>
@@ -23,21 +58,6 @@
   </url>
   
   <url>
-    <loc>/tags/opensource/</loc>
-    <lastmod>2022-02-13T17:55:44+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/</loc>
-    <lastmod>2022-02-13T17:55:44+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2022-02-13T17:55:44+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/about/</loc>
     <lastmod>2022-01-28T16:47:00+01:00</lastmod>
   </url>
@@ -45,11 +65,6 @@
   <url>
     <loc>/</loc>
     <lastmod>2022-01-28T16:47:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/git/</loc>
-    <lastmod>2022-01-24T19:37:44+02:00</lastmod>
   </url>
   
   <url>
