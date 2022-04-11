@@ -40,7 +40,12 @@ behavior as another, etc.</p>
 a summary referencing the sub-system, followed by an empty line and
 the message body, and concluded by your sign-off:</p>
 <pre><code> net bridge: add support for foo bar
-
+    
+ You need an actual body of your commit message, otherwise the
+ checkpatch.pl script (below) will complain.  For good reason,
+ why wouldn't you want to tell the tale of how you ended up at
+ this point in history?
+    
  Signed-off-by: Your Name &lt;your.name@example.com&gt;
 </code></pre>
 </li>
