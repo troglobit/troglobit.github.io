@@ -3,8 +3,38 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/tags/buildroot/</loc>
+    <lastmod>2022-04-17T16:56:00+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/tags/git/</loc>
-    <lastmod>2022-04-11T17:19:00+02:00</lastmod>
+    <lastmod>2022-04-17T16:56:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/howto/</loc>
+    <lastmod>2022-04-17T16:56:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/opensource/</loc>
+    <lastmod>2022-04-17T16:56:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/</loc>
+    <lastmod>2022-04-17T16:56:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2022-04-17T16:56:00+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2022-04-17-your-own-operating-system/</loc>
+    <lastmod>2022-04-17T16:56:00+01:00</lastmod>
   </url>
   
   <url>
@@ -23,32 +53,12 @@
   </url>
   
   <url>
-    <loc>/tags/opensource/</loc>
-    <lastmod>2022-04-11T17:19:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/</loc>
-    <lastmod>2022-04-11T17:19:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2022-04-11T17:19:00+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/finit/</loc>
     <lastmod>2022-02-13T17:55:44+02:00</lastmod>
   </url>
   
   <url>
     <loc>/post/2022-02-13-finit-in-linux-containers-lxc/</loc>
-    <lastmod>2022-02-13T17:55:44+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/howto/</loc>
     <lastmod>2022-02-13T17:55:44+02:00</lastmod>
   </url>
   
@@ -90,11 +100,6 @@
   <url>
     <loc>/post/2022-01-09-dependency-handling-in-finit/</loc>
     <lastmod>2022-01-09T18:46:23+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/buildroot/</loc>
-    <lastmod>2022-01-04T10:15:00+02:00</lastmod>
   </url>
   
   <url>

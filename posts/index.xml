@@ -6,8 +6,83 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-        <lastBuildDate>Mon, 11 Apr 2022 17:19:00 +0200</lastBuildDate>
+        <lastBuildDate>Sun, 17 Apr 2022 16:56:00 +0100</lastBuildDate>
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Your Own Operating System</title>
+            <link>/post/2022-04-17-your-own-operating-system/</link>
+            <pubDate>Sun, 17 Apr 2022 16:56:00 +0100</pubDate>
+            
+            <guid>/post/2022-04-17-your-own-operating-system/</guid>
+            <description>This post shows how you can create your own operating system based on Buildroot. Add your own packages, patches, and your very own flavor to the experience.
+ My own take on this is myLinux, which started out as a TroglOS, and before that as miniroot, by Henrik Nordström. Please feel free to dig around myLinux for more inspiration and tips on how to solve common use-cases.
+ The manual, section 9, describes the basic process of setting up a our customizations as a BR2_EXTERNAL tree.</description>
+            <content type="html"><![CDATA[<p>This post shows how you can create your own operating system based on
+<a href="https://buildroot.org">Buildroot</a>.  Add your own packages, patches, and your very own flavor
+to the experience.</p>
+<blockquote>
+<p>My own take on this is <a href="https://github.com/troglobit/myLinux">myLinux</a>, which started out as a TroglOS,
+and before that as <a href="https://github.com/hno/miniroot">miniroot</a>, by Henrik Nordström.  Please feel
+free to dig around myLinux for more inspiration and tips on how to
+solve common use-cases.</p>
+</blockquote>
+<!-- more -->
+<p>The <a href="https://buildroot.org/downloads/manual/manual.html">manual</a>, section 9, describes the basic process of setting up a
+our customizations as a <code>BR2_EXTERNAL</code> tree.  Let&rsquo;s start with the
+basic directory layout.  We&rsquo;ve also chosen a name for our little system:
+&ldquo;Foo&rdquo;.</p>
+<pre><code>mkdir foo
+cd foo
+git init
+touch Makefile
+touch Config.in
+touch external.mk
+touch external.desc
+make configs
+touch configs/foo_defconfig
+git add .
+</code></pre>
+<p>Edit <code>external.desc</code>, notice the name in CAPITAL letters:</p>
+<pre><code>name: FOO
+desc: Foo System
+</code></pre>
+<p>Now, we want our project to be stand-alone, so we add buildroot as a
+GIT submodule to our project:</p>
+<pre><code>git submodule add https://github.com/buildroot/buildroot.git
+</code></pre>
+<p>To make things easier for us, we&rsquo;re also creating a Makefile to set some
+of the critical buildroot environment variables needed.  For details,
+see the <a href="https://buildroot.org/downloads/manual/manual.html">manual</a>.  Edit <code>Makefile</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-Makefile" data-lang="Makefile"><span class="k">export </span><span class="nv">BR2_EXTERNAL</span> <span class="o">:=</span> <span class="k">$(</span>CURDIR<span class="k">)</span>
+<span class="k">export </span><span class="nv">PATH</span>         <span class="o">:=</span> <span class="k">$(</span>CURDIR<span class="k">)</span>/bin:<span class="k">$(</span>PATH<span class="k">)</span>
+
+<span class="nv">ARCH</span> <span class="o">?=</span> <span class="k">$(</span>shell uname -m<span class="k">)</span>
+<span class="nv">O</span>    <span class="o">?=</span> <span class="k">$(</span>CURDIR<span class="k">)</span>/output
+
+<span class="nv">config</span> <span class="o">:=</span> <span class="k">$(</span>O<span class="k">)</span>/.config
+<span class="nv">bmake</span>   <span class="o">=</span> <span class="k">$(</span>MAKE<span class="k">)</span> -C buildroot <span class="nv">O</span><span class="o">=</span><span class="k">$(</span>O<span class="k">)</span> <span class="nv">$1</span>
+
+
+<span class="nf">all</span><span class="o">:</span> <span class="k">$(</span><span class="nv">config</span><span class="k">)</span> <span class="n">buildroot</span>/<span class="n">Makefile</span>
+	@+<span class="k">$(</span>call bmake,<span class="nv">$@</span><span class="k">)</span>
+
+<span class="nf">$(config)</span><span class="o">:</span>
+	@+<span class="k">$(</span>call bmake,list-defconfigs<span class="k">)</span>
+	@echo <span class="s2">&#34;ERROR: No configuration selected.&#34;</span>
+	@echo <span class="s2">&#34;Please choose a configuration from the list above by running&#34;</span>
+	@echo <span class="s2">&#34;&#39;make &lt;board&gt;_defconfig&#39; before building an image.&#34;</span>
+	@exit <span class="m">1</span>
+
+<span class="nf">%</span><span class="o">:</span> <span class="n">buildroot</span>/<span class="n">Makefile</span>
+	@+<span class="k">$(</span>call bmake,<span class="nv">$@</span><span class="k">)</span>
+
+<span class="nf">buildroot/Makefile</span><span class="o">:</span>
+	@git submodule update --init
+
+<span class="nf">.PHONY</span><span class="o">:</span> <span class="n">all</span> <span class="n">defconfig</span>
+</code></pre></div>]]></content>
+        </item>
         
         <item>
             <title>Linux Kernel Development Checklist</title>
