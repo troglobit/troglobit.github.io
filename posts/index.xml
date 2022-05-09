@@ -39,7 +39,7 @@ touch Makefile
 touch Config.in
 touch external.mk
 touch external.desc
-make configs
+mkdir configs
 touch configs/foo_defconfig
 git add .
 </code></pre>
@@ -79,8 +79,6 @@ see the <a href="https://buildroot.org/downloads/manual/manual.html">manual</a>.
 
 <span class="nf">buildroot/Makefile</span><span class="o">:</span>
 	@git submodule update --init
-
-<span class="nf">.PHONY</span><span class="o">:</span> <span class="n">all</span> <span class="n">defconfig</span>
 </code></pre></div>]]></content>
         </item>
         
