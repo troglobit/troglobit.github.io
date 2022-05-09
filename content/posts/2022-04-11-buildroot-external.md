@@ -28,7 +28,7 @@ basic directory layout.  We've also chosen a name for our little system:
     touch Config.in
     touch external.mk
     touch external.desc
-    make configs
+    mkdir configs
     touch configs/foo_defconfig
     git add .
 
@@ -72,8 +72,6 @@ $(config):
 
 buildroot/Makefile:
 	@git submodule update --init
-
-.PHONY: all defconfig
 ```
 
 [Buildroot]: https://buildroot.org
