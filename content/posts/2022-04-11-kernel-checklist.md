@@ -63,14 +63,16 @@ list.
 
         $ ./scripts/get_maintainer.pl mail/*
 
-9. Inspect the cover letter and patches one last time:
+8. Inspect the cover letter and patches one last time:
 
+   * Did you remember to address all comments?  Double check ...
    * Did you remember to add all `Reviewed-by:` and `Acked-by:` tags
      from a previous version you sent?
    * Did you double-check any updated email addresses for maintainers?
-   * OK, time to send ...
 
-        $ git send-email --to netdev@vger,kernel.org --cc foo@example.com mail/*
+9. OK, time to send!
+
+        $ git send-email --to netdev@vger.kernel.org --cc foo@example.com mail/*
 
    You are offered one last chance to proofread the contents (remember
    to check the email headers!) before you send.
