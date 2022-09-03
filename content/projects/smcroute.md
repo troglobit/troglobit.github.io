@@ -1,7 +1,7 @@
 ---
 name: SMCRoute
 title: "Static Multicast Routing Daemon"
-date: 2021-08-19 15:46:00 +02:00
+date: 2022-09-03 21:31:19 +01:00
 aliases: /smcroute.html
 ---
 
@@ -64,8 +64,9 @@ disabling ALL interfaces except the few used for multicast routing.
 Issue tracker and GIT repository available at [GitHub][].
 
 * [Repository][GitHub]
-* [smcroute-2.5.0.tar.gz](https://ftp.troglobit.com/smcroute/smcroute-2.5.0.tar.gz),
-  [MD5](https://ftp.troglobit.com/smcroute/smcroute-2.5.0.tar.gz.md5)
+* [smcroute-2.5.5.tar.gz](https://ftp.troglobit.com/smcroute/smcroute-2.5.5.tar.gz),
+  [MD5](https://ftp.troglobit.com/smcroute/smcroute-2.5.5.tar.gz.md5),
+  [MD5](https://ftp.troglobit.com/smcroute/smcroute-2.5.5.tar.gz.sha256)
 * [Issue Tracker](https://github.com/troglobit/smcroute/issues)
 * [Debian packages](https://packages.debian.org/smcroute)
 * [Ubuntu packages](https://packages.ubuntu.com/smcroute)
