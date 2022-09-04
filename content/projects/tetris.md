@@ -13,6 +13,8 @@ external library dependencys other than a standard C-library, like
 [musl libc](http://www.musl-libc.org/).  Hence, it is very suitable
 for small embedded devices in need of an easter egg ;-)
 
+<a href="/images/micro-tetris-color.png"><img style="float: right" alt="Color screenshot of Micro Tetris 1.4.0" src="/images/micro-tetris-color.png" height="220" /></a>
+
 The game is based on a 1989 *International Obfuscated C Code Contest*
 (IOCCC) [entry](http://www.ioccc.org/1989/tromp.hint) made by
 [John Tromp](http://tromp.github.io/tetris.html).
@@ -27,14 +29,3 @@ Issue tracker and GIT repository available at GitHub:
 
 See also the [Free(code) page](http://freecode.com/projects/micro-tetris).
 
-<img style="float: right" src="/images/micro-tetris-color.png" />
-
-```
-Legend:
- j    Left
- k    Rotate
- l    Right
- SPC  Drop
- p    Pause
- q    Quit
-```
