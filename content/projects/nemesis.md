@@ -1,7 +1,7 @@
 ---
 name: Nemesis
 title: "N E M E S I S"
-date: 2019-06-16 15:39:00 +02:00
+date: 2021-07-07 15:39:00 +02:00
 aliases: /nemesis.html
 ---
 <img src="/images/nemesis.png" style="float: right;">
@@ -20,8 +20,8 @@ injection modes, almost any custom packet can be crafted and injected.
 * [ChangeLog](https://github.com/troglobit/nemesis/blob/master/ChangeLog.md)
 * [Repository](http://github.com/troglobit/nemesis)
 * [Issue Tracker](http://github.com/troglobit/nemesis/issues)
-* [nemesis-1.6.tar.xz](ftp://ftp.troglobit.com/nemesis/nemesis-1.6.tar.gz),
-  [MD5](ftp://ftp.troglobit.com/nemesis/nemesis-1.6.tar.gz.md5)
+* [nemesis-1.8.tar.xz](ftp://ftp.troglobit.com/nemesis/nemesis-1.8.tar.gz),
+  [MD5](ftp://ftp.troglobit.com/nemesis/nemesis-1.8.tar.gz.md5)
 
 
 Examples
