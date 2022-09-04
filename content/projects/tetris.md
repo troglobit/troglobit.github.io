@@ -1,7 +1,7 @@
 ---
 name: Tetris&trade;
 title: "Micro Tetris™"
-date: 2021-06-30 20:37:00 +02:00
+date: 2021-12-26 20:37:00 +02:00
 aliases: /tetris.html
 ---
 [<img class="center" src="/images/TetrisConstruction.jpg" style="width: 300px;" />](http://erikjohanssonphoto.com/work/tetris/)
@@ -21,13 +21,13 @@ Issue tracker and GIT repository available at GitHub:
 
    * [Repository](http://github.com/troglobit/tetris)
    * [Issue Tracker](http://github.com/troglobit/tetris/issues)
-   * [tetris-1.3.0.tar.bz2](ftp://ftp.troglobit.com/tetris/tetris-1.3.0.tar.bz2),
-     [MD5](ftp://ftp.troglobit.com/tetris/tetris-1.3.0.tar.bz2.md5),
-     [SHA256](ftp://ftp.troglobit.com/tetris/tetris-1.3.0.tar.bz2.sha256)
+   * [tetris-1.4.0.tar.gz](ftp://ftp.troglobit.com/tetris/tetris-1.4.0.tar.gz),
+     [MD5](ftp://ftp.troglobit.com/tetris/tetris-1.4.0.tar.gz.md5),
+     [SHA256](ftp://ftp.troglobit.com/tetris/tetris-1.4.0.tar.gz.sha256)
 
 See also the [Free(code) page](http://freecode.com/projects/micro-tetris).
 
-<img style="float: right" src="/images/micro-tetris.png" />
+<img style="float: right" src="/images/micro-tetris-color.png" />
 
 ```
 Legend:
