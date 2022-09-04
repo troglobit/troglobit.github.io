@@ -1,7 +1,7 @@
 ---
 name: SMCRoute
 title: "Static Multicast Routing Daemon"
-date: 2022-09-03 21:31:19 +01:00
+date: 2022-09-04 10:00:41 +01:00
 aliases: /smcroute.html
 ---
 
@@ -56,10 +56,10 @@ Origin & References
 SMCRoute was originally written by [Carsten Schill][].  Later on Julien
 Blache, Todd Hayton and Micha Lenk picked up development for [Debian][].
 
-Since 2011 Joachim Nilsson heads development at [GitHub][].  New
-features include config file support, reloading config on `SIGHUP`,
-source-less on-demand (*,G) routing, TTL scoping and support for
-disabling ALL interfaces except the few used for multicast routing.
+Since 2011 Joachim Wiberg heads development at [GitHub][].  New features
+include config file support, reloading config on `SIGHUP`, source-less
+on-demand (*,G) routing, TTL scoping and support for disabling ALL
+interfaces except the few used for multicast routing.
 
 Issue tracker and GIT repository available at [GitHub][].
 
