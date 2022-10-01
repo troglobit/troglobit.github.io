@@ -1,6 +1,9 @@
 ---
 title: Weird Screen Artifacts on X200
 date: 2020-08-23T14:02:00Z
+tags:
+ - ThinkPad
+ - X200
 ---
 
 I blogged earlier about the awesome little ThinkPad X200 I found and its

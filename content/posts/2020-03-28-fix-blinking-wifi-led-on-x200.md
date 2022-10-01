@@ -1,6 +1,9 @@
 ---
 title: Fix blinking WiFi LED on X200
 date: 2020-03-28T14:16:00Z
+tags:
+ - ThinkPad
+ - X200
 ---
 
 Recently got my hands on a ThinkPad X200, the last model without the

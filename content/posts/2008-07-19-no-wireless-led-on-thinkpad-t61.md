@@ -1,11 +1,11 @@
 ---
-categories:
-- thinkpad
-comments: true
-date: 2008-07-19T11:09:25Z
 title: No Wireless LED on ThinkPad T61
+date: 2008-07-19T11:09:25Z
 url: /2008/07/19/no-wireless-led-on-thinkpad-t61/
 aliases: /blog/2008/07/19/no-wireless-led-on-thinkpad-t61/
+tags:
+ - ThinkPad
+ - T61
 ---
 
 I've got a ThinkPad T61 with Intel iwl3945 wireless chipset that I
