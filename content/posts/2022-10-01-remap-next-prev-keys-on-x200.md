@@ -40,6 +40,7 @@ it looks something like this:
         augment "xfree86"
         augment "level5"
         augment "caps(caps_lock)"
+        augment "thinkpad"
     };
 
 Restart your X window system, or reboot, et voilà! \o/
