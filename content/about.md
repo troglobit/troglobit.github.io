@@ -1,20 +1,26 @@
 ---
 title: "About"
-date: 2022-01-28 16:47:00 +0100
+date: 2022-10-01 16:21:00 +0100
 ---
 
-Welcome to my blog, my name is Joachim Wiberg, formerly Nilsson.  The
-nick `troglobit` is a tribute to my childhood friend Henrik Flordal,
-for being a good friend and inspiring me to become a hacker.  It is
-also the first password to a Linux server (Henrik's) I got a login to,
-back in 1995.
+Welcome to this little blog, my name is Joachim Wiberg, formerly
+Nilsson.  The nick `troglobit` is a tribute to my childhood friend
+Henrik Flordal, for being a good friend and inspiring me to become a
+hacker.  It is also the first password to a Linux server (Henrik's) I
+got a login to, back in 1995.
 
-I work a [Addiva Elektronik](https://addiva.se) in Västerås, Sweden,
-as a software architect and embedded systems consultant.  My specialty
-is embedded Linux, preferably [Buildroot](https://buildroot.org), and
-networking.  For a long time I worked at [Westermo R&D][westermo], as
-a software architect for [WeOS][], a Linux-based network operating
-system for switches and routers.
+So yes, I'm a huge Linux and UNIX nerd.  Ever since my first job, after
+[graduating from MdU][resume], I've been running Linux on almost all my
+machines, including those at work.  In the beginning (2000) it was hard
+and even actively discouraged by management and IT departments, but I
+made it work and set the bar for others to follow!
+
+Today I work a [Addiva Elektronik](https://addiva.se) in Västerås,
+Sweden, as a software architect and embedded systems consultant.  My
+specialty is networking solutions and embedded Linux, preferably
+[Buildroot](https://buildroot.org).  For very a long time I worked at
+[Westermo R&D][westermo] as a software architect for [WeOS][], a
+Linux-based network operating system for switches and routers.
 
 In my spare time I write Free/Libre Open Source Software ([FLOSS][]).
 For example, I maintain [Finit][], [Inadyn][], [pimd][], [mrouted][],
