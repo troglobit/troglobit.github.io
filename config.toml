@@ -1,5 +1,5 @@
-#baseurl = "https://troglobit.com/"
-baseurl = "/"
+baseurl = "https://troglobit.com/"
+#baseurl = "/"
 title = "Joachim Wiberg"
 languageCode = "en-us"
 theme = "hello-friend-ng"
