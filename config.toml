@@ -146,6 +146,11 @@ disableHugoGeneratorInject = false
   # Social icons
   # use 'fab' when brand icons, use 'fas' when standard solid icons.
   [[params.social]]
+    name = "mastodon"
+    icon = "fa fa-mastodon"
+    url  = "https://mastodon.nu/@troglobit"
+
+  [[params.social]]
     name = "twitter"
     url  = "https://twitter.com/troglobit"
 
