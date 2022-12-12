@@ -2,22 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>bluetooth on Joachim Wiberg</title>
-    <link>/categories/bluetooth/</link>
+    <link>https://troglobit.com/categories/bluetooth/</link>
     <description>Recent content in bluetooth on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Tue, 03 Jan 2017 17:03:05 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/bluetooth/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 03 Jan 2017 17:03:05 +0000</lastBuildDate><atom:link href="https://troglobit.com/categories/bluetooth/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Trust Bluetooth 4.0 Adapter in Linux</title>
-      <link>/2017/01/03/trust-bluetooth-4.0-adapter-in-linux/</link>
+      <link>https://troglobit.com/2017/01/03/trust-bluetooth-4.0-adapter-in-linux/</link>
       <pubDate>Tue, 03 Jan 2017 17:03:05 +0000</pubDate>
       
-      <guid>/2017/01/03/trust-bluetooth-4.0-adapter-in-linux/</guid>
+      <guid>https://troglobit.com/2017/01/03/trust-bluetooth-4.0-adapter-in-linux/</guid>
       <description>&lt;p&gt;This is a quick writeup of how to get the Trust Bluetooth 4.0 adapter
 (dongle) working in Linux, Ubuntu 16.04.&lt;/p&gt;</description>
     </item>

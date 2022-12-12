@@ -10,7 +10,7 @@
 <meta name="keywords" content=", merecat" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
-<link rel="canonical" href="/howtos/merecat-and-cgit/" />
+<link rel="canonical" href="https://troglobit.com/howtos/merecat-and-cgit/" />
 
 
     <title>
@@ -26,21 +26,21 @@
 
 
 
-<link rel="stylesheet" href="/main.29c2c8c3fc9cf748254138351f142ac2833b208a68e83aec126edc98b59efef2.css">
+<link rel="stylesheet" href="https://troglobit.com/main.29c2c8c3fc9cf748254138351f142ac2833b208a68e83aec126edc98b59efef2.css">
 
 
     
-        <link rel="stylesheet" type="text/css" href="/css/extra.css">
+        <link rel="stylesheet" type="text/css" href="https://troglobit.com/css/extra.css">
     
 
 
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1b1c1d">
-    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://troglobit.com/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://troglobit.com/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://troglobit.com/favicon-16x16.png">
+    <link rel="manifest" href="https://troglobit.com/site.webmanifest">
+    <link rel="mask-icon" href="https://troglobit.com/safari-pinned-tab.svg" color="#1b1c1d">
+    <link rel="shortcut icon" href="https://troglobit.com/favicon.ico">
     <meta name="msapplication-TileColor" content="#1b1c1d">
     <meta name="theme-color" content="#1b1c1d">
 
@@ -49,13 +49,9 @@
 <meta itemprop="name" content="HowTo: Set up Merecat with cgit">
 <meta itemprop="description" content="This post details how to set up cgit with Merecat httpd.  It
 began as a GitHub issue report by Mr Alok G. Singh, who had run
-into problems setting it up, and ended up as a HowTo.">
-<meta itemprop="datePublished" content="2021-12-09T05:56:00&#43;00:00" />
-<meta itemprop="dateModified" content="2021-12-09T05:56:00&#43;00:00" />
+into problems setting it up, and ended up as a HowTo."><meta itemprop="datePublished" content="2021-12-09T05:56:00+00:00" />
+<meta itemprop="dateModified" content="2021-12-09T05:56:00+00:00" />
 <meta itemprop="wordCount" content="273">
-
-
-
 <meta itemprop="keywords" content="merecat," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="HowTo: Set up Merecat with cgit"/>
@@ -71,9 +67,10 @@ into problems setting it up, and ended up as a HowTo."/>
 began as a GitHub issue report by Mr Alok G. Singh, who had run
 into problems setting it up, and ended up as a HowTo." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/howtos/merecat-and-cgit/" />
+<meta property="og:url" content="https://troglobit.com/howtos/merecat-and-cgit/" /><meta property="article:section" content="howtos" />
 <meta property="article:published_time" content="2021-12-09T05:56:00+00:00" />
 <meta property="article:modified_time" content="2021-12-09T05:56:00+00:00" />
+
 
 
 
@@ -100,7 +97,7 @@ into problems setting it up, and ended up as a HowTo." />
         <div class="container">
             <header class="header">
     <span class="header__inner">
-        <a href="/" style="text-decoration: none;">
+        <a href="https://troglobit.com/" style="text-decoration: none;">
     <div class="logo">
         
             <span class="logo__mark">&gt;</span>
@@ -118,7 +115,7 @@ into problems setting it up, and ended up as a HowTo." />
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="/about/">About</a></li><li><a href="/posts/">Blog</a></li><li><a href="/howtos/">HowTos</a></li><li><a href="/projects/">Projects</a></li><li><a href="https://resume.troglobit.com">Resumé</a></li><li><a href="https://ftp.troglobit.com">FTP</a></li><li><a href="https://deb.troglobit.com">DEB</a></li>
+    <ul class="menu__inner"><li><a href="https://troglobit.com/about/">About</a></li><li><a href="https://troglobit.com/posts/">Blog</a></li><li><a href="https://troglobit.com/howtos/">HowTos</a></li><li><a href="https://troglobit.com/projects/">Projects</a></li><li><a href="https://resume.troglobit.com">Resumé</a></li><li><a href="https://ftp.troglobit.com">FTP</a></li><li><a href="https://deb.troglobit.com">DEB</a></li>
     </ul>
 </nav>
 
@@ -144,7 +141,7 @@ into problems setting it up, and ended up as a HowTo." />
         </div>
 
         <article>
-            <h2 class="post-title"><a href="/howtos/merecat-and-cgit/">HowTo: Set up Merecat with cgit</a></h2>
+            <h2 class="post-title"><a href="https://troglobit.com/howtos/merecat-and-cgit/">HowTo: Set up Merecat with cgit</a></h2>
 
             
             
@@ -163,7 +160,7 @@ installed into both <code>/usr/share</code> and <code>/usr/lib</code>, and when 
 chrooted those directories will not be available.  I&rsquo;ve bind mounted my
 <code>/usr/share/cgit</code> to <code>/var/www/cgit.troglobit.com</code> and linked the
 <code>cgit.cgi</code> from <code>../../lib/cgit/</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">root@example:/usr/share/cgit# ll
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">root@example:/usr/share/cgit# ll
 total <span class="m">1000</span>
 drwxr-xr-x   <span class="m">2</span> root root   <span class="m">4096</span> Mar <span class="m">30</span> 11:16 ./
 drwxr-xr-x <span class="m">140</span> root root   <span class="m">4096</span> Mar <span class="m">30</span> 09:39 ../
@@ -176,7 +173,7 @@ lrwxrwxrwx   <span class="m">1</span> root root      <span class="m">8</span> Ma
 -rw-r--r--   <span class="m">1</span> root root     <span class="m">47</span> Feb <span class="m">12</span>  <span class="m">2016</span> robots.txt
 </code></pre></div><p>Merecat httpd currently does not support URL rewrite, so I&rsquo;ve set up
 cgit as follows, <code>/etc/cgitrc</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-cfg" data-lang="cfg"><span class="c1"># cgit config</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cfg" data-lang="cfg"><span class="c1"># cgit config</span>
 
 <span class="na">css</span><span class="o">=</span><span class="s">/cgit.css</span>
 <span class="na">logo</span><span class="o">=</span><span class="s">/cgit.png</span>
@@ -201,7 +198,7 @@ be viewed here: <a href="http://cgit.troglobit.com">http://cgit.troglobit.com</a
     <p>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
 
-        <span class="tag"><a href="/tags/merecat/">merecat</a></span>
+        <span class="tag"><a href="https://troglobit.com/tags/merecat/">merecat</a></span>
         
     </p>
 
@@ -217,7 +214,7 @@ be viewed here: <a href="http://cgit.troglobit.com">http://cgit.troglobit.com</a
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2022</span>
-            <span><a href="/">Joachim Wiberg</a></span>
+            <span><a href="https://troglobit.com/">Joachim Wiberg</a></span>
             <span>UNIX&trade; 4Life! &#9994;</span>
             
             
@@ -234,7 +231,7 @@ be viewed here: <a href="http://cgit.troglobit.com">http://cgit.troglobit.com</a
 
 
 
-<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+<script type="text/javascript" src="https://troglobit.com/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
 
 
 

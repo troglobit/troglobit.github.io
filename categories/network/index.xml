@@ -2,22 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>network on Joachim Wiberg</title>
-    <link>/categories/network/</link>
+    <link>https://troglobit.com/categories/network/</link>
     <description>Recent content in network on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Fri, 02 Sep 2016 23:30:00 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/network/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 10 Feb 2009 21:56:42 +0000</lastBuildDate><atom:link href="https://troglobit.com/categories/network/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Netork Programming -- Link Collection</title>
-      <link>/2009/02/10/network-programming-link-collection/</link>
+      <link>https://troglobit.com/2009/02/10/network-programming-link-collection/</link>
       <pubDate>Tue, 10 Feb 2009 21:56:42 +0000</pubDate>
       
-      <guid>/2009/02/10/network-programming-link-collection/</guid>
+      <guid>https://troglobit.com/2009/02/10/network-programming-link-collection/</guid>
       <description>This is a first effort at collecting information about network programming structs and APIs available in UNIX. I plan on updating this as I find more.
  Linux Journal: Linux Network Programming, Part I, II, III. Linux Journal: Multicast Routing Code in the Linux Kernel Linux Journal: Inside the Linux Packet Filter, Part I, II /usr/include/netinet/in.h  There are of course, in addition to these fine sources, the entire catalogue of work by Richard M.</description>
     </item>

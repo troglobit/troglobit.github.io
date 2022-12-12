@@ -2,22 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mrouted on Joachim Wiberg</title>
-    <link>/categories/mrouted/</link>
+    <link>https://troglobit.com/categories/mrouted/</link>
     <description>Recent content in mrouted on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Wed, 27 Mar 2019 15:54:00 +0200</lastBuildDate>
-    
-	<atom:link href="/categories/mrouted/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 27 Mar 2019 15:54:00 +0200</lastBuildDate><atom:link href="https://troglobit.com/categories/mrouted/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Multicast HowTo</title>
-      <link>/howtos/multicast/</link>
+      <link>https://troglobit.com/howtos/multicast/</link>
       <pubDate>Wed, 27 Mar 2019 15:54:00 +0200</pubDate>
       
-      <guid>/howtos/multicast/</guid>
+      <guid>https://troglobit.com/howtos/multicast/</guid>
       <description>Introduction This HowTo attempts to give some insight into the basics of setting up multicast routing. Both static multicast routing, with SMCRoute, and dynamic multicast routing, with mrouted and pimd.
 For some use-cases, in particular link-local multicast, it may not be possible to use multicast routing, then I recommend trying out:
  Bridging networks, see bridge(8) or Linux bridge - how it works igmproxy, mcproxy, or OpenVPN in Layer-2, bridged mode  Make sure to check out the FAQ for the most common problems.</description>
@@ -25,10 +21,10 @@ For some use-cases, in particular link-local multicast, it may not be possible t
     
     <item>
       <title>New Open Source Releases</title>
-      <link>/2013/07/12/new-open-source-releases/</link>
+      <link>https://troglobit.com/2013/07/12/new-open-source-releases/</link>
       <pubDate>Fri, 12 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>/2013/07/12/new-open-source-releases/</guid>
+      <guid>https://troglobit.com/2013/07/12/new-open-source-releases/</guid>
       <description>Vacation time means catching up on my Open Source projects! :)
 Currently I&amp;rsquo;m shaping up the home pages and this blog to improve the easy access and overview of all the packages I maintain. The following packages have new releases, or can expect new releases soon:
  Minix Editline v1.14.1 SMCRoute v1.99.1 &amp;ndash; There&amp;rsquo;s even a v2.0.0 being planned, with the core of SMCRoute available as a library mrouted minor cleanup an sync with OpenBSD pimd cleanups and bug fixes, needs testing inadyn is in dire need of a release, but needs more testing and fixes  As usual, see my GitHub for the latest commits if you want to try anything out, file an issue report, or if you want to contribute.</description>

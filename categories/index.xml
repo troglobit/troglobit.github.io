@@ -2,958 +2,954 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Joachim Wiberg</title>
-    <link>/categories/</link>
+    <link>https://troglobit.com/categories/</link>
     <description>Recent content in Categories on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Sun, 01 Aug 2021 08:31:12 +0200</lastBuildDate>
-    
-	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 01 Aug 2021 08:31:12 +0200</lastBuildDate><atom:link href="https://troglobit.com/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>freebsd</title>
-      <link>/categories/freebsd/</link>
+      <link>https://troglobit.com/categories/freebsd/</link>
       <pubDate>Sun, 01 Aug 2021 08:31:12 +0200</pubDate>
       
-      <guid>/categories/freebsd/</guid>
+      <guid>https://troglobit.com/categories/freebsd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>howto</title>
-      <link>/categories/howto/</link>
+      <link>https://troglobit.com/categories/howto/</link>
       <pubDate>Sun, 01 Aug 2021 08:31:12 +0200</pubDate>
       
-      <guid>/categories/howto/</guid>
+      <guid>https://troglobit.com/categories/howto/</guid>
       <description></description>
     </item>
     
     <item>
       <title>kernel</title>
-      <link>/categories/kernel/</link>
+      <link>https://troglobit.com/categories/kernel/</link>
       <pubDate>Sun, 01 Aug 2021 08:31:12 +0200</pubDate>
       
-      <guid>/categories/kernel/</guid>
+      <guid>https://troglobit.com/categories/kernel/</guid>
       <description></description>
     </item>
     
     <item>
       <title>multicast</title>
-      <link>/categories/multicast/</link>
+      <link>https://troglobit.com/categories/multicast/</link>
       <pubDate>Sun, 01 Aug 2021 08:31:12 +0200</pubDate>
       
-      <guid>/categories/multicast/</guid>
+      <guid>https://troglobit.com/categories/multicast/</guid>
       <description></description>
     </item>
     
     <item>
       <title>bsd</title>
-      <link>/categories/bsd/</link>
+      <link>https://troglobit.com/categories/bsd/</link>
       <pubDate>Sat, 22 Aug 2020 21:39:00 +0100</pubDate>
       
-      <guid>/categories/bsd/</guid>
+      <guid>https://troglobit.com/categories/bsd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>netbsd</title>
-      <link>/categories/netbsd/</link>
+      <link>https://troglobit.com/categories/netbsd/</link>
       <pubDate>Sat, 22 Aug 2020 21:39:00 +0100</pubDate>
       
-      <guid>/categories/netbsd/</guid>
+      <guid>https://troglobit.com/categories/netbsd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>/categories/linux/</link>
+      <link>https://troglobit.com/categories/linux/</link>
       <pubDate>Tue, 09 Jun 2020 22:48:52 +0200</pubDate>
       
-      <guid>/categories/linux/</guid>
+      <guid>https://troglobit.com/categories/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>opensource</title>
-      <link>/categories/opensource/</link>
+      <link>https://troglobit.com/categories/opensource/</link>
       <pubDate>Tue, 09 Jun 2020 22:48:52 +0200</pubDate>
       
-      <guid>/categories/opensource/</guid>
+      <guid>https://troglobit.com/categories/opensource/</guid>
       <description></description>
     </item>
     
     <item>
       <title>unix</title>
-      <link>/categories/unix/</link>
+      <link>https://troglobit.com/categories/unix/</link>
       <pubDate>Tue, 09 Jun 2020 22:48:52 +0200</pubDate>
       
-      <guid>/categories/unix/</guid>
+      <guid>https://troglobit.com/categories/unix/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sudo</title>
-      <link>/categories/sudo/</link>
+      <link>https://troglobit.com/categories/sudo/</link>
       <pubDate>Sun, 07 Jun 2020 12:25:52 +0200</pubDate>
       
-      <guid>/categories/sudo/</guid>
+      <guid>https://troglobit.com/categories/sudo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>apt</title>
-      <link>/categories/apt/</link>
+      <link>https://troglobit.com/categories/apt/</link>
       <pubDate>Sat, 22 Feb 2020 12:28:00 +0000</pubDate>
       
-      <guid>/categories/apt/</guid>
+      <guid>https://troglobit.com/categories/apt/</guid>
       <description></description>
     </item>
     
     <item>
       <title>debian</title>
-      <link>/categories/debian/</link>
+      <link>https://troglobit.com/categories/debian/</link>
       <pubDate>Sat, 22 Feb 2020 12:28:00 +0000</pubDate>
       
-      <guid>/categories/debian/</guid>
+      <guid>https://troglobit.com/categories/debian/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ubuntu</title>
-      <link>/categories/ubuntu/</link>
+      <link>https://troglobit.com/categories/ubuntu/</link>
       <pubDate>Sat, 22 Feb 2020 12:28:00 +0000</pubDate>
       
-      <guid>/categories/ubuntu/</guid>
+      <guid>https://troglobit.com/categories/ubuntu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>programming</title>
-      <link>/categories/programming/</link>
+      <link>https://troglobit.com/categories/programming/</link>
       <pubDate>Sat, 22 Feb 2020 09:45:00 +0000</pubDate>
       
-      <guid>/categories/programming/</guid>
+      <guid>https://troglobit.com/categories/programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>IGMP</title>
-      <link>/categories/igmp/</link>
+      <link>https://troglobit.com/categories/igmp/</link>
       <pubDate>Wed, 27 Mar 2019 15:54:00 +0200</pubDate>
       
-      <guid>/categories/igmp/</guid>
+      <guid>https://troglobit.com/categories/igmp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>igmpproxy</title>
-      <link>/categories/igmpproxy/</link>
+      <link>https://troglobit.com/categories/igmpproxy/</link>
       <pubDate>Wed, 27 Mar 2019 15:54:00 +0200</pubDate>
       
-      <guid>/categories/igmpproxy/</guid>
+      <guid>https://troglobit.com/categories/igmpproxy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>mcproxy</title>
-      <link>/categories/mcproxy/</link>
+      <link>https://troglobit.com/categories/mcproxy/</link>
       <pubDate>Wed, 27 Mar 2019 15:54:00 +0200</pubDate>
       
-      <guid>/categories/mcproxy/</guid>
+      <guid>https://troglobit.com/categories/mcproxy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>mrouted</title>
-      <link>/categories/mrouted/</link>
+      <link>https://troglobit.com/categories/mrouted/</link>
       <pubDate>Wed, 27 Mar 2019 15:54:00 +0200</pubDate>
       
-      <guid>/categories/mrouted/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>PIM</title>
-      <link>/categories/pim/</link>
-      <pubDate>Wed, 27 Mar 2019 15:54:00 +0200</pubDate>
-      
-      <guid>/categories/pim/</guid>
+      <guid>https://troglobit.com/categories/mrouted/</guid>
       <description></description>
     </item>
     
     <item>
       <title>pimd</title>
-      <link>/categories/pimd/</link>
+      <link>https://troglobit.com/categories/pimd/</link>
       <pubDate>Wed, 27 Mar 2019 15:54:00 +0200</pubDate>
       
-      <guid>/categories/pimd/</guid>
+      <guid>https://troglobit.com/categories/pimd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SMCRoute</title>
-      <link>/categories/smcroute/</link>
+      <link>https://troglobit.com/categories/smcroute/</link>
       <pubDate>Wed, 27 Mar 2019 15:54:00 +0200</pubDate>
       
-      <guid>/categories/smcroute/</guid>
+      <guid>https://troglobit.com/categories/smcroute/</guid>
       <description></description>
     </item>
     
     <item>
       <title>snmp</title>
-      <link>/categories/snmp/</link>
+      <link>https://troglobit.com/categories/snmp/</link>
       <pubDate>Sat, 05 May 2018 13:57:00 +0200</pubDate>
       
-      <guid>/categories/snmp/</guid>
+      <guid>https://troglobit.com/categories/snmp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PIM</title>
+      <link>https://troglobit.com/categories/pim/</link>
+      <pubDate>Tue, 23 Jan 2018 20:39:36 +0000</pubDate>
+      
+      <guid>https://troglobit.com/categories/pim/</guid>
       <description></description>
     </item>
     
     <item>
       <title>eventloop</title>
-      <link>/categories/eventloop/</link>
+      <link>https://troglobit.com/categories/eventloop/</link>
       <pubDate>Tue, 19 Sep 2017 08:51:38 +0000</pubDate>
       
-      <guid>/categories/eventloop/</guid>
+      <guid>https://troglobit.com/categories/eventloop/</guid>
       <description></description>
     </item>
     
     <item>
       <title>libev</title>
-      <link>/categories/libev/</link>
+      <link>https://troglobit.com/categories/libev/</link>
       <pubDate>Tue, 19 Sep 2017 08:51:38 +0000</pubDate>
       
-      <guid>/categories/libev/</guid>
+      <guid>https://troglobit.com/categories/libev/</guid>
       <description></description>
     </item>
     
     <item>
       <title>docker</title>
-      <link>/categories/docker/</link>
+      <link>https://troglobit.com/categories/docker/</link>
       <pubDate>Sun, 17 Sep 2017 10:45:37 +0000</pubDate>
       
-      <guid>/categories/docker/</guid>
+      <guid>https://troglobit.com/categories/docker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Merecat</title>
-      <link>/categories/merecat/</link>
+      <link>https://troglobit.com/categories/merecat/</link>
       <pubDate>Sun, 17 Sep 2017 10:45:37 +0000</pubDate>
       
-      <guid>/categories/merecat/</guid>
+      <guid>https://troglobit.com/categories/merecat/</guid>
       <description></description>
     </item>
     
     <item>
       <title>alpine</title>
-      <link>/categories/alpine/</link>
+      <link>https://troglobit.com/categories/alpine/</link>
       <pubDate>Sun, 10 Sep 2017 11:13:39 +0000</pubDate>
       
-      <guid>/categories/alpine/</guid>
+      <guid>https://troglobit.com/categories/alpine/</guid>
       <description></description>
     </item>
     
     <item>
       <title>openbsd</title>
-      <link>/categories/openbsd/</link>
+      <link>https://troglobit.com/categories/openbsd/</link>
       <pubDate>Tue, 06 Jun 2017 10:44:55 +0000</pubDate>
       
-      <guid>/categories/openbsd/</guid>
+      <guid>https://troglobit.com/categories/openbsd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>httpd</title>
-      <link>/categories/httpd/</link>
+      <link>https://troglobit.com/categories/httpd/</link>
       <pubDate>Sun, 12 Feb 2017 00:07:44 +0000</pubDate>
       
-      <guid>/categories/httpd/</guid>
+      <guid>https://troglobit.com/categories/httpd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HTTPS</title>
-      <link>/categories/https/</link>
+      <link>https://troglobit.com/categories/https/</link>
       <pubDate>Sun, 12 Feb 2017 00:07:44 +0000</pubDate>
       
-      <guid>/categories/https/</guid>
+      <guid>https://troglobit.com/categories/https/</guid>
       <description></description>
     </item>
     
     <item>
       <title>OpenSSL</title>
-      <link>/categories/openssl/</link>
+      <link>https://troglobit.com/categories/openssl/</link>
       <pubDate>Sun, 12 Feb 2017 00:07:44 +0000</pubDate>
       
-      <guid>/categories/openssl/</guid>
+      <guid>https://troglobit.com/categories/openssl/</guid>
       <description></description>
     </item>
     
     <item>
       <title>thttpd</title>
-      <link>/categories/thttpd/</link>
+      <link>https://troglobit.com/categories/thttpd/</link>
       <pubDate>Sun, 12 Feb 2017 00:07:44 +0000</pubDate>
       
-      <guid>/categories/thttpd/</guid>
+      <guid>https://troglobit.com/categories/thttpd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Embedded</title>
-      <link>/categories/embedded/</link>
+      <link>https://troglobit.com/categories/embedded/</link>
       <pubDate>Thu, 02 Feb 2017 18:52:18 +0000</pubDate>
       
-      <guid>/categories/embedded/</guid>
+      <guid>https://troglobit.com/categories/embedded/</guid>
       <description></description>
     </item>
     
     <item>
       <title>qemu</title>
-      <link>/categories/qemu/</link>
+      <link>https://troglobit.com/categories/qemu/</link>
       <pubDate>Thu, 02 Feb 2017 18:52:18 +0000</pubDate>
       
-      <guid>/categories/qemu/</guid>
+      <guid>https://troglobit.com/categories/qemu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>raspberry pi</title>
-      <link>/categories/raspberry-pi/</link>
+      <link>https://troglobit.com/categories/raspberry-pi/</link>
       <pubDate>Sun, 15 Jan 2017 13:13:15 +0000</pubDate>
       
-      <guid>/categories/raspberry-pi/</guid>
+      <guid>https://troglobit.com/categories/raspberry-pi/</guid>
       <description></description>
     </item>
     
     <item>
       <title>retro</title>
-      <link>/categories/retro/</link>
+      <link>https://troglobit.com/categories/retro/</link>
       <pubDate>Sun, 15 Jan 2017 13:13:15 +0000</pubDate>
       
-      <guid>/categories/retro/</guid>
+      <guid>https://troglobit.com/categories/retro/</guid>
       <description></description>
     </item>
     
     <item>
       <title>bluetooth</title>
-      <link>/categories/bluetooth/</link>
+      <link>https://troglobit.com/categories/bluetooth/</link>
       <pubDate>Tue, 03 Jan 2017 17:03:05 +0000</pubDate>
       
-      <guid>/categories/bluetooth/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>c</title>
-      <link>/categories/c/</link>
-      <pubDate>Sun, 11 Dec 2016 20:26:12 +0000</pubDate>
-      
-      <guid>/categories/c/</guid>
+      <guid>https://troglobit.com/categories/bluetooth/</guid>
       <description></description>
     </item>
     
     <item>
       <title>capabilities</title>
-      <link>/categories/capabilities/</link>
+      <link>https://troglobit.com/categories/capabilities/</link>
       <pubDate>Sun, 11 Dec 2016 20:26:12 +0000</pubDate>
       
-      <guid>/categories/capabilities/</guid>
+      <guid>https://troglobit.com/categories/capabilities/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sandwich</title>
-      <link>/categories/sandwich/</link>
+      <link>https://troglobit.com/categories/sandwich/</link>
       <pubDate>Sun, 11 Dec 2016 20:26:12 +0000</pubDate>
       
-      <guid>/categories/sandwich/</guid>
+      <guid>https://troglobit.com/categories/sandwich/</guid>
       <description></description>
     </item>
     
     <item>
       <title>icmp</title>
-      <link>/categories/icmp/</link>
+      <link>https://troglobit.com/categories/icmp/</link>
       <pubDate>Sat, 19 Nov 2016 23:37:20 +0000</pubDate>
       
-      <guid>/categories/icmp/</guid>
+      <guid>https://troglobit.com/categories/icmp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Projects</title>
-      <link>/categories/projects/</link>
+      <link>https://troglobit.com/categories/projects/</link>
       <pubDate>Sat, 19 Nov 2016 23:37:20 +0000</pubDate>
       
-      <guid>/categories/projects/</guid>
+      <guid>https://troglobit.com/categories/projects/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sthttpd</title>
-      <link>/categories/sthttpd/</link>
+      <link>https://troglobit.com/categories/sthttpd/</link>
       <pubDate>Sun, 06 Nov 2016 01:34:18 +0000</pubDate>
       
-      <guid>/categories/sthttpd/</guid>
+      <guid>https://troglobit.com/categories/sthttpd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>c</title>
+      <link>https://troglobit.com/categories/c/</link>
+      <pubDate>Thu, 27 Oct 2016 22:22:44 +0000</pubDate>
+      
+      <guid>https://troglobit.com/categories/c/</guid>
       <description></description>
     </item>
     
     <item>
       <title>toolchain</title>
-      <link>/categories/toolchain/</link>
+      <link>https://troglobit.com/categories/toolchain/</link>
       <pubDate>Thu, 27 Oct 2016 22:22:44 +0000</pubDate>
       
-      <guid>/categories/toolchain/</guid>
+      <guid>https://troglobit.com/categories/toolchain/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Finit</title>
-      <link>/categories/finit/</link>
+      <link>https://troglobit.com/categories/finit/</link>
       <pubDate>Wed, 21 Sep 2016 19:08:37 +0000</pubDate>
       
-      <guid>/categories/finit/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>network</title>
-      <link>/categories/network/</link>
-      <pubDate>Fri, 02 Sep 2016 23:30:00 +0000</pubDate>
-      
-      <guid>/categories/network/</guid>
+      <guid>https://troglobit.com/categories/finit/</guid>
       <description></description>
     </item>
     
     <item>
       <title>networking</title>
-      <link>/categories/networking/</link>
+      <link>https://troglobit.com/categories/networking/</link>
       <pubDate>Fri, 02 Sep 2016 23:30:00 +0000</pubDate>
       
-      <guid>/categories/networking/</guid>
+      <guid>https://troglobit.com/categories/networking/</guid>
       <description></description>
     </item>
     
     <item>
       <title>KVM</title>
-      <link>/categories/kvm/</link>
+      <link>https://troglobit.com/categories/kvm/</link>
       <pubDate>Thu, 18 Aug 2016 20:07:17 +0000</pubDate>
       
-      <guid>/categories/kvm/</guid>
+      <guid>https://troglobit.com/categories/kvm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>virt-manager</title>
-      <link>/categories/virt-manager/</link>
+      <link>https://troglobit.com/categories/virt-manager/</link>
       <pubDate>Thu, 18 Aug 2016 20:07:17 +0000</pubDate>
       
-      <guid>/categories/virt-manager/</guid>
+      <guid>https://troglobit.com/categories/virt-manager/</guid>
       <description></description>
     </item>
     
     <item>
       <title>RAID</title>
-      <link>/categories/raid/</link>
+      <link>https://troglobit.com/categories/raid/</link>
       <pubDate>Sat, 13 Aug 2016 15:59:36 +0000</pubDate>
       
-      <guid>/categories/raid/</guid>
+      <guid>https://troglobit.com/categories/raid/</guid>
       <description></description>
     </item>
     
     <item>
       <title>thinkpad</title>
-      <link>/categories/thinkpad/</link>
+      <link>https://troglobit.com/categories/thinkpad/</link>
       <pubDate>Sun, 03 Jul 2016 09:57:44 +0000</pubDate>
       
-      <guid>/categories/thinkpad/</guid>
+      <guid>https://troglobit.com/categories/thinkpad/</guid>
       <description></description>
     </item>
     
     <item>
       <title>misc</title>
-      <link>/categories/misc/</link>
+      <link>https://troglobit.com/categories/misc/</link>
       <pubDate>Mon, 04 Apr 2016 00:14:28 +0000</pubDate>
       
-      <guid>/categories/misc/</guid>
+      <guid>https://troglobit.com/categories/misc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tips</title>
-      <link>/categories/tips/</link>
+      <link>https://troglobit.com/categories/tips/</link>
       <pubDate>Mon, 04 Apr 2016 00:14:28 +0000</pubDate>
       
-      <guid>/categories/tips/</guid>
+      <guid>https://troglobit.com/categories/tips/</guid>
       <description></description>
     </item>
     
     <item>
       <title>backup</title>
-      <link>/categories/backup/</link>
+      <link>https://troglobit.com/categories/backup/</link>
       <pubDate>Thu, 24 Mar 2016 22:39:00 +0000</pubDate>
       
-      <guid>/categories/backup/</guid>
+      <guid>https://troglobit.com/categories/backup/</guid>
       <description></description>
     </item>
     
     <item>
       <title>containers</title>
-      <link>/categories/containers/</link>
+      <link>https://troglobit.com/categories/containers/</link>
       <pubDate>Mon, 07 Mar 2016 01:37:04 +0000</pubDate>
       
-      <guid>/categories/containers/</guid>
+      <guid>https://troglobit.com/categories/containers/</guid>
       <description></description>
     </item>
     
     <item>
       <title>darkside</title>
-      <link>/categories/darkside/</link>
+      <link>https://troglobit.com/categories/darkside/</link>
       <pubDate>Fri, 13 Nov 2015 20:57:29 +0000</pubDate>
       
-      <guid>/categories/darkside/</guid>
+      <guid>https://troglobit.com/categories/darkside/</guid>
       <description></description>
     </item>
     
     <item>
       <title>dns</title>
-      <link>/categories/dns/</link>
+      <link>https://troglobit.com/categories/dns/</link>
       <pubDate>Fri, 13 Nov 2015 20:57:29 +0000</pubDate>
       
-      <guid>/categories/dns/</guid>
+      <guid>https://troglobit.com/categories/dns/</guid>
       <description></description>
     </item>
     
     <item>
       <title>jedi</title>
-      <link>/categories/jedi/</link>
+      <link>https://troglobit.com/categories/jedi/</link>
       <pubDate>Fri, 13 Nov 2015 20:57:29 +0000</pubDate>
       
-      <guid>/categories/jedi/</guid>
+      <guid>https://troglobit.com/categories/jedi/</guid>
       <description></description>
     </item>
     
     <item>
       <title>sith</title>
-      <link>/categories/sith/</link>
+      <link>https://troglobit.com/categories/sith/</link>
       <pubDate>Fri, 13 Nov 2015 20:57:29 +0000</pubDate>
       
-      <guid>/categories/sith/</guid>
+      <guid>https://troglobit.com/categories/sith/</guid>
       <description></description>
     </item>
     
     <item>
       <title>starwars</title>
-      <link>/categories/starwars/</link>
+      <link>https://troglobit.com/categories/starwars/</link>
       <pubDate>Fri, 13 Nov 2015 20:57:29 +0000</pubDate>
       
-      <guid>/categories/starwars/</guid>
+      <guid>https://troglobit.com/categories/starwars/</guid>
       <description></description>
     </item>
     
     <item>
       <title>work</title>
-      <link>/categories/work/</link>
+      <link>https://troglobit.com/categories/work/</link>
       <pubDate>Fri, 13 Nov 2015 20:57:29 +0000</pubDate>
       
-      <guid>/categories/work/</guid>
+      <guid>https://troglobit.com/categories/work/</guid>
       <description></description>
     </item>
     
     <item>
       <title>awesome</title>
-      <link>/categories/awesome/</link>
+      <link>https://troglobit.com/categories/awesome/</link>
       <pubDate>Tue, 10 Nov 2015 12:14:09 +0000</pubDate>
       
-      <guid>/categories/awesome/</guid>
+      <guid>https://troglobit.com/categories/awesome/</guid>
       <description></description>
     </item>
     
     <item>
       <title>spotify</title>
-      <link>/categories/spotify/</link>
+      <link>https://troglobit.com/categories/spotify/</link>
       <pubDate>Tue, 10 Nov 2015 12:14:09 +0000</pubDate>
       
-      <guid>/categories/spotify/</guid>
+      <guid>https://troglobit.com/categories/spotify/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Personal</title>
-      <link>/categories/personal/</link>
+      <link>https://troglobit.com/categories/personal/</link>
       <pubDate>Sat, 07 Nov 2015 02:32:12 +0000</pubDate>
       
-      <guid>/categories/personal/</guid>
+      <guid>https://troglobit.com/categories/personal/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hacking</title>
-      <link>/categories/hacking/</link>
+      <link>https://troglobit.com/categories/hacking/</link>
       <pubDate>Wed, 09 Sep 2015 21:49:13 +0000</pubDate>
       
-      <guid>/categories/hacking/</guid>
+      <guid>https://troglobit.com/categories/hacking/</guid>
       <description></description>
     </item>
     
     <item>
       <title>git</title>
-      <link>/categories/git/</link>
+      <link>https://troglobit.com/categories/git/</link>
       <pubDate>Thu, 02 Jul 2015 17:11:55 +0000</pubDate>
       
-      <guid>/categories/git/</guid>
+      <guid>https://troglobit.com/categories/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>submodules</title>
-      <link>/categories/submodules/</link>
+      <link>https://troglobit.com/categories/submodules/</link>
       <pubDate>Thu, 02 Jul 2015 17:11:55 +0000</pubDate>
       
-      <guid>/categories/submodules/</guid>
+      <guid>https://troglobit.com/categories/submodules/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Apache</title>
-      <link>/categories/apache/</link>
+      <link>https://troglobit.com/categories/apache/</link>
       <pubDate>Tue, 30 Jun 2015 23:13:48 +0000</pubDate>
       
-      <guid>/categories/apache/</guid>
+      <guid>https://troglobit.com/categories/apache/</guid>
       <description></description>
     </item>
     
     <item>
       <title>gitweb</title>
-      <link>/categories/gitweb/</link>
+      <link>https://troglobit.com/categories/gitweb/</link>
       <pubDate>Tue, 30 Jun 2015 23:13:48 +0000</pubDate>
       
-      <guid>/categories/gitweb/</guid>
+      <guid>https://troglobit.com/categories/gitweb/</guid>
       <description></description>
     </item>
     
     <item>
       <title>inetd</title>
-      <link>/categories/inetd/</link>
+      <link>https://troglobit.com/categories/inetd/</link>
       <pubDate>Fri, 06 Mar 2015 22:34:45 +0000</pubDate>
       
-      <guid>/categories/inetd/</guid>
+      <guid>https://troglobit.com/categories/inetd/</guid>
       <description></description>
     </item>
     
     <item>
       <title>github</title>
-      <link>/categories/github/</link>
+      <link>https://troglobit.com/categories/github/</link>
       <pubDate>Fri, 02 Jan 2015 14:12:59 +0000</pubDate>
       
-      <guid>/categories/github/</guid>
+      <guid>https://troglobit.com/categories/github/</guid>
       <description></description>
     </item>
     
     <item>
       <title>octopress</title>
-      <link>/categories/octopress/</link>
+      <link>https://troglobit.com/categories/octopress/</link>
       <pubDate>Fri, 02 Jan 2015 14:12:59 +0000</pubDate>
       
-      <guid>/categories/octopress/</guid>
+      <guid>https://troglobit.com/categories/octopress/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ftp</title>
-      <link>/categories/ftp/</link>
+      <link>https://troglobit.com/categories/ftp/</link>
       <pubDate>Sun, 21 Dec 2014 19:42:17 +0000</pubDate>
       
-      <guid>/categories/ftp/</guid>
+      <guid>https://troglobit.com/categories/ftp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tftp</title>
-      <link>/categories/tftp/</link>
+      <link>https://troglobit.com/categories/tftp/</link>
       <pubDate>Sun, 21 Dec 2014 19:42:17 +0000</pubDate>
       
-      <guid>/categories/tftp/</guid>
+      <guid>https://troglobit.com/categories/tftp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ddns</title>
-      <link>/categories/ddns/</link>
+      <link>https://troglobit.com/categories/ddns/</link>
       <pubDate>Sat, 13 Sep 2014 19:18:56 +0000</pubDate>
       
-      <guid>/categories/ddns/</guid>
+      <guid>https://troglobit.com/categories/ddns/</guid>
       <description></description>
     </item>
     
     <item>
       <title>blog</title>
-      <link>/categories/blog/</link>
+      <link>https://troglobit.com/categories/blog/</link>
       <pubDate>Sun, 29 Jun 2014 14:52:39 +0000</pubDate>
       
-      <guid>/categories/blog/</guid>
+      <guid>https://troglobit.com/categories/blog/</guid>
       <description></description>
     </item>
     
     <item>
       <title>conf</title>
-      <link>/categories/conf/</link>
+      <link>https://troglobit.com/categories/conf/</link>
       <pubDate>Sun, 23 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>/categories/conf/</guid>
+      <guid>https://troglobit.com/categories/conf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>json</title>
-      <link>/categories/json/</link>
+      <link>https://troglobit.com/categories/json/</link>
       <pubDate>Sun, 23 Feb 2014 00:00:00 +0000</pubDate>
       
-      <guid>/categories/json/</guid>
+      <guid>https://troglobit.com/categories/json/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tz</title>
-      <link>/categories/tz/</link>
+      <link>https://troglobit.com/categories/tz/</link>
       <pubDate>Fri, 09 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>/categories/tz/</guid>
+      <guid>https://troglobit.com/categories/tz/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Threads vs Events</title>
-      <link>/categories/threads-vs-events/</link>
+      <link>https://troglobit.com/categories/threads-vs-events/</link>
       <pubDate>Tue, 06 Aug 2013 00:00:00 +0000</pubDate>
       
-      <guid>/categories/threads-vs-events/</guid>
+      <guid>https://troglobit.com/categories/threads-vs-events/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Editline</title>
-      <link>/categories/editline/</link>
+      <link>https://troglobit.com/categories/editline/</link>
       <pubDate>Fri, 12 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>/categories/editline/</guid>
+      <guid>https://troglobit.com/categories/editline/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Inadyn</title>
-      <link>/categories/inadyn/</link>
+      <link>https://troglobit.com/categories/inadyn/</link>
       <pubDate>Fri, 12 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>/categories/inadyn/</guid>
+      <guid>https://troglobit.com/categories/inadyn/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Administration</title>
-      <link>/categories/administration/</link>
+      <link>https://troglobit.com/categories/administration/</link>
       <pubDate>Wed, 10 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>/categories/administration/</guid>
+      <guid>https://troglobit.com/categories/administration/</guid>
       <description></description>
     </item>
     
     <item>
       <title>iTunes</title>
-      <link>/categories/itunes/</link>
+      <link>https://troglobit.com/categories/itunes/</link>
       <pubDate>Fri, 31 Dec 2010 20:26:37 +0000</pubDate>
       
-      <guid>/categories/itunes/</guid>
+      <guid>https://troglobit.com/categories/itunes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>virtualization</title>
-      <link>/categories/virtualization/</link>
+      <link>https://troglobit.com/categories/virtualization/</link>
       <pubDate>Sun, 29 Aug 2010 20:44:34 +0000</pubDate>
       
-      <guid>/categories/virtualization/</guid>
+      <guid>https://troglobit.com/categories/virtualization/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Minix</title>
-      <link>/categories/minix/</link>
+      <link>https://troglobit.com/categories/minix/</link>
       <pubDate>Thu, 12 Aug 2010 18:17:40 +0000</pubDate>
       
-      <guid>/categories/minix/</guid>
+      <guid>https://troglobit.com/categories/minix/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tetris</title>
-      <link>/categories/tetris/</link>
+      <link>https://troglobit.com/categories/tetris/</link>
       <pubDate>Mon, 02 Aug 2010 00:56:35 +0000</pubDate>
       
-      <guid>/categories/tetris/</guid>
+      <guid>https://troglobit.com/categories/tetris/</guid>
       <description></description>
     </item>
     
     <item>
       <title>bzr</title>
-      <link>/categories/bzr/</link>
+      <link>https://troglobit.com/categories/bzr/</link>
       <pubDate>Tue, 13 Jul 2010 01:56:11 +0000</pubDate>
       
-      <guid>/categories/bzr/</guid>
+      <guid>https://troglobit.com/categories/bzr/</guid>
       <description></description>
     </item>
     
     <item>
       <title>shell</title>
-      <link>/categories/shell/</link>
+      <link>https://troglobit.com/categories/shell/</link>
       <pubDate>Sun, 09 May 2010 19:53:19 +0000</pubDate>
       
-      <guid>/categories/shell/</guid>
+      <guid>https://troglobit.com/categories/shell/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Fonts</title>
-      <link>/categories/fonts/</link>
+      <link>https://troglobit.com/categories/fonts/</link>
       <pubDate>Mon, 26 Apr 2010 22:44:19 +0000</pubDate>
       
-      <guid>/categories/fonts/</guid>
+      <guid>https://troglobit.com/categories/fonts/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Typography</title>
-      <link>/categories/typography/</link>
+      <link>https://troglobit.com/categories/typography/</link>
       <pubDate>Mon, 26 Apr 2010 22:44:19 +0000</pubDate>
       
-      <guid>/categories/typography/</guid>
+      <guid>https://troglobit.com/categories/typography/</guid>
       <description></description>
     </item>
     
     <item>
       <title>bazaar</title>
-      <link>/categories/bazaar/</link>
+      <link>https://troglobit.com/categories/bazaar/</link>
       <pubDate>Sat, 13 Jun 2009 00:36:07 +0000</pubDate>
       
-      <guid>/categories/bazaar/</guid>
+      <guid>https://troglobit.com/categories/bazaar/</guid>
       <description></description>
     </item>
     
     <item>
       <title>xen</title>
-      <link>/categories/xen/</link>
+      <link>https://troglobit.com/categories/xen/</link>
       <pubDate>Mon, 08 Jun 2009 22:05:42 +0000</pubDate>
       
-      <guid>/categories/xen/</guid>
+      <guid>https://troglobit.com/categories/xen/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cvs</title>
-      <link>/categories/cvs/</link>
+      <link>https://troglobit.com/categories/cvs/</link>
       <pubDate>Fri, 10 Apr 2009 16:23:42 +0000</pubDate>
       
-      <guid>/categories/cvs/</guid>
+      <guid>https://troglobit.com/categories/cvs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>subversion</title>
-      <link>/categories/subversion/</link>
+      <link>https://troglobit.com/categories/subversion/</link>
       <pubDate>Fri, 10 Apr 2009 16:23:42 +0000</pubDate>
       
-      <guid>/categories/subversion/</guid>
+      <guid>https://troglobit.com/categories/subversion/</guid>
       <description></description>
     </item>
     
     <item>
       <title>svn</title>
-      <link>/categories/svn/</link>
+      <link>https://troglobit.com/categories/svn/</link>
       <pubDate>Fri, 10 Apr 2009 16:23:42 +0000</pubDate>
       
-      <guid>/categories/svn/</guid>
+      <guid>https://troglobit.com/categories/svn/</guid>
       <description></description>
     </item>
     
     <item>
       <title>reminder</title>
-      <link>/categories/reminder/</link>
+      <link>https://troglobit.com/categories/reminder/</link>
       <pubDate>Sat, 14 Feb 2009 21:13:41 +0000</pubDate>
       
-      <guid>/categories/reminder/</guid>
+      <guid>https://troglobit.com/categories/reminder/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>network</title>
+      <link>https://troglobit.com/categories/network/</link>
+      <pubDate>Tue, 10 Feb 2009 21:56:42 +0000</pubDate>
+      
+      <guid>https://troglobit.com/categories/network/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Vim</title>
-      <link>/categories/vim/</link>
+      <link>https://troglobit.com/categories/vim/</link>
       <pubDate>Sun, 09 Nov 2008 00:39:27 +0000</pubDate>
       
-      <guid>/categories/vim/</guid>
+      <guid>https://troglobit.com/categories/vim/</guid>
       <description></description>
     </item>
     
     <item>
       <title>GNU</title>
-      <link>/categories/gnu/</link>
+      <link>https://troglobit.com/categories/gnu/</link>
       <pubDate>Wed, 30 Jul 2008 23:53:42 +0000</pubDate>
       
-      <guid>/categories/gnu/</guid>
+      <guid>https://troglobit.com/categories/gnu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>license</title>
-      <link>/categories/license/</link>
+      <link>https://troglobit.com/categories/license/</link>
       <pubDate>Wed, 30 Jul 2008 23:53:42 +0000</pubDate>
       
-      <guid>/categories/license/</guid>
+      <guid>https://troglobit.com/categories/license/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Emacs</title>
-      <link>/categories/emacs/</link>
+      <link>https://troglobit.com/categories/emacs/</link>
       <pubDate>Mon, 28 Jul 2008 01:38:13 +0000</pubDate>
       
-      <guid>/categories/emacs/</guid>
+      <guid>https://troglobit.com/categories/emacs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>regexp</title>
-      <link>/categories/regexp/</link>
+      <link>https://troglobit.com/categories/regexp/</link>
       <pubDate>Sun, 13 Jul 2008 21:38:33 +0000</pubDate>
       
-      <guid>/categories/regexp/</guid>
+      <guid>https://troglobit.com/categories/regexp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Gnome</title>
-      <link>/categories/gnome/</link>
+      <link>https://troglobit.com/categories/gnome/</link>
       <pubDate>Sat, 07 Jul 2007 09:52:17 +0000</pubDate>
       
-      <guid>/categories/gnome/</guid>
+      <guid>https://troglobit.com/categories/gnome/</guid>
       <description></description>
     </item>
     
     <item>
       <title>modules</title>
-      <link>/categories/modules/</link>
+      <link>https://troglobit.com/categories/modules/</link>
       <pubDate>Sun, 25 Mar 2007 23:59:57 +0000</pubDate>
       
-      <guid>/categories/modules/</guid>
+      <guid>https://troglobit.com/categories/modules/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Swedish</title>
-      <link>/categories/swedish/</link>
+      <link>https://troglobit.com/categories/swedish/</link>
       <pubDate>Mon, 24 Jul 2006 22:10:27 +0000</pubDate>
       
-      <guid>/categories/swedish/</guid>
+      <guid>https://troglobit.com/categories/swedish/</guid>
       <description></description>
     </item>
     

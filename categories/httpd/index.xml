@@ -2,22 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>httpd on Joachim Wiberg</title>
-    <link>/categories/httpd/</link>
+    <link>https://troglobit.com/categories/httpd/</link>
     <description>Recent content in httpd on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Sun, 12 Feb 2017 00:07:44 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/httpd/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 12 Feb 2017 00:07:44 +0000</lastBuildDate><atom:link href="https://troglobit.com/categories/httpd/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HTTPS proxy for Merecat httpd</title>
-      <link>/2017/02/12/https-proxy-for-merecat-httpd/</link>
+      <link>https://troglobit.com/2017/02/12/https-proxy-for-merecat-httpd/</link>
       <pubDate>Sun, 12 Feb 2017 00:07:44 +0000</pubDate>
       
-      <guid>/2017/02/12/https-proxy-for-merecat-httpd/</guid>
+      <guid>https://troglobit.com/2017/02/12/https-proxy-for-merecat-httpd/</guid>
       <description>This is a HTTPS proxy HowTo for Merecat httpd using pound and OpenSSL.
 Pound is a reverse proxy, load balancer, and HTTPS front-end for Web servers. It is available in Debian/Ubuntu and is very simple to set up:
 First install the package, including OpenSSL, or LibreSSL:
@@ -27,10 +23,10 @@ mkdir ~/certs cd ~/certs openssl req -x509 -newkey rsa:4096 -keyout key.pem -out
     
     <item>
       <title>Merecat - another stray kitten?</title>
-      <link>/2016/11/06/merecat-another-stray-kitten-/</link>
+      <link>https://troglobit.com/2016/11/06/merecat---another-stray-kitten-/</link>
       <pubDate>Sun, 06 Nov 2016 01:34:18 +0000</pubDate>
       
-      <guid>/2016/11/06/merecat-another-stray-kitten-/</guid>
+      <guid>https://troglobit.com/2016/11/06/merecat---another-stray-kitten-/</guid>
       <description>&lt;p&gt;This post is about my adoption, refactor, and rebranding of thttpd as
 &lt;a href=&#34;http://merecat.troglobit.com&#34;&gt;Merecat&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I code for recreation as well as work.  Most of the time I tinker around

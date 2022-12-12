@@ -10,7 +10,7 @@
 <meta name="keywords" content=", merecat" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
-<link rel="canonical" href="/howtos/merecat-basic-cig-in-c/" />
+<link rel="canonical" href="https://troglobit.com/howtos/merecat-basic-cig-in-c/" />
 
 
     <title>
@@ -26,34 +26,30 @@
 
 
 
-<link rel="stylesheet" href="/main.29c2c8c3fc9cf748254138351f142ac2833b208a68e83aec126edc98b59efef2.css">
+<link rel="stylesheet" href="https://troglobit.com/main.29c2c8c3fc9cf748254138351f142ac2833b208a68e83aec126edc98b59efef2.css">
 
 
     
-        <link rel="stylesheet" type="text/css" href="/css/extra.css">
+        <link rel="stylesheet" type="text/css" href="https://troglobit.com/css/extra.css">
     
 
 
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1b1c1d">
-    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://troglobit.com/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://troglobit.com/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://troglobit.com/favicon-16x16.png">
+    <link rel="manifest" href="https://troglobit.com/site.webmanifest">
+    <link rel="mask-icon" href="https://troglobit.com/safari-pinned-tab.svg" color="#1b1c1d">
+    <link rel="shortcut icon" href="https://troglobit.com/favicon.ico">
     <meta name="msapplication-TileColor" content="#1b1c1d">
     <meta name="theme-color" content="#1b1c1d">
 
 
 
 <meta itemprop="name" content="Basic CGI in C with Merecat httpd">
-<meta itemprop="description" content="This post is a writeup of how to use basic CGI programs in Merecat httpd v2.32.">
-<meta itemprop="datePublished" content="2019-08-05T22:00:25&#43;02:00" />
-<meta itemprop="dateModified" content="2019-08-05T22:00:25&#43;02:00" />
+<meta itemprop="description" content="This post is a writeup of how to use basic CGI programs in Merecat httpd v2.32."><meta itemprop="datePublished" content="2019-08-05T22:00:25+02:00" />
+<meta itemprop="dateModified" content="2019-08-05T22:00:25+02:00" />
 <meta itemprop="wordCount" content="229">
-
-
-
 <meta itemprop="keywords" content="merecat," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Basic CGI in C with Merecat httpd"/>
@@ -65,9 +61,10 @@
     <meta property="og:title" content="Basic CGI in C with Merecat httpd" />
 <meta property="og:description" content="This post is a writeup of how to use basic CGI programs in Merecat httpd v2.32." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/howtos/merecat-basic-cig-in-c/" />
+<meta property="og:url" content="https://troglobit.com/howtos/merecat-basic-cig-in-c/" /><meta property="article:section" content="howtos" />
 <meta property="article:published_time" content="2019-08-05T22:00:25+02:00" />
 <meta property="article:modified_time" content="2019-08-05T22:00:25+02:00" />
+
 
 
 
@@ -94,7 +91,7 @@
         <div class="container">
             <header class="header">
     <span class="header__inner">
-        <a href="/" style="text-decoration: none;">
+        <a href="https://troglobit.com/" style="text-decoration: none;">
     <div class="logo">
         
             <span class="logo__mark">&gt;</span>
@@ -112,7 +109,7 @@
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="/about/">About</a></li><li><a href="/posts/">Blog</a></li><li><a href="/howtos/">HowTos</a></li><li><a href="/projects/">Projects</a></li><li><a href="https://resume.troglobit.com">Resumé</a></li><li><a href="https://ftp.troglobit.com">FTP</a></li><li><a href="https://deb.troglobit.com">DEB</a></li>
+    <ul class="menu__inner"><li><a href="https://troglobit.com/about/">About</a></li><li><a href="https://troglobit.com/posts/">Blog</a></li><li><a href="https://troglobit.com/howtos/">HowTos</a></li><li><a href="https://troglobit.com/projects/">Projects</a></li><li><a href="https://resume.troglobit.com">Resumé</a></li><li><a href="https://ftp.troglobit.com">FTP</a></li><li><a href="https://deb.troglobit.com">DEB</a></li>
     </ul>
 </nav>
 
@@ -138,7 +135,7 @@
         </div>
 
         <article>
-            <h2 class="post-title"><a href="/howtos/merecat-basic-cig-in-c/">Basic CGI in C with Merecat httpd</a></h2>
+            <h2 class="post-title"><a href="https://troglobit.com/howtos/merecat-basic-cig-in-c/">Basic CGI in C with Merecat httpd</a></h2>
 
             
             
@@ -154,21 +151,21 @@
 <p>Build Merecat httpd according to the instructions in the README.  This
 document assumes the directory <code>~/merecat/</code>.  Then create a config file,
 <code>~/test.conf</code>, with the following content:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">port = 8080
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">port = 8080
 
 cgi &#34;**.cgi|cgi-bin/*&#34; {
     enabled = true
 }
 </code></pre></div><p>In this example we&rsquo;ve chosen port 8080 so we can start the server as a
 regular user.  For production systems you likely want to use the default
-(80), or set up proper HTTPS, see <a href="/howtos/merecat-and-lets-encrypt/">Let&rsquo;s Encrypt Merecat</a> for
+(80), or set up proper HTTPS, see <a href="https://troglobit.com/howtos/merecat-and-lets-encrypt/">Let&rsquo;s Encrypt Merecat</a> for
 help with that.</p>
 <p>The classic <em>cgic</em> used here is just an example.  A CGI program can be
 written in just about any programming language, or plain shell script.
 Merecat actually ships with a <code>/cgi-bin/printenv</code>, which is a plain
 Bourne shell script.</p>
 <p>Download, unpack and build cgic:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">mkdir temp; cd temp/
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">mkdir temp; cd temp/
 wget http://www.boutell.com/cgic/cgic207.tar.gz
 tar xf cgic207.tar.gz
 cd cgic207/
@@ -176,9 +173,9 @@ make
 </code></pre></div><p>A stand-alone example program is built which we can install into the
 Merecat web root.  Notice the name change to <code>index.cgi</code>, we don&rsquo;t have
 to use the <code>cgi-bin/</code> due to the CGI pattern we set up previously:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">cp cgictest.cgi ~/merecat/www/index.cgi
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">cp cgictest.cgi ~/merecat/www/index.cgi
 </code></pre></div><p>Now we can start the web server and test the CGI program out.</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">cd ~/merecat/
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">cd ~/merecat/
 ./src/merecat -f ~/test.conf www
 </code></pre></div><p>We can now open our browser at http://127.0.0.1:8080/ and there is the
 CGI!  Remember to check out http://127.0.0.1:8080/cgi-bin/printenv too.</p>
@@ -192,7 +189,7 @@ CGI!  Remember to check out http://127.0.0.1:8080/cgi-bin/printenv too.</p>
     <p>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
 
-        <span class="tag"><a href="/tags/merecat/">merecat</a></span>
+        <span class="tag"><a href="https://troglobit.com/tags/merecat/">merecat</a></span>
         
     </p>
 
@@ -208,7 +205,7 @@ CGI!  Remember to check out http://127.0.0.1:8080/cgi-bin/printenv too.</p>
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2022</span>
-            <span><a href="/">Joachim Wiberg</a></span>
+            <span><a href="https://troglobit.com/">Joachim Wiberg</a></span>
             <span>UNIX&trade; 4Life! &#9994;</span>
             
             
@@ -225,7 +222,7 @@ CGI!  Remember to check out http://127.0.0.1:8080/cgi-bin/printenv too.</p>
 
 
 
-<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+<script type="text/javascript" src="https://troglobit.com/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
 
 
 

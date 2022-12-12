@@ -2,22 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>virt-manager on Joachim Wiberg</title>
-    <link>/categories/virt-manager/</link>
+    <link>https://troglobit.com/categories/virt-manager/</link>
     <description>Recent content in virt-manager on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Thu, 18 Aug 2016 20:07:17 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/virt-manager/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 18 Aug 2016 20:07:17 +0000</lastBuildDate><atom:link href="https://troglobit.com/categories/virt-manager/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Live KVM migration with virt-manager</title>
-      <link>/2016/08/18/live-kvm-migration-with-virt-manager/</link>
+      <link>https://troglobit.com/2016/08/18/live-kvm-migration-with-virt-manager/</link>
       <pubDate>Thu, 18 Aug 2016 20:07:17 +0000</pubDate>
       
-      <guid>/2016/08/18/live-kvm-migration-with-virt-manager/</guid>
+      <guid>https://troglobit.com/2016/08/18/live-kvm-migration-with-virt-manager/</guid>
       <description>&lt;p&gt;With the new servers and my server room shaping up, I&amp;rsquo;ve been working on
 setting up ALL THE THINGS!  I just managed to set up live migration of
 the KVM virtual machines I use for testing my &lt;a href=&#34;https://en.wikipedia.org/wiki/Free_and_open-source_software&#34;&gt;FLOSS&lt;/a&gt; projects.  Here

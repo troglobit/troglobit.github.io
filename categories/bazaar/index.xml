@@ -2,22 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>bazaar on Joachim Wiberg</title>
-    <link>/categories/bazaar/</link>
+    <link>https://troglobit.com/categories/bazaar/</link>
     <description>Recent content in bazaar on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Sat, 13 Jun 2009 00:36:07 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/bazaar/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 13 Jun 2009 00:36:07 +0000</lastBuildDate><atom:link href="https://troglobit.com/categories/bazaar/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HowTo use Git for Collaborative Development</title>
-      <link>/2009/06/13/howto-use-git-for-collaborative-development/</link>
+      <link>https://troglobit.com/2009/06/13/howto-use-git-for-collaborative-development/</link>
       <pubDate>Sat, 13 Jun 2009 00:36:07 +0000</pubDate>
       
-      <guid>/2009/06/13/howto-use-git-for-collaborative-development/</guid>
+      <guid>https://troglobit.com/2009/06/13/howto-use-git-for-collaborative-development/</guid>
       <description>This is mainly some notes for myself so I don&amp;rsquo;t forget. Having worked with GNU Bazaar before much of Git is still alien to me.
 This HowTo is divided into two parts:
  what happens on your laptop, and what you must do on a remote server where you publish your changes  So, let&amp;rsquo;s start stimple:
@@ -26,10 +22,10 @@ laptop&amp;gt; mkdir projectX; cd projectX laptop&amp;gt; git init laptop&amp;gt
     
     <item>
       <title>More about Bzrweb and some about Git</title>
-      <link>/2009/06/12/more-about-bzrweb-and-some-about-git/</link>
+      <link>https://troglobit.com/2009/06/12/more-about-bzrweb-and-some-about-git/</link>
       <pubDate>Fri, 12 Jun 2009 19:50:27 +0000</pubDate>
       
-      <guid>/2009/06/12/more-about-bzrweb-and-some-about-git/</guid>
+      <guid>https://troglobit.com/2009/06/12/more-about-bzrweb-and-some-about-git/</guid>
       <description>OK, I admit it. I cannot decide what version control system (VCS) to use. I&amp;rsquo;m stuck between the speed and massive snow ball effect of Git and the ease of use and emotional attachment I have to Bazaar.
 I&amp;rsquo;ve been &amp;ldquo;maintaining&amp;rdquo; bzrweb for a while now, not doing a very good job of it though. It&amp;rsquo;s lagging behind considerably to the bzr API. After the upgrade of vmlinux.org to the latest Ubuntu server release bzrweb actually didn&amp;rsquo;t work at all.</description>
     </item>

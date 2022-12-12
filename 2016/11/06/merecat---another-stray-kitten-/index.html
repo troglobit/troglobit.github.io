@@ -1,27 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Joachim Wiberg ">
+<meta name="description" content="This post is about my adoption, refactor, and rebranding of thttpd as Merecat.
+I code for recreation as well as work. Most of the time I tinker around with my various projects simply to learn and sometimes these little projects turn into something useful for other people as well, which is great!
+Recently I discovered my method to get started: refactoring, or just simple code cleanup. You see I&#39;ve got this crazy idea that all simple things are correct. Although things usually tend to require a certain balance &amp;mdash; not all things can be simplified, and not all simple things are correct.
+When I recently had to migrate my personal blog, FTP, and GIT server, I set out to run everything from an old RasPi2. This put my private life in just about the same niche as my work life, embedded. On a resource constrained platform like that running Apache is not the best idea. So I set out to (re-)discover the web servers of my past, the late 90&amp;rsquo;s, I had almost forgotten:
+ mini_httpd, Boa, BusyBox httpd, thttpd, and more &amp;hellip;  Come to think of it, they are probably one of the many reasons that I started my career in embedded in the first place!
+" />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://troglobit.com/2016/11/06/merecat---another-stray-kitten-/" />
 
-  <title>Merecat - another stray kitten?</title>
-  <meta property="og:title" content="Merecat - another stray kitten?" />
-  <meta name="twitter:title" content="Merecat - another stray kitten?" />
-  <meta name="description" content="This post is about my adoption, refactor, and rebranding of thttpd as
+
+    <title>
+        
+            Merecat - another stray kitten? :: Joachim Wiberg  — The Last Outpost
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="https://troglobit.com/main.29c2c8c3fc9cf748254138351f142ac2833b208a68e83aec126edc98b59efef2.css">
+
+
+    
+        <link rel="stylesheet" type="text/css" href="https://troglobit.com/css/extra.css">
+    
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://troglobit.com/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://troglobit.com/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://troglobit.com/favicon-16x16.png">
+    <link rel="manifest" href="https://troglobit.com/site.webmanifest">
+    <link rel="mask-icon" href="https://troglobit.com/safari-pinned-tab.svg" color="#1b1c1d">
+    <link rel="shortcut icon" href="https://troglobit.com/favicon.ico">
+    <meta name="msapplication-TileColor" content="#1b1c1d">
+    <meta name="theme-color" content="#1b1c1d">
+
+
+
+<meta itemprop="name" content="Merecat - another stray kitten?">
+<meta itemprop="description" content="This post is about my adoption, refactor, and rebranding of thttpd as
 Merecat.
-
 I code for recreation as well as work.  Most of the time I tinker around
 with my various projects simply to learn
 and sometimes these little projects turn into something useful for other
 people as well, which is great!
-
  Recently I discovered my method to get started:
 refactoring, or just simple code cleanup.  You see I&#39;ve got this crazy
 idea that all simple things are correct.  Although things
 usually tend to require a certain balance &mdash; not all things can be
 simplified, and not all simple things are correct.
-
 When I recently had to migrate my personal blog, FTP, and GIT server, I
 set out to run everything from an old RasPi2.  This put my private life
 in just about the same niche as my work life, embedded.  On a resource
@@ -29,32 +69,30 @@ constrained platform like that running Apache is not the best idea.  So
 I set out to (re-)discover the web servers of my past, the late 90&rsquo;s, I
 had almost forgotten:
 
-
 mini_httpd,
 Boa,
 BusyBox httpd,
 thttpd,
 and more &hellip;
 
-
 Come to think of it, they are probably one of the many reasons that I
-started my career in embedded in the first place!
-
-">
-  <meta property="og:description" content="This post is about my adoption, refactor, and rebranding of thttpd as
+started my career in embedded in the first place!"><meta itemprop="datePublished" content="2016-11-06T01:34:18+00:00" />
+<meta itemprop="dateModified" content="2016-11-06T01:34:18+00:00" />
+<meta itemprop="wordCount" content="839">
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Merecat - another stray kitten?"/>
+<meta name="twitter:description" content="This post is about my adoption, refactor, and rebranding of thttpd as
 Merecat.
-
 I code for recreation as well as work.  Most of the time I tinker around
 with my various projects simply to learn
 and sometimes these little projects turn into something useful for other
 people as well, which is great!
-
  Recently I discovered my method to get started:
 refactoring, or just simple code cleanup.  You see I&#39;ve got this crazy
 idea that all simple things are correct.  Although things
 usually tend to require a certain balance &mdash; not all things can be
 simplified, and not all simple things are correct.
-
 When I recently had to migrate my personal blog, FTP, and GIT server, I
 set out to run everything from an old RasPi2.  This put my private life
 in just about the same niche as my work life, embedded.  On a resource
@@ -62,6 +100,36 @@ constrained platform like that running Apache is not the best idea.  So
 I set out to (re-)discover the web servers of my past, the late 90&rsquo;s, I
 had almost forgotten:
 
+mini_httpd,
+Boa,
+BusyBox httpd,
+thttpd,
+and more &hellip;
+
+Come to think of it, they are probably one of the many reasons that I
+started my career in embedded in the first place!"/>
+
+
+
+
+    <meta property="og:title" content="Merecat - another stray kitten?" />
+<meta property="og:description" content="This post is about my adoption, refactor, and rebranding of thttpd as
+Merecat.
+I code for recreation as well as work.  Most of the time I tinker around
+with my various projects simply to learn
+and sometimes these little projects turn into something useful for other
+people as well, which is great!
+ Recently I discovered my method to get started:
+refactoring, or just simple code cleanup.  You see I&#39;ve got this crazy
+idea that all simple things are correct.  Although things
+usually tend to require a certain balance &mdash; not all things can be
+simplified, and not all simple things are correct.
+When I recently had to migrate my personal blog, FTP, and GIT server, I
+set out to run everything from an old RasPi2.  This put my private life
+in just about the same niche as my work life, embedded.  On a resource
+constrained platform like that running Apache is not the best idea.  So
+I set out to (re-)discover the web servers of my past, the late 90&rsquo;s, I
+had almost forgotten:
 
 mini_httpd,
 Boa,
@@ -69,239 +137,127 @@ BusyBox httpd,
 thttpd,
 and more &hellip;
 
-
 Come to think of it, they are probably one of the many reasons that I
-started my career in embedded in the first place!
-
-">
-  <meta name="twitter:description" content="This post is about my adoption, refactor, and rebranding of thttpd as
-Merecat.
-
-I code for recreation as well as work.  Most of the time I tinker around
-with my various projects simply to learn
-and …">
-  <meta name="author" content="Joachim Nilsson"/>
-  <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
-  <meta property="og:image" content="/images/profile.jpg" />
-  <meta name="twitter:image" content="/images/profile.jpg" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@troglobit" />
-  <meta name="twitter:creator" content="@troglobit" />
-  <meta property="og:url" content="/2016/11/06/merecat---another-stray-kitten-/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="" />
-
-  <meta name="generator" content="Hugo 0.47.1" />
-  <link rel="canonical" href="/2016/11/06/merecat---another-stray-kitten-/" />
-  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="/css/syntax.css" /><link rel="stylesheet" href="/css/codeblock.css" />
+started my career in embedded in the first place!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://troglobit.com/2016/11/06/merecat---another-stray-kitten-/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2016-11-06T01:34:18+00:00" />
+<meta property="article:modified_time" content="2016-11-06T01:34:18+00:00" />
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+    <meta property="article:section" content="Merecat" />
+
+    <meta property="article:section" content="thttpd" />
+
+    <meta property="article:section" content="sthttpd" />
+
+    <meta property="article:section" content="httpd" />
 
 
 
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <meta property="article:published_time" content="2016-11-06 01:34:18 &#43;0000 UTC" />
 
-<div class="pswp__bg"></div>
 
-<div class="pswp__scroll-wrap">
+
+
+
+
+
+
+
+
+    </head>
+
     
-    <div class="pswp__container">
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-    </div>
+        <body>
     
-    <div class="pswp__ui pswp__ui--hidden">
-    <div class="pswp__top-bar">
-      
-      <div class="pswp__counter"></div>
-      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-      <button class="pswp__button pswp__button--share" title="Share"></button>
-      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-      
-      
-      <div class="pswp__preloader">
-        <div class="pswp__preloader__icn">
-          <div class="pswp__preloader__cut">
-            <div class="pswp__preloader__donut"></div>
-          </div>
-        </div>
-      </div>
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="https://troglobit.com/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">&gt;</span>
+            <span class="logo__text">$ cd /home/</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
     </div>
-    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-      <div class="pswp__share-tooltip"></div>
-    </div>
-    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-    </button>
-    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-    </button>
-    <div class="pswp__caption">
-      <div class="pswp__caption__center"></div>
-    </div>
-    </div>
-    </div>
-</div>
+</a>
 
-</head>
 
-  <body>
-    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/"></a>
-    </div>
-
-    <div class="collapse navbar-collapse" id="main-navbar">
-      <ul class="nav navbar-nav navbar-right">
-        
-          
-            <li>
-              <a title="Archive" href="/archive/">Archive</a>
-            </li>
-          
-        
-          
-            <li>
-              <a title="FTP" href="http://ftp.troglobit.com">FTP</a>
-            </li>
-          
-        
-          
-            <li>
-              <a title="GIT" href="http://git.troglobit.com">GIT</a>
-            </li>
-          
-        
-          
-            <li>
-              <a title="HowTos" href="/howto/">HowTos</a>
-            </li>
-          
-        
-          
-            <li>
-              <a title="Projects" href="/projects/">Projects</a>
-            </li>
-          
-        
-          
-            <li>
-              <a title="Resumé" href="http://resume.troglobit.com">Resumé</a>
-            </li>
-          
-        
-          
-            <li>
-              <a title="About" href="/about/">About</a>
-            </li>
-          
-        
-
-        
-
-        
-      </ul>
-    </div>
-
-    <div class="avatar-container">
-      <div class="avatar-img-border">
-        
-          <a title="" href="/">
-            <img class="avatar-img" src="/images/profile.jpg" alt="" />
-          </a>
-        
-      </div>
-    </div>
-
-  </div>
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://troglobit.com/about/">About</a></li><li><a href="https://troglobit.com/posts/">Blog</a></li><li><a href="https://troglobit.com/howtos/">HowTos</a></li><li><a href="https://troglobit.com/projects/">Projects</a></li><li><a href="https://resume.troglobit.com">Resumé</a></li><li><a href="https://ftp.troglobit.com">FTP</a></li><li><a href="https://deb.troglobit.com">DEB</a></li>
+    </ul>
 </nav>
 
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+        </span>
+    </span>
+</header>
 
 
-
-    
-  
-  
-  
-
-
-
-
-  
-
-  <header class="header-section ">
-    
-    <div class="intro-header no-img">
-      
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="post-heading">
-              <h1>Merecat - another stray kitten?</h1>
+            <div class="content">
                 
-                
-                  <span class="post-meta">
-  
-  
-  <i class="fa fa-calendar-o"></i>&nbsp;Posted on November 6, 2016
-  
-  
-  
-</span>
+  <main class="post">
 
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        4 minutes
 
-                
-            </div>
-          </div>
-        </div>
-      </div>
+        
+      </p>
     </div>
-  </header>
 
+    <article>
+      <h1 class="post-title">
+        <a href="https://troglobit.com/2016/11/06/merecat---another-stray-kitten-/">Merecat - another stray kitten?</a>
+      </h1>
 
-    
-<div class="container" role="main">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <article role="main" class="blog-post">
-	
-	<p>This post is about my adoption, refactor, and rebranding of thttpd as
+      
+
+      
+
+      
+
+      <div class="post-content">
+        <p>This post is about my adoption, refactor, and rebranding of thttpd as
 <a href="http://merecat.troglobit.com">Merecat</a>.</p>
-
 <p>I code for recreation as well as work.  Most of the time I tinker around
 with my various <a href="https://github.com/troglobit">projects</a> simply to learn
 and sometimes these little projects turn into something useful for other
 people as well, which is great!</p>
-
 <p data-pullquote="not all things can be simplified, and not all simple
 things are correct"> Recently I discovered my method to get started:
 refactoring, or just simple code cleanup.  You see I've got this crazy
 idea that <em>all simple things are correct</em>.  Although things
 usually tend to require a certain balance &mdash; not all things can be
 simplified, and not all simple things are correct.</p>
-
 <p>When I recently had to migrate my personal blog, FTP, and GIT server, I
 set out to run everything from an old RasPi2.  This put my private life
 in just about the same niche as my work life, embedded.  On a resource
 constrained platform like that running Apache is not the best idea.  So
 I set out to (re-)discover the web servers of my past, the late 90&rsquo;s, I
 had almost forgotten:</p>
-
 <ul>
 <li><a href="http://acme.com/software/mini_httpd/">mini_httpd</a>,</li>
 <li><a href="http://www.boa.org/">Boa</a>,</li>
@@ -309,60 +265,46 @@ had almost forgotten:</p>
 <li><a href="http://www.acme.com/software/thttpd/">thttpd</a>,</li>
 <li>and more &hellip;</li>
 </ul>
-
 <p>Come to think of it, they are probably one of the many reasons that I
 started my career in embedded in the first place!</p>
-
-<p></p>
-
 <p>With all the warm feels and fuzzy memories I had of thttpd I decided to
 give it a whirl.  And with my usual lack of insight (of how much time
 this would consume) I started fixing bugs and issues that nagged me.</p>
-
 <p>Ten patches in I hesitated and set out on another archaeological
 expedition, surely I couldn&rsquo;t have seen all these problems myself?  I
 visited the usual burial grounds for ancient software: *BSD, Debian,
 Gentoo, SourceForge, Internet Archive &hellip; and that&rsquo;s when I found
 <a href="https://github.com/blueness/sthttpd/">sthttpd</a> by Anthony G. Basile.</p>
-
 <p>Anthony had left sthttpd in great shape!  Not only had he merged all
 Gentoo fixes, he had also converted the build system to GNU configure
 and automake.  So I started rebasing my patches on sthttpd and then I
 simply couldn&rsquo;t stop.  The refactoring machine in my head was on fire, I
 simpy had to let it all out!</p>
-
 <p>The goal I had was a simple to use, good looking by default, bare bones
 web server.  My use-case was simple: serve gitweb, HTTP gateway for my
 FTP, serve my resumé, and possibly even my Jekyll blog.  So I basically
 just needed to get virtual hosts and dir listings working.</p>
-
 <p>In the process, however, I had done a lot more. Lots of half baked ideas
 and barely working code.  But it worked for me, so I tagged the first
 release of Merecat, v2.30, and went on my merry way.</p>
-
 <p>Until the RasPi server crashed.  I thought it might be heat and maybe
 overclocking issues, so I moved it to my server room and downclocked it.
 A few weeks passed and everything seemed to work just fine, then bam!
 Another crash, and now it only stayed up a few hours at a time between
 crashes.</p>
-
 <p>Heartbroken (well not really) I decided it was time to move to the cloud
 like everyone else.  So a droplet was created (clear of US influence I
 hope) and data was being moved to the new location.  This time I wanted
 the setup to be as clean as possible, so only Debian packages and proper
 systemd integration.  Fortunately I had a well timed week off from work
 to do all this.</p>
-
 <p>I had just barely started digging in, when I got a bug report by email
 from Gaetan Bisson who had found lots of issues with Merecat.  The bugs
 he reported overlapped nicely with the work I planned to do anyway \o/</p>
-
 <p>The resulting v2.31 release of Merecat has a lot of fixes and new
 features, these are the ones I can remember (and are in the GitHub
 changelog):</p>
-
 <h3 id="changes">Changes</h3>
-
 <ul>
 <li>Sort directories first in dir listings</li>
 <li>Include systemd unit file</li>
@@ -371,9 +313,7 @@ changelog):</p>
 <li>Support for shared <code>WEBROOT/cgi-bin</code> as fallback for vhosts</li>
 <li>Update default landing page</li>
 </ul>
-
 <h3 id="fixes">Fixes</h3>
-
 <ul>
 <li>Add missing CSS and jpeg files to install</li>
 <li>Fix dependency tracking when reconfiguring</li>
@@ -386,146 +326,228 @@ Gaetan Bisson</li>
 pattern, issue reported by Gaetan Bisson</li>
 <li>Fix syslog warning: bind 0.0.0.0: Address already in use</li>
 </ul>
-
 <p>Download the release from my <a href="http://ftp.troglobit.com">FTP</a>, or the
 <a href="https://github.com/troglobit/merecat/releases/tag/v2.31">GitHub release page</a>,
 which also has a pre-built .deb for Ubuntu 16.04.  For those who want to
 build the .deb themselves:</p>
-
 <pre><code>cd merecat/
 dpkg-buildpackage -uc -us -B -d
 </code></pre>
-
 <p>Then simply:</p>
-
 <pre><code>sudo dpkg -i ../merecat_2.31-3_amd64.deb
 </code></pre>
-
 <p><strong>Note:</strong> For use with GitWeb, remember to install <code>libcgi-pm-perl</code></p>
-
 <p>I&rsquo;d like to take this opportunity to thank a couple of friends who
 helped out with the auditing and layout testing of the new default
 landing page.  Thank you Anders Bornäs and Martin Olsson :-)</p>
-
 <!--
   -- Local Variables:
   -- mode: markdown
   -- End:
   -->
-      </article>
-
-      
-        <ul class="pager blog-pager">
-          
-            <li class="previous">
-              <a href="/2016/10/27/new-toolchains/" data-toggle="tooltip" data-placement="top" title="New Toolchains">&larr; Previous Post</a>
-            </li>
-          
-          
-            <li class="next">
-              <a href="/2016/11/19/one-ping-only/" data-toggle="tooltip" data-placement="top" title="One ping only">Next Post &rarr;</a>
-            </li>
-          
-        </ul>
-      
-
-
-      
-        
-        
-      
-
-    </div>
-  </div>
-</div>
-
-    <footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <ul class="list-inline text-center footer-links">
-          
-              <li>
-                <a href="mailto:troglobit@gmail.com" title="Email me">
-                  <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="https://plus.google.com/&#43;JoachimNilsson" title="Google&#43;">
-                  <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/troglobit" title="GitHub">
-                  <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="https://twitter.com/troglobit" title="Twitter">
-                  <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-          
-          <li>
-            
-            <a href="/index.xml" title="RSS">
-            
-              <span class="fa-stack fa-lg">
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-        <p class="credits copyright text-muted">
-          
-            
-              <a href="http://troglobit.com">Joachim Nilsson</a>
-            
-          
-
-          &nbsp;&bull;&nbsp;
-          2019
-
-          
-        </p>
-        
-        <p class="credits theme-by text-muted">
-          <a href="http://gohugo.io">Hugo v0.47.1</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
-          
-        </p>
       </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+
+        <span class="tag"><a href="https://troglobit.com/categories/merecat/">Merecat</a></span>
+        <span class="tag"><a href="https://troglobit.com/categories/thttpd/">thttpd</a></span>
+        <span class="tag"><a href="https://troglobit.com/categories/sthttpd/">sthttpd</a></span>
+        <span class="tag"><a href="https://troglobit.com/categories/httpd/">httpd</a></span>
+        
+    </p>
+
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        839 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2016-11-06 02:34
+        
+
+         
+          
+        
+      </p>
+    </div>
+      <hr />
+      <div class="sharing-buttons">
+        
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2ftroglobit.com%2f2016%2f11%2f06%2fmerecat---another-stray-kitten-%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
+  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
     </div>
   </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?url=https%3a%2f%2ftroglobit.com%2f2016%2f11%2f06%2fmerecat---another-stray-kitten-%2f" target="_blank" rel="noopener" aria-label="" title="Share on twitter">
+  <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
+      <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=Merecat%20-%20another%20stray%20kitten%3f&amp;caption=Merecat%20-%20another%20stray%20kitten%3f&amp;canonicalUrl=https%3a%2f%2ftroglobit.com%2f2016%2f11%2f06%2fmerecat---another-stray-kitten-%2f" target="_blank" rel="noopener" aria-label="" title="Share on tumblr">
+  <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small">
+    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941 0 9.999 0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.207 2.371h.09c.631-.02 1.486-.205 1.936-.419l1.156 3.425c-.436.636-2.4 1.374-4.156 1.404h-.178l.011.002z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="mailto:?subject=Merecat%20-%20another%20stray%20kitten%3f&amp;body=https%3a%2f%2ftroglobit.com%2f2016%2f11%2f06%2fmerecat---another-stray-kitten-%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
+  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=https%3a%2f%2ftroglobit.com%2f2016%2f11%2f06%2fmerecat---another-stray-kitten-%2f&amp;media=https%3a%2f%2ftroglobit.com%2f2016%2f11%2f06%2fmerecat---another-stray-kitten-%2f;description=Merecat%20-%20another%20stray%20kitten%3f" target="_blank" rel="noopener" aria-label="" title="Share on pinterest">
+  <div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2ftroglobit.com%2f2016%2f11%2f06%2fmerecat---another-stray-kitten-%2f&amp;title=Merecat%20-%20another%20stray%20kitten%3f&amp;summary=Merecat%20-%20another%20stray%20kitten%3f&amp;source=https%3a%2f%2ftroglobit.com%2f2016%2f11%2f06%2fmerecat---another-stray-kitten-%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
+  <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=https%3a%2f%2ftroglobit.com%2f2016%2f11%2f06%2fmerecat---another-stray-kitten-%2f&amp;resubmit=true&amp;title=Merecat%20-%20another%20stray%20kitten%3f" target="_blank" rel="noopener" aria-label="" title="Share on reddit">
+  <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://www.xing.com/app/user?op=share;url=https%3a%2f%2ftroglobit.com%2f2016%2f11%2f06%2fmerecat---another-stray-kitten-%2f;title=Merecat%20-%20another%20stray%20kitten%3f" target="_blank" rel="noopener" aria-label="" title="Share on xing">
+  <div class="resp-sharing-button resp-sharing-button--xing resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L1.86 16.051c-.099.188-.093.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="whatsapp://send?text=Merecat%20-%20another%20stray%20kitten%3f%20https%3a%2f%2ftroglobit.com%2f2016%2f11%2f06%2fmerecat---another-stray-kitten-%2f" target="_blank" rel="noopener" aria-label="" title="Share on whatsapp">
+  <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2ftroglobit.com%2f2016%2f11%2f06%2fmerecat---another-stray-kitten-%2f&amp;t=Merecat%20-%20another%20stray%20kitten%3f" target="_blank" rel="noopener" aria-label="" title="Share on hacker news">
+  <div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z"/></svg>
+    </div>
+  </div>
+</a>
+
+
+<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=Merecat%20-%20another%20stray%20kitten%3f&amp;url=https%3a%2f%2ftroglobit.com%2f2016%2f11%2f06%2fmerecat---another-stray-kitten-%2f" target="_blank" rel="noopener" aria-label="" title="Share on telegram">
+  <div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+    </div>
+  </div>
+</a>
+
+      </div>
+
+    
+    <div class="pagination">
+        <div class="pagination__title">
+            <span class="pagination__title-h"></span>
+            <hr />
+        </div>
+
+        <div class="pagination__buttons">
+            
+            <span class="button previous">
+                <a href="https://troglobit.com/2016/11/19/one-ping-only/">
+                    <span class="button__icon">←</span>
+                    <span class="button__text">One ping only</span>
+                </a>
+            </span>
+            
+
+            
+            <span class="button next">
+                <a href="https://troglobit.com/2016/10/27/new-toolchains/">
+                    <span class="button__text">New Toolchains</span>
+                    <span class="button__icon">→</span>
+                </a>
+            </span>
+            
+        </div>
+    </div>
+
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2022</span>
+            <span><a href="https://troglobit.com/">Joachim Wiberg</a></span>
+            <span>UNIX&trade; 4Life! &#9994;</span>
+            
+            
+        </div>
+    </div>
+    
+    
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="/js/main.js"></script><script> renderMathInElement(document.body); </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
-<script src="/js/load-photoswipe.js"></script>
+            
+        </div>
+
+        
 
 
 
+<script type="text/javascript" src="https://troglobit.com/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
 
 
 
-  </body>
+    </body>
 </html>
-

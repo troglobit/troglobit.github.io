@@ -2,22 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>RAID on Joachim Wiberg</title>
-    <link>/categories/raid/</link>
+    <link>https://troglobit.com/categories/raid/</link>
     <description>Recent content in RAID on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Sat, 13 Aug 2016 15:59:36 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/raid/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 13 Aug 2016 15:59:36 +0000</lastBuildDate><atom:link href="https://troglobit.com/categories/raid/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fake RAID Adventures</title>
-      <link>/2016/08/13/fake-raid-adventures/</link>
+      <link>https://troglobit.com/2016/08/13/fake-raid-adventures/</link>
       <pubDate>Sat, 13 Aug 2016 15:59:36 +0000</pubDate>
       
-      <guid>/2016/08/13/fake-raid-adventures/</guid>
+      <guid>https://troglobit.com/2016/08/13/fake-raid-adventures/</guid>
       <description>&lt;p&gt;The other day I got my geeky hands on two old SuperMicro X8STI-F 1U
 servers.  I plan to use them as build and embedded target emulation
 servers for my &lt;a href=&#34;https://github.com/troglobit&#34;&gt;open source projects&lt;/a&gt;

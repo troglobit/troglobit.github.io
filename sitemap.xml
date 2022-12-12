@@ -1,1569 +1,958 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
-    <loc>/tags/buildroot/</loc>
+    <loc>https://troglobit.com/</loc>
+    <lastmod>2022-10-01T15:44:00+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/posts/</loc>
+    <lastmod>2022-10-01T15:44:00+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/post/2022-10-01-remap-prev/next-on-thinkpad/</loc>
+    <lastmod>2022-10-01T15:44:00+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/</loc>
+    <lastmod>2022-10-01T15:44:00+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/thinkpad/</loc>
+    <lastmod>2022-10-01T15:44:00+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/x200/</loc>
+    <lastmod>2022-10-01T15:44:00+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/about/</loc>
+    <lastmod>2022-10-01T16:21:00+01:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/post/2022-09-09-logging-to-remote-syslog-servers/</loc>
+    <lastmod>2022-09-09T19:36:44+01:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/opensource/</loc>
+    <lastmod>2022-09-09T19:36:44+01:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/sysklogd/</loc>
+    <lastmod>2022-09-09T19:36:44+01:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/projects/</loc>
+    <lastmod>2022-09-04T10:00:41+01:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/projects/smcroute/</loc>
+    <lastmod>2022-09-04T10:00:41+01:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/buildroot/</loc>
     <lastmod>2022-04-17T16:56:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/git/</loc>
+  </url><url>
+    <loc>https://troglobit.com/tags/git/</loc>
     <lastmod>2022-04-17T16:56:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/howto/</loc>
+  </url><url>
+    <loc>https://troglobit.com/tags/howto/</loc>
     <lastmod>2022-04-17T16:56:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/opensource/</loc>
+  </url><url>
+    <loc>https://troglobit.com/post/2022-04-17-your-own-operating-system/</loc>
     <lastmod>2022-04-17T16:56:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/</loc>
-    <lastmod>2022-04-17T16:56:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <lastmod>2022-04-17T16:56:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2022-04-17-your-own-operating-system/</loc>
-    <lastmod>2022-04-17T16:56:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/kernel/</loc>
+  </url><url>
+    <loc>https://troglobit.com/tags/kernel/</loc>
     <lastmod>2022-04-11T17:19:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/linux/</loc>
+  </url><url>
+    <loc>https://troglobit.com/tags/linux/</loc>
     <lastmod>2022-04-11T17:19:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2022-04-11-linux-kernel-development-checklist/</loc>
+  </url><url>
+    <loc>https://troglobit.com/post/2022-04-11-linux-kernel-development-checklist/</loc>
     <lastmod>2022-04-11T17:19:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/finit/</loc>
+  </url><url>
+    <loc>https://troglobit.com/tags/finit/</loc>
     <lastmod>2022-02-13T17:55:44+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2022-02-13-finit-in-linux-containers-lxc/</loc>
+  </url><url>
+    <loc>https://troglobit.com/post/2022-02-13-finit-in-linux-containers-lxc/</loc>
     <lastmod>2022-02-13T17:55:44+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/init/</loc>
+  </url><url>
+    <loc>https://troglobit.com/tags/init/</loc>
     <lastmod>2022-02-13T17:55:44+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/about/</loc>
-    <lastmod>2022-01-28T16:47:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2022-01-28T16:47:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2022-01-24-gmail-and-git-send-email/</loc>
+  </url><url>
+    <loc>https://troglobit.com/post/2022-01-24-gmail-and-git-send-email/</loc>
     <lastmod>2022-01-24T19:37:44+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/finit/</loc>
+  </url><url>
+    <loc>https://troglobit.com/projects/finit/</loc>
     <lastmod>2022-01-17T06:35:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/</loc>
-    <lastmod>2022-01-17T06:35:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2022-01-16-finit-v4.2-released/</loc>
+  </url><url>
+    <loc>https://troglobit.com/post/2022-01-16-finit-v4.2-released/</loc>
     <lastmod>2022-01-16T15:30:23+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2022-01-09-dependency-handling-in-finit/</loc>
+  </url><url>
+    <loc>https://troglobit.com/post/2022-01-09-dependency-handling-in-finit/</loc>
     <lastmod>2022-01-09T18:46:23+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2022-01-04-buildroot-development-checklist/</loc>
+  </url><url>
+    <loc>https://troglobit.com/post/2022-01-04-buildroot-development-checklist/</loc>
     <lastmod>2022-01-04T10:15:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/howtos/merecat-and-cgit/</loc>
+  </url><url>
+    <loc>https://troglobit.com/projects/tetris/</loc>
+    <lastmod>2021-12-26T20:37:00+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/howtos/merecat-and-cgit/</loc>
     <lastmod>2021-12-09T05:56:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/howtos/</loc>
+  </url><url>
+    <loc>https://troglobit.com/howtos/</loc>
     <lastmod>2021-12-09T05:56:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/merecat/</loc>
+  </url><url>
+    <loc>https://troglobit.com/tags/merecat/</loc>
     <lastmod>2021-12-09T05:56:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/howtos/merecat-and-ikiwiki/</loc>
+  </url><url>
+    <loc>https://troglobit.com/howtos/merecat-and-ikiwiki/</loc>
     <lastmod>2021-12-09T05:51:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/mrouted/</loc>
+  </url><url>
+    <loc>https://troglobit.com/projects/mrouted/</loc>
     <lastmod>2021-11-03T12:39:12+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/howtos/howto-build-and-use-my-projects/</loc>
+  </url><url>
+    <loc>https://troglobit.com/howtos/howto-build-and-use-my-projects/</loc>
     <lastmod>2021-10-05T21:03:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/project/smcroute/smcroute-conf.html</loc>
+  </url><url>
+    <loc>https://troglobit.com/project/smcroute/smcroute-conf.html</loc>
     <lastmod>2021-08-19T15:46:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/smcroute/</loc>
-    <lastmod>2021-08-19T15:46:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/</loc>
     <lastmod>2021-08-01T08:31:12+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/freebsd/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/freebsd/</loc>
     <lastmod>2021-08-01T08:31:12+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/howto/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/howto/</loc>
     <lastmod>2021-08-01T08:31:12+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/howtos/mrouting-in-freebsd/</loc>
+  </url><url>
+    <loc>https://troglobit.com/howtos/mrouting-in-freebsd/</loc>
     <lastmod>2021-08-01T08:31:12+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/kernel/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/kernel/</loc>
     <lastmod>2021-08-01T08:31:12+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/multicast/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/multicast/</loc>
     <lastmod>2021-08-01T08:31:12+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/tetris/</loc>
-    <lastmod>2021-06-30T20:37:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/emacs/</loc>
+  </url><url>
+    <loc>https://troglobit.com/projects/nemesis/</loc>
+    <lastmod>2021-07-07T15:39:00+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/emacs/</loc>
     <lastmod>2021-05-11T19:12:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2021-05-11-emacs-gmail-and-lore-mailing-lists/</loc>
+  </url><url>
+    <loc>https://troglobit.com/post/2021-05-11-emacs-gmail-and-lore-mailing-lists/</loc>
     <lastmod>2021-05-11T19:12:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/gmail/</loc>
+  </url><url>
+    <loc>https://troglobit.com/tags/gmail/</loc>
     <lastmod>2021-05-11T19:12:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/lore/</loc>
+  </url><url>
+    <loc>https://troglobit.com/tags/lore/</loc>
     <lastmod>2021-05-11T19:12:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/notmuch/</loc>
+  </url><url>
+    <loc>https://troglobit.com/tags/notmuch/</loc>
     <lastmod>2021-05-11T19:12:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/watchdogd/</loc>
+  </url><url>
+    <loc>https://troglobit.com/projects/watchdogd/</loc>
     <lastmod>2021-04-30T17:02:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2021-04-27-its-here/</loc>
+  </url><url>
+    <loc>https://troglobit.com/post/2021-04-27-its-here/</loc>
     <lastmod>2021-04-27T20:18:06+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2021-02-12-alpine-linux-with-finit/</loc>
+  </url><url>
+    <loc>https://troglobit.com/post/2021-02-12-alpine-linux-with-finit/</loc>
     <lastmod>2021-02-12T07:24:06+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2020-11-15-backtrace-in-c/</loc>
+  </url><url>
+    <loc>https://troglobit.com/post/2020-11-15-backtrace-in-c/</loc>
     <lastmod>2020-11-15T17:25:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2020-08-23-weird-screen-artifacts-on-x200/</loc>
+  </url><url>
+    <loc>https://troglobit.com/post/2020-08-23-weird-screen-artifacts-on-x200/</loc>
     <lastmod>2020-08-23T14:02:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/bsd/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/bsd/</loc>
     <lastmod>2020-08-22T21:39:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/howtos/netbsd-pkgsrc/</loc>
+  </url><url>
+    <loc>https://troglobit.com/howtos/netbsd-pkgsrc/</loc>
     <lastmod>2020-08-22T21:39:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/netbsd/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/netbsd/</loc>
     <lastmod>2020-08-22T21:39:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2020-07-17-wireguard-and-dns-timeout/</loc>
+  </url><url>
+    <loc>https://troglobit.com/post/2020-07-17-wireguard-and-dns-timeout/</loc>
     <lastmod>2020-07-17T11:04:09+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/howtos/merecat-and-lets-encrypt/</loc>
+  </url><url>
+    <loc>https://troglobit.com/howtos/merecat-and-lets-encrypt/</loc>
     <lastmod>2020-07-15T14:10:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2020-07-13-fixing-file-sharing-in-debian/ubuntu/mint/</loc>
+  </url><url>
+    <loc>https://troglobit.com/post/2020-07-13-fixing-file-sharing-in-debian/ubuntu/mint/</loc>
     <lastmod>2020-07-13T17:37:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/linux/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/linux/</loc>
     <lastmod>2020-06-09T22:48:52+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2020-06-09-open-source-releases/</loc>
+  </url><url>
+    <loc>https://troglobit.com/post/2020-06-09-open-source-releases/</loc>
     <lastmod>2020-06-09T22:48:52+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/opensource/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/opensource/</loc>
     <lastmod>2020-06-09T22:48:52+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/unix/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/unix/</loc>
     <lastmod>2020-06-09T22:48:52+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/sudo/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/sudo/</loc>
     <lastmod>2020-06-07T12:25:52+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2020-06-07-sudo-tricks/</loc>
+  </url><url>
+    <loc>https://troglobit.com/post/2020-06-07-sudo-tricks/</loc>
     <lastmod>2020-06-07T12:25:52+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/editline/</loc>
+  </url><url>
+    <loc>https://troglobit.com/projects/editline/</loc>
     <lastmod>2020-04-05T14:38:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2020-03-28-fix-blinking-wifi-led-on-x200/</loc>
+  </url><url>
+    <loc>https://troglobit.com/post/2020-03-28-fix-blinking-wifi-led-on-x200/</loc>
     <lastmod>2020-03-28T14:16:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2020-02-23-howto-install-pre-built-packages/</loc>
+  </url><url>
+    <loc>https://troglobit.com/post/2020-02-23-howto-install-pre-built-packages/</loc>
     <lastmod>2020-02-23T19:16:45+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/mini-snmpd/</loc>
+  </url><url>
+    <loc>https://troglobit.com/projects/mini-snmpd/</loc>
     <lastmod>2020-02-23T09:00:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/apt/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/apt/</loc>
     <lastmod>2020-02-22T12:28:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/debian/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/debian/</loc>
     <lastmod>2020-02-22T12:28:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2017/09/30/set-up-a-debian-ubuntu-apt-repository/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2017/09/30/set-up-a-debian-ubuntu-apt-repository/</loc>
     <lastmod>2020-02-22T12:28:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/ubuntu/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/ubuntu/</loc>
     <lastmod>2020-02-22T12:28:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/programming/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/programming/</loc>
     <lastmod>2020-02-22T09:45:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2020-02-22-useful-unix-apis/</loc>
+  </url><url>
+    <loc>https://troglobit.com/post/2020-02-22-useful-unix-apis/</loc>
     <lastmod>2020-02-22T09:45:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/inadyn/</loc>
+  </url><url>
+    <loc>https://troglobit.com/projects/inadyn/</loc>
     <lastmod>2020-02-20T16:29:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2019-11-03-bsd-syslogd-in-linux/</loc>
+  </url><url>
+    <loc>https://troglobit.com/post/2019-11-03-bsd-syslogd-in-linux/</loc>
     <lastmod>2019-11-03T23:04:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/sysklogd/</loc>
-    <lastmod>2019-11-03T23:04:00+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/howtos/merecat-basic-cig-in-c/</loc>
+  </url><url>
+    <loc>https://troglobit.com/howtos/merecat-basic-cig-in-c/</loc>
     <lastmod>2019-08-05T22:00:25+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/uftpd/</loc>
+  </url><url>
+    <loc>https://troglobit.com/projects/uftpd/</loc>
     <lastmod>2019-07-29T20:31:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/merecat/</loc>
+  </url><url>
+    <loc>https://troglobit.com/projects/merecat/</loc>
     <lastmod>2019-07-19T12:35:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2019-07-18-controlling-display-brightness/</loc>
+  </url><url>
+    <loc>https://troglobit.com/post/2019-07-18-controlling-display-brightness/</loc>
     <lastmod>2019-07-18T15:13:53+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2019-07-07-xscreensaver-fonts/</loc>
+  </url><url>
+    <loc>https://troglobit.com/post/2019-07-07-xscreensaver-fonts/</loc>
     <lastmod>2019-07-07T14:27:58+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2019-06-26-minor-miracles/</loc>
+  </url><url>
+    <loc>https://troglobit.com/post/2019-06-26-minor-miracles/</loc>
     <lastmod>2019-06-26T19:07:29+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/nemesis/</loc>
-    <lastmod>2019-06-16T15:39:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/pimd/</loc>
+  </url><url>
+    <loc>https://troglobit.com/projects/pimd/</loc>
     <lastmod>2019-04-28T08:50:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/igmp/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/igmp/</loc>
     <lastmod>2019-03-27T15:54:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/igmpproxy/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/igmpproxy/</loc>
     <lastmod>2019-03-27T15:54:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/mcproxy/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/mcproxy/</loc>
     <lastmod>2019-03-27T15:54:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/mrouted/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/mrouted/</loc>
     <lastmod>2019-03-27T15:54:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/howtos/multicast/</loc>
+  </url><url>
+    <loc>https://troglobit.com/howtos/multicast/</loc>
     <lastmod>2019-03-27T15:54:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/pim/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/pimd/</loc>
     <lastmod>2019-03-27T15:54:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/pimd/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/smcroute/</loc>
     <lastmod>2019-03-27T15:54:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/smcroute/</loc>
-    <lastmod>2019-03-27T15:54:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2019-03-13-floss-progress/</loc>
+  </url><url>
+    <loc>https://troglobit.com/post/2019-03-13-floss-progress/</loc>
     <lastmod>2019-03-13T00:11:32+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2019-03-12-odd-progress/</loc>
+  </url><url>
+    <loc>https://troglobit.com/post/2019-03-12-odd-progress/</loc>
     <lastmod>2019-03-12T23:11:30+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2018-08-12-dark-themes-ahead/</loc>
+  </url><url>
+    <loc>https://troglobit.com/post/2018-08-12-dark-themes-ahead/</loc>
     <lastmod>2018-08-12T23:51:52+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2018-08-03-display-brightness-in-awesome-on-thinkpad-x250/</loc>
+  </url><url>
+    <loc>https://troglobit.com/post/2018-08-03-display-brightness-in-awesome-on-thinkpad-x250/</loc>
     <lastmod>2018-08-03T16:15:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2018-06-16-open-source-releases/</loc>
+  </url><url>
+    <loc>https://troglobit.com/post/2018-06-16-open-source-releases/</loc>
     <lastmod>2018-06-16T15:19:28+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/howtos/snmp/</loc>
+  </url><url>
+    <loc>https://troglobit.com/howtos/snmp/</loc>
     <lastmod>2018-05-05T13:57:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/snmp/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/snmp/</loc>
     <lastmod>2018-05-05T13:57:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2018-04-15-n-e-m-e-s-i-s/</loc>
+  </url><url>
+    <loc>https://troglobit.com/post/2018-04-15-n-e-m-e-s-i-s/</loc>
     <lastmod>2018-04-15T16:11:23+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2018-02-15-slow-down/</loc>
+  </url><url>
+    <loc>https://troglobit.com/post/2018-02-15-slow-down/</loc>
     <lastmod>2018-02-15T20:05:25+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2016/07/05/multicast-routing-with-pim-sm-over-gre/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2016/07/05/multicast-routing-with-pim-sm-over-gre/</loc>
     <lastmod>2018-01-23T20:39:36+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/eventloop/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/pim/</loc>
+    <lastmod>2018-01-23T20:39:36+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/categories/eventloop/</loc>
     <lastmod>2017-09-19T08:51:38+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/libev/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/libev/</loc>
     <lastmod>2017-09-19T08:51:38+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2017/09/19/threads-vs-event-loop-again/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2017/09/19/threads-vs-event-loop--again/</loc>
     <lastmod>2017-09-19T08:51:38+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/docker/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/docker/</loc>
     <lastmod>2017-09-17T10:45:37+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/merecat/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/merecat/</loc>
     <lastmod>2017-09-17T10:45:37+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2017/09/17/packaging-software-with-docker/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2017/09/17/packaging-software-with-docker/</loc>
     <lastmod>2017-09-17T10:45:37+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/alpine/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/alpine/</loc>
     <lastmod>2017-09-10T11:13:39+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2017/09/10/install-x-window-in-alpine-linux/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2017/09/10/install-x-window-in-alpine-linux/</loc>
     <lastmod>2017-09-10T11:13:39+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2017/09/09/boot-alpine-linux-with-grub/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2017/09/09/boot-alpine-linux-with-grub/</loc>
     <lastmod>2017-09-09T21:37:10+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2017/06/06/install-git-in-openbsd/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2017/06/06/install-git-in-openbsd/</loc>
     <lastmod>2017-06-06T10:44:55+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/openbsd/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/openbsd/</loc>
     <lastmod>2017-06-06T10:44:55+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/httpd/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/httpd/</loc>
     <lastmod>2017-02-12T00:07:44+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/https/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/https/</loc>
     <lastmod>2017-02-12T00:07:44+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2017/02/12/https-proxy-for-merecat-httpd/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2017/02/12/https-proxy-for-merecat-httpd/</loc>
     <lastmod>2017-02-12T00:07:44+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/openssl/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/openssl/</loc>
     <lastmod>2017-02-12T00:07:44+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/thttpd/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/thttpd/</loc>
     <lastmod>2017-02-12T00:07:44+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/embedded/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/embedded/</loc>
     <lastmod>2017-02-02T18:52:18+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2017/02/02/emulate-an-actual-mtd-device-in-qemu/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2017/02/02/emulate-an-actual-mtd-device-in-qemu/</loc>
     <lastmod>2017-02-02T18:52:18+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/qemu/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/qemu/</loc>
     <lastmod>2017-02-02T18:52:18+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/raspberry-pi/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/raspberry-pi/</loc>
     <lastmod>2017-01-15T13:13:15+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/retro/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/retro/</loc>
     <lastmod>2017-01-15T13:13:15+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2017/01/15/wolfenstein-3d-on-retropie/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2017/01/15/wolfenstein-3d-on-retropie/</loc>
     <lastmod>2017-01-15T13:13:15+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/bluetooth/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/bluetooth/</loc>
     <lastmod>2017-01-03T17:03:05+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2017/01/03/trust-bluetooth-4.0-adapter-in-linux/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2017/01/03/trust-bluetooth-4.0-adapter-in-linux/</loc>
     <lastmod>2017-01-03T17:03:05+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2016/12/11/a-life-without-sudo/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2016/12/11/a-life-without-sudo/</loc>
     <lastmod>2016-12-11T20:26:12+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/c/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/capabilities/</loc>
     <lastmod>2016-12-11T20:26:12+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/capabilities/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/sandwich/</loc>
     <lastmod>2016-12-11T20:26:12+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/sandwich/</loc>
-    <lastmod>2016-12-11T20:26:12+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/icmp/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/icmp/</loc>
     <lastmod>2016-11-19T23:37:20+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2016/11/19/one-ping-only/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2016/11/19/one-ping-only/</loc>
     <lastmod>2016-11-19T23:37:20+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/projects/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/projects/</loc>
     <lastmod>2016-11-19T23:37:20+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2016/11/06/merecat-another-stray-kitten-/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2016/11/06/merecat---another-stray-kitten-/</loc>
     <lastmod>2016-11-06T01:34:18+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/sthttpd/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/sthttpd/</loc>
     <lastmod>2016-11-06T01:34:18+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2016/10/27/new-toolchains/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/c/</loc>
     <lastmod>2016-10-27T22:22:44+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/toolchain/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2016/10/27/new-toolchains/</loc>
     <lastmod>2016-10-27T22:22:44+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2016/09/26/arm-toolchain-r1/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/toolchain/</loc>
+    <lastmod>2016-10-27T22:22:44+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/2016/09/26/arm-toolchain-r1/</loc>
     <lastmod>2016-09-26T22:43:53+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/finit/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/finit/</loc>
     <lastmod>2016-09-21T19:08:37+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2016/09/21/finit3-almost-there/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2016/09/21/finit3--almost-there/</loc>
     <lastmod>2016-09-21T19:08:37+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/network/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/networking/</loc>
     <lastmod>2016-09-02T23:30:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/networking/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2016/09/02/the-general-idea/</loc>
     <lastmod>2016-09-02T23:30:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2016/09/02/the-general-idea/</loc>
-    <lastmod>2016-09-02T23:30:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/kvm/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/kvm/</loc>
     <lastmod>2016-08-18T20:07:17+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2016/08/18/live-kvm-migration-with-virt-manager/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2016/08/18/live-kvm-migration-with-virt-manager/</loc>
     <lastmod>2016-08-18T20:07:17+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/virt-manager/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/virt-manager/</loc>
     <lastmod>2016-08-18T20:07:17+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2016/08/13/fake-raid-adventures/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2016/08/13/fake-raid-adventures/</loc>
     <lastmod>2016-08-13T15:59:36+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/raid/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/raid/</loc>
     <lastmod>2016-08-13T15:59:36+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/thinkpad/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/thinkpad/</loc>
     <lastmod>2016-07-03T09:57:44+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2016/07/03/upgrade-x1-carbon-bios-from-linux/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2016/07/03/upgrade-x1-carbon-bios-from-linux/</loc>
     <lastmod>2016-07-03T09:57:44+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2016/07/02/redirecting-tcp-udp-ports-for-fun-and-profit/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2016/07/02/redirecting-tcp-udp-ports-for-fun-and-profit/</loc>
     <lastmod>2016-07-02T12:54:37+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2016/04/21/using-netcat-to-test-your-internet-daemon/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2016/04/21/using-netcat-to-test-your-internet-daemon/</loc>
     <lastmod>2016-04-21T14:21:49+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2016/04/11/the-key-to-successful-boot/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2016/04/11/the-key-to-successful-boot/</loc>
     <lastmod>2016-04-11T01:28:27+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2016/04/04/lecture-from-the-unix-beards/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2016/04/04/lecture-from-the-unix-beards/</loc>
     <lastmod>2016-04-04T00:14:28+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/misc/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/misc/</loc>
     <lastmod>2016-04-04T00:14:28+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/tips/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/tips/</loc>
     <lastmod>2016-04-04T00:14:28+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/backup/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/backup/</loc>
     <lastmod>2016-03-24T22:39:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2016/03/24/disaster-recovery/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2016/03/24/disaster-recovery/</loc>
     <lastmod>2016-03-24T22:39:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/containers/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/containers/</loc>
     <lastmod>2016-03-07T01:37:04+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2016/03/07/testing-multicast-with-docker/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2016/03/07/testing-multicast-with-docker/</loc>
     <lastmod>2016-03-07T01:37:04+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2016/03/07/multicast-testing/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2016/03/07/multicast-testing/</loc>
     <lastmod>2016-03-07T01:06:02+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/darkside/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/darkside/</loc>
     <lastmod>2015-11-13T20:57:29+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/dns/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/dns/</loc>
     <lastmod>2015-11-13T20:57:29+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/</loc>
     <lastmod>2015-11-13T20:57:29+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/jedi/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/jedi/</loc>
     <lastmod>2015-11-13T20:57:29+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/sith/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/sith/</loc>
     <lastmod>2015-11-13T20:57:29+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/starwars/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/starwars/</loc>
     <lastmod>2015-11-13T20:57:29+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/work/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/work/</loc>
     <lastmod>2015-11-13T20:57:29+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/awesome/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/awesome/</loc>
     <lastmod>2015-11-10T12:14:09+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/</loc>
     <lastmod>2015-11-10T12:14:09+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/spotify/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/spotify/</loc>
     <lastmod>2015-11-10T12:14:09+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/personal/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/personal/</loc>
     <lastmod>2015-11-07T02:32:12+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2015/11/07/stray-puppies/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2015/11/07/stray-puppies/</loc>
     <lastmod>2015-11-07T02:32:12+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/howtos/pimd-on-freebsd/</loc>
+  </url><url>
+    <loc>https://troglobit.com/howtos/pimd-on-freebsd/</loc>
     <lastmod>2015-09-27T18:45:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/hacking/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/hacking/</loc>
     <lastmod>2015-09-09T21:49:13+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2015/09/09/summer-of-code-2015/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2015/09/09/summer-of-code-2015/</loc>
     <lastmod>2015-09-09T21:49:13+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/howtos/pimd-on-openbsd/</loc>
+  </url><url>
+    <loc>https://troglobit.com/howtos/pimd-on-openbsd/</loc>
     <lastmod>2015-07-19T00:32:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/git/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/git/</loc>
     <lastmod>2015-07-02T17:11:55+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2015/07/02/howto-using-lite-with-a-git-based-application/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2015/07/02/howto-using-lite-with-a-git-based-application/</loc>
     <lastmod>2015-07-02T17:11:55+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/submodules/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/submodules/</loc>
     <lastmod>2015-07-02T17:11:55+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/</loc>
     <lastmod>2015-07-01T00:42:17+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/apache/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/apache/</loc>
     <lastmod>2015-06-30T23:13:48+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/gitweb/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/gitweb/</loc>
     <lastmod>2015-06-30T23:13:48+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/</loc>
     <lastmod>2015-06-30T23:13:48+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/inetd/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/inetd/</loc>
     <lastmod>2015-03-06T22:34:45+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2015/03/06/inetd-support-in-finit-v1-dot-12/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2015/03/06/inetd-support-in-finit-v1-dot-12/</loc>
     <lastmod>2015-03-06T22:34:45+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2015/01/24/finit-v1-dot-11-released/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2015/01/24/finit-v1-dot-11-released/</loc>
     <lastmod>2015-01-24T16:54:23+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/</loc>
     <lastmod>2015-01-12T01:57:40+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2015/01/08/recent-open-source-work/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2015/01/08/recent-open-source-work/</loc>
     <lastmod>2015-01-08T01:57:14+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2015/01/02/blog-restoration-project-now-also-on-github-pages/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2015/01/02/blog-restoration-project-now-also-on-github-pages/</loc>
     <lastmod>2015-01-02T14:12:59+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/github/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/github/</loc>
     <lastmod>2015-01-02T14:12:59+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/octopress/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/octopress/</loc>
     <lastmod>2015-01-02T14:12:59+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2014/12/28/mrouted-v3-dot-9-7/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2014/12/28/mrouted-v3-dot-9-7/</loc>
     <lastmod>2014-12-28T19:38:06+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2014/12/28/last-release-of-pimd/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2014/12/28/last-release-of-pimd/</loc>
     <lastmod>2014-12-28T13:42:18+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/ftp/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/ftp/</loc>
     <lastmod>2014-12-21T19:42:17+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/tftp/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/tftp/</loc>
     <lastmod>2014-12-21T19:42:17+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2014/12/21/tftp-blocksize-negotiation-in-uftpd-v1-dot-7/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2014/12/21/tftp-blocksize-negotiation-in-uftpd-v1-dot-7/</loc>
     <lastmod>2014-12-21T19:42:17+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/</loc>
     <lastmod>2014-09-23T01:55:19+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/ddns/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/ddns/</loc>
     <lastmod>2014-09-13T19:18:56+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/</loc>
     <lastmod>2014-09-13T19:18:56+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2014/09/04/bugfix-release-of-uftpd/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2014/09/04/bugfix-release-of-uftpd/</loc>
     <lastmod>2014-09-04T22:22:09+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2014/09/02/new-release-of-the-awesome-uftpd/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2014/09/02/new-release-of-the-awesome-uftpd/</loc>
     <lastmod>2014-09-02T10:47:35+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2014/08/27/howto-rebase-without-an-origin/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2014/08/27/howto-rebase-without-an-origin/</loc>
     <lastmod>2014-08-27T10:00:13+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/howtos/rebase-without-an-origin/</loc>
+  </url><url>
+    <loc>https://troglobit.com/howtos/rebase-without-an-origin/</loc>
     <lastmod>2014-08-27T10:00:13+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/blog/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/blog/</loc>
     <lastmod>2014-06-29T14:52:39+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2014/06/29/on-the-demise-of-free-code-dot-dot-dot/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2014/06/29/on-the-demise-of-free-code-dot-dot-dot/</loc>
     <lastmod>2014-06-29T14:52:39+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2014/05/20/new-release-of-uftpd-and-inadyn-dot-dot-dot/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2014/05/20/new-release-of-uftpd-and-inadyn-dot-dot-dot/</loc>
     <lastmod>2014-05-20T21:08:25+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2014/05/14/new-release-of-the-ddns-client-inadyn/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2014/05/14/new-release-of-the-ddns-client-inadyn/</loc>
     <lastmod>2014-05-14T08:29:48+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2014/05/04/why-write-your-own-ftp-server/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2014/05/04/why-write-your-own-ftp-server/</loc>
     <lastmod>2014-05-04T11:25:09+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2014/04/21/release-of-finit-v1-dot-9/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2014/04/21/release-of-finit-v1-dot-9/</loc>
     <lastmod>2014-04-21T16:08:30+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2014/03/18/finally-google-movies-and-music-in-sweden/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2014/03/18/finally-google-movies-and-music-in-sweden/</loc>
     <lastmod>2014-03-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/conf/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/conf/</loc>
     <lastmod>2014-02-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/json/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/json/</loc>
     <lastmod>2014-02-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2014/02/23/weekend-hack-json-vs-conf/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2014/02/23/weekend-hack-json-vs-conf/</loc>
     <lastmod>2014-02-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2013/08/13/just-a-programmer/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2013/08/13/just-a-programmer/</loc>
     <lastmod>2013-08-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2013/08/13/on-commit-messages-dot-dot-dot/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2013/08/13/on-commit-messages-dot-dot-dot/</loc>
     <lastmod>2013-08-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2013/08/09/on-the-linearity-of-time/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2013/08/09/on-the-linearity-of-time/</loc>
     <lastmod>2013-08-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/tz/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/tz/</loc>
     <lastmod>2013-08-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/threads-vs-events/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/threads-vs-events/</loc>
     <lastmod>2013-08-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2013/08/06/event-handling/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2013/08/06/event-handling/</loc>
     <lastmod>2013-08-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/editline/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/editline/</loc>
     <lastmod>2013-07-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/inadyn/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/inadyn/</loc>
     <lastmod>2013-07-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2013/07/12/new-open-source-releases/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2013/07/12/new-open-source-releases/</loc>
     <lastmod>2013-07-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/administration/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/administration/</loc>
     <lastmod>2013-07-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2013/07/10/net-install-centos/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2013/07/10/net-install-centos/</loc>
     <lastmod>2013-07-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/projects/snake/</loc>
+  </url><url>
+    <loc>https://troglobit.com/projects/snake/</loc>
     <lastmod>2013-07-07T10:28:00+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2013/07/05/file-system-pass-through-in-kvm-slash-qemu-slash-libvirt/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2013/07/05/file-system-pass-through-in-kvm-slash-qemu-slash-libvirt/</loc>
     <lastmod>2013-07-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2013/06/22/programming-as-an-artform/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2013/06/22/programming-as-an-artform/</loc>
     <lastmod>2013-06-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2013/06/08/finit-v1-dot-8/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2013/06/08/finit-v1-dot-8/</loc>
     <lastmod>2013-06-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2013/06/07/proof-of-life/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2013/06/07/proof-of-life/</loc>
     <lastmod>2013-06-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2013/02/17/resurrection/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2013/02/17/resurrection/</loc>
     <lastmod>2013-02-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2011/01/09/announcing-pimd-v2-dot-1-7/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2011/01/09/announcing-pimd-v2-dot-1-7/</loc>
     <lastmod>2011-01-09T20:20:57+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2011/01/08/announcing-pimd-v2-dot-1-6/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2011/01/08/announcing-pimd-v2-dot-1-6/</loc>
     <lastmod>2011-01-08T23:40:22+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/itunes/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/itunes/</loc>
     <lastmod>2010-12-31T20:26:37+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2010/12/31/ubuntu-to-serve-music-to-itunes/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2010/12/31/ubuntu-to-serve-music-to-itunes/</loc>
     <lastmod>2010-12-31T20:26:37+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2010/10/11/announcing-mrouted-v3-dot-9-3/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2010/10/11/announcing-mrouted-v3-dot-9-3/</loc>
     <lastmod>2010-10-11T23:44:28+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2010/09/08/announcing-pimd-v2-dot-1-3/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2010/09/08/announcing-pimd-v2-dot-1-3/</loc>
     <lastmod>2010-09-08T23:44:49+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2010/08/29/finally/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2010/08/29/finally/</loc>
     <lastmod>2010-08-29T20:44:34+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/virtualization/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/virtualization/</loc>
     <lastmod>2010-08-29T20:44:34+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/minix/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/minix/</loc>
     <lastmod>2010-08-12T18:17:40+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2010/08/12/minix-editline-1-dot-14-dot-0/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2010/08/12/minix-editline-1-dot-14-dot-0/</loc>
     <lastmod>2010-08-12T18:17:40+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2010/08/02/micro-tetris-1-dot-2-0/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2010/08/02/micro-tetris-1-dot-2-0/</loc>
     <lastmod>2010-08-02T00:56:35+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/tetris/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/tetris/</loc>
     <lastmod>2010-08-02T00:56:35+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2010/07/19/minix-editline-moves-to-git/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2010/07/19/minix-editline-moves-to-git/</loc>
     <lastmod>2010-07-19T02:40:36+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2010/07/13/git-quickie/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2010/07/13/git-quickie/</loc>
     <lastmod>2010-07-13T20:45:49+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/bzr/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/bzr/</loc>
     <lastmod>2010-07-13T01:56:11+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2010/07/13/converting-from-bazaar-to-git/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2010/07/13/converting-from-bazaar-to-git/</loc>
     <lastmod>2010-07-13T01:56:11+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/shell/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/shell/</loc>
     <lastmod>2010-05-09T19:53:19+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2010/05/09/syntax-highlighting-in-less/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2010/05/09/syntax-highlighting-in-less/</loc>
     <lastmod>2010-05-09T19:53:19+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2010/05/01/howto-move-window-buttons-back-to-the-right-hand-side/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2010/05/01/howto-move-window-buttons-back-to-the-right-hand-side/</loc>
     <lastmod>2010-05-01T16:46:57+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2010/04/26/best-programming-font-ever/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2010/04/26/best-programming-font-ever/</loc>
     <lastmod>2010-04-26T22:44:19+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/fonts/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/fonts/</loc>
     <lastmod>2010-04-26T22:44:19+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/typography/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/typography/</loc>
     <lastmod>2010-04-26T22:44:19+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2009/06/14/oona-6-years-old/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2009/06/14/oona-6-years-old/</loc>
     <lastmod>2009-06-14T21:04:34+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2009/06/14/editline-first-post/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2009/06/14/editline-first-post/</loc>
     <lastmod>2009-06-14T20:44:45+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/bazaar/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/bazaar/</loc>
     <lastmod>2009-06-13T00:36:07+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2009/06/13/howto-use-git-for-collaborative-development/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2009/06/13/howto-use-git-for-collaborative-development/</loc>
     <lastmod>2009-06-13T00:36:07+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2009/06/13/micro-tetris/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2009/06/13/micro-tetris/</loc>
     <lastmod>2009-06-13T00:04:30+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2009/06/12/more-about-bzrweb-and-some-about-git/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2009/06/12/more-about-bzrweb-and-some-about-git/</loc>
     <lastmod>2009-06-12T19:50:27+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2009/06/08/howto-setup-and-run-xen/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2009/06/08/howto-setup-and-run-xen/</loc>
     <lastmod>2009-06-08T22:05:42+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/xen/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/xen/</loc>
     <lastmod>2009-06-08T22:05:42+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/cvs/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/cvs/</loc>
     <lastmod>2009-04-10T16:23:42+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2009/04/10/learning-about-git/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2009/04/10/learning-about-git/</loc>
     <lastmod>2009-04-10T16:23:42+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/subversion/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/subversion/</loc>
     <lastmod>2009-04-10T16:23:42+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/svn/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/svn/</loc>
     <lastmod>2009-04-10T16:23:42+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2009/04/05/brief-libev-update/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2009/04/05/brief-libev-update/</loc>
     <lastmod>2009-04-05T23:53:47+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2009/03/28/the-marvellous-libev/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2009/03/28/the-marvellous-libev/</loc>
     <lastmod>2009-03-28T23:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2009/03/27/why-i-like-c/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2009/03/27/why-i-like-c/</loc>
     <lastmod>2009-03-27T00:37:42+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2009/02/28/link-collection-2009-02-28/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2009/02/28/link-collection-2009-02-28/</loc>
     <lastmod>2009-02-28T23:36:37+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/reminder/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/reminder/</loc>
     <lastmod>2009-02-14T21:13:41+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2009/02/14/reminder-to-self/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2009/02/14/reminder-to-self/</loc>
     <lastmod>2009-02-14T21:13:41+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2009/02/10/network-programming-link-collection/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2009/02/10/network-programming-link-collection/</loc>
     <lastmod>2009-02-10T21:56:42+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2009/02/08/minix-editline-v0-dot-3-0/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/network/</loc>
+    <lastmod>2009-02-10T21:56:42+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/2009/02/08/minix-editline-v0-dot-3-0/</loc>
     <lastmod>2009-02-08T22:35:22+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2008/11/09/the-joy-of-colors/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2008/11/09/the-joy-of-colors/</loc>
     <lastmod>2008-11-09T00:39:27+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/vim/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/vim/</loc>
     <lastmod>2008-11-09T00:39:27+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2008/11/08/minix-editline-v0-dot-2-2/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2008/11/08/minix-editline-v0-dot-2-2/</loc>
     <lastmod>2008-11-08T20:24:22+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2008/10/27/ubuntu-8-dot-10rc1-networkmanager-wtf/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2008/10/27/ubuntu-8-dot-10rc1-networkmanager-wtf/</loc>
     <lastmod>2008-10-27T19:50:03+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2008/08/20/cross-compiler-foo/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2008/08/20/cross-compiler-foo/</loc>
     <lastmod>2008-08-20T20:14:42+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/gnu/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/gnu/</loc>
     <lastmod>2008-07-30T23:53:42+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/license/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/license/</loc>
     <lastmod>2008-07-30T23:53:42+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2008/07/30/moving-to-isc/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2008/07/30/moving-to-isc/</loc>
     <lastmod>2008-07-30T23:53:42+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2008/07/30/link-collection-w31-2008/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2008/07/30/link-collection-w31-2008/</loc>
     <lastmod>2008-07-30T16:22:36+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/emacs/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/emacs/</loc>
     <lastmod>2008-07-28T01:38:13+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2008/07/28/howto-build-gnu-emacs-from-cvs/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2008/07/28/howto-build-gnu-emacs-from-cvs/</loc>
     <lastmod>2008-07-28T01:38:13+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2008/07/22/more-emacs-progress/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2008/07/22/more-emacs-progress/</loc>
     <lastmod>2008-07-22T23:56:55+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2008/07/19/no-wireless-led-on-thinkpad-t61/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2008/07/19/no-wireless-led-on-thinkpad-t61/</loc>
     <lastmod>2008-07-19T11:09:25+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2008/07/17/suddenly-compiz-is-not-working-anymore-dot-dot-dot/</loc>
+  </url><url>
+    <loc>https://troglobit.com/tags/t61/</loc>
+    <lastmod>2008-07-19T11:09:25+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/2008/07/17/suddenly-compiz-is-not-working-anymore-dot-dot-dot/</loc>
     <lastmod>2008-07-17T01:48:05+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2008/07/14/missing-sound-in-firefox/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2008/07/14/missing-sound-in-firefox/</loc>
     <lastmod>2008-07-14T10:30:48+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/regexp/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/regexp/</loc>
     <lastmod>2008-07-13T21:38:33+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2008/07/13/regexp-replace-in-many-files/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2008/07/13/regexp-replace-in-many-files/</loc>
     <lastmod>2008-07-13T21:38:33+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2008/06/09/minix-editline-v0-dot-2-1/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2008/06/09/minix-editline-v0-dot-2-1/</loc>
     <lastmod>2008-06-09T23:02:22+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2008/06/09/minix-editline-v0-dot-1-4/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2008/06/09/minix-editline-v0-dot-1-4/</loc>
     <lastmod>2008-06-09T00:49:22+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2008/06/08/minix-editline-v0-dot-1-1/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2008/06/08/minix-editline-v0-dot-1-1/</loc>
     <lastmod>2008-06-08T00:56:22+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2008/06/07/minix-editline-v0-dot-1-0/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2008/06/07/minix-editline-v0-dot-1-0/</loc>
     <lastmod>2008-06-07T21:45:05+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2008/02/24/enterprise-emacs/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2008/02/24/enterprise-emacs/</loc>
     <lastmod>2008-02-24T10:59:19+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2008/02/23/suspend-slash-resume-nightmare-in-ubuntu/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2008/02/23/suspend-slash-resume-nightmare-in-ubuntu/</loc>
     <lastmod>2008-02-23T21:34:44+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2007/07/31/bzrweb-0-dot-1-2-released/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2007/07/31/bzrweb-0-dot-1-2-released/</loc>
     <lastmod>2007-07-31T23:33:01+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2007/07/12/netapplet-patchwork/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2007/07/12/netapplet-patchwork/</loc>
     <lastmod>2007-07-12T11:37:38+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2007/07/11/making-bzrweb-work-again/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2007/07/11/making-bzrweb-work-again/</loc>
     <lastmod>2007-07-11T10:35:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2007/07/07/buggy-gnome-main-menu/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2007/07/07/buggy-gnome-main-menu/</loc>
     <lastmod>2007-07-07T09:52:17+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/gnome/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/gnome/</loc>
     <lastmod>2007-07-07T09:52:17+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/modules/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/modules/</loc>
     <lastmod>2007-03-25T23:59:57+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2007/03/25/vmware-kernel-modules-for-your-new-kernel/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2007/03/25/vmware-kernel-modules-for-your-new-kernel/</loc>
     <lastmod>2007-03-25T23:59:57+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2007/02/03/building-debian-slash-ubuntu-kernels/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2007/02/03/building-debian-slash-ubuntu-kernels/</loc>
     <lastmod>2007-02-03T11:00:45+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2007/02/03/moved/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2007/02/03/moved/</loc>
     <lastmod>2007-02-03T10:52:15+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2006/09/23/top-ten-unix-shell-commands/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2006/09/23/top-ten-unix-shell-commands/</loc>
     <lastmod>2006-09-23T23:02:42+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2006/08/13/aaaah/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2006/08/13/aaaah/</loc>
     <lastmod>2006-08-13T10:43:13+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2006/08/05/test-posting-using-blosxom/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2006/08/05/test-posting-using-blosxom/</loc>
     <lastmod>2006-08-05T22:35:49+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2006/07/24/besiktning/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2006/07/24/besiktning/</loc>
     <lastmod>2006-07-24T22:10:27+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/swedish/</loc>
+  </url><url>
+    <loc>https://troglobit.com/categories/swedish/</loc>
     <lastmod>2006-07-24T22:10:27+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2006/07/23/atari-st-e-emulation-with-steem/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2006/07/23/atari-st-e-emulation-with-steem/</loc>
     <lastmod>2006-07-23T22:10:50+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2006/07/21/bromsbyte-passat/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2006/07/21/bromsbyte-passat/</loc>
     <lastmod>2006-07-21T22:10:48+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2006/07/17/make-kpkg-and-dirty-modules/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2006/07/17/make-kpkg-and-dirty-modules/</loc>
     <lastmod>2006-07-17T22:10:24+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2006/07/17/quick-note/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2006/07/17/quick-note/</loc>
     <lastmod>2006-07-17T21:10:45+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2006/06/06/swedish-national-day-deep-thoughts-dot-dot-dot/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2006/06/06/swedish-national-day-deep-thoughts-dot-dot-dot/</loc>
     <lastmod>2006-06-06T22:10:42+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2006/06/06/laptop-network-configuration-in-debian-slash-ubuntu/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2006/06/06/laptop-network-configuration-in-debian-slash-ubuntu/</loc>
     <lastmod>2006-06-06T21:10:24+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2006/05/26/no-news-are-good-news/</loc>
+  </url><url>
+    <loc>https://troglobit.com/2006/05/26/no-news-are-good-news/</loc>
     <lastmod>2006-05-26T21:10:42+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/series/</loc>
   </url>
-  
-  <url>
-    <loc>/series/</loc>
-  </url>
-  
 </urlset>

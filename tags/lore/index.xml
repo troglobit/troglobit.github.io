@@ -2,22 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>lore on Joachim Wiberg</title>
-    <link>/tags/lore/</link>
+    <link>https://troglobit.com/tags/lore/</link>
     <description>Recent content in lore on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Tue, 11 May 2021 19:12:00 +0100</lastBuildDate>
-    
-	<atom:link href="/tags/lore/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 11 May 2021 19:12:00 +0100</lastBuildDate><atom:link href="https://troglobit.com/tags/lore/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Emacs: GMail and Lore Mailing Lists</title>
-      <link>/post/2021-05-11-emacs-gmail-and-lore-mailing-lists/</link>
+      <link>https://troglobit.com/post/2021-05-11-emacs-gmail-and-lore-mailing-lists/</link>
       <pubDate>Tue, 11 May 2021 19:12:00 +0100</pubDate>
       
-      <guid>/post/2021-05-11-emacs-gmail-and-lore-mailing-lists/</guid>
+      <guid>https://troglobit.com/post/2021-05-11-emacs-gmail-and-lore-mailing-lists/</guid>
       <description>With lots of help from the tireless Tobias Waldekranz, I think I&amp;rsquo;ve finally found the perfect &amp;ldquo;magit like&amp;rdquo; email setup. With Emacs, of course. This is the story of how I did it.
 First install notmuch, mbsync (from the isync package), and afew:
 sudo apt install notmuch isync afew Do initial setup of notmuch for your user. I&amp;rsquo;ve opted to store my mail in ~/mail, this is used throughout the text below, ymmv.</description>

@@ -2,22 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>github on Joachim Wiberg</title>
-    <link>/categories/github/</link>
+    <link>https://troglobit.com/categories/github/</link>
     <description>Recent content in github on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Fri, 02 Jan 2015 14:12:59 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/github/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 02 Jan 2015 14:12:59 +0000</lastBuildDate><atom:link href="https://troglobit.com/categories/github/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Blog Restoration Project</title>
-      <link>/2015/01/02/blog-restoration-project-now-also-on-github-pages/</link>
+      <link>https://troglobit.com/2015/01/02/blog-restoration-project-now-also-on-github-pages/</link>
       <pubDate>Fri, 02 Jan 2015 14:12:59 +0000</pubDate>
       
-      <guid>/2015/01/02/blog-restoration-project-now-also-on-github-pages/</guid>
+      <guid>https://troglobit.com/2015/01/02/blog-restoration-project-now-also-on-github-pages/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve had this long-standing issue with backups.  It&amp;rsquo;s deadly boring to
 set up and maintain, so I don&amp;rsquo;t do any.  Until today!&lt;/p&gt;
 &lt;p&gt;Today I moved the sources for my &lt;a href=&#34;http://troglobit.com&#34;&gt;Octopress blag&lt;/a&gt;

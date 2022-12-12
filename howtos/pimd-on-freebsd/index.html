@@ -10,7 +10,7 @@
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
-<link rel="canonical" href="/howtos/pimd-on-freebsd/" />
+<link rel="canonical" href="https://troglobit.com/howtos/pimd-on-freebsd/" />
 
 
     <title>
@@ -26,21 +26,21 @@
 
 
 
-<link rel="stylesheet" href="/main.29c2c8c3fc9cf748254138351f142ac2833b208a68e83aec126edc98b59efef2.css">
+<link rel="stylesheet" href="https://troglobit.com/main.29c2c8c3fc9cf748254138351f142ac2833b208a68e83aec126edc98b59efef2.css">
 
 
     
-        <link rel="stylesheet" type="text/css" href="/css/extra.css">
+        <link rel="stylesheet" type="text/css" href="https://troglobit.com/css/extra.css">
     
 
 
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1b1c1d">
-    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://troglobit.com/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://troglobit.com/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://troglobit.com/favicon-16x16.png">
+    <link rel="manifest" href="https://troglobit.com/site.webmanifest">
+    <link rel="mask-icon" href="https://troglobit.com/safari-pinned-tab.svg" color="#1b1c1d">
+    <link rel="shortcut icon" href="https://troglobit.com/favicon.ico">
     <meta name="msapplication-TileColor" content="#1b1c1d">
     <meta name="theme-color" content="#1b1c1d">
 
@@ -48,13 +48,9 @@
 
 <meta itemprop="name" content="HowTo run pimd on FreeBSD">
 <meta itemprop="description" content="This is not a proper HowTo, more of a &ldquo;note to self&rdquo; after having created a setup to test pimd issue #57. For these notes the following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and Qemu 2.3.0, is used:
-.--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | &#39;--------&#39; &#39;----&#39; &#39;----&#39; &#39;----------&#39; The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP/MLD snooping to get pimd to run smoothly.">
-<meta itemprop="datePublished" content="2015-09-27T18:45:00&#43;02:00" />
-<meta itemprop="dateModified" content="2015-09-27T18:45:00&#43;02:00" />
+.--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | &#39;--------&#39; &#39;----&#39; &#39;----&#39; &#39;----------&#39; The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP/MLD snooping to get pimd to run smoothly."><meta itemprop="datePublished" content="2015-09-27T18:45:00+02:00" />
+<meta itemprop="dateModified" content="2015-09-27T18:45:00+02:00" />
 <meta itemprop="wordCount" content="354">
-
-
-
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="HowTo run pimd on FreeBSD"/>
@@ -68,9 +64,10 @@
 <meta property="og:description" content="This is not a proper HowTo, more of a &ldquo;note to self&rdquo; after having created a setup to test pimd issue #57. For these notes the following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and Qemu 2.3.0, is used:
 .--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | &#39;--------&#39; &#39;----&#39; &#39;----&#39; &#39;----------&#39; The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP/MLD snooping to get pimd to run smoothly." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/howtos/pimd-on-freebsd/" />
+<meta property="og:url" content="https://troglobit.com/howtos/pimd-on-freebsd/" /><meta property="article:section" content="howtos" />
 <meta property="article:published_time" content="2015-09-27T18:45:00+02:00" />
 <meta property="article:modified_time" content="2015-09-27T18:45:00+02:00" />
+
 
 
 
@@ -107,7 +104,7 @@
         <div class="container">
             <header class="header">
     <span class="header__inner">
-        <a href="/" style="text-decoration: none;">
+        <a href="https://troglobit.com/" style="text-decoration: none;">
     <div class="logo">
         
             <span class="logo__mark">&gt;</span>
@@ -125,7 +122,7 @@
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="/about/">About</a></li><li><a href="/posts/">Blog</a></li><li><a href="/howtos/">HowTos</a></li><li><a href="/projects/">Projects</a></li><li><a href="https://resume.troglobit.com">Resumé</a></li><li><a href="https://ftp.troglobit.com">FTP</a></li><li><a href="https://deb.troglobit.com">DEB</a></li>
+    <ul class="menu__inner"><li><a href="https://troglobit.com/about/">About</a></li><li><a href="https://troglobit.com/posts/">Blog</a></li><li><a href="https://troglobit.com/howtos/">HowTos</a></li><li><a href="https://troglobit.com/projects/">Projects</a></li><li><a href="https://resume.troglobit.com">Resumé</a></li><li><a href="https://ftp.troglobit.com">FTP</a></li><li><a href="https://deb.troglobit.com">DEB</a></li>
     </ul>
 </nav>
 
@@ -151,7 +148,7 @@
         </div>
 
         <article>
-            <h2 class="post-title"><a href="/howtos/pimd-on-freebsd/">HowTo run pimd on FreeBSD</a></h2>
+            <h2 class="post-title"><a href="https://troglobit.com/howtos/pimd-on-freebsd/">HowTo run pimd on FreeBSD</a></h2>
 
             
             
@@ -162,11 +159,11 @@
 created a setup to test pimd <a href="https://github.com/troglobit/pimd/issues/57">issue #57</a>.  For these notes the
 following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and
 Qemu 2.3.0, is used:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">    .--------. net1 .----. net2 .----. net3 .----------.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    .--------. net1 .----. net2 .----. net3 .----------.
     | Sender |------| R2 |------| R3 |------| Receiver |
     &#39;--------&#39;      &#39;----&#39;      &#39;----&#39;      &#39;----------&#39;
 </code></pre></div><p>The networks between the boxes are actually Linux bridge devices (br),
-on which you may have to <a href="/multicast-howto.html#roll-your-own">disable IGMP/MLD snooping</a> to get <code>pimd</code>
+on which you may have to <a href="https://troglobit.com/multicast-howto.html#roll-your-own">disable IGMP/MLD snooping</a> to get <code>pimd</code>
 to run smoothly.  Only R2 and R3 run FreeBSD v10.2, 64-bit.  The <code>net1</code>,
 between sender and <code>R2</code>, and <code>net3</code>, between <code>R3</code> and the receiver, are
 both setup using simple DHCP client.  The Linux bridges have a DHCP
@@ -176,11 +173,11 @@ server running.  Only <code>net2</code> between the two routers is static, using
 <p>You need a few things set up in FreeBSD before starting <code>pimd</code>.</p>
 <p>In <code>/boot/loader.conf</code> add the following line to load the MROUTING
 kernel module:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">    ip_mroute_load=&#34;yes&#34;
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    ip_mroute_load=&#34;yes&#34;
 </code></pre></div><p>If you want to serial console access to your FreeBSD, or run FreeBSD in
 Qemu (virt-manager), you may want to add the following lines as well to
 <code>/boot/loader.conf</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">    boot_multicons=&#34;YES&#34;
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    boot_multicons=&#34;YES&#34;
     boot_serial=&#34;YES&#34;
     comconsole_speed=&#34;115200&#34;
     console=&#34;comconsole,vidconsole&#34;
@@ -189,29 +186,29 @@ enable router/gateway mode and to enable RIP to resolve the unicast
 forwarding table.  The <code>Sender</code> and <code>Recieiver</code> nodes, which run
 Ubuntu 14.04, employ Quagga <code>ripd</code> for this, but on FreeBSD we employ
 the god &lsquo;ol <code>routed</code> :-)</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">    gateway_enable=&#34;YES&#34;
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    gateway_enable=&#34;YES&#34;
     routed_enable=&#34;YES&#34;
     routed_flags=&#34;-s&#34;
 </code></pre></div><p>Notice how we change the <code>routed_flags</code> from quiet mode! Now, for
 interop with the rest of the network we enable RIP v2 mode by adding the
 following line to <code>/etc/gateways</code>:</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">    ripv2
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    ripv2
 </code></pre></div><h2 id="download-pimd">Download pimd</h2>
 <p>Next we need to download and build <code>pimd</code>.  It is available on GitHub if
 you want the latest bleeding edge stuff, or use the latest tarball:</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">    wget http://ftp.troglobit.com/pimd/pimd-2.3.2.tar.gz
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">    wget http://ftp.troglobit.com/pimd/pimd-2.3.2.tar.gz
     tar xfz pimd-2.3.2.tar.gz
     <span class="nb">cd</span> pimd-2.3.2/
     ./configure
     make
 </code></pre></div><h2 id="running-pimd">Running pimd</h2>
 <p>Now we can start pimd on both routers:</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">    ./pimd -c pimd.conf
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">    ./pimd -c pimd.conf
 </code></pre></div><p>After a while you should be able to see some interesting output in both</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">    ./pimd -r
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    ./pimd -r
 </code></pre></div><p>and</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">    netstat -rn
-</code></pre></div><p>See the <a href="/howto-run-pimd-on-openbsd.html">OpenBSD HowTo</a> for example
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">    netstat -rn
+</code></pre></div><p>See the <a href="https://troglobit.com/howto-run-pimd-on-openbsd.html">OpenBSD HowTo</a> for example
 output and troubleshooting.</p>
 
             </div>
@@ -225,11 +222,11 @@ output and troubleshooting.</p>
     <p>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
 
-        <span class="tag"><a href="/categories/multicast/">multicast</a></span>
-        <span class="tag"><a href="/categories/pimd/">pimd</a></span>
-        <span class="tag"><a href="/categories/freebsd/">freebsd</a></span>
-        <span class="tag"><a href="/categories/bsd/">bsd</a></span>
-        <span class="tag"><a href="/categories/howto/">howto</a></span>
+        <span class="tag"><a href="https://troglobit.com/categories/multicast/">multicast</a></span>
+        <span class="tag"><a href="https://troglobit.com/categories/pimd/">pimd</a></span>
+        <span class="tag"><a href="https://troglobit.com/categories/freebsd/">freebsd</a></span>
+        <span class="tag"><a href="https://troglobit.com/categories/bsd/">bsd</a></span>
+        <span class="tag"><a href="https://troglobit.com/categories/howto/">howto</a></span>
         
     </p>
 
@@ -244,7 +241,7 @@ output and troubleshooting.</p>
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2022</span>
-            <span><a href="/">Joachim Wiberg</a></span>
+            <span><a href="https://troglobit.com/">Joachim Wiberg</a></span>
             <span>UNIX&trade; 4Life! &#9994;</span>
             
             
@@ -261,7 +258,7 @@ output and troubleshooting.</p>
 
 
 
-<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+<script type="text/javascript" src="https://troglobit.com/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
 
 
 

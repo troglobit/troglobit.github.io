@@ -2,22 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Embedded on Joachim Wiberg</title>
-    <link>/categories/embedded/</link>
+    <link>https://troglobit.com/categories/embedded/</link>
     <description>Recent content in Embedded on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Thu, 02 Feb 2017 18:52:18 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/embedded/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 02 Feb 2017 18:52:18 +0000</lastBuildDate><atom:link href="https://troglobit.com/categories/embedded/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Emulate an actual MTD device in Qemu</title>
-      <link>/2017/02/02/emulate-an-actual-mtd-device-in-qemu/</link>
+      <link>https://troglobit.com/2017/02/02/emulate-an-actual-mtd-device-in-qemu/</link>
       <pubDate>Thu, 02 Feb 2017 18:52:18 +0000</pubDate>
       
-      <guid>/2017/02/02/emulate-an-actual-mtd-device-in-qemu/</guid>
+      <guid>https://troglobit.com/2017/02/02/emulate-an-actual-mtd-device-in-qemu/</guid>
       <description>&lt;p&gt;Having worked with Linux for the last 20 years, and embedded for more
 than ten of them, I&amp;rsquo;ve become quite a fan of virtualization in general
 and &lt;a href=&#34;http://qemu.org&#34;&gt;Qemu&lt;/a&gt; in particular.&lt;/p&gt;
@@ -34,10 +30,10 @@ why I created &lt;a href=&#34;https://github.com/troglobit/troglos&#34;&gt;Trogl
     
     <item>
       <title>New Toolchains</title>
-      <link>/2016/10/27/new-toolchains/</link>
+      <link>https://troglobit.com/2016/10/27/new-toolchains/</link>
       <pubDate>Thu, 27 Oct 2016 22:22:44 +0000</pubDate>
       
-      <guid>/2016/10/27/new-toolchains/</guid>
+      <guid>https://troglobit.com/2016/10/27/new-toolchains/</guid>
       <description>Finally, fresh from the oven, here are the remaining two toolchains I&amp;rsquo;ve promised, based on GCC 6.1 and GLIBC 2.23. Download from the FTP:
  arm-unknown-linux-gnueabi-6.1.0-2.tar.xz powerpc-unknown-linux-gnu-6.1.0-2.tar.xz x86_64-unknown-linux-gnu-6.1.0-2.tar.xz  Unpack into /usr/local, and add to your $PATH, e.g.
 export PATH=/usr/local/arm-unknown-linux-gnueabi-6.1.0-2/bin:$PATH  The toolchains are built using crosstool-NG on Ubuntu 16.04 64-bit, and are primarily intended for myself and users of TroglOS, but are generic enough to be useful for other purposes as well.</description>
@@ -45,10 +41,10 @@ export PATH=/usr/local/arm-unknown-linux-gnueabi-6.1.0-2/bin:$PATH  The toolchai
     
     <item>
       <title>ARM Toolchain r1</title>
-      <link>/2016/09/26/arm-toolchain-r1/</link>
+      <link>https://troglobit.com/2016/09/26/arm-toolchain-r1/</link>
       <pubDate>Mon, 26 Sep 2016 22:43:53 +0000</pubDate>
       
-      <guid>/2016/09/26/arm-toolchain-r1/</guid>
+      <guid>https://troglobit.com/2016/09/26/arm-toolchain-r1/</guid>
       <description>First GCC 6.1 based ARM (32-bit) toolchain released on my FTP. Built using crosstool-NG for Ubuntu 16.04 (x86_64) with GLIBC 2.23.
  arm-unknown-linux-gnueabi-6.1.0-1.tar.xz  Download, unpack into /usr/local, and add to your $PATH
 export PATH=/usr/local/arm-unknown-linux-gnueabi-6.1.0-1/bin:$PATH  There&amp;rsquo;s lots of neat stuff included, both a sysroot and a debug-root with GDB and gdbserver for target. For details on using it, see the excellent docs.
@@ -57,21 +53,21 @@ The main purpose for my building this is TroglOS, but it is useful for other pur
     
     <item>
       <title>The General Idea</title>
-      <link>/2016/09/02/the-general-idea/</link>
+      <link>https://troglobit.com/2016/09/02/the-general-idea/</link>
       <pubDate>Fri, 02 Sep 2016 23:30:00 +0000</pubDate>
       
-      <guid>/2016/09/02/the-general-idea/</guid>
+      <guid>https://troglobit.com/2016/09/02/the-general-idea/</guid>
       <description>OK, so here&amp;rsquo;s the general idea: take one teaspoon of a well equipped SBC with Marvell chips you know well, add an awesome WiFi hotspot with USB connection, stir feverishly for several weekends in a row, then sprinkle some AlpineLinux and a custom kernel on top. Enjoy!
 I have no clue if this will actually work, may even try porting my own little thing called TroglOS to the ClearFog first, I don&amp;rsquo;t know, but it will definitely be awesome!</description>
     </item>
     
     <item>
       <title>Cross Compiler Foo</title>
-      <link>/2008/08/20/cross-compiler-foo/</link>
+      <link>https://troglobit.com/2008/08/20/cross-compiler-foo/</link>
       <pubDate>Wed, 20 Aug 2008 20:14:42 +0000</pubDate>
       
-      <guid>/2008/08/20/cross-compiler-foo/</guid>
-      <description>There is a certain magic surrounding cross compilers and the people that know how to build one. Not unlike that of (Linux/BSD) kernel developers. At work we today support two embedded Linux targets, both are ARM based, and in neither of the two have we built the cross compiler ourselves. The first was ye&amp;rsquo; old 2.95 based from uClinux.org and the second we had a consultant build for us. Lame!</description>
+      <guid>https://troglobit.com/2008/08/20/cross-compiler-foo/</guid>
+      <description>There is a certain magic surrounding cross compilers and the people that know how to build one. Not unlike that of (Linux/BSD) kernel developers. At work we today support two embedded Linux targets, both are ARM based, and in neither of the two have we built the cross compiler ourselves. The first was ye&#39; old 2.95 based from uClinux.org and the second we had a consultant build for us. Lame!</description>
     </item>
     
   </channel>

@@ -2,32 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>tftp on Joachim Wiberg</title>
-    <link>/categories/tftp/</link>
+    <link>https://troglobit.com/categories/tftp/</link>
     <description>Recent content in tftp on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Sun, 21 Dec 2014 19:42:17 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/tftp/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 21 Dec 2014 19:42:17 +0000</lastBuildDate><atom:link href="https://troglobit.com/categories/tftp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TFTP blocksize negotiation in uftpd v1.7</title>
-      <link>/2014/12/21/tftp-blocksize-negotiation-in-uftpd-v1-dot-7/</link>
+      <link>https://troglobit.com/2014/12/21/tftp-blocksize-negotiation-in-uftpd-v1-dot-7/</link>
       <pubDate>Sun, 21 Dec 2014 19:42:17 +0000</pubDate>
       
-      <guid>/2014/12/21/tftp-blocksize-negotiation-in-uftpd-v1-dot-7/</guid>
+      <guid>https://troglobit.com/2014/12/21/tftp-blocksize-negotiation-in-uftpd-v1-dot-7/</guid>
       <description>New release of uftpd, this time with TFTP blocksize negotiation, RFC 2348. Making it a lot faster to transfer files over TFTP.
 Try it out!</description>
     </item>
     
     <item>
       <title>GnuTLS support in Inadyn and fixes to uftpd</title>
-      <link>/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/</link>
+      <link>https://troglobit.com/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/</link>
       <pubDate>Sat, 13 Sep 2014 19:18:56 +0000</pubDate>
       
-      <guid>/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/</guid>
+      <guid>https://troglobit.com/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/</guid>
       <description>Quite a few changes lately. I finally got around to adding support for GnuTLS to Inadyn, hopefully this will get into Debian &amp;hellip; unless the Jessie freeze prevents that.
 Also, thanks to a friend of mine trying out uftpd recently I discovered that libuev has been missing from the tarball since the release of the TFTP support. Fixed.
 Another great piece of news is that Coverity accepted uftpd as an Open Source project, I&amp;rsquo;ve been hard at work fixing nasty bugs uncovered by the Coverity Scan.</description>
@@ -35,10 +31,10 @@ Another great piece of news is that Coverity accepted uftpd as an Open Source pr
     
     <item>
       <title>Bugfix release of uftpd</title>
-      <link>/2014/09/04/bugfix-release-of-uftpd/</link>
+      <link>https://troglobit.com/2014/09/04/bugfix-release-of-uftpd/</link>
       <pubDate>Thu, 04 Sep 2014 22:22:09 +0000</pubDate>
       
-      <guid>/2014/09/04/bugfix-release-of-uftpd/</guid>
+      <guid>https://troglobit.com/2014/09/04/bugfix-release-of-uftpd/</guid>
       <description>So them pesky details of /etc/inetd.conf really are important?
  This is a small bugfix release of uftpd. Version 1.4 is basically just to change nowait to wait for the TFTP service in /etc/inetd.conf, but there&amp;rsquo;s also a minor man page update.
 Enjoy! :)</description>
@@ -46,20 +42,20 @@ Enjoy! :)</description>
     
     <item>
       <title>The awesome uftpd, now w/ TFTP support! :)</title>
-      <link>/2014/09/02/new-release-of-the-awesome-uftpd/</link>
+      <link>https://troglobit.com/2014/09/02/new-release-of-the-awesome-uftpd/</link>
       <pubDate>Tue, 02 Sep 2014 10:47:35 +0000</pubDate>
       
-      <guid>/2014/09/02/new-release-of-the-awesome-uftpd/</guid>
+      <guid>https://troglobit.com/2014/09/02/new-release-of-the-awesome-uftpd/</guid>
       <description>Today sees the release of v1.3 of the awesome little uftpd. The main news is the new TFTP support! Just like before you don&amp;rsquo;t need any configuration file, just build and install &amp;ndash; or build a .deb file and install.
 This release completes the main purpose of uftpd for me, I can now use it as my daily driver and fully replace vsftpd and tftpd-hpa, which to me are the next best.</description>
     </item>
     
     <item>
       <title>New releases of uftpd and inadyn ...</title>
-      <link>/2014/05/20/new-release-of-uftpd-and-inadyn-dot-dot-dot/</link>
+      <link>https://troglobit.com/2014/05/20/new-release-of-uftpd-and-inadyn-dot-dot-dot/</link>
       <pubDate>Tue, 20 May 2014 21:08:25 +0000</pubDate>
       
-      <guid>/2014/05/20/new-release-of-uftpd-and-inadyn-dot-dot-dot/</guid>
+      <guid>https://troglobit.com/2014/05/20/new-release-of-uftpd-and-inadyn-dot-dot-dot/</guid>
       <description>The last couple of weeks have both seen the birth of the fabulous uftpd and a reignited inadyn project! Yesterday v1.2 of uftpd was released and today Inadyn saw the first working HTTPS support being released as v1.99.8! This is likely the last release of Inadyn before the big 2.0, which will introduce the new .conf file format based on libConfuse. A .conf file feasibility study was presented earlier &amp;hellip;</description>
     </item>
     

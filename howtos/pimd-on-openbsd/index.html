@@ -10,7 +10,7 @@ First of all, my sincere thanks to the OpenBSD team for, not just an awesome UNI
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
-<link rel="canonical" href="/howtos/pimd-on-openbsd/" />
+<link rel="canonical" href="https://troglobit.com/howtos/pimd-on-openbsd/" />
 
 
     <title>
@@ -26,21 +26,21 @@ First of all, my sincere thanks to the OpenBSD team for, not just an awesome UNI
 
 
 
-<link rel="stylesheet" href="/main.29c2c8c3fc9cf748254138351f142ac2833b208a68e83aec126edc98b59efef2.css">
+<link rel="stylesheet" href="https://troglobit.com/main.29c2c8c3fc9cf748254138351f142ac2833b208a68e83aec126edc98b59efef2.css">
 
 
     
-        <link rel="stylesheet" type="text/css" href="/css/extra.css">
+        <link rel="stylesheet" type="text/css" href="https://troglobit.com/css/extra.css">
     
 
 
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#1b1c1d">
-    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://troglobit.com/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://troglobit.com/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://troglobit.com/favicon-16x16.png">
+    <link rel="manifest" href="https://troglobit.com/site.webmanifest">
+    <link rel="mask-icon" href="https://troglobit.com/safari-pinned-tab.svg" color="#1b1c1d">
+    <link rel="shortcut icon" href="https://troglobit.com/favicon.ico">
     <meta name="msapplication-TileColor" content="#1b1c1d">
     <meta name="theme-color" content="#1b1c1d">
 
@@ -48,13 +48,9 @@ First of all, my sincere thanks to the OpenBSD team for, not just an awesome UNI
 
 <meta itemprop="name" content="HowTo run pimd on OpenBSD">
 <meta itemprop="description" content="This is an introduction to HowTo run pimd on OpenBSD. I keep it around mostly as a reminder to myself when testing new pimd releases, maybe someone else can make use of it as well.
-First of all, my sincere thanks to the OpenBSD team for, not just an awesome UNIX distribution, but also for their good taste in shipping a MULTICAST enabled kernel in the base distribution! On both NetBSD and FreeBSD there is a bit of work to get multicast support, which is one of the reasons for my not writing a HowTo for either of them atm.">
-<meta itemprop="datePublished" content="2015-07-19T00:32:00&#43;02:00" />
-<meta itemprop="dateModified" content="2015-07-19T00:32:00&#43;02:00" />
+First of all, my sincere thanks to the OpenBSD team for, not just an awesome UNIX distribution, but also for their good taste in shipping a MULTICAST enabled kernel in the base distribution! On both NetBSD and FreeBSD there is a bit of work to get multicast support, which is one of the reasons for my not writing a HowTo for either of them atm."><meta itemprop="datePublished" content="2015-07-19T00:32:00+02:00" />
+<meta itemprop="dateModified" content="2015-07-19T00:32:00+02:00" />
 <meta itemprop="wordCount" content="1224">
-
-
-
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="HowTo run pimd on OpenBSD"/>
@@ -68,9 +64,10 @@ First of all, my sincere thanks to the OpenBSD team for, not just an awesome UNI
 <meta property="og:description" content="This is an introduction to HowTo run pimd on OpenBSD. I keep it around mostly as a reminder to myself when testing new pimd releases, maybe someone else can make use of it as well.
 First of all, my sincere thanks to the OpenBSD team for, not just an awesome UNIX distribution, but also for their good taste in shipping a MULTICAST enabled kernel in the base distribution! On both NetBSD and FreeBSD there is a bit of work to get multicast support, which is one of the reasons for my not writing a HowTo for either of them atm." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/howtos/pimd-on-openbsd/" />
+<meta property="og:url" content="https://troglobit.com/howtos/pimd-on-openbsd/" /><meta property="article:section" content="howtos" />
 <meta property="article:published_time" content="2015-07-19T00:32:00+02:00" />
 <meta property="article:modified_time" content="2015-07-19T00:32:00+02:00" />
+
 
 
 
@@ -107,7 +104,7 @@ First of all, my sincere thanks to the OpenBSD team for, not just an awesome UNI
         <div class="container">
             <header class="header">
     <span class="header__inner">
-        <a href="/" style="text-decoration: none;">
+        <a href="https://troglobit.com/" style="text-decoration: none;">
     <div class="logo">
         
             <span class="logo__mark">&gt;</span>
@@ -125,7 +122,7 @@ First of all, my sincere thanks to the OpenBSD team for, not just an awesome UNI
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="/about/">About</a></li><li><a href="/posts/">Blog</a></li><li><a href="/howtos/">HowTos</a></li><li><a href="/projects/">Projects</a></li><li><a href="https://resume.troglobit.com">Resumé</a></li><li><a href="https://ftp.troglobit.com">FTP</a></li><li><a href="https://deb.troglobit.com">DEB</a></li>
+    <ul class="menu__inner"><li><a href="https://troglobit.com/about/">About</a></li><li><a href="https://troglobit.com/posts/">Blog</a></li><li><a href="https://troglobit.com/howtos/">HowTos</a></li><li><a href="https://troglobit.com/projects/">Projects</a></li><li><a href="https://resume.troglobit.com">Resumé</a></li><li><a href="https://ftp.troglobit.com">FTP</a></li><li><a href="https://deb.troglobit.com">DEB</a></li>
     </ul>
 </nav>
 
@@ -151,25 +148,25 @@ First of all, my sincere thanks to the OpenBSD team for, not just an awesome UNI
         </div>
 
         <article>
-            <h2 class="post-title"><a href="/howtos/pimd-on-openbsd/">HowTo run pimd on OpenBSD</a></h2>
+            <h2 class="post-title"><a href="https://troglobit.com/howtos/pimd-on-openbsd/">HowTo run pimd on OpenBSD</a></h2>
 
             
             
             
 
             <div class="post-content">
-                <p>This is an introduction to HowTo run <a href="/pimd.html">pimd</a> on OpenBSD.  I
+                <p>This is an introduction to HowTo run <a href="https://troglobit.com/pimd.html">pimd</a> on OpenBSD.  I
 keep it around mostly as a reminder to myself when testing new pimd
 releases, maybe someone else can make use of it as well.</p>
 <p>First of all, my sincere thanks to the <a href="http://www.openbsd.org">OpenBSD</a>
 team for, not just an awesome UNIX distribution, but also for their good
 taste in shipping a MULTICAST enabled kernel in the base distribution!
-On both NetBSD and FreeBSD <a href="/blog/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/">there is a bit of work</a> to get multicast
+On both NetBSD and FreeBSD <a href="https://troglobit.com/blog/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/">there is a bit of work</a> to get multicast
 support, which is one of the reasons for my not writing a HowTo for
 either of them atm.</p>
 <p>Now, OpenBSD already ships mrouted, which is an older flood and prune based
 protocol called DVMRP.  Their version is a few years older than the
-<a href="/mrouted.html">mrouted</a> I maintain.  The DVMRP protocol in mrouted uses a
+<a href="https://troglobit.com/mrouted.html">mrouted</a> I maintain.  The DVMRP protocol in mrouted uses a
 sort of built-in RIP to figure out how to route multicast.  This was one of
 the first things <a href="http://tools.ietf.org/html/rfc2362">they</a> ripped out when
 creating PIM.</p>
@@ -376,11 +373,11 @@ pass proto igmp allow-opts
     <p>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-folder meta-icon"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
 
-        <span class="tag"><a href="/categories/multicast/">multicast</a></span>
-        <span class="tag"><a href="/categories/pimd/">pimd</a></span>
-        <span class="tag"><a href="/categories/openbsd/">openbsd</a></span>
-        <span class="tag"><a href="/categories/bsd/">bsd</a></span>
-        <span class="tag"><a href="/categories/howto/">howto</a></span>
+        <span class="tag"><a href="https://troglobit.com/categories/multicast/">multicast</a></span>
+        <span class="tag"><a href="https://troglobit.com/categories/pimd/">pimd</a></span>
+        <span class="tag"><a href="https://troglobit.com/categories/openbsd/">openbsd</a></span>
+        <span class="tag"><a href="https://troglobit.com/categories/bsd/">bsd</a></span>
+        <span class="tag"><a href="https://troglobit.com/categories/howto/">howto</a></span>
         
     </p>
 
@@ -395,7 +392,7 @@ pass proto igmp allow-opts
     <div class="footer__inner">
         <div class="footer__content">
             <span>&copy; 2022</span>
-            <span><a href="/">Joachim Wiberg</a></span>
+            <span><a href="https://troglobit.com/">Joachim Wiberg</a></span>
             <span>UNIX&trade; 4Life! &#9994;</span>
             
             
@@ -412,7 +409,7 @@ pass proto igmp allow-opts
 
 
 
-<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+<script type="text/javascript" src="https://troglobit.com/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
 
 
 

@@ -2,22 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>qemu on Joachim Wiberg</title>
-    <link>/categories/qemu/</link>
+    <link>https://troglobit.com/categories/qemu/</link>
     <description>Recent content in qemu on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Thu, 02 Feb 2017 18:52:18 +0000</lastBuildDate>
-    
-	<atom:link href="/categories/qemu/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 02 Feb 2017 18:52:18 +0000</lastBuildDate><atom:link href="https://troglobit.com/categories/qemu/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Emulate an actual MTD device in Qemu</title>
-      <link>/2017/02/02/emulate-an-actual-mtd-device-in-qemu/</link>
+      <link>https://troglobit.com/2017/02/02/emulate-an-actual-mtd-device-in-qemu/</link>
       <pubDate>Thu, 02 Feb 2017 18:52:18 +0000</pubDate>
       
-      <guid>/2017/02/02/emulate-an-actual-mtd-device-in-qemu/</guid>
+      <guid>https://troglobit.com/2017/02/02/emulate-an-actual-mtd-device-in-qemu/</guid>
       <description>&lt;p&gt;Having worked with Linux for the last 20 years, and embedded for more
 than ten of them, I&amp;rsquo;ve become quite a fan of virtualization in general
 and &lt;a href=&#34;http://qemu.org&#34;&gt;Qemu&lt;/a&gt; in particular.&lt;/p&gt;

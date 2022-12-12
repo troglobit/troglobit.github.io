@@ -2,34 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>sudo on Joachim Wiberg</title>
-    <link>/categories/sudo/</link>
+    <link>https://troglobit.com/categories/sudo/</link>
     <description>Recent content in sudo on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Sun, 07 Jun 2020 12:25:52 +0200</lastBuildDate>
-    
-	<atom:link href="/categories/sudo/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 07 Jun 2020 12:25:52 +0200</lastBuildDate><atom:link href="https://troglobit.com/categories/sudo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>sudo tricks</title>
-      <link>/post/2020-06-07-sudo-tricks/</link>
+      <link>https://troglobit.com/post/2020-06-07-sudo-tricks/</link>
       <pubDate>Sun, 07 Jun 2020 12:25:52 +0200</pubDate>
       
-      <guid>/post/2020-06-07-sudo-tricks/</guid>
+      <guid>https://troglobit.com/post/2020-06-07-sudo-tricks/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;&amp;ldquo;My name is Joachim and I&amp;rsquo;m a &lt;code&gt;sudo su -&lt;/code&gt; user.&amp;rdquo;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Before you read any further, please read &lt;a href=&#34;/2016/12/11/a-life-without-sudo/&#34;&gt;A life without sudo&lt;/a&gt;.&lt;/p&gt;</description>
+&lt;p&gt;Before you read any further, please read &lt;a href=&#34;https://troglobit.com/2016/12/11/a-life-without-sudo/&#34;&gt;A life without sudo&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>A life without sudo</title>
-      <link>/2016/12/11/a-life-without-sudo/</link>
+      <link>https://troglobit.com/2016/12/11/a-life-without-sudo/</link>
       <pubDate>Sun, 11 Dec 2016 20:26:12 +0000</pubDate>
       
-      <guid>/2016/12/11/a-life-without-sudo/</guid>
+      <guid>https://troglobit.com/2016/12/11/a-life-without-sudo/</guid>
       <description>Ever since my first stumbling steps with Linux back in &amp;lsquo;96, I&amp;rsquo;ve been learning about UNIX. The first obvious lesson was to not use the root account. Since then I&amp;rsquo;ve been using a combination of sudo command and suid root binaries to get the job done.
 
 For the last ten years, however, I&amp;rsquo;ve been meaning to learn about Linux capabilities(7) and thanks to a colleague of mine I now have :)</description>

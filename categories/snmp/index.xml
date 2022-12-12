@@ -2,22 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>snmp on Joachim Wiberg</title>
-    <link>/categories/snmp/</link>
+    <link>https://troglobit.com/categories/snmp/</link>
     <description>Recent content in snmp on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Sat, 05 May 2018 13:57:00 +0200</lastBuildDate>
-    
-	<atom:link href="/categories/snmp/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 05 May 2018 13:57:00 +0200</lastBuildDate><atom:link href="https://troglobit.com/categories/snmp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HowTo play with SNMP</title>
-      <link>/howtos/snmp/</link>
+      <link>https://troglobit.com/howtos/snmp/</link>
       <pubDate>Sat, 05 May 2018 13:57:00 +0200</pubDate>
       
-      <guid>/howtos/snmp/</guid>
+      <guid>https://troglobit.com/howtos/snmp/</guid>
       <description>This mini HowTo describes how to use the SNMP client tools to retrieve human readable information from devices running an SNMP daemon. In the examples below mini-snmpd is used as the daemon and as client both the command line net-snmp tool and the snmpB GUI are used.
 Personally I use both Ubuntu and Debian, so the tools I use to download the clients will reflect that. See your respective UNIX distro&amp;rsquo;s help pages for how to install these client tools in your operating system.</description>
     </item>
