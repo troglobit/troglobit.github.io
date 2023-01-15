@@ -17,16 +17,24 @@
             <guid>https://troglobit.com/post/2022-12-26-buildroot-demo-of-finit/</guid>
             <description>&lt;p&gt;I believe there is a &lt;strong&gt;gap in the market&lt;/strong&gt; between BusyBox init and
 systemd.  In particular in the embedded space.&lt;/p&gt;
-&lt;p&gt;I&amp;rsquo;m a really bad salesman, and an even worse writer.  So instead of
-tooting my own horn, I here present a demo of a &lt;em&gt;Buildroot external&lt;/em&gt;
-providing &lt;a href=&#34;https://github.com/troglobit/finit#introduction&#34;&gt;Finit&lt;/a&gt;, so you can see for yourself.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://troglobit.com/images/finit-demo/bootstrap.png#floatright&#34; alt=&#34;Finit bootstrap&#34;&gt;&lt;/p&gt;</description>
+&lt;p&gt;I&amp;rsquo;m a really bad salesman, and an even worse writer, so instead of
+trying to convince you with my poor English, I&amp;rsquo;ve made a demo.  It is a
+&lt;a href=&#34;https://nightly.buildroot.org/#outside-br-custom&#34;&gt;Buildroot external&lt;/a&gt;
+that can be used to add &lt;a href=&#34;https://github.com/troglobit/finit#introduction&#34;&gt;Finit&lt;/a&gt; to your own projects.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For details, look here: &lt;a href=&#34;https://github.com/troglobit/br2-finit-demo&#34;&gt;https://github.com/troglobit/br2-finit-demo&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://troglobit.com/images/finit-demo/bootstrap.png&#34; alt=&#34;Finit bootstrap&#34;&gt;&lt;/p&gt;</description>
             <content type="html"><![CDATA[<p>I believe there is a <strong>gap in the market</strong> between BusyBox init and
 systemd.  In particular in the embedded space.</p>
-<p>I&rsquo;m a really bad salesman, and an even worse writer.  So instead of
-tooting my own horn, I here present a demo of a <em>Buildroot external</em>
-providing <a href="https://github.com/troglobit/finit#introduction">Finit</a>, so you can see for yourself.</p>
-<p><img src="/images/finit-demo/bootstrap.png#floatright" alt="Finit bootstrap"></p>
+<p>I&rsquo;m a really bad salesman, and an even worse writer, so instead of
+trying to convince you with my poor English, I&rsquo;ve made a demo.  It is a
+<a href="https://nightly.buildroot.org/#outside-br-custom">Buildroot external</a>
+that can be used to add <a href="https://github.com/troglobit/finit#introduction">Finit</a> to your own projects.</p>
+<blockquote>
+<p>For details, look here: <a href="https://github.com/troglobit/br2-finit-demo">https://github.com/troglobit/br2-finit-demo</a></p>
+</blockquote>
+<p><img src="/images/finit-demo/bootstrap.png" alt="Finit bootstrap"></p>
 <h2 id="why-finit">Why Finit?</h2>
 <ul>
 <li>Sane built-in defaults</li>
@@ -68,7 +76,7 @@ make
 <p>Log in, user <code>root</code>, empty password</p>
 </li>
 </ol>
-<p><img src="/images/finit-demo/login.png#floatright" alt="Finit login"></p>
+<p><img src="/images/finit-demo/login.png" alt="Finit login"></p>
 <p>It boots fairly quick provided you have an x86_64 host computer.  See
 the <code>initctl</code> tool to control Finit.</p>
 <pre><code>initctl help
@@ -83,7 +91,7 @@ the <code>initctl</code> tool to control Finit.</p>
 more with <code>make menuconfig</code> or <code>make busybox-menuconfig</code>) like:</p>
 <pre><code>initctl enable telnetd
 </code></pre>
-<p><img src="/images/finit-demo/enable.png#floatright" alt="Enable service"></p>
+<p><img src="/images/finit-demo/enable.png" alt="Enable service"></p>
 <p>Try <code>initctl ls</code> again, it&rsquo;s now listed in the set of enabled services.
 But it&rsquo;s not yet running &hellip; (check with <code>initctl status</code>).  This is
 because we may want to roll out multiple changes to a system before
@@ -93,7 +101,7 @@ activating them.  To activate we tell Finit to reload its configuration.</p>
 <p>Verify it is now running.  For more detailed information about telnetd:</p>
 <pre><code>initctl status telnetd
 </code></pre>
-<p><img src="/images/finit-demo/status.png#floatright" alt="Service status"></p>
+<p><img src="/images/finit-demo/status.png" alt="Service status"></p>
 <p>Try killing telnetd and check the status again.  You can now see that
 Finit has already restarted it for you (<code>Restarts: 1 (1/10)</code>).  Kill it
 a few more times to see what happens.  When a service reaches its max
@@ -105,7 +113,7 @@ total restarts counter continues counting.</p>
 <pre><code>telnet localhost 8023
 </code></pre>
 <h2 id="fin">Fin</h2>
-<p><img src="/images/finit-demo/poweroff.png#floatright" alt="Finit poweroff"></p>
+<p><img src="/images/finit-demo/poweroff.png" alt="Finit poweroff"></p>
 <p>There is of course a lot more to cover.  Please get in touch with me if
 you are curious about some other aspect that would be suitable for a
 blog post.  There is also a <a href="https://github.com/troglobit/finit/discussions">discussion forum</a> open for general

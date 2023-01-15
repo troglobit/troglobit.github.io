@@ -6,8 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="Joachim Wiberg ">
 <meta name="description" content="I believe there is a gap in the market between BusyBox init and systemd. In particular in the embedded space.
-I&amp;rsquo;m a really bad salesman, and an even worse writer. So instead of tooting my own horn, I here present a demo of a Buildroot external providing Finit, so you can see for yourself.
-" />
+I&amp;rsquo;m a really bad salesman, and an even worse writer, so instead of trying to convince you with my poor English, I&amp;rsquo;ve made a demo. It is a Buildroot external that can be used to add Finit to your own projects.
+ For details, look here: https://github.com/troglobit/br2-finit-demo
+ " />
 <meta name="keywords" content=", finit, init, opensource" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -47,20 +48,28 @@ I&amp;rsquo;m a really bad salesman, and an even worse writer. So instead of too
 <meta itemprop="name" content="Buildroot demo of Finit">
 <meta itemprop="description" content="I believe there is a gap in the market between BusyBox init and
 systemd.  In particular in the embedded space.
-I&rsquo;m a really bad salesman, and an even worse writer.  So instead of
-tooting my own horn, I here present a demo of a Buildroot external
-providing Finit, so you can see for yourself.
+I&rsquo;m a really bad salesman, and an even worse writer, so instead of
+trying to convince you with my poor English, I&rsquo;ve made a demo.  It is a
+Buildroot external
+that can be used to add Finit to your own projects.
+
+For details, look here: https://github.com/troglobit/br2-finit-demo
+
 "><meta itemprop="datePublished" content="2022-12-26T21:21:21+00:00" />
 <meta itemprop="dateModified" content="2022-12-26T21:21:21+00:00" />
-<meta itemprop="wordCount" content="420">
+<meta itemprop="wordCount" content="432">
 <meta itemprop="keywords" content="finit,init,opensource," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Buildroot demo of Finit"/>
 <meta name="twitter:description" content="I believe there is a gap in the market between BusyBox init and
 systemd.  In particular in the embedded space.
-I&rsquo;m a really bad salesman, and an even worse writer.  So instead of
-tooting my own horn, I here present a demo of a Buildroot external
-providing Finit, so you can see for yourself.
+I&rsquo;m a really bad salesman, and an even worse writer, so instead of
+trying to convince you with my poor English, I&rsquo;ve made a demo.  It is a
+Buildroot external
+that can be used to add Finit to your own projects.
+
+For details, look here: https://github.com/troglobit/br2-finit-demo
+
 "/>
 
 
@@ -68,9 +77,13 @@ providing Finit, so you can see for yourself.
     <meta property="og:title" content="Buildroot demo of Finit" />
 <meta property="og:description" content="I believe there is a gap in the market between BusyBox init and
 systemd.  In particular in the embedded space.
-I&rsquo;m a really bad salesman, and an even worse writer.  So instead of
-tooting my own horn, I here present a demo of a Buildroot external
-providing Finit, so you can see for yourself.
+I&rsquo;m a really bad salesman, and an even worse writer, so instead of
+trying to convince you with my poor English, I&rsquo;ve made a demo.  It is a
+Buildroot external
+that can be used to add Finit to your own projects.
+
+For details, look here: https://github.com/troglobit/br2-finit-demo
+
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://troglobit.com/post/2022-12-26-buildroot-demo-of-finit/" /><meta property="article:section" content="posts" />
@@ -147,7 +160,7 @@ providing Finit, so you can see for yourself.
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        2 minutes
+        3 minutes
 
         
       </p>
@@ -167,10 +180,14 @@ providing Finit, so you can see for yourself.
       <div class="post-content">
         <p>I believe there is a <strong>gap in the market</strong> between BusyBox init and
 systemd.  In particular in the embedded space.</p>
-<p>I&rsquo;m a really bad salesman, and an even worse writer.  So instead of
-tooting my own horn, I here present a demo of a <em>Buildroot external</em>
-providing <a href="https://github.com/troglobit/finit#introduction">Finit</a>, so you can see for yourself.</p>
-<p><img src="https://troglobit.com/images/finit-demo/bootstrap.png#floatright" alt="Finit bootstrap"></p>
+<p>I&rsquo;m a really bad salesman, and an even worse writer, so instead of
+trying to convince you with my poor English, I&rsquo;ve made a demo.  It is a
+<a href="https://nightly.buildroot.org/#outside-br-custom">Buildroot external</a>
+that can be used to add <a href="https://github.com/troglobit/finit#introduction">Finit</a> to your own projects.</p>
+<blockquote>
+<p>For details, look here: <a href="https://github.com/troglobit/br2-finit-demo">https://github.com/troglobit/br2-finit-demo</a></p>
+</blockquote>
+<p><img src="https://troglobit.com/images/finit-demo/bootstrap.png" alt="Finit bootstrap"></p>
 <h2 id="why-finit">Why Finit?</h2>
 <ul>
 <li>Sane built-in defaults</li>
@@ -212,7 +229,7 @@ make
 <p>Log in, user <code>root</code>, empty password</p>
 </li>
 </ol>
-<p><img src="https://troglobit.com/images/finit-demo/login.png#floatright" alt="Finit login"></p>
+<p><img src="https://troglobit.com/images/finit-demo/login.png" alt="Finit login"></p>
 <p>It boots fairly quick provided you have an x86_64 host computer.  See
 the <code>initctl</code> tool to control Finit.</p>
 <pre><code>initctl help
@@ -227,7 +244,7 @@ the <code>initctl</code> tool to control Finit.</p>
 more with <code>make menuconfig</code> or <code>make busybox-menuconfig</code>) like:</p>
 <pre><code>initctl enable telnetd
 </code></pre>
-<p><img src="https://troglobit.com/images/finit-demo/enable.png#floatright" alt="Enable service"></p>
+<p><img src="https://troglobit.com/images/finit-demo/enable.png" alt="Enable service"></p>
 <p>Try <code>initctl ls</code> again, it&rsquo;s now listed in the set of enabled services.
 But it&rsquo;s not yet running &hellip; (check with <code>initctl status</code>).  This is
 because we may want to roll out multiple changes to a system before
@@ -237,7 +254,7 @@ activating them.  To activate we tell Finit to reload its configuration.</p>
 <p>Verify it is now running.  For more detailed information about telnetd:</p>
 <pre><code>initctl status telnetd
 </code></pre>
-<p><img src="https://troglobit.com/images/finit-demo/status.png#floatright" alt="Service status"></p>
+<p><img src="https://troglobit.com/images/finit-demo/status.png" alt="Service status"></p>
 <p>Try killing telnetd and check the status again.  You can now see that
 Finit has already restarted it for you (<code>Restarts: 1 (1/10)</code>).  Kill it
 a few more times to see what happens.  When a service reaches its max
@@ -249,7 +266,7 @@ total restarts counter continues counting.</p>
 <pre><code>telnet localhost 8023
 </code></pre>
 <h2 id="fin">Fin</h2>
-<p><img src="https://troglobit.com/images/finit-demo/poweroff.png#floatright" alt="Finit poweroff"></p>
+<p><img src="https://troglobit.com/images/finit-demo/poweroff.png" alt="Finit poweroff"></p>
 <p>There is of course a lot more to cover.  Please get in touch with me if
 you are curious about some other aspect that would be suitable for a
 blog post.  There is also a <a href="https://github.com/troglobit/finit/discussions">discussion forum</a> open for general
@@ -280,7 +297,7 @@ questions about Finit.</p>
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        420 Words
+        432 Words
       </p>
 
       <p>
