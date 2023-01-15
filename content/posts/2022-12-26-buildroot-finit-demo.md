@@ -10,11 +10,14 @@ tags:
 I believe there is a **gap in the market** between BusyBox init and
 systemd.  In particular in the embedded space.
 
-I'm a really bad salesman, and an even worse writer.  So instead of
-tooting my own horn, I here present a demo of a *Buildroot external*
-providing [Finit][1], so you can see for yourself.
+I'm a really bad salesman, and an even worse writer, so instead of
+trying to convince you with my poor English, I've made a demo.  It is a
+[Buildroot external](https://nightly.buildroot.org/#outside-br-custom)
+that can be used to add [Finit][1] to your own projects.
 
-![Finit bootstrap](/images/finit-demo/bootstrap.png#floatright)
+> For details, look here: <https://github.com/troglobit/br2-finit-demo>
+
+![Finit bootstrap](/images/finit-demo/bootstrap.png)
 
 <!--more-->
 
@@ -57,7 +60,7 @@ system <https://buildroot.org/downloads/manual/manual.html#requirement>
 
  5. Log in, user `root`, empty password
 
-![Finit login](/images/finit-demo/login.png#floatright)
+![Finit login](/images/finit-demo/login.png)
 
 It boots fairly quick provided you have an x86_64 host computer.  See
 the `initctl` tool to control Finit.
@@ -77,7 +80,7 @@ more with `make menuconfig` or `make busybox-menuconfig`) like:
 
     initctl enable telnetd
 
-![Enable service](/images/finit-demo/enable.png#floatright)
+![Enable service](/images/finit-demo/enable.png)
 
 Try `initctl ls` again, it's now listed in the set of enabled services.
 But it's not yet running ... (check with `initctl status`).  This is
@@ -90,7 +93,7 @@ Verify it is now running.  For more detailed information about telnetd:
 
     initctl status telnetd
 
-![Service status](/images/finit-demo/status.png#floatright)
+![Service status](/images/finit-demo/status.png)
 
 Try killing telnetd and check the status again.  You can now see that
 Finit has already restarted it for you (`Restarts: 1 (1/10)`).  Kill it
@@ -108,7 +111,7 @@ You can connect to the system from your host, or anywhere on the LAN:
 Fin
 ---
 
-![Finit poweroff](/images/finit-demo/poweroff.png#floatright)
+![Finit poweroff](/images/finit-demo/poweroff.png)
 
 There is of course a lot more to cover.  Please get in touch with me if
 you are curious about some other aspect that would be suitable for a
