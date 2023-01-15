@@ -2,16 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://troglobit.com/post/2022-12-26-buildroot-demo-of-finit/</loc>
+    <lastmod>2022-12-26T21:21:21+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/finit/</loc>
+    <lastmod>2022-12-26T21:21:21+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/init/</loc>
+    <lastmod>2022-12-26T21:21:21+00:00</lastmod>
+  </url><url>
     <loc>https://troglobit.com/</loc>
-    <lastmod>2022-10-01T15:44:00+00:00</lastmod>
+    <lastmod>2022-12-26T21:21:21+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/opensource/</loc>
+    <lastmod>2022-12-26T21:21:21+00:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/posts/</loc>
-    <lastmod>2022-10-01T15:44:00+00:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/post/2022-10-01-remap-prev/next-on-thinkpad/</loc>
-    <lastmod>2022-10-01T15:44:00+00:00</lastmod>
+    <lastmod>2022-12-26T21:21:21+00:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/tags/</loc>
+    <lastmod>2022-12-26T21:21:21+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/post/2022-10-01-remap-prev/next-on-thinkpad/</loc>
     <lastmod>2022-10-01T15:44:00+00:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/tags/thinkpad/</loc>
@@ -24,9 +36,6 @@
     <lastmod>2022-10-01T16:21:00+01:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/post/2022-09-09-logging-to-remote-syslog-servers/</loc>
-    <lastmod>2022-09-09T19:36:44+01:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/tags/opensource/</loc>
     <lastmod>2022-09-09T19:36:44+01:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/tags/sysklogd/</loc>
@@ -59,13 +68,7 @@
     <loc>https://troglobit.com/post/2022-04-11-linux-kernel-development-checklist/</loc>
     <lastmod>2022-04-11T17:19:00+02:00</lastmod>
   </url><url>
-    <loc>https://troglobit.com/tags/finit/</loc>
-    <lastmod>2022-02-13T17:55:44+02:00</lastmod>
-  </url><url>
     <loc>https://troglobit.com/post/2022-02-13-finit-in-linux-containers-lxc/</loc>
-    <lastmod>2022-02-13T17:55:44+02:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/tags/init/</loc>
     <lastmod>2022-02-13T17:55:44+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/post/2022-01-24-gmail-and-git-send-email/</loc>

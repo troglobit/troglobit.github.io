@@ -7,7 +7,34 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Sat, 01 Oct 2022 15:44:00 +0000</lastBuildDate><atom:link href="https://troglobit.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Dec 2022 21:21:21 +0000</lastBuildDate><atom:link href="https://troglobit.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>finit</title>
+      <link>https://troglobit.com/tags/finit/</link>
+      <pubDate>Mon, 26 Dec 2022 21:21:21 +0000</pubDate>
+      
+      <guid>https://troglobit.com/tags/finit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>init</title>
+      <link>https://troglobit.com/tags/init/</link>
+      <pubDate>Mon, 26 Dec 2022 21:21:21 +0000</pubDate>
+      
+      <guid>https://troglobit.com/tags/init/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>opensource</title>
+      <link>https://troglobit.com/tags/opensource/</link>
+      <pubDate>Mon, 26 Dec 2022 21:21:21 +0000</pubDate>
+      
+      <guid>https://troglobit.com/tags/opensource/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>ThinkPad</title>
       <link>https://troglobit.com/tags/thinkpad/</link>
@@ -23,15 +50,6 @@
       <pubDate>Sat, 01 Oct 2022 15:44:00 +0000</pubDate>
       
       <guid>https://troglobit.com/tags/x200/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>opensource</title>
-      <link>https://troglobit.com/tags/opensource/</link>
-      <pubDate>Fri, 09 Sep 2022 19:36:44 +0100</pubDate>
-      
-      <guid>https://troglobit.com/tags/opensource/</guid>
       <description></description>
     </item>
     
@@ -86,24 +104,6 @@
       <pubDate>Mon, 11 Apr 2022 17:19:00 +0200</pubDate>
       
       <guid>https://troglobit.com/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>finit</title>
-      <link>https://troglobit.com/tags/finit/</link>
-      <pubDate>Sun, 13 Feb 2022 17:55:44 +0200</pubDate>
-      
-      <guid>https://troglobit.com/tags/finit/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>init</title>
-      <link>https://troglobit.com/tags/init/</link>
-      <pubDate>Sun, 13 Feb 2022 17:55:44 +0200</pubDate>
-      
-      <guid>https://troglobit.com/tags/init/</guid>
       <description></description>
     </item>
     

@@ -7,7 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Sat, 01 Oct 2022 15:44:00 +0000</lastBuildDate><atom:link href="https://troglobit.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Dec 2022 21:21:21 +0000</lastBuildDate><atom:link href="https://troglobit.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Buildroot demo of Finit</title>
+      <link>https://troglobit.com/post/2022-12-26-buildroot-demo-of-finit/</link>
+      <pubDate>Mon, 26 Dec 2022 21:21:21 +0000</pubDate>
+      
+      <guid>https://troglobit.com/post/2022-12-26-buildroot-demo-of-finit/</guid>
+      <description>&lt;p&gt;I believe there is a &lt;strong&gt;gap in the market&lt;/strong&gt; between BusyBox init and
+systemd.  In particular in the embedded space.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m a really bad salesman, and an even worse writer.  So instead of
+tooting my own horn, I here present a demo of a &lt;em&gt;Buildroot external&lt;/em&gt;
+providing &lt;a href=&#34;https://github.com/troglobit/finit#introduction&#34;&gt;Finit&lt;/a&gt;, so you can see for yourself.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://troglobit.com/images/finit-demo/bootstrap.png#floatright&#34; alt=&#34;Finit bootstrap&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>Remap Prev/Next on ThinkPad</title>
       <link>https://troglobit.com/post/2022-10-01-remap-prev/next-on-thinkpad/</link>
