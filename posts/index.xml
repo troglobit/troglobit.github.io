@@ -6,8 +6,154 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-        <lastBuildDate>Mon, 26 Dec 2022 21:21:21 +0000</lastBuildDate>
+        <lastBuildDate>Sun, 15 Jan 2023 18:42:00 +0000</lastBuildDate>
         <atom:link href="https://troglobit.com/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Finit custom connectivity check</title>
+            <link>https://troglobit.com/post/2023-01-15-finit-custom-connectivity-check/</link>
+            <pubDate>Sun, 15 Jan 2023 18:42:00 +0000</pubDate>
+            
+            <guid>https://troglobit.com/post/2023-01-15-finit-custom-connectivity-check/</guid>
+            <description>&lt;p&gt;This post shows how you can extend Finit with your own conditions.  The
+example we will use is a simple Internet connectivity checker.  When it
+triggers we start BusyBox ntpd which, if started with any other type of
+condition (none, default route, etc.) may get stuck trying to resolve
+&lt;code&gt;pool.ntp.org&lt;/code&gt;.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>This post shows how you can extend Finit with your own conditions.  The
+example we will use is a simple Internet connectivity checker.  When it
+triggers we start BusyBox ntpd which, if started with any other type of
+condition (none, default route, etc.) may get stuck trying to resolve
+<code>pool.ntp.org</code>.</p>
+<h3 id="recap">Recap</h3>
+<p>As mentioned in previous posts, the three main condition groups are:</p>
+<ul>
+<li>pid</li>
+<li>net</li>
+<li>usr</li>
+</ul>
+<p>Recently another group has been added:</p>
+<ul>
+<li>sys</li>
+</ul>
+<p>It is free to use and populate by users.  Take note, however, of other
+plugins and daemons that share the namespace.  For instance, the Finit
+<code>keventd</code> publish the <code>&lt;sys/pwr/ac&gt;</code> condition.</p>
+<blockquote>
+<p>For details see the Finit documentation:
+<a href="https://github.com/troglobit/finit/blob/master/doc/conditions.md">https://github.com/troglobit/finit/blob/master/doc/conditions.md</a></p>
+</blockquote>
+<h3 id="connectivity-check">Connectivity Check</h3>
+<p>There are many methods available, ICMP (ping) is probably the most
+common.  But since it is often blocked by firewalls we will use plain
+HTTP, of which there are several online servers to choose from:</p>
+<table>
+<thead>
+<tr>
+<th><strong>URI</strong></th>
+<th><strong>Response</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://network-test.debian.org/nm">http://network-test.debian.org/nm</a></td>
+<td>NetworkManager is online</td>
+</tr>
+<tr>
+<td><a href="https://fedoraproject.org/static/hotspot.txt">https://fedoraproject.org/static/hotspot.txt</a></td>
+<td>OK</td>
+</tr>
+<tr>
+<td><a href="http://nmcheck.gnome.org/check_network_status.txt">http://nmcheck.gnome.org/check_network_status.txt</a></td>
+<td>NetworkManager is online</td>
+</tr>
+<tr>
+<td><a href="https://www.pkgbuild.com/check_network_status.txt">https://www.pkgbuild.com/check_network_status.txt</a></td>
+<td>NetworkManager is online</td>
+</tr>
+<tr>
+<td><a href="http://connectivity-check.ubuntu.com">http://connectivity-check.ubuntu.com</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>The Ubuntu checker returns an empty response, making it very simple to
+use with a basic <code>curl http://connectivity-check.ubuntu.com</code>.  Simply
+checking the return value is enough.</p>
+</blockquote>
+<h3 id="the-script">The Script</h3>
+<p>We don&rsquo;t have curl on our target, only the BusyBox version of wget.  But
+that is all we need to create this little script.  I&rsquo;ve put mine in the
+rootfs with a post-build hook in Buildroot.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">root@anarchy:~# cat /usr/bin/connectivity.sh
+<span class="c1">#!/bin/sh</span>
+<span class="c1"># Manages connectivity condition &lt;sys/internet/up&gt;</span>
+
+<span class="nv">GEN</span><span class="o">=</span>/run/finit/cond/reconf
+<span class="nv">NET</span><span class="o">=</span>/run/finit/cond/sys/internet
+<span class="nv">URI</span><span class="o">=</span>http://connectivity-check.ubuntu.com
+<span class="nv">SEC</span><span class="o">=</span><span class="m">5</span>
+
+isup<span class="o">()</span>
+<span class="o">{</span>
+	wget -T <span class="m">1</span> -qO- <span class="nv">$URI</span> 2&gt;/dev/null <span class="o">||</span> <span class="k">return</span> <span class="m">1</span>
+	<span class="k">return</span> <span class="m">0</span>
+<span class="o">}</span>
+
+mkdir -p <span class="nv">$NET</span>
+<span class="k">while</span> true<span class="p">;</span> <span class="k">do</span>
+	<span class="k">if</span> isup<span class="p">;</span> <span class="k">then</span>
+		ln -sf <span class="nv">$GEN</span> <span class="nv">$NET</span>/up
+	<span class="k">else</span>
+		rm -f <span class="nv">$NET</span>/up
+	<span class="k">fi</span>
+	sleep <span class="nv">$SEC</span>
+<span class="k">done</span>
+</code></pre></div><h3 id="the-finit-config">The Finit Config</h3>
+<p>Create a new Finit config for the connectivity script:</p>
+<pre><code>root@anarchy:~# initctl -c edit connectivity
+</code></pre>
+<p>Paste in the following and exit:</p>
+<pre><code># Manages the &lt;net/internet/up&gt; condition
+service [2345789] connectivity.sh -- Connectivity monitor
+</code></pre>
+<p>Enable it:</p>
+<pre><code>root@anarchy:~# initctl enable connectivity
+</code></pre>
+<p>Now edit the BusyBox <code>ntpd</code> config:</p>
+<pre><code>root@anarchy:~# initctl edit ntpd
+</code></pre>
+<p>Change it to the following:</p>
+<pre><code>service [2345] log &lt;!sys/internet/up&gt; ntpd -n -l -I eth0 -p pool.ntp.org -- NTP daemon
+</code></pre>
+<p>This tells Finit to wait for the script&rsquo;s condition and then start ntpd
+as a server on eth0, and peer with pool.ntp.org.</p>
+<p>Activate all the changes:</p>
+<pre><code>root@anarchy:~# initctl reload
+</code></pre>
+<p>Verify everything has started properly using <code>initctl</code>.  Check the
+system log messages for the ntpd progress.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">root@anarchy:~# initctl -p
+PID   IDENT            STATUS   RUNLEVELS    DESCRIPTION
+==============================================================================
+438   connectivity.sh  running  [--2345-789] Connectivity monitor
+443   dropbear         running  [--2345-789] Dropbear SSH daemon
+455   tty:console      running  [-12345-789] Getty on /dev/console
+444   mdnsd            running  [--2345-789] mDNS-SD daemon
+445   mini-snmpd       running  [--2345----] Mini snmpd
+8379  ntpd             running  [--2345----] NTP daemon
+447   smcrouted        running  [--2345----] Static multicast routing daemon
+448   ssdpd            running  [--2345----] SSDP Responder
+416   sysklogd         running  [S123456789] System log daemon
+449   watchdogd        running  [-123456789] System watchdog daemon
+450   httpd            running  [--2345----] Web interface
+root@anarchy:~# initctl -p cond
+PID   IDENT            STATUS  CONDITION (+ ON, ~ FLUX, - OFF)
+==============================================================================
+8379  ntpd             on      &lt;+sys/internet/up&gt;
+</code></pre></div>]]></content>
+        </item>
         
         <item>
             <title>Buildroot demo of Finit</title>

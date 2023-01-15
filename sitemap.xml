@@ -2,25 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://troglobit.com/post/2022-12-26-buildroot-demo-of-finit/</loc>
-    <lastmod>2022-12-26T21:21:21+00:00</lastmod>
-  </url><url>
     <loc>https://troglobit.com/tags/finit/</loc>
-    <lastmod>2022-12-26T21:21:21+00:00</lastmod>
+    <lastmod>2023-01-15T18:42:00+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/post/2023-01-15-finit-custom-connectivity-check/</loc>
+    <lastmod>2023-01-15T18:42:00+00:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/tags/init/</loc>
-    <lastmod>2022-12-26T21:21:21+00:00</lastmod>
+    <lastmod>2023-01-15T18:42:00+00:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/</loc>
-    <lastmod>2022-12-26T21:21:21+00:00</lastmod>
+    <lastmod>2023-01-15T18:42:00+00:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/tags/opensource/</loc>
-    <lastmod>2022-12-26T21:21:21+00:00</lastmod>
+    <lastmod>2023-01-15T18:42:00+00:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/posts/</loc>
-    <lastmod>2022-12-26T21:21:21+00:00</lastmod>
+    <lastmod>2023-01-15T18:42:00+00:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/tags/</loc>
+    <lastmod>2023-01-15T18:42:00+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/post/2022-12-26-buildroot-demo-of-finit/</loc>
     <lastmod>2022-12-26T21:21:21+00:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/post/2022-10-01-remap-prev/next-on-thinkpad/</loc>
