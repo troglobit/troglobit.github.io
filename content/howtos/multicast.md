@@ -1,7 +1,8 @@
 ---
 title: "Multicast HowTo"
 toc: true
-date: 2019-03-27 15:54:00 +02:00
+date: 2023-05-28 07:52:12 +0200
+orig-date: 2019-03-27 15:54:00 +02:00
 aliases: [/multicast-howto.html]
 categories: [ "multicast", "pimd", "mrouted", "SMCRoute", "IGMP", "igmpproxy", "mcproxy" ]
 ---
@@ -123,7 +124,7 @@ What is TTL and Why Can't I Route Multicast?
 The single most common problem with routing multicast that everybody
 runs into is the TTL.
 
-The TTL is the the *Time To Live* field in the IP header of a frame.
+The TTL is the *Time To Live* field in the IP header of a frame.
 
     $ tcpdump -i lo -vvv icmp
     tcpdump: listening on lo, link-type EN10MB (Ethernet), capture size 262144 bytes
@@ -137,7 +138,7 @@ router should not forward the frame beyond the originating LAN.  Again,
 without any regulation multicast is broadcast and we do not want to
 route broadcast!
 
-The singular best way to fix this problem is for the sender to to set a
+The singular best way to fix this problem is for the sender to set a
 higher TTL.  Set it only as high as the number of hops you want this to
 be forwarded!
 
@@ -333,8 +334,8 @@ update `/etc/smcroute.conf` and and start/restart `smcroute`, or send
 the source-less (*,G) approach, since we in our limited setup have full
 control over all multicast senders.  There is a slight setup cost
 associated with this: the time it takes the kernel to notify SMCRoute
-about a new source and before the the actual multicast route is written
-to the kernel.  In most cases this is acceptable.
+about a new source and before the actual multicast route is written to
+the kernel.  In most cases this is acceptable.
 
 In `smcroute.conf` on R2:
 
