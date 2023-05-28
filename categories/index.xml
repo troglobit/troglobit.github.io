@@ -7,7 +7,70 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Sun, 01 Aug 2021 08:31:12 +0200</lastBuildDate><atom:link href="https://troglobit.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 May 2023 07:52:12 +0200</lastBuildDate><atom:link href="https://troglobit.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IGMP</title>
+      <link>https://troglobit.com/categories/igmp/</link>
+      <pubDate>Sun, 28 May 2023 07:52:12 +0200</pubDate>
+      
+      <guid>https://troglobit.com/categories/igmp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>igmpproxy</title>
+      <link>https://troglobit.com/categories/igmpproxy/</link>
+      <pubDate>Sun, 28 May 2023 07:52:12 +0200</pubDate>
+      
+      <guid>https://troglobit.com/categories/igmpproxy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mcproxy</title>
+      <link>https://troglobit.com/categories/mcproxy/</link>
+      <pubDate>Sun, 28 May 2023 07:52:12 +0200</pubDate>
+      
+      <guid>https://troglobit.com/categories/mcproxy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mrouted</title>
+      <link>https://troglobit.com/categories/mrouted/</link>
+      <pubDate>Sun, 28 May 2023 07:52:12 +0200</pubDate>
+      
+      <guid>https://troglobit.com/categories/mrouted/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>multicast</title>
+      <link>https://troglobit.com/categories/multicast/</link>
+      <pubDate>Sun, 28 May 2023 07:52:12 +0200</pubDate>
+      
+      <guid>https://troglobit.com/categories/multicast/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pimd</title>
+      <link>https://troglobit.com/categories/pimd/</link>
+      <pubDate>Sun, 28 May 2023 07:52:12 +0200</pubDate>
+      
+      <guid>https://troglobit.com/categories/pimd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SMCRoute</title>
+      <link>https://troglobit.com/categories/smcroute/</link>
+      <pubDate>Sun, 28 May 2023 07:52:12 +0200</pubDate>
+      
+      <guid>https://troglobit.com/categories/smcroute/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>freebsd</title>
       <link>https://troglobit.com/categories/freebsd/</link>
@@ -32,15 +95,6 @@
       <pubDate>Sun, 01 Aug 2021 08:31:12 +0200</pubDate>
       
       <guid>https://troglobit.com/categories/kernel/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>multicast</title>
-      <link>https://troglobit.com/categories/multicast/</link>
-      <pubDate>Sun, 01 Aug 2021 08:31:12 +0200</pubDate>
-      
-      <guid>https://troglobit.com/categories/multicast/</guid>
       <description></description>
     </item>
     
@@ -131,60 +185,6 @@
       <pubDate>Sat, 22 Feb 2020 09:45:00 +0000</pubDate>
       
       <guid>https://troglobit.com/categories/programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>IGMP</title>
-      <link>https://troglobit.com/categories/igmp/</link>
-      <pubDate>Wed, 27 Mar 2019 15:54:00 +0200</pubDate>
-      
-      <guid>https://troglobit.com/categories/igmp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>igmpproxy</title>
-      <link>https://troglobit.com/categories/igmpproxy/</link>
-      <pubDate>Wed, 27 Mar 2019 15:54:00 +0200</pubDate>
-      
-      <guid>https://troglobit.com/categories/igmpproxy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>mcproxy</title>
-      <link>https://troglobit.com/categories/mcproxy/</link>
-      <pubDate>Wed, 27 Mar 2019 15:54:00 +0200</pubDate>
-      
-      <guid>https://troglobit.com/categories/mcproxy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>mrouted</title>
-      <link>https://troglobit.com/categories/mrouted/</link>
-      <pubDate>Wed, 27 Mar 2019 15:54:00 +0200</pubDate>
-      
-      <guid>https://troglobit.com/categories/mrouted/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>pimd</title>
-      <link>https://troglobit.com/categories/pimd/</link>
-      <pubDate>Wed, 27 Mar 2019 15:54:00 +0200</pubDate>
-      
-      <guid>https://troglobit.com/categories/pimd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SMCRoute</title>
-      <link>https://troglobit.com/categories/smcroute/</link>
-      <pubDate>Wed, 27 Mar 2019 15:54:00 +0200</pubDate>
-      
-      <guid>https://troglobit.com/categories/smcroute/</guid>
       <description></description>
     </item>
     

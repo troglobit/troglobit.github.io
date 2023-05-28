@@ -47,9 +47,9 @@ For some use-cases, in particular link-local multicast, it may not be possible t
 <meta itemprop="name" content="Multicast HowTo">
 <meta itemprop="description" content="Introduction This HowTo attempts to give some insight into the basics of setting up multicast routing. Both static multicast routing, with SMCRoute, and dynamic multicast routing, with mrouted and pimd.
 For some use-cases, in particular link-local multicast, it may not be possible to use multicast routing, then I recommend trying out:
- Bridging networks, see bridge(8) or Linux bridge - how it works igmproxy, mcproxy, or OpenVPN in Layer-2, bridged mode  Make sure to check out the FAQ for the most common problems."><meta itemprop="datePublished" content="2019-03-27T15:54:00+02:00" />
-<meta itemprop="dateModified" content="2019-03-27T15:54:00+02:00" />
-<meta itemprop="wordCount" content="2641">
+ Bridging networks, see bridge(8) or Linux bridge - how it works igmproxy, mcproxy, or OpenVPN in Layer-2, bridged mode  Make sure to check out the FAQ for the most common problems."><meta itemprop="datePublished" content="2023-05-28T07:52:12+02:00" />
+<meta itemprop="dateModified" content="2023-05-28T07:52:12+02:00" />
+<meta itemprop="wordCount" content="2638">
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Multicast HowTo"/>
@@ -65,8 +65,8 @@ For some use-cases, in particular link-local multicast, it may not be possible t
  Bridging networks, see bridge(8) or Linux bridge - how it works igmproxy, mcproxy, or OpenVPN in Layer-2, bridged mode  Make sure to check out the FAQ for the most common problems." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://troglobit.com/howtos/multicast/" /><meta property="article:section" content="howtos" />
-<meta property="article:published_time" content="2019-03-27T15:54:00+02:00" />
-<meta property="article:modified_time" content="2019-03-27T15:54:00+02:00" />
+<meta property="article:published_time" content="2023-05-28T07:52:12+02:00" />
+<meta property="article:modified_time" content="2023-05-28T07:52:12+02:00" />
 
 
 
@@ -88,7 +88,7 @@ For some use-cases, in particular link-local multicast, it may not be possible t
 
 
 
-    <meta property="article:published_time" content="2019-03-27 15:54:00 &#43;0200 &#43;0200" />
+    <meta property="article:published_time" content="2023-05-28 07:52:12 &#43;0200 CEST" />
 
 
 
@@ -257,7 +257,7 @@ LAN could now send an IGMP report requesting (192.168.10.1, 225.1.2.3).</p>
 <h2 id="what-is-ttl-and-why-cant-i-route-multicast">What is TTL and Why Can&rsquo;t I Route Multicast?</h2>
 <p>The single most common problem with routing multicast that everybody
 runs into is the TTL.</p>
-<p>The TTL is the the <em>Time To Live</em> field in the IP header of a frame.</p>
+<p>The TTL is the <em>Time To Live</em> field in the IP header of a frame.</p>
 <pre><code>$ tcpdump -i lo -vvv icmp
 tcpdump: listening on lo, link-type EN10MB (Ethernet), capture size 262144 bytes
 20:36:50.146377 IP (tos 0x0, ttl 1, id 0, offset 0, flags [DF], proto ICMP (1), length 84)
@@ -269,7 +269,7 @@ tcpdump: listening on lo, link-type EN10MB (Ethernet), capture size 262144 bytes
 router should not forward the frame beyond the originating LAN.  Again,
 without any regulation multicast is broadcast and we do not want to
 route broadcast!</p>
-<p>The singular best way to fix this problem is for the sender to to set a
+<p>The singular best way to fix this problem is for the sender to set a
 higher TTL.  Set it only as high as the number of hops you want this to
 be forwarded!</p>
 <blockquote>
@@ -433,8 +433,8 @@ update <code>/etc/smcroute.conf</code> and and start/restart <code>smcroute</cod
 the source-less (*,G) approach, since we in our limited setup have full
 control over all multicast senders.  There is a slight setup cost
 associated with this: the time it takes the kernel to notify SMCRoute
-about a new source and before the the actual multicast route is written
-to the kernel.  In most cases this is acceptable.</p>
+about a new source and before the actual multicast route is written to
+the kernel.  In most cases this is acceptable.</p>
 <p>In <code>smcroute.conf</code> on R2:</p>
 <pre><code>mgroup from eth0 group 225.1.2.3
 mroute from eth0 group 225.1.2.3 to eth1

@@ -2,6 +2,39 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://troglobit.com/categories/</loc>
+    <lastmod>2023-05-28T07:52:12+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/howtos/</loc>
+    <lastmod>2023-05-28T07:52:12+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/categories/igmp/</loc>
+    <lastmod>2023-05-28T07:52:12+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/categories/igmpproxy/</loc>
+    <lastmod>2023-05-28T07:52:12+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/</loc>
+    <lastmod>2023-05-28T07:52:12+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/categories/mcproxy/</loc>
+    <lastmod>2023-05-28T07:52:12+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/categories/mrouted/</loc>
+    <lastmod>2023-05-28T07:52:12+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/categories/multicast/</loc>
+    <lastmod>2023-05-28T07:52:12+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/howtos/multicast/</loc>
+    <lastmod>2023-05-28T07:52:12+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/categories/pimd/</loc>
+    <lastmod>2023-05-28T07:52:12+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/categories/smcroute/</loc>
+    <lastmod>2023-05-28T07:52:12+02:00</lastmod>
+  </url><url>
     <loc>https://troglobit.com/tags/finit/</loc>
     <lastmod>2023-01-15T18:42:00+00:00</lastmod>
   </url><url>
@@ -9,9 +42,6 @@
     <lastmod>2023-01-15T18:42:00+00:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/tags/init/</loc>
-    <lastmod>2023-01-15T18:42:00+00:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/</loc>
     <lastmod>2023-01-15T18:42:00+00:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/tags/opensource/</loc>
@@ -95,9 +125,6 @@
     <loc>https://troglobit.com/howtos/merecat-and-cgit/</loc>
     <lastmod>2021-12-09T05:56:00+00:00</lastmod>
   </url><url>
-    <loc>https://troglobit.com/howtos/</loc>
-    <lastmod>2021-12-09T05:56:00+00:00</lastmod>
-  </url><url>
     <loc>https://troglobit.com/tags/merecat/</loc>
     <lastmod>2021-12-09T05:56:00+00:00</lastmod>
   </url><url>
@@ -113,9 +140,6 @@
     <loc>https://troglobit.com/project/smcroute/smcroute-conf.html</loc>
     <lastmod>2021-08-19T15:46:00+02:00</lastmod>
   </url><url>
-    <loc>https://troglobit.com/categories/</loc>
-    <lastmod>2021-08-01T08:31:12+02:00</lastmod>
-  </url><url>
     <loc>https://troglobit.com/categories/freebsd/</loc>
     <lastmod>2021-08-01T08:31:12+02:00</lastmod>
   </url><url>
@@ -126,9 +150,6 @@
     <lastmod>2021-08-01T08:31:12+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/categories/kernel/</loc>
-    <lastmod>2021-08-01T08:31:12+02:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/categories/multicast/</loc>
     <lastmod>2021-08-01T08:31:12+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/projects/nemesis/</loc>
@@ -256,27 +277,6 @@
   </url><url>
     <loc>https://troglobit.com/projects/pimd/</loc>
     <lastmod>2019-04-28T08:50:00+02:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/categories/igmp/</loc>
-    <lastmod>2019-03-27T15:54:00+02:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/categories/igmpproxy/</loc>
-    <lastmod>2019-03-27T15:54:00+02:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/categories/mcproxy/</loc>
-    <lastmod>2019-03-27T15:54:00+02:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/categories/mrouted/</loc>
-    <lastmod>2019-03-27T15:54:00+02:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/howtos/multicast/</loc>
-    <lastmod>2019-03-27T15:54:00+02:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/categories/pimd/</loc>
-    <lastmod>2019-03-27T15:54:00+02:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/categories/smcroute/</loc>
-    <lastmod>2019-03-27T15:54:00+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/post/2019-03-13-floss-progress/</loc>
     <lastmod>2019-03-13T00:11:32+01:00</lastmod>

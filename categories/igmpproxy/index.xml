@@ -7,11 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Wed, 27 Mar 2019 15:54:00 +0200</lastBuildDate><atom:link href="https://troglobit.com/categories/igmpproxy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 May 2023 07:52:12 +0200</lastBuildDate><atom:link href="https://troglobit.com/categories/igmpproxy/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Multicast HowTo</title>
       <link>https://troglobit.com/howtos/multicast/</link>
-      <pubDate>Wed, 27 Mar 2019 15:54:00 +0200</pubDate>
+      <pubDate>Sun, 28 May 2023 07:52:12 +0200</pubDate>
       
       <guid>https://troglobit.com/howtos/multicast/</guid>
       <description>Introduction This HowTo attempts to give some insight into the basics of setting up multicast routing. Both static multicast routing, with SMCRoute, and dynamic multicast routing, with mrouted and pimd.

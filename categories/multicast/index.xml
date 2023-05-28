@@ -7,7 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Sun, 01 Aug 2021 08:31:12 +0200</lastBuildDate><atom:link href="https://troglobit.com/categories/multicast/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 May 2023 07:52:12 +0200</lastBuildDate><atom:link href="https://troglobit.com/categories/multicast/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Multicast HowTo</title>
+      <link>https://troglobit.com/howtos/multicast/</link>
+      <pubDate>Sun, 28 May 2023 07:52:12 +0200</pubDate>
+      
+      <guid>https://troglobit.com/howtos/multicast/</guid>
+      <description>Introduction This HowTo attempts to give some insight into the basics of setting up multicast routing. Both static multicast routing, with SMCRoute, and dynamic multicast routing, with mrouted and pimd.
+For some use-cases, in particular link-local multicast, it may not be possible to use multicast routing, then I recommend trying out:
+ Bridging networks, see bridge(8) or Linux bridge - how it works igmproxy, mcproxy, or OpenVPN in Layer-2, bridged mode  Make sure to check out the FAQ for the most common problems.</description>
+    </item>
+    
     <item>
       <title>HowTo: Add Multicast Routing to FreeBSD kernel</title>
       <link>https://troglobit.com/howtos/mrouting-in-freebsd/</link>
@@ -29,17 +40,6 @@ cd /usr/src cd sys/amd64/conf cat GENERIC | sed &#39;s/GENERIC$/MULTICAST/&#39; 
 due to Covid-19, mass layoffs, social distancing and quarantine.  Not
 to mention the unrest in US and Europe in the wake of George Floyd&amp;rsquo;s
 uneccessary death.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Multicast HowTo</title>
-      <link>https://troglobit.com/howtos/multicast/</link>
-      <pubDate>Wed, 27 Mar 2019 15:54:00 +0200</pubDate>
-      
-      <guid>https://troglobit.com/howtos/multicast/</guid>
-      <description>Introduction This HowTo attempts to give some insight into the basics of setting up multicast routing. Both static multicast routing, with SMCRoute, and dynamic multicast routing, with mrouted and pimd.
-For some use-cases, in particular link-local multicast, it may not be possible to use multicast routing, then I recommend trying out:
- Bridging networks, see bridge(8) or Linux bridge - how it works igmproxy, mcproxy, or OpenVPN in Layer-2, bridged mode  Make sure to check out the FAQ for the most common problems.</description>
     </item>
     
     <item>
