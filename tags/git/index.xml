@@ -7,7 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Sun, 17 Apr 2022 16:56:00 +0100</lastBuildDate><atom:link href="https://troglobit.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Jun 2023 17:49:00 +0200</lastBuildDate><atom:link href="https://troglobit.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Buildroot Development Checklist</title>
+      <link>https://troglobit.com/post/2023-06-04-buildroot-development-checklist/</link>
+      <pubDate>Sun, 04 Jun 2023 17:49:00 +0200</pubDate>
+      
+      <guid>https://troglobit.com/post/2023-06-04-buildroot-development-checklist/</guid>
+      <description>&lt;p&gt;Because I always forget, here&amp;rsquo;s a reminder to myself on how to use &lt;code&gt;git format-patch&lt;/code&gt; and &lt;code&gt;git send-email&lt;/code&gt; from the command line.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The following process applies to many other mailing-list based
+projects as well, with local differences in helper scripts.&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
     <item>
       <title>Your Own Operating System</title>
       <link>https://troglobit.com/post/2022-04-17-your-own-operating-system/</link>
@@ -40,19 +53,6 @@ list.&lt;/p&gt;</description>
       <description>&lt;p&gt;As a follow-up to my previous Buildroot mailing-list post about the
 &lt;code&gt;git format-patch&lt;/code&gt; and &lt;code&gt;git send-email&lt;/code&gt; commands, this post covers how
 to set up the latter.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Buildroot Development Checklist</title>
-      <link>https://troglobit.com/post/2022-01-04-buildroot-development-checklist/</link>
-      <pubDate>Tue, 04 Jan 2022 10:15:00 +0200</pubDate>
-      
-      <guid>https://troglobit.com/post/2022-01-04-buildroot-development-checklist/</guid>
-      <description>&lt;p&gt;Because I always forget, here&amp;rsquo;s a reminder to myself on how to use &lt;code&gt;git format-patch&lt;/code&gt; and &lt;code&gt;git send-email&lt;/code&gt; from the command line.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;The following process applies to many other mailing-list based
-projects as well, with local differences in helper scripts.&lt;/p&gt;
-&lt;/blockquote&gt;</description>
     </item>
     
   </channel>

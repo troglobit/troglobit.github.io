@@ -5,17 +5,18 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="Joachim Wiberg ">
-<meta name="description" content="This post shows how you can extend Finit with your own conditions. The example we will use is a simple Internet connectivity checker. When it triggers we start BusyBox ntpd which, if started with any other type of condition (none, default route, etc.) may get stuck trying to resolve pool.ntp.org.
+<meta name="description" content="Because I always forget, here&amp;rsquo;s a reminder to myself on how to use git format-patch and git send-email from the command line.
+ The following process applies to many other mailing-list based projects as well, with local differences in helper scripts.
 " />
-<meta name="keywords" content=", finit, init, opensource" />
+<meta name="keywords" content=", buildroot, git, opensource" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
-<link rel="canonical" href="https://troglobit.com/post/2023-01-15-finit-custom-connectivity-check/" />
+<link rel="canonical" href="https://troglobit.com/post/2023-06-04-buildroot-development-checklist/" />
 
 
     <title>
         
-            Finit custom connectivity check :: Joachim Wiberg  — The Last Outpost
+            Buildroot Development Checklist :: Joachim Wiberg  — The Last Outpost
         
     </title>
 
@@ -43,35 +44,35 @@
     <meta name="msapplication-TileColor" content="">
 
 
-<meta itemprop="name" content="Finit custom connectivity check">
-<meta itemprop="description" content="This post shows how you can extend Finit with your own conditions.  The
-example we will use is a simple Internet connectivity checker.  When it
-triggers we start BusyBox ntpd which, if started with any other type of
-condition (none, default route, etc.) may get stuck trying to resolve
-pool.ntp.org."><meta itemprop="datePublished" content="2023-01-15T18:42:00+00:00" />
-<meta itemprop="dateModified" content="2023-01-15T18:42:00+00:00" />
-<meta itemprop="wordCount" content="488">
-<meta itemprop="keywords" content="finit,init,opensource," />
+<meta itemprop="name" content="Buildroot Development Checklist">
+<meta itemprop="description" content="Because I always forget, here&rsquo;s a reminder to myself on how to use git format-patch and git send-email from the command line.
+
+The following process applies to many other mailing-list based
+projects as well, with local differences in helper scripts.
+"><meta itemprop="datePublished" content="2023-06-04T17:49:00+02:00" />
+<meta itemprop="dateModified" content="2023-06-04T17:49:00+02:00" />
+<meta itemprop="wordCount" content="413">
+<meta itemprop="keywords" content="buildroot,git,opensource," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Finit custom connectivity check"/>
-<meta name="twitter:description" content="This post shows how you can extend Finit with your own conditions.  The
-example we will use is a simple Internet connectivity checker.  When it
-triggers we start BusyBox ntpd which, if started with any other type of
-condition (none, default route, etc.) may get stuck trying to resolve
-pool.ntp.org."/>
+<meta name="twitter:title" content="Buildroot Development Checklist"/>
+<meta name="twitter:description" content="Because I always forget, here&rsquo;s a reminder to myself on how to use git format-patch and git send-email from the command line.
+
+The following process applies to many other mailing-list based
+projects as well, with local differences in helper scripts.
+"/>
 
 
 
-    <meta property="og:title" content="Finit custom connectivity check" />
-<meta property="og:description" content="This post shows how you can extend Finit with your own conditions.  The
-example we will use is a simple Internet connectivity checker.  When it
-triggers we start BusyBox ntpd which, if started with any other type of
-condition (none, default route, etc.) may get stuck trying to resolve
-pool.ntp.org." />
+    <meta property="og:title" content="Buildroot Development Checklist" />
+<meta property="og:description" content="Because I always forget, here&rsquo;s a reminder to myself on how to use git format-patch and git send-email from the command line.
+
+The following process applies to many other mailing-list based
+projects as well, with local differences in helper scripts.
+" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://troglobit.com/post/2023-01-15-finit-custom-connectivity-check/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-01-15T18:42:00+00:00" />
-<meta property="article:modified_time" content="2023-01-15T18:42:00+00:00" />
+<meta property="og:url" content="https://troglobit.com/post/2023-06-04-buildroot-development-checklist/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-06-04T17:49:00+02:00" />
+<meta property="article:modified_time" content="2023-06-04T17:49:00+02:00" />
 
 
 
@@ -79,7 +80,7 @@ pool.ntp.org." />
 
 
 
-    <meta property="article:published_time" content="2023-01-15 18:42:00 &#43;0000 UTC" />
+    <meta property="article:published_time" content="2023-06-04 17:49:00 &#43;0200 CEST" />
 
 
 
@@ -143,7 +144,7 @@ pool.ntp.org." />
           <circle cx="12" cy="12" r="10"></circle>
           <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-        3 minutes
+        2 minutes
 
         
       </p>
@@ -151,7 +152,7 @@ pool.ntp.org." />
 
     <article>
       <h1 class="post-title">
-        <a href="https://troglobit.com/post/2023-01-15-finit-custom-connectivity-check/">Finit custom connectivity check</a>
+        <a href="https://troglobit.com/post/2023-06-04-buildroot-development-checklist/">Buildroot Development Checklist</a>
       </h1>
 
       
@@ -161,139 +162,91 @@ pool.ntp.org." />
       
 
       <div class="post-content">
-        <p>This post shows how you can extend Finit with your own conditions.  The
-example we will use is a simple Internet connectivity checker.  When it
-triggers we start BusyBox ntpd which, if started with any other type of
-condition (none, default route, etc.) may get stuck trying to resolve
-<code>pool.ntp.org</code>.</p>
-<h3 id="recap">Recap</h3>
-<p>As mentioned in previous posts, the three main condition groups are:</p>
-<ul>
-<li>pid</li>
-<li>net</li>
-<li>usr</li>
-</ul>
-<p>Recently another group has been added:</p>
-<ul>
-<li>sys</li>
-</ul>
-<p>It is free to use and populate by users.  Take note, however, of other
-plugins and daemons that share the namespace.  For instance, the Finit
-<code>keventd</code> publish the <code>&lt;sys/pwr/ac&gt;</code> condition.</p>
+        <p>Because I always forget, here&rsquo;s a reminder to myself on how to use <code>git format-patch</code> and <code>git send-email</code> from the command line.</p>
 <blockquote>
-<p>For details see the Finit documentation:
-<a href="https://github.com/troglobit/finit/blob/master/doc/conditions.md">https://github.com/troglobit/finit/blob/master/doc/conditions.md</a></p>
+<p>The following process applies to many other mailing-list based
+projects as well, with local differences in helper scripts.</p>
 </blockquote>
-<h3 id="connectivity-check">Connectivity Check</h3>
-<p>There are many methods available, ICMP (ping) is probably the most
-common.  But since it is often blocked by firewalls we will use plain
-HTTP, of which there are several online servers to choose from:</p>
-<table>
-<thead>
-<tr>
-<th><strong>URI</strong></th>
-<th><strong>Response</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="http://network-test.debian.org/nm">http://network-test.debian.org/nm</a></td>
-<td>NetworkManager is online</td>
-</tr>
-<tr>
-<td><a href="https://fedoraproject.org/static/hotspot.txt">https://fedoraproject.org/static/hotspot.txt</a></td>
-<td>OK</td>
-</tr>
-<tr>
-<td><a href="http://nmcheck.gnome.org/check_network_status.txt">http://nmcheck.gnome.org/check_network_status.txt</a></td>
-<td>NetworkManager is online</td>
-</tr>
-<tr>
-<td><a href="https://www.pkgbuild.com/check_network_status.txt">https://www.pkgbuild.com/check_network_status.txt</a></td>
-<td>NetworkManager is online</td>
-</tr>
-<tr>
-<td><a href="http://connectivity-check.ubuntu.com">http://connectivity-check.ubuntu.com</a></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<p>The following example is for contributing to the [Buildroot Project][1],
+but the process is much the same for other mailing list-based projects.</p>
+<ol>
+<li>
+<p>Make your changes on an up-to-date branch from Buildroot master</p>
+<pre><code> $ git checkout -b package/foo
+ $ git fetch --all --tags
+ $ git rebase origin/master
+</code></pre>
+</li>
+<li>
+<p>Use <em>logical commits</em>; upgrade package as one, changing/extending
+behavior as another, etc.</p>
+</li>
+<li>
+<p>Use commit messages to record <em>why</em> changes are made.  First line is
+a summary referencing the sub-system, followed by an empty line and
+the message body, and concluded by your sign-off:</p>
+<pre><code> package/foo: bump version to v1.2.3
+
+ Signed-off-by: Your Name &lt;your.name@example.com&gt;
+</code></pre>
+</li>
+<li>
+<p>Verify formatting of package files; .in, .mk, etc.</p>
+<pre><code> $ ./utils/docker-run make check-package
+</code></pre>
+<p>If you change or add a new package, verify you don&rsquo;t introduce any
+recursive dependencies, or other nasty surprises.  Remember, the
+build systems includes <em>all</em> <code>.mk</code> files into one big Makefile, so
+any changes you make are seen by <em>all</em> other packages.</p>
+<pre><code> $  make menuconfig         # complains if you have recursive deps.
+ $  make &lt;pkg&gt;-rebuild      # check output of build
+</code></pre>
+</li>
+<li>
+<p>Test your package/change with a set of cross-compilation toolchains.
+The <code>.config</code> file is a menuconfig snippet enabling the package to
+test:</p>
+<pre><code> $ ./utils/test-pkg -c foo.config -p foo
+</code></pre>
+<p>Output goes in <code>~/br-test-pkg/</code>, check all logs.  Some toolchains
+can help you track down issues with your package you won&rsquo;t see
+elsewhere.</p>
+</li>
+<li>
+<p>Format your patches, with the optional <code>--cover-letter</code>, very useful
+to explain a series of patches:</p>
+<pre><code> $  git format-patch --cover-letter -M -n -s -o mail origin/master
+</code></pre>
+<p>Remember to <strong>edit the cover letter</strong> &mdash; it serves as an
+introduction and explains the reasoning behind your changes.  Focus
+on <em>the why, not the how,</em> the patches have separate commit messages</p>
+</li>
+<li>
+<p>Figure out DEVELOPERS to Cc in your correspondence to the mailing list:</p>
+<pre><code> $ ./utils/get-developers mail/*
+ git send-email --to buildroot@buildroot.org --cc foo@example.com
+</code></pre>
+</li>
+<li>
+<p>At the very least, the following should be output:</p>
+<pre><code> git send-email --to buildroot@buildroot.org
+</code></pre>
+</li>
+<li>
+<p>Append <code>mail/*</code> to send.  You and others in Signed-off-by,
+Reviewed-by: are Cc:ed by default</p>
+<pre><code> $ git send-email --to buildroot@buildroot.org --cc foo@example.com mail/*
+</code></pre>
+<p>You are offered one last chance to proofread the contents (remember
+to check the email headers!) before you send.</p>
+</li>
+</ol>
 <blockquote>
-<p>The Ubuntu checker returns an empty response, making it very simple to
-use with a basic <code>curl http://connectivity-check.ubuntu.com</code>.  Simply
-checking the return value is enough.</p>
+<p><strong>Note:</strong> if you haven&rsquo;t set up your <code>~/.gitconfig</code> yet for sending
+email, please see <a href="https://git-scm.com/docs/git-send-email">https://git-scm.com/docs/git-send-email</a> or my blog
+post <a href="https://troglobit.com/post/2022-01-24-gmail-and-git-send-email/">https://troglobit.com/post/2022-01-24-gmail-and-git-send-email/</a>
+for details.</p>
 </blockquote>
-<h3 id="the-script">The Script</h3>
-<p>We don&rsquo;t have curl on our target, only the BusyBox version of wget.  But
-that is all we need to create this little script.  I&rsquo;ve put mine in the
-rootfs with a post-build hook in Buildroot.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">root@anarchy:~# cat /usr/bin/connectivity.sh
-<span class="c1">#!/bin/sh</span>
-<span class="c1"># Manages connectivity condition &lt;sys/internet/up&gt;</span>
-
-<span class="nv">GEN</span><span class="o">=</span>/run/finit/cond/reconf
-<span class="nv">NET</span><span class="o">=</span>/run/finit/cond/sys/internet
-<span class="nv">URI</span><span class="o">=</span>http://connectivity-check.ubuntu.com
-<span class="nv">SEC</span><span class="o">=</span><span class="m">5</span>
-
-isup<span class="o">()</span>
-<span class="o">{</span>
-	wget -T <span class="m">1</span> -qO- <span class="nv">$URI</span> 2&gt;/dev/null <span class="o">||</span> <span class="k">return</span> <span class="m">1</span>
-	<span class="k">return</span> <span class="m">0</span>
-<span class="o">}</span>
-
-mkdir -p <span class="nv">$NET</span>
-<span class="k">while</span> true<span class="p">;</span> <span class="k">do</span>
-	<span class="k">if</span> isup<span class="p">;</span> <span class="k">then</span>
-		ln -sf <span class="nv">$GEN</span> <span class="nv">$NET</span>/up
-	<span class="k">else</span>
-		rm -f <span class="nv">$NET</span>/up
-	<span class="k">fi</span>
-	sleep <span class="nv">$SEC</span>
-<span class="k">done</span>
-</code></pre></div><h3 id="the-finit-config">The Finit Config</h3>
-<p>Create a new Finit config for the connectivity script:</p>
-<pre><code>root@anarchy:~# initctl -c edit connectivity
-</code></pre>
-<p>Paste in the following and exit:</p>
-<pre><code># Manages the &lt;net/internet/up&gt; condition
-service [2345789] connectivity.sh -- Connectivity monitor
-</code></pre>
-<p>Enable it:</p>
-<pre><code>root@anarchy:~# initctl enable connectivity
-</code></pre>
-<p>Now edit the BusyBox <code>ntpd</code> config:</p>
-<pre><code>root@anarchy:~# initctl edit ntpd
-</code></pre>
-<p>Change it to the following:</p>
-<pre><code>service [2345] log &lt;!sys/internet/up&gt; ntpd -n -l -I eth0 -p pool.ntp.org -- NTP daemon
-</code></pre>
-<p>This tells Finit to wait for the script&rsquo;s condition and then start ntpd
-as a server on eth0, and peer with pool.ntp.org.</p>
-<p>Activate all the changes:</p>
-<pre><code>root@anarchy:~# initctl reload
-</code></pre>
-<p>Verify everything has started properly using <code>initctl</code>.  Check the
-system log messages for the ntpd progress.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">root@anarchy:~# initctl -p
-PID   IDENT            STATUS   RUNLEVELS    DESCRIPTION
-==============================================================================
-438   connectivity.sh  running  [--2345-789] Connectivity monitor
-443   dropbear         running  [--2345-789] Dropbear SSH daemon
-455   tty:console      running  [-12345-789] Getty on /dev/console
-444   mdnsd            running  [--2345-789] mDNS-SD daemon
-445   mini-snmpd       running  [--2345----] Mini snmpd
-8379  ntpd             running  [--2345----] NTP daemon
-447   smcrouted        running  [--2345----] Static multicast routing daemon
-448   ssdpd            running  [--2345----] SSDP Responder
-416   sysklogd         running  [S123456789] System log daemon
-449   watchdogd        running  [-123456789] System watchdog daemon
-450   httpd            running  [--2345----] Web interface
-root@anarchy:~# initctl -p cond
-PID   IDENT            STATUS  CONDITION (+ ON, ~ FLUX, - OFF)
-==============================================================================
-8379  ntpd             on      &lt;+sys/internet/up&gt;
-</code></pre></div>
       </div>
     </article>
 
@@ -304,8 +257,8 @@ PID   IDENT            STATUS  CONDITION (+ ON, ~ FLUX, - OFF)
     <p>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
 
-        <span class="tag"><a href="https://troglobit.com/tags/finit/">finit</a></span>
-        <span class="tag"><a href="https://troglobit.com/tags/init/">init</a></span>
+        <span class="tag"><a href="https://troglobit.com/tags/buildroot/">buildroot</a></span>
+        <span class="tag"><a href="https://troglobit.com/tags/git/">git</a></span>
         <span class="tag"><a href="https://troglobit.com/tags/opensource/">opensource</a></span>
         
     </p>
@@ -320,7 +273,7 @@ PID   IDENT            STATUS  CONDITION (+ ON, ~ FLUX, - OFF)
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        488 Words
+        413 Words
       </p>
 
       <p>
@@ -331,7 +284,7 @@ PID   IDENT            STATUS  CONDITION (+ ON, ~ FLUX, - OFF)
           <line x1="3" y1="10" x2="21" y2="10"></line>
         </svg>
         
-          2023-01-15 19:42
+          2023-06-04 17:49
         
 
          
@@ -342,7 +295,7 @@ PID   IDENT            STATUS  CONDITION (+ ON, ~ FLUX, - OFF)
       <hr />
       <div class="sharing-buttons">
         
-<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2ftroglobit.com%2fpost%2f2023-01-15-finit-custom-connectivity-check%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
+<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2ftroglobit.com%2fpost%2f2023-06-04-buildroot-development-checklist%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
   <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
     </div>
@@ -350,7 +303,7 @@ PID   IDENT            STATUS  CONDITION (+ ON, ~ FLUX, - OFF)
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?url=https%3a%2f%2ftroglobit.com%2fpost%2f2023-01-15-finit-custom-connectivity-check%2f" target="_blank" rel="noopener" aria-label="" title="Share on twitter">
+<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?url=https%3a%2f%2ftroglobit.com%2fpost%2f2023-06-04-buildroot-development-checklist%2f" target="_blank" rel="noopener" aria-label="" title="Share on twitter">
   <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
       <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
@@ -359,7 +312,7 @@ PID   IDENT            STATUS  CONDITION (+ ON, ~ FLUX, - OFF)
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=Finit%20custom%20connectivity%20check&amp;caption=Finit%20custom%20connectivity%20check&amp;canonicalUrl=https%3a%2f%2ftroglobit.com%2fpost%2f2023-01-15-finit-custom-connectivity-check%2f" target="_blank" rel="noopener" aria-label="" title="Share on tumblr">
+<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=Buildroot%20Development%20Checklist&amp;caption=Buildroot%20Development%20Checklist&amp;canonicalUrl=https%3a%2f%2ftroglobit.com%2fpost%2f2023-06-04-buildroot-development-checklist%2f" target="_blank" rel="noopener" aria-label="" title="Share on tumblr">
   <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small">
     <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941 0 9.999 0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.207 2.371h.09c.631-.02 1.486-.205 1.936-.419l1.156 3.425c-.436.636-2.4 1.374-4.156 1.404h-.178l.011.002z"/></svg>
@@ -368,7 +321,7 @@ PID   IDENT            STATUS  CONDITION (+ ON, ~ FLUX, - OFF)
 </a>
 
 
-<a class="resp-sharing-button__link" href="mailto:?subject=Finit%20custom%20connectivity%20check&amp;body=https%3a%2f%2ftroglobit.com%2fpost%2f2023-01-15-finit-custom-connectivity-check%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
+<a class="resp-sharing-button__link" href="mailto:?subject=Buildroot%20Development%20Checklist&amp;body=https%3a%2f%2ftroglobit.com%2fpost%2f2023-06-04-buildroot-development-checklist%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
   <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
     </div>
@@ -376,7 +329,7 @@ PID   IDENT            STATUS  CONDITION (+ ON, ~ FLUX, - OFF)
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=https%3a%2f%2ftroglobit.com%2fpost%2f2023-01-15-finit-custom-connectivity-check%2f&amp;media=https%3a%2f%2ftroglobit.com%2fpost%2f2023-01-15-finit-custom-connectivity-check%2f;description=Finit%20custom%20connectivity%20check" target="_blank" rel="noopener" aria-label="" title="Share on pinterest">
+<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=https%3a%2f%2ftroglobit.com%2fpost%2f2023-06-04-buildroot-development-checklist%2f&amp;media=https%3a%2f%2ftroglobit.com%2fpost%2f2023-06-04-buildroot-development-checklist%2f;description=Buildroot%20Development%20Checklist" target="_blank" rel="noopener" aria-label="" title="Share on pinterest">
   <div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg>
     </div>
@@ -384,7 +337,7 @@ PID   IDENT            STATUS  CONDITION (+ ON, ~ FLUX, - OFF)
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2ftroglobit.com%2fpost%2f2023-01-15-finit-custom-connectivity-check%2f&amp;title=Finit%20custom%20connectivity%20check&amp;summary=Finit%20custom%20connectivity%20check&amp;source=https%3a%2f%2ftroglobit.com%2fpost%2f2023-01-15-finit-custom-connectivity-check%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
+<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2ftroglobit.com%2fpost%2f2023-06-04-buildroot-development-checklist%2f&amp;title=Buildroot%20Development%20Checklist&amp;summary=Buildroot%20Development%20Checklist&amp;source=https%3a%2f%2ftroglobit.com%2fpost%2f2023-06-04-buildroot-development-checklist%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
   <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
     </div>
@@ -392,7 +345,7 @@ PID   IDENT            STATUS  CONDITION (+ ON, ~ FLUX, - OFF)
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=https%3a%2f%2ftroglobit.com%2fpost%2f2023-01-15-finit-custom-connectivity-check%2f&amp;resubmit=true&amp;title=Finit%20custom%20connectivity%20check" target="_blank" rel="noopener" aria-label="" title="Share on reddit">
+<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=https%3a%2f%2ftroglobit.com%2fpost%2f2023-06-04-buildroot-development-checklist%2f&amp;resubmit=true&amp;title=Buildroot%20Development%20Checklist" target="_blank" rel="noopener" aria-label="" title="Share on reddit">
   <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
     </div>
@@ -400,7 +353,7 @@ PID   IDENT            STATUS  CONDITION (+ ON, ~ FLUX, - OFF)
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://www.xing.com/app/user?op=share;url=https%3a%2f%2ftroglobit.com%2fpost%2f2023-01-15-finit-custom-connectivity-check%2f;title=Finit%20custom%20connectivity%20check" target="_blank" rel="noopener" aria-label="" title="Share on xing">
+<a class="resp-sharing-button__link" href="https://www.xing.com/app/user?op=share;url=https%3a%2f%2ftroglobit.com%2fpost%2f2023-06-04-buildroot-development-checklist%2f;title=Buildroot%20Development%20Checklist" target="_blank" rel="noopener" aria-label="" title="Share on xing">
   <div class="resp-sharing-button resp-sharing-button--xing resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L1.86 16.051c-.099.188-.093.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"/></svg>
     </div>
@@ -408,7 +361,7 @@ PID   IDENT            STATUS  CONDITION (+ ON, ~ FLUX, - OFF)
 </a>
 
 
-<a class="resp-sharing-button__link" href="whatsapp://send?text=Finit%20custom%20connectivity%20check%20https%3a%2f%2ftroglobit.com%2fpost%2f2023-01-15-finit-custom-connectivity-check%2f" target="_blank" rel="noopener" aria-label="" title="Share on whatsapp">
+<a class="resp-sharing-button__link" href="whatsapp://send?text=Buildroot%20Development%20Checklist%20https%3a%2f%2ftroglobit.com%2fpost%2f2023-06-04-buildroot-development-checklist%2f" target="_blank" rel="noopener" aria-label="" title="Share on whatsapp">
   <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
     </div>
@@ -416,7 +369,7 @@ PID   IDENT            STATUS  CONDITION (+ ON, ~ FLUX, - OFF)
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2ftroglobit.com%2fpost%2f2023-01-15-finit-custom-connectivity-check%2f&amp;t=Finit%20custom%20connectivity%20check" target="_blank" rel="noopener" aria-label="" title="Share on hacker news">
+<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2ftroglobit.com%2fpost%2f2023-06-04-buildroot-development-checklist%2f&amp;t=Buildroot%20Development%20Checklist" target="_blank" rel="noopener" aria-label="" title="Share on hacker news">
   <div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
 			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z"/></svg>
     </div>
@@ -424,7 +377,7 @@ PID   IDENT            STATUS  CONDITION (+ ON, ~ FLUX, - OFF)
 </a>
 
 
-<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=Finit%20custom%20connectivity%20check&amp;url=https%3a%2f%2ftroglobit.com%2fpost%2f2023-01-15-finit-custom-connectivity-check%2f" target="_blank" rel="noopener" aria-label="" title="Share on telegram">
+<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=Buildroot%20Development%20Checklist&amp;url=https%3a%2f%2ftroglobit.com%2fpost%2f2023-06-04-buildroot-development-checklist%2f" target="_blank" rel="noopener" aria-label="" title="Share on telegram">
   <div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
     </div>
@@ -439,18 +392,11 @@ PID   IDENT            STATUS  CONDITION (+ ON, ~ FLUX, - OFF)
 
         <div class="pagination__buttons">
             
-            <span class="button previous">
-                <a href="https://troglobit.com/post/2023-06-04-buildroot-development-checklist/">
-                    <span class="button__icon">←</span>
-                    <span class="button__text">Buildroot Development Checklist</span>
-                </a>
-            </span>
-            
 
             
             <span class="button next">
-                <a href="https://troglobit.com/post/2022-12-26-buildroot-demo-of-finit/">
-                    <span class="button__text">Buildroot demo of Finit</span>
+                <a href="https://troglobit.com/post/2023-01-15-finit-custom-connectivity-check/">
+                    <span class="button__text">Finit custom connectivity check</span>
                     <span class="button__icon">→</span>
                 </a>
             </span>
