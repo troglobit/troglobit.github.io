@@ -1,7 +1,7 @@
 ---
 title: "Buildroot Development Checklist"
 orig-date: 2021-01-24 13:26:00 +0100
-date: 2022-01-04 10:15:00 +0200
+date: 2023-06-04 17:49:00 +0200
 tags: [ buildroot, git, opensource ]
 draft: false
 ---
@@ -36,7 +36,7 @@ but the process is much the same for other mailing list-based projects.
 
 4. Verify formatting of package files; .in, .mk, etc.
 
-        $ ./utils/check-package package/foo/*
+        $ ./utils/docker-run make check-package
 
    If you change or add a new package, verify you don't introduce any
    recursive dependencies, or other nasty surprises.  Remember, the
