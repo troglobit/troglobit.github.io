@@ -27,6 +27,7 @@ For example, I maintain [Finit][], [Inadyn][], [pimd][], [mrouted][],
 [SMCRoute][], [sysklogd][], [uftpd][], and more at [GitHub][].
 
 > <a rel="me" href="https://mastodon.nu/@troglobit">Follow me on Mastodon</a>
+> or <a rel="me" href="https://fosstodon.org/@troglobit">Fosstodon</a> (eng)
 
 My [GPG key][] fingerprint is `4A11 E139 3486 34EF 499C ECAC ECA8 26A3
 7B6C 7409`.  Fetch it from a key server using:
