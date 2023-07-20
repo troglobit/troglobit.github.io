@@ -124,21 +124,8 @@ Narcis  Ilisei.  The  goal of  this  project is  to focus  on \*BSD  and
 various embedded Linux  platforms, but *Cygwin is  also supported*.  All
 sane patches addressing this target audience are welcome!
 
-Relevant patches and features from the following forks have been merged:
-
-* ["New" upstream](https://sourceforge.net/projects/inadyn/) by
-  [Christoph Brill](http://www.egore911.de/)
-* [Inadyn-advanced](https://sourceforge.net/projects/inadyn-advanced/)
-* [Inadyn extended](https://github.com/vampik/inadyn) by
-  [Vampik.ru](http://vampik.ru/), maintained by
-  [Andrey Tikhomirov](https://github.com/vampik/inadyn)
-
-The [inadyn-mt][] project is another fork from the original INADYN.  It
-maintains support for Windows and adds many new features and fixes, not
-just for Windows.
 
 [1]: https://en.wikipedia.org/wiki/Dynamic_DNS
 [2]: https://en.wikipedia.org/wiki/ISP
 [README]: https://github.com/troglobit/inadyn/blob/master/README.md
 [origin]: http://www.inatech.eu/inadyn/
-[inadyn-mt]: https://sourceforge.net/projects/inadyn-mt/
