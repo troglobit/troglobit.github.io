@@ -1,6 +1,7 @@
 ---
-title: Buildroot demo of Finit
-date: 2022-12-26T21:21:21Z
+title: Buildroot demo of FastInit (Finit)
+date: 2023-09-25T04:48:00Z
+orig-date: 2022-12-26T21:21:21Z
 tags:
  - finit
  - init
@@ -8,12 +9,13 @@ tags:
 ---
 
 I believe there is a **gap in the market** between BusyBox init and
-systemd.  In particular in the embedded space.
+systemd.  In particular in the embedded space.  This blog post shows how
+easily it is to get up and running quickly with FastInit ([Finit][1])!
 
 I'm a really bad salesman, and an even worse writer, so instead of
 trying to convince you with my poor English, I've made a demo.  It is a
 [Buildroot external](https://nightly.buildroot.org/#outside-br-custom)
-that can be used to add [Finit][1] to your own projects.
+that can be used to add Finit to your own projects.
 
 > For details, look here: <https://github.com/troglobit/br2-finit-demo>
 
@@ -30,7 +32,10 @@ Why Finit?
  - Scriptable nearly everywhere
  - Supports service/task synchronization (called conditions)
  - Supports PID/systemd/s6 readiness notification
+ - Supports tmpfiles.d like systemd
  - Supports `ifup -a` & `ifdown -a` natively
+ - Supports `/etc/rc.local` and has built-in `runparts` for [SysV init
+   compatibility](https://github.com/troglobit/finit/tree/master/doc#sysv-init-compatibility)
  - And [more ...](https://github.com/troglobit/finit#introduction)
 
 
@@ -51,7 +56,7 @@ system <https://buildroot.org/downloads/manual/manual.html#requirement>
 
  3. Configure and Build
 
-        make qemu_x86_64_finit_defconfig
+        make qemu_x86_64_defconfig
         make
 
  4. Run
