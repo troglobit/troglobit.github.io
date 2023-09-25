@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Sat, 22 Feb 2020 12:28:00 +0000</lastBuildDate><atom:link href="https://troglobit.com/categories/debian/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Sep 2023 20:24:00 +0000</lastBuildDate><atom:link href="https://troglobit.com/categories/debian/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HowTo play with SNMP</title>
+      <link>https://troglobit.com/howtos/snmp/</link>
+      <pubDate>Mon, 04 Sep 2023 20:24:00 +0000</pubDate>
+      
+      <guid>https://troglobit.com/howtos/snmp/</guid>
+      <description>This mini HowTo describes how to use the SNMP client tools to retrieve human readable information from devices running an SNMP daemon. In the examples below mini-snmpd is used as the daemon and as client both the command line net-snmp tool and the snmpB GUI are used.
+Personally I use both Ubuntu and Debian, so the tools I use to download the clients will reflect that. See your respective UNIX distro&amp;rsquo;s help pages for how to install these client tools in your operating system.</description>
+    </item>
+    
     <item>
       <title>Set up a Debian/Ubuntu APT Repository</title>
       <link>https://troglobit.com/2017/09/30/set-up-a-debian-ubuntu-apt-repository/</link>
@@ -20,16 +30,6 @@ managed to get it working.  Probably due to problems with GPG.  Then I
 went down the tried and true path of using &lt;a href=&#34;https://debian-administration.org/article/286/Setting_up_your_own_APT_repository_with_upload_support&#34;&gt;reprepro&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I&amp;rsquo;ve tried to document my steps here, but I&amp;rsquo;ve very likely missed a few
 steps that a beginner admin may run into. YMMV B-)&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>HowTo play with SNMP</title>
-      <link>https://troglobit.com/howtos/snmp/</link>
-      <pubDate>Sat, 05 May 2018 13:57:00 +0200</pubDate>
-      
-      <guid>https://troglobit.com/howtos/snmp/</guid>
-      <description>This mini HowTo describes how to use the SNMP client tools to retrieve human readable information from devices running an SNMP daemon. In the examples below mini-snmpd is used as the daemon and as client both the command line net-snmp tool and the snmpB GUI are used.
-Personally I use both Ubuntu and Debian, so the tools I use to download the clients will reflect that. See your respective UNIX distro&amp;rsquo;s help pages for how to install these client tools in your operating system.</description>
     </item>
     
     <item>

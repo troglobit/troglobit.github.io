@@ -2,6 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://troglobit.com/post/2023-09-25-buildroot-demo-of-fastinit-finit/</loc>
+    <lastmod>2023-09-25T04:48:00+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/finit/</loc>
+    <lastmod>2023-09-25T04:48:00+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/init/</loc>
+    <lastmod>2023-09-25T04:48:00+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/</loc>
+    <lastmod>2023-09-25T04:48:00+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/opensource/</loc>
+    <lastmod>2023-09-25T04:48:00+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/posts/</loc>
+    <lastmod>2023-09-25T04:48:00+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/</loc>
+    <lastmod>2023-09-25T04:48:00+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/categories/</loc>
+    <lastmod>2023-09-04T20:24:00+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/categories/debian/</loc>
+    <lastmod>2023-09-04T20:24:00+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/categories/howto/</loc>
+    <lastmod>2023-09-04T20:24:00+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/howtos/snmp/</loc>
+    <lastmod>2023-09-04T20:24:00+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/howtos/</loc>
+    <lastmod>2023-09-04T20:24:00+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/categories/snmp/</loc>
+    <lastmod>2023-09-04T20:24:00+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/categories/ubuntu/</loc>
+    <lastmod>2023-09-04T20:24:00+00:00</lastmod>
+  </url><url>
     <loc>https://troglobit.com/tags/buildroot/</loc>
     <lastmod>2023-06-04T17:49:00+02:00</lastmod>
   </url><url>
@@ -10,24 +52,6 @@
   </url><url>
     <loc>https://troglobit.com/tags/git/</loc>
     <lastmod>2023-06-04T17:49:00+02:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/</loc>
-    <lastmod>2023-06-04T17:49:00+02:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/tags/opensource/</loc>
-    <lastmod>2023-06-04T17:49:00+02:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/posts/</loc>
-    <lastmod>2023-06-04T17:49:00+02:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/tags/</loc>
-    <lastmod>2023-06-04T17:49:00+02:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/categories/</loc>
-    <lastmod>2023-05-28T07:52:12+02:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/howtos/</loc>
-    <lastmod>2023-05-28T07:52:12+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/categories/igmp/</loc>
     <lastmod>2023-05-28T07:52:12+02:00</lastmod>
@@ -53,17 +77,8 @@
     <loc>https://troglobit.com/categories/smcroute/</loc>
     <lastmod>2023-05-28T07:52:12+02:00</lastmod>
   </url><url>
-    <loc>https://troglobit.com/tags/finit/</loc>
-    <lastmod>2023-01-15T18:42:00+00:00</lastmod>
-  </url><url>
     <loc>https://troglobit.com/post/2023-01-15-finit-custom-connectivity-check/</loc>
     <lastmod>2023-01-15T18:42:00+00:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/tags/init/</loc>
-    <lastmod>2023-01-15T18:42:00+00:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/post/2022-12-26-buildroot-demo-of-finit/</loc>
-    <lastmod>2022-12-26T21:21:21+00:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/post/2022-10-01-remap-prev/next-on-thinkpad/</loc>
     <lastmod>2022-10-01T15:44:00+00:00</lastmod>
@@ -141,9 +156,6 @@
     <lastmod>2021-08-19T15:46:00+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/categories/freebsd/</loc>
-    <lastmod>2021-08-01T08:31:12+02:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/categories/howto/</loc>
     <lastmod>2021-08-01T08:31:12+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/howtos/mrouting-in-freebsd/</loc>
@@ -236,13 +248,7 @@
     <loc>https://troglobit.com/categories/apt/</loc>
     <lastmod>2020-02-22T12:28:00+00:00</lastmod>
   </url><url>
-    <loc>https://troglobit.com/categories/debian/</loc>
-    <lastmod>2020-02-22T12:28:00+00:00</lastmod>
-  </url><url>
     <loc>https://troglobit.com/2017/09/30/set-up-a-debian-ubuntu-apt-repository/</loc>
-    <lastmod>2020-02-22T12:28:00+00:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/categories/ubuntu/</loc>
     <lastmod>2020-02-22T12:28:00+00:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/categories/programming/</loc>
@@ -292,12 +298,6 @@
   </url><url>
     <loc>https://troglobit.com/post/2018-06-16-open-source-releases/</loc>
     <lastmod>2018-06-16T15:19:28+02:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/howtos/snmp/</loc>
-    <lastmod>2018-05-05T13:57:00+02:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/categories/snmp/</loc>
-    <lastmod>2018-05-05T13:57:00+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/post/2018-04-15-n-e-m-e-s-i-s/</loc>
     <lastmod>2018-04-15T16:11:23+02:00</lastmod>
