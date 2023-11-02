@@ -9,6 +9,16 @@
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
     <lastBuildDate>Thu, 02 Nov 2023 06:47:00 +0100</lastBuildDate><atom:link href="https://troglobit.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>About</title>
+      <link>https://troglobit.com/about/</link>
+      <pubDate>Thu, 02 Nov 2023 07:26:00 +0100</pubDate>
+      
+      <guid>https://troglobit.com/about/</guid>
+      <description>Welcome to this little blog, my name is Joachim Wiberg, formerly Nilsson. The nick troglobit is a tribute to my childhood friend Henrik Flordal, for being a good friend and inspiring me to become a hacker. It is also the first password to a Linux server (Henrik&amp;rsquo;s) I got a login to, back in 1995.
+So yes, I&amp;rsquo;m a huge Linux and UNIX nerd. Ever since my first job, after graduating from MdU, I&amp;rsquo;ve been running Linux on almost all my machines, including those at work.</description>
+    </item>
+    
+    <item>
       <title>Fast init for Linux systems</title>
       <link>https://troglobit.com/projects/finit/</link>
       <pubDate>Thu, 02 Nov 2023 06:47:00 +0100</pubDate>
@@ -93,16 +103,6 @@ condition (none, default route, etc.) may get stuck trying to resolve
       <guid>https://troglobit.com/post/2022-10-01-remap-prev/next-on-thinkpad/</guid>
       <description>I still use my awesome little ThinkPad X200, in fact I now have more of them and even a few X201&amp;rsquo;s. They are truly the best machines I&amp;rsquo;ve ever used! :-)
 One annoying thing though, when going back to these traditional ThinkPad keyboards is the prev/next keys next to the arrow keys. On modern ones they are PgUp/PgDn and I recently learned how to elegantly remap them in X. Note the difference, below, to the original at ThinkWiki.</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://troglobit.com/about/</link>
-      <pubDate>Sat, 01 Oct 2022 16:21:00 +0100</pubDate>
-      
-      <guid>https://troglobit.com/about/</guid>
-      <description>Welcome to this little blog, my name is Joachim Wiberg, formerly Nilsson. The nick troglobit is a tribute to my childhood friend Henrik Flordal, for being a good friend and inspiring me to become a hacker. It is also the first password to a Linux server (Henrik&amp;rsquo;s) I got a login to, back in 1995.
-So yes, I&amp;rsquo;m a huge Linux and UNIX nerd. Ever since my first job, after graduating from MdU, I&amp;rsquo;ve been running Linux on almost all my machines, including those at work.</description>
     </item>
     
     <item>
