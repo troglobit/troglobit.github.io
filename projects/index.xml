@@ -7,7 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Sun, 04 Sep 2022 10:00:41 +0100</lastBuildDate><atom:link href="https://troglobit.com/projects/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Nov 2023 06:47:00 +0100</lastBuildDate><atom:link href="https://troglobit.com/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fast init for Linux systems</title>
+      <link>https://troglobit.com/projects/finit/</link>
+      <pubDate>Thu, 02 Nov 2023 06:47:00 +0100</pubDate>
+      
+      <guid>https://troglobit.com/projects/finit/</guid>
+      <description>Finit is an alternative to SysV init and systemd, originally reverse engineered from the EeePC fastinit by Claudio Matsuoka — &amp;ldquo;gaps filled with frog DNA …&amp;rdquo;
+ Latest release available on GitHub
+ Features include:
+ Runlevels, defined per service One-shot tasks, services (daemons), or SysV init start/stop scripts Runparts and /etc/rc.local support Process supervision similar to systemd Sourcing environment files Conditions for network/process/custom dependencies Pre/Post script actions Tooling to enable/disable services Optional built-in getty Optional built-in watchdog, with support for hand-over to watchdogd Built-in support for Debian/BusyBox /etc/network/interfaces, automatically calls ifup/ifdown Cgroups v2, both configuration and monitoring in initctl top Plugin support for customization Proper rescue mode with bundled sulogin for protected maintenance shell (optional)  Some of these feature are presented below, for more, see the online documentation and the following blog posts:</description>
+    </item>
+    
     <item>
       <title>Static Multicast Routing Daemon</title>
       <link>https://troglobit.com/projects/smcroute/</link>
@@ -17,17 +29,6 @@
       <description>SMCRoute is a daemon and command line tool to manipulate the multicast routing table in the UNIX kernel. Both FreeBSD and Linux kernels are supported, but it may work on other systems as well.
 SMCRoute can be used as an alternative to dynamic multicast routing daemons like mrouted or pimd when (only) static multicast routes should be maintained or no proper signalling exists.
 The full documentation of SMCRoute is available in the manual pages, see smcrouted(8), smcroutectl(8), and smcroute.</description>
-    </item>
-    
-    <item>
-      <title>Fast init for Linux systems</title>
-      <link>https://troglobit.com/projects/finit/</link>
-      <pubDate>Mon, 17 Jan 2022 06:35:00 +0100</pubDate>
-      
-      <guid>https://troglobit.com/projects/finit/</guid>
-      <description>Finit is an alternative to SysV init and systemd, originally reverse engineered from the EeePC fastinit by Claudio Matsuoka — &amp;ldquo;gaps filled with frog DNA …&amp;rdquo;
-Features include:
- Runlevels, defined per service One-shot tasks, services (daemons), or SysV init start/stop scripts Runparts and /etc/rc.local support Process supervision similar to systemd Sourcing environment files Conditions for network/process/custom dependencies Pre/Post script actions Tooling to enable/disable services Built-in getty Built-in watchdog, with support for hand-over to watchdogd Built-in support for Debian/BusyBox /etc/network/interfaces Cgroups v2, both configuration and monitoring in initctl top Plugin support for customization Proper rescue mode with bundled sulogin for protected maintenance shell  Some of these feature are presented below, for more, see the online documentation and the following blog posts:</description>
     </item>
     
     <item>
