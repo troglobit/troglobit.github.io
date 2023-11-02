@@ -1,13 +1,15 @@
 ---
 title: "Fast init for Linux systems"
-date: 2022-01-17 06:35:00 +0100
+date: 2023-11-02 06:47:00 +0100
 aliases: /finit.html
 ---
-![finit logo](/images/finit3.png#floatright)
+[![finit logo][0]][20]
 
 Finit is an alternative to [SysV init][1] and [systemd][7], originally
 reverse engineered from the EeePC fastinit by Claudio Matsuoka — "gaps
 filled with frog DNA …"
+
+> [Latest release][20] available on [GitHub][19]
 
 Features include:
 
@@ -19,12 +21,12 @@ Features include:
   * Conditions for network/process/custom dependencies
   * Pre/Post script actions
   * Tooling to enable/disable services
-  * Built-in getty
-  * Built-in watchdog, with support for hand-over to [watchdogd](https://troglobit.com/watchdogd.html)
-  * Built-in support for Debian/BusyBox `/etc/network/interfaces`
+  * Optional built-in getty
+  * Optional built-in watchdog, with support for hand-over to [watchdogd](https://troglobit.com/watchdogd.html)
+  * Built-in support for Debian/BusyBox `/etc/network/interfaces`, automatically calls ifup/ifdown
   * Cgroups v2, both configuration and monitoring in `initctl top`
   * Plugin support for customization
-  * Proper rescue mode with bundled `sulogin` for protected maintenance shell
+  * Proper rescue mode with bundled `sulogin` for protected maintenance shell (optional)
 
 Some of these feature are presented below, for more, see the [online
 documentation][README] and the following blog posts:
@@ -44,8 +46,15 @@ Linux.
 
 ![Alpine Linux started with Finit](/images/finit4-screenshot.png#center)
 
-The buildroot derivatives [myLinux][9] and [Westermo NetBox][11] provide
-examples of how to boot embedded systems with Finit.
+The following [Buildroot][17] derivatives provide examples of how to
+boot embedded systems with Finit:
+
+  - [Infix][16]
+  - [myLinux][9]
+  - [Westermo NetBox][11]
+
+There's even a [br2-external demo][18] available, which may be more
+accessible to beginners.
 
 
 Configuration
@@ -89,6 +98,11 @@ service :8080 [2345] merecat -n -p 8080 /var/www -- Old web server
 #task [S] /etc/init.d/keyboard-setup start       -- Setting up preliminary keymap
 #task [S] /etc/init.d/acpid start                -- Starting ACPI Daemon
 #task [S] /etc/init.d/kbd start                  -- Preparing console
+
+# When Finit receive SIGPWR, e.g., from powstatd(8), it asserts the
+# sys/pwr/fail condition.  The <!> in the condition tells Finit to
+# not block bootstrap waiting for the task to run.
+task [S0123456789] <!sys/pwr/fail> name:pwrfail initctl poweroff -- Power failure, shutting down
 
 # Run start scripts from this directory
 # runparts /etc/start.d
@@ -488,16 +502,16 @@ Matsuoka, which was reverse engineered from syscalls of the
 Please file bug reports, clone it, or send pull requests for bug fixes
 and proposed extensions using GitHub:
 
-* [Repository](https://github.com/troglobit/finit)
+* [Repository][19]
 * [Issue Tracker](https://github.com/troglobit/finit/issues)
 * [README][]
 * [TODO](https://github.com/troglobit/finit/blob/master/TODO.md)
 * [ChangeLog](https://github.com/troglobit/finit/blob/master/ChangeLog.md)
-* [finit-4.2.tar.gz](ftp://ftp.troglobit.com/finit/finit-4.2.tar.gz),
-  [MD5](ftp://ftp.troglobit.com/finit/finit-4.2.tar.gz.md5),
-  [SHA256](ftp://ftp.troglobit.com/finit/finit-4.2.tar.gz.sha256)
+* [finit-4.5.tar.gz](ftp://ftp.troglobit.com/finit/finit-4.5.tar.gz),
+  [MD5](ftp://ftp.troglobit.com/finit/finit-4.5.tar.gz.md5),
+  [SHA256](ftp://ftp.troglobit.com/finit/finit-4.5.tar.gz.sha256)
 
-
+[0]: /images/finit3.png#floatright
 [1]: https://en.wikipedia.org/wiki/Init
 [2]: https://en.wikipedia.org/wiki/Process_supervision
 [3]: http://cr.yp.to/daemontools.html
@@ -513,5 +527,10 @@ and proposed extensions using GitHub:
 [13]: https://github.com/troglobit/finit/blob/master/doc/config.md
 [14]: https://github.com/troglobit/finit/blob/master/doc/conditions.md
 [15]: https://github.com/troglobit/finit/blob/master/doc/signals.md
+[16]: https://github.com/kernelkit/infix
+[17]: https://buildroot.org
+[18]: https://github.com/troglobit/br2-finit-demo
+[19]: https://github.com/troglobit/finit
+[20]: https://github.com/troglobit/finit/releases/latest
 [README]: https://github.com/troglobit/finit/blob/master/README.md
 [contrib]: https://github.com/troglobit/finit/tree/master/contrib
