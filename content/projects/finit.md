@@ -11,7 +11,9 @@ filled with frog DNA …"
 
 > [Latest release][20] available on [GitHub][19]
 
-Features include:
+
+Features
+--------
 
   * Runlevels, defined per service
   * One-shot tasks, services (daemons), or [SysV init][1] start/stop scripts
