@@ -1,6 +1,6 @@
 ---
 title: "About"
-date: 2022-10-01 16:21:00 +0100
+date: 2023-11-02 07:26:00 +0100
 ---
 
 Welcome to this little blog, my name is Joachim Wiberg, formerly
@@ -18,9 +18,12 @@ made it work and set the bar for others to follow!
 Today I work a [Addiva Elektronik](https://addiva.se) in Västerås,
 Sweden, as a software architect and embedded systems consultant.  My
 specialty is networking solutions and embedded Linux, preferably
-[Buildroot](https://buildroot.org).  For very a long time I worked at
+[Buildroot](https://buildroot.org).  For a very long time I worked at
 [Westermo R&D][westermo] as a software architect for [WeOS][], a
-Linux-based network operating system for switches and routers.
+Linux-based network operating system for switches and routers that I
+created 2005-2007 for them, which since has grown up considerably.
+These days I spend my time building [yet another network operating
+system][infix], this time based on Buildroot and with NETCONF.
 
 In my spare time I write Free/Libre Open Source Software ([FLOSS][]).
 For example, I maintain [Finit][], [Inadyn][], [pimd][], [mrouted][],
@@ -50,3 +53,4 @@ You can find my [online resume here][resume], or download the [PDF][].
 [GPG key]:  http://keys.gnupg.net/pks/lookup?search=0xECA826A37B6C7409&fingerprint=on&op=index
 [resume]:   https://resume.troglobit.com
 [PDF]:      https://resume.troglobit.com/resume.pdf
+[infix]:    https://github.com/kernelkit/infix
