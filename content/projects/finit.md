@@ -28,6 +28,10 @@ Features include:
   * Plugin support for customization
   * Proper rescue mode with bundled `sulogin` for protected maintenance shell (optional)
 
+
+Blog Posts
+----------
+
 Some of these feature are presented below, for more, see the [online
 documentation][README] and the following blog posts:
 
