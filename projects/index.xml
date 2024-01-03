@@ -72,13 +72,14 @@ Nemesis can natively craft and inject ARP, DNS, ETHERNET, ICMP, IGMP, IP, OSPF, 
     </item>
     
     <item>
-      <title>System &amp; Process Supervisor for Linux</title>
+      <title>Advanced watchdog daemon for Linux</title>
       <link>https://troglobit.com/projects/watchdogd/</link>
       <pubDate>Fri, 30 Apr 2021 17:02:00 +0100</pubDate>
       
       <guid>https://troglobit.com/projects/watchdogd/</guid>
-      <description>watchdogd(8) is an advanced system and process supervisor daemon, primarily intended for embedded Linux and server systems. By default it periodically kicks the system watchdog timer (WDT) to prevent it from resetting the system. In its more advanced guise it monitors critical system resources, supervises the heartbeat of processes, records deadline transgressions, and initiates a controlled reset if needed.
-When a system comes back up after a reset, watchdogd determines the reset cause and records it in a file for later analysis by an operator or network management system (NMS).</description>
+      <description>watchdogd(8) is an advanced system and process supervisor primarily intended for embedded Linux and server systems. It supports &amp;ldquo;kicking&amp;rdquo; multiple watchdog timer (WDT) devices and can also monitor critical system resources, supervise the heartbeat of processes1 and record process deadline transgressions.
+ Read more about Built-in Monitors in the extended documentation.
+ The configuration determines how the daemon acts on monitored resources and supervised processes. See watchdogd.conf(5) for how to set up watermarks and trigger external scripts to suit your particular setup.</description>
     </item>
     
     <item>
