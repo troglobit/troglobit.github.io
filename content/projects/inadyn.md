@@ -2,6 +2,7 @@
 name: In-a-dyn
 title: "Small and Simple DDNS Client"
 date: 2020-02-20 16:29:00 +02:00
+lastmod: 2024-01-03 10:55:00 +01:00
 aliases: /inadyn.html
 ---
 
@@ -13,49 +14,6 @@ keeping your DNS record up to date with any IP address changes from your
 connections to the Internet.
 
 [Presentation here.](https://docs.google.com/presentation/d/14rT-LB5Ea_aHamlMFzVvT92ZU1DMWzVhav9OMOiVkpI/edit?usp=sharing)
-
-
-Supported Providers
--------------------
-
-The following is a curated list of *some* of the natively supported DDNS
-providers.   Other providers,  e.g. <http://twoDNS.de>,  can usually  be
-supported using the custom provider  support.  For the full details, see
-the [README][], or `inadyn.conf(5)` found in the tarball.
-
-   * <https://freedns.afraid.org>
-   * <https://www.nsupdate.info>
-   * <https://duckdns.org>
-   * <https://freemyip.com>
-   * <https://www.loopia.com>
-   * <https://www.dyndns.org>, <https://dyn.com>
-   * <https://www.noip.com>
-   * <https://www.easydns.com>
-   * <https://www.dnsomatic.com>
-   * <https://dns.he.net>
-   * <https://www.tunnelbroker.net>
-   * <https://www.sitelutions.com>
-   * <https://www.dnsexit.com>, parent of <https://www.zoneedit.com>
-   * <https://www.changeip.com>
-   * <https://www.dhis.org>
-   * <https://www.namecheap.com>
-   * <https://domains.google>
-   * <https://www.ovh.com>
-   * <https://giradns.com>
-   * <https://www.duiadns.net>
-   * <https://ddnss.de>
-   * <https://dynv6.com>
-   * <https://spdyn.de>
-   * <https://www.cloudxns.net>
-   * <https://www.pubyun.com>, formerly <http://www.3322.org>
-   * <https://www.dnspod.cn>
-   * <https://www.dynu.com>
-   * <https://www.selfhost.de>
-   * <https://connect.yandex.ru>
-   * <https://www.cloudflare.com>
-
-Some of these services are free of charge for non-commercial use, others
-take a small fee, but also provide more domains to choose from.
 
 
 Example
@@ -82,8 +40,6 @@ script, use `--help` or see the [README][] for details on building.
 
 More examples in the `inadyn.conf(5)` man page and the [README][].
 
-**Note:** The `.conf` file format syntax changed in v2.0!
-
 
 Download
 --------
@@ -94,26 +50,6 @@ Issue tracker and GIT repository available at GitHub:
 * [ChangeLog](https://github.com/troglobit/inadyn/blob/master/ChangeLog.md)
 * [Repository](https://github.com/troglobit/inadyn)
 * [Issue Tracker](https://github.com/troglobit/inadyn/issues)
-* [inadyn-2.6.tar.xz](ftp://ftp.troglobit.com/inadyn/inadyn-2.6.tar.xz),
-  [MD5](ftp://ftp.troglobit.com/inadyn/inadyn-2.6.tar.xz.md5)
-  [GPG Sign](ftp://ftp.troglobit.com/inadyn/inadyn-2.6.xz.asc)
-
-See also the [OpenHub page](https://www.openhub.net/p/inadyn/), the
-[Freshcode page](http://freshcode.club/projects/inadyn), or the dormant
-[Free(code) page](http://freecode.com/projects/inadyn).
-
-
-Install
--------
-
-Pre-built package for Debian, and other compatible amd64 derivatives,
-like Ubuntu, Linux Mint, etc. is available here:
-
-```sh
-curl -sS https://deb.troglobit.com/pubkey.gpg | sudo apt-key add -
-echo "deb [arch=amd64] https://deb.troglobit.com/debian stable main" | sudo tee /etc/apt/sources.list.d/troglobit.list
-sudo apt-get update && sudo apt-get install inadyn
-```
 
 
 Origin & References
