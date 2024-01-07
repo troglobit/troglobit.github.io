@@ -4,14 +4,15 @@ title = "Joachim Wiberg"
 languageCode = "en-us"
 theme = "hello-friend-ng"
 
-# Syntax highlighting
-pygmentsUseClasses = true
+# Syntax highlighting, UseClasses=false to work!
+pygmentsUseClasses = false
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
-#PygmentsStyle = "monokai"
-PygmentsStyle = "native"
+# https://xyproto.github.io/splash/docs/
+PygmentsStyle = "gruvbox"
 
 paginate  = 10
+rssLimit  = 10  # Maximum number of items in the RSS feed.
 
 archetypeDir = "archetypes"
 contentDir   = "content"
@@ -53,6 +54,9 @@ disableHugoGeneratorInject = false
   series   = "series"
 
 [params]
+  [params.author]
+    name = "Joachim Wiberg"
+
   dateform        = "Jan 2, 2006"
   dateformShort   = "Jan 2"
   dateformNum     = "2006-01-02"
@@ -99,7 +103,7 @@ disableHugoGeneratorInject = false
   # If you want, you can easily override the default footer with your own content. 
   #
   [params.footer]
-    trademark = true
+    trademark = 2006
     rss = false
     copyright = true
     author = true
@@ -168,7 +172,7 @@ disableHugoGeneratorInject = false
 
 [languages]
   [languages.en]
-    subtitle  = "The Last Outpost"
+    #subtitle  = "The Last Outpost"
     weight    = 1
     copyright = 'UNIX&trade; 4Life! &#9994;'
 
@@ -189,15 +193,3 @@ disableHugoGeneratorInject = false
     weight     = 3
     name       = "Projects"
     url        = "/projects/"
-  [[menu.main]]
-    weight     = 4
-    name       = "Resumé"
-    url        = "https://resume.troglobit.com"
-  [[menu.main]]
-    weight     = 5
-    name       = "FTP"
-    url        = "https://ftp.troglobit.com"
-  [[menu.main]]
-    weight     = 6
-    name       = "DEB"
-    url        = "https://deb.troglobit.com"
