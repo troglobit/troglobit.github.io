@@ -5,43 +5,16 @@
     <link>https://troglobit.com/categories/sthttpd/</link>
     <description>Recent content in sthttpd on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Sun, 06 Nov 2016 01:34:18 +0000</lastBuildDate><atom:link href="https://troglobit.com/categories/sthttpd/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 06 Nov 2016 01:34:18 +0000</lastBuildDate>
+    <atom:link href="https://troglobit.com/categories/sthttpd/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Merecat - another stray kitten?</title>
       <link>https://troglobit.com/2016/11/06/merecat---another-stray-kitten-/</link>
       <pubDate>Sun, 06 Nov 2016 01:34:18 +0000</pubDate>
-      
       <guid>https://troglobit.com/2016/11/06/merecat---another-stray-kitten-/</guid>
-      <description>&lt;p&gt;This post is about my adoption, refactor, and rebranding of thttpd as
-&lt;a href=&#34;http://merecat.troglobit.com&#34;&gt;Merecat&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;I code for recreation as well as work.  Most of the time I tinker around
-with my various &lt;a href=&#34;https://github.com/troglobit&#34;&gt;projects&lt;/a&gt; simply to learn
-and sometimes these little projects turn into something useful for other
-people as well, which is great!&lt;/p&gt;
-&lt;p data-pullquote=&#34;not all things can be simplified, and not all simple
-things are correct&#34;&gt; Recently I discovered my method to get started:
-refactoring, or just simple code cleanup.  You see I&#39;ve got this crazy
-idea that &lt;em&gt;all simple things are correct&lt;/em&gt;.  Although things
-usually tend to require a certain balance &amp;mdash; not all things can be
-simplified, and not all simple things are correct.&lt;/p&gt;
-&lt;p&gt;When I recently had to migrate my personal blog, FTP, and GIT server, I
-set out to run everything from an old RasPi2.  This put my private life
-in just about the same niche as my work life, embedded.  On a resource
-constrained platform like that running Apache is not the best idea.  So
-I set out to (re-)discover the web servers of my past, the late 90&amp;rsquo;s, I
-had almost forgotten:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://acme.com/software/mini_httpd/&#34;&gt;mini_httpd&lt;/a&gt;,&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.boa.org/&#34;&gt;Boa&lt;/a&gt;,&lt;/li&gt;
-&lt;li&gt;BusyBox httpd,&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.acme.com/software/thttpd/&#34;&gt;thttpd&lt;/a&gt;,&lt;/li&gt;
-&lt;li&gt;and more &amp;hellip;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Come to think of it, they are probably one of the many reasons that I
-started my career in embedded in the first place!&lt;/p&gt;</description>
+      <description>&lt;p&gt;This post is about my adoption, refactor, and rebranding of thttpd as&#xA;&lt;a href=&#34;http://merecat.troglobit.com&#34;&gt;Merecat&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;I code for recreation as well as work.  Most of the time I tinker around&#xA;with my various &lt;a href=&#34;https://github.com/troglobit&#34;&gt;projects&lt;/a&gt; simply to learn&#xA;and sometimes these little projects turn into something useful for other&#xA;people as well, which is great!&lt;/p&gt;&#xA;&lt;p data-pullquote=&#34;not all things can be simplified, and not all simple&#xA;things are correct&#34;&gt; Recently I discovered my method to get started:&#xA;refactoring, or just simple code cleanup.  You see I&#39;ve got this crazy&#xA;idea that &lt;em&gt;all simple things are correct&lt;/em&gt;.  Although things&#xA;usually tend to require a certain balance &amp;mdash; not all things can be&#xA;simplified, and not all simple things are correct.&lt;/p&gt;&#xA;&lt;p&gt;When I recently had to migrate my personal blog, FTP, and GIT server, I&#xA;set out to run everything from an old RasPi2.  This put my private life&#xA;in just about the same niche as my work life, embedded.  On a resource&#xA;constrained platform like that running Apache is not the best idea.  So&#xA;I set out to (re-)discover the web servers of my past, the late 90&amp;rsquo;s, I&#xA;had almost forgotten:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://acme.com/software/mini_httpd/&#34;&gt;mini_httpd&lt;/a&gt;,&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://www.boa.org/&#34;&gt;Boa&lt;/a&gt;,&lt;/li&gt;&#xA;&lt;li&gt;BusyBox httpd,&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://www.acme.com/software/thttpd/&#34;&gt;thttpd&lt;/a&gt;,&lt;/li&gt;&#xA;&lt;li&gt;and more &amp;hellip;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Come to think of it, they are probably one of the many reasons that I&#xA;started my career in embedded in the first place!&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

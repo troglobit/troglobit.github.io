@@ -15,23 +15,16 @@
 
     <title>
         
-            HowTo: Set up Merecat with cgit :: Joachim Wiberg  — The Last Outpost
+            HowTo: Set up Merecat with cgit :: Joachim Wiberg 
         
     </title>
 
 
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
-    type="text/css">
 
 
+<link rel="stylesheet" href="https://troglobit.com/main.949191c1dcc9c4a887997048b240354e47152016d821198f89448496ba42e491.css" integrity="sha256-lJGRwdzJxKiHmXBIskA1TkcVIBbYIRmPiUSElrpC5JE=">
 
-<link rel="stylesheet" href="https://troglobit.com/main.274b9101bb929690505a03a6e203b1ec6098ae11e7462d3d41ac05a2ba21078f.css">
-
-
-    
-        <link rel="stylesheet" type="text/css" href="https://troglobit.com/css/extra.css">
-    
 
 
     <link rel="apple-touch-icon" sizes="180x180" href="https://troglobit.com/apple-touch-icon.png">
@@ -50,8 +43,7 @@ into problems setting it up, and ended up as a HowTo."><meta itemprop="datePubli
 <meta itemprop="dateModified" content="2021-12-09T05:56:00+00:00" />
 <meta itemprop="wordCount" content="273">
 <meta itemprop="keywords" content="merecat," />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="HowTo: Set up Merecat with cgit"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="HowTo: Set up Merecat with cgit"/>
 <meta name="twitter:description" content="This post details how to set up cgit with Merecat httpd.  It
 began as a GitHub issue report by Mr Alok G. Singh, who had run
 into problems setting it up, and ended up as a HowTo."/>
@@ -84,6 +76,7 @@ into problems setting it up, and ended up as a HowTo." />
 
 
 
+
     </head>
 
     
@@ -97,7 +90,8 @@ into problems setting it up, and ended up as a HowTo." />
     <div class="logo">
         
             <span class="logo__mark">&gt;</span>
-            <span class="logo__text">$ cd /home/</span>
+            <span class="logo__text ">
+                $ cd /home/</span>
             <span class="logo__cursor" style=
                   "
                    
@@ -111,7 +105,7 @@ into problems setting it up, and ended up as a HowTo." />
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://troglobit.com/about/">About</a></li><li><a href="https://troglobit.com/posts/">Blog</a></li><li><a href="https://troglobit.com/howtos/">HowTos</a></li><li><a href="https://troglobit.com/projects/">Projects</a></li><li><a href="https://resume.troglobit.com">Resumé</a></li><li><a href="https://ftp.troglobit.com">FTP</a></li><li><a href="https://deb.troglobit.com">DEB</a></li>
+    <ul class="menu__inner"><li><a href="https://troglobit.com/about/">About</a></li><li><a href="https://troglobit.com/posts/">Blog</a></li><li><a href="https://troglobit.com/howtos/">HowTos</a></li><li><a href="https://troglobit.com/projects/">Projects</a></li>
     </ul>
 </nav>
 
@@ -156,33 +150,33 @@ installed into both <code>/usr/share</code> and <code>/usr/lib</code>, and when 
 chrooted those directories will not be available.  I&rsquo;ve bind mounted my
 <code>/usr/share/cgit</code> to <code>/var/www/cgit.troglobit.com</code> and linked the
 <code>cgit.cgi</code> from <code>../../lib/cgit/</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">root@example:/usr/share/cgit# ll
-total <span class="m">1000</span>
-drwxr-xr-x   <span class="m">2</span> root root   <span class="m">4096</span> Mar <span class="m">30</span> 11:16 ./
-drwxr-xr-x <span class="m">140</span> root root   <span class="m">4096</span> Mar <span class="m">30</span> 09:39 ../
--rwxr-xr-x   <span class="m">2</span> root root <span class="m">986800</span> Feb <span class="m">12</span>  <span class="m">2016</span> cgit.cgi*
--rw-r--r--   <span class="m">1</span> root root  <span class="m">13312</span> Feb <span class="m">12</span>  <span class="m">2016</span> cgit.css
--rw-r--r--   <span class="m">1</span> root root   <span class="m">1278</span> Feb <span class="m">12</span>  <span class="m">2016</span> cgit.png
--rw-r--r--   <span class="m">1</span> root root   <span class="m">1078</span> Feb <span class="m">12</span>  <span class="m">2016</span> favicon.ico
-lrwxrwxrwx   <span class="m">1</span> root root     <span class="m">22</span> Mar <span class="m">30</span> 11:16 filters -&gt; ../../lib/cgit/filters/
-lrwxrwxrwx   <span class="m">1</span> root root      <span class="m">8</span> Mar <span class="m">30</span> 10:16 index.cgi -&gt; cgit.cgi*
--rw-r--r--   <span class="m">1</span> root root     <span class="m">47</span> Feb <span class="m">12</span>  <span class="m">2016</span> robots.txt
-</code></pre></div><p>Merecat httpd currently does not support URL rewrite, so I&rsquo;ve set up
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>root@example:/usr/share/cgit# ll
+</span></span><span style="display:flex;"><span>total <span style="color:#d3869b">1000</span>
+</span></span><span style="display:flex;"><span>drwxr-xr-x   <span style="color:#d3869b">2</span> root root   <span style="color:#d3869b">4096</span> Mar <span style="color:#d3869b">30</span> 11:16 ./
+</span></span><span style="display:flex;"><span>drwxr-xr-x <span style="color:#d3869b">140</span> root root   <span style="color:#d3869b">4096</span> Mar <span style="color:#d3869b">30</span> 09:39 ../
+</span></span><span style="display:flex;"><span>-rwxr-xr-x   <span style="color:#d3869b">2</span> root root <span style="color:#d3869b">986800</span> Feb <span style="color:#d3869b">12</span>  <span style="color:#d3869b">2016</span> cgit.cgi*
+</span></span><span style="display:flex;"><span>-rw-r--r--   <span style="color:#d3869b">1</span> root root  <span style="color:#d3869b">13312</span> Feb <span style="color:#d3869b">12</span>  <span style="color:#d3869b">2016</span> cgit.css
+</span></span><span style="display:flex;"><span>-rw-r--r--   <span style="color:#d3869b">1</span> root root   <span style="color:#d3869b">1278</span> Feb <span style="color:#d3869b">12</span>  <span style="color:#d3869b">2016</span> cgit.png
+</span></span><span style="display:flex;"><span>-rw-r--r--   <span style="color:#d3869b">1</span> root root   <span style="color:#d3869b">1078</span> Feb <span style="color:#d3869b">12</span>  <span style="color:#d3869b">2016</span> favicon.ico
+</span></span><span style="display:flex;"><span>lrwxrwxrwx   <span style="color:#d3869b">1</span> root root     <span style="color:#d3869b">22</span> Mar <span style="color:#d3869b">30</span> 11:16 filters -&gt; ../../lib/cgit/filters/
+</span></span><span style="display:flex;"><span>lrwxrwxrwx   <span style="color:#d3869b">1</span> root root      <span style="color:#d3869b">8</span> Mar <span style="color:#d3869b">30</span> 10:16 index.cgi -&gt; cgit.cgi*
+</span></span><span style="display:flex;"><span>-rw-r--r--   <span style="color:#d3869b">1</span> root root     <span style="color:#d3869b">47</span> Feb <span style="color:#d3869b">12</span>  <span style="color:#d3869b">2016</span> robots.txt
+</span></span></code></pre></div><p>Merecat httpd currently does not support URL rewrite, so I&rsquo;ve set up
 cgit as follows, <code>/etc/cgitrc</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cfg" data-lang="cfg"><span class="c1"># cgit config</span>
-
-<span class="na">css</span><span class="o">=</span><span class="s">/cgit.css</span>
-<span class="na">logo</span><span class="o">=</span><span class="s">/cgit.png</span>
-
-<span class="c1"># Prepend this to all URLs</span>
-<span class="na">virtual-root</span><span class="o">=</span><span class="s">/cgit.cgi/</span>
-
-<span class="c1"># Home of all GIT repos</span>
-<span class="na">scan-path</span><span class="o">=</span><span class="s">/srv/git/</span>
-
-<span class="c1"># if you do not want that webcrawler (like google) index your site</span>
-<span class="na">robots</span><span class="o">=</span><span class="s">noindex, nofollow</span>
-</code></pre></div><p><em>Note the leading slash</em> in the <code>virtual-root</code>.  The resulting site can
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cfg" data-lang="cfg"><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># cgit config</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b8bb26;font-weight:bold">css</span><span style="color:#fe8019">=</span><span style="color:#b8bb26">/cgit.css</span>
+</span></span><span style="display:flex;"><span><span style="color:#b8bb26;font-weight:bold">logo</span><span style="color:#fe8019">=</span><span style="color:#b8bb26">/cgit.png</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Prepend this to all URLs</span>
+</span></span><span style="display:flex;"><span><span style="color:#b8bb26;font-weight:bold">virtual-root</span><span style="color:#fe8019">=</span><span style="color:#b8bb26">/cgit.cgi/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Home of all GIT repos</span>
+</span></span><span style="display:flex;"><span><span style="color:#b8bb26;font-weight:bold">scan-path</span><span style="color:#fe8019">=</span><span style="color:#b8bb26">/srv/git/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># if you do not want that webcrawler (like google) index your site</span>
+</span></span><span style="display:flex;"><span><span style="color:#b8bb26;font-weight:bold">robots</span><span style="color:#fe8019">=</span><span style="color:#b8bb26">noindex, nofollow</span>
+</span></span></code></pre></div><p><em>Note the leading slash</em> in the <code>virtual-root</code>.  The resulting site can
 be viewed here: <a href="http://cgit.troglobit.com">http://cgit.troglobit.com</a></p>
             </div>
         </article>
@@ -209,7 +203,7 @@ be viewed here: <a href="http://cgit.troglobit.com">http://cgit.troglobit.com</a
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2024</span>
+            <span>&copy; 2006</span>
             <span><a href="https://troglobit.com/">Joachim Wiberg</a></span>
             <span>UNIX&trade; 4Life! &#9994;</span>
             
@@ -227,7 +221,8 @@ be viewed here: <a href="http://cgit.troglobit.com">http://cgit.troglobit.com</a
 
 
 
-<script type="text/javascript" src="https://troglobit.com/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
+<script type="text/javascript" src="https://troglobit.com/bundle.min.46e438bd2eca7eb6358c700b40f6f56b22ab0b92503ecc11a2d8e4bcc610b8b4da83e5ea3d3e84fdb5f3c3c765744b9f5bbaf43cf5a027910be07ee39a9c12a1.js" integrity="sha512-RuQ4vS7KfrY1jHALQPb1ayKrC5JQPswRotjkvMYQuLTag&#43;XqPT6E/bXzw8dldEufW7r0PPWgJ5EL4H7jmpwSoQ=="></script>
+
 
 
 

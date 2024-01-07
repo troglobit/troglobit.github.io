@@ -5,31 +5,23 @@
     <link>https://troglobit.com/categories/netbsd/</link>
     <description>Recent content in netbsd on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Sat, 22 Aug 2020 21:39:00 +0100</lastBuildDate><atom:link href="https://troglobit.com/categories/netbsd/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Aug 2020 21:39:00 +0100</lastBuildDate>
+    <atom:link href="https://troglobit.com/categories/netbsd/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HowTo use NetBSD pre-built packages</title>
       <link>https://troglobit.com/howtos/netbsd-pkgsrc/</link>
       <pubDate>Sat, 22 Aug 2020 21:39:00 +0100</pubDate>
-      
       <guid>https://troglobit.com/howtos/netbsd-pkgsrc/</guid>
-      <description>Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.
-Here it is, you&amp;rsquo;d think this be something the installer could set up a default for &amp;hellip;
-PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/  or if you use the latest on an old ThinkPad T42:
-PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/i386/9.0/All/  The simply
-pkg_add -v git  Or so you might think!</description>
+      <description>Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.&#xA;Here it is, you&amp;rsquo;d think this be something the installer could set up a default for &amp;hellip;&#xA;PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/ or if you use the latest on an old ThinkPad T42:&#xA;PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/i386/9.0/All/ The simply&#xA;pkg_add -v git Or so you might think!</description>
     </item>
-    
     <item>
       <title>Finally, NetBSD Boots in KVM!</title>
       <link>https://troglobit.com/2010/08/29/finally/</link>
       <pubDate>Sun, 29 Aug 2010 20:44:34 +0000</pubDate>
-      
       <guid>https://troglobit.com/2010/08/29/finally/</guid>
-      <description>Compared to OpenBSD and FreeBSD the NetBSD install was hard, really hard. It wasn&amp;rsquo;t until I stumbled across this that I managed to convince myself to try it again.
-The trick seems to be to ignore as much as you can from other Internet tips. NetBSD runs fine in KVM, so if someone says you need to run it in Qemu mode — don&amp;rsquo;t believe the hype. OK, in virt-manager there is no preset defaults for NetBSD, so I went with a generic OS and tried starting the install from there.</description>
+      <description>Compared to OpenBSD and FreeBSD the NetBSD install was hard, really hard. It wasn&amp;rsquo;t until I stumbled across this that I managed to convince myself to try it again.&#xA;The trick seems to be to ignore as much as you can from other Internet tips. NetBSD runs fine in KVM, so if someone says you need to run it in Qemu mode — don&amp;rsquo;t believe the hype. OK, in virt-manager there is no preset defaults for NetBSD, so I went with a generic OS and tried starting the install from there.</description>
     </item>
-    
   </channel>
 </rss>

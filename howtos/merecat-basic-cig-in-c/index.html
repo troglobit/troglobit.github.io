@@ -15,23 +15,16 @@
 
     <title>
         
-            Basic CGI in C with Merecat httpd :: Joachim Wiberg  — The Last Outpost
+            Basic CGI in C with Merecat httpd :: Joachim Wiberg 
         
     </title>
 
 
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
-    type="text/css">
 
 
+<link rel="stylesheet" href="https://troglobit.com/main.949191c1dcc9c4a887997048b240354e47152016d821198f89448496ba42e491.css" integrity="sha256-lJGRwdzJxKiHmXBIskA1TkcVIBbYIRmPiUSElrpC5JE=">
 
-<link rel="stylesheet" href="https://troglobit.com/main.274b9101bb929690505a03a6e203b1ec6098ae11e7462d3d41ac05a2ba21078f.css">
-
-
-    
-        <link rel="stylesheet" type="text/css" href="https://troglobit.com/css/extra.css">
-    
 
 
     <link rel="apple-touch-icon" sizes="180x180" href="https://troglobit.com/apple-touch-icon.png">
@@ -48,8 +41,7 @@
 <meta itemprop="dateModified" content="2019-08-05T22:00:25+02:00" />
 <meta itemprop="wordCount" content="229">
 <meta itemprop="keywords" content="merecat," />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Basic CGI in C with Merecat httpd"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Basic CGI in C with Merecat httpd"/>
 <meta name="twitter:description" content="This post is a writeup of how to use basic CGI programs in Merecat httpd v2.32."/>
 
 
@@ -78,6 +70,7 @@
 
 
 
+
     </head>
 
     
@@ -91,7 +84,8 @@
     <div class="logo">
         
             <span class="logo__mark">&gt;</span>
-            <span class="logo__text">$ cd /home/</span>
+            <span class="logo__text ">
+                $ cd /home/</span>
             <span class="logo__cursor" style=
                   "
                    
@@ -105,7 +99,7 @@
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://troglobit.com/about/">About</a></li><li><a href="https://troglobit.com/posts/">Blog</a></li><li><a href="https://troglobit.com/howtos/">HowTos</a></li><li><a href="https://troglobit.com/projects/">Projects</a></li><li><a href="https://resume.troglobit.com">Resumé</a></li><li><a href="https://ftp.troglobit.com">FTP</a></li><li><a href="https://deb.troglobit.com">DEB</a></li>
+    <ul class="menu__inner"><li><a href="https://troglobit.com/about/">About</a></li><li><a href="https://troglobit.com/posts/">Blog</a></li><li><a href="https://troglobit.com/howtos/">HowTos</a></li><li><a href="https://troglobit.com/projects/">Projects</a></li>
     </ul>
 </nav>
 
@@ -147,12 +141,12 @@
 <p>Build Merecat httpd according to the instructions in the README.  This
 document assumes the directory <code>~/merecat/</code>.  Then create a config file,
 <code>~/test.conf</code>, with the following content:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">port = 8080
-
-cgi &#34;**.cgi|cgi-bin/*&#34; {
-    enabled = true
-}
-</code></pre></div><p>In this example we&rsquo;ve chosen port 8080 so we can start the server as a
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>port = 8080
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cgi &#34;**.cgi|cgi-bin/*&#34; {
+</span></span><span style="display:flex;"><span>    enabled = true
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In this example we&rsquo;ve chosen port 8080 so we can start the server as a
 regular user.  For production systems you likely want to use the default
 (80), or set up proper HTTPS, see <a href="https://troglobit.com/howtos/merecat-and-lets-encrypt/">Let&rsquo;s Encrypt Merecat</a> for
 help with that.</p>
@@ -161,19 +155,19 @@ written in just about any programming language, or plain shell script.
 Merecat actually ships with a <code>/cgi-bin/printenv</code>, which is a plain
 Bourne shell script.</p>
 <p>Download, unpack and build cgic:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">mkdir temp; cd temp/
-wget http://www.boutell.com/cgic/cgic207.tar.gz
-tar xf cgic207.tar.gz
-cd cgic207/
-make
-</code></pre></div><p>A stand-alone example program is built which we can install into the
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>mkdir temp; cd temp/
+</span></span><span style="display:flex;"><span>wget http://www.boutell.com/cgic/cgic207.tar.gz
+</span></span><span style="display:flex;"><span>tar xf cgic207.tar.gz
+</span></span><span style="display:flex;"><span>cd cgic207/
+</span></span><span style="display:flex;"><span>make
+</span></span></code></pre></div><p>A stand-alone example program is built which we can install into the
 Merecat web root.  Notice the name change to <code>index.cgi</code>, we don&rsquo;t have
 to use the <code>cgi-bin/</code> due to the CGI pattern we set up previously:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">cp cgictest.cgi ~/merecat/www/index.cgi
-</code></pre></div><p>Now we can start the web server and test the CGI program out.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">cd ~/merecat/
-./src/merecat -f ~/test.conf www
-</code></pre></div><p>We can now open our browser at http://127.0.0.1:8080/ and there is the
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>cp cgictest.cgi ~/merecat/www/index.cgi
+</span></span></code></pre></div><p>Now we can start the web server and test the CGI program out.</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>cd ~/merecat/
+</span></span><span style="display:flex;"><span>./src/merecat -f ~/test.conf www
+</span></span></code></pre></div><p>We can now open our browser at http://127.0.0.1:8080/ and there is the
 CGI!  Remember to check out http://127.0.0.1:8080/cgi-bin/printenv too.</p>
             </div>
         </article>
@@ -200,7 +194,7 @@ CGI!  Remember to check out http://127.0.0.1:8080/cgi-bin/printenv too.</p>
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2024</span>
+            <span>&copy; 2006</span>
             <span><a href="https://troglobit.com/">Joachim Wiberg</a></span>
             <span>UNIX&trade; 4Life! &#9994;</span>
             
@@ -218,7 +212,8 @@ CGI!  Remember to check out http://127.0.0.1:8080/cgi-bin/printenv too.</p>
 
 
 
-<script type="text/javascript" src="https://troglobit.com/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
+<script type="text/javascript" src="https://troglobit.com/bundle.min.46e438bd2eca7eb6358c700b40f6f56b22ab0b92503ecc11a2d8e4bcc610b8b4da83e5ea3d3e84fdb5f3c3c765744b9f5bbaf43cf5a027910be07ee39a9c12a1.js" integrity="sha512-RuQ4vS7KfrY1jHALQPb1ayKrC5JQPswRotjkvMYQuLTag&#43;XqPT6E/bXzw8dldEufW7r0PPWgJ5EL4H7jmpwSoQ=="></script>
+
 
 
 

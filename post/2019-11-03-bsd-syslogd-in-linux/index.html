@@ -18,23 +18,16 @@ https://github.com/troglobit/sysklogd/
 
     <title>
         
-            BSD syslogd in Linux :: Joachim Wiberg  — The Last Outpost
+            BSD syslogd in Linux :: Joachim Wiberg 
         
     </title>
 
 
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
-    type="text/css">
 
 
+<link rel="stylesheet" href="https://troglobit.com/main.949191c1dcc9c4a887997048b240354e47152016d821198f89448496ba42e491.css" integrity="sha256-lJGRwdzJxKiHmXBIskA1TkcVIBbYIRmPiUSElrpC5JE=">
 
-<link rel="stylesheet" href="https://troglobit.com/main.274b9101bb929690505a03a6e203b1ec6098ae11e7462d3d41ac05a2ba21078f.css">
-
-
-    
-        <link rel="stylesheet" type="text/css" href="https://troglobit.com/css/extra.css">
-    
 
 
     <link rel="apple-touch-icon" sizes="180x180" href="https://troglobit.com/apple-touch-icon.png">
@@ -57,10 +50,9 @@ The result is a fully RFC compliant syslogd, and a libsyslog with a
 replacement syslog.h header for sending RFC5424 events from applications!
 https://github.com/troglobit/sysklogd/"><meta itemprop="datePublished" content="2019-11-03T23:04:00+01:00" />
 <meta itemprop="dateModified" content="2019-11-03T23:04:00+01:00" />
-<meta itemprop="wordCount" content="904">
+<meta itemprop="wordCount" content="905">
 <meta itemprop="keywords" content="opensource,sysklogd," />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="BSD syslogd in Linux"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="BSD syslogd in Linux"/>
 <meta name="twitter:description" content="Some time ago now I was in a meeting with a customer where I first learned of
 the new syslog standard, RFC5424.  I say &ldquo;new&rdquo; because, despite it being
 ten years old, it was new to me.
@@ -105,6 +97,7 @@ https://github.com/troglobit/sysklogd/" />
 
 
 
+
     </head>
 
     
@@ -118,7 +111,8 @@ https://github.com/troglobit/sysklogd/" />
     <div class="logo">
         
             <span class="logo__mark">&gt;</span>
-            <span class="logo__text">$ cd /home/</span>
+            <span class="logo__text ">
+                $ cd /home/</span>
             <span class="logo__cursor" style=
                   "
                    
@@ -132,7 +126,7 @@ https://github.com/troglobit/sysklogd/" />
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://troglobit.com/about/">About</a></li><li><a href="https://troglobit.com/posts/">Blog</a></li><li><a href="https://troglobit.com/howtos/">HowTos</a></li><li><a href="https://troglobit.com/projects/">Projects</a></li><li><a href="https://resume.troglobit.com">Resumé</a></li><li><a href="https://ftp.troglobit.com">FTP</a></li><li><a href="https://deb.troglobit.com">DEB</a></li>
+    <ul class="menu__inner"><li><a href="https://troglobit.com/about/">About</a></li><li><a href="https://troglobit.com/posts/">Blog</a></li><li><a href="https://troglobit.com/howtos/">HowTos</a></li><li><a href="https://troglobit.com/projects/">Projects</a></li>
     </ul>
 </nav>
 
@@ -247,45 +241,45 @@ there is no way for a Linux application today to add a MsgID or any structured
 data to a syslog message &hellip; until now.</p>
 <p><code>sysklogd</code> comes with <code>libsyslog</code> and a <code>syslog.h</code> header replacement that
 has the NetBSD <code>syslogp()</code> family of APIs:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="kt">int</span>  <span class="nf">setlogmask</span>  <span class="p">(</span><span class="kt">int</span> <span class="n">maskpri</span><span class="p">);</span>
-<span class="kt">int</span>  <span class="nf">setlogmask_r</span><span class="p">(</span><span class="kt">int</span> <span class="n">maskpri</span><span class="p">,</span> <span class="k">struct</span> <span class="n">syslog_data</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>
-
-<span class="kt">void</span> <span class="nf">openlog</span>   <span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">ident</span><span class="p">,</span> <span class="kt">int</span> <span class="n">logopt</span><span class="p">,</span> <span class="kt">int</span> <span class="n">facility</span><span class="p">);</span>
-<span class="kt">void</span> <span class="nf">openlog_r</span> <span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">ident</span><span class="p">,</span> <span class="kt">int</span> <span class="n">logopt</span><span class="p">,</span> <span class="kt">int</span> <span class="n">facility</span><span class="p">,</span> <span class="k">struct</span> <span class="n">syslog_data</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>
-
-<span class="kt">void</span> <span class="nf">closelog</span>  <span class="p">(</span><span class="kt">void</span><span class="p">);</span>
-<span class="kt">void</span> <span class="nf">closelog_r</span><span class="p">(</span><span class="k">struct</span> <span class="n">syslog_data</span> <span class="o">*</span><span class="n">data</span><span class="p">);</span>
-
-<span class="kt">void</span> <span class="nf">syslog</span>    <span class="p">(</span><span class="kt">int</span> <span class="n">priority</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">message</span><span class="p">,</span> <span class="p">...);</span>
-<span class="kt">void</span> <span class="nf">vsyslog</span>   <span class="p">(</span><span class="kt">int</span> <span class="n">priority</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">message</span><span class="p">,</span> <span class="n">va_list</span> <span class="n">args</span><span class="p">);</span>
-
-<span class="kt">void</span> <span class="nf">syslogp</span>   <span class="p">(</span><span class="kt">int</span> <span class="n">priority</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">msgid</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">sd</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">message</span><span class="p">,</span> <span class="p">...);</span>
-<span class="kt">void</span> <span class="nf">vsyslogp</span>  <span class="p">(</span><span class="kt">int</span> <span class="n">priority</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">msgid</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">sd</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">message</span><span class="p">,</span> <span class="n">va_list</span> <span class="n">args</span><span class="p">);</span>
-
-<span class="kt">void</span> <span class="nf">syslog_r</span>  <span class="p">(</span><span class="kt">int</span> <span class="n">priority</span><span class="p">,</span> <span class="k">struct</span> <span class="n">syslog_data</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">message</span><span class="p">,</span> <span class="p">...);</span>
-<span class="kt">void</span> <span class="nf">vsyslog_r</span> <span class="p">(</span><span class="kt">int</span> <span class="n">priority</span><span class="p">,</span> <span class="k">struct</span> <span class="n">syslog_data</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">message</span><span class="p">,</span> <span class="n">va_list</span> <span class="n">args</span><span class="p">);</span>
-
-<span class="kt">void</span> <span class="nf">syslogp_r</span> <span class="p">(</span><span class="kt">int</span> <span class="n">priority</span><span class="p">,</span> <span class="k">struct</span> <span class="n">syslog_data</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">msgid</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">sd</span><span class="p">,</span>
-                <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">message</span><span class="p">,</span> <span class="p">...);</span>
-<span class="kt">void</span> <span class="nf">vsyslogp_r</span><span class="p">(</span><span class="kt">int</span> <span class="n">priority</span><span class="p">,</span> <span class="k">struct</span> <span class="n">syslog_data</span> <span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">msgid</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">sd</span><span class="p">,</span>
-                <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">message</span><span class="p">,</span> <span class="n">va_list</span> <span class="n">args</span><span class="p">);</span>
-</code></pre></div><h2 id="example">Example</h2>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#fabd2f">int</span>  <span style="color:#fabd2f">setlogmask</span>  (<span style="color:#fabd2f">int</span> maskpri);
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">int</span>  <span style="color:#fabd2f">setlogmask_r</span>(<span style="color:#fabd2f">int</span> maskpri, <span style="color:#fe8019">struct</span> syslog_data <span style="color:#fe8019">*</span>data);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">void</span> <span style="color:#fabd2f">openlog</span>   (<span style="color:#fe8019">const</span> <span style="color:#fabd2f">char</span> <span style="color:#fe8019">*</span>ident, <span style="color:#fabd2f">int</span> logopt, <span style="color:#fabd2f">int</span> facility);
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">void</span> <span style="color:#fabd2f">openlog_r</span> (<span style="color:#fe8019">const</span> <span style="color:#fabd2f">char</span> <span style="color:#fe8019">*</span>ident, <span style="color:#fabd2f">int</span> logopt, <span style="color:#fabd2f">int</span> facility, <span style="color:#fe8019">struct</span> syslog_data <span style="color:#fe8019">*</span>data);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">void</span> <span style="color:#fabd2f">closelog</span>  (<span style="color:#fabd2f">void</span>);
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">void</span> <span style="color:#fabd2f">closelog_r</span>(<span style="color:#fe8019">struct</span> syslog_data <span style="color:#fe8019">*</span>data);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">void</span> <span style="color:#fabd2f">syslog</span>    (<span style="color:#fabd2f">int</span> priority, <span style="color:#fe8019">const</span> <span style="color:#fabd2f">char</span> <span style="color:#fe8019">*</span>message, ...);
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">void</span> <span style="color:#fabd2f">vsyslog</span>   (<span style="color:#fabd2f">int</span> priority, <span style="color:#fe8019">const</span> <span style="color:#fabd2f">char</span> <span style="color:#fe8019">*</span>message, va_list args);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">void</span> <span style="color:#fabd2f">syslogp</span>   (<span style="color:#fabd2f">int</span> priority, <span style="color:#fe8019">const</span> <span style="color:#fabd2f">char</span> <span style="color:#fe8019">*</span>msgid, <span style="color:#fe8019">const</span> <span style="color:#fabd2f">char</span> <span style="color:#fe8019">*</span>sd, <span style="color:#fe8019">const</span> <span style="color:#fabd2f">char</span> <span style="color:#fe8019">*</span>message, ...);
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">void</span> <span style="color:#fabd2f">vsyslogp</span>  (<span style="color:#fabd2f">int</span> priority, <span style="color:#fe8019">const</span> <span style="color:#fabd2f">char</span> <span style="color:#fe8019">*</span>msgid, <span style="color:#fe8019">const</span> <span style="color:#fabd2f">char</span> <span style="color:#fe8019">*</span>sd, <span style="color:#fe8019">const</span> <span style="color:#fabd2f">char</span> <span style="color:#fe8019">*</span>message, va_list args);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">void</span> <span style="color:#fabd2f">syslog_r</span>  (<span style="color:#fabd2f">int</span> priority, <span style="color:#fe8019">struct</span> syslog_data <span style="color:#fe8019">*</span>data, <span style="color:#fe8019">const</span> <span style="color:#fabd2f">char</span> <span style="color:#fe8019">*</span>message, ...);
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">void</span> <span style="color:#fabd2f">vsyslog_r</span> (<span style="color:#fabd2f">int</span> priority, <span style="color:#fe8019">struct</span> syslog_data <span style="color:#fe8019">*</span>data, <span style="color:#fe8019">const</span> <span style="color:#fabd2f">char</span> <span style="color:#fe8019">*</span>message, va_list args);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">void</span> <span style="color:#fabd2f">syslogp_r</span> (<span style="color:#fabd2f">int</span> priority, <span style="color:#fe8019">struct</span> syslog_data <span style="color:#fe8019">*</span>data, <span style="color:#fe8019">const</span> <span style="color:#fabd2f">char</span> <span style="color:#fe8019">*</span>msgid, <span style="color:#fe8019">const</span> <span style="color:#fabd2f">char</span> <span style="color:#fe8019">*</span>sd,
+</span></span><span style="display:flex;"><span>                <span style="color:#fe8019">const</span> <span style="color:#fabd2f">char</span> <span style="color:#fe8019">*</span>message, ...);
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">void</span> <span style="color:#fabd2f">vsyslogp_r</span>(<span style="color:#fabd2f">int</span> priority, <span style="color:#fe8019">struct</span> syslog_data <span style="color:#fe8019">*</span>data, <span style="color:#fe8019">const</span> <span style="color:#fabd2f">char</span> <span style="color:#fe8019">*</span>msgid, <span style="color:#fe8019">const</span> <span style="color:#fabd2f">char</span> <span style="color:#fe8019">*</span>sd,
+</span></span><span style="display:flex;"><span>                <span style="color:#fe8019">const</span> <span style="color:#fabd2f">char</span> <span style="color:#fe8019">*</span>message, va_list args);
+</span></span></code></pre></div><h2 id="example">Example</h2>
 <p>To use the new API on Linux we create an example application:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="cm">/* example.c - Example of how to use NetBSD syslogp() API */</span>
-<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;syslog/syslog.h&gt;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-<span class="p">{</span>
-        <span class="n">openlog</span><span class="p">(</span><span class="s">&#34;example&#34;</span><span class="p">,</span> <span class="n">LOG_PID</span><span class="p">,</span> <span class="n">LOG_USER</span><span class="p">);</span>
-        <span class="n">syslogp</span><span class="p">(</span><span class="n">LOG_NOTICE</span><span class="p">,</span> <span class="s">&#34;MSGID&#34;</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="s">&#34;Kilroy was here.&#34;</span><span class="p">);</span>
-        <span class="n">closelog</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre></div><p>We build and run the application.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">jocke@troglobit:~/tmp $ gcc <span class="sb">`</span>pkg-config --libs --static --cflags libsyslog<span class="sb">`</span> <span class="se">\
-</span><span class="se"></span>                            -o example example.c
-jocke@troglobit:~/tmp $ ./example
-</code></pre></div><p>Provided <code>syslogd</code> is set up properly the following would be logged in your
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#928374;font-style:italic">/* example.c - Example of how to use NetBSD syslogp() API */</span>
+</span></span><span style="display:flex;"><span><span style="color:#8ec07c">#include</span> <span style="color:#8ec07c;font-style:italic">&lt;stdio.h&gt;</span><span style="color:#8ec07c">
+</span></span></span><span style="display:flex;"><span><span style="color:#8ec07c">#include</span> <span style="color:#8ec07c;font-style:italic">&lt;syslog/syslog.h&gt;</span><span style="color:#8ec07c">
+</span></span></span><span style="display:flex;"><span><span style="color:#8ec07c"></span>
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">int</span> <span style="color:#fabd2f">main</span>(<span style="color:#fabd2f">void</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#fabd2f">openlog</span>(<span style="color:#b8bb26">&#34;example&#34;</span>, LOG_PID, LOG_USER);
+</span></span><span style="display:flex;"><span>        <span style="color:#fabd2f">syslogp</span>(LOG_NOTICE, <span style="color:#b8bb26">&#34;MSGID&#34;</span>, <span style="color:#fabd2f">NULL</span>, <span style="color:#b8bb26">&#34;Kilroy was here.&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#fabd2f">closelog</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>We build and run the application.</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>jocke@troglobit:~/tmp $ gcc <span style="color:#b8bb26">`</span>pkg-config --libs --static --cflags libsyslog<span style="color:#b8bb26">`</span> <span style="color:#b8bb26">\
+</span></span></span><span style="display:flex;"><span><span style="color:#b8bb26"></span>                            -o example example.c
+</span></span><span style="display:flex;"><span>jocke@troglobit:~/tmp $ ./example
+</span></span></code></pre></div><p>Provided <code>syslogd</code> is set up properly the following would be logged in your
 local log file, or sent to a remote syslog server:</p>
 <pre><code>2019-11-03T00:46:34.034324+01:00 troglobit example 1234 MSGID - Kilroy was here.
 </code></pre>
@@ -314,7 +308,7 @@ local log file, or sent to a remote syslog server:</p>
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        904 Words
+        905 Words
       </p>
 
       <p>
@@ -333,99 +327,6 @@ local log file, or sent to a remote syslog server:</p>
         
       </p>
     </div>
-      <hr />
-      <div class="sharing-buttons">
-        
-<a class="resp-sharing-button__link" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2ftroglobit.com%2fpost%2f2019-11-03-bsd-syslogd-in-linux%2f" target="_blank" rel="noopener" aria-label="" title="Share on facebook">
-  <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-    </div>
-  </div>
-</a>
-
-
-<a class="resp-sharing-button__link" href="https://twitter.com/intent/tweet/?url=https%3a%2f%2ftroglobit.com%2fpost%2f2019-11-03-bsd-syslogd-in-linux%2f" target="_blank" rel="noopener" aria-label="" title="Share on twitter">
-  <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--small">
-      <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
-    </div>
-  </div>
-</a>
-
-
-<a class="resp-sharing-button__link" href="https://www.tumblr.com/widgets/share/tool?posttype=link&amp;title=BSD%20syslogd%20in%20Linux&amp;caption=BSD%20syslogd%20in%20Linux&amp;canonicalUrl=https%3a%2f%2ftroglobit.com%2fpost%2f2019-11-03-bsd-syslogd-in-linux%2f" target="_blank" rel="noopener" aria-label="" title="Share on tumblr">
-  <div class="resp-sharing-button resp-sharing-button--tumblr resp-sharing-button--small">
-    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941 0 9.999 0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.207 2.371h.09c.631-.02 1.486-.205 1.936-.419l1.156 3.425c-.436.636-2.4 1.374-4.156 1.404h-.178l.011.002z"/></svg>
-    </div>
-  </div>
-</a>
-
-
-<a class="resp-sharing-button__link" href="mailto:?subject=BSD%20syslogd%20in%20Linux&amp;body=https%3a%2f%2ftroglobit.com%2fpost%2f2019-11-03-bsd-syslogd-in-linux%2f" target="_self" rel="noopener" aria-label="" title="Share via email">
-  <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-    </div>
-  </div>
-</a>
-
-
-<a class="resp-sharing-button__link" href="https://pinterest.com/pin/create/button/?url=https%3a%2f%2ftroglobit.com%2fpost%2f2019-11-03-bsd-syslogd-in-linux%2f&amp;media=https%3a%2f%2ftroglobit.com%2fpost%2f2019-11-03-bsd-syslogd-in-linux%2f;description=BSD%20syslogd%20in%20Linux" target="_blank" rel="noopener" aria-label="" title="Share on pinterest">
-  <div class="resp-sharing-button resp-sharing-button--pinterest resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"/></svg>
-    </div>
-  </div>
-</a>
-
-
-<a class="resp-sharing-button__link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2ftroglobit.com%2fpost%2f2019-11-03-bsd-syslogd-in-linux%2f&amp;title=BSD%20syslogd%20in%20Linux&amp;summary=BSD%20syslogd%20in%20Linux&amp;source=https%3a%2f%2ftroglobit.com%2fpost%2f2019-11-03-bsd-syslogd-in-linux%2f" target="_blank" rel="noopener" aria-label="" title="Share on linkedin">
-  <div class="resp-sharing-button resp-sharing-button--linkedin resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-    </div>
-  </div>
-</a>
-
-
-<a class="resp-sharing-button__link" href="https://reddit.com/submit/?url=https%3a%2f%2ftroglobit.com%2fpost%2f2019-11-03-bsd-syslogd-in-linux%2f&amp;resubmit=true&amp;title=BSD%20syslogd%20in%20Linux" target="_blank" rel="noopener" aria-label="" title="Share on reddit">
-  <div class="resp-sharing-button resp-sharing-button--reddit resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
-    </div>
-  </div>
-</a>
-
-
-<a class="resp-sharing-button__link" href="https://www.xing.com/app/user?op=share;url=https%3a%2f%2ftroglobit.com%2fpost%2f2019-11-03-bsd-syslogd-in-linux%2f;title=BSD%20syslogd%20in%20Linux" target="_blank" rel="noopener" aria-label="" title="Share on xing">
-  <div class="resp-sharing-button resp-sharing-button--xing resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L1.86 16.051c-.099.188-.093.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l3.734-6.609-2.378-4.155c-.172-.315-.434-.659-.962-.659H3.648v.016z"/></svg>
-    </div>
-  </div>
-</a>
-
-
-<a class="resp-sharing-button__link" href="whatsapp://send?text=BSD%20syslogd%20in%20Linux%20https%3a%2f%2ftroglobit.com%2fpost%2f2019-11-03-bsd-syslogd-in-linux%2f" target="_blank" rel="noopener" aria-label="" title="Share on whatsapp">
-  <div class="resp-sharing-button resp-sharing-button--whatsapp resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-    </div>
-  </div>
-</a>
-
-
-<a class="resp-sharing-button__link" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2ftroglobit.com%2fpost%2f2019-11-03-bsd-syslogd-in-linux%2f&amp;t=BSD%20syslogd%20in%20Linux" target="_blank" rel="noopener" aria-label="" title="Share on hacker news">
-  <div class="resp-sharing-button resp-sharing-button--hackernews resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M0 24V0h24v24H0zM6.951 5.896l4.112 7.708v5.064h1.583v-4.972l4.148-7.799h-1.749l-2.457 4.875c-.372.745-.688 1.434-.688 1.434s-.297-.708-.651-1.434L8.831 5.896h-1.88z"/></svg>
-    </div>
-  </div>
-</a>
-
-
-<a class="resp-sharing-button__link" href="https://telegram.me/share/url?text=BSD%20syslogd%20in%20Linux&amp;url=https%3a%2f%2ftroglobit.com%2fpost%2f2019-11-03-bsd-syslogd-in-linux%2f" target="_blank" rel="noopener" aria-label="" title="Share on telegram">
-  <div class="resp-sharing-button resp-sharing-button--telegram resp-sharing-button--small"><div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-    </div>
-  </div>
-</a>
-
-      </div>
 
     
     <div class="pagination">
@@ -457,6 +358,8 @@ local log file, or sent to a remote syslog server:</p>
 
     
 
+    
+
   </main>
 
             </div>
@@ -466,7 +369,7 @@ local log file, or sent to a remote syslog server:</p>
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2024</span>
+            <span>&copy; 2006</span>
             <span><a href="https://troglobit.com/">Joachim Wiberg</a></span>
             <span>UNIX&trade; 4Life! &#9994;</span>
             
@@ -484,7 +387,8 @@ local log file, or sent to a remote syslog server:</p>
 
 
 
-<script type="text/javascript" src="https://troglobit.com/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
+<script type="text/javascript" src="https://troglobit.com/bundle.min.46e438bd2eca7eb6358c700b40f6f56b22ab0b92503ecc11a2d8e4bcc610b8b4da83e5ea3d3e84fdb5f3c3c765744b9f5bbaf43cf5a027910be07ee39a9c12a1.js" integrity="sha512-RuQ4vS7KfrY1jHALQPb1ayKrC5JQPswRotjkvMYQuLTag&#43;XqPT6E/bXzw8dldEufW7r0PPWgJ5EL4H7jmpwSoQ=="></script>
+
 
 
 

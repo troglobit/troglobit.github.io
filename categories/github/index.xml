@@ -5,24 +5,16 @@
     <link>https://troglobit.com/categories/github/</link>
     <description>Recent content in github on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Fri, 02 Jan 2015 14:12:59 +0000</lastBuildDate><atom:link href="https://troglobit.com/categories/github/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Jan 2015 14:12:59 +0000</lastBuildDate>
+    <atom:link href="https://troglobit.com/categories/github/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Blog Restoration Project</title>
       <link>https://troglobit.com/2015/01/02/blog-restoration-project-now-also-on-github-pages/</link>
       <pubDate>Fri, 02 Jan 2015 14:12:59 +0000</pubDate>
-      
       <guid>https://troglobit.com/2015/01/02/blog-restoration-project-now-also-on-github-pages/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ve had this long-standing issue with backups.  It&amp;rsquo;s deadly boring to
-set up and maintain, so I don&amp;rsquo;t do any.  Until today!&lt;/p&gt;
-&lt;p&gt;Today I moved the sources for my &lt;a href=&#34;http://troglobit.com&#34;&gt;Octopress blag&lt;/a&gt;
-to GitHub, which also prompted me to set up
-&lt;a href=&#34;http://troglobit.github.io&#34;&gt;a mirror&lt;/a&gt; on
-&lt;a href=&#34;http://pages.github.io&#34;&gt;GitHub Pages&lt;/a&gt;.  As usual, reading up on the
-subject and muster enough motivation took me about three months, whereas
-the actual work took about 4h.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&amp;rsquo;ve had this long-standing issue with backups.  It&amp;rsquo;s deadly boring to&#xA;set up and maintain, so I don&amp;rsquo;t do any.  Until today!&lt;/p&gt;&#xA;&lt;p&gt;Today I moved the sources for my &lt;a href=&#34;http://troglobit.com&#34;&gt;Octopress blag&lt;/a&gt;&#xA;to GitHub, which also prompted me to set up&#xA;&lt;a href=&#34;http://troglobit.github.io&#34;&gt;a mirror&lt;/a&gt; on&#xA;&lt;a href=&#34;http://pages.github.io&#34;&gt;GitHub Pages&lt;/a&gt;.  As usual, reading up on the&#xA;subject and muster enough motivation took me about three months, whereas&#xA;the actual work took about 4h.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

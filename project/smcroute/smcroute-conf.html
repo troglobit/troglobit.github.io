@@ -14,23 +14,16 @@
 
     <title>
         
-            smcroute.conf example :: Joachim Wiberg  — The Last Outpost
+            smcroute.conf example :: Joachim Wiberg 
         
     </title>
 
 
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
-    type="text/css">
 
 
+<link rel="stylesheet" href="https://troglobit.com/main.949191c1dcc9c4a887997048b240354e47152016d821198f89448496ba42e491.css" integrity="sha256-lJGRwdzJxKiHmXBIskA1TkcVIBbYIRmPiUSElrpC5JE=">
 
-<link rel="stylesheet" href="https://troglobit.com/main.274b9101bb929690505a03a6e203b1ec6098ae11e7462d3d41ac05a2ba21078f.css">
-
-
-    
-        <link rel="stylesheet" type="text/css" href="https://troglobit.com/css/extra.css">
-    
 
 
     <link rel="apple-touch-icon" sizes="180x180" href="https://troglobit.com/apple-touch-icon.png">
@@ -47,8 +40,7 @@
 <meta itemprop="dateModified" content="2021-08-19T15:46:00+02:00" />
 <meta itemprop="wordCount" content="438">
 <meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="smcroute.conf example"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="smcroute.conf example"/>
 <meta name="twitter:description" content=""/>
 
 
@@ -77,6 +69,7 @@
 
 
 
+
     </head>
 
     
@@ -90,7 +83,8 @@
     <div class="logo">
         
             <span class="logo__mark">&gt;</span>
-            <span class="logo__text">$ cd /home/</span>
+            <span class="logo__text ">
+                $ cd /home/</span>
             <span class="logo__cursor" style=
                   "
                    
@@ -104,7 +98,7 @@
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://troglobit.com/about/">About</a></li><li><a href="https://troglobit.com/posts/">Blog</a></li><li><a href="https://troglobit.com/howtos/">HowTos</a></li><li><a href="https://troglobit.com/projects/">Projects</a></li><li><a href="https://resume.troglobit.com">Resumé</a></li><li><a href="https://ftp.troglobit.com">FTP</a></li><li><a href="https://deb.troglobit.com">DEB</a></li>
+    <ul class="menu__inner"><li><a href="https://troglobit.com/about/">About</a></li><li><a href="https://troglobit.com/posts/">Blog</a></li><li><a href="https://troglobit.com/howtos/">HowTos</a></li><li><a href="https://troglobit.com/projects/">Projects</a></li>
     </ul>
 </nav>
 
@@ -137,68 +131,68 @@
             
 
             <div class="post-content">
-                <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">#
-# smcroute.conf example
-#
-# The configuration file supports joining multicast groups, to use
-# Layer-2 signaling so that switches and routers open up multicast
-# traffic to your interfaces.  Leave is not supported, remove the
-# mgroup and SIGHUP your daemon, or send a specific leave command.
-#
-# NOTE: Use of the mgroup command should be avoided if possible.
-#       Instead configure &#34;router ports&#34; or similar on the switches
-#       or bridges on your LAN.  This to have them direct all the
-#       multicast to your router, or select groups if they have
-#       such capabilities.  Usually MAC multicast filters exist.
-#
-#       Some switch manufacturers support mrdisc, RFC4286, which
-#       SMCRoute can use to advertise itself on source interfaces.
-#       If availble, use that instead of mgroup.
-#
-# Similarly supported is setting mroutes.  Removing mroutes is not
-# supported, remove/comment out the mroute from the .conf file, or
-# send a remove command with smcroutectl.
-#
-# Syntax:
-#   phyint IFNAME &lt;enable|disable&gt; [mrdisc] [ttl-threshold &lt;1-255&gt;]
-#   mgroup from IIF [source ADDR[/LEN]] group GROUP[/LEN]
-#   mroute from IIF [source ADDR[/LEN]] group GROUP[/LEN] to OIF [OIF ...]
-#   include /path/to/*.conf
-
-# This example assumes smcrouted was started with the `-N` flag.
-# Only enable interfaces required for inbound and outbound traffic.
-phyint eth0 enable ttl-threshold 11
-phyint eth1 enable ttl-threshold 3
-phyint eth2 enable ttl-threshold 5
-phyint virbr0 enable ttl-threshold 5
-
-# Instruct the kernel to join the multicast group 225.1.2.3 on interface
-# eth0.  Then add an mroute of the same multicast stream, from the host
-# 192.168.1.42 on interface eth0 and forward to eth1 and eth2.
-mgroup from eth0                     group 225.1.2.3
-mroute from eth0 source 192.168.1.42 group 225.1.2.3 to eth1 eth2
-
-# Similar example, but using source-specific group join
-mgroup from virbr0 source 192.168.123.110 group 225.1.2.4
-mroute from virbr0 source 192.168.123.110 group 225.1.2.4 to eth0
-
-# Allow multicast for group 225.3.2.1, from ANY source, ingressing on
-# interface eth0 to be forwarded to eth1 and eth2.  When the kernel
-# receives a frame from unknown multicast sender, it asks smcrouted who
-# use this &#34;template&#34; to match against, if the ingressing interface and
-# group matches, smcrouted installs an (S,G) route in the kernel MFC.
-mgroup from eth0 group 225.3.2.1
-mroute from eth0 group 225.3.2.1 to eth1 eth2
-
-# The previous is an example of the (*,G) support.  It is also possible
-# to specify a range of such rules.
-mgroup from eth0 group 225.0.0.0/24
-mroute from eth0 group 225.0.0.0/24 to eth1 eth2
-
-# Include any snippet in /etc/smcroute.d/, but please remember that
-# all phyint statements must be read first.
-include /etc/smcroute.d/*.conf
-</code></pre></div>
+                <div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># smcroute.conf example</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># The configuration file supports joining multicast groups, to use</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Layer-2 signaling so that switches and routers open up multicast</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># traffic to your interfaces.  Leave is not supported, remove the</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># mgroup and SIGHUP your daemon, or send a specific leave command.</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># NOTE: Use of the mgroup command should be avoided if possible.</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#       Instead configure &#34;router ports&#34; or similar on the switches</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#       or bridges on your LAN.  This to have them direct all the</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#       multicast to your router, or select groups if they have</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#       such capabilities.  Usually MAC multicast filters exist.</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#       Some switch manufacturers support mrdisc, RFC4286, which</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#       SMCRoute can use to advertise itself on source interfaces.</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#       If availble, use that instead of mgroup.</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Similarly supported is setting mroutes.  Removing mroutes is not</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># supported, remove/comment out the mroute from the .conf file, or</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># send a remove command with smcroutectl.</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Syntax:</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#   phyint IFNAME &lt;enable|disable&gt; [mrdisc] [ttl-threshold &lt;1-255&gt;]</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#   mgroup from IIF [source ADDR[/LEN]] group GROUP[/LEN]</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#   mroute from IIF [source ADDR[/LEN]] group GROUP[/LEN] to OIF [OIF ...]</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#   include /path/to/*.conf</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># This example assumes smcrouted was started with the `-N` flag.</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Only enable interfaces required for inbound and outbound traffic.</span>
+</span></span><span style="display:flex;"><span>phyint eth0 enable ttl<span style="color:#fe8019">-</span>threshold <span style="color:#d3869b">11</span>
+</span></span><span style="display:flex;"><span>phyint eth1 enable ttl<span style="color:#fe8019">-</span>threshold <span style="color:#d3869b">3</span>
+</span></span><span style="display:flex;"><span>phyint eth2 enable ttl<span style="color:#fe8019">-</span>threshold <span style="color:#d3869b">5</span>
+</span></span><span style="display:flex;"><span>phyint virbr0 enable ttl<span style="color:#fe8019">-</span>threshold <span style="color:#d3869b">5</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Instruct the kernel to join the multicast group 225.1.2.3 on interface</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># eth0.  Then add an mroute of the same multicast stream, from the host</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># 192.168.1.42 on interface eth0 and forward to eth1 and eth2.</span>
+</span></span><span style="display:flex;"><span>mgroup from eth0                     group <span style="color:#d3869b">225.1</span><span style="color:#fe8019">.</span><span style="color:#d3869b">2.3</span>
+</span></span><span style="display:flex;"><span>mroute from eth0 source <span style="color:#d3869b">192.168</span><span style="color:#fe8019">.</span><span style="color:#d3869b">1.42</span> group <span style="color:#d3869b">225.1</span><span style="color:#fe8019">.</span><span style="color:#d3869b">2.3</span> to eth1 eth2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Similar example, but using source-specific group join</span>
+</span></span><span style="display:flex;"><span>mgroup from virbr0 source <span style="color:#d3869b">192.168</span><span style="color:#fe8019">.</span><span style="color:#d3869b">123.110</span> group <span style="color:#d3869b">225.1</span><span style="color:#fe8019">.</span><span style="color:#d3869b">2.4</span>
+</span></span><span style="display:flex;"><span>mroute from virbr0 source <span style="color:#d3869b">192.168</span><span style="color:#fe8019">.</span><span style="color:#d3869b">123.110</span> group <span style="color:#d3869b">225.1</span><span style="color:#fe8019">.</span><span style="color:#d3869b">2.4</span> to eth0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Allow multicast for group 225.3.2.1, from ANY source, ingressing on</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># interface eth0 to be forwarded to eth1 and eth2.  When the kernel</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># receives a frame from unknown multicast sender, it asks smcrouted who</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># use this &#34;template&#34; to match against, if the ingressing interface and</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># group matches, smcrouted installs an (S,G) route in the kernel MFC.</span>
+</span></span><span style="display:flex;"><span>mgroup from eth0 group <span style="color:#d3869b">225.3</span><span style="color:#fe8019">.</span><span style="color:#d3869b">2.1</span>
+</span></span><span style="display:flex;"><span>mroute from eth0 group <span style="color:#d3869b">225.3</span><span style="color:#fe8019">.</span><span style="color:#d3869b">2.1</span> to eth1 eth2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># The previous is an example of the (*,G) support.  It is also possible</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># to specify a range of such rules.</span>
+</span></span><span style="display:flex;"><span>mgroup from eth0 group <span style="color:#d3869b">225.0</span><span style="color:#fe8019">.</span><span style="color:#d3869b">0.0</span><span style="color:#fe8019">/</span><span style="color:#d3869b">24</span>
+</span></span><span style="display:flex;"><span>mroute from eth0 group <span style="color:#d3869b">225.0</span><span style="color:#fe8019">.</span><span style="color:#d3869b">0.0</span><span style="color:#fe8019">/</span><span style="color:#d3869b">24</span> to eth1 eth2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Include any snippet in /etc/smcroute.d/, but please remember that</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># all phyint statements must be read first.</span>
+</span></span><span style="display:flex;"><span>include <span style="color:#fe8019">/</span>etc<span style="color:#fe8019">/</span>smcroute<span style="color:#fe8019">.</span>d<span style="color:#fe8019">/*.</span>conf
+</span></span></code></pre></div>
             </div>
         </article>
 
@@ -217,7 +211,7 @@ include /etc/smcroute.d/*.conf
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2024</span>
+            <span>&copy; 2006</span>
             <span><a href="https://troglobit.com/">Joachim Wiberg</a></span>
             <span>UNIX&trade; 4Life! &#9994;</span>
             
@@ -235,7 +229,8 @@ include /etc/smcroute.d/*.conf
 
 
 
-<script type="text/javascript" src="https://troglobit.com/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
+<script type="text/javascript" src="https://troglobit.com/bundle.min.46e438bd2eca7eb6358c700b40f6f56b22ab0b92503ecc11a2d8e4bcc610b8b4da83e5ea3d3e84fdb5f3c3c765744b9f5bbaf43cf5a027910be07ee39a9c12a1.js" integrity="sha512-RuQ4vS7KfrY1jHALQPb1ayKrC5JQPswRotjkvMYQuLTag&#43;XqPT6E/bXzw8dldEufW7r0PPWgJ5EL4H7jmpwSoQ=="></script>
+
 
 
 

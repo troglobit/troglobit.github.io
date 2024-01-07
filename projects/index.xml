@@ -5,155 +5,79 @@
     <link>https://troglobit.com/projects/</link>
     <description>Recent content in Projects on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Thu, 02 Nov 2023 06:47:00 +0100</lastBuildDate><atom:link href="https://troglobit.com/projects/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Nov 2023 06:47:00 +0100</lastBuildDate>
+    <atom:link href="https://troglobit.com/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fast init for Linux systems</title>
       <link>https://troglobit.com/projects/finit/</link>
       <pubDate>Thu, 02 Nov 2023 06:47:00 +0100</pubDate>
-      
       <guid>https://troglobit.com/projects/finit/</guid>
-      <description>Finit is an alternative to SysV init and systemd, originally reverse engineered from the EeePC fastinit by Claudio Matsuoka — &amp;ldquo;gaps filled with frog DNA …&amp;rdquo;
- Latest release available on GitHub
- Features  Runlevels, defined per service One-shot tasks, services (daemons), or SysV init start/stop scripts Runparts and /etc/rc.local support Process supervision similar to systemd Sourcing environment files Conditions for network/process/custom dependencies Pre/Post script actions Tooling to enable/disable services Optional built-in getty Optional built-in watchdog, with support for hand-over to watchdogd Built-in support for Debian/BusyBox /etc/network/interfaces, automatically calls ifup/ifdown Cgroups v2, both configuration and monitoring in initctl top Plugin support for customization Proper rescue mode with bundled sulogin for protected maintenance shell (optional)  Blog Posts Some of these feature are presented below, for more, see the online documentation and the following blog posts:</description>
+      <description>Finit is an alternative to SysV init and systemd, originally reverse engineered from the EeePC fastinit by Claudio Matsuoka — &amp;ldquo;gaps filled with frog DNA …&amp;rdquo;&#xA;Latest release available on GitHub&#xA;Features Runlevels, defined per service One-shot tasks, services (daemons), or SysV init start/stop scripts Runparts and /etc/rc.local support Process supervision similar to systemd Sourcing environment files Conditions for network/process/custom dependencies Pre/Post script actions Tooling to enable/disable services Optional built-in getty Optional built-in watchdog, with support for hand-over to watchdogd Built-in support for Debian/BusyBox /etc/network/interfaces, automatically calls ifup/ifdown Cgroups v2, both configuration and monitoring in initctl top Plugin support for customization Proper rescue mode with bundled sulogin for protected maintenance shell (optional) Blog Posts Some of these feature are presented below, for more, see the online documentation and the following blog posts:</description>
     </item>
-    
     <item>
       <title>Static Multicast Routing Daemon</title>
       <link>https://troglobit.com/projects/smcroute/</link>
       <pubDate>Sun, 04 Sep 2022 10:00:41 +0100</pubDate>
-      
       <guid>https://troglobit.com/projects/smcroute/</guid>
-      <description>SMCRoute is a daemon and command line tool to manipulate the multicast routing table in the UNIX kernel. Both FreeBSD and Linux kernels are supported, but it may work on other systems as well.
-SMCRoute can be used as an alternative to dynamic multicast routing daemons like mrouted or pimd when (only) static multicast routes should be maintained or no proper signalling exists.
-The full documentation of SMCRoute is available in the manual pages, see smcrouted(8), smcroutectl(8), and smcroute.</description>
+      <description>SMCRoute is a daemon and command line tool to manipulate the multicast routing table in the UNIX kernel. Both FreeBSD and Linux kernels are supported, but it may work on other systems as well.&#xA;SMCRoute can be used as an alternative to dynamic multicast routing daemons like mrouted or pimd when (only) static multicast routes should be maintained or no proper signalling exists.&#xA;The full documentation of SMCRoute is available in the manual pages, see smcrouted(8), smcroutectl(8), and smcroute.</description>
     </item>
-    
     <item>
       <title>Micro Tetris™</title>
       <link>https://troglobit.com/projects/tetris/</link>
       <pubDate>Sun, 26 Dec 2021 20:37:00 +0200</pubDate>
-      
       <guid>https://troglobit.com/projects/tetris/</guid>
-      <description>Micro Tetris — one of the smallest Tetris implementations in the world! Utilizing only ANSI escape sequences to draw the board, no external library dependencys other than a standard C-library, like uClibc or musl libc. Hence, it is very suitable for small embedded devices in need of an easter egg ;-)
-
-The game is based on a 1989 International Obfuscated C Code Contest (IOCCC) entry made by John Tromp.</description>
+      <description>Micro Tetris — one of the smallest Tetris implementations in the world! Utilizing only ANSI escape sequences to draw the board, no external library dependencys other than a standard C-library, like uClibc or musl libc. Hence, it is very suitable for small embedded devices in need of an easter egg ;-)&#xA;The game is based on a 1989 International Obfuscated C Code Contest (IOCCC) entry made by John Tromp.</description>
     </item>
-    
     <item>
       <title>The original multicast routing daemon</title>
       <link>https://troglobit.com/projects/mrouted/</link>
       <pubDate>Wed, 03 Nov 2021 12:39:12 +0100</pubDate>
-      
       <guid>https://troglobit.com/projects/mrouted/</guid>
-      <description>mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, RFC 1075. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunneling support.
- Tunneling may be required to cross non-multicast-aware routers.
- The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is suitable for smaller/dense networks. It employs the &amp;ldquo;flood and prune&amp;rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups.</description>
+      <description>mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, RFC 1075. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunneling support.&#xA;Tunneling may be required to cross non-multicast-aware routers.&#xA;The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is suitable for smaller/dense networks. It employs the &amp;ldquo;flood and prune&amp;rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups.</description>
     </item>
-    
     <item>
       <title>smcroute.conf example</title>
       <link>https://troglobit.com/project/smcroute/smcroute-conf.html</link>
       <pubDate>Thu, 19 Aug 2021 15:46:00 +0200</pubDate>
-      
       <guid>https://troglobit.com/project/smcroute/smcroute-conf.html</guid>
       <description></description>
     </item>
-    
     <item>
       <title>N E M E S I S</title>
       <link>https://troglobit.com/projects/nemesis/</link>
       <pubDate>Wed, 07 Jul 2021 15:39:00 +0200</pubDate>
-      
       <guid>https://troglobit.com/projects/nemesis/</guid>
-      <description>Nemesis is a command-line network packet crafting and injection utility for UNIX-like and Windows systems. Well suited for testing Network Intrusion Detection Systems, firewalls, IP stacks and a variety of other tasks. As a command-line driven utility, it is perfect for automation and scripting.
-Nemesis can natively craft and inject ARP, DNS, ETHERNET, ICMP, IGMP, IP, OSPF, RIP, TCP and UDP packets. Using the IP and the Ethernet injection modes, almost any custom packet can be crafted and injected.</description>
+      <description>Nemesis is a command-line network packet crafting and injection utility for UNIX-like and Windows systems. Well suited for testing Network Intrusion Detection Systems, firewalls, IP stacks and a variety of other tasks. As a command-line driven utility, it is perfect for automation and scripting.&#xA;Nemesis can natively craft and inject ARP, DNS, ETHERNET, ICMP, IGMP, IP, OSPF, RIP, TCP and UDP packets. Using the IP and the Ethernet injection modes, almost any custom packet can be crafted and injected.</description>
     </item>
-    
     <item>
       <title>Advanced watchdog daemon for Linux</title>
       <link>https://troglobit.com/projects/watchdogd/</link>
       <pubDate>Fri, 30 Apr 2021 17:02:00 +0100</pubDate>
-      
       <guid>https://troglobit.com/projects/watchdogd/</guid>
-      <description>watchdogd(8) is an advanced system and process supervisor primarily intended for embedded Linux and server systems. It supports &amp;ldquo;kicking&amp;rdquo; multiple watchdog timer (WDT) devices and can also monitor critical system resources, supervise the heartbeat of processes1 and record process deadline transgressions.
- Read more about Built-in Monitors in the extended documentation.
- The configuration determines how the daemon acts on monitored resources and supervised processes. See watchdogd.conf(5) for how to set up watermarks and trigger external scripts to suit your particular setup.</description>
+      <description>watchdogd(8) is an advanced system and process supervisor primarily intended for embedded Linux and server systems. It supports &amp;ldquo;kicking&amp;rdquo; multiple watchdog timer (WDT) devices and can also monitor critical system resources, supervise the heartbeat of processes1 and record process deadline transgressions.&#xA;Read more about Built-in Monitors in the extended documentation.&#xA;The configuration determines how the daemon acts on monitored resources and supervised processes. See watchdogd.conf(5) for how to set up watermarks and trigger external scripts to suit your particular setup.</description>
     </item>
-    
     <item>
       <title>Minix Editline</title>
       <link>https://troglobit.com/projects/editline/</link>
       <pubDate>Sun, 05 Apr 2020 14:38:00 +0200</pubDate>
-      
       <guid>https://troglobit.com/projects/editline/</guid>
-      <description>This is a line editing library for UNIX. It can be linked into almost any program to provide command line editing and history. It is call compatible with the FSF readline library, but is a fraction of the size (and offers fewer features).
-The small size (&amp;lt;30k), lack of dependencies (no ncurses needed!) and the free license should make this library interesting to many embedded developers seeking a replacement for the GNU readline library.</description>
+      <description>This is a line editing library for UNIX. It can be linked into almost any program to provide command line editing and history. It is call compatible with the FSF readline library, but is a fraction of the size (and offers fewer features).&#xA;The small size (&amp;lt;30k), lack of dependencies (no ncurses needed!) and the free license should make this library interesting to many embedded developers seeking a replacement for the GNU readline library.</description>
     </item>
-    
     <item>
       <title>Mini SNMP daemon</title>
       <link>https://troglobit.com/projects/mini-snmpd/</link>
       <pubDate>Sun, 23 Feb 2020 09:00:00 +0200</pubDate>
-      
       <guid>https://troglobit.com/projects/mini-snmpd/</guid>
-      <description>This is an SNMP server for small and embedded systems, currently Linux and FreeBSD are supported. It is easily portable to other UNIX systems since it&amp;rsquo;s written in C. The daemon is very small (~40 kiB) and does not have nowhere near the feature set of Net-SNMP, therefore it has a very low impact on system resources.
-See my mini HowTo: Playing with SNMP for a quick introduction to setting up the SNMP tools and MIBs to avoid having to use numerical OIDs.</description>
+      <description>This is an SNMP server for small and embedded systems, currently Linux and FreeBSD are supported. It is easily portable to other UNIX systems since it&amp;rsquo;s written in C. The daemon is very small (~40 kiB) and does not have nowhere near the feature set of Net-SNMP, therefore it has a very low impact on system resources.&#xA;See my mini HowTo: Playing with SNMP for a quick introduction to setting up the SNMP tools and MIBs to avoid having to use numerical OIDs.</description>
     </item>
-    
     <item>
       <title>Small and Simple DDNS Client</title>
       <link>https://troglobit.com/projects/inadyn/</link>
       <pubDate>Thu, 20 Feb 2020 16:29:00 +0200</pubDate>
-      
       <guid>https://troglobit.com/projects/inadyn/</guid>
-      <description>In-a-dyn is a small and simple Dynamic DNS, DDNS, client with HTTPS support. It is commonly available in many GNU/Linux distributions, used in off-the-shelf routers and Internet gateways to automate the task of keeping your DNS record up to date with any IP address changes from your ISP. It can also be used in installations with redundant (backup) connections to the Internet.
-Presentation here.
-Example The configuration file on most systems is in /etc/inadyn.</description>
+      <description>In-a-dyn is a small and simple Dynamic DNS, DDNS, client with HTTPS support. It is commonly available in many GNU/Linux distributions, used in off-the-shelf routers and Internet gateways to automate the task of keeping your DNS record up to date with any IP address changes from your ISP. It can also be used in installations with redundant (backup) connections to the Internet.&#xA;Presentation here.&#xA;Example The configuration file on most systems is in /etc/inadyn.</description>
     </item>
-    
-    <item>
-      <title>No nonsense FTP/TFTP server</title>
-      <link>https://troglobit.com/projects/uftpd/</link>
-      <pubDate>Mon, 29 Jul 2019 20:31:00 +0200</pubDate>
-      
-      <guid>https://troglobit.com/projects/uftpd/</guid>
-      <description>Tired of confusing configuration files and security features you don&amp;rsquo;t need?
-Try uftpd!
- Supports FTP and TFTP No configuration file Defaults to port ftp/tcp and tftp/udp found in /etc/services, or custom port(s) Serves files from the ftp user&amp;rsquo;s $HOME, as specified in /etc/passwd, or custom path Can run from inetd(8) or as a standalone daemon Can be built and installed as a .deb file, with debconf support Can run as root, with chroot and privsep, or as a regular user Supports TFTP blocksize negotiation, RFC 2348  Basically, it just works!</description>
-    </item>
-    
-    <item>
-      <title>Merecat httpd</title>
-      <link>https://troglobit.com/projects/merecat/</link>
-      <pubDate>Fri, 19 Jul 2019 12:35:00 +0200</pubDate>
-      
-      <guid>https://troglobit.com/projects/merecat/</guid>
-      <description>Merecat started out as a pun at Mongoose, but is now useful for actual web serving purposes. It is however not a real Meerkat, merely yet another copycat, forked from the great thttpd created by Jef Poskanzer.
-Merecat expands on the features originally offered by thttpd, but still has a limited feature set:
- Virtual hosts Basic .htpassd and .htaccess support URL-traffic-based throttling CGI/1.1 HTTP/1.1 Keep-alive Built-in gzip deflate using zlib HTTPS support using OpenSSL/LibreSSL, works with Let&amp;rsquo;s Encrypt!</description>
-    </item>
-    
-    <item>
-      <title>The original PIM-SM daemon</title>
-      <link>https://troglobit.com/projects/pimd/</link>
-      <pubDate>Sun, 28 Apr 2019 08:50:00 +0200</pubDate>
-      
-      <guid>https://troglobit.com/projects/pimd/</guid>
-      <description>Protocol Independent Multicast, PIM, allows existing networks to route IP multicast, regardless of what unicast routing protocol is in use. It is designed to use existing routing tables to make its multicast routing decisions. PIM-SM is suitable for sparsely located multicast subscribers, for dense mode operation mrouted is recommended, and for static multicast routing smcroute may be used.
-pimd is a lightweight standalone PIM-SM/SSM v2 multicast routing daemon. It is the original USC (netweb/catarina.</description>
-    </item>
-    
-    <item>
-      <title>Micro Snake</title>
-      <link>https://troglobit.com/projects/snake/</link>
-      <pubDate>Sun, 07 Jul 2013 10:28:00 +0200</pubDate>
-      
-      <guid>https://troglobit.com/projects/snake/</guid>
-      <description>Welcome to Micro Snake, based on an original implementation by Simon Huggins. This version of the snake game is very small, utilizing only ANSI escape sequences to draw the board, no external library dependencys other than a standard C-library, like uClibc. Hence, it is very suitable for todays small embedded devices.
-The aim of the game is to collect the gold ($), avoid cactuses (*), borders, and colliding with the snake itself.</description>
-    </item>
-    
   </channel>
 </rss>

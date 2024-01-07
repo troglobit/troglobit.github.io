@@ -7,7 +7,7 @@
 <meta name="author" content="Joachim Wiberg ">
 <meta name="description" content="This is a HowTo for setting up Merecat httpd with Let&amp;rsquo;s Encrypt HTTPS certificates.
 The upcoming v2.32 release of Merecat supports HTTPS as well as serving more than one Internet port. This is highly useful for those who want to serve both HTTPS and HTTP content.
- Update: now with support for --webroot and HTTP-01 renewal!
+Update: now with support for --webroot and HTTP-01 renewal!
 " />
 <meta name="keywords" content=", merecat" />
 <meta name="robots" content="noodp" />
@@ -17,23 +17,16 @@ The upcoming v2.32 release of Merecat supports HTTPS as well as serving more tha
 
     <title>
         
-            HowTo: Set up Merecat with Let&#39;s Encrypt certificate :: Joachim Wiberg  — The Last Outpost
+            HowTo: Set up Merecat with Let&#39;s Encrypt certificate :: Joachim Wiberg 
         
     </title>
 
 
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
-    type="text/css">
 
 
+<link rel="stylesheet" href="https://troglobit.com/main.949191c1dcc9c4a887997048b240354e47152016d821198f89448496ba42e491.css" integrity="sha256-lJGRwdzJxKiHmXBIskA1TkcVIBbYIRmPiUSElrpC5JE=">
 
-<link rel="stylesheet" href="https://troglobit.com/main.274b9101bb929690505a03a6e203b1ec6098ae11e7462d3d41ac05a2ba21078f.css">
-
-
-    
-        <link rel="stylesheet" type="text/css" href="https://troglobit.com/css/extra.css">
-    
 
 
     <link rel="apple-touch-icon" sizes="180x180" href="https://troglobit.com/apple-touch-icon.png">
@@ -57,8 +50,7 @@ Update: now with support for --webroot and HTTP-01 renewal!
 <meta itemprop="dateModified" content="2020-07-15T14:10:00+00:00" />
 <meta itemprop="wordCount" content="1563">
 <meta itemprop="keywords" content="merecat," />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="HowTo: Set up Merecat with Let&#39;s Encrypt certificate"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="HowTo: Set up Merecat with Let&#39;s Encrypt certificate"/>
 <meta name="twitter:description" content="This is a HowTo for setting up Merecat httpd with Let&rsquo;s
 Encrypt HTTPS certificates.
 The upcoming v2.32 release of Merecat supports HTTPS as well as
@@ -101,6 +93,7 @@ Update: now with support for --webroot and HTTP-01 renewal!
 
 
 
+
     </head>
 
     
@@ -114,7 +107,8 @@ Update: now with support for --webroot and HTTP-01 renewal!
     <div class="logo">
         
             <span class="logo__mark">&gt;</span>
-            <span class="logo__text">$ cd /home/</span>
+            <span class="logo__text ">
+                $ cd /home/</span>
             <span class="logo__cursor" style=
                   "
                    
@@ -128,7 +122,7 @@ Update: now with support for --webroot and HTTP-01 renewal!
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://troglobit.com/about/">About</a></li><li><a href="https://troglobit.com/posts/">Blog</a></li><li><a href="https://troglobit.com/howtos/">HowTos</a></li><li><a href="https://troglobit.com/projects/">Projects</a></li><li><a href="https://resume.troglobit.com">Resumé</a></li><li><a href="https://ftp.troglobit.com">FTP</a></li><li><a href="https://deb.troglobit.com">DEB</a></li>
+    <ul class="menu__inner"><li><a href="https://troglobit.com/about/">About</a></li><li><a href="https://troglobit.com/posts/">Blog</a></li><li><a href="https://troglobit.com/howtos/">HowTos</a></li><li><a href="https://troglobit.com/projects/">Projects</a></li>
     </ul>
 </nav>
 
@@ -174,13 +168,13 @@ who want to serve both HTTPS and HTTP content.</p>
 are reading this before Merecat v2.32 has been released you can use the
 latest software from the GitHub master branch.  Note, you need OpenSSL
 and a few other packages, see the README file for details:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">git clone https://github.com/troglobit/merecat.git
-<span class="nb">cd</span> merecat/
-./autogen.sh
-./configure
-make package
-sudo dpkg -i ../merecat_2.32-1_amd64.deb
-</code></pre></div><h2 id="starting-certbot">Starting Certbot</h2>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git clone https://github.com/troglobit/merecat.git
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">cd</span> merecat/
+</span></span><span style="display:flex;"><span>./autogen.sh
+</span></span><span style="display:flex;"><span>./configure
+</span></span><span style="display:flex;"><span>make package
+</span></span><span style="display:flex;"><span>sudo dpkg -i ../merecat_2.32-1_amd64.deb
+</span></span></code></pre></div><h2 id="starting-certbot">Starting Certbot</h2>
 <p>If you already have at least version v2.32 of <a href="https://merecat.troglobit.com">Merecat</a> installed you
 can begin the process of getting a Let&rsquo;s Encrypt certificate.  This
 HowTo use the EFF&rsquo;s certbot, which is available in Ubuntu or from the
@@ -306,42 +300,42 @@ root@example:/var/www#
 </pre>
 <p>It is recommended to also set up Diffie-Hellman paramaters.  For this
 you need to genereate a site specific file:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">root@example:/var/www# openssl dhparam -out certs/dhparam.pem <span class="m">2048</span>
-Generating DH parameters, <span class="m">2048</span> bit long safe prime, generator <span class="m">2</span>
-
-This is going to take a long <span class="nb">time</span>
-........................................................+.........................................................................
-.......+......................................+...................................................................................
-.............................................................................................+....................................
-..................................................................................................................................
-......................................................................+...........................................................
-............................................................................................................................+.....
-..................................................................................................................................
-.+.......+........................................................................................................................
-.........................+........................................................................................................
-.................+.............................................................++*++*++*++*
-root@example:/var/www#
-</code></pre></div><p>The <code>/etc/merecat.conf</code> file for a site with a couple of virtual hosts,
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>root@example:/var/www# openssl dhparam -out certs/dhparam.pem <span style="color:#d3869b">2048</span>
+</span></span><span style="display:flex;"><span>Generating DH parameters, <span style="color:#d3869b">2048</span> bit long safe prime, generator <span style="color:#d3869b">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>This is going to take a long <span style="color:#fabd2f">time</span>
+</span></span><span style="display:flex;"><span>........................................................+.........................................................................
+</span></span><span style="display:flex;"><span>.......+......................................+...................................................................................
+</span></span><span style="display:flex;"><span>.............................................................................................+....................................
+</span></span><span style="display:flex;"><span>..................................................................................................................................
+</span></span><span style="display:flex;"><span>......................................................................+...........................................................
+</span></span><span style="display:flex;"><span>............................................................................................................................+.....
+</span></span><span style="display:flex;"><span>..................................................................................................................................
+</span></span><span style="display:flex;"><span>.+.......+........................................................................................................................
+</span></span><span style="display:flex;"><span>.........................+........................................................................................................
+</span></span><span style="display:flex;"><span>.................+.............................................................++*++*++*++*
+</span></span><span style="display:flex;"><span>root@example:/var/www#
+</span></span></code></pre></div><p>The <code>/etc/merecat.conf</code> file for a site with a couple of virtual hosts,
 look like this:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">## /etc/merecat.conf                                     -*-conf-unix-*-
-
-virtual-host     = true
-
-user-agent-deny  = &#34;**SemrushBot**|**MJ12bot**|**DotBot**&#34;
-
-server default {
-    port     = 80
-}
-
-server secure {
-    port     = 443
-    ssl {
-        certfile = /etc/letsencrypt/live/example.com/fullchain.pem
-        keyfile  = /etc/letsencrypt/live/example.com/privkey.pem
-        dhfile   = certs/dhparam.pem
-    }
-}
-</code></pre></div><p>The <a href="https://merecat.troglobit.com">Merecat</a> defaults take care of a lot of the nasty details you
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>## /etc/merecat.conf                                     -*-conf-unix-*-
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>virtual-host     = true
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>user-agent-deny  = &#34;**SemrushBot**|**MJ12bot**|**DotBot**&#34;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>server default {
+</span></span><span style="display:flex;"><span>    port     = 80
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>server secure {
+</span></span><span style="display:flex;"><span>    port     = 443
+</span></span><span style="display:flex;"><span>    ssl {
+</span></span><span style="display:flex;"><span>        certfile = /etc/letsencrypt/live/example.com/fullchain.pem
+</span></span><span style="display:flex;"><span>        keyfile  = /etc/letsencrypt/live/example.com/privkey.pem
+</span></span><span style="display:flex;"><span>        dhfile   = certs/dhparam.pem
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The <a href="https://merecat.troglobit.com">Merecat</a> defaults take care of a lot of the nasty details you
 shouldn&rsquo;t have to bother with, and unlike other web servers the virtual
 host setup is done in the file system rather than in the configuration
 file.  See <a href="https://merecat.troglobit.com">Merecat</a> docs for details.</p>
@@ -352,24 +346,24 @@ root@example:/var/www# <b>systemctl start merecat.service</b>
 <h2 id="http-01-renewal">HTTP-01 Renewal</h2>
 <p>For automatic renewal to work you need a new (July 2020) feature of
 Merecat, called location matching:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">server default {
-        port = 80
-        location &#34;/.well-known/acme-challenge/**&#34; {
-                 path = &#34;letsencrypt/.well-known/acme-challenge/&#34;
-        }
-        redirect &#34;/**&#34; {
-                 code = 301
-                 location = &#34;https://$host$request_uri$args&#34;
-        }
-}
-</code></pre></div><p>The <code>path</code> must be relative to the server root directory.  Use bind
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>server default {
+</span></span><span style="display:flex;"><span>        port = 80
+</span></span><span style="display:flex;"><span>        location &#34;/.well-known/acme-challenge/**&#34; {
+</span></span><span style="display:flex;"><span>                 path = &#34;letsencrypt/.well-known/acme-challenge/&#34;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        redirect &#34;/**&#34; {
+</span></span><span style="display:flex;"><span>                 code = 301
+</span></span><span style="display:flex;"><span>                 location = &#34;https://$host$request_uri$args&#34;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The <code>path</code> must be relative to the server root directory.  Use bind
 mounts to get <code>/var/lib/letsencrypt</code> into your server root.  This way
 we can ensure <code>certbot</code> only writes to its own directory and cannot
 write to any file in the server root.</p>
 <p>Then run <code>certbot</code> with the following arguments and then add all virtual
 hosts you want to support from Merecat:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">root@example:/var/www/&gt; certbot certonly --webroot --webroot-path /var/lib/letsencrypt --dry-run
-</code></pre></div><p>Drop <code>--dry-run</code> when you&rsquo;re done playing around learning all settings.</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>root@example:/var/www/&gt; certbot certonly --webroot --webroot-path /var/lib/letsencrypt --dry-run
+</span></span></code></pre></div><p>Drop <code>--dry-run</code> when you&rsquo;re done playing around learning all settings.</p>
 <p>The actual renewal is set up automatically by the certbot install as a
 cronjob or systemd timer.  Certbot uses the last known method you used
 to manually install/update your certs.  For details on this, see the
@@ -378,8 +372,8 @@ change this.)</p>
 <p>After a successful renewal you need to restart Merecat httpd to activate
 the new certificates.  Instead of modifying the above cronjob or timer,
 we add the following line to <code>/etc/letsencrypt/cli.ini</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">deploy-hook = systemctl restart merecat
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>deploy-hook = systemctl restart merecat
+</span></span></code></pre></div>
             </div>
         </article>
 
@@ -405,7 +399,7 @@ we add the following line to <code>/etc/letsencrypt/cli.ini</code>:</p>
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2024</span>
+            <span>&copy; 2006</span>
             <span><a href="https://troglobit.com/">Joachim Wiberg</a></span>
             <span>UNIX&trade; 4Life! &#9994;</span>
             
@@ -423,7 +417,8 @@ we add the following line to <code>/etc/letsencrypt/cli.ini</code>:</p>
 
 
 
-<script type="text/javascript" src="https://troglobit.com/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
+<script type="text/javascript" src="https://troglobit.com/bundle.min.46e438bd2eca7eb6358c700b40f6f56b22ab0b92503ecc11a2d8e4bcc610b8b4da83e5ea3d3e84fdb5f3c3c765744b9f5bbaf43cf5a027910be07ee39a9c12a1.js" integrity="sha512-RuQ4vS7KfrY1jHALQPb1ayKrC5JQPswRotjkvMYQuLTag&#43;XqPT6E/bXzw8dldEufW7r0PPWgJ5EL4H7jmpwSoQ=="></script>
+
 
 
 

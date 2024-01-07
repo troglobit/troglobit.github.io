@@ -5,19 +5,16 @@
     <link>https://troglobit.com/categories/icmp/</link>
     <description>Recent content in icmp on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Sat, 19 Nov 2016 23:37:20 +0000</lastBuildDate><atom:link href="https://troglobit.com/categories/icmp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Nov 2016 23:37:20 +0000</lastBuildDate>
+    <atom:link href="https://troglobit.com/categories/icmp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>One ping only</title>
       <link>https://troglobit.com/2016/11/19/one-ping-only/</link>
       <pubDate>Sat, 19 Nov 2016 23:37:20 +0000</pubDate>
-      
       <guid>https://troglobit.com/2016/11/19/one-ping-only/</guid>
-      <description>For some odd reason, today was the day when I woke up and continued working on libICMP. It&amp;rsquo;s now almost seven years since I first adopted Tim Lawless&#39; public domain version, and today I picked up where I left off and started refactoring and cleaning up.
-Example:
-#include &amp;#34;icmp/icmp.h&amp;#34; int main(int argc, char *argv[]) { char *host = &amp;#34;localhost&amp;#34;; struct libicmp *obj; if (argc &amp;gt;= 2) host = argv[1]; if (!</description>
+      <description>For some odd reason, today was the day when I woke up and continued working on libICMP. It&amp;rsquo;s now almost seven years since I first adopted Tim Lawless&amp;rsquo; public domain version, and today I picked up where I left off and started refactoring and cleaning up.&#xA;Example:&#xA;#include &amp;#34;icmp/icmp.h&amp;#34; int main(int argc, char *argv[]) { char *host = &amp;#34;localhost&amp;#34;; struct libicmp *obj; if (argc &amp;gt;= 2) host = argv[1]; if (!</description>
     </item>
-    
   </channel>
 </rss>

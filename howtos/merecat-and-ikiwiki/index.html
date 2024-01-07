@@ -18,23 +18,16 @@ $ ikiwiki --setup ~/home." />
 
     <title>
         
-            HowTo: Set up Merecat with Ikiwiki :: Joachim Wiberg  — The Last Outpost
+            HowTo: Set up Merecat with Ikiwiki :: Joachim Wiberg 
         
     </title>
 
 
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
-    type="text/css">
 
 
+<link rel="stylesheet" href="https://troglobit.com/main.949191c1dcc9c4a887997048b240354e47152016d821198f89448496ba42e491.css" integrity="sha256-lJGRwdzJxKiHmXBIskA1TkcVIBbYIRmPiUSElrpC5JE=">
 
-<link rel="stylesheet" href="https://troglobit.com/main.274b9101bb929690505a03a6e203b1ec6098ae11e7462d3d41ac05a2ba21078f.css">
-
-
-    
-        <link rel="stylesheet" type="text/css" href="https://troglobit.com/css/extra.css">
-    
 
 
     <link rel="apple-touch-icon" sizes="180x180" href="https://troglobit.com/apple-touch-icon.png">
@@ -55,8 +48,7 @@ $ ikiwiki --setup ~/home."><meta itemprop="datePublished" content="2021-12-09T05
 <meta itemprop="dateModified" content="2021-12-09T05:51:00+00:00" />
 <meta itemprop="wordCount" content="174">
 <meta itemprop="keywords" content="merecat," />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="HowTo: Set up Merecat with Ikiwiki"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="HowTo: Set up Merecat with Ikiwiki"/>
 <meta name="twitter:description" content="This is a HowTo for setting up ikiwiki with Merecat httpd.
 First install ikiwiki
 $ sudo apt install ikiwiki libcgi-session-perl libcgi-formbuilder-perl Follow the steps to setup a new Wiki or Blog. In this example we set up a wiki in our ~/public_html:
@@ -93,6 +85,7 @@ $ ikiwiki --setup ~/home." />
 
 
 
+
     </head>
 
     
@@ -106,7 +99,8 @@ $ ikiwiki --setup ~/home." />
     <div class="logo">
         
             <span class="logo__mark">&gt;</span>
-            <span class="logo__text">$ cd /home/</span>
+            <span class="logo__text ">
+                $ cd /home/</span>
             <span class="logo__cursor" style=
                   "
                    
@@ -120,7 +114,7 @@ $ ikiwiki --setup ~/home." />
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://troglobit.com/about/">About</a></li><li><a href="https://troglobit.com/posts/">Blog</a></li><li><a href="https://troglobit.com/howtos/">HowTos</a></li><li><a href="https://troglobit.com/projects/">Projects</a></li><li><a href="https://resume.troglobit.com">Resumé</a></li><li><a href="https://ftp.troglobit.com">FTP</a></li><li><a href="https://deb.troglobit.com">DEB</a></li>
+    <ul class="menu__inner"><li><a href="https://troglobit.com/about/">About</a></li><li><a href="https://troglobit.com/posts/">Blog</a></li><li><a href="https://troglobit.com/howtos/">HowTos</a></li><li><a href="https://troglobit.com/projects/">Projects</a></li>
     </ul>
 </nav>
 
@@ -155,29 +149,29 @@ $ ikiwiki --setup ~/home." />
             <div class="post-content">
                 <p>This is a HowTo for setting up <a href="http://ikiwiki.info/">ikiwiki</a> with <a href="https://merecat.troglobit.com">Merecat httpd</a>.</p>
 <p>First install ikiwiki</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">$ sudo apt install ikiwiki libcgi-session-perl libcgi-formbuilder-perl
-</code></pre></div><p>Follow the steps to setup a new Wiki or Blog.  In this example we set up a
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>$ sudo apt install ikiwiki libcgi-session-perl libcgi-formbuilder-perl
+</span></span></code></pre></div><p>Follow the steps to setup a new Wiki or Blog.  In this example we set up a
 wiki in our <code>~/public_html</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ ikiwiki --setup /etc/ikiwiki/auto.setup
-...
-Successfully <span class="nb">set</span> up wiki:
-url:         http://localhost/~jocke/wiki
-srcdir:      ~/wiki
-destdir:     ~/public_html/wiki
-repository:  ~/wiki.git
-</code></pre></div><p>To modify settings, edit ~/home.setup and then run:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ ikiwiki --setup ~/home.setup
-</code></pre></div><p>By default Merecat has per-user <code>~/public_html</code> support disabled, this
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ ikiwiki --setup /etc/ikiwiki/auto.setup
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>Successfully <span style="color:#fabd2f">set</span> up wiki:
+</span></span><span style="display:flex;"><span>url:         http://localhost/~jocke/wiki
+</span></span><span style="display:flex;"><span>srcdir:      ~/wiki
+</span></span><span style="display:flex;"><span>destdir:     ~/public_html/wiki
+</span></span><span style="display:flex;"><span>repository:  ~/wiki.git
+</span></span></code></pre></div><p>To modify settings, edit ~/home.setup and then run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ ikiwiki --setup ~/home.setup
+</span></span></code></pre></div><p>By default Merecat has per-user <code>~/public_html</code> support disabled, this
 is for safety purposes.  To build from source, here from GIT, use:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">git clone https://github.com/troglobit/merecat
-./autogen.sh
-./configure --enable-public-html
-make
-sudo make install
-</code></pre></div><p>Now, to start playing with Ikiwiki, simply start the httpd as your user
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git clone https://github.com/troglobit/merecat
+</span></span><span style="display:flex;"><span>./autogen.sh
+</span></span><span style="display:flex;"><span>./configure --enable-public-html
+</span></span><span style="display:flex;"><span>make
+</span></span><span style="display:flex;"><span>sudo make install
+</span></span></code></pre></div><p>Now, to start playing with Ikiwiki, simply start the httpd as your user
 on a non-priviliged port:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ merecat -n -p <span class="m">8080</span>
-</code></pre></div><p>&hellip; and open http://localhost:8080/~jocke/wiki/ in your browser 😃</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ merecat -n -p <span style="color:#d3869b">8080</span>
+</span></span></code></pre></div><p>&hellip; and open http://localhost:8080/~jocke/wiki/ in your browser &#x1f603;</p>
 <p><strong>NOTE:</strong> Although Merecat httpd is a fork of <a href="http://acme.com/software/thttpd/">thttpd</a>.  Compared to
 its forefather Mercat is fully capable of running ikiwiki without any
 patches.  Problems with port not being included in <code>HTTP_HOST</code> or
@@ -209,7 +203,7 @@ missing trailing slash in <code>PATH_INFO</code>, have all been fixed.</p>
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2024</span>
+            <span>&copy; 2006</span>
             <span><a href="https://troglobit.com/">Joachim Wiberg</a></span>
             <span>UNIX&trade; 4Life! &#9994;</span>
             
@@ -227,7 +221,8 @@ missing trailing slash in <code>PATH_INFO</code>, have all been fixed.</p>
 
 
 
-<script type="text/javascript" src="https://troglobit.com/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
+<script type="text/javascript" src="https://troglobit.com/bundle.min.46e438bd2eca7eb6358c700b40f6f56b22ab0b92503ecc11a2d8e4bcc610b8b4da83e5ea3d3e84fdb5f3c3c765744b9f5bbaf43cf5a027910be07ee39a9c12a1.js" integrity="sha512-RuQ4vS7KfrY1jHALQPb1ayKrC5JQPswRotjkvMYQuLTag&#43;XqPT6E/bXzw8dldEufW7r0PPWgJ5EL4H7jmpwSoQ=="></script>
+
 
 
 

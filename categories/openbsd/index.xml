@@ -5,29 +5,23 @@
     <link>https://troglobit.com/categories/openbsd/</link>
     <description>Recent content in openbsd on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Tue, 06 Jun 2017 10:44:55 +0000</lastBuildDate><atom:link href="https://troglobit.com/categories/openbsd/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Jun 2017 10:44:55 +0000</lastBuildDate>
+    <atom:link href="https://troglobit.com/categories/openbsd/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GIT, Autoconf and Automake in OpenBSD</title>
       <link>https://troglobit.com/2017/06/06/install-git-in-openbsd/</link>
       <pubDate>Tue, 06 Jun 2017 10:44:55 +0000</pubDate>
-      
       <guid>https://troglobit.com/2017/06/06/install-git-in-openbsd/</guid>
-      <description>Reminder to self:
-echo &amp;#34;https://ftp.eu.openbsd.org/pub/OpenBSD/&amp;#34; &amp;gt;/etc/installurl pkg_add git autoconf automake libtool Select the latest versions, then add the following to ~/.profile:
-AUTOCONF_VERSION=2.69 AUTOMAKE_VERSION=1.15 export AUTOCONF_VERSION AUTOMAKE_VERSION With your selected versions, of course.</description>
+      <description>Reminder to self:&#xA;echo &amp;#34;https://ftp.eu.openbsd.org/pub/OpenBSD/&amp;#34; &amp;gt;/etc/installurl pkg_add git autoconf automake libtool Select the latest versions, then add the following to ~/.profile:&#xA;AUTOCONF_VERSION=2.69 AUTOMAKE_VERSION=1.15 export AUTOCONF_VERSION AUTOMAKE_VERSION With your selected versions, of course.</description>
     </item>
-    
     <item>
       <title>HowTo run pimd on OpenBSD</title>
       <link>https://troglobit.com/howtos/pimd-on-openbsd/</link>
       <pubDate>Sun, 19 Jul 2015 00:32:00 +0200</pubDate>
-      
       <guid>https://troglobit.com/howtos/pimd-on-openbsd/</guid>
-      <description>This is an introduction to HowTo run pimd on OpenBSD. I keep it around mostly as a reminder to myself when testing new pimd releases, maybe someone else can make use of it as well.
-First of all, my sincere thanks to the OpenBSD team for, not just an awesome UNIX distribution, but also for their good taste in shipping a MULTICAST enabled kernel in the base distribution! On both NetBSD and FreeBSD there is a bit of work to get multicast support, which is one of the reasons for my not writing a HowTo for either of them atm.</description>
+      <description>This is an introduction to HowTo run pimd on OpenBSD. I keep it around mostly as a reminder to myself when testing new pimd releases, maybe someone else can make use of it as well.&#xA;First of all, my sincere thanks to the OpenBSD team for, not just an awesome UNIX distribution, but also for their good taste in shipping a MULTICAST enabled kernel in the base distribution! On both NetBSD and FreeBSD there is a bit of work to get multicast support, which is one of the reasons for my not writing a HowTo for either of them atm.</description>
     </item>
-    
   </channel>
 </rss>

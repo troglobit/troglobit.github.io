@@ -5,66 +5,37 @@
     <link>https://troglobit.com/categories/blog/</link>
     <description>Recent content in blog on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Sun, 29 Jun 2014 14:52:39 +0000</lastBuildDate><atom:link href="https://troglobit.com/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 29 Jun 2014 14:52:39 +0000</lastBuildDate>
+    <atom:link href="https://troglobit.com/categories/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>On the demise of free(code) ...</title>
       <link>https://troglobit.com/2014/06/29/on-the-demise-of-free-code-dot-dot-dot/</link>
       <pubDate>Sun, 29 Jun 2014 14:52:39 +0000</pubDate>
-      
       <guid>https://troglobit.com/2014/06/29/on-the-demise-of-free-code-dot-dot-dot/</guid>
-      <description>&lt;p&gt;I feel I have to write something about the demise of
-&lt;a href=&#34;http://freecode.com&#34;&gt;free(code)&lt;/a&gt;.
-&lt;a href=&#34;http://esr.ibiblio.org/?p=5936&#34;&gt;Others&lt;/a&gt; have written about it too,
-and its been covered on &lt;a href=&#34;http://lwn.net/Articles/603403/&#34;&gt;lwn.net&lt;/a&gt; as
-well.&lt;/p&gt;
-&lt;p&gt;It&amp;rsquo;s actually a rather depressing development.  They claim it&amp;rsquo;s due to
-the low traffic and decline in updates, but it&amp;rsquo;s evident that&amp;rsquo;s not
-the whole truth.  The owners recommend their other site, SourceForge,
-but anyone having been in the loop for the last decade or two knows
-that SourceForge has been in a slow decline for a long time, more so
-than free(code) in my opinion.  Also, SourceForge only lists its own
-projects, and only the most active or &amp;ldquo;top&amp;rdquo; projects.&lt;/p&gt;
-&lt;p&gt;I never used free(code) to find the &amp;ldquo;top&amp;rdquo; projects or the most active
-ones.  That&amp;rsquo;s completely useless to me.  I went there to dig for small
-unknown projects, small gems that are usually unlisted on GitHub or
-SourceForge.  I went there to publicize my own small creations, learn
-about other similar projects and get a quick feedback on recent
-changes of new releases to projects I was interested in.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I feel I have to write something about the demise of&#xA;&lt;a href=&#34;http://freecode.com&#34;&gt;free(code)&lt;/a&gt;.&#xA;&lt;a href=&#34;http://esr.ibiblio.org/?p=5936&#34;&gt;Others&lt;/a&gt; have written about it too,&#xA;and its been covered on &lt;a href=&#34;http://lwn.net/Articles/603403/&#34;&gt;lwn.net&lt;/a&gt; as&#xA;well.&lt;/p&gt;&#xA;&lt;p&gt;It&amp;rsquo;s actually a rather depressing development.  They claim it&amp;rsquo;s due to&#xA;the low traffic and decline in updates, but it&amp;rsquo;s evident that&amp;rsquo;s not&#xA;the whole truth.  The owners recommend their other site, SourceForge,&#xA;but anyone having been in the loop for the last decade or two knows&#xA;that SourceForge has been in a slow decline for a long time, more so&#xA;than free(code) in my opinion.  Also, SourceForge only lists its own&#xA;projects, and only the most active or &amp;ldquo;top&amp;rdquo; projects.&lt;/p&gt;&#xA;&lt;p&gt;I never used free(code) to find the &amp;ldquo;top&amp;rdquo; projects or the most active&#xA;ones.  That&amp;rsquo;s completely useless to me.  I went there to dig for small&#xA;unknown projects, small gems that are usually unlisted on GitHub or&#xA;SourceForge.  I went there to publicize my own small creations, learn&#xA;about other similar projects and get a quick feedback on recent&#xA;changes of new releases to projects I was interested in.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Proof of Life</title>
       <link>https://troglobit.com/2013/06/07/proof-of-life/</link>
       <pubDate>Fri, 07 Jun 2013 00:00:00 +0000</pubDate>
-      
       <guid>https://troglobit.com/2013/06/07/proof-of-life/</guid>
-      <description>There is a certain &amp;ldquo;burstyness&amp;rdquo; to the way I work on my open source projects. It seems it often coincides with intense work loads during new release cycles at work.
-However, I&amp;rsquo;ve just finished restoring two pages that got lost in the big server crash:
- mrouted pimd  Big thanks goes to the Wayback Machine for maintaining records of the original pages I lost!</description>
+      <description>There is a certain &amp;ldquo;burstyness&amp;rdquo; to the way I work on my open source projects. It seems it often coincides with intense work loads during new release cycles at work.&#xA;However, I&amp;rsquo;ve just finished restoring two pages that got lost in the big server crash:&#xA;mrouted pimd Big thanks goes to the Wayback Machine for maintaining records of the original pages I lost!</description>
     </item>
-    
     <item>
       <title>Resurrection</title>
       <link>https://troglobit.com/2013/02/17/resurrection/</link>
       <pubDate>Sun, 17 Feb 2013 00:00:00 +0000</pubDate>
-      
       <guid>https://troglobit.com/2013/02/17/resurrection/</guid>
-      <description>Quite some time has passed now since our old site, http://vmlinux.org, crashed and burned, and with it much of my previous Open Source work and blogs. Tech blog entries, archives for the projects I maintain, lost.
-Backups? Of course not.
-This all happened in 2011. Since then we also managed to lose the domain and I kind of lost myself for a while, including my motivation.
-Fortunately, at this point in time I had migrated most of my projects from CVS and Subversion to DVCS&#39; like Bzr and GIT, so I could easily setup new homes for most of my Open Source projects at GitHub.</description>
+      <description>Quite some time has passed now since our old site, http://vmlinux.org, crashed and burned, and with it much of my previous Open Source work and blogs. Tech blog entries, archives for the projects I maintain, lost.&#xA;Backups? Of course not.&#xA;This all happened in 2011. Since then we also managed to lose the domain and I kind of lost myself for a while, including my motivation.&#xA;Fortunately, at this point in time I had migrated most of my projects from CVS and Subversion to DVCS&amp;rsquo; like Bzr and GIT, so I could easily setup new homes for most of my Open Source projects at GitHub.</description>
     </item>
-    
     <item>
       <title>Test posting using blosxom</title>
       <link>https://troglobit.com/2006/08/05/test-posting-using-blosxom/</link>
       <pubDate>Sat, 05 Aug 2006 22:35:49 +0000</pubDate>
-      
       <guid>https://troglobit.com/2006/08/05/test-posting-using-blosxom/</guid>
       <description>First try to consolidate on using an already working implementation of a blog script rather than writing my own. I&amp;rsquo;m trying out Blosxom, which is somewhat overkill for my needs. I actually wrote up a simple Perl script a couple of weeks ago that did what I wanted, oh well, what remains now is to do some Emacs hacks to smooth things over a bit.</description>
     </item>
-    
   </channel>
 </rss>

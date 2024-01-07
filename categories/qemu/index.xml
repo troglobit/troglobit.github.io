@@ -5,28 +5,16 @@
     <link>https://troglobit.com/categories/qemu/</link>
     <description>Recent content in qemu on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Thu, 02 Feb 2017 18:52:18 +0000</lastBuildDate><atom:link href="https://troglobit.com/categories/qemu/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Feb 2017 18:52:18 +0000</lastBuildDate>
+    <atom:link href="https://troglobit.com/categories/qemu/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Emulate an actual MTD device in Qemu</title>
       <link>https://troglobit.com/2017/02/02/emulate-an-actual-mtd-device-in-qemu/</link>
       <pubDate>Thu, 02 Feb 2017 18:52:18 +0000</pubDate>
-      
       <guid>https://troglobit.com/2017/02/02/emulate-an-actual-mtd-device-in-qemu/</guid>
-      <description>&lt;p&gt;Having worked with Linux for the last 20 years, and embedded for more
-than ten of them, I&amp;rsquo;ve become quite a fan of virtualization in general
-and &lt;a href=&#34;http://qemu.org&#34;&gt;Qemu&lt;/a&gt; in particular.&lt;/p&gt;
-&lt;p&gt;Qemu is a fantastic little tool, created by the Open Source superhero
-&lt;a href=&#34;http://blog.smartbear.com/careers/fabrice-bellard-portrait-of-a-super-productive-programmer/&#34;&gt;Fabrice Bellard&lt;/a&gt;.
-It can be used to verify an embedded system without having to deal with
-the problems of actual HW until you really have to.  Don&amp;rsquo;t get me wrong,
-HW excites me like any other nerd, but if the HW is new and shaky it can
-be quite a pain to develop higher level functions.&lt;/p&gt;
-&lt;p&gt;My holy grail is to have a 100% complete and accurate virtualization
-target per architecture to test my various software projects on.  That&amp;rsquo;s
-why I created &lt;a href=&#34;https://github.com/troglobit/troglos&#34;&gt;TroglOS&lt;/a&gt;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Having worked with Linux for the last 20 years, and embedded for more&#xA;than ten of them, I&amp;rsquo;ve become quite a fan of virtualization in general&#xA;and &lt;a href=&#34;http://qemu.org&#34;&gt;Qemu&lt;/a&gt; in particular.&lt;/p&gt;&#xA;&lt;p&gt;Qemu is a fantastic little tool, created by the Open Source superhero&#xA;&lt;a href=&#34;http://blog.smartbear.com/careers/fabrice-bellard-portrait-of-a-super-productive-programmer/&#34;&gt;Fabrice Bellard&lt;/a&gt;.&#xA;It can be used to verify an embedded system without having to deal with&#xA;the problems of actual HW until you really have to.  Don&amp;rsquo;t get me wrong,&#xA;HW excites me like any other nerd, but if the HW is new and shaky it can&#xA;be quite a pain to develop higher level functions.&lt;/p&gt;&#xA;&lt;p&gt;My holy grail is to have a 100% complete and accurate virtualization&#xA;target per architecture to test my various software projects on.  That&amp;rsquo;s&#xA;why I created &lt;a href=&#34;https://github.com/troglobit/troglos&#34;&gt;TroglOS&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -5,162 +5,79 @@
     <link>https://troglobit.com/categories/programming/</link>
     <description>Recent content in programming on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Sat, 22 Feb 2020 09:45:00 +0000</lastBuildDate><atom:link href="https://troglobit.com/categories/programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Feb 2020 09:45:00 +0000</lastBuildDate>
+    <atom:link href="https://troglobit.com/categories/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Useful UNIX API:s</title>
       <link>https://troglobit.com/post/2020-02-22-useful-unix-apis/</link>
       <pubDate>Sat, 22 Feb 2020 09:45:00 +0000</pubDate>
-      
       <guid>https://troglobit.com/post/2020-02-22-useful-unix-apis/</guid>
-      <description>&lt;p&gt;Had an interesting conversation with a buddy last night.  It started out
-as a shift-reduce problem with Bison and ended up a ping-pong of useful
-UNIX API:s.  We concluded that despite having worked professionally with
-UNIX for over two decades, it is still very satisfying finding gems like
-these.&lt;/p&gt;
-&lt;p&gt;Most people are completely unaware they exist and end up rolling their
-own (buggy) implementations.  For instance, string manipulation and
-various forms of linked lists.  Which is why I many years ago extracted
-the &lt;em&gt;frog DNA&lt;/em&gt; from &lt;a href=&#34;https://github.com/troglobit/finit/&#34;&gt;Finit&lt;/a&gt; to a
-separate library called &lt;a href=&#34;https://github.com/troglobit/libite/&#34;&gt;libite&lt;/a&gt;,
-or -lite for short.  It imports the OpenBSD &lt;code&gt;strlcpy()&lt;/code&gt; family of API:s,
-up-to-date &lt;code&gt;queue.h&lt;/code&gt; with the &lt;code&gt;_SAFE&lt;/code&gt; iterators, and more.  Some people
-like &lt;a href=&#34;https://libbsd.freedesktop.org/wiki/&#34;&gt;libbsd&lt;/a&gt; for this, but I&amp;rsquo;ve
-found many of the ports incomplete and unsafe and prefer to stay closer
-to the upstream *BSD versions.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; This post was originally written Nov 14, 2015.  It was a
-Saturday and I remember being extremely inspired when I wrote it.  I&amp;rsquo;ve
-continued adding to it over the years, and still do.  So, as of Jul 2,
-2017 I&amp;rsquo;m bumping the modification date each time I add something new :-)&lt;/p&gt;</description>
+      <description>&lt;p&gt;Had an interesting conversation with a buddy last night.  It started out&#xA;as a shift-reduce problem with Bison and ended up a ping-pong of useful&#xA;UNIX API:s.  We concluded that despite having worked professionally with&#xA;UNIX for over two decades, it is still very satisfying finding gems like&#xA;these.&lt;/p&gt;&#xA;&lt;p&gt;Most people are completely unaware they exist and end up rolling their&#xA;own (buggy) implementations.  For instance, string manipulation and&#xA;various forms of linked lists.  Which is why I many years ago extracted&#xA;the &lt;em&gt;frog DNA&lt;/em&gt; from &lt;a href=&#34;https://github.com/troglobit/finit/&#34;&gt;Finit&lt;/a&gt; to a&#xA;separate library called &lt;a href=&#34;https://github.com/troglobit/libite/&#34;&gt;libite&lt;/a&gt;,&#xA;or -lite for short.  It imports the OpenBSD &lt;code&gt;strlcpy()&lt;/code&gt; family of API:s,&#xA;up-to-date &lt;code&gt;queue.h&lt;/code&gt; with the &lt;code&gt;_SAFE&lt;/code&gt; iterators, and more.  Some people&#xA;like &lt;a href=&#34;https://libbsd.freedesktop.org/wiki/&#34;&gt;libbsd&lt;/a&gt; for this, but I&amp;rsquo;ve&#xA;found many of the ports incomplete and unsafe and prefer to stay closer&#xA;to the upstream *BSD versions.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; This post was originally written Nov 14, 2015.  It was a&#xA;Saturday and I remember being extremely inspired when I wrote it.  I&amp;rsquo;ve&#xA;continued adding to it over the years, and still do.  So, as of Jul 2,&#xA;2017 I&amp;rsquo;m bumping the modification date each time I add something new :-)&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Threads vs Event Loop, Again ...</title>
       <link>https://troglobit.com/2017/09/19/threads-vs-event-loop--again/</link>
       <pubDate>Tue, 19 Sep 2017 08:51:38 +0000</pubDate>
-      
       <guid>https://troglobit.com/2017/09/19/threads-vs-event-loop--again/</guid>
-      <description>&lt;p&gt;I still get asked this, from time to time.  Maybe it&amp;rsquo;s because I only
-use event loops, maybe it&amp;rsquo;s because I&amp;rsquo;ve written &lt;a href=&#34;https://github.com/troglobit/libuev&#34;&gt;libuEv&lt;/a&gt;, or maybe
-people still don&amp;rsquo;t understand:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Why an event loop, why not use threads?&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;So here&amp;rsquo;s my response, once more.&lt;/p&gt;</description>
+      <description>&lt;p&gt;I still get asked this, from time to time.  Maybe it&amp;rsquo;s because I only&#xA;use event loops, maybe it&amp;rsquo;s because I&amp;rsquo;ve written &lt;a href=&#34;https://github.com/troglobit/libuev&#34;&gt;libuEv&lt;/a&gt;, or maybe&#xA;people still don&amp;rsquo;t understand:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Why an event loop, why not use threads?&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;So here&amp;rsquo;s my response, once more.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Summer of Code 2015</title>
       <link>https://troglobit.com/2015/09/09/summer-of-code-2015/</link>
       <pubDate>Wed, 09 Sep 2015 21:49:13 +0000</pubDate>
-      
       <guid>https://troglobit.com/2015/09/09/summer-of-code-2015/</guid>
-      <description>Summer is now slowly fading away, and what a summer it has been here in Sweden! For someone who isn&amp;rsquo;t a fan of the summer heat it has been an awesome time for brain work, and in my case work on my open source projects! :-)
-Due to my not really taking much vacation previous years I had saved up for ten weeks (10) this year! It was really worth it, and for the first time in many years I actually feel rested.</description>
+      <description>Summer is now slowly fading away, and what a summer it has been here in Sweden! For someone who isn&amp;rsquo;t a fan of the summer heat it has been an awesome time for brain work, and in my case work on my open source projects! :-)&#xA;Due to my not really taking much vacation previous years I had saved up for ten weeks (10) this year! It was really worth it, and for the first time in many years I actually feel rested.</description>
     </item>
-    
     <item>
       <title>Rant: All the C Compiler Warnings ...</title>
       <link>https://troglobit.com/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/</link>
       <pubDate>Mon, 12 Jan 2015 01:57:40 +0000</pubDate>
-      
       <guid>https://troglobit.com/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;Enable &lt;em&gt;all&lt;/em&gt; the warnings!&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;This is one of the truths you learn when you start working with C.  Most
-of the time adding &lt;code&gt;CPPFLAGS=&amp;quot;-W -Wall -Werror&amp;quot;&lt;/code&gt; is all you need to find
-all the nasty bugs.  And if that&amp;rsquo;s not enough, there are tons of tools
-for static code analysis, like &lt;code&gt;scan-build&lt;/code&gt; in
-&lt;a href=&#34;http://clang-analyzer.llvm.org/scan-build.html&#34;&gt;Clang&lt;/a&gt;, and
-&lt;a href=&#34;https://scan.coverity.com/&#34;&gt;Coverity Scan&lt;/a&gt;, to help you &lt;em&gt;find all the
-bugs&lt;/em&gt;!&lt;/p&gt;
-&lt;p&gt;However, these pesky warnings (some of which cannot even be disabled!)
-are sometimes more of a nuisance than help.  Sometimes you &lt;em&gt;know&lt;/em&gt; that
-some parameters to a function will remain unused &amp;ndash; it&amp;rsquo;s a callback, and
-you don&amp;rsquo;t need all the data given to you.  So you start adding all kinds
-of voodoo, like &lt;code&gt;__attribute__ ((unused))&lt;/code&gt; &amp;hellip; seriously?&lt;/p&gt;</description>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;Enable &lt;em&gt;all&lt;/em&gt; the warnings!&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;This is one of the truths you learn when you start working with C.  Most&#xA;of the time adding &lt;code&gt;CPPFLAGS=&amp;quot;-W -Wall -Werror&amp;quot;&lt;/code&gt; is all you need to find&#xA;all the nasty bugs.  And if that&amp;rsquo;s not enough, there are tons of tools&#xA;for static code analysis, like &lt;code&gt;scan-build&lt;/code&gt; in&#xA;&lt;a href=&#34;http://clang-analyzer.llvm.org/scan-build.html&#34;&gt;Clang&lt;/a&gt;, and&#xA;&lt;a href=&#34;https://scan.coverity.com/&#34;&gt;Coverity Scan&lt;/a&gt;, to help you &lt;em&gt;find all the&#xA;bugs&lt;/em&gt;!&lt;/p&gt;&#xA;&lt;p&gt;However, these pesky warnings (some of which cannot even be disabled!)&#xA;are sometimes more of a nuisance than help.  Sometimes you &lt;em&gt;know&lt;/em&gt; that&#xA;some parameters to a function will remain unused &amp;ndash; it&amp;rsquo;s a callback, and&#xA;you don&amp;rsquo;t need all the data given to you.  So you start adding all kinds&#xA;of voodoo, like &lt;code&gt;__attribute__ ((unused))&lt;/code&gt; &amp;hellip; seriously?&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Just a Programmer</title>
       <link>https://troglobit.com/2013/08/13/just-a-programmer/</link>
       <pubDate>Tue, 13 Aug 2013 00:00:00 +0000</pubDate>
-      
       <guid>https://troglobit.com/2013/08/13/just-a-programmer/</guid>
-      <description>&lt;p&gt;Sometimes people ask me what I do for a living.  Usually I tend to
-pause and think, real hard, becuase the people asking me this aren&amp;rsquo;t
-programmers.  They use computers, but are mostly limited to a Windows
-machine, writing in MS Word and browsing the Internet, mostly for
-Facebook.&lt;/p&gt;
-&lt;p&gt;I often start off with: &amp;ldquo;It&amp;rsquo;s a bit complicated to explain &amp;hellip; &amp;ldquo;, by
-which time I&amp;rsquo;ve lost most of the people in the room listening to me.
-Sometimes I say: &amp;ldquo;I&amp;rsquo;m a software architect.&amp;rdquo;, because people seem to
-know what architects do for a living, they draw houses, design stuff
-and drive SAAB&amp;rsquo;s.  Much like dentists.  The prefix &amp;ldquo;software&amp;rdquo; however
-does confuse people.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Sometimes people ask me what I do for a living.  Usually I tend to&#xA;pause and think, real hard, becuase the people asking me this aren&amp;rsquo;t&#xA;programmers.  They use computers, but are mostly limited to a Windows&#xA;machine, writing in MS Word and browsing the Internet, mostly for&#xA;Facebook.&lt;/p&gt;&#xA;&lt;p&gt;I often start off with: &amp;ldquo;It&amp;rsquo;s a bit complicated to explain &amp;hellip; &amp;ldquo;, by&#xA;which time I&amp;rsquo;ve lost most of the people in the room listening to me.&#xA;Sometimes I say: &amp;ldquo;I&amp;rsquo;m a software architect.&amp;rdquo;, because people seem to&#xA;know what architects do for a living, they draw houses, design stuff&#xA;and drive SAAB&amp;rsquo;s.  Much like dentists.  The prefix &amp;ldquo;software&amp;rdquo; however&#xA;does confuse people.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Programming as an Artform</title>
       <link>https://troglobit.com/2013/06/22/programming-as-an-artform/</link>
       <pubDate>Sat, 22 Jun 2013 00:00:00 +0000</pubDate>
-      
       <guid>https://troglobit.com/2013/06/22/programming-as-an-artform/</guid>
-      <description>&lt;p&gt;This is a response to the excellent post by Jani Gorše, titled
-&lt;a href=&#34;https://blooki.st/BlookElement/ShowTextPhoto?blookElementId=1962&#34;&gt;Why is Programming an Art?&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Ever since I began studying Computer Engineering at &lt;a href=&#34;http://www.mdh.se&#34;&gt;university&lt;/a&gt; back
-in 1995 I have struggled to find the &amp;ldquo;proper&amp;rdquo; ways to format my code,
-name functions and variables appropriately, structure functions into
-files and files into directories with Makefiles and Makefile snippets,
-using both recursive and non-recursive make.  Formatting of code, for
-instance, was for a while a bit of an obsession of mine, and it sort of
-is still.  But today I am more concerned with the overall structure and
-how components interact.  Even though I can still get very annoyed at
-people naming their local variables obtrusively.&lt;/p&gt;</description>
+      <description>&lt;p&gt;This is a response to the excellent post by Jani Gorše, titled&#xA;&lt;a href=&#34;https://blooki.st/BlookElement/ShowTextPhoto?blookElementId=1962&#34;&gt;Why is Programming an Art?&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Ever since I began studying Computer Engineering at &lt;a href=&#34;http://www.mdh.se&#34;&gt;university&lt;/a&gt; back&#xA;in 1995 I have struggled to find the &amp;ldquo;proper&amp;rdquo; ways to format my code,&#xA;name functions and variables appropriately, structure functions into&#xA;files and files into directories with Makefiles and Makefile snippets,&#xA;using both recursive and non-recursive make.  Formatting of code, for&#xA;instance, was for a while a bit of an obsession of mine, and it sort of&#xA;is still.  But today I am more concerned with the overall structure and&#xA;how components interact.  Even though I can still get very annoyed at&#xA;people naming their local variables obtrusively.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Brief libev update</title>
       <link>https://troglobit.com/2009/04/05/brief-libev-update/</link>
       <pubDate>Sun, 05 Apr 2009 23:53:47 +0000</pubDate>
-      
       <guid>https://troglobit.com/2009/04/05/brief-libev-update/</guid>
-      <description>I have now updated the libev examples. It took me a while, but during that time I have been hard at work converting two of our network daemons to use libev. As of today the upcoming Westermo WeOS uses libev in both its rstpd and igmpd implementations.
-Updated example code:
- timer test message queue test  Enjoy, and feel free to [contact me][6] if you have any questions or comments on the code.</description>
+      <description>I have now updated the libev examples. It took me a while, but during that time I have been hard at work converting two of our network daemons to use libev. As of today the upcoming Westermo WeOS uses libev in both its rstpd and igmpd implementations.&#xA;Updated example code:&#xA;timer test message queue test Enjoy, and feel free to [contact me][6] if you have any questions or comments on the code.</description>
     </item>
-    
     <item>
       <title>The Marvellous libev</title>
       <link>https://troglobit.com/2009/03/28/the-marvellous-libev/</link>
       <pubDate>Sat, 28 Mar 2009 23:00:00 +0000</pubDate>
-      
       <guid>https://troglobit.com/2009/03/28/the-marvellous-libev/</guid>
-      <description>A very good friend mine recently told me about a neat event library, libev. Usually when he drops me links like that it takes me a couple of years to react and finally adopt.
-This time it only took me about a month.
-He has actually showed me lots of very useful stuff throughout the years, and even though we used GNU/Linux at university, he was one those hard core people who showed me the path into a successful full-time career as a Linux developer.</description>
+      <description>A very good friend mine recently told me about a neat event library, libev. Usually when he drops me links like that it takes me a couple of years to react and finally adopt.&#xA;This time it only took me about a month.&#xA;He has actually showed me lots of very useful stuff throughout the years, and even though we used GNU/Linux at university, he was one those hard core people who showed me the path into a successful full-time career as a Linux developer.</description>
     </item>
-    
     <item>
       <title>Why I Like C</title>
       <link>https://troglobit.com/2009/03/27/why-i-like-c/</link>
       <pubDate>Fri, 27 Mar 2009 00:37:42 +0000</pubDate>
-      
       <guid>https://troglobit.com/2009/03/27/why-i-like-c/</guid>
       <description>I thought I was alone, but it turns out I&amp;rsquo;m not. Scott James Remnant describes exactly what I&amp;rsquo;ve been feeling the last couple of years. Read his blog entry on the subject. I couldn&amp;rsquo;t agree more.</description>
     </item>
-    
     <item>
       <title>Netork Programming -- Link Collection</title>
       <link>https://troglobit.com/2009/02/10/network-programming-link-collection/</link>
       <pubDate>Tue, 10 Feb 2009 21:56:42 +0000</pubDate>
-      
       <guid>https://troglobit.com/2009/02/10/network-programming-link-collection/</guid>
-      <description>This is a first effort at collecting information about network programming structs and APIs available in UNIX. I plan on updating this as I find more.
- Linux Journal: Linux Network Programming, Part I, II, III. Linux Journal: Multicast Routing Code in the Linux Kernel Linux Journal: Inside the Linux Packet Filter, Part I, II /usr/include/netinet/in.h  There are of course, in addition to these fine sources, the entire catalogue of work by Richard M.</description>
+      <description>This is a first effort at collecting information about network programming structs and APIs available in UNIX. I plan on updating this as I find more.&#xA;Linux Journal: Linux Network Programming, Part I, II, III. Linux Journal: Multicast Routing Code in the Linux Kernel Linux Journal: Inside the Linux Packet Filter, Part I, II /usr/include/netinet/in.h There are of course, in addition to these fine sources, the entire catalogue of work by Richard M.</description>
     </item>
-    
   </channel>
 </rss>

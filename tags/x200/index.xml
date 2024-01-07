@@ -5,46 +5,30 @@
     <link>https://troglobit.com/tags/x200/</link>
     <description>Recent content in X200 on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Sat, 01 Oct 2022 15:44:00 +0000</lastBuildDate><atom:link href="https://troglobit.com/tags/x200/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Oct 2022 15:44:00 +0000</lastBuildDate>
+    <atom:link href="https://troglobit.com/tags/x200/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Remap Prev/Next on ThinkPad</title>
       <link>https://troglobit.com/post/2022-10-01-remap-prev/next-on-thinkpad/</link>
       <pubDate>Sat, 01 Oct 2022 15:44:00 +0000</pubDate>
-      
       <guid>https://troglobit.com/post/2022-10-01-remap-prev/next-on-thinkpad/</guid>
-      <description>I still use my awesome little ThinkPad X200, in fact I now have more of them and even a few X201&amp;rsquo;s. They are truly the best machines I&amp;rsquo;ve ever used! :-)
-One annoying thing though, when going back to these traditional ThinkPad keyboards is the prev/next keys next to the arrow keys. On modern ones they are PgUp/PgDn and I recently learned how to elegantly remap them in X. Note the difference, below, to the original at ThinkWiki.</description>
+      <description>I still use my awesome little ThinkPad X200, in fact I now have more of them and even a few X201&amp;rsquo;s. They are truly the best machines I&amp;rsquo;ve ever used! :-)&#xA;One annoying thing though, when going back to these traditional ThinkPad keyboards is the prev/next keys next to the arrow keys. On modern ones they are PgUp/PgDn and I recently learned how to elegantly remap them in X. Note the difference, below, to the original at ThinkWiki.</description>
     </item>
-    
     <item>
       <title>Weird Screen Artifacts on X200</title>
       <link>https://troglobit.com/post/2020-08-23-weird-screen-artifacts-on-x200/</link>
       <pubDate>Sun, 23 Aug 2020 14:02:00 +0000</pubDate>
-      
       <guid>https://troglobit.com/post/2020-08-23-weird-screen-artifacts-on-x200/</guid>
-      <description>I blogged earlier about the awesome little ThinkPad X200 I found and its blinking WiFi LED. Briefly I mentioned an odd issue with X/Wayland on LMDE 4. This turned out to be a HW bug that can only be worked around by disabling hardware acceleration for virtualization:
-https://forums.lenovo.com/t5/Windows-8-1-8-7-Vista-and-XP-Discussions/Bizarre-screen-artifacts-on-R400-Integrated-Graphics-running-Win-7-RTM/m-p/153980?page=1#199768
-The post says it should be sufficient to &amp;ldquo;Disable Virtualization Technology for Directed-IO (VT-d)&amp;quot;, but that didn&amp;rsquo;t work for me, and I wanted to keep the 8 GiB of RAM I managed to fit into it.</description>
+      <description>I blogged earlier about the awesome little ThinkPad X200 I found and its blinking WiFi LED. Briefly I mentioned an odd issue with X/Wayland on LMDE 4. This turned out to be a HW bug that can only be worked around by disabling hardware acceleration for virtualization:&#xA;https://forums.lenovo.com/t5/Windows-8-1-8-7-Vista-and-XP-Discussions/Bizarre-screen-artifacts-on-R400-Integrated-Graphics-running-Win-7-RTM/m-p/153980?page=1#199768&#xA;The post says it should be sufficient to &amp;ldquo;Disable Virtualization Technology for Directed-IO (VT-d)&amp;rdquo;, but that didn&amp;rsquo;t work for me, and I wanted to keep the 8 GiB of RAM I managed to fit into it.</description>
     </item>
-    
     <item>
       <title>Fix blinking WiFi LED on X200</title>
       <link>https://troglobit.com/post/2020-03-28-fix-blinking-wifi-led-on-x200/</link>
       <pubDate>Sat, 28 Mar 2020 14:16:00 +0000</pubDate>
-      
       <guid>https://troglobit.com/post/2020-03-28-fix-blinking-wifi-led-on-x200/</guid>
-      <description>&lt;p&gt;Recently got my hands on a ThinkPad X200, the last model without the
-useless touchpad and with the awesome classic keyboard.  A fine little
-machine that can easily be upgraded with an SSD disk and 8 GiB RAM!&lt;/p&gt;
-&lt;p&gt;I set it up with &lt;a href=&#34;https://www.linuxmint.com/download_lmde.php&#34;&gt;Linx Mint (LMDE 4)&lt;/a&gt;, which worked great to begin
-with, but there was some odd issue with X/Wayland that sometimes caused
-the screen (only the screen) to freeze up and show random color patterns.
-Only way to workaround it was to suspend, wait, and resume again.  So
-now I&amp;rsquo;m running Ubuntu 20.04 on it and everything seems to work a lot
-better, this far.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Recently got my hands on a ThinkPad X200, the last model without the&#xA;useless touchpad and with the awesome classic keyboard.  A fine little&#xA;machine that can easily be upgraded with an SSD disk and 8 GiB RAM!&lt;/p&gt;&#xA;&lt;p&gt;I set it up with &lt;a href=&#34;https://www.linuxmint.com/download_lmde.php&#34;&gt;Linx Mint (LMDE 4)&lt;/a&gt;, which worked great to begin&#xA;with, but there was some odd issue with X/Wayland that sometimes caused&#xA;the screen (only the screen) to freeze up and show random color patterns.&#xA;Only way to workaround it was to suspend, wait, and resume again.  So&#xA;now I&amp;rsquo;m running Ubuntu 20.04 on it and everything seems to work a lot&#xA;better, this far.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

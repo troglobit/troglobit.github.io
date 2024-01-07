@@ -5,39 +5,16 @@
     <link>https://troglobit.com/categories/apache/</link>
     <description>Recent content in Apache on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Tue, 30 Jun 2015 23:13:48 +0000</lastBuildDate><atom:link href="https://troglobit.com/categories/apache/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Jun 2015 23:13:48 +0000</lastBuildDate>
+    <atom:link href="https://troglobit.com/categories/apache/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HowTo: Apache with Gitweb on Debian 8.1</title>
       <link>https://troglobit.com/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/</link>
       <pubDate>Tue, 30 Jun 2015 23:13:48 +0000</pubDate>
-      
       <guid>https://troglobit.com/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;m posting this in case anyone else gets stuck setting up &lt;a href=&#34;http://www.apache.org&#34;&gt;Apache&lt;/a&gt;
-with &lt;a href=&#34;http://git-scm.com/docs/gitweb&#34;&gt;Gitweb&lt;/a&gt;.  Also as a reminder to myself in case I ever need to
-set up this all over again.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;You have all your eggs in one basket (GitHub), and&lt;/li&gt;
-&lt;li&gt;You really like that shiny basket, but&lt;/li&gt;
-&lt;li&gt;You know you&amp;rsquo;re clumsy and usually drop baskets yourself.&lt;/li&gt;
-&lt;li&gt;You are wise (yes you are!) and realize you need another basket, so&lt;/li&gt;
-&lt;li&gt;You set up a server and a domain yourself &amp;hellip;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;OK.  Let&amp;rsquo;s start simple, since you are already running the latest Debian
-you fire up the command line and install the basics:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo apt-get install gitweb apache2
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;So it&amp;rsquo;ll complain, you&amp;rsquo;ll clarify your request and soon all required
-packages are on your server.  Now what?&lt;/p&gt;
-&lt;p&gt;Debian has already set up http://localhost/gitweb for you, and if you
-have a domain already you should go ahead and edit the master file for
-that:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;editor /etc/apache2/sites-available/000-default.conf
-service apache2 reload
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;If you want to use that for your gitweb needs, then you&amp;rsquo;re done!&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&amp;rsquo;m posting this in case anyone else gets stuck setting up &lt;a href=&#34;http://www.apache.org&#34;&gt;Apache&lt;/a&gt;&#xA;with &lt;a href=&#34;http://git-scm.com/docs/gitweb&#34;&gt;Gitweb&lt;/a&gt;.  Also as a reminder to myself in case I ever need to&#xA;set up this all over again.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;You have all your eggs in one basket (GitHub), and&lt;/li&gt;&#xA;&lt;li&gt;You really like that shiny basket, but&lt;/li&gt;&#xA;&lt;li&gt;You know you&amp;rsquo;re clumsy and usually drop baskets yourself.&lt;/li&gt;&#xA;&lt;li&gt;You are wise (yes you are!) and realize you need another basket, so&lt;/li&gt;&#xA;&lt;li&gt;You set up a server and a domain yourself &amp;hellip;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;OK.  Let&amp;rsquo;s start simple, since you are already running the latest Debian&#xA;you fire up the command line and install the basics:&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;sudo apt-get install gitweb apache2&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;So it&amp;rsquo;ll complain, you&amp;rsquo;ll clarify your request and soon all required&#xA;packages are on your server.  Now what?&lt;/p&gt;&#xA;&lt;p&gt;Debian has already set up http://localhost/gitweb for you, and if you&#xA;have a domain already you should go ahead and edit the master file for&#xA;that:&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;editor /etc/apache2/sites-available/000-default.conf&#xA;service apache2 reload&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;If you want to use that for your gitweb needs, then you&amp;rsquo;re done!&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

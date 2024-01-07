@@ -5,43 +5,16 @@
     <link>https://troglobit.com/categories/pim/</link>
     <description>Recent content in PIM on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Tue, 23 Jan 2018 20:39:36 +0000</lastBuildDate><atom:link href="https://troglobit.com/categories/pim/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Jan 2018 20:39:36 +0000</lastBuildDate>
+    <atom:link href="https://troglobit.com/categories/pim/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Multicast routing with PIM-SM over GRE</title>
       <link>https://troglobit.com/2016/07/05/multicast-routing-with-pim-sm-over-gre/</link>
       <pubDate>Tue, 23 Jan 2018 20:39:36 +0000</pubDate>
-      
       <guid>https://troglobit.com/2016/07/05/multicast-routing-with-pim-sm-over-gre/</guid>
-      <description>&lt;p&gt;GRE tunnels are useful in many ways.  This blog post shows how to set up
-multicast routing with &lt;a href=&#34;https://github.com/troglobit/pimd/&#34;&gt;pimd&lt;/a&gt; over a
-GRE tunnel.  To achieve this we will also set up OSPF over GRE with
-&lt;a href=&#34;http://www.quagga.net&#34;&gt;Quagga&lt;/a&gt;, because PIM, unlike DVMRP (&lt;code&gt;mrouted&lt;/code&gt;),
-require unicast routing rules to be established.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;       .----{ Intranet }----.
-      /    192.168.1.0/24    \
-     /                        \
-.10 /                          \.20
-.--&amp;#39;---. .1  GRE Tunnel  .2 .---`--.
-|      |====================|      |
-|  R1  |   172.16.16.0/30   |  R2  |
-|      |                    |      |
-&amp;#39;--.---&amp;#39;                    &amp;#39;------&amp;#39;
-   | .1                        | .1 
-   |    10.0.1.0/24            |    10.0.2.0/24
-   | .2                        | .2 
-.--&amp;#39;---.                    .--&amp;#39;---.
-|      |                    |      |
-|  C1  |                    |  C2  |
-|      |                    |      |
-&amp;#39;------&amp;#39;                    &amp;#39;------&amp;#39;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In this post we are using the home WiFi network, 192.168.1.0/24, to hook
-up the GRE tunnel.  It is just as easy to extend this to a big corporate
-Intranet with more routers between &lt;code&gt;R1&lt;/code&gt; and &lt;code&gt;R2&lt;/code&gt;.  As long as that IT
-department takes care of the unicast routing between &lt;code&gt;R1&lt;/code&gt; and &lt;code&gt;R2&lt;/code&gt; so
-that the GRE tunnel can be established.&lt;/p&gt;</description>
+      <description>&lt;p&gt;GRE tunnels are useful in many ways.  This blog post shows how to set up&#xA;multicast routing with &lt;a href=&#34;https://github.com/troglobit/pimd/&#34;&gt;pimd&lt;/a&gt; over a&#xA;GRE tunnel.  To achieve this we will also set up OSPF over GRE with&#xA;&lt;a href=&#34;http://www.quagga.net&#34;&gt;Quagga&lt;/a&gt;, because PIM, unlike DVMRP (&lt;code&gt;mrouted&lt;/code&gt;),&#xA;require unicast routing rules to be established.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;       .----{ Intranet }----.&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      /    192.168.1.0/24    \&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     /                        \&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.10 /                          \.20&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.--&amp;#39;---. .1  GRE Tunnel  .2 .---`--.&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|      |====================|      |&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|  R1  |   172.16.16.0/30   |  R2  |&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|      |                    |      |&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;#39;--.---&amp;#39;                    &amp;#39;------&amp;#39;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   | .1                        | .1 &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   |    10.0.1.0/24            |    10.0.2.0/24&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   | .2                        | .2 &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.--&amp;#39;---.                    .--&amp;#39;---.&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|      |                    |      |&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|  C1  |                    |  C2  |&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|      |                    |      |&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;#39;------&amp;#39;                    &amp;#39;------&amp;#39;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In this post we are using the home WiFi network, 192.168.1.0/24, to hook&#xA;up the GRE tunnel.  It is just as easy to extend this to a big corporate&#xA;Intranet with more routers between &lt;code&gt;R1&lt;/code&gt; and &lt;code&gt;R2&lt;/code&gt;.  As long as that IT&#xA;department takes care of the unicast routing between &lt;code&gt;R1&lt;/code&gt; and &lt;code&gt;R2&lt;/code&gt; so&#xA;that the GRE tunnel can be established.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

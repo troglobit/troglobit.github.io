@@ -5,57 +5,37 @@
     <link>https://troglobit.com/tags/merecat/</link>
     <description>Recent content in merecat on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Thu, 09 Dec 2021 05:56:00 +0000</lastBuildDate><atom:link href="https://troglobit.com/tags/merecat/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Dec 2021 05:56:00 +0000</lastBuildDate>
+    <atom:link href="https://troglobit.com/tags/merecat/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HowTo: Set up Merecat with cgit</title>
       <link>https://troglobit.com/howtos/merecat-and-cgit/</link>
       <pubDate>Thu, 09 Dec 2021 05:56:00 +0000</pubDate>
-      
       <guid>https://troglobit.com/howtos/merecat-and-cgit/</guid>
-      <description>&lt;p&gt;This post details how to set up &lt;a href=&#34;https://git.zx2c4.com/cgit/&#34;&gt;cgit&lt;/a&gt; with &lt;a href=&#34;http://merecat.troglobit.com&#34;&gt;Merecat httpd&lt;/a&gt;.  It
-began as a &lt;a href=&#34;https://github.com/troglobit/merecat/issues/3&#34;&gt;GitHub issue&lt;/a&gt; report by Mr Alok G. Singh, who had run
-into problems setting it up, and ended up as a HowTo.&lt;/p&gt;</description>
+      <description>&lt;p&gt;This post details how to set up &lt;a href=&#34;https://git.zx2c4.com/cgit/&#34;&gt;cgit&lt;/a&gt; with &lt;a href=&#34;http://merecat.troglobit.com&#34;&gt;Merecat httpd&lt;/a&gt;.  It&#xA;began as a &lt;a href=&#34;https://github.com/troglobit/merecat/issues/3&#34;&gt;GitHub issue&lt;/a&gt; report by Mr Alok G. Singh, who had run&#xA;into problems setting it up, and ended up as a HowTo.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>HowTo: Set up Merecat with Ikiwiki</title>
       <link>https://troglobit.com/howtos/merecat-and-ikiwiki/</link>
       <pubDate>Thu, 09 Dec 2021 05:51:00 +0000</pubDate>
-      
       <guid>https://troglobit.com/howtos/merecat-and-ikiwiki/</guid>
-      <description>This is a HowTo for setting up ikiwiki with Merecat httpd.
-First install ikiwiki
-$ sudo apt install ikiwiki libcgi-session-perl libcgi-formbuilder-perl Follow the steps to setup a new Wiki or Blog. In this example we set up a wiki in our ~/public_html:
-$ ikiwiki --setup /etc/ikiwiki/auto.setup ... Successfully set up wiki: url: http://localhost/~jocke/wiki srcdir: ~/wiki destdir: ~/public_html/wiki repository: ~/wiki.git To modify settings, edit ~/home.setup and then run:
-$ ikiwiki --setup ~/home.</description>
+      <description>This is a HowTo for setting up ikiwiki with Merecat httpd.&#xA;First install ikiwiki&#xA;$ sudo apt install ikiwiki libcgi-session-perl libcgi-formbuilder-perl Follow the steps to setup a new Wiki or Blog. In this example we set up a wiki in our ~/public_html:&#xA;$ ikiwiki --setup /etc/ikiwiki/auto.setup ... Successfully set up wiki: url: http://localhost/~jocke/wiki srcdir: ~/wiki destdir: ~/public_html/wiki repository: ~/wiki.git To modify settings, edit ~/home.setup and then run:&#xA;$ ikiwiki --setup ~/home.</description>
     </item>
-    
     <item>
       <title>HowTo: Set up Merecat with Let&#39;s Encrypt certificate</title>
       <link>https://troglobit.com/howtos/merecat-and-lets-encrypt/</link>
       <pubDate>Wed, 15 Jul 2020 14:10:00 +0000</pubDate>
-      
       <guid>https://troglobit.com/howtos/merecat-and-lets-encrypt/</guid>
-      <description>&lt;p&gt;This is a HowTo for setting up &lt;a href=&#34;https://merecat.troglobit.com&#34;&gt;Merecat httpd&lt;/a&gt; with &lt;a href=&#34;https://letsencrypt.org/&#34;&gt;Let&amp;rsquo;s
-Encrypt&lt;/a&gt; HTTPS certificates.&lt;/p&gt;
-&lt;p&gt;The upcoming v2.32 release of &lt;a href=&#34;https://merecat.troglobit.com&#34;&gt;Merecat&lt;/a&gt; supports HTTPS as well as
-serving more than one Internet port.  This is highly useful for those
-who want to serve both HTTPS and HTTP content.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; now with support for &lt;code&gt;--webroot&lt;/code&gt; and HTTP-01 renewal!&lt;/p&gt;
-&lt;/blockquote&gt;</description>
+      <description>&lt;p&gt;This is a HowTo for setting up &lt;a href=&#34;https://merecat.troglobit.com&#34;&gt;Merecat httpd&lt;/a&gt; with &lt;a href=&#34;https://letsencrypt.org/&#34;&gt;Let&amp;rsquo;s&#xA;Encrypt&lt;/a&gt; HTTPS certificates.&lt;/p&gt;&#xA;&lt;p&gt;The upcoming v2.32 release of &lt;a href=&#34;https://merecat.troglobit.com&#34;&gt;Merecat&lt;/a&gt; supports HTTPS as well as&#xA;serving more than one Internet port.  This is highly useful for those&#xA;who want to serve both HTTPS and HTTP content.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; now with support for &lt;code&gt;--webroot&lt;/code&gt; and HTTP-01 renewal!&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
     </item>
-    
     <item>
       <title>Basic CGI in C with Merecat httpd</title>
       <link>https://troglobit.com/howtos/merecat-basic-cig-in-c/</link>
       <pubDate>Mon, 05 Aug 2019 22:00:25 +0200</pubDate>
-      
       <guid>https://troglobit.com/howtos/merecat-basic-cig-in-c/</guid>
       <description>&lt;p&gt;This post is a writeup of how to use basic CGI programs in Merecat httpd v2.32.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -5,44 +5,23 @@
     <link>https://troglobit.com/categories/kvm/</link>
     <description>Recent content in KVM on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Thu, 18 Aug 2016 20:07:17 +0000</lastBuildDate><atom:link href="https://troglobit.com/categories/kvm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Aug 2016 20:07:17 +0000</lastBuildDate>
+    <atom:link href="https://troglobit.com/categories/kvm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Live KVM migration with virt-manager</title>
       <link>https://troglobit.com/2016/08/18/live-kvm-migration-with-virt-manager/</link>
       <pubDate>Thu, 18 Aug 2016 20:07:17 +0000</pubDate>
-      
       <guid>https://troglobit.com/2016/08/18/live-kvm-migration-with-virt-manager/</guid>
-      <description>&lt;p&gt;With the new servers and my server room shaping up, I&amp;rsquo;ve been working on
-setting up ALL THE THINGS!  I just managed to set up live migration of
-the KVM virtual machines I use for testing my &lt;a href=&#34;https://en.wikipedia.org/wiki/Free_and_open-source_software&#34;&gt;FLOSS&lt;/a&gt; projects.  Here
-is a short writeup of that, just as a reminder for myself.&lt;/p&gt;
-&lt;h2 id=&#34;checklist&#34;&gt;Checklist&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Make sure the libvirt versions are the same.  I tried setting up
-migration between CentOS 7.2 and and Ubuntu LTS 16.04 which turned
-out to be a mess of insurmountable incompatibilities.  I&amp;rsquo;ve now gone
-back to run Ubuntu on everything and it all works fine.&lt;/li&gt;
-&lt;li&gt;Set up NFS for the backend store of &lt;code&gt;/var/lib/libvirt/images&lt;/code&gt;.  Make
-sure to export the share properly, I tried first with my ReadyNAS, but
-couldn&amp;rsquo;t set up root access (defaulted to nobody).&lt;/li&gt;
-&lt;li&gt;Set up VM disk caching=none&lt;/li&gt;
-&lt;li&gt;Set up VM processor model=default&lt;/li&gt;
-&lt;li&gt;Profit&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Good Luck! :)&lt;/p&gt;</description>
+      <description>&lt;p&gt;With the new servers and my server room shaping up, I&amp;rsquo;ve been working on&#xA;setting up ALL THE THINGS!  I just managed to set up live migration of&#xA;the KVM virtual machines I use for testing my &lt;a href=&#34;https://en.wikipedia.org/wiki/Free_and_open-source_software&#34;&gt;FLOSS&lt;/a&gt; projects.  Here&#xA;is a short writeup of that, just as a reminder for myself.&lt;/p&gt;&#xA;&lt;h2 id=&#34;checklist&#34;&gt;Checklist&lt;/h2&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Make sure the libvirt versions are the same.  I tried setting up&#xA;migration between CentOS 7.2 and and Ubuntu LTS 16.04 which turned&#xA;out to be a mess of insurmountable incompatibilities.  I&amp;rsquo;ve now gone&#xA;back to run Ubuntu on everything and it all works fine.&lt;/li&gt;&#xA;&lt;li&gt;Set up NFS for the backend store of &lt;code&gt;/var/lib/libvirt/images&lt;/code&gt;.  Make&#xA;sure to export the share properly, I tried first with my ReadyNAS, but&#xA;couldn&amp;rsquo;t set up root access (defaulted to nobody).&lt;/li&gt;&#xA;&lt;li&gt;Set up VM disk caching=none&lt;/li&gt;&#xA;&lt;li&gt;Set up VM processor model=default&lt;/li&gt;&#xA;&lt;li&gt;Profit&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Good Luck! :)&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Finally, NetBSD Boots in KVM!</title>
       <link>https://troglobit.com/2010/08/29/finally/</link>
       <pubDate>Sun, 29 Aug 2010 20:44:34 +0000</pubDate>
-      
       <guid>https://troglobit.com/2010/08/29/finally/</guid>
-      <description>Compared to OpenBSD and FreeBSD the NetBSD install was hard, really hard. It wasn&amp;rsquo;t until I stumbled across this that I managed to convince myself to try it again.
-The trick seems to be to ignore as much as you can from other Internet tips. NetBSD runs fine in KVM, so if someone says you need to run it in Qemu mode — don&amp;rsquo;t believe the hype. OK, in virt-manager there is no preset defaults for NetBSD, so I went with a generic OS and tried starting the install from there.</description>
+      <description>Compared to OpenBSD and FreeBSD the NetBSD install was hard, really hard. It wasn&amp;rsquo;t until I stumbled across this that I managed to convince myself to try it again.&#xA;The trick seems to be to ignore as much as you can from other Internet tips. NetBSD runs fine in KVM, so if someone says you need to run it in Qemu mode — don&amp;rsquo;t believe the hype. OK, in virt-manager there is no preset defaults for NetBSD, so I went with a generic OS and tried starting the install from there.</description>
     </item>
-    
   </channel>
 </rss>

@@ -15,23 +15,16 @@
 
     <title>
         
-            HowTo run pimd on FreeBSD :: Joachim Wiberg  — The Last Outpost
+            HowTo run pimd on FreeBSD :: Joachim Wiberg 
         
     </title>
 
 
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
-    type="text/css">
 
 
+<link rel="stylesheet" href="https://troglobit.com/main.949191c1dcc9c4a887997048b240354e47152016d821198f89448496ba42e491.css" integrity="sha256-lJGRwdzJxKiHmXBIskA1TkcVIBbYIRmPiUSElrpC5JE=">
 
-<link rel="stylesheet" href="https://troglobit.com/main.274b9101bb929690505a03a6e203b1ec6098ae11e7462d3d41ac05a2ba21078f.css">
-
-
-    
-        <link rel="stylesheet" type="text/css" href="https://troglobit.com/css/extra.css">
-    
 
 
     <link rel="apple-touch-icon" sizes="180x180" href="https://troglobit.com/apple-touch-icon.png">
@@ -49,8 +42,7 @@
 <meta itemprop="dateModified" content="2015-09-27T18:45:00+02:00" />
 <meta itemprop="wordCount" content="354">
 <meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="HowTo run pimd on FreeBSD"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="HowTo run pimd on FreeBSD"/>
 <meta name="twitter:description" content="This is not a proper HowTo, more of a &ldquo;note to self&rdquo; after having created a setup to test pimd issue #57. For these notes the following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and Qemu 2.3.0, is used:
 .--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | &#39;--------&#39; &#39;----&#39; &#39;----&#39; &#39;----------&#39; The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP/MLD snooping to get pimd to run smoothly."/>
 
@@ -91,6 +83,7 @@
 
 
 
+
     </head>
 
     
@@ -104,7 +97,8 @@
     <div class="logo">
         
             <span class="logo__mark">&gt;</span>
-            <span class="logo__text">$ cd /home/</span>
+            <span class="logo__text ">
+                $ cd /home/</span>
             <span class="logo__cursor" style=
                   "
                    
@@ -118,7 +112,7 @@
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://troglobit.com/about/">About</a></li><li><a href="https://troglobit.com/posts/">Blog</a></li><li><a href="https://troglobit.com/howtos/">HowTos</a></li><li><a href="https://troglobit.com/projects/">Projects</a></li><li><a href="https://resume.troglobit.com">Resumé</a></li><li><a href="https://ftp.troglobit.com">FTP</a></li><li><a href="https://deb.troglobit.com">DEB</a></li>
+    <ul class="menu__inner"><li><a href="https://troglobit.com/about/">About</a></li><li><a href="https://troglobit.com/posts/">Blog</a></li><li><a href="https://troglobit.com/howtos/">HowTos</a></li><li><a href="https://troglobit.com/projects/">Projects</a></li>
     </ul>
 </nav>
 
@@ -155,10 +149,10 @@
 created a setup to test pimd <a href="https://github.com/troglobit/pimd/issues/57">issue #57</a>.  For these notes the
 following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and
 Qemu 2.3.0, is used:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    .--------. net1 .----. net2 .----. net3 .----------.
-    | Sender |------| R2 |------| R3 |------| Receiver |
-    &#39;--------&#39;      &#39;----&#39;      &#39;----&#39;      &#39;----------&#39;
-</code></pre></div><p>The networks between the boxes are actually Linux bridge devices (br),
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>    .--------. net1 .----. net2 .----. net3 .----------.
+</span></span><span style="display:flex;"><span>    | Sender |------| R2 |------| R3 |------| Receiver |
+</span></span><span style="display:flex;"><span>    &#39;--------&#39;      &#39;----&#39;      &#39;----&#39;      &#39;----------&#39;
+</span></span></code></pre></div><p>The networks between the boxes are actually Linux bridge devices (br),
 on which you may have to <a href="https://troglobit.com/multicast-howto.html#roll-your-own">disable IGMP/MLD snooping</a> to get <code>pimd</code>
 to run smoothly.  Only R2 and R3 run FreeBSD v10.2, 64-bit.  The <code>net1</code>,
 between sender and <code>R2</code>, and <code>net3</code>, between <code>R3</code> and the receiver, are
@@ -169,42 +163,42 @@ server running.  Only <code>net2</code> between the two routers is static, using
 <p>You need a few things set up in FreeBSD before starting <code>pimd</code>.</p>
 <p>In <code>/boot/loader.conf</code> add the following line to load the MROUTING
 kernel module:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    ip_mroute_load=&#34;yes&#34;
-</code></pre></div><p>If you want to serial console access to your FreeBSD, or run FreeBSD in
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span>    ip_mroute_load<span style="color:#fe8019">=</span><span style="color:#b8bb26">&#34;yes&#34;</span>
+</span></span></code></pre></div><p>If you want to serial console access to your FreeBSD, or run FreeBSD in
 Qemu (virt-manager), you may want to add the following lines as well to
 <code>/boot/loader.conf</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    boot_multicons=&#34;YES&#34;
-    boot_serial=&#34;YES&#34;
-    comconsole_speed=&#34;115200&#34;
-    console=&#34;comconsole,vidconsole&#34;
-</code></pre></div><p>In <code>/etc/rc.conf</code> there are several lines that need to be added, both to
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>    boot_multicons=&#34;YES&#34;
+</span></span><span style="display:flex;"><span>    boot_serial=&#34;YES&#34;
+</span></span><span style="display:flex;"><span>    comconsole_speed=&#34;115200&#34;
+</span></span><span style="display:flex;"><span>    console=&#34;comconsole,vidconsole&#34;
+</span></span></code></pre></div><p>In <code>/etc/rc.conf</code> there are several lines that need to be added, both to
 enable router/gateway mode and to enable RIP to resolve the unicast
 forwarding table.  The <code>Sender</code> and <code>Recieiver</code> nodes, which run
 Ubuntu 14.04, employ Quagga <code>ripd</code> for this, but on FreeBSD we employ
 the god &lsquo;ol <code>routed</code> :-)</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    gateway_enable=&#34;YES&#34;
-    routed_enable=&#34;YES&#34;
-    routed_flags=&#34;-s&#34;
-</code></pre></div><p>Notice how we change the <code>routed_flags</code> from quiet mode! Now, for
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>    gateway_enable=&#34;YES&#34;
+</span></span><span style="display:flex;"><span>    routed_enable=&#34;YES&#34;
+</span></span><span style="display:flex;"><span>    routed_flags=&#34;-s&#34;
+</span></span></code></pre></div><p>Notice how we change the <code>routed_flags</code> from quiet mode! Now, for
 interop with the rest of the network we enable RIP v2 mode by adding the
 following line to <code>/etc/gateways</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    ripv2
-</code></pre></div><h2 id="download-pimd">Download pimd</h2>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>    ripv2
+</span></span></code></pre></div><h2 id="download-pimd">Download pimd</h2>
 <p>Next we need to download and build <code>pimd</code>.  It is available on GitHub if
 you want the latest bleeding edge stuff, or use the latest tarball:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">    wget http://ftp.troglobit.com/pimd/pimd-2.3.2.tar.gz
-    tar xfz pimd-2.3.2.tar.gz
-    <span class="nb">cd</span> pimd-2.3.2/
-    ./configure
-    make
-</code></pre></div><h2 id="running-pimd">Running pimd</h2>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>    wget http://ftp.troglobit.com/pimd/pimd-2.3.2.tar.gz
+</span></span><span style="display:flex;"><span>    tar xfz pimd-2.3.2.tar.gz
+</span></span><span style="display:flex;"><span>    <span style="color:#fabd2f">cd</span> pimd-2.3.2/
+</span></span><span style="display:flex;"><span>    ./configure
+</span></span><span style="display:flex;"><span>    make
+</span></span></code></pre></div><h2 id="running-pimd">Running pimd</h2>
 <p>Now we can start pimd on both routers:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">    ./pimd -c pimd.conf
-</code></pre></div><p>After a while you should be able to see some interesting output in both</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">    ./pimd -r
-</code></pre></div><p>and</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">    netstat -rn
-</code></pre></div><p>See the <a href="https://troglobit.com/howto-run-pimd-on-openbsd.html">OpenBSD HowTo</a> for example
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>    ./pimd -c pimd.conf
+</span></span></code></pre></div><p>After a while you should be able to see some interesting output in both</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>    ./pimd -r
+</span></span></code></pre></div><p>and</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>    netstat -rn
+</span></span></code></pre></div><p>See the <a href="https://troglobit.com/howto-run-pimd-on-openbsd.html">OpenBSD HowTo</a> for example
 output and troubleshooting.</p>
 
             </div>
@@ -236,7 +230,7 @@ output and troubleshooting.</p>
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2024</span>
+            <span>&copy; 2006</span>
             <span><a href="https://troglobit.com/">Joachim Wiberg</a></span>
             <span>UNIX&trade; 4Life! &#9994;</span>
             
@@ -254,7 +248,8 @@ output and troubleshooting.</p>
 
 
 
-<script type="text/javascript" src="https://troglobit.com/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
+<script type="text/javascript" src="https://troglobit.com/bundle.min.46e438bd2eca7eb6358c700b40f6f56b22ab0b92503ecc11a2d8e4bcc610b8b4da83e5ea3d3e84fdb5f3c3c765744b9f5bbaf43cf5a027910be07ee39a9c12a1.js" integrity="sha512-RuQ4vS7KfrY1jHALQPb1ayKrC5JQPswRotjkvMYQuLTag&#43;XqPT6E/bXzw8dldEufW7r0PPWgJ5EL4H7jmpwSoQ=="></script>
+
 
 
 

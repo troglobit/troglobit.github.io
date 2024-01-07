@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="Joachim Wiberg ">
 <meta name="description" content="Finit is an alternative to SysV init and systemd, originally reverse engineered from the EeePC fastinit by Claudio Matsuoka — &amp;ldquo;gaps filled with frog DNA …&amp;rdquo;
- Latest release available on GitHub
- Features  Runlevels, defined per service One-shot tasks, services (daemons), or SysV init start/stop scripts Runparts and /etc/rc.local support Process supervision similar to systemd Sourcing environment files Conditions for network/process/custom dependencies Pre/Post script actions Tooling to enable/disable services Optional built-in getty Optional built-in watchdog, with support for hand-over to watchdogd Built-in support for Debian/BusyBox /etc/network/interfaces, automatically calls ifup/ifdown Cgroups v2, both configuration and monitoring in initctl top Plugin support for customization Proper rescue mode with bundled sulogin for protected maintenance shell (optional)  Blog Posts Some of these feature are presented below, for more, see the online documentation and the following blog posts:" />
+Latest release available on GitHub
+Features Runlevels, defined per service One-shot tasks, services (daemons), or SysV init start/stop scripts Runparts and /etc/rc.local support Process supervision similar to systemd Sourcing environment files Conditions for network/process/custom dependencies Pre/Post script actions Tooling to enable/disable services Optional built-in getty Optional built-in watchdog, with support for hand-over to watchdogd Built-in support for Debian/BusyBox /etc/network/interfaces, automatically calls ifup/ifdown Cgroups v2, both configuration and monitoring in initctl top Plugin support for customization Proper rescue mode with bundled sulogin for protected maintenance shell (optional) Blog Posts Some of these feature are presented below, for more, see the online documentation and the following blog posts:" />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -16,23 +16,16 @@
 
     <title>
         
-            Fast init for Linux systems :: Joachim Wiberg  — The Last Outpost
+            Fast init for Linux systems :: Joachim Wiberg 
         
     </title>
 
 
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
-    type="text/css">
 
 
+<link rel="stylesheet" href="https://troglobit.com/main.949191c1dcc9c4a887997048b240354e47152016d821198f89448496ba42e491.css" integrity="sha256-lJGRwdzJxKiHmXBIskA1TkcVIBbYIRmPiUSElrpC5JE=">
 
-<link rel="stylesheet" href="https://troglobit.com/main.274b9101bb929690505a03a6e203b1ec6098ae11e7462d3d41ac05a2ba21078f.css">
-
-
-    
-        <link rel="stylesheet" type="text/css" href="https://troglobit.com/css/extra.css">
-    
 
 
     <link rel="apple-touch-icon" sizes="180x180" href="https://troglobit.com/apple-touch-icon.png">
@@ -46,23 +39,22 @@
 
 <meta itemprop="name" content="Fast init for Linux systems">
 <meta itemprop="description" content="Finit is an alternative to SysV init and systemd, originally reverse engineered from the EeePC fastinit by Claudio Matsuoka — &ldquo;gaps filled with frog DNA …&rdquo;
- Latest release available on GitHub
- Features  Runlevels, defined per service One-shot tasks, services (daemons), or SysV init start/stop scripts Runparts and /etc/rc.local support Process supervision similar to systemd Sourcing environment files Conditions for network/process/custom dependencies Pre/Post script actions Tooling to enable/disable services Optional built-in getty Optional built-in watchdog, with support for hand-over to watchdogd Built-in support for Debian/BusyBox /etc/network/interfaces, automatically calls ifup/ifdown Cgroups v2, both configuration and monitoring in initctl top Plugin support for customization Proper rescue mode with bundled sulogin for protected maintenance shell (optional)  Blog Posts Some of these feature are presented below, for more, see the online documentation and the following blog posts:"><meta itemprop="datePublished" content="2023-11-02T06:47:00+01:00" />
+Latest release available on GitHub
+Features Runlevels, defined per service One-shot tasks, services (daemons), or SysV init start/stop scripts Runparts and /etc/rc.local support Process supervision similar to systemd Sourcing environment files Conditions for network/process/custom dependencies Pre/Post script actions Tooling to enable/disable services Optional built-in getty Optional built-in watchdog, with support for hand-over to watchdogd Built-in support for Debian/BusyBox /etc/network/interfaces, automatically calls ifup/ifdown Cgroups v2, both configuration and monitoring in initctl top Plugin support for customization Proper rescue mode with bundled sulogin for protected maintenance shell (optional) Blog Posts Some of these feature are presented below, for more, see the online documentation and the following blog posts:"><meta itemprop="datePublished" content="2023-11-02T06:47:00+01:00" />
 <meta itemprop="dateModified" content="2023-11-02T06:47:00+01:00" />
 <meta itemprop="wordCount" content="2810">
 <meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Fast init for Linux systems"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Fast init for Linux systems"/>
 <meta name="twitter:description" content="Finit is an alternative to SysV init and systemd, originally reverse engineered from the EeePC fastinit by Claudio Matsuoka — &ldquo;gaps filled with frog DNA …&rdquo;
- Latest release available on GitHub
- Features  Runlevels, defined per service One-shot tasks, services (daemons), or SysV init start/stop scripts Runparts and /etc/rc.local support Process supervision similar to systemd Sourcing environment files Conditions for network/process/custom dependencies Pre/Post script actions Tooling to enable/disable services Optional built-in getty Optional built-in watchdog, with support for hand-over to watchdogd Built-in support for Debian/BusyBox /etc/network/interfaces, automatically calls ifup/ifdown Cgroups v2, both configuration and monitoring in initctl top Plugin support for customization Proper rescue mode with bundled sulogin for protected maintenance shell (optional)  Blog Posts Some of these feature are presented below, for more, see the online documentation and the following blog posts:"/>
+Latest release available on GitHub
+Features Runlevels, defined per service One-shot tasks, services (daemons), or SysV init start/stop scripts Runparts and /etc/rc.local support Process supervision similar to systemd Sourcing environment files Conditions for network/process/custom dependencies Pre/Post script actions Tooling to enable/disable services Optional built-in getty Optional built-in watchdog, with support for hand-over to watchdogd Built-in support for Debian/BusyBox /etc/network/interfaces, automatically calls ifup/ifdown Cgroups v2, both configuration and monitoring in initctl top Plugin support for customization Proper rescue mode with bundled sulogin for protected maintenance shell (optional) Blog Posts Some of these feature are presented below, for more, see the online documentation and the following blog posts:"/>
 
 
 
     <meta property="og:title" content="Fast init for Linux systems" />
 <meta property="og:description" content="Finit is an alternative to SysV init and systemd, originally reverse engineered from the EeePC fastinit by Claudio Matsuoka — &ldquo;gaps filled with frog DNA …&rdquo;
- Latest release available on GitHub
- Features  Runlevels, defined per service One-shot tasks, services (daemons), or SysV init start/stop scripts Runparts and /etc/rc.local support Process supervision similar to systemd Sourcing environment files Conditions for network/process/custom dependencies Pre/Post script actions Tooling to enable/disable services Optional built-in getty Optional built-in watchdog, with support for hand-over to watchdogd Built-in support for Debian/BusyBox /etc/network/interfaces, automatically calls ifup/ifdown Cgroups v2, both configuration and monitoring in initctl top Plugin support for customization Proper rescue mode with bundled sulogin for protected maintenance shell (optional)  Blog Posts Some of these feature are presented below, for more, see the online documentation and the following blog posts:" />
+Latest release available on GitHub
+Features Runlevels, defined per service One-shot tasks, services (daemons), or SysV init start/stop scripts Runparts and /etc/rc.local support Process supervision similar to systemd Sourcing environment files Conditions for network/process/custom dependencies Pre/Post script actions Tooling to enable/disable services Optional built-in getty Optional built-in watchdog, with support for hand-over to watchdogd Built-in support for Debian/BusyBox /etc/network/interfaces, automatically calls ifup/ifdown Cgroups v2, both configuration and monitoring in initctl top Plugin support for customization Proper rescue mode with bundled sulogin for protected maintenance shell (optional) Blog Posts Some of these feature are presented below, for more, see the online documentation and the following blog posts:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://troglobit.com/projects/finit/" /><meta property="article:section" content="projects" />
 <meta property="article:published_time" content="2023-11-02T06:47:00+01:00" />
@@ -75,6 +67,7 @@
 
 
     <meta property="article:published_time" content="2023-11-02 06:47:00 &#43;0100 CET" />
+
 
 
 
@@ -98,7 +91,8 @@
     <div class="logo">
         
             <span class="logo__mark">&gt;</span>
-            <span class="logo__text">$ cd /home/</span>
+            <span class="logo__text ">
+                $ cd /home/</span>
             <span class="logo__cursor" style=
                   "
                    
@@ -112,7 +106,7 @@
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="https://troglobit.com/about/">About</a></li><li><a href="https://troglobit.com/posts/">Blog</a></li><li><a href="https://troglobit.com/howtos/">HowTos</a></li><li><a href="https://troglobit.com/projects/">Projects</a></li><li><a href="https://resume.troglobit.com">Resumé</a></li><li><a href="https://ftp.troglobit.com">FTP</a></li><li><a href="https://deb.troglobit.com">DEB</a></li>
+    <ul class="menu__inner"><li><a href="https://troglobit.com/about/">About</a></li><li><a href="https://troglobit.com/posts/">Blog</a></li><li><a href="https://troglobit.com/howtos/">HowTos</a></li><li><a href="https://troglobit.com/projects/">Projects</a></li>
     </ul>
 </nav>
 
@@ -200,71 +194,71 @@ service, or set of related services, are defined in their own <code>foo.conf</co
 file in the <code>/etc/finit.d</code> directory.  Available, but not yet enabled,
 services can be placed in <code>/etc/finit.d/available</code> and enabled by an
 operator using the initctl tool.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"># Runlevel to start after bootstrap, &#39;S&#39;, default: 2
-runlevel 2
-
-# Max file size for each log file: 100 kiB, rotate max 4 copies:
-# log =&gt; log.1 =&gt; log.2.gz =&gt; log.3.gz =&gt; log.4.gz
-log size=100k count=4
-
-# Services to be monitored and respawned as needed
-service [S12345] watchdogd -L -f                             -- System watchdog daemon
-service [S12345] syslogd -n -b 3 -D                          -- System log daemon
-service [S12345] &lt;pid/syslogd&gt; klogd -n                      -- Kernel log daemon
-service   [2345] env:-/etc/conf.d/lldpd lldpd -d $LLDPD_OPTS -- LLDP daemon (IEEE 802.1ab)
-
-# The BusyBox ntpd does not use syslog when running in the foreground
-# So we use this trick to redirect stdout/stderr to a log file.  The
-# log file is rotated with the above settings.  The condition declares
-# a dependency on a system default route (gateway) to be set.  A single
-# &lt;!&gt; at the beginning means ntpd does not respect SIGHUP for restart.
-service [2345] log:/var/log/ntpd.log &lt;!net/route/default&gt; ntpd -n -l -I eth0 -- NTP daemon
-
-# For multiple instances of the same service, add :ID somewhere between
-# the service/run/task keyword and the command.
-service :80   [2345] merecat -n -p 80   /var/www -- Web server
-service :8080 [2345] merecat -n -p 8080 /var/www -- Old web server
-
-# Alternative method instead of below runparts, can also use /etc/rc.local
-#task [S] /etc/init.d/keyboard-setup start       -- Setting up preliminary keymap
-#task [S] /etc/init.d/acpid start                -- Starting ACPI Daemon
-#task [S] /etc/init.d/kbd start                  -- Preparing console
-
-# When Finit receive SIGPWR, e.g., from powstatd(8), it asserts the
-# sys/pwr/fail condition.  The &lt;!&gt; in the condition tells Finit to
-# not block bootstrap waiting for the task to run.
-task [S0123456789] &lt;!sys/pwr/fail&gt; name:pwrfail initctl poweroff -- Power failure, shutting down
-
-# Run start scripts from this directory
-# runparts /etc/start.d
-
-# Virtual consoles run BusyBox getty, keep kernel default speed
-tty [12345] /sbin/getty -L 0 /dev/tty1 linux
-tty [12345] /sbin/getty -L 0 /dev/tty2 linux
-tty [12345] /sbin/getty -L 0 /dev/tty3 linux
-
-# Use built-in getty for serial port and USB serial
-tty [12345] /dev/ttyAMA0 noclear nowait
-tty [12345] /dev/ttyUSB0 noclear
-
-# Just give me a shell, I need to debug this embedded system!
-#tty [12345] @console noclear nologin
-#tty [12345] notty
-#tty [12345] rescue
-</code></pre></div><p>The <code>service</code> stanza, as well as <code>task</code>, <code>run</code> and others are described
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Runlevel to start after bootstrap, &#39;S&#39;, default: 2</span>
+</span></span><span style="display:flex;"><span>runlevel <span style="color:#d3869b">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Max file size for each log file: 100 kiB, rotate max 4 copies:</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># log =&gt; log.1 =&gt; log.2.gz =&gt; log.3.gz =&gt; log.4.gz</span>
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">log</span> size<span style="color:#fe8019">=</span><span style="color:#d3869b">100</span>k count<span style="color:#fe8019">=</span><span style="color:#d3869b">4</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Services to be monitored and respawned as needed</span>
+</span></span><span style="display:flex;"><span>service [S12345] watchdogd <span style="color:#fe8019">-</span>L <span style="color:#fe8019">-</span>f                             <span style="color:#fe8019">--</span> System watchdog daemon
+</span></span><span style="display:flex;"><span>service [S12345] syslogd <span style="color:#fe8019">-</span>n <span style="color:#fe8019">-</span>b <span style="color:#d3869b">3</span> <span style="color:#fe8019">-</span>D                          <span style="color:#fe8019">--</span> System <span style="color:#fabd2f">log</span> daemon
+</span></span><span style="display:flex;"><span>service [S12345] <span style="color:#fe8019">&lt;</span>pid<span style="color:#fe8019">/</span>syslogd<span style="color:#fe8019">&gt;</span> klogd <span style="color:#fe8019">-</span>n                      <span style="color:#fe8019">--</span> Kernel <span style="color:#fabd2f">log</span> daemon
+</span></span><span style="display:flex;"><span>service   [<span style="color:#d3869b">2345</span>] env:<span style="color:#fe8019">-/</span>etc<span style="color:#fe8019">/</span>conf<span style="color:#fe8019">.</span>d<span style="color:#fe8019">/</span>lldpd lldpd <span style="color:#fe8019">-</span>d <span style="color:#fe8019">$</span>LLDPD_OPTS <span style="color:#fe8019">--</span> LLDP daemon (IEEE <span style="color:#d3869b">802.1</span>ab)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># The BusyBox ntpd does not use syslog when running in the foreground</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># So we use this trick to redirect stdout/stderr to a log file.  The</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># log file is rotated with the above settings.  The condition declares</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># a dependency on a system default route (gateway) to be set.  A single</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># &lt;!&gt; at the beginning means ntpd does not respect SIGHUP for restart.</span>
+</span></span><span style="display:flex;"><span>service [<span style="color:#d3869b">2345</span>] <span style="color:#fabd2f">log</span>:<span style="color:#fe8019">/</span><span style="color:#fe8019">var</span><span style="color:#fe8019">/</span><span style="color:#fabd2f">log</span><span style="color:#fe8019">/</span>ntpd<span style="color:#fe8019">.</span>log <span style="color:#fe8019">&lt;!</span>net<span style="color:#fe8019">/</span>route<span style="color:#fe8019">/</span>default<span style="color:#fe8019">&gt;</span> ntpd <span style="color:#fe8019">-</span>n <span style="color:#fe8019">-</span>l <span style="color:#fe8019">-</span>I eth0 <span style="color:#fe8019">--</span> NTP daemon
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># For multiple instances of the same service, add :ID somewhere between</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># the service/run/task keyword and the command.</span>
+</span></span><span style="display:flex;"><span>service :<span style="color:#d3869b">80</span>   [<span style="color:#d3869b">2345</span>] merecat <span style="color:#fe8019">-</span>n <span style="color:#fe8019">-</span>p <span style="color:#d3869b">80</span>   <span style="color:#fe8019">/</span><span style="color:#fe8019">var</span><span style="color:#fe8019">/</span>www <span style="color:#fe8019">--</span> Web server
+</span></span><span style="display:flex;"><span>service :<span style="color:#d3869b">8080</span> [<span style="color:#d3869b">2345</span>] merecat <span style="color:#fe8019">-</span>n <span style="color:#fe8019">-</span>p <span style="color:#d3869b">8080</span> <span style="color:#fe8019">/</span><span style="color:#fe8019">var</span><span style="color:#fe8019">/</span>www <span style="color:#fe8019">--</span> Old web server
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Alternative method instead of below runparts, can also use /etc/rc.local</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#task [S] /etc/init.d/keyboard-setup start       -- Setting up preliminary keymap</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#task [S] /etc/init.d/acpid start                -- Starting ACPI Daemon</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#task [S] /etc/init.d/kbd start                  -- Preparing console</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># When Finit receive SIGPWR, e.g., from powstatd(8), it asserts the</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># sys/pwr/fail condition.  The &lt;!&gt; in the condition tells Finit to</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># not block bootstrap waiting for the task to run.</span>
+</span></span><span style="display:flex;"><span>task [S0123456789] <span style="color:#fe8019">&lt;!</span>sys<span style="color:#fe8019">/</span>pwr<span style="color:#fe8019">/</span>fail<span style="color:#fe8019">&gt;</span> name:pwrfail initctl poweroff <span style="color:#fe8019">--</span> Power failure, shutting down
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Run start scripts from this directory</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># runparts /etc/start.d</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Virtual consoles run BusyBox getty, keep kernel default speed</span>
+</span></span><span style="display:flex;"><span>tty [<span style="color:#d3869b">12345</span>] <span style="color:#fe8019">/</span>sbin<span style="color:#fe8019">/</span>getty <span style="color:#fe8019">-</span>L <span style="color:#d3869b">0</span> <span style="color:#fe8019">/</span>dev<span style="color:#fe8019">/</span>tty1 linux
+</span></span><span style="display:flex;"><span>tty [<span style="color:#d3869b">12345</span>] <span style="color:#fe8019">/</span>sbin<span style="color:#fe8019">/</span>getty <span style="color:#fe8019">-</span>L <span style="color:#d3869b">0</span> <span style="color:#fe8019">/</span>dev<span style="color:#fe8019">/</span>tty2 linux
+</span></span><span style="display:flex;"><span>tty [<span style="color:#d3869b">12345</span>] <span style="color:#fe8019">/</span>sbin<span style="color:#fe8019">/</span>getty <span style="color:#fe8019">-</span>L <span style="color:#d3869b">0</span> <span style="color:#fe8019">/</span>dev<span style="color:#fe8019">/</span>tty3 linux
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Use built-in getty for serial port and USB serial</span>
+</span></span><span style="display:flex;"><span>tty [<span style="color:#d3869b">12345</span>] <span style="color:#fe8019">/</span>dev<span style="color:#fe8019">/</span>ttyAMA0 noclear nowait
+</span></span><span style="display:flex;"><span>tty [<span style="color:#d3869b">12345</span>] <span style="color:#fe8019">/</span>dev<span style="color:#fe8019">/</span>ttyUSB0 noclear
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Just give me a shell, I need to debug this embedded system!</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#tty [12345] @console noclear nologin</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#tty [12345] notty</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#tty [12345] rescue</span>
+</span></span></code></pre></div><p>The <code>service</code> stanza, as well as <code>task</code>, <code>run</code> and others are described
 in full in <a href="https://github.com/troglobit/finit/blob/master/doc/config.md">doc/config.md</a>.  Here&rsquo;s a quick overview of some of the
 most common components needed to start a UNIX daemon:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">service [LVLS] &lt;COND&gt; log env:[-]/etc/default/daemon daemon ARGS -- Daemon daemon
-^       ^      ^      ^   ^                          ^              ^       ^
-|       |      |      |   |                          |              |        `-- Optional description
-|       |      |      |   |                          |              `----------- Daemon arguments
-|       |      |      |   |                          `-------------------------- Path to daemon
-|       |      |      |    `---------------------------------------------------- Optional env. file
-|       |      |       `-------------------------------------------------------- Redirect output to log
-|       |       `--------------------------------------------------------------- Optional conditions
-|        `---------------------------------------------------------------------- Optional Runlevels
- `------------------------------------------------------------------------------ Monitored application
-</code></pre></div><p>Some components are optional: runlevel(s), condition(s) and description,
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>service [LVLS] &lt;COND&gt; log env:[-]/etc/default/daemon daemon ARGS -- Daemon daemon
+</span></span><span style="display:flex;"><span>^       ^      ^      ^   ^                          ^              ^       ^
+</span></span><span style="display:flex;"><span>|       |      |      |   |                          |              |        `-- Optional description
+</span></span><span style="display:flex;"><span>|       |      |      |   |                          |              `----------- Daemon arguments
+</span></span><span style="display:flex;"><span>|       |      |      |   |                          `-------------------------- Path to daemon
+</span></span><span style="display:flex;"><span>|       |      |      |    `---------------------------------------------------- Optional env. file
+</span></span><span style="display:flex;"><span>|       |      |       `-------------------------------------------------------- Redirect output to log
+</span></span><span style="display:flex;"><span>|       |       `--------------------------------------------------------------- Optional conditions
+</span></span><span style="display:flex;"><span>|        `---------------------------------------------------------------------- Optional Runlevels
+</span></span><span style="display:flex;"><span> `------------------------------------------------------------------------------ Monitored application
+</span></span></code></pre></div><p>Some components are optional: runlevel(s), condition(s) and description,
 making it easy to create simple start scripts and still possible for more
 advanced uses as well:</p>
 <pre><code>service /usr/sbin/sshd -D
@@ -301,15 +295,15 @@ will instead try to restart it.</p>
 Getty, useful for really small systems.  A getty sets up the TTY and
 waits for user input before handing over to <code>/bin/login</code>, which is
 responsible for handling the actual authentication.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">tty [12345] /dev/tty1    nowait  linux
-tty [12345] /dev/ttyAMA0 noclear vt100
-tty [12345] /sbin/getty  -L /dev/ttyAMA0 vt100
-</code></pre></div><p>Users of embedded systems may want to enable automatic serial console
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>tty [12345] /dev/tty1    nowait  linux
+</span></span><span style="display:flex;"><span>tty [12345] /dev/ttyAMA0 noclear vt100
+</span></span><span style="display:flex;"><span>tty [12345] /sbin/getty  -L /dev/ttyAMA0 vt100
+</span></span></code></pre></div><p>Users of embedded systems may want to enable automatic serial console
 with the special <code>@console</code> device.  This works regardless weather the
 system uses <code>ttyS0</code>, <code>ttyAMA0</code>, <code>ttyMXC0</code>, or anything else.  Finit
 figures it out by querying sysfs: <code>/sys/class/tty/console/active</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">tty [12345] @console linux noclear
-</code></pre></div><p>Notice the optional <code>noclear</code>, <code>nowait</code>, and <code>nologin</code> flags.  The
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>tty [12345] @console linux noclear
+</span></span></code></pre></div><p>Notice the optional <code>noclear</code>, <code>nowait</code>, and <code>nologin</code> flags.  The
 latter is for skipping the login process entirely. For more information,
 see <a href="https://github.com/troglobit/finit/blob/master/doc/config.md">doc/config.md</a>.</p>
 <p><strong>Runlevels</strong></p>
@@ -360,8 +354,8 @@ started, but not networking, Finit calls its built-in [run-parts(8)][]
 command on any configured <code>runparts &lt;DIR&gt;</code> directory.  This happens just
 before changing to the configured runlevel (default 2).  (Networking is
 enabled just prior to changing from single user mode.)</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">runparts /etc/rc.d/
-</code></pre></div><p>Right after the runlevel change when all services have started properly,
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>runparts /etc/rc.d/
+</span></span></code></pre></div><p>Right after the runlevel change when all services have started properly,
 <code>/etc/rc.local</code> is called.</p>
 <p>No configuration stanza in <code>/etc/finit.conf</code> is required for <code>rc.local</code>.
 If it exists and is an executable shell script Finit calls it at the very
@@ -380,18 +374,18 @@ more of a policy for the user to define.  Normally only runlevels 1-6
 are used, and even more commonly, only the default runlevel is used.</p>
 <p>To specify an allowed set of runlevels for a <code>service</code>, <code>run</code> command,
 <code>task</code>, or <code>tty</code>, add <code>[NNN]</code> to your <code>/etc/finit.conf</code>, like this:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">service [S12345] syslogd -n -x             -- System log daemon
-run     [S]      /etc/init.d/acpid start   -- Starting ACPI Daemon
-task    [S]      /etc/init.d/kbd start     -- Preparing console
-service [S12345] &lt;pid/syslogd&gt; klogd -n -x -- Kernel log daemon
-
-tty     [12345]  /dev/tty1
-tty     [2]      /dev/tty2
-tty     [2]      /dev/tty3
-tty     [2]      /dev/tty4
-tty     [2]      /dev/tty5
-tty     [2]      /dev/tty6
-</code></pre></div><p>In this example syslogd is first started, in parallel, and then acpid is
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>service [S12345] syslogd -n -x             -- System log daemon
+</span></span><span style="display:flex;"><span>run     [S]      /etc/init.d/acpid start   -- Starting ACPI Daemon
+</span></span><span style="display:flex;"><span>task    [S]      /etc/init.d/kbd start     -- Preparing console
+</span></span><span style="display:flex;"><span>service [S12345] &lt;pid/syslogd&gt; klogd -n -x -- Kernel log daemon
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tty     [12345]  /dev/tty1
+</span></span><span style="display:flex;"><span>tty     [2]      /dev/tty2
+</span></span><span style="display:flex;"><span>tty     [2]      /dev/tty3
+</span></span><span style="display:flex;"><span>tty     [2]      /dev/tty4
+</span></span><span style="display:flex;"><span>tty     [2]      /dev/tty5
+</span></span><span style="display:flex;"><span>tty     [2]      /dev/tty6
+</span></span></code></pre></div><p>In this example syslogd is first started, in parallel, and then acpid is
 called using a conventional SysV init script.  It is called with the run
 command, meaning the following task command to start the kbd script is
 not called until the acpid init script has fully completed.  Then the
@@ -404,9 +398,9 @@ in a shell, so pipes and redirects can be used.</p>
 <p>The following examples illustrate this.  Bootstrap task and run commands
 are also removed when they have completed, <code>initctl show</code> will not list
 them.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">task [S] echo &#34;foo&#34; | cat &gt;/tmp/bar
-run  [S] echo &#34;$HOME&#34; &gt;/tmp/secret
-</code></pre></div><p>Switching between runlevels can be done by calling init with a single
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>task [S] echo &#34;foo&#34; | cat &gt;/tmp/bar
+</span></span><span style="display:flex;"><span>run  [S] echo &#34;$HOME&#34; &gt;/tmp/secret
+</span></span></code></pre></div><p>Switching between runlevels can be done by calling init with a single
 argument, e.g. <kbd>init 5</kbd>, or using <code>initctl runlevel 5</code>, both
 switch to runlevel 5.  When changing runlevels Finit also automatically
 reloads all <code>.conf</code> files in the <code>/etc/finit.d/</code> directory.  So if you
@@ -428,58 +422,58 @@ the more common combination for Finit.  For more details, see
 <p>Finit also implements a modern API to query status, and start/stop
 services, called <code>initctl</code>.  Unlike <code>telinit</code> the <code>initctl</code> tool does
 not return until the given command has fully completed.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">alpine:~# initctl help
-Usage: initctl [OPTIONS] [COMMAND]
-
-Options:
-  -b, --batch               Batch mode, no screen size probing
-  -c, --create              Create missing paths (and files) as needed
-  -f, --force               Ignore missing files and arguments, never prompt
-  -1, --once                Only one lap in commands like &#39;top&#39;
-  -p, --plain               Use plain table headings, no ctrl chars
-  -q, --quiet               Silent, only return status of command
-  -t, --no-heading          Skip table headings
-  -v, --verbose             Verbose output
-  -h, --help                This help text
-
-Commands:
-  debug                     Toggle Finit (daemon) debug
-  help                      This help text
-  version                   Show Finit version
-
-  ls | list                 List all .conf in /etc/finit.d
-  create   &lt;CONF&gt;           Create   .conf in /etc/finit.d/available
-  delete   &lt;CONF&gt;           Delete   .conf in /etc/finit.d/available
-  show     &lt;CONF&gt;           Show     .conf in /etc/finit.d/available
-  edit     &lt;CONF&gt;           Edit     .conf in /etc/finit.d/available
-  touch    &lt;CONF&gt;           Change   .conf in /etc/finit.d/available
-  enable   &lt;CONF&gt;           Enable   .conf in /etc/finit.d/available
-  disable  &lt;CONF&gt;           Disable  .conf in /etc/finit.d/enabled
-  reload                    Reload  *.conf in /etc/finit.d (activate changes)
-
-  cond     set   &lt;COND&gt;     Set (assert) user-defined condition     +usr/COND
-  cond     clear &lt;COND&gt;     Clear (deassert) user-defined condition -usr/COND
-  cond     status           Show condition status, default cond command
-  cond     dump             Dump all conditions and their status
-
-  log      [NAME]           Show ten last Finit, or NAME, messages from syslog
-  start    &lt;NAME&gt;[:ID]      Start service by name, with optional ID
-  stop     &lt;NAME&gt;[:ID]      Stop/Pause a running service by name
-  reload   &lt;NAME&gt;[:ID]      Reload service by name (SIGHUP or restart)
-  restart  &lt;NAME&gt;[:ID]      Restart (stop/start) service by name
-  status   &lt;NAME&gt;[:ID]      Show service status, by name
-  status                    Show status of services, default command
-
-  cgroup                    List cgroup config overview
-  ps                        List processes based on cgroups
-  top                       Show top-like listing based on cgroups
-
-  runlevel [0-9]            Show or set runlevel: 0 halt, 6 reboot
-  reboot                    Reboot system
-  halt                      Halt system
-  poweroff                  Halt and power off system
-  suspend                   Suspend system
-</code></pre></div><p>For services <em>not</em> supporting <code>SIGHUP</code> the <code>&lt;!&gt;</code> notation in the .conf
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span>alpine:<span style="color:#fe8019">~</span><span style="color:#928374;font-style:italic"># initctl help</span>
+</span></span><span style="display:flex;"><span>Usage: initctl [OPTIONS] [COMMAND]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Options:
+</span></span><span style="display:flex;"><span>  <span style="color:#fe8019">-</span>b, <span style="color:#fe8019">--</span>batch               Batch mode, no screen size probing
+</span></span><span style="display:flex;"><span>  <span style="color:#fe8019">-</span>c, <span style="color:#fe8019">--</span>create              Create missing paths (<span style="color:#fe8019">and</span> files) as needed
+</span></span><span style="display:flex;"><span>  <span style="color:#fe8019">-</span>f, <span style="color:#fe8019">--</span>force               Ignore missing files <span style="color:#fe8019">and</span> arguments, never prompt
+</span></span><span style="display:flex;"><span>  <span style="color:#fe8019">-</span><span style="color:#d3869b">1</span>, <span style="color:#fe8019">--</span>once                Only one lap <span style="color:#fe8019">in</span> commands like <span style="color:#b8bb26">&#39;top&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#fe8019">-</span>p, <span style="color:#fe8019">--</span>plain               Use plain table headings, no ctrl chars
+</span></span><span style="display:flex;"><span>  <span style="color:#fe8019">-</span>q, <span style="color:#fe8019">--</span>quiet               Silent, only <span style="color:#fe8019">return</span> status of command
+</span></span><span style="display:flex;"><span>  <span style="color:#fe8019">-</span>t, <span style="color:#fe8019">--</span>no<span style="color:#fe8019">-</span>heading          Skip table headings
+</span></span><span style="display:flex;"><span>  <span style="color:#fe8019">-</span>v, <span style="color:#fe8019">--</span>verbose             Verbose output
+</span></span><span style="display:flex;"><span>  <span style="color:#fe8019">-</span>h, <span style="color:#fe8019">--</span>help                This help text
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Commands:
+</span></span><span style="display:flex;"><span>  debug                     Toggle Finit (daemon) debug
+</span></span><span style="display:flex;"><span>  help                      This help text
+</span></span><span style="display:flex;"><span>  version                   Show Finit version
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  ls <span style="color:#fe8019">|</span> list                 List all <span style="color:#fe8019">.</span>conf <span style="color:#fe8019">in</span> <span style="color:#fe8019">/</span>etc<span style="color:#fe8019">/</span>finit<span style="color:#fe8019">.</span>d
+</span></span><span style="display:flex;"><span>  create   <span style="color:#fe8019">&lt;</span>CONF<span style="color:#fe8019">&gt;</span>           Create   <span style="color:#fe8019">.</span>conf <span style="color:#fe8019">in</span> <span style="color:#fe8019">/</span>etc<span style="color:#fe8019">/</span>finit<span style="color:#fe8019">.</span>d<span style="color:#fe8019">/</span>available
+</span></span><span style="display:flex;"><span>  delete   <span style="color:#fe8019">&lt;</span>CONF<span style="color:#fe8019">&gt;</span>           Delete   <span style="color:#fe8019">.</span>conf <span style="color:#fe8019">in</span> <span style="color:#fe8019">/</span>etc<span style="color:#fe8019">/</span>finit<span style="color:#fe8019">.</span>d<span style="color:#fe8019">/</span>available
+</span></span><span style="display:flex;"><span>  show     <span style="color:#fe8019">&lt;</span>CONF<span style="color:#fe8019">&gt;</span>           Show     <span style="color:#fe8019">.</span>conf <span style="color:#fe8019">in</span> <span style="color:#fe8019">/</span>etc<span style="color:#fe8019">/</span>finit<span style="color:#fe8019">.</span>d<span style="color:#fe8019">/</span>available
+</span></span><span style="display:flex;"><span>  edit     <span style="color:#fe8019">&lt;</span>CONF<span style="color:#fe8019">&gt;</span>           Edit     <span style="color:#fe8019">.</span>conf <span style="color:#fe8019">in</span> <span style="color:#fe8019">/</span>etc<span style="color:#fe8019">/</span>finit<span style="color:#fe8019">.</span>d<span style="color:#fe8019">/</span>available
+</span></span><span style="display:flex;"><span>  touch    <span style="color:#fe8019">&lt;</span>CONF<span style="color:#fe8019">&gt;</span>           Change   <span style="color:#fe8019">.</span>conf <span style="color:#fe8019">in</span> <span style="color:#fe8019">/</span>etc<span style="color:#fe8019">/</span>finit<span style="color:#fe8019">.</span>d<span style="color:#fe8019">/</span>available
+</span></span><span style="display:flex;"><span>  enable   <span style="color:#fe8019">&lt;</span>CONF<span style="color:#fe8019">&gt;</span>           Enable   <span style="color:#fe8019">.</span>conf <span style="color:#fe8019">in</span> <span style="color:#fe8019">/</span>etc<span style="color:#fe8019">/</span>finit<span style="color:#fe8019">.</span>d<span style="color:#fe8019">/</span>available
+</span></span><span style="display:flex;"><span>  disable  <span style="color:#fe8019">&lt;</span>CONF<span style="color:#fe8019">&gt;</span>           Disable  <span style="color:#fe8019">.</span>conf <span style="color:#fe8019">in</span> <span style="color:#fe8019">/</span>etc<span style="color:#fe8019">/</span>finit<span style="color:#fe8019">.</span>d<span style="color:#fe8019">/</span>enabled
+</span></span><span style="display:flex;"><span>  reload                    Reload  <span style="color:#fe8019">*.</span>conf <span style="color:#fe8019">in</span> <span style="color:#fe8019">/</span>etc<span style="color:#fe8019">/</span>finit<span style="color:#fe8019">.</span>d (activate changes)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  cond     set   <span style="color:#fe8019">&lt;</span>COND<span style="color:#fe8019">&gt;</span>     Set (<span style="color:#fabd2f">assert</span>) user<span style="color:#fe8019">-</span>defined condition     <span style="color:#fe8019">+</span>usr<span style="color:#fe8019">/</span>COND
+</span></span><span style="display:flex;"><span>  cond     clear <span style="color:#fe8019">&lt;</span>COND<span style="color:#fe8019">&gt;</span>     Clear (deassert) user<span style="color:#fe8019">-</span>defined condition <span style="color:#fe8019">-</span>usr<span style="color:#fe8019">/</span>COND
+</span></span><span style="display:flex;"><span>  cond     status           Show condition status, default cond command
+</span></span><span style="display:flex;"><span>  cond     dump             Dump all conditions <span style="color:#fe8019">and</span> their status
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#fabd2f">log</span>      [NAME]           Show ten last Finit, <span style="color:#fe8019">or</span> NAME, messages from syslog
+</span></span><span style="display:flex;"><span>  start    <span style="color:#fe8019">&lt;</span>NAME<span style="color:#fe8019">&gt;</span>[:ID]      Start service by name, with optional ID
+</span></span><span style="display:flex;"><span>  stop     <span style="color:#fe8019">&lt;</span>NAME<span style="color:#fe8019">&gt;</span>[:ID]      Stop<span style="color:#fe8019">/</span>Pause a running service by name
+</span></span><span style="display:flex;"><span>  reload   <span style="color:#fe8019">&lt;</span>NAME<span style="color:#fe8019">&gt;</span>[:ID]      Reload service by name (SIGHUP <span style="color:#fe8019">or</span> restart)
+</span></span><span style="display:flex;"><span>  restart  <span style="color:#fe8019">&lt;</span>NAME<span style="color:#fe8019">&gt;</span>[:ID]      Restart (stop<span style="color:#fe8019">/</span>start) service by name
+</span></span><span style="display:flex;"><span>  status   <span style="color:#fe8019">&lt;</span>NAME<span style="color:#fe8019">&gt;</span>[:ID]      Show service status, by name
+</span></span><span style="display:flex;"><span>  status                    Show status of services, default command
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  cgroup                    List cgroup config overview
+</span></span><span style="display:flex;"><span>  ps                        List processes based on cgroups
+</span></span><span style="display:flex;"><span>  top                       Show top<span style="color:#fe8019">-</span>like listing based on cgroups
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  runlevel [<span style="color:#d3869b">0</span><span style="color:#fe8019">-</span><span style="color:#d3869b">9</span>]            Show <span style="color:#fe8019">or</span> set runlevel: <span style="color:#d3869b">0</span> halt, <span style="color:#d3869b">6</span> reboot
+</span></span><span style="display:flex;"><span>  reboot                    Reboot system
+</span></span><span style="display:flex;"><span>  halt                      Halt system
+</span></span><span style="display:flex;"><span>  poweroff                  Halt <span style="color:#fe8019">and</span> power off system
+</span></span><span style="display:flex;"><span>  suspend                   Suspend system
+</span></span></code></pre></div><p>For services <em>not</em> supporting <code>SIGHUP</code> the <code>&lt;!&gt;</code> notation in the .conf
 file must be used to tell Finit to stop and start it on <code>reload</code> and
 <code>runlevel</code> changes.  If <code>&lt;&gt;</code> holds more <a href="https://github.com/troglobit/finit/blob/master/doc/conditions.md">conditions</a>, these will
 also affect how a service is maintained.</p>
@@ -487,26 +481,26 @@ also affect how a service is maintained.</p>
 the current runlevel these services will not be respawned automatically
 by Finit if they exit (crash).  Hence, if the runlevel is 2, the below
 Dropbear SSH service will not be restarted if it is killed or exits.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">alpine:~# initctl 
-PID   IDENT     STATUS   RUNLEVELS    DESCRIPTION
-======================================================================
-1506  acpid     running  [--2345----] ACPI daemon
-1509  crond     running  [--2345----] Cron daemon
-1489  dropbear  running  [--2345----] Dropbear SSH daemon
-1511  klogd     running  [S12345----] Kernel log daemon
-1512  ntpd      running  [--2345----] NTP daemon
-1473  syslogd   running  [S12345----] Syslog daemon
-
-alpine:~# initctl -v
-PID   IDENT     STATUS   RUNLEVELS    COMMAND
-======================================================================
-1506  acpid     running  [--2345----] acpid -f
-1509  crond     running  [--2345----] crond -f -S $CRON_OPTS
-1489  dropbear  running  [--2345----] dropbear -R -F $DROPBEAR_OPTS
-1511  klogd     running  [S12345----] klogd -n $KLOGD_OPTS
-1512  ntpd      running  [--2345----] ntpd -n $NTPD_OPTS
-1473  syslogd   running  [S12345----] syslogd -n
-</code></pre></div><p>The environment variables to each of the services above are read from,
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>alpine:~# initctl 
+</span></span><span style="display:flex;"><span>PID   IDENT     STATUS   RUNLEVELS    DESCRIPTION
+</span></span><span style="display:flex;"><span>======================================================================
+</span></span><span style="display:flex;"><span>1506  acpid     running  [--2345----] ACPI daemon
+</span></span><span style="display:flex;"><span>1509  crond     running  [--2345----] Cron daemon
+</span></span><span style="display:flex;"><span>1489  dropbear  running  [--2345----] Dropbear SSH daemon
+</span></span><span style="display:flex;"><span>1511  klogd     running  [S12345----] Kernel log daemon
+</span></span><span style="display:flex;"><span>1512  ntpd      running  [--2345----] NTP daemon
+</span></span><span style="display:flex;"><span>1473  syslogd   running  [S12345----] Syslog daemon
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>alpine:~# initctl -v
+</span></span><span style="display:flex;"><span>PID   IDENT     STATUS   RUNLEVELS    COMMAND
+</span></span><span style="display:flex;"><span>======================================================================
+</span></span><span style="display:flex;"><span>1506  acpid     running  [--2345----] acpid -f
+</span></span><span style="display:flex;"><span>1509  crond     running  [--2345----] crond -f -S $CRON_OPTS
+</span></span><span style="display:flex;"><span>1489  dropbear  running  [--2345----] dropbear -R -F $DROPBEAR_OPTS
+</span></span><span style="display:flex;"><span>1511  klogd     running  [S12345----] klogd -n $KLOGD_OPTS
+</span></span><span style="display:flex;"><span>1512  ntpd      running  [--2345----] ntpd -n $NTPD_OPTS
+</span></span><span style="display:flex;"><span>1473  syslogd   running  [S12345----] syslogd -n
+</span></span></code></pre></div><p>The environment variables to each of the services above are read from,
 in the case of Alpine Linux, <code>/etc/conf.d/</code>.  Other distributions may
 have other directories, e.g., Debian use <code>/etc/default/</code>.</p>
 <h2 id="requirements">Requirements</h2>
@@ -521,8 +515,8 @@ results.</p>
 <p>At boot Finit calls either <code>mdev</code> or <code>udevd</code> to populate <code>/dev</code>, this is
 done slightly differently and on systems with udev you might want to add
 the following one-shot task early in your <code>/etc/finit.conf</code>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback">run [S] udevadm settle --timeout=120 -- Waiting for udev
-</code></pre></div><p>Finit has a built-in Getty for TTYs, but requires a working <code>/bin/login</code>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>run [S] udevadm settle --timeout=120 -- Waiting for udev
+</span></span></code></pre></div><p>Finit has a built-in Getty for TTYs, but requires a working <code>/bin/login</code>
 or <code>/bin/sh</code>, if no TTYs are configured in <code>/etc/finit.conf</code>.</p>
 <p>For a fully operational system <code>/var</code>, <code>/run</code> and <code>/tmp</code> must be set up
 properly in <code>/etc/fstab</code> &ndash; which is iterated over at boot.</p>
@@ -561,7 +555,7 @@ and proposed extensions using GitHub:</p>
     
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2024</span>
+            <span>&copy; 2006</span>
             <span><a href="https://troglobit.com/">Joachim Wiberg</a></span>
             <span>UNIX&trade; 4Life! &#9994;</span>
             
@@ -579,7 +573,8 @@ and proposed extensions using GitHub:</p>
 
 
 
-<script type="text/javascript" src="https://troglobit.com/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
+<script type="text/javascript" src="https://troglobit.com/bundle.min.46e438bd2eca7eb6358c700b40f6f56b22ab0b92503ecc11a2d8e4bcc610b8b4da83e5ea3d3e84fdb5f3c3c765744b9f5bbaf43cf5a027910be07ee39a9c12a1.js" integrity="sha512-RuQ4vS7KfrY1jHALQPb1ayKrC5JQPswRotjkvMYQuLTag&#43;XqPT6E/bXzw8dldEufW7r0PPWgJ5EL4H7jmpwSoQ=="></script>
+
 
 
 

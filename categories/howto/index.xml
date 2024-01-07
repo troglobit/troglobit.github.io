@@ -5,244 +5,79 @@
     <link>https://troglobit.com/categories/howto/</link>
     <description>Recent content in howto on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Mon, 04 Sep 2023 20:24:00 +0000</lastBuildDate><atom:link href="https://troglobit.com/categories/howto/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Sep 2023 20:24:00 +0000</lastBuildDate>
+    <atom:link href="https://troglobit.com/categories/howto/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HowTo play with SNMP</title>
       <link>https://troglobit.com/howtos/snmp/</link>
       <pubDate>Mon, 04 Sep 2023 20:24:00 +0000</pubDate>
-      
       <guid>https://troglobit.com/howtos/snmp/</guid>
-      <description>This mini HowTo describes how to use the SNMP client tools to retrieve human readable information from devices running an SNMP daemon. In the examples below mini-snmpd is used as the daemon and as client both the command line net-snmp tool and the snmpB GUI are used.
-Personally I use both Ubuntu and Debian, so the tools I use to download the clients will reflect that. See your respective UNIX distro&amp;rsquo;s help pages for how to install these client tools in your operating system.</description>
+      <description>This mini HowTo describes how to use the SNMP client tools to retrieve human readable information from devices running an SNMP daemon. In the examples below mini-snmpd is used as the daemon and as client both the command line net-snmp tool and the snmpB GUI are used.&#xA;Personally I use both Ubuntu and Debian, so the tools I use to download the clients will reflect that. See your respective UNIX distro&amp;rsquo;s help pages for how to install these client tools in your operating system.</description>
     </item>
-    
     <item>
       <title>HowTo: Add Multicast Routing to FreeBSD kernel</title>
       <link>https://troglobit.com/howtos/mrouting-in-freebsd/</link>
       <pubDate>Sun, 01 Aug 2021 08:31:12 +0200</pubDate>
-      
       <guid>https://troglobit.com/howtos/mrouting-in-freebsd/</guid>
-      <description>This is a very short blog post, mostly intended as a reminder to myself. Basically, there are two methods of adding multicast routing support to the FreeBSD kernel:
- Rebuild the kernel with options MROUTING Load the kernel module: kldload ip_mroute  The kernel rebuild assumes the src.txz set was installed previously.
-cd /usr/src cd sys/amd64/conf cat GENERIC | sed &#39;s/GENERIC$/MULTICAST/&#39; &amp;gt; MULTICAST echo &#39;options MROUTING # Multicast routing&#39; &amp;gt;&amp;gt; MULTICAST echo &#39;options PIM # Enable for pimd&#39; &amp;gt;&amp;gt; MULTICAST cd - make kernel KERNCONF=MULTICAST reboot  That&amp;rsquo;s it.</description>
+      <description>This is a very short blog post, mostly intended as a reminder to myself. Basically, there are two methods of adding multicast routing support to the FreeBSD kernel:&#xA;Rebuild the kernel with options MROUTING Load the kernel module: kldload ip_mroute The kernel rebuild assumes the src.txz set was installed previously.&#xA;cd /usr/src cd sys/amd64/conf cat GENERIC | sed &#39;s/GENERIC$/MULTICAST/&#39; &amp;gt; MULTICAST echo &#39;options MROUTING # Multicast routing&#39; &amp;gt;&amp;gt; MULTICAST echo &#39;options PIM # Enable for pimd&#39; &amp;gt;&amp;gt; MULTICAST cd - make kernel KERNCONF=MULTICAST reboot That&amp;rsquo;s it.</description>
     </item>
-    
     <item>
       <title>HowTo use NetBSD pre-built packages</title>
       <link>https://troglobit.com/howtos/netbsd-pkgsrc/</link>
       <pubDate>Sat, 22 Aug 2020 21:39:00 +0100</pubDate>
-      
       <guid>https://troglobit.com/howtos/netbsd-pkgsrc/</guid>
-      <description>Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.
-Here it is, you&amp;rsquo;d think this be something the installer could set up a default for &amp;hellip;
-PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/  or if you use the latest on an old ThinkPad T42:
-PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/i386/9.0/All/  The simply
-pkg_add -v git  Or so you might think!</description>
+      <description>Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.&#xA;Here it is, you&amp;rsquo;d think this be something the installer could set up a default for &amp;hellip;&#xA;PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/ or if you use the latest on an old ThinkPad T42:&#xA;PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/i386/9.0/All/ The simply&#xA;pkg_add -v git Or so you might think!</description>
     </item>
-    
     <item>
       <title>HowTo run pimd on FreeBSD</title>
       <link>https://troglobit.com/howtos/pimd-on-freebsd/</link>
       <pubDate>Sun, 27 Sep 2015 18:45:00 +0200</pubDate>
-      
       <guid>https://troglobit.com/howtos/pimd-on-freebsd/</guid>
-      <description>This is not a proper HowTo, more of a &amp;ldquo;note to self&amp;rdquo; after having created a setup to test pimd issue #57. For these notes the following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and Qemu 2.3.0, is used:
-.--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | &amp;#39;--------&amp;#39; &amp;#39;----&amp;#39; &amp;#39;----&amp;#39; &amp;#39;----------&amp;#39; The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP/MLD snooping to get pimd to run smoothly.</description>
+      <description>This is not a proper HowTo, more of a &amp;ldquo;note to self&amp;rdquo; after having created a setup to test pimd issue #57. For these notes the following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and Qemu 2.3.0, is used:&#xA;.--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | &amp;#39;--------&amp;#39; &amp;#39;----&amp;#39; &amp;#39;----&amp;#39; &amp;#39;----------&amp;#39; The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP/MLD snooping to get pimd to run smoothly.</description>
     </item>
-    
     <item>
       <title>HowTo run pimd on OpenBSD</title>
       <link>https://troglobit.com/howtos/pimd-on-openbsd/</link>
       <pubDate>Sun, 19 Jul 2015 00:32:00 +0200</pubDate>
-      
       <guid>https://troglobit.com/howtos/pimd-on-openbsd/</guid>
-      <description>This is an introduction to HowTo run pimd on OpenBSD. I keep it around mostly as a reminder to myself when testing new pimd releases, maybe someone else can make use of it as well.
-First of all, my sincere thanks to the OpenBSD team for, not just an awesome UNIX distribution, but also for their good taste in shipping a MULTICAST enabled kernel in the base distribution! On both NetBSD and FreeBSD there is a bit of work to get multicast support, which is one of the reasons for my not writing a HowTo for either of them atm.</description>
+      <description>This is an introduction to HowTo run pimd on OpenBSD. I keep it around mostly as a reminder to myself when testing new pimd releases, maybe someone else can make use of it as well.&#xA;First of all, my sincere thanks to the OpenBSD team for, not just an awesome UNIX distribution, but also for their good taste in shipping a MULTICAST enabled kernel in the base distribution! On both NetBSD and FreeBSD there is a bit of work to get multicast support, which is one of the reasons for my not writing a HowTo for either of them atm.</description>
     </item>
-    
     <item>
       <title>HowTo: Using -lite with a GIT-based application</title>
       <link>https://troglobit.com/2015/07/02/howto-using-lite-with-a-git-based-application/</link>
       <pubDate>Thu, 02 Jul 2015 17:11:55 +0000</pubDate>
-      
       <guid>https://troglobit.com/2015/07/02/howto-using-lite-with-a-git-based-application/</guid>
-      <description>&lt;p&gt;Years ago while looking for a fast &lt;a href=&#34;https://en.wikipedia.org/wiki/Init&#34;&gt;init&lt;/a&gt; replacement for &lt;a href=&#34;http://westermo.com/&#34;&gt;work&lt;/a&gt;,
-I found &lt;a href=&#34;http://helllabs.org/finit/&#34;&gt;Finit&lt;/a&gt;.  Originally written by &lt;a href=&#34;https://github.com/cmatsuoka&#34;&gt;Claudio Matsuoka&lt;/a&gt; to act
-as a drop-in replacement for the &lt;a href=&#34;https://en.wikipedia.org/wiki/Asus_Eee_PC&#34;&gt;Asus EeePC&lt;/a&gt; &lt;a href=&#34;http://wiki.eeeuser.com/boot_process:the_boot_process&#34;&gt;fastinit&lt;/a&gt;, &lt;em&gt;&amp;ldquo;gaps
-filled with frog DNA …&amp;quot;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Until I found Finit I had always been in awe of those venturing into the
-realm of &lt;a href=&#34;http://0pointer.net/blog/&#34;&gt;PID 1&lt;/a&gt;.  However, learning from the simplicity of Claudio&amp;rsquo;s
-code I realized that although PID 1 at times is indistinguishable from
-magic, it is really not that hard to master.  &lt;a href=&#34;https://github.com/troglobit/finit&#34;&gt;My version of Finit&lt;/a&gt;
-is available on GitHub.&lt;/p&gt;
-&lt;p&gt;The code is open sourced under the very liberal &lt;a href=&#34;http://opensource.org/licenses/MIT&#34;&gt;MIT/X11 license&lt;/a&gt;,
-and much of its frog DNA has proven very useful to me over the years.
-This blog post is about how that frog DNA can help you fill gaps in your
-projects …&lt;/p&gt;</description>
+      <description>&lt;p&gt;Years ago while looking for a fast &lt;a href=&#34;https://en.wikipedia.org/wiki/Init&#34;&gt;init&lt;/a&gt; replacement for &lt;a href=&#34;http://westermo.com/&#34;&gt;work&lt;/a&gt;,&#xA;I found &lt;a href=&#34;http://helllabs.org/finit/&#34;&gt;Finit&lt;/a&gt;.  Originally written by &lt;a href=&#34;https://github.com/cmatsuoka&#34;&gt;Claudio Matsuoka&lt;/a&gt; to act&#xA;as a drop-in replacement for the &lt;a href=&#34;https://en.wikipedia.org/wiki/Asus_Eee_PC&#34;&gt;Asus EeePC&lt;/a&gt; &lt;a href=&#34;http://wiki.eeeuser.com/boot_process:the_boot_process&#34;&gt;fastinit&lt;/a&gt;, &lt;em&gt;&amp;ldquo;gaps&#xA;filled with frog DNA …&amp;rdquo;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Until I found Finit I had always been in awe of those venturing into the&#xA;realm of &lt;a href=&#34;http://0pointer.net/blog/&#34;&gt;PID 1&lt;/a&gt;.  However, learning from the simplicity of Claudio&amp;rsquo;s&#xA;code I realized that although PID 1 at times is indistinguishable from&#xA;magic, it is really not that hard to master.  &lt;a href=&#34;https://github.com/troglobit/finit&#34;&gt;My version of Finit&lt;/a&gt;&#xA;is available on GitHub.&lt;/p&gt;&#xA;&lt;p&gt;The code is open sourced under the very liberal &lt;a href=&#34;http://opensource.org/licenses/MIT&#34;&gt;MIT/X11 license&lt;/a&gt;,&#xA;and much of its frog DNA has proven very useful to me over the years.&#xA;This blog post is about how that frog DNA can help you fill gaps in your&#xA;projects …&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>HowTo: Push to multiple GIT repos with one command</title>
       <link>https://troglobit.com/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/</link>
       <pubDate>Wed, 01 Jul 2015 00:42:17 +0000</pubDate>
-      
       <guid>https://troglobit.com/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/</guid>
-      <description>&lt;p&gt;So, now that I have &lt;a href=&#34;http://git.troglobit.com&#34;&gt;http://git.troglobit.com&lt;/a&gt; setup as a backup GIT repo
-to &lt;a href=&#34;https://github.com/troglobit&#34;&gt;https://github.com/troglobit&lt;/a&gt;, I needed a &lt;em&gt;simple&lt;/em&gt; way to always push
-to both repos &amp;ndash; best way for me is to always hook into my regular work
-flow, otherwise I&amp;rsquo;d just forget.  The &lt;a href=&#34;1&#34;&gt;git-remote(1)&lt;/a&gt; man page to the
-rescue, it describes the &lt;code&gt;set-url --add&lt;/code&gt; sub-command:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;git remote set-url --add origin ssh://git.troglobit.com:1234/srv/git/watchdogd.git
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Now, with a simple &lt;code&gt;git push&lt;/code&gt; followed by &lt;code&gt;git push --tags&lt;/code&gt; I had now
-pushed to both the GitHub repo as well as my own server!&lt;/p&gt;</description>
+      <description>&lt;p&gt;So, now that I have &lt;a href=&#34;http://git.troglobit.com&#34;&gt;http://git.troglobit.com&lt;/a&gt; setup as a backup GIT repo&#xA;to &lt;a href=&#34;https://github.com/troglobit&#34;&gt;https://github.com/troglobit&lt;/a&gt;, I needed a &lt;em&gt;simple&lt;/em&gt; way to always push&#xA;to both repos &amp;ndash; best way for me is to always hook into my regular work&#xA;flow, otherwise I&amp;rsquo;d just forget.  The &lt;a href=&#34;1&#34;&gt;git-remote(1)&lt;/a&gt; man page to the&#xA;rescue, it describes the &lt;code&gt;set-url --add&lt;/code&gt; sub-command:&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;git remote set-url --add origin ssh://git.troglobit.com:1234/srv/git/watchdogd.git&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;Now, with a simple &lt;code&gt;git push&lt;/code&gt; followed by &lt;code&gt;git push --tags&lt;/code&gt; I had now&#xA;pushed to both the GitHub repo as well as my own server!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>HowTo: Apache with Gitweb on Debian 8.1</title>
       <link>https://troglobit.com/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/</link>
       <pubDate>Tue, 30 Jun 2015 23:13:48 +0000</pubDate>
-      
       <guid>https://troglobit.com/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;m posting this in case anyone else gets stuck setting up &lt;a href=&#34;http://www.apache.org&#34;&gt;Apache&lt;/a&gt;
-with &lt;a href=&#34;http://git-scm.com/docs/gitweb&#34;&gt;Gitweb&lt;/a&gt;.  Also as a reminder to myself in case I ever need to
-set up this all over again.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;You have all your eggs in one basket (GitHub), and&lt;/li&gt;
-&lt;li&gt;You really like that shiny basket, but&lt;/li&gt;
-&lt;li&gt;You know you&amp;rsquo;re clumsy and usually drop baskets yourself.&lt;/li&gt;
-&lt;li&gt;You are wise (yes you are!) and realize you need another basket, so&lt;/li&gt;
-&lt;li&gt;You set up a server and a domain yourself &amp;hellip;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;OK.  Let&amp;rsquo;s start simple, since you are already running the latest Debian
-you fire up the command line and install the basics:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo apt-get install gitweb apache2
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;So it&amp;rsquo;ll complain, you&amp;rsquo;ll clarify your request and soon all required
-packages are on your server.  Now what?&lt;/p&gt;
-&lt;p&gt;Debian has already set up http://localhost/gitweb for you, and if you
-have a domain already you should go ahead and edit the master file for
-that:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;editor /etc/apache2/sites-available/000-default.conf
-service apache2 reload
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;If you want to use that for your gitweb needs, then you&amp;rsquo;re done!&lt;/p&gt;</description>
+      <description>&lt;p&gt;I&amp;rsquo;m posting this in case anyone else gets stuck setting up &lt;a href=&#34;http://www.apache.org&#34;&gt;Apache&lt;/a&gt;&#xA;with &lt;a href=&#34;http://git-scm.com/docs/gitweb&#34;&gt;Gitweb&lt;/a&gt;.  Also as a reminder to myself in case I ever need to&#xA;set up this all over again.&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;You have all your eggs in one basket (GitHub), and&lt;/li&gt;&#xA;&lt;li&gt;You really like that shiny basket, but&lt;/li&gt;&#xA;&lt;li&gt;You know you&amp;rsquo;re clumsy and usually drop baskets yourself.&lt;/li&gt;&#xA;&lt;li&gt;You are wise (yes you are!) and realize you need another basket, so&lt;/li&gt;&#xA;&lt;li&gt;You set up a server and a domain yourself &amp;hellip;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;OK.  Let&amp;rsquo;s start simple, since you are already running the latest Debian&#xA;you fire up the command line and install the basics:&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;sudo apt-get install gitweb apache2&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;So it&amp;rsquo;ll complain, you&amp;rsquo;ll clarify your request and soon all required&#xA;packages are on your server.  Now what?&lt;/p&gt;&#xA;&lt;p&gt;Debian has already set up http://localhost/gitweb for you, and if you&#xA;have a domain already you should go ahead and edit the master file for&#xA;that:&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;editor /etc/apache2/sites-available/000-default.conf&#xA;service apache2 reload&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;If you want to use that for your gitweb needs, then you&amp;rsquo;re done!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>HowTo: Add Multicast Routing to FreeBSD kernel</title>
       <link>https://troglobit.com/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/</link>
       <pubDate>Tue, 23 Sep 2014 01:55:19 +0000</pubDate>
-      
       <guid>https://troglobit.com/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/</guid>
-      <description>This is a very short blog post, mostly intended as a reminder to myself. Basically, there are two methods of adding multicast routing support to the FreeBSD kernel:
- Rebuild the kernel with options MROUTING Load the kernel module: kldload ip_mroute  The kernel rebuild assumes the src.txz set was installed previously.
-cd /usr/src cd sys/amd64/conf cat GENERIC | sed &#39;s/GENERIC$/MULTICAST/&#39; &amp;gt; MULTICAST echo &#39;options MROUTING # Multicast routing&#39; &amp;gt;&amp;gt; MULTICAST echo &#39;options PIM # Enable for pimd&#39; &amp;gt;&amp;gt; MULTICAST cd - make kernel KERNCONF=MULTICAST reboot  That&amp;rsquo;s it.</description>
+      <description>This is a very short blog post, mostly intended as a reminder to myself. Basically, there are two methods of adding multicast routing support to the FreeBSD kernel:&#xA;Rebuild the kernel with options MROUTING Load the kernel module: kldload ip_mroute The kernel rebuild assumes the src.txz set was installed previously.&#xA;cd /usr/src cd sys/amd64/conf cat GENERIC | sed &#39;s/GENERIC$/MULTICAST/&#39; &amp;gt; MULTICAST echo &#39;options MROUTING # Multicast routing&#39; &amp;gt;&amp;gt; MULTICAST echo &#39;options PIM # Enable for pimd&#39; &amp;gt;&amp;gt; MULTICAST cd - make kernel KERNCONF=MULTICAST reboot That&amp;rsquo;s it.</description>
     </item>
-    
     <item>
       <title>HowTo Rebase without an origin</title>
       <link>https://troglobit.com/2014/08/27/howto-rebase-without-an-origin/</link>
       <pubDate>Wed, 27 Aug 2014 10:00:13 +0000</pubDate>
-      
       <guid>https://troglobit.com/2014/08/27/howto-rebase-without-an-origin/</guid>
       <description>OK, so you&amp;rsquo;ve just been handed the task to integrate a big piece of corporate software and it&amp;rsquo;s nowhere near as done and ready as project management thinks. Of course you&amp;rsquo;ve already started chugging away at it, fixing bugs, refactoring code and wrapping it in neat containers to keep the changeset against the base SW small &amp;ndash; you already know you&amp;rsquo;ll get another drop of the same stinking pieace of code in another six months, so you keep the changes small and track them in GIT with neatly formatted commit messages.</description>
     </item>
-    
-    <item>
-      <title>HowTo Rebase without an origin</title>
-      <link>https://troglobit.com/howtos/rebase-without-an-origin/</link>
-      <pubDate>Wed, 27 Aug 2014 10:00:13 +0200</pubDate>
-      
-      <guid>https://troglobit.com/howtos/rebase-without-an-origin/</guid>
-      <description>OK, so you&amp;rsquo;ve just been handed the task to integrate a big piece of corporate software and it&amp;rsquo;s nowhere near as done and ready as project management thinks. Of course you&amp;rsquo;ve already started chugging away at it, fixing bugs, refactoring code and wrapping it in neat containers to keep the changeset against the base SW small &amp;ndash; you already know you&amp;rsquo;ll get another drop of the same stinking pieace of code in another six months, so you keep the changes small and track them in GIT with neatly formatted commit messages.</description>
-    </item>
-    
-    <item>
-      <title>Use Ubuntu to Serve iTunes</title>
-      <link>https://troglobit.com/2010/12/31/ubuntu-to-serve-music-to-itunes/</link>
-      <pubDate>Fri, 31 Dec 2010 20:26:37 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2010/12/31/ubuntu-to-serve-music-to-itunes/</guid>
-      <description>OK, so we finally got an iPad. The effective marketing droids of Apple are doing a good job, even the Linux zealots are starting to use their products :-)
-So, how to serve the immense music collection of our family to the iPad? Well, it seems the magic integration with iTunes is not enough (yet), so you need a Simple Daap Client app on your iPad to get the most out of this HowTo.</description>
-    </item>
-    
-    <item>
-      <title>Converting from Bazaar to GIT</title>
-      <link>https://troglobit.com/2010/07/13/converting-from-bazaar-to-git/</link>
-      <pubDate>Tue, 13 Jul 2010 01:56:11 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2010/07/13/converting-from-bazaar-to-git/</guid>
-      <description>You need git, and bazaar obviously. Also install bzr-fastimport, it contains the export plugin as well. The rest is a rip off from Frank&amp;rsquo;s page.
-$ git init project.git $ cd project.git $ bzr fast-export --export-marks=.git/bzr.mark ~/project.bzr | git fast-import --export-marks=.git/git.mark That worked for me. The output will likely be something like this:
-01:41:19 Calculating the revisions to include ... 01:41:19 Starting export of 33 revisions ... 01:41:20 Exported 33 revisions in 0:00:01 git-fast-import statistics: --------------------------------------------------------------------- Alloc&amp;#39;d objects: 5000 Total objects : 267 ( 0 duplicates ) blobs : 158 ( 0 duplicates 57 deltas) trees : 76 ( 0 duplicates 55 deltas) commits: 33 ( 0 duplicates 0 deltas) tags : 0 ( 0 duplicates 0 deltas) Total branches : 10 ( 1 loads ) marks : 1024 ( 33 unique ) atoms : 38 Memory total : 2344 KiB pools : 2110 KiB objects: 234 KiB --------------------------------------------------------------------- pack_report: getpagesize() = 4096 pack_report: core.</description>
-    </item>
-    
-    <item>
-      <title>HowTo: Move window buttons back to the right</title>
-      <link>https://troglobit.com/2010/05/01/howto-move-window-buttons-back-to-the-right-hand-side/</link>
-      <pubDate>Sat, 01 May 2010 16:46:57 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2010/05/01/howto-move-window-buttons-back-to-the-right-hand-side/</guid>
-      <description>When you&amp;rsquo;ve installed Ubuntu 10.04 you might want to have the window controls back to the right side, where you&amp;rsquo;re used to having them. Use the following simple command:
-gconftool-2 --set /apps/metacity/general/button_layout --type string &amp;quot;menu:minimize,maximize,close&amp;quot;  </description>
-    </item>
-    
-    <item>
-      <title>HowTo use Git for Collaborative Development</title>
-      <link>https://troglobit.com/2009/06/13/howto-use-git-for-collaborative-development/</link>
-      <pubDate>Sat, 13 Jun 2009 00:36:07 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2009/06/13/howto-use-git-for-collaborative-development/</guid>
-      <description>This is mainly some notes for myself so I don&amp;rsquo;t forget. Having worked with GNU Bazaar before much of Git is still alien to me.
-This HowTo is divided into two parts:
- what happens on your laptop, and what you must do on a remote server where you publish your changes  So, let&amp;rsquo;s start stimple:
-laptop&amp;gt; mkdir projectX; cd projectX laptop&amp;gt; git init laptop&amp;gt; emacs file1.txt laptop&amp;gt; git add file1.</description>
-    </item>
-    
-    <item>
-      <title>Howto Setup and Run Xen</title>
-      <link>https://troglobit.com/2009/06/08/howto-setup-and-run-xen/</link>
-      <pubDate>Mon, 08 Jun 2009 22:05:42 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2009/06/08/howto-setup-and-run-xen/</guid>
-      <description>This is an extremly brief and quick Xen tutorial. There are lots of them already, see your GNU/Linux distribution&amp;rsquo;s wiki, HowtoForge or other places for a starter guide. This particular HowTo deals with setting up Xen as easy as possible using Ubuntu 8.04 LTS as host operating system (dom0 in Xen terms) and Ubuntu 9.04 as guest operating systems (domU in Xen lingo).
-Ubuntu 8.04 LTS comes with a Xen kernel that can run as dom0.</description>
-    </item>
-    
-    <item>
-      <title>HowTo: Build GNU Emacs from CVS</title>
-      <link>https://troglobit.com/2008/07/28/howto-build-gnu-emacs-from-cvs/</link>
-      <pubDate>Mon, 28 Jul 2008 01:38:13 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2008/07/28/howto-build-gnu-emacs-from-cvs/</guid>
-      <description>Why would you want to do this? Well, considering all the neat new things that have been added lately it should be tempting for any old Emacs fan.
-The Emacs Wiki has all the info you need, but here is a quick run-down of the bare necessities. Start by checking out your working copy:
-cvs -z3 -d:pserver:anonymous@cvs.savannah.gnu.org:/cvsroot/emacs co emacs cd emacs/ ./configure make bootstrap Start with ./src/emacs or symlink the binary to your ~/bin/ directory.</description>
-    </item>
-    
-    <item>
-      <title>HowTo: Building Debian/Ubuntu Kernels</title>
-      <link>https://troglobit.com/2007/02/03/building-debian-slash-ubuntu-kernels/</link>
-      <pubDate>Sat, 03 Feb 2007 11:00:45 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2007/02/03/building-debian-slash-ubuntu-kernels/</guid>
-      <description>I have been over this topic so many times now, strangely enough I&amp;rsquo;ve managed to make things more complicated than they need to be. It&amp;rsquo;s really this simple:
-$ wget ftp://ftp.sunet.se/pub/Linux/kernels/v2.6/linux-2.6.19.2.tar.bz2 $ tar xfj linux-2.6.19.2.tar.bz2 $ cd linux-2.6.19.2/ $ zcat /proc/config.gz &amp;gt;.config $ make menuconfig [Tweak to your hearts desire] $ fakeroot make-kpkg --initrd kernel_image $ dpkg -i ../linux-image-2.6.19.2_2.6.19.2-10.00.Custom_i386.deb [DONE!] You may, of course, need to tweak the file /etc/kernel-pkg.conf, but there are man pages for that.</description>
-    </item>
-    
-    <item>
-      <title>make-kpkg and dirty modules</title>
-      <link>https://troglobit.com/2006/07/17/make-kpkg-and-dirty-modules/</link>
-      <pubDate>Mon, 17 Jul 2006 22:10:24 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2006/07/17/make-kpkg-and-dirty-modules/</guid>
-      <description>Dammit, tonight I spent too many hours chasing down a &amp;ldquo;feature&amp;rdquo; in the Debian kernel build process or the Linux-2.6 kernel. I haven&amp;rsquo;t yet deciced who to blame ;-)
-Here goes: when you build the latest Linux 2.6 kernel, checked out from the git repository, with make-kpkg you should make sure to uncheck the CONFIG_LOCALVERSION_AUTO option in the kernel config before hand. It&amp;rsquo;s under &amp;ldquo;General setup&amp;rdquo; → &amp;ldquo;Automatically append version information &amp;hellip;&amp;rdquo;.</description>
-    </item>
-    
   </channel>
 </rss>

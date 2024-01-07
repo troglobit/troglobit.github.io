@@ -5,413 +5,79 @@
     <link>https://troglobit.com/categories/opensource/</link>
     <description>Recent content in opensource on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Tue, 09 Jun 2020 22:48:52 +0200</lastBuildDate><atom:link href="https://troglobit.com/categories/opensource/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Jun 2020 22:48:52 +0200</lastBuildDate>
+    <atom:link href="https://troglobit.com/categories/opensource/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Open Source Releases</title>
       <link>https://troglobit.com/post/2020-06-09-open-source-releases/</link>
       <pubDate>Tue, 09 Jun 2020 22:48:52 +0200</pubDate>
-      
       <guid>https://troglobit.com/post/2020-06-09-open-source-releases/</guid>
-      <description>&lt;p&gt;The last couple of months have been crazy.  The downturn in the economy
-due to Covid-19, mass layoffs, social distancing and quarantine.  Not
-to mention the unrest in US and Europe in the wake of George Floyd&amp;rsquo;s
-uneccessary death.&lt;/p&gt;</description>
+      <description>&lt;p&gt;The last couple of months have been crazy.  The downturn in the economy&#xA;due to Covid-19, mass layoffs, social distancing and quarantine.  Not&#xA;to mention the unrest in US and Europe in the wake of George Floyd&amp;rsquo;s&#xA;uneccessary death.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>HowTo: Using -lite with a GIT-based application</title>
       <link>https://troglobit.com/2015/07/02/howto-using-lite-with-a-git-based-application/</link>
       <pubDate>Thu, 02 Jul 2015 17:11:55 +0000</pubDate>
-      
       <guid>https://troglobit.com/2015/07/02/howto-using-lite-with-a-git-based-application/</guid>
-      <description>&lt;p&gt;Years ago while looking for a fast &lt;a href=&#34;https://en.wikipedia.org/wiki/Init&#34;&gt;init&lt;/a&gt; replacement for &lt;a href=&#34;http://westermo.com/&#34;&gt;work&lt;/a&gt;,
-I found &lt;a href=&#34;http://helllabs.org/finit/&#34;&gt;Finit&lt;/a&gt;.  Originally written by &lt;a href=&#34;https://github.com/cmatsuoka&#34;&gt;Claudio Matsuoka&lt;/a&gt; to act
-as a drop-in replacement for the &lt;a href=&#34;https://en.wikipedia.org/wiki/Asus_Eee_PC&#34;&gt;Asus EeePC&lt;/a&gt; &lt;a href=&#34;http://wiki.eeeuser.com/boot_process:the_boot_process&#34;&gt;fastinit&lt;/a&gt;, &lt;em&gt;&amp;ldquo;gaps
-filled with frog DNA …&amp;quot;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Until I found Finit I had always been in awe of those venturing into the
-realm of &lt;a href=&#34;http://0pointer.net/blog/&#34;&gt;PID 1&lt;/a&gt;.  However, learning from the simplicity of Claudio&amp;rsquo;s
-code I realized that although PID 1 at times is indistinguishable from
-magic, it is really not that hard to master.  &lt;a href=&#34;https://github.com/troglobit/finit&#34;&gt;My version of Finit&lt;/a&gt;
-is available on GitHub.&lt;/p&gt;
-&lt;p&gt;The code is open sourced under the very liberal &lt;a href=&#34;http://opensource.org/licenses/MIT&#34;&gt;MIT/X11 license&lt;/a&gt;,
-and much of its frog DNA has proven very useful to me over the years.
-This blog post is about how that frog DNA can help you fill gaps in your
-projects …&lt;/p&gt;</description>
+      <description>&lt;p&gt;Years ago while looking for a fast &lt;a href=&#34;https://en.wikipedia.org/wiki/Init&#34;&gt;init&lt;/a&gt; replacement for &lt;a href=&#34;http://westermo.com/&#34;&gt;work&lt;/a&gt;,&#xA;I found &lt;a href=&#34;http://helllabs.org/finit/&#34;&gt;Finit&lt;/a&gt;.  Originally written by &lt;a href=&#34;https://github.com/cmatsuoka&#34;&gt;Claudio Matsuoka&lt;/a&gt; to act&#xA;as a drop-in replacement for the &lt;a href=&#34;https://en.wikipedia.org/wiki/Asus_Eee_PC&#34;&gt;Asus EeePC&lt;/a&gt; &lt;a href=&#34;http://wiki.eeeuser.com/boot_process:the_boot_process&#34;&gt;fastinit&lt;/a&gt;, &lt;em&gt;&amp;ldquo;gaps&#xA;filled with frog DNA …&amp;rdquo;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Until I found Finit I had always been in awe of those venturing into the&#xA;realm of &lt;a href=&#34;http://0pointer.net/blog/&#34;&gt;PID 1&lt;/a&gt;.  However, learning from the simplicity of Claudio&amp;rsquo;s&#xA;code I realized that although PID 1 at times is indistinguishable from&#xA;magic, it is really not that hard to master.  &lt;a href=&#34;https://github.com/troglobit/finit&#34;&gt;My version of Finit&lt;/a&gt;&#xA;is available on GitHub.&lt;/p&gt;&#xA;&lt;p&gt;The code is open sourced under the very liberal &lt;a href=&#34;http://opensource.org/licenses/MIT&#34;&gt;MIT/X11 license&lt;/a&gt;,&#xA;and much of its frog DNA has proven very useful to me over the years.&#xA;This blog post is about how that frog DNA can help you fill gaps in your&#xA;projects …&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Inetd Support in Finit v1.12</title>
       <link>https://troglobit.com/2015/03/06/inetd-support-in-finit-v1-dot-12/</link>
       <pubDate>Fri, 06 Mar 2015 22:34:45 +0000</pubDate>
-      
       <guid>https://troglobit.com/2015/03/06/inetd-support-in-finit-v1-dot-12/</guid>
-      <description>&lt;p&gt;A steady flow of features, and releases, is key to keeping any project
-alive.  Recently I ticked off another item in the &lt;a href=&#34;https://troglobit.com/finit.html&#34;&gt;Finit&lt;/a&gt;
-TODO list &amp;hellip;&lt;/p&gt;
-&lt;p&gt;Finit v1.12 now comes with a built-in inetd!  You no longer need an
-external inetd daemon to launch services on demand.&lt;/p&gt;
-&lt;p&gt;The good news doesn&amp;rsquo;t stop there, this little inetd actually supports a
-poor man&amp;rsquo;s tcpwrappers!&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;inetd ssh/tcp          nowait [2345] /sbin/dropbear -i -R -F
-inetd ssh@eth0:222/tcp nowait [2345] /sbin/dropbear -i -R -F
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;With these two lines in your &lt;code&gt;/etc/finit.conf&lt;/code&gt; you tell finit to launch
-the &lt;a href=&#34;https://matt.ucc.asn.au/dropbear/dropbear.html&#34;&gt;Dropbear SSH&lt;/a&gt;
-server on demand on port 22 (default ssh/tcp port in &lt;code&gt;/etc/services&lt;/code&gt;) on
-&lt;em&gt;all&lt;/em&gt; interfaces except on &lt;code&gt;eth0&lt;/code&gt;, which in your case is the Internet
-(WAN) interface, here you want SSH to run on port 222.  Actually, you
-don&amp;rsquo;t want port 22 open at all on &lt;code&gt;eth0&lt;/code&gt; &amp;hellip; so finit takes care of this
-for you!  Seriously, it just works, no need for messing about with that
-nasty old &lt;code&gt;iptables&lt;/code&gt; anymore!&lt;/p&gt;
-&lt;p&gt;The original UNIX inetd super server supported many protocols
-internally, some of which may seem a bit odd today, and some have been
-superseded by more modern protocols.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Echo_Protocol&#34;&gt;echo&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Character_Generator_Protocol&#34;&gt;chargen&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Time_Protocol&#34;&gt;time&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Daytime_Protocol&#34;&gt;daytime&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Discard_Protocol&#34;&gt;discard&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Finit currently only supports one internal/built-in standard service,
-&lt;code&gt;time&lt;/code&gt;.  It is built as a plugin to serve as an example of how you can
-extend Finit yourself.  The time service can be called either as UDP or
-TCP.  To prevent security issues, the &lt;code&gt;time&lt;/code&gt; protocol is disabled by
-default.  To enable it you need two things:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;The &lt;code&gt;time.so&lt;/code&gt; plugin (built by default)&lt;/li&gt;
-&lt;li&gt;An &lt;code&gt;inetd time ...&lt;/code&gt; line in &lt;code&gt;/etc/finit.conf&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Assuming you&amp;rsquo;ve installed the default set of plugins, the following two
-lines can be added:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;inetd time/udp   wait [2345] internal
-inetd time/tcp nowait [2345] internal
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;This can be very useful for testing the inetd capabilities, your network
-connection, or simply to get the time to a client where NTP for some
-reason does not work, or is blocked.  For instance, you could have a GPS
-setup on your server and distribute time to clients with the &lt;code&gt;time&lt;/code&gt;
-protocol.&lt;/p&gt;
-&lt;p&gt;To use it you need an &lt;a href=&#34;http://www.aelius.com/njh/rdate/&#34;&gt;&lt;code&gt;rdate&lt;/code&gt;&lt;/a&gt;
-client.  Users of &lt;code&gt;rdate&lt;/code&gt; in BusyBox may need to be reminded that it
-only supports TCP.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ rdate -pu 198.51.100.42
-Sat Mar  7 08:48:58 CET 2015
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;For more info on Finit and its features, see the &lt;a href=&#34;https://github.com/troglobit/finit/blob/master/README.md&#34;&gt;README&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Enjoy! ツ&lt;/p&gt;</description>
+      <description>&lt;p&gt;A steady flow of features, and releases, is key to keeping any project&#xA;alive.  Recently I ticked off another item in the &lt;a href=&#34;https://troglobit.com/finit.html&#34;&gt;Finit&lt;/a&gt;&#xA;TODO list &amp;hellip;&lt;/p&gt;&#xA;&lt;p&gt;Finit v1.12 now comes with a built-in inetd!  You no longer need an&#xA;external inetd daemon to launch services on demand.&lt;/p&gt;&#xA;&lt;p&gt;The good news doesn&amp;rsquo;t stop there, this little inetd actually supports a&#xA;poor man&amp;rsquo;s tcpwrappers!&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;inetd ssh/tcp          nowait [2345] /sbin/dropbear -i -R -F&#xA;inetd ssh@eth0:222/tcp nowait [2345] /sbin/dropbear -i -R -F&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;With these two lines in your &lt;code&gt;/etc/finit.conf&lt;/code&gt; you tell finit to launch&#xA;the &lt;a href=&#34;https://matt.ucc.asn.au/dropbear/dropbear.html&#34;&gt;Dropbear SSH&lt;/a&gt;&#xA;server on demand on port 22 (default ssh/tcp port in &lt;code&gt;/etc/services&lt;/code&gt;) on&#xA;&lt;em&gt;all&lt;/em&gt; interfaces except on &lt;code&gt;eth0&lt;/code&gt;, which in your case is the Internet&#xA;(WAN) interface, here you want SSH to run on port 222.  Actually, you&#xA;don&amp;rsquo;t want port 22 open at all on &lt;code&gt;eth0&lt;/code&gt; &amp;hellip; so finit takes care of this&#xA;for you!  Seriously, it just works, no need for messing about with that&#xA;nasty old &lt;code&gt;iptables&lt;/code&gt; anymore!&lt;/p&gt;&#xA;&lt;p&gt;The original UNIX inetd super server supported many protocols&#xA;internally, some of which may seem a bit odd today, and some have been&#xA;superseded by more modern protocols.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Echo_Protocol&#34;&gt;echo&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Character_Generator_Protocol&#34;&gt;chargen&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Time_Protocol&#34;&gt;time&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Daytime_Protocol&#34;&gt;daytime&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Discard_Protocol&#34;&gt;discard&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Finit currently only supports one internal/built-in standard service,&#xA;&lt;code&gt;time&lt;/code&gt;.  It is built as a plugin to serve as an example of how you can&#xA;extend Finit yourself.  The time service can be called either as UDP or&#xA;TCP.  To prevent security issues, the &lt;code&gt;time&lt;/code&gt; protocol is disabled by&#xA;default.  To enable it you need two things:&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;The &lt;code&gt;time.so&lt;/code&gt; plugin (built by default)&lt;/li&gt;&#xA;&lt;li&gt;An &lt;code&gt;inetd time ...&lt;/code&gt; line in &lt;code&gt;/etc/finit.conf&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Assuming you&amp;rsquo;ve installed the default set of plugins, the following two&#xA;lines can be added:&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;inetd time/udp   wait [2345] internal&#xA;inetd time/tcp nowait [2345] internal&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;This can be very useful for testing the inetd capabilities, your network&#xA;connection, or simply to get the time to a client where NTP for some&#xA;reason does not work, or is blocked.  For instance, you could have a GPS&#xA;setup on your server and distribute time to clients with the &lt;code&gt;time&lt;/code&gt;&#xA;protocol.&lt;/p&gt;&#xA;&lt;p&gt;To use it you need an &lt;a href=&#34;http://www.aelius.com/njh/rdate/&#34;&gt;&lt;code&gt;rdate&lt;/code&gt;&lt;/a&gt;&#xA;client.  Users of &lt;code&gt;rdate&lt;/code&gt; in BusyBox may need to be reminded that it&#xA;only supports TCP.&lt;/p&gt;&#xA;&lt;pre&gt;&lt;code&gt;$ rdate -pu 198.51.100.42&#xA;Sat Mar  7 08:48:58 CET 2015&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;&lt;p&gt;For more info on Finit and its features, see the &lt;a href=&#34;https://github.com/troglobit/finit/blob/master/README.md&#34;&gt;README&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Enjoy! ツ&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Finit v1.11 released!</title>
       <link>https://troglobit.com/2015/01/24/finit-v1-dot-11-released/</link>
       <pubDate>Sat, 24 Jan 2015 16:54:23 +0000</pubDate>
-      
       <guid>https://troglobit.com/2015/01/24/finit-v1-dot-11-released/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Update 2015-03-09&lt;/strong&gt;: This release has unfortunately been &lt;em&gt;yanked&lt;/em&gt; due
-to serious regressions in launching background processes.  It has been
-replaced by &lt;a href=&#34;https://troglobit.com/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/&#34;&gt;v1.12&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;strong&gt;Update 2015-03-09&lt;/strong&gt;: This release has unfortunately been &lt;em&gt;yanked&lt;/em&gt; due&#xA;to serious regressions in launching background processes.  It has been&#xA;replaced by &lt;a href=&#34;https://troglobit.com/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/&#34;&gt;v1.12&lt;/a&gt;&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Recent Open Source Work</title>
       <link>https://troglobit.com/2015/01/08/recent-open-source-work/</link>
       <pubDate>Thu, 08 Jan 2015 01:57:14 +0000</pubDate>
-      
       <guid>https://troglobit.com/2015/01/08/recent-open-source-work/</guid>
-      <description>I&amp;rsquo;m a coder, not a writer. Here&amp;rsquo;s what I&amp;rsquo;ve been working on during the winter holidays:
-  A new feature release of Finit is coming shortly, which will use libuEv and feature inetd support built-in!
-  Another minor release of my own take on event loops, libuEv v1.0.3. This time with a heavy focus on documentation and Q&amp;amp;A, extensive validation testing have been done on this release.
-  Released another minor release of mrouted, v3.</description>
+      <description>I&amp;rsquo;m a coder, not a writer. Here&amp;rsquo;s what I&amp;rsquo;ve been working on during the winter holidays:&#xA;A new feature release of Finit is coming shortly, which will use libuEv and feature inetd support built-in!&#xA;Another minor release of my own take on event loops, libuEv v1.0.3. This time with a heavy focus on documentation and Q&amp;amp;A, extensive validation testing have been done on this release.&#xA;Released another minor release of mrouted, v3.</description>
     </item>
-    
     <item>
       <title>mrouted v3.9.7</title>
       <link>https://troglobit.com/2014/12/28/mrouted-v3-dot-9-7/</link>
       <pubDate>Sun, 28 Dec 2014 19:38:06 +0000</pubDate>
-      
       <guid>https://troglobit.com/2014/12/28/mrouted-v3-dot-9-7/</guid>
-      <description>&lt;p&gt;Another release today is the venerable &lt;a href=&#34;https://troglobit.com/mrouted.html&#34;&gt;mrouted&lt;/a&gt;, now
-available as
-&lt;a href=&#34;https://github.com/troglobit/mrouted/releases/tag/3.9.7&#34;&gt;v3.9.7 on GitHub&lt;/a&gt;.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Another release today is the venerable &lt;a href=&#34;https://troglobit.com/mrouted.html&#34;&gt;mrouted&lt;/a&gt;, now&#xA;available as&#xA;&lt;a href=&#34;https://github.com/troglobit/mrouted/releases/tag/3.9.7&#34;&gt;v3.9.7 on GitHub&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>pimd v2.2.0 -- The last release of pimd?</title>
       <link>https://troglobit.com/2014/12/28/last-release-of-pimd/</link>
       <pubDate>Sun, 28 Dec 2014 13:42:18 +0000</pubDate>
-      
       <guid>https://troglobit.com/2014/12/28/last-release-of-pimd/</guid>
-      <description>&lt;p&gt;On one of the last days of 2014 I release &lt;a href=&#34;https://troglobit.com/pimd.html&#34;&gt;pimd&lt;/a&gt;
-&lt;a href=&#34;https://github.com/troglobit/pimd/releases/tag/2.2.0&#34;&gt;v2.2.0&lt;/a&gt;, which
-is an awesome release with a lot of new features and bug fixes!&lt;/p&gt;
-&lt;p&gt;However, it could very well be the last release I do.  Even though its
-one of my most popular projects on
-&lt;a href=&#34;https://github.com/troglobit&#34;&gt;GitHub&lt;/a&gt; I have not had enough time to
-dedicate to it over the years.  I will continue to do fixes and merge
-pull requests until someone else steps up to take over.  There is also
-the distinct possibility that the
-&lt;a href=&#34;https://github.com/greearb/xorp.ct&#34;&gt;Xorp PIM-SM&lt;/a&gt; or the new
-&lt;a href=&#34;https://github.com/udhos/qpimd&#34;&gt;Quagga PIM-SSM&lt;/a&gt; implementations will
-(finally) make good old pimd completely redundant.&lt;/p&gt;
-&lt;p&gt;At &lt;a href=&#34;http://www.westermo.com&#34;&gt;work&lt;/a&gt; we will likely start using the
-Quagga PIM rather than pimd in WeOS.&lt;/p&gt;
-&lt;p&gt;For now though, enjoy pimd v2.2.0.  It&amp;rsquo;s been tested in both my Qemu
-based virtual testbed and a few setups using Linux&#39; &lt;code&gt;netns&lt;/code&gt; feature in
-&lt;a href=&#34;http://www.nrl.navy.mil/itd/ncs/products/core&#34;&gt;CORE&lt;/a&gt; &amp;ndash; awesome
-little proggy! :-)&lt;/p&gt;</description>
+      <description>&lt;p&gt;On one of the last days of 2014 I release &lt;a href=&#34;https://troglobit.com/pimd.html&#34;&gt;pimd&lt;/a&gt;&#xA;&lt;a href=&#34;https://github.com/troglobit/pimd/releases/tag/2.2.0&#34;&gt;v2.2.0&lt;/a&gt;, which&#xA;is an awesome release with a lot of new features and bug fixes!&lt;/p&gt;&#xA;&lt;p&gt;However, it could very well be the last release I do.  Even though its&#xA;one of my most popular projects on&#xA;&lt;a href=&#34;https://github.com/troglobit&#34;&gt;GitHub&lt;/a&gt; I have not had enough time to&#xA;dedicate to it over the years.  I will continue to do fixes and merge&#xA;pull requests until someone else steps up to take over.  There is also&#xA;the distinct possibility that the&#xA;&lt;a href=&#34;https://github.com/greearb/xorp.ct&#34;&gt;Xorp PIM-SM&lt;/a&gt; or the new&#xA;&lt;a href=&#34;https://github.com/udhos/qpimd&#34;&gt;Quagga PIM-SSM&lt;/a&gt; implementations will&#xA;(finally) make good old pimd completely redundant.&lt;/p&gt;&#xA;&lt;p&gt;At &lt;a href=&#34;http://www.westermo.com&#34;&gt;work&lt;/a&gt; we will likely start using the&#xA;Quagga PIM rather than pimd in WeOS.&lt;/p&gt;&#xA;&lt;p&gt;For now though, enjoy pimd v2.2.0.  It&amp;rsquo;s been tested in both my Qemu&#xA;based virtual testbed and a few setups using Linux&amp;rsquo; &lt;code&gt;netns&lt;/code&gt; feature in&#xA;&lt;a href=&#34;http://www.nrl.navy.mil/itd/ncs/products/core&#34;&gt;CORE&lt;/a&gt; &amp;ndash; awesome&#xA;little proggy! :-)&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>TFTP blocksize negotiation in uftpd v1.7</title>
       <link>https://troglobit.com/2014/12/21/tftp-blocksize-negotiation-in-uftpd-v1-dot-7/</link>
       <pubDate>Sun, 21 Dec 2014 19:42:17 +0000</pubDate>
-      
       <guid>https://troglobit.com/2014/12/21/tftp-blocksize-negotiation-in-uftpd-v1-dot-7/</guid>
-      <description>New release of uftpd, this time with TFTP blocksize negotiation, RFC 2348. Making it a lot faster to transfer files over TFTP.
-Try it out!</description>
+      <description>New release of uftpd, this time with TFTP blocksize negotiation, RFC 2348. Making it a lot faster to transfer files over TFTP.&#xA;Try it out!</description>
     </item>
-    
     <item>
       <title>GnuTLS support in Inadyn and fixes to uftpd</title>
       <link>https://troglobit.com/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/</link>
       <pubDate>Sat, 13 Sep 2014 19:18:56 +0000</pubDate>
-      
       <guid>https://troglobit.com/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/</guid>
-      <description>Quite a few changes lately. I finally got around to adding support for GnuTLS to Inadyn, hopefully this will get into Debian &amp;hellip; unless the Jessie freeze prevents that.
-Also, thanks to a friend of mine trying out uftpd recently I discovered that libuev has been missing from the tarball since the release of the TFTP support. Fixed.
-Another great piece of news is that Coverity accepted uftpd as an Open Source project, I&amp;rsquo;ve been hard at work fixing nasty bugs uncovered by the Coverity Scan.</description>
+      <description>Quite a few changes lately. I finally got around to adding support for GnuTLS to Inadyn, hopefully this will get into Debian &amp;hellip; unless the Jessie freeze prevents that.&#xA;Also, thanks to a friend of mine trying out uftpd recently I discovered that libuev has been missing from the tarball since the release of the TFTP support. Fixed.&#xA;Another great piece of news is that Coverity accepted uftpd as an Open Source project, I&amp;rsquo;ve been hard at work fixing nasty bugs uncovered by the Coverity Scan.</description>
     </item>
-    
     <item>
       <title>Bugfix release of uftpd</title>
       <link>https://troglobit.com/2014/09/04/bugfix-release-of-uftpd/</link>
       <pubDate>Thu, 04 Sep 2014 22:22:09 +0000</pubDate>
-      
       <guid>https://troglobit.com/2014/09/04/bugfix-release-of-uftpd/</guid>
-      <description>So them pesky details of /etc/inetd.conf really are important?
- This is a small bugfix release of uftpd. Version 1.4 is basically just to change nowait to wait for the TFTP service in /etc/inetd.conf, but there&amp;rsquo;s also a minor man page update.
-Enjoy! :)</description>
+      <description>So them pesky details of /etc/inetd.conf really are important?&#xA;This is a small bugfix release of uftpd. Version 1.4 is basically just to change nowait to wait for the TFTP service in /etc/inetd.conf, but there&amp;rsquo;s also a minor man page update.&#xA;Enjoy! :)</description>
     </item>
-    
-    <item>
-      <title>The awesome uftpd, now w/ TFTP support! :)</title>
-      <link>https://troglobit.com/2014/09/02/new-release-of-the-awesome-uftpd/</link>
-      <pubDate>Tue, 02 Sep 2014 10:47:35 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2014/09/02/new-release-of-the-awesome-uftpd/</guid>
-      <description>Today sees the release of v1.3 of the awesome little uftpd. The main news is the new TFTP support! Just like before you don&amp;rsquo;t need any configuration file, just build and install &amp;ndash; or build a .deb file and install.
-This release completes the main purpose of uftpd for me, I can now use it as my daily driver and fully replace vsftpd and tftpd-hpa, which to me are the next best.</description>
-    </item>
-    
-    <item>
-      <title>New releases of uftpd and inadyn ...</title>
-      <link>https://troglobit.com/2014/05/20/new-release-of-uftpd-and-inadyn-dot-dot-dot/</link>
-      <pubDate>Tue, 20 May 2014 21:08:25 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2014/05/20/new-release-of-uftpd-and-inadyn-dot-dot-dot/</guid>
-      <description>The last couple of weeks have both seen the birth of the fabulous uftpd and a reignited inadyn project! Yesterday v1.2 of uftpd was released and today Inadyn saw the first working HTTPS support being released as v1.99.8! This is likely the last release of Inadyn before the big 2.0, which will introduce the new .conf file format based on libConfuse. A .conf file feasibility study was presented earlier &amp;hellip;</description>
-    </item>
-    
-    <item>
-      <title>New release of the DDNS client Inadyn</title>
-      <link>https://troglobit.com/2014/05/14/new-release-of-the-ddns-client-inadyn/</link>
-      <pubDate>Wed, 14 May 2014 08:29:48 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2014/05/14/new-release-of-the-ddns-client-inadyn/</guid>
-      <description>Looking for a Dynamic DNS, DDNS, client? Well you&amp;rsquo;re in luck, the FLOSS market space is flooded with dedicated clients and various wget scripts. So why bother with an old C implementation? Well, this is admittedly one of the old timers in the game and is likely packaged for your GNU/Linux distribution of choice already. It&amp;rsquo;s tried and tested with many DDNS service providers and even comes bundled in a few embedded router distributions as well.</description>
-    </item>
-    
-    <item>
-      <title>Why write your own FTP server?</title>
-      <link>https://troglobit.com/2014/05/04/why-write-your-own-ftp-server/</link>
-      <pubDate>Sun, 04 May 2014 11:25:09 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2014/05/04/why-write-your-own-ftp-server/</guid>
-      <description>&lt;p&gt;So, I finally got fed up with all other FTP servers and wrote
-&lt;a href=&#34;https://troglobit.com/uftpd.html&#34;&gt;my own&lt;/a&gt;.  Why would someone in their right mind do
-something like this 2014?&lt;/p&gt;
-&lt;p&gt;As a developer the answer to most such questions is usually; to
-scratch an itch.  For a very long time I&amp;rsquo;ve looked for a really simple
-FTP server that just works, out of the box!&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Release of Finit v1.9</title>
-      <link>https://troglobit.com/2014/04/21/release-of-finit-v1-dot-9/</link>
-      <pubDate>Mon, 21 Apr 2014 16:08:30 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2014/04/21/release-of-finit-v1-dot-9/</guid>
-      <description>Just made it! Here&amp;rsquo;s the result of #Easterhack14 &amp;ndash; Finit v1.9 :-)
-Nothing fancy this time, just collecting some bug fixes, playing with cppcheck a bit and adding support for including .conf files. Quite useful if you want to partition your configuration, or if you share major pieces of configuration between different platforms.
-Enjoy!</description>
-    </item>
-    
-    <item>
-      <title>Threads vs Events</title>
-      <link>https://troglobit.com/2013/08/06/event-handling/</link>
-      <pubDate>Tue, 06 Aug 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2013/08/06/event-handling/</guid>
-      <description>&lt;p&gt;This is a rant about something I recently found to be a long standing
-battle line in the world of programming,
-&lt;a href=&#34;http://cgi.di.uoa.gr/~mema/courses/mde518/papers/lauer78.pdf&#34;&gt;Lau78&lt;/a&gt;.
-The event vs thread based approach to programming.  As rants go I do
-not aspire to deliver a clear or logical message, what so ever.  It&amp;rsquo;s
-basically just something I need to get off my chest.&lt;/p&gt;
-&lt;p&gt;It was not until 2007 I first learned about the event based approach
-to programming and event libraries like
-&lt;a href=&#34;http://libevent.org/&#34;&gt;libevent&lt;/a&gt; and
-&lt;a href=&#34;http://software.schmorp.de/pkg/libev.html&#34;&gt;libev&lt;/a&gt;.  Up until that
-point the silver bullet everyone was using was &amp;hellip; Threads.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>New Open Source Releases</title>
-      <link>https://troglobit.com/2013/07/12/new-open-source-releases/</link>
-      <pubDate>Fri, 12 Jul 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2013/07/12/new-open-source-releases/</guid>
-      <description>Vacation time means catching up on my Open Source projects! :)
-Currently I&amp;rsquo;m shaping up the home pages and this blog to improve the easy access and overview of all the packages I maintain. The following packages have new releases, or can expect new releases soon:
- Minix Editline v1.14.1 SMCRoute v1.99.1 &amp;ndash; There&amp;rsquo;s even a v2.0.0 being planned, with the core of SMCRoute available as a library mrouted minor cleanup an sync with OpenBSD pimd cleanups and bug fixes, needs testing inadyn is in dire need of a release, but needs more testing and fixes  As usual, see my GitHub for the latest commits if you want to try anything out, file an issue report, or if you want to contribute.</description>
-    </item>
-    
-    <item>
-      <title>Finit v1.8</title>
-      <link>https://troglobit.com/2013/06/08/finit-v1-dot-8/</link>
-      <pubDate>Sat, 08 Jun 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2013/06/08/finit-v1-dot-8/</guid>
-      <description>It&amp;rsquo;s been a long time coming, but here it finally is, Finit v1.8! The goodies we&amp;rsquo;ve been waiting for are:
- Runlevels Multiple TTYs One-shot tasks  Let&amp;rsquo;s start off with tasks. Tasks are one-shot commands, with a syntax like service directives, but are not monitored and respawned like services. Tasks are started in parallel, just like services. For some cases, like the system bootstrap phase, some tasks may need to be executed in sequence, and for that purpose there also exists a run command.</description>
-    </item>
-    
-    <item>
-      <title>Announcing pimd v2.1.7</title>
-      <link>https://troglobit.com/2011/01/09/announcing-pimd-v2-dot-1-7/</link>
-      <pubDate>Sun, 09 Jan 2011 20:20:57 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2011/01/09/announcing-pimd-v2-dot-1-7/</guid>
-      <description>This is a followup release to the security fix in pimd, v2.1.6. The change to use /var/lib/misc/, instead of the insecure /var/tmp/, has now been refactored into using the proper FHS recommended /var/run/pimd/ instead.
-As always, check the homepage, the ChangeLog and the GIT log for more details.</description>
-    </item>
-    
-    <item>
-      <title>Announcing pimd v2.1.6</title>
-      <link>https://troglobit.com/2011/01/08/announcing-pimd-v2-dot-1-6/</link>
-      <pubDate>Sat, 08 Jan 2011 23:40:22 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2011/01/08/announcing-pimd-v2-dot-1-6/</guid>
-      <description>This is a security release of pimd, v2.1.6. The following fixes are included:
- CVE-2011-0007: &amp;ldquo;Insecure file creation in /var/tmp&amp;rdquo; Build error on GNU/kFreeBSD  Thanks to Vincent Bernat this time for the CVE fix!
-As always, check the homepage, the ChangeLog and the GIT log for more details.</description>
-    </item>
-    
-    <item>
-      <title>Announcing mrouted v3.9.3</title>
-      <link>https://troglobit.com/2010/10/11/announcing-mrouted-v3-dot-9-3/</link>
-      <pubDate>Mon, 11 Oct 2010 23:44:28 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2010/10/11/announcing-mrouted-v3-dot-9-3/</guid>
-      <description>Here is another bug-fix release of mrouted. This time with a couple of really nasty bugs fixed. A big thanks to Dan Kruchinin for tracking down a NULL pointer dereference in the conf file parser and an overzealous check of netmask that made mrouted useless over tunnel interfaces or point-to-point links (OpenVPN, PPP, L2TP and PPTP). See the ChangeLog or the GIT log for details.</description>
-    </item>
-    
-    <item>
-      <title>Announcing pimd v2.1.3</title>
-      <link>https://troglobit.com/2010/09/08/announcing-pimd-v2-dot-1-3/</link>
-      <pubDate>Wed, 08 Sep 2010 23:44:49 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2010/09/08/announcing-pimd-v2-dot-1-3/</guid>
-      <description>I&amp;rsquo;m very pleased to present the next bug-fix release of pimd, v2.1.3. The real announcement for v2.1.2 I never really got around to write because the diligent Debian maintainer, Antonin Kral alerted me to some problems. Which is great! I do not have the resources to test the build on all those platforms. I sure appreciate all the help I can get. Thank you Antonin!
-As always, check the homepage, the changelog and the GIT log for details.</description>
-    </item>
-    
-    <item>
-      <title>Editline First Post</title>
-      <link>https://troglobit.com/2009/06/14/editline-first-post/</link>
-      <pubDate>Sun, 14 Jun 2009 20:44:45 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2009/06/14/editline-first-post/</guid>
-      <description>For a while now I&amp;rsquo;ve been maintaining a port of the Minix editline library libedit. Mainly for my own purposes, or rather on behalf of Westermo WeOS, where it is used in the CLI. This library is the same as the Debian editline package, even though the origin of that package is somewhat unclear to me.
-Today I decided to adjust the package name and bump the version number to indicate that my port is the same, and now slightly more advanced, than the Debian version.</description>
-    </item>
-    
-    <item>
-      <title>Minix editline v0.3.0</title>
-      <link>https://troglobit.com/2009/02/08/minix-editline-v0-dot-3-0/</link>
-      <pubDate>Sun, 08 Feb 2009 22:35:22 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2009/02/08/minix-editline-v0-dot-3-0/</guid>
-      <description>It&amp;rsquo;s here! Fresh, new and packed with new features! Well, really just one new major feature — support for ANSI arrow keys. A good enough reason to bump the minor version number :-)
-Get it from the usual FTP location:
- http://ftp.vmlinux.org/pub/People/jocke/minix-editline/  </description>
-    </item>
-    
-    <item>
-      <title>Minix editline v0.2.2</title>
-      <link>https://troglobit.com/2008/11/08/minix-editline-v0-dot-2-2/</link>
-      <pubDate>Sat, 08 Nov 2008 20:24:22 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2008/11/08/minix-editline-v0-dot-2-2/</guid>
-      <description>Oups, it seems I forgot to announce the v0.2.2 release of the Minix editline library! It was made official in Bazaar over a month ago, 2008-10-02, but it was not until today that the tarball was created and uploaded to the FTP.
-The most noteworthy in this release is support for command completion with the addition of rl_complete() and rl_list_possib(). Two function pointers that easily can be overloaded by the user.</description>
-    </item>
-    
-    <item>
-      <title>Moving to ISC</title>
-      <link>https://troglobit.com/2008/07/30/moving-to-isc/</link>
-      <pubDate>Wed, 30 Jul 2008 23:53:42 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2008/07/30/moving-to-isc/</guid>
-      <description>I hereby announce that all of the code I produce from now on will use the ISC license. Previously I&amp;rsquo;ve used the MIT license and the GNU GPL, or LGPL where applicable.
-The reason for changing this is two-fold. First, I like to be able to reuse much of what I do in proprietary settings. Yes, I&amp;rsquo;m one of those people who look upon the world with &amp;ldquo;grey&amp;rdquo; eyes rather than black &amp;amp; white.</description>
-    </item>
-    
-    <item>
-      <title>Minix editline v0.2.1</title>
-      <link>https://troglobit.com/2008/06/09/minix-editline-v0-dot-2-1/</link>
-      <pubDate>Mon, 09 Jun 2008 23:02:22 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2008/06/09/minix-editline-v0-dot-2-1/</guid>
-      <description>The v0.2.0 release included some Debian patches, tcgetattr() and a batch mode (when reading from file) line reader. This release fixes a bug in the Debian patch that caused the batch mode version of readline() to actually truncate lines longer than 64 chars.
-Get it from the usual FTP location:
- http://ftp.vmlinux.org/pub/People/jocke/minix-editline/  </description>
-    </item>
-    
-    <item>
-      <title>Minix editline v0.1.4</title>
-      <link>https://troglobit.com/2008/06/09/minix-editline-v0-dot-1-4/</link>
-      <pubDate>Mon, 09 Jun 2008 00:49:22 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2008/06/09/minix-editline-v0-dot-1-4/</guid>
-      <description>Another day another release, I guess. :-)
-Lots of small fixes — it can now be cross-built for Arm (Xscale) without any serious warnings. Get it from the usual FTP location:
- http://ftp.vmlinux.org/pub/People/jocke/minix-editline/  </description>
-    </item>
-    
-    <item>
-      <title>Minix editline v0.1.1</title>
-      <link>https://troglobit.com/2008/06/08/minix-editline-v0-dot-1-1/</link>
-      <pubDate>Sun, 08 Jun 2008 00:56:22 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2008/06/08/minix-editline-v0-dot-1-1/</guid>
-      <description>Hot on the heels of the first one, only minor build fixes but this one should actually be usable by others. Now installs both library, include file and man page into the given --prefix.
- http://ftp.vmlinux.org/pub/People/jocke/minix-editline/  </description>
-    </item>
-    
-    <item>
-      <title>Minix editline v0.1.0</title>
-      <link>https://troglobit.com/2008/06/07/minix-editline-v0-dot-1-0/</link>
-      <pubDate>Sat, 07 Jun 2008 21:45:05 +0000</pubDate>
-      
-      <guid>https://troglobit.com/2008/06/07/minix-editline-v0-dot-1-0/</guid>
-      <description>I&amp;rsquo;ve been looking long and hard for a small and useful GNU readline replacement. Oddly enough, all the time I was looking for one I never even once considered looking at the Minix sources!
-Currently I&amp;rsquo;m using the NetBSD editline derivative (readline compatible) from Jess Thrysoee, but it requires ncurses, which is huge!
-All I really wanted was a bare bones readline() suitable for small embedded systems. One which could record history and preferably, but not required to, support completion.</description>
-    </item>
-    
   </channel>
 </rss>

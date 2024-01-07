@@ -5,162 +5,79 @@
     <link>https://troglobit.com/howtos/</link>
     <description>Recent content in Howtos on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Mon, 04 Sep 2023 20:24:00 +0000</lastBuildDate><atom:link href="https://troglobit.com/howtos/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Sep 2023 20:24:00 +0000</lastBuildDate>
+    <atom:link href="https://troglobit.com/howtos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HowTo play with SNMP</title>
       <link>https://troglobit.com/howtos/snmp/</link>
       <pubDate>Mon, 04 Sep 2023 20:24:00 +0000</pubDate>
-      
       <guid>https://troglobit.com/howtos/snmp/</guid>
-      <description>This mini HowTo describes how to use the SNMP client tools to retrieve human readable information from devices running an SNMP daemon. In the examples below mini-snmpd is used as the daemon and as client both the command line net-snmp tool and the snmpB GUI are used.
-Personally I use both Ubuntu and Debian, so the tools I use to download the clients will reflect that. See your respective UNIX distro&amp;rsquo;s help pages for how to install these client tools in your operating system.</description>
+      <description>This mini HowTo describes how to use the SNMP client tools to retrieve human readable information from devices running an SNMP daemon. In the examples below mini-snmpd is used as the daemon and as client both the command line net-snmp tool and the snmpB GUI are used.&#xA;Personally I use both Ubuntu and Debian, so the tools I use to download the clients will reflect that. See your respective UNIX distro&amp;rsquo;s help pages for how to install these client tools in your operating system.</description>
     </item>
-    
     <item>
       <title>Multicast HowTo</title>
       <link>https://troglobit.com/howtos/multicast/</link>
       <pubDate>Sun, 28 May 2023 07:52:12 +0200</pubDate>
-      
       <guid>https://troglobit.com/howtos/multicast/</guid>
-      <description>Introduction This HowTo attempts to give some insight into the basics of setting up multicast routing. Both static multicast routing, with SMCRoute, and dynamic multicast routing, with mrouted and pimd.
-For some use-cases, in particular link-local multicast, it may not be possible to use multicast routing, then I recommend trying out:
- Bridging networks, see bridge(8) or Linux bridge - how it works igmproxy, mcproxy, or OpenVPN in Layer-2, bridged mode  Make sure to check out the FAQ for the most common problems.</description>
+      <description>Introduction This HowTo attempts to give some insight into the basics of setting up multicast routing. Both static multicast routing, with SMCRoute, and dynamic multicast routing, with mrouted and pimd.&#xA;For some use-cases, in particular link-local multicast, it may not be possible to use multicast routing, then I recommend trying out:&#xA;Bridging networks, see bridge(8) or Linux bridge - how it works igmproxy, mcproxy, or OpenVPN in Layer-2, bridged mode Make sure to check out the FAQ for the most common problems.</description>
     </item>
-    
     <item>
       <title>HowTo: Set up Merecat with cgit</title>
       <link>https://troglobit.com/howtos/merecat-and-cgit/</link>
       <pubDate>Thu, 09 Dec 2021 05:56:00 +0000</pubDate>
-      
       <guid>https://troglobit.com/howtos/merecat-and-cgit/</guid>
-      <description>&lt;p&gt;This post details how to set up &lt;a href=&#34;https://git.zx2c4.com/cgit/&#34;&gt;cgit&lt;/a&gt; with &lt;a href=&#34;http://merecat.troglobit.com&#34;&gt;Merecat httpd&lt;/a&gt;.  It
-began as a &lt;a href=&#34;https://github.com/troglobit/merecat/issues/3&#34;&gt;GitHub issue&lt;/a&gt; report by Mr Alok G. Singh, who had run
-into problems setting it up, and ended up as a HowTo.&lt;/p&gt;</description>
+      <description>&lt;p&gt;This post details how to set up &lt;a href=&#34;https://git.zx2c4.com/cgit/&#34;&gt;cgit&lt;/a&gt; with &lt;a href=&#34;http://merecat.troglobit.com&#34;&gt;Merecat httpd&lt;/a&gt;.  It&#xA;began as a &lt;a href=&#34;https://github.com/troglobit/merecat/issues/3&#34;&gt;GitHub issue&lt;/a&gt; report by Mr Alok G. Singh, who had run&#xA;into problems setting it up, and ended up as a HowTo.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>HowTo: Set up Merecat with Ikiwiki</title>
       <link>https://troglobit.com/howtos/merecat-and-ikiwiki/</link>
       <pubDate>Thu, 09 Dec 2021 05:51:00 +0000</pubDate>
-      
       <guid>https://troglobit.com/howtos/merecat-and-ikiwiki/</guid>
-      <description>This is a HowTo for setting up ikiwiki with Merecat httpd.
-First install ikiwiki
-$ sudo apt install ikiwiki libcgi-session-perl libcgi-formbuilder-perl Follow the steps to setup a new Wiki or Blog. In this example we set up a wiki in our ~/public_html:
-$ ikiwiki --setup /etc/ikiwiki/auto.setup ... Successfully set up wiki: url: http://localhost/~jocke/wiki srcdir: ~/wiki destdir: ~/public_html/wiki repository: ~/wiki.git To modify settings, edit ~/home.setup and then run:
-$ ikiwiki --setup ~/home.</description>
+      <description>This is a HowTo for setting up ikiwiki with Merecat httpd.&#xA;First install ikiwiki&#xA;$ sudo apt install ikiwiki libcgi-session-perl libcgi-formbuilder-perl Follow the steps to setup a new Wiki or Blog. In this example we set up a wiki in our ~/public_html:&#xA;$ ikiwiki --setup /etc/ikiwiki/auto.setup ... Successfully set up wiki: url: http://localhost/~jocke/wiki srcdir: ~/wiki destdir: ~/public_html/wiki repository: ~/wiki.git To modify settings, edit ~/home.setup and then run:&#xA;$ ikiwiki --setup ~/home.</description>
     </item>
-    
     <item>
       <title>HowTo: Build &amp; Use My Projects</title>
       <link>https://troglobit.com/howtos/howto-build-and-use-my-projects/</link>
       <pubDate>Tue, 05 Oct 2021 21:03:00 +0200</pubDate>
-      
       <guid>https://troglobit.com/howtos/howto-build-and-use-my-projects/</guid>
-      <description>&lt;p&gt;Ever so often someone new to Open Source show up on GitHub or in my
-inbox.  It usually starts something like this:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;&amp;ldquo;Hey, I just downloaded your software, what&amp;rsquo;s next?&amp;quot;&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;&amp;ldquo;Your software doesn&amp;rsquo;t work on my system!!!!&amp;quot;&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;&amp;ldquo;How can I do that weird-thing that fits my odd use-case?&amp;quot;&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;&amp;ldquo;I have zero documented experience but I think you should fix your build system!&amp;quot;&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;This HowTo is for you.&lt;/p&gt;
-&lt;h2 id=&#34;0-short-version&#34;&gt;0. Short Version&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Download a &lt;em&gt;versioned&lt;/em&gt; archive from the project&amp;rsquo;s Releases page&lt;/li&gt;
-&lt;li&gt;Extract archive for v1.2.3 and change to its directory, &lt;code&gt;cd archive-1.2.3/&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;./configure --help&lt;/code&gt;, or use something like the following &amp;hellip;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo make install&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Some projects of mine are available in Debian/Ubuntu/FreeBSD, if you
-use that, please report bugs to them and not me.  I have no control
-over what they do.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Cheers&lt;br&gt;
-/Joachim&lt;/p&gt;</description>
+      <description>&lt;p&gt;Ever so often someone new to Open Source show up on GitHub or in my&#xA;inbox.  It usually starts something like this:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;&amp;ldquo;Hey, I just downloaded your software, what&amp;rsquo;s next?&amp;rdquo;&lt;/em&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;&amp;ldquo;Your software doesn&amp;rsquo;t work on my system!!!!&amp;rdquo;&lt;/em&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;&amp;ldquo;How can I do that weird-thing that fits my odd use-case?&amp;rdquo;&lt;/em&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;&amp;ldquo;I have zero documented experience but I think you should fix your build system!&amp;rdquo;&lt;/em&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;This HowTo is for you.&lt;/p&gt;&#xA;&lt;h2 id=&#34;0-short-version&#34;&gt;0. Short Version&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Download a &lt;em&gt;versioned&lt;/em&gt; archive from the project&amp;rsquo;s Releases page&lt;/li&gt;&#xA;&lt;li&gt;Extract archive for v1.2.3 and change to its directory, &lt;code&gt;cd archive-1.2.3/&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;./configure --help&lt;/code&gt;, or use something like the following &amp;hellip;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo make install&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Some projects of mine are available in Debian/Ubuntu/FreeBSD, if you&#xA;use that, please report bugs to them and not me.  I have no control&#xA;over what they do.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Cheers&lt;br&gt;&#xA;/Joachim&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>HowTo: Add Multicast Routing to FreeBSD kernel</title>
       <link>https://troglobit.com/howtos/mrouting-in-freebsd/</link>
       <pubDate>Sun, 01 Aug 2021 08:31:12 +0200</pubDate>
-      
       <guid>https://troglobit.com/howtos/mrouting-in-freebsd/</guid>
-      <description>This is a very short blog post, mostly intended as a reminder to myself. Basically, there are two methods of adding multicast routing support to the FreeBSD kernel:
- Rebuild the kernel with options MROUTING Load the kernel module: kldload ip_mroute  The kernel rebuild assumes the src.txz set was installed previously.
-cd /usr/src cd sys/amd64/conf cat GENERIC | sed &#39;s/GENERIC$/MULTICAST/&#39; &amp;gt; MULTICAST echo &#39;options MROUTING # Multicast routing&#39; &amp;gt;&amp;gt; MULTICAST echo &#39;options PIM # Enable for pimd&#39; &amp;gt;&amp;gt; MULTICAST cd - make kernel KERNCONF=MULTICAST reboot  That&amp;rsquo;s it.</description>
+      <description>This is a very short blog post, mostly intended as a reminder to myself. Basically, there are two methods of adding multicast routing support to the FreeBSD kernel:&#xA;Rebuild the kernel with options MROUTING Load the kernel module: kldload ip_mroute The kernel rebuild assumes the src.txz set was installed previously.&#xA;cd /usr/src cd sys/amd64/conf cat GENERIC | sed &#39;s/GENERIC$/MULTICAST/&#39; &amp;gt; MULTICAST echo &#39;options MROUTING # Multicast routing&#39; &amp;gt;&amp;gt; MULTICAST echo &#39;options PIM # Enable for pimd&#39; &amp;gt;&amp;gt; MULTICAST cd - make kernel KERNCONF=MULTICAST reboot That&amp;rsquo;s it.</description>
     </item>
-    
     <item>
       <title>HowTo use NetBSD pre-built packages</title>
       <link>https://troglobit.com/howtos/netbsd-pkgsrc/</link>
       <pubDate>Sat, 22 Aug 2020 21:39:00 +0100</pubDate>
-      
       <guid>https://troglobit.com/howtos/netbsd-pkgsrc/</guid>
-      <description>Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.
-Here it is, you&amp;rsquo;d think this be something the installer could set up a default for &amp;hellip;
-PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/  or if you use the latest on an old ThinkPad T42:
-PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/i386/9.0/All/  The simply
-pkg_add -v git  Or so you might think!</description>
+      <description>Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.&#xA;Here it is, you&amp;rsquo;d think this be something the installer could set up a default for &amp;hellip;&#xA;PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/ or if you use the latest on an old ThinkPad T42:&#xA;PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/i386/9.0/All/ The simply&#xA;pkg_add -v git Or so you might think!</description>
     </item>
-    
     <item>
       <title>HowTo: Set up Merecat with Let&#39;s Encrypt certificate</title>
       <link>https://troglobit.com/howtos/merecat-and-lets-encrypt/</link>
       <pubDate>Wed, 15 Jul 2020 14:10:00 +0000</pubDate>
-      
       <guid>https://troglobit.com/howtos/merecat-and-lets-encrypt/</guid>
-      <description>&lt;p&gt;This is a HowTo for setting up &lt;a href=&#34;https://merecat.troglobit.com&#34;&gt;Merecat httpd&lt;/a&gt; with &lt;a href=&#34;https://letsencrypt.org/&#34;&gt;Let&amp;rsquo;s
-Encrypt&lt;/a&gt; HTTPS certificates.&lt;/p&gt;
-&lt;p&gt;The upcoming v2.32 release of &lt;a href=&#34;https://merecat.troglobit.com&#34;&gt;Merecat&lt;/a&gt; supports HTTPS as well as
-serving more than one Internet port.  This is highly useful for those
-who want to serve both HTTPS and HTTP content.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; now with support for &lt;code&gt;--webroot&lt;/code&gt; and HTTP-01 renewal!&lt;/p&gt;
-&lt;/blockquote&gt;</description>
+      <description>&lt;p&gt;This is a HowTo for setting up &lt;a href=&#34;https://merecat.troglobit.com&#34;&gt;Merecat httpd&lt;/a&gt; with &lt;a href=&#34;https://letsencrypt.org/&#34;&gt;Let&amp;rsquo;s&#xA;Encrypt&lt;/a&gt; HTTPS certificates.&lt;/p&gt;&#xA;&lt;p&gt;The upcoming v2.32 release of &lt;a href=&#34;https://merecat.troglobit.com&#34;&gt;Merecat&lt;/a&gt; supports HTTPS as well as&#xA;serving more than one Internet port.  This is highly useful for those&#xA;who want to serve both HTTPS and HTTP content.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; now with support for &lt;code&gt;--webroot&lt;/code&gt; and HTTP-01 renewal!&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
     </item>
-    
     <item>
       <title>Basic CGI in C with Merecat httpd</title>
       <link>https://troglobit.com/howtos/merecat-basic-cig-in-c/</link>
       <pubDate>Mon, 05 Aug 2019 22:00:25 +0200</pubDate>
-      
       <guid>https://troglobit.com/howtos/merecat-basic-cig-in-c/</guid>
       <description>&lt;p&gt;This post is a writeup of how to use basic CGI programs in Merecat httpd v2.32.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>HowTo run pimd on FreeBSD</title>
       <link>https://troglobit.com/howtos/pimd-on-freebsd/</link>
       <pubDate>Sun, 27 Sep 2015 18:45:00 +0200</pubDate>
-      
       <guid>https://troglobit.com/howtos/pimd-on-freebsd/</guid>
-      <description>This is not a proper HowTo, more of a &amp;ldquo;note to self&amp;rdquo; after having created a setup to test pimd issue #57. For these notes the following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and Qemu 2.3.0, is used:
-.--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | &amp;#39;--------&amp;#39; &amp;#39;----&amp;#39; &amp;#39;----&amp;#39; &amp;#39;----------&amp;#39; The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP/MLD snooping to get pimd to run smoothly.</description>
+      <description>This is not a proper HowTo, more of a &amp;ldquo;note to self&amp;rdquo; after having created a setup to test pimd issue #57. For these notes the following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and Qemu 2.3.0, is used:&#xA;.--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | &amp;#39;--------&amp;#39; &amp;#39;----&amp;#39; &amp;#39;----&amp;#39; &amp;#39;----------&amp;#39; The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP/MLD snooping to get pimd to run smoothly.</description>
     </item>
-    
-    <item>
-      <title>HowTo run pimd on OpenBSD</title>
-      <link>https://troglobit.com/howtos/pimd-on-openbsd/</link>
-      <pubDate>Sun, 19 Jul 2015 00:32:00 +0200</pubDate>
-      
-      <guid>https://troglobit.com/howtos/pimd-on-openbsd/</guid>
-      <description>This is an introduction to HowTo run pimd on OpenBSD. I keep it around mostly as a reminder to myself when testing new pimd releases, maybe someone else can make use of it as well.
-First of all, my sincere thanks to the OpenBSD team for, not just an awesome UNIX distribution, but also for their good taste in shipping a MULTICAST enabled kernel in the base distribution! On both NetBSD and FreeBSD there is a bit of work to get multicast support, which is one of the reasons for my not writing a HowTo for either of them atm.</description>
-    </item>
-    
-    <item>
-      <title>HowTo Rebase without an origin</title>
-      <link>https://troglobit.com/howtos/rebase-without-an-origin/</link>
-      <pubDate>Wed, 27 Aug 2014 10:00:13 +0200</pubDate>
-      
-      <guid>https://troglobit.com/howtos/rebase-without-an-origin/</guid>
-      <description>OK, so you&amp;rsquo;ve just been handed the task to integrate a big piece of corporate software and it&amp;rsquo;s nowhere near as done and ready as project management thinks. Of course you&amp;rsquo;ve already started chugging away at it, fixing bugs, refactoring code and wrapping it in neat containers to keep the changeset against the base SW small &amp;ndash; you already know you&amp;rsquo;ll get another drop of the same stinking pieace of code in another six months, so you keep the changes small and track them in GIT with neatly formatted commit messages.</description>
-    </item>
-    
   </channel>
 </rss>

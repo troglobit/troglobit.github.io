@@ -5,17 +5,16 @@
     <link>https://troglobit.com/categories/regexp/</link>
     <description>Recent content in regexp on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Sun, 13 Jul 2008 21:38:33 +0000</lastBuildDate><atom:link href="https://troglobit.com/categories/regexp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Jul 2008 21:38:33 +0000</lastBuildDate>
+    <atom:link href="https://troglobit.com/categories/regexp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Regexp replace in many files</title>
       <link>https://troglobit.com/2008/07/13/regexp-replace-in-many-files/</link>
       <pubDate>Sun, 13 Jul 2008 21:38:33 +0000</pubDate>
-      
       <guid>https://troglobit.com/2008/07/13/regexp-replace-in-many-files/</guid>
       <description>I just have to blog about this exceptional tool I just found. It is called regexxer and is a tool in the true UNIX spirit — it does one job only, and does it well.</description>
     </item>
-    
   </channel>
 </rss>
