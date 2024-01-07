@@ -17,6 +17,13 @@
       <description>&lt;p&gt;Because I always forget, here&amp;rsquo;s a reminder to myself on how to use &lt;code&gt;git format-patch&lt;/code&gt; and &lt;code&gt;git send-email&lt;/code&gt; from the command line.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The following process applies to many other mailing-list based&#xA;projects as well, with local differences in helper scripts.&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
     </item>
     <item>
+      <title>Buildroot demo of FastInit (Finit)</title>
+      <link>https://troglobit.com/post/2022-12-26-buildroot-demo-of-fastinit-finit/</link>
+      <pubDate>Mon, 26 Dec 2022 21:21:21 +0000</pubDate>
+      <guid>https://troglobit.com/post/2022-12-26-buildroot-demo-of-fastinit-finit/</guid>
+      <description>&lt;p&gt;I believe there is a &lt;strong&gt;gap in the market&lt;/strong&gt; between BusyBox init and&#xA;systemd.  In particular in the embedded space.  This blog post shows how&#xA;easily it is to get up and running quickly with FastInit (&lt;a href=&#34;https://github.com/troglobit/finit#introduction&#34;&gt;Finit&lt;/a&gt;)!&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m a really bad salesman, and an even worse writer, so instead of&#xA;trying to convince you with my poor English, I&amp;rsquo;ve made a demo.  It is a&#xA;&lt;a href=&#34;https://nightly.buildroot.org/#outside-br-custom&#34;&gt;Buildroot external&lt;/a&gt;&#xA;that can be used to add Finit to your own projects.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;For details, look here: &lt;a href=&#34;https://github.com/troglobit/br2-finit-demo&#34;&gt;https://github.com/troglobit/br2-finit-demo&lt;/a&gt;,&#xA;try out the &lt;a href=&#34;https://github.com/troglobit/br2-finit-demo/releases/tag/latest&#34;&gt;latest build&lt;/a&gt; in &lt;a href=&#34;https://www.qemu.org&#34;&gt;Qemu&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://troglobit.com/images/finit-demo/bootstrap.png&#34; alt=&#34;Finit bootstrap&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>Your Own Operating System</title>
       <link>https://troglobit.com/post/2022-04-17-your-own-operating-system/</link>
       <pubDate>Sun, 17 Apr 2022 16:56:00 +0100</pubDate>

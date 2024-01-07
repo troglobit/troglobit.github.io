@@ -24,13 +24,6 @@
       <description>Finit is an alternative to SysV init and systemd, originally reverse engineered from the EeePC fastinit by Claudio Matsuoka — &amp;ldquo;gaps filled with frog DNA …&amp;rdquo;&#xA;Latest release available on GitHub&#xA;Features Runlevels, defined per service One-shot tasks, services (daemons), or SysV init start/stop scripts Runparts and /etc/rc.local support Process supervision similar to systemd Sourcing environment files Conditions for network/process/custom dependencies Pre/Post script actions Tooling to enable/disable services Optional built-in getty Optional built-in watchdog, with support for hand-over to watchdogd Built-in support for Debian/BusyBox /etc/network/interfaces, automatically calls ifup/ifdown Cgroups v2, both configuration and monitoring in initctl top Plugin support for customization Proper rescue mode with bundled sulogin for protected maintenance shell (optional) Blog Posts Some of these feature are presented below, for more, see the online documentation and the following blog posts:</description>
     </item>
     <item>
-      <title>Buildroot demo of FastInit (Finit)</title>
-      <link>https://troglobit.com/post/2023-09-25-buildroot-demo-of-fastinit-finit/</link>
-      <pubDate>Mon, 25 Sep 2023 04:48:00 +0000</pubDate>
-      <guid>https://troglobit.com/post/2023-09-25-buildroot-demo-of-fastinit-finit/</guid>
-      <description>&lt;p&gt;I believe there is a &lt;strong&gt;gap in the market&lt;/strong&gt; between BusyBox init and&#xA;systemd.  In particular in the embedded space.  This blog post shows how&#xA;easily it is to get up and running quickly with FastInit (&lt;a href=&#34;https://github.com/troglobit/finit#introduction&#34;&gt;Finit&lt;/a&gt;)!&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m a really bad salesman, and an even worse writer, so instead of&#xA;trying to convince you with my poor English, I&amp;rsquo;ve made a demo.  It is a&#xA;&lt;a href=&#34;https://nightly.buildroot.org/#outside-br-custom&#34;&gt;Buildroot external&lt;/a&gt;&#xA;that can be used to add Finit to your own projects.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;For details, look here: &lt;a href=&#34;https://github.com/troglobit/br2-finit-demo&#34;&gt;https://github.com/troglobit/br2-finit-demo&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://troglobit.com/images/finit-demo/bootstrap.png&#34; alt=&#34;Finit bootstrap&#34;&gt;&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>HowTo play with SNMP</title>
       <link>https://troglobit.com/howtos/snmp/</link>
       <pubDate>Mon, 04 Sep 2023 20:24:00 +0000</pubDate>
@@ -57,6 +50,13 @@
       <pubDate>Sun, 15 Jan 2023 18:42:00 +0000</pubDate>
       <guid>https://troglobit.com/post/2023-01-15-finit-custom-connectivity-check/</guid>
       <description>&lt;p&gt;This post shows how you can extend Finit with your own conditions.  The&#xA;example we will use is a simple Internet connectivity checker.  When it&#xA;triggers we start BusyBox ntpd which, if started with any other type of&#xA;condition (none, default route, etc.) may get stuck trying to resolve&#xA;&lt;code&gt;pool.ntp.org&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Buildroot demo of FastInit (Finit)</title>
+      <link>https://troglobit.com/post/2022-12-26-buildroot-demo-of-fastinit-finit/</link>
+      <pubDate>Mon, 26 Dec 2022 21:21:21 +0000</pubDate>
+      <guid>https://troglobit.com/post/2022-12-26-buildroot-demo-of-fastinit-finit/</guid>
+      <description>&lt;p&gt;I believe there is a &lt;strong&gt;gap in the market&lt;/strong&gt; between BusyBox init and&#xA;systemd.  In particular in the embedded space.  This blog post shows how&#xA;easily it is to get up and running quickly with FastInit (&lt;a href=&#34;https://github.com/troglobit/finit#introduction&#34;&gt;Finit&lt;/a&gt;)!&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m a really bad salesman, and an even worse writer, so instead of&#xA;trying to convince you with my poor English, I&amp;rsquo;ve made a demo.  It is a&#xA;&lt;a href=&#34;https://nightly.buildroot.org/#outside-br-custom&#34;&gt;Buildroot external&lt;/a&gt;&#xA;that can be used to add Finit to your own projects.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;For details, look here: &lt;a href=&#34;https://github.com/troglobit/br2-finit-demo&#34;&gt;https://github.com/troglobit/br2-finit-demo&lt;/a&gt;,&#xA;try out the &lt;a href=&#34;https://github.com/troglobit/br2-finit-demo/releases/tag/latest&#34;&gt;latest build&lt;/a&gt; in &lt;a href=&#34;https://www.qemu.org&#34;&gt;Qemu&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://troglobit.com/images/finit-demo/bootstrap.png&#34; alt=&#34;Finit bootstrap&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Remap Prev/Next on ThinkPad</title>

@@ -6,124 +6,8 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-        <lastBuildDate>Mon, 25 Sep 2023 04:48:00 +0000</lastBuildDate>
+        <lastBuildDate>Sun, 04 Jun 2023 17:49:00 +0200</lastBuildDate>
         <atom:link href="https://troglobit.com/posts/index.xml" rel="self" type="application/rss+xml" />
-        
-        <item>
-            <title>Buildroot demo of FastInit (Finit)</title>
-            <link>https://troglobit.com/post/2023-09-25-buildroot-demo-of-fastinit-finit/</link>
-            <pubDate>Mon, 25 Sep 2023 04:48:00 +0000</pubDate>
-            
-            <guid>https://troglobit.com/post/2023-09-25-buildroot-demo-of-fastinit-finit/</guid>
-            <description>&lt;p&gt;I believe there is a &lt;strong&gt;gap in the market&lt;/strong&gt; between BusyBox init and
-systemd.  In particular in the embedded space.  This blog post shows how
-easily it is to get up and running quickly with FastInit (&lt;a href=&#34;https://github.com/troglobit/finit#introduction&#34;&gt;Finit&lt;/a&gt;)!&lt;/p&gt;
-&lt;p&gt;I&amp;rsquo;m a really bad salesman, and an even worse writer, so instead of
-trying to convince you with my poor English, I&amp;rsquo;ve made a demo.  It is a
-&lt;a href=&#34;https://nightly.buildroot.org/#outside-br-custom&#34;&gt;Buildroot external&lt;/a&gt;
-that can be used to add Finit to your own projects.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;For details, look here: &lt;a href=&#34;https://github.com/troglobit/br2-finit-demo&#34;&gt;https://github.com/troglobit/br2-finit-demo&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://troglobit.com/images/finit-demo/bootstrap.png&#34; alt=&#34;Finit bootstrap&#34;&gt;&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p>I believe there is a <strong>gap in the market</strong> between BusyBox init and
-systemd.  In particular in the embedded space.  This blog post shows how
-easily it is to get up and running quickly with FastInit (<a href="https://github.com/troglobit/finit#introduction">Finit</a>)!</p>
-<p>I&rsquo;m a really bad salesman, and an even worse writer, so instead of
-trying to convince you with my poor English, I&rsquo;ve made a demo.  It is a
-<a href="https://nightly.buildroot.org/#outside-br-custom">Buildroot external</a>
-that can be used to add Finit to your own projects.</p>
-<blockquote>
-<p>For details, look here: <a href="https://github.com/troglobit/br2-finit-demo">https://github.com/troglobit/br2-finit-demo</a></p>
-</blockquote>
-<p><img src="/images/finit-demo/bootstrap.png" alt="Finit bootstrap"></p>
-<h2 id="why-finit">Why Finit?</h2>
-<ul>
-<li>Sane built-in defaults</li>
-<li>Supports runlevels</li>
-<li>Respawns your services (customizable)</li>
-<li>Scriptable nearly everywhere</li>
-<li>Supports service/task synchronization (called conditions)</li>
-<li>Supports PID/systemd/s6 readiness notification</li>
-<li>Supports tmpfiles.d like systemd</li>
-<li>Supports <code>ifup -a</code> &amp; <code>ifdown -a</code> natively</li>
-<li>Supports <code>/etc/rc.local</code> and has built-in <code>runparts</code> for <a href="https://github.com/troglobit/finit/tree/master/doc#sysv-init-compatibility">SysV init
-compatibility</a></li>
-<li>And <a href="https://github.com/troglobit/finit#introduction">more &hellip;</a></li>
-</ul>
-<h2 id="try-it-out">Try it Out</h2>
-<p>First, check your system for the necessary packages to build a buildroot
-system <a href="https://buildroot.org/downloads/manual/manual.html#requirement">https://buildroot.org/downloads/manual/manual.html#requirement</a></p>
-<ol>
-<li>
-<p>Download the demo GIT repo:</p>
-<pre><code>git clone https://github.com/troglobit/br2-finit-demo.git
-</code></pre>
-</li>
-<li>
-<p>Change to the top directory and fetch all submodules:</p>
-<pre><code>cd br2-finit-demo/
-git submodule update --init
-</code></pre>
-</li>
-<li>
-<p>Configure and Build</p>
-<pre><code>make qemu_x86_64_defconfig
-make
-</code></pre>
-</li>
-<li>
-<p>Run</p>
-<pre><code>make run
-</code></pre>
-</li>
-<li>
-<p>Log in, user <code>root</code>, empty password</p>
-</li>
-</ol>
-<p><img src="/images/finit-demo/login.png" alt="Finit login"></p>
-<p>It boots fairly quick provided you have an x86_64 host computer.  See
-the <code>initctl</code> tool to control Finit.</p>
-<pre><code>initctl help
-</code></pre>
-<p>Brings up the available commands.  Check what is running right now:</p>
-<pre><code>initctl status   # default command, you can omit 'status'
-</code></pre>
-<p>Show available .conf snippets that start services:</p>
-<pre><code>initctl ls
-</code></pre>
-<p>Try enabling some services (not a lot is enabled in the defconfig, add
-more with <code>make menuconfig</code> or <code>make busybox-menuconfig</code>) like:</p>
-<pre><code>initctl enable telnetd
-</code></pre>
-<p><img src="/images/finit-demo/enable.png" alt="Enable service"></p>
-<p>Try <code>initctl ls</code> again, it&rsquo;s now listed in the set of enabled services.
-But it&rsquo;s not yet running &hellip; (check with <code>initctl status</code>).  This is
-because we may want to roll out multiple changes to a system before
-activating them.  To activate we tell Finit to reload its configuration.</p>
-<pre><code>initctl reload
-</code></pre>
-<p>Verify it is now running.  For more detailed information about telnetd:</p>
-<pre><code>initctl status telnetd
-</code></pre>
-<p><img src="/images/finit-demo/status.png" alt="Service status"></p>
-<p>Try killing telnetd and check the status again.  You can now see that
-Finit has already restarted it for you (<code>Restarts: 1 (1/10)</code>).  Kill it
-a few more times to see what happens.  When a service reaches its max
-restart count Finit will no longer try to restart it automatically &ndash;
-something is obviously not right with the service.  You will have to
-restart it manually, which clears the restart counter.  Notice how the
-total restarts counter continues counting.</p>
-<p>You can connect to the system from your host, or anywhere on the LAN:</p>
-<pre><code>telnet localhost 8023
-</code></pre>
-<h2 id="fin">Fin</h2>
-<p><img src="/images/finit-demo/poweroff.png" alt="Finit poweroff"></p>
-<p>There is of course a lot more to cover.  Please get in touch with me if
-you are curious about some other aspect that would be suitable for a
-blog post.  There is also a <a href="https://github.com/troglobit/finit/discussions">discussion forum</a> open for general
-questions about Finit.</p>]]></content>
-        </item>
         
         <item>
             <title>Buildroot Development Checklist</title>
@@ -367,6 +251,124 @@ system log messages for the ntpd progress.</p>
 </span></span><span style="display:flex;"><span>==============================================================================
 </span></span><span style="display:flex;"><span>8379  ntpd             on      &lt;+sys/internet/up&gt;
 </span></span></code></pre></div>]]></content>
+        </item>
+        
+        <item>
+            <title>Buildroot demo of FastInit (Finit)</title>
+            <link>https://troglobit.com/post/2022-12-26-buildroot-demo-of-fastinit-finit/</link>
+            <pubDate>Mon, 26 Dec 2022 21:21:21 +0000</pubDate>
+            
+            <guid>https://troglobit.com/post/2022-12-26-buildroot-demo-of-fastinit-finit/</guid>
+            <description>&lt;p&gt;I believe there is a &lt;strong&gt;gap in the market&lt;/strong&gt; between BusyBox init and
+systemd.  In particular in the embedded space.  This blog post shows how
+easily it is to get up and running quickly with FastInit (&lt;a href=&#34;https://github.com/troglobit/finit#introduction&#34;&gt;Finit&lt;/a&gt;)!&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m a really bad salesman, and an even worse writer, so instead of
+trying to convince you with my poor English, I&amp;rsquo;ve made a demo.  It is a
+&lt;a href=&#34;https://nightly.buildroot.org/#outside-br-custom&#34;&gt;Buildroot external&lt;/a&gt;
+that can be used to add Finit to your own projects.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;For details, look here: &lt;a href=&#34;https://github.com/troglobit/br2-finit-demo&#34;&gt;https://github.com/troglobit/br2-finit-demo&lt;/a&gt;,
+try out the &lt;a href=&#34;https://github.com/troglobit/br2-finit-demo/releases/tag/latest&#34;&gt;latest build&lt;/a&gt; in &lt;a href=&#34;https://www.qemu.org&#34;&gt;Qemu&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://troglobit.com/images/finit-demo/bootstrap.png&#34; alt=&#34;Finit bootstrap&#34;&gt;&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>I believe there is a <strong>gap in the market</strong> between BusyBox init and
+systemd.  In particular in the embedded space.  This blog post shows how
+easily it is to get up and running quickly with FastInit (<a href="https://github.com/troglobit/finit#introduction">Finit</a>)!</p>
+<p>I&rsquo;m a really bad salesman, and an even worse writer, so instead of
+trying to convince you with my poor English, I&rsquo;ve made a demo.  It is a
+<a href="https://nightly.buildroot.org/#outside-br-custom">Buildroot external</a>
+that can be used to add Finit to your own projects.</p>
+<blockquote>
+<p>For details, look here: <a href="https://github.com/troglobit/br2-finit-demo">https://github.com/troglobit/br2-finit-demo</a>,
+try out the <a href="https://github.com/troglobit/br2-finit-demo/releases/tag/latest">latest build</a> in <a href="https://www.qemu.org">Qemu</a>.</p>
+</blockquote>
+<p><img src="/images/finit-demo/bootstrap.png" alt="Finit bootstrap"></p>
+<h2 id="why-finit">Why Finit?</h2>
+<ul>
+<li>Sane built-in defaults</li>
+<li>Supports runlevels</li>
+<li>Respawns your services (customizable)</li>
+<li>Scriptable nearly everywhere</li>
+<li>Supports service/task synchronization (called conditions)</li>
+<li>Supports PID/systemd/s6 readiness notification</li>
+<li>Supports tmpfiles.d like systemd</li>
+<li>Supports <code>ifup -a</code> &amp; <code>ifdown -a</code> natively</li>
+<li>Supports <code>/etc/rc.local</code> and has built-in <code>runparts</code> for <a href="https://github.com/troglobit/finit/tree/master/doc#sysv-init-compatibility">SysV init
+compatibility</a></li>
+<li>And <a href="https://github.com/troglobit/finit#introduction">more &hellip;</a></li>
+</ul>
+<h2 id="try-it-out">Try it Out</h2>
+<p>First, check your system for the necessary packages to build a buildroot
+system <a href="https://buildroot.org/downloads/manual/manual.html#requirement">https://buildroot.org/downloads/manual/manual.html#requirement</a></p>
+<ol>
+<li>
+<p>Download the demo GIT repo:</p>
+<pre><code>git clone https://github.com/troglobit/br2-finit-demo.git
+</code></pre>
+</li>
+<li>
+<p>Change to the top directory and fetch all submodules:</p>
+<pre><code>cd br2-finit-demo/
+git submodule update --init
+</code></pre>
+</li>
+<li>
+<p>Configure and Build</p>
+<pre><code>make qemu_x86_64_defconfig
+make
+</code></pre>
+</li>
+<li>
+<p>Run</p>
+<pre><code>make run
+</code></pre>
+</li>
+<li>
+<p>Log in, user <code>root</code>, empty password</p>
+</li>
+</ol>
+<p><img src="/images/finit-demo/login.png" alt="Finit login"></p>
+<p>It boots fairly quick provided you have an x86_64 host computer.  See
+the <code>initctl</code> tool to control Finit.</p>
+<pre><code>initctl help
+</code></pre>
+<p>Brings up the available commands.  Check what is running right now:</p>
+<pre><code>initctl status   # default command, you can omit 'status'
+</code></pre>
+<p>Show available .conf snippets that start services:</p>
+<pre><code>initctl ls
+</code></pre>
+<p>Try enabling some services (not a lot is enabled in the defconfig, add
+more with <code>make menuconfig</code> or <code>make busybox-menuconfig</code>) like:</p>
+<pre><code>initctl enable telnetd
+</code></pre>
+<p><img src="/images/finit-demo/enable.png" alt="Enable service"></p>
+<p>Try <code>initctl ls</code> again, it&rsquo;s now listed in the set of enabled services.
+But it&rsquo;s not yet running &hellip; (check with <code>initctl status</code>).  This is
+because we may want to roll out multiple changes to a system before
+activating them.  To activate we tell Finit to reload its configuration.</p>
+<pre><code>initctl reload
+</code></pre>
+<p>Verify it is now running.  For more detailed information about telnetd:</p>
+<pre><code>initctl status telnetd
+</code></pre>
+<p><img src="/images/finit-demo/status.png" alt="Service status"></p>
+<p>Try killing telnetd and check the status again.  You can now see that
+Finit has already restarted it for you (<code>Restarts: 1 (1/10)</code>).  Kill it
+a few more times to see what happens.  When a service reaches its max
+restart count Finit will no longer try to restart it automatically &ndash;
+something is obviously not right with the service.  You will have to
+restart it manually, which clears the restart counter.  Notice how the
+total restarts counter continues counting.</p>
+<p>You can connect to the system from your host, or anywhere on the LAN:</p>
+<pre><code>telnet localhost 8023
+</code></pre>
+<h2 id="fin">Fin</h2>
+<p><img src="/images/finit-demo/poweroff.png" alt="Finit poweroff"></p>
+<p>There is of course a lot more to cover.  Please get in touch with me if
+you are curious about some other aspect that would be suitable for a
+blog post.  There is also a <a href="https://github.com/troglobit/finit/discussions">discussion forum</a> open for general
+questions about Finit.</p>]]></content>
         </item>
         
         <item>
