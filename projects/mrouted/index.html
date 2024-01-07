@@ -42,7 +42,7 @@ The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is 
 Tunneling may be required to cross non-multicast-aware routers.
 The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is suitable for smaller/dense networks. It employs the &ldquo;flood and prune&rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups."><meta itemprop="datePublished" content="2021-11-03T12:39:12+01:00" />
 <meta itemprop="dateModified" content="2021-11-03T12:39:12+01:00" />
-<meta itemprop="wordCount" content="391">
+<meta itemprop="wordCount" content="387">
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="The original multicast routing daemon"/>
 <meta name="twitter:description" content="mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, RFC 1075. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunneling support.
@@ -139,7 +139,9 @@ The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is 
             
 
             <div class="post-content">
-                <p><img src="https://troglobit.com/images/dvmrp.png#floatright" alt="DVRMP"></p>
+                <figure class="right-floated"><img src="https://troglobit.com/images/dvmrp.png"
+         alt="DVMRP"/>
+</figure>
 <p>mrouted is an implementation of the IPv4 multicast routing protocol
 DVMRP, <a href="https://tools.ietf.org/html/rfc1075">RFC 1075</a>.  It is capable of turning a UNIX workstation, or
 Linux device, into a multicast router with tunneling support.</p>
@@ -184,14 +186,12 @@ important news include:</p>
 <li>Support for multiple multicast routing tables, <code>-t ID</code></li>
 </ul>
 <hr>
-<p>Issue tracker and GIT repository available at GitHub:</p>
+<p>The project is hosted at GitHub, see the following links for more
+information, how to download, and build:</p>
 <ul>
 <li><a href="https://github.com/troglobit/mrouted">Repository</a></li>
-<li><a href="https://github.com/troglobit/mrouted/releases/tag/4.4">ChangeLog</a></li>
+<li><a href="https://github.com/troglobit/mrouted/blob/master/ChangeLog.md">ChangeLog</a></li>
 <li><a href="https://github.com/troglobit/mrouted/issues">Issue Tracker</a></li>
-<li><a href="https://ftp.troglobit.com/mrouted/mrouted-4.4.tar.gz">mrouted-4.4.tar.gz</a>,
-<a href="https://ftp.troglobit.com/mrouted/mrouted-4.4.tar.gz.md5">MD5</a>,
-<a href="https://ftp.troglobit.com/mrouted/mrouted-4.4.tar.gz.sha256">SHA256</a>,</li>
 </ul>
 <p>Manual pages availale here:</p>
 <ul>
@@ -199,8 +199,6 @@ important news include:</p>
 <li><a href="https://man.troglobit.com/man8/mroutectl.8.html">mroutectl(8)</a></li>
 <li><a href="https://man.troglobit.com/man5/mrouted.conf.5.html">mrouted.conf(5)</a></li>
 </ul>
-<p>See also the <a href="https://www.openhub.net/p/mrouted/">OpenHub page</a>, or the
-(sadly) dormant <a href="http://freecode.com/projects/mrouted">Free(code) page</a>.</p>
 <p>Problems?  See the <a href="https://troglobit.com/multicast-howto.html">multicast howto</a></p>
 
             </div>

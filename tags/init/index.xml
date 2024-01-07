@@ -35,28 +35,28 @@
       <link>https://troglobit.com/post/2022-01-16-finit-v4.2-released/</link>
       <pubDate>Sun, 16 Jan 2022 15:30:23 +0100</pubDate>
       <guid>https://troglobit.com/post/2022-01-16-finit-v4.2-released/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://troglobit.com/finit.html&#34;&gt;&lt;img src=&#34;https://troglobit.com/images/finit3.png#floatright&#34; alt=&#34;finit logo&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m very pleased to announce &lt;a href=&#34;https://github.com/troglobit/finit/releases/tag/4.2&#34;&gt;Finit v4.2&lt;/a&gt;!  It comes seven months&#xA;after the last release, v4.1, with a bunch of fixes and some new&#xA;features.  See the release notes for details.&lt;/p&gt;</description>
+      <description>&lt;figure class=&#34;right-floated&#34;&gt;&lt;a href=&#34;https://troglobit.com/finit.html&#34;&gt;&lt;img src=&#34;https://troglobit.com/images/finit3.png&#34;&#xA;         alt=&#34;finit logo&#34;/&gt;&lt;/a&gt;&#xA;&lt;/figure&gt;&#xA;&lt;p&gt;I&amp;rsquo;m very pleased to announce &lt;a href=&#34;https://github.com/troglobit/finit/releases/tag/4.2&#34;&gt;Finit v4.2&lt;/a&gt;!  It comes seven months&#xA;after the last release, v4.1, with a bunch of fixes and some new&#xA;features.  See the release notes for details.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Dependency handling in Finit</title>
-      <link>https://troglobit.com/post/2022-01-09-dependency-handling-in-finit/</link>
-      <pubDate>Sun, 09 Jan 2022 18:46:23 +0100</pubDate>
-      <guid>https://troglobit.com/post/2022-01-09-dependency-handling-in-finit/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://troglobit.com/finit.html&#34;&gt;&lt;img src=&#34;https://troglobit.com/images/finit3.png#floatright&#34; alt=&#34;finit logo&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;This is a blog post about Finit.  Each post is concluded with a video&#xA;summarizing the topic.  The impatient reader can scroll down to the&#xA;&lt;a href=&#34;#video&#34;&gt;video&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Most non-trivial systems require dependency tracking between services.&#xA;Not only does it help ensure correct operation, it is also an enabler&#xA;for starting services in parallel.  Less known, but just as important,&#xA;is handling dependencies at system reconfiguration.&lt;/p&gt;</description>
+      <link>https://troglobit.com/post/2021-05-01-dependency-handling-in-finit/</link>
+      <pubDate>Sat, 01 May 2021 08:43:06 +0100</pubDate>
+      <guid>https://troglobit.com/post/2021-05-01-dependency-handling-in-finit/</guid>
+      <description>&lt;figure class=&#34;right-floated&#34;&gt;&lt;a href=&#34;https://troglobit.com/finit.html&#34;&gt;&lt;img src=&#34;https://troglobit.com/images/finit3.png&#34;&#xA;         alt=&#34;finit logo&#34;/&gt;&lt;/a&gt;&#xA;&lt;/figure&gt;&#xA;&lt;p&gt;This is a blog post about Finit.  Each post is concluded with a video&#xA;summarizing the topic.  The impatient reader can scroll down to the&#xA;&lt;a href=&#34;#video&#34;&gt;video&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Most non-trivial systems require dependency tracking between services.&#xA;Not only does it help ensure correct operation, it is also an enabler&#xA;for starting services in parallel.  Less known, but just as important,&#xA;is handling dependencies at system reconfiguration.&lt;/p&gt;</description>
     </item>
     <item>
       <title>It&#39;s Here! ♥</title>
       <link>https://troglobit.com/post/2021-04-27-its-here/</link>
       <pubDate>Tue, 27 Apr 2021 20:18:06 +0100</pubDate>
       <guid>https://troglobit.com/post/2021-04-27-its-here/</guid>
-      <description>&lt;p&gt;&lt;img src=&#34;https://troglobit.com/images/finit3.png#floatright&#34; alt=&#34;finit logo&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Finit v4 was finally released the other day! \o/&lt;/p&gt;&#xA;&lt;p&gt;It represents the culmination of many years of hard work and careful&#xA;thought put in by many people.  There&amp;rsquo;s so much to tell, hardly know&#xA;where to begin &amp;hellip; the plan anyway is to use this blog for a series of&#xA;posts detailing different aspects and important features.&lt;/p&gt;&#xA;&lt;p&gt;The impatient reader can either scroll down to the &lt;strong&gt;video&lt;/strong&gt; below, or&#xA;move on to the project home page: &lt;a href=&#34;https://troglobit.com/finit.html&#34;&gt;https://troglobit.com/finit.html&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;figure class=&#34;right-floated&#34;&gt;&lt;a href=&#34;https://github.com/troglobit/finit/releases/latest&#34;&gt;&lt;img src=&#34;https://troglobit.com/images/finit3.png&#34;&#xA;         alt=&#34;finit logo&#34;/&gt;&lt;/a&gt;&#xA;&lt;/figure&gt;&#xA;&lt;p&gt;Finit v4 was finally released the other day! \o/&lt;/p&gt;&#xA;&lt;p&gt;It represents the culmination of many years of hard work and careful&#xA;thought put in by many people.  There&amp;rsquo;s so much to tell, hardly know&#xA;where to begin &amp;hellip; the plan anyway is to use this blog for a series of&#xA;posts detailing different aspects and important features.&lt;/p&gt;&#xA;&lt;p&gt;The impatient reader can either scroll down to the &lt;strong&gt;video&lt;/strong&gt; below, or&#xA;move on to the project home page: &lt;a href=&#34;https://troglobit.com/finit.html&#34;&gt;https://troglobit.com/finit.html&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Alpine Linux with Finit</title>
       <link>https://troglobit.com/post/2021-02-12-alpine-linux-with-finit/</link>
       <pubDate>Fri, 12 Feb 2021 07:24:06 +0100</pubDate>
       <guid>https://troglobit.com/post/2021-02-12-alpine-linux-with-finit/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://alpinelinux.org/&#34;&gt;Alpine Linux&lt;/a&gt; is an amazing little operating&#xA;system.  It&amp;rsquo;s small, boots quick, and easy to use.  The size alone makes&#xA;it very attractive to container builders.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://troglobit.com/images/finit4-screenshot.png#center&#34; alt=&#34;Alpine Linux started with Finit&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;This blog post details how to set Alpine up with the Finit init system,&#xA;replacing the default OpenRC.&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://alpinelinux.org/&#34;&gt;Alpine Linux&lt;/a&gt; is an amazing little operating&#xA;system.  It&amp;rsquo;s small, boots quick, and easy to use.  The size alone makes&#xA;it very attractive to container builders.&lt;/p&gt;&#xA;&lt;figure class=&#34;center&#34;&gt;&lt;img src=&#34;https://troglobit.com/images/finit4-screenshot.png&#34;&#xA;         alt=&#34;Alpine Linux started with Finit&#34;/&gt;&lt;figcaption&gt;&#xA;            &lt;p&gt;Alpine Linux started with Finit&lt;/p&gt;&#xA;        &lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&lt;p&gt;This blog post details how to set Alpine up with the Finit init system,&#xA;replacing the default OpenRC.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Finit3: Almost there ...</title>

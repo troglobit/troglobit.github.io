@@ -799,11 +799,15 @@ other mail-list based Open Source projects as well.</p>
             <pubDate>Sun, 16 Jan 2022 15:30:23 +0100</pubDate>
             
             <guid>https://troglobit.com/post/2022-01-16-finit-v4.2-released/</guid>
-            <description>&lt;p&gt;&lt;a href=&#34;https://troglobit.com/finit.html&#34;&gt;&lt;img src=&#34;https://troglobit.com/images/finit3.png#floatright&#34; alt=&#34;finit logo&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+            <description>&lt;figure class=&#34;right-floated&#34;&gt;&lt;a href=&#34;https://troglobit.com/finit.html&#34;&gt;&lt;img src=&#34;https://troglobit.com/images/finit3.png&#34;
+         alt=&#34;finit logo&#34;/&gt;&lt;/a&gt;
+&lt;/figure&gt;
 &lt;p&gt;I&amp;rsquo;m very pleased to announce &lt;a href=&#34;https://github.com/troglobit/finit/releases/tag/4.2&#34;&gt;Finit v4.2&lt;/a&gt;!  It comes seven months
 after the last release, v4.1, with a bunch of fixes and some new
 features.  See the release notes for details.&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p><a href="https://troglobit.com/finit.html"><img src="/images/finit3.png#floatright" alt="finit logo"></a></p>
+            <content type="html"><![CDATA[<figure class="right-floated"><a href="https://troglobit.com/finit.html"><img src="/images/finit3.png"
+         alt="finit logo"/></a>
+</figure>
 <p>I&rsquo;m very pleased to announce <a href="https://github.com/troglobit/finit/releases/tag/4.2">Finit v4.2</a>!  It comes seven months
 after the last release, v4.1, with a bunch of fixes and some new
 features.  See the release notes for details.</p>
@@ -837,19 +841,19 @@ extract the full potential of your system.</p>
 preferred Linux distribution, on Linux Mint and other Debian
 derivatives:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>    sudo apt install qemu-system-x86
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Bash" data-lang="Bash"><span style="display:flex;"><span>$ sudo apt install qemu-system-x86
 </span></span></code></pre></div><ol start="2">
 <li>Download the image and untar it:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>    <span style="color:#fabd2f">cd</span> ~/Downloads
-</span></span><span style="display:flex;"><span>    tar xf myLinux-2.0-dev.tar.xz
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Bash" data-lang="Bash"><span style="display:flex;"><span>$ <span style="color:#fabd2f">cd</span> ~/Downloads
+</span></span><span style="display:flex;"><span>$ tar xf myLinux-2.0-dev.tar.xz
 </span></span></code></pre></div><ol start="3">
 <li>Run the <code>qemu.sh</code> script, you can modify it to suit your needs:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>    <span style="color:#fabd2f">cd</span> myLinux-2.0-dev
-</span></span><span style="display:flex;"><span>    ./qemu.sh
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Bash" data-lang="Bash"><span style="display:flex;"><span>$ <span style="color:#fabd2f">cd</span> myLinux-2.0-dev
+</span></span><span style="display:flex;"><span>$ ./qemu.sh
 </span></span></code></pre></div><p>You should see the bootstrap messages and a message at the end:</p>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>    Please press Enter to activate this console.
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Bash" data-lang="Bash"><span style="display:flex;"><span>Please press Enter to activate this console.
 </span></span></code></pre></div><blockquote>
 <p>Ctrl-a x &ndash; exit Qemu<br>
 Ctrl-a c &ndash; toggle Qemu console/monitor</p>
@@ -862,9 +866,11 @@ no password:</p>
 <p><img src="/images/finit-v4.2-first-boot.png" alt=""></p>
 <p>To allow SSH login, you must set a password, use <code>passwd</code>.  When set
 you can connect to the QEMU virtual machine using:</p>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>    ssh -p <span style="color:#d3869b">2222</span> root@localhost
-</span></span></code></pre></div><p>Now you&rsquo;re settled in and it&rsquo;s time to get to know Finit.  Play around
-a bit with <code>initctl</code>, it comes with limited built-in help <code>initctl help</code>, and there is much <a href="https://github.com/troglobit/finit/tree/master/doc">documentation available online</a>, including man pages: <a href="https://man.troglobit.com/man8/initctl.8.html">initctl(8)</a>, <a href="https://man.troglobit.com/man8/finit.8.html">finit(8)</a>, and <a href="https://man.troglobit.com/man5/finit.conf.5.html">finit.conf(5)</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Bash" data-lang="Bash"><span style="display:flex;"><span>$ ssh -p <span style="color:#d3869b">2222</span> root@localhost
+</span></span></code></pre></div><p>Now you&rsquo;re settled in and it&rsquo;s time to get to know Finit.  Play around a
+bit with <code>initctl</code>, it comes with limited built-in help <code>initctl help</code>,
+and there is much <a href="https://github.com/troglobit/finit/tree/master/doc">documentation available online</a>, including man
+pages: <a href="https://man.troglobit.com/man8/initctl.8.html">initctl(8)</a>, <a href="https://man.troglobit.com/man8/finit.8.html">finit(8)</a>, and <a href="https://man.troglobit.com/man5/finit.conf.5.html">finit.conf(5)</a>.</p>
 <p><img src="/images/finit-v4.2-initctl.png" alt=""></p>
 <p>Try stopping and starting services.  For instance, check the status of
 the <code>sntpd</code> service, notice the condition on a default route &ndash; check
@@ -873,97 +879,6 @@ what happens when you remove the default route.</p>
 in another blog post.</p>
 <p>Have fun! :-)<br>
 /Joachim</p>]]></content>
-        </item>
-        
-        <item>
-            <title>Dependency handling in Finit</title>
-            <link>https://troglobit.com/post/2022-01-09-dependency-handling-in-finit/</link>
-            <pubDate>Sun, 09 Jan 2022 18:46:23 +0100</pubDate>
-            
-            <guid>https://troglobit.com/post/2022-01-09-dependency-handling-in-finit/</guid>
-            <description>&lt;p&gt;&lt;a href=&#34;https://troglobit.com/finit.html&#34;&gt;&lt;img src=&#34;https://troglobit.com/images/finit3.png#floatright&#34; alt=&#34;finit logo&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;This is a blog post about Finit.  Each post is concluded with a video
-summarizing the topic.  The impatient reader can scroll down to the
-&lt;a href=&#34;#video&#34;&gt;video&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Most non-trivial systems require dependency tracking between services.
-Not only does it help ensure correct operation, it is also an enabler
-for starting services in parallel.  Less known, but just as important,
-is handling dependencies at system reconfiguration.&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p><a href="https://troglobit.com/finit.html"><img src="/images/finit3.png#floatright" alt="finit logo"></a></p>
-<p>This is a blog post about Finit.  Each post is concluded with a video
-summarizing the topic.  The impatient reader can scroll down to the
-<a href="#video">video</a>.</p>
-<p>Most non-trivial systems require dependency tracking between services.
-Not only does it help ensure correct operation, it is also an enabler
-for starting services in parallel.  Less known, but just as important,
-is handling dependencies at system reconfiguration.</p>
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Let&#39;s boot up. <a href="https://t.co/AKpDXoh3Vh">pic.twitter.com/AKpDXoh3Vh</a></p>&mdash; ＨＡＣＫＥＲＳＢＯＴ (@Hackers_bot) <a href="https://twitter.com/Hackers_bot/status/1388605672024154114?ref_src=twsrc%5Etfw">May 1, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
-<p>Finit handles dependencies between services with a condition subsystem
-comprising three major types:</p>
-<ul>
-<li>pid</li>
-<li>net</li>
-<li>usr</li>
-</ul>
-<blockquote>
-<p>For more information about the condition subsystem in Finit, see:
-<a href="https://github.com/troglobit/finit/blob/master/doc/conditions.md">https://github.com/troglobit/finit/blob/master/doc/conditions.md</a></p>
-</blockquote>
-<h2 id="pid-conditions">PID Conditions</h2>
-<p>A <code>&lt;pid/foo&gt;</code> condition ensures that the service <code>foo</code> has started and
-created its PID file in <code>/var/run/foo.pid</code>.  Finit tracks all files
-created below <code>/var/run</code> that ends in <code>.pid</code>, or <code>/pid</code> for any
-sub-directory.  If the PID in the file matches a service started by
-Finit that service&rsquo;s provided condition is asserted.</p>
-<blockquote>
-<p>At reconfiguration it is expected that services &ldquo;touch&rdquo; their PID
-files to reassert the condition they provide.  See the documentation
-for details and how to handle non-conformant services.</p>
-</blockquote>
-<h3 id="example">Example</h3>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>/etc/finit.d/foo.conf
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    service manual:yes foo -fooargs -- Foo service
-</span></span><span style="display:flex;"><span>   
-</span></span><span style="display:flex;"><span>/etc/finit.d/bar.conf
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    service &lt;pid/foo&gt; bar -barargs -- Bar service
-</span></span></code></pre></div><p>Bar service is started only when <code>foo</code> is up and ready.</p>
-<h2 id="net-conditions">Net Conditions</h2>
-<p>A <code>&lt;net/...&gt;</code> condition is for various <em>basic</em> network conditions, e.g.,</p>
-<ul>
-<li><code>&lt;net/route/default&gt;</code></li>
-<li><code>&lt;net/&lt;IFNAME&gt;/exist&gt;</code></li>
-<li><code>&lt;net/&lt;IFNAME&gt;/up&gt;</code></li>
-<li><code>&lt;net/&lt;IFNAME&gt;/running&gt;</code></li>
-</ul>
-<h3 id="example-1">Example</h3>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>/etc/finit.d/inadyn.conf
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    service &lt;net/route/default&gt; inadyn -ns -- In-a-Dyn DDNS Client
-</span></span></code></pre></div><p>In-a-Dyn is started only when the system has a default route.  Conversely,
-it is stopped (SIGTERM) when the default route is removed.</p>
-<h3 id="user-conditions">User Conditions</h3>
-<p>A <code>&lt;usr/baz&gt;</code> condition is completely controlled by the user.  These are
-<em>static</em> (one-shot) conditions that persist across <code>initctl reload</code>
-calls, but do not survive a reboot.</p>
-<p>All User conditions are controlled using the <code>initctl cond ..</code> commands:</p>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>initctl cond set baz   # Set (assert) user-defined condition
-</span></span><span style="display:flex;"><span>initctl cond clr baz   # Clear (deassert) user-defined condition
-</span></span></code></pre></div><h3 id="example-2">Example</h3>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>/etc/finit.d/foo.conf
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    service &lt;usr/baz&gt; foo -foargs -- Foo service
-</span></span></code></pre></div><p>Foo service is not started until the following command is called:</p>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>initctl cond set baz
-</span></span></code></pre></div><h2 id="video">Video</h2>
-<p>Here&rsquo;s a video showing conditions in action, booting Alpine Linux
-3.13.  The video shows how <code>ntpd</code> depends on <code>syslogd</code>, how this works
-and how other conditions can be added.  Worth noting is how dependant
-processes are stopped if their dependencies are not satisfied.</p>
-<script id="asciicast-460832" src="https://asciinema.org/a/460832.js" async></script>  
-<p>Join the <a href="https://github.com/troglobit/finit/discussions/">discussion on GitHub</a> or #troglobit on Freenode if IRC is
-more your thing.</p>]]></content>
         </item>
         
         <item>
@@ -1176,12 +1091,103 @@ directory as <code>pre-new</code>:</p>
         </item>
         
         <item>
+            <title>Dependency handling in Finit</title>
+            <link>https://troglobit.com/post/2021-05-01-dependency-handling-in-finit/</link>
+            <pubDate>Sat, 01 May 2021 08:43:06 +0100</pubDate>
+            
+            <guid>https://troglobit.com/post/2021-05-01-dependency-handling-in-finit/</guid>
+            <description>&lt;figure class=&#34;right-floated&#34;&gt;&lt;a href=&#34;https://troglobit.com/finit.html&#34;&gt;&lt;img src=&#34;https://troglobit.com/images/finit3.png&#34;
+         alt=&#34;finit logo&#34;/&gt;&lt;/a&gt;
+&lt;/figure&gt;
+&lt;p&gt;This is a blog post about Finit.  Each post is concluded with a video
+summarizing the topic.  The impatient reader can scroll down to the
+&lt;a href=&#34;#video&#34;&gt;video&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Most non-trivial systems require dependency tracking between services.
+Not only does it help ensure correct operation, it is also an enabler
+for starting services in parallel.  Less known, but just as important,
+is handling dependencies at system reconfiguration.&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<figure class="right-floated"><a href="https://troglobit.com/finit.html"><img src="/images/finit3.png"
+         alt="finit logo"/></a>
+</figure>
+<p>This is a blog post about Finit.  Each post is concluded with a video
+summarizing the topic.  The impatient reader can scroll down to the
+<a href="#video">video</a>.</p>
+<p>Most non-trivial systems require dependency tracking between services.
+Not only does it help ensure correct operation, it is also an enabler
+for starting services in parallel.  Less known, but just as important,
+is handling dependencies at system reconfiguration.</p>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Let&#39;s boot up. <a href="https://t.co/AKpDXoh3Vh">pic.twitter.com/AKpDXoh3Vh</a></p>&mdash; ＨＡＣＫＥＲＳＢＯＴ (@Hackers_bot) <a href="https://twitter.com/Hackers_bot/status/1388605672024154114?ref_src=twsrc%5Etfw">May 1, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+<p>Finit handles dependencies between services with a condition subsystem
+comprising three major types:</p>
+<ul>
+<li>pid</li>
+<li>net</li>
+<li>usr</li>
+</ul>
+<blockquote>
+<p>For more information about the condition subsystem in Finit, see:
+<a href="https://github.com/troglobit/finit/blob/master/doc/conditions.md">https://github.com/troglobit/finit/blob/master/doc/conditions.md</a></p>
+</blockquote>
+<h2 id="pid-conditions">PID Conditions</h2>
+<p>A <code>&lt;pid/foo&gt;</code> condition ensures that the service <code>foo</code> has started and
+created its PID file in <code>/var/run/foo.pid</code>.  Finit tracks all files
+created below <code>/var/run</code> that ends in <code>.pid</code>, or <code>/pid</code> for any
+sub-directory.  If the PID in the file matches a service started by
+Finit that service&rsquo;s provided condition is asserted.</p>
+<blockquote>
+<p>At reconfiguration it is expected that services &ldquo;touch&rdquo; their PID
+files to reassert the condition they provide.  See the documentation
+for details and how to handle non-conformant services.</p>
+</blockquote>
+<h3 id="example">Example</h3>
+<p>Bar service is started only when <code>foo</code> is up and ready.</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ApacheConf" data-lang="ApacheConf"><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># /etc/finit.d/foo.conf</span>
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">service</span> manual:yes foo -fooargs -- Foo service
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ApacheConf" data-lang="ApacheConf"><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># /etc/finit.d/bar.conf</span>
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">service</span> &lt;pid/foo&gt; bar -barargs -- Bar service
+</span></span></code></pre></div><h2 id="net-conditions">Net Conditions</h2>
+<p>A <code>&lt;net/...&gt;</code> condition is for various <em>basic</em> network conditions, e.g.,</p>
+<ul>
+<li><code>&lt;net/route/default&gt;</code></li>
+<li><code>&lt;net/&lt;IFNAME&gt;/exist&gt;</code></li>
+<li><code>&lt;net/&lt;IFNAME&gt;/up&gt;</code></li>
+<li><code>&lt;net/&lt;IFNAME&gt;/running&gt;</code></li>
+</ul>
+<h3 id="example-1">Example</h3>
+<p>In-a-Dyn is started only when the system has a default route.  Conversely,
+it is stopped (SIGTERM) when the default route is removed.</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ApacheConf" data-lang="ApacheConf"><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># /etc/finit.d/inadyn.conf</span>
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">service</span> &lt;net/route/default&gt; inadyn -ns -- In-a-Dyn DDNS Client
+</span></span></code></pre></div><h3 id="user-conditions">User Conditions</h3>
+<p>A <code>&lt;usr/baz&gt;</code> condition is completely controlled by the user.  These are
+<em>static</em> (one-shot) conditions that persist across <code>initctl reload</code>
+calls, but do not survive a reboot.</p>
+<p>All User conditions are controlled using the <code>initctl cond ..</code> commands:</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Bash" data-lang="Bash"><span style="display:flex;"><span>$ initctl cond <span style="color:#fabd2f">set</span> baz   <span style="color:#928374;font-style:italic"># Set (assert) user-defined condition</span>
+</span></span><span style="display:flex;"><span>$ initctl cond clr baz   <span style="color:#928374;font-style:italic"># Clear (deassert) user-defined condition</span>
+</span></span></code></pre></div><h3 id="example-2">Example</h3>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ApacheConf" data-lang="ApacheConf"><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># /etc/finit.d/foo.conf</span>
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">service</span> &lt;usr/baz&gt; foo -foargs -- Foo service
+</span></span></code></pre></div><p>Foo service is not started until the following command is called:</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Bash" data-lang="Bash"><span style="display:flex;"><span>$ initctl cond <span style="color:#fabd2f">set</span> baz
+</span></span></code></pre></div><h2 id="video">Video</h2>
+<p>Here&rsquo;s a video showing conditions in action, booting Alpine Linux
+3.13.  The video shows how <code>ntpd</code> depends on <code>syslogd</code>, how this works
+and how other conditions can be added.  Worth noting is how dependant
+processes are stopped if their dependencies are not satisfied.</p>
+<script id="asciicast-460832" src="https://asciinema.org/a/460832.js" async></script>  
+<p>Join the <a href="https://github.com/troglobit/finit/discussions/">discussion on GitHub</a>.</p>]]></content>
+        </item>
+        
+        <item>
             <title>It&#39;s Here! ♥</title>
             <link>https://troglobit.com/post/2021-04-27-its-here/</link>
             <pubDate>Tue, 27 Apr 2021 20:18:06 +0100</pubDate>
             
             <guid>https://troglobit.com/post/2021-04-27-its-here/</guid>
-            <description>&lt;p&gt;&lt;img src=&#34;https://troglobit.com/images/finit3.png#floatright&#34; alt=&#34;finit logo&#34;&gt;&lt;/p&gt;
+            <description>&lt;figure class=&#34;right-floated&#34;&gt;&lt;a href=&#34;https://github.com/troglobit/finit/releases/latest&#34;&gt;&lt;img src=&#34;https://troglobit.com/images/finit3.png&#34;
+         alt=&#34;finit logo&#34;/&gt;&lt;/a&gt;
+&lt;/figure&gt;
 &lt;p&gt;Finit v4 was finally released the other day! \o/&lt;/p&gt;
 &lt;p&gt;It represents the culmination of many years of hard work and careful
 thought put in by many people.  There&amp;rsquo;s so much to tell, hardly know
@@ -1189,7 +1195,9 @@ where to begin &amp;hellip; the plan anyway is to use this blog for a series of
 posts detailing different aspects and important features.&lt;/p&gt;
 &lt;p&gt;The impatient reader can either scroll down to the &lt;strong&gt;video&lt;/strong&gt; below, or
 move on to the project home page: &lt;a href=&#34;https://troglobit.com/finit.html&#34;&gt;https://troglobit.com/finit.html&lt;/a&gt;&lt;/p&gt;</description>
-            <content type="html"><![CDATA[<p><img src="/images/finit3.png#floatright" alt="finit logo"></p>
+            <content type="html"><![CDATA[<figure class="right-floated"><a href="https://github.com/troglobit/finit/releases/latest"><img src="/images/finit3.png"
+         alt="finit logo"/></a>
+</figure>
 <p>Finit v4 was finally released the other day! \o/</p>
 <p>It represents the culmination of many years of hard work and careful
 thought put in by many people.  There&rsquo;s so much to tell, hardly know
@@ -1199,8 +1207,7 @@ posts detailing different aspects and important features.</p>
 move on to the project home page: <a href="https://troglobit.com/finit.html">https://troglobit.com/finit.html</a></p>
 <p>Here&rsquo;s a video showing it in action, booting Alpine Linux 3.13</p>
 <script id="asciicast-410316" src="https://asciinema.org/a/410316.js" async></script>  
-<p>Join the <a href="https://github.com/troglobit/finit/discussions/169">discussion on GitHub</a> or #troglobit on Freenode if IRC is
-more your thing.</p>]]></content>
+<p>Join the <a href="https://github.com/troglobit/finit/discussions/169">discussion on GitHub</a>.</p>]]></content>
         </item>
         
         <item>
@@ -1212,13 +1219,21 @@ more your thing.</p>]]></content>
             <description>&lt;p&gt;&lt;a href=&#34;https://alpinelinux.org/&#34;&gt;Alpine Linux&lt;/a&gt; is an amazing little operating
 system.  It&amp;rsquo;s small, boots quick, and easy to use.  The size alone makes
 it very attractive to container builders.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://troglobit.com/images/finit4-screenshot.png#center&#34; alt=&#34;Alpine Linux started with Finit&#34;&gt;&lt;/p&gt;
+&lt;figure class=&#34;center&#34;&gt;&lt;img src=&#34;https://troglobit.com/images/finit4-screenshot.png&#34;
+         alt=&#34;Alpine Linux started with Finit&#34;/&gt;&lt;figcaption&gt;
+            &lt;p&gt;Alpine Linux started with Finit&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
 &lt;p&gt;This blog post details how to set Alpine up with the Finit init system,
 replacing the default OpenRC.&lt;/p&gt;</description>
             <content type="html"><![CDATA[<p><a href="https://alpinelinux.org/">Alpine Linux</a> is an amazing little operating
 system.  It&rsquo;s small, boots quick, and easy to use.  The size alone makes
 it very attractive to container builders.</p>
-<p><img src="/images/finit4-screenshot.png#center" alt="Alpine Linux started with Finit"></p>
+<figure class="center"><img src="/images/finit4-screenshot.png"
+         alt="Alpine Linux started with Finit"/><figcaption>
+            <p>Alpine Linux started with Finit</p>
+        </figcaption>
+</figure>
 <p>This blog post details how to set Alpine up with the Finit init system,
 replacing the default OpenRC.</p>
 <h3 id="alpine-sdk">Alpine SDK</h3>

@@ -2,17 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://troglobit.com/about/</loc>
-    <lastmod>2023-11-02T07:26:00+01:00</lastmod>
-  </url><url>
     <loc>https://troglobit.com/projects/finit/</loc>
-    <lastmod>2023-11-02T06:47:00+01:00</lastmod>
+    <lastmod>2024-01-07T19:47:00+01:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/</loc>
-    <lastmod>2024-01-03T10:55:00+01:00</lastmod>
+    <lastmod>2024-01-07T20:21:00+01:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/projects/</loc>
-    <lastmod>2024-01-03T10:55:00+01:00</lastmod>
+    <lastmod>2024-01-07T19:47:00+01:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/about/</loc>
+    <lastmod>2023-11-02T07:26:00+01:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/categories/</loc>
     <lastmod>2023-09-04T20:24:00+00:00</lastmod>
@@ -36,7 +36,7 @@
     <lastmod>2023-09-04T20:24:00+00:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/tags/buildroot/</loc>
-    <lastmod>2023-09-25T04:48:00+00:00</lastmod>
+    <lastmod>2024-01-07T16:48:00+00:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/post/2023-06-04-buildroot-development-checklist/</loc>
     <lastmod>2023-06-04T17:49:00+02:00</lastmod>
@@ -45,13 +45,13 @@
     <lastmod>2023-06-04T17:49:00+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/tags/opensource/</loc>
-    <lastmod>2023-09-25T04:48:00+00:00</lastmod>
+    <lastmod>2024-01-07T20:21:00+01:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/posts/</loc>
-    <lastmod>2023-09-25T04:48:00+00:00</lastmod>
+    <lastmod>2024-01-07T20:21:00+01:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/tags/</loc>
-    <lastmod>2023-09-25T04:48:00+00:00</lastmod>
+    <lastmod>2024-01-07T20:21:00+01:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/categories/igmp/</loc>
     <lastmod>2023-05-28T07:52:12+02:00</lastmod>
@@ -78,16 +78,16 @@
     <lastmod>2023-05-28T07:52:12+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/tags/finit/</loc>
-    <lastmod>2023-09-25T04:48:00+00:00</lastmod>
+    <lastmod>2024-01-07T20:21:00+01:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/post/2023-01-15-finit-custom-connectivity-check/</loc>
     <lastmod>2023-01-15T18:42:00+00:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/tags/init/</loc>
-    <lastmod>2023-09-25T04:48:00+00:00</lastmod>
+    <lastmod>2024-01-07T20:21:00+01:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/post/2022-12-26-buildroot-demo-of-fastinit-finit/</loc>
-    <lastmod>2023-09-25T04:48:00+00:00</lastmod>
+    <lastmod>2024-01-07T16:48:00+00:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/post/2022-10-01-remap-prev/next-on-thinkpad/</loc>
     <lastmod>2022-10-01T15:44:00+00:00</lastmod>
@@ -130,9 +130,6 @@
   </url><url>
     <loc>https://troglobit.com/post/2022-01-16-finit-v4.2-released/</loc>
     <lastmod>2022-01-16T15:30:23+01:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/post/2022-01-09-dependency-handling-in-finit/</loc>
-    <lastmod>2022-01-09T18:46:23+01:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/projects/tetris/</loc>
     <lastmod>2021-12-26T20:37:00+02:00</lastmod>
@@ -182,11 +179,14 @@
     <loc>https://troglobit.com/tags/notmuch/</loc>
     <lastmod>2021-05-11T19:12:00+01:00</lastmod>
   </url><url>
+    <loc>https://troglobit.com/post/2021-05-01-dependency-handling-in-finit/</loc>
+    <lastmod>2022-01-09T18:46:23+01:00</lastmod>
+  </url><url>
     <loc>https://troglobit.com/projects/watchdogd/</loc>
     <lastmod>2024-01-02T14:57:00+01:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/post/2021-04-27-its-here/</loc>
-    <lastmod>2021-04-27T20:18:06+01:00</lastmod>
+    <lastmod>2024-01-07T20:21:00+01:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/post/2021-02-12-alpine-linux-with-finit/</loc>
     <lastmod>2021-02-12T07:24:06+01:00</lastmod>

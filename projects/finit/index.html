@@ -40,9 +40,9 @@ Features Runlevels, defined per service One-shot tasks, services (daemons), or S
 <meta itemprop="name" content="Fast init for Linux systems">
 <meta itemprop="description" content="Finit is an alternative to SysV init and systemd, originally reverse engineered from the EeePC fastinit by Claudio Matsuoka — &ldquo;gaps filled with frog DNA …&rdquo;
 Latest release available on GitHub
-Features Runlevels, defined per service One-shot tasks, services (daemons), or SysV init start/stop scripts Runparts and /etc/rc.local support Process supervision similar to systemd Sourcing environment files Conditions for network/process/custom dependencies Pre/Post script actions Tooling to enable/disable services Optional built-in getty Optional built-in watchdog, with support for hand-over to watchdogd Built-in support for Debian/BusyBox /etc/network/interfaces, automatically calls ifup/ifdown Cgroups v2, both configuration and monitoring in initctl top Plugin support for customization Proper rescue mode with bundled sulogin for protected maintenance shell (optional) Blog Posts Some of these feature are presented below, for more, see the online documentation and the following blog posts:"><meta itemprop="datePublished" content="2023-11-02T06:47:00+01:00" />
-<meta itemprop="dateModified" content="2023-11-02T06:47:00+01:00" />
-<meta itemprop="wordCount" content="2810">
+Features Runlevels, defined per service One-shot tasks, services (daemons), or SysV init start/stop scripts Runparts and /etc/rc.local support Process supervision similar to systemd Sourcing environment files Conditions for network/process/custom dependencies Pre/Post script actions Tooling to enable/disable services Optional built-in getty Optional built-in watchdog, with support for hand-over to watchdogd Built-in support for Debian/BusyBox /etc/network/interfaces, automatically calls ifup/ifdown Cgroups v2, both configuration and monitoring in initctl top Plugin support for customization Proper rescue mode with bundled sulogin for protected maintenance shell (optional) Blog Posts Some of these feature are presented below, for more, see the online documentation and the following blog posts:"><meta itemprop="datePublished" content="2024-01-07T19:47:00+01:00" />
+<meta itemprop="dateModified" content="2024-01-07T19:47:00+01:00" />
+<meta itemprop="wordCount" content="2825">
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Fast init for Linux systems"/>
 <meta name="twitter:description" content="Finit is an alternative to SysV init and systemd, originally reverse engineered from the EeePC fastinit by Claudio Matsuoka — &ldquo;gaps filled with frog DNA …&rdquo;
@@ -57,8 +57,8 @@ Latest release available on GitHub
 Features Runlevels, defined per service One-shot tasks, services (daemons), or SysV init start/stop scripts Runparts and /etc/rc.local support Process supervision similar to systemd Sourcing environment files Conditions for network/process/custom dependencies Pre/Post script actions Tooling to enable/disable services Optional built-in getty Optional built-in watchdog, with support for hand-over to watchdogd Built-in support for Debian/BusyBox /etc/network/interfaces, automatically calls ifup/ifdown Cgroups v2, both configuration and monitoring in initctl top Plugin support for customization Proper rescue mode with bundled sulogin for protected maintenance shell (optional) Blog Posts Some of these feature are presented below, for more, see the online documentation and the following blog posts:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://troglobit.com/projects/finit/" /><meta property="article:section" content="projects" />
-<meta property="article:published_time" content="2023-11-02T06:47:00+01:00" />
-<meta property="article:modified_time" content="2023-11-02T06:47:00+01:00" />
+<meta property="article:published_time" content="2024-01-07T19:47:00+01:00" />
+<meta property="article:modified_time" content="2024-01-07T19:47:00+01:00" />
 
 
 
@@ -66,7 +66,7 @@ Features Runlevels, defined per service One-shot tasks, services (daemons), or S
 
 
 
-    <meta property="article:published_time" content="2023-11-02 06:47:00 &#43;0100 CET" />
+    <meta property="article:published_time" content="2024-01-07 19:47:00 &#43;0100 CET" />
 
 
 
@@ -139,7 +139,8 @@ Features Runlevels, defined per service One-shot tasks, services (daemons), or S
             
 
             <div class="post-content">
-                <p><a href="https://github.com/troglobit/finit/releases/latest"><img src="https://troglobit.com/images/finit3.png#floatright" alt="finit logo"></a></p>
+                <figure class="right-floated"><a href="https://github.com/troglobit/finit/releases/latest"><img src="https://troglobit.com/images/finit3.png"/></a>
+</figure>
 <p>Finit is an alternative to <a href="https://en.wikipedia.org/wiki/Init">SysV init</a> and <a href="https://www.freedesktop.org/wiki/Software/systemd/">systemd</a>, originally
 reverse engineered from the EeePC fastinit by Claudio Matsuoka — &ldquo;gaps
 filled with frog DNA …&rdquo;</p>
@@ -171,12 +172,17 @@ documentation</a> and the following blog posts:</p>
 <li><a href="https://troglobit.com/post/2022-01-09-dependency-handling-in-finit/">Dependency handling in Finit</a></li>
 <li><a href="https://troglobit.com/post/2021-04-27-its-here/">It&rsquo;s here! ♥</a> &ndash; Finit v4 release post</li>
 <li><a href="https://troglobit.com/post/2021-02-12-alpine-linux-with-finit/">Alpine Linux with Finit</a></li>
+<li><a href="https://troglobit.com/post/2022-12-26-buildroot-demo-of-fastinit-finit/">Buildroot demo of FastInit (Finit)</a></li>
 </ul>
 <h2 id="example">Example</h2>
 <p>The <a href="https://github.com/troglobit/finit/tree/master/contrib">GitHub finit/contrib/ section</a>, also part of the release
 tarball, include sample configurations for Debian, Void, and Alpine
 Linux.</p>
-<p><img src="https://troglobit.com/images/finit4-screenshot.png#center" alt="Alpine Linux started with Finit"></p>
+<figure class="center"><img src="https://troglobit.com/images/alpine-screenshot2.png"
+         alt="Alpine Linux v3.19 with Finit v4.7"/><figcaption>
+            <p>Alpine Linux v3.19 with Finit v4.7</p>
+        </figcaption>
+</figure>
 <p>The following <a href="https://buildroot.org">Buildroot</a> derivatives provide examples of how to
 boot embedded systems with Finit:</p>
 <ul>
@@ -184,8 +190,8 @@ boot embedded systems with Finit:</p>
 <li><a href="https://github.com/troglobit/myLinux">myLinux</a></li>
 <li><a href="https://github.com/westermo/netbox">Westermo NetBox</a></li>
 </ul>
-<p>There&rsquo;s even a <a href="https://github.com/troglobit/br2-finit-demo">br2-external demo</a> available, which may be more
-accessible to beginners.</p>
+<p>There&rsquo;s even a <a href="https://github.com/troglobit/br2-finit-demo">br2-external demo</a> available, with a <a href="https://github.com/troglobit/br2-finit-demo/releases/tag/latest">downloadable
+image</a>, which may be more accessible to beginners.</p>
 <h2 id="configuration">Configuration</h2>
 <p>This example <code>/etc/finit.conf</code> is for Alpine Linux.  The release tarball
 contains the recommended (and fairly up to date) &ldquo;split layout&rdquo; in the
@@ -194,30 +200,30 @@ service, or set of related services, are defined in their own <code>foo.conf</co
 file in the <code>/etc/finit.d</code> directory.  Available, but not yet enabled,
 services can be placed in <code>/etc/finit.d/available</code> and enabled by an
 operator using the initctl tool.</p>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Runlevel to start after bootstrap, &#39;S&#39;, default: 2</span>
-</span></span><span style="display:flex;"><span>runlevel <span style="color:#d3869b">2</span>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ApacheConf" data-lang="ApacheConf"><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Runlevel to start after bootstrap, &#39;S&#39;, default: 2</span>
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">runlevel</span> <span style="color:#d3869b">2</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Max file size for each log file: 100 kiB, rotate max 4 copies:</span>
 </span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># log =&gt; log.1 =&gt; log.2.gz =&gt; log.3.gz =&gt; log.4.gz</span>
-</span></span><span style="display:flex;"><span><span style="color:#fabd2f">log</span> size<span style="color:#fe8019">=</span><span style="color:#d3869b">100</span>k count<span style="color:#fe8019">=</span><span style="color:#d3869b">4</span>
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">log</span> size=100k count=4
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Services to be monitored and respawned as needed</span>
-</span></span><span style="display:flex;"><span>service [S12345] watchdogd <span style="color:#fe8019">-</span>L <span style="color:#fe8019">-</span>f                             <span style="color:#fe8019">--</span> System watchdog daemon
-</span></span><span style="display:flex;"><span>service [S12345] syslogd <span style="color:#fe8019">-</span>n <span style="color:#fe8019">-</span>b <span style="color:#d3869b">3</span> <span style="color:#fe8019">-</span>D                          <span style="color:#fe8019">--</span> System <span style="color:#fabd2f">log</span> daemon
-</span></span><span style="display:flex;"><span>service [S12345] <span style="color:#fe8019">&lt;</span>pid<span style="color:#fe8019">/</span>syslogd<span style="color:#fe8019">&gt;</span> klogd <span style="color:#fe8019">-</span>n                      <span style="color:#fe8019">--</span> Kernel <span style="color:#fabd2f">log</span> daemon
-</span></span><span style="display:flex;"><span>service   [<span style="color:#d3869b">2345</span>] env:<span style="color:#fe8019">-/</span>etc<span style="color:#fe8019">/</span>conf<span style="color:#fe8019">.</span>d<span style="color:#fe8019">/</span>lldpd lldpd <span style="color:#fe8019">-</span>d <span style="color:#fe8019">$</span>LLDPD_OPTS <span style="color:#fe8019">--</span> LLDP daemon (IEEE <span style="color:#d3869b">802.1</span>ab)
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">service</span> [S12345] watchdogd -L -f                             -- System watchdog daemon
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">service</span> [S12345] syslogd -n -b <span style="color:#d3869b">3</span> -D                          -- System log daemon
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">service</span> [S12345] &lt;pid/syslogd&gt; klogd -n                      -- Kernel log daemon
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">service</span>   [2345] env:-/etc/conf.d/lldpd lldpd -d $LLDPD_OPTS -- LLDP daemon (IEEE <span style="color:#d3869b">802</span>.1ab)
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># The BusyBox ntpd does not use syslog when running in the foreground</span>
 </span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># So we use this trick to redirect stdout/stderr to a log file.  The</span>
 </span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># log file is rotated with the above settings.  The condition declares</span>
 </span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># a dependency on a system default route (gateway) to be set.  A single</span>
 </span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># &lt;!&gt; at the beginning means ntpd does not respect SIGHUP for restart.</span>
-</span></span><span style="display:flex;"><span>service [<span style="color:#d3869b">2345</span>] <span style="color:#fabd2f">log</span>:<span style="color:#fe8019">/</span><span style="color:#fe8019">var</span><span style="color:#fe8019">/</span><span style="color:#fabd2f">log</span><span style="color:#fe8019">/</span>ntpd<span style="color:#fe8019">.</span>log <span style="color:#fe8019">&lt;!</span>net<span style="color:#fe8019">/</span>route<span style="color:#fe8019">/</span>default<span style="color:#fe8019">&gt;</span> ntpd <span style="color:#fe8019">-</span>n <span style="color:#fe8019">-</span>l <span style="color:#fe8019">-</span>I eth0 <span style="color:#fe8019">--</span> NTP daemon
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">service</span> [2345] log:/var/log/ntpd.log &lt;!net/route/default&gt; ntpd -n -l -I eth0 -- NTP daemon
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># For multiple instances of the same service, add :ID somewhere between</span>
 </span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># the service/run/task keyword and the command.</span>
-</span></span><span style="display:flex;"><span>service :<span style="color:#d3869b">80</span>   [<span style="color:#d3869b">2345</span>] merecat <span style="color:#fe8019">-</span>n <span style="color:#fe8019">-</span>p <span style="color:#d3869b">80</span>   <span style="color:#fe8019">/</span><span style="color:#fe8019">var</span><span style="color:#fe8019">/</span>www <span style="color:#fe8019">--</span> Web server
-</span></span><span style="display:flex;"><span>service :<span style="color:#d3869b">8080</span> [<span style="color:#d3869b">2345</span>] merecat <span style="color:#fe8019">-</span>n <span style="color:#fe8019">-</span>p <span style="color:#d3869b">8080</span> <span style="color:#fe8019">/</span><span style="color:#fe8019">var</span><span style="color:#fe8019">/</span>www <span style="color:#fe8019">--</span> Old web server
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">service</span> :80   [2345] merecat -n -p <span style="color:#d3869b">80</span>   <span style="color:#b8bb26">/var/www</span> -- Web server
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">service</span> :8080 [2345] merecat -n -p <span style="color:#d3869b">8080</span> <span style="color:#b8bb26">/var/www</span> -- Old web server
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Alternative method instead of below runparts, can also use /etc/rc.local</span>
 </span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#task [S] /etc/init.d/keyboard-setup start       -- Setting up preliminary keymap</span>
@@ -227,19 +233,19 @@ operator using the initctl tool.</p>
 </span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># When Finit receive SIGPWR, e.g., from powstatd(8), it asserts the</span>
 </span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># sys/pwr/fail condition.  The &lt;!&gt; in the condition tells Finit to</span>
 </span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># not block bootstrap waiting for the task to run.</span>
-</span></span><span style="display:flex;"><span>task [S0123456789] <span style="color:#fe8019">&lt;!</span>sys<span style="color:#fe8019">/</span>pwr<span style="color:#fe8019">/</span>fail<span style="color:#fe8019">&gt;</span> name:pwrfail initctl poweroff <span style="color:#fe8019">--</span> Power failure, shutting down
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">task</span> [S0123456789] &lt;!sys/pwr/fail&gt; name:pwrfail initctl poweroff -- Power failure, shutting down
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Run start scripts from this directory</span>
 </span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># runparts /etc/start.d</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Virtual consoles run BusyBox getty, keep kernel default speed</span>
-</span></span><span style="display:flex;"><span>tty [<span style="color:#d3869b">12345</span>] <span style="color:#fe8019">/</span>sbin<span style="color:#fe8019">/</span>getty <span style="color:#fe8019">-</span>L <span style="color:#d3869b">0</span> <span style="color:#fe8019">/</span>dev<span style="color:#fe8019">/</span>tty1 linux
-</span></span><span style="display:flex;"><span>tty [<span style="color:#d3869b">12345</span>] <span style="color:#fe8019">/</span>sbin<span style="color:#fe8019">/</span>getty <span style="color:#fe8019">-</span>L <span style="color:#d3869b">0</span> <span style="color:#fe8019">/</span>dev<span style="color:#fe8019">/</span>tty2 linux
-</span></span><span style="display:flex;"><span>tty [<span style="color:#d3869b">12345</span>] <span style="color:#fe8019">/</span>sbin<span style="color:#fe8019">/</span>getty <span style="color:#fe8019">-</span>L <span style="color:#d3869b">0</span> <span style="color:#fe8019">/</span>dev<span style="color:#fe8019">/</span>tty3 linux
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">tty</span> [12345] <span style="color:#b8bb26">/sbin/getty</span> -L <span style="color:#d3869b">0</span> <span style="color:#b8bb26">/dev/tty1</span> linux
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">tty</span> [12345] <span style="color:#b8bb26">/sbin/getty</span> -L <span style="color:#d3869b">0</span> <span style="color:#b8bb26">/dev/tty2</span> linux
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">tty</span> [12345] <span style="color:#b8bb26">/sbin/getty</span> -L <span style="color:#d3869b">0</span> <span style="color:#b8bb26">/dev/tty3</span> linux
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Use built-in getty for serial port and USB serial</span>
-</span></span><span style="display:flex;"><span>tty [<span style="color:#d3869b">12345</span>] <span style="color:#fe8019">/</span>dev<span style="color:#fe8019">/</span>ttyAMA0 noclear nowait
-</span></span><span style="display:flex;"><span>tty [<span style="color:#d3869b">12345</span>] <span style="color:#fe8019">/</span>dev<span style="color:#fe8019">/</span>ttyUSB0 noclear
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">tty</span> [12345] <span style="color:#b8bb26">/dev/ttyAMA0</span> noclear nowait
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">tty</span> [12345] <span style="color:#b8bb26">/dev/ttyUSB0</span> noclear
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Just give me a shell, I need to debug this embedded system!</span>
 </span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#tty [12345] @console noclear nologin</span>
@@ -295,14 +301,14 @@ will instead try to restart it.</p>
 Getty, useful for really small systems.  A getty sets up the TTY and
 waits for user input before handing over to <code>/bin/login</code>, which is
 responsible for handling the actual authentication.</p>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>tty [12345] /dev/tty1    nowait  linux
-</span></span><span style="display:flex;"><span>tty [12345] /dev/ttyAMA0 noclear vt100
-</span></span><span style="display:flex;"><span>tty [12345] /sbin/getty  -L /dev/ttyAMA0 vt100
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ApacheConf" data-lang="ApacheConf"><span style="display:flex;"><span><span style="color:#fabd2f">tty</span> [12345] <span style="color:#b8bb26">/dev/tty1</span>    nowait  linux
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">tty</span> [12345] <span style="color:#b8bb26">/dev/ttyAMA0</span> noclear vt100
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">tty</span> [12345] <span style="color:#b8bb26">/sbin/getty</span>  -L <span style="color:#b8bb26">/dev/ttyAMA0</span> vt100
 </span></span></code></pre></div><p>Users of embedded systems may want to enable automatic serial console
 with the special <code>@console</code> device.  This works regardless weather the
 system uses <code>ttyS0</code>, <code>ttyAMA0</code>, <code>ttyMXC0</code>, or anything else.  Finit
 figures it out by querying sysfs: <code>/sys/class/tty/console/active</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>tty [12345] @console linux noclear
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ApacheConf" data-lang="ApacheConf"><span style="display:flex;"><span><span style="color:#fabd2f">tty</span> [12345] @console linux noclear
 </span></span></code></pre></div><p>Notice the optional <code>noclear</code>, <code>nowait</code>, and <code>nologin</code> flags.  The
 latter is for skipping the login process entirely. For more information,
 see <a href="https://github.com/troglobit/finit/blob/master/doc/config.md">doc/config.md</a>.</p>
@@ -374,17 +380,17 @@ more of a policy for the user to define.  Normally only runlevels 1-6
 are used, and even more commonly, only the default runlevel is used.</p>
 <p>To specify an allowed set of runlevels for a <code>service</code>, <code>run</code> command,
 <code>task</code>, or <code>tty</code>, add <code>[NNN]</code> to your <code>/etc/finit.conf</code>, like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>service [S12345] syslogd -n -x             -- System log daemon
-</span></span><span style="display:flex;"><span>run     [S]      /etc/init.d/acpid start   -- Starting ACPI Daemon
-</span></span><span style="display:flex;"><span>task    [S]      /etc/init.d/kbd start     -- Preparing console
-</span></span><span style="display:flex;"><span>service [S12345] &lt;pid/syslogd&gt; klogd -n -x -- Kernel log daemon
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ApacheConf" data-lang="ApacheConf"><span style="display:flex;"><span><span style="color:#fabd2f">service</span> [S12345] syslogd -n -x             -- System log daemon
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">run</span>     [S]      <span style="color:#b8bb26">/etc/init.d/acpid</span> start   -- Starting ACPI Daemon
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">task</span>    [S]      <span style="color:#b8bb26">/etc/init.d/kbd</span> start     -- Preparing console
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">service</span> [S12345] &lt;pid/syslogd&gt; klogd -n -x -- Kernel log daemon
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>tty     [12345]  /dev/tty1
-</span></span><span style="display:flex;"><span>tty     [2]      /dev/tty2
-</span></span><span style="display:flex;"><span>tty     [2]      /dev/tty3
-</span></span><span style="display:flex;"><span>tty     [2]      /dev/tty4
-</span></span><span style="display:flex;"><span>tty     [2]      /dev/tty5
-</span></span><span style="display:flex;"><span>tty     [2]      /dev/tty6
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">tty</span>     [12345]  <span style="color:#b8bb26">/dev/tty1</span>
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">tty</span>     [2]      <span style="color:#b8bb26">/dev/tty2</span>
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">tty</span>     [2]      <span style="color:#b8bb26">/dev/tty3</span>
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">tty</span>     [2]      <span style="color:#b8bb26">/dev/tty4</span>
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">tty</span>     [2]      <span style="color:#b8bb26">/dev/tty5</span>
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">tty</span>     [2]      <span style="color:#b8bb26">/dev/tty6</span>
 </span></span></code></pre></div><p>In this example syslogd is first started, in parallel, and then acpid is
 called using a conventional SysV init script.  It is called with the run
 command, meaning the following task command to start the kbd script is
@@ -398,8 +404,8 @@ in a shell, so pipes and redirects can be used.</p>
 <p>The following examples illustrate this.  Bootstrap task and run commands
 are also removed when they have completed, <code>initctl show</code> will not list
 them.</p>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>task [S] echo &#34;foo&#34; | cat &gt;/tmp/bar
-</span></span><span style="display:flex;"><span>run  [S] echo &#34;$HOME&#34; &gt;/tmp/secret
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ApacheConf" data-lang="ApacheConf"><span style="display:flex;"><span><span style="color:#fabd2f">task</span> [S] echo <span style="color:#b8bb26">&#34;foo&#34;</span> | cat &gt;/tmp/bar
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">run</span>  [S] echo <span style="color:#b8bb26">&#34;$HOME&#34;</span> &gt;/tmp/secret
 </span></span></code></pre></div><p>Switching between runlevels can be done by calling init with a single
 argument, e.g. <kbd>init 5</kbd>, or using <code>initctl runlevel 5</code>, both
 switch to runlevel 5.  When changing runlevels Finit also automatically
@@ -515,7 +521,7 @@ results.</p>
 <p>At boot Finit calls either <code>mdev</code> or <code>udevd</code> to populate <code>/dev</code>, this is
 done slightly differently and on systems with udev you might want to add
 the following one-shot task early in your <code>/etc/finit.conf</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>run [S] udevadm settle --timeout=120 -- Waiting for udev
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ApacheConf" data-lang="ApacheConf"><span style="display:flex;"><span><span style="color:#fabd2f">run</span> [S] udevadm settle --timeout=120 -- Waiting for udev
 </span></span></code></pre></div><p>Finit has a built-in Getty for TTYs, but requires a working <code>/bin/login</code>
 or <code>/bin/sh</code>, if no TTYs are configured in <code>/etc/finit.conf</code>.</p>
 <p>For a fully operational system <code>/var</code>, <code>/run</code> and <code>/tmp</code> must be set up
