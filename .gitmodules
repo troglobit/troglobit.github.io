@@ -5,6 +5,3 @@
 [submodule "themes/hugo-coder"]
 	path = themes/hugo-coder
 	url = https://github.com/luizdepra/hugo-coder.git
-[submodule "themes/hello-friend-ng"]
-	path = themes/hello-friend-ng
-	url = git@github.com:troglobit/troglobit.github.io
