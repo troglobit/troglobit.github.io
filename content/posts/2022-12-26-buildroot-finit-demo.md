@@ -1,8 +1,9 @@
 ---
 title: Buildroot demo of FastInit (Finit)
-date: 2023-09-25T04:48:00Z
-orig-date: 2022-12-26T21:21:21Z
+date: 2022-12-26T21:21:21Z
+lastmod: 2024-01-07T16:48:00Z
 tags:
+ - buildroot
  - finit
  - init
  - opensource
@@ -17,7 +18,8 @@ trying to convince you with my poor English, I've made a demo.  It is a
 [Buildroot external](https://nightly.buildroot.org/#outside-br-custom)
 that can be used to add Finit to your own projects.
 
-> For details, look here: <https://github.com/troglobit/br2-finit-demo>
+> For details, look here: <https://github.com/troglobit/br2-finit-demo>,
+> try out the [latest build][3] in [Qemu][4].
 
 ![Finit bootstrap](/images/finit-demo/bootstrap.png)
 
@@ -125,3 +127,5 @@ questions about Finit.
 
 [1]: https://github.com/troglobit/finit#introduction
 [2]: https://github.com/troglobit/finit/discussions
+[3]: https://github.com/troglobit/br2-finit-demo/releases/tag/latest
+[4]: https://www.qemu.org
