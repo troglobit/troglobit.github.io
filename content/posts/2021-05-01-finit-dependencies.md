@@ -1,12 +1,13 @@
 ---
 title: "Dependency handling in Finit"
 subtitle: ""
-original-date: 2021-05-01 08:43:06 +0100
-date: 2022-01-09 18:46:23 +0100
+date: 2021-05-01 08:43:06 +0100
+lastmod: 2022-01-09 18:46:23 +0100
 tags: [ finit, init, opensource ]
 draft: false
 ---
-[![finit logo](/images/finit3.png#floatright)](https://troglobit.com/finit.html)
+
+{{% figure src="/images/finit3.png" class="right-floated" alt="finit logo" link="https://troglobit.com/finit.html" %}}
 
 This is a blog post about Finit.  Each post is concluded with a video
 summarizing the topic.  The impatient reader can scroll down to the
@@ -46,17 +47,17 @@ Finit that service's provided condition is asserted.
 
 ### Example
 
-```
-/etc/finit.d/foo.conf
-
-    service manual:yes foo -fooargs -- Foo service
-   
-/etc/finit.d/bar.conf
-
-    service <pid/foo> bar -barargs -- Bar service
-```
-
 Bar service is started only when `foo` is up and ready.
+
+```ApacheConf
+# /etc/finit.d/foo.conf
+service manual:yes foo -fooargs -- Foo service
+```
+   
+```ApacheConf
+# /etc/finit.d/bar.conf
+service <pid/foo> bar -barargs -- Bar service
+```
 
 
 ## Net Conditions
@@ -70,14 +71,13 @@ A `<net/...>` condition is for various *basic* network conditions, e.g.,
 
 ### Example
 
-```
-/etc/finit.d/inadyn.conf
-
-    service <net/route/default> inadyn -ns -- In-a-Dyn DDNS Client
-```
-
 In-a-Dyn is started only when the system has a default route.  Conversely,
 it is stopped (SIGTERM) when the default route is removed.
+
+```ApacheConf
+# /etc/finit.d/inadyn.conf
+service <net/route/default> inadyn -ns -- In-a-Dyn DDNS Client
+```
 
 
 ### User Conditions
@@ -88,23 +88,22 @@ calls, but do not survive a reboot.
 
 All User conditions are controlled using the `initctl cond ..` commands:
 
-```
-initctl cond set baz   # Set (assert) user-defined condition
-initctl cond clr baz   # Clear (deassert) user-defined condition
+```Bash
+$ initctl cond set baz   # Set (assert) user-defined condition
+$ initctl cond clr baz   # Clear (deassert) user-defined condition
 ```
 
 ### Example
 
-```
-/etc/finit.d/foo.conf
-
-    service <usr/baz> foo -foargs -- Foo service
+```ApacheConf
+# /etc/finit.d/foo.conf
+service <usr/baz> foo -foargs -- Foo service
 ```
 
 Foo service is not started until the following command is called:
 
-```
-initctl cond set baz
+```Bash
+$ initctl cond set baz
 ```
 
 ## Video
@@ -116,7 +115,6 @@ processes are stopped if their dependencies are not satisfied.
 
 <script id="asciicast-460832" src="https://asciinema.org/a/460832.js" async></script>  
 
-Join the [discussion on GitHub][1] or #troglobit on Freenode if IRC is
-more your thing.
+Join the [discussion on GitHub][1].
 
 [1]: https://github.com/troglobit/finit/discussions/

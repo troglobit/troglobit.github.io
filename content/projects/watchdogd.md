@@ -5,9 +5,7 @@ date: 2021-04-30 17:02:00 +01:00
 lastmod: 2024-01-02 14:57:00 +01:00
 aliases: /watchdogd.html
 ---
-
-<img style="float: right" src="/images/watchdog.png" alt="http://toonclips.com/design/788"
-     title="Watch Dog Detective Taking Notes">
+{{% figure src="/images/watchdog.png" class="right-floated" link="http://toonclips.com/design/788" alt="Watch Dog Detective Taking Notes" %}}
 
 [watchdogd(8)][] is an advanced system and process supervisor primarily
 intended for embedded Linux and server systems.  It supports "kicking"

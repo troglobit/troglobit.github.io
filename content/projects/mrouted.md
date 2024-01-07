@@ -4,7 +4,8 @@ title: The original multicast routing daemon
 date: 2021-11-03 12:39:12 +01:00
 aliases: /mrouted.html
 ---
-![DVRMP](/images/dvmrp.png#floatright)
+
+{{% figure src="/images/dvmrp.png" class="right-floated" alt="DVMRP" %}}
 
 mrouted is an implementation of the IPv4 multicast routing protocol
 DVMRP, [RFC 1075][].  It is capable of turning a UNIX workstation, or
@@ -57,23 +58,18 @@ important news include:
 
 ----
 
-Issue tracker and GIT repository available at GitHub:
+The project is hosted at GitHub, see the following links for more
+information, how to download, and build:
 
    * [Repository](https://github.com/troglobit/mrouted)
-   * [ChangeLog](https://github.com/troglobit/mrouted/releases/tag/4.4)
+   * [ChangeLog](https://github.com/troglobit/mrouted/blob/master/ChangeLog.md)
    * [Issue Tracker](https://github.com/troglobit/mrouted/issues)
-   * [mrouted-4.4.tar.gz](https://ftp.troglobit.com/mrouted/mrouted-4.4.tar.gz),
-     [MD5](https://ftp.troglobit.com/mrouted/mrouted-4.4.tar.gz.md5),
-     [SHA256](https://ftp.troglobit.com/mrouted/mrouted-4.4.tar.gz.sha256),
 
 Manual pages availale here:
 
    * [mrouted(8)](https://man.troglobit.com/man8/mrouted.8.html)
    * [mroutectl(8)](https://man.troglobit.com/man8/mroutectl.8.html)
    * [mrouted.conf(5)](https://man.troglobit.com/man5/mrouted.conf.5.html)
-
-See also the [OpenHub page](https://www.openhub.net/p/mrouted/), or the
-(sadly) dormant [Free(code) page](http://freecode.com/projects/mrouted).
 
 Problems?  See the [multicast howto](/multicast-howto.html)
 

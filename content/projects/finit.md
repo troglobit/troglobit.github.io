@@ -1,9 +1,9 @@
 ---
 title: "Fast init for Linux systems"
-date: 2023-11-02 06:47:00 +0100
+date: 2024-01-07 19:47:00 +0100
 aliases: /finit.html
 ---
-[![finit logo][0]][20]
+{{% figure src="/images/finit3.png" class="right-floated" link="https://github.com/troglobit/finit/releases/latest" %}}
 
 Finit is an alternative to [SysV init][1] and [systemd][7], originally
 reverse engineered from the EeePC fastinit by Claudio Matsuoka — "gaps
@@ -41,6 +41,7 @@ documentation][README] and the following blog posts:
   * [Dependency handling in Finit](/post/2022-01-09-dependency-handling-in-finit/)
   * [It's here! ♥](/post/2021-04-27-its-here/) -- Finit v4 release post
   * [Alpine Linux with Finit](/post/2021-02-12-alpine-linux-with-finit/)
+  * [Buildroot demo of FastInit (Finit)](/post/2022-12-26-buildroot-demo-of-fastinit-finit/)
 
 
 Example
@@ -50,7 +51,7 @@ The [GitHub finit/contrib/ section][contrib], also part of the release
 tarball, include sample configurations for Debian, Void, and Alpine
 Linux.
 
-![Alpine Linux started with Finit](/images/finit4-screenshot.png#center)
+{{% figure src="/images/alpine-screenshot2.png" class="center" caption="Alpine Linux v3.19 with Finit v4.7" %}}
 
 The following [Buildroot][17] derivatives provide examples of how to
 boot embedded systems with Finit:
@@ -59,8 +60,8 @@ boot embedded systems with Finit:
   - [myLinux][9]
   - [Westermo NetBox][11]
 
-There's even a [br2-external demo][18] available, which may be more
-accessible to beginners.
+There's even a [br2-external demo][18] available, with a [downloadable
+image][21], which may be more accessible to beginners.
 
 
 Configuration
@@ -74,7 +75,7 @@ file in the `/etc/finit.d` directory.  Available, but not yet enabled,
 services can be placed in `/etc/finit.d/available` and enabled by an
 operator using the initctl tool.
 
-```
+```ApacheConf
 # Runlevel to start after bootstrap, 'S', default: 2
 runlevel 2
 
@@ -197,7 +198,7 @@ Getty, useful for really small systems.  A getty sets up the TTY and
 waits for user input before handing over to `/bin/login`, which is
 responsible for handling the actual authentication.
 
-```conf
+```ApacheConf
 tty [12345] /dev/tty1    nowait  linux
 tty [12345] /dev/ttyAMA0 noclear vt100
 tty [12345] /sbin/getty  -L /dev/ttyAMA0 vt100
@@ -208,7 +209,7 @@ with the special `@console` device.  This works regardless weather the
 system uses `ttyS0`, `ttyAMA0`, `ttyMXC0`, or anything else.  Finit
 figures it out by querying sysfs: `/sys/class/tty/console/active`.
 
-```conf
+```ApacheConf
 tty [12345] @console linux noclear
 ```
 
@@ -313,7 +314,7 @@ are used, and even more commonly, only the default runlevel is used.
 To specify an allowed set of runlevels for a `service`, `run` command,
 `task`, or `tty`, add `[NNN]` to your `/etc/finit.conf`, like this:
 
-```
+```ApacheConf
 service [S12345] syslogd -n -x             -- System log daemon
 run     [S]      /etc/init.d/acpid start   -- Starting ACPI Daemon
 task    [S]      /etc/init.d/kbd start     -- Preparing console
@@ -343,7 +344,7 @@ The following examples illustrate this.  Bootstrap task and run commands
 are also removed when they have completed, `initctl show` will not list
 them.
 
-```
+```ApacheConf
 task [S] echo "foo" | cat >/tmp/bar
 run  [S] echo "$HOME" >/tmp/secret
 ```
@@ -487,7 +488,7 @@ At boot Finit calls either `mdev` or `udevd` to populate `/dev`, this is
 done slightly differently and on systems with udev you might want to add
 the following one-shot task early in your `/etc/finit.conf`:
 
-```conf
+```ApacheConf
 run [S] udevadm settle --timeout=120 -- Waiting for udev
 ```
 
@@ -517,7 +518,6 @@ and proposed extensions using GitHub:
   [MD5](ftp://ftp.troglobit.com/finit/finit-4.5.tar.gz.md5),
   [SHA256](ftp://ftp.troglobit.com/finit/finit-4.5.tar.gz.sha256)
 
-[0]: /images/finit3.png#floatright
 [1]: https://en.wikipedia.org/wiki/Init
 [2]: https://en.wikipedia.org/wiki/Process_supervision
 [3]: http://cr.yp.to/daemontools.html
@@ -538,5 +538,6 @@ and proposed extensions using GitHub:
 [18]: https://github.com/troglobit/br2-finit-demo
 [19]: https://github.com/troglobit/finit
 [20]: https://github.com/troglobit/finit/releases/latest
+[21]: https://github.com/troglobit/br2-finit-demo/releases/tag/latest
 [README]: https://github.com/troglobit/finit/blob/master/README.md
 [contrib]: https://github.com/troglobit/finit/tree/master/contrib
