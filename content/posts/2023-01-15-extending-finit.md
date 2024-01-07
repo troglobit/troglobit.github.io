@@ -56,7 +56,7 @@ We don't have curl on our target, only the BusyBox version of wget.  But
 that is all we need to create this little script.  I've put mine in the
 rootfs with a post-build hook in Buildroot.
 
-```sh
+```bash
 root@anarchy:~# cat /usr/bin/connectivity.sh
 #!/bin/sh
 # Manages connectivity condition <sys/internet/up>
