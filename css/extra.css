@@ -2,3 +2,15 @@
  * Use https://gohugo.io/content-management/shortcodes/#figure
  * Previously this was used http://www.ebadf.net/2016/10/19/centering-images-in-hugo/
  */
+
+pre {
+  code {
+    @media (prefers-color-scheme: light) {
+      color: inherit;
+    }
+
+    [data-theme=light] & {
+      color: inherit;
+    }
+  }
+}
