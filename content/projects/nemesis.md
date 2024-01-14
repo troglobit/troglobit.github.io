@@ -2,6 +2,7 @@
 name: Nemesis
 title: "N E M E S I S"
 date: 2021-07-07 15:39:00 +02:00
+lastmod: 2024-01-14 13:44:00 +0100
 aliases: /nemesis.html
 ---
 <img src="/images/nemesis.png" style="float: right;">
@@ -16,12 +17,11 @@ Nemesis can natively craft and inject ARP, DNS, ETHERNET, ICMP, IGMP,
 IP, OSPF, RIP, TCP and UDP packets.  Using the IP and the Ethernet
 injection modes, almost any custom packet can be crafted and injected.
 
-* [README](https://github.com/troglobit/nemesis/blob/master/README.md)
-* [ChangeLog](https://github.com/troglobit/nemesis/blob/master/ChangeLog.md)
-* [Repository](http://github.com/troglobit/nemesis)
-* [Issue Tracker](http://github.com/troglobit/nemesis/issues)
-* [nemesis-1.8.tar.xz](ftp://ftp.troglobit.com/nemesis/nemesis-1.8.tar.gz),
-  [MD5](ftp://ftp.troglobit.com/nemesis/nemesis-1.8.tar.gz.md5)
+* [README](https://github.com/libnet/nemesis/blob/master/README.md)
+* [ChangeLog](https://github.com/libnet/nemesis/blob/master/ChangeLog.md)
+* [Repository](http://github.com/libnet/nemesis)
+* [Issue Tracker](http://github.com/libnet/nemesis/issues)
+* [Latest Release](https://github.com/libnet/nemesis/releases/latest)
 
 
 Examples
