@@ -54,9 +54,6 @@ disableHugoGeneratorInject = false
   series   = "series"
 
 [params]
-  [params.author]
-    name = "Joachim Wiberg"
-
   dateform        = "Jan 2, 2006"
   dateformShort   = "Jan 2"
   dateformNum     = "2006-01-02"
@@ -81,6 +78,14 @@ disableHugoGeneratorInject = false
   #
   disableReadOtherPosts = false
 
+  # Enable theme toggle
+  #
+  # This options enables the theme toggle for the theme.
+  # Per default, this option is off.
+  # The theme is respecting the prefers-color-scheme of the operating systeme.
+  # With this option on, the page user is able to set the scheme he wants.
+  enableThemeToggle = true
+
   # Sharing buttons
   #
   # There are a lot of buttons preconfigured. If you want to change them,
@@ -88,6 +93,12 @@ disableHugoGeneratorInject = false
   # and add them into your own `layouts/partials/sharing-buttons.html`
   #
   enableSharingButtons = true
+
+  # Global language menu
+  #
+  # Enables the global language menu.
+  #
+  enableGlobalLanguageMenu = false
 
   # Integrate Javascript files or stylesheets by adding the url to the external assets or by
   # linking local files with their path relative to the static folder, e.g. "css/styles.css"
@@ -98,6 +109,13 @@ disableHugoGeneratorInject = false
   # Toggle this option need to rebuild SCSS, requires extended version of Hugo
   #
   justifyContent = true  # Set "text-align: justify" to .post-content.
+
+  # Integrate Plausible.io
+  # plausibleDataDomain = 'test.com'
+  # plausibleScriptSource = 'https://plausible.io/js/script.js'
+
+  [params.author]
+    name = "Joachim Wiberg"
 
   # Custom footer 
   # If you want, you can easily override the default footer with your own content. 
