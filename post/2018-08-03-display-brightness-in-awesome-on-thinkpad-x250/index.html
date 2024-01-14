@@ -165,13 +165,12 @@ when I realized the display brightness keys didn&rsquo;t do anything in my
 had changed from HW controlled to SW controlled in this new generation.</p>
 <p>A quick google later and I had found Fredrik Haikarainen&rsquo;s <a href="https://github.com/haikarainen/light">light</a>
 and bound it to the approriate keys in my <code>.config/awesome/rc.lua</code>:</p>
-<pre><code>-- Brightness
-globalkeys = gears.table.join(globalkeys,
-  awful.key({}, &quot;XF86MonBrightnessUp&quot;,   function () awful.util.spawn(&quot;light -A 10&quot;) end),
-  awful.key({}, &quot;XF86MonBrightnessDown&quot;, function () awful.util.spawn(&quot;light -U 10&quot;) end))
-root.keys(globalkeys)
-</code></pre>
-<p>Actually, I tried running light from the command line first, without
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#928374;font-style:italic">-- Brightness</span>
+</span></span><span style="display:flex;"><span>globalkeys <span style="color:#fe8019">=</span> gears.table.join(globalkeys,
+</span></span><span style="display:flex;"><span>  awful.key({}, <span style="color:#b8bb26">&#34;XF86MonBrightnessUp&#34;</span>,   <span style="color:#fe8019">function</span> () awful.util.spawn(<span style="color:#b8bb26">&#34;light -A 10&#34;</span>) <span style="color:#fe8019">end</span>),
+</span></span><span style="display:flex;"><span>  awful.key({}, <span style="color:#b8bb26">&#34;XF86MonBrightnessDown&#34;</span>, <span style="color:#fe8019">function</span> () awful.util.spawn(<span style="color:#b8bb26">&#34;light -U 10&#34;</span>) <span style="color:#fe8019">end</span>))
+</span></span><span style="display:flex;"><span>root.keys(globalkeys)
+</span></span></code></pre></div><p>Actually, I tried running light from the command line first, without
 running <code>sudo make install</code>, and that didn&rsquo;t work so I was about to give
 up.  Turns out <code>light</code> needs to be SUID root because of reasons.  Oh well,
 that we should be able fix relatively easy.</p>

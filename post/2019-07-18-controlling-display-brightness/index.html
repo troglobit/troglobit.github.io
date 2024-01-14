@@ -170,11 +170,11 @@ build, and install.  You may have to reboot for the udev rules to take
 effect.</p>
 <p>Users of the <a href="https://awesomewm.org/">Awesome WM</a> can update their <code>~/.config/awesome/rc.lua</code>
 to include the following:</p>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>    <span style="color:#928374;font-style:italic">-- Brightness</span>
-</span></span><span style="display:flex;"><span>    awful.key({ }, <span style="color:#b8bb26">&#34;XF86MonBrightnessUp&#34;</span>, <span style="color:#fe8019">function</span> () os.execute(<span style="color:#b8bb26">&#34;backlight up&#34;</span>) <span style="color:#fe8019">end</span>,
-</span></span><span style="display:flex;"><span>              {description <span style="color:#fe8019">=</span> <span style="color:#b8bb26">&#34;Increase brightness&#34;</span>, group <span style="color:#fe8019">=</span> <span style="color:#b8bb26">&#34;hotkeys&#34;</span>}),
-</span></span><span style="display:flex;"><span>    awful.key({ }, <span style="color:#b8bb26">&#34;XF86MonBrightnessDown&#34;</span>, <span style="color:#fe8019">function</span> () os.execute(<span style="color:#b8bb26">&#34;backlight down&#34;</span>) <span style="color:#fe8019">end</span>,
-</span></span><span style="display:flex;"><span>              {description <span style="color:#fe8019">=</span> <span style="color:#b8bb26">&#34;Decrease brightness&#34;</span>, group <span style="color:#fe8019">=</span> <span style="color:#b8bb26">&#34;hotkeys&#34;</span>}),
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#928374;font-style:italic">-- Brightness</span>
+</span></span><span style="display:flex;"><span>awful.key({ }, <span style="color:#b8bb26">&#34;XF86MonBrightnessUp&#34;</span>, <span style="color:#fe8019">function</span> () os.execute(<span style="color:#b8bb26">&#34;backlight up&#34;</span>) <span style="color:#fe8019">end</span>,
+</span></span><span style="display:flex;"><span>          {description <span style="color:#fe8019">=</span> <span style="color:#b8bb26">&#34;Increase brightness&#34;</span>, group <span style="color:#fe8019">=</span> <span style="color:#b8bb26">&#34;hotkeys&#34;</span>}),
+</span></span><span style="display:flex;"><span>awful.key({ }, <span style="color:#b8bb26">&#34;XF86MonBrightnessDown&#34;</span>, <span style="color:#fe8019">function</span> () os.execute(<span style="color:#b8bb26">&#34;backlight down&#34;</span>) <span style="color:#fe8019">end</span>,
+</span></span><span style="display:flex;"><span>          {description <span style="color:#fe8019">=</span> <span style="color:#b8bb26">&#34;Decrease brightness&#34;</span>, group <span style="color:#fe8019">=</span> <span style="color:#b8bb26">&#34;hotkeys&#34;</span>}),
 </span></span></code></pre></div><p>Reload Awesome and your brightness keys will now work as expected.</p>
 
       </div>

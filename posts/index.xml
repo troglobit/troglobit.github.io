@@ -232,25 +232,25 @@ as a server on eth0, and peer with pool.ntp.org.</p>
 </code></pre>
 <p>Verify everything has started properly using <code>initctl</code>.  Check the
 system log messages for the ntpd progress.</p>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>root@anarchy:~# initctl -p
-</span></span><span style="display:flex;"><span>PID   IDENT            STATUS   RUNLEVELS    DESCRIPTION
-</span></span><span style="display:flex;"><span>==============================================================================
-</span></span><span style="display:flex;"><span>438   connectivity.sh  running  [--2345-789] Connectivity monitor
-</span></span><span style="display:flex;"><span>443   dropbear         running  [--2345-789] Dropbear SSH daemon
-</span></span><span style="display:flex;"><span>455   tty:console      running  [-12345-789] Getty on /dev/console
-</span></span><span style="display:flex;"><span>444   mdnsd            running  [--2345-789] mDNS-SD daemon
-</span></span><span style="display:flex;"><span>445   mini-snmpd       running  [--2345----] Mini snmpd
-</span></span><span style="display:flex;"><span>8379  ntpd             running  [--2345----] NTP daemon
-</span></span><span style="display:flex;"><span>447   smcrouted        running  [--2345----] Static multicast routing daemon
-</span></span><span style="display:flex;"><span>448   ssdpd            running  [--2345----] SSDP Responder
-</span></span><span style="display:flex;"><span>416   sysklogd         running  [S123456789] System log daemon
-</span></span><span style="display:flex;"><span>449   watchdogd        running  [-123456789] System watchdog daemon
-</span></span><span style="display:flex;"><span>450   httpd            running  [--2345----] Web interface
-</span></span><span style="display:flex;"><span>root@anarchy:~# initctl -p cond
-</span></span><span style="display:flex;"><span>PID   IDENT            STATUS  CONDITION (+ ON, ~ FLUX, - OFF)
-</span></span><span style="display:flex;"><span>==============================================================================
-</span></span><span style="display:flex;"><span>8379  ntpd             on      &lt;+sys/internet/up&gt;
-</span></span></code></pre></div>]]></content>
+<pre><code>root@anarchy:~# initctl -p
+PID   IDENT            STATUS   RUNLEVELS    DESCRIPTION
+==============================================================================
+438   connectivity.sh  running  [--2345-789] Connectivity monitor
+443   dropbear         running  [--2345-789] Dropbear SSH daemon
+455   tty:console      running  [-12345-789] Getty on /dev/console
+444   mdnsd            running  [--2345-789] mDNS-SD daemon
+445   mini-snmpd       running  [--2345----] Mini snmpd
+8379  ntpd             running  [--2345----] NTP daemon
+447   smcrouted        running  [--2345----] Static multicast routing daemon
+448   ssdpd            running  [--2345----] SSDP Responder
+416   sysklogd         running  [S123456789] System log daemon
+449   watchdogd        running  [-123456789] System watchdog daemon
+450   httpd            running  [--2345----] Web interface
+root@anarchy:~# initctl -p cond
+PID   IDENT            STATUS  CONDITION (+ ON, ~ FLUX, - OFF)
+==============================================================================
+8379  ntpd             on      &lt;+sys/internet/up&gt;
+</code></pre>]]></content>
         </item>
         
         <item>
@@ -488,30 +488,29 @@ GIT submodule to our project:</p>
 <p>To make things easier for us, we&rsquo;re also creating a Makefile to set some
 of the critical buildroot environment variables needed.  For details,
 see the <a href="https://buildroot.org/downloads/manual/manual.html">manual</a>.  Edit <code>Makefile</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Makefile" data-lang="Makefile"><span style="display:flex;"><span><span style="color:#fe8019">export </span>BR2_EXTERNAL <span style="color:#fe8019">:=</span> <span style="color:#fe8019">$(</span>CURDIR<span style="color:#fe8019">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#fe8019">export </span>PATH         <span style="color:#fe8019">:=</span> <span style="color:#fe8019">$(</span>CURDIR<span style="color:#fe8019">)</span>/bin:<span style="color:#fe8019">$(</span>PATH<span style="color:#fe8019">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#fabd2f">export</span> BR2_EXTERNAL :<span style="color:#fe8019">=</span> <span style="color:#fe8019">$(</span>CURDIR<span style="color:#fe8019">)</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>ARCH <span style="color:#fe8019">?=</span> <span style="color:#fe8019">$(</span>shell uname -m<span style="color:#fe8019">)</span>
-</span></span><span style="display:flex;"><span>O    <span style="color:#fe8019">?=</span> <span style="color:#fe8019">$(</span>CURDIR<span style="color:#fe8019">)</span>/output
+</span></span><span style="display:flex;"><span>ARCH ?<span style="color:#fe8019">=</span> <span style="color:#fe8019">$(</span>shell uname -m<span style="color:#fe8019">)</span>
+</span></span><span style="display:flex;"><span>O    ?<span style="color:#fe8019">=</span> <span style="color:#fe8019">$(</span>CURDIR<span style="color:#fe8019">)</span>/output
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>config <span style="color:#fe8019">:=</span> <span style="color:#fe8019">$(</span>O<span style="color:#fe8019">)</span>/.config
+</span></span><span style="display:flex;"><span>config :<span style="color:#fe8019">=</span> <span style="color:#fe8019">$(</span>O<span style="color:#fe8019">)</span>/.config
 </span></span><span style="display:flex;"><span>bmake   <span style="color:#fe8019">=</span> <span style="color:#fe8019">$(</span>MAKE<span style="color:#fe8019">)</span> -C buildroot O<span style="color:#fe8019">=</span><span style="color:#fe8019">$(</span>O<span style="color:#fe8019">)</span> $1
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#fabd2f">all</span><span style="color:#fe8019">:</span> <span style="color:#fe8019">$(</span>config<span style="color:#fe8019">)</span> buildroot/Makefile
+</span></span><span style="display:flex;"><span>all: <span style="color:#fe8019">$(</span>config<span style="color:#fe8019">)</span> buildroot/Makefile
 </span></span><span style="display:flex;"><span>	@+<span style="color:#fe8019">$(</span>call bmake,$@<span style="color:#fe8019">)</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#fabd2f">$(config)</span><span style="color:#fe8019">:</span>
+</span></span><span style="display:flex;"><span><span style="color:#fe8019">$(</span>config<span style="color:#fe8019">)</span>:
 </span></span><span style="display:flex;"><span>	@+<span style="color:#fe8019">$(</span>call bmake,list-defconfigs<span style="color:#fe8019">)</span>
 </span></span><span style="display:flex;"><span>	@echo <span style="color:#b8bb26">&#34;ERROR: No configuration selected.&#34;</span>
 </span></span><span style="display:flex;"><span>	@echo <span style="color:#b8bb26">&#34;Please choose a configuration from the list above by running&#34;</span>
 </span></span><span style="display:flex;"><span>	@echo <span style="color:#b8bb26">&#34;&#39;make &lt;board&gt;_defconfig&#39; before building an image.&#34;</span>
 </span></span><span style="display:flex;"><span>	@exit <span style="color:#d3869b">1</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#fabd2f">%</span><span style="color:#fe8019">:</span> buildroot/Makefile
+</span></span><span style="display:flex;"><span>%: buildroot/Makefile
 </span></span><span style="display:flex;"><span>	@+<span style="color:#fe8019">$(</span>call bmake,$@<span style="color:#fe8019">)</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#fabd2f">buildroot/Makefile</span><span style="color:#fe8019">:</span>
+</span></span><span style="display:flex;"><span>buildroot/Makefile:
 </span></span><span style="display:flex;"><span>	@git submodule update --init
 </span></span></code></pre></div>]]></content>
         </item>
@@ -1651,39 +1650,41 @@ $ mg distributions
 file below.  These are the official names and their current release
 state in Debian.  Below we will use <code>reprepro createsymlinks</code> to
 automatically create synmlinks based on this file.</p>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>Origin: Troglobit Software
-</span></span><span style="display:flex;"><span>Label: deb.troglobit.com
-</span></span><span style="display:flex;"><span>Suite: oldstable
-</span></span><span style="display:flex;"><span>Codename: stretch
-</span></span><span style="display:flex;"><span>Architectures: amd64
-</span></span><span style="display:flex;"><span>Components: main
-</span></span><span style="display:flex;"><span>Description: Unofficial Debian/Ubuntu Packages maintained by Joachim Nilsson
-</span></span><span style="display:flex;"><span>SignWith: 4B8786A6
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Origin: Troglobit Software
-</span></span><span style="display:flex;"><span>Label: deb.troglobit.com
-</span></span><span style="display:flex;"><span>Suite: stable
-</span></span><span style="display:flex;"><span>Codename: buster
-</span></span><span style="display:flex;"><span>Architectures: amd64
-</span></span><span style="display:flex;"><span>Components: main
-</span></span><span style="display:flex;"><span>Description: Unofficial Debian/Ubuntu Packages maintained by Joachim Nilsson
-</span></span><span style="display:flex;"><span>SignWith: 4B8786A6
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Origin: Troglobit Software
-</span></span><span style="display:flex;"><span>Label: deb.troglobit.com
-</span></span><span style="display:flex;"><span>Suite: unstable
-</span></span><span style="display:flex;"><span>Codename: sid
-</span></span><span style="display:flex;"><span>Architectures: amd64
-</span></span><span style="display:flex;"><span>Components: main
-</span></span><span style="display:flex;"><span>Description: Unofficial Debian/Ubuntu Packages maintained by Joachim Nilsson
-</span></span><span style="display:flex;"><span>SignWith: 4B8786A6
-</span></span></code></pre></div><p>Next up is <code>conf/incoming</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>Name: default
-</span></span><span style="display:flex;"><span>IncomingDir: incoming
-</span></span><span style="display:flex;"><span>TempDir: tmp
-</span></span><span style="display:flex;"><span>Allow: oldstable&gt;stretch stable&gt;buster unstable&gt;sid
-</span></span><span style="display:flex;"><span>Cleanup: on_deny on_error
-</span></span></code></pre></div><p>We can now create the initial structure, symbolic links and initial
+<pre><code>Origin: Troglobit Software
+Label: deb.troglobit.com
+Suite: oldstable
+Codename: stretch
+Architectures: amd64
+Components: main
+Description: Unofficial Debian/Ubuntu Packages maintained by Joachim Nilsson
+SignWith: 4B8786A6
+
+Origin: Troglobit Software
+Label: deb.troglobit.com
+Suite: stable
+Codename: buster
+Architectures: amd64
+Components: main
+Description: Unofficial Debian/Ubuntu Packages maintained by Joachim Nilsson
+SignWith: 4B8786A6
+
+Origin: Troglobit Software
+Label: deb.troglobit.com
+Suite: unstable
+Codename: sid
+Architectures: amd64
+Components: main
+Description: Unofficial Debian/Ubuntu Packages maintained by Joachim Nilsson
+SignWith: 4B8786A6
+</code></pre>
+<p>Next up is <code>conf/incoming</code>:</p>
+<pre><code>Name: default
+IncomingDir: incoming
+TempDir: tmp
+Allow: oldstable&gt;stretch stable&gt;buster unstable&gt;sid
+Cleanup: on_deny on_error
+</code></pre>
+<p>We can now create the initial structure, symbolic links and initial
 Packages files:</p>
 <pre><code>$ cd /srv/deb/debian
 $ reprepro -Vb . createsymlinks
@@ -2043,11 +2044,11 @@ build, and install.  You may have to reboot for the udev rules to take
 effect.</p>
 <p>Users of the <a href="https://awesomewm.org/">Awesome WM</a> can update their <code>~/.config/awesome/rc.lua</code>
 to include the following:</p>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>    <span style="color:#928374;font-style:italic">-- Brightness</span>
-</span></span><span style="display:flex;"><span>    awful.key({ }, <span style="color:#b8bb26">&#34;XF86MonBrightnessUp&#34;</span>, <span style="color:#fe8019">function</span> () os.execute(<span style="color:#b8bb26">&#34;backlight up&#34;</span>) <span style="color:#fe8019">end</span>,
-</span></span><span style="display:flex;"><span>              {description <span style="color:#fe8019">=</span> <span style="color:#b8bb26">&#34;Increase brightness&#34;</span>, group <span style="color:#fe8019">=</span> <span style="color:#b8bb26">&#34;hotkeys&#34;</span>}),
-</span></span><span style="display:flex;"><span>    awful.key({ }, <span style="color:#b8bb26">&#34;XF86MonBrightnessDown&#34;</span>, <span style="color:#fe8019">function</span> () os.execute(<span style="color:#b8bb26">&#34;backlight down&#34;</span>) <span style="color:#fe8019">end</span>,
-</span></span><span style="display:flex;"><span>              {description <span style="color:#fe8019">=</span> <span style="color:#b8bb26">&#34;Decrease brightness&#34;</span>, group <span style="color:#fe8019">=</span> <span style="color:#b8bb26">&#34;hotkeys&#34;</span>}),
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#928374;font-style:italic">-- Brightness</span>
+</span></span><span style="display:flex;"><span>awful.key({ }, <span style="color:#b8bb26">&#34;XF86MonBrightnessUp&#34;</span>, <span style="color:#fe8019">function</span> () os.execute(<span style="color:#b8bb26">&#34;backlight up&#34;</span>) <span style="color:#fe8019">end</span>,
+</span></span><span style="display:flex;"><span>          {description <span style="color:#fe8019">=</span> <span style="color:#b8bb26">&#34;Increase brightness&#34;</span>, group <span style="color:#fe8019">=</span> <span style="color:#b8bb26">&#34;hotkeys&#34;</span>}),
+</span></span><span style="display:flex;"><span>awful.key({ }, <span style="color:#b8bb26">&#34;XF86MonBrightnessDown&#34;</span>, <span style="color:#fe8019">function</span> () os.execute(<span style="color:#b8bb26">&#34;backlight down&#34;</span>) <span style="color:#fe8019">end</span>,
+</span></span><span style="display:flex;"><span>          {description <span style="color:#fe8019">=</span> <span style="color:#b8bb26">&#34;Decrease brightness&#34;</span>, group <span style="color:#fe8019">=</span> <span style="color:#b8bb26">&#34;hotkeys&#34;</span>}),
 </span></span></code></pre></div><p>Reload Awesome and your brightness keys will now work as expected.</p>
 ]]></content>
         </item>
@@ -2242,9 +2243,9 @@ motivation rather than the other way around.</p>
 Theme in Gnome or &lt;a href=&#34;https://awesomewm.org/&#34;&gt;Awesome&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I use &lt;a href=&#34;https://system76.com/&#34;&gt;System76&lt;/a&gt; amazing Gtk+ theme from &lt;a href=&#34;https://github.com/pop-os/gtk-theme&#34;&gt;Pop!_OS&lt;/a&gt;.  It&amp;rsquo;s quite
 simple to set up on top of Ubuntu and use in Awesome:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sudo add-apt-repository ppa:system76/pop
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sudo apt update
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    sudo apt install pop-theme
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo add-apt-repository ppa:system76/pop
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt update
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt install pop-theme
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I then use &lt;a href=&#34;https://wiki.gnome.org/Apps/Tweaks&#34;&gt;gnome-tweaks&lt;/a&gt; to select the Pop-dark-slim theme.  Now, the
 problem is that certain text box inputs in Firefox is either completely
 dark or white and the text cannot be seen until you mark it.  This isn&amp;rsquo;t
@@ -2253,9 +2254,9 @@ specific to the Pop!_OS theme, Adwaita-dark is exactly as bad.&lt;/p&gt;</descri
 Theme in Gnome or <a href="https://awesomewm.org/">Awesome</a>.</p>
 <p>I use <a href="https://system76.com/">System76</a> amazing Gtk+ theme from <a href="https://github.com/pop-os/gtk-theme">Pop!_OS</a>.  It&rsquo;s quite
 simple to set up on top of Ubuntu and use in Awesome:</p>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>    sudo add-apt-repository ppa:system76/pop
-</span></span><span style="display:flex;"><span>    sudo apt update
-</span></span><span style="display:flex;"><span>    sudo apt install pop-theme
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo add-apt-repository ppa:system76/pop
+</span></span><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>sudo apt install pop-theme
 </span></span></code></pre></div><p>I then use <a href="https://wiki.gnome.org/Apps/Tweaks">gnome-tweaks</a> to select the Pop-dark-slim theme.  Now, the
 problem is that certain text box inputs in Firefox is either completely
 dark or white and the text cannot be seen until you mark it.  This isn&rsquo;t
@@ -2286,13 +2287,12 @@ when I realized the display brightness keys didn&rsquo;t do anything in my
 had changed from HW controlled to SW controlled in this new generation.</p>
 <p>A quick google later and I had found Fredrik Haikarainen&rsquo;s <a href="https://github.com/haikarainen/light">light</a>
 and bound it to the approriate keys in my <code>.config/awesome/rc.lua</code>:</p>
-<pre><code>-- Brightness
-globalkeys = gears.table.join(globalkeys,
-  awful.key({}, &quot;XF86MonBrightnessUp&quot;,   function () awful.util.spawn(&quot;light -A 10&quot;) end),
-  awful.key({}, &quot;XF86MonBrightnessDown&quot;, function () awful.util.spawn(&quot;light -U 10&quot;) end))
-root.keys(globalkeys)
-</code></pre>
-<p>Actually, I tried running light from the command line first, without
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#928374;font-style:italic">-- Brightness</span>
+</span></span><span style="display:flex;"><span>globalkeys <span style="color:#fe8019">=</span> gears.table.join(globalkeys,
+</span></span><span style="display:flex;"><span>  awful.key({}, <span style="color:#b8bb26">&#34;XF86MonBrightnessUp&#34;</span>,   <span style="color:#fe8019">function</span> () awful.util.spawn(<span style="color:#b8bb26">&#34;light -A 10&#34;</span>) <span style="color:#fe8019">end</span>),
+</span></span><span style="display:flex;"><span>  awful.key({}, <span style="color:#b8bb26">&#34;XF86MonBrightnessDown&#34;</span>, <span style="color:#fe8019">function</span> () awful.util.spawn(<span style="color:#b8bb26">&#34;light -U 10&#34;</span>) <span style="color:#fe8019">end</span>))
+</span></span><span style="display:flex;"><span>root.keys(globalkeys)
+</span></span></code></pre></div><p>Actually, I tried running light from the command line first, without
 running <code>sudo make install</code>, and that didn&rsquo;t work so I was about to give
 up.  Turns out <code>light</code> needs to be SUID root because of reasons.  Oh well,
 that we should be able fix relatively easy.</p>

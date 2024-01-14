@@ -278,25 +278,25 @@ as a server on eth0, and peer with pool.ntp.org.</p>
 </code></pre>
 <p>Verify everything has started properly using <code>initctl</code>.  Check the
 system log messages for the ntpd progress.</p>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>root@anarchy:~# initctl -p
-</span></span><span style="display:flex;"><span>PID   IDENT            STATUS   RUNLEVELS    DESCRIPTION
-</span></span><span style="display:flex;"><span>==============================================================================
-</span></span><span style="display:flex;"><span>438   connectivity.sh  running  [--2345-789] Connectivity monitor
-</span></span><span style="display:flex;"><span>443   dropbear         running  [--2345-789] Dropbear SSH daemon
-</span></span><span style="display:flex;"><span>455   tty:console      running  [-12345-789] Getty on /dev/console
-</span></span><span style="display:flex;"><span>444   mdnsd            running  [--2345-789] mDNS-SD daemon
-</span></span><span style="display:flex;"><span>445   mini-snmpd       running  [--2345----] Mini snmpd
-</span></span><span style="display:flex;"><span>8379  ntpd             running  [--2345----] NTP daemon
-</span></span><span style="display:flex;"><span>447   smcrouted        running  [--2345----] Static multicast routing daemon
-</span></span><span style="display:flex;"><span>448   ssdpd            running  [--2345----] SSDP Responder
-</span></span><span style="display:flex;"><span>416   sysklogd         running  [S123456789] System log daemon
-</span></span><span style="display:flex;"><span>449   watchdogd        running  [-123456789] System watchdog daemon
-</span></span><span style="display:flex;"><span>450   httpd            running  [--2345----] Web interface
-</span></span><span style="display:flex;"><span>root@anarchy:~# initctl -p cond
-</span></span><span style="display:flex;"><span>PID   IDENT            STATUS  CONDITION (+ ON, ~ FLUX, - OFF)
-</span></span><span style="display:flex;"><span>==============================================================================
-</span></span><span style="display:flex;"><span>8379  ntpd             on      &lt;+sys/internet/up&gt;
-</span></span></code></pre></div>
+<pre><code>root@anarchy:~# initctl -p
+PID   IDENT            STATUS   RUNLEVELS    DESCRIPTION
+==============================================================================
+438   connectivity.sh  running  [--2345-789] Connectivity monitor
+443   dropbear         running  [--2345-789] Dropbear SSH daemon
+455   tty:console      running  [-12345-789] Getty on /dev/console
+444   mdnsd            running  [--2345-789] mDNS-SD daemon
+445   mini-snmpd       running  [--2345----] Mini snmpd
+8379  ntpd             running  [--2345----] NTP daemon
+447   smcrouted        running  [--2345----] Static multicast routing daemon
+448   ssdpd            running  [--2345----] SSDP Responder
+416   sysklogd         running  [S123456789] System log daemon
+449   watchdogd        running  [-123456789] System watchdog daemon
+450   httpd            running  [--2345----] Web interface
+root@anarchy:~# initctl -p cond
+PID   IDENT            STATUS  CONDITION (+ ON, ~ FLUX, - OFF)
+==============================================================================
+8379  ntpd             on      &lt;+sys/internet/up&gt;
+</code></pre>
       </div>
     </article>
 
