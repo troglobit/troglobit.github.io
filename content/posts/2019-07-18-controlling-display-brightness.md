@@ -27,11 +27,11 @@ Users of the [Awesome WM][] can update their `~/.config/awesome/rc.lua`
 to include the following:
 
 ```lua
-    -- Brightness
-    awful.key({ }, "XF86MonBrightnessUp", function () os.execute("backlight up") end,
-              {description = "Increase brightness", group = "hotkeys"}),
-    awful.key({ }, "XF86MonBrightnessDown", function () os.execute("backlight down") end,
-              {description = "Decrease brightness", group = "hotkeys"}),
+-- Brightness
+awful.key({ }, "XF86MonBrightnessUp", function () os.execute("backlight up") end,
+          {description = "Increase brightness", group = "hotkeys"}),
+awful.key({ }, "XF86MonBrightnessDown", function () os.execute("backlight down") end,
+          {description = "Decrease brightness", group = "hotkeys"}),
 ```
 
 Reload Awesome and your brightness keys will now work as expected.

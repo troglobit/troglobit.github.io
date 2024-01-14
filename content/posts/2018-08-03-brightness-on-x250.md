@@ -17,11 +17,13 @@ had changed from HW controlled to SW controlled in this new generation.
 A quick google later and I had found Fredrik Haikarainen's [light][]
 and bound it to the approriate keys in my `.config/awesome/rc.lua`:
 
-    -- Brightness
-    globalkeys = gears.table.join(globalkeys,
-      awful.key({}, "XF86MonBrightnessUp",   function () awful.util.spawn("light -A 10") end),
-      awful.key({}, "XF86MonBrightnessDown", function () awful.util.spawn("light -U 10") end))
-    root.keys(globalkeys)
+```lua
+-- Brightness
+globalkeys = gears.table.join(globalkeys,
+  awful.key({}, "XF86MonBrightnessUp",   function () awful.util.spawn("light -A 10") end),
+  awful.key({}, "XF86MonBrightnessDown", function () awful.util.spawn("light -U 10") end))
+root.keys(globalkeys)
+```
 
 Actually, I tried running light from the command line first, without
 running `sudo make install`, and that didn't work so I was about to give

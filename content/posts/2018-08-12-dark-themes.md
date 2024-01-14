@@ -11,10 +11,10 @@ Theme in Gnome or [Awesome][].
 I use [System76][] amazing Gtk+ theme from [Pop!_OS][].  It's quite
 simple to set up on top of Ubuntu and use in Awesome:
 
-```sh
-    sudo add-apt-repository ppa:system76/pop
-    sudo apt update
-    sudo apt install pop-theme
+```shell
+sudo add-apt-repository ppa:system76/pop
+sudo apt update
+sudo apt install pop-theme
 ```
 
 I then use [gnome-tweaks][] to select the Pop-dark-slim theme.  Now, the
