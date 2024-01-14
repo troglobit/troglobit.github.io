@@ -46,9 +46,8 @@ To make things easier for us, we're also creating a Makefile to set some
 of the critical buildroot environment variables needed.  For details,
 see the [manual][].  Edit `Makefile`:
 
-```Makefile
+```shell
 export BR2_EXTERNAL := $(CURDIR)
-export PATH         := $(CURDIR)/bin:$(PATH)
 
 ARCH ?= $(shell uname -m)
 O    ?= $(CURDIR)/output
