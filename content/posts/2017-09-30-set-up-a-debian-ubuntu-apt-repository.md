@@ -1,14 +1,14 @@
 ---
-categories:
-- debian
-- ubuntu
-- apt
-comments: true
 date: 2020-02-22T12:28:00Z
 orig-date: 2017-09-30T12:39:43Z
 title: Set up a Debian/Ubuntu APT Repository
 url: /2017/09/30/set-up-a-debian-ubuntu-apt-repository/
 aliases: /blog/2017/09/30/set-up-a-debian-ubuntu-apt-repository/
+categories:
+- debian
+- ubuntu
+- apt
+comments: true
 ---
 
 How to set up a Debian/Ubuntu APT repository with GPG signing.
@@ -62,44 +62,40 @@ file below.  These are the official names and their current release
 state in Debian.  Below we will use `reprepro createsymlinks` to
 automatically create synmlinks based on this file.
 
-```conf
-Origin: Troglobit Software
-Label: deb.troglobit.com
-Suite: oldstable
-Codename: stretch
-Architectures: amd64
-Components: main
-Description: Unofficial Debian/Ubuntu Packages maintained by Joachim Nilsson
-SignWith: 4B8786A6
-
-Origin: Troglobit Software
-Label: deb.troglobit.com
-Suite: stable
-Codename: buster
-Architectures: amd64
-Components: main
-Description: Unofficial Debian/Ubuntu Packages maintained by Joachim Nilsson
-SignWith: 4B8786A6
-
-Origin: Troglobit Software
-Label: deb.troglobit.com
-Suite: unstable
-Codename: sid
-Architectures: amd64
-Components: main
-Description: Unofficial Debian/Ubuntu Packages maintained by Joachim Nilsson
-SignWith: 4B8786A6
-```
+    Origin: Troglobit Software
+    Label: deb.troglobit.com
+    Suite: oldstable
+    Codename: stretch
+    Architectures: amd64
+    Components: main
+    Description: Unofficial Debian/Ubuntu Packages maintained by Joachim Nilsson
+    SignWith: 4B8786A6
+    
+    Origin: Troglobit Software
+    Label: deb.troglobit.com
+    Suite: stable
+    Codename: buster
+    Architectures: amd64
+    Components: main
+    Description: Unofficial Debian/Ubuntu Packages maintained by Joachim Nilsson
+    SignWith: 4B8786A6
+    
+    Origin: Troglobit Software
+    Label: deb.troglobit.com
+    Suite: unstable
+    Codename: sid
+    Architectures: amd64
+    Components: main
+    Description: Unofficial Debian/Ubuntu Packages maintained by Joachim Nilsson
+    SignWith: 4B8786A6
 
 Next up is `conf/incoming`:
 
-```
-Name: default
-IncomingDir: incoming
-TempDir: tmp
-Allow: oldstable>stretch stable>buster unstable>sid
-Cleanup: on_deny on_error
-```
+    Name: default
+    IncomingDir: incoming
+    TempDir: tmp
+    Allow: oldstable>stretch stable>buster unstable>sid
+    Cleanup: on_deny on_error
 
 We can now create the initial structure, symbolic links and initial
 Packages files:
