@@ -170,7 +170,7 @@ disableHugoGeneratorInject = false
   [[params.social]]
     name = "mastodon"
     icon = "fa fa-mastodon"
-    url  = "https://mastodon.nu/@troglobit"
+    url  = "https://fosstodon.org/@troglobit"
 
   [[params.social]]
     name = "twitter"
