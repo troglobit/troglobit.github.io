@@ -116,24 +116,22 @@ Activate all the changes:
 Verify everything has started properly using `initctl`.  Check the
 system log messages for the ntpd progress.
 
-```
-root@anarchy:~# initctl -p
-PID   IDENT            STATUS   RUNLEVELS    DESCRIPTION
-==============================================================================
-438   connectivity.sh  running  [--2345-789] Connectivity monitor
-443   dropbear         running  [--2345-789] Dropbear SSH daemon
-455   tty:console      running  [-12345-789] Getty on /dev/console
-444   mdnsd            running  [--2345-789] mDNS-SD daemon
-445   mini-snmpd       running  [--2345----] Mini snmpd
-8379  ntpd             running  [--2345----] NTP daemon
-447   smcrouted        running  [--2345----] Static multicast routing daemon
-448   ssdpd            running  [--2345----] SSDP Responder
-416   sysklogd         running  [S123456789] System log daemon
-449   watchdogd        running  [-123456789] System watchdog daemon
-450   httpd            running  [--2345----] Web interface
-root@anarchy:~# initctl -p cond
-PID   IDENT            STATUS  CONDITION (+ ON, ~ FLUX, - OFF)
-==============================================================================
-8379  ntpd             on      <+sys/internet/up>
-```
+    root@anarchy:~# initctl -p
+    PID   IDENT            STATUS   RUNLEVELS    DESCRIPTION
+    ==============================================================================
+    438   connectivity.sh  running  [--2345-789] Connectivity monitor
+    443   dropbear         running  [--2345-789] Dropbear SSH daemon
+    455   tty:console      running  [-12345-789] Getty on /dev/console
+    444   mdnsd            running  [--2345-789] mDNS-SD daemon
+    445   mini-snmpd       running  [--2345----] Mini snmpd
+    8379  ntpd             running  [--2345----] NTP daemon
+    447   smcrouted        running  [--2345----] Static multicast routing daemon
+    448   ssdpd            running  [--2345----] SSDP Responder
+    416   sysklogd         running  [S123456789] System log daemon
+    449   watchdogd        running  [-123456789] System watchdog daemon
+    450   httpd            running  [--2345----] Web interface
+    root@anarchy:~# initctl -p cond
+    PID   IDENT            STATUS  CONDITION (+ ON, ~ FLUX, - OFF)
+    ==============================================================================
+    8379  ntpd             on      <+sys/internet/up>
 
