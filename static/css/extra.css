@@ -3,6 +3,14 @@
  * Previously this was used http://www.ebadf.net/2016/10/19/centering-images-in-hugo/
  */
 
+figure {
+    margin-top: 0;
+    figcaption {
+	padding-top: 0;
+	margin-left: 25px;
+    }
+}
+
 pre {
   code {
     @media (prefers-color-scheme: light) {
