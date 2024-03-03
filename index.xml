@@ -7,8 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Sun, 28 Jan 2024 22:10:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 03 Mar 2024 13:19:28 +0000</lastBuildDate>
     <atom:link href="https://troglobit.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building Emacs with JIT</title>
+      <link>https://troglobit.com/post/2024-03-03-building-emacs-with-jit/</link>
+      <pubDate>Sun, 03 Mar 2024 13:19:28 +0000</pubDate>
+      <guid>https://troglobit.com/post/2024-03-03-building-emacs-with-jit/</guid>
+      <description>Very brief intro to building GNU Emacs from GIT, with GCC JIT enabled to greatly speed up our favorite editor, GNU Emacs!&#xA;Perquisites You need a lot of development packages installed to check out and build Emacs. How to install these are outside the scope of this blog post. The output of the configure script and some intuition is usually sufficient. On Debian, Ubuntu, or Linux Mint, systems at least the following is needed:</description>
+    </item>
     <item>
       <title>Migrating from Terminator to Kitty</title>
       <link>https://troglobit.com/post/2024-01-28-migrating-from-terminator-to-kitty/</link>
@@ -71,13 +78,6 @@
       <pubDate>Sat, 01 Oct 2022 15:44:00 +0000</pubDate>
       <guid>https://troglobit.com/post/2022-10-01-remap-prev/next-on-thinkpad/</guid>
       <description>I still use my awesome little ThinkPad X200, in fact I now have more of them and even a few X201&amp;rsquo;s. They are truly the best machines I&amp;rsquo;ve ever used! :-)&#xA;One annoying thing though, when going back to these traditional ThinkPad keyboards is the prev/next keys next to the arrow keys. On modern ones they are PgUp/PgDn and I recently learned how to elegantly remap them in X. Note the difference, below, to the original at ThinkWiki.</description>
-    </item>
-    <item>
-      <title>Logging to remote syslog servers</title>
-      <link>https://troglobit.com/post/2022-09-09-logging-to-remote-syslog-servers/</link>
-      <pubDate>Fri, 09 Sep 2022 19:36:44 +0100</pubDate>
-      <guid>https://troglobit.com/post/2022-09-09-logging-to-remote-syslog-servers/</guid>
-      <description>The logger(1) tool in your system, /usr/bin/logger, standardized in IEEE Std 1003.2 (&amp;ldquo;POSIX.2&amp;rdquo;), has many different implementations. For Linux users the most common one is part of the util-linux package.&#xA;I&amp;rsquo;ve always considered this one of those weird Linux:isms. The logger tool is closely tied to the system log daemon, so in the sysklogd project we ship our own implementation of logger. Our implementation is derived from the Finit project&amp;rsquo;s logit tool.</description>
     </item>
   </channel>
 </rss>

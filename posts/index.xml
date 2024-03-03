@@ -6,8 +6,90 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-        <lastBuildDate>Sun, 28 Jan 2024 22:10:00 +0000</lastBuildDate>
+        <lastBuildDate>Sun, 03 Mar 2024 13:19:28 +0000</lastBuildDate>
         <atom:link href="https://troglobit.com/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Building Emacs with JIT</title>
+            <link>https://troglobit.com/post/2024-03-03-building-emacs-with-jit/</link>
+            <pubDate>Sun, 03 Mar 2024 13:19:28 +0000</pubDate>
+            
+            <guid>https://troglobit.com/post/2024-03-03-building-emacs-with-jit/</guid>
+            <description>Very brief intro to building GNU Emacs from GIT, with GCC JIT enabled to greatly speed up our favorite editor, GNU Emacs!
+Perquisites You need a lot of development packages installed to check out and build Emacs. How to install these are outside the scope of this blog post. The output of the configure script and some intuition is usually sufficient. On Debian, Ubuntu, or Linux Mint, systems at least the following is needed:</description>
+            <content type="html"><![CDATA[<p>Very brief intro to building GNU Emacs from GIT, with GCC JIT enabled to
+greatly speed up our favorite editor, <a href="https://www.gnu.org/software/emacs/">GNU Emacs</a>!</p>
+<h3 id="perquisites">Perquisites</h3>
+<p>You need a lot of development packages installed to check out and build Emacs.
+How to install these are outside the scope of this blog post.  The output of
+the <code>configure</code> script and some intuition is usually sufficient.  On Debian,
+Ubuntu, or Linux Mint, systems at least the following is needed:</p>
+<pre><code> sudo apt install build-essential autoconf automake git make      \
+          libgtk-4-dev libwebkitgtk-6.0-dev libxpm-dev libgif-dev \
+          libjpeg-dev libxft-dev libotf-dev librsvg2-dev libwebp-dev
+</code></pre>
+<p>The one package <em>critical</em> though for the JIT feature is:</p>
+<pre><code>sudo apt install libgccjit-11-dev
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong> the version of the package depends on what version of GCC is your
+primary, usually selected by your Linux distribution.</p>
+</blockquote>
+<h3 id="checkout--build">Checkout &amp; Build</h3>
+<p>To build Emacs we first have to clone it using GIT from the GNU repository:</p>
+<pre><code>cd src/
+git clone https://git.savannah.gnu.org/git/emacs.git
+</code></pre>
+<p>Now we can start, first we create the <code>configure</code> script and <code>Makefile.in</code>&rsquo;s,
+because they are generated files and not checked into GIT:</p>
+<pre><code>cd emacs/
+./autogen.sh
+</code></pre>
+<p>Finally, time to configure the features we want.  I&rsquo;ve selected a few that you
+may not want, see <code>./configure --help</code> for more information:</p>
+<pre><code>./configure --with-native-compilation --with-xwidgets --with-tree-sitter --with-xft
+</code></pre>
+<p>The features you select with the <code>configure</code> script also mandate that you have
+development versions of the libraries (packages) providing these features.
+See above <code>apt install</code> for hints on how to install packages.  I&rsquo;ve selected:</p>
+<ul>
+<li><a href="https://www.emacswiki.org/emacs/GccEmacs">Native compilation</a> (JIT)</li>
+<li><a href="https://www.emacswiki.org/emacs/EmacsXWidgets">X Widgets</a>, with WebKit GTK</li>
+<li><a href="https://www.emacswiki.org/emacs/Tree-sitter">Tree Sitter</a></li>
+<li><a href="https://www.emacswiki.org/emacs/XftGnuEmacs">Xft</a></li>
+</ul>
+<p>Now, Emacs consists of both C code and LISP code (the Emacs Lisp dialect), so
+not unlike when building a compiler, we need to bootstrap Emacs first so that
+it can build itself:</p>
+<pre><code>make bootstrap
+</code></pre>
+<p>After this initial step, which takes several minutes, we can go ahead and build
+the final stages:</p>
+<pre><code>make
+</code></pre>
+<h3 id="installation">Installation</h3>
+<p>I recommend you remove any Emacs packages, including elpa, or similar <code>*-el</code>
+packages, that you may have installed already.  Otherwise you risk getting
+incompatible Elvisp^Welisp package in your system.</p>
+<p>When you&rsquo;ve cleaned up your system, it&rsquo;s time to install Emacs:</p>
+<pre><code>sudo make install
+</code></pre>
+<p>The default install location is <code>/usr/local</code>, with the Emacs binary installed
+in <code>/usr/local/bin</code>.  If you want another location, you can control that with
+the <code>--prefix</code> option to configure (above).</p>
+<h3 id="setup">Setup</h3>
+<p>The basic setup of GNU Emacs, out of the box, is better than it was 20 years
+ago, but you&rsquo;ll likely want to spend some time setting it up to your liking:</p>
+<ul>
+<li>Modern copy-paste (CUA mode)</li>
+<li>Saving state of files/cursor/etc. between sessions</li>
+<li>Ido Mode <a href="https://www.masteringemacs.org/article/introduction-to-ido-mode">https://www.masteringemacs.org/article/introduction-to-ido-mode</a></li>
+<li>&hellip;</li>
+</ul>
+<p>If you want to have a look at my dark-mode-c-python-programming <code>~/.emacs</code> as
+an example: <a href="https://github.com/troglobit/toolbox/blob/master/dot.emacs">https://github.com/troglobit/toolbox/blob/master/dot.emacs</a></p>
+]]></content>
+        </item>
         
         <item>
             <title>Migrating from Terminator to Kitty</title>
