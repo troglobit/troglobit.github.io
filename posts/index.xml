@@ -116,9 +116,11 @@ new handling of capabilities, two of my colleagues went all-in on
 all, I hated that it didn&rsquo;t support splits in any way!  I was also not
 impressed with the lack of documentation and changing configuration file
 formats that just put more roadblocks in my way.</p>
-<p>During the winter holiday I sat down to instead learn about <a href="https://sw.kovidgoyal.net/kitty/">Kitty</a>,
-by Kovid Goyal, and I must say I&rsquo;m very impressed and would recommend
-it to anyone looking for a replacement! :-)</p>
+<figure class="right-floated"><img src="/images/kitty.png" width="100"/>
+</figure>
+<p>During the winter holiday I learned about <a href="https://sw.kovidgoyal.net/kitty/">Kitty</a>, by <a href="https://www.kovidgoyal.net/">Kovid Goyal</a>,
+and it was so much easier to use and customize.  I&rsquo;m very impressed and
+would recommend it to anyone looking for a replacement!  &#x1f929;</p>
 <h3 id="speed-vs-latency">Speed vs Latency</h3>
 <p>One interesting &lsquo;vs&rsquo; argument when talking to Alacritty fanbois is
 speed.  If the Typomenter screenshot is not enough, there&rsquo;s lots of good
