@@ -99,7 +99,7 @@ an example: <a href="https://github.com/troglobit/toolbox/blob/master/dot.emacs"
             <guid>https://troglobit.com/post/2024-01-28-migrating-from-terminator-to-kitty/</guid>
             <description>Daniel Lipovetsky&amp;rsquo;s Typometer results.
 Ever since I first learned about Terminator I&amp;rsquo;ve been a huge fan! It&amp;rsquo;s a great replacement for the standard Gnome terminal with its built-in support for horizontal and vertical splits.
-It&amp;rsquo;s not a race car though &amp;hellip; like Gnome terminal it&amp;rsquo;s built around libvte. So on a bad day of clashing with Ubuntu, GDM, systemd and the new handling of capabilities, two of my colleagues went all-in on [Alacritty][] and now swear by it!</description>
+It&amp;rsquo;s not a race car though &amp;hellip; like Gnome terminal it&amp;rsquo;s built around libvte. So on a bad day of clashing with Ubuntu, GDM, systemd and the new handling of capabilities, two of my colleagues went all-in on Alacritty and now swear by it!</description>
             <content type="html"><![CDATA[<figure class="right-floated"><img src="/images/kitty-vs-alacritty-latency.png" width="300"/><figcaption>
             <p>
                     <a href="https://github.com/kovidgoyal/kitty/issues/2701#issuecomment-911089374">Daniel Lipovetsky&rsquo;s Typometer results.</a></p>
@@ -111,7 +111,7 @@ built-in support for horizontal and vertical splits.</p>
 <p>It&rsquo;s not a race car though &hellip; like Gnome terminal it&rsquo;s built around
 libvte.  So on a bad day of clashing with Ubuntu, GDM, systemd and the
 new handling of capabilities, two of my colleagues went all-in on
-[Alacritty][] and now swear by it!</p>
+<a href="https://alacritty.org/">Alacritty</a> and now swear by it!</p>
 <p>I tried to fall in line, but I just couldn&rsquo;t get it to work for me, at
 all, I hated that it didn&rsquo;t support splits in any way!  I was also not
 impressed with the lack of documentation and changing configuration file

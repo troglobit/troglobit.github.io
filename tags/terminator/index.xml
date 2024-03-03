@@ -14,7 +14,7 @@
       <link>https://troglobit.com/post/2024-01-28-migrating-from-terminator-to-kitty/</link>
       <pubDate>Sun, 28 Jan 2024 22:10:00 +0000</pubDate>
       <guid>https://troglobit.com/post/2024-01-28-migrating-from-terminator-to-kitty/</guid>
-      <description>Daniel Lipovetsky&amp;rsquo;s Typometer results.&#xA;Ever since I first learned about Terminator I&amp;rsquo;ve been a huge fan! It&amp;rsquo;s a great replacement for the standard Gnome terminal with its built-in support for horizontal and vertical splits.&#xA;It&amp;rsquo;s not a race car though &amp;hellip; like Gnome terminal it&amp;rsquo;s built around libvte. So on a bad day of clashing with Ubuntu, GDM, systemd and the new handling of capabilities, two of my colleagues went all-in on [Alacritty][] and now swear by it!</description>
+      <description>Daniel Lipovetsky&amp;rsquo;s Typometer results.&#xA;Ever since I first learned about Terminator I&amp;rsquo;ve been a huge fan! It&amp;rsquo;s a great replacement for the standard Gnome terminal with its built-in support for horizontal and vertical splits.&#xA;It&amp;rsquo;s not a race car though &amp;hellip; like Gnome terminal it&amp;rsquo;s built around libvte. So on a bad day of clashing with Ubuntu, GDM, systemd and the new handling of capabilities, two of my colleagues went all-in on Alacritty and now swear by it!</description>
     </item>
   </channel>
 </rss>
