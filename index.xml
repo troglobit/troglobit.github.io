@@ -7,8 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Sun, 07 Jan 2024 19:47:00 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 28 Jan 2024 22:10:00 +0000</lastBuildDate>
     <atom:link href="https://troglobit.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Migrating from Terminator to Kitty</title>
+      <link>https://troglobit.com/post/2024-01-28-migrating-from-terminator-to-kitty/</link>
+      <pubDate>Sun, 28 Jan 2024 22:10:00 +0000</pubDate>
+      <guid>https://troglobit.com/post/2024-01-28-migrating-from-terminator-to-kitty/</guid>
+      <description>Daniel Lipovetsky&amp;rsquo;s Typometer results.&#xA;Ever since I first learned about Terminator I&amp;rsquo;ve been a huge fan! It&amp;rsquo;s a great replacement for the standard Gnome terminal with its built-in support for horizontal and vertical splits.&#xA;It&amp;rsquo;s not a race car though &amp;hellip; like Gnome terminal it&amp;rsquo;s built around libvte. So on a bad day of clashing with Ubuntu, GDM, systemd and the new handling of capabilities, two of my colleagues went all-in on [Alacritty][] and now swear by it!</description>
+    </item>
     <item>
       <title>Fast init for Linux systems</title>
       <link>https://troglobit.com/projects/finit/</link>
@@ -71,13 +78,6 @@
       <pubDate>Fri, 09 Sep 2022 19:36:44 +0100</pubDate>
       <guid>https://troglobit.com/post/2022-09-09-logging-to-remote-syslog-servers/</guid>
       <description>The logger(1) tool in your system, /usr/bin/logger, standardized in IEEE Std 1003.2 (&amp;ldquo;POSIX.2&amp;rdquo;), has many different implementations. For Linux users the most common one is part of the util-linux package.&#xA;I&amp;rsquo;ve always considered this one of those weird Linux:isms. The logger tool is closely tied to the system log daemon, so in the sysklogd project we ship our own implementation of logger. Our implementation is derived from the Finit project&amp;rsquo;s logit tool.</description>
-    </item>
-    <item>
-      <title>Static Multicast Routing Daemon</title>
-      <link>https://troglobit.com/projects/smcroute/</link>
-      <pubDate>Sun, 04 Sep 2022 10:00:41 +0100</pubDate>
-      <guid>https://troglobit.com/projects/smcroute/</guid>
-      <description>SMCRoute is a daemon and command line tool to manipulate the multicast routing table in the UNIX kernel. Both FreeBSD and Linux kernels are supported, but it may work on other systems as well.&#xA;SMCRoute can be used as an alternative to dynamic multicast routing daemons like mrouted or pimd when (only) static multicast routes should be maintained or no proper signalling exists.&#xA;The full documentation of SMCRoute is available in the manual pages, see smcrouted(8), smcroutectl(8), and smcroute.</description>
     </item>
   </channel>
 </rss>

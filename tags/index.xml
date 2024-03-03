@@ -7,8 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Sun, 04 Jun 2023 17:49:00 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 28 Jan 2024 22:10:00 +0000</lastBuildDate>
     <atom:link href="https://troglobit.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>kitty</title>
+      <link>https://troglobit.com/tags/kitty/</link>
+      <pubDate>Sun, 28 Jan 2024 22:10:00 +0000</pubDate>
+      <guid>https://troglobit.com/tags/kitty/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>terminator</title>
+      <link>https://troglobit.com/tags/terminator/</link>
+      <pubDate>Sun, 28 Jan 2024 22:10:00 +0000</pubDate>
+      <guid>https://troglobit.com/tags/terminator/</guid>
+      <description></description>
+    </item>
     <item>
       <title>buildroot</title>
       <link>https://troglobit.com/tags/buildroot/</link>
@@ -63,20 +77,6 @@
       <link>https://troglobit.com/tags/sysklogd/</link>
       <pubDate>Fri, 09 Sep 2022 19:36:44 +0100</pubDate>
       <guid>https://troglobit.com/tags/sysklogd/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>howto</title>
-      <link>https://troglobit.com/tags/howto/</link>
-      <pubDate>Sun, 17 Apr 2022 16:56:00 +0100</pubDate>
-      <guid>https://troglobit.com/tags/howto/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>kernel</title>
-      <link>https://troglobit.com/tags/kernel/</link>
-      <pubDate>Mon, 11 Apr 2022 17:19:00 +0200</pubDate>
-      <guid>https://troglobit.com/tags/kernel/</guid>
       <description></description>
     </item>
   </channel>

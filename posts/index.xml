@@ -6,8 +6,101 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-        <lastBuildDate>Sun, 04 Jun 2023 17:49:00 +0200</lastBuildDate>
+        <lastBuildDate>Sun, 28 Jan 2024 22:10:00 +0000</lastBuildDate>
         <atom:link href="https://troglobit.com/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Migrating from Terminator to Kitty</title>
+            <link>https://troglobit.com/post/2024-01-28-migrating-from-terminator-to-kitty/</link>
+            <pubDate>Sun, 28 Jan 2024 22:10:00 +0000</pubDate>
+            
+            <guid>https://troglobit.com/post/2024-01-28-migrating-from-terminator-to-kitty/</guid>
+            <description>Daniel Lipovetsky&amp;rsquo;s Typometer results.
+Ever since I first learned about Terminator I&amp;rsquo;ve been a huge fan! It&amp;rsquo;s a great replacement for the standard Gnome terminal with its built-in support for horizontal and vertical splits.
+It&amp;rsquo;s not a race car though &amp;hellip; like Gnome terminal it&amp;rsquo;s built around libvte. So on a bad day of clashing with Ubuntu, GDM, systemd and the new handling of capabilities, two of my colleagues went all-in on [Alacritty][] and now swear by it!</description>
+            <content type="html"><![CDATA[<figure class="right-floated"><img src="/images/kitty-vs-alacritty-latency.png" width="300"/><figcaption>
+            <p>
+                    <a href="https://github.com/kovidgoyal/kitty/issues/2701#issuecomment-911089374">Daniel Lipovetsky&rsquo;s Typometer results.</a></p>
+        </figcaption>
+</figure>
+<p>Ever since I first learned about <a href="https://en.wikipedia.org/wiki/Terminator_(terminal_emulator)">Terminator</a> I&rsquo;ve been a huge fan!
+It&rsquo;s a great replacement for the standard <a href="https://en.wikipedia.org/wiki/GNOME_Terminal">Gnome terminal</a> with its
+built-in support for horizontal and vertical splits.</p>
+<p>It&rsquo;s not a race car though &hellip; like Gnome terminal it&rsquo;s built around
+libvte.  So on a bad day of clashing with Ubuntu, GDM, systemd and the
+new handling of capabilities, two of my colleagues went all-in on
+[Alacritty][] and now swear by it!</p>
+<p>I tried to fall in line, but I just couldn&rsquo;t get it to work for me, at
+all, I hated that it didn&rsquo;t support splits in any way!  I was also not
+impressed with the lack of documentation and changing configuration file
+formats that just put more roadblocks in my way.</p>
+<p>During the winter holiday I sat down to instead learn about <a href="https://sw.kovidgoyal.net/kitty/">Kitty</a>,
+by Kovid Goyal, and I must say I&rsquo;m very impressed and would recommend
+it to anyone looking for a replacement! :-)</p>
+<h3 id="speed-vs-latency">Speed vs Latency</h3>
+<p>One interesting &lsquo;vs&rsquo; argument when talking to Alacritty fanbois is
+speed.  If the Typomenter screenshot is not enough, there&rsquo;s lots of good
+ammunition on this <a href="https://github.com/kovidgoyal/kitty/issues/2701">GitHub topic</a>.  Here are some links to get you
+started:</p>
+<ul>
+<li><a href="https://nick-black.com/dankwiki/index.php?title=Notcurses#Terminal_emulators">https://nick-black.com/dankwiki/index.php?title=Notcurses#Terminal_emulators</a></li>
+<li><a href="https://thume.ca/2020/05/20/making-a-latency-tester/">https://thume.ca/2020/05/20/making-a-latency-tester/</a></li>
+</ul>
+<h3 id="kitty-config">Kitty Config</h3>
+<p>To ease my transition from Terminator I created this configuration file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># ~/.config/kitty/kitty.conf -- Mimic the great Terminator</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Use Ctrl-Shift-F5 to reload the configuration at runtime.</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># See https://sw.kovidgoyal.net/kitty/ for more information.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># General</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span>shell_integration       disabled
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Window</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span>remember_window_size    yes
+</span></span><span style="display:flex;"><span>scrollback_lines        <span style="color:#d3869b">100000</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Tab bar</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span>tab_bar_edge            bottom
+</span></span><span style="display:flex;"><span>tab_bar_style           powerline
+</span></span><span style="display:flex;"><span>tab_powerline_style     angled
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Key bindings</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span>map shift+page_up       scroll_page_up
+</span></span><span style="display:flex;"><span>map shift+page_down     scroll_page_down
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>map ctrl+page_up        previous_tab
+</span></span><span style="display:flex;"><span>map ctrl+page_down      next_tab
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>map ctrl+shift+x        detach_window
+</span></span><span style="display:flex;"><span>map ctrl+shift+z        detach_window ask
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>map alt+up              neighboring_window up
+</span></span><span style="display:flex;"><span>map alt+down            neighboring_window down
+</span></span><span style="display:flex;"><span>map alt+left            neighboring_window left
+</span></span><span style="display:flex;"><span>map alt+right           neighboring_window right
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>map ctrl+shift+plus     no-op
+</span></span><span style="display:flex;"><span>map ctrl+shift+minus    no-op
+</span></span><span style="display:flex;"><span>map ctrl+plus           change_font_size all +2.0
+</span></span><span style="display:flex;"><span>map ctrl+minus          change_font_size all -2.0
+</span></span><span style="display:flex;"><span>map ctrl+0              change_font_size all <span style="color:#d3869b">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>map ctrl+shift+o        combine : new_window : goto_layout vertical
+</span></span><span style="display:flex;"><span>map ctrl+shift+e        combine : new_window : goto_layout horizontal
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>map f11                 toggle_fullscreen
+</span></span></code></pre></div>]]></content>
+        </item>
         
         <item>
             <title>Buildroot Development Checklist</title>
