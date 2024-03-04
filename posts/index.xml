@@ -24,32 +24,27 @@ greatly speed up our favorite editor, <a href="https://www.gnu.org/software/emac
 How to install these are outside the scope of this blog post.  The output of
 the <code>configure</code> script and some intuition is usually sufficient.  On Debian,
 Ubuntu, or Linux Mint, systems at least the following is needed:</p>
-<pre><code> sudo apt install build-essential autoconf automake git make      \
-          libgtk-4-dev libwebkitgtk-6.0-dev libxpm-dev libgif-dev \
-          libjpeg-dev libxft-dev libotf-dev librsvg2-dev libwebp-dev
-</code></pre>
-<p>The one package <em>critical</em> though for the JIT feature is:</p>
-<pre><code>sudo apt install libgccjit-11-dev
-</code></pre>
-<blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>~$ sudo apt install build-essential autoconf automake git make      <span style="color:#b8bb26">\
+</span></span></span><span style="display:flex;"><span><span style="color:#b8bb26"></span>            libgtk-4-dev libwebkitgtk-6.0-dev libxpm-dev libgif-dev <span style="color:#b8bb26">\
+</span></span></span><span style="display:flex;"><span><span style="color:#b8bb26"></span>            libjpeg-dev libxft-dev libotf-dev librsvg2-dev libwebp-dev
+</span></span></code></pre></div><p>The one package <em>critical</em> though for the JIT feature is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>~$ sudo apt install libgccjit-11-dev
+</span></span></code></pre></div><blockquote>
 <p><strong>Note:</strong> the version of the package depends on what version of GCC is your
 primary, usually selected by your Linux distribution.</p>
 </blockquote>
 <h3 id="checkout--build">Checkout &amp; Build</h3>
 <p>To build Emacs we first have to clone it using GIT from the GNU repository:</p>
-<pre><code>cd src/
-git clone https://git.savannah.gnu.org/git/emacs.git
-</code></pre>
-<p>Now we can start, first we create the <code>configure</code> script and <code>Makefile.in</code>&rsquo;s,
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>~$ <span style="color:#fabd2f">cd</span> src/
+</span></span><span style="display:flex;"><span>~/src$ git clone https://git.savannah.gnu.org/git/emacs.git
+</span></span></code></pre></div><p>Now we can start, first we create the <code>configure</code> script and <code>Makefile.in</code>&rsquo;s,
 because they are generated files and not checked into GIT:</p>
-<pre><code>cd emacs/
-./autogen.sh
-</code></pre>
-<p>Finally, time to configure the features we want.  I&rsquo;ve selected a few that you
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>~/src$ <span style="color:#fabd2f">cd</span> emacs/
+</span></span><span style="display:flex;"><span>~/src/emacs<span style="color:#fe8019">(</span>master<span style="color:#fe8019">)</span>$ ./autogen.sh
+</span></span></code></pre></div><p>Finally, time to configure the features we want.  I&rsquo;ve selected a few that you
 may not want, see <code>./configure --help</code> for more information:</p>
-<pre><code>./configure --with-native-compilation --with-xwidgets --with-tree-sitter --with-xft
-</code></pre>
-<p>The features you select with the <code>configure</code> script also mandate that you have
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>~/src/emacs<span style="color:#fe8019">(</span>master<span style="color:#fe8019">)</span>$ ./configure --with-native-compilation --with-xwidgets --with-tree-sitter --with-xft
+</span></span></code></pre></div><p>The features you select with the <code>configure</code> script also mandate that you have
 development versions of the libraries (packages) providing these features.
 See above <code>apt install</code> for hints on how to install packages.  I&rsquo;ve selected:</p>
 <ul>
@@ -61,20 +56,17 @@ See above <code>apt install</code> for hints on how to install packages.  I&rsqu
 <p>Now, Emacs consists of both C code and LISP code (the Emacs Lisp dialect), so
 not unlike when building a compiler, we need to bootstrap Emacs first so that
 it can build itself:</p>
-<pre><code>make bootstrap
-</code></pre>
-<p>After this initial step, which takes several minutes, we can go ahead and build
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>~/src/emacs<span style="color:#fe8019">(</span>master<span style="color:#fe8019">)</span>$ make bootstrap
+</span></span></code></pre></div><p>After this initial step, which takes several minutes, we can go ahead and build
 the final stages:</p>
-<pre><code>make
-</code></pre>
-<h3 id="installation">Installation</h3>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>~/src/emacs<span style="color:#fe8019">(</span>master<span style="color:#fe8019">)</span>$ make
+</span></span></code></pre></div><h3 id="installation">Installation</h3>
 <p>I recommend you remove any Emacs packages, including elpa, or similar <code>*-el</code>
 packages, that you may have installed already.  Otherwise you risk getting
 incompatible Elvisp^Welisp package in your system.</p>
 <p>When you&rsquo;ve cleaned up your system, it&rsquo;s time to install Emacs:</p>
-<pre><code>sudo make install
-</code></pre>
-<p>The default install location is <code>/usr/local</code>, with the Emacs binary installed
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>~/src/emacs<span style="color:#fe8019">(</span>master<span style="color:#fe8019">)</span>$ sudo make install
+</span></span></code></pre></div><p>The default install location is <code>/usr/local</code>, with the Emacs binary installed
 in <code>/usr/local/bin</code>.  If you want another location, you can control that with
 the <code>--prefix</code> option to configure (above).</p>
 <h3 id="setup">Setup</h3>
@@ -447,7 +439,11 @@ that can be used to add Finit to your own projects.&lt;/p&gt;
 &lt;p&gt;For details, look here: &lt;a href=&#34;https://github.com/troglobit/br2-finit-demo&#34;&gt;https://github.com/troglobit/br2-finit-demo&lt;/a&gt;,
 try out the &lt;a href=&#34;https://github.com/troglobit/br2-finit-demo/releases/tag/latest&#34;&gt;latest build&lt;/a&gt; in &lt;a href=&#34;https://www.qemu.org&#34;&gt;Qemu&lt;/a&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;img src=&#34;https://troglobit.com/images/finit-demo/bootstrap.png&#34; alt=&#34;Finit bootstrap&#34;&gt;&lt;/p&gt;</description>
+&lt;figure class=&#34;center&#34;&gt;&lt;img src=&#34;https://troglobit.com/images/finit-demo/bootstrap.png&#34;
+         alt=&#34;Finit bootstrap&#34; width=&#34;600&#34;/&gt;&lt;figcaption&gt;
+            &lt;p&gt;Finit bootstrap&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;</description>
             <content type="html"><![CDATA[<p>I believe there is a <strong>gap in the market</strong> between BusyBox init and
 systemd.  In particular in the embedded space.  This blog post shows how
 easily it is to get up and running quickly with FastInit (<a href="https://github.com/troglobit/finit#introduction">Finit</a>)!</p>
@@ -459,7 +455,11 @@ that can be used to add Finit to your own projects.</p>
 <p>For details, look here: <a href="https://github.com/troglobit/br2-finit-demo">https://github.com/troglobit/br2-finit-demo</a>,
 try out the <a href="https://github.com/troglobit/br2-finit-demo/releases/tag/latest">latest build</a> in <a href="https://www.qemu.org">Qemu</a>.</p>
 </blockquote>
-<p><img src="/images/finit-demo/bootstrap.png" alt="Finit bootstrap"></p>
+<figure class="center"><img src="/images/finit-demo/bootstrap.png"
+         alt="Finit bootstrap" width="600"/><figcaption>
+            <p>Finit bootstrap</p>
+        </figcaption>
+</figure>
 <h2 id="why-finit">Why Finit?</h2>
 <ul>
 <li>Sane built-in defaults</li>
@@ -480,56 +480,58 @@ system <a href="https://buildroot.org/downloads/manual/manual.html#requirement">
 <ol>
 <li>
 <p>Download the demo GIT repo:</p>
-<pre><code>git clone https://github.com/troglobit/br2-finit-demo.git
-</code></pre>
-</li>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>~$ git clone https://github.com/troglobit/br2-finit-demo.git
+</span></span></code></pre></div></li>
 <li>
 <p>Change to the top directory and fetch all submodules:</p>
-<pre><code>cd br2-finit-demo/
-git submodule update --init
-</code></pre>
-</li>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>~$ <span style="color:#fabd2f">cd</span> br2-finit-demo/
+</span></span><span style="display:flex;"><span>~/br2-finit-demo<span style="color:#fe8019">(</span>main<span style="color:#fe8019">)</span>$ git submodule update --init
+</span></span></code></pre></div></li>
 <li>
 <p>Configure and Build</p>
-<pre><code>make qemu_x86_64_defconfig
-make
-</code></pre>
-</li>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>~/br2-finit-demo<span style="color:#fe8019">(</span>main<span style="color:#fe8019">)</span>$ make qemu_x86_64_defconfig
+</span></span><span style="display:flex;"><span>~/br2-finit-demo<span style="color:#fe8019">(</span>main<span style="color:#fe8019">)</span>$ make
+</span></span></code></pre></div></li>
 <li>
 <p>Run</p>
-<pre><code>make run
-</code></pre>
-</li>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>~/br2-finit-demo<span style="color:#fe8019">(</span>main<span style="color:#fe8019">)</span>$ make run
+</span></span></code></pre></div></li>
 <li>
 <p>Log in, user <code>root</code>, empty password</p>
 </li>
 </ol>
-<p><img src="/images/finit-demo/login.png" alt="Finit login"></p>
+<figure class="center"><img src="/images/finit-demo/login.png"
+         alt="Finit login prompt" width="550"/><figcaption>
+            <p>Finit login prompt</p>
+        </figcaption>
+</figure>
 <p>It boots fairly quick provided you have an x86_64 host computer.  See
 the <code>initctl</code> tool to control Finit.</p>
-<pre><code>initctl help
-</code></pre>
-<p>Brings up the available commands.  Check what is running right now:</p>
-<pre><code>initctl status   # default command, you can omit 'status'
-</code></pre>
-<p>Show available .conf snippets that start services:</p>
-<pre><code>initctl ls
-</code></pre>
-<p>Try enabling some services (not a lot is enabled in the defconfig, add
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># initctl help</span>
+</span></span></code></pre></div><p>Brings up the available commands.  Check what is running right now:</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># initctl status   # default command, you can omit &#39;status&#39;</span>
+</span></span></code></pre></div><p>Show available .conf snippets that start services:</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># initctl ls</span>
+</span></span></code></pre></div><p>Try enabling some services (not a lot is enabled in the defconfig, add
 more with <code>make menuconfig</code> or <code>make busybox-menuconfig</code>) like:</p>
-<pre><code>initctl enable telnetd
-</code></pre>
-<p><img src="/images/finit-demo/enable.png" alt="Enable service"></p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># initctl enable telnetd</span>
+</span></span></code></pre></div><figure class="center"><img src="/images/finit-demo/enable.png"
+         alt="Enable service" width="600"/><figcaption>
+            <p>Enable service</p>
+        </figcaption>
+</figure>
 <p>Try <code>initctl ls</code> again, it&rsquo;s now listed in the set of enabled services.
 But it&rsquo;s not yet running &hellip; (check with <code>initctl status</code>).  This is
 because we may want to roll out multiple changes to a system before
 activating them.  To activate we tell Finit to reload its configuration.</p>
-<pre><code>initctl reload
-</code></pre>
-<p>Verify it is now running.  For more detailed information about telnetd:</p>
-<pre><code>initctl status telnetd
-</code></pre>
-<p><img src="/images/finit-demo/status.png" alt="Service status"></p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># initctl reload</span>
+</span></span></code></pre></div><p>Verify it is now running.  For more detailed information about telnetd:</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># initctl status telnetd</span>
+</span></span></code></pre></div><figure class="center"><img src="/images/finit-demo/status.png"
+         alt="Service status" width="400"/><figcaption>
+            <p>Service status</p>
+        </figcaption>
+</figure>
 <p>Try killing telnetd and check the status again.  You can now see that
 Finit has already restarted it for you (<code>Restarts: 1 (1/10)</code>).  Kill it
 a few more times to see what happens.  When a service reaches its max
@@ -538,10 +540,13 @@ something is obviously not right with the service.  You will have to
 restart it manually, which clears the restart counter.  Notice how the
 total restarts counter continues counting.</p>
 <p>You can connect to the system from your host, or anywhere on the LAN:</p>
-<pre><code>telnet localhost 8023
-</code></pre>
-<h2 id="fin">Fin</h2>
-<p><img src="/images/finit-demo/poweroff.png" alt="Finit poweroff"></p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>~$ telnet localhost <span style="color:#d3869b">8023</span>
+</span></span></code></pre></div><h2 id="fin">Fin</h2>
+<figure class="center"><img src="/images/finit-demo/poweroff.png"
+         alt="Finit poweroff" width="350"/><figcaption>
+            <p>Finit poweroff</p>
+        </figcaption>
+</figure>
 <p>There is of course a lot more to cover.  Please get in touch with me if
 you are curious about some other aspect that would be suitable for a
 blog post.  There is also a <a href="https://github.com/troglobit/finit/discussions">discussion forum</a> open for general
