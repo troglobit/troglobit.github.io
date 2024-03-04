@@ -21,7 +21,7 @@ that can be used to add Finit to your own projects.
 > For details, look here: <https://github.com/troglobit/br2-finit-demo>,
 > try out the [latest build][3] in [Qemu][4].
 
-![Finit bootstrap](/images/finit-demo/bootstrap.png)
+{{% figure src="/images/finit-demo/bootstrap.png" caption="Finit bootstrap" class="center" width=600 %}}
 
 <!--more-->
 
@@ -49,58 +49,78 @@ system <https://buildroot.org/downloads/manual/manual.html#requirement>
 
  1. Download the demo GIT repo:
 
-        git clone https://github.com/troglobit/br2-finit-demo.git
+    ```shell
+    ~$ git clone https://github.com/troglobit/br2-finit-demo.git
+    ```
 
  2. Change to the top directory and fetch all submodules:
 
-        cd br2-finit-demo/
-        git submodule update --init
+    ```shell
+    ~$ cd br2-finit-demo/
+    ~/br2-finit-demo(main)$ git submodule update --init
+    ```
 
  3. Configure and Build
 
-        make qemu_x86_64_defconfig
-        make
+    ```shell
+    ~/br2-finit-demo(main)$ make qemu_x86_64_defconfig
+    ~/br2-finit-demo(main)$ make
+    ```
 
  4. Run
 
-        make run
+    ```shell
+    ~/br2-finit-demo(main)$ make run
+    ```
 
  5. Log in, user `root`, empty password
 
-![Finit login](/images/finit-demo/login.png)
+{{% figure src="/images/finit-demo/login.png" caption="Finit login prompt" class="center" width=550 %}}
 
 It boots fairly quick provided you have an x86_64 host computer.  See
 the `initctl` tool to control Finit.
 
-    initctl help
+```shell
+# initctl help
+```
 
 Brings up the available commands.  Check what is running right now:
 
-    initctl status   # default command, you can omit 'status'
+```shell
+# initctl status   # default command, you can omit 'status'
+```
 
 Show available .conf snippets that start services:
 
-    initctl ls
+```shell
+# initctl ls
+```
 
 Try enabling some services (not a lot is enabled in the defconfig, add
 more with `make menuconfig` or `make busybox-menuconfig`) like:
 
-    initctl enable telnetd
+```shell
+# initctl enable telnetd
+```
 
-![Enable service](/images/finit-demo/enable.png)
+{{% figure src="/images/finit-demo/enable.png" caption="Enable service" class="center" width=600 %}}
 
 Try `initctl ls` again, it's now listed in the set of enabled services.
 But it's not yet running ... (check with `initctl status`).  This is
 because we may want to roll out multiple changes to a system before
 activating them.  To activate we tell Finit to reload its configuration.
 
-    initctl reload
+```shell
+# initctl reload
+```
 
 Verify it is now running.  For more detailed information about telnetd:
 
-    initctl status telnetd
+```shell
+# initctl status telnetd
+```
 
-![Service status](/images/finit-demo/status.png)
+{{% figure src="/images/finit-demo/status.png" caption="Service status" class="center" width=400 %}}
 
 Try killing telnetd and check the status again.  You can now see that
 Finit has already restarted it for you (`Restarts: 1 (1/10)`).  Kill it
@@ -112,13 +132,15 @@ total restarts counter continues counting.
 
 You can connect to the system from your host, or anywhere on the LAN:
 
-    telnet localhost 8023
+```shell
+~$ telnet localhost 8023
+```
 
 
 Fin
 ---
 
-![Finit poweroff](/images/finit-demo/poweroff.png)
+{{% figure src="/images/finit-demo/poweroff.png" caption="Finit poweroff" class="center" width=350 %}}
 
 There is of course a lot more to cover.  Please get in touch with me if
 you are curious about some other aspect that would be suitable for a
