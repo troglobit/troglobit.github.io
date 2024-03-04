@@ -7,7 +7,19 @@ figure {
     margin-top: 0;
     figcaption {
 	padding-top: 0;
-	margin-left: 25px;
+	float: inherit;
+    }
+    .left-floated {
+	img {
+	    margin-top: 0px;
+	    margin-bottom: 0px;
+	}
+    }
+    &.right-floated {
+	img {
+	    margin-top: 0px;
+	    margin-bottom: 0px;
+	}
     }
 }
 
