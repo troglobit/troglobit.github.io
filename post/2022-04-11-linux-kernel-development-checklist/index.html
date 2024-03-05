@@ -168,11 +168,10 @@ list.</p>
 <ol>
 <li>
 <p>Make your changes on an up-to-date branch from net-next master:</p>
-<pre><code> $ git checkout -b my-patch-series
- $ git fetch --all --tags
- $ git rebase net-next/master
-</code></pre>
-</li>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ git checkout -b my-patch-series
+</span></span><span style="display:flex;"><span>$ git fetch --all --tags
+</span></span><span style="display:flex;"><span>$ git rebase net-next/master
+</span></span></code></pre></div></li>
 <li>
 <p>Use <em>logical commits</em>; upgrade package as one, changing/extending
 behavior as another, etc.</p>
@@ -181,16 +180,15 @@ behavior as another, etc.</p>
 <p>Use commit messages to record <em>why</em> changes are made.  First line is
 a summary referencing the sub-system, followed by an empty line and
 the message body, and concluded by your sign-off:</p>
-<pre><code> net bridge: add support for foo bar
-
- You need an actual body of your commit message, otherwise the
- checkpatch.pl script (below) will complain.  For good reason,
- why wouldn't you want to tell the tale of how you ended up at
- this point in history?
-
- Signed-off-by: Your Name &lt;your.name@example.com&gt;
-</code></pre>
-</li>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span> net bridge: add support for foo bar
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> You need an actual body of your commit message, otherwise the
+</span></span><span style="display:flex;"><span> checkpatch.pl script (below) will complain.  For good reason,
+</span></span><span style="display:flex;"><span> why wouldn&#39;t you want to tell the tale of how you ended up at
+</span></span><span style="display:flex;"><span> this point in history?
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> Signed-off-by: Your Name &lt;your.name@example.com&gt;
+</span></span></code></pre></div></li>
 <li>
 <p>Maybe consider adding a selftest.  Better than having to answer any
 question later on how your feature is supposed to work.  Or even to
@@ -200,9 +198,8 @@ does fix what you say it does.</p>
 <li>
 <p>Format your patches, with the optional <code>--cover-letter</code>, very useful
 to explain a series of patches:</p>
-<pre><code> $  git format-patch --cover-letter -M -n -s -o mail net-next/master
-</code></pre>
-<p>Remember: <strong>edit the cover letter</strong> &mdash; it serves as an introduction
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ git format-patch --cover-letter -M -n -s -o mail net-next/master
+</span></span></code></pre></div><p>Remember: <strong>edit the cover letter</strong> &mdash; it serves as an introduction
 and explains the reasoning behind your changes.  Focus on <em>the why,
 not the how,</em> the patches have separate commit messages</p>
 </li>
@@ -211,18 +208,16 @@ not the how,</em> the patches have separate commit messages</p>
 <code>checkpatch.pl</code> script is the collected wisdom of the ancients, the
 oracle that you can ask free of shame before submitting yourself to
 the wrath of the maintainers:</p>
-<pre><code> $ ./scripts/checkpatch.pl mail/*
-</code></pre>
-</li>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ ./scripts/checkpatch.pl mail/*
+</span></span></code></pre></div></li>
 <li>
 <p>Figure out maintainers to Cc in your correspondence to the mailing
 list.  Please note, it is <em>up to you</em> to figure out the relevant
 people and lists to Cc.  The script gives you an idea of who have
 recently traveled beyond the rim like you, as well as those who do
 live there permanently.</p>
-<pre><code> $ ./scripts/get_maintainer.pl mail/*
-</code></pre>
-</li>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ ./scripts/get_maintainer.pl mail/*
+</span></span></code></pre></div></li>
 <li>
 <p>Inspect the cover letter and patches one last time:</p>
 <ul>
@@ -234,9 +229,8 @@ from a previous version you sent?</li>
 </li>
 <li>
 <p>OK, time to send!</p>
-<pre><code> $ git send-email --to netdev@vger.kernel.org --cc foo@example.com mail/*
-</code></pre>
-<p>You are offered one last chance to proofread the contents (remember
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ git send-email --to netdev@vger.kernel.org --cc foo@example.com mail/*
+</span></span></code></pre></div><p>You are offered one last chance to proofread the contents (remember
 to check the email headers!) before you send.</p>
 </li>
 </ol>

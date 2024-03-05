@@ -44,7 +44,7 @@ I&amp;rsquo;ve always considered this one of those weird Linux:isms. The logger 
 <meta itemprop="description" content="The logger(1) tool in your system, /usr/bin/logger, standardized in IEEE Std 1003.2 (&ldquo;POSIX.2&rdquo;), has many different implementations. For Linux users the most common one is part of the util-linux package.
 I&rsquo;ve always considered this one of those weird Linux:isms. The logger tool is closely tied to the system log daemon, so in the sysklogd project we ship our own implementation of logger. Our implementation is derived from the Finit project&rsquo;s logit tool."><meta itemprop="datePublished" content="2022-09-09T19:36:44+01:00" />
 <meta itemprop="dateModified" content="2022-09-09T19:36:44+01:00" />
-<meta itemprop="wordCount" content="140">
+<meta itemprop="wordCount" content="141">
 <meta itemprop="keywords" content="opensource,sysklogd," />
 <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Logging to remote syslog servers"/>
 <meta name="twitter:description" content="The logger(1) tool in your system, /usr/bin/logger, standardized in IEEE Std 1003.2 (&ldquo;POSIX.2&rdquo;), has many different implementations. For Linux users the most common one is part of the util-linux package.
@@ -166,9 +166,8 @@ our own implementation of logger.  Our implementation is derived from the
 both RFC3164 (BSD) and RFC5424 (new) style logging.  It also supports logging
 to file, including log rotation, <em>and</em> in the latest sysklogd release, v2.4.4,
 logger supports logging to a remote host:</p>
-<pre><code>logger -h 192.168.1.1 &quot;Kilroy was here&quot;
-</code></pre>
-<p>Command line options are modeled on the corresponding FreeBSD flags, where
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>~$ logger -h 192.168.1.1 <span style="color:#b8bb26">&#34;Kilroy was here&#34;</span>
+</span></span></code></pre></div><p>Command line options are modeled on the corresponding FreeBSD flags, where
 applicable, not util-linux.  See the <a href="https://www.freebsd.org/cgi/man.cgi?query=logger&amp;apropos=0&amp;sektion=0&amp;manpath=FreeBSD+13.1-RELEASE+and+Ports&amp;arch=default&amp;format=html">FreeBSD man page</a> for comparison.</p>
 
       </div>
@@ -196,7 +195,7 @@ applicable, not util-linux.  See the <a href="https://www.freebsd.org/cgi/man.cg
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        140 Words
+        141 Words
       </p>
 
       <p>

@@ -51,7 +51,7 @@ a workaround!
 Update: same on Debian 11 (bullseye) and Linux Mint 20 (Ulyana)
 "><meta itemprop="datePublished" content="2020-07-13T17:37:00+01:00" />
 <meta itemprop="dateModified" content="2020-07-13T17:37:00+01:00" />
-<meta itemprop="wordCount" content="166">
+<meta itemprop="wordCount" content="168">
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Fixing file sharing in Debian/Ubuntu/Mint"/>
 <meta name="twitter:description" content="Mounting my ReadyNAS from Nautilus stopped working after upgrading to
@@ -185,21 +185,17 @@ a workaround!</p>
 <p>The fix, from <a href="https://askubuntu.com/questions/1229929/cant-acces-nas-anymore-after-upgrading-to-20-04">AskUbuntu</a> and <a href="https://www.reddit.com/r/linuxquestions/comments/djvpdn/smb_connection_nautilus_error_debian_bullseye/">Reddit</a>, suggest lowering the min
 protocol version.  To do this, open <code>/etc/samba/smb.conf</code> with your
 favorite editor:</p>
-<pre><code>sudo mg /etc/samba/smb.conf
-</code></pre>
-<p>Add the following line to the <code>[global]</code> section:</p>
-<pre><code>client min protocol = NT1
-</code></pre>
-<p>If you&rsquo;re using Nautilus (Files, Nemo), you&rsquo;re done.  But if you&rsquo;re
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>~$ sudo mg /etc/samba/smb.conf
+</span></span></code></pre></div><p>Add the following line to the <code>[global]</code> section:</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-aconf" data-lang="aconf"><span style="display:flex;"><span><span style="color:#fabd2f">client</span> <span style="color:#fe8019">min</span> protocol = NT1
+</span></span></code></pre></div><p>If you&rsquo;re using Nautilus (Files, Nemo), you&rsquo;re done.  But if you&rsquo;re
 using Samba, e.g. from the command line, restart it to make change take
 effect:</p>
-<pre><code>sudo systemctl restart smbd.service
-</code></pre>
-<p>That&rsquo;s it.  If it doesn&rsquo;t work, you could try setting an ever lower
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>~$ sudo systemctl restart smbd.service
+</span></span></code></pre></div><p>That&rsquo;s it.  If it doesn&rsquo;t work, you could try setting an ever lower
 protocol version:</p>
-<pre><code>client min protocol = CORE
-</code></pre>
-<p>For me, however, using <code>NT1</code> makes everything work.  Including renaming
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-aconf" data-lang="aconf"><span style="display:flex;"><span><span style="color:#fabd2f">client</span> <span style="color:#fe8019">min</span> protocol = CORE
+</span></span></code></pre></div><p>For me, however, using <code>NT1</code> makes everything work.  Including renaming
 files and such, which does not work with <code>CORE</code>.</p>
       </div>
     </article>
@@ -218,7 +214,7 @@ files and such, which does not work with <code>CORE</code>.</p>
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        166 Words
+        168 Words
       </p>
 
       <p>
