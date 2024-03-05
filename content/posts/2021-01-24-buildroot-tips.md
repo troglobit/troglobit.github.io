@@ -19,9 +19,11 @@ but the process is much the same for other mailing list-based projects.
 
 1. Make your changes on an up-to-date branch from Buildroot master
 
-        $ git checkout -b package/foo
-        $ git fetch --all --tags
-        $ git rebase origin/master
+   ```shell
+   $ git checkout -b package/foo
+   $ git fetch --all --tags
+   $ git rebase origin/master
+   ```
 
 2. Use *logical commits*; upgrade package as one, changing/extending
    behavior as another, etc.
@@ -30,27 +32,35 @@ but the process is much the same for other mailing list-based projects.
    a summary referencing the sub-system, followed by an empty line and
    the message body, and concluded by your sign-off:
    
-        package/foo: bump version to v1.2.3
+   ```
+   package/foo: bump version to v1.2.3
 
-        Signed-off-by: Your Name <your.name@example.com>
+   Signed-off-by: Your Name <your.name@example.com>
+   ```
 
 4. Verify formatting of package files; .in, .mk, etc.
 
-        $ ./utils/docker-run make check-package
+   ```shell
+   $ ./utils/docker-run make check-package
+   ```
 
    If you change or add a new package, verify you don't introduce any
    recursive dependencies, or other nasty surprises.  Remember, the
    build systems includes *all* `.mk` files into one big Makefile, so
    any changes you make are seen by *all* other packages.
 
-        $  make menuconfig         # complains if you have recursive deps.
-        $  make <pkg>-rebuild      # check output of build
+   ```shell
+   $ make menuconfig         # complains if you have recursive deps.
+   $ make <pkg>-rebuild      # check output of build
+   ```
 
 5. Test your package/change with a set of cross-compilation toolchains.
    The `.config` file is a menuconfig snippet enabling the package to
    test:
 
-        $ ./utils/test-pkg -c foo.config -p foo
+   ```shell
+   $ ./utils/test-pkg -c foo.config -p foo
+   ```
 
    Output goes in `~/br-test-pkg/`, check all logs.  Some toolchains
    can help you track down issues with your package you won't see
@@ -59,7 +69,9 @@ but the process is much the same for other mailing list-based projects.
 6. Format your patches, with the optional `--cover-letter`, very useful
    to explain a series of patches:
 
-        $  git format-patch --cover-letter -M -n -s -o mail origin/master
+   ```shell
+   $ git format-patch --cover-letter -M -n -s -o mail origin/master
+   ```
 
    Remember to **edit the cover letter** --- it serves as an
    introduction and explains the reasoning behind your changes.  Focus
@@ -67,17 +79,23 @@ but the process is much the same for other mailing list-based projects.
 
 7. Figure out DEVELOPERS to Cc in your correspondence to the mailing list:
 
-        $ ./utils/get-developers mail/*
-        git send-email --to buildroot@buildroot.org --cc foo@example.com
+   ```shell
+   $ ./utils/get-developers mail/*
+   git send-email --to buildroot@buildroot.org --cc foo@example.com
+   ```
 
 8. At the very least, the following should be output:
 
-        git send-email --to buildroot@buildroot.org
+   ```shell
+   git send-email --to buildroot@buildroot.org
+   ```
 		
 9. Append `mail/*` to send.  You and others in Signed-off-by,
    Reviewed-by: are Cc:ed by default
 
-        $ git send-email --to buildroot@buildroot.org --cc foo@example.com mail/*
+   ```shell
+   $ git send-email --to buildroot@buildroot.org --cc foo@example.com mail/*
+   ```
 		
    You are offered one last chance to proofread the contents (remember
    to check the email headers!) before you send.
