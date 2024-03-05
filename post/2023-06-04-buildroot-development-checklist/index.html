@@ -175,11 +175,10 @@ but the process is much the same for other mailing list-based projects.</p>
 <ol>
 <li>
 <p>Make your changes on an up-to-date branch from Buildroot master</p>
-<pre><code> $ git checkout -b package/foo
- $ git fetch --all --tags
- $ git rebase origin/master
-</code></pre>
-</li>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ git checkout -b package/foo
+</span></span><span style="display:flex;"><span>$ git fetch --all --tags
+</span></span><span style="display:flex;"><span>$ git rebase origin/master
+</span></span></code></pre></div></li>
 <li>
 <p>Use <em>logical commits</em>; upgrade package as one, changing/extending
 behavior as another, etc.</p>
@@ -188,59 +187,51 @@ behavior as another, etc.</p>
 <p>Use commit messages to record <em>why</em> changes are made.  First line is
 a summary referencing the sub-system, followed by an empty line and
 the message body, and concluded by your sign-off:</p>
-<pre><code> package/foo: bump version to v1.2.3
-
- Signed-off-by: Your Name &lt;your.name@example.com&gt;
-</code></pre>
-</li>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>package/foo: bump version to v1.2.3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Signed-off-by: Your Name &lt;your.name@example.com&gt;
+</span></span></code></pre></div></li>
 <li>
 <p>Verify formatting of package files; .in, .mk, etc.</p>
-<pre><code> $ ./utils/docker-run make check-package
-</code></pre>
-<p>If you change or add a new package, verify you don&rsquo;t introduce any
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ ./utils/docker-run make check-package
+</span></span></code></pre></div><p>If you change or add a new package, verify you don&rsquo;t introduce any
 recursive dependencies, or other nasty surprises.  Remember, the
 build systems includes <em>all</em> <code>.mk</code> files into one big Makefile, so
 any changes you make are seen by <em>all</em> other packages.</p>
-<pre><code> $  make menuconfig         # complains if you have recursive deps.
- $  make &lt;pkg&gt;-rebuild      # check output of build
-</code></pre>
-</li>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ make menuconfig         <span style="color:#928374;font-style:italic"># complains if you have recursive deps.</span>
+</span></span><span style="display:flex;"><span>$ make &lt;pkg&gt;-rebuild      <span style="color:#928374;font-style:italic"># check output of build</span>
+</span></span></code></pre></div></li>
 <li>
 <p>Test your package/change with a set of cross-compilation toolchains.
 The <code>.config</code> file is a menuconfig snippet enabling the package to
 test:</p>
-<pre><code> $ ./utils/test-pkg -c foo.config -p foo
-</code></pre>
-<p>Output goes in <code>~/br-test-pkg/</code>, check all logs.  Some toolchains
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ ./utils/test-pkg -c foo.config -p foo
+</span></span></code></pre></div><p>Output goes in <code>~/br-test-pkg/</code>, check all logs.  Some toolchains
 can help you track down issues with your package you won&rsquo;t see
 elsewhere.</p>
 </li>
 <li>
 <p>Format your patches, with the optional <code>--cover-letter</code>, very useful
 to explain a series of patches:</p>
-<pre><code> $  git format-patch --cover-letter -M -n -s -o mail origin/master
-</code></pre>
-<p>Remember to <strong>edit the cover letter</strong> &mdash; it serves as an
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ git format-patch --cover-letter -M -n -s -o mail origin/master
+</span></span></code></pre></div><p>Remember to <strong>edit the cover letter</strong> &mdash; it serves as an
 introduction and explains the reasoning behind your changes.  Focus
 on <em>the why, not the how,</em> the patches have separate commit messages</p>
 </li>
 <li>
 <p>Figure out DEVELOPERS to Cc in your correspondence to the mailing list:</p>
-<pre><code> $ ./utils/get-developers mail/*
- git send-email --to buildroot@buildroot.org --cc foo@example.com
-</code></pre>
-</li>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ ./utils/get-developers mail/*
+</span></span><span style="display:flex;"><span>git send-email --to buildroot@buildroot.org --cc foo@example.com
+</span></span></code></pre></div></li>
 <li>
 <p>At the very least, the following should be output:</p>
-<pre><code> git send-email --to buildroot@buildroot.org
-</code></pre>
-</li>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git send-email --to buildroot@buildroot.org
+</span></span></code></pre></div></li>
 <li>
 <p>Append <code>mail/*</code> to send.  You and others in Signed-off-by,
 Reviewed-by: are Cc:ed by default</p>
-<pre><code> $ git send-email --to buildroot@buildroot.org --cc foo@example.com mail/*
-</code></pre>
-<p>You are offered one last chance to proofread the contents (remember
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ git send-email --to buildroot@buildroot.org --cc foo@example.com mail/*
+</span></span></code></pre></div><p>You are offered one last chance to proofread the contents (remember
 to check the email headers!) before you send.</p>
 </li>
 </ol>
