@@ -18,7 +18,9 @@ both RFC3164 (BSD) and RFC5424 (new) style logging.  It also supports logging
 to file, including log rotation, *and* in the latest sysklogd release, v2.4.4,
 logger supports logging to a remote host:
 
-    logger -h 192.168.1.1 "Kilroy was here"
+```shell
+~$ logger -h 192.168.1.1 "Kilroy was here"
+```
 
 Command line options are modeled on the corresponding FreeBSD flags, where
 applicable, not util-linux.  See the [FreeBSD man page][6] for comparison.

@@ -20,22 +20,30 @@ The fix, from [AskUbuntu][] and [Reddit][], suggest lowering the min
 protocol version.  To do this, open `/etc/samba/smb.conf` with your
 favorite editor:
 
-    sudo mg /etc/samba/smb.conf
+```shell
+~$ sudo mg /etc/samba/smb.conf
+```
 
 Add the following line to the `[global]` section:
 
-    client min protocol = NT1
+```aconf
+client min protocol = NT1
+```
 
 If you're using Nautilus (Files, Nemo), you're done.  But if you're
 using Samba, e.g. from the command line, restart it to make change take
 effect:
 
-    sudo systemctl restart smbd.service
+```shell
+~$ sudo systemctl restart smbd.service
+```
 
 That's it.  If it doesn't work, you could try setting an ever lower
 protocol version:
 
-    client min protocol = CORE
+```aconf
+client min protocol = CORE
+```
 
 For me, however, using `NT1` makes everything work.  Including renaming
 files and such, which does not work with `CORE`.

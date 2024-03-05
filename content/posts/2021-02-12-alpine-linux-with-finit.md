@@ -23,8 +23,9 @@ source.  The example given here builds from GIT sources, which require a
 few more steps.  Building from release tarballs is easier and does not
 bring the same amount of overhead.
 
-    apk add alpine-sdk autoconf automake libtool linux-headers
-
+```shell
+~$ apk add alpine-sdk autoconf automake libtool linux-headers
+```
 
 ### Finit Deps
 
@@ -33,36 +34,47 @@ own separate projects: [libite (-lite)][2] and [libuEv][3].  The former
 contains basic frog DNA and the latter a small event loop that basically
 is just a wrapper for Linux `epoll()` & C:o.
 
-    git clone https://github.com/troglobit/libite
-    git clone https://github.com/troglobit/libuev
-    git clone https://github.com/troglobit/finit
+```shell
+~$ git clone https://github.com/troglobit/libite
+~$ git clone https://github.com/troglobit/libuev
+~$ git clone https://github.com/troglobit/finit
+```
 
 Build each of the dependencies first:
 
-    cd libite
-    ./autogen && ./configure && make && make install
-    ...
-    cd ../libuev
-    ./autogen && ./configure && make && make install
-    ...
+```shell
+~$ cd libite
+~/libite(maaster)$ ./autogen && ./configure && make && sudo make install
+...
+~/libite(maaster)$ cd ../libuev
+~/libuev(maaster)$ ./autogen && ./configure && make && sudo make install
+...
+```
 
+> **Note:** since Alpine Linux 3.15 `doas` replaces sudo.  See the
+> following blog post for details, in short `alias sudo=doas`:
+> <https://www.perrotta.dev/2022/02/doas-bridging-the-sudo-gap/>
 
 ### Finit
 
 Now lets build Finit for Alpine!
 
-    cd ../finit
-	./autogen
-	./contrib/alpine/build.sh
-    ...
-    *** Done
+```shell
+~/libuev(maaster)$ cd ../finit
+~/finit(maaster)$ ./autogen
+~/finit(maaster)$ ./contrib/alpine/build.sh
+...
+*** Done
+```
 	
 Time to wake up!  We're now at the critical part where we can potentially
 screw things up -- the installation.
 
 > Please, read the output from the install script carefully!
 
-	./contrib/alpine/install.sh
+```shell
+~/finit(maaster)$ ./contrib/alpine/install.sh
+```
 
 The first question is easy, do you really want to install Finit?  Yes.
 
@@ -70,8 +82,10 @@ For the second question, however, *I recommend answering NO* first and
 manually set `init=` in the boot loader, just to make sure everything
 works OK.  You can re-run `install.sh` later to repeat the process.
 
-    *** Install Finit as the system default IOnit (y/N)? N
-    *** Done
+```
+*** Install Finit as the system default IOnit (y/N)? N
+*** Done
+```
 
 ### Testing
 

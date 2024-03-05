@@ -21,26 +21,33 @@ our customizations as a `BR2_EXTERNAL` tree.  Let's start with the
 basic directory layout.  We've also chosen a name for our little system:
 "Foo".
 
-    mkdir foo
-    cd foo
-    git init
-    touch Makefile
-    touch Config.in
-    touch external.mk
-    touch external.desc
-    mkdir configs
-    touch configs/foo_defconfig
-    git add .
+```shell
+~$ mkdir foo
+~$ cd foo/
+~/foo$ git init
+~/foo(HEAD)$ touch Makefile
+~/foo(HEAD)$ touch Config.in
+~/foo(HEAD)$ touch external.mk
+~/foo(HEAD)$ touch external.desc
+~/foo(HEAD)$ mkdir configs
+~/foo(HEAD)$ touch configs/foo_defconfig
+~/foo(HEAD)$ git add .
+```
 
 Edit `external.desc`, notice the name in CAPITAL letters:
 
-    name: FOO
-    desc: Foo System
+```
+name: FOO
+desc: Foo System
+```
 
 Now, we want our project to be stand-alone, so we add buildroot as a
 GIT submodule to our project:
 
-    git submodule add https://github.com/buildroot/buildroot.git
+
+```shell
+~/foo(HEAD)$ git submodule add https://github.com/buildroot/buildroot.git
+```
 
 To make things easier for us, we're also creating a Makefile to set some
 of the critical buildroot environment variables needed.  For details,

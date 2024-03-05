@@ -14,9 +14,11 @@ list.
 
 1. Make your changes on an up-to-date branch from net-next master:
 
-        $ git checkout -b my-patch-series
-        $ git fetch --all --tags
-        $ git rebase net-next/master
+   ```shell
+   $ git checkout -b my-patch-series
+   $ git fetch --all --tags
+   $ git rebase net-next/master
+   ```
 
 2. Use *logical commits*; upgrade package as one, changing/extending
    behavior as another, etc.
@@ -25,14 +27,16 @@ list.
    a summary referencing the sub-system, followed by an empty line and
    the message body, and concluded by your sign-off:
    
-        net bridge: add support for foo bar
-        
-        You need an actual body of your commit message, otherwise the
-		checkpatch.pl script (below) will complain.  For good reason,
-		why wouldn't you want to tell the tale of how you ended up at
-		this point in history?
-        
-        Signed-off-by: Your Name <your.name@example.com>
+   ```
+    net bridge: add support for foo bar
+    
+    You need an actual body of your commit message, otherwise the
+	checkpatch.pl script (below) will complain.  For good reason,
+	why wouldn't you want to tell the tale of how you ended up at
+	this point in history?
+    
+    Signed-off-by: Your Name <your.name@example.com>
+   ```
 
 4. Maybe consider adding a selftest.  Better than having to answer any
    question later on how your feature is supposed to work.  Or even to
@@ -42,7 +46,9 @@ list.
 5. Format your patches, with the optional `--cover-letter`, very useful
    to explain a series of patches:
 
-        $  git format-patch --cover-letter -M -n -s -o mail net-next/master
+   ```shell
+   $ git format-patch --cover-letter -M -n -s -o mail net-next/master
+   ```
 
    Remember: **edit the cover letter** --- it serves as an introduction
    and explains the reasoning behind your changes.  Focus on *the why,
@@ -53,7 +59,9 @@ list.
    oracle that you can ask free of shame before submitting yourself to
    the wrath of the maintainers:
 
-        $ ./scripts/checkpatch.pl mail/*
+   ```shell
+   $ ./scripts/checkpatch.pl mail/*
+   ```
 
 7. Figure out maintainers to Cc in your correspondence to the mailing
    list.  Please note, it is *up to you* to figure out the relevant
@@ -61,7 +69,9 @@ list.
    recently traveled beyond the rim like you, as well as those who do
    live there permanently.
 
-        $ ./scripts/get_maintainer.pl mail/*
+   ```shell
+   $ ./scripts/get_maintainer.pl mail/*
+   ```
 
 8. Inspect the cover letter and patches one last time:
 
@@ -72,7 +82,9 @@ list.
 
 9. OK, time to send!
 
-        $ git send-email --to netdev@vger.kernel.org --cc foo@example.com mail/*
+   ```shell
+   $ git send-email --to netdev@vger.kernel.org --cc foo@example.com mail/*
+   ```
 
    You are offered one last chance to proofread the contents (remember
    to check the email headers!) before you send.
