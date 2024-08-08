@@ -38,7 +38,7 @@ The former is the default while the latter is not.
 Alright, the base configuration I use to test my packages in Qemu is called
 `configs/troglobit_qemu_x86_64_defconfig`:
 
-```
+```apacheconf
 BR2_x86_64=y
 BR2_TOOLCHAIN_EXTERNAL=y
 BR2_TOOLCHAIN_EXTERNAL_BOOTLIN_X86_64_UCLIBC_BLEEDING_EDGE=y
@@ -53,9 +53,9 @@ BR2_ROOTFS_POST_IMAGE_SCRIPT="board/qemu/post-image.sh"
 BR2_ROOTFS_POST_SCRIPT_ARGS="$(BR2_DEFCONFIG)"
 BR2_LINUX_KERNEL=y
 BR2_LINUX_KERNEL_USE_CUSTOM_CONFIG=y
-BR2_LINUX_KERNEL_CUSTOM_CONFIG_FILE="board/qemu/x86_64/linux.config"
+BR2_LINUX_KERNEL_CUSTOM_CONFIG_FILE="linux.config"
 BR2_LINUX_KERNEL_NEEDS_HOST_LIBELF=y
-BR2_PACKAGE_BUSYBOX_CONFIG="troglobit_busybox.config"
+BR2_PACKAGE_BUSYBOX_CONFIG="busybox.config"
 BR2_PACKAGE_BUSYBOX_SHOW_OTHERS=y
 BR2_PACKAGE_PYTHON3=y
 BR2_PACKAGE_PYTHON_TERMINALTABLES=y
@@ -72,8 +72,9 @@ BR2_TARGET_ROOTFS_SQUASHFS=y
 # BR2_TARGET_ROOTFS_TAR is not set
 ```
 
-> **Note:** this includes a custom .config files for both Linux and
-> BusyBox that are currently not included in this post.  YMMV
+You need the two .config files as well:
+ - [Linux .config][2]
+ - [BusyBox .config][3]
 
 Apply and build from scratch with:
 
@@ -128,3 +129,5 @@ $ make foo-rebuild all run
 
 [0]: /post/2023-06-04-buildroot-development-checklist/
 [1]: https://nightly.buildroot.org/
+[2]: /busybox.config
+[3]: /linux.config
