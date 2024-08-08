@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Embedded on Joachim Wiberg</title>
+    <link>https://troglobit.com/tags/embedded/</link>
+    <description>Recent content in Embedded on Joachim Wiberg</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
+    <lastBuildDate>Wed, 07 Aug 2024 07:06:19 +0100</lastBuildDate>
+    <atom:link href="https://troglobit.com/tags/embedded/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Buildroot Development Environment</title>
+      <link>https://troglobit.com/post/2024-08-07-buildroot-development-environment/</link>
+      <pubDate>Wed, 07 Aug 2024 07:06:19 +0100</pubDate>
+      <guid>https://troglobit.com/post/2024-08-07-buildroot-development-environment/</guid>
+      <description>Here are a few Buildroot tricks I use to develop and test my packages. This post will likely evolve over the years to come.&#xA;For the basics, please see my post Buildroot Development Checklist. It covers how to use the check-package and test-pkg tools shipped with Buildroot.&#xA;Tip: if stuck, always check the Buildroot documentation!&#xA;introduction I often need to rebuild from scratch to verify fundamental changes to the structure of my embedded systems.</description>
+    </item>
+  </channel>
+</rss>

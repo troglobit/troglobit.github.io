@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>netbsd on Joachim Wiberg</title>
+    <title>NetBSD on Joachim Wiberg</title>
     <link>https://troglobit.com/categories/netbsd/</link>
-    <description>Recent content in netbsd on Joachim Wiberg</description>
+    <description>Recent content in NetBSD on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>

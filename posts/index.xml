@@ -6,8 +6,113 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-        <lastBuildDate>Sun, 03 Mar 2024 13:19:28 +0000</lastBuildDate>
+        <lastBuildDate>Wed, 07 Aug 2024 07:06:19 +0100</lastBuildDate>
         <atom:link href="https://troglobit.com/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Buildroot Development Environment</title>
+            <link>https://troglobit.com/post/2024-08-07-buildroot-development-environment/</link>
+            <pubDate>Wed, 07 Aug 2024 07:06:19 +0100</pubDate>
+            
+            <guid>https://troglobit.com/post/2024-08-07-buildroot-development-environment/</guid>
+            <description>Here are a few Buildroot tricks I use to develop and test my packages. This post will likely evolve over the years to come.
+For the basics, please see my post Buildroot Development Checklist. It covers how to use the check-package and test-pkg tools shipped with Buildroot.
+Tip: if stuck, always check the Buildroot documentation!
+introduction I often need to rebuild from scratch to verify fundamental changes to the structure of my embedded systems.</description>
+            <content type="html"><![CDATA[<p>Here are a few Buildroot tricks I use to develop and test my packages.
+This post will likely evolve over the years to come.</p>
+<p>For the basics, please see my post <a href="/post/2023-06-04-buildroot-development-checklist/">Buildroot Development Checklist</a>.
+It covers how to use the <code>check-package</code> and <code>test-pkg</code> tools shipped
+with Buildroot.</p>
+<blockquote>
+<p><strong>Tip:</strong> if stuck, always check the <a href="https://nightly.buildroot.org/">Buildroot documentation</a>!</p>
+</blockquote>
+<h3 id="introduction">introduction</h3>
+<p>I often need to rebuild from scratch to verify fundamental changes to
+the structure of my embedded systems.  So I don&rsquo;t have the patience to
+wait for big chunks of code to be downloaded and rebuilt from scratch
+every time.  Buildroot has two great options for this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>BR2_DL_DIR=&#34;$(TOPDIR)/dl&#34;
+</span></span></code></pre></div><p>and</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>BR2_CCACHE=y
+</span></span><span style="display:flex;"><span>BR2_CCACHE_DIR=&#34;$(TOPDIR)/.ccache&#34;
+</span></span></code></pre></div><p>The former is the default while the latter is not.</p>
+<h3 id="defconfig">defconfig</h3>
+<p>Alright, the base configuration I use to test my packages in Qemu is called
+<code>configs/troglobit_qemu_x86_64_defconfig</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>BR2_x86_64=y
+</span></span><span style="display:flex;"><span>BR2_TOOLCHAIN_EXTERNAL=y
+</span></span><span style="display:flex;"><span>BR2_TOOLCHAIN_EXTERNAL_BOOTLIN_X86_64_UCLIBC_BLEEDING_EDGE=y
+</span></span><span style="display:flex;"><span>BR2_CCACHE=y
+</span></span><span style="display:flex;"><span>BR2_CCACHE_DIR=&#34;$(TOPDIR)/.ccache&#34;
+</span></span><span style="display:flex;"><span>BR2_TARGET_GENERIC_ISSUE=&#34;Buildroot Testing Ground&#34;
+</span></span><span style="display:flex;"><span>BR2_ROOTFS_DEVICE_CREATION_STATIC=y
+</span></span><span style="display:flex;"><span>BR2_SYSTEM_DHCP=&#34;eth0&#34;
+</span></span><span style="display:flex;"><span>BR2_TARGET_TZ_INFO=y
+</span></span><span style="display:flex;"><span>BR2_ROOTFS_POST_BUILD_SCRIPT=&#34;board/qemu/x86_64/post-build.sh&#34;
+</span></span><span style="display:flex;"><span>BR2_ROOTFS_POST_IMAGE_SCRIPT=&#34;board/qemu/post-image.sh&#34;
+</span></span><span style="display:flex;"><span>BR2_ROOTFS_POST_SCRIPT_ARGS=&#34;$(BR2_DEFCONFIG)&#34;
+</span></span><span style="display:flex;"><span>BR2_LINUX_KERNEL=y
+</span></span><span style="display:flex;"><span>BR2_LINUX_KERNEL_USE_CUSTOM_CONFIG=y
+</span></span><span style="display:flex;"><span>BR2_LINUX_KERNEL_CUSTOM_CONFIG_FILE=&#34;board/qemu/x86_64/linux.config&#34;
+</span></span><span style="display:flex;"><span>BR2_LINUX_KERNEL_NEEDS_HOST_LIBELF=y
+</span></span><span style="display:flex;"><span>BR2_PACKAGE_BUSYBOX_CONFIG=&#34;troglobit_busybox.config&#34;
+</span></span><span style="display:flex;"><span>BR2_PACKAGE_BUSYBOX_SHOW_OTHERS=y
+</span></span><span style="display:flex;"><span>BR2_PACKAGE_PYTHON3=y
+</span></span><span style="display:flex;"><span>BR2_PACKAGE_PYTHON_TERMINALTABLES=y
+</span></span><span style="display:flex;"><span>BR2_PACKAGE_LIBXCRYPT=y
+</span></span><span style="display:flex;"><span>BR2_PACKAGE_EXPAT=y
+</span></span><span style="display:flex;"><span>BR2_PACKAGE_LINUX_PAM=y
+</span></span><span style="display:flex;"><span>BR2_PACKAGE_LINUX_PAM_LASTLOG=y
+</span></span><span style="display:flex;"><span>BR2_PACKAGE_OPENSSH=y
+</span></span><span style="display:flex;"><span>BR2_PACKAGE_SYSKLOGD=y
+</span></span><span style="display:flex;"><span>BR2_PACKAGE_SYSKLOGD_LOGGER=y
+</span></span><span style="display:flex;"><span>BR2_TARGET_ROOTFS_EXT2=y
+</span></span><span style="display:flex;"><span>BR2_TARGET_ROOTFS_EXT2_SIZE=&#34;384M&#34;
+</span></span><span style="display:flex;"><span>BR2_TARGET_ROOTFS_SQUASHFS=y
+</span></span><span style="display:flex;"><span># BR2_TARGET_ROOTFS_TAR is not set
+</span></span></code></pre></div><blockquote>
+<p><strong>Note:</strong> this includes a custom .config files for both Linux and
+BusyBox that are currently not included in this post.  YMMV</p>
+</blockquote>
+<p>Apply and build from scratch with:</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ rm -rf output/
+</span></span><span style="display:flex;"><span>$ make troglobit_qemu_x86_64_defconfig
+</span></span><span style="display:flex;"><span>$ make
+</span></span></code></pre></div><h3 id="localmk">local.mk</h3>
+<p>Now, testing the resulting image has become substantially easier in
+Buildroot.  They even ship their own qemu start script, provided you
+build the whole shebang (with host Qemu etc.), but we don&rsquo;t have the
+patience for this so we&rsquo;re using the Qemu packages provided on our
+Debian/Ubuntu or Linux Mint installation (not covered here either).</p>
+<p>What I&rsquo;ve done instead is to employ the <code>local.mk</code> trick to add <code>run:</code>
+build target:</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>#SSDP_RESPONDER_OVERRIDE_SRCDIR = /home/jocke/src/ssdp-responder
+</span></span><span style="display:flex;"><span>#SYSKLOGD_OVERRIDE_SRCDIR       = /home/jocke/src/sysklogd
+</span></span><span style="display:flex;"><span>#FINIT_OVERRIDE_SRCDIR          = /home/jocke/src/finit
+</span></span><span style="display:flex;"><span>#MG_OVERRIDE_SRCDIR             = /home/jocke/src/mg
+</span></span><span style="display:flex;"><span>#MROUTED_OVERRIDE_SRCDIR        = /home/jocke/src/mrouted
+</span></span><span style="display:flex;"><span>#LIBNL_OVERRIDE_SRCDIR          = /home/jocke/src/libnl
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>run:
+</span></span><span style="display:flex;"><span>	@line=`stty -g`; stty raw;																\
+</span></span><span style="display:flex;"><span>	qemu-system-x86_64 -nographic -M pc -cpu host -enable-kvm								\
+</span></span><span style="display:flex;"><span>			-kernel output/images/bzImage													\
+</span></span><span style="display:flex;"><span>			-drive file=output/images/rootfs.ext2,if=virtio,format=raw						\
+</span></span><span style="display:flex;"><span>			-append &#34;rootwait root=/dev/vda console=tty1 console=ttyS0 net.ifnames=0 quiet&#34; \
+</span></span><span style="display:flex;"><span>			-netdev tap,id=nd0,ifname=qtap0 -device virtio-net-pci,netdev=nd0				\
+</span></span><span style="display:flex;"><span>			-netdev tap,id=nd1,ifname=qtap1 -device virtio-net-pci,netdev=nd1				\
+</span></span><span style="display:flex;"><span>			-nic bridge,br=virbr0,model=virtio; stty $$line
+</span></span></code></pre></div><blockquote>
+<p><strong>Remember:</strong> makefiles need leading tabs!</p>
+</blockquote>
+<p>So whenever I want to test any of my packages I run <code>make menuconfig</code>
+first to select it.  Maybe uncomment one of them in my <code>local.mk</code> to
+build unreleased/patched code.</p>
+<p>Then:</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ make foo-rebuild all run
+</span></span></code></pre></div>]]></content>
+        </item>
         
         <item>
             <title>Building Emacs with JIT</title>
@@ -552,7 +657,7 @@ questions about Finit.</p>]]></content>
             <guid>https://troglobit.com/post/2022-10-01-remap-prev/next-on-thinkpad/</guid>
             <description>I still use my awesome little ThinkPad X200, in fact I now have more of them and even a few X201&amp;rsquo;s. They are truly the best machines I&amp;rsquo;ve ever used! :-)
 One annoying thing though, when going back to these traditional ThinkPad keyboards is the prev/next keys next to the arrow keys. On modern ones they are PgUp/PgDn and I recently learned how to elegantly remap them in X. Note the difference, below, to the original at ThinkWiki.</description>
-            <content type="html"><![CDATA[<p>I still use my awesome little <a href="https://www.youtube.com/watch?v=CVG7SW0ouL8&amp;ab_channel=LaptopRetrospective">ThinkPad X200</a>, in fact I now have
+            <content type="html"><![CDATA[<p>I still use my awesome little <a href="https://www.youtube.com/watch?v=CVG7SW0ouL8&ab_channel=LaptopRetrospective">ThinkPad X200</a>, in fact I now have
 more of them and even a few X201&rsquo;s.  They are truly the best machines
 I&rsquo;ve ever used! :-)</p>
 <p>One annoying thing though, when going back to these traditional ThinkPad
@@ -611,7 +716,7 @@ to file, including log rotation, <em>and</em> in the latest sysklogd release, v2
 logger supports logging to a remote host:</p>
 <div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>~$ logger -h 192.168.1.1 <span style="color:#b8bb26">&#34;Kilroy was here&#34;</span>
 </span></span></code></pre></div><p>Command line options are modeled on the corresponding FreeBSD flags, where
-applicable, not util-linux.  See the <a href="https://www.freebsd.org/cgi/man.cgi?query=logger&amp;apropos=0&amp;sektion=0&amp;manpath=FreeBSD+13.1-RELEASE+and+Ports&amp;arch=default&amp;format=html">FreeBSD man page</a> for comparison.</p>
+applicable, not util-linux.  See the <a href="https://www.freebsd.org/cgi/man.cgi?query=logger&apropos=0&sektion=0&manpath=FreeBSD+13.1-RELEASE+and+Ports&arch=default&format=html">FreeBSD man page</a> for comparison.</p>
 ]]></content>
         </item>
         
@@ -1027,7 +1132,7 @@ most headless deployments there isn&rsquo;t.  Let&rsquo;s pretend we&rsquo;re se
 this devie, and press enter &ndash; you are presented with a login prompt.
 The default username is <code>root</code> and for the first time login there is
 no password:</p>
-<p><img src="/images/finit-v4.2-first-boot.png" alt=""></p>
+<p><img src="/images/finit-v4.2-first-boot.png"></p>
 <p>To allow SSH login, you must set a password, use <code>passwd</code>.  When set
 you can connect to the QEMU virtual machine using:</p>
 <div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Bash" data-lang="Bash"><span style="display:flex;"><span>~$ ssh -p <span style="color:#d3869b">2222</span> root@localhost
@@ -1035,7 +1140,7 @@ you can connect to the QEMU virtual machine using:</p>
 bit with <code>initctl</code>, it comes with limited built-in help <code>initctl help</code>,
 and there is much <a href="https://github.com/troglobit/finit/tree/master/doc">documentation available online</a>, including man
 pages: <a href="https://man.troglobit.com/man8/initctl.8.html">initctl(8)</a>, <a href="https://man.troglobit.com/man8/finit.8.html">finit(8)</a>, and <a href="https://man.troglobit.com/man5/finit.conf.5.html">finit.conf(5)</a>.</p>
-<p><img src="/images/finit-v4.2-initctl.png" alt=""></p>
+<p><img src="/images/finit-v4.2-initctl.png"></p>
 <p>Try stopping and starting services.  For instance, check the status of
 the <code>sntpd</code> service, notice the condition on a default route &ndash; check
 what happens when you remove the default route.</p>
@@ -1265,7 +1370,7 @@ directory as <code>pre-new</code>:</p>
 &lt;/figure&gt;
 &lt;p&gt;This is a blog post about Finit.  Each post is concluded with a video
 summarizing the topic.  The impatient reader can scroll down to the
-&lt;a href=&#34;#video&#34;&gt;video&lt;/a&gt;.&lt;/p&gt;
+&lt;a href=&#34;https://troglobit.com/post/2021-05-01-dependency-handling-in-finit/#video&#34;&gt;video&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Most non-trivial systems require dependency tracking between services.
 Not only does it help ensure correct operation, it is also an enabler
 for starting services in parallel.  Less known, but just as important,
@@ -1275,7 +1380,7 @@ is handling dependencies at system reconfiguration.&lt;/p&gt;</description>
 </figure>
 <p>This is a blog post about Finit.  Each post is concluded with a video
 summarizing the topic.  The impatient reader can scroll down to the
-<a href="#video">video</a>.</p>
+<a href="/post/2021-05-01-dependency-handling-in-finit/#video">video</a>.</p>
 <p>Most non-trivial systems require dependency tracking between services.
 Not only does it help ensure correct operation, it is also an enabler
 for starting services in parallel.  Less known, but just as important,
@@ -1971,7 +2076,7 @@ continued adding to it over the years, and still do.  So, as of Jul 2,
 <li><a href="http://man7.org/linux/man-pages/man3/lsearch.3.html"><code>lsearch()</code></a></li>
 </ul>
 <h2 id="bsd-sysqueueh">BSD <code>sys/queue.h</code></h2>
-<p><a href="https://www.freebsd.org/cgi/man.cgi?query=queue&amp;sektion=3">This header</a> has lots of macros for handling various forms of
+<p><a href="https://www.freebsd.org/cgi/man.cgi?query=queue&sektion=3">This header</a> has lots of macros for handling various forms of
 linked lists.  The version in GLIBC is a bit behind the BSD&rsquo;s, because
 the latter also have <code>_safe()</code> versions of some macros to aid the user
 in some tricky cases, e.g. when removing entries while iterating.</p>
@@ -3448,7 +3553,7 @@ For the last ten years, however, I&amp;rsquo;ve been meaning to learn about Linu
 learning about UNIX.  The first obvious lesson was to not use the root
 account.  Since then I&rsquo;ve been using a combination of <code>sudo command</code> and
 suid root binaries to get the job done.</p>
-<p><a href="https://xkcd.com/149/"><img src="/images/sandwich.png" alt="sudo make me a sandwich"></a></p>
+<p><a href="https://xkcd.com/149/"><img alt="sudo make me a sandwich" src="/images/sandwich.png"></a></p>
 <p>For the last ten years, however, I&rsquo;ve been meaning to learn about Linux
 <a href="http://man7.org/linux/man-pages/man7/capabilities.7.html">capabilities(7)</a>
 and thanks to a colleague of mine I now have :)</p>
@@ -3739,7 +3844,7 @@ Gorgeous, isn&amp;rsquo;t it?! &amp;#x1f60e;
 This fancy artwork means we&amp;rsquo;re nearing the end of a long and agonizing release cycle where a lot of the internals of Finit have been rewritten and new exciting features have been added! More on this in an upcoming post &amp;#x1f603;</description>
             <content type="html"><![CDATA[<p>Today the new logo for Finit3 was added to the GitHub repo and the
 <a href="/finit.html">homepage</a></p>
-<p><img src="/images/finit3.png" alt="Finit3 logo"></p>
+<p><img alt="Finit3 logo" src="/images/finit3.png"></p>
 <p>Gorgeous, isn&rsquo;t it?! &#x1f60e;</p>
 <p>This fancy artwork means we&rsquo;re nearing the end of a long and agonizing
 release cycle where a lot of the internals of Finit have been rewritten
@@ -8281,7 +8386,7 @@ Mekonomen för 2400:- och började själv &hellip;</p>
 rätt hyffsad verkstad.  Även om själva verkstan i slutändan inte var det
 som avgjorde det hela, så hjälper det att ha lyftar och verktyg till
 hands.  Till min hjälp hade jag dessutom, eftersom jag sparat en massa
-pengar redan, köpt in en Haynes-manual och ett <a href="https://web.archive.org/web/20090601001422/http://www.biltema.se/products/product.asp?iSecId=506&amp;iItemId=82463">bromskolvverktyg</a>.
+pengar redan, köpt in en Haynes-manual och ett <a href="https://web.archive.org/web/20090601001422/http://www.biltema.se/products/product.asp?iSecId=506&iItemId=82463">bromskolvverktyg</a>.
 Haynes-manualen hade två skiftnycklar av fem i svårighet för att byta
 framskivorna och tre för bak, så jag började fram.</p>
 <p>Som den nybörjare jag är så tog det mig ett ganska bra tag innan jag
@@ -8354,7 +8459,7 @@ trycker och vrider.  Inget händer.  &ldquo;Vänta nu,&rdquo; säger han, &ldquo
 att ta den här bautapolygripen och så trycker jag samtidigt som du
 försöker vrida.&rdquo;  Inte lätt, det går segt som tusan, men långsamt
 långsamt så kryper kolven in.  Seger!  Så här i efterhand har jag
-förstått att det var ett <a href="https://web.archive.org/web/20090601001422/http://www.biltema.se/products/product.asp?iSecId=506&amp;iItemId=82465">sånt här</a> bromskolvverktyg jag skulle ha
+förstått att det var ett <a href="https://web.archive.org/web/20090601001422/http://www.biltema.se/products/product.asp?iSecId=506&iItemId=82465">sånt här</a> bromskolvverktyg jag skulle ha
 haft bak.</p>
 <p>Resten var bara ihopmontering, det var lätt och totalt så var det alltså
 bara två bultar, vilka man kunde återanvända, för att byta både

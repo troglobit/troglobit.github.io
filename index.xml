@@ -7,8 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Sun, 03 Mar 2024 13:19:28 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 Aug 2024 07:06:19 +0100</lastBuildDate>
     <atom:link href="https://troglobit.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Buildroot Development Environment</title>
+      <link>https://troglobit.com/post/2024-08-07-buildroot-development-environment/</link>
+      <pubDate>Wed, 07 Aug 2024 07:06:19 +0100</pubDate>
+      <guid>https://troglobit.com/post/2024-08-07-buildroot-development-environment/</guid>
+      <description>Here are a few Buildroot tricks I use to develop and test my packages. This post will likely evolve over the years to come.&#xA;For the basics, please see my post Buildroot Development Checklist. It covers how to use the check-package and test-pkg tools shipped with Buildroot.&#xA;Tip: if stuck, always check the Buildroot documentation!&#xA;introduction I often need to rebuild from scratch to verify fundamental changes to the structure of my embedded systems.</description>
+    </item>
     <item>
       <title>Building Emacs with JIT</title>
       <link>https://troglobit.com/post/2024-03-03-building-emacs-with-jit/</link>
@@ -71,13 +78,6 @@
       <pubDate>Mon, 26 Dec 2022 21:21:21 +0000</pubDate>
       <guid>https://troglobit.com/post/2022-12-26-buildroot-demo-of-fastinit-finit/</guid>
       <description>&lt;p&gt;I believe there is a &lt;strong&gt;gap in the market&lt;/strong&gt; between BusyBox init and&#xA;systemd.  In particular in the embedded space.  This blog post shows how&#xA;easily it is to get up and running quickly with FastInit (&lt;a href=&#34;https://github.com/troglobit/finit#introduction&#34;&gt;Finit&lt;/a&gt;)!&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m a really bad salesman, and an even worse writer, so instead of&#xA;trying to convince you with my poor English, I&amp;rsquo;ve made a demo.  It is a&#xA;&lt;a href=&#34;https://nightly.buildroot.org/#outside-br-custom&#34;&gt;Buildroot external&lt;/a&gt;&#xA;that can be used to add Finit to your own projects.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;For details, look here: &lt;a href=&#34;https://github.com/troglobit/br2-finit-demo&#34;&gt;https://github.com/troglobit/br2-finit-demo&lt;/a&gt;,&#xA;try out the &lt;a href=&#34;https://github.com/troglobit/br2-finit-demo/releases/tag/latest&#34;&gt;latest build&lt;/a&gt; in &lt;a href=&#34;https://www.qemu.org&#34;&gt;Qemu&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;figure class=&#34;center&#34;&gt;&lt;img src=&#34;https://troglobit.com/images/finit-demo/bootstrap.png&#34;&#xA;         alt=&#34;Finit bootstrap&#34; width=&#34;600&#34;/&gt;&lt;figcaption&gt;&#xA;            &lt;p&gt;Finit bootstrap&lt;/p&gt;&#xA;        &lt;/figcaption&gt;&#xA;&lt;/figure&gt;</description>
-    </item>
-    <item>
-      <title>Remap Prev/Next on ThinkPad</title>
-      <link>https://troglobit.com/post/2022-10-01-remap-prev/next-on-thinkpad/</link>
-      <pubDate>Sat, 01 Oct 2022 15:44:00 +0000</pubDate>
-      <guid>https://troglobit.com/post/2022-10-01-remap-prev/next-on-thinkpad/</guid>
-      <description>I still use my awesome little ThinkPad X200, in fact I now have more of them and even a few X201&amp;rsquo;s. They are truly the best machines I&amp;rsquo;ve ever used! :-)&#xA;One annoying thing though, when going back to these traditional ThinkPad keyboards is the prev/next keys next to the arrow keys. On modern ones they are PgUp/PgDn and I recently learned how to elegantly remap them in X. Note the difference, below, to the original at ThinkWiki.</description>
     </item>
   </channel>
 </rss>

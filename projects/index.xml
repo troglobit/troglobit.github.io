@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
-    <lastBuildDate>Sun, 07 Jan 2024 19:47:00 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jan 2024 13:44:00 +0100</lastBuildDate>
     <atom:link href="https://troglobit.com/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fast init for Linux systems</title>
@@ -42,7 +42,7 @@
       <link>https://troglobit.com/project/smcroute/smcroute-conf.html</link>
       <pubDate>Thu, 19 Aug 2021 15:46:00 +0200</pubDate>
       <guid>https://troglobit.com/project/smcroute/smcroute-conf.html</guid>
-      <description></description>
+      <description># # smcroute.conf example # # The configuration file supports joining multicast groups, to use # Layer-2 signaling so that switches and routers open up multicast # traffic to your interfaces. Leave is not supported, remove the # mgroup and SIGHUP your daemon, or send a specific leave command. # # NOTE: Use of the mgroup command should be avoided if possible. # Instead configure &amp;#34;router ports&amp;#34; or similar on the switches # or bridges on your LAN.</description>
     </item>
     <item>
       <title>N E M E S I S</title>
