@@ -14,8 +14,10 @@ comments: true
 
 {{% figure src="/images/sandwich.png" link="https://xkcd.com/149/"
      alt="Make me a sandwich.  What? Make it yourself."
-	 caption="Classic XKCD cartoon :-)"
+	 caption="<b>Fig 1.</b> Classic XKCD cartoon :-)"
      width="260" class="right-floated" %}}
+
+> *Please see the [latest update](#update-sep-15-2024), below!*
 
 Ever since my first stumbling steps with Linux back in '96, I've been
 learning about UNIX.  The first obvious lesson was to not use the root
@@ -61,10 +63,31 @@ $ sudo /sbin/setcap cap_net_raw,cap_net_admin+ep /usr/bin/qemu-system-arm
 
 ----
 
-**Update Sep 15, 2024:** here's a script I use to set capabilities.  It
-used to be called `wkz-caps.sh`, but I've since refactored it.  You need
-to run it every time after upgrading any of the packages on your system
-that provides the tools you need capabilities for.
+### Update Sep 15, 2024
+
+As time has progressed so has Linux distributions.  On Debian derived
+distributions like Ubuntu, or my personal favorite, [Linux Mint][mint],
+you now have to adjust your PAM setup slightly:
+
+Edit the file `/etc/pam.d/common-auth` and change the `pam_cap.so` line:
+
+```apacheconf
+...
+# Comment this line
+#auth   optional                        pam_cap.so
+# Add this line, notice the 'require' keyword
+auth    required                        pam_cap.so
+...
+```
+
+Without it, your inherited capability mask will not be set properly!
+
+### Helper Script
+
+Here's a little script I use to set capabilities.  It used to be called
+`wkz-caps.sh`, but I've since refactored it.  You need to run it every
+time after upgrading any of the packages on your system that provides
+the tools you need capabilities for.
 
 ```bash
 #!/bin/sh
@@ -97,4 +120,5 @@ set_capabilities 'cap_net_raw+ep' \
     tcpdump nemesis hping3 trafgen
 ```
 
-[wkz]: https://github.com/wkz/
+[wkz]:   https://github.com/wkz/
+[mint]:  https://linuxmint.com/
