@@ -622,7 +622,7 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
           
         
 
-        <span>2 mins read</span>
+        <span>3 mins read</span>
       </span>
     </div>
 
@@ -662,7 +662,7 @@ wants to run <code>tcpdump</code> he is granted the capability:</p>
 <div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo /sbin/setcap cap_net_raw+ep /usr/sbin/tcpdump
 </span></span></code></pre></div><p>Some applications require multiple capabilities, like Qemu when you use
 tap networking.  Update <code>/etc/security/capability.conf</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>cap_net_raw,cap_net_admin     joachim
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>cap_sys_ptrace,cap_net_bind_service,cap_net_raw,cap_net_admin     joachim
 </span></span></code></pre></div><p>Place all capabilities on one line, separated with comma.  Then add both
 capabilities to qemu, like this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo /sbin/setcap cap_net_raw,cap_net_admin+ep /usr/bin/qemu-system-arm
@@ -671,14 +671,32 @@ capabilities to qemu, like this:</p>
 <p>As time has progressed so has Linux distributions.  On Debian derived
 distributions like Ubuntu, or my personal favorite, <a href="https://linuxmint.com/" target="_blank">Linux Mint</a>,
 you now have to adjust your PAM setup slightly:</p>
-<p>Edit the file <code>/etc/pam.d/common-auth</code> and change the <code>pam_cap.so</code> line:</p>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apacheconf" data-lang="apacheconf"><span style="display:flex;"><span>...
-</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Comment this line</span>
-</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#auth   optional                        pam_cap.so</span>
-</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Add this line, notice the &#39;require&#39; keyword</span>
-</span></span><span style="display:flex;"><span><span style="color:#fabd2f">auth</span>    required                        pam_cap.so
+<p>Edit the file <code>/etc/pam.d/common-auth</code> and modify the <code>pam_cap.so</code> line
+to include the <code>keepcaps</code> keyword:</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apacheconf" data-lang="apacheconf"><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># /etc/pam.d/common-auth</span>
 </span></span><span style="display:flex;"><span>...
-</span></span></code></pre></div><p>Without it, your inherited capability mask will not be set properly!</p>
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">auth</span>    optional         pam_cap.so keepcaps
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p>Without it, your inherited capability mask will not be set properly!  If
+you&rsquo;re unlucky, you may also have to comment out <code>pam_systemd.so</code> in the
+file <code>/etc/pam.d/common-session</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apacheconf" data-lang="apacheconf"><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># /etc/pam.d/common-session</span>
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#session optional        pam_systemd.so</span>
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p>&hellip; or, if you want your desktop environment to work like you expect it
+to, then use this ugly hack instead:</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apacheconf" data-lang="apacheconf"><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># /etc/pam.d/common-session</span>
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># This gives *all users* the following capabilities, not what we want.</span>
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">session</span> optional        pam_systemd.so default-capability-ambient-set=CAP_NET_RAW,CAP_NET_ADMIN,CAP_NET_BIND_SERVICE,CAP_SYS_PTRACE,CAP_WAKE_ALARM
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><blockquote>
+<p>In the future, <code>systemd-homed</code> is supposed to be possible to set up to
+allow the same fine grained mask per user as <code>capability.conf</code>.  It is
+unclear to the undersigned why <code>pam_systemd.so</code>, or distributions (?),
+cannot just use <code>pam_cap.so</code> and <code>capability.conf</code> &hellip;</p>
+</blockquote>
 <h3 id="helper-script">Helper Script</h3>
 <p>Here&rsquo;s a little script I use to set capabilities.  It used to be called
 <code>wkz-caps.sh</code>, but I&rsquo;ve since refactored it.  You need to run it every
