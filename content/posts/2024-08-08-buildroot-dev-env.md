@@ -20,13 +20,13 @@ the structure of my embedded systems.  So I don't have the patience to
 wait for big chunks of code to be downloaded and rebuilt from scratch
 every time.  Buildroot has two great options for this:
 
-```
+```makefile
 BR2_DL_DIR="$(TOPDIR)/dl"
 ```
 
 and
 
-```
+```makefile
 BR2_CCACHE=y
 BR2_CCACHE_DIR="$(TOPDIR)/.ccache"
 ```
@@ -38,7 +38,7 @@ The former is the default while the latter is not.
 Alright, the base configuration I use to test my packages in Qemu is called
 `configs/troglobit_qemu_x86_64_defconfig`:
 
-```apacheconf
+```makefile
 BR2_x86_64=y
 BR2_TOOLCHAIN_EXTERNAL=y
 BR2_TOOLCHAIN_EXTERNAL_BOOTLIN_X86_64_UCLIBC_BLEEDING_EDGE=y
@@ -95,7 +95,7 @@ Debian/Ubuntu or Linux Mint installation (not covered here either).
 What I've done instead is to employ the `local.mk` trick to add `run:`
 build target:
 
-```
+```makefile
 #SSDP_RESPONDER_OVERRIDE_SRCDIR = /home/jocke/src/ssdp-responder
 #SYSKLOGD_OVERRIDE_SRCDIR       = /home/jocke/src/sysklogd
 #FINIT_OVERRIDE_SRCDIR          = /home/jocke/src/finit
