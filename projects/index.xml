@@ -5,8 +5,7 @@
     <link>https://troglobit.com/projects/</link>
     <description>Recent content in Projects on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
+    <language>en-us</language>
     <lastBuildDate>Sun, 14 Jan 2024 13:44:00 +0100</lastBuildDate>
     <atom:link href="https://troglobit.com/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -78,6 +77,34 @@
       <pubDate>Thu, 20 Feb 2020 16:29:00 +0200</pubDate>
       <guid>https://troglobit.com/projects/inadyn/</guid>
       <description>In-a-dyn is a small and simple Dynamic DNS, DDNS, client with HTTPS support. It is commonly available in many GNU/Linux distributions, used in off-the-shelf routers and Internet gateways to automate the task of keeping your DNS record up to date with any IP address changes from your ISP. It can also be used in installations with redundant (backup) connections to the Internet.&#xA;Presentation here.&#xA;Example The configuration file on most systems is in /etc/inadyn.</description>
+    </item>
+    <item>
+      <title>No nonsense FTP/TFTP server</title>
+      <link>https://troglobit.com/projects/uftpd/</link>
+      <pubDate>Mon, 29 Jul 2019 20:31:00 +0200</pubDate>
+      <guid>https://troglobit.com/projects/uftpd/</guid>
+      <description>Tired of confusing configuration files and security features you don&amp;rsquo;t need?&#xA;Try uftpd!&#xA;Supports FTP and TFTP No configuration file Defaults to port ftp/tcp and tftp/udp found in /etc/services, or custom port(s) Serves files from the ftp user&amp;rsquo;s $HOME, as specified in /etc/passwd, or custom path Can run from inetd(8) or as a standalone daemon Can be built and installed as a .deb file, with debconf support Can run as root, with chroot and privsep, or as a regular user Supports TFTP blocksize negotiation, RFC 2348 Basically, it just works!</description>
+    </item>
+    <item>
+      <title>Merecat httpd</title>
+      <link>https://troglobit.com/projects/merecat/</link>
+      <pubDate>Fri, 19 Jul 2019 12:35:00 +0200</pubDate>
+      <guid>https://troglobit.com/projects/merecat/</guid>
+      <description>Merecat started out as a pun at Mongoose, but is now useful for actual web serving purposes. It is however not a real Meerkat, merely yet another copycat, forked from the great thttpd created by Jef Poskanzer.&#xA;Merecat expands on the features originally offered by thttpd, but still has a limited feature set:&#xA;Virtual hosts Basic .htpassd and .htaccess support URL-traffic-based throttling CGI/1.1 HTTP/1.1 Keep-alive Built-in gzip deflate using zlib HTTPS support using OpenSSL/LibreSSL, works with Let&amp;rsquo;s Encrypt!</description>
+    </item>
+    <item>
+      <title>The original PIM-SM daemon</title>
+      <link>https://troglobit.com/projects/pimd/</link>
+      <pubDate>Sun, 28 Apr 2019 08:50:00 +0200</pubDate>
+      <guid>https://troglobit.com/projects/pimd/</guid>
+      <description>Protocol Independent Multicast, PIM, allows existing networks to route IP multicast, regardless of what unicast routing protocol is in use. It is designed to use existing routing tables to make its multicast routing decisions. PIM-SM is suitable for sparsely located multicast subscribers, for dense mode operation mrouted is recommended, and for static multicast routing smcroute may be used.&#xA;pimd is a lightweight standalone PIM-SM/SSM v2 multicast routing daemon. It is the original USC (netweb/catarina.</description>
+    </item>
+    <item>
+      <title>Micro Snake</title>
+      <link>https://troglobit.com/projects/snake/</link>
+      <pubDate>Sun, 07 Jul 2013 10:28:00 +0200</pubDate>
+      <guid>https://troglobit.com/projects/snake/</guid>
+      <description>Welcome to Micro Snake, based on an original implementation by Simon Huggins. This version of the snake game is very small, utilizing only ANSI escape sequences to draw the board, no external library dependencys other than a standard C-library, like uClibc. Hence, it is very suitable for todays small embedded devices.&#xA;The aim of the game is to collect the gold ($), avoid cactuses (*), borders, and colliding with the snake itself.</description>
     </item>
   </channel>
 </rss>

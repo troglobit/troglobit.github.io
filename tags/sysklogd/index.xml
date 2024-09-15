@@ -5,8 +5,7 @@
     <link>https://troglobit.com/tags/sysklogd/</link>
     <description>Recent content in Sysklogd on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
+    <language>en-us</language>
     <lastBuildDate>Fri, 09 Sep 2022 19:36:44 +0100</lastBuildDate>
     <atom:link href="https://troglobit.com/tags/sysklogd/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -21,7 +20,7 @@
       <link>https://troglobit.com/post/2019-11-03-bsd-syslogd-in-linux/</link>
       <pubDate>Sun, 03 Nov 2019 23:04:00 +0100</pubDate>
       <guid>https://troglobit.com/post/2019-11-03-bsd-syslogd-in-linux/</guid>
-      <description>&lt;p&gt;Some time ago now I was in a meeting with a customer where I first learned of&#xA;the new syslog standard, &lt;a href=&#34;https://tools.ietf.org/html/rfc5424&#34;&gt;RFC5424&lt;/a&gt;.  I say &amp;ldquo;new&amp;rdquo; because, despite it being&#xA;ten years old, it was new to me.&lt;/p&gt;&#xA;&lt;p&gt;Three weeks ago I started updating my fork of &lt;a href=&#34;https://www.infodrom.org/projects/sysklogd/&#34;&gt;sysklogd&lt;/a&gt; to be &lt;a href=&#34;https://tools.ietf.org/html/rfc5424&#34;&gt;RFC5424&lt;/a&gt;&#xA;compliant.  I ended up ripping out most of the old code and replacing it with&#xA;fresh DNA strands from FreeBSD and NetBSD.&lt;/p&gt;&#xA;&lt;p&gt;The result is a fully RFC compliant &lt;code&gt;syslogd&lt;/code&gt;, &lt;strong&gt;and&lt;/strong&gt; a &lt;code&gt;libsyslog&lt;/code&gt; with a&#xA;replacement &lt;code&gt;syslog.h&lt;/code&gt; header for sending RFC5424 events from applications!&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/troglobit/sysklogd/&#34;&gt;https://github.com/troglobit/sysklogd/&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Some time ago now I was in a meeting with a customer where I first learned of&#xA;the new syslog standard, &lt;a href=&#34;https://tools.ietf.org/html/rfc5424&#34; target=&#34;_blank&#34;&gt;RFC5424&lt;/a&gt;.  I say &amp;ldquo;new&amp;rdquo; because, despite it being&#xA;ten years old, it was new to me.&lt;/p&gt;&#xA;&lt;p&gt;Three weeks ago I started updating my fork of &lt;a href=&#34;https://www.infodrom.org/projects/sysklogd/&#34; target=&#34;_blank&#34;&gt;sysklogd&lt;/a&gt; to be &lt;a href=&#34;https://tools.ietf.org/html/rfc5424&#34; target=&#34;_blank&#34;&gt;RFC5424&lt;/a&gt;&#xA;compliant.  I ended up ripping out most of the old code and replacing it with&#xA;fresh DNA strands from FreeBSD and NetBSD.&lt;/p&gt;&#xA;&lt;p&gt;The result is a fully RFC compliant &lt;code&gt;syslogd&lt;/code&gt;, &lt;strong&gt;and&lt;/strong&gt; a &lt;code&gt;libsyslog&lt;/code&gt; with a&#xA;replacement &lt;code&gt;syslog.h&lt;/code&gt; header for sending RFC5424 events from applications!&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/troglobit/sysklogd/&#34; target=&#34;_blank&#34;&gt;https://github.com/troglobit/sysklogd/&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

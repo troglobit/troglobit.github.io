@@ -5,8 +5,7 @@
     <link>https://troglobit.com/tags/x200/</link>
     <description>Recent content in X200 on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
+    <language>en-us</language>
     <lastBuildDate>Sat, 01 Oct 2022 15:44:00 +0000</lastBuildDate>
     <atom:link href="https://troglobit.com/tags/x200/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -28,7 +27,7 @@
       <link>https://troglobit.com/post/2020-03-28-fix-blinking-wifi-led-on-x200/</link>
       <pubDate>Sat, 28 Mar 2020 14:16:00 +0000</pubDate>
       <guid>https://troglobit.com/post/2020-03-28-fix-blinking-wifi-led-on-x200/</guid>
-      <description>&lt;p&gt;Recently got my hands on a ThinkPad X200, the last model without the&#xA;useless touchpad and with the awesome classic keyboard.  A fine little&#xA;machine that can easily be upgraded with an SSD disk and 8 GiB RAM!&lt;/p&gt;&#xA;&lt;p&gt;I set it up with &lt;a href=&#34;https://www.linuxmint.com/download_lmde.php&#34;&gt;Linx Mint (LMDE 4)&lt;/a&gt;, which worked great to begin&#xA;with, but there was some odd issue with X/Wayland that sometimes caused&#xA;the screen (only the screen) to freeze up and show random color patterns.&#xA;Only way to workaround it was to suspend, wait, and resume again.  So&#xA;now I&amp;rsquo;m running Ubuntu 20.04 on it and everything seems to work a lot&#xA;better, this far.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Recently got my hands on a ThinkPad X200, the last model without the&#xA;useless touchpad and with the awesome classic keyboard.  A fine little&#xA;machine that can easily be upgraded with an SSD disk and 8 GiB RAM!&lt;/p&gt;&#xA;&lt;p&gt;I set it up with &lt;a href=&#34;https://www.linuxmint.com/download_lmde.php&#34; target=&#34;_blank&#34;&gt;Linx Mint (LMDE 4)&lt;/a&gt;, which worked great to begin&#xA;with, but there was some odd issue with X/Wayland that sometimes caused&#xA;the screen (only the screen) to freeze up and show random color patterns.&#xA;Only way to workaround it was to suspend, wait, and resume again.  So&#xA;now I&amp;rsquo;m running Ubuntu 20.04 on it and everything seems to work a lot&#xA;better, this far.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

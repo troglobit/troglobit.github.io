@@ -5,8 +5,7 @@
     <link>https://troglobit.com/tags/kernel/</link>
     <description>Recent content in Kernel on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
+    <language>en-us</language>
     <lastBuildDate>Mon, 11 Apr 2022 17:19:00 +0200</lastBuildDate>
     <atom:link href="https://troglobit.com/tags/kernel/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -14,7 +13,7 @@
       <link>https://troglobit.com/post/2022-04-11-linux-kernel-development-checklist/</link>
       <pubDate>Mon, 11 Apr 2022 17:19:00 +0200</pubDate>
       <guid>https://troglobit.com/post/2022-04-11-linux-kernel-development-checklist/</guid>
-      <description>&lt;p&gt;Because I always tend to forget steps, and haven&amp;rsquo;t half replaced myself&#xA;with a shell script (yet), here&amp;rsquo;s a reminder to myself on how to post a&#xA;patch to the &lt;a href=&#34;https://lore.kernel.org/netdev/&#34;&gt;Linux netdev&lt;/a&gt; mailing&#xA;list.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Because I always tend to forget steps, and haven&amp;rsquo;t half replaced myself&#xA;with a shell script (yet), here&amp;rsquo;s a reminder to myself on how to post a&#xA;patch to the &lt;a href=&#34;https://lore.kernel.org/netdev/&#34; target=&#34;_blank&#34;&gt;Linux netdev&lt;/a&gt; mailing&#xA;list.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -5,8 +5,7 @@
     <link>https://troglobit.com/howtos/</link>
     <description>Recent content in Howtos on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
+    <language>en-us</language>
     <lastBuildDate>Mon, 04 Sep 2023 20:24:00 +0000</lastBuildDate>
     <atom:link href="https://troglobit.com/howtos/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -28,7 +27,7 @@
       <link>https://troglobit.com/howtos/merecat-and-cgit/</link>
       <pubDate>Thu, 09 Dec 2021 05:56:00 +0000</pubDate>
       <guid>https://troglobit.com/howtos/merecat-and-cgit/</guid>
-      <description>&lt;p&gt;This post details how to set up &lt;a href=&#34;https://git.zx2c4.com/cgit/&#34;&gt;cgit&lt;/a&gt; with &lt;a href=&#34;http://merecat.troglobit.com&#34;&gt;Merecat httpd&lt;/a&gt;.  It&#xA;began as a &lt;a href=&#34;https://github.com/troglobit/merecat/issues/3&#34;&gt;GitHub issue&lt;/a&gt; report by Mr Alok G. Singh, who had run&#xA;into problems setting it up, and ended up as a HowTo.&lt;/p&gt;</description>
+      <description>&lt;p&gt;This post details how to set up &lt;a href=&#34;https://git.zx2c4.com/cgit/&#34; target=&#34;_blank&#34;&gt;cgit&lt;/a&gt; with &lt;a href=&#34;http://merecat.troglobit.com&#34; target=&#34;_blank&#34;&gt;Merecat httpd&lt;/a&gt;.  It&#xA;began as a &lt;a href=&#34;https://github.com/troglobit/merecat/issues/3&#34; target=&#34;_blank&#34;&gt;GitHub issue&lt;/a&gt; report by Mr Alok G. Singh, who had run&#xA;into problems setting it up, and ended up as a HowTo.&lt;/p&gt;</description>
     </item>
     <item>
       <title>HowTo: Set up Merecat with Ikiwiki</title>
@@ -63,7 +62,7 @@
       <link>https://troglobit.com/howtos/merecat-and-lets-encrypt/</link>
       <pubDate>Wed, 15 Jul 2020 14:10:00 +0000</pubDate>
       <guid>https://troglobit.com/howtos/merecat-and-lets-encrypt/</guid>
-      <description>&lt;p&gt;This is a HowTo for setting up &lt;a href=&#34;https://merecat.troglobit.com&#34;&gt;Merecat httpd&lt;/a&gt; with &lt;a href=&#34;https://letsencrypt.org/&#34;&gt;Let&amp;rsquo;s&#xA;Encrypt&lt;/a&gt; HTTPS certificates.&lt;/p&gt;&#xA;&lt;p&gt;The upcoming v2.32 release of &lt;a href=&#34;https://merecat.troglobit.com&#34;&gt;Merecat&lt;/a&gt; supports HTTPS as well as&#xA;serving more than one Internet port.  This is highly useful for those&#xA;who want to serve both HTTPS and HTTP content.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; now with support for &lt;code&gt;--webroot&lt;/code&gt; and HTTP-01 renewal!&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+      <description>&lt;p&gt;This is a HowTo for setting up &lt;a href=&#34;https://merecat.troglobit.com&#34; target=&#34;_blank&#34;&gt;Merecat httpd&lt;/a&gt; with &lt;a href=&#34;https://letsencrypt.org/&#34; target=&#34;_blank&#34;&gt;Let&amp;rsquo;s&#xA;Encrypt&lt;/a&gt; HTTPS certificates.&lt;/p&gt;&#xA;&lt;p&gt;The upcoming v2.32 release of &lt;a href=&#34;https://merecat.troglobit.com&#34; target=&#34;_blank&#34;&gt;Merecat&lt;/a&gt; supports HTTPS as well as&#xA;serving more than one Internet port.  This is highly useful for those&#xA;who want to serve both HTTPS and HTTP content.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; now with support for &lt;code&gt;--webroot&lt;/code&gt; and HTTP-01 renewal!&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
     </item>
     <item>
       <title>Basic CGI in C with Merecat httpd</title>
@@ -78,6 +77,20 @@
       <pubDate>Sun, 27 Sep 2015 18:45:00 +0200</pubDate>
       <guid>https://troglobit.com/howtos/pimd-on-freebsd/</guid>
       <description>This is not a proper HowTo, more of a &amp;ldquo;note to self&amp;rdquo; after having created a setup to test pimd issue #57. For these notes the following virtual topology, running on Ubuntu 15.10 with Linux 4.2 and Qemu 2.3.0, is used:&#xA;.--------. net1 .----. net2 .----. net3 .----------. | Sender |------| R2 |------| R3 |------| Receiver | &amp;#39;--------&amp;#39; &amp;#39;----&amp;#39; &amp;#39;----&amp;#39; &amp;#39;----------&amp;#39; The networks between the boxes are actually Linux bridge devices (br), on which you may have to disable IGMP/MLD snooping to get pimd to run smoothly.</description>
+    </item>
+    <item>
+      <title>HowTo run pimd on OpenBSD</title>
+      <link>https://troglobit.com/howtos/pimd-on-openbsd/</link>
+      <pubDate>Sun, 19 Jul 2015 00:32:00 +0200</pubDate>
+      <guid>https://troglobit.com/howtos/pimd-on-openbsd/</guid>
+      <description>This is an introduction to HowTo run pimd on OpenBSD. I keep it around mostly as a reminder to myself when testing new pimd releases, maybe someone else can make use of it as well.&#xA;First of all, my sincere thanks to the OpenBSD team for, not just an awesome UNIX distribution, but also for their good taste in shipping a MULTICAST enabled kernel in the base distribution! On both NetBSD and FreeBSD there is a bit of work to get multicast support, which is one of the reasons for my not writing a HowTo for either of them atm.</description>
+    </item>
+    <item>
+      <title>HowTo Rebase without an origin</title>
+      <link>https://troglobit.com/howtos/rebase-without-an-origin/</link>
+      <pubDate>Wed, 27 Aug 2014 10:00:13 +0200</pubDate>
+      <guid>https://troglobit.com/howtos/rebase-without-an-origin/</guid>
+      <description>OK, so you&amp;rsquo;ve just been handed the task to integrate a big piece of corporate software and it&amp;rsquo;s nowhere near as done and ready as project management thinks. Of course you&amp;rsquo;ve already started chugging away at it, fixing bugs, refactoring code and wrapping it in neat containers to keep the changeset against the base SW small &amp;ndash; you already know you&amp;rsquo;ll get another drop of the same stinking pieace of code in another six months, so you keep the changes small and track them in GIT with neatly formatted commit messages.</description>
     </item>
   </channel>
 </rss>

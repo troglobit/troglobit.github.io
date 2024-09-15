@@ -5,8 +5,7 @@
     <link>https://troglobit.com/tags/howto/</link>
     <description>Recent content in Howto on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
+    <language>en-us</language>
     <lastBuildDate>Sun, 17 Apr 2022 16:56:00 +0100</lastBuildDate>
     <atom:link href="https://troglobit.com/tags/howto/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -21,7 +20,7 @@
       <link>https://troglobit.com/post/2022-02-13-finit-in-linux-containers-lxc/</link>
       <pubDate>Sun, 13 Feb 2022 17:55:44 +0200</pubDate>
       <guid>https://troglobit.com/post/2022-02-13-finit-in-linux-containers-lxc/</guid>
-      <description>&lt;p&gt;This is a mini-HowTo on running Finit in an LXC system container.  We&#xA;will be using a variant (external) of Buildroot, called &lt;a href=&#34;https://github.com/westermo/netbox&#34;&gt;NetBox&lt;/a&gt; to&#xA;create a squashfs (read-only) image for the root filesystem.  Then we&#xA;will give the container a single writable directory from which it then&#xA;uses bind mount to emulate a full-blown system.&lt;/p&gt;&#xA;&lt;p&gt;It is expected you have LXC installed and all the relevant build tools&#xA;needed to create the image.  How to set that up is not covered by this&#xA;tutorial.&lt;/p&gt;</description>
+      <description>&lt;p&gt;This is a mini-HowTo on running Finit in an LXC system container.  We&#xA;will be using a variant (external) of Buildroot, called &lt;a href=&#34;https://github.com/westermo/netbox&#34; target=&#34;_blank&#34;&gt;NetBox&lt;/a&gt; to&#xA;create a squashfs (read-only) image for the root filesystem.  Then we&#xA;will give the container a single writable directory from which it then&#xA;uses bind mount to emulate a full-blown system.&lt;/p&gt;&#xA;&lt;p&gt;It is expected you have LXC installed and all the relevant build tools&#xA;needed to create the image.  How to set that up is not covered by this&#xA;tutorial.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Gmail and git send-email</title>

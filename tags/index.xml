@@ -5,8 +5,7 @@
     <link>https://troglobit.com/tags/</link>
     <description>Recent content in Tags on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
+    <language>en-us</language>
     <lastBuildDate>Wed, 07 Aug 2024 07:06:19 +0100</lastBuildDate>
     <atom:link href="https://troglobit.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -77,6 +76,90 @@
       <link>https://troglobit.com/tags/finit/</link>
       <pubDate>Sun, 15 Jan 2023 18:42:00 +0000</pubDate>
       <guid>https://troglobit.com/tags/finit/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Init</title>
+      <link>https://troglobit.com/tags/init/</link>
+      <pubDate>Sun, 15 Jan 2023 18:42:00 +0000</pubDate>
+      <guid>https://troglobit.com/tags/init/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ThinkPad</title>
+      <link>https://troglobit.com/tags/thinkpad/</link>
+      <pubDate>Sat, 01 Oct 2022 15:44:00 +0000</pubDate>
+      <guid>https://troglobit.com/tags/thinkpad/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>X200</title>
+      <link>https://troglobit.com/tags/x200/</link>
+      <pubDate>Sat, 01 Oct 2022 15:44:00 +0000</pubDate>
+      <guid>https://troglobit.com/tags/x200/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sysklogd</title>
+      <link>https://troglobit.com/tags/sysklogd/</link>
+      <pubDate>Fri, 09 Sep 2022 19:36:44 +0100</pubDate>
+      <guid>https://troglobit.com/tags/sysklogd/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Howto</title>
+      <link>https://troglobit.com/tags/howto/</link>
+      <pubDate>Sun, 17 Apr 2022 16:56:00 +0100</pubDate>
+      <guid>https://troglobit.com/tags/howto/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Kernel</title>
+      <link>https://troglobit.com/tags/kernel/</link>
+      <pubDate>Mon, 11 Apr 2022 17:19:00 +0200</pubDate>
+      <guid>https://troglobit.com/tags/kernel/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>https://troglobit.com/tags/linux/</link>
+      <pubDate>Mon, 11 Apr 2022 17:19:00 +0200</pubDate>
+      <guid>https://troglobit.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Merecat</title>
+      <link>https://troglobit.com/tags/merecat/</link>
+      <pubDate>Thu, 09 Dec 2021 05:56:00 +0000</pubDate>
+      <guid>https://troglobit.com/tags/merecat/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gmail</title>
+      <link>https://troglobit.com/tags/gmail/</link>
+      <pubDate>Tue, 11 May 2021 19:12:00 +0100</pubDate>
+      <guid>https://troglobit.com/tags/gmail/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lore</title>
+      <link>https://troglobit.com/tags/lore/</link>
+      <pubDate>Tue, 11 May 2021 19:12:00 +0100</pubDate>
+      <guid>https://troglobit.com/tags/lore/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Notmuch</title>
+      <link>https://troglobit.com/tags/notmuch/</link>
+      <pubDate>Tue, 11 May 2021 19:12:00 +0100</pubDate>
+      <guid>https://troglobit.com/tags/notmuch/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>T61</title>
+      <link>https://troglobit.com/tags/t61/</link>
+      <pubDate>Sat, 19 Jul 2008 11:09:25 +0000</pubDate>
+      <guid>https://troglobit.com/tags/t61/</guid>
       <description></description>
     </item>
   </channel>

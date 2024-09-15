@@ -5,8 +5,7 @@
     <link>https://troglobit.com/tags/merecat/</link>
     <description>Recent content in Merecat on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>UNIX&amp;trade; 4Life! &amp;#9994;</copyright>
+    <language>en-us</language>
     <lastBuildDate>Thu, 09 Dec 2021 05:56:00 +0000</lastBuildDate>
     <atom:link href="https://troglobit.com/tags/merecat/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -14,7 +13,7 @@
       <link>https://troglobit.com/howtos/merecat-and-cgit/</link>
       <pubDate>Thu, 09 Dec 2021 05:56:00 +0000</pubDate>
       <guid>https://troglobit.com/howtos/merecat-and-cgit/</guid>
-      <description>&lt;p&gt;This post details how to set up &lt;a href=&#34;https://git.zx2c4.com/cgit/&#34;&gt;cgit&lt;/a&gt; with &lt;a href=&#34;http://merecat.troglobit.com&#34;&gt;Merecat httpd&lt;/a&gt;.  It&#xA;began as a &lt;a href=&#34;https://github.com/troglobit/merecat/issues/3&#34;&gt;GitHub issue&lt;/a&gt; report by Mr Alok G. Singh, who had run&#xA;into problems setting it up, and ended up as a HowTo.&lt;/p&gt;</description>
+      <description>&lt;p&gt;This post details how to set up &lt;a href=&#34;https://git.zx2c4.com/cgit/&#34; target=&#34;_blank&#34;&gt;cgit&lt;/a&gt; with &lt;a href=&#34;http://merecat.troglobit.com&#34; target=&#34;_blank&#34;&gt;Merecat httpd&lt;/a&gt;.  It&#xA;began as a &lt;a href=&#34;https://github.com/troglobit/merecat/issues/3&#34; target=&#34;_blank&#34;&gt;GitHub issue&lt;/a&gt; report by Mr Alok G. Singh, who had run&#xA;into problems setting it up, and ended up as a HowTo.&lt;/p&gt;</description>
     </item>
     <item>
       <title>HowTo: Set up Merecat with Ikiwiki</title>
@@ -28,7 +27,7 @@
       <link>https://troglobit.com/howtos/merecat-and-lets-encrypt/</link>
       <pubDate>Wed, 15 Jul 2020 14:10:00 +0000</pubDate>
       <guid>https://troglobit.com/howtos/merecat-and-lets-encrypt/</guid>
-      <description>&lt;p&gt;This is a HowTo for setting up &lt;a href=&#34;https://merecat.troglobit.com&#34;&gt;Merecat httpd&lt;/a&gt; with &lt;a href=&#34;https://letsencrypt.org/&#34;&gt;Let&amp;rsquo;s&#xA;Encrypt&lt;/a&gt; HTTPS certificates.&lt;/p&gt;&#xA;&lt;p&gt;The upcoming v2.32 release of &lt;a href=&#34;https://merecat.troglobit.com&#34;&gt;Merecat&lt;/a&gt; supports HTTPS as well as&#xA;serving more than one Internet port.  This is highly useful for those&#xA;who want to serve both HTTPS and HTTP content.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; now with support for &lt;code&gt;--webroot&lt;/code&gt; and HTTP-01 renewal!&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+      <description>&lt;p&gt;This is a HowTo for setting up &lt;a href=&#34;https://merecat.troglobit.com&#34; target=&#34;_blank&#34;&gt;Merecat httpd&lt;/a&gt; with &lt;a href=&#34;https://letsencrypt.org/&#34; target=&#34;_blank&#34;&gt;Let&amp;rsquo;s&#xA;Encrypt&lt;/a&gt; HTTPS certificates.&lt;/p&gt;&#xA;&lt;p&gt;The upcoming v2.32 release of &lt;a href=&#34;https://merecat.troglobit.com&#34; target=&#34;_blank&#34;&gt;Merecat&lt;/a&gt; supports HTTPS as well as&#xA;serving more than one Internet port.  This is highly useful for those&#xA;who want to serve both HTTPS and HTTP content.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; now with support for &lt;code&gt;--webroot&lt;/code&gt; and HTTP-01 renewal!&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
     </item>
     <item>
       <title>Basic CGI in C with Merecat httpd</title>
