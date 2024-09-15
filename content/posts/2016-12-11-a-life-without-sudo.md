@@ -51,7 +51,7 @@ Some applications require multiple capabilities, like Qemu when you use
 tap networking.  Update `/etc/security/capability.conf`
 
 ```
-cap_net_raw,cap_net_admin     joachim
+cap_sys_ptrace,cap_net_bind_service,cap_net_raw,cap_net_admin     joachim
 ```
 
 Place all capabilities on one line, separated with comma.  Then add both
@@ -69,18 +69,43 @@ As time has progressed so has Linux distributions.  On Debian derived
 distributions like Ubuntu, or my personal favorite, [Linux Mint][mint],
 you now have to adjust your PAM setup slightly:
 
-Edit the file `/etc/pam.d/common-auth` and change the `pam_cap.so` line:
+Edit the file `/etc/pam.d/common-auth` and modify the `pam_cap.so` line
+to include the `keepcaps` keyword:
 
 ```apacheconf
+# /etc/pam.d/common-auth
 ...
-# Comment this line
-#auth   optional                        pam_cap.so
-# Add this line, notice the 'require' keyword
-auth    required                        pam_cap.so
+auth    optional         pam_cap.so keepcaps
 ...
 ```
 
-Without it, your inherited capability mask will not be set properly!
+Without it, your inherited capability mask will not be set properly!  If
+you're unlucky, you may also have to comment out `pam_systemd.so` in the
+file `/etc/pam.d/common-session`:
+
+```apacheconf
+# /etc/pam.d/common-session
+...
+#session optional        pam_systemd.so
+...
+```
+
+... or, if you want your desktop environment to work like you expect it
+to, then use this ugly hack instead:
+
+```apacheconf
+# /etc/pam.d/common-session
+...
+# This gives *all users* the following capabilities, not what we want.
+session optional        pam_systemd.so default-capability-ambient-set=CAP_NET_RAW,CAP_NET_ADMIN,CAP_NET_BIND_SERVICE,CAP_SYS_PTRACE,CAP_WAKE_ALARM
+...
+```
+
+> In the future, `systemd-homed` is supposed to be possible to set up to
+> allow the same fine grained mask per user as `capability.conf`.  It is
+> unclear to the undersigned why `pam_systemd.so`, or distributions (?),
+> cannot just use `pam_cap.so` and `capability.conf` ...
+
 
 ### Helper Script
 
