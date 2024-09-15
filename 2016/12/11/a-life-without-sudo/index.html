@@ -637,9 +637,12 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
 
   <figure class="right-floated"><a href="https://xkcd.com/149/"><img src="/images/sandwich.png"
          alt="Make me a sandwich.  What? Make it yourself." width="260"/></a><figcaption>
-            <p>Classic XKCD cartoon :-)</p>
+            <p><b>Fig 1.</b> Classic XKCD cartoon :-)</p>
         </figcaption>
 </figure>
+<blockquote>
+<p><em>Please see the <a href="#update-sep-15-2024">latest update</a>, below!</em></p>
+</blockquote>
 <p>Ever since my first stumbling steps with Linux back in &lsquo;96, I&rsquo;ve been
 learning about UNIX.  The first obvious lesson was to not use the root
 account.  Since then I&rsquo;ve been using a combination of <code>sudo command</code> and
@@ -664,10 +667,23 @@ tap networking.  Update <code>/etc/security/capability.conf</code></p>
 capabilities to qemu, like this:</p>
 <div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo /sbin/setcap cap_net_raw,cap_net_admin+ep /usr/bin/qemu-system-arm
 </span></span></code></pre></div><hr>
-<p><strong>Update Sep 15, 2024:</strong> here&rsquo;s a script I use to set capabilities.  It
-used to be called <code>wkz-caps.sh</code>, but I&rsquo;ve since refactored it.  You need
-to run it every time after upgrading any of the packages on your system
-that provides the tools you need capabilities for.</p>
+<h3 id="update-sep-15-2024">Update Sep 15, 2024</h3>
+<p>As time has progressed so has Linux distributions.  On Debian derived
+distributions like Ubuntu, or my personal favorite, <a href="https://linuxmint.com/" target="_blank">Linux Mint</a>,
+you now have to adjust your PAM setup slightly:</p>
+<p>Edit the file <code>/etc/pam.d/common-auth</code> and change the <code>pam_cap.so</code> line:</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apacheconf" data-lang="apacheconf"><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Comment this line</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic">#auth   optional                        pam_cap.so</span>
+</span></span><span style="display:flex;"><span><span style="color:#928374;font-style:italic"># Add this line, notice the &#39;require&#39; keyword</span>
+</span></span><span style="display:flex;"><span><span style="color:#fabd2f">auth</span>    required                        pam_cap.so
+</span></span><span style="display:flex;"><span>...
+</span></span></code></pre></div><p>Without it, your inherited capability mask will not be set properly!</p>
+<h3 id="helper-script">Helper Script</h3>
+<p>Here&rsquo;s a little script I use to set capabilities.  It used to be called
+<code>wkz-caps.sh</code>, but I&rsquo;ve since refactored it.  You need to run it every
+time after upgrading any of the packages on your system that provides
+the tools you need capabilities for.</p>
 <div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8ec07c">#!/bin/sh
 </span></span></span><span style="display:flex;"><span><span style="color:#8ec07c"></span>
 </span></span><span style="display:flex;"><span>set_capabilities<span style="color:#fe8019">()</span>
@@ -720,7 +736,16 @@ that provides the tools you need capabilities for.</p>
     <div class="article-toc ">
     <div class="toc-wrapper">
       <h4 id="contents"></h4>
-      <nav id="TableOfContents"></nav>
+      <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#update-sep-15-2024">Update Sep 15, 2024</a></li>
+        <li><a href="#helper-script">Helper Script</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
