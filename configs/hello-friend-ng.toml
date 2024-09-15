@@ -1,0 +1,216 @@
+baseurl = "https://troglobit.com/"
+#baseurl = "/"
+title = "Joachim Wiberg"
+languageCode = "en-us"
+#theme = "hello-friend-ng"
+theme = "poison"
+
+# Syntax highlighting, UseClasses=false to work!
+pygmentsUseClasses = false
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
+# https://xyproto.github.io/splash/docs/
+PygmentsStyle = "gruvbox"
+
+paginate  = 10
+rssLimit  = 10  # Maximum number of items in the RSS feed.
+
+archetypeDir = "archetypes"
+contentDir   = "content"
+dataDir      = "data"
+layoutDir    = "layouts"
+publishDir   = "public"
+
+buildDrafts  = false
+buildFuture  = true
+buildExpired = true
+canonifyURLs = true
+
+enableRobotsTXT = true
+enableGitInfo   = false
+enableEmoji     = true
+enableMissingTranslationPlaceholders = false
+disableSitemap = false
+disable404     = false
+disableHugoGeneratorInject = false
+
+[permalinks]
+  # compat urls for search engines
+  posts = "/post/:year-:month-:day-:title/"
+
+[author]
+  name = "Joachim Wiberg"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[blackfriday]
+  hrefTargetBlank = true
+
+[taxonomies]
+  tag      = "tags"
+  category = "categories"
+  series   = "series"
+
+[params]
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNum     = "2006-01-02"
+  dateformNumTime = "2006-01-02 15:04"
+
+  # Metadata mostly used in document's head
+  # 
+  #description = "Nice theme for homepages and blogs"
+  #keywords = ""
+  #images = [""]
+
+  #homeSubtitle = "The Last Outpost"
+
+  # Set a background for the homepage
+  # backgroundImage = "assets/images/background.jpg"
+
+  # Prefix of link to the git commit detail page. GitInfo must be enabled.
+  #
+  # gitUrl = ""
+
+  # Set disableReadOtherPosts to true in order to hide the links to other posts.
+  #
+  disableReadOtherPosts = false
+
+  # Enable theme toggle
+  #
+  # This options enables the theme toggle for the theme.
+  # Per default, this option is off.
+  # The theme is respecting the prefers-color-scheme of the operating systeme.
+  # With this option on, the page user is able to set the scheme he wants.
+  enableThemeToggle = true
+
+  # Sharing buttons
+  #
+  # There are a lot of buttons preconfigured. If you want to change them,
+  # generate the buttons here: https://sharingbuttons.io
+  # and add them into your own `layouts/partials/sharing-buttons.html`
+  #
+  enableSharingButtons = true
+
+  # Global language menu
+  #
+  # Enables the global language menu.
+  #
+  enableGlobalLanguageMenu = false
+
+  # Integrate Javascript files or stylesheets by adding the url to the external assets or by
+  # linking local files with their path relative to the static folder, e.g. "css/styles.css"
+  #
+  customCSS = [ "/css/extra.css" ]
+  customJS  = []
+
+  # Toggle this option need to rebuild SCSS, requires extended version of Hugo
+  #
+  justifyContent = true  # Set "text-align: justify" to .post-content.
+
+  # Integrate Plausible.io
+  # plausibleDataDomain = 'test.com'
+  # plausibleScriptSource = 'https://plausible.io/js/script.js'
+
+  [params.author]
+    name = "Joachim Wiberg"
+
+  # Custom footer 
+  # If you want, you can easily override the default footer with your own content. 
+  #
+  [params.footer]
+    trademark = 2006
+    rss = false
+    copyright = true
+    author = true
+
+    topText = []
+    bottomText = []
+
+  # Colors for favicons
+  #
+  [params.favicon.color]
+    mask = "#1b1c1d"
+    msapplication = "#1b1c1d"
+    theme = "#1b1c1d"
+
+  [params.logo]
+    logoMark     = "~"
+    logoText     = "$ cd /home/"
+    logoHomeLink = "/"
+    # Set true to remove the logo cursor entirely.
+    #logoCursorDisabled = true
+    # Set to a valid CSS color to change the cursor in the logo.
+    #logoCursorColor    = "#67a2c9"
+    # Set to a valid CSS time value to change the animation duration, "0s" to disable.
+    logoCursorAnimate  = "0s"
+    # Append the current url pathname to logoText
+    logoCursorPathname = true
+
+  # Commento is more than just a comments widget you can embed — 
+  # it’s a return to the roots of the internet. 
+  # An internet without the tracking and invasions of privacy. 
+  # An internet that is simple and lightweight. 
+  # An internet that is focused on interesting discussions, not ads. 
+  # A better internet.
+  # Uncomment this to enable Commento.
+  #
+  # [params.commento]
+  #   url = ""
+
+  # Uncomment this if you want a portrait on your start page
+  #
+  [params.portrait]
+     path     = "images/profile.jpg"
+     alt      = "Portrait"
+     maxWidth = "160px"
+
+  # Social icons
+  # use 'fab' when brand icons, use 'fas' when standard solid icons.
+  [[params.social]]
+    name = "mastodon"
+    icon = "fa fa-mastodon"
+    url  = "https://fosstodon.org/@troglobit"
+
+  [[params.social]]
+    name = "twitter"
+    url  = "https://twitter.com/troglobit"
+
+  [[params.social]]
+    name = "git"
+    url  = "https://git.troglobit.com"
+
+  [[params.social]]
+    name = "email"
+    url  = "mailto:Joachim Wiberg <troglobit+spam@gmail.com>"
+
+  [[params.social]]
+    name = "github"
+    url  = "https://github.com/troglobit"
+
+[languages]
+  [languages.en]
+    #subtitle  = "The Last Outpost"
+    weight    = 1
+    copyright = 'UNIX&trade; 4Life! &#9994;'
+
+[menu]
+  [[menu.main]]
+    weight     = 1
+    name       = "About"
+    url        = "/about/"
+  [[menu.main]]
+    weight     = 1
+    name       = "Blog"
+    url        = "/posts/"
+  [[menu.main]]
+    weight     = 2
+    name       = "HowTos"
+    url        = "/howtos/"
+  [[menu.main]]
+    weight     = 3
+    name       = "Projects"
+    url        = "/projects/"

@@ -2,7 +2,7 @@ baseurl = "https://troglobit.com/"
 #baseurl = "/"
 title = "Joachim Wiberg"
 languageCode = "en-us"
-theme = "hello-friend-ng"
+theme = "poison"
 
 # Syntax highlighting, UseClasses=false to work!
 pygmentsUseClasses = false
@@ -11,8 +11,17 @@ pygmentsCodefencesGuessSyntax = true
 # https://xyproto.github.io/splash/docs/
 PygmentsStyle = "gruvbox"
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[blackfriday]
+  hrefTargetBlank = true
+
 paginate  = 10
-rssLimit  = 10  # Maximum number of items in the RSS feed.
+rssLimit  = 10		      # Maximum number of items in the RSS feed.
+pluralizelisttitles = false   # removes the automatically appended "s" on sidebar entries
 
 archetypeDir = "archetypes"
 contentDir   = "content"
@@ -37,179 +46,107 @@ disableHugoGeneratorInject = false
   # compat urls for search engines
   posts = "/post/:year-:month-:day-:title/"
 
-[author]
-  name = "Joachim Wiberg"
-
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
-
-[blackfriday]
-  hrefTargetBlank = true
-
-[taxonomies]
-  tag      = "tags"
-  category = "categories"
-  series   = "series"
-
-[params]
-  dateform        = "Jan 2, 2006"
-  dateformShort   = "Jan 2"
-  dateformNum     = "2006-01-02"
-  dateformNumTime = "2006-01-02 15:04"
-
-  # Metadata mostly used in document's head
-  # 
-  #description = "Nice theme for homepages and blogs"
-  #keywords = ""
-  #images = [""]
-
-  #homeSubtitle = "The Last Outpost"
-
-  # Set a background for the homepage
-  # backgroundImage = "assets/images/background.jpg"
-
-  # Prefix of link to the git commit detail page. GitInfo must be enabled.
-  #
-  # gitUrl = ""
-
-  # Set disableReadOtherPosts to true in order to hide the links to other posts.
-  #
-  disableReadOtherPosts = false
-
-  # Enable theme toggle
-  #
-  # This options enables the theme toggle for the theme.
-  # Per default, this option is off.
-  # The theme is respecting the prefers-color-scheme of the operating systeme.
-  # With this option on, the page user is able to set the scheme he wants.
-  enableThemeToggle = true
-
-  # Sharing buttons
-  #
-  # There are a lot of buttons preconfigured. If you want to change them,
-  # generate the buttons here: https://sharingbuttons.io
-  # and add them into your own `layouts/partials/sharing-buttons.html`
-  #
-  enableSharingButtons = true
-
-  # Global language menu
-  #
-  # Enables the global language menu.
-  #
-  enableGlobalLanguageMenu = false
-
-  # Integrate Javascript files or stylesheets by adding the url to the external assets or by
-  # linking local files with their path relative to the static folder, e.g. "css/styles.css"
-  #
-  customCSS = [ "/css/extra.css" ]
-  customJS  = []
-
-  # Toggle this option need to rebuild SCSS, requires extended version of Hugo
-  #
-  justifyContent = true  # Set "text-align: justify" to .post-content.
-
-  # Integrate Plausible.io
-  # plausibleDataDomain = 'test.com'
-  # plausibleScriptSource = 'https://plausible.io/js/script.js'
-
-  [params.author]
+[params.author]
     name = "Joachim Wiberg"
 
-  # Custom footer 
-  # If you want, you can easily override the default footer with your own content. 
-  #
-  [params.footer]
-    trademark = 2006
-    rss = false
-    copyright = true
-    author = true
+[params]
+    brand = "Troglobit"
+    #remote_brand_image = 'https://github.com/troglbit.png'
+    brand_image = "/images/profile.jpg"
+    #description = "The Last Outpost"
+    dark_mode = true
 
-    topText = []
-    bottomText = []
+    front_page_content = ["posts", "projects", "howtos"]
 
-  # Colors for favicons
-  #
-  [params.favicon.color]
-    mask = "#1b1c1d"
-    msapplication = "#1b1c1d"
-    theme = "#1b1c1d"
+    # MENU PLACEHOLDER
+    # Menu dict keys:
+        # Name:         The name to display on the menu.
+        # URL:          The directory relative to the content directory.
+        # HasChildren:  If the directory's files should be listed.  Default is true.
+        # Limit:        If the files should be listed, how many should be shown.
+    menu = [
+        {Name = "About", URL = "/about/", HasChildren = false},
+        {Name = "Posts", URL = "/posts/", HasChildren = true, Limit = 2},
+	{Name = "Projects", URL = "/projects/", HasChildren = true, Limit = 2},
+	{Name = "HowTos", URL = "/howtos/", HasChildren = true, Limit = 2},
+    ]
 
-  [params.logo]
-    logoMark     = "~"
-    logoText     = "$ cd /home/"
-    logoHomeLink = "/"
-    # Set true to remove the logo cursor entirely.
-    #logoCursorDisabled = true
-    # Set to a valid CSS color to change the cursor in the logo.
-    #logoCursorColor    = "#67a2c9"
-    # Set to a valid CSS time value to change the animation duration, "0s" to disable.
-    logoCursorAnimate  = "0s"
-    # Append the current url pathname to logoText
-    logoCursorPathname = true
+    # Links to your socials.  Comment or delete any you don't need/use. 
+    #discord_url = "https://discord.com"
+    email_url = "mailto:Joachim Wiberg <troglobit+spam@gmail.com>"
+    #facebook_url = "https://facebook.com"
+    #flickr_url = "https://flickr.com"
+    github_url = "https://github.com/troglobit"
+    #gitlab_url = "https://gitlab.com"
+    #instagram_url = "https://instagram.com"
+    linkedin_url = "https://www.linkedin.com/in/joachim-wiberg-3a017125"
+    mastodon_url = "https://fosstodon.org/@troglobit"
+    #matrix_url = "https://matrix.org"
+    #telegram_url = "https://telegram.org"
+    #tryhackme_url = "https://tryhackme.com"
+    #twitter_url = "https://twitter.com/troglobit"
+    x_url = "https://x.com/troglobit"
+    #xmpp_url = "https://xmpp.org"
+    #youtube_url = "https://youtube.com"
+    #signal_url = "https://signal.org"
+    #bluesky_url = "https://bsky.app"
 
-  # Commento is more than just a comments widget you can embed — 
-  # it’s a return to the roots of the internet. 
-  # An internet without the tracking and invasions of privacy. 
-  # An internet that is simple and lightweight. 
-  # An internet that is focused on interesting discussions, not ads. 
-  # A better internet.
-  # Uncomment this to enable Commento.
-  #
-  # [params.commento]
-  #   url = ""
+    # NOTE: If you don't want to use RSS, comment or delete the following lines
+    # Adds an RSS icon to the end of the socials which links to {{ .Site.BaseURL }}/index.xml
+    rss_icon = true
+    # Which section the RSS icon links to, defaults to all content. See https://gohugo.io/templates/rss/#section-rss
+    rss_section = "posts"
 
-  # Uncomment this if you want a portrait on your start page
-  #
-  [params.portrait]
-     path     = "images/profile.jpg"
-     alt      = "Portrait"
-     maxWidth = "320px"
+    # Hex colors for your sidebar.
+    moon_sun_background_color = "#515151"   # default is #515151
+    moon_sun_color = "#FFF"                 # default is #FFF
+    sidebar_a_color = "#FFF"                # default is #FFF
+    sidebar_bg_color = "#202020"            # default is #202020
+    sidebar_h1_color = "#FFF"               # default is #FFF
+    sidebar_img_border_color = "#515151"    # default is #515151
+    sidebar_p_color = "#909090"             # default is #909090
+    sidebar_socials_color = "#FFF"          # default is #FFF
 
-  # Social icons
-  # use 'fab' when brand icons, use 'fas' when standard solid icons.
-  [[params.social]]
-    name = "mastodon"
-    icon = "fa fa-mastodon"
-    url  = "https://fosstodon.org/@troglobit"
+    # Hex colors for your content in light mode.
+    code_color = "#000"                     # default is #000
+    code_background_color = "#E5E5E5"       # default is #E5E5E5
+    code_block_color = "#FFF"               # default is #FFF
+    code_block_background_color = "#272822" # default is #272822
+    content_bg_color = "#FAF9F6"            # default is #FAF9F6
+    date_color = "#515151"                  # default is #515151
+    link_color = "#268BD2"                  # default is #268BD2
+    list_color = "#5A5A5A"                  # default is #5A5A5A
+    post_title_color = "#303030"            # default is #303030
+    table_border_color = "#E5E5E5"          # default is #E5E5E5
+    table_stripe_color = "#F9F9F9"          # default is #F9F9F9
+    text_color = "#222"                     # default is #222
 
-  [[params.social]]
-    name = "twitter"
-    url  = "https://twitter.com/troglobit"
+    # Hex colors for your content in dark mode
+    code_color_dark = "#FFF"                        # default is #FFF
+    code_background_color_dark = "#515151"          # default is #515151
+    code_block_color_dark = "#FFF"                  # default is #FFF
+    code_block_background_color_dark = "#272822"    # default is #272822
+    content_bg_color_dark = "#121212"               # default is #121212
+    date_color_dark = "#9A9A9A"                     # default is #9A9A9A
+    link_color_dark = "#268BD2"                     # default is #268BD2
+    list_color_dark = "#9D9D9D"                     # default is #9D9D9D
+    post_title_color_dark = "#DBE2E9"               # default is #DBE2E9
+    table_border_color_dark = "#515151"             # default is #515151
+    table_stripe_color_dark = "#202020"             # default is #202020
+    text_color_dark = "#EEE"                        # default is #EEE
 
-  [[params.social]]
-    name = "git"
-    url  = "https://git.troglobit.com"
+    # NOTE: If using Remark42 as commenting engine, uncomment and configure these lines
+    # remark42 = true
+    # remark42_host = "https://yourhost.com"
+    # remark42_site_id = "your_site_id"
 
-  [[params.social]]
-    name = "email"
-    url  = "mailto:Joachim Wiberg <troglobit+spam@gmail.com>"
+    # NOTE: The following three params are optional and are used to create meta tags + enhance SEO.
+    # og_image = ""                       # path to social icon - front matter: image takes precedent, then og_image, then brand_url
+                                          # this is also used in the schema output as well. Image is resized to max 1200x630
+                                          # For this to work though og_image and brand_url must be a path inside the assets directory
+                                          # e.g. /assets/images/site/og-image.png becomes images/site/og-image.png
+    # publisher_icon = ""                 # path to publisher icon - defaults to favicon, used in schema
 
-  [[params.social]]
-    name = "github"
-    url  = "https://github.com/troglobit"
-
-[languages]
-  [languages.en]
-    #subtitle  = "The Last Outpost"
-    weight    = 1
-    copyright = 'UNIX&trade; 4Life! &#9994;'
-
-[menu]
-  [[menu.main]]
-    weight     = 1
-    name       = "About"
-    url        = "/about/"
-  [[menu.main]]
-    weight     = 1
-    name       = "Blog"
-    url        = "/posts/"
-  [[menu.main]]
-    weight     = 2
-    name       = "HowTos"
-    url        = "/howtos/"
-  [[menu.main]]
-    weight     = 3
-    name       = "Projects"
-    url        = "/projects/"
+[taxonomies]
+    series = 'series'
+    tags = 'tags'

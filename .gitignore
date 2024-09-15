@@ -6,3 +6,4 @@
 .pygments-cache
 old/*
 public
+/resources/
