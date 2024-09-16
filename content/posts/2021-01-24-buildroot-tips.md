@@ -41,7 +41,7 @@ but the process is much the same for other mailing list-based projects.
 4. Verify formatting of package files; .in, .mk, etc.
 
    ```shell
-   $ ./utils/docker-run make check-package
+   $ ./utils/check-package package/foo/*
    ```
 
    If you change or add a new package, verify you don't introduce any
