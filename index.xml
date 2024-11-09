@@ -164,9 +164,9 @@
     </item>
     <item>
       <title>smcroute.conf example</title>
-      <link>https://troglobit.com/project/smcroute/smcroute-conf.html</link>
+      <link>https://troglobit.com/projects/smcroute/smcroute-conf.html</link>
       <pubDate>Thu, 19 Aug 2021 15:46:00 +0200</pubDate>
-      <guid>https://troglobit.com/project/smcroute/smcroute-conf.html</guid>
+      <guid>https://troglobit.com/projects/smcroute/smcroute-conf.html</guid>
       <description># # smcroute.conf example # # The configuration file supports joining multicast groups, to use # Layer-2 signaling so that switches and routers open up multicast # traffic to your interfaces. Leave is not supported, remove the # mgroup and SIGHUP your daemon, or send a specific leave command. # # NOTE: Use of the mgroup command should be avoided if possible. # Instead configure &amp;#34;router ports&amp;#34; or similar on the switches # or bridges on your LAN.</description>
     </item>
     <item>
