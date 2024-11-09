@@ -2,7 +2,7 @@
 name: smcroute.conf
 date: 2021-08-19 15:46:00 +02:00
 title: smcroute.conf example
-url: /project/smcroute/smcroute-conf.html
+url: /projects/smcroute/smcroute-conf.html
 aliases: /smcroute-conf.html
 ---
 <!--more-->
