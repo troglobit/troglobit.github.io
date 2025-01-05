@@ -6,8 +6,15 @@
     <description>Recent content on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Sep 2024 11:38:04 -0100</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jan 2025 13:57:00 +0000</lastBuildDate>
     <atom:link href="https://troglobit.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Testing Network Daemons</title>
+      <link>https://troglobit.com/post/2025-01-05-testing-network-daemons/</link>
+      <pubDate>Sun, 05 Jan 2025 13:57:00 +0000</pubDate>
+      <guid>https://troglobit.com/post/2025-01-05-testing-network-daemons/</guid>
+      <description>&lt;p&gt;As a maintainer of many Open Source projects where networking is key, a&#xA;side quest has emerged &amp;ndash; how to test network applications without root?&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The following writeup is part of my series; &lt;em&gt;Reminders to self&lt;/em&gt;.&#xA;Please let me know if there&amp;rsquo;s anything you&amp;rsquo;d like me to delve&#xA;further into.&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
     <item>
       <title>Buildroot Development Environment</title>
       <link>https://troglobit.com/post/2024-08-07-buildroot-development-environment/</link>

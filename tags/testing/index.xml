@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Testing on Joachim Wiberg</title>
+    <link>https://troglobit.com/tags/testing/</link>
+    <description>Recent content in Testing on Joachim Wiberg</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 05 Jan 2025 13:57:00 +0000</lastBuildDate>
+    <atom:link href="https://troglobit.com/tags/testing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Testing Network Daemons</title>
+      <link>https://troglobit.com/post/2025-01-05-testing-network-daemons/</link>
+      <pubDate>Sun, 05 Jan 2025 13:57:00 +0000</pubDate>
+      <guid>https://troglobit.com/post/2025-01-05-testing-network-daemons/</guid>
+      <description>&lt;p&gt;As a maintainer of many Open Source projects where networking is key, a&#xA;side quest has emerged &amp;ndash; how to test network applications without root?&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The following writeup is part of my series; &lt;em&gt;Reminders to self&lt;/em&gt;.&#xA;Please let me know if there&amp;rsquo;s anything you&amp;rsquo;d like me to delve&#xA;further into.&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+  </channel>
+</rss>

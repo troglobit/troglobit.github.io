@@ -74,7 +74,7 @@
 <meta property="og:url" content="https://troglobit.com/" />
 
 
-<meta property="og:updated_time" content="2024-09-11T11:38:04-01:00" />
+<meta property="og:updated_time" content="2025-01-05T13:57:00Z" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -261,6 +261,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
         
@@ -284,11 +290,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/post/2024-08-07-buildroot-development-environment/">Buildroot Development Environment</a>
+                                <a href="https://troglobit.com/post/2025-01-05-testing-network-daemons/">Testing Network Daemons</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/post/2024-03-03-building-emacs-with-jit/">Building Emacs with JIT</a>
+                                <a href="https://troglobit.com/post/2024-08-07-buildroot-development-environment/">Buildroot Development Environment</a>
                             </li>
                         
                     
@@ -302,6 +308,12 @@
                 
             
                 
+                
+                        
+                
+                        
+                
+                        
                 
                         
                 
@@ -433,6 +445,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
         
@@ -474,6 +492,12 @@
                 
             
                 
+                
+                        
+                
+                        
+                
+                        
                 
                         
                 
@@ -577,7 +601,7 @@
         <p class="footnote">
 powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a target="_blank" href="https://github.com/lukeorth/poison">poison</a>
     <br>
-    &copy; 2024 Joachim Wiberg. All rights reserved.
+    &copy; 2025 Joachim Wiberg. All rights reserved.
 </p>
 
   </div>
@@ -587,6 +611,60 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
                 <div class="posts">
     
     
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/howtos/merecat-and-ikiwiki/">HowTo: Set up Merecat with Ikiwiki</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2021-12-09T05:51:00Z" class="post-date">
+        December 9, 2021
+      </time>
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>1 min read</span>
+      </span>
+    </div>
+
+    
+    <ul class="tags">
+      
+      <li class="tag-merecat">
+        <a href="https://troglobit.com/tags/merecat">merecat</a>
+      </li>
+      
+    </ul>
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        This is a HowTo for setting up ikiwiki with Merecat httpd.
+First install ikiwiki
+$ sudo apt install ikiwiki libcgi-session-perl libcgi-formbuilder-perl Follow the steps to setup a new Wiki or Blog. In this example we set up a wiki in our ~/public_html:
+$ ikiwiki --setup /etc/ikiwiki/auto.setup ... Successfully set up wiki: url: http://localhost/~jocke/wiki srcdir: ~/wiki destdir: ~/public_html/wiki repository: ~/wiki.git To modify settings, edit ~/home.setup and then run:
+$ ikiwiki --setup ~/home.
+        
+        <div class="read-more-link">
+            <a href="/howtos/merecat-and-ikiwiki/">Read More…</a>
+        </div>
+        
+        
+    </article>
     <article class="post">
         <div class="info">
   <h1 class="post-title">
@@ -1066,73 +1144,6 @@ move on to the project home page: <a href="https://troglobit.com/finit.html" tar
         
         <div class="read-more-link">
             <a href="/post/2021-04-27-its-here/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/post/2021-02-12-alpine-linux-with-finit/">Alpine Linux with Finit</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2021-02-12T07:24:06&#43;0100" class="post-date">
-        February 12, 2021
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>3 mins read</span>
-      </span>
-    </div>
-
-    
-    <ul class="tags">
-      
-      <li class="tag-finit">
-        <a href="https://troglobit.com/tags/finit">finit</a>
-      </li>
-      
-      <li class="tag-init">
-        <a href="https://troglobit.com/tags/init">init</a>
-      </li>
-      
-      <li class="tag-opensource">
-        <a href="https://troglobit.com/tags/opensource">opensource</a>
-      </li>
-      
-    </ul>
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        <p><a href="https://alpinelinux.org/" target="_blank">Alpine Linux</a> is an amazing little operating
-system.  It&rsquo;s small, boots quick, and easy to use.  The size alone makes
-it very attractive to container builders.</p>
-<figure class="center"><img src="/images/finit4-screenshot.png"
-         alt="Alpine Linux started with Finit"/><figcaption>
-            <p>Alpine Linux started with Finit</p>
-        </figcaption>
-</figure>
-<p>This blog post details how to set Alpine up with the Finit init system,
-replacing the default OpenRC.</p>
-        
-        <div class="read-more-link">
-            <a href="/post/2021-02-12-alpine-linux-with-finit/">Read More…</a>
         </div>
         
         

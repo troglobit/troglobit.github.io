@@ -74,7 +74,7 @@
 <meta property="og:url" content="https://troglobit.com/" />
 
 
-<meta property="og:updated_time" content="2024-09-11T11:38:04-01:00" />
+<meta property="og:updated_time" content="2025-01-05T13:57:00Z" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -261,6 +261,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
         
@@ -284,11 +290,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/post/2024-08-07-buildroot-development-environment/">Buildroot Development Environment</a>
+                                <a href="https://troglobit.com/post/2025-01-05-testing-network-daemons/">Testing Network Daemons</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/post/2024-03-03-building-emacs-with-jit/">Building Emacs with JIT</a>
+                                <a href="https://troglobit.com/post/2024-08-07-buildroot-development-environment/">Buildroot Development Environment</a>
                             </li>
                         
                     
@@ -302,6 +308,12 @@
                 
             
                 
+                
+                        
+                
+                        
+                
+                        
                 
                         
                 
@@ -433,6 +445,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
         
@@ -474,6 +492,12 @@
                 
             
                 
+                
+                        
+                
+                        
+                
+                        
                 
                         
                 
@@ -577,7 +601,7 @@
         <p class="footnote">
 powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a target="_blank" href="https://github.com/lukeorth/poison">poison</a>
     <br>
-    &copy; 2024 Joachim Wiberg. All rights reserved.
+    &copy; 2025 Joachim Wiberg. All rights reserved.
 </p>
 
   </div>
@@ -587,6 +611,50 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
                 <div class="posts">
     
     
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/2010/07/13/converting-from-bazaar-to-git/">Converting from Bazaar to GIT</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2010-07-13T01:56:11Z" class="post-date">
+        July 13, 2010
+      </time>
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>1 min read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        You need git, and bazaar obviously. Also install bzr-fastimport, it contains the export plugin as well. The rest is a rip off from Frank&rsquo;s page.
+$ git init project.git $ cd project.git $ bzr fast-export --export-marks=.git/bzr.mark ~/project.bzr | git fast-import --export-marks=.git/git.mark That worked for me. The output will likely be something like this:
+01:41:19 Calculating the revisions to include ... 01:41:19 Starting export of 33 revisions ... 01:41:20 Exported 33 revisions in 0:00:01 git-fast-import statistics: --------------------------------------------------------------------- Alloc&#39;d objects: 5000 Total objects : 267 ( 0 duplicates ) blobs : 158 ( 0 duplicates 57 deltas) trees : 76 ( 0 duplicates 55 deltas) commits: 33 ( 0 duplicates 0 deltas) tags : 0 ( 0 duplicates 0 deltas) Total branches : 10 ( 1 loads ) marks : 1024 ( 33 unique ) atoms : 38 Memory total : 2344 KiB pools : 2110 KiB objects: 234 KiB --------------------------------------------------------------------- pack_report: getpagesize() = 4096 pack_report: core.
+        
+        <div class="read-more-link">
+            <a href="/2010/07/13/converting-from-bazaar-to-git/">Read More…</a>
+        </div>
+        
+        
+    </article>
     <article class="post">
         <div class="info">
   <h1 class="post-title">
@@ -963,49 +1031,6 @@ Ubuntu 8.04 LTS comes with a Xen kernel that can run as dom0.
         
         <div class="read-more-link">
             <a href="/2009/06/08/howto-setup-and-run-xen/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/2009/04/10/learning-about-git/">Learning About GIT</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2009-04-10T16:23:42Z" class="post-date">
-        April 10, 2009
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>2 mins read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        It has been a long time coming, but now I&rsquo;m seriously starting to look at Git. Git is the content tracker used by the Linux kernel folks, initially developed by Torvalds.
-At Westermo R&amp;D we use Subversion for our daily operations and today I started migrating the software to Git. Mainly just to get a comparison of performance, storage size and to explore how we can use Git on top of svn to become more productive when working in parallel in different teams.
-        
-        <div class="read-more-link">
-            <a href="/2009/04/10/learning-about-git/">Read More…</a>
         </div>
         
         

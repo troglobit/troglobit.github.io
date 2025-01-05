@@ -2,6 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://troglobit.com/</loc>
+    <lastmod>2025-01-05T13:57:00+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/linux/</loc>
+    <lastmod>2025-01-05T13:57:00+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/networking/</loc>
+    <lastmod>2025-01-05T13:57:00+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/posts/</loc>
+    <lastmod>2025-01-05T13:57:00+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/</loc>
+    <lastmod>2025-01-05T13:57:00+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/testing/</loc>
+    <lastmod>2025-01-05T13:57:00+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/post/2025-01-05-testing-network-daemons/</loc>
+    <lastmod>2025-01-05T13:57:00+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/unshare/</loc>
+    <lastmod>2025-01-05T13:57:00+00:00</lastmod>
+  </url><url>
     <loc>https://troglobit.com/tags/buildroot/</loc>
     <lastmod>2024-08-07T07:06:19+01:00</lastmod>
   </url><url>
@@ -9,15 +33,6 @@
     <lastmod>2024-08-07T07:06:19+01:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/tags/embedded/</loc>
-    <lastmod>2024-08-07T07:06:19+01:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/</loc>
-    <lastmod>2024-09-11T11:38:04-01:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/posts/</loc>
-    <lastmod>2024-09-11T11:38:04-01:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/tags/</loc>
     <lastmod>2024-08-07T07:06:19+01:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/post/2024-03-03-building-emacs-with-jit/</loc>
@@ -105,9 +120,6 @@
     <lastmod>2022-04-17T16:56:00+01:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/tags/kernel/</loc>
-    <lastmod>2022-04-11T17:19:00+02:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/tags/linux/</loc>
     <lastmod>2022-04-11T17:19:00+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/post/2022-04-11-linux-kernel-development-checklist/</loc>
