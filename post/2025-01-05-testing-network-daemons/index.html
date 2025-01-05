@@ -744,6 +744,16 @@ veth0a@if2       DOWN           8a:2f:99:38:a7:6c &lt;BROADCAST,MULTICAST&gt;
 lo               DOWN           00:00:00:00:00:00 &lt;LOOPBACK&gt; 
 veth0b@if3       DOWN           fa:e3:0f:a6:dd:77 &lt;BROADCAST,MULTICAST&gt; 
 </code></pre>
+<h3 id="final-notes">Final Notes</h3>
+<p>For scripting purposes you may want to look into more of the options for
+both <code>unshare</code> and <code>nsenter</code>.  For the latter in particular you may want
+to use <code>nsenter -t $pid -n -U --preserve-credentials [CMD]</code>.</p>
+<p>Also, and this bears repeating, you should not need to use <code>sudo</code> for
+any of these commands.  You may need to <a href="https://troglobit.com/2016/12/11/a-life-without-sudo/" target="_blank">set up capabilities</a> though,
+but that&rsquo;s a good thing to learn about anyway.</p>
+<p>Finally, as of late many Linux distributions have started <a href="https://ubuntu.com/blog/ubuntu-23-10-restricted-unprivileged-user-namespaces" target="_blank">locking down
+namespaces for regular users</a>.  Read more about what you may need to
+do, and know about, <a href="https://www.baeldung.com/linux/kernel-enable-user-namespaces" target="_blank">here</a>.</p>
 <p>That&rsquo;s it, this is all the tools you need to get started, good luck!</p>
   
   <hr>
@@ -771,6 +781,7 @@ veth0b@if3       DOWN           fa:e3:0f:a6:dd:77 &lt;BROADCAST,MULTICAST&gt;
         <li><a href="#tools-of-the-trade">Tools of the Trade</a></li>
         <li><a href="#privileged-ports">Privileged Ports</a></li>
         <li><a href="#lan-communication">LAN Communication</a></li>
+        <li><a href="#final-notes">Final Notes</a></li>
       </ul>
     </li>
   </ul>
