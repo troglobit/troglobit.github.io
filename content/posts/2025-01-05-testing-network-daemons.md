@@ -105,6 +105,21 @@ We can peek into the nested unshare using the `nsenter` command:
     lo               DOWN           00:00:00:00:00:00 <LOOPBACK> 
 	veth0b@if3       DOWN           fa:e3:0f:a6:dd:77 <BROADCAST,MULTICAST> 
 
+
+### Final Notes
+
+For scripting purposes you may want to look into more of the options for
+both `unshare` and `nsenter`.  For the latter in particular you may want
+to use `nsenter -t $pid -n -U --preserve-credentials [CMD]`.
+
+Also, and this bears repeating, you should not need to use `sudo` for
+any of these commands.  You may need to [set up capabilities][7] though,
+but that's a good thing to learn about anyway.
+
+Finally, as of late many Linux distributions have started [locking down
+namespaces for regular users][8].  Read more about what you may need to
+do, and know about, [here][9].
+
 That's it, this is all the tools you need to get started, good luck!
 
 [0]: https://www.qemu.org/
@@ -114,6 +129,6 @@ That's it, this is all the tools you need to get started, good luck!
 [4]: https://man7.org/linux/man-pages/man1/nsenter.1.html
 [5]: https://en.wikipedia.org/wiki/Iproute2
 [6]: https://www.w3.org/Daemon/User/Installation/PrivilegedPorts.html
-
-
-
+[7]: https://troglobit.com/2016/12/11/a-life-without-sudo/
+[8]: https://ubuntu.com/blog/ubuntu-23-10-restricted-unprivileged-user-namespaces
+[9]: https://www.baeldung.com/linux/kernel-enable-user-namespaces
