@@ -1,29 +1,29 @@
 ---
 title: "About"
-date: 2023-11-02 07:26:00 +0100
+date: 2024-02-02 08:35:00 +0100
 ---
 
-Welcome to this little blog, my name is Joachim Wiberg, formerly
-Nilsson.  The nick `troglobit` is a tribute to my childhood friend
-Henrik Flordal, for being a good friend and inspiring me to become a
-hacker.  It is also the first password to a Linux server (Henrik's) I
-got a login to, back in 1995.
+Welcome to this little blog!  I'm Joachim Wiberg, formerly Nilsson.  The
+nick `troglobit` is a tribute to my childhood friend Henrik Flordal, for
+being a good friend and inspiring me to become a hacker.  It is also my
+first password to a Linux server (Henrik's), back in 1995.
 
 So yes, I'm a huge Linux and UNIX nerd.  Ever since my first job, after
-[graduating from MdU][resume], I've been running Linux on almost all my
-machines, including those at work.  In the beginning (2000) it was hard
-and even actively discouraged by management and IT departments, but I
-made it work and set the bar for others to follow!
+[graduating from MdU][resume], I've (only) been running Linux on almost
+all my machines (some run BSD or UNUX though ;-), including work.  In
+the beginning (1998-2000) it was hard and even actively discouraged by
+management and IT departments, but I persevered and got Linux into many
+organizations over the years.
 
-Today I work a [Addiva Elektronik](https://addiva.se) in Västerås,
-Sweden, as a software architect and embedded systems consultant.  My
-specialty is networking solutions and embedded Linux, preferably
+Today I work a [Wires](https://wires.se) in Västerås, Sweden,
+as a software architect and embedded systems consultant.  My specialty is
+networking solutions and embedded Linux, preferably based on [Infix][] or
 [Buildroot](https://buildroot.org).  For a very long time I worked at
 [Westermo R&D][westermo] as a software architect for [WeOS][], a
 Linux-based network operating system for switches and routers that I
 created 2005-2007 for them, which since has grown up considerably.
 These days I spend my time building [yet another network operating
-system][infix], this time based on Buildroot and with NETCONF.
+system][Infix], this time based on Buildroot and with NETCONF.
 
 In my spare time I write Free/Libre Open Source Software ([FLOSS][]).
 For example, I maintain [Finit][], [Inadyn][], [pimd][], [mrouted][],
@@ -50,4 +50,4 @@ You can find my [online resume here][resume], or download the [PDF][].
 [GPG key]:  http://keys.gnupg.net/pks/lookup?search=0xECA826A37B6C7409&fingerprint=on&op=index
 [resume]:   https://resume.troglobit.com
 [PDF]:      https://resume.troglobit.com/resume.pdf
-[infix]:    https://github.com/kernelkit/infix
+[Infix]:    https://github.com/kernelkit/infix
