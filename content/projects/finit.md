@@ -1,6 +1,7 @@
 ---
 title: "Fast init for Linux systems"
 date: 2024-01-07 19:47:00 +0100
+lastmod: 2025-03-03 03:05:00 +0100
 aliases: /finit.html
 ---
 {{% figure src="/images/finit3.png" class="right-floated" link="https://github.com/troglobit/finit/releases/latest" %}}
@@ -38,7 +39,7 @@ Some of these feature are presented below, for more, see the [online
 documentation][README] and the following blog posts:
 
   * [Finit v4.2 -- Try before you buy!](/post/2022-01-16-finit-v4.2-released/)
-  * [Dependency handling in Finit](/post/2022-01-09-dependency-handling-in-finit/)
+  * [Dependency handling in Finit](/post/2021-05-01-dependency-handling-in-finit/)
   * [It's here! ♥](/post/2021-04-27-its-here/) -- Finit v4 release post
   * [Alpine Linux with Finit](/post/2021-02-12-alpine-linux-with-finit/)
   * [Buildroot demo of FastInit (Finit)](/post/2022-12-26-buildroot-demo-of-fastinit-finit/)
