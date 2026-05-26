@@ -33,16 +33,15 @@ that is what we'll make use of here.
 ### Tools of the Trade
 
 The tools we'll be using are probably already available on your system.
-You just don't know about them ... 
+You just don't know about them ...
 
- - [unshare][3]
- - [nsenter][4]
- - [ip][5]
+- [unshare][3]
+- [nsenter][4]
+- [ip][5]
 
 Well, the last one you probably should know about if you're an active
 Linux user since we've replaced the classic UNIX `ifconfig` tool (and
 a few others) with the [iproute2][5] sute.
-
 
 ### Privileged Ports
 
@@ -56,8 +55,11 @@ it runs on.
 This brings us to our first example use-case for network namespaces:
 
     $ cd ~/src/my-project/
-    $ unshare -mrun
-	#
+    $ unshare -mrun --map-auto
+    #
+
+> The `--map-auto` options is relatively new, but something you'll need
+> on modern systems, e.g., Ubuntu 24.04 or later.
 
 There you go, a root prompt in a dedicated network namespace, meaning
 you can now go ahead and start your application :-)
@@ -67,10 +69,9 @@ Oh wait, you need one last thing:
 	# ip link set lo up state up
 
 Not much networking in UNIX works unless the loopback interfaces is up.
-In Linux this brings up the interface, sets the IPv4 and IPv6 loopback 
+In Linux this brings up the interface, sets the IPv4 and IPv6 loopback
 addresses, and `state up` ensure that we se `UP` instead of `UNKNOWN`
 link status.
-
 
 ### LAN Communication
 
@@ -104,7 +105,6 @@ We can peek into the nested unshare using the `nsenter` command:
     # nsenter -t 1646509 -n ip -br l
     lo               DOWN           00:00:00:00:00:00 <LOOPBACK> 
 	veth0b@if3       DOWN           fa:e3:0f:a6:dd:77 <BROADCAST,MULTICAST> 
-
 
 ### Final Notes
 
