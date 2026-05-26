@@ -55,6 +55,7 @@ disableHugoGeneratorInject = false
     #remote_brand_image = 'https://github.com/troglbit.png'
     brand_image = "/images/profile.jpg"
     #description = "The Last Outpost"
+    description = "Purveyor of Open Source since 1995"
     dark_mode = true
 
     front_page_content = ["posts", "projects", "howtos"]
