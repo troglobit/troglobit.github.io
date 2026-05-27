@@ -6,8 +6,22 @@
     <description>Recent content on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 03 Mar 2025 03:05:00 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 26 May 2026 22:00:00 +0200</lastBuildDate>
     <atom:link href="https://troglobit.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Long Time, No Blog</title>
+      <link>https://troglobit.com/post/2026-05-26-long-time-no-blog/</link>
+      <pubDate>Tue, 26 May 2026 22:00:00 +0200</pubDate>
+      <guid>https://troglobit.com/post/2026-05-26-long-time-no-blog/</guid>
+      <description>&lt;figure class=&#34;right-floated&#34;&gt;&lt;a href=&#34;https://github.com/troglobit/kg&#34;&gt;&lt;img src=&#34;https://troglobit.com/images/kg-1.1.png&#34;&#xA;         alt=&#34;kg welcome screen&#34; width=&#34;360&#34;/&gt;&lt;/a&gt;&#xA;&lt;/figure&gt;&#xA;&lt;p&gt;Well, this has been quiet for a while.  Not because I stopped tinkering&#xA;— quite the opposite.  Almost all of my time these days goes into &lt;a href=&#34;https://github.com/kernelkit/infix&#34; target=&#34;_blank&#34;&gt;Infix&#xA;OS&lt;/a&gt;, a Linux-based network operating system by &lt;a href=&#34;https://wires.se/infix&#34; target=&#34;_blank&#34;&gt;Wires&lt;/a&gt;.  The OS is&#xA;maintained under an independent organization, KernelKit, where I blog a&#xA;lot — so check out the &lt;a href=&#34;https://www.kernelkit.org/&#34; target=&#34;_blank&#34;&gt;KernelKit blog&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>U-Boot Bring-up Tricks</title>
+      <link>https://troglobit.com/post/2025-05-05-u-boot-bring-up-tricks/</link>
+      <pubDate>Mon, 05 May 2025 13:57:00 +0000</pubDate>
+      <guid>https://troglobit.com/post/2025-05-05-u-boot-bring-up-tricks/</guid>
+      <description>In my Reminder to Self series, this week we turn to some tricks I learned while porting U-Boot to a new board. First, a few tools:&#xA;vbindiff: Linux tool to examine, e.g., flash.bin binwalk: Linux tool to examine an unknown binary file bdinfo: U-Boot command to list board info When poking through such binaries, the FDT (flattened device tree) header magic to look for is 0xd00dfeed.&#xA;Huge props to wkz for all the help and sparring, cheers!</description>
+    </item>
     <item>
       <title>Testing Network Daemons</title>
       <link>https://troglobit.com/post/2025-01-05-testing-network-daemons/</link>

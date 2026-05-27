@@ -43,6 +43,7 @@
 
 
 
+
   
   
 
@@ -52,19 +53,25 @@
 
 
 <!-- Open Graph image and Twitter Card metadata -->
+<meta property="og:image" content="https://troglobit.com/images/profile.jpg" />
+  <meta name="twitter:image" content="https://troglobit.com/images/profile.jpg" />
+  <meta name="twitter:card" content="summary" />
+      <meta property="og:image:width" content="400" />
+      <meta property="og:image:height" content="400" />
+    <meta property="og:image:type" content="image/jpeg" />
 
 <title itemprop="name">Troglobit</title>
-<meta property="og:title" content=Troglobit />
-<meta name="twitter:title" content=Troglobit />
-<meta itemprop="name" content=Troglobit />
-<meta name="application-name" content=Troglobit />
+<meta property="og:title" content="Troglobit" />
+<meta name="twitter:title" content="Troglobit" />
+<meta itemprop="name" content="Troglobit" />
+<meta name="application-name" content="Troglobit" />
 <meta property="og:site_name" content="Joachim Wiberg" />
 
 
-<meta name="description" content="" />
-<meta itemprop="description" content="" />
-<meta property="og:description" content="" />
-<meta name="twitter:description" content="" />
+<meta name="description" content="Purveyor of Open Source since 1995" />
+<meta itemprop="description" content="Purveyor of Open Source since 1995" />
+<meta property="og:description" content="Purveyor of Open Source since 1995" />
+<meta name="twitter:description" content="Purveyor of Open Source since 1995" />
 
 
 <base href="https://troglobit.com/" />
@@ -74,7 +81,7 @@
 <meta property="og:url" content="https://troglobit.com/" />
 
 
-<meta property="og:updated_time" content="2025-03-03T03:05:00&#43;01:00" />
+<meta property="og:updated_time" content="2026-05-26T22:00:00&#43;02:00" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -91,6 +98,10 @@
 <meta name="apple-mobile-web-app-title" content="Joachim Wiberg" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+
+
+  <meta property="og:type" content="website" />
 
 
 
@@ -180,7 +191,7 @@
         
     </h1>
     <p class="lead">
-    
+    Purveyor of Open Source since 1995
     </p>
 </div>
 
@@ -267,6 +278,10 @@
                 
                         
                 
+                        
+                
+                        
+                
             
         
         
@@ -290,11 +305,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/post/2025-01-05-testing-network-daemons/">Testing Network Daemons</a>
+                                <a href="https://troglobit.com/post/2026-05-26-long-time-no-blog/">Long Time, No Blog</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/post/2024-08-07-buildroot-development-environment/">Buildroot Development Environment</a>
+                                <a href="https://troglobit.com/post/2025-05-05-u-boot-bring-up-tricks/">U-Boot Bring-up Tricks</a>
                             </li>
                         
                     
@@ -308,6 +323,10 @@
                 
             
                 
+                
+                        
+                
+                        
                 
                         
                 
@@ -451,6 +470,10 @@
                 
                         
                 
+                        
+                
+                        
+                
             
         
         
@@ -492,6 +515,10 @@
                 
             
                 
+                
+                        
+                
+                        
                 
                         
                 
@@ -601,7 +628,7 @@
         <p class="footnote">
 powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a target="_blank" href="https://github.com/lukeorth/poison">poison</a>
     <br>
-    &copy; 2025 Joachim Wiberg. All rights reserved.
+    &copy; 2026 Joachim Wiberg. All rights reserved.
 </p>
 
   </div>
@@ -611,6 +638,94 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
                 <div class="posts">
     
     
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/projects/uftpd/">No nonsense FTP/TFTP server</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2019-07-29T20:31:00&#43;0200" class="post-date">
+        July 29, 2019
+      </time>
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>1 min read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        Tired of confusing configuration files and security features you don&rsquo;t need?
+Try uftpd!
+Supports FTP and TFTP No configuration file Defaults to port ftp/tcp and tftp/udp found in /etc/services, or custom port(s) Serves files from the ftp user&rsquo;s $HOME, as specified in /etc/passwd, or custom path Can run from inetd(8) or as a standalone daemon Can be built and installed as a .deb file, with debconf support Can run as root, with chroot and privsep, or as a regular user Supports TFTP blocksize negotiation, RFC 2348 Basically, it just works!
+        
+        <div class="read-more-link">
+            <a href="/projects/uftpd/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/projects/merecat/">Merecat httpd</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2019-07-19T12:35:00&#43;0200" class="post-date">
+        July 19, 2019
+      </time>
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>2 mins read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        Merecat started out as a pun at Mongoose, but is now useful for actual web serving purposes. It is however not a real Meerkat, merely yet another copycat, forked from the great thttpd created by Jef Poskanzer.
+Merecat expands on the features originally offered by thttpd, but still has a limited feature set:
+Virtual hosts Basic .htpassd and .htaccess support URL-traffic-based throttling CGI/1.1 HTTP/1.1 Keep-alive Built-in gzip deflate using zlib HTTPS support using OpenSSL/LibreSSL, works with Let&rsquo;s Encrypt!
+        
+        <div class="read-more-link">
+            <a href="/projects/merecat/">Read More…</a>
+        </div>
+        
+        
+    </article>
     <article class="post">
         <div class="info">
   <h1 class="post-title">
@@ -967,95 +1082,6 @@ when I realized the display brightness keys didn&rsquo;t do anything in my
         
         <div class="read-more-link">
             <a href="/post/2018-08-03-display-brightness-in-awesome-on-thinkpad-x250/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/post/2018-06-16-open-source-releases/">Open Source Releases</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2018-06-16T15:19:28&#43;0200" class="post-date">
-        June 16, 2018
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>1 min read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        <p>Last three months have been hectic, lots of exciting things going on <a href="https://www.westermo.com" target="_blank">at
-work</a>, with my kids, and also with some of my
-pet projects.</p>
-        
-        <div class="read-more-link">
-            <a href="/post/2018-06-16-open-source-releases/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/post/2018-04-15-n-e-m-e-s-i-s/">N E M E S I S</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2018-04-15T16:11:23&#43;0200" class="post-date">
-        April 15, 2018
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>2 mins read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        <p>Summer is  almost upon us.  The  weather in Sweden has  been amazing the
-last couple of weeks, sunny and  warm.  This has of course not prevented
-me from pursuing my favorite  indoor activity; coding!  This time around
-I&rsquo;ve spent some time to resurrect the packet injection tool <a href="/projects/nemesis/">Nemesis</a>.</p>
-        
-        <div class="read-more-link">
-            <a href="/post/2018-04-15-n-e-m-e-s-i-s/">Read More…</a>
         </div>
         
         

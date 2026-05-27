@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kg on Joachim Wiberg</title>
+    <link>https://troglobit.com/tags/kg/</link>
+    <description>Recent content in Kg on Joachim Wiberg</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 26 May 2026 22:00:00 +0200</lastBuildDate>
+    <atom:link href="https://troglobit.com/tags/kg/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Long Time, No Blog</title>
+      <link>https://troglobit.com/post/2026-05-26-long-time-no-blog/</link>
+      <pubDate>Tue, 26 May 2026 22:00:00 +0200</pubDate>
+      <guid>https://troglobit.com/post/2026-05-26-long-time-no-blog/</guid>
+      <description>&lt;figure class=&#34;right-floated&#34;&gt;&lt;a href=&#34;https://github.com/troglobit/kg&#34;&gt;&lt;img src=&#34;https://troglobit.com/images/kg-1.1.png&#34;&#xA;         alt=&#34;kg welcome screen&#34; width=&#34;360&#34;/&gt;&lt;/a&gt;&#xA;&lt;/figure&gt;&#xA;&lt;p&gt;Well, this has been quiet for a while.  Not because I stopped tinkering&#xA;— quite the opposite.  Almost all of my time these days goes into &lt;a href=&#34;https://github.com/kernelkit/infix&#34; target=&#34;_blank&#34;&gt;Infix&#xA;OS&lt;/a&gt;, a Linux-based network operating system by &lt;a href=&#34;https://wires.se/infix&#34; target=&#34;_blank&#34;&gt;Wires&lt;/a&gt;.  The OS is&#xA;maintained under an independent organization, KernelKit, where I blog a&#xA;lot — so check out the &lt;a href=&#34;https://www.kernelkit.org/&#34; target=&#34;_blank&#34;&gt;KernelKit blog&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

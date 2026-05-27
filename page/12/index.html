@@ -43,6 +43,7 @@
 
 
 
+
   
   
 
@@ -52,19 +53,25 @@
 
 
 <!-- Open Graph image and Twitter Card metadata -->
+<meta property="og:image" content="https://troglobit.com/images/profile.jpg" />
+  <meta name="twitter:image" content="https://troglobit.com/images/profile.jpg" />
+  <meta name="twitter:card" content="summary" />
+      <meta property="og:image:width" content="400" />
+      <meta property="og:image:height" content="400" />
+    <meta property="og:image:type" content="image/jpeg" />
 
 <title itemprop="name">Troglobit</title>
-<meta property="og:title" content=Troglobit />
-<meta name="twitter:title" content=Troglobit />
-<meta itemprop="name" content=Troglobit />
-<meta name="application-name" content=Troglobit />
+<meta property="og:title" content="Troglobit" />
+<meta name="twitter:title" content="Troglobit" />
+<meta itemprop="name" content="Troglobit" />
+<meta name="application-name" content="Troglobit" />
 <meta property="og:site_name" content="Joachim Wiberg" />
 
 
-<meta name="description" content="" />
-<meta itemprop="description" content="" />
-<meta property="og:description" content="" />
-<meta name="twitter:description" content="" />
+<meta name="description" content="Purveyor of Open Source since 1995" />
+<meta itemprop="description" content="Purveyor of Open Source since 1995" />
+<meta property="og:description" content="Purveyor of Open Source since 1995" />
+<meta name="twitter:description" content="Purveyor of Open Source since 1995" />
 
 
 <base href="https://troglobit.com/" />
@@ -74,7 +81,7 @@
 <meta property="og:url" content="https://troglobit.com/" />
 
 
-<meta property="og:updated_time" content="2025-03-03T03:05:00&#43;01:00" />
+<meta property="og:updated_time" content="2026-05-26T22:00:00&#43;02:00" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -91,6 +98,10 @@
 <meta name="apple-mobile-web-app-title" content="Joachim Wiberg" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+
+
+  <meta property="og:type" content="website" />
 
 
 
@@ -180,7 +191,7 @@
         
     </h1>
     <p class="lead">
-    
+    Purveyor of Open Source since 1995
     </p>
 </div>
 
@@ -267,6 +278,10 @@
                 
                         
                 
+                        
+                
+                        
+                
             
         
         
@@ -290,11 +305,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/post/2025-01-05-testing-network-daemons/">Testing Network Daemons</a>
+                                <a href="https://troglobit.com/post/2026-05-26-long-time-no-blog/">Long Time, No Blog</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/post/2024-08-07-buildroot-development-environment/">Buildroot Development Environment</a>
+                                <a href="https://troglobit.com/post/2025-05-05-u-boot-bring-up-tricks/">U-Boot Bring-up Tricks</a>
                             </li>
                         
                     
@@ -308,6 +323,10 @@
                 
             
                 
+                
+                        
+                
+                        
                 
                         
                 
@@ -451,6 +470,10 @@
                 
                         
                 
+                        
+                
+                        
+                
             
         
         
@@ -492,6 +515,10 @@
                 
             
                 
+                
+                        
+                
+                        
                 
                         
                 
@@ -601,7 +628,7 @@
         <p class="footnote">
 powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a target="_blank" href="https://github.com/lukeorth/poison">poison</a>
     <br>
-    &copy; 2025 Joachim Wiberg. All rights reserved.
+    &copy; 2026 Joachim Wiberg. All rights reserved.
 </p>
 
   </div>
@@ -611,6 +638,91 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
                 <div class="posts">
     
     
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/2014/09/02/new-release-of-the-awesome-uftpd/">The awesome uftpd, now w/ TFTP support! :)</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2014-09-02T10:47:35Z" class="post-date">
+        September 2, 2014
+      </time>
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>1 min read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        Today sees the release of v1.3 of the awesome little uftpd. The main news is the new TFTP support! Just like before you don&rsquo;t need any configuration file, just build and install &ndash; or build a .deb file and install.
+This release completes the main purpose of uftpd for me, I can now use it as my daily driver and fully replace vsftpd and tftpd-hpa, which to me are the next best.
+        
+        <div class="read-more-link">
+            <a href="/2014/09/02/new-release-of-the-awesome-uftpd/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/2014/08/27/howto-rebase-without-an-origin/">HowTo Rebase without an origin</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2014-08-27T10:00:13Z" class="post-date">
+        August 27, 2014
+      </time>
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>1 min read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        OK, so you&rsquo;ve just been handed the task to integrate a big piece of corporate software and it&rsquo;s nowhere near as done and ready as project management thinks. Of course you&rsquo;ve already started chugging away at it, fixing bugs, refactoring code and wrapping it in neat containers to keep the changeset against the base SW small &ndash; you already know you&rsquo;ll get another drop of the same stinking pieace of code in another six months, so you keep the changes small and track them in GIT with neatly formatted commit messages.
+        
+        <div class="read-more-link">
+            <a href="/2014/08/27/howto-rebase-without-an-origin/">Read More…</a>
+        </div>
+        
+        
+    </article>
     <article class="post">
         <div class="info">
   <h1 class="post-title">
@@ -977,96 +1089,6 @@ For some reason I chose Gravity as my first rental, at 39 Skr. I&rsquo;ve heard 
         <div class="read-more-link">
             <a href="/2014/02/23/weekend-hack-json-vs-conf/">Read More…</a>
         </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/2013/08/13/just-a-programmer/">Just a Programmer</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2013-08-13T00:00:00Z" class="post-date">
-        August 13, 2013
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>2 mins read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        <p>Sometimes people ask me what I do for a living.  Usually I tend to
-pause and think, real hard, becuase the people asking me this aren&rsquo;t
-programmers.  They use computers, but are mostly limited to a Windows
-machine, writing in MS Word and browsing the Internet, mostly for
-Facebook.</p>
-<p>I often start off with: &ldquo;It&rsquo;s a bit complicated to explain &hellip; &ldquo;, by
-which time I&rsquo;ve lost most of the people in the room listening to me.
-Sometimes I say: &ldquo;I&rsquo;m a software architect.&rdquo;, because people seem to
-know what architects do for a living, they draw houses, design stuff
-and drive SAAB&rsquo;s.  Much like dentists.  The prefix &ldquo;software&rdquo; however
-does confuse people.</p>
-        
-        <div class="read-more-link">
-            <a href="/2013/08/13/just-a-programmer/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/2013/08/13/on-commit-messages-dot-dot-dot/">On commit messages ...</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2013-08-13T00:00:00Z" class="post-date">
-        August 13, 2013
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>1 min read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        There&rsquo;s just one thing to say on the topic of commit messages: ur doin it wrong if &hellip;
         
         
     </article>

@@ -43,6 +43,7 @@
 
 
 
+
   
   
 
@@ -52,19 +53,25 @@
 
 
 <!-- Open Graph image and Twitter Card metadata -->
+<meta property="og:image" content="https://troglobit.com/images/profile.jpg" />
+  <meta name="twitter:image" content="https://troglobit.com/images/profile.jpg" />
+  <meta name="twitter:card" content="summary" />
+      <meta property="og:image:width" content="400" />
+      <meta property="og:image:height" content="400" />
+    <meta property="og:image:type" content="image/jpeg" />
 
 <title itemprop="name">Troglobit</title>
-<meta property="og:title" content=Troglobit />
-<meta name="twitter:title" content=Troglobit />
-<meta itemprop="name" content=Troglobit />
-<meta name="application-name" content=Troglobit />
+<meta property="og:title" content="Troglobit" />
+<meta name="twitter:title" content="Troglobit" />
+<meta itemprop="name" content="Troglobit" />
+<meta name="application-name" content="Troglobit" />
 <meta property="og:site_name" content="Joachim Wiberg" />
 
 
-<meta name="description" content="" />
-<meta itemprop="description" content="" />
-<meta property="og:description" content="" />
-<meta name="twitter:description" content="" />
+<meta name="description" content="Purveyor of Open Source since 1995" />
+<meta itemprop="description" content="Purveyor of Open Source since 1995" />
+<meta property="og:description" content="Purveyor of Open Source since 1995" />
+<meta name="twitter:description" content="Purveyor of Open Source since 1995" />
 
 
 <base href="https://troglobit.com/" />
@@ -74,7 +81,7 @@
 <meta property="og:url" content="https://troglobit.com/" />
 
 
-<meta property="og:updated_time" content="2025-03-03T03:05:00&#43;01:00" />
+<meta property="og:updated_time" content="2026-05-26T22:00:00&#43;02:00" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -91,6 +98,10 @@
 <meta name="apple-mobile-web-app-title" content="Joachim Wiberg" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+
+
+  <meta property="og:type" content="website" />
 
 
 
@@ -180,7 +191,7 @@
         
     </h1>
     <p class="lead">
-    
+    Purveyor of Open Source since 1995
     </p>
 </div>
 
@@ -267,6 +278,10 @@
                 
                         
                 
+                        
+                
+                        
+                
             
         
         
@@ -290,11 +305,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/post/2025-01-05-testing-network-daemons/">Testing Network Daemons</a>
+                                <a href="https://troglobit.com/post/2026-05-26-long-time-no-blog/">Long Time, No Blog</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/post/2024-08-07-buildroot-development-environment/">Buildroot Development Environment</a>
+                                <a href="https://troglobit.com/post/2025-05-05-u-boot-bring-up-tricks/">U-Boot Bring-up Tricks</a>
                             </li>
                         
                     
@@ -308,6 +323,10 @@
                 
             
                 
+                
+                        
+                
+                        
                 
                         
                 
@@ -451,6 +470,10 @@
                 
                         
                 
+                        
+                
+                        
+                
             
         
         
@@ -492,6 +515,10 @@
                 
             
                 
+                
+                        
+                
+                        
                 
                         
                 
@@ -601,7 +628,7 @@
         <p class="footnote">
 powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a target="_blank" href="https://github.com/lukeorth/poison">poison</a>
     <br>
-    &copy; 2025 Joachim Wiberg. All rights reserved.
+    &copy; 2026 Joachim Wiberg. All rights reserved.
 </p>
 
   </div>
@@ -611,6 +638,101 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
                 <div class="posts">
     
     
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/projects/tetris/">Micro Tetris™</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2021-12-26T20:37:00&#43;0200" class="post-date">
+        December 26, 2021
+      </time>
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>1 min read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        Micro Tetris — one of the smallest Tetris implementations in the world! Utilizing only ANSI escape sequences to draw the board, no external library dependencys other than a standard C-library, like uClibc or musl libc. Hence, it is very suitable for small embedded devices in need of an easter egg ;-)
+The game is based on a 1989 International Obfuscated C Code Contest (IOCCC) entry made by John Tromp.
+        
+        <div class="read-more-link">
+            <a href="/projects/tetris/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/howtos/merecat-and-cgit/">HowTo: Set up Merecat with cgit</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2021-12-09T05:56:00Z" class="post-date">
+        December 9, 2021
+      </time>
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>2 mins read</span>
+      </span>
+    </div>
+
+    
+    <ul class="tags">
+      
+      <li class="tag-merecat">
+        <a href="https://troglobit.com/tags/merecat">merecat</a>
+      </li>
+      
+    </ul>
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        <p>This post details how to set up <a href="https://git.zx2c4.com/cgit/" target="_blank">cgit</a> with <a href="http://merecat.troglobit.com" target="_blank">Merecat httpd</a>.  It
+began as a <a href="https://github.com/troglobit/merecat/issues/3" target="_blank">GitHub issue</a> report by Mr Alok G. Singh, who had run
+into problems setting it up, and ended up as a HowTo.</p>
+        
+        <div class="read-more-link">
+            <a href="/howtos/merecat-and-cgit/">Read More…</a>
+        </div>
+        
+        
+    </article>
     <article class="post">
         <div class="info">
   <h1 class="post-title">
@@ -1033,117 +1155,6 @@ is handling dependencies at system reconfiguration.</p>
         
         <div class="read-more-link">
             <a href="/post/2021-05-01-dependency-handling-in-finit/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/projects/watchdogd/">Advanced watchdog daemon for Linux</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2021-04-30T17:02:00&#43;0100" class="post-date">
-        April 30, 2021
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>1 min read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        watchdogd(8) is an advanced system and process supervisor primarily intended for embedded Linux and server systems. It supports &ldquo;kicking&rdquo; multiple watchdog timer (WDT) devices and can also monitor critical system resources, supervise the heartbeat of processes1 and record process deadline transgressions.
-Read more about Built-in Monitors in the extended documentation.
-The configuration determines how the daemon acts on monitored resources and supervised processes. See watchdogd.conf(5) for how to set up watermarks and trigger external scripts to suit your particular setup.
-        
-        <div class="read-more-link">
-            <a href="/projects/watchdogd/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/post/2021-04-27-its-here/">It&#39;s Here! ♥</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2021-04-27T20:18:06&#43;0100" class="post-date">
-        April 27, 2021
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>1 min read</span>
-      </span>
-    </div>
-
-    
-    <ul class="tags">
-      
-      <li class="tag-finit">
-        <a href="https://troglobit.com/tags/finit">finit</a>
-      </li>
-      
-      <li class="tag-init">
-        <a href="https://troglobit.com/tags/init">init</a>
-      </li>
-      
-      <li class="tag-opensource">
-        <a href="https://troglobit.com/tags/opensource">opensource</a>
-      </li>
-      
-    </ul>
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        <figure class="right-floated"><a href="https://github.com/troglobit/finit/releases/latest"><img src="/images/finit3.png"
-         alt="finit logo"/></a>
-</figure>
-<p>Finit v4 was finally released the other day! \o/</p>
-<p>It represents the culmination of many years of hard work and careful
-thought put in by many people.  There&rsquo;s so much to tell, hardly know
-where to begin &hellip; the plan anyway is to use this blog for a series of
-posts detailing different aspects and important features.</p>
-<p>The impatient reader can either scroll down to the <strong>video</strong> below, or
-move on to the project home page: <a href="https://troglobit.com/finit.html" target="_blank">https://troglobit.com/finit.html</a></p>
-        
-        <div class="read-more-link">
-            <a href="/post/2021-04-27-its-here/">Read More…</a>
         </div>
         
         

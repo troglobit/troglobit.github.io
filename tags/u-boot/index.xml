@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>U-Boot on Joachim Wiberg</title>
+    <link>https://troglobit.com/tags/u-boot/</link>
+    <description>Recent content in U-Boot on Joachim Wiberg</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 May 2025 13:57:00 +0000</lastBuildDate>
+    <atom:link href="https://troglobit.com/tags/u-boot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>U-Boot Bring-up Tricks</title>
+      <link>https://troglobit.com/post/2025-05-05-u-boot-bring-up-tricks/</link>
+      <pubDate>Mon, 05 May 2025 13:57:00 +0000</pubDate>
+      <guid>https://troglobit.com/post/2025-05-05-u-boot-bring-up-tricks/</guid>
+      <description>In my Reminder to Self series, this week we turn to some tricks I learned while porting U-Boot to a new board. First, a few tools:&#xA;vbindiff: Linux tool to examine, e.g., flash.bin binwalk: Linux tool to examine an unknown binary file bdinfo: U-Boot command to list board info When poking through such binaries, the FDT (flattened device tree) header magic to look for is 0xd00dfeed.&#xA;Huge props to wkz for all the help and sparring, cheers!</description>
+    </item>
+  </channel>
+</rss>

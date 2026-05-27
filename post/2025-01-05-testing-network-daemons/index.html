@@ -43,6 +43,11 @@
 
 
 
+
+  
+  
+    
+  
   
 
 
@@ -55,19 +60,25 @@
 
 
 <!-- Open Graph image and Twitter Card metadata -->
+<meta property="og:image" content="https://troglobit.com/images/profile.jpg" />
+  <meta name="twitter:image" content="https://troglobit.com/images/profile.jpg" />
+  <meta name="twitter:card" content="summary" />
+      <meta property="og:image:width" content="400" />
+      <meta property="og:image:height" content="400" />
+    <meta property="og:image:type" content="image/jpeg" />
 
 <title itemprop="name">Troglobit - Testing Network Daemons</title>
-<meta property="og:title" content=Troglobit&#32;-&#32;Testing&#32;Network&#32;Daemons />
-<meta name="twitter:title" content=Troglobit&#32;-&#32;Testing&#32;Network&#32;Daemons />
-<meta itemprop="name" content=Troglobit&#32;-&#32;Testing&#32;Network&#32;Daemons />
-<meta name="application-name" content=Troglobit&#32;-&#32;Testing&#32;Network&#32;Daemons />
+<meta property="og:title" content="Troglobit - Testing Network Daemons" />
+<meta name="twitter:title" content="Troglobit - Testing Network Daemons" />
+<meta itemprop="name" content="Troglobit - Testing Network Daemons" />
+<meta name="application-name" content="Troglobit - Testing Network Daemons" />
 <meta property="og:site_name" content="Joachim Wiberg" />
 
 
-<meta name="description" content="" />
-<meta itemprop="description" content="" />
-<meta property="og:description" content="" />
-<meta name="twitter:description" content="" />
+<meta name="description" content="As a maintainer of many Open Source projects where networking is key, a side quest has emerged – how to test network applications without root? The following writeup is part of my series; Reminders to …" />
+<meta itemprop="description" content="As a maintainer of many Open Source projects where networking is key, a side quest has emerged – how to test network applications without root? The following writeup is part of my series; Reminders to …" />
+<meta property="og:description" content="As a maintainer of many Open Source projects where networking is key, a side quest has emerged – how to test network applications without root? The following writeup is part of my series; Reminders to …" />
+<meta name="twitter:description" content="As a maintainer of many Open Source projects where networking is key, a side quest has emerged – how to test network applications without root? The following writeup is part of my series; Reminders to …" />
 
 
 <base href="https://troglobit.com/post/2025-01-05-testing-network-daemons/" />
@@ -93,6 +104,19 @@
 <meta name="apple-mobile-web-app-title" content="Joachim Wiberg" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+
+
+  <meta property="og:type" content="article" />
+  <meta property="article:publisher" content="" />
+  <meta property="og:article:published_time" content="2025-01-05T13:57:00Z" />
+  <meta property="article:published_time" content="2025-01-05T13:57:00Z" />
+  
+    <meta property="og:article:author" content="Joachim Wiberg" />
+    <meta property="article:author" content="Joachim Wiberg" />
+    <meta name="author" content="Joachim Wiberg" />
+  
+  
 
 
 
@@ -182,7 +206,7 @@
         
     </h1>
     <p class="lead">
-    
+    Purveyor of Open Source since 1995
     </p>
 </div>
 
@@ -269,6 +293,10 @@
                 
                         
                 
+                        
+                
+                        
+                
             
         
         
@@ -292,11 +320,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/post/2025-01-05-testing-network-daemons/">Testing Network Daemons</a>
+                                <a href="https://troglobit.com/post/2026-05-26-long-time-no-blog/">Long Time, No Blog</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/post/2024-08-07-buildroot-development-environment/">Buildroot Development Environment</a>
+                                <a href="https://troglobit.com/post/2025-05-05-u-boot-bring-up-tricks/">U-Boot Bring-up Tricks</a>
                             </li>
                         
                     
@@ -310,6 +338,10 @@
                 
             
                 
+                
+                        
+                
+                        
                 
                         
                 
@@ -453,6 +485,10 @@
                 
                         
                 
+                        
+                
+                        
+                
             
         
         
@@ -494,6 +530,10 @@
                 
             
                 
+                
+                        
+                
+                        
                 
                         
                 
@@ -603,7 +643,7 @@
         <p class="footnote">
 powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a target="_blank" href="https://github.com/lukeorth/poison">poison</a>
     <br>
-    &copy; 2025 Joachim Wiberg. All rights reserved.
+    &copy; 2026 Joachim Wiberg. All rights reserved.
 </p>
 
   </div>
@@ -704,9 +744,13 @@ in our project to verify that our application works on the standard port
 it runs on.</p>
 <p>This brings us to our first example use-case for network namespaces:</p>
 <pre><code>$ cd ~/src/my-project/
-$ unshare -mrun
+$ unshare -mrun --map-auto
 #
 </code></pre>
+<blockquote>
+<p>The <code>--map-auto</code> options is relatively new, but something you&rsquo;ll need
+on modern systems, e.g., Ubuntu 24.04 or later.</p>
+</blockquote>
 <p>There you go, a root prompt in a dedicated network namespace, meaning
 you can now go ahead and start your application :-)</p>
 <p>Oh wait, you need one last thing:</p>
@@ -763,6 +807,10 @@ do, and know about, <a href="https://www.baeldung.com/linux/kernel-enable-user-n
             <a class="previous-post" href="https://troglobit.com/post/2024-08-07-buildroot-development-environment/?ref=footer"><span style="font-weight:bold;">« Previous</span><br>Buildroot Development Environment</a>
         
 	    
+            <div class="next-post">
+                <a href="https://troglobit.com/post/2025-05-05-u-boot-bring-up-tricks/?ref=footer"><span style="font-weight:bold;">Next »</span><br>U-Boot Bring-up Tricks</a>
+            </div>
+        
     
 </div>
 

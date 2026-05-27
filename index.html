@@ -43,6 +43,7 @@
 
 
 
+
   
   
 
@@ -52,19 +53,25 @@
 
 
 <!-- Open Graph image and Twitter Card metadata -->
+<meta property="og:image" content="https://troglobit.com/images/profile.jpg" />
+  <meta name="twitter:image" content="https://troglobit.com/images/profile.jpg" />
+  <meta name="twitter:card" content="summary" />
+      <meta property="og:image:width" content="400" />
+      <meta property="og:image:height" content="400" />
+    <meta property="og:image:type" content="image/jpeg" />
 
 <title itemprop="name">Troglobit</title>
-<meta property="og:title" content=Troglobit />
-<meta name="twitter:title" content=Troglobit />
-<meta itemprop="name" content=Troglobit />
-<meta name="application-name" content=Troglobit />
+<meta property="og:title" content="Troglobit" />
+<meta name="twitter:title" content="Troglobit" />
+<meta itemprop="name" content="Troglobit" />
+<meta name="application-name" content="Troglobit" />
 <meta property="og:site_name" content="Joachim Wiberg" />
 
 
-<meta name="description" content="" />
-<meta itemprop="description" content="" />
-<meta property="og:description" content="" />
-<meta name="twitter:description" content="" />
+<meta name="description" content="Purveyor of Open Source since 1995" />
+<meta itemprop="description" content="Purveyor of Open Source since 1995" />
+<meta property="og:description" content="Purveyor of Open Source since 1995" />
+<meta name="twitter:description" content="Purveyor of Open Source since 1995" />
 
 
 <base href="https://troglobit.com/" />
@@ -74,7 +81,7 @@
 <meta property="og:url" content="https://troglobit.com/" />
 
 
-<meta property="og:updated_time" content="2025-03-03T03:05:00&#43;01:00" />
+<meta property="og:updated_time" content="2026-05-26T22:00:00&#43;02:00" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -91,6 +98,10 @@
 <meta name="apple-mobile-web-app-title" content="Joachim Wiberg" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+
+
+  <meta property="og:type" content="website" />
 
 
 
@@ -180,7 +191,7 @@
         
     </h1>
     <p class="lead">
-    
+    Purveyor of Open Source since 1995
     </p>
 </div>
 
@@ -267,6 +278,10 @@
                 
                         
                 
+                        
+                
+                        
+                
             
         
         
@@ -290,11 +305,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/post/2025-01-05-testing-network-daemons/">Testing Network Daemons</a>
+                                <a href="https://troglobit.com/post/2026-05-26-long-time-no-blog/">Long Time, No Blog</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/post/2024-08-07-buildroot-development-environment/">Buildroot Development Environment</a>
+                                <a href="https://troglobit.com/post/2025-05-05-u-boot-bring-up-tricks/">U-Boot Bring-up Tricks</a>
                             </li>
                         
                     
@@ -308,6 +323,10 @@
                 
             
                 
+                
+                        
+                
+                        
                 
                         
                 
@@ -451,6 +470,10 @@
                 
                         
                 
+                        
+                
+                        
+                
             
         
         
@@ -492,6 +515,10 @@
                 
             
                 
+                
+                        
+                
+                        
                 
                         
                 
@@ -601,7 +628,7 @@
         <p class="footnote">
 powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a target="_blank" href="https://github.com/lukeorth/poison">poison</a>
     <br>
-    &copy; 2025 Joachim Wiberg. All rights reserved.
+    &copy; 2026 Joachim Wiberg. All rights reserved.
 </p>
 
   </div>
@@ -611,6 +638,127 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
                 <div class="posts">
     
     
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/post/2026-05-26-long-time-no-blog/">Long Time, No Blog</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2026-05-26T22:00:00&#43;0200" class="post-date">
+        May 26, 2026
+      </time>
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>4 mins read</span>
+      </span>
+    </div>
+
+    
+    <ul class="tags">
+      
+      <li class="tag-kg">
+        <a href="https://troglobit.com/tags/kg">kg</a>
+      </li>
+      
+      <li class="tag-emacs">
+        <a href="https://troglobit.com/tags/emacs">emacs</a>
+      </li>
+      
+      <li class="tag-opensource">
+        <a href="https://troglobit.com/tags/opensource">opensource</a>
+      </li>
+      
+    </ul>
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        <figure class="right-floated"><a href="https://github.com/troglobit/kg"><img src="/images/kg-1.1.png"
+         alt="kg welcome screen" width="360"/></a>
+</figure>
+<p>Well, this has been quiet for a while.  Not because I stopped tinkering
+— quite the opposite.  Almost all of my time these days goes into <a href="https://github.com/kernelkit/infix" target="_blank">Infix
+OS</a>, a Linux-based network operating system by <a href="https://wires.se/infix" target="_blank">Wires</a>.  The OS is
+maintained under an independent organization, KernelKit, where I blog a
+lot — so check out the <a href="https://www.kernelkit.org/" target="_blank">KernelKit blog</a>.</p>
+        
+        <div class="read-more-link">
+            <a href="/post/2026-05-26-long-time-no-blog/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/post/2025-05-05-u-boot-bring-up-tricks/">U-Boot Bring-up Tricks</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2025-05-05T13:57:00Z" class="post-date">
+        May 5, 2025
+      </time>
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>3 mins read</span>
+      </span>
+    </div>
+
+    
+    <ul class="tags">
+      
+      <li class="tag-u-boot">
+        <a href="https://troglobit.com/tags/u-boot">u-boot</a>
+      </li>
+      
+      <li class="tag-buildroot">
+        <a href="https://troglobit.com/tags/buildroot">buildroot</a>
+      </li>
+      
+    </ul>
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        In my Reminder to Self series, this week we turn to some tricks I learned while porting U-Boot to a new board. First, a few tools:
+vbindiff: Linux tool to examine, e.g., flash.bin binwalk: Linux tool to examine an unknown binary file bdinfo: U-Boot command to list board info When poking through such binaries, the FDT (flattened device tree) header magic to look for is 0xd00dfeed.
+Huge props to wkz for all the help and sparring, cheers!
+        
+        <div class="read-more-link">
+            <a href="/post/2025-05-05-u-boot-bring-up-tricks/">Read More…</a>
+        </div>
+        
+        
+    </article>
     <article class="post">
         <div class="info">
   <h1 class="post-title">
@@ -1040,145 +1188,6 @@ Bridging networks, see bridge(8) or Linux bridge - how it works igmproxy, mcprox
         
         <div class="read-more-link">
             <a href="/howtos/multicast/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/post/2023-01-15-finit-custom-connectivity-check/">Finit custom connectivity check</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2023-01-15T18:42:00Z" class="post-date">
-        January 15, 2023
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>3 mins read</span>
-      </span>
-    </div>
-
-    
-    <ul class="tags">
-      
-      <li class="tag-finit">
-        <a href="https://troglobit.com/tags/finit">finit</a>
-      </li>
-      
-      <li class="tag-init">
-        <a href="https://troglobit.com/tags/init">init</a>
-      </li>
-      
-      <li class="tag-opensource">
-        <a href="https://troglobit.com/tags/opensource">opensource</a>
-      </li>
-      
-    </ul>
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        <p>This post shows how you can extend Finit with your own conditions.  The
-example we will use is a simple Internet connectivity checker.  When it
-triggers we start BusyBox ntpd which, if started with any other type of
-condition (none, default route, etc.) may get stuck trying to resolve
-<code>pool.ntp.org</code>.</p>
-        
-        <div class="read-more-link">
-            <a href="/post/2023-01-15-finit-custom-connectivity-check/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/post/2022-12-26-buildroot-demo-of-fastinit-finit/">Buildroot demo of FastInit (Finit)</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2022-12-26T21:21:21Z" class="post-date">
-        December 26, 2022
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>3 mins read</span>
-      </span>
-    </div>
-
-    
-    <ul class="tags">
-      
-      <li class="tag-buildroot">
-        <a href="https://troglobit.com/tags/buildroot">buildroot</a>
-      </li>
-      
-      <li class="tag-finit">
-        <a href="https://troglobit.com/tags/finit">finit</a>
-      </li>
-      
-      <li class="tag-init">
-        <a href="https://troglobit.com/tags/init">init</a>
-      </li>
-      
-      <li class="tag-opensource">
-        <a href="https://troglobit.com/tags/opensource">opensource</a>
-      </li>
-      
-    </ul>
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        <p>I believe there is a <strong>gap in the market</strong> between BusyBox init and
-systemd.  In particular in the embedded space.  This blog post shows how
-easily it is to get up and running quickly with FastInit (<a href="https://github.com/troglobit/finit#introduction" target="_blank">Finit</a>)!</p>
-<p>I&rsquo;m a really bad salesman, and an even worse writer, so instead of
-trying to convince you with my poor English, I&rsquo;ve made a demo.  It is a
-<a href="https://nightly.buildroot.org/#outside-br-custom" target="_blank">Buildroot external</a>
-that can be used to add Finit to your own projects.</p>
-<blockquote>
-<p>For details, look here: <a href="https://github.com/troglobit/br2-finit-demo" target="_blank">https://github.com/troglobit/br2-finit-demo</a>,
-try out the <a href="https://github.com/troglobit/br2-finit-demo/releases/tag/latest" target="_blank">latest build</a> in <a href="https://www.qemu.org" target="_blank">Qemu</a>.</p>
-</blockquote>
-<figure class="center"><img src="/images/finit-demo/bootstrap.png"
-         alt="Finit bootstrap" width="600"/><figcaption>
-            <p>Finit bootstrap</p>
-        </figcaption>
-</figure>
-        
-        <div class="read-more-link">
-            <a href="/post/2022-12-26-buildroot-demo-of-fastinit-finit/">Read More…</a>
         </div>
         
         
