@@ -30,13 +30,21 @@ Features
 - Support for seamless reload and update on `SIGHUP`, i.e., established
   multicast flows are not disturbed by reloading the configuration or
   adding/removing outbound interfaces to existing routes
+- On Linux, late-arriving interfaces (WireGuard, 6LoWPAN, late-binding
+  bridges, ...) auto-activate via netlink without needing `SIGHUP`
+- Routes that name an interface that does not yet exist are queued on
+  a pending list, viewable with `smcroutectl show pending`
+- VIFs and MIFs are allocated on demand for interfaces referenced by
+  `smcroute.conf` or `smcroutectl`, so hosts with many unrelated
+  interfaces no longer exhaust the kernel's 32-slot table
 - Source-less on-demand routing, a.k.a. (*,G) based static routing
 - Support for ranges, (S/LEN,G) and/or (S,G/LEN), or (S/LEN,G/LEN),
   be careful though since this expands to multiple kernel routes
 - Source specific group join support
 - Optional built-in [mrdisc][] support, [RFC4286][] (IPv4 only)
 - Support for multiple routing tables on Linux
-- Client with built-in support to show routes and joined groups
+- Client with built-in support to show routes and joined groups, with
+  optional JSON output (`smcroutectl -j show`) for monitoring agents
 - Interface wildcard matching, `eth+` matches `eth0, eth15`
 
 
@@ -56,17 +64,19 @@ Origin & References
 SMCRoute was originally written by [Carsten Schill][].  Later on Julien
 Blache, Todd Hayton and Micha Lenk picked up development for [Debian][].
 
-Since 2011 Joachim Wiberg heads development at [GitHub][].  New features
-include config file support, reloading config on `SIGHUP`, source-less
-on-demand (*,G) routing, TTL scoping and support for disabling ALL
-interfaces except the few used for multicast routing.
+Since 2011 Joachim Wiberg heads development at [GitHub][].  Notable
+additions over the years include a configuration file, seamless reload
+on `SIGHUP`, source-less on-demand (*,G) routing, TTL scoping, lazy
+VIF/MIF allocation, and Linux netlink-driven activation of routes
+whose interface arrives after the daemon starts.
 
 Issue tracker and GIT repository available at [GitHub][].
 
 * [Repository][GitHub]
-* [smcroute-2.5.5.tar.gz](https://ftp.troglobit.com/smcroute/smcroute-2.5.5.tar.gz),
-  [MD5](https://ftp.troglobit.com/smcroute/smcroute-2.5.5.tar.gz.md5),
-  [MD5](https://ftp.troglobit.com/smcroute/smcroute-2.5.5.tar.gz.sha256)
+* [smcroute-2.6.0.tar.gz](https://ftp.troglobit.com/smcroute/smcroute-2.6.0.tar.gz),
+  [MD5](https://ftp.troglobit.com/smcroute/smcroute-2.6.0.tar.gz.md5),
+  [SHA256](https://ftp.troglobit.com/smcroute/smcroute-2.6.0.tar.gz.sha256)
+* [ChangeLog](https://github.com/troglobit/smcroute/releases/tag/2.6.0)
 * [Issue Tracker](https://github.com/troglobit/smcroute/issues)
 * [Debian packages](https://packages.debian.org/smcroute)
 * [Ubuntu packages](https://packages.ubuntu.com/smcroute)
