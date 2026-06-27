@@ -670,7 +670,7 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
           
         
 
-        <span>2 mins read</span>
+        <span>3 mins read</span>
       </span>
     </div>
 
@@ -704,13 +704,21 @@ exists.</p>
 <li>Support for seamless reload and update on <code>SIGHUP</code>, i.e., established
 multicast flows are not disturbed by reloading the configuration or
 adding/removing outbound interfaces to existing routes</li>
+<li>On Linux, late-arriving interfaces (WireGuard, 6LoWPAN, late-binding
+bridges, &hellip;) auto-activate via netlink without needing <code>SIGHUP</code></li>
+<li>Routes that name an interface that does not yet exist are queued on
+a pending list, viewable with <code>smcroutectl show pending</code></li>
+<li>VIFs and MIFs are allocated on demand for interfaces referenced by
+<code>smcroute.conf</code> or <code>smcroutectl</code>, so hosts with many unrelated
+interfaces no longer exhaust the kernel&rsquo;s 32-slot table</li>
 <li>Source-less on-demand routing, a.k.a. (*,G) based static routing</li>
 <li>Support for ranges, (S/LEN,G) and/or (S,G/LEN), or (S/LEN,G/LEN),
 be careful though since this expands to multiple kernel routes</li>
 <li>Source specific group join support</li>
 <li>Optional built-in <a href="https://github.com/troglobit/mrdisc" target="_blank">mrdisc</a> support, <a href="https://tools.ietf.org/html/rfc4286" target="_blank">RFC4286</a> (IPv4 only)</li>
 <li>Support for multiple routing tables on Linux</li>
-<li>Client with built-in support to show routes and joined groups</li>
+<li>Client with built-in support to show routes and joined groups, with
+optional JSON output (<code>smcroutectl -j show</code>) for monitoring agents</li>
 <li>Interface wildcard matching, <code>eth+</code> matches <code>eth0, eth15</code></li>
 </ul>
 <h2 id="why-a-daemon">Why a Daemon?</h2>
@@ -722,16 +730,18 @@ automatically when a UNIX program ends, the kernel cleans up all routes.</p>
 <h2 id="origin--references">Origin &amp; References</h2>
 <p>SMCRoute was originally written by <a href="http://www.cschill.de/smcroute/" target="_blank">Carsten Schill</a>.  Later on Julien
 Blache, Todd Hayton and Micha Lenk picked up development for <a href="https://alioth.debian.org/projects/smcroute/" target="_blank">Debian</a>.</p>
-<p>Since 2011 Joachim Wiberg heads development at <a href="https://github.com/troglobit/smcroute" target="_blank">GitHub</a>.  New features
-include config file support, reloading config on <code>SIGHUP</code>, source-less
-on-demand (*,G) routing, TTL scoping and support for disabling ALL
-interfaces except the few used for multicast routing.</p>
+<p>Since 2011 Joachim Wiberg heads development at <a href="https://github.com/troglobit/smcroute" target="_blank">GitHub</a>.  Notable
+additions over the years include a configuration file, seamless reload
+on <code>SIGHUP</code>, source-less on-demand (*,G) routing, TTL scoping, lazy
+VIF/MIF allocation, and Linux netlink-driven activation of routes
+whose interface arrives after the daemon starts.</p>
 <p>Issue tracker and GIT repository available at <a href="https://github.com/troglobit/smcroute" target="_blank">GitHub</a>.</p>
 <ul>
 <li><a href="https://github.com/troglobit/smcroute" target="_blank">Repository</a></li>
-<li><a href="https://ftp.troglobit.com/smcroute/smcroute-2.5.5.tar.gz" target="_blank">smcroute-2.5.5.tar.gz</a>,
-<a href="https://ftp.troglobit.com/smcroute/smcroute-2.5.5.tar.gz.md5" target="_blank">MD5</a>,
-<a href="https://ftp.troglobit.com/smcroute/smcroute-2.5.5.tar.gz.sha256" target="_blank">MD5</a></li>
+<li><a href="https://ftp.troglobit.com/smcroute/smcroute-2.6.0.tar.gz" target="_blank">smcroute-2.6.0.tar.gz</a>,
+<a href="https://ftp.troglobit.com/smcroute/smcroute-2.6.0.tar.gz.md5" target="_blank">MD5</a>,
+<a href="https://ftp.troglobit.com/smcroute/smcroute-2.6.0.tar.gz.sha256" target="_blank">SHA256</a></li>
+<li><a href="https://github.com/troglobit/smcroute/releases/tag/2.6.0" target="_blank">ChangeLog</a></li>
 <li><a href="https://github.com/troglobit/smcroute/issues" target="_blank">Issue Tracker</a></li>
 <li><a href="https://packages.debian.org/smcroute" target="_blank">Debian packages</a></li>
 <li><a href="https://packages.ubuntu.com/smcroute" target="_blank">Ubuntu packages</a></li>
