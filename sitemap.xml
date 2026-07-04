@@ -6,7 +6,7 @@
     <lastmod>2026-05-26T22:00:00+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/</loc>
-    <lastmod>2026-05-26T22:00:00+02:00</lastmod>
+    <lastmod>2026-07-04T09:57:00+00:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/tags/kg/</loc>
     <lastmod>2026-05-26T22:00:00+02:00</lastmod>
@@ -78,22 +78,7 @@
     <lastmod>2025-03-03T03:05:00+01:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/projects/</loc>
-    <lastmod>2025-03-03T03:05:00+01:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/howtos/snmp/</loc>
-    <lastmod>2023-09-04T20:24:00+00:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/howtos/</loc>
-    <lastmod>2023-09-04T20:24:00+00:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/post/2023-06-04-buildroot-development-checklist/</loc>
-    <lastmod>2023-06-04T17:49:00+02:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/tags/git/</loc>
-    <lastmod>2023-06-04T17:49:00+02:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/howtos/multicast/</loc>
-    <lastmod>2023-05-28T07:52:12+02:00</lastmod>
+    <lastmod>2026-07-04T09:28:00+01:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/tags/finit/</loc>
     <lastmod>2024-01-07T20:21:00+01:00</lastmod>
@@ -125,6 +110,9 @@
     <loc>https://troglobit.com/projects/smcroute/</loc>
     <lastmod>2022-09-04T10:00:41+01:00</lastmod>
   </url><url>
+    <loc>https://troglobit.com/tags/git/</loc>
+    <lastmod>2023-06-04T17:49:00+02:00</lastmod>
+  </url><url>
     <loc>https://troglobit.com/tags/howto/</loc>
     <lastmod>2022-04-17T16:56:00+01:00</lastmod>
   </url><url>
@@ -149,41 +137,14 @@
     <loc>https://troglobit.com/projects/tetris/</loc>
     <lastmod>2021-12-26T20:37:00+02:00</lastmod>
   </url><url>
-    <loc>https://troglobit.com/howtos/merecat-and-cgit/</loc>
-    <lastmod>2021-12-09T05:56:00+00:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/tags/merecat/</loc>
-    <lastmod>2021-12-09T05:56:00+00:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/howtos/merecat-and-ikiwiki/</loc>
-    <lastmod>2021-12-09T05:51:00+00:00</lastmod>
-  </url><url>
     <loc>https://troglobit.com/projects/mrouted/</loc>
     <lastmod>2021-11-03T12:39:12+01:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/howtos/howto-build-and-use-my-projects/</loc>
-    <lastmod>2021-10-05T21:03:00+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/projects/smcroute/smcroute-conf.html</loc>
     <lastmod>2021-08-19T15:46:00+02:00</lastmod>
   </url><url>
-    <loc>https://troglobit.com/howtos/mrouting-in-freebsd/</loc>
-    <lastmod>2021-08-01T08:31:12+02:00</lastmod>
-  </url><url>
     <loc>https://troglobit.com/projects/nemesis/</loc>
     <lastmod>2024-01-14T13:44:00+01:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/post/2021-05-11-emacs-gmail-and-lore-mailing-lists/</loc>
-    <lastmod>2021-05-11T19:12:00+01:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/tags/gmail/</loc>
-    <lastmod>2021-05-11T19:12:00+01:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/tags/lore/</loc>
-    <lastmod>2021-05-11T19:12:00+01:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/tags/notmuch/</loc>
-    <lastmod>2021-05-11T19:12:00+01:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/post/2021-05-01-dependency-handling-in-finit/</loc>
     <lastmod>2022-01-09T18:46:23+01:00</lastmod>
@@ -197,23 +158,35 @@
     <loc>https://troglobit.com/post/2021-02-12-alpine-linux-with-finit/</loc>
     <lastmod>2021-02-12T07:24:06+01:00</lastmod>
   </url><url>
+    <loc>https://troglobit.com/post/2021-01-24-buildroot-development-checklist/</loc>
+    <lastmod>2023-06-04T17:49:00+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/post/2021-01-13-emacs-gmail-and-lore-mailing-lists/</loc>
+    <lastmod>2021-05-11T19:12:00+01:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/gmail/</loc>
+    <lastmod>2021-05-11T19:12:00+01:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/lore/</loc>
+    <lastmod>2021-05-11T19:12:00+01:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/notmuch/</loc>
+    <lastmod>2021-05-11T19:12:00+01:00</lastmod>
+  </url><url>
     <loc>https://troglobit.com/post/2020-11-15-backtrace-in-c/</loc>
     <lastmod>2020-11-15T17:25:00+01:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/post/2020-08-23-weird-screen-artifacts-on-x200/</loc>
     <lastmod>2020-08-23T14:02:00+00:00</lastmod>
   </url><url>
-    <loc>https://troglobit.com/howtos/netbsd-pkgsrc/</loc>
-    <lastmod>2020-08-22T21:39:00+01:00</lastmod>
+    <loc>https://troglobit.com/howtos/howto-build-and-use-my-projects/</loc>
+    <lastmod>2021-10-05T21:03:00+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/howtos/</loc>
+    <lastmod>2026-07-04T09:57:00+00:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/post/2020-07-17-wireguard-and-dns-timeout/</loc>
     <lastmod>2020-07-17T11:04:09+02:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/howtos/merecat-and-lets-encrypt/</loc>
-    <lastmod>2020-07-15T14:10:00+00:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/post/2020-07-13-fixing-file-sharing-in-debian/ubuntu/mint/</loc>
-    <lastmod>2020-07-13T17:37:00+01:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/post/2020-06-09-open-source-releases/</loc>
     <lastmod>2020-06-09T22:48:52+02:00</lastmod>
@@ -231,22 +204,22 @@
     <lastmod>2020-02-23T19:16:45+01:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/projects/mini-snmpd/</loc>
-    <lastmod>2020-02-23T09:00:00+02:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/2017/09/30/set-up-a-debian-ubuntu-apt-repository/</loc>
-    <lastmod>2020-02-22T12:28:00+00:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/post/2020-02-22-useful-unix-apis/</loc>
-    <lastmod>2020-02-22T09:45:00+00:00</lastmod>
+    <lastmod>2026-07-04T09:28:00+01:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/projects/inadyn/</loc>
     <lastmod>2024-01-03T10:55:00+01:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/post/2020-02-16-fixing-file-sharing-in-debian/ubuntu/mint/</loc>
+    <lastmod>2020-07-13T17:37:00+01:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/post/2019-11-03-bsd-syslogd-in-linux/</loc>
     <lastmod>2019-11-03T23:04:00+01:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/howtos/merecat-basic-cig-in-c/</loc>
     <lastmod>2019-08-05T22:00:25+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/merecat/</loc>
+    <lastmod>2021-12-09T05:56:00+00:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/projects/uftpd/</loc>
     <lastmod>2019-07-29T20:31:00+02:00</lastmod>
@@ -260,11 +233,17 @@
     <loc>https://troglobit.com/post/2019-07-07-xscreensaver-fonts/</loc>
     <lastmod>2019-07-07T14:27:58+02:00</lastmod>
   </url><url>
+    <loc>https://troglobit.com/howtos/merecat-and-lets-encrypt/</loc>
+    <lastmod>2020-07-15T14:10:00+00:00</lastmod>
+  </url><url>
     <loc>https://troglobit.com/post/2019-06-26-minor-miracles/</loc>
     <lastmod>2019-06-26T19:07:29+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/projects/pimd/</loc>
     <lastmod>2019-04-28T08:50:00+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/howtos/multicast/</loc>
+    <lastmod>2023-05-28T07:52:12+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/post/2019-03-13-floss-progress/</loc>
     <lastmod>2019-03-13T00:11:32+01:00</lastmod>
@@ -281,14 +260,23 @@
     <loc>https://troglobit.com/post/2018-06-16-open-source-releases/</loc>
     <lastmod>2018-06-16T15:19:28+02:00</lastmod>
   </url><url>
+    <loc>https://troglobit.com/howtos/snmp/</loc>
+    <lastmod>2026-07-04T09:57:00+00:00</lastmod>
+  </url><url>
     <loc>https://troglobit.com/post/2018-04-15-n-e-m-e-s-i-s/</loc>
     <lastmod>2018-04-15T16:11:23+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/howtos/merecat-and-cgit/</loc>
+    <lastmod>2021-12-09T05:56:00+00:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/post/2018-02-15-slow-down/</loc>
     <lastmod>2018-02-15T20:05:25+01:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/2016/07/05/multicast-routing-with-pim-sm-over-gre/</loc>
     <lastmod>2018-01-23T20:39:36+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/2017/09/30/set-up-a-debian-ubuntu-apt-repository/</loc>
+    <lastmod>2020-02-22T12:28:00+00:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/2017/09/19/threads-vs-event-loop--again/</loc>
     <lastmod>2017-09-19T08:51:38+00:00</lastmod>
@@ -307,6 +295,9 @@
   </url><url>
     <loc>https://troglobit.com/2017/02/12/https-proxy-for-merecat-httpd/</loc>
     <lastmod>2017-02-12T00:07:44+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/howtos/merecat-and-ikiwiki/</loc>
+    <lastmod>2021-12-09T05:51:00+00:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/2017/02/02/emulate-an-actual-mtd-device-in-qemu/</loc>
     <lastmod>2017-02-02T18:52:18+00:00</lastmod>
@@ -368,6 +359,9 @@
     <loc>https://troglobit.com/2016/03/07/multicast-testing/</loc>
     <lastmod>2016-03-07T01:06:02+00:00</lastmod>
   </url><url>
+    <loc>https://troglobit.com/post/2015-11-14-useful-unix-apis/</loc>
+    <lastmod>2020-02-22T09:45:00+00:00</lastmod>
+  </url><url>
     <loc>https://troglobit.com/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/</loc>
     <lastmod>2015-11-13T20:57:29+00:00</lastmod>
   </url><url>
@@ -382,6 +376,9 @@
   </url><url>
     <loc>https://troglobit.com/2015/09/09/summer-of-code-2015/</loc>
     <lastmod>2015-09-09T21:49:13+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/howtos/netbsd-pkgsrc/</loc>
+    <lastmod>2020-08-22T21:39:00+01:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/howtos/pimd-on-openbsd/</loc>
     <lastmod>2015-07-19T00:32:00+02:00</lastmod>
@@ -421,6 +418,9 @@
   </url><url>
     <loc>https://troglobit.com/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/</loc>
     <lastmod>2014-09-23T01:55:19+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/howtos/mrouting-in-freebsd/</loc>
+    <lastmod>2021-08-01T08:31:12+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/</loc>
     <lastmod>2014-09-13T19:18:56+00:00</lastmod>

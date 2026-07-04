@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://troglobit.com/" />
 
 
-<meta property="og:updated_time" content="2026-05-26T22:00:00&#43;02:00" />
+<meta property="og:updated_time" content="2026-07-04T09:57:00Z" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -404,11 +404,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/finit/">Fast init for Linux systems</a>
+                                <a href="https://troglobit.com/projects/mini-snmpd/">Mini SNMP daemon</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/smcroute/">Static Multicast Routing Daemon</a>
+                                <a href="https://troglobit.com/projects/finit/">Fast init for Linux systems</a>
                             </li>
                         
                     
@@ -641,93 +641,6 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
     <article class="post">
         <div class="info">
   <h1 class="post-title">
-    <a href="https://troglobit.com/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/">En vanlig dag på jobbet (SWEDISH)</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2015-11-13T20:57:29Z" class="post-date">
-        November 13, 2015
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>3 mins read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        I vanlig ordning bashar vi DNS på jobbet, pga ofungerar hårt över VPN för de flesta. (Ja vi kör alla Linux, utom cheferna som envisas med att använda något ur gamla testamentet.) Här följer ett utdrag från vår IRC:
-14:32 &lt;n00b&gt; Success! Äntligen fick jag ordning på DNS via guest wifi -&gt; vpn -&gt; office network. Firar med att skapa lite irc noise. :D 14:32 &lt; rooth&gt;n00b: Du har väl fått den distribuerade /etc/hosts filen?
-        
-        <div class="read-more-link">
-            <a href="/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/">Awesome: Changing Next/Prev Tune in Spotify</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2015-11-10T12:14:09Z" class="post-date">
-        November 10, 2015
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>1 min read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        Back to using the Awesome WM in Ubuntu. This time I&rsquo;m setting up everything from scratch and first up is fixing keybindings to control my main music player: Spotify!
-Edit your ~/.config/awesome/rc.lua with Emacs (obviously). If you do not have an rc file, simply copy the system /etc/xdb/awesome/rc.lua:
-globalkeys = awful.util.table.join(globalkeys, awful.key({}, &quot;XF86AudioRaiseVolume&quot;, function () awful.util.spawn(&quot;amixer -D pulse sset Master 5%+&quot;, false) end), awful.key({}, &quot;XF86AudioLowerVolume&quot;, function () awful.util.spawn(&quot;amixer -D pulse sset Master 5%-&quot;, false) end), awful.
-        
-        <div class="read-more-link">
-            <a href="/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
     <a href="https://troglobit.com/2015/11/07/stray-puppies/">Stray Puppies</a>
   </h1>
 
@@ -738,6 +651,7 @@ globalkeys = awful.util.table.join(globalkeys, awful.key({}, &quot;XF86AudioRais
       <time datetime=" 2015-11-07T02:32:12Z" class="post-date">
         November 7, 2015
       </time>
+      
       
       <span> - </span>
       <span class="reading-time">
@@ -783,6 +697,7 @@ Well, I have to confess that there are certain things that SNMP can be really us
         September 27, 2015
       </time>
       
+      
       <span> - </span>
       <span class="reading-time">
         
@@ -826,6 +741,7 @@ Well, I have to confess that there are certain things that SNMP can be really us
         September 9, 2015
       </time>
       
+      
       <span> - </span>
       <span class="reading-time">
         
@@ -858,6 +774,57 @@ Due to my not really taking much vacation previous years I had saved up for ten 
     <article class="post">
         <div class="info">
   <h1 class="post-title">
+    <a href="https://troglobit.com/howtos/netbsd-pkgsrc/">HowTo use NetBSD pre-built packages</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2015-07-30T11:13:00&#43;0200" class="post-date">
+        July 30, 2015
+      </time>
+      
+      <time datetime=" 2020-08-22T21:39:00&#43;0100" class="post-updated">
+        (updated August 22, 2020)
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>1 min read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.
+Here it is, you&rsquo;d think this be something the installer could set up a default for &hellip;
+PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/ or if you use the latest on an old ThinkPad T42:
+PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/i386/9.0/All/ The simply
+pkg_add -v git Or so you might think!
+        
+        <div class="read-more-link">
+            <a href="/howtos/netbsd-pkgsrc/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
     <a href="https://troglobit.com/howtos/pimd-on-openbsd/">HowTo run pimd on OpenBSD</a>
   </h1>
 
@@ -868,6 +835,7 @@ Due to my not really taking much vacation previous years I had saved up for ten 
       <time datetime=" 2015-07-19T00:32:00&#43;0200" class="post-date">
         July 19, 2015
       </time>
+      
       
       <span> - </span>
       <span class="reading-time">
@@ -911,6 +879,7 @@ First of all, my sincere thanks to the OpenBSD team for, not just an awesome UNI
       <time datetime=" 2015-07-02T17:11:55Z" class="post-date">
         July 2, 2015
       </time>
+      
       
       <span> - </span>
       <span class="reading-time">
@@ -966,6 +935,7 @@ projects …</p>
         July 1, 2015
       </time>
       
+      
       <span> - </span>
       <span class="reading-time">
         
@@ -1015,6 +985,7 @@ pushed to both the GitHub repo as well as my own server!</p>
       <time datetime=" 2015-06-30T23:13:48Z" class="post-date">
         June 30, 2015
       </time>
+      
       
       <span> - </span>
       <span class="reading-time">
@@ -1079,6 +1050,7 @@ service apache2 reload
       <time datetime=" 2015-03-06T22:34:45Z" class="post-date">
         March 6, 2015
       </time>
+      
       
       <span> - </span>
       <span class="reading-time">
@@ -1174,6 +1146,67 @@ Sat Mar  7 08:48:58 CET 2015
         
         <div class="read-more-link">
             <a href="/2015/03/06/inetd-support-in-finit-v1-dot-12/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/2015/01/24/finit-v1-dot-11-released/">Finit v1.11 released!</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2015-01-24T16:54:23Z" class="post-date">
+        January 24, 2015
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>1 min read</span>
+      </span>
+    </div>
+
+    
+    <ul class="tags">
+      
+      <li class="tag-finit">
+        <a href="https://troglobit.com/tags/finit">finit</a>
+      </li>
+      
+      <li class="tag-init">
+        <a href="https://troglobit.com/tags/init">init</a>
+      </li>
+      
+      <li class="tag-opensource">
+        <a href="https://troglobit.com/tags/opensource">opensource</a>
+      </li>
+      
+    </ul>
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        <p><strong>Update 2015-03-09</strong>: This release has unfortunately been <em>yanked</em> due
+to serious regressions in launching background processes.  It has been
+replaced by <a href="/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/">v1.12</a></p>
+        
+        <div class="read-more-link">
+            <a href="/2015/01/24/finit-v1-dot-11-released/">Read More…</a>
         </div>
         
         

@@ -107,13 +107,6 @@
       <description></description>
     </item>
     <item>
-      <title>Git</title>
-      <link>https://troglobit.com/tags/git/</link>
-      <pubDate>Sun, 04 Jun 2023 17:49:00 +0200</pubDate>
-      <guid>https://troglobit.com/tags/git/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Finit</title>
       <link>https://troglobit.com/tags/finit/</link>
       <pubDate>Sun, 15 Jan 2023 18:42:00 +0000</pubDate>
@@ -149,6 +142,13 @@
       <description></description>
     </item>
     <item>
+      <title>Git</title>
+      <link>https://troglobit.com/tags/git/</link>
+      <pubDate>Sun, 17 Apr 2022 16:56:00 +0100</pubDate>
+      <guid>https://troglobit.com/tags/git/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Howto</title>
       <link>https://troglobit.com/tags/howto/</link>
       <pubDate>Sun, 17 Apr 2022 16:56:00 +0100</pubDate>
@@ -163,31 +163,31 @@
       <description></description>
     </item>
     <item>
-      <title>Merecat</title>
-      <link>https://troglobit.com/tags/merecat/</link>
-      <pubDate>Thu, 09 Dec 2021 05:56:00 +0000</pubDate>
-      <guid>https://troglobit.com/tags/merecat/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Gmail</title>
       <link>https://troglobit.com/tags/gmail/</link>
-      <pubDate>Tue, 11 May 2021 19:12:00 +0100</pubDate>
+      <pubDate>Wed, 13 Jan 2021 09:29:00 +0100</pubDate>
       <guid>https://troglobit.com/tags/gmail/</guid>
       <description></description>
     </item>
     <item>
       <title>Lore</title>
       <link>https://troglobit.com/tags/lore/</link>
-      <pubDate>Tue, 11 May 2021 19:12:00 +0100</pubDate>
+      <pubDate>Wed, 13 Jan 2021 09:29:00 +0100</pubDate>
       <guid>https://troglobit.com/tags/lore/</guid>
       <description></description>
     </item>
     <item>
       <title>Notmuch</title>
       <link>https://troglobit.com/tags/notmuch/</link>
-      <pubDate>Tue, 11 May 2021 19:12:00 +0100</pubDate>
+      <pubDate>Wed, 13 Jan 2021 09:29:00 +0100</pubDate>
       <guid>https://troglobit.com/tags/notmuch/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Merecat</title>
+      <link>https://troglobit.com/tags/merecat/</link>
+      <pubDate>Mon, 05 Aug 2019 22:00:25 +0200</pubDate>
+      <guid>https://troglobit.com/tags/merecat/</guid>
       <description></description>
     </item>
     <item>

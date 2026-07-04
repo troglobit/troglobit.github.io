@@ -75,10 +75,10 @@
 <meta property="og:site_name" content="Joachim Wiberg" />
 
 
-<meta name="description" content="This is an SNMP server for small and embedded systems, currently Linux and FreeBSD are supported. It is easily portable to other UNIX systems since it’s written in C. The daemon is very small (~40 …" />
-<meta itemprop="description" content="This is an SNMP server for small and embedded systems, currently Linux and FreeBSD are supported. It is easily portable to other UNIX systems since it’s written in C. The daemon is very small (~40 …" />
-<meta property="og:description" content="This is an SNMP server for small and embedded systems, currently Linux and FreeBSD are supported. It is easily portable to other UNIX systems since it’s written in C. The daemon is very small (~40 …" />
-<meta name="twitter:description" content="This is an SNMP server for small and embedded systems, currently Linux and FreeBSD are supported. It is easily portable to other UNIX systems since it’s written in C. The daemon is very small (~40 …" />
+<meta name="description" content="This is an SNMP server for small and embedded systems, currently Linux and FreeBSD are supported. It is easily portable to other UNIX systems since it’s written in C. A stripped binary is ~80 kiB and …" />
+<meta itemprop="description" content="This is an SNMP server for small and embedded systems, currently Linux and FreeBSD are supported. It is easily portable to other UNIX systems since it’s written in C. A stripped binary is ~80 kiB and …" />
+<meta property="og:description" content="This is an SNMP server for small and embedded systems, currently Linux and FreeBSD are supported. It is easily portable to other UNIX systems since it’s written in C. A stripped binary is ~80 kiB and …" />
+<meta name="twitter:description" content="This is an SNMP server for small and embedded systems, currently Linux and FreeBSD are supported. It is easily portable to other UNIX systems since it’s written in C. A stripped binary is ~80 kiB and …" />
 
 
 <base href="https://troglobit.com/projects/mini-snmpd/" />
@@ -88,7 +88,7 @@
 <meta property="og:url" content="https://troglobit.com/projects/mini-snmpd/" />
 
 
-<meta property="og:updated_time" content="2020-02-23T09:00:00&#43;02:00" />
+<meta property="og:updated_time" content="2026-07-04T09:28:00&#43;01:00" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -419,11 +419,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/finit/">Fast init for Linux systems</a>
+                                <a href="https://troglobit.com/projects/mini-snmpd/">Mini SNMP daemon</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/smcroute/">Static Multicast Routing Daemon</a>
+                                <a href="https://troglobit.com/projects/finit/">Fast init for Linux systems</a>
                             </li>
                         
                     
@@ -664,13 +664,18 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
         February 23, 2020
       </time>
       
+      <time datetime=" 2026-07-04T09:28:00&#43;0100" class="post-updated">
+        (updated July 4, 2026)
+      </time>
+      
+      
       <span> - </span>
       <span class="reading-time">
         
           
         
 
-        <span>5 mins read</span>
+        <span>4 mins read</span>
       </span>
     </div>
 
@@ -685,151 +690,103 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
 
   <p>This is an SNMP server for small and embedded systems, currently Linux
 and FreeBSD are supported.  It is easily portable to other UNIX systems
-since it&rsquo;s written in C.  The daemon is very small (~40 kiB) and does
-not have nowhere near the feature set of <a href="http://net-snmp.org" target="_blank">Net-SNMP</a>, therefore it has
-a very low impact on system resources.</p>
+since it&rsquo;s written in C.  A stripped binary is ~80 kiB and comes nowhere
+near the feature set of <a href="http://net-snmp.org" target="_blank">Net-SNMP</a>, so it has a very low impact on
+system resources — a good fit for routers, NAS boxes, and other embedded
+devices.</p>
 <p>See my mini HowTo: <a href="/howto-play-with-snmp.html">Playing with SNMP</a> for a
 quick introduction to setting up the SNMP tools and MIBs to avoid having
 to use numerical OIDs.</p>
 <p><strong>Features:</strong></p>
 <ul>
-<li>Supports SNMP version 1 and 2c</li>
-<li>Supports SNMP <code>get</code>, <code>getnext</code> and <code>getbulk</code></li>
-<li>Supports both IPv4 and IPv6</li>
-<li>Supports communication over UDP and TCP sockets</li>
-<li>Supports the most important performance data (uptime, CPU load, memory usage)</li>
-<li>Supports the most important network data (bytes/packets in/out, error counts)</li>
-<li>Supports the most important disk data (disk space/inodes available/used/free)</li>
+<li>SNMP version 1 and 2c, with <code>get</code>, <code>getnext</code>, and <code>getbulk</code></li>
+<li>Dual-stack: serves IPv4 and IPv6 at the same time</li>
+<li>Communication over both UDP and TCP (so SNMP over an SSH tunnel works)</li>
+<li>SNMPv2c notifications (traps): coldStart, linkUp/linkDown, and
+authentication failure</li>
+<li>Real-time interface tracking on Linux via netlink — interfaces created
+or removed after start-up appear and disappear without a restart</li>
+<li>Reloads its configuration on <code>SIGHUP</code>, even after dropping privileges</li>
+<li>Optional <code>/etc/mini-snmpd.conf</code> (libConfuse), combined with the command line</li>
+<li>Custom static responses on any OID, e.g. to emulate another device</li>
+<li>Read-only, and can drop root privileges with <code>-u</code></li>
+<li>Wide MIB coverage: SNMPv2-MIB (system group, agent counters, sysORTable),
+IF-MIB (ifTable and the 64-bit ifXTable), IP-MIB (including the RFC 4293
+ipAddressTable, so IPv6 addresses are discoverable), TCP-MIB, UDP-MIB,
+HOST-RESOURCES-MIB (memory, storage, processors, system), UCD-SNMP-MIB
+(memory, disk, load average, CPU), and LM-SENSORS-MIB temperatures on Linux</li>
 <li>Tested with <a href="http://net-snmp.org" target="_blank">net-snmp</a>, <a href="http://net-snmp.net" target="_blank">cacti</a>, and <a href="http://oss.oetiker.ch/mrtg/" target="_blank">MRTG</a></li>
 </ul>
+<p>See <a href="https://github.com/troglobit/mini-snmpd/blob/master/doc/MIBS.md" target="_blank">MIBS.md</a> for the complete list of objects served.</p>
 <p><a id="example"></a></p>
 <h2 id="example">Example</h2>
-<p>First start the daemon:</p>
-<pre><code>$ sudo ./mini-snmpd -i eth0,eth1,wlan0
+<p>With no <code>-i</code> the daemon monitors every interface (loopback first); here we
+pick a couple and run on a high port so it need not be root:</p>
+<pre><code>$ ./mini-snmpd -n -p 16161 -D &quot;Ubuntu 24.04 LTS&quot; -C &quot;ops@example.com&quot; \
+               -L &quot;Server room&quot; -i eth0,eth1
 </code></pre>
-<p>Then do an SNMP walk:</p>
-<pre><code>$ snmpwalk -v2c -c public 127.0.0.1 .
-SNMPv2-MIB::sysDescr.0 = STRING: 
+<p>An SNMP walk then returns the system, interface, and host data.  The
+excerpt below is abbreviated — see <a href="https://github.com/troglobit/mini-snmpd/blob/master/doc/MIBS.md" target="_blank">MIBS.md</a> for everything served:</p>
+<pre><code>$ snmpwalk -v2c -c public 127.0.0.1:16161
+SNMPv2-MIB::sysDescr.0 = STRING: Ubuntu 24.04 LTS
 SNMPv2-MIB::sysObjectID.0 = OID: SNMPv2-SMI::enterprises
-SNMPv2-MIB::sysUpTime.0 = Timeticks: (5954) 0:00:59.54
-SNMPv2-MIB::sysContact.0 = STRING: 
-SNMPv2-MIB::sysName.0 = STRING: luthien
-SNMPv2-MIB::sysLocation.0 = STRING: 
-IF-MIB::ifNumber.0 = INTEGER: 3
-IF-MIB::ifIndex.1 = INTEGER: 1
-IF-MIB::ifIndex.2 = INTEGER: 2
-IF-MIB::ifIndex.3 = INTEGER: 3
+DISMAN-EVENT-MIB::sysUpTimeInstance = Timeticks: (104) 0:00:01.04
+SNMPv2-MIB::sysContact.0 = STRING: ops@example.com
+SNMPv2-MIB::sysName.0 = STRING: server
+SNMPv2-MIB::sysLocation.0 = STRING: Server room
+SNMPv2-MIB::sysServices.0 = INTEGER: 79
+SNMPv2-MIB::sysORID.1 = OID: SNMPv2-MIB::snmpMIB
+...
 IF-MIB::ifDescr.1 = STRING: eth0
 IF-MIB::ifDescr.2 = STRING: eth1
-IF-MIB::ifDescr.3 = STRING: wlan0
-IF-MIB::ifOperStatus.1 = INTEGER: up(1)
-IF-MIB::ifOperStatus.2 = INTEGER: lowerLayerDown(7)
-IF-MIB::ifOperStatus.3 = INTEGER: up(1)
-IF-MIB::ifInOctets.1 = Counter32: 1791842
-IF-MIB::ifInOctets.2 = Counter32: 0
-IF-MIB::ifInOctets.3 = Counter32: 1909293573
-IF-MIB::ifInUcastPkts.1 = Counter32: 18071
-IF-MIB::ifInUcastPkts.2 = Counter32: 0
-IF-MIB::ifInUcastPkts.3 = Counter32: 2010670
-IF-MIB::ifInDiscards.1 = Counter32: 12
-IF-MIB::ifInDiscards.2 = Counter32: 0
-IF-MIB::ifInDiscards.3 = Counter32: 0
-IF-MIB::ifInErrors.1 = Counter32: 0
-IF-MIB::ifInErrors.2 = Counter32: 0
-IF-MIB::ifInErrors.3 = Counter32: 0
-IF-MIB::ifOutOctets.1 = Counter32: 1199703
-IF-MIB::ifOutOctets.2 = Counter32: 0
-IF-MIB::ifOutOctets.3 = Counter32: 179994204
-IF-MIB::ifOutUcastPkts.1 = Counter32: 6437
-IF-MIB::ifOutUcastPkts.2 = Counter32: 0
-IF-MIB::ifOutUcastPkts.3 = Counter32: 1269885
-IF-MIB::ifOutDiscards.1 = Counter32: 0
-IF-MIB::ifOutDiscards.2 = Counter32: 0
-IF-MIB::ifOutDiscards.3 = Counter32: 0
-IF-MIB::ifOutErrors.1 = Counter32: 0
-IF-MIB::ifOutErrors.2 = Counter32: 0
-IF-MIB::ifOutErrors.3 = Counter32: 0
-HOST-RESOURCES-MIB::hrSystemUptime.0 = Timeticks: (4290528121) 496 days, 14:08:01.21
-UCD-SNMP-MIB::memTotalReal.0 = INTEGER: 8055412 kB
-UCD-SNMP-MIB::memAvailReal.0 = INTEGER: 961136 kB
-UCD-SNMP-MIB::memShared.0 = INTEGER: 0 kB
-UCD-SNMP-MIB::memBuffer.0 = INTEGER: 474372 kB
-UCD-SNMP-MIB::memCached.0 = INTEGER: 2473876 kB
-UCD-SNMP-MIB::dskIndex.1 = INTEGER: 1
-UCD-SNMP-MIB::dskPath.1 = STRING: /
-UCD-SNMP-MIB::dskTotal.1 = INTEGER: 222230176
-UCD-SNMP-MIB::dskAvail.1 = INTEGER: 20289308
-UCD-SNMP-MIB::dskUsed.1 = INTEGER: 201940864
-UCD-SNMP-MIB::dskPercent.1 = INTEGER: 91
-UCD-SNMP-MIB::dskPercentNode.1 = INTEGER: 12
-UCD-SNMP-MIB::laIndex.1 = INTEGER: 1
-UCD-SNMP-MIB::laIndex.2 = INTEGER: 2
-UCD-SNMP-MIB::laIndex.3 = INTEGER: 3
-UCD-SNMP-MIB::laNames.1 = STRING: Load-1
-UCD-SNMP-MIB::laNames.2 = STRING: Load-5
-UCD-SNMP-MIB::laNames.3 = STRING: Load-15
-UCD-SNMP-MIB::laLoad.1 = STRING: 0.06
-UCD-SNMP-MIB::laLoad.2 = STRING: 0.14
-UCD-SNMP-MIB::laLoad.3 = STRING: 0.28
-UCD-SNMP-MIB::laConfig.1 = STRING: 1
-UCD-SNMP-MIB::laConfig.2 = STRING: 5
-UCD-SNMP-MIB::laConfig.3 = STRING: 15
-UCD-SNMP-MIB::laLoadInt.1 = INTEGER: 6
-UCD-SNMP-MIB::laLoadInt.2 = INTEGER: 14
-UCD-SNMP-MIB::laLoadInt.3 = INTEGER: 28
-UCD-SNMP-MIB::ssCpuRawUser.0 = Counter32: 2263123
-UCD-SNMP-MIB::ssCpuRawNice.0 = Counter32: 8820
-UCD-SNMP-MIB::ssCpuRawSystem.0 = Counter32: 353194
-UCD-SNMP-MIB::ssCpuRawIdle.0 = Counter32: 46493489
-UCD-SNMP-MIB::ssRawInterrupts.0 = Counter32: 50186444
-UCD-SNMP-MIB::ssRawContexts.0 = Counter32: 243678129
-UCD-SNMP-MIB::ssRawContexts.0 = No more variables left in this MIB View (It is past the end of the MIB tree)
+...
+HOST-RESOURCES-MIB::hrSystemDate.0 = STRING: 2026-7-4,10:12:33.0,+2:0
+HOST-RESOURCES-MIB::hrSystemProcesses.0 = Gauge32: 214
+HOST-RESOURCES-MIB::hrProcessorLoad.1 = INTEGER: 3
+IP-MIB::ipAddressIfIndex.ipv4.&quot;192.0.2.10&quot; = INTEGER: 2
+IP-MIB::ipAddressIfIndex.ipv6.&quot;fe:80:00:00:00:00:00:00:...:01&quot; = INTEGER: 2
+LM-SENSORS-MIB::lmTempSensorsValue.1 = Gauge32: 42000
+SNMPv2-MIB::snmpInPkts.0 = Counter32: 12
+</code></pre>
+<p>New in 2.0, mini-snmpd can also send traps.  Point it at a manager with
+<code>-T addr[:port]</code> (repeatable):</p>
+<pre><code>$ ./mini-snmpd -n -c public -i eth0 -T 192.0.2.5
+</code></pre>
+<p>It emits <code>coldStart</code> at start-up, <code>linkUp</code>/<code>linkDown</code> as interfaces change
+state, and <code>authenticationFailure</code> on a wrong community.  With the optional
+<code>.conf</code> file you can also emulate another device by pinning a fixed string
+to an OID, e.g. to look like an HP JetDirect print server:</p>
+<pre><code>custom &quot;.1.3.6.1.4.1.11.2.3.9.1.1.7.0&quot; {
+        value = &quot;MFG:Hewlett-Packard;MDL:HP LaserJet 1020;CLS:PRINTER;&quot;
+}
 </code></pre>
 <p><a id="small"></a></p>
 <h2 id="building-really-small-binaries">Building Really Small Binaries</h2>
-<p>By simply calling <code>./configure &amp;&amp; make</code> you don&rsquo;t really get a small
-mini-snmpd binary.  Sure, most people know about setting <code>CFLAGS=-Os</code>
-before calling the configure script &ndash; that&rsquo;s how you reach the ~40 kiB
-mentioned above.</p>
-<pre><code>CFLAGS=&quot;-Os&quot; ./configure &amp;&amp; make clean all &amp;&amp; strip mini-snmpd &amp;&amp; ll mini-snmpd &amp;&amp; size mini-snmpd
--rwxrwxr-x 1 jocke jocke 39520 nov  8 21:35 mini-snmpd*
+<p>A default <code>./configure &amp;&amp; make</code> now bundles the <code>.conf</code> parser, ethtool
+statistics, and the test suite, so the binary is ~100 kiB.  For the
+smallest build, opt out of what you do not need and set <code>CFLAGS=-Os</code>:</p>
+<pre><code>CFLAGS=&quot;-Os&quot; ./configure --without-config --disable-ethtool --disable-ipv6
+make clean all &amp;&amp; strip mini-snmpd &amp;&amp; size mini-snmpd
    text	   data	    bss	    dec	    hex	 filename
-  32766	   1028	  16032	  49826	   c2a2	 mini-snmpd
+  65347	   2824	 349504	 417675	  65f8b	 mini-snmpd
 </code></pre>
-<p>To get really crazy with things you can try this, it works for me but
-YMMV as usual:</p>
-<pre><code>CFLAGS=&quot;-W -Wall -Os -U_FORTIFY_SOURCE -fno-stack-protector -fomit-frame-pointer -ffunction-sections -fdata-sections -Wl,--gc-sections -fno-asynchronous-unwind-tables -fmerge-all-constants -fno-ident -Wl,-z,norelro -Wl,--hash-style=gnu -Wl,--build-id=none &quot; ./configure --disable-ipv6
-make clean all &amp;&amp; strip -S --strip-unneeded --remove-section=.note.gnu.gold-version --remove-section=.comment --remove-section=.note --remove-section=.note.gnu.build-id --remove-section=.note.ABI-tag mini-snmpd &amp;&amp; ll mini-snmpd &amp;&amp; size mini-snmpd
--rwxrwxr-x 1 jocke jocke 30696 nov  8 21:37 mini-snmpd*
-   text	   data	    bss	    dec	    hex	 filename
-  27305	    964	  15968	  44237	   accd	 mini-snmpd
+<p>That is ~80 kiB on disk; most of the <code>bss</code> is the fixed-size MIB table,
+demand-zeroed, so it does not weigh on resident memory until used.</p>
+<p>You can push further.  The figures below are from an older, smaller
+release, but the technique is unchanged — a pile of GCC and linker flags
+strips off several more kiB:</p>
+<pre><code>CFLAGS=&quot;-W -Wall -Os -U_FORTIFY_SOURCE -fno-stack-protector -fomit-frame-pointer -ffunction-sections -fdata-sections -Wl,--gc-sections -fno-asynchronous-unwind-tables -fmerge-all-constants -fno-ident -Wl,-z,norelro -Wl,--hash-style=gnu -Wl,--build-id=none &quot; ./configure --without-config --disable-ipv6
+make clean all &amp;&amp; strip -S --strip-unneeded --remove-section=.note.gnu.gold-version --remove-section=.comment --remove-section=.note --remove-section=.note.gnu.build-id --remove-section=.note.ABI-tag mini-snmpd
 </code></pre>
-<p>This insane amount of arguments to GCC saves you ~9kiB.  Which begs the
-question, is there anything else you can do, how low can we go?!  Let me
-introduce you to <a href="http://upx.sourceforge.net/" target="_blank">upx</a>:</p>
-<pre><code>upx --ultra-brute mini-snmpd &amp;&amp; ll mini-snmpd &amp;&amp; size mini-snmpd
-                       Ultimate Packer for eXecutables
-                          Copyright (C) 1996 - 2013
-UPX 3.91        Markus Oberhumer, Laszlo Molnar &amp; John Reiser   Sep 30th 2013
-
-        File size         Ratio      Format      Name
-   --------------------   ------   -----------   -----------
-     30696 -&gt;     15604   50.83%  linux/ElfAMD   mini-snmpd
-
-Packed 1 file.
--rwxrwxr-x 1 jocke jocke 15604 nov  8 21:37 mini-snmpd*
-   text	   data	    bss	    dec	    hex	 filename
-      0	      0	      0	      0	      0	 mini-snmpd
+<p>And <a href="http://upx.sourceforge.net/" target="_blank">upx</a> can then roughly halve the on-disk
+size again:</p>
+<pre><code>upx --ultra-brute mini-snmpd
 </code></pre>
-<p>Yeah, running <code>size</code> on the binary afterwards is kinda useless, but
-<em>WOW</em>!  Using upx actually cut the size down to almost half of what we
-got with the insane arguments above &ndash; saved ~15kiB on a 30kiB binary!</p>
-<p>On embedded targets some of these tricks may just about save you if
-you&rsquo;re running out of flash.  However, there are often nasty compiler
-bugs to be found just by changing optimization level to <code>-Os</code>.  So when
-it comes to embedded I always recommend playing it safe and going with
-<code>-O2</code> and no further optimizations, unless you want to spend a lot of
-time looking for weird bugs!</p>
+<p>On embedded targets these tricks may just save you if you are running out
+of flash.  There are, however, often nasty compiler bugs to be found just
+by changing the optimization level to <code>-Os</code>.  So for embedded I always
+recommend playing it safe with <code>-O2</code> and no further optimizations, unless
+you want to spend a lot of time chasing weird bugs!</p>
 <p><a id="info"></a></p>
 <h2 id="project-info">Project Info</h2>
 <p>This is the continuation of the hard work on mini-snmpd by Robert Ernst.
@@ -842,12 +799,14 @@ to come by any older version(s), send me an email! :)</p>
 <p>mini-snmpd is licensed under the <a href="https://github.com/troglobit/mini-snmpd/blob/master/COPYING" target="_blank">GNU GPL v2</a>.</p>
 <ul>
 <li><a href="http://github.com/troglobit/mini-snmpd" target="_blank">Repository</a></li>
+<li><a href="https://github.com/troglobit/mini-snmpd/releases" target="_blank">Download release tarballs</a></li>
+<li><a href="https://github.com/troglobit/mini-snmpd/releases" target="_blank">Release notes / ChangeLog</a></li>
 <li><a href="http://github.com/troglobit/mini-snmpd/issues" target="_blank">Issue Tracker</a></li>
-<li><a href="ftp://ftp.troglobit.com/mini-snmpd/mini-snmpd-1.6.tar.gz">mini-snmpd-1.6.tar.gz</a>,
-<a href="ftp://ftp.troglobit.com/mini-snmpd/mini-snmpd-1.6.tar.gz.md5">MD5</a>,</li>
-<li><a href="https://github.com/troglobit/mini-snmpd/releases/tag/v1.6" target="_blank">ChangeLog</a></li>
-<li><a href="https://github.com/troglobit/mini-snmpd/blob/master/TODO" target="_blank">TODO</a></li>
-<li>Man page <a href="http://ftp.troglobit.com/mini-snmpd/mini-snmpd.html" target="_blank">mini-snmpd.8</a> (outdated)</li>
+<li><a href="https://github.com/troglobit/mini-snmpd/blob/master/doc/MIBS.md" target="_blank">Supported MIBs</a></li>
+<li><a href="https://github.com/troglobit/mini-snmpd/blob/master/doc/extending.md" target="_blank">Extending mini-snmpd</a></li>
+<li><a href="https://github.com/troglobit/mini-snmpd/blob/master/doc/TODO" target="_blank">TODO</a></li>
+<li>Man pages: <a href="https://man.troglobit.com/man8/mini-snmpd.8.html" target="_blank">mini-snmpd.8</a>,
+<a href="https://man.troglobit.com/man5/mini-snmpd.conf.5.html" target="_blank">mini-snmpd.conf.5</a></li>
 </ul>
 <p>See also the old <a href="http://freecode.com/projects/minisnmpd" target="_blank">Free(code) page</a>.</p>
 

@@ -6,7 +6,7 @@
     <description>Recent content in Projects on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 03 Mar 2025 03:05:00 +0100</lastBuildDate>
+    <lastBuildDate>Sat, 04 Jul 2026 09:28:00 +0100</lastBuildDate>
     <atom:link href="https://troglobit.com/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fast init for Linux systems</title>
@@ -69,7 +69,7 @@
       <link>https://troglobit.com/projects/mini-snmpd/</link>
       <pubDate>Sun, 23 Feb 2020 09:00:00 +0200</pubDate>
       <guid>https://troglobit.com/projects/mini-snmpd/</guid>
-      <description>This is an SNMP server for small and embedded systems, currently Linux and FreeBSD are supported. It is easily portable to other UNIX systems since it&amp;rsquo;s written in C. The daemon is very small (~40 kiB) and does not have nowhere near the feature set of Net-SNMP, therefore it has a very low impact on system resources.&#xA;See my mini HowTo: Playing with SNMP for a quick introduction to setting up the SNMP tools and MIBs to avoid having to use numerical OIDs.</description>
+      <description>This is an SNMP server for small and embedded systems, currently Linux and FreeBSD are supported. It is easily portable to other UNIX systems since it&amp;rsquo;s written in C. A stripped binary is ~80 kiB and comes nowhere near the feature set of Net-SNMP, so it has a very low impact on system resources — a good fit for routers, NAS boxes, and other embedded devices.&#xA;See my mini HowTo: Playing with SNMP for a quick introduction to setting up the SNMP tools and MIBs to avoid having to use numerical OIDs.</description>
     </item>
     <item>
       <title>Small and Simple DDNS Client</title>

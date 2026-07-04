@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://troglobit.com/" />
 
 
-<meta property="og:updated_time" content="2026-05-26T22:00:00&#43;02:00" />
+<meta property="og:updated_time" content="2026-07-04T09:57:00Z" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -404,11 +404,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/finit/">Fast init for Linux systems</a>
+                                <a href="https://troglobit.com/projects/mini-snmpd/">Mini SNMP daemon</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/smcroute/">Static Multicast Routing Daemon</a>
+                                <a href="https://troglobit.com/projects/finit/">Fast init for Linux systems</a>
                             </li>
                         
                     
@@ -641,353 +641,6 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
     <article class="post">
         <div class="info">
   <h1 class="post-title">
-    <a href="https://troglobit.com/projects/tetris/">Micro Tetris™</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2021-12-26T20:37:00&#43;0200" class="post-date">
-        December 26, 2021
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>1 min read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        Micro Tetris — one of the smallest Tetris implementations in the world! Utilizing only ANSI escape sequences to draw the board, no external library dependencys other than a standard C-library, like uClibc or musl libc. Hence, it is very suitable for small embedded devices in need of an easter egg ;-)
-The game is based on a 1989 International Obfuscated C Code Contest (IOCCC) entry made by John Tromp.
-        
-        <div class="read-more-link">
-            <a href="/projects/tetris/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/howtos/merecat-and-cgit/">HowTo: Set up Merecat with cgit</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2021-12-09T05:56:00Z" class="post-date">
-        December 9, 2021
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>2 mins read</span>
-      </span>
-    </div>
-
-    
-    <ul class="tags">
-      
-      <li class="tag-merecat">
-        <a href="https://troglobit.com/tags/merecat">merecat</a>
-      </li>
-      
-    </ul>
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        <p>This post details how to set up <a href="https://git.zx2c4.com/cgit/" target="_blank">cgit</a> with <a href="http://merecat.troglobit.com" target="_blank">Merecat httpd</a>.  It
-began as a <a href="https://github.com/troglobit/merecat/issues/3" target="_blank">GitHub issue</a> report by Mr Alok G. Singh, who had run
-into problems setting it up, and ended up as a HowTo.</p>
-        
-        <div class="read-more-link">
-            <a href="/howtos/merecat-and-cgit/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/howtos/merecat-and-ikiwiki/">HowTo: Set up Merecat with Ikiwiki</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2021-12-09T05:51:00Z" class="post-date">
-        December 9, 2021
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>1 min read</span>
-      </span>
-    </div>
-
-    
-    <ul class="tags">
-      
-      <li class="tag-merecat">
-        <a href="https://troglobit.com/tags/merecat">merecat</a>
-      </li>
-      
-    </ul>
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        This is a HowTo for setting up ikiwiki with Merecat httpd.
-First install ikiwiki
-$ sudo apt install ikiwiki libcgi-session-perl libcgi-formbuilder-perl Follow the steps to setup a new Wiki or Blog. In this example we set up a wiki in our ~/public_html:
-$ ikiwiki --setup /etc/ikiwiki/auto.setup ... Successfully set up wiki: url: http://localhost/~jocke/wiki srcdir: ~/wiki destdir: ~/public_html/wiki repository: ~/wiki.git To modify settings, edit ~/home.setup and then run:
-$ ikiwiki --setup ~/home.
-        
-        <div class="read-more-link">
-            <a href="/howtos/merecat-and-ikiwiki/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/projects/mrouted/">The original multicast routing daemon</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2021-11-03T12:39:12&#43;0100" class="post-date">
-        November 3, 2021
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>2 mins read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, RFC 1075. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunneling support.
-Tunneling may be required to cross non-multicast-aware routers.
-The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is suitable for smaller/dense networks. It employs the &ldquo;flood and prune&rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups.
-        
-        <div class="read-more-link">
-            <a href="/projects/mrouted/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/howtos/howto-build-and-use-my-projects/">HowTo: Build &amp; Use My Projects</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-        
-          <span>Joachim Wiberg - </span>
-        
-      
-      
-      <time datetime=" 2021-10-05T21:03:00&#43;0200" class="post-date">
-        October 5, 2021
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>5 mins read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        <p>Ever so often someone new to Open Source show up on GitHub or in my
-inbox.  It usually starts something like this:</p>
-<ul>
-<li><em>&ldquo;Hey, I just downloaded your software, what&rsquo;s next?&rdquo;</em></li>
-<li><em>&ldquo;Your software doesn&rsquo;t work on my system!!!!&rdquo;</em></li>
-<li><em>&ldquo;How can I do that weird-thing that fits my odd use-case?&rdquo;</em></li>
-<li><em>&ldquo;I have zero documented experience but I think you should fix your build system!&rdquo;</em></li>
-</ul>
-<p>This HowTo is for you.</p>
-<h2 id="0-short-version">0. Short Version</h2>
-<ul>
-<li>Download a <em>versioned</em> archive from the project&rsquo;s Releases page</li>
-<li>Extract archive for v1.2.3 and change to its directory, <code>cd archive-1.2.3/</code></li>
-<li><code>./configure --help</code>, or use something like the following &hellip;</li>
-<li><code>./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var &amp;&amp; make &amp;&amp; sudo make install</code></li>
-</ul>
-<blockquote>
-<p>Some projects of mine are available in Debian/Ubuntu/FreeBSD, if you
-use that, please report bugs to them and not me.  I have no control
-over what they do.</p>
-</blockquote>
-<p>Cheers<br>
-/Joachim</p>
-        
-        <div class="read-more-link">
-            <a href="/howtos/howto-build-and-use-my-projects/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/projects/smcroute/smcroute-conf.html">smcroute.conf example</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2021-08-19T15:46:00&#43;0200" class="post-date">
-        August 19, 2021
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>3 mins read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        # # smcroute.conf example # # The configuration file supports joining multicast groups, to use # Layer-2 signaling so that switches and routers open up multicast # traffic to your interfaces. Leave is not supported, remove the # mgroup and SIGHUP your daemon, or send a specific leave command. # # NOTE: Use of the mgroup command should be avoided if possible. # Instead configure &#34;router ports&#34; or similar on the switches # or bridges on your LAN.
-        
-        <div class="read-more-link">
-            <a href="/projects/smcroute/smcroute-conf.html">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/howtos/mrouting-in-freebsd/">HowTo: Add Multicast Routing to FreeBSD kernel</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2021-08-01T08:31:12&#43;0200" class="post-date">
-        August 1, 2021
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>1 min read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        This is a very short blog post, mostly intended as a reminder to myself. Basically, there are two methods of adding multicast routing support to the FreeBSD kernel:
-Rebuild the kernel with options MROUTING Load the kernel module: kldload ip_mroute The kernel rebuild assumes the src.txz set was installed previously.
-cd /usr/src cd sys/amd64/conf cat GENERIC | sed 's/GENERIC$/MULTICAST/' &gt; MULTICAST echo 'options MROUTING # Multicast routing' &gt;&gt; MULTICAST echo 'options PIM # Enable for pimd' &gt;&gt; MULTICAST cd - make kernel KERNCONF=MULTICAST reboot That&rsquo;s it.
-        
-        <div class="read-more-link">
-            <a href="/howtos/mrouting-in-freebsd/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
     <a href="https://troglobit.com/projects/nemesis/">N E M E S I S</a>
   </h1>
 
@@ -998,6 +651,11 @@ cd /usr/src cd sys/amd64/conf cat GENERIC | sed 's/GENERIC$/MULTICAST/' &gt; MUL
       <time datetime=" 2021-07-07T15:39:00&#43;0200" class="post-date">
         July 7, 2021
       </time>
+      
+      <time datetime=" 2024-01-14T13:44:00&#43;0100" class="post-updated">
+        (updated January 14, 2024)
+      </time>
+      
       
       <span> - </span>
       <span class="reading-time">
@@ -1031,70 +689,6 @@ Nemesis can natively craft and inject ARP, DNS, ETHERNET, ICMP, IGMP, IP, OSPF, 
     <article class="post">
         <div class="info">
   <h1 class="post-title">
-    <a href="https://troglobit.com/post/2021-05-11-emacs-gmail-and-lore-mailing-lists/">Emacs: GMail and Lore Mailing Lists</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2021-05-11T19:12:00&#43;0100" class="post-date">
-        May 11, 2021
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>4 mins read</span>
-      </span>
-    </div>
-
-    
-    <ul class="tags">
-      
-      <li class="tag-notmuch">
-        <a href="https://troglobit.com/tags/notmuch">notmuch</a>
-      </li>
-      
-      <li class="tag-emacs">
-        <a href="https://troglobit.com/tags/emacs">emacs</a>
-      </li>
-      
-      <li class="tag-gmail">
-        <a href="https://troglobit.com/tags/gmail">gmail</a>
-      </li>
-      
-      <li class="tag-lore">
-        <a href="https://troglobit.com/tags/lore">lore</a>
-      </li>
-      
-    </ul>
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        With lots of help from the tireless Tobias Waldekranz, I think I&rsquo;ve finally found the perfect &ldquo;magit like&rdquo; email setup. With Emacs, of course. This is the story of how I did it.
-First install notmuch, mbsync (from the isync package), and afew:
-sudo apt install notmuch isync afew Do initial setup of notmuch for your user. I&rsquo;ve opted to store my mail in ~/mail, this is used throughout the text below, ymmv.
-        
-        <div class="read-more-link">
-            <a href="/post/2021-05-11-emacs-gmail-and-lore-mailing-lists/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
     <a href="https://troglobit.com/post/2021-05-01-dependency-handling-in-finit/">Dependency handling in Finit</a>
   </h1>
 
@@ -1105,6 +699,11 @@ sudo apt install notmuch isync afew Do initial setup of notmuch for your user. I
       <time datetime=" 2021-05-01T08:43:06&#43;0100" class="post-date">
         May 1, 2021
       </time>
+      
+      <time datetime=" 2022-01-09T18:46:23&#43;0100" class="post-updated">
+        (updated January 9, 2022)
+      </time>
+      
       
       <span> - </span>
       <span class="reading-time">
@@ -1155,6 +754,506 @@ is handling dependencies at system reconfiguration.</p>
         
         <div class="read-more-link">
             <a href="/post/2021-05-01-dependency-handling-in-finit/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/projects/watchdogd/">Advanced watchdog daemon for Linux</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2021-04-30T17:02:00&#43;0100" class="post-date">
+        April 30, 2021
+      </time>
+      
+      <time datetime=" 2024-01-02T14:57:00&#43;0100" class="post-updated">
+        (updated January 2, 2024)
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>1 min read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        watchdogd(8) is an advanced system and process supervisor primarily intended for embedded Linux and server systems. It supports &ldquo;kicking&rdquo; multiple watchdog timer (WDT) devices and can also monitor critical system resources, supervise the heartbeat of processes1 and record process deadline transgressions.
+Read more about Built-in Monitors in the extended documentation.
+The configuration determines how the daemon acts on monitored resources and supervised processes. See watchdogd.conf(5) for how to set up watermarks and trigger external scripts to suit your particular setup.
+        
+        <div class="read-more-link">
+            <a href="/projects/watchdogd/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/post/2021-04-27-its-here/">It&#39;s Here! ♥</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2021-04-27T20:18:06&#43;0100" class="post-date">
+        April 27, 2021
+      </time>
+      
+      <time datetime=" 2024-01-07T20:21:00&#43;0100" class="post-updated">
+        (updated January 7, 2024)
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>1 min read</span>
+      </span>
+    </div>
+
+    
+    <ul class="tags">
+      
+      <li class="tag-finit">
+        <a href="https://troglobit.com/tags/finit">finit</a>
+      </li>
+      
+      <li class="tag-init">
+        <a href="https://troglobit.com/tags/init">init</a>
+      </li>
+      
+      <li class="tag-opensource">
+        <a href="https://troglobit.com/tags/opensource">opensource</a>
+      </li>
+      
+    </ul>
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        <figure class="right-floated"><a href="https://github.com/troglobit/finit/releases/latest"><img src="/images/finit3.png"
+         alt="finit logo"/></a>
+</figure>
+<p>Finit v4 was finally released the other day! \o/</p>
+<p>It represents the culmination of many years of hard work and careful
+thought put in by many people.  There&rsquo;s so much to tell, hardly know
+where to begin &hellip; the plan anyway is to use this blog for a series of
+posts detailing different aspects and important features.</p>
+<p>The impatient reader can either scroll down to the <strong>video</strong> below, or
+move on to the project home page: <a href="https://troglobit.com/finit.html" target="_blank">https://troglobit.com/finit.html</a></p>
+        
+        <div class="read-more-link">
+            <a href="/post/2021-04-27-its-here/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/post/2021-02-12-alpine-linux-with-finit/">Alpine Linux with Finit</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2021-02-12T07:24:06&#43;0100" class="post-date">
+        February 12, 2021
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>3 mins read</span>
+      </span>
+    </div>
+
+    
+    <ul class="tags">
+      
+      <li class="tag-finit">
+        <a href="https://troglobit.com/tags/finit">finit</a>
+      </li>
+      
+      <li class="tag-init">
+        <a href="https://troglobit.com/tags/init">init</a>
+      </li>
+      
+      <li class="tag-opensource">
+        <a href="https://troglobit.com/tags/opensource">opensource</a>
+      </li>
+      
+    </ul>
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        <p><a href="https://alpinelinux.org/" target="_blank">Alpine Linux</a> is an amazing little operating
+system.  It&rsquo;s small, boots quick, and easy to use.  The size alone makes
+it very attractive to container builders.</p>
+<figure class="center"><img src="/images/finit4-screenshot.png"
+         alt="Alpine Linux started with Finit"/><figcaption>
+            <p>Alpine Linux started with Finit</p>
+        </figcaption>
+</figure>
+<p>This blog post details how to set Alpine up with the Finit init system,
+replacing the default OpenRC.</p>
+        
+        <div class="read-more-link">
+            <a href="/post/2021-02-12-alpine-linux-with-finit/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/post/2021-01-24-buildroot-development-checklist/">Buildroot Development Checklist</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2021-01-24T13:26:00&#43;0100" class="post-date">
+        January 24, 2021
+      </time>
+      
+      <time datetime=" 2023-06-04T17:49:00&#43;0200" class="post-updated">
+        (updated June 4, 2023)
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>2 mins read</span>
+      </span>
+    </div>
+
+    
+    <ul class="tags">
+      
+      <li class="tag-buildroot">
+        <a href="https://troglobit.com/tags/buildroot">buildroot</a>
+      </li>
+      
+      <li class="tag-git">
+        <a href="https://troglobit.com/tags/git">git</a>
+      </li>
+      
+      <li class="tag-opensource">
+        <a href="https://troglobit.com/tags/opensource">opensource</a>
+      </li>
+      
+    </ul>
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        <p>Because I always forget, here&rsquo;s a reminder to myself on how to use <code>git format-patch</code> and <code>git send-email</code> from the command line.</p>
+<blockquote>
+<p>The following process applies to many other mailing-list based
+projects as well, with local differences in helper scripts.</p>
+</blockquote>
+        
+        <div class="read-more-link">
+            <a href="/post/2021-01-24-buildroot-development-checklist/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/post/2021-01-13-emacs-gmail-and-lore-mailing-lists/">Emacs: GMail and Lore Mailing Lists</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2021-01-13T09:29:00&#43;0100" class="post-date">
+        January 13, 2021
+      </time>
+      
+      <time datetime=" 2021-05-11T19:12:00&#43;0100" class="post-updated">
+        (updated May 11, 2021)
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>4 mins read</span>
+      </span>
+    </div>
+
+    
+    <ul class="tags">
+      
+      <li class="tag-notmuch">
+        <a href="https://troglobit.com/tags/notmuch">notmuch</a>
+      </li>
+      
+      <li class="tag-emacs">
+        <a href="https://troglobit.com/tags/emacs">emacs</a>
+      </li>
+      
+      <li class="tag-gmail">
+        <a href="https://troglobit.com/tags/gmail">gmail</a>
+      </li>
+      
+      <li class="tag-lore">
+        <a href="https://troglobit.com/tags/lore">lore</a>
+      </li>
+      
+    </ul>
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        With lots of help from the tireless Tobias Waldekranz, I think I&rsquo;ve finally found the perfect &ldquo;magit like&rdquo; email setup. With Emacs, of course. This is the story of how I did it.
+First install notmuch, mbsync (from the isync package), and afew:
+sudo apt install notmuch isync afew Do initial setup of notmuch for your user. I&rsquo;ve opted to store my mail in ~/mail, this is used throughout the text below, ymmv.
+        
+        <div class="read-more-link">
+            <a href="/post/2021-01-13-emacs-gmail-and-lore-mailing-lists/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/post/2020-11-15-backtrace-in-c/">Backtrace in C</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2020-11-15T17:25:00&#43;0100" class="post-date">
+        November 15, 2020
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>1 min read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        <p>Reminder to self: remember <code>CFLAGS=-g -Og -rdynamic</code> to allow
+<code>backtrace_symbols()</code> to actually pretty print function names
+in stack traces.</p>
+        
+        <div class="read-more-link">
+            <a href="/post/2020-11-15-backtrace-in-c/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/post/2020-08-23-weird-screen-artifacts-on-x200/">Weird Screen Artifacts on X200</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2020-08-23T14:02:00Z" class="post-date">
+        August 23, 2020
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>1 min read</span>
+      </span>
+    </div>
+
+    
+    <ul class="tags">
+      
+      <li class="tag-ThinkPad">
+        <a href="https://troglobit.com/tags/thinkpad">ThinkPad</a>
+      </li>
+      
+      <li class="tag-X200">
+        <a href="https://troglobit.com/tags/x200">X200</a>
+      </li>
+      
+    </ul>
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        I blogged earlier about the awesome little ThinkPad X200 I found and its blinking WiFi LED. Briefly I mentioned an odd issue with X/Wayland on LMDE 4. This turned out to be a HW bug that can only be worked around by disabling hardware acceleration for virtualization:
+https://forums.lenovo.com/t5/Windows-8-1-8-7-Vista-and-XP-Discussions/Bizarre-screen-artifacts-on-R400-Integrated-Graphics-running-Win-7-RTM/m-p/153980?page=1#199768
+The post says it should be sufficient to &ldquo;Disable Virtualization Technology for Directed-IO (VT-d)&rdquo;, but that didn&rsquo;t work for me, and I wanted to keep the 8 GiB of RAM I managed to fit into it.
+        
+        <div class="read-more-link">
+            <a href="/post/2020-08-23-weird-screen-artifacts-on-x200/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/howtos/howto-build-and-use-my-projects/">HowTo: Build &amp; Use My Projects</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+        
+          <span>Joachim Wiberg - </span>
+        
+      
+      
+      <time datetime=" 2020-08-14T07:38:09&#43;0100" class="post-date">
+        August 14, 2020
+      </time>
+      
+      <time datetime=" 2021-10-05T21:03:00&#43;0200" class="post-updated">
+        (updated October 5, 2021)
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>5 mins read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        <p>Ever so often someone new to Open Source show up on GitHub or in my
+inbox.  It usually starts something like this:</p>
+<ul>
+<li><em>&ldquo;Hey, I just downloaded your software, what&rsquo;s next?&rdquo;</em></li>
+<li><em>&ldquo;Your software doesn&rsquo;t work on my system!!!!&rdquo;</em></li>
+<li><em>&ldquo;How can I do that weird-thing that fits my odd use-case?&rdquo;</em></li>
+<li><em>&ldquo;I have zero documented experience but I think you should fix your build system!&rdquo;</em></li>
+</ul>
+<p>This HowTo is for you.</p>
+<h2 id="0-short-version">0. Short Version</h2>
+<ul>
+<li>Download a <em>versioned</em> archive from the project&rsquo;s Releases page</li>
+<li>Extract archive for v1.2.3 and change to its directory, <code>cd archive-1.2.3/</code></li>
+<li><code>./configure --help</code>, or use something like the following &hellip;</li>
+<li><code>./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var &amp;&amp; make &amp;&amp; sudo make install</code></li>
+</ul>
+<blockquote>
+<p>Some projects of mine are available in Debian/Ubuntu/FreeBSD, if you
+use that, please report bugs to them and not me.  I have no control
+over what they do.</p>
+</blockquote>
+<p>Cheers<br>
+/Joachim</p>
+        
+        <div class="read-more-link">
+            <a href="/howtos/howto-build-and-use-my-projects/">Read More…</a>
         </div>
         
         

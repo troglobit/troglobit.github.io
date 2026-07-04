@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://troglobit.com/" />
 
 
-<meta property="og:updated_time" content="2026-05-26T22:00:00&#43;02:00" />
+<meta property="og:updated_time" content="2026-07-04T09:57:00Z" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -404,11 +404,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/finit/">Fast init for Linux systems</a>
+                                <a href="https://troglobit.com/projects/mini-snmpd/">Mini SNMP daemon</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/smcroute/">Static Multicast Routing Daemon</a>
+                                <a href="https://troglobit.com/projects/finit/">Fast init for Linux systems</a>
                             </li>
                         
                     
@@ -652,6 +652,7 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
         May 26, 2026
       </time>
       
+      
       <span> - </span>
       <span class="reading-time">
         
@@ -717,6 +718,7 @@ lot — so check out the <a href="https://www.kernelkit.org/" target="_blank">Ke
         May 5, 2025
       </time>
       
+      
       <span> - </span>
       <span class="reading-time">
         
@@ -772,6 +774,7 @@ Huge props to wkz for all the help and sparring, cheers!
       <time datetime=" 2025-01-05T13:57:00Z" class="post-date">
         January 5, 2025
       </time>
+      
       
       <span> - </span>
       <span class="reading-time">
@@ -841,6 +844,7 @@ further into.</p>
         August 7, 2024
       </time>
       
+      
       <span> - </span>
       <span class="reading-time">
         
@@ -897,6 +901,7 @@ introduction I often need to rebuild from scratch to verify fundamental changes 
       <time datetime=" 2024-03-03T13:19:28Z" class="post-date">
         March 3, 2024
       </time>
+      
       
       <span> - </span>
       <span class="reading-time">
@@ -957,6 +962,7 @@ Perquisites You need a lot of development packages installed to check out and bu
         January 28, 2024
       </time>
       
+      
       <span> - </span>
       <span class="reading-time">
         
@@ -1013,6 +1019,11 @@ It&rsquo;s not a race car though &hellip; like Gnome terminal it&rsquo;s built a
         January 7, 2024
       </time>
       
+      <time datetime=" 2025-03-03T03:05:00&#43;0100" class="post-updated">
+        (updated March 3, 2025)
+      </time>
+      
+      
       <span> - </span>
       <span class="reading-time">
         
@@ -1046,16 +1057,17 @@ Features Runlevels, defined per service One-shot tasks, services (daemons), or S
     <article class="post">
         <div class="info">
   <h1 class="post-title">
-    <a href="https://troglobit.com/howtos/snmp/">HowTo play with SNMP</a>
+    <a href="https://troglobit.com/post/2023-01-15-finit-custom-connectivity-check/">Finit custom connectivity check</a>
   </h1>
 
   <div class="headline">
     <div>
       
       
-      <time datetime=" 2023-09-04T20:24:00Z" class="post-date">
-        September 4, 2023
+      <time datetime=" 2023-01-15T18:42:00Z" class="post-date">
+        January 15, 2023
       </time>
+      
       
       <span> - </span>
       <span class="reading-time">
@@ -1063,62 +1075,19 @@ Features Runlevels, defined per service One-shot tasks, services (daemons), or S
           
         
 
-        <span>2 mins read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        This mini HowTo describes how to use the SNMP client tools to retrieve human readable information from devices running an SNMP daemon. In the examples below mini-snmpd is used as the daemon and as client both the command line net-snmp tool and the snmpB GUI are used.
-Personally I use both Ubuntu and Debian, so the tools I use to download the clients will reflect that. See your respective UNIX distro&rsquo;s help pages for how to install these client tools in your operating system.
-        
-        <div class="read-more-link">
-            <a href="/howtos/snmp/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/post/2023-06-04-buildroot-development-checklist/">Buildroot Development Checklist</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2023-06-04T17:49:00&#43;0200" class="post-date">
-        June 4, 2023
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>2 mins read</span>
+        <span>3 mins read</span>
       </span>
     </div>
 
     
     <ul class="tags">
       
-      <li class="tag-buildroot">
-        <a href="https://troglobit.com/tags/buildroot">buildroot</a>
+      <li class="tag-finit">
+        <a href="https://troglobit.com/tags/finit">finit</a>
       </li>
       
-      <li class="tag-git">
-        <a href="https://troglobit.com/tags/git">git</a>
+      <li class="tag-init">
+        <a href="https://troglobit.com/tags/init">init</a>
       </li>
       
       <li class="tag-opensource">
@@ -1136,14 +1105,14 @@ Personally I use both Ubuntu and Debian, so the tools I use to download the clie
 </div>
 
         
-        <p>Because I always forget, here&rsquo;s a reminder to myself on how to use <code>git format-patch</code> and <code>git send-email</code> from the command line.</p>
-<blockquote>
-<p>The following process applies to many other mailing-list based
-projects as well, with local differences in helper scripts.</p>
-</blockquote>
+        <p>This post shows how you can extend Finit with your own conditions.  The
+example we will use is a simple Internet connectivity checker.  When it
+triggers we start BusyBox ntpd which, if started with any other type of
+condition (none, default route, etc.) may get stuck trying to resolve
+<code>pool.ntp.org</code>.</p>
         
         <div class="read-more-link">
-            <a href="/post/2023-06-04-buildroot-development-checklist/">Read More…</a>
+            <a href="/post/2023-01-15-finit-custom-connectivity-check/">Read More…</a>
         </div>
         
         
@@ -1151,16 +1120,21 @@ projects as well, with local differences in helper scripts.</p>
     <article class="post">
         <div class="info">
   <h1 class="post-title">
-    <a href="https://troglobit.com/howtos/multicast/">Multicast HowTo</a>
+    <a href="https://troglobit.com/post/2022-12-26-buildroot-demo-of-fastinit-finit/">Buildroot demo of FastInit (Finit)</a>
   </h1>
 
   <div class="headline">
     <div>
       
       
-      <time datetime=" 2023-05-28T07:52:12&#43;0200" class="post-date">
-        May 28, 2023
+      <time datetime=" 2022-12-26T21:21:21Z" class="post-date">
+        December 26, 2022
       </time>
+      
+      <time datetime=" 2024-01-07T16:48:00Z" class="post-updated">
+        (updated January 7, 2024)
+      </time>
+      
       
       <span> - </span>
       <span class="reading-time">
@@ -1168,10 +1142,30 @@ projects as well, with local differences in helper scripts.</p>
           
         
 
-        <span>13 mins read</span>
+        <span>3 mins read</span>
       </span>
     </div>
 
+    
+    <ul class="tags">
+      
+      <li class="tag-buildroot">
+        <a href="https://troglobit.com/tags/buildroot">buildroot</a>
+      </li>
+      
+      <li class="tag-finit">
+        <a href="https://troglobit.com/tags/finit">finit</a>
+      </li>
+      
+      <li class="tag-init">
+        <a href="https://troglobit.com/tags/init">init</a>
+      </li>
+      
+      <li class="tag-opensource">
+        <a href="https://troglobit.com/tags/opensource">opensource</a>
+      </li>
+      
+    </ul>
     
   </div>
 
@@ -1182,12 +1176,81 @@ projects as well, with local differences in helper scripts.</p>
 </div>
 
         
-        Introduction This HowTo attempts to give some insight into the basics of setting up multicast routing. Both static multicast routing, with SMCRoute, and dynamic multicast routing, with mrouted and pimd.
-For some use-cases, in particular link-local multicast, it may not be possible to use multicast routing, then I recommend trying out:
-Bridging networks, see bridge(8) or Linux bridge - how it works igmproxy, mcproxy, or OpenVPN in Layer-2, bridged mode Make sure to check out the FAQ for the most common problems.
+        <p>I believe there is a <strong>gap in the market</strong> between BusyBox init and
+systemd.  In particular in the embedded space.  This blog post shows how
+easily it is to get up and running quickly with FastInit (<a href="https://github.com/troglobit/finit#introduction" target="_blank">Finit</a>)!</p>
+<p>I&rsquo;m a really bad salesman, and an even worse writer, so instead of
+trying to convince you with my poor English, I&rsquo;ve made a demo.  It is a
+<a href="https://nightly.buildroot.org/#outside-br-custom" target="_blank">Buildroot external</a>
+that can be used to add Finit to your own projects.</p>
+<blockquote>
+<p>For details, look here: <a href="https://github.com/troglobit/br2-finit-demo" target="_blank">https://github.com/troglobit/br2-finit-demo</a>,
+try out the <a href="https://github.com/troglobit/br2-finit-demo/releases/tag/latest" target="_blank">latest build</a> in <a href="https://www.qemu.org" target="_blank">Qemu</a>.</p>
+</blockquote>
+<figure class="center"><img src="/images/finit-demo/bootstrap.png"
+         alt="Finit bootstrap" width="600"/><figcaption>
+            <p>Finit bootstrap</p>
+        </figcaption>
+</figure>
         
         <div class="read-more-link">
-            <a href="/howtos/multicast/">Read More…</a>
+            <a href="/post/2022-12-26-buildroot-demo-of-fastinit-finit/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/post/2022-10-01-remap-prev/next-on-thinkpad/">Remap Prev/Next on ThinkPad</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2022-10-01T15:44:00Z" class="post-date">
+        October 1, 2022
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>1 min read</span>
+      </span>
+    </div>
+
+    
+    <ul class="tags">
+      
+      <li class="tag-ThinkPad">
+        <a href="https://troglobit.com/tags/thinkpad">ThinkPad</a>
+      </li>
+      
+      <li class="tag-X200">
+        <a href="https://troglobit.com/tags/x200">X200</a>
+      </li>
+      
+    </ul>
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        I still use my awesome little ThinkPad X200, in fact I now have more of them and even a few X201&rsquo;s. They are truly the best machines I&rsquo;ve ever used! :-)
+One annoying thing though, when going back to these traditional ThinkPad keyboards is the prev/next keys next to the arrow keys. On modern ones they are PgUp/PgDn and I recently learned how to elegantly remap them in X. Note the difference, below, to the original at ThinkWiki.
+        
+        <div class="read-more-link">
+            <a href="/post/2022-10-01-remap-prev/next-on-thinkpad/">Read More…</a>
         </div>
         
         

@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://troglobit.com/" />
 
 
-<meta property="og:updated_time" content="2026-05-26T22:00:00&#43;02:00" />
+<meta property="og:updated_time" content="2026-07-04T09:57:00Z" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -404,11 +404,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/finit/">Fast init for Linux systems</a>
+                                <a href="https://troglobit.com/projects/mini-snmpd/">Mini SNMP daemon</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/smcroute/">Static Multicast Routing Daemon</a>
+                                <a href="https://troglobit.com/projects/finit/">Fast init for Linux systems</a>
                             </li>
                         
                     
@@ -641,157 +641,6 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
     <article class="post">
         <div class="info">
   <h1 class="post-title">
-    <a href="https://troglobit.com/2016/08/18/live-kvm-migration-with-virt-manager/">Live KVM migration with virt-manager</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2016-08-18T20:07:17Z" class="post-date">
-        August 18, 2016
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>2 mins read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        <p>With the new servers and my server room shaping up, I&rsquo;ve been working on
-setting up ALL THE THINGS!  I just managed to set up live migration of
-the KVM virtual machines I use for testing my <a href="https://en.wikipedia.org/wiki/Free_and_open-source_software" target="_blank">FLOSS</a> projects.  Here
-is a short writeup of that, just as a reminder for myself.</p>
-<h2 id="checklist">Checklist</h2>
-<ol>
-<li>Make sure the libvirt versions are the same.  I tried setting up
-migration between CentOS 7.2 and and Ubuntu LTS 16.04 which turned
-out to be a mess of insurmountable incompatibilities.  I&rsquo;ve now gone
-back to run Ubuntu on everything and it all works fine.</li>
-<li>Set up NFS for the backend store of <code>/var/lib/libvirt/images</code>.  Make
-sure to export the share properly, I tried first with my ReadyNAS, but
-couldn&rsquo;t set up root access (defaulted to nobody).</li>
-<li>Set up VM disk caching=none</li>
-<li>Set up VM processor model=default</li>
-<li>Profit</li>
-</ol>
-<p>Good Luck! :)</p>
-        
-        <div class="read-more-link">
-            <a href="/2016/08/18/live-kvm-migration-with-virt-manager/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/2016/08/13/fake-raid-adventures/">Fake RAID Adventures</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2016-08-13T15:59:36Z" class="post-date">
-        August 13, 2016
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>3 mins read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        <p>The other day I got my geeky hands on two old SuperMicro X8STI-F 1U
-servers.  I plan to use them as build and embedded target emulation
-servers for my <a href="https://github.com/troglobit" target="_blank">open source projects</a>
-as well as Minecraft server for my kids :)</p>
-<img src="http://eitc.in/yahoo_site_admin/assets/docs/Supermicro_SuperServer_SC512L_small.324203750.JPG">
-        
-        <div class="read-more-link">
-            <a href="/2016/08/13/fake-raid-adventures/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/2016/07/03/upgrade-x1-carbon-bios-from-linux/">Upgrade X1 Carbon BIOS from Linux</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2016-07-03T09:57:44Z" class="post-date">
-        July 3, 2016
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>2 mins read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        <p>This is a very brief writeup of how to upgrade the BIOS on a X1 Carbon
-(G1) from Linux.  For more information on this topic there is always the
-excellent <a href="http://www.thinkwiki.org/wiki/BIOS_Upgrade" target="_blank">ThinkWiki</a>.</p>
-<p>OK, this post is more about creating the bootable USB stick needed, was
-too much of a chicken to try <a href="https://www.flashrom.org/Flashrom" target="_blank">Flashrom</a> &hellip;</p>
-        
-        <div class="read-more-link">
-            <a href="/2016/07/03/upgrade-x1-carbon-bios-from-linux/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
     <a href="https://troglobit.com/2016/07/02/redirecting-tcp-udp-ports-for-fun-and-profit/">Redirecting Ports For Fun and Profit</a>
   </h1>
 
@@ -802,6 +651,7 @@ too much of a chicken to try <a href="https://www.flashrom.org/Flashrom" target=
       <time datetime=" 2016-07-02T12:54:37Z" class="post-date">
         July 2, 2016
       </time>
+      
       
       <span> - </span>
       <span class="reading-time">
@@ -858,6 +708,7 @@ I have several other <a href="/projects/">projects</a> to attend to :-)</p>
         April 21, 2016
       </time>
       
+      
       <span> - </span>
       <span class="reading-time">
         
@@ -902,6 +753,7 @@ sudo netstat -atnup If your application is not listed there you have a problem w
       <time datetime=" 2016-04-11T01:28:27Z" class="post-date">
         April 11, 2016
       </time>
+      
       
       <span> - </span>
       <span class="reading-time">
@@ -957,6 +809,7 @@ Simply touch the PID file instead.</p>
         April 4, 2016
       </time>
       
+      
       <span> - </span>
       <span class="reading-time">
         
@@ -1000,6 +853,7 @@ Keep separate accounts. If possible, use separate accounts (with different permi
       <time datetime=" 2016-03-24T22:39:00Z" class="post-date">
         March 24, 2016
       </time>
+      
       
       <span> - </span>
       <span class="reading-time">
@@ -1056,6 +910,7 @@ take heed young people!</p>
       <time datetime=" 2016-03-07T01:37:04Z" class="post-date">
         March 7, 2016
       </time>
+      
       
       <span> - </span>
       <span class="reading-time">
@@ -1121,6 +976,7 @@ work properly with <code>pimd</code> running on the host:</p>
         March 7, 2016
       </time>
       
+      
       <span> - </span>
       <span class="reading-time">
         
@@ -1154,6 +1010,160 @@ improving and adding features to it over the years.</p>
         
         <div class="read-more-link">
             <a href="/2016/03/07/multicast-testing/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/post/2015-11-14-useful-unix-apis/">Useful UNIX API:s</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2015-11-14T11:45:49Z" class="post-date">
+        November 14, 2015
+      </time>
+      
+      <time datetime=" 2020-02-22T09:45:00Z" class="post-updated">
+        (updated February 22, 2020)
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>2 mins read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        <p>Had an interesting conversation with a buddy last night.  It started out
+as a shift-reduce problem with Bison and ended up a ping-pong of useful
+UNIX API:s.  We concluded that despite having worked professionally with
+UNIX for over two decades, it is still very satisfying finding gems like
+these.</p>
+<p>Most people are completely unaware they exist and end up rolling their
+own (buggy) implementations.  For instance, string manipulation and
+various forms of linked lists.  Which is why I many years ago extracted
+the <em>frog DNA</em> from <a href="https://github.com/troglobit/finit/" target="_blank">Finit</a> to a
+separate library called <a href="https://github.com/troglobit/libite/" target="_blank">libite</a>,
+or -lite for short.  It imports the OpenBSD <code>strlcpy()</code> family of API:s,
+up-to-date <code>queue.h</code> with the <code>_SAFE</code> iterators, and more.  Some people
+like <a href="https://libbsd.freedesktop.org/wiki/" target="_blank">libbsd</a> for this, but I&rsquo;ve
+found many of the ports incomplete and unsafe and prefer to stay closer
+to the upstream *BSD versions.</p>
+<p><strong>Update:</strong> This post was originally written Nov 14, 2015.  It was a
+Saturday and I remember being extremely inspired when I wrote it.  I&rsquo;ve
+continued adding to it over the years, and still do.  So, as of Jul 2,
+2017 I&rsquo;m bumping the modification date each time I add something new :-)</p>
+        
+        <div class="read-more-link">
+            <a href="/post/2015-11-14-useful-unix-apis/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/">En vanlig dag på jobbet (SWEDISH)</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2015-11-13T20:57:29Z" class="post-date">
+        November 13, 2015
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>3 mins read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        I vanlig ordning bashar vi DNS på jobbet, pga ofungerar hårt över VPN för de flesta. (Ja vi kör alla Linux, utom cheferna som envisas med att använda något ur gamla testamentet.) Här följer ett utdrag från vår IRC:
+14:32 &lt;n00b&gt; Success! Äntligen fick jag ordning på DNS via guest wifi -&gt; vpn -&gt; office network. Firar med att skapa lite irc noise. :D 14:32 &lt; rooth&gt;n00b: Du har väl fått den distribuerade /etc/hosts filen?
+        
+        <div class="read-more-link">
+            <a href="/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/">Awesome: Changing Next/Prev Tune in Spotify</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2015-11-10T12:14:09Z" class="post-date">
+        November 10, 2015
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>1 min read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        Back to using the Awesome WM in Ubuntu. This time I&rsquo;m setting up everything from scratch and first up is fixing keybindings to control my main music player: Spotify!
+Edit your ~/.config/awesome/rc.lua with Emacs (obviously). If you do not have an rc file, simply copy the system /etc/xdb/awesome/rc.lua:
+globalkeys = awful.util.table.join(globalkeys, awful.key({}, &quot;XF86AudioRaiseVolume&quot;, function () awful.util.spawn(&quot;amixer -D pulse sset Master 5%+&quot;, false) end), awful.key({}, &quot;XF86AudioLowerVolume&quot;, function () awful.util.spawn(&quot;amixer -D pulse sset Master 5%-&quot;, false) end), awful.
+        
+        <div class="read-more-link">
+            <a href="/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/">Read More…</a>
         </div>
         
         

@@ -51,13 +51,6 @@
       <description>Daniel Lipovetsky&amp;rsquo;s Typometer results.&#xA;Ever since I first learned about Terminator I&amp;rsquo;ve been a huge fan! It&amp;rsquo;s a great replacement for the standard Gnome terminal with its built-in support for horizontal and vertical splits.&#xA;It&amp;rsquo;s not a race car though &amp;hellip; like Gnome terminal it&amp;rsquo;s built around libvte. So on a bad day of clashing with Ubuntu, GDM, systemd and the new handling of capabilities, two of my colleagues went all-in on Alacritty and now swear by it!</description>
     </item>
     <item>
-      <title>Buildroot Development Checklist</title>
-      <link>https://troglobit.com/post/2023-06-04-buildroot-development-checklist/</link>
-      <pubDate>Sun, 04 Jun 2023 17:49:00 +0200</pubDate>
-      <guid>https://troglobit.com/post/2023-06-04-buildroot-development-checklist/</guid>
-      <description>&lt;p&gt;Because I always forget, here&amp;rsquo;s a reminder to myself on how to use &lt;code&gt;git format-patch&lt;/code&gt; and &lt;code&gt;git send-email&lt;/code&gt; from the command line.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The following process applies to many other mailing-list based&#xA;projects as well, with local differences in helper scripts.&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
-    </item>
-    <item>
       <title>Finit custom connectivity check</title>
       <link>https://troglobit.com/post/2023-01-15-finit-custom-connectivity-check/</link>
       <pubDate>Sun, 15 Jan 2023 18:42:00 +0000</pubDate>
@@ -121,13 +114,6 @@
       <description>&lt;figure class=&#34;right-floated&#34;&gt;&lt;a href=&#34;https://troglobit.com/finit.html&#34;&gt;&lt;img src=&#34;https://troglobit.com/images/finit3.png&#34;&#xA;         alt=&#34;finit logo&#34;/&gt;&lt;/a&gt;&#xA;&lt;/figure&gt;&#xA;&lt;p&gt;I&amp;rsquo;m very pleased to announce &lt;a href=&#34;https://github.com/troglobit/finit/releases/tag/4.2&#34; target=&#34;_blank&#34;&gt;Finit v4.2&lt;/a&gt;!  It comes seven months&#xA;after the last release, v4.1, with a bunch of fixes and some new&#xA;features.  See the release notes for details.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Emacs: GMail and Lore Mailing Lists</title>
-      <link>https://troglobit.com/post/2021-05-11-emacs-gmail-and-lore-mailing-lists/</link>
-      <pubDate>Tue, 11 May 2021 19:12:00 +0100</pubDate>
-      <guid>https://troglobit.com/post/2021-05-11-emacs-gmail-and-lore-mailing-lists/</guid>
-      <description>With lots of help from the tireless Tobias Waldekranz, I think I&amp;rsquo;ve finally found the perfect &amp;ldquo;magit like&amp;rdquo; email setup. With Emacs, of course. This is the story of how I did it.&#xA;First install notmuch, mbsync (from the isync package), and afew:&#xA;sudo apt install notmuch isync afew Do initial setup of notmuch for your user. I&amp;rsquo;ve opted to store my mail in ~/mail, this is used throughout the text below, ymmv.</description>
-    </item>
-    <item>
       <title>Dependency handling in Finit</title>
       <link>https://troglobit.com/post/2021-05-01-dependency-handling-in-finit/</link>
       <pubDate>Sat, 01 May 2021 08:43:06 +0100</pubDate>
@@ -149,6 +135,20 @@
       <description>&lt;p&gt;&lt;a href=&#34;https://alpinelinux.org/&#34; target=&#34;_blank&#34;&gt;Alpine Linux&lt;/a&gt; is an amazing little operating&#xA;system.  It&amp;rsquo;s small, boots quick, and easy to use.  The size alone makes&#xA;it very attractive to container builders.&lt;/p&gt;&#xA;&lt;figure class=&#34;center&#34;&gt;&lt;img src=&#34;https://troglobit.com/images/finit4-screenshot.png&#34;&#xA;         alt=&#34;Alpine Linux started with Finit&#34;/&gt;&lt;figcaption&gt;&#xA;            &lt;p&gt;Alpine Linux started with Finit&lt;/p&gt;&#xA;        &lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&lt;p&gt;This blog post details how to set Alpine up with the Finit init system,&#xA;replacing the default OpenRC.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Buildroot Development Checklist</title>
+      <link>https://troglobit.com/post/2021-01-24-buildroot-development-checklist/</link>
+      <pubDate>Sun, 24 Jan 2021 13:26:00 +0100</pubDate>
+      <guid>https://troglobit.com/post/2021-01-24-buildroot-development-checklist/</guid>
+      <description>&lt;p&gt;Because I always forget, here&amp;rsquo;s a reminder to myself on how to use &lt;code&gt;git format-patch&lt;/code&gt; and &lt;code&gt;git send-email&lt;/code&gt; from the command line.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The following process applies to many other mailing-list based&#xA;projects as well, with local differences in helper scripts.&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>Emacs: GMail and Lore Mailing Lists</title>
+      <link>https://troglobit.com/post/2021-01-13-emacs-gmail-and-lore-mailing-lists/</link>
+      <pubDate>Wed, 13 Jan 2021 09:29:00 +0100</pubDate>
+      <guid>https://troglobit.com/post/2021-01-13-emacs-gmail-and-lore-mailing-lists/</guid>
+      <description>With lots of help from the tireless Tobias Waldekranz, I think I&amp;rsquo;ve finally found the perfect &amp;ldquo;magit like&amp;rdquo; email setup. With Emacs, of course. This is the story of how I did it.&#xA;First install notmuch, mbsync (from the isync package), and afew:&#xA;sudo apt install notmuch isync afew Do initial setup of notmuch for your user. I&amp;rsquo;ve opted to store my mail in ~/mail, this is used throughout the text below, ymmv.</description>
+    </item>
+    <item>
       <title>Backtrace in C</title>
       <link>https://troglobit.com/post/2020-11-15-backtrace-in-c/</link>
       <pubDate>Sun, 15 Nov 2020 17:25:00 +0100</pubDate>
@@ -168,13 +168,6 @@
       <pubDate>Fri, 17 Jul 2020 11:04:09 +0200</pubDate>
       <guid>https://troglobit.com/post/2020-07-17-wireguard-and-dns-timeout/</guid>
       <description>&lt;p&gt;For a while now my Wireguard VPN provider has been handing out a bad DNS&#xA;server.  So whenever I do a DNS lookup it takes five (5!) seconds timing&#xA;out, which is quite annoying.&lt;/p&gt;&#xA;&lt;p&gt;This blog post is about how you can fix this with &lt;code&gt;openresolv&lt;/code&gt; in Ubuntu.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Fixing file sharing in Debian/Ubuntu/Mint</title>
-      <link>https://troglobit.com/post/2020-07-13-fixing-file-sharing-in-debian/ubuntu/mint/</link>
-      <pubDate>Mon, 13 Jul 2020 17:37:00 +0100</pubDate>
-      <guid>https://troglobit.com/post/2020-07-13-fixing-file-sharing-in-debian/ubuntu/mint/</guid>
-      <description>&lt;p&gt;Mounting my ReadyNAS from Nautilus stopped working after upgrading to&#xA;Ubuntu 20.04.  Turns out there was a change in behavior in Sambva v4.11&#xA;that disabled SMB1 protocol by default.  It&amp;rsquo;ll be interesting to see how&#xA;this pans out in the rest of the Linux community &amp;hellip; fortunately there&amp;rsquo;s&#xA;a workaround!&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; same on Debian 11 (&lt;em&gt;bullseye&lt;/em&gt;) and Linux Mint 20 (&lt;em&gt;Ulyana&lt;/em&gt;)&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
     </item>
     <item>
       <title>Open Source Releases</title>
@@ -205,18 +198,11 @@
       <description>&lt;p&gt;Every now and then people ask me for pre-built packages of software I&#xA;maintain.  Up until today I&amp;rsquo;ve had to refer them to the cold hard build&#xA;instructions for each of my programs.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Set up a Debian/Ubuntu APT Repository</title>
-      <link>https://troglobit.com/2017/09/30/set-up-a-debian-ubuntu-apt-repository/</link>
-      <pubDate>Sat, 22 Feb 2020 12:28:00 +0000</pubDate>
-      <guid>https://troglobit.com/2017/09/30/set-up-a-debian-ubuntu-apt-repository/</guid>
-      <description>&lt;p&gt;How to set up a Debian/Ubuntu APT repository with GPG signing.&lt;/p&gt;&#xA;&lt;p&gt;At first I tried to use &lt;a href=&#34;https://debian-administration.org/article/717/Setting_up_a_personal_secure_apt_repository&#34; target=&#34;_blank&#34;&gt;Bas Wijnen&amp;rsquo;s mini-dinstall howto&lt;/a&gt;, but never&#xA;managed to get it working.  Probably due to problems with GPG.  Then I&#xA;went down the tried and true path of using &lt;a href=&#34;https://debian-administration.org/article/286/Setting_up_your_own_APT_repository_with_upload_support&#34; target=&#34;_blank&#34;&gt;reprepro&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve tried to document my steps here, but I&amp;rsquo;ve very likely missed a few&#xA;steps that a beginner admin may run into. YMMV B-)&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Useful UNIX API:s</title>
-      <link>https://troglobit.com/post/2020-02-22-useful-unix-apis/</link>
-      <pubDate>Sat, 22 Feb 2020 09:45:00 +0000</pubDate>
-      <guid>https://troglobit.com/post/2020-02-22-useful-unix-apis/</guid>
-      <description>&lt;p&gt;Had an interesting conversation with a buddy last night.  It started out&#xA;as a shift-reduce problem with Bison and ended up a ping-pong of useful&#xA;UNIX API:s.  We concluded that despite having worked professionally with&#xA;UNIX for over two decades, it is still very satisfying finding gems like&#xA;these.&lt;/p&gt;&#xA;&lt;p&gt;Most people are completely unaware they exist and end up rolling their&#xA;own (buggy) implementations.  For instance, string manipulation and&#xA;various forms of linked lists.  Which is why I many years ago extracted&#xA;the &lt;em&gt;frog DNA&lt;/em&gt; from &lt;a href=&#34;https://github.com/troglobit/finit/&#34; target=&#34;_blank&#34;&gt;Finit&lt;/a&gt; to a&#xA;separate library called &lt;a href=&#34;https://github.com/troglobit/libite/&#34; target=&#34;_blank&#34;&gt;libite&lt;/a&gt;,&#xA;or -lite for short.  It imports the OpenBSD &lt;code&gt;strlcpy()&lt;/code&gt; family of API:s,&#xA;up-to-date &lt;code&gt;queue.h&lt;/code&gt; with the &lt;code&gt;_SAFE&lt;/code&gt; iterators, and more.  Some people&#xA;like &lt;a href=&#34;https://libbsd.freedesktop.org/wiki/&#34; target=&#34;_blank&#34;&gt;libbsd&lt;/a&gt; for this, but I&amp;rsquo;ve&#xA;found many of the ports incomplete and unsafe and prefer to stay closer&#xA;to the upstream *BSD versions.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; This post was originally written Nov 14, 2015.  It was a&#xA;Saturday and I remember being extremely inspired when I wrote it.  I&amp;rsquo;ve&#xA;continued adding to it over the years, and still do.  So, as of Jul 2,&#xA;2017 I&amp;rsquo;m bumping the modification date each time I add something new :-)&lt;/p&gt;</description>
+      <title>Fixing file sharing in Debian/Ubuntu/Mint</title>
+      <link>https://troglobit.com/post/2020-02-16-fixing-file-sharing-in-debian/ubuntu/mint/</link>
+      <pubDate>Sun, 16 Feb 2020 21:06:59 +0100</pubDate>
+      <guid>https://troglobit.com/post/2020-02-16-fixing-file-sharing-in-debian/ubuntu/mint/</guid>
+      <description>&lt;p&gt;Mounting my ReadyNAS from Nautilus stopped working after upgrading to&#xA;Ubuntu 20.04.  Turns out there was a change in behavior in Sambva v4.11&#xA;that disabled SMB1 protocol by default.  It&amp;rsquo;ll be interesting to see how&#xA;this pans out in the rest of the Linux community &amp;hellip; fortunately there&amp;rsquo;s&#xA;a workaround!&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; same on Debian 11 (&lt;em&gt;bullseye&lt;/em&gt;) and Linux Mint 20 (&lt;em&gt;Ulyana&lt;/em&gt;)&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
     </item>
     <item>
       <title>BSD syslogd in Linux</title>
@@ -301,6 +287,13 @@
       <pubDate>Tue, 23 Jan 2018 20:39:36 +0000</pubDate>
       <guid>https://troglobit.com/2016/07/05/multicast-routing-with-pim-sm-over-gre/</guid>
       <description>&lt;p&gt;GRE tunnels are useful in many ways.  This blog post shows how to set up&#xA;multicast routing with &lt;a href=&#34;https://github.com/troglobit/pimd/&#34; target=&#34;_blank&#34;&gt;pimd&lt;/a&gt; over a&#xA;GRE tunnel.  To achieve this we will also set up OSPF over GRE with&#xA;&lt;a href=&#34;http://www.quagga.net&#34; target=&#34;_blank&#34;&gt;Quagga&lt;/a&gt;, because PIM, unlike DVMRP (&lt;code&gt;mrouted&lt;/code&gt;),&#xA;require unicast routing rules to be established.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;       .----{ Intranet }----.&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      /    192.168.1.0/24    \&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     /                        \&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.10 /                          \.20&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.--&amp;#39;---. .1  GRE Tunnel  .2 .---`--.&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|      |====================|      |&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|  R1  |   172.16.16.0/30   |  R2  |&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|      |                    |      |&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;#39;--.---&amp;#39;                    &amp;#39;------&amp;#39;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   | .1                        | .1 &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   |    10.0.1.0/24            |    10.0.2.0/24&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   | .2                        | .2 &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.--&amp;#39;---.                    .--&amp;#39;---.&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|      |                    |      |&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|  C1  |                    |  C2  |&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|      |                    |      |&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;#39;------&amp;#39;                    &amp;#39;------&amp;#39;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In this post we are using the home WiFi network, 192.168.1.0/24, to hook&#xA;up the GRE tunnel.  It is just as easy to extend this to a big corporate&#xA;Intranet with more routers between &lt;code&gt;R1&lt;/code&gt; and &lt;code&gt;R2&lt;/code&gt;.  As long as that IT&#xA;department takes care of the unicast routing between &lt;code&gt;R1&lt;/code&gt; and &lt;code&gt;R2&lt;/code&gt; so&#xA;that the GRE tunnel can be established.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Set up a Debian/Ubuntu APT Repository</title>
+      <link>https://troglobit.com/2017/09/30/set-up-a-debian-ubuntu-apt-repository/</link>
+      <pubDate>Sat, 30 Sep 2017 12:39:43 +0000</pubDate>
+      <guid>https://troglobit.com/2017/09/30/set-up-a-debian-ubuntu-apt-repository/</guid>
+      <description>&lt;p&gt;How to set up a Debian/Ubuntu APT repository with GPG signing.&lt;/p&gt;&#xA;&lt;p&gt;At first I tried to use &lt;a href=&#34;https://debian-administration.org/article/717/Setting_up_a_personal_secure_apt_repository&#34; target=&#34;_blank&#34;&gt;Bas Wijnen&amp;rsquo;s mini-dinstall howto&lt;/a&gt;, but never&#xA;managed to get it working.  Probably due to problems with GPG.  Then I&#xA;went down the tried and true path of using &lt;a href=&#34;https://debian-administration.org/article/286/Setting_up_your_own_APT_repository_with_upload_support&#34; target=&#34;_blank&#34;&gt;reprepro&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve tried to document my steps here, but I&amp;rsquo;ve very likely missed a few&#xA;steps that a beginner admin may run into. YMMV B-)&lt;/p&gt;</description>
     </item>
     <item>
       <title>Threads vs Event Loop, Again ...</title>
@@ -483,6 +476,13 @@
       <pubDate>Mon, 07 Mar 2016 01:06:02 +0000</pubDate>
       <guid>https://troglobit.com/2016/03/07/multicast-testing/</guid>
       <description>&lt;p&gt;For the better part of the last ten years I have been working with&#xA;multicast in one way or another.  I&amp;rsquo;ve used many different tools for&#xA;testing, but on most systems I usually resort to &lt;code&gt;ping(1)&lt;/code&gt; and&#xA;&lt;code&gt;tcpdump(1)&lt;/code&gt;, which are quite sufficient.  However, you often need to&#xA;tell bridges (switches) to open up multicast in your general direction&#xA;for your pings to get through, so you need to send an IGMP &amp;ldquo;join&amp;rdquo; first.&lt;/p&gt;&#xA;&lt;p&gt;Way back in 2006 I stumbled upon a neat tool called &lt;code&gt;mcjoin&lt;/code&gt;, written by&#xA;David Stevens and announced in&#xA;&lt;a href=&#34;https://lkml.org/lkml/2004/8/5/143&#34; target=&#34;_blank&#34;&gt;this posting to LKML&lt;/a&gt;.  I started&#xA;improving and adding features to it over the years.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Useful UNIX API:s</title>
+      <link>https://troglobit.com/post/2015-11-14-useful-unix-apis/</link>
+      <pubDate>Sat, 14 Nov 2015 11:45:49 +0000</pubDate>
+      <guid>https://troglobit.com/post/2015-11-14-useful-unix-apis/</guid>
+      <description>&lt;p&gt;Had an interesting conversation with a buddy last night.  It started out&#xA;as a shift-reduce problem with Bison and ended up a ping-pong of useful&#xA;UNIX API:s.  We concluded that despite having worked professionally with&#xA;UNIX for over two decades, it is still very satisfying finding gems like&#xA;these.&lt;/p&gt;&#xA;&lt;p&gt;Most people are completely unaware they exist and end up rolling their&#xA;own (buggy) implementations.  For instance, string manipulation and&#xA;various forms of linked lists.  Which is why I many years ago extracted&#xA;the &lt;em&gt;frog DNA&lt;/em&gt; from &lt;a href=&#34;https://github.com/troglobit/finit/&#34; target=&#34;_blank&#34;&gt;Finit&lt;/a&gt; to a&#xA;separate library called &lt;a href=&#34;https://github.com/troglobit/libite/&#34; target=&#34;_blank&#34;&gt;libite&lt;/a&gt;,&#xA;or -lite for short.  It imports the OpenBSD &lt;code&gt;strlcpy()&lt;/code&gt; family of API:s,&#xA;up-to-date &lt;code&gt;queue.h&lt;/code&gt; with the &lt;code&gt;_SAFE&lt;/code&gt; iterators, and more.  Some people&#xA;like &lt;a href=&#34;https://libbsd.freedesktop.org/wiki/&#34; target=&#34;_blank&#34;&gt;libbsd&lt;/a&gt; for this, but I&amp;rsquo;ve&#xA;found many of the ports incomplete and unsafe and prefer to stay closer&#xA;to the upstream *BSD versions.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; This post was originally written Nov 14, 2015.  It was a&#xA;Saturday and I remember being extremely inspired when I wrote it.  I&amp;rsquo;ve&#xA;continued adding to it over the years, and still do.  So, as of Jul 2,&#xA;2017 I&amp;rsquo;m bumping the modification date each time I add something new :-)&lt;/p&gt;</description>
     </item>
     <item>
       <title>En vanlig dag på jobbet (SWEDISH)</title>

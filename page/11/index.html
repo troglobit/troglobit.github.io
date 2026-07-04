@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://troglobit.com/" />
 
 
-<meta property="og:updated_time" content="2026-05-26T22:00:00&#43;02:00" />
+<meta property="og:updated_time" content="2026-07-04T09:57:00Z" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -404,11 +404,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/finit/">Fast init for Linux systems</a>
+                                <a href="https://troglobit.com/projects/mini-snmpd/">Mini SNMP daemon</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/smcroute/">Static Multicast Routing Daemon</a>
+                                <a href="https://troglobit.com/projects/finit/">Fast init for Linux systems</a>
                             </li>
                         
                     
@@ -641,66 +641,6 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
     <article class="post">
         <div class="info">
   <h1 class="post-title">
-    <a href="https://troglobit.com/2015/01/24/finit-v1-dot-11-released/">Finit v1.11 released!</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2015-01-24T16:54:23Z" class="post-date">
-        January 24, 2015
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>1 min read</span>
-      </span>
-    </div>
-
-    
-    <ul class="tags">
-      
-      <li class="tag-finit">
-        <a href="https://troglobit.com/tags/finit">finit</a>
-      </li>
-      
-      <li class="tag-init">
-        <a href="https://troglobit.com/tags/init">init</a>
-      </li>
-      
-      <li class="tag-opensource">
-        <a href="https://troglobit.com/tags/opensource">opensource</a>
-      </li>
-      
-    </ul>
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        <p><strong>Update 2015-03-09</strong>: This release has unfortunately been <em>yanked</em> due
-to serious regressions in launching background processes.  It has been
-replaced by <a href="/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/">v1.12</a></p>
-        
-        <div class="read-more-link">
-            <a href="/2015/01/24/finit-v1-dot-11-released/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
     <a href="https://troglobit.com/2015/01/12/rant-all-the-c-compiler-warnings-dot-dot-dot/">Rant: All the C Compiler Warnings ...</a>
   </h1>
 
@@ -711,6 +651,7 @@ replaced by <a href="/blog/2015/03/06/inetd-support-in-finit-v1-dot-12/">v1.12</
       <time datetime=" 2015-01-12T01:57:40Z" class="post-date">
         January 12, 2015
       </time>
+      
       
       <span> - </span>
       <span class="reading-time">
@@ -768,6 +709,7 @@ of voodoo, like <code>__attribute__ ((unused))</code> &hellip; seriously?</p>
         January 8, 2015
       </time>
       
+      
       <span> - </span>
       <span class="reading-time">
         
@@ -812,6 +754,7 @@ Released another minor release of mrouted, v3.
       <time datetime=" 2015-01-02T14:12:59Z" class="post-date">
         January 2, 2015
       </time>
+      
       
       <span> - </span>
       <span class="reading-time">
@@ -862,6 +805,7 @@ the actual work took about 4h.</p>
         December 28, 2014
       </time>
       
+      
       <span> - </span>
       <span class="reading-time">
         
@@ -905,6 +849,7 @@ available as
       <time datetime=" 2014-12-28T13:42:18Z" class="post-date">
         December 28, 2014
       </time>
+      
       
       <span> - </span>
       <span class="reading-time">
@@ -965,6 +910,7 @@ little proggy! :-)</p>
         December 21, 2014
       </time>
       
+      
       <span> - </span>
       <span class="reading-time">
         
@@ -1004,6 +950,7 @@ Try it out!
         September 23, 2014
       </time>
       
+      
       <span> - </span>
       <span class="reading-time">
         
@@ -1037,6 +984,55 @@ cd /usr/src cd sys/amd64/conf cat GENERIC | sed 's/GENERIC$/MULTICAST/' &gt; MUL
     <article class="post">
         <div class="info">
   <h1 class="post-title">
+    <a href="https://troglobit.com/howtos/mrouting-in-freebsd/">HowTo: Add Multicast Routing to FreeBSD kernel</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2014-09-23T01:55:19&#43;0200" class="post-date">
+        September 23, 2014
+      </time>
+      
+      <time datetime=" 2021-08-01T08:31:12&#43;0200" class="post-updated">
+        (updated August 1, 2021)
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>1 min read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        This is a very short blog post, mostly intended as a reminder to myself. Basically, there are two methods of adding multicast routing support to the FreeBSD kernel:
+Rebuild the kernel with options MROUTING Load the kernel module: kldload ip_mroute The kernel rebuild assumes the src.txz set was installed previously.
+cd /usr/src cd sys/amd64/conf cat GENERIC | sed 's/GENERIC$/MULTICAST/' &gt; MULTICAST echo 'options MROUTING # Multicast routing' &gt;&gt; MULTICAST echo 'options PIM # Enable for pimd' &gt;&gt; MULTICAST cd - make kernel KERNCONF=MULTICAST reboot That&rsquo;s it.
+        
+        <div class="read-more-link">
+            <a href="/howtos/mrouting-in-freebsd/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
     <a href="https://troglobit.com/2014/09/13/gnutls-support-in-inadyn-and-fixes-to-uftpd/">GnuTLS support in Inadyn and fixes to uftpd</a>
   </h1>
 
@@ -1047,6 +1043,7 @@ cd /usr/src cd sys/amd64/conf cat GENERIC | sed 's/GENERIC$/MULTICAST/' &gt; MUL
       <time datetime=" 2014-09-13T19:18:56Z" class="post-date">
         September 13, 2014
       </time>
+      
       
       <span> - </span>
       <span class="reading-time">
@@ -1091,6 +1088,7 @@ Another great piece of news is that Coverity accepted uftpd as an Open Source pr
       <time datetime=" 2014-09-04T22:22:09Z" class="post-date">
         September 4, 2014
       </time>
+      
       
       <span> - </span>
       <span class="reading-time">

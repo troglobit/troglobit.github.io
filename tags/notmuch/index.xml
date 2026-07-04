@@ -10,9 +10,9 @@
     <atom:link href="https://troglobit.com/tags/notmuch/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Emacs: GMail and Lore Mailing Lists</title>
-      <link>https://troglobit.com/post/2021-05-11-emacs-gmail-and-lore-mailing-lists/</link>
-      <pubDate>Tue, 11 May 2021 19:12:00 +0100</pubDate>
-      <guid>https://troglobit.com/post/2021-05-11-emacs-gmail-and-lore-mailing-lists/</guid>
+      <link>https://troglobit.com/post/2021-01-13-emacs-gmail-and-lore-mailing-lists/</link>
+      <pubDate>Wed, 13 Jan 2021 09:29:00 +0100</pubDate>
+      <guid>https://troglobit.com/post/2021-01-13-emacs-gmail-and-lore-mailing-lists/</guid>
       <description>With lots of help from the tireless Tobias Waldekranz, I think I&amp;rsquo;ve finally found the perfect &amp;ldquo;magit like&amp;rdquo; email setup. With Emacs, of course. This is the story of how I did it.&#xA;First install notmuch, mbsync (from the isync package), and afew:&#xA;sudo apt install notmuch isync afew Do initial setup of notmuch for your user. I&amp;rsquo;ve opted to store my mail in ~/mail, this is used throughout the text below, ymmv.</description>
     </item>
   </channel>

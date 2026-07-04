@@ -6,7 +6,7 @@
     <description>Recent content on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 26 May 2026 22:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 04 Jul 2026 09:57:00 +0000</lastBuildDate>
     <atom:link href="https://troglobit.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Long Time, No Blog</title>
@@ -56,27 +56,6 @@
       <pubDate>Sun, 07 Jan 2024 19:47:00 +0100</pubDate>
       <guid>https://troglobit.com/projects/finit/</guid>
       <description>Finit is an alternative to SysV init and systemd, originally reverse engineered from the EeePC fastinit by Claudio Matsuoka — &amp;ldquo;gaps filled with frog DNA …&amp;rdquo;&#xA;Latest release available on GitHub&#xA;Features Runlevels, defined per service One-shot tasks, services (daemons), or SysV init start/stop scripts Runparts and /etc/rc.local support Process supervision similar to systemd Sourcing environment files Conditions for network/process/custom dependencies Pre/Post script actions Tooling to enable/disable services Optional built-in getty Optional built-in watchdog, with support for hand-over to watchdogd Built-in support for Debian/BusyBox /etc/network/interfaces, automatically calls ifup/ifdown Cgroups v2, both configuration and monitoring in initctl top Plugin support for customization Proper rescue mode with bundled sulogin for protected maintenance shell (optional) Blog Posts Some of these feature are presented below, for more, see the online documentation and the following blog posts:</description>
-    </item>
-    <item>
-      <title>HowTo play with SNMP</title>
-      <link>https://troglobit.com/howtos/snmp/</link>
-      <pubDate>Mon, 04 Sep 2023 20:24:00 +0000</pubDate>
-      <guid>https://troglobit.com/howtos/snmp/</guid>
-      <description>This mini HowTo describes how to use the SNMP client tools to retrieve human readable information from devices running an SNMP daemon. In the examples below mini-snmpd is used as the daemon and as client both the command line net-snmp tool and the snmpB GUI are used.&#xA;Personally I use both Ubuntu and Debian, so the tools I use to download the clients will reflect that. See your respective UNIX distro&amp;rsquo;s help pages for how to install these client tools in your operating system.</description>
-    </item>
-    <item>
-      <title>Buildroot Development Checklist</title>
-      <link>https://troglobit.com/post/2023-06-04-buildroot-development-checklist/</link>
-      <pubDate>Sun, 04 Jun 2023 17:49:00 +0200</pubDate>
-      <guid>https://troglobit.com/post/2023-06-04-buildroot-development-checklist/</guid>
-      <description>&lt;p&gt;Because I always forget, here&amp;rsquo;s a reminder to myself on how to use &lt;code&gt;git format-patch&lt;/code&gt; and &lt;code&gt;git send-email&lt;/code&gt; from the command line.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The following process applies to many other mailing-list based&#xA;projects as well, with local differences in helper scripts.&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
-    </item>
-    <item>
-      <title>Multicast HowTo</title>
-      <link>https://troglobit.com/howtos/multicast/</link>
-      <pubDate>Sun, 28 May 2023 07:52:12 +0200</pubDate>
-      <guid>https://troglobit.com/howtos/multicast/</guid>
-      <description>Introduction This HowTo attempts to give some insight into the basics of setting up multicast routing. Both static multicast routing, with SMCRoute, and dynamic multicast routing, with mrouted and pimd.&#xA;For some use-cases, in particular link-local multicast, it may not be possible to use multicast routing, then I recommend trying out:&#xA;Bridging networks, see bridge(8) or Linux bridge - how it works igmproxy, mcproxy, or OpenVPN in Layer-2, bridged mode Make sure to check out the FAQ for the most common problems.</description>
     </item>
     <item>
       <title>Finit custom connectivity check</title>
@@ -156,32 +135,11 @@
       <description>Micro Tetris — one of the smallest Tetris implementations in the world! Utilizing only ANSI escape sequences to draw the board, no external library dependencys other than a standard C-library, like uClibc or musl libc. Hence, it is very suitable for small embedded devices in need of an easter egg ;-)&#xA;The game is based on a 1989 International Obfuscated C Code Contest (IOCCC) entry made by John Tromp.</description>
     </item>
     <item>
-      <title>HowTo: Set up Merecat with cgit</title>
-      <link>https://troglobit.com/howtos/merecat-and-cgit/</link>
-      <pubDate>Thu, 09 Dec 2021 05:56:00 +0000</pubDate>
-      <guid>https://troglobit.com/howtos/merecat-and-cgit/</guid>
-      <description>&lt;p&gt;This post details how to set up &lt;a href=&#34;https://git.zx2c4.com/cgit/&#34; target=&#34;_blank&#34;&gt;cgit&lt;/a&gt; with &lt;a href=&#34;http://merecat.troglobit.com&#34; target=&#34;_blank&#34;&gt;Merecat httpd&lt;/a&gt;.  It&#xA;began as a &lt;a href=&#34;https://github.com/troglobit/merecat/issues/3&#34; target=&#34;_blank&#34;&gt;GitHub issue&lt;/a&gt; report by Mr Alok G. Singh, who had run&#xA;into problems setting it up, and ended up as a HowTo.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>HowTo: Set up Merecat with Ikiwiki</title>
-      <link>https://troglobit.com/howtos/merecat-and-ikiwiki/</link>
-      <pubDate>Thu, 09 Dec 2021 05:51:00 +0000</pubDate>
-      <guid>https://troglobit.com/howtos/merecat-and-ikiwiki/</guid>
-      <description>This is a HowTo for setting up ikiwiki with Merecat httpd.&#xA;First install ikiwiki&#xA;$ sudo apt install ikiwiki libcgi-session-perl libcgi-formbuilder-perl Follow the steps to setup a new Wiki or Blog. In this example we set up a wiki in our ~/public_html:&#xA;$ ikiwiki --setup /etc/ikiwiki/auto.setup ... Successfully set up wiki: url: http://localhost/~jocke/wiki srcdir: ~/wiki destdir: ~/public_html/wiki repository: ~/wiki.git To modify settings, edit ~/home.setup and then run:&#xA;$ ikiwiki --setup ~/home.</description>
-    </item>
-    <item>
       <title>The original multicast routing daemon</title>
       <link>https://troglobit.com/projects/mrouted/</link>
       <pubDate>Wed, 03 Nov 2021 12:39:12 +0100</pubDate>
       <guid>https://troglobit.com/projects/mrouted/</guid>
       <description>mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, RFC 1075. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunneling support.&#xA;Tunneling may be required to cross non-multicast-aware routers.&#xA;The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is suitable for smaller/dense networks. It employs the &amp;ldquo;flood and prune&amp;rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups.</description>
-    </item>
-    <item>
-      <title>HowTo: Build &amp; Use My Projects</title>
-      <link>https://troglobit.com/howtos/howto-build-and-use-my-projects/</link>
-      <pubDate>Tue, 05 Oct 2021 21:03:00 +0200</pubDate>
-      <guid>https://troglobit.com/howtos/howto-build-and-use-my-projects/</guid>
-      <description>&lt;p&gt;Ever so often someone new to Open Source show up on GitHub or in my&#xA;inbox.  It usually starts something like this:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;&amp;ldquo;Hey, I just downloaded your software, what&amp;rsquo;s next?&amp;rdquo;&lt;/em&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;&amp;ldquo;Your software doesn&amp;rsquo;t work on my system!!!!&amp;rdquo;&lt;/em&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;&amp;ldquo;How can I do that weird-thing that fits my odd use-case?&amp;rdquo;&lt;/em&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;&amp;ldquo;I have zero documented experience but I think you should fix your build system!&amp;rdquo;&lt;/em&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;This HowTo is for you.&lt;/p&gt;&#xA;&lt;h2 id=&#34;0-short-version&#34;&gt;0. Short Version&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Download a &lt;em&gt;versioned&lt;/em&gt; archive from the project&amp;rsquo;s Releases page&lt;/li&gt;&#xA;&lt;li&gt;Extract archive for v1.2.3 and change to its directory, &lt;code&gt;cd archive-1.2.3/&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;./configure --help&lt;/code&gt;, or use something like the following &amp;hellip;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo make install&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Some projects of mine are available in Debian/Ubuntu/FreeBSD, if you&#xA;use that, please report bugs to them and not me.  I have no control&#xA;over what they do.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Cheers&lt;br&gt;&#xA;/Joachim&lt;/p&gt;</description>
     </item>
     <item>
       <title>smcroute.conf example</title>
@@ -191,25 +149,11 @@
       <description># # smcroute.conf example # # The configuration file supports joining multicast groups, to use # Layer-2 signaling so that switches and routers open up multicast # traffic to your interfaces. Leave is not supported, remove the # mgroup and SIGHUP your daemon, or send a specific leave command. # # NOTE: Use of the mgroup command should be avoided if possible. # Instead configure &amp;#34;router ports&amp;#34; or similar on the switches # or bridges on your LAN.</description>
     </item>
     <item>
-      <title>HowTo: Add Multicast Routing to FreeBSD kernel</title>
-      <link>https://troglobit.com/howtos/mrouting-in-freebsd/</link>
-      <pubDate>Sun, 01 Aug 2021 08:31:12 +0200</pubDate>
-      <guid>https://troglobit.com/howtos/mrouting-in-freebsd/</guid>
-      <description>This is a very short blog post, mostly intended as a reminder to myself. Basically, there are two methods of adding multicast routing support to the FreeBSD kernel:&#xA;Rebuild the kernel with options MROUTING Load the kernel module: kldload ip_mroute The kernel rebuild assumes the src.txz set was installed previously.&#xA;cd /usr/src cd sys/amd64/conf cat GENERIC | sed &#39;s/GENERIC$/MULTICAST/&#39; &amp;gt; MULTICAST echo &#39;options MROUTING # Multicast routing&#39; &amp;gt;&amp;gt; MULTICAST echo &#39;options PIM # Enable for pimd&#39; &amp;gt;&amp;gt; MULTICAST cd - make kernel KERNCONF=MULTICAST reboot That&amp;rsquo;s it.</description>
-    </item>
-    <item>
       <title>N E M E S I S</title>
       <link>https://troglobit.com/projects/nemesis/</link>
       <pubDate>Wed, 07 Jul 2021 15:39:00 +0200</pubDate>
       <guid>https://troglobit.com/projects/nemesis/</guid>
       <description>Nemesis is a command-line network packet crafting and injection utility for UNIX-like and Windows systems. Well suited for testing Network Intrusion Detection Systems, firewalls, IP stacks and a variety of other tasks. As a command-line driven utility, it is perfect for automation and scripting.&#xA;Nemesis can natively craft and inject ARP, DNS, ETHERNET, ICMP, IGMP, IP, OSPF, RIP, TCP and UDP packets. Using the IP and the Ethernet injection modes, almost any custom packet can be crafted and injected.</description>
-    </item>
-    <item>
-      <title>Emacs: GMail and Lore Mailing Lists</title>
-      <link>https://troglobit.com/post/2021-05-11-emacs-gmail-and-lore-mailing-lists/</link>
-      <pubDate>Tue, 11 May 2021 19:12:00 +0100</pubDate>
-      <guid>https://troglobit.com/post/2021-05-11-emacs-gmail-and-lore-mailing-lists/</guid>
-      <description>With lots of help from the tireless Tobias Waldekranz, I think I&amp;rsquo;ve finally found the perfect &amp;ldquo;magit like&amp;rdquo; email setup. With Emacs, of course. This is the story of how I did it.&#xA;First install notmuch, mbsync (from the isync package), and afew:&#xA;sudo apt install notmuch isync afew Do initial setup of notmuch for your user. I&amp;rsquo;ve opted to store my mail in ~/mail, this is used throughout the text below, ymmv.</description>
     </item>
     <item>
       <title>Dependency handling in Finit</title>
@@ -240,6 +184,20 @@
       <description>&lt;p&gt;&lt;a href=&#34;https://alpinelinux.org/&#34; target=&#34;_blank&#34;&gt;Alpine Linux&lt;/a&gt; is an amazing little operating&#xA;system.  It&amp;rsquo;s small, boots quick, and easy to use.  The size alone makes&#xA;it very attractive to container builders.&lt;/p&gt;&#xA;&lt;figure class=&#34;center&#34;&gt;&lt;img src=&#34;https://troglobit.com/images/finit4-screenshot.png&#34;&#xA;         alt=&#34;Alpine Linux started with Finit&#34;/&gt;&lt;figcaption&gt;&#xA;            &lt;p&gt;Alpine Linux started with Finit&lt;/p&gt;&#xA;        &lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&lt;p&gt;This blog post details how to set Alpine up with the Finit init system,&#xA;replacing the default OpenRC.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Buildroot Development Checklist</title>
+      <link>https://troglobit.com/post/2021-01-24-buildroot-development-checklist/</link>
+      <pubDate>Sun, 24 Jan 2021 13:26:00 +0100</pubDate>
+      <guid>https://troglobit.com/post/2021-01-24-buildroot-development-checklist/</guid>
+      <description>&lt;p&gt;Because I always forget, here&amp;rsquo;s a reminder to myself on how to use &lt;code&gt;git format-patch&lt;/code&gt; and &lt;code&gt;git send-email&lt;/code&gt; from the command line.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The following process applies to many other mailing-list based&#xA;projects as well, with local differences in helper scripts.&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
+      <title>Emacs: GMail and Lore Mailing Lists</title>
+      <link>https://troglobit.com/post/2021-01-13-emacs-gmail-and-lore-mailing-lists/</link>
+      <pubDate>Wed, 13 Jan 2021 09:29:00 +0100</pubDate>
+      <guid>https://troglobit.com/post/2021-01-13-emacs-gmail-and-lore-mailing-lists/</guid>
+      <description>With lots of help from the tireless Tobias Waldekranz, I think I&amp;rsquo;ve finally found the perfect &amp;ldquo;magit like&amp;rdquo; email setup. With Emacs, of course. This is the story of how I did it.&#xA;First install notmuch, mbsync (from the isync package), and afew:&#xA;sudo apt install notmuch isync afew Do initial setup of notmuch for your user. I&amp;rsquo;ve opted to store my mail in ~/mail, this is used throughout the text below, ymmv.</description>
+    </item>
+    <item>
       <title>Backtrace in C</title>
       <link>https://troglobit.com/post/2020-11-15-backtrace-in-c/</link>
       <pubDate>Sun, 15 Nov 2020 17:25:00 +0100</pubDate>
@@ -254,11 +212,11 @@
       <description>I blogged earlier about the awesome little ThinkPad X200 I found and its blinking WiFi LED. Briefly I mentioned an odd issue with X/Wayland on LMDE 4. This turned out to be a HW bug that can only be worked around by disabling hardware acceleration for virtualization:&#xA;https://forums.lenovo.com/t5/Windows-8-1-8-7-Vista-and-XP-Discussions/Bizarre-screen-artifacts-on-R400-Integrated-Graphics-running-Win-7-RTM/m-p/153980?page=1#199768&#xA;The post says it should be sufficient to &amp;ldquo;Disable Virtualization Technology for Directed-IO (VT-d)&amp;rdquo;, but that didn&amp;rsquo;t work for me, and I wanted to keep the 8 GiB of RAM I managed to fit into it.</description>
     </item>
     <item>
-      <title>HowTo use NetBSD pre-built packages</title>
-      <link>https://troglobit.com/howtos/netbsd-pkgsrc/</link>
-      <pubDate>Sat, 22 Aug 2020 21:39:00 +0100</pubDate>
-      <guid>https://troglobit.com/howtos/netbsd-pkgsrc/</guid>
-      <description>Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.&#xA;Here it is, you&amp;rsquo;d think this be something the installer could set up a default for &amp;hellip;&#xA;PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/ or if you use the latest on an old ThinkPad T42:&#xA;PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/i386/9.0/All/ The simply&#xA;pkg_add -v git Or so you might think!</description>
+      <title>HowTo: Build &amp; Use My Projects</title>
+      <link>https://troglobit.com/howtos/howto-build-and-use-my-projects/</link>
+      <pubDate>Fri, 14 Aug 2020 07:38:09 +0100</pubDate>
+      <guid>https://troglobit.com/howtos/howto-build-and-use-my-projects/</guid>
+      <description>&lt;p&gt;Ever so often someone new to Open Source show up on GitHub or in my&#xA;inbox.  It usually starts something like this:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;&amp;ldquo;Hey, I just downloaded your software, what&amp;rsquo;s next?&amp;rdquo;&lt;/em&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;&amp;ldquo;Your software doesn&amp;rsquo;t work on my system!!!!&amp;rdquo;&lt;/em&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;&amp;ldquo;How can I do that weird-thing that fits my odd use-case?&amp;rdquo;&lt;/em&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;&amp;ldquo;I have zero documented experience but I think you should fix your build system!&amp;rdquo;&lt;/em&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;This HowTo is for you.&lt;/p&gt;&#xA;&lt;h2 id=&#34;0-short-version&#34;&gt;0. Short Version&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Download a &lt;em&gt;versioned&lt;/em&gt; archive from the project&amp;rsquo;s Releases page&lt;/li&gt;&#xA;&lt;li&gt;Extract archive for v1.2.3 and change to its directory, &lt;code&gt;cd archive-1.2.3/&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;./configure --help&lt;/code&gt;, or use something like the following &amp;hellip;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo make install&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;Some projects of mine are available in Debian/Ubuntu/FreeBSD, if you&#xA;use that, please report bugs to them and not me.  I have no control&#xA;over what they do.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Cheers&lt;br&gt;&#xA;/Joachim&lt;/p&gt;</description>
     </item>
     <item>
       <title>Wireguard and DNS Timeout</title>
@@ -266,20 +224,6 @@
       <pubDate>Fri, 17 Jul 2020 11:04:09 +0200</pubDate>
       <guid>https://troglobit.com/post/2020-07-17-wireguard-and-dns-timeout/</guid>
       <description>&lt;p&gt;For a while now my Wireguard VPN provider has been handing out a bad DNS&#xA;server.  So whenever I do a DNS lookup it takes five (5!) seconds timing&#xA;out, which is quite annoying.&lt;/p&gt;&#xA;&lt;p&gt;This blog post is about how you can fix this with &lt;code&gt;openresolv&lt;/code&gt; in Ubuntu.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>HowTo: Set up Merecat with Let&#39;s Encrypt certificate</title>
-      <link>https://troglobit.com/howtos/merecat-and-lets-encrypt/</link>
-      <pubDate>Wed, 15 Jul 2020 14:10:00 +0000</pubDate>
-      <guid>https://troglobit.com/howtos/merecat-and-lets-encrypt/</guid>
-      <description>&lt;p&gt;This is a HowTo for setting up &lt;a href=&#34;https://merecat.troglobit.com&#34; target=&#34;_blank&#34;&gt;Merecat httpd&lt;/a&gt; with &lt;a href=&#34;https://letsencrypt.org/&#34; target=&#34;_blank&#34;&gt;Let&amp;rsquo;s&#xA;Encrypt&lt;/a&gt; HTTPS certificates.&lt;/p&gt;&#xA;&lt;p&gt;The upcoming v2.32 release of &lt;a href=&#34;https://merecat.troglobit.com&#34; target=&#34;_blank&#34;&gt;Merecat&lt;/a&gt; supports HTTPS as well as&#xA;serving more than one Internet port.  This is highly useful for those&#xA;who want to serve both HTTPS and HTTP content.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; now with support for &lt;code&gt;--webroot&lt;/code&gt; and HTTP-01 renewal!&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
-    </item>
-    <item>
-      <title>Fixing file sharing in Debian/Ubuntu/Mint</title>
-      <link>https://troglobit.com/post/2020-07-13-fixing-file-sharing-in-debian/ubuntu/mint/</link>
-      <pubDate>Mon, 13 Jul 2020 17:37:00 +0100</pubDate>
-      <guid>https://troglobit.com/post/2020-07-13-fixing-file-sharing-in-debian/ubuntu/mint/</guid>
-      <description>&lt;p&gt;Mounting my ReadyNAS from Nautilus stopped working after upgrading to&#xA;Ubuntu 20.04.  Turns out there was a change in behavior in Sambva v4.11&#xA;that disabled SMB1 protocol by default.  It&amp;rsquo;ll be interesting to see how&#xA;this pans out in the rest of the Linux community &amp;hellip; fortunately there&amp;rsquo;s&#xA;a workaround!&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; same on Debian 11 (&lt;em&gt;bullseye&lt;/em&gt;) and Linux Mint 20 (&lt;em&gt;Ulyana&lt;/em&gt;)&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
     </item>
     <item>
       <title>Open Source Releases</title>
@@ -321,21 +265,7 @@
       <link>https://troglobit.com/projects/mini-snmpd/</link>
       <pubDate>Sun, 23 Feb 2020 09:00:00 +0200</pubDate>
       <guid>https://troglobit.com/projects/mini-snmpd/</guid>
-      <description>This is an SNMP server for small and embedded systems, currently Linux and FreeBSD are supported. It is easily portable to other UNIX systems since it&amp;rsquo;s written in C. The daemon is very small (~40 kiB) and does not have nowhere near the feature set of Net-SNMP, therefore it has a very low impact on system resources.&#xA;See my mini HowTo: Playing with SNMP for a quick introduction to setting up the SNMP tools and MIBs to avoid having to use numerical OIDs.</description>
-    </item>
-    <item>
-      <title>Set up a Debian/Ubuntu APT Repository</title>
-      <link>https://troglobit.com/2017/09/30/set-up-a-debian-ubuntu-apt-repository/</link>
-      <pubDate>Sat, 22 Feb 2020 12:28:00 +0000</pubDate>
-      <guid>https://troglobit.com/2017/09/30/set-up-a-debian-ubuntu-apt-repository/</guid>
-      <description>&lt;p&gt;How to set up a Debian/Ubuntu APT repository with GPG signing.&lt;/p&gt;&#xA;&lt;p&gt;At first I tried to use &lt;a href=&#34;https://debian-administration.org/article/717/Setting_up_a_personal_secure_apt_repository&#34; target=&#34;_blank&#34;&gt;Bas Wijnen&amp;rsquo;s mini-dinstall howto&lt;/a&gt;, but never&#xA;managed to get it working.  Probably due to problems with GPG.  Then I&#xA;went down the tried and true path of using &lt;a href=&#34;https://debian-administration.org/article/286/Setting_up_your_own_APT_repository_with_upload_support&#34; target=&#34;_blank&#34;&gt;reprepro&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve tried to document my steps here, but I&amp;rsquo;ve very likely missed a few&#xA;steps that a beginner admin may run into. YMMV B-)&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Useful UNIX API:s</title>
-      <link>https://troglobit.com/post/2020-02-22-useful-unix-apis/</link>
-      <pubDate>Sat, 22 Feb 2020 09:45:00 +0000</pubDate>
-      <guid>https://troglobit.com/post/2020-02-22-useful-unix-apis/</guid>
-      <description>&lt;p&gt;Had an interesting conversation with a buddy last night.  It started out&#xA;as a shift-reduce problem with Bison and ended up a ping-pong of useful&#xA;UNIX API:s.  We concluded that despite having worked professionally with&#xA;UNIX for over two decades, it is still very satisfying finding gems like&#xA;these.&lt;/p&gt;&#xA;&lt;p&gt;Most people are completely unaware they exist and end up rolling their&#xA;own (buggy) implementations.  For instance, string manipulation and&#xA;various forms of linked lists.  Which is why I many years ago extracted&#xA;the &lt;em&gt;frog DNA&lt;/em&gt; from &lt;a href=&#34;https://github.com/troglobit/finit/&#34; target=&#34;_blank&#34;&gt;Finit&lt;/a&gt; to a&#xA;separate library called &lt;a href=&#34;https://github.com/troglobit/libite/&#34; target=&#34;_blank&#34;&gt;libite&lt;/a&gt;,&#xA;or -lite for short.  It imports the OpenBSD &lt;code&gt;strlcpy()&lt;/code&gt; family of API:s,&#xA;up-to-date &lt;code&gt;queue.h&lt;/code&gt; with the &lt;code&gt;_SAFE&lt;/code&gt; iterators, and more.  Some people&#xA;like &lt;a href=&#34;https://libbsd.freedesktop.org/wiki/&#34; target=&#34;_blank&#34;&gt;libbsd&lt;/a&gt; for this, but I&amp;rsquo;ve&#xA;found many of the ports incomplete and unsafe and prefer to stay closer&#xA;to the upstream *BSD versions.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; This post was originally written Nov 14, 2015.  It was a&#xA;Saturday and I remember being extremely inspired when I wrote it.  I&amp;rsquo;ve&#xA;continued adding to it over the years, and still do.  So, as of Jul 2,&#xA;2017 I&amp;rsquo;m bumping the modification date each time I add something new :-)&lt;/p&gt;</description>
+      <description>This is an SNMP server for small and embedded systems, currently Linux and FreeBSD are supported. It is easily portable to other UNIX systems since it&amp;rsquo;s written in C. A stripped binary is ~80 kiB and comes nowhere near the feature set of Net-SNMP, so it has a very low impact on system resources — a good fit for routers, NAS boxes, and other embedded devices.&#xA;See my mini HowTo: Playing with SNMP for a quick introduction to setting up the SNMP tools and MIBs to avoid having to use numerical OIDs.</description>
     </item>
     <item>
       <title>Small and Simple DDNS Client</title>
@@ -343,6 +273,13 @@
       <pubDate>Thu, 20 Feb 2020 16:29:00 +0200</pubDate>
       <guid>https://troglobit.com/projects/inadyn/</guid>
       <description>In-a-dyn is a small and simple Dynamic DNS, DDNS, client with HTTPS support. It is commonly available in many GNU/Linux distributions, used in off-the-shelf routers and Internet gateways to automate the task of keeping your DNS record up to date with any IP address changes from your ISP. It can also be used in installations with redundant (backup) connections to the Internet.&#xA;Presentation here.&#xA;Example The configuration file on most systems is in /etc/inadyn.</description>
+    </item>
+    <item>
+      <title>Fixing file sharing in Debian/Ubuntu/Mint</title>
+      <link>https://troglobit.com/post/2020-02-16-fixing-file-sharing-in-debian/ubuntu/mint/</link>
+      <pubDate>Sun, 16 Feb 2020 21:06:59 +0100</pubDate>
+      <guid>https://troglobit.com/post/2020-02-16-fixing-file-sharing-in-debian/ubuntu/mint/</guid>
+      <description>&lt;p&gt;Mounting my ReadyNAS from Nautilus stopped working after upgrading to&#xA;Ubuntu 20.04.  Turns out there was a change in behavior in Sambva v4.11&#xA;that disabled SMB1 protocol by default.  It&amp;rsquo;ll be interesting to see how&#xA;this pans out in the rest of the Linux community &amp;hellip; fortunately there&amp;rsquo;s&#xA;a workaround!&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; same on Debian 11 (&lt;em&gt;bullseye&lt;/em&gt;) and Linux Mint 20 (&lt;em&gt;Ulyana&lt;/em&gt;)&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
     </item>
     <item>
       <title>BSD syslogd in Linux</title>
@@ -387,6 +324,13 @@
       <description>&lt;p&gt;I run Awesome on Ubuntu 19.04 with XScreenSaver.  This post is a brief&#xA;writeup of what I did to fix the ugly default fonts.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>HowTo: Set up Merecat with Let&#39;s Encrypt certificate</title>
+      <link>https://troglobit.com/howtos/merecat-and-lets-encrypt/</link>
+      <pubDate>Thu, 27 Jun 2019 16:27:39 +0000</pubDate>
+      <guid>https://troglobit.com/howtos/merecat-and-lets-encrypt/</guid>
+      <description>&lt;p&gt;This is a HowTo for setting up &lt;a href=&#34;https://merecat.troglobit.com&#34; target=&#34;_blank&#34;&gt;Merecat httpd&lt;/a&gt; with &lt;a href=&#34;https://letsencrypt.org/&#34; target=&#34;_blank&#34;&gt;Let&amp;rsquo;s&#xA;Encrypt&lt;/a&gt; HTTPS certificates.&lt;/p&gt;&#xA;&lt;p&gt;The upcoming v2.32 release of &lt;a href=&#34;https://merecat.troglobit.com&#34; target=&#34;_blank&#34;&gt;Merecat&lt;/a&gt; supports HTTPS as well as&#xA;serving more than one Internet port.  This is highly useful for those&#xA;who want to serve both HTTPS and HTTP content.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; now with support for &lt;code&gt;--webroot&lt;/code&gt; and HTTP-01 renewal!&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
+    <item>
       <title>Minor Miracles</title>
       <link>https://troglobit.com/post/2019-06-26-minor-miracles/</link>
       <pubDate>Wed, 26 Jun 2019 19:07:29 +0200</pubDate>
@@ -399,6 +343,13 @@
       <pubDate>Sun, 28 Apr 2019 08:50:00 +0200</pubDate>
       <guid>https://troglobit.com/projects/pimd/</guid>
       <description>Protocol Independent Multicast, PIM, allows existing networks to route IP multicast, regardless of what unicast routing protocol is in use. It is designed to use existing routing tables to make its multicast routing decisions. PIM-SM is suitable for sparsely located multicast subscribers, for dense mode operation mrouted is recommended, and for static multicast routing smcroute may be used.&#xA;pimd is a lightweight standalone PIM-SM/SSM v2 multicast routing daemon. It is the original USC (netweb/catarina.</description>
+    </item>
+    <item>
+      <title>Multicast HowTo</title>
+      <link>https://troglobit.com/howtos/multicast/</link>
+      <pubDate>Wed, 27 Mar 2019 15:54:00 +0200</pubDate>
+      <guid>https://troglobit.com/howtos/multicast/</guid>
+      <description>This HowTo attempts to give some insight into the basics of setting up multicast routing. Both static multicast routing, with SMCRoute, and dynamic multicast routing, with mrouted and pimd.&#xA;For some use-cases, in particular link-local multicast, it may not be possible to use multicast routing, then I recommend trying out:&#xA;Bridging networks, see bridge(8) or Linux bridge - how it works igmproxy, mcproxy, or OpenVPN in Layer-2, bridged mode Make sure to check out the FAQ for the most common problems.</description>
     </item>
     <item>
       <title>FLOSS Progress</title>
@@ -436,11 +387,25 @@
       <description>&lt;p&gt;Last three months have been hectic, lots of exciting things going on &lt;a href=&#34;https://www.westermo.com&#34; target=&#34;_blank&#34;&gt;at&#xA;work&lt;/a&gt;, with my kids, and also with some of my&#xA;pet projects.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>HowTo play with SNMP</title>
+      <link>https://troglobit.com/howtos/snmp/</link>
+      <pubDate>Sat, 05 May 2018 13:57:00 +0200</pubDate>
+      <guid>https://troglobit.com/howtos/snmp/</guid>
+      <description>This mini HowTo describes how to use the SNMP client tools to retrieve human readable information from devices running an SNMP daemon. In the examples below mini-snmpd is used as the daemon and as client both the command line net-snmp tool and the snmpB GUI are used.&#xA;Personally I use both Ubuntu and Debian, so the tools I use to download the clients will reflect that. See your respective UNIX distro&amp;rsquo;s help pages for how to install these client tools in your operating system.</description>
+    </item>
+    <item>
       <title>N E M E S I S</title>
       <link>https://troglobit.com/post/2018-04-15-n-e-m-e-s-i-s/</link>
       <pubDate>Sun, 15 Apr 2018 16:11:23 +0200</pubDate>
       <guid>https://troglobit.com/post/2018-04-15-n-e-m-e-s-i-s/</guid>
       <description>&lt;p&gt;Summer is  almost upon us.  The  weather in Sweden has  been amazing the&#xA;last couple of weeks, sunny and  warm.  This has of course not prevented&#xA;me from pursuing my favorite  indoor activity; coding!  This time around&#xA;I&amp;rsquo;ve spent some time to resurrect the packet injection tool &lt;a href=&#34;https://troglobit.com/projects/nemesis/&#34;&gt;Nemesis&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HowTo: Set up Merecat with cgit</title>
+      <link>https://troglobit.com/howtos/merecat-and-cgit/</link>
+      <pubDate>Fri, 30 Mar 2018 19:41:26 +0200</pubDate>
+      <guid>https://troglobit.com/howtos/merecat-and-cgit/</guid>
+      <description>&lt;p&gt;This post details how to set up &lt;a href=&#34;https://git.zx2c4.com/cgit/&#34; target=&#34;_blank&#34;&gt;cgit&lt;/a&gt; with &lt;a href=&#34;http://merecat.troglobit.com&#34; target=&#34;_blank&#34;&gt;Merecat httpd&lt;/a&gt;.  It&#xA;began as a &lt;a href=&#34;https://github.com/troglobit/merecat/issues/3&#34; target=&#34;_blank&#34;&gt;GitHub issue&lt;/a&gt; report by Mr Alok G. Singh, who had run&#xA;into problems setting it up, and ended up as a HowTo.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Slow Down</title>
@@ -455,6 +420,13 @@
       <pubDate>Tue, 23 Jan 2018 20:39:36 +0000</pubDate>
       <guid>https://troglobit.com/2016/07/05/multicast-routing-with-pim-sm-over-gre/</guid>
       <description>&lt;p&gt;GRE tunnels are useful in many ways.  This blog post shows how to set up&#xA;multicast routing with &lt;a href=&#34;https://github.com/troglobit/pimd/&#34; target=&#34;_blank&#34;&gt;pimd&lt;/a&gt; over a&#xA;GRE tunnel.  To achieve this we will also set up OSPF over GRE with&#xA;&lt;a href=&#34;http://www.quagga.net&#34; target=&#34;_blank&#34;&gt;Quagga&lt;/a&gt;, because PIM, unlike DVMRP (&lt;code&gt;mrouted&lt;/code&gt;),&#xA;require unicast routing rules to be established.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;       .----{ Intranet }----.&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      /    192.168.1.0/24    \&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     /                        \&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.10 /                          \.20&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.--&amp;#39;---. .1  GRE Tunnel  .2 .---`--.&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|      |====================|      |&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|  R1  |   172.16.16.0/30   |  R2  |&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|      |                    |      |&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;#39;--.---&amp;#39;                    &amp;#39;------&amp;#39;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   | .1                        | .1 &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   |    10.0.1.0/24            |    10.0.2.0/24&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   | .2                        | .2 &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.--&amp;#39;---.                    .--&amp;#39;---.&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|      |                    |      |&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|  C1  |                    |  C2  |&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|      |                    |      |&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&amp;#39;------&amp;#39;                    &amp;#39;------&amp;#39;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In this post we are using the home WiFi network, 192.168.1.0/24, to hook&#xA;up the GRE tunnel.  It is just as easy to extend this to a big corporate&#xA;Intranet with more routers between &lt;code&gt;R1&lt;/code&gt; and &lt;code&gt;R2&lt;/code&gt;.  As long as that IT&#xA;department takes care of the unicast routing between &lt;code&gt;R1&lt;/code&gt; and &lt;code&gt;R2&lt;/code&gt; so&#xA;that the GRE tunnel can be established.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Set up a Debian/Ubuntu APT Repository</title>
+      <link>https://troglobit.com/2017/09/30/set-up-a-debian-ubuntu-apt-repository/</link>
+      <pubDate>Sat, 30 Sep 2017 12:39:43 +0000</pubDate>
+      <guid>https://troglobit.com/2017/09/30/set-up-a-debian-ubuntu-apt-repository/</guid>
+      <description>&lt;p&gt;How to set up a Debian/Ubuntu APT repository with GPG signing.&lt;/p&gt;&#xA;&lt;p&gt;At first I tried to use &lt;a href=&#34;https://debian-administration.org/article/717/Setting_up_a_personal_secure_apt_repository&#34; target=&#34;_blank&#34;&gt;Bas Wijnen&amp;rsquo;s mini-dinstall howto&lt;/a&gt;, but never&#xA;managed to get it working.  Probably due to problems with GPG.  Then I&#xA;went down the tried and true path of using &lt;a href=&#34;https://debian-administration.org/article/286/Setting_up_your_own_APT_repository_with_upload_support&#34; target=&#34;_blank&#34;&gt;reprepro&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve tried to document my steps here, but I&amp;rsquo;ve very likely missed a few&#xA;steps that a beginner admin may run into. YMMV B-)&lt;/p&gt;</description>
     </item>
     <item>
       <title>Threads vs Event Loop, Again ...</title>
@@ -497,6 +469,13 @@
       <pubDate>Sun, 12 Feb 2017 00:07:44 +0000</pubDate>
       <guid>https://troglobit.com/2017/02/12/https-proxy-for-merecat-httpd/</guid>
       <description>This is a HTTPS proxy HowTo for Merecat httpd using pound and OpenSSL.&#xA;Pound is a reverse proxy, load balancer, and HTTPS front-end for Web servers. It is available in Debian/Ubuntu and is very simple to set up:&#xA;First install the package, including OpenSSL, or LibreSSL:&#xA;sudo apt install pound openssl Use OpenSSL to create a self-signed certificate:&#xA;mkdir ~/certs cd ~/certs openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.</description>
+    </item>
+    <item>
+      <title>HowTo: Set up Merecat with Ikiwiki</title>
+      <link>https://troglobit.com/howtos/merecat-and-ikiwiki/</link>
+      <pubDate>Sat, 11 Feb 2017 16:03:39 +0000</pubDate>
+      <guid>https://troglobit.com/howtos/merecat-and-ikiwiki/</guid>
+      <description>This is a HowTo for setting up ikiwiki with Merecat httpd.&#xA;First install ikiwiki&#xA;$ sudo apt install ikiwiki libcgi-session-perl libcgi-formbuilder-perl Follow the steps to setup a new Wiki or Blog. In this example we set up a wiki in our ~/public_html:&#xA;$ ikiwiki --setup /etc/ikiwiki/auto.setup ... Successfully set up wiki: url: http://localhost/~jocke/wiki srcdir: ~/wiki destdir: ~/public_html/wiki repository: ~/wiki.git To modify settings, edit ~/home.setup and then run:&#xA;$ ikiwiki --setup ~/home.</description>
     </item>
     <item>
       <title>Emulate an actual MTD device in Qemu</title>
@@ -639,6 +618,13 @@
       <description>&lt;p&gt;For the better part of the last ten years I have been working with&#xA;multicast in one way or another.  I&amp;rsquo;ve used many different tools for&#xA;testing, but on most systems I usually resort to &lt;code&gt;ping(1)&lt;/code&gt; and&#xA;&lt;code&gt;tcpdump(1)&lt;/code&gt;, which are quite sufficient.  However, you often need to&#xA;tell bridges (switches) to open up multicast in your general direction&#xA;for your pings to get through, so you need to send an IGMP &amp;ldquo;join&amp;rdquo; first.&lt;/p&gt;&#xA;&lt;p&gt;Way back in 2006 I stumbled upon a neat tool called &lt;code&gt;mcjoin&lt;/code&gt;, written by&#xA;David Stevens and announced in&#xA;&lt;a href=&#34;https://lkml.org/lkml/2004/8/5/143&#34; target=&#34;_blank&#34;&gt;this posting to LKML&lt;/a&gt;.  I started&#xA;improving and adding features to it over the years.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>Useful UNIX API:s</title>
+      <link>https://troglobit.com/post/2015-11-14-useful-unix-apis/</link>
+      <pubDate>Sat, 14 Nov 2015 11:45:49 +0000</pubDate>
+      <guid>https://troglobit.com/post/2015-11-14-useful-unix-apis/</guid>
+      <description>&lt;p&gt;Had an interesting conversation with a buddy last night.  It started out&#xA;as a shift-reduce problem with Bison and ended up a ping-pong of useful&#xA;UNIX API:s.  We concluded that despite having worked professionally with&#xA;UNIX for over two decades, it is still very satisfying finding gems like&#xA;these.&lt;/p&gt;&#xA;&lt;p&gt;Most people are completely unaware they exist and end up rolling their&#xA;own (buggy) implementations.  For instance, string manipulation and&#xA;various forms of linked lists.  Which is why I many years ago extracted&#xA;the &lt;em&gt;frog DNA&lt;/em&gt; from &lt;a href=&#34;https://github.com/troglobit/finit/&#34; target=&#34;_blank&#34;&gt;Finit&lt;/a&gt; to a&#xA;separate library called &lt;a href=&#34;https://github.com/troglobit/libite/&#34; target=&#34;_blank&#34;&gt;libite&lt;/a&gt;,&#xA;or -lite for short.  It imports the OpenBSD &lt;code&gt;strlcpy()&lt;/code&gt; family of API:s,&#xA;up-to-date &lt;code&gt;queue.h&lt;/code&gt; with the &lt;code&gt;_SAFE&lt;/code&gt; iterators, and more.  Some people&#xA;like &lt;a href=&#34;https://libbsd.freedesktop.org/wiki/&#34; target=&#34;_blank&#34;&gt;libbsd&lt;/a&gt; for this, but I&amp;rsquo;ve&#xA;found many of the ports incomplete and unsafe and prefer to stay closer&#xA;to the upstream *BSD versions.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; This post was originally written Nov 14, 2015.  It was a&#xA;Saturday and I remember being extremely inspired when I wrote it.  I&amp;rsquo;ve&#xA;continued adding to it over the years, and still do.  So, as of Jul 2,&#xA;2017 I&amp;rsquo;m bumping the modification date each time I add something new :-)&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>En vanlig dag på jobbet (SWEDISH)</title>
       <link>https://troglobit.com/2015/11/13/en-vanlig-dag-pa-jobbet-swedish/</link>
       <pubDate>Fri, 13 Nov 2015 20:57:29 +0000</pubDate>
@@ -672,6 +658,13 @@
       <pubDate>Wed, 09 Sep 2015 21:49:13 +0000</pubDate>
       <guid>https://troglobit.com/2015/09/09/summer-of-code-2015/</guid>
       <description>Summer is now slowly fading away, and what a summer it has been here in Sweden! For someone who isn&amp;rsquo;t a fan of the summer heat it has been an awesome time for brain work, and in my case work on my open source projects! :-)&#xA;Due to my not really taking much vacation previous years I had saved up for ten weeks (10) this year! It was really worth it, and for the first time in many years I actually feel rested.</description>
+    </item>
+    <item>
+      <title>HowTo use NetBSD pre-built packages</title>
+      <link>https://troglobit.com/howtos/netbsd-pkgsrc/</link>
+      <pubDate>Thu, 30 Jul 2015 11:13:00 +0200</pubDate>
+      <guid>https://troglobit.com/howtos/netbsd-pkgsrc/</guid>
+      <description>Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.&#xA;Here it is, you&amp;rsquo;d think this be something the installer could set up a default for &amp;hellip;&#xA;PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/ or if you use the latest on an old ThinkPad T42:&#xA;PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/i386/9.0/All/ The simply&#xA;pkg_add -v git Or so you might think!</description>
     </item>
     <item>
       <title>HowTo run pimd on OpenBSD</title>
@@ -762,6 +755,13 @@
       <link>https://troglobit.com/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/</link>
       <pubDate>Tue, 23 Sep 2014 01:55:19 +0000</pubDate>
       <guid>https://troglobit.com/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/</guid>
+      <description>This is a very short blog post, mostly intended as a reminder to myself. Basically, there are two methods of adding multicast routing support to the FreeBSD kernel:&#xA;Rebuild the kernel with options MROUTING Load the kernel module: kldload ip_mroute The kernel rebuild assumes the src.txz set was installed previously.&#xA;cd /usr/src cd sys/amd64/conf cat GENERIC | sed &#39;s/GENERIC$/MULTICAST/&#39; &amp;gt; MULTICAST echo &#39;options MROUTING # Multicast routing&#39; &amp;gt;&amp;gt; MULTICAST echo &#39;options PIM # Enable for pimd&#39; &amp;gt;&amp;gt; MULTICAST cd - make kernel KERNCONF=MULTICAST reboot That&amp;rsquo;s it.</description>
+    </item>
+    <item>
+      <title>HowTo: Add Multicast Routing to FreeBSD kernel</title>
+      <link>https://troglobit.com/howtos/mrouting-in-freebsd/</link>
+      <pubDate>Tue, 23 Sep 2014 01:55:19 +0200</pubDate>
+      <guid>https://troglobit.com/howtos/mrouting-in-freebsd/</guid>
       <description>This is a very short blog post, mostly intended as a reminder to myself. Basically, there are two methods of adding multicast routing support to the FreeBSD kernel:&#xA;Rebuild the kernel with options MROUTING Load the kernel module: kldload ip_mroute The kernel rebuild assumes the src.txz set was installed previously.&#xA;cd /usr/src cd sys/amd64/conf cat GENERIC | sed &#39;s/GENERIC$/MULTICAST/&#39; &amp;gt; MULTICAST echo &#39;options MROUTING # Multicast routing&#39; &amp;gt;&amp;gt; MULTICAST echo &#39;options PIM # Enable for pimd&#39; &amp;gt;&amp;gt; MULTICAST cd - make kernel KERNCONF=MULTICAST reboot That&amp;rsquo;s it.</description>
     </item>
     <item>

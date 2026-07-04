@@ -16,13 +16,6 @@
       <description>&lt;figure class=&#34;right-floated&#34;&gt;&lt;a href=&#34;https://github.com/troglobit/kg&#34;&gt;&lt;img src=&#34;https://troglobit.com/images/kg-1.1.png&#34;&#xA;         alt=&#34;kg welcome screen&#34; width=&#34;360&#34;/&gt;&lt;/a&gt;&#xA;&lt;/figure&gt;&#xA;&lt;p&gt;Well, this has been quiet for a while.  Not because I stopped tinkering&#xA;— quite the opposite.  Almost all of my time these days goes into &lt;a href=&#34;https://github.com/kernelkit/infix&#34; target=&#34;_blank&#34;&gt;Infix&#xA;OS&lt;/a&gt;, a Linux-based network operating system by &lt;a href=&#34;https://wires.se/infix&#34; target=&#34;_blank&#34;&gt;Wires&lt;/a&gt;.  The OS is&#xA;maintained under an independent organization, KernelKit, where I blog a&#xA;lot — so check out the &lt;a href=&#34;https://www.kernelkit.org/&#34; target=&#34;_blank&#34;&gt;KernelKit blog&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Buildroot Development Checklist</title>
-      <link>https://troglobit.com/post/2023-06-04-buildroot-development-checklist/</link>
-      <pubDate>Sun, 04 Jun 2023 17:49:00 +0200</pubDate>
-      <guid>https://troglobit.com/post/2023-06-04-buildroot-development-checklist/</guid>
-      <description>&lt;p&gt;Because I always forget, here&amp;rsquo;s a reminder to myself on how to use &lt;code&gt;git format-patch&lt;/code&gt; and &lt;code&gt;git send-email&lt;/code&gt; from the command line.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The following process applies to many other mailing-list based&#xA;projects as well, with local differences in helper scripts.&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
-    </item>
-    <item>
       <title>Finit custom connectivity check</title>
       <link>https://troglobit.com/post/2023-01-15-finit-custom-connectivity-check/</link>
       <pubDate>Sun, 15 Jan 2023 18:42:00 +0000</pubDate>
@@ -98,6 +91,13 @@
       <pubDate>Fri, 12 Feb 2021 07:24:06 +0100</pubDate>
       <guid>https://troglobit.com/post/2021-02-12-alpine-linux-with-finit/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://alpinelinux.org/&#34; target=&#34;_blank&#34;&gt;Alpine Linux&lt;/a&gt; is an amazing little operating&#xA;system.  It&amp;rsquo;s small, boots quick, and easy to use.  The size alone makes&#xA;it very attractive to container builders.&lt;/p&gt;&#xA;&lt;figure class=&#34;center&#34;&gt;&lt;img src=&#34;https://troglobit.com/images/finit4-screenshot.png&#34;&#xA;         alt=&#34;Alpine Linux started with Finit&#34;/&gt;&lt;figcaption&gt;&#xA;            &lt;p&gt;Alpine Linux started with Finit&lt;/p&gt;&#xA;        &lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&lt;p&gt;This blog post details how to set Alpine up with the Finit init system,&#xA;replacing the default OpenRC.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Buildroot Development Checklist</title>
+      <link>https://troglobit.com/post/2021-01-24-buildroot-development-checklist/</link>
+      <pubDate>Sun, 24 Jan 2021 13:26:00 +0100</pubDate>
+      <guid>https://troglobit.com/post/2021-01-24-buildroot-development-checklist/</guid>
+      <description>&lt;p&gt;Because I always forget, here&amp;rsquo;s a reminder to myself on how to use &lt;code&gt;git format-patch&lt;/code&gt; and &lt;code&gt;git send-email&lt;/code&gt; from the command line.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The following process applies to many other mailing-list based&#xA;projects as well, with local differences in helper scripts.&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
     </item>
     <item>
       <title>BSD syslogd in Linux</title>

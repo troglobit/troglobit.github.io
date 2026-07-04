@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://troglobit.com/" />
 
 
-<meta property="og:updated_time" content="2026-05-26T22:00:00&#43;02:00" />
+<meta property="og:updated_time" content="2026-07-04T09:57:00Z" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -404,11 +404,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/finit/">Fast init for Linux systems</a>
+                                <a href="https://troglobit.com/projects/mini-snmpd/">Mini SNMP daemon</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/smcroute/">Static Multicast Routing Daemon</a>
+                                <a href="https://troglobit.com/projects/finit/">Fast init for Linux systems</a>
                             </li>
                         
                     
@@ -641,200 +641,6 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
     <article class="post">
         <div class="info">
   <h1 class="post-title">
-    <a href="https://troglobit.com/post/2023-01-15-finit-custom-connectivity-check/">Finit custom connectivity check</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2023-01-15T18:42:00Z" class="post-date">
-        January 15, 2023
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>3 mins read</span>
-      </span>
-    </div>
-
-    
-    <ul class="tags">
-      
-      <li class="tag-finit">
-        <a href="https://troglobit.com/tags/finit">finit</a>
-      </li>
-      
-      <li class="tag-init">
-        <a href="https://troglobit.com/tags/init">init</a>
-      </li>
-      
-      <li class="tag-opensource">
-        <a href="https://troglobit.com/tags/opensource">opensource</a>
-      </li>
-      
-    </ul>
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        <p>This post shows how you can extend Finit with your own conditions.  The
-example we will use is a simple Internet connectivity checker.  When it
-triggers we start BusyBox ntpd which, if started with any other type of
-condition (none, default route, etc.) may get stuck trying to resolve
-<code>pool.ntp.org</code>.</p>
-        
-        <div class="read-more-link">
-            <a href="/post/2023-01-15-finit-custom-connectivity-check/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/post/2022-12-26-buildroot-demo-of-fastinit-finit/">Buildroot demo of FastInit (Finit)</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2022-12-26T21:21:21Z" class="post-date">
-        December 26, 2022
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>3 mins read</span>
-      </span>
-    </div>
-
-    
-    <ul class="tags">
-      
-      <li class="tag-buildroot">
-        <a href="https://troglobit.com/tags/buildroot">buildroot</a>
-      </li>
-      
-      <li class="tag-finit">
-        <a href="https://troglobit.com/tags/finit">finit</a>
-      </li>
-      
-      <li class="tag-init">
-        <a href="https://troglobit.com/tags/init">init</a>
-      </li>
-      
-      <li class="tag-opensource">
-        <a href="https://troglobit.com/tags/opensource">opensource</a>
-      </li>
-      
-    </ul>
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        <p>I believe there is a <strong>gap in the market</strong> between BusyBox init and
-systemd.  In particular in the embedded space.  This blog post shows how
-easily it is to get up and running quickly with FastInit (<a href="https://github.com/troglobit/finit#introduction" target="_blank">Finit</a>)!</p>
-<p>I&rsquo;m a really bad salesman, and an even worse writer, so instead of
-trying to convince you with my poor English, I&rsquo;ve made a demo.  It is a
-<a href="https://nightly.buildroot.org/#outside-br-custom" target="_blank">Buildroot external</a>
-that can be used to add Finit to your own projects.</p>
-<blockquote>
-<p>For details, look here: <a href="https://github.com/troglobit/br2-finit-demo" target="_blank">https://github.com/troglobit/br2-finit-demo</a>,
-try out the <a href="https://github.com/troglobit/br2-finit-demo/releases/tag/latest" target="_blank">latest build</a> in <a href="https://www.qemu.org" target="_blank">Qemu</a>.</p>
-</blockquote>
-<figure class="center"><img src="/images/finit-demo/bootstrap.png"
-         alt="Finit bootstrap" width="600"/><figcaption>
-            <p>Finit bootstrap</p>
-        </figcaption>
-</figure>
-        
-        <div class="read-more-link">
-            <a href="/post/2022-12-26-buildroot-demo-of-fastinit-finit/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/post/2022-10-01-remap-prev/next-on-thinkpad/">Remap Prev/Next on ThinkPad</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2022-10-01T15:44:00Z" class="post-date">
-        October 1, 2022
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>1 min read</span>
-      </span>
-    </div>
-
-    
-    <ul class="tags">
-      
-      <li class="tag-ThinkPad">
-        <a href="https://troglobit.com/tags/thinkpad">ThinkPad</a>
-      </li>
-      
-      <li class="tag-X200">
-        <a href="https://troglobit.com/tags/x200">X200</a>
-      </li>
-      
-    </ul>
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        I still use my awesome little ThinkPad X200, in fact I now have more of them and even a few X201&rsquo;s. They are truly the best machines I&rsquo;ve ever used! :-)
-One annoying thing though, when going back to these traditional ThinkPad keyboards is the prev/next keys next to the arrow keys. On modern ones they are PgUp/PgDn and I recently learned how to elegantly remap them in X. Note the difference, below, to the original at ThinkWiki.
-        
-        <div class="read-more-link">
-            <a href="/post/2022-10-01-remap-prev/next-on-thinkpad/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
     <a href="https://troglobit.com/post/2022-09-09-logging-to-remote-syslog-servers/">Logging to remote syslog servers</a>
   </h1>
 
@@ -845,6 +651,7 @@ One annoying thing though, when going back to these traditional ThinkPad keyboar
       <time datetime=" 2022-09-09T19:36:44&#43;0100" class="post-date">
         September 9, 2022
       </time>
+      
       
       <span> - </span>
       <span class="reading-time">
@@ -901,6 +708,7 @@ I&rsquo;ve always considered this one of those weird Linux:isms. The logger tool
         September 4, 2022
       </time>
       
+      
       <span> - </span>
       <span class="reading-time">
         
@@ -944,6 +752,7 @@ The full documentation of SMCRoute is available in the manual pages, see smcrout
       <time datetime=" 2022-04-17T16:56:00&#43;0100" class="post-date">
         April 17, 2022
       </time>
+      
       
       <span> - </span>
       <span class="reading-time">
@@ -1009,6 +818,7 @@ The manual, section 9, describes the basic process of setting up a our customiza
         April 11, 2022
       </time>
       
+      
       <span> - </span>
       <span class="reading-time">
         
@@ -1073,6 +883,7 @@ list.</p>
       <time datetime=" 2022-02-13T17:55:44&#43;0200" class="post-date">
         February 13, 2022
       </time>
+      
       
       <span> - </span>
       <span class="reading-time">
@@ -1143,6 +954,7 @@ tutorial.</p>
         January 24, 2022
       </time>
       
+      
       <span> - </span>
       <span class="reading-time">
         
@@ -1203,6 +1015,7 @@ to set up the latter.</p>
         January 16, 2022
       </time>
       
+      
       <span> - </span>
       <span class="reading-time">
         
@@ -1248,6 +1061,138 @@ features.  See the release notes for details.</p>
         
         <div class="read-more-link">
             <a href="/post/2022-01-16-finit-v4.2-released/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/projects/tetris/">Micro Tetris™</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2021-12-26T20:37:00&#43;0200" class="post-date">
+        December 26, 2021
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>1 min read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        Micro Tetris — one of the smallest Tetris implementations in the world! Utilizing only ANSI escape sequences to draw the board, no external library dependencys other than a standard C-library, like uClibc or musl libc. Hence, it is very suitable for small embedded devices in need of an easter egg ;-)
+The game is based on a 1989 International Obfuscated C Code Contest (IOCCC) entry made by John Tromp.
+        
+        <div class="read-more-link">
+            <a href="/projects/tetris/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/projects/mrouted/">The original multicast routing daemon</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2021-11-03T12:39:12&#43;0100" class="post-date">
+        November 3, 2021
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>2 mins read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, RFC 1075. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunneling support.
+Tunneling may be required to cross non-multicast-aware routers.
+The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is suitable for smaller/dense networks. It employs the &ldquo;flood and prune&rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups.
+        
+        <div class="read-more-link">
+            <a href="/projects/mrouted/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/projects/smcroute/smcroute-conf.html">smcroute.conf example</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2021-08-19T15:46:00&#43;0200" class="post-date">
+        August 19, 2021
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>3 mins read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        # # smcroute.conf example # # The configuration file supports joining multicast groups, to use # Layer-2 signaling so that switches and routers open up multicast # traffic to your interfaces. Leave is not supported, remove the # mgroup and SIGHUP your daemon, or send a specific leave command. # # NOTE: Use of the mgroup command should be avoided if possible. # Instead configure &#34;router ports&#34; or similar on the switches # or bridges on your LAN.
+        
+        <div class="read-more-link">
+            <a href="/projects/smcroute/smcroute-conf.html">Read More…</a>
         </div>
         
         

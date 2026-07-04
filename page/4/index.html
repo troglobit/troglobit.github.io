@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://troglobit.com/" />
 
 
-<meta property="og:updated_time" content="2026-05-26T22:00:00&#43;02:00" />
+<meta property="og:updated_time" content="2026-07-04T09:57:00Z" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -404,11 +404,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/finit/">Fast init for Linux systems</a>
+                                <a href="https://troglobit.com/projects/mini-snmpd/">Mini SNMP daemon</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/smcroute/">Static Multicast Routing Daemon</a>
+                                <a href="https://troglobit.com/projects/finit/">Fast init for Linux systems</a>
                             </li>
                         
                     
@@ -641,330 +641,6 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
     <article class="post">
         <div class="info">
   <h1 class="post-title">
-    <a href="https://troglobit.com/projects/watchdogd/">Advanced watchdog daemon for Linux</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2021-04-30T17:02:00&#43;0100" class="post-date">
-        April 30, 2021
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>1 min read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        watchdogd(8) is an advanced system and process supervisor primarily intended for embedded Linux and server systems. It supports &ldquo;kicking&rdquo; multiple watchdog timer (WDT) devices and can also monitor critical system resources, supervise the heartbeat of processes1 and record process deadline transgressions.
-Read more about Built-in Monitors in the extended documentation.
-The configuration determines how the daemon acts on monitored resources and supervised processes. See watchdogd.conf(5) for how to set up watermarks and trigger external scripts to suit your particular setup.
-        
-        <div class="read-more-link">
-            <a href="/projects/watchdogd/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/post/2021-04-27-its-here/">It&#39;s Here! ♥</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2021-04-27T20:18:06&#43;0100" class="post-date">
-        April 27, 2021
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>1 min read</span>
-      </span>
-    </div>
-
-    
-    <ul class="tags">
-      
-      <li class="tag-finit">
-        <a href="https://troglobit.com/tags/finit">finit</a>
-      </li>
-      
-      <li class="tag-init">
-        <a href="https://troglobit.com/tags/init">init</a>
-      </li>
-      
-      <li class="tag-opensource">
-        <a href="https://troglobit.com/tags/opensource">opensource</a>
-      </li>
-      
-    </ul>
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        <figure class="right-floated"><a href="https://github.com/troglobit/finit/releases/latest"><img src="/images/finit3.png"
-         alt="finit logo"/></a>
-</figure>
-<p>Finit v4 was finally released the other day! \o/</p>
-<p>It represents the culmination of many years of hard work and careful
-thought put in by many people.  There&rsquo;s so much to tell, hardly know
-where to begin &hellip; the plan anyway is to use this blog for a series of
-posts detailing different aspects and important features.</p>
-<p>The impatient reader can either scroll down to the <strong>video</strong> below, or
-move on to the project home page: <a href="https://troglobit.com/finit.html" target="_blank">https://troglobit.com/finit.html</a></p>
-        
-        <div class="read-more-link">
-            <a href="/post/2021-04-27-its-here/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/post/2021-02-12-alpine-linux-with-finit/">Alpine Linux with Finit</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2021-02-12T07:24:06&#43;0100" class="post-date">
-        February 12, 2021
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>3 mins read</span>
-      </span>
-    </div>
-
-    
-    <ul class="tags">
-      
-      <li class="tag-finit">
-        <a href="https://troglobit.com/tags/finit">finit</a>
-      </li>
-      
-      <li class="tag-init">
-        <a href="https://troglobit.com/tags/init">init</a>
-      </li>
-      
-      <li class="tag-opensource">
-        <a href="https://troglobit.com/tags/opensource">opensource</a>
-      </li>
-      
-    </ul>
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        <p><a href="https://alpinelinux.org/" target="_blank">Alpine Linux</a> is an amazing little operating
-system.  It&rsquo;s small, boots quick, and easy to use.  The size alone makes
-it very attractive to container builders.</p>
-<figure class="center"><img src="/images/finit4-screenshot.png"
-         alt="Alpine Linux started with Finit"/><figcaption>
-            <p>Alpine Linux started with Finit</p>
-        </figcaption>
-</figure>
-<p>This blog post details how to set Alpine up with the Finit init system,
-replacing the default OpenRC.</p>
-        
-        <div class="read-more-link">
-            <a href="/post/2021-02-12-alpine-linux-with-finit/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/post/2020-11-15-backtrace-in-c/">Backtrace in C</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2020-11-15T17:25:00&#43;0100" class="post-date">
-        November 15, 2020
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>1 min read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        <p>Reminder to self: remember <code>CFLAGS=-g -Og -rdynamic</code> to allow
-<code>backtrace_symbols()</code> to actually pretty print function names
-in stack traces.</p>
-        
-        <div class="read-more-link">
-            <a href="/post/2020-11-15-backtrace-in-c/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/post/2020-08-23-weird-screen-artifacts-on-x200/">Weird Screen Artifacts on X200</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2020-08-23T14:02:00Z" class="post-date">
-        August 23, 2020
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>1 min read</span>
-      </span>
-    </div>
-
-    
-    <ul class="tags">
-      
-      <li class="tag-ThinkPad">
-        <a href="https://troglobit.com/tags/thinkpad">ThinkPad</a>
-      </li>
-      
-      <li class="tag-X200">
-        <a href="https://troglobit.com/tags/x200">X200</a>
-      </li>
-      
-    </ul>
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        I blogged earlier about the awesome little ThinkPad X200 I found and its blinking WiFi LED. Briefly I mentioned an odd issue with X/Wayland on LMDE 4. This turned out to be a HW bug that can only be worked around by disabling hardware acceleration for virtualization:
-https://forums.lenovo.com/t5/Windows-8-1-8-7-Vista-and-XP-Discussions/Bizarre-screen-artifacts-on-R400-Integrated-Graphics-running-Win-7-RTM/m-p/153980?page=1#199768
-The post says it should be sufficient to &ldquo;Disable Virtualization Technology for Directed-IO (VT-d)&rdquo;, but that didn&rsquo;t work for me, and I wanted to keep the 8 GiB of RAM I managed to fit into it.
-        
-        <div class="read-more-link">
-            <a href="/post/2020-08-23-weird-screen-artifacts-on-x200/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/howtos/netbsd-pkgsrc/">HowTo use NetBSD pre-built packages</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2020-08-22T21:39:00&#43;0100" class="post-date">
-        August 22, 2020
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>1 min read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.
-Here it is, you&rsquo;d think this be something the installer could set up a default for &hellip;
-PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/ or if you use the latest on an old ThinkPad T42:
-PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/i386/9.0/All/ The simply
-pkg_add -v git Or so you might think!
-        
-        <div class="read-more-link">
-            <a href="/howtos/netbsd-pkgsrc/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
     <a href="https://troglobit.com/post/2020-07-17-wireguard-and-dns-timeout/">Wireguard and DNS Timeout</a>
   </h1>
 
@@ -979,6 +655,7 @@ pkg_add -v git Or so you might think!
       <time datetime=" 2020-07-17T11:04:09&#43;0200" class="post-date">
         July 17, 2020
       </time>
+      
       
       <span> - </span>
       <span class="reading-time">
@@ -1014,16 +691,17 @@ out, which is quite annoying.</p>
     <article class="post">
         <div class="info">
   <h1 class="post-title">
-    <a href="https://troglobit.com/howtos/merecat-and-lets-encrypt/">HowTo: Set up Merecat with Let&#39;s Encrypt certificate</a>
+    <a href="https://troglobit.com/post/2020-06-09-open-source-releases/">Open Source Releases</a>
   </h1>
 
   <div class="headline">
     <div>
       
       
-      <time datetime=" 2020-07-15T14:10:00Z" class="post-date">
-        July 15, 2020
+      <time datetime=" 2020-06-09T22:48:52&#43;0200" class="post-date">
+        June 9, 2020
       </time>
+      
       
       <span> - </span>
       <span class="reading-time">
@@ -1031,15 +709,155 @@ out, which is quite annoying.</p>
           
         
 
-        <span>8 mins read</span>
+        <span>1 min read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        <p>The last couple of months have been crazy.  The downturn in the economy
+due to Covid-19, mass layoffs, social distancing and quarantine.  Not
+to mention the unrest in US and Europe in the wake of George Floyd&rsquo;s
+uneccessary death.</p>
+        
+        <div class="read-more-link">
+            <a href="/post/2020-06-09-open-source-releases/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/post/2020-06-07-sudo-tricks/">sudo tricks</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2020-06-07T12:25:52&#43;0200" class="post-date">
+        June 7, 2020
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>1 min read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        <blockquote>
+<p>&ldquo;My name is Joachim and I&rsquo;m a <code>sudo su -</code> user.&rdquo;</p>
+</blockquote>
+<p>Before you read any further, please read <a href="/2016/12/11/a-life-without-sudo/">A life without sudo</a>.</p>
+        
+        <div class="read-more-link">
+            <a href="/post/2020-06-07-sudo-tricks/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/projects/editline/">Minix Editline</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2020-04-05T14:38:00&#43;0200" class="post-date">
+        April 5, 2020
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>2 mins read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        This is a line editing library for UNIX. It can be linked into almost any program to provide command line editing and history. It is call compatible with the FSF readline library, but is a fraction of the size (and offers fewer features).
+The small size (&lt;30k), lack of dependencies (no ncurses needed!) and the free license should make this library interesting to many embedded developers seeking a replacement for the GNU readline library.
+        
+        <div class="read-more-link">
+            <a href="/projects/editline/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/post/2020-03-28-fix-blinking-wifi-led-on-x200/">Fix blinking WiFi LED on X200</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2020-03-28T14:16:00Z" class="post-date">
+        March 28, 2020
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>1 min read</span>
       </span>
     </div>
 
     
     <ul class="tags">
       
-      <li class="tag-merecat">
-        <a href="https://troglobit.com/tags/merecat">merecat</a>
+      <li class="tag-ThinkPad">
+        <a href="https://troglobit.com/tags/thinkpad">ThinkPad</a>
+      </li>
+      
+      <li class="tag-X200">
+        <a href="https://troglobit.com/tags/x200">X200</a>
       </li>
       
     </ul>
@@ -1053,17 +871,18 @@ out, which is quite annoying.</p>
 </div>
 
         
-        <p>This is a HowTo for setting up <a href="https://merecat.troglobit.com" target="_blank">Merecat httpd</a> with <a href="https://letsencrypt.org/" target="_blank">Let&rsquo;s
-Encrypt</a> HTTPS certificates.</p>
-<p>The upcoming v2.32 release of <a href="https://merecat.troglobit.com" target="_blank">Merecat</a> supports HTTPS as well as
-serving more than one Internet port.  This is highly useful for those
-who want to serve both HTTPS and HTTP content.</p>
-<blockquote>
-<p><strong>Update:</strong> now with support for <code>--webroot</code> and HTTP-01 renewal!</p>
-</blockquote>
+        <p>Recently got my hands on a ThinkPad X200, the last model without the
+useless touchpad and with the awesome classic keyboard.  A fine little
+machine that can easily be upgraded with an SSD disk and 8 GiB RAM!</p>
+<p>I set it up with <a href="https://www.linuxmint.com/download_lmde.php" target="_blank">Linx Mint (LMDE 4)</a>, which worked great to begin
+with, but there was some odd issue with X/Wayland that sometimes caused
+the screen (only the screen) to freeze up and show random color patterns.
+Only way to workaround it was to suspend, wait, and resume again.  So
+now I&rsquo;m running Ubuntu 20.04 on it and everything seems to work a lot
+better, this far.</p>
         
         <div class="read-more-link">
-            <a href="/howtos/merecat-and-lets-encrypt/">Read More…</a>
+            <a href="/post/2020-03-28-fix-blinking-wifi-led-on-x200/">Read More…</a>
         </div>
         
         
@@ -1071,16 +890,163 @@ who want to serve both HTTPS and HTTP content.</p>
     <article class="post">
         <div class="info">
   <h1 class="post-title">
-    <a href="https://troglobit.com/post/2020-07-13-fixing-file-sharing-in-debian/ubuntu/mint/">Fixing file sharing in Debian/Ubuntu/Mint</a>
+    <a href="https://troglobit.com/post/2020-02-23-howto-install-pre-built-packages/">HowTo: Install pre-built packages</a>
   </h1>
 
   <div class="headline">
     <div>
       
       
-      <time datetime=" 2020-07-13T17:37:00&#43;0100" class="post-date">
-        July 13, 2020
+      <time datetime=" 2020-02-23T19:16:45&#43;0100" class="post-date">
+        February 23, 2020
       </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>1 min read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        <p>Every now and then people ask me for pre-built packages of software I
+maintain.  Up until today I&rsquo;ve had to refer them to the cold hard build
+instructions for each of my programs.</p>
+        
+        <div class="read-more-link">
+            <a href="/post/2020-02-23-howto-install-pre-built-packages/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/projects/mini-snmpd/">Mini SNMP daemon</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2020-02-23T09:00:00&#43;0200" class="post-date">
+        February 23, 2020
+      </time>
+      
+      <time datetime=" 2026-07-04T09:28:00&#43;0100" class="post-updated">
+        (updated July 4, 2026)
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>4 mins read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        This is an SNMP server for small and embedded systems, currently Linux and FreeBSD are supported. It is easily portable to other UNIX systems since it&rsquo;s written in C. A stripped binary is ~80 kiB and comes nowhere near the feature set of Net-SNMP, so it has a very low impact on system resources — a good fit for routers, NAS boxes, and other embedded devices.
+See my mini HowTo: Playing with SNMP for a quick introduction to setting up the SNMP tools and MIBs to avoid having to use numerical OIDs.
+        
+        <div class="read-more-link">
+            <a href="/projects/mini-snmpd/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/projects/inadyn/">Small and Simple DDNS Client</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2020-02-20T16:29:00&#43;0200" class="post-date">
+        February 20, 2020
+      </time>
+      
+      <time datetime=" 2024-01-03T10:55:00&#43;0100" class="post-updated">
+        (updated January 3, 2024)
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>2 mins read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        In-a-dyn is a small and simple Dynamic DNS, DDNS, client with HTTPS support. It is commonly available in many GNU/Linux distributions, used in off-the-shelf routers and Internet gateways to automate the task of keeping your DNS record up to date with any IP address changes from your ISP. It can also be used in installations with redundant (backup) connections to the Internet.
+Presentation here.
+Example The configuration file on most systems is in /etc/inadyn.
+        
+        <div class="read-more-link">
+            <a href="/projects/inadyn/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/post/2020-02-16-fixing-file-sharing-in-debian/ubuntu/mint/">Fixing file sharing in Debian/Ubuntu/Mint</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2020-02-16T21:06:59&#43;0100" class="post-date">
+        February 16, 2020
+      </time>
+      
+      <time datetime=" 2020-07-13T17:37:00&#43;0100" class="post-updated">
+        (updated July 13, 2020)
+      </time>
+      
       
       <span> - </span>
       <span class="reading-time">
@@ -1112,7 +1078,7 @@ a workaround!</p>
 </blockquote>
         
         <div class="read-more-link">
-            <a href="/post/2020-07-13-fixing-file-sharing-in-debian/ubuntu/mint/">Read More…</a>
+            <a href="/post/2020-02-16-fixing-file-sharing-in-debian/ubuntu/mint/">Read More…</a>
         </div>
         
         
@@ -1120,16 +1086,17 @@ a workaround!</p>
     <article class="post">
         <div class="info">
   <h1 class="post-title">
-    <a href="https://troglobit.com/post/2020-06-09-open-source-releases/">Open Source Releases</a>
+    <a href="https://troglobit.com/post/2019-11-03-bsd-syslogd-in-linux/">BSD syslogd in Linux</a>
   </h1>
 
   <div class="headline">
     <div>
       
       
-      <time datetime=" 2020-06-09T22:48:52&#43;0200" class="post-date">
-        June 9, 2020
+      <time datetime=" 2019-11-03T23:04:00&#43;0100" class="post-date">
+        November 3, 2019
       </time>
+      
       
       <span> - </span>
       <span class="reading-time">
@@ -1137,10 +1104,22 @@ a workaround!</p>
           
         
 
-        <span>1 min read</span>
+        <span>5 mins read</span>
       </span>
     </div>
 
+    
+    <ul class="tags">
+      
+      <li class="tag-opensource">
+        <a href="https://troglobit.com/tags/opensource">opensource</a>
+      </li>
+      
+      <li class="tag-sysklogd">
+        <a href="https://troglobit.com/tags/sysklogd">sysklogd</a>
+      </li>
+      
+    </ul>
     
   </div>
 
@@ -1151,13 +1130,18 @@ a workaround!</p>
 </div>
 
         
-        <p>The last couple of months have been crazy.  The downturn in the economy
-due to Covid-19, mass layoffs, social distancing and quarantine.  Not
-to mention the unrest in US and Europe in the wake of George Floyd&rsquo;s
-uneccessary death.</p>
+        <p>Some time ago now I was in a meeting with a customer where I first learned of
+the new syslog standard, <a href="https://tools.ietf.org/html/rfc5424" target="_blank">RFC5424</a>.  I say &ldquo;new&rdquo; because, despite it being
+ten years old, it was new to me.</p>
+<p>Three weeks ago I started updating my fork of <a href="https://www.infodrom.org/projects/sysklogd/" target="_blank">sysklogd</a> to be <a href="https://tools.ietf.org/html/rfc5424" target="_blank">RFC5424</a>
+compliant.  I ended up ripping out most of the old code and replacing it with
+fresh DNA strands from FreeBSD and NetBSD.</p>
+<p>The result is a fully RFC compliant <code>syslogd</code>, <strong>and</strong> a <code>libsyslog</code> with a
+replacement <code>syslog.h</code> header for sending RFC5424 events from applications!</p>
+<p><a href="https://github.com/troglobit/sysklogd/" target="_blank">https://github.com/troglobit/sysklogd/</a></p>
         
         <div class="read-more-link">
-            <a href="/post/2020-06-09-open-source-releases/">Read More…</a>
+            <a href="/post/2019-11-03-bsd-syslogd-in-linux/">Read More…</a>
         </div>
         
         
