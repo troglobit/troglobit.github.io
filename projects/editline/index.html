@@ -88,7 +88,7 @@
 <meta property="og:url" content="https://troglobit.com/projects/editline/" />
 
 
-<meta property="og:updated_time" content="2020-04-05T14:38:00&#43;02:00" />
+<meta property="og:updated_time" content="2026-07-04T11:41:00&#43;02:00" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -419,11 +419,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/mini-snmpd/">Mini SNMP daemon</a>
+                                <a href="https://troglobit.com/projects/editline/">Minix Editline</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/finit/">Fast init for Linux systems</a>
+                                <a href="https://troglobit.com/projects/mini-snmpd/">Mini SNMP daemon</a>
                             </li>
                         
                     
@@ -664,6 +664,10 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
         April 5, 2020
       </time>
       
+      <time datetime=" 2026-07-04T11:41:00&#43;0200" class="post-updated">
+        (updated July 4, 2026)
+      </time>
+      
       
       <span> - </span>
       <span class="reading-time">
@@ -694,6 +698,17 @@ compatible with the FSF readline library, but is a fraction of the size
 <p>The small size (&lt;30k), lack of dependencies (no ncurses needed!) and the
 free license should make this library interesting to many embedded
 developers seeking a replacement for the <a href="http://directory.fsf.org/project/readline/" target="_blank">GNU readline</a> library.</p>
+<p>Since the 2.0 release editline is UTF-8 aware: cursor movement,
+deletion, word motion, and wrapped-line redisplay all work on whole
+glyphs rather than bytes.  Other features:</p>
+<ul>
+<li>Emacs-style line editing with rebindable keys</li>
+<li>Command history, saved to and restored from a file, with a scrollback
+size you can change at runtime</li>
+<li>TAB completion, with a hook for your own completer</li>
+<li>A callback interface for use from an event loop</li>
+<li>An FSF readline compatibility layer, so many programs build unchanged</li>
+</ul>
 <p>Configuration is made by supplying different options to the GNU
 configure script.  In the <a href="https://github.com/troglobit/editline/tree/master/examples" target="_blank">examples/</a> directory you can find some
 small code snippets used for testing.</p>
@@ -702,10 +717,7 @@ small code snippets used for testing.</p>
 <li><a href="http://github.com/troglobit/editline" target="_blank">Repository</a></li>
 <li><a href="http://github.com/troglobit/editline/issues" target="_blank">Issue Tracker</a></li>
 <li><a href="https://github.com/troglobit/editline/blob/master/ChangeLog.md" target="_blank">ChangeLog</a></li>
-<li><a href="ftp://ftp.troglobit.com/editline/editline-1.17.1.tar.gz">editline-1.17.1.tar.gz</a>,
-<a href="ftp://ftp.troglobit.com/editline/editline-1.17.1.tar.gz.md5">MD5</a></li>
-<li><a href="ftp://ftp.troglobit.com/editline/editline-1.17.1.tar.xz">editline-1.17.1.tar.xz</a>,
-<a href="ftp://ftp.troglobit.com/editline/editline-1.17.1.tar.xz.md5">MD5</a></li>
+<li><a href="https://github.com/troglobit/editline/releases" target="_blank">Releases</a> (source tarballs and release notes)</li>
 </ul>
 <p>See also the <a href="https://www.openhub.net/p/editline" target="_blank">OpenHub page</a>, or
 the old <a href="http://freecode.com/projects/minix-editline" target="_blank">Free(code) page</a>.</p>
@@ -713,7 +725,7 @@ the old <a href="http://freecode.com/projects/minix-editline" target="_blank">Fr
 <p>The editline library was created by Simmule Turner and <a href="http://en.wikipedia.org/wiki/Rich_Salz" target="_blank">Rich Salz</a>
 back in 1992.  At the time they chose to distribute the code under a
 &ldquo;<a href="http://en.wikipedia.org/wiki/C_News" target="_blank">C News</a>-like&rdquo; copyright, see the file <a href="https://github.com/troglobit/editline/blob/master/LICENSE" target="_blank">LICENSE</a> for details.
-Today <a href="https://github.com/richsalz/" target="_blank">Rich</a> disitributes the
+Today <a href="https://github.com/richsalz/" target="_blank">Rich</a> distributes the
 <a href="https://github.com/richsalz/editline" target="_blank">original sources</a> under the
 <a href="https://github.com/richsalz/editline/blob/master/LICENSE" target="_blank">Apache 2.0 license</a>.
 The version distributed here, however, continues to use the original
@@ -729,7 +741,7 @@ often based on the original <a href="http://ftp.cs.toronto.edu/pub/white/pub/rc/
 speech-tools/siod/</li>
 <li>Steve Tell&rsquo;s <a href="http://www.cs.unc.edu/~tell/dist.html" target="_blank">editline patches</a></li>
 </ul>
-<p>The most intersting patches and bug fixes from each fork have been
+<p>The most interesting patches and bug fixes from each fork have been
 merged here.  Outstanding issues are listed in the <a href="https://github.com/troglobit/editline/blob/master/docs/TODO.md" target="_blank">TODO</a> file.</p>
 
   
