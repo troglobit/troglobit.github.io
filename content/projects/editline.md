@@ -2,6 +2,7 @@
 name: libeditline
 title: "Minix Editline"
 date: 2020-04-05 14:38:00 +02:00
+lastmod: 2026-07-04 11:41:00 +02:00
 aliases: /editline.html
 ---
 
@@ -16,6 +17,17 @@ The small size (<30k), lack of dependencies (no ncurses needed!) and the
 free license should make this library interesting to many embedded
 developers seeking a replacement for the [GNU readline][] library.
 
+Since the 2.0 release editline is UTF-8 aware: cursor movement,
+deletion, word motion, and wrapped-line redisplay all work on whole
+glyphs rather than bytes.  Other features:
+
+* Emacs-style line editing with rebindable keys
+* Command history, saved to and restored from a file, with a scrollback
+  size you can change at runtime
+* TAB completion, with a hook for your own completer
+* A callback interface for use from an event loop
+* An FSF readline compatibility layer, so many programs build unchanged
+
 Configuration is made by supplying different options to the GNU
 configure script.  In the [examples/][] directory you can find some
 small code snippets used for testing.
@@ -25,10 +37,7 @@ Issue tracker and GIT repository available at GitHub:
    * [Repository](http://github.com/troglobit/editline)
    * [Issue Tracker](http://github.com/troglobit/editline/issues)
    * [ChangeLog](https://github.com/troglobit/editline/blob/master/ChangeLog.md)
-   * [editline-1.17.1.tar.gz](ftp://ftp.troglobit.com/editline/editline-1.17.1.tar.gz),
-     [MD5](ftp://ftp.troglobit.com/editline/editline-1.17.1.tar.gz.md5)
-   * [editline-1.17.1.tar.xz](ftp://ftp.troglobit.com/editline/editline-1.17.1.tar.xz),
-     [MD5](ftp://ftp.troglobit.com/editline/editline-1.17.1.tar.xz.md5)
+   * [Releases](https://github.com/troglobit/editline/releases) (source tarballs and release notes)
 
 See also the [OpenHub page](https://www.openhub.net/p/editline), or
 the old [Free(code) page](http://freecode.com/projects/minix-editline).
@@ -39,7 +48,7 @@ Origin & References
 The editline library was created by Simmule Turner and [Rich Salz][]
 back in 1992.  At the time they chose to distribute the code under a
 "[C News][]-like" copyright, see the file [LICENSE][] for details.
-Today [Rich](https://github.com/richsalz/) disitributes the
+Today [Rich](https://github.com/richsalz/) distributes the
 [original sources](https://github.com/richsalz/editline) under the
 [Apache 2.0 license](https://github.com/richsalz/editline/blob/master/LICENSE).
 The version distributed here, however, continues to use the original
@@ -56,7 +65,7 @@ often based on the original [comp.sources.unix][] posting are:
   speech-tools/siod/
 * Steve Tell's [editline patches](http://www.cs.unc.edu/~tell/dist.html)
 
-The most intersting patches and bug fixes from each fork have been
+The most interesting patches and bug fixes from each fork have been
 merged here.  Outstanding issues are listed in the [TODO][] file.
 
 
