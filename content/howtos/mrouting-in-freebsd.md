@@ -1,8 +1,8 @@
 ---
 name:  "MROUTING in FreeBSD"
 title: "HowTo: Add Multicast Routing to FreeBSD kernel"
-date: 2021-08-01 08:31:12 +0200
-orig-date: 2014-09-23 01:55:19 +0200
+date: 2014-09-23 01:55:19 +0200
+lastmod: 2021-08-01 08:31:12 +0200
 aliases: [/howto-add-multicast-routing-support-to-the-freebsd-kernel.html]
 categories: [ "freebsd", "kernel", "multicast", "howto" ]
 ---

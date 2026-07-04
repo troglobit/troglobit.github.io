@@ -1,8 +1,8 @@
 ---
 name:  "NetBSD pre-built packages"
 title: "HowTo use NetBSD pre-built packages"
-date: 2020-08-22 21:39:00 +01:00
-orig-date: 2015-07-30 11:13:00 +02:00
+date: 2015-07-30 11:13:00 +02:00
+lastmod: 2020-08-22 21:39:00 +01:00
 aliases: [/howto-netbsd-pkgsrc.html]
 categories: [ "netbsd", "bsd", "howto" ]
 ---

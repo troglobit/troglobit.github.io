@@ -3,12 +3,14 @@ categories:
 - unix
 - programming
 comments: true
-date: 2020-02-22T09:45:00Z
-orig-date: 2015-11-14T11:45:49Z
+date: 2015-11-14T11:45:49Z
+lastmod: 2020-02-22T09:45:00Z
 title: Useful UNIX API:s
 aliases:
     - /2015/11/14/useful-unix-api-s/
     - /blog/2015/11/14/useful-unix-api-s/
+    - /post/2020-02-22-useful-unix-apis/
+url: /post/2015-11-14-useful-unix-apis/
 ---
 
 Had an interesting conversation with a buddy last night.  It started out

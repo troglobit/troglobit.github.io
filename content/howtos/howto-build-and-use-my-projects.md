@@ -2,8 +2,8 @@
 title: "HowTo: Build & Use My Projects"
 author: "Joachim Wiberg"
 type: ""
-orig-date: 2020-08-14T07:38:09+01:00
-date: 2021-10-05T21:03:00+02:00
+lastmod: 2021-10-05T21:03:00+02:00
+date: 2020-08-14T07:38:09+01:00
 subtitle: "#include <stddisclaimer.h>"
 image: ""
 tags: []

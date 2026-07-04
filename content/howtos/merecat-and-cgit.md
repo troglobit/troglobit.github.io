@@ -1,7 +1,7 @@
 ---
 title: "HowTo: Set up Merecat with cgit"
-date: 2021-12-09T05:56:00Z 
-orig-date: 2018-03-30 19:41:26 +0200
+date: 2018-03-30 19:41:26 +0200
+lastmod: 2021-12-09T05:56:00Z
 aliases: [ "/2018/03/30/cgit-with-merecat-httpd/" ]
 tags: [merecat]
 ---

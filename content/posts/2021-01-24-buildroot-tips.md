@@ -1,9 +1,12 @@
 ---
 title: "Buildroot Development Checklist"
-orig-date: 2021-01-24 13:26:00 +0100
-date: 2023-06-04 17:49:00 +0200
+lastmod: 2023-06-04 17:49:00 +0200
+date: 2021-01-24 13:26:00 +0100
 tags: [ buildroot, git, opensource ]
 draft: false
+url: /post/2021-01-24-buildroot-development-checklist/
+aliases:
+  - /post/2023-06-04-buildroot-development-checklist/
 ---
 
 Because I always forget, here's a reminder to myself on how to use `git

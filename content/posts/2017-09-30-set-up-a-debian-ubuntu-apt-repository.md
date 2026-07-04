@@ -1,6 +1,6 @@
 ---
-date: 2020-02-22T12:28:00Z
-orig-date: 2017-09-30T12:39:43Z
+date: 2017-09-30T12:39:43Z
+lastmod: 2020-02-22T12:28:00Z
 title: Set up a Debian/Ubuntu APT Repository
 url: /2017/09/30/set-up-a-debian-ubuntu-apt-repository/
 aliases: /blog/2017/09/30/set-up-a-debian-ubuntu-apt-repository/

@@ -1,9 +1,12 @@
 ---
 title: "Emacs: GMail and Lore Mailing Lists"
 subtitle: ""
-orig-date: 2021-01-13 09:29:00 +0100
-date: 2021-05-11 19:12:00 +0100
+lastmod: 2021-05-11 19:12:00 +0100
+date: 2021-01-13 09:29:00 +0100
 tags: [ notmuch, emacs, gmail, lore ]
+url: /post/2021-01-13-emacs-gmail-and-lore-mailing-lists/
+aliases:
+  - /post/2021-05-11-emacs-gmail-and-lore-mailing-lists/
 ---
 
 With lots of help from the tireless Tobias Waldekranz, I think I've

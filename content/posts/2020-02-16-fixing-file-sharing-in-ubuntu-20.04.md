@@ -1,9 +1,12 @@
 ---
 title: "Fixing file sharing in Debian/Ubuntu/Mint"
 subtitle: ""
-orig-date: 2020-02-16 21:06:59 +0100
-date: 2020-07-13 17:37:00 +0100
+lastmod: 2020-07-13 17:37:00 +0100
+date: 2020-02-16 21:06:59 +0100
 tags: []
+url: /post/2020-02-16-fixing-file-sharing-in-debian/ubuntu/mint/
+aliases:
+  - /post/2020-07-13-fixing-file-sharing-in-debian/ubuntu/mint/
 ---
 
 Mounting my ReadyNAS from Nautilus stopped working after upgrading to

@@ -1,14 +1,11 @@
 ---
 title: "Multicast HowTo"
 toc: true
-date: 2023-05-28 07:52:12 +0200
-orig-date: 2019-03-27 15:54:00 +02:00
+date: 2019-03-27 15:54:00 +02:00
+lastmod: 2023-05-28 07:52:12 +0200
 aliases: [/multicast-howto.html]
 categories: [ "multicast", "pimd", "mrouted", "SMCRoute", "IGMP", "igmpproxy", "mcproxy" ]
 ---
-
-Introduction
-============
 
 This HowTo attempts to give some insight into the basics of setting up
 multicast routing.  Both static multicast routing, with [SMCRoute][1],
