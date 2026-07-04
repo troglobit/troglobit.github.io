@@ -1,8 +1,8 @@
 ---
 name:  "Playing with SNMP"
 title: "HowTo play with SNMP"
-date: 2023-09-04T20:24:00Z
-orig-date: 2018-05-05 13:57:00 +02:00
+date: 2018-05-05 13:57:00 +02:00
+lastmod: 2026-07-04T09:57:00Z
 aliases: [/howto-play-with-snmp.html]
 categories: [ "snmp", "debian", "ubuntu", "howto" ]
 ---
@@ -33,7 +33,7 @@ default.  *Comment out* the line that reads:
 
     mibs :
 
-Assuming you have already started `mini_snmpd`, say using port 16161 so
+Assuming you have already started `mini-snmpd`, say using port 16161 so
 it doesn't have to run as root, you can now talk to it using:
 
     snmpwalk -v2c -c public 127.0.0.1:16161
@@ -81,6 +81,10 @@ Useful Tests
 Walk all IP addresses
 
     snmpwalk  -v2c -c public 192.168.2.200 IP-MIB::ipAddrTable
+
+For IPv6 addresses too, walk the modern table (mini-snmpd 2.0 and later)
+
+    snmpwalk  -v2c -c public 192.168.2.200 IP-MIB::ipAddressTable
 
 Get loadavg
 
