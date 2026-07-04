@@ -150,11 +150,11 @@ mini-snmpd is licensed under the [GNU GPL v2][LICENSE].
 
 See also the old [Free(code) page](http://freecode.com/projects/minisnmpd).
 
-[1]: http://net-snmp.org
-[2]: http://net-snmp.net
-[3]: http://oss.oetiker.ch/mrtg/
+[1]: https://www.net-snmp.org/
+[2]: https://www.cacti.net/
+[3]: https://oss.oetiker.ch/mrtg/
 [4]: https://web.archive.org/web/20150522170054/http://members.aon.at/linuxfreak/linux/mini_snmpd.html
-[ftp]: ftp://ftp.troglobit.com/mini-snmpd/
-[repo]: http://github.com/troglobit/mini-snmpd
+[ftp]: https://ftp.troglobit.com/mini-snmpd/
+[repo]: https://github.com/troglobit/mini-snmpd
 [mibs]: https://github.com/troglobit/mini-snmpd/blob/master/doc/MIBS.md
 [LICENSE]: https://github.com/troglobit/mini-snmpd/blob/master/COPYING
