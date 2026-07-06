@@ -1,7 +1,7 @@
 ---
 title: "Buildroot Development Checklist"
-lastmod: 2023-06-04 17:49:00 +0200
 date: 2021-01-24 13:26:00 +0100
+lastmod: 2023-06-04 17:49:00 +0200
 tags: [ buildroot, git, opensource ]
 draft: false
 url: /post/2021-01-24-buildroot-development-checklist/
@@ -107,3 +107,5 @@ but the process is much the same for other mailing list-based projects.
 > email, please see https://git-scm.com/docs/git-send-email or my blog
 > post https://troglobit.com/post/2022-01-24-gmail-and-git-send-email/
 > for details.
+
+[1]: https://buildroot.org/
