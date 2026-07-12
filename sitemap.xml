@@ -2,25 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://troglobit.com/tags/emacs/</loc>
-    <lastmod>2026-05-26T22:00:00+02:00</lastmod>
+    <loc>https://troglobit.com/post/2026-07-12-can-you-dig-it/</loc>
+    <lastmod>2026-07-12T20:30:00+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/digit/</loc>
+    <lastmod>2026-07-12T20:30:00+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/git/</loc>
+    <lastmod>2026-07-12T20:30:00+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/go/</loc>
+    <lastmod>2026-07-12T20:30:00+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/</loc>
-    <lastmod>2026-07-04T09:57:00+00:00</lastmod>
+    <lastmod>2026-07-12T20:30:00+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/opensource/</loc>
+    <lastmod>2026-07-12T20:30:00+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/posts/</loc>
+    <lastmod>2026-07-12T20:30:00+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/selfhosting/</loc>
+    <lastmod>2026-07-12T20:30:00+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/</loc>
+    <lastmod>2026-07-12T20:30:00+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/emacs/</loc>
+    <lastmod>2026-05-26T22:00:00+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/tags/kg/</loc>
     <lastmod>2026-05-26T22:00:00+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/post/2026-05-26-long-time-no-blog/</loc>
-    <lastmod>2026-05-26T22:00:00+02:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/tags/opensource/</loc>
-    <lastmod>2026-05-26T22:00:00+02:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/posts/</loc>
-    <lastmod>2026-05-26T22:00:00+02:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/tags/</loc>
     <lastmod>2026-05-26T22:00:00+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/tags/buildroot/</loc>
@@ -109,9 +124,6 @@
   </url><url>
     <loc>https://troglobit.com/projects/smcroute/</loc>
     <lastmod>2022-09-04T10:00:41+01:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/tags/git/</loc>
-    <lastmod>2023-06-04T17:49:00+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/tags/howto/</loc>
     <lastmod>2022-04-17T16:56:00+01:00</lastmod>

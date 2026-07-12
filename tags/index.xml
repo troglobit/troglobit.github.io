@@ -6,8 +6,43 @@
     <description>Recent content in Tags on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 26 May 2026 22:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jul 2026 20:30:00 +0200</lastBuildDate>
     <atom:link href="https://troglobit.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Digit</title>
+      <link>https://troglobit.com/tags/digit/</link>
+      <pubDate>Sun, 12 Jul 2026 20:30:00 +0200</pubDate>
+      <guid>https://troglobit.com/tags/digit/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Git</title>
+      <link>https://troglobit.com/tags/git/</link>
+      <pubDate>Sun, 12 Jul 2026 20:30:00 +0200</pubDate>
+      <guid>https://troglobit.com/tags/git/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Go</title>
+      <link>https://troglobit.com/tags/go/</link>
+      <pubDate>Sun, 12 Jul 2026 20:30:00 +0200</pubDate>
+      <guid>https://troglobit.com/tags/go/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Opensource</title>
+      <link>https://troglobit.com/tags/opensource/</link>
+      <pubDate>Sun, 12 Jul 2026 20:30:00 +0200</pubDate>
+      <guid>https://troglobit.com/tags/opensource/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Selfhosting</title>
+      <link>https://troglobit.com/tags/selfhosting/</link>
+      <pubDate>Sun, 12 Jul 2026 20:30:00 +0200</pubDate>
+      <guid>https://troglobit.com/tags/selfhosting/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Emacs</title>
       <link>https://troglobit.com/tags/emacs/</link>
@@ -20,13 +55,6 @@
       <link>https://troglobit.com/tags/kg/</link>
       <pubDate>Tue, 26 May 2026 22:00:00 +0200</pubDate>
       <guid>https://troglobit.com/tags/kg/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Opensource</title>
-      <link>https://troglobit.com/tags/opensource/</link>
-      <pubDate>Tue, 26 May 2026 22:00:00 +0200</pubDate>
-      <guid>https://troglobit.com/tags/opensource/</guid>
       <description></description>
     </item>
     <item>
@@ -139,13 +167,6 @@
       <link>https://troglobit.com/tags/sysklogd/</link>
       <pubDate>Fri, 09 Sep 2022 19:36:44 +0100</pubDate>
       <guid>https://troglobit.com/tags/sysklogd/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Git</title>
-      <link>https://troglobit.com/tags/git/</link>
-      <pubDate>Sun, 17 Apr 2022 16:56:00 +0100</pubDate>
-      <guid>https://troglobit.com/tags/git/</guid>
       <description></description>
     </item>
     <item>
