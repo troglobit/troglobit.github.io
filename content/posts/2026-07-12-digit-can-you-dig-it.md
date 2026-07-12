@@ -67,6 +67,12 @@ Features that cost CPU, bandwidth, or attack surface — blame,
 snapshots, clone, search — sit behind config toggles, cgit style,
 so every instance is exactly as wide as its operator wants.
 
+And it hasn't stopped at the tag — a few more features have already
+landed since: keyboard navigation that hops between a commit and its
+parents or children, and walks the log without reaching for the mouse
+(tap `?` for the map), plus a commit log that sizes itself to your
+window so the whole page fits on one screen, no scrollbar in sight.
+
 ### Grab It
 
 Building is the boring kind of boring:
@@ -84,8 +90,13 @@ reverse proxying with nginx or [merecat][], and running under systemd
 or [Finit][].
 
 Best of all: you can see it in action right now, browsing its own
-source, at **[git.troglobit.com][live]**.  Bug reports and patches
-welcome, as always.  Can you dig it?
+source, at **[git.troglobit.com][live]**.  That site is a small
+experiment in its own right — it's served through [merecat][]'s
+brand-new `proxy-pass`, as far as I know the first service anywhere
+running on it, which quietly makes git.troglobit.com equal parts git
+browser and merecat proving ground.  Two birds, one droplet.
+
+Bug reports and patches welcome, as always.  Can you dig it?
 
 [gitweb]:   https://git-scm.com/docs/gitweb
 [legit]:    https://github.com/icyphox/legit
