@@ -79,6 +79,7 @@ disableHugoGeneratorInject = false
     #facebook_url = "https://facebook.com"
     #flickr_url = "https://flickr.com"
     github_url = "https://github.com/troglobit"
+    gitweb_url = "https://git.troglobit.com"
     #gitlab_url = "https://gitlab.com"
     #instagram_url = "https://instagram.com"
     linkedin_url = "https://www.linkedin.com/in/joachim-wiberg-3a017125"
