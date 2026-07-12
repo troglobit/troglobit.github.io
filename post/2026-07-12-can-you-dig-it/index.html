@@ -700,7 +700,7 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
           
         
 
-        <span>3 mins read</span>
+        <span>4 mins read</span>
       </span>
     </div>
 
@@ -792,6 +792,11 @@ anchors with GitHub-style visual range marks:</li>
 <p>Features that cost CPU, bandwidth, or attack surface — blame,
 snapshots, clone, search — sit behind config toggles, cgit style,
 so every instance is exactly as wide as its operator wants.</p>
+<p>And it hasn&rsquo;t stopped at the tag — a few more features have already
+landed since: keyboard navigation that hops between a commit and its
+parents or children, and walks the log without reaching for the mouse
+(tap <code>?</code> for the map), plus a commit log that sizes itself to your
+window so the whole page fits on one screen, no scrollbar in sight.</p>
 <h3 id="grab-it">Grab It</h3>
 <p>Building is the boring kind of boring:</p>
 <div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/troglobit/digit.git
@@ -803,8 +808,12 @@ release</a>, and the <a href="https://github.com/troglobit/digit" target="_blank
 reverse proxying with nginx or <a href="https://github.com/troglobit/merecat" target="_blank">merecat</a>, and running under systemd
 or <a href="https://github.com/troglobit/finit" target="_blank">Finit</a>.</p>
 <p>Best of all: you can see it in action right now, browsing its own
-source, at <strong><a href="https://git.troglobit.com/github.com/troglobit/digit/" target="_blank">git.troglobit.com</a></strong>.  Bug reports and patches
-welcome, as always.  Can you dig it?</p>
+source, at <strong><a href="https://git.troglobit.com/github.com/troglobit/digit/" target="_blank">git.troglobit.com</a></strong>.  That site is a small
+experiment in its own right — it&rsquo;s served through <a href="https://github.com/troglobit/merecat" target="_blank">merecat</a>&rsquo;s
+brand-new <code>proxy-pass</code>, as far as I know the first service anywhere
+running on it, which quietly makes git.troglobit.com equal parts git
+browser and merecat proving ground.  Two birds, one droplet.</p>
+<p>Bug reports and patches welcome, as always.  Can you dig it?</p>
   
   <hr>
 <div class="footer">
