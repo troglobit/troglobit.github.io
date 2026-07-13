@@ -22,7 +22,7 @@ frontend these days, and the poor machine never had a quiet moment.
 <!--more-->
 
 So, obviously, the reasonable thing to do was to write my own.  Say
-hello to **[digit][]**, which just shipped [v1.0][].
+hello to **[digit][]**, which just shipped ~~[v1.0][]~~[v1.1][].
 
 ### Display Git
 
