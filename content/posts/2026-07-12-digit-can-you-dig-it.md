@@ -8,7 +8,7 @@ image: /images/digit-card.png
 description: "Announcing Digit, a fast and simple web frontend to git repositories.  Born the day an AI scraper herd melted my droplet, it browses mirror trees, renders GitHub-grade markdown, and serves crawlers nothing but 304s.  Live at https://git.troglobit.com"
 ---
 
-{{% figure src="/images/digit-1.0.png" class="right-floated" width="512" alt="Digit repo overview" link="https://git.troglobit.com" %}}
+{{% figure src="/images/digit-card.png" class="right-floated" width="512" alt="Digit repo overview" link="https://git.troglobit.com" %}}
 
 Like many of you I keep mirrors of my projects on a small VPS —
 partly as insurance, GitHub is lovely until it isn't, and partly
@@ -42,6 +42,8 @@ hash-pinned URLs are marked immutable forever, and the scraper herds
 that inspired the whole exercise now graze on a diet of 304s.  A
 bundled `robots.txt` and fail2ban-friendly logs handle the ones that
 don't take the hint.
+
+{{% figure src="/images/digit-1.0.png" class="centered" alt="Digit repo overview" link="https://git.troglobit.com" %}}
 
 ### What It Does
 
