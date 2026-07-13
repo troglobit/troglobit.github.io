@@ -58,11 +58,11 @@
 
 
 <!-- Open Graph image and Twitter Card metadata -->
-<meta property="og:image" content="https://troglobit.com/images/digit-1.0.png" />
-  <meta name="twitter:image" content="https://troglobit.com/images/digit-1.0.png" />
+<meta property="og:image" content="https://troglobit.com/images/digit-card.png" />
+  <meta name="twitter:image" content="https://troglobit.com/images/digit-card.png" />
   <meta name="twitter:card" content="summary_large_image" />
-      <meta property="og:image:width" content="1135" />
-      <meta property="og:image:height" content="1121" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
     <meta property="og:image:type" content="image/png" />
 
 <title itemprop="name">Troglobit - Can You Dig It?</title>
@@ -86,7 +86,7 @@
 <meta property="og:url" content="https://troglobit.com/post/2026-07-12-can-you-dig-it/" />
 
 
-<meta property="og:updated_time" content="2026-07-12T20:30:00&#43;02:00" />
+<meta property="og:updated_time" content="2026-07-13T16:43:27&#43;02:00" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -693,6 +693,10 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
         July 12, 2026
       </time>
       
+      <time datetime=" 2026-07-13T16:43:27&#43;0200" class="post-updated">
+        (updated July 13, 2026)
+      </time>
+      
       
       <span> - </span>
       <span class="reading-time">
@@ -749,7 +753,7 @@ but on my single-core droplet it <em>pegged the CPU</em> just rendering a
 repo page.  Add the AI scraper herds that graze on every public git
 frontend these days, and the poor machine never had a quiet moment.</p>
 <p>So, obviously, the reasonable thing to do was to write my own.  Say
-hello to <strong><a href="https://github.com/troglobit/digit" target="_blank">digit</a></strong>, which just shipped v1.0.</p>
+hello to <strong><a href="https://github.com/troglobit/digit" target="_blank">digit</a></strong>, which just shipped <a href="https://github.com/troglobit/digit/releases/tag/1.0" target="_blank">v1.0</a>.</p>
 <h3 id="display-git">Display Git</h3>
 <p>The name came first, I&rsquo;ll admit it.  <em>Digit</em> — display git.  Dig it?
 It also means finger, so it keeps a finger on your repos.  The puns
@@ -758,8 +762,8 @@ design decisions of the project.</p>
 <p>Under the hood the design is old-school: digit is a single static Go
 binary that shells out to the real <code>git</code> for everything, just like
 gitweb and cgit before it.  The git binary has decades of packfile
-and commit-graph optimizations that pure-Go reimplementations simply
-lack — that&rsquo;s the difference between browsing a kernel-sized repo and
+and commit-graph optimizations that pure-Go re-implementations simply
+lack, that&rsquo;s the difference between browsing a kernel-sized repo and
 melting a droplet.  On top of that sits an aggressive cache: every
 page carries an ETag derived from the repo&rsquo;s actual ref state,
 hash-pinned URLs are marked immutable forever, and the scraper herds
@@ -767,18 +771,18 @@ that inspired the whole exercise now graze on a diet of 304s.  A
 bundled <code>robots.txt</code> and fail2ban-friendly logs handle the ones that
 don&rsquo;t take the hint.</p>
 <h3 id="what-it-does">What It Does</h3>
-<p>Everything you&rsquo;d expect from the classic tier — trees, logs, diffs,
-blame, refs, snapshots — plus the things I always missed there:</p>
+<p>Everything you&rsquo;d expect from the classic tier (trees, logs, diffs,
+blame, refs, snapshots) plus the things I always missed there:</p>
 <ul>
-<li><strong>Mirror-tree aware</strong> — repos nested <code>host/org/repo.git</code>, the way
+<li><strong>Mirror-tree aware:</strong> repos nested <code>host/org/repo.git</code>, the way
 mirror scripts lay them out, get grouped per org with index pages
 at every level.  My whole <code>/srv/git</code> just works.</li>
-<li><strong>GitHub-grade markdown</strong> — emoji, tables, alerts (<code>&gt; [!TIP]</code>),
+<li><strong>GitHub-grade markdown:</strong> emoji, tables, alerts (<code>&gt; [!TIP]</code>),
 relative links and images, plus readme tabs for license,
 contributing, and friends.  Your project pages look like project
 pages, not like 2004.</li>
-<li><strong>Read-only clone over smart HTTP</strong> with a GitHub-style clone
-menu — copyable HTTPS/SSH URLs and tar.gz/zip snapshots.  Handy
+<li><strong>Read-only clone over smart HTTP:</strong> with a GitHub-style clone
+menu, copyable HTTPS/SSH URLs and tar.gz/zip snapshots.  Handy
 for an office-internal instance, off by default for public ones.</li>
 <li><strong>Atom and RSS feeds</strong>, per repo and site-wide, commit message
 search, <code>.patch</code> URLs, dark mode with a proper toggle, and line
@@ -789,27 +793,30 @@ anchors with GitHub-style visual range marks:</li>
             <p>Shift-click the gutter for #L10-L20 links with a visual mark</p>
         </figcaption>
 </figure>
-<p>Features that cost CPU, bandwidth, or attack surface — blame,
-snapshots, clone, search — sit behind config toggles, cgit style,
-so every instance is exactly as wide as its operator wants.</p>
-<p>And it hasn&rsquo;t stopped at the tag — a few more features have already
-landed since: keyboard navigation that hops between a commit and its
-parents or children, and walks the log without reaching for the mouse
-(tap <code>?</code> for the map), plus a commit log that sizes itself to your
-window so the whole page fits on one screen, no scrollbar in sight.</p>
+<p>Features that cost CPU, bandwidth, or attack surface (blame, snapshots,
+clone, search) sit behind config toggles, cgit style, so every instance
+is exactly as wide as its operator wants.</p>
+<p>And it hasn&rsquo;t stopped at the first release.  The very next day
+<strong><a href="https://github.com/troglobit/digit/releases/tag/1.1" target="_blank">v1.1</a></strong> landed, a mobile and accessibility pass.  On a phone the
+whole thing folds down now: a hamburger swallows the repo tools, and the
+file and commit views get tidy framed headers.  It behaves with a
+keyboard and a screen reader, and the log grew little tag and branch
+pills so you can spot where a release landed.  Keyboard navigation still
+hops between a commit and its parents or children and walks the log
+without touching the mouse; tap <code>?</code> for the map.</p>
 <h3 id="grab-it">Grab It</h3>
 <p>Building is the boring kind of boring:</p>
 <div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/troglobit/digit.git
 </span></span><span style="display:flex;"><span><span style="color:#fabd2f">cd</span> digit
 </span></span><span style="display:flex;"><span>make
 </span></span><span style="display:flex;"><span>sudo make install
-</span></span></code></pre></div><p>Prebuilt static binaries for linux amd64/arm64 hang off the <a href="https://github.com/troglobit/digit/releases/tag/1.0" target="_blank">v1.0
+</span></span></code></pre></div><p>Prebuilt static binaries for linux amd64/arm64 hang off the <a href="https://github.com/troglobit/digit/releases/tag/1.1" target="_blank">v1.1
 release</a>, and the <a href="https://github.com/troglobit/digit" target="_blank">README</a> covers configuration,
 reverse proxying with nginx or <a href="https://github.com/troglobit/merecat" target="_blank">merecat</a>, and running under systemd
 or <a href="https://github.com/troglobit/finit" target="_blank">Finit</a>.</p>
 <p>Best of all: you can see it in action right now, browsing its own
 source, at <strong><a href="https://git.troglobit.com/github.com/troglobit/digit/" target="_blank">git.troglobit.com</a></strong>.  That site is a small
-experiment in its own right — it&rsquo;s served through <a href="https://github.com/troglobit/merecat" target="_blank">merecat</a>&rsquo;s
+experiment in its own right,  it&rsquo;s served through <a href="https://github.com/troglobit/merecat" target="_blank">merecat</a>&rsquo;s
 brand-new <code>proxy-pass</code>, as far as I know the first service anywhere
 running on it, which quietly makes git.troglobit.com equal parts git
 browser and merecat proving ground.  Two birds, one droplet.</p>
