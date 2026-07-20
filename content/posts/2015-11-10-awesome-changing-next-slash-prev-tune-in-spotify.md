@@ -3,6 +3,8 @@ categories:
 - unix
 - spotify
 - awesome
+tags:
+- awesome
 comments: true
 date: 2015-11-10T12:14:09Z
 title: 'Awesome: Changing Next/Prev Tune in Spotify'
@@ -10,7 +12,7 @@ url: /2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/
 aliases: /blog/2015/11/10/awesome-changing-next-slash-prev-tune-in-spotify/
 ---
 
-Back to using the [Awesome WM](http://awesome.naquadah.org/) in Ubuntu.
+Back to using the [Awesome WM](https://awesomewm.org/) in Ubuntu.
 This time I'm setting up everything from scratch and first up is fixing
 keybindings to control my main music player: Spotify!
 
