@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://troglobit.com/" />
 
 
-<meta property="og:updated_time" content="2026-07-13T16:43:27&#43;02:00" />
+<meta property="og:updated_time" content="2026-07-20T08:15:33Z" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -288,6 +288,16 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
             
         
         
@@ -311,11 +321,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/post/2026-07-12-can-you-dig-it/">Can You Dig It?</a>
+                                <a href="https://troglobit.com/post/2026-07-20-sane-defaults-for-rxvt/">Sane Defaults for rxvt</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/post/2026-05-26-long-time-no-blog/">Long Time, No Blog</a>
+                                <a href="https://troglobit.com/post/2026-07-12-can-you-dig-it/">Can You Dig It?</a>
                             </li>
                         
                     
@@ -329,6 +339,16 @@
                 
             
                 
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
                 
                         
                 
@@ -492,6 +512,16 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
             
         
         
@@ -533,6 +563,16 @@
                 
             
                 
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
                 
                         
                 
@@ -669,6 +709,55 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
                 <div class="posts">
     
     
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/howtos/multicast/">Multicast HowTo</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2019-03-27T15:54:00&#43;0200" class="post-date">
+        March 27, 2019
+      </time>
+      
+      <time datetime=" 2023-05-28T07:52:12&#43;0200" class="post-updated">
+        (updated May 28, 2023)
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>13 mins read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        This HowTo attempts to give some insight into the basics of setting up multicast routing. Both static multicast routing, with SMCRoute, and dynamic multicast routing, with mrouted and pimd.
+For some use-cases, in particular link-local multicast, it may not be possible to use multicast routing, then I recommend trying out:
+Bridging networks, see bridge(8) or Linux bridge - how it works igmproxy, mcproxy, or OpenVPN in Layer-2, bridged mode Make sure to check out the FAQ for the most common problems.
+        
+        <div class="read-more-link">
+            <a href="/howtos/multicast/">Read More…</a>
+        </div>
+        
+        
+    </article>
     <article class="post">
         <div class="info">
   <h1 class="post-title">
@@ -1097,75 +1186,6 @@ However, nothing comes for free, and although I&rsquo;ve achieved my goals, I&rs
         
         <div class="read-more-link">
             <a href="/post/2018-02-15-slow-down/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/2016/07/05/multicast-routing-with-pim-sm-over-gre/">Multicast routing with PIM-SM over GRE</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2018-01-23T20:39:36Z" class="post-date">
-        January 23, 2018
-      </time>
-      
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>8 mins read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        <p>GRE tunnels are useful in many ways.  This blog post shows how to set up
-multicast routing with <a href="https://github.com/troglobit/pimd/" target="_blank">pimd</a> over a
-GRE tunnel.  To achieve this we will also set up OSPF over GRE with
-<a href="http://www.quagga.net" target="_blank">Quagga</a>, because PIM, unlike DVMRP (<code>mrouted</code>),
-require unicast routing rules to be established.</p>
-<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>       .----{ Intranet }----.
-</span></span><span style="display:flex;"><span>      /    192.168.1.0/24    \
-</span></span><span style="display:flex;"><span>     /                        \
-</span></span><span style="display:flex;"><span>.10 /                          \.20
-</span></span><span style="display:flex;"><span>.--&#39;---. .1  GRE Tunnel  .2 .---`--.
-</span></span><span style="display:flex;"><span>|      |====================|      |
-</span></span><span style="display:flex;"><span>|  R1  |   172.16.16.0/30   |  R2  |
-</span></span><span style="display:flex;"><span>|      |                    |      |
-</span></span><span style="display:flex;"><span>&#39;--.---&#39;                    &#39;------&#39;
-</span></span><span style="display:flex;"><span>   | .1                        | .1 
-</span></span><span style="display:flex;"><span>   |    10.0.1.0/24            |    10.0.2.0/24
-</span></span><span style="display:flex;"><span>   | .2                        | .2 
-</span></span><span style="display:flex;"><span>.--&#39;---.                    .--&#39;---.
-</span></span><span style="display:flex;"><span>|      |                    |      |
-</span></span><span style="display:flex;"><span>|  C1  |                    |  C2  |
-</span></span><span style="display:flex;"><span>|      |                    |      |
-</span></span><span style="display:flex;"><span>&#39;------&#39;                    &#39;------&#39;
-</span></span></code></pre></div><p>In this post we are using the home WiFi network, 192.168.1.0/24, to hook
-up the GRE tunnel.  It is just as easy to extend this to a big corporate
-Intranet with more routers between <code>R1</code> and <code>R2</code>.  As long as that IT
-department takes care of the unicast routing between <code>R1</code> and <code>R2</code> so
-that the GRE tunnel can be established.</p>
-        
-        <div class="read-more-link">
-            <a href="/2016/07/05/multicast-routing-with-pim-sm-over-gre/">Read More…</a>
         </div>
         
         

@@ -2,6 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://troglobit.com/tags/awesome/</loc>
+    <lastmod>2026-07-20T08:15:33+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/</loc>
+    <lastmod>2026-07-20T08:15:33+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/posts/</loc>
+    <lastmod>2026-07-20T08:15:33+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/rxvt/</loc>
+    <lastmod>2026-07-20T08:15:33+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/post/2026-07-20-sane-defaults-for-rxvt/</loc>
+    <lastmod>2026-07-20T08:15:33+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/</loc>
+    <lastmod>2026-07-20T08:15:33+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/terminal/</loc>
+    <lastmod>2026-07-20T08:15:33+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/urxvt/</loc>
+    <lastmod>2026-07-20T08:15:33+00:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/x11/</loc>
+    <lastmod>2026-07-20T08:15:33+00:00</lastmod>
+  </url><url>
     <loc>https://troglobit.com/post/2026-07-12-can-you-dig-it/</loc>
     <lastmod>2026-07-13T16:43:27+02:00</lastmod>
   </url><url>
@@ -14,19 +41,10 @@
     <loc>https://troglobit.com/tags/go/</loc>
     <lastmod>2026-07-13T16:43:27+02:00</lastmod>
   </url><url>
-    <loc>https://troglobit.com/</loc>
-    <lastmod>2026-07-13T16:43:27+02:00</lastmod>
-  </url><url>
     <loc>https://troglobit.com/tags/opensource/</loc>
     <lastmod>2026-07-13T16:43:27+02:00</lastmod>
   </url><url>
-    <loc>https://troglobit.com/posts/</loc>
-    <lastmod>2026-07-13T16:43:27+02:00</lastmod>
-  </url><url>
     <loc>https://troglobit.com/tags/selfhosting/</loc>
-    <lastmod>2026-07-13T16:43:27+02:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/tags/</loc>
     <lastmod>2026-07-13T16:43:27+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/tags/emacs/</loc>

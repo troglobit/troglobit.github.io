@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://troglobit.com/" />
 
 
-<meta property="og:updated_time" content="2026-07-13T16:43:27&#43;02:00" />
+<meta property="og:updated_time" content="2026-07-20T08:15:33Z" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -288,6 +288,16 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
             
         
         
@@ -311,11 +321,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/post/2026-07-12-can-you-dig-it/">Can You Dig It?</a>
+                                <a href="https://troglobit.com/post/2026-07-20-sane-defaults-for-rxvt/">Sane Defaults for rxvt</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/post/2026-05-26-long-time-no-blog/">Long Time, No Blog</a>
+                                <a href="https://troglobit.com/post/2026-07-12-can-you-dig-it/">Can You Dig It?</a>
                             </li>
                         
                     
@@ -329,6 +339,16 @@
                 
             
                 
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
                 
                         
                 
@@ -492,6 +512,16 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
             
         
         
@@ -533,6 +563,16 @@
                 
             
                 
+                
+                        
+                
+                        
+                
+                        
+                
+                        
+                
+                        
                 
                         
                 
@@ -669,6 +709,51 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
                 <div class="posts">
     
     
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/projects/mrouted/">The original multicast routing daemon</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2021-11-03T12:39:12&#43;0100" class="post-date">
+        November 3, 2021
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>2 mins read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, RFC 1075. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunneling support.
+Tunneling may be required to cross non-multicast-aware routers.
+The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is suitable for smaller/dense networks. It employs the &ldquo;flood and prune&rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups.
+        
+        <div class="read-more-link">
+            <a href="/projects/mrouted/">Read More…</a>
+        </div>
+        
+        
+    </article>
     <article class="post">
         <div class="info">
   <h1 class="post-title">
@@ -1198,63 +1283,6 @@ in stack traces.</p>
         
         <div class="read-more-link">
             <a href="/post/2020-11-15-backtrace-in-c/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/post/2020-08-23-weird-screen-artifacts-on-x200/">Weird Screen Artifacts on X200</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2020-08-23T14:02:00Z" class="post-date">
-        August 23, 2020
-      </time>
-      
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>1 min read</span>
-      </span>
-    </div>
-
-    
-    <ul class="tags">
-      
-      <li class="tag-ThinkPad">
-        <a href="https://troglobit.com/tags/thinkpad">ThinkPad</a>
-      </li>
-      
-      <li class="tag-X200">
-        <a href="https://troglobit.com/tags/x200">X200</a>
-      </li>
-      
-    </ul>
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        I blogged earlier about the awesome little ThinkPad X200 I found and its blinking WiFi LED. Briefly I mentioned an odd issue with X/Wayland on LMDE 4. This turned out to be a HW bug that can only be worked around by disabling hardware acceleration for virtualization:
-https://forums.lenovo.com/t5/Windows-8-1-8-7-Vista-and-XP-Discussions/Bizarre-screen-artifacts-on-R400-Integrated-Graphics-running-Win-7-RTM/m-p/153980?page=1#199768
-The post says it should be sufficient to &ldquo;Disable Virtualization Technology for Directed-IO (VT-d)&rdquo;, but that didn&rsquo;t work for me, and I wanted to keep the 8 GiB of RAM I managed to fit into it.
-        
-        <div class="read-more-link">
-            <a href="/post/2020-08-23-weird-screen-artifacts-on-x200/">Read More…</a>
         </div>
         
         

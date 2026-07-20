@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Jul 2026 16:43:27 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jul 2026 08:15:33 +0000</lastBuildDate>
     <atom:link href="https://troglobit.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sane Defaults for rxvt</title>
+      <link>https://troglobit.com/post/2026-07-20-sane-defaults-for-rxvt/</link>
+      <pubDate>Mon, 20 Jul 2026 08:15:33 +0000</pubDate>
+      <guid>https://troglobit.com/post/2026-07-20-sane-defaults-for-rxvt/</guid>
+      <description>&lt;figure class=&#34;right-floated&#34;&gt;&lt;img src=&#34;https://troglobit.com/images/rxvt-card.png&#34;&#xA;         alt=&#34;rxvt with two tabs, the active one running Midnight Commander, in the Tango palette&#34; width=&#34;512&#34;/&gt;&lt;figcaption&gt;&#xA;            &lt;p&gt;&lt;em&gt;Mockup of rxvt new look, running Midnight Commander.&lt;/em&gt;&lt;/p&gt;&#xA;        &lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&lt;p&gt;I want to test the editors I maintain, &lt;a href=&#34;https://github.com/troglobit/kg&#34; target=&#34;_blank&#34;&gt;kg&lt;/a&gt; and &lt;a href=&#34;https://github.com/troglobit/mg&#34; target=&#34;_blank&#34;&gt;mg&lt;/a&gt;, on as many&#xA;terminals as possible, and after bouncing between xterm, GNOME Terminal,&#xA;&lt;a href=&#34;https://sw.kovidgoyal.net/kitty/&#34; target=&#34;_blank&#34;&gt;kitty&lt;/a&gt;, &lt;a href=&#34;https://alacritty.org&#34; target=&#34;_blank&#34;&gt;Alacritty&lt;/a&gt; and Terminator over the years, &lt;code&gt;rxvt&lt;/code&gt; is the&#xA;one I keep coming back to &amp;ndash; mostly for how far it bends to a plain&#xA;config file.  So here&amp;rsquo;s how I set it up with a few sane defaults, or at&#xA;least how far I got &amp;hellip;&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;The following writeup is part of my series; &lt;em&gt;Reminders to self&lt;/em&gt;.&#xA;Please let me know if there&amp;rsquo;s anything you&amp;rsquo;d like me to delve&#xA;further into.&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
+    </item>
     <item>
       <title>Can You Dig It?</title>
       <link>https://troglobit.com/post/2026-07-12-can-you-dig-it/</link>
