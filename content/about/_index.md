@@ -32,8 +32,8 @@ time around, the OS is based on Buildroot and completely modeled with
 
 My spare time is spent with my kids and cat, but I also maintain quite a
 few Free/Libre Open Source Software ([FLOSS][]) project.  For example,
-[Finit][], [Inadyn][], [pimd][], [pimd-dense][], [mrouted][],
-[SMCRoute][], [sysklogd][], [uftpd][], and more at [GitHub][].
+[Finit][], [Mg][], [pimd][], [pimd-dense][], [mrouted][], [SMCRoute][],
+[sysklogd][], [uftpd][], and more at [GitHub][].
 
 My [GPG key][] fingerprint is `4A11 E139 3486 34EF 499C ECAC ECA8 26A3
 7B6C 7409`.  Fetch it from a key server using:
@@ -46,7 +46,7 @@ You can find my [online resume here][resume], or download the [PDF][].
 [^1]: You may have known me previously as [Joachim Nilsson](https://web.archive.org/web/20050205144440/http://www.mds.mdh.se/~dat95jnn/home.htm).
 
 [Finit]:      /finit.html
-[Inadyn]:     /inadyn.html
+[Mg]:         https://github.com/troglobit/mg
 [pimd]:       /pimd.html
 [mrouted]:    /mrouted.html
 [SMCRoute]:   /smcroute.html
