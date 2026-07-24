@@ -12,6 +12,10 @@ into problems setting it up, and ended up as a HowTo.
 
 <!--more-->
 
+> **Update 2026-07-24:** these days I run [digit][4] instead, see [Can
+> You Dig It?][5] for details.  This HowTo remains for anyone still
+> setting up cgit.
+
 My server has several sub-domains set up, hence I run [Merecat][2] with
 the `virtual-host = true` setting and bind mounts in `/var/www/`.
 Detailed in the [online documentation][2].
@@ -56,9 +60,10 @@ scan-path=/srv/git/
 robots=noindex, nofollow
 ```
 
-*Note the leading slash* in the `virtual-root`.  The resulting site can
-be viewed here: http://cgit.troglobit.com
+*Note the leading slash* in the `virtual-root`.
 
 [1]: https://git.zx2c4.com/cgit/
 [2]: http://merecat.troglobit.com
 [3]: https://github.com/troglobit/merecat/issues/3
+[4]: https://git.troglobit.com
+[5]: {{< ref "2026-07-12-digit-can-you-dig-it.md" >}}
