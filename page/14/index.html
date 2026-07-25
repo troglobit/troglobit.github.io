@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://troglobit.com/" />
 
 
-<meta property="og:updated_time" content="2026-07-25T09:00:00&#43;02:00" />
+<meta property="og:updated_time" content="2026-07-25T18:30:00&#43;02:00" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -300,6 +300,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
         
@@ -414,6 +420,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
         
@@ -440,11 +452,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/merecat/">Merecat httpd</a>
+                                <a href="https://troglobit.com/projects/mdnsd/">Embeddable Multicast DNS daemon</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/finit/">Fast init for Linux systems</a>
+                                <a href="https://troglobit.com/projects/merecat/">Merecat httpd</a>
                             </li>
                         
                     
@@ -455,6 +467,12 @@
                 
             
                 
+                
+                        
+                
+                        
+                
+                        
                 
                         
                 
@@ -642,6 +660,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
 
@@ -717,6 +741,70 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
                 <div class="posts">
     
     
+    
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/2013/07/05/file-system-pass-through-in-kvm-slash-qemu-slash-libvirt/">File System Pass-Through in KVM/Qemu/libvirt</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2013-07-05T00:00:00Z" class="post-date">
+        July 5, 2013
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>3 mins read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+
+        
+        
+
+        
+        <p>This post doesn&rsquo;t cover fully setting up KVM/Qemu with virt-manager
+and creating virtual machine guests.  See the Ubuntu
+<a href="https://help.ubuntu.com/community/KVM/Installation" target="_blank">KVM Installtion</a>,
+<a href="https://help.ubuntu.com/community/KVM/VirtManager" target="_blank">VirtManager Guide</a>,
+the
+<a href="https://help.ubuntu.com/13.04/serverguide/libvirt.html" target="_blank">Ubuntu Server Guide on libvirt</a>,
+or
+<a href="http://www.howtoforge.com/virtualization-with-kvm-on-ubuntu-12.04-lts-p3" target="_blank">HowtoForge</a>
+for that.</p>
+<p>Instead this blog post details the most relevant steps to get file
+system pass-through between a Linux host and Qemu guest working.  The
+upstream <a href="http://wiki.qemu.org/Documentation/9psetup" target="_blank">Qemu docs</a>
+provide a good starting point, as is the original
+<a href="https://www.kernel.org/doc/ols/2010/ols2010-pages-109-120.pdf" target="_blank">IBM paper on VirtFS</a>.
+For users of Ubuntu &lt;= 13.04, watch out for the
+<a href="https://bugs.launchpad.net/ubuntu/&#43;source/libvirt/&#43;bug/943680" target="_blank">libvirt bug</a>
+that I know many people run into, myself included.</p>
+        
+        <div class="read-more-link">
+            <a href="/2013/07/05/file-system-pass-through-in-kvm-slash-qemu-slash-libvirt/">Read More…</a>
+        </div>
+        
+        
+    </article>
     
     <article class="post">
         <div class="info">
@@ -1170,55 +1258,6 @@ As always, check the homepage, the changelog and the GIT log for details.
         
         <div class="read-more-link">
             <a href="/2010/09/08/announcing-pimd-v2-dot-1-3/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/2010/08/29/finally/">Finally, NetBSD Boots in KVM!</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2010-08-29T20:44:34Z" class="post-date">
-        August 29, 2010
-      </time>
-      
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>1 min read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-
-        
-        
-
-        
-        Compared to OpenBSD and FreeBSD the NetBSD install was hard, really hard. It wasn&rsquo;t until I stumbled across this that I managed to convince myself to try it again.
-The trick seems to be to ignore as much as you can from other Internet tips. NetBSD runs fine in KVM, so if someone says you need to run it in Qemu mode — don&rsquo;t believe the hype. OK, in virt-manager there is no preset defaults for NetBSD, so I went with a generic OS and tried starting the install from there.
-        
-        <div class="read-more-link">
-            <a href="/2010/08/29/finally/">Read More…</a>
         </div>
         
         

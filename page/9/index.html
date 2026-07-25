@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://troglobit.com/" />
 
 
-<meta property="og:updated_time" content="2026-07-25T09:00:00&#43;02:00" />
+<meta property="og:updated_time" content="2026-07-25T18:30:00&#43;02:00" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -300,6 +300,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
         
@@ -414,6 +420,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
         
@@ -440,11 +452,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/merecat/">Merecat httpd</a>
+                                <a href="https://troglobit.com/projects/mdnsd/">Embeddable Multicast DNS daemon</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/finit/">Fast init for Linux systems</a>
+                                <a href="https://troglobit.com/projects/merecat/">Merecat httpd</a>
                             </li>
                         
                     
@@ -455,6 +467,12 @@
                 
             
                 
+                
+                        
+                
+                        
+                
+                        
                 
                         
                 
@@ -642,6 +660,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
 
@@ -717,6 +741,71 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
                 <div class="posts">
     
     
+    
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/2016/08/18/live-kvm-migration-with-virt-manager/">Live KVM migration with virt-manager</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2016-08-18T20:07:17Z" class="post-date">
+        August 18, 2016
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>2 mins read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+
+        
+        
+
+        
+        <p>With the new servers and my server room shaping up, I&rsquo;ve been working on
+setting up ALL THE THINGS!  I just managed to set up live migration of
+the KVM virtual machines I use for testing my <a href="https://en.wikipedia.org/wiki/Free_and_open-source_software" target="_blank">FLOSS</a> projects.  Here
+is a short writeup of that, just as a reminder for myself.</p>
+<h2 id="checklist">Checklist</h2>
+<ol>
+<li>Make sure the libvirt versions are the same.  I tried setting up
+migration between CentOS 7.2 and and Ubuntu LTS 16.04 which turned
+out to be a mess of insurmountable incompatibilities.  I&rsquo;ve now gone
+back to run Ubuntu on everything and it all works fine.</li>
+<li>Set up NFS for the backend store of <code>/var/lib/libvirt/images</code>.  Make
+sure to export the share properly, I tried first with my ReadyNAS, but
+couldn&rsquo;t set up root access (defaulted to nobody).</li>
+<li>Set up VM disk caching=none</li>
+<li>Set up VM processor model=default</li>
+<li>Profit</li>
+</ol>
+<p>Good Luck! :)</p>
+        
+        <div class="read-more-link">
+            <a href="/2016/08/18/live-kvm-migration-with-virt-manager/">Read More…</a>
+        </div>
+        
+        
+    </article>
     
     <article class="post">
         <div class="info">
@@ -1228,76 +1317,6 @@ improving and adding features to it over the years.</p>
         
         <div class="read-more-link">
             <a href="/2016/03/07/multicast-testing/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/post/2015-11-14-useful-unix-apis/">Useful UNIX API:s</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2015-11-14T11:45:49Z" class="post-date">
-        November 14, 2015
-      </time>
-      
-      <time datetime=" 2020-02-22T09:45:00Z" class="post-updated">
-        (updated February 22, 2020)
-      </time>
-      
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>2 mins read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-
-        
-        
-
-        
-        <p>Had an interesting conversation with a buddy last night.  It started out
-as a shift-reduce problem with Bison and ended up a ping-pong of useful
-UNIX API:s.  We concluded that despite having worked professionally with
-UNIX for over two decades, it is still very satisfying finding gems like
-these.</p>
-<p>Most people are completely unaware they exist and end up rolling their
-own (buggy) implementations.  For instance, string manipulation and
-various forms of linked lists.  Which is why I many years ago extracted
-the <em>frog DNA</em> from <a href="https://github.com/finit-project/finit/" target="_blank">Finit</a> to a
-separate library called <a href="https://github.com/troglobit/libite/" target="_blank">libite</a>,
-or -lite for short.  It imports the OpenBSD <code>strlcpy()</code> family of API:s,
-up-to-date <code>queue.h</code> with the <code>_SAFE</code> iterators, and more.  Some people
-like <a href="https://libbsd.freedesktop.org/wiki/" target="_blank">libbsd</a> for this, but I&rsquo;ve
-found many of the ports incomplete and unsafe and prefer to stay closer
-to the upstream *BSD versions.</p>
-<p><strong>Update:</strong> This post was originally written Nov 14, 2015.  It was a
-Saturday and I remember being extremely inspired when I wrote it.  I&rsquo;ve
-continued adding to it over the years, and still do.  So, as of Jul 2,
-2017 I&rsquo;m bumping the modification date each time I add something new :-)</p>
-        
-        <div class="read-more-link">
-            <a href="/post/2015-11-14-useful-unix-apis/">Read More…</a>
         </div>
         
         

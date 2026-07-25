@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://troglobit.com/" />
 
 
-<meta property="og:updated_time" content="2026-07-25T09:00:00&#43;02:00" />
+<meta property="og:updated_time" content="2026-07-25T18:30:00&#43;02:00" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -300,6 +300,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
         
@@ -414,6 +420,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
         
@@ -440,11 +452,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/merecat/">Merecat httpd</a>
+                                <a href="https://troglobit.com/projects/mdnsd/">Embeddable Multicast DNS daemon</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/finit/">Fast init for Linux systems</a>
+                                <a href="https://troglobit.com/projects/merecat/">Merecat httpd</a>
                             </li>
                         
                     
@@ -455,6 +467,12 @@
                 
             
                 
+                
+                        
+                
+                        
+                
+                        
                 
                         
                 
@@ -642,6 +660,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
 
@@ -717,6 +741,65 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
                 <div class="posts">
     
     
+    
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/2017/02/02/emulate-an-actual-mtd-device-in-qemu/">Emulate an actual MTD device in Qemu</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2017-02-02T18:52:18Z" class="post-date">
+        February 2, 2017
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>4 mins read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+
+        
+        
+
+        
+        <p>Having worked with Linux for the last 20 years, and embedded for more
+than ten of them, I&rsquo;ve become quite a fan of virtualization in general
+and <a href="http://qemu.org" target="_blank">Qemu</a> in particular.</p>
+<p>Qemu is a fantastic little tool, created by the Open Source superhero
+<a href="http://blog.smartbear.com/careers/fabrice-bellard-portrait-of-a-super-productive-programmer/" target="_blank">Fabrice Bellard</a>.
+It can be used to verify an embedded system without having to deal with
+the problems of actual HW until you really have to.  Don&rsquo;t get me wrong,
+HW excites me like any other nerd, but if the HW is new and shaky it can
+be quite a pain to develop higher level functions.</p>
+<p>My holy grail is to have a 100% complete and accurate virtualization
+target per architecture to test my various software projects on.  That&rsquo;s
+why I created <a href="https://github.com/troglobit/troglos" target="_blank">TroglOS</a>.</p>
+        
+        <div class="read-more-link">
+            <a href="/2017/02/02/emulate-an-actual-mtd-device-in-qemu/">Read More…</a>
+        </div>
+        
+        
+    </article>
     
     <article class="post">
         <div class="info">
@@ -1207,71 +1290,6 @@ I have no clue if this will actually work, may even try porting my own little th
         
         <div class="read-more-link">
             <a href="/2016/09/02/the-general-idea/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/2016/08/18/live-kvm-migration-with-virt-manager/">Live KVM migration with virt-manager</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2016-08-18T20:07:17Z" class="post-date">
-        August 18, 2016
-      </time>
-      
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>2 mins read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-
-        
-        
-
-        
-        <p>With the new servers and my server room shaping up, I&rsquo;ve been working on
-setting up ALL THE THINGS!  I just managed to set up live migration of
-the KVM virtual machines I use for testing my <a href="https://en.wikipedia.org/wiki/Free_and_open-source_software" target="_blank">FLOSS</a> projects.  Here
-is a short writeup of that, just as a reminder for myself.</p>
-<h2 id="checklist">Checklist</h2>
-<ol>
-<li>Make sure the libvirt versions are the same.  I tried setting up
-migration between CentOS 7.2 and and Ubuntu LTS 16.04 which turned
-out to be a mess of insurmountable incompatibilities.  I&rsquo;ve now gone
-back to run Ubuntu on everything and it all works fine.</li>
-<li>Set up NFS for the backend store of <code>/var/lib/libvirt/images</code>.  Make
-sure to export the share properly, I tried first with my ReadyNAS, but
-couldn&rsquo;t set up root access (defaulted to nobody).</li>
-<li>Set up VM disk caching=none</li>
-<li>Set up VM processor model=default</li>
-<li>Profit</li>
-</ol>
-<p>Good Luck! :)</p>
-        
-        <div class="read-more-link">
-            <a href="/2016/08/18/live-kvm-migration-with-virt-manager/">Read More…</a>
         </div>
         
         

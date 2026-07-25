@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://troglobit.com/" />
 
 
-<meta property="og:updated_time" content="2026-07-25T09:00:00&#43;02:00" />
+<meta property="og:updated_time" content="2026-07-25T18:30:00&#43;02:00" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -300,6 +300,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
         
@@ -414,6 +420,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
         
@@ -440,11 +452,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/merecat/">Merecat httpd</a>
+                                <a href="https://troglobit.com/projects/mdnsd/">Embeddable Multicast DNS daemon</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/finit/">Fast init for Linux systems</a>
+                                <a href="https://troglobit.com/projects/merecat/">Merecat httpd</a>
                             </li>
                         
                     
@@ -455,6 +467,12 @@
                 
             
                 
+                
+                        
+                
+                        
+                
+                        
                 
                         
                 
@@ -642,6 +660,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
 
@@ -717,6 +741,56 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
                 <div class="posts">
     
     
+    
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/2009/02/14/reminder-to-self/">Reminder to Self</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2009-02-14T21:13:41Z" class="post-date">
+        February 14, 2009
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>1 min read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+
+        
+        
+
+        
+        How to recode AVI-files to be able to write them to a Video CD.
+ffmpeg -i original.avi -target pal-vcd copy.mpg vcdimager -t vcd1 -l &quot;Title&quot; -c vcd.cue -b vcd.bin copy.mpg cdrdao write --device /dev/cdrw vcd.cue Note: vcdimager is able to take multiple .mpg files as argument, very useful when burning multiple family videos to the same disc!
+Tip from Johan Risberg on how to be able to reattach a UTF-8 Linux screen session from Cygwin.
+        
+        <div class="read-more-link">
+            <a href="/2009/02/14/reminder-to-self/">Read More…</a>
+        </div>
+        
+        
+    </article>
     
     <article class="post">
         <div class="info">
@@ -1151,56 +1225,6 @@ cvs -z3 -d:pserver:anonymous@cvs.savannah.gnu.org:/cvsroot/emacs co emacs cd ema
         
         <div class="read-more-link">
             <a href="/2008/07/28/howto-build-gnu-emacs-from-cvs/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/2008/07/22/more-emacs-progress/">More Emacs Progress!</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2008-07-22T23:56:55Z" class="post-date">
-        July 22, 2008
-      </time>
-      
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>1 min read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-
-        
-        
-
-        
-        Wow, I&rsquo;m almost starting to feel like a Windows user. The latest CVS builds of GNU Emacs has a lot of new features:
-XFT Support (font anti-aliasing) Better GTK integration (desktop) A font selector! I use the CVS version now as my daily driver in Ubuntu 8.10. It&rsquo;s really useful, and I love the improved support for debugging programs inside Emacs!
-I think it is quite impressive how far this little editor has come.
-        
-        <div class="read-more-link">
-            <a href="/2008/07/22/more-emacs-progress/">Read More…</a>
         </div>
         
         

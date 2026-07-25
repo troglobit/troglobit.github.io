@@ -6,8 +6,15 @@
     <description>Recent content in Projects on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 25 Jul 2026 09:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jul 2026 18:30:00 +0200</lastBuildDate>
     <atom:link href="https://troglobit.com/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Embeddable Multicast DNS daemon</title>
+      <link>https://troglobit.com/projects/mdnsd/</link>
+      <pubDate>Sat, 25 Jul 2026 18:30:00 +0200</pubDate>
+      <guid>https://troglobit.com/projects/mdnsd/</guid>
+      <description>&lt;p&gt;&lt;code&gt;mdnsd&lt;/code&gt; is a small Multicast DNS and &lt;a href=&#34;https://www.rfc-editor.org/rfc/rfc6763&#34; target=&#34;_blank&#34;&gt;DNS-SD&lt;/a&gt; (service discovery)&#xA;responder and library for advertising hosts and services on the local&#xA;link.  It descends from &lt;a href=&#34;https://github.com/quartzjer&#34; target=&#34;_blank&#34;&gt;Jeremie Miller&amp;rsquo;s&lt;/a&gt; original mDNS/mDNS-SD&#xA;daemon and is a lightweight alternative to &lt;a href=&#34;https://www.avahi.org/&#34; target=&#34;_blank&#34;&gt;avahi&lt;/a&gt;, small enough to&#xA;embed in firmware.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Fast init for Linux systems</title>
       <link>https://troglobit.com/projects/finit/</link>

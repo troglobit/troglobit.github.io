@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://troglobit.com/" />
 
 
-<meta property="og:updated_time" content="2026-07-25T09:00:00&#43;02:00" />
+<meta property="og:updated_time" content="2026-07-25T18:30:00&#43;02:00" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -300,6 +300,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
         
@@ -414,6 +420,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
         
@@ -440,11 +452,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/merecat/">Merecat httpd</a>
+                                <a href="https://troglobit.com/projects/mdnsd/">Embeddable Multicast DNS daemon</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/finit/">Fast init for Linux systems</a>
+                                <a href="https://troglobit.com/projects/merecat/">Merecat httpd</a>
                             </li>
                         
                     
@@ -455,6 +467,12 @@
                 
             
                 
+                
+                        
+                
+                        
+                
+                        
                 
                         
                 
@@ -642,6 +660,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
 
@@ -717,6 +741,76 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
                 <div class="posts">
     
     
+    
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/post/2015-11-14-useful-unix-apis/">Useful UNIX API:s</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2015-11-14T11:45:49Z" class="post-date">
+        November 14, 2015
+      </time>
+      
+      <time datetime=" 2020-02-22T09:45:00Z" class="post-updated">
+        (updated February 22, 2020)
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>2 mins read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+
+        
+        
+
+        
+        <p>Had an interesting conversation with a buddy last night.  It started out
+as a shift-reduce problem with Bison and ended up a ping-pong of useful
+UNIX API:s.  We concluded that despite having worked professionally with
+UNIX for over two decades, it is still very satisfying finding gems like
+these.</p>
+<p>Most people are completely unaware they exist and end up rolling their
+own (buggy) implementations.  For instance, string manipulation and
+various forms of linked lists.  Which is why I many years ago extracted
+the <em>frog DNA</em> from <a href="https://github.com/finit-project/finit/" target="_blank">Finit</a> to a
+separate library called <a href="https://github.com/troglobit/libite/" target="_blank">libite</a>,
+or -lite for short.  It imports the OpenBSD <code>strlcpy()</code> family of API:s,
+up-to-date <code>queue.h</code> with the <code>_SAFE</code> iterators, and more.  Some people
+like <a href="https://libbsd.freedesktop.org/wiki/" target="_blank">libbsd</a> for this, but I&rsquo;ve
+found many of the ports incomplete and unsafe and prefer to stay closer
+to the upstream *BSD versions.</p>
+<p><strong>Update:</strong> This post was originally written Nov 14, 2015.  It was a
+Saturday and I remember being extremely inspired when I wrote it.  I&rsquo;ve
+continued adding to it over the years, and still do.  So, as of Jul 2,
+2017 I&rsquo;m bumping the modification date each time I add something new :-)</p>
+        
+        <div class="read-more-link">
+            <a href="/post/2015-11-14-useful-unix-apis/">Read More…</a>
+        </div>
+        
+        
+    </article>
     
     <article class="post">
         <div class="info">
@@ -1189,76 +1283,6 @@ pushed to both the GitHub repo as well as my own server!</p>
         
         <div class="read-more-link">
             <a href="/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/">HowTo: Apache with Gitweb on Debian 8.1</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2015-06-30T23:13:48Z" class="post-date">
-        June 30, 2015
-      </time>
-      
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>4 mins read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-
-        
-        
-
-        
-        <p>I&rsquo;m posting this in case anyone else gets stuck setting up <a href="http://www.apache.org" target="_blank">Apache</a>
-with <a href="http://git-scm.com/docs/gitweb" target="_blank">Gitweb</a>.  Also as a reminder to myself in case I ever need to
-set up this all over again.</p>
-<ol>
-<li>You have all your eggs in one basket (GitHub), and</li>
-<li>You really like that shiny basket, but</li>
-<li>You know you&rsquo;re clumsy and usually drop baskets yourself.</li>
-<li>You are wise (yes you are!) and realize you need another basket, so</li>
-<li>You set up a server and a domain yourself &hellip;</li>
-</ol>
-<p>OK.  Let&rsquo;s start simple, since you are already running the latest Debian
-you fire up the command line and install the basics:</p>
-<pre><code>sudo apt-get install gitweb apache2
-</code></pre>
-<p>So it&rsquo;ll complain, you&rsquo;ll clarify your request and soon all required
-packages are on your server.  Now what?</p>
-<p>Debian has already set up http://localhost/gitweb for you, and if you
-have a domain already you should go ahead and edit the master file for
-that:</p>
-<pre><code>editor /etc/apache2/sites-available/000-default.conf
-service apache2 reload
-</code></pre>
-<p>If you want to use that for your gitweb needs, then you&rsquo;re done!</p>
-        
-        <div class="read-more-link">
-            <a href="/2015/06/30/howto-apache-with-gitweb-on-debian-8-dot-1/">Read More…</a>
         </div>
         
         
