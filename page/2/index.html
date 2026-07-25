@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://troglobit.com/" />
 
 
-<meta property="og:updated_time" content="2026-07-20T08:15:33Z" />
+<meta property="og:updated_time" content="2026-07-25T08:10:00&#43;02:00" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -114,7 +114,7 @@
     
     
 
-<link type="text/css" rel="stylesheet" href="/css/bundle.min.38582ad6358fd7e8681326fd2f2f83c1056c6fa45c4872e09a3760b866676227.css">
+<link type="text/css" rel="stylesheet" href="/css/bundle.min.a82fe8032aa4163a9daf27a647b7d212b136bd36eff5bd92e2da0644a36ad625.css">
 
 
     
@@ -436,11 +436,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/editline/">Minix Editline</a>
+                                <a href="https://troglobit.com/projects/finit/">Fast init for Linux systems</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/mini-snmpd/">Mini SNMP daemon</a>
+                                <a href="https://troglobit.com/projects/editline/">Minix Editline</a>
                             </li>
                         
                     
@@ -709,6 +709,7 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
                 <div class="posts">
     
     
+    
     <article class="post">
         <div class="info">
   <h1 class="post-title">
@@ -767,10 +768,14 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
   
 </div>
 
+
+        
+        
+
         
         <p>I believe there is a <strong>gap in the market</strong> between BusyBox init and
 systemd.  In particular in the embedded space.  This blog post shows how
-easily it is to get up and running quickly with FastInit (<a href="https://github.com/troglobit/finit#introduction" target="_blank">Finit</a>)!</p>
+easily it is to get up and running quickly with FastInit (<a href="https://github.com/finit-project/finit#introduction" target="_blank">Finit</a>)!</p>
 <p>I&rsquo;m a really bad salesman, and an even worse writer, so instead of
 trying to convince you with my poor English, I&rsquo;ve made a demo.  It is a
 <a href="https://nightly.buildroot.org/#outside-br-custom" target="_blank">Buildroot external</a>
@@ -791,6 +796,7 @@ try out the <a href="https://github.com/troglobit/br2-finit-demo/releases/tag/la
         
         
     </article>
+    
     <article class="post">
         <div class="info">
   <h1 class="post-title">
@@ -837,6 +843,10 @@ try out the <a href="https://github.com/troglobit/br2-finit-demo/releases/tag/la
   
 </div>
 
+
+        
+        
+
         
         I still use my awesome little ThinkPad X200, in fact I now have more of them and even a few X201&rsquo;s. They are truly the best machines I&rsquo;ve ever used! :-)
 One annoying thing though, when going back to these traditional ThinkPad keyboards is the prev/next keys next to the arrow keys. On modern ones they are PgUp/PgDn and I recently learned how to elegantly remap them in X. Note the difference, below, to the original at ThinkWiki.
@@ -847,6 +857,7 @@ One annoying thing though, when going back to these traditional ThinkPad keyboar
         
         
     </article>
+    
     <article class="post">
         <div class="info">
   <h1 class="post-title">
@@ -893,6 +904,10 @@ One annoying thing though, when going back to these traditional ThinkPad keyboar
   
 </div>
 
+
+        
+        
+
         
         The logger(1) tool in your system, /usr/bin/logger, standardized in IEEE Std 1003.2 (&ldquo;POSIX.2&rdquo;), has many different implementations. For Linux users the most common one is part of the util-linux package.
 I&rsquo;ve always considered this one of those weird Linux:isms. The logger tool is closely tied to the system log daemon, so in the sysklogd project we ship our own implementation of logger. Our implementation is derived from the Finit project&rsquo;s logit tool.
@@ -903,6 +918,7 @@ I&rsquo;ve always considered this one of those weird Linux:isms. The logger tool
         
         
     </article>
+    
     <article class="post">
         <div class="info">
   <h1 class="post-title">
@@ -937,6 +953,10 @@ I&rsquo;ve always considered this one of those weird Linux:isms. The logger tool
   
 </div>
 
+
+        
+        
+
         
         SMCRoute is a daemon and command line tool to manipulate the multicast routing table in the UNIX kernel. Both FreeBSD and Linux kernels are supported, but it may work on other systems as well.
 SMCRoute can be used as an alternative to dynamic multicast routing daemons like mrouted or pimd when (only) static multicast routes should be maintained or no proper signalling exists.
@@ -948,6 +968,7 @@ The full documentation of SMCRoute is available in the manual pages, see smcrout
         
         
     </article>
+    
     <article class="post">
         <div class="info">
   <h1 class="post-title">
@@ -1002,6 +1023,10 @@ The full documentation of SMCRoute is available in the manual pages, see smcrout
   
 </div>
 
+
+        
+        
+
         
         This post shows how you can create your own operating system based on Buildroot. Add your own packages, patches, and your very own flavor to the experience.
 My own take on this is myLinux, which started out as a TroglOS, and before that as miniroot, by Henrik Nordström. Please feel free to dig around myLinux for more inspiration and tips on how to solve common use-cases.
@@ -1013,6 +1038,7 @@ The manual, section 9, describes the basic process of setting up a our customiza
         
         
     </article>
+    
     <article class="post">
         <div class="info">
   <h1 class="post-title">
@@ -1067,6 +1093,10 @@ The manual, section 9, describes the basic process of setting up a our customiza
   
 </div>
 
+
+        
+        
+
         
         <p>Because I always tend to forget steps, and haven&rsquo;t half replaced myself
 with a shell script (yet), here&rsquo;s a reminder to myself on how to post a
@@ -1079,6 +1109,7 @@ list.</p>
         
         
     </article>
+    
     <article class="post">
         <div class="info">
   <h1 class="post-title">
@@ -1133,6 +1164,10 @@ list.</p>
   
 </div>
 
+
+        
+        
+
         
         <p>This is a mini-HowTo on running Finit in an LXC system container.  We
 will be using a variant (external) of Buildroot, called <a href="https://github.com/westermo/netbox" target="_blank">NetBox</a> to
@@ -1149,6 +1184,7 @@ tutorial.</p>
         
         
     </article>
+    
     <article class="post">
         <div class="info">
   <h1 class="post-title">
@@ -1199,6 +1235,10 @@ tutorial.</p>
   
 </div>
 
+
+        
+        
+
         
         <p>As a follow-up to my previous Buildroot mailing-list post about the
 <code>git format-patch</code> and <code>git send-email</code> commands, this post covers how
@@ -1210,6 +1250,7 @@ to set up the latter.</p>
         
         
     </article>
+    
     <article class="post">
         <div class="info">
   <h1 class="post-title">
@@ -1260,11 +1301,15 @@ to set up the latter.</p>
   
 </div>
 
+
+        
+        
+
         
         <figure class="right-floated"><a href="https://troglobit.com/finit.html"><img src="/images/finit3.png"
          alt="finit logo"/></a>
 </figure>
-<p>I&rsquo;m very pleased to announce <a href="https://github.com/troglobit/finit/releases/tag/4.2" target="_blank">Finit v4.2</a>!  It comes seven months
+<p>I&rsquo;m very pleased to announce <a href="https://github.com/finit-project/finit/releases/tag/4.2" target="_blank">Finit v4.2</a>!  It comes seven months
 after the last release, v4.1, with a bunch of fixes and some new
 features.  See the release notes for details.</p>
         
@@ -1274,6 +1319,7 @@ features.  See the release notes for details.</p>
         
         
     </article>
+    
     <article class="post">
         <div class="info">
   <h1 class="post-title">
@@ -1307,6 +1353,10 @@ features.  See the release notes for details.</p>
 
   
 </div>
+
+
+        
+        
 
         
         Micro Tetris — one of the smallest Tetris implementations in the world! Utilizing only ANSI escape sequences to draw the board, no external library dependencys other than a standard C-library, like uClibc or musl libc. Hence, it is very suitable for small embedded devices in need of an easter egg ;-)

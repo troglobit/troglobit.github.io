@@ -88,7 +88,7 @@
 <meta property="og:url" content="https://troglobit.com/projects/" />
 
 
-<meta property="og:updated_time" content="2026-07-04T11:41:00&#43;02:00" />
+<meta property="og:updated_time" content="2026-07-25T08:10:00&#43;02:00" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -121,7 +121,7 @@
     
     
 
-<link type="text/css" rel="stylesheet" href="/css/bundle.min.38582ad6358fd7e8681326fd2f2f83c1056c6fa45c4872e09a3760b866676227.css">
+<link type="text/css" rel="stylesheet" href="/css/bundle.min.a82fe8032aa4163a9daf27a647b7d212b136bd36eff5bd92e2da0644a36ad625.css">
 
 
     
@@ -443,11 +443,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/editline/">Minix Editline</a>
+                                <a href="https://troglobit.com/projects/finit/">Fast init for Linux systems</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/mini-snmpd/">Mini SNMP daemon</a>
+                                <a href="https://troglobit.com/projects/editline/">Minix Editline</a>
                             </li>
                         
                     
@@ -714,104 +714,238 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
 
             <main class="content container">
                 
-<h1 class="title">Projects</h1>
-<div class="posts">
+<div class="posts projects">
     
-        <div class="project">
+    
+    
+    <article class="post project-card">
+        <h1 class="post-title">
             <a href="/projects/finit/">Fast init for Linux systems</a>
-            <p>
-                
-                Finit is an alternative to SysV init and systemd, originally reverse engineered from the EeePC fastinit by Claudio Matsuoka — &ldquo;gaps filled with frog DNA …&rdquo;
-Latest release available on GitHub
-Features Runlevels, defined per service One-shot tasks, services (daemons), or SysV init start/stop scripts Runparts and /etc/rc.local support Process supervision similar to systemd Sourcing environment files Conditions for network/process/custom dependencies Pre/Post script actions Tooling to enable/disable services Optional built-in getty Optional built-in watchdog, with support for hand-over to watchdogd Built-in support for Debian/BusyBox /etc/network/interfaces, automatically calls ifup/ifdown Cgroups v2, both configuration and monitoring in initctl top Plugin support for customization Proper rescue mode with bundled sulogin for protected maintenance shell (optional) Blog Posts Some of these feature are presented below, for more, see the online documentation and the following blog posts:
-            </p>
+        </h1>
+
+        
+        <a class="project-card-img" href="/projects/finit/" tabindex="-1" aria-hidden="true">
+            <img src="/images/finit-card.png" alt="Fast init for Linux systems social card" loading="lazy">
+        </a>
+        
+
+        <div class="project-card-summary">
+            
+                <p>Finit is a fast, simple init and process supervisor for embedded, server, and desktop Linux -- an alternative to SysV init and systemd, reverse engineered from the EeePC fastinit.</p>
+            
         </div>
+
+        <div class="read-more-link">
+            <a href="/projects/finit/">Read More…</a>
+        </div>
+    </article>
     
-        <div class="project">
+    
+    <article class="post project-card">
+        <h1 class="post-title">
             <a href="/projects/smcroute/">Static Multicast Routing Daemon</a>
-            <p>
-                
+        </h1>
+
+        
+
+        <div class="project-card-summary">
+            
                 SMCRoute is a daemon and command line tool to manipulate the multicast routing table in the UNIX kernel. Both FreeBSD and Linux kernels are supported, but it may work on other systems as well.
 SMCRoute can be used as an alternative to dynamic multicast routing daemons like mrouted or pimd when (only) static multicast routes should be maintained or no proper signalling exists.
 The full documentation of SMCRoute is available in the manual pages, see smcrouted(8), smcroutectl(8), and smcroute.
-            </p>
+            
         </div>
+
+        <div class="read-more-link">
+            <a href="/projects/smcroute/">Read More…</a>
+        </div>
+    </article>
     
-        <div class="project">
+    
+    <article class="post project-card">
+        <h1 class="post-title">
             <a href="/projects/tetris/">Micro Tetris™</a>
-            <p>
-                
+        </h1>
+
+        
+
+        <div class="project-card-summary">
+            
                 Micro Tetris — one of the smallest Tetris implementations in the world! Utilizing only ANSI escape sequences to draw the board, no external library dependencys other than a standard C-library, like uClibc or musl libc. Hence, it is very suitable for small embedded devices in need of an easter egg ;-)
 The game is based on a 1989 International Obfuscated C Code Contest (IOCCC) entry made by John Tromp.
-            </p>
+            
         </div>
+
+        <div class="read-more-link">
+            <a href="/projects/tetris/">Read More…</a>
+        </div>
+    </article>
     
-        <div class="project">
+    
+    <article class="post project-card">
+        <h1 class="post-title">
             <a href="/projects/mrouted/">The original multicast routing daemon</a>
-            <p>
-                
+        </h1>
+
+        
+
+        <div class="project-card-summary">
+            
                 mrouted is an implementation of the IPv4 multicast routing protocol DVMRP, RFC 1075. It is capable of turning a UNIX workstation, or Linux device, into a multicast router with tunneling support.
 Tunneling may be required to cross non-multicast-aware routers.
 The Distantance Vector Multicast Routing Protocol (DVMRP), derived from RIP, is suitable for smaller/dense networks. It employs the &ldquo;flood and prune&rdquo; method, where multicast is flooded until neighboring routers opt out from unwanted multicast groups.
-            </p>
+            
         </div>
+
+        <div class="read-more-link">
+            <a href="/projects/mrouted/">Read More…</a>
+        </div>
+    </article>
     
-        <div class="project">
+    
+    <article class="post project-card">
+        <h1 class="post-title">
             <a href="/projects/smcroute/smcroute-conf.html">smcroute.conf example</a>
-            <p>
-                
+        </h1>
+
+        
+
+        <div class="project-card-summary">
+            
                 # # smcroute.conf example # # The configuration file supports joining multicast groups, to use # Layer-2 signaling so that switches and routers open up multicast # traffic to your interfaces. Leave is not supported, remove the # mgroup and SIGHUP your daemon, or send a specific leave command. # # NOTE: Use of the mgroup command should be avoided if possible. # Instead configure &#34;router ports&#34; or similar on the switches # or bridges on your LAN.
-            </p>
+            
         </div>
+
+        <div class="read-more-link">
+            <a href="/projects/smcroute/smcroute-conf.html">Read More…</a>
+        </div>
+    </article>
     
-        <div class="project">
+    
+    <article class="post project-card">
+        <h1 class="post-title">
             <a href="/projects/nemesis/">N E M E S I S</a>
-            <p>
-                
+        </h1>
+
+        
+
+        <div class="project-card-summary">
+            
                 Nemesis is a command-line network packet crafting and injection utility for UNIX-like and Windows systems. Well suited for testing Network Intrusion Detection Systems, firewalls, IP stacks and a variety of other tasks. As a command-line driven utility, it is perfect for automation and scripting.
 Nemesis can natively craft and inject ARP, DNS, ETHERNET, ICMP, IGMP, IP, OSPF, RIP, TCP and UDP packets. Using the IP and the Ethernet injection modes, almost any custom packet can be crafted and injected.
-            </p>
+            
         </div>
+
+        <div class="read-more-link">
+            <a href="/projects/nemesis/">Read More…</a>
+        </div>
+    </article>
     
-        <div class="project">
+    
+    <article class="post project-card">
+        <h1 class="post-title">
             <a href="/projects/watchdogd/">Advanced watchdog daemon for Linux</a>
-            <p>
-                
+        </h1>
+
+        
+
+        <div class="project-card-summary">
+            
                 watchdogd(8) is an advanced system and process supervisor primarily intended for embedded Linux and server systems. It supports &ldquo;kicking&rdquo; multiple watchdog timer (WDT) devices and can also monitor critical system resources, supervise the heartbeat of processes1 and record process deadline transgressions.
 Read more about Built-in Monitors in the extended documentation.
 The configuration determines how the daemon acts on monitored resources and supervised processes. See watchdogd.conf(5) for how to set up watermarks and trigger external scripts to suit your particular setup.
-            </p>
+            
         </div>
+
+        <div class="read-more-link">
+            <a href="/projects/watchdogd/">Read More…</a>
+        </div>
+    </article>
     
-        <div class="project">
+    
+    <article class="post project-card">
+        <h1 class="post-title">
             <a href="/projects/editline/">Minix Editline</a>
-            <p>
-                
+        </h1>
+
+        
+
+        <div class="project-card-summary">
+            
                 This is a line editing library for UNIX. It can be linked into almost any program to provide command line editing and history. It is call compatible with the FSF readline library, but is a fraction of the size (and offers fewer features).
 The small size (&lt;30k), lack of dependencies (no ncurses needed!) and the free license should make this library interesting to many embedded developers seeking a replacement for the GNU readline library.
-            </p>
+            
         </div>
+
+        <div class="read-more-link">
+            <a href="/projects/editline/">Read More…</a>
+        </div>
+    </article>
     
-        <div class="project">
+    
+    <article class="post project-card">
+        <h1 class="post-title">
             <a href="/projects/mini-snmpd/">Mini SNMP daemon</a>
-            <p>
-                
+        </h1>
+
+        
+
+        <div class="project-card-summary">
+            
                 This is an SNMP server for small and embedded systems, currently Linux and FreeBSD are supported. It is easily portable to other UNIX systems since it&rsquo;s written in C. A stripped binary is ~80 kiB and comes nowhere near the feature set of Net-SNMP, so it has a very low impact on system resources — a good fit for routers, NAS boxes, and other embedded devices.
 See my mini HowTo: Playing with SNMP for a quick introduction to setting up the SNMP tools and MIBs to avoid having to use numerical OIDs.
-            </p>
+            
         </div>
+
+        <div class="read-more-link">
+            <a href="/projects/mini-snmpd/">Read More…</a>
+        </div>
+    </article>
     
-        <div class="project">
+    
+    <article class="post project-card">
+        <h1 class="post-title">
             <a href="/projects/inadyn/">Small and Simple DDNS Client</a>
-            <p>
-                
+        </h1>
+
+        
+
+        <div class="project-card-summary">
+            
                 In-a-dyn is a small and simple Dynamic DNS, DDNS, client with HTTPS support. It is commonly available in many GNU/Linux distributions, used in off-the-shelf routers and Internet gateways to automate the task of keeping your DNS record up to date with any IP address changes from your ISP. It can also be used in installations with redundant (backup) connections to the Internet.
 Presentation here.
 Example The configuration file on most systems is in /etc/inadyn.
-            </p>
+            
         </div>
+
+        <div class="read-more-link">
+            <a href="/projects/inadyn/">Read More…</a>
+        </div>
+    </article>
+</div>
+
+
+<hr>
+<div class="footer">
+<nav id="page-nav">
+
+    
+    
+    
+    <span class="page-number current">1</span>
+    
+    
+    
+    <a href="/projects/page/2/">2</a>
+    
+    
+
+    
+    <a href="/projects/page/2/" rel="next" class="extend next"> Next &raquo;</a>
     
 </div>
+
+
 
             </main>
             

@@ -75,10 +75,10 @@
 <meta property="og:site_name" content="Joachim Wiberg" />
 
 
-<meta name="description" content="Ever so often someone new to Open Source show up on GitHub or in my inbox. It usually starts something like this: “Hey, I just downloaded your software, what’s next?” “Your software doesn’t work on my …" />
-<meta itemprop="description" content="Ever so often someone new to Open Source show up on GitHub or in my inbox. It usually starts something like this: “Hey, I just downloaded your software, what’s next?” “Your software doesn’t work on my …" />
-<meta property="og:description" content="Ever so often someone new to Open Source show up on GitHub or in my inbox. It usually starts something like this: “Hey, I just downloaded your software, what’s next?” “Your software doesn’t work on my …" />
-<meta name="twitter:description" content="Ever so often someone new to Open Source show up on GitHub or in my inbox. It usually starts something like this: “Hey, I just downloaded your software, what’s next?” “Your software doesn’t work on my …" />
+<meta name="description" content="Every so often someone new to Open Source shows up on GitHub or in my inbox with a question like: “I just downloaded your software, what’s next?” “It doesn’t build on my system, can you help?” “How …" />
+<meta itemprop="description" content="Every so often someone new to Open Source shows up on GitHub or in my inbox with a question like: “I just downloaded your software, what’s next?” “It doesn’t build on my system, can you help?” “How …" />
+<meta property="og:description" content="Every so often someone new to Open Source shows up on GitHub or in my inbox with a question like: “I just downloaded your software, what’s next?” “It doesn’t build on my system, can you help?” “How …" />
+<meta name="twitter:description" content="Every so often someone new to Open Source shows up on GitHub or in my inbox with a question like: “I just downloaded your software, what’s next?” “It doesn’t build on my system, can you help?” “How …" />
 
 
 <base href="https://troglobit.com/howtos/howto-build-and-use-my-projects/" />
@@ -129,7 +129,7 @@
     
     
 
-<link type="text/css" rel="stylesheet" href="/css/bundle.min.38582ad6358fd7e8681326fd2f2f83c1056c6fa45c4872e09a3760b866676227.css">
+<link type="text/css" rel="stylesheet" href="/css/bundle.min.a82fe8032aa4163a9daf27a647b7d212b136bd36eff5bd92e2da0644a36ad625.css">
 
 
     
@@ -451,11 +451,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/editline/">Minix Editline</a>
+                                <a href="https://troglobit.com/projects/finit/">Fast init for Linux systems</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/mini-snmpd/">Mini SNMP daemon</a>
+                                <a href="https://troglobit.com/projects/editline/">Minix Editline</a>
                             </li>
                         
                     
@@ -763,15 +763,16 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
   
 </div>
 
-  <p>Ever so often someone new to Open Source show up on GitHub or in my
-inbox.  It usually starts something like this:</p>
+  <p>Every so often someone new to Open Source shows up on GitHub or in my
+inbox with a question like:</p>
 <ul>
-<li><em>&ldquo;Hey, I just downloaded your software, what&rsquo;s next?&rdquo;</em></li>
-<li><em>&ldquo;Your software doesn&rsquo;t work on my system!!!!&rdquo;</em></li>
-<li><em>&ldquo;How can I do that weird-thing that fits my odd use-case?&rdquo;</em></li>
-<li><em>&ldquo;I have zero documented experience but I think you should fix your build system!&rdquo;</em></li>
+<li><em>&ldquo;I just downloaded your software, what&rsquo;s next?&rdquo;</em></li>
+<li><em>&ldquo;It doesn&rsquo;t build on my system, can you help?&rdquo;</em></li>
+<li><em>&ldquo;How can I adapt it to my own use-case?&rdquo;</em></li>
+<li><em>&ldquo;Could the build system be improved?&rdquo;</em></li>
 </ul>
-<p>This HowTo is for you.</p>
+<p>These are all good questions, and this HowTo tries to answer the most
+common ones up front.</p>
 <h2 id="0-short-version">0. Short Version</h2>
 <ul>
 <li>Download a <em>versioned</em> archive from the project&rsquo;s Releases page</li>
@@ -780,20 +781,20 @@ inbox.  It usually starts something like this:</p>
 <li><code>./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var &amp;&amp; make &amp;&amp; sudo make install</code></li>
 </ul>
 <blockquote>
-<p>Some projects of mine are available in Debian/Ubuntu/FreeBSD, if you
-use that, please report bugs to them and not me.  I have no control
-over what they do.</p>
+<p>Some of my projects are also available in Debian/Ubuntu/FreeBSD.  If
+you installed one from there, please report bugs to them first, they
+may carry their own patches.</p>
 </blockquote>
 <p>Cheers<br>
 /Joachim</p>
-<h2 id="1-i-dont-owe-you-free-support">1. I don&rsquo;t owe you free support</h2>
-<p>Just because the software is published for free, and often without any
-restrictions<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> on use, doesn&rsquo;t mean I must provide you with any (free)
-support.</p>
+<h2 id="1-a-note-on-support">1. A note on support</h2>
+<p>I maintain these projects in my spare time and publish them for free,
+usually without any restrictions<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> on use.  I read what comes in and
+help when I can, but I can&rsquo;t promise support or quick answers.</p>
 <p>If you use my software packaged by a 3rd party, e.g., Debian, FreeBSD,
 or similar, please report the bug/problem to them first.  They become
 first line support when publishing my work.</p>
-<h2 id="2-use-released-software-not-git-sources-please">2. Use <strong>released</strong> software, not GIT sources please</h2>
+<h2 id="2-prefer-released-software-over-git-sources">2. Prefer <strong>released</strong> software over GIT sources</h2>
 <p>There are some important caveats to consider if you&rsquo;re new to Open
 Source software:</p>
 <ul>
@@ -806,15 +807,16 @@ Source software:</p>
 release from that tag.  This results in artifacts such as an archive in
 the form of a tarball, or zipfile, with a <em>version</em> in the name.</p>
 <blockquote>
-<p>GitHub has the bad habit of automatically creating archives for a
-&ldquo;tag&rdquo;, don&rsquo;t use those.  They typically <strong>miss important files</strong>.</p>
+<p>GitHub automatically creates archives for each &ldquo;tag&rdquo;, but please
+don&rsquo;t use those, they typically <strong>miss important files</strong>.</p>
 </blockquote>
 <p>Released archives, in most of my projects, include a <code>configure</code> script,
 which usually is not available in raw GIT.</p>
 <h3 id="please-note">Please note</h3>
 <p>Every project on GitHub has a <em>Releases Page</em>, e.g.</p>
-<p><a href="https://github.com/troglobit/finit/releases" target="_blank">https://github.com/troglobit/finit/releases</a></p>
-<p>Unless you want to contribute to the project, use released software!</p>
+<p><a href="https://github.com/finit-project/finit/releases" target="_blank">https://github.com/finit-project/finit/releases</a></p>
+<p>Unless you want to contribute to the project, the released software is
+the best place to start.</p>
 <h2 id="3-some-assembly-required">3. Some assembly required</h2>
 <p>Pun intended, but don&rsquo;t worry I don&rsquo;t use any assembly language in my
 software.  It&rsquo;s more like building furniture from IKEA.</p>
@@ -914,8 +916,8 @@ PID files and <code>.sock</code> files.</p>
       <nav id="TableOfContents">
   <ul>
     <li><a href="#0-short-version">0. Short Version</a></li>
-    <li><a href="#1-i-dont-owe-you-free-support">1. I don&rsquo;t owe you free support</a></li>
-    <li><a href="#2-use-released-software-not-git-sources-please">2. Use <strong>released</strong> software, not GIT sources please</a>
+    <li><a href="#1-a-note-on-support">1. A note on support</a></li>
+    <li><a href="#2-prefer-released-software-over-git-sources">2. Prefer <strong>released</strong> software over GIT sources</a>
       <ul>
         <li><a href="#please-note">Please note</a></li>
       </ul>

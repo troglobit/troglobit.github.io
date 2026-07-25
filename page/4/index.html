@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://troglobit.com/" />
 
 
-<meta property="og:updated_time" content="2026-07-20T08:15:33Z" />
+<meta property="og:updated_time" content="2026-07-25T08:10:00&#43;02:00" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -114,7 +114,7 @@
     
     
 
-<link type="text/css" rel="stylesheet" href="/css/bundle.min.38582ad6358fd7e8681326fd2f2f83c1056c6fa45c4872e09a3760b866676227.css">
+<link type="text/css" rel="stylesheet" href="/css/bundle.min.a82fe8032aa4163a9daf27a647b7d212b136bd36eff5bd92e2da0644a36ad625.css">
 
 
     
@@ -436,11 +436,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/editline/">Minix Editline</a>
+                                <a href="https://troglobit.com/projects/finit/">Fast init for Linux systems</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/mini-snmpd/">Mini SNMP daemon</a>
+                                <a href="https://troglobit.com/projects/editline/">Minix Editline</a>
                             </li>
                         
                     
@@ -709,6 +709,7 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
                 <div class="posts">
     
     
+    
     <article class="post">
         <div class="info">
   <h1 class="post-title">
@@ -755,6 +756,10 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
   
 </div>
 
+
+        
+        
+
         
         I blogged earlier about the awesome little ThinkPad X200 I found and its blinking WiFi LED. Briefly I mentioned an odd issue with X/Wayland on LMDE 4. This turned out to be a HW bug that can only be worked around by disabling hardware acceleration for virtualization:
 https://forums.lenovo.com/t5/Windows-8-1-8-7-Vista-and-XP-Discussions/Bizarre-screen-artifacts-on-R400-Integrated-Graphics-running-Win-7-RTM/m-p/153980?page=1#199768
@@ -766,6 +771,7 @@ The post says it should be sufficient to &ldquo;Disable Virtualization Technolog
         
         
     </article>
+    
     <article class="post">
         <div class="info">
   <h1 class="post-title">
@@ -808,16 +814,21 @@ The post says it should be sufficient to &ldquo;Disable Virtualization Technolog
   
 </div>
 
+
         
-        <p>Ever so often someone new to Open Source show up on GitHub or in my
-inbox.  It usually starts something like this:</p>
+        
+
+        
+        <p>Every so often someone new to Open Source shows up on GitHub or in my
+inbox with a question like:</p>
 <ul>
-<li><em>&ldquo;Hey, I just downloaded your software, what&rsquo;s next?&rdquo;</em></li>
-<li><em>&ldquo;Your software doesn&rsquo;t work on my system!!!!&rdquo;</em></li>
-<li><em>&ldquo;How can I do that weird-thing that fits my odd use-case?&rdquo;</em></li>
-<li><em>&ldquo;I have zero documented experience but I think you should fix your build system!&rdquo;</em></li>
+<li><em>&ldquo;I just downloaded your software, what&rsquo;s next?&rdquo;</em></li>
+<li><em>&ldquo;It doesn&rsquo;t build on my system, can you help?&rdquo;</em></li>
+<li><em>&ldquo;How can I adapt it to my own use-case?&rdquo;</em></li>
+<li><em>&ldquo;Could the build system be improved?&rdquo;</em></li>
 </ul>
-<p>This HowTo is for you.</p>
+<p>These are all good questions, and this HowTo tries to answer the most
+common ones up front.</p>
 <h2 id="0-short-version">0. Short Version</h2>
 <ul>
 <li>Download a <em>versioned</em> archive from the project&rsquo;s Releases page</li>
@@ -826,9 +837,9 @@ inbox.  It usually starts something like this:</p>
 <li><code>./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var &amp;&amp; make &amp;&amp; sudo make install</code></li>
 </ul>
 <blockquote>
-<p>Some projects of mine are available in Debian/Ubuntu/FreeBSD, if you
-use that, please report bugs to them and not me.  I have no control
-over what they do.</p>
+<p>Some of my projects are also available in Debian/Ubuntu/FreeBSD.  If
+you installed one from there, please report bugs to them first, they
+may carry their own patches.</p>
 </blockquote>
 <p>Cheers<br>
 /Joachim</p>
@@ -839,6 +850,7 @@ over what they do.</p>
         
         
     </article>
+    
     <article class="post">
         <div class="info">
   <h1 class="post-title">
@@ -877,6 +889,10 @@ over what they do.</p>
   
 </div>
 
+
+        
+        
+
         
         <p>For a while now my Wireguard VPN provider has been handing out a bad DNS
 server.  So whenever I do a DNS lookup it takes five (5!) seconds timing
@@ -889,6 +905,7 @@ out, which is quite annoying.</p>
         
         
     </article>
+    
     <article class="post">
         <div class="info">
   <h1 class="post-title">
@@ -923,6 +940,10 @@ out, which is quite annoying.</p>
   
 </div>
 
+
+        
+        
+
         
         <p>The last couple of months have been crazy.  The downturn in the economy
 due to Covid-19, mass layoffs, social distancing and quarantine.  Not
@@ -935,6 +956,7 @@ uneccessary death.</p>
         
         
     </article>
+    
     <article class="post">
         <div class="info">
   <h1 class="post-title">
@@ -969,6 +991,10 @@ uneccessary death.</p>
   
 </div>
 
+
+        
+        
+
         
         <blockquote>
 <p>&ldquo;My name is Joachim and I&rsquo;m a <code>sudo su -</code> user.&rdquo;</p>
@@ -981,6 +1007,7 @@ uneccessary death.</p>
         
         
     </article>
+    
     <article class="post">
         <div class="info">
   <h1 class="post-title">
@@ -1019,6 +1046,10 @@ uneccessary death.</p>
   
 </div>
 
+
+        
+        
+
         
         This is a line editing library for UNIX. It can be linked into almost any program to provide command line editing and history. It is call compatible with the FSF readline library, but is a fraction of the size (and offers fewer features).
 The small size (&lt;30k), lack of dependencies (no ncurses needed!) and the free license should make this library interesting to many embedded developers seeking a replacement for the GNU readline library.
@@ -1029,6 +1060,7 @@ The small size (&lt;30k), lack of dependencies (no ncurses needed!) and the free
         
         
     </article>
+    
     <article class="post">
         <div class="info">
   <h1 class="post-title">
@@ -1075,6 +1107,10 @@ The small size (&lt;30k), lack of dependencies (no ncurses needed!) and the free
   
 </div>
 
+
+        
+        
+
         
         <p>Recently got my hands on a ThinkPad X200, the last model without the
 useless touchpad and with the awesome classic keyboard.  A fine little
@@ -1092,6 +1128,7 @@ better, this far.</p>
         
         
     </article>
+    
     <article class="post">
         <div class="info">
   <h1 class="post-title">
@@ -1126,6 +1163,10 @@ better, this far.</p>
   
 </div>
 
+
+        
+        
+
         
         <p>Every now and then people ask me for pre-built packages of software I
 maintain.  Up until today I&rsquo;ve had to refer them to the cold hard build
@@ -1137,6 +1178,7 @@ instructions for each of my programs.</p>
         
         
     </article>
+    
     <article class="post">
         <div class="info">
   <h1 class="post-title">
@@ -1175,6 +1217,10 @@ instructions for each of my programs.</p>
   
 </div>
 
+
+        
+        
+
         
         This is an SNMP server for small and embedded systems, currently Linux and FreeBSD are supported. It is easily portable to other UNIX systems since it&rsquo;s written in C. A stripped binary is ~80 kiB and comes nowhere near the feature set of Net-SNMP, so it has a very low impact on system resources — a good fit for routers, NAS boxes, and other embedded devices.
 See my mini HowTo: Playing with SNMP for a quick introduction to setting up the SNMP tools and MIBs to avoid having to use numerical OIDs.
@@ -1185,6 +1231,7 @@ See my mini HowTo: Playing with SNMP for a quick introduction to setting up the 
         
         
     </article>
+    
     <article class="post">
         <div class="info">
   <h1 class="post-title">
@@ -1222,6 +1269,10 @@ See my mini HowTo: Playing with SNMP for a quick introduction to setting up the 
 
   
 </div>
+
+
+        
+        
 
         
         In-a-dyn is a small and simple Dynamic DNS, DDNS, client with HTTPS support. It is commonly available in many GNU/Linux distributions, used in off-the-shelf routers and Internet gateways to automate the task of keeping your DNS record up to date with any IP address changes from your ISP. It can also be used in installations with redundant (backup) connections to the Internet.
