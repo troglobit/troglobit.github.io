@@ -3,7 +3,8 @@
     {{ partial "light_dark.html" . }}
 {{ end }}
 <div class="posts projects">
-    {{ range .Paginator.Pages }}
+    {{/* Most recently updated projects first. */}}
+    {{ range (.Paginate (.Pages.ByLastmod.Reverse)).Pages }}
     {{ $url := .RelPermalink }}
     {{ $title := .Title }}
     <article class="post project-card">
