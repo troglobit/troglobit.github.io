@@ -46,8 +46,6 @@
 
   
   
-    
-  
   
 
 
@@ -60,12 +58,12 @@
 
 
 <!-- Open Graph image and Twitter Card metadata -->
-<meta property="og:image" content="https://troglobit.com/images/profile.jpg" />
-  <meta name="twitter:image" content="https://troglobit.com/images/profile.jpg" />
-  <meta name="twitter:card" content="summary" />
-      <meta property="og:image:width" content="400" />
-      <meta property="og:image:height" content="400" />
-    <meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image" content="https://troglobit.com/images/merecat-card.png" />
+  <meta name="twitter:image" content="https://troglobit.com/images/merecat-card.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
 
 <title itemprop="name">Troglobit - Merecat httpd</title>
 <meta property="og:title" content="Troglobit - Merecat httpd" />
@@ -75,10 +73,10 @@
 <meta property="og:site_name" content="Joachim Wiberg" />
 
 
-<meta name="description" content="Merecat started out as a pun at Mongoose, but is now useful for actual web serving purposes. It is however not a real Meerkat, merely yet another copycat, forked from the great thttpd created by Jef …" />
-<meta itemprop="description" content="Merecat started out as a pun at Mongoose, but is now useful for actual web serving purposes. It is however not a real Meerkat, merely yet another copycat, forked from the great thttpd created by Jef …" />
-<meta property="og:description" content="Merecat started out as a pun at Mongoose, but is now useful for actual web serving purposes. It is however not a real Meerkat, merely yet another copycat, forked from the great thttpd created by Jef …" />
-<meta name="twitter:description" content="Merecat started out as a pun at Mongoose, but is now useful for actual web serving purposes. It is however not a real Meerkat, merely yet another copycat, forked from the great thttpd created by Jef …" />
+<meta name="description" content="Merecat httpd is a tiny embedded web server forked from thttpd -- HTTPS, CGI, virtual hosts, and a reverse proxy in a ~160 kiB footprint." />
+<meta itemprop="description" content="Merecat httpd is a tiny embedded web server forked from thttpd -- HTTPS, CGI, virtual hosts, and a reverse proxy in a ~160 kiB footprint." />
+<meta property="og:description" content="Merecat httpd is a tiny embedded web server forked from thttpd -- HTTPS, CGI, virtual hosts, and a reverse proxy in a ~160 kiB footprint." />
+<meta name="twitter:description" content="Merecat httpd is a tiny embedded web server forked from thttpd -- HTTPS, CGI, virtual hosts, and a reverse proxy in a ~160 kiB footprint." />
 
 
 <base href="https://troglobit.com/projects/merecat/" />
@@ -88,7 +86,7 @@
 <meta property="og:url" content="https://troglobit.com/projects/merecat/" />
 
 
-<meta property="og:updated_time" content="2019-07-19T12:35:00&#43;02:00" />
+<meta property="og:updated_time" content="2026-07-25T09:00:00&#43;02:00" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -313,6 +311,8 @@
                 
                         
                 
+                        
+                
             
         
         
@@ -425,6 +425,8 @@
                 
                         
                 
+                        
+                
             
         
         
@@ -451,11 +453,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/finit/">Fast init for Linux systems</a>
+                                <a href="https://troglobit.com/projects/merecat/">Merecat httpd</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/editline/">Minix Editline</a>
+                                <a href="https://troglobit.com/projects/finit/">Fast init for Linux systems</a>
                             </li>
                         
                     
@@ -466,6 +468,8 @@
                 
             
                 
+                
+                        
                 
                         
                 
@@ -649,6 +653,8 @@
                 
                         
                 
+                        
+                
             
         
 
@@ -735,6 +741,10 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
         July 19, 2019
       </time>
       
+      <time datetime=" 2026-07-25T09:00:00&#43;0200" class="post-updated">
+        (updated July 25, 2026)
+      </time>
+      
       
       <span> - </span>
       <span class="reading-time">
@@ -747,6 +757,22 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
     </div>
 
     
+    <ul class="tags">
+      
+      <li class="tag-merecat">
+        <a href="https://troglobit.com/tags/merecat">merecat</a>
+      </li>
+      
+      <li class="tag-httpd">
+        <a href="https://troglobit.com/tags/httpd">httpd</a>
+      </li>
+      
+      <li class="tag-opensource">
+        <a href="https://troglobit.com/tags/opensource">opensource</a>
+      </li>
+      
+    </ul>
+    
   </div>
 
   
@@ -756,49 +782,61 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
 </div>
 
   <p><a href="https://merecat.troglobit.com" target="_blank">Merecat</a> started out as a pun at <a href="https://github.com/cesanta/mongoose" target="_blank">Mongoose</a>, but is now useful for
-actual web serving purposes.  It is however not a real <a href="https://en.wikipedia.org/wiki/Meerkat" target="_blank">Meerkat</a>,
-merely yet another copycat, forked from the great <a href="http://www.acme.com/software/thttpd/" target="_blank">thttpd</a> created by
+actual web serving.  It is however not a real <a href="https://en.wikipedia.org/wiki/Meerkat" target="_blank">Meerkat</a>, merely yet
+another copycat, forked from the great <a href="http://www.acme.com/software/thttpd/" target="_blank">thttpd</a> created by
 <a href="http://www.acme.com" target="_blank">Jef Poskanzer</a>.</p>
-<p>Merecat expands on the features originally offered by thttpd, but still
-has a limited feature set:</p>
+<h2 id="features">Features</h2>
+<p>Merecat expands on the features originally offered by thttpd, but keeps a
+deliberately small feature set:</p>
 <ul>
 <li>Virtual hosts</li>
-<li>Basic <code>.htpassd</code> and <code>.htaccess</code> support</li>
+<li>Basic <code>.htpasswd</code> and <code>.htaccess</code> support</li>
 <li>URL-traffic-based throttling</li>
-<li>CGI/1.1</li>
-<li>HTTP/1.1 Keep-alive</li>
+<li>CGI/1.1 and native PHP, using <code>php-cgi</code>, if enabled in <code>merecat.conf</code></li>
+<li>HTTP/1.1 keep-alive</li>
 <li>Built-in gzip deflate using zlib</li>
-<li>HTTPS support using OpenSSL/LibreSSL, works with <a href="https://letsencrypt.org/" target="_blank">Let&rsquo;s Encrypt</a>!</li>
-<li>Dual server support, both HTTP/HTTPS from one process</li>
-<li>HTTP redirect, to gently redirect a HTTP server to HTTPS</li>
-<li>Native PHP support, using <code>php-cgi</code> if enabled in <code>merecat.conf</code></li>
+<li>HTTPS using OpenSSL/LibreSSL, works with <a href="https://letsencrypt.org/" target="_blank">Let&rsquo;s Encrypt</a>!</li>
+<li>Dual server support, both HTTP and HTTPS from one process</li>
+<li>HTTP redirect, to gently nudge an HTTP server over to HTTPS</li>
+<li>Reverse proxy (<code>proxy-pass</code>), to front local app servers the way nginx does</li>
 </ul>
-<p>The first landing page after installation can be seen here:</p>
-<p>:point_right: <a href="https://merecat.troglobit.com" target="_blank">https://merecat.troglobit.com</a></p>
-<img class="center noborder" src="/images/peeking.gif" />
-<p>The resulting footprint (~140 kiB) makes it quick and suitable for small
-and embedded systems!</p>
-<p>Merecat is available as free/open source software under the simplified
-2-clause <a href="https://github.com/troglobit/merecat/blob/master/LICENSE" target="_blank">BSD license</a>.  For more information, see the manual
-page <code>merecat(8)</code>, or the <a href="http://halplant.com:2001/server/thttpd_FAQ.html" target="_blank">FAQ</a>.</p>
-<p>Issue tracker and GIT repository available at GitHub:</p>
+<p>The resulting footprint (a ~160 kiB stripped binary) makes it quick and
+suitable for small and embedded systems.  Merecat is free/open source
+software under the simplified 2-clause <a href="https://github.com/troglobit/merecat/blob/master/LICENSE" target="_blank">BSD license</a>; for more
+details see the <code>merecat(8)</code> manual page or the <a href="http://halplant.com:2001/server/thttpd_FAQ.html" target="_blank">FAQ</a>.</p>
+<h2 id="powered-by-merecat">Powered by Merecat</h2>
+<p>All of <a href="https://merecat.troglobit.com" target="_blank">troglobit.com</a> runs on Merecat, including the page
+you&rsquo;re reading.  The git browser over at <a href="https://git.troglobit.com" target="_blank">git.troglobit.com</a> is a
+separate Go application that Merecat fronts with its reverse proxy
+(<code>proxy-pass</code>) &ndash; see <a href="https://troglobit.com/post/2026-07-12-can-you-dig-it/">Can You Dig It?</a> for that story.</p>
+<p>The default landing page you get right after installation is live here:</p>
+<p><strong><a href="https://merecat.troglobit.com" target="_blank">https://merecat.troglobit.com</a></strong></p>
+<p>For more hands-on examples, see the HowTos:</p>
 <ul>
-<li><a href="http://github.com/troglobit/merecat" target="_blank">Repository</a></li>
-<li><a href="http://github.com/troglobit/merecat/issues" target="_blank">Issue Tracker</a></li>
+<li><a href="https://troglobit.com/howtos/merecat-basic-cig-in-c/">Basic CGI in C</a></li>
+<li><a href="https://troglobit.com/howtos/merecat-and-lets-encrypt/">HTTPS with Let&rsquo;s Encrypt</a></li>
+<li><a href="https://troglobit.com/howtos/merecat-and-ikiwiki/">Serving an ikiwiki</a></li>
+<li><a href="https://troglobit.com/howtos/merecat-and-cgit/">Set up cgit</a></li>
+</ul>
+<h2 id="get-it">Get It</h2>
+<blockquote>
+<p><a href="https://github.com/troglobit/merecat/releases/latest" target="_blank">Latest release</a> available on <a href="https://github.com/troglobit/merecat" target="_blank">GitHub</a></p>
+</blockquote>
+<ul>
+<li><a href="https://github.com/troglobit/merecat" target="_blank">Repository</a></li>
+<li><a href="https://github.com/troglobit/merecat/issues" target="_blank">Issue Tracker</a></li>
 <li><a href="https://github.com/troglobit/merecat/blob/master/ChangeLog.md" target="_blank">ChangeLog</a></li>
-<li><a href="ftp://ftp.troglobit.com/merecat/merecat-2.32.tar.xz">merecat-2.32.tar.xz</a>,
-<a href="ftp://ftp.troglobit.com/merecat/merecat-2.32.tar.xz.md5">MD5</a></li>
+<li><a href="https://hub.docker.com/r/troglobit/merecat/" target="_blank">Docker image</a>, to try it isolated from the rest of the system</li>
 </ul>
 <h2 id="origin--references">Origin &amp; References</h2>
-<p>Merecat is a stiched up fork of <a href="https://github.com/blueness/sthttpd/" target="_blank">sthttpd</a> with lots of lost patches
-found lying around the web.  The sthttpd project in turn is a fork from
-the original <a href="http://www.acme.com/software/thttpd/" target="_blank">thttpd</a> &ndash; the tiny/turbo/throttling HTTP server.</p>
+<p>Merecat is a stitched-up fork of <a href="https://github.com/blueness/sthttpd/" target="_blank">sthttpd</a> with lots of lost patches
+found lying around the web.  The sthttpd project in turn is a fork of the
+original <a href="http://www.acme.com/software/thttpd/" target="_blank">thttpd</a> &ndash; the tiny/turbo/throttling HTTP server.</p>
 <ul>
-<li><a href="http://www.acme.com/software/thttpd/" target="_blank">thttpd</a> was created by Jef Poskanzer <a href="mailto:jef@mail.acme.com">mailto:jef@mail.acme.com</a></li>
-<li><a href="https://github.com/blueness/sthttpd/" target="_blank">sthttpd</a> was spawned by Anthony G. Basile <a href="mailto:blueness@gentoo.org">mailto:blueness@gentoo.org</a></li>
-<li><a href="https://merecat.troglobit.com" target="_blank">Merecat</a> is maintained by Joachim Nilsson <a href="mailto:troglobit@gmail.com">mailto:troglobit@gmail.com</a></li>
+<li><a href="http://www.acme.com/software/thttpd/" target="_blank">thttpd</a> was created by Jef Poskanzer <a href="mailto:jef@mail.acme.com">jef@mail.acme.com</a></li>
+<li><a href="https://github.com/blueness/sthttpd/" target="_blank">sthttpd</a> was spawned by Anthony G. Basile <a href="mailto:blueness@gentoo.org">blueness@gentoo.org</a></li>
+<li><a href="https://merecat.troglobit.com" target="_blank">Merecat</a> is maintained by Joachim Wiberg <a href="mailto:troglobit@gmail.com">troglobit@gmail.com</a></li>
 </ul>
-
   
   <hr>
 <div class="footer">
@@ -824,6 +862,9 @@ the original <a href="http://www.acme.com/software/thttpd/" target="_blank">thtt
       <h4 id="contents"></h4>
       <nav id="TableOfContents">
   <ul>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#powered-by-merecat">Powered by Merecat</a></li>
+    <li><a href="#get-it">Get It</a></li>
     <li><a href="#origin--references">Origin &amp; References</a></li>
   </ul>
 </nav>

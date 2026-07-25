@@ -6,7 +6,7 @@
     <description>Recent content in Merecat on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 09 Dec 2021 05:56:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jul 2026 09:00:00 +0200</lastBuildDate>
     <atom:link href="https://troglobit.com/tags/merecat/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Basic CGI in C with Merecat httpd</title>
@@ -14,6 +14,13 @@
       <pubDate>Mon, 05 Aug 2019 22:00:25 +0200</pubDate>
       <guid>https://troglobit.com/howtos/merecat-basic-cig-in-c/</guid>
       <description>&lt;p&gt;This post is a writeup of how to use basic CGI programs in Merecat httpd v2.32.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Merecat httpd</title>
+      <link>https://troglobit.com/projects/merecat/</link>
+      <pubDate>Fri, 19 Jul 2019 12:35:00 +0200</pubDate>
+      <guid>https://troglobit.com/projects/merecat/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://merecat.troglobit.com&#34; target=&#34;_blank&#34;&gt;Merecat&lt;/a&gt; started out as a pun at &lt;a href=&#34;https://github.com/cesanta/mongoose&#34; target=&#34;_blank&#34;&gt;Mongoose&lt;/a&gt;, but is now useful for&#xA;actual web serving.  It is however not a real &lt;a href=&#34;https://en.wikipedia.org/wiki/Meerkat&#34; target=&#34;_blank&#34;&gt;Meerkat&lt;/a&gt;, merely yet&#xA;another copycat, forked from the great &lt;a href=&#34;http://www.acme.com/software/thttpd/&#34; target=&#34;_blank&#34;&gt;thttpd&lt;/a&gt; created by&#xA;&lt;a href=&#34;http://www.acme.com&#34; target=&#34;_blank&#34;&gt;Jef Poskanzer&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>HowTo: Set up Merecat with Let&#39;s Encrypt certificate</title>

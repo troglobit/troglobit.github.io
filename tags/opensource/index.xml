@@ -6,7 +6,7 @@
     <description>Recent content in Opensource on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 25 Jul 2026 08:10:00 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jul 2026 09:00:00 +0200</lastBuildDate>
     <atom:link href="https://troglobit.com/tags/opensource/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Can You Dig It?</title>
@@ -119,6 +119,13 @@
       <pubDate>Sun, 03 Nov 2019 23:04:00 +0100</pubDate>
       <guid>https://troglobit.com/post/2019-11-03-bsd-syslogd-in-linux/</guid>
       <description>&lt;p&gt;Some time ago now I was in a meeting with a customer where I first learned of&#xA;the new syslog standard, &lt;a href=&#34;https://tools.ietf.org/html/rfc5424&#34; target=&#34;_blank&#34;&gt;RFC5424&lt;/a&gt;.  I say &amp;ldquo;new&amp;rdquo; because, despite it being&#xA;ten years old, it was new to me.&lt;/p&gt;&#xA;&lt;p&gt;Three weeks ago I started updating my fork of &lt;a href=&#34;https://www.infodrom.org/projects/sysklogd/&#34; target=&#34;_blank&#34;&gt;sysklogd&lt;/a&gt; to be &lt;a href=&#34;https://tools.ietf.org/html/rfc5424&#34; target=&#34;_blank&#34;&gt;RFC5424&lt;/a&gt;&#xA;compliant.  I ended up ripping out most of the old code and replacing it with&#xA;fresh DNA strands from FreeBSD and NetBSD.&lt;/p&gt;&#xA;&lt;p&gt;The result is a fully RFC compliant &lt;code&gt;syslogd&lt;/code&gt;, &lt;strong&gt;and&lt;/strong&gt; a &lt;code&gt;libsyslog&lt;/code&gt; with a&#xA;replacement &lt;code&gt;syslog.h&lt;/code&gt; header for sending RFC5424 events from applications!&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/troglobit/sysklogd/&#34; target=&#34;_blank&#34;&gt;https://github.com/troglobit/sysklogd/&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Merecat httpd</title>
+      <link>https://troglobit.com/projects/merecat/</link>
+      <pubDate>Fri, 19 Jul 2019 12:35:00 +0200</pubDate>
+      <guid>https://troglobit.com/projects/merecat/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://merecat.troglobit.com&#34; target=&#34;_blank&#34;&gt;Merecat&lt;/a&gt; started out as a pun at &lt;a href=&#34;https://github.com/cesanta/mongoose&#34; target=&#34;_blank&#34;&gt;Mongoose&lt;/a&gt;, but is now useful for&#xA;actual web serving.  It is however not a real &lt;a href=&#34;https://en.wikipedia.org/wiki/Meerkat&#34; target=&#34;_blank&#34;&gt;Meerkat&lt;/a&gt;, merely yet&#xA;another copycat, forked from the great &lt;a href=&#34;http://www.acme.com/software/thttpd/&#34; target=&#34;_blank&#34;&gt;thttpd&lt;/a&gt; created by&#xA;&lt;a href=&#34;http://www.acme.com&#34; target=&#34;_blank&#34;&gt;Jef Poskanzer&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Finit3: Almost there ...</title>
