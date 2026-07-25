@@ -9,7 +9,7 @@ aliases: /blog/2017/09/10/install-x-window-in-alpine-linux/
 ---
 
 How to install LXDM + XFCE4 in Alpine Linux 3.6 when testing with
-[Finit](https://github.com/troglobit/finit/tree/master/contrib/alpine).
+[Finit](https://github.com/finit-project/finit/tree/master/contrib/alpine).
 
 <!--more-->
 

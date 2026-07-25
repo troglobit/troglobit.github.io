@@ -110,5 +110,5 @@ Bug reports and patches welcome, as always.  Can you dig it?
 [v1.0]:     https://github.com/troglobit/digit/releases/tag/1.0
 [v1.1]:     https://github.com/troglobit/digit/releases/tag/1.1
 [merecat]:  https://github.com/troglobit/merecat
-[Finit]:    https://github.com/troglobit/finit
+[Finit]:    https://github.com/finit-project/finit
 [live]:     https://git.troglobit.com/github.com/troglobit/digit/

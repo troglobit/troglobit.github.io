@@ -79,6 +79,6 @@ kernel) to get a more verbose output, usable for autobuilders etc.
 [11]: http://www.openbsd.org/cgi-bin/man.cgi/OpenBSD-current/man3/LIST_EMPTY.3
 [12]: https://github.com/troglobit/uftpd
 [13]: https://github.com/troglobit/libuev
-[14]: https://github.com/troglobit/finit
+[14]: https://github.com/finit-project/finit
 [15]: https://github.com/troglobit/inadyn
 [MIT]: http://opensource.org/licenses/MIT

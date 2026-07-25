@@ -37,8 +37,8 @@ Why Finit?
  - Supports tmpfiles.d like systemd
  - Supports `ifup -a` & `ifdown -a` natively
  - Supports `/etc/rc.local` and has built-in `runparts` for [SysV init
-   compatibility](https://github.com/troglobit/finit/tree/master/doc#sysv-init-compatibility)
- - And [more ...](https://github.com/troglobit/finit#introduction)
+   compatibility](https://github.com/finit-project/finit/tree/master/doc#sysv-init-compatibility)
+ - And [more ...](https://github.com/finit-project/finit#introduction)
 
 
 Try it Out
@@ -147,7 +147,7 @@ you are curious about some other aspect that would be suitable for a
 blog post.  There is also a [discussion forum][2] open for general
 questions about Finit.
 
-[1]: https://github.com/troglobit/finit#introduction
-[2]: https://github.com/troglobit/finit/discussions
+[1]: https://github.com/finit-project/finit#introduction
+[2]: https://github.com/finit-project/finit/discussions
 [3]: https://github.com/troglobit/br2-finit-demo/releases/tag/latest
 [4]: https://www.qemu.org

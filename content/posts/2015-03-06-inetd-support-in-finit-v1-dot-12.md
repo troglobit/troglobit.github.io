@@ -108,5 +108,5 @@ Enjoy! ツ
 * Only restart *lost daemons* when recovering from a `SIGSTOP`/norespawn.
 
 [libuEv]: https://github.com/troglobit/libuev
-[1.11]:   https://github.com/troglobit/finit/compare/1.10...1.11
-[README]: https://github.com/troglobit/finit/blob/master/README.md
+[1.11]:   https://github.com/finit-project/finit/compare/1.10...1.11
+[README]: https://github.com/finit-project/finit/blob/master/README.md

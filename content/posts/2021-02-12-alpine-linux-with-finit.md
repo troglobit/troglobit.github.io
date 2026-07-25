@@ -37,7 +37,7 @@ is just a wrapper for Linux `epoll()` & C:o.
 ```shell
 ~$ git clone https://github.com/troglobit/libite
 ~$ git clone https://github.com/troglobit/libuev
-~$ git clone https://github.com/troglobit/finit
+~$ git clone https://github.com/finit-project/finit
 ```
 
 Build each of the dependencies first:

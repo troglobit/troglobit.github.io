@@ -3,12 +3,12 @@ title: "About"
 date: 2024-02-02 08:35:00 +0100
 ---
 
-Welcome to this blog, I'm Joachim Wiberg[^1]!  It serves as a tribute to
-my childhood friend Henrik Flordal, for inspiring me to become a hacker.
-The nick is also the first password I got to a Linux server (Henrik's),
-back in 1995.  I set this up ages ago in an attempt to apologize for my
-DDOS:ing his server because I had yet to learn about `/etc/motd`.  We
-have not spoken since, unfortunately &#128148;
+Welcome to this blog, I'm Joachim Wiberg[^1]!  It serves as a tribute to my
+childhood friend Henrik Flordal, for inspiring me to become a hacker.  The
+nick is also the first password I got to a Linux server (Henrik's), back
+in 1995.  I set this up ages ago partly as a belated apology for DDoS:ing his
+server before I'd learned about `/etc/motd`.  We've since lost touch, but
+wherever you are now, thanks for the spark, Henrik! &#128578;
 
 So yes, I'm a huge Linux and UNIX nerd.  Ever since my first job, after
 [graduating from MdU][resume], I've (only) been running Linux on almost

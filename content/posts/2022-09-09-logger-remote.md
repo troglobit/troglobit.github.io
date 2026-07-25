@@ -29,5 +29,5 @@ applicable, not util-linux.  See the [FreeBSD man page][6] for comparison.
 [2]: https://pubs.opengroup.org/onlinepubs/9699919799/utilities/logger.html
 [3]: https://www.kernel.org/pub/linux/utils/util-linux/
 [4]: https://github.com/troglobit/sysklogd/
-[5]: https://github.com/troglobit/finit/
+[5]: https://github.com/finit-project/finit/
 [6]: https://www.freebsd.org/cgi/man.cgi?query=logger&apropos=0&sektion=0&manpath=FreeBSD+13.1-RELEASE+and+Ports&arch=default&format=html

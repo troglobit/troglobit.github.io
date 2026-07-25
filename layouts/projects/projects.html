@@ -1,0 +1,35 @@
+{{ define "main" -}}
+{{ if .Site.Params.light_dark }}
+    {{ partial "light_dark.html" . }}
+{{ end }}
+<div class="posts projects">
+    {{ range .Paginator.Pages }}
+    {{ $url := .RelPermalink }}
+    {{ $title := .Title }}
+    <article class="post project-card">
+        <h1 class="post-title">
+            <a href="{{ $url }}">{{ $title }}</a>
+        </h1>
+
+        {{ with .Params.image }}
+        <a class="project-card-img" href="{{ $url }}" tabindex="-1" aria-hidden="true">
+            <img src="{{ . }}" alt="{{ $title }} social card" loading="lazy">
+        </a>
+        {{ end }}
+
+        <div class="project-card-summary">
+            {{ with .Description }}
+                <p>{{ . }}</p>
+            {{ else }}
+                {{ .Summary }}
+            {{ end }}
+        </div>
+
+        <div class="read-more-link">
+            <a href="{{ $url }}">Read More…</a>
+        </div>
+    </article>
+    {{- end }}
+</div>
+{{ partial "pagination.html" . }}
+{{ end }}

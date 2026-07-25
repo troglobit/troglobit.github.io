@@ -37,4 +37,4 @@ episode where two of my projects finally get married! ツ
 [libuEv]: https://github.com/troglobit/libuev
 [Travis CI]: https://travis-ci.org/troglobit/finit
 [Coverity Scan]: https://scan.coverity.com/projects/3545
-[dea3ae8]: https://github.com/troglobit/finit/commit/dea3ae8
+[dea3ae8]: https://github.com/finit-project/finit/commit/dea3ae8

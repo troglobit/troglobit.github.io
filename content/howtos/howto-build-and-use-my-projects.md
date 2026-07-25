@@ -9,15 +9,16 @@ image: ""
 tags: []
 ---
 
-Ever so often someone new to Open Source show up on GitHub or in my
-inbox.  It usually starts something like this:
+Every so often someone new to Open Source shows up on GitHub or in my
+inbox with a question like:
 
-- *"Hey, I just downloaded your software, what's next?"*
-- *"Your software doesn't work on my system!!!!"*
-- *"How can I do that weird-thing that fits my odd use-case?"*
-- *"I have zero documented experience but I think you should fix your build system!"*
+- *"I just downloaded your software, what's next?"*
+- *"It doesn't build on my system, can you help?"*
+- *"How can I adapt it to my own use-case?"*
+- *"Could the build system be improved?"*
 
-This HowTo is for you.
+These are all good questions, and this HowTo tries to answer the most
+common ones up front.
 
 ## 0. Short Version
 
@@ -26,20 +27,20 @@ This HowTo is for you.
 - `./configure --help`, or use something like the following ...
 - `./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var && make && sudo make install`
 
-> Some projects of mine are available in Debian/Ubuntu/FreeBSD, if you
-> use that, please report bugs to them and not me.  I have no control
-> over what they do.
+> Some of my projects are also available in Debian/Ubuntu/FreeBSD.  If
+> you installed one from there, please report bugs to them first, they
+> may carry their own patches.
 
 Cheers  
  /Joachim
 
 <!--more-->
 
-## 1. I don't owe you free support
+## 1. A note on support
 
-Just because the software is published for free, and often without any
-restrictions[^1] on use, doesn't mean I must provide you with any (free)
-support.
+I maintain these projects in my spare time and publish them for free,
+usually without any restrictions[^1] on use.  I read what comes in and
+help when I can, but I can't promise support or quick answers.
 
 If you use my software packaged by a 3rd party, e.g., Debian, FreeBSD,
 or similar, please report the bug/problem to them first.  They become
@@ -48,7 +49,7 @@ first line support when publishing my work.
 [^1]: see the file LICENSE or COPYING included with the software.
 
 
-## 2. Use **released** software, not GIT sources please
+## 2. Prefer **released** software over GIT sources
 
 There are some important caveats to consider if you're new to Open
 Source software:
@@ -62,8 +63,8 @@ When I release software on GitHub I first do a "tag", then build the
 release from that tag.  This results in artifacts such as an archive in
 the form of a tarball, or zipfile, with a *version* in the name.
 
-> GitHub has the bad habit of automatically creating archives for a
-> "tag", don't use those.  They typically **miss important files**.
+> GitHub automatically creates archives for each "tag", but please
+> don't use those, they typically **miss important files**.
 
 Released archives, in most of my projects, include a `configure` script,
 which usually is not available in raw GIT.
@@ -72,9 +73,10 @@ which usually is not available in raw GIT.
 
 Every project on GitHub has a *Releases Page*, e.g.
 
-<https://github.com/troglobit/finit/releases>
+<https://github.com/finit-project/finit/releases>
 
-Unless you want to contribute to the project, use released software!
+Unless you want to contribute to the project, the released software is
+the best place to start.
 
 
 ## 3. Some assembly required

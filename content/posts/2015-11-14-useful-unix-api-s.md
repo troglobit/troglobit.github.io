@@ -22,7 +22,7 @@ these.
 Most people are completely unaware they exist and end up rolling their
 own (buggy) implementations.  For instance, string manipulation and
 various forms of linked lists.  Which is why I many years ago extracted
-the *frog DNA* from [Finit](https://github.com/troglobit/finit/) to a
+the *frog DNA* from [Finit](https://github.com/finit-project/finit/) to a
 separate library called [libite](https://github.com/troglobit/libite/),
 or -lite for short.  It imports the OpenBSD `strlcpy()` family of API:s,
 up-to-date `queue.h` with the `_SAFE` iterators, and more.  Some people

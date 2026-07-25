@@ -1,0 +1,38 @@
+{{ define "main" -}}
+<div class="posts">
+    {{ $frontPageTypes := default (slice "posts") .Site.Params.front_page_content }}
+    {{ range (.Paginate (where .Site.RegularPages "Type" "in" $frontPageTypes)).Pages }}
+    {{ $cardType := in (slice "projects" "howtos") .Type }}
+    <article class="post">
+        {{ partial "post/info.html" . }}
+
+        {{/* Posts embed their card inline in the content; projects and
+             howtos keep it in front matter, so surface it here too. */}}
+        {{ if and $cardType .Params.image }}
+        <a class="project-card-img" href="{{ .RelPermalink }}" tabindex="-1" aria-hidden="true">
+            <img src="{{ .Params.image }}" alt="{{ .Title }} social card" loading="lazy">
+        </a>
+        {{ end }}
+
+        {{ if or (.Site.Params.noSummary) (.Params.noSummary) }}
+        {{ .Content }}
+        {{ else if and $cardType .Description }}
+        {{/* Projects/howtos rarely use <!--more-->; the concise front-matter
+             description reads better than the flattened auto-summary. */}}
+        <div class="project-card-summary"><p>{{ .Description }}</p></div>
+        <div class="read-more-link">
+            <a href="{{ .RelPermalink }}">Read More…</a>
+        </div>
+        {{ else }}
+        {{ .Summary }}
+        {{ if .Truncated }}
+        <div class="read-more-link">
+            <a href="{{ .RelPermalink }}">Read More…</a>
+        </div>
+        {{ end }}
+        {{ end }}
+    </article>
+    {{- end }}
+</div>
+{{ partial "pagination.html" . }}
+{{- end }}

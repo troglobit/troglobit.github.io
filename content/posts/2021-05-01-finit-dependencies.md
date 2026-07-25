@@ -30,7 +30,7 @@ comprising three major types:
  * usr
  
 > For more information about the condition subsystem in Finit, see:
-> <https://github.com/troglobit/finit/blob/master/doc/conditions.md>
+> <https://github.com/finit-project/finit/blob/master/doc/conditions.md>
 
 
 ## PID Conditions
@@ -117,4 +117,4 @@ processes are stopped if their dependencies are not satisfied.
 
 Join the [discussion on GitHub][1].
 
-[1]: https://github.com/troglobit/finit/discussions/
+[1]: https://github.com/finit-project/finit/discussions/

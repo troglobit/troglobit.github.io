@@ -36,3 +36,58 @@ pre[class*="language-"] {
 code[class*="language-"], pre[class*="language-"] {
     text-shadow: none;
 }
+
+/* Social card floated beside a brief presentation.  Reused by the
+   projects listing and by project/howto entries on the front page. */
+.project-card-img {
+    float: right;
+    width: 320px;
+    max-width: 45%;
+    margin: 0.3rem 0 0.6rem 1.4rem;	/* top right bottom left */
+}
+.project-card-img img {
+    width: 100%;
+    margin: 0;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .14);
+}
+
+/* Left-align the blurb; justified text reads poorly beside a float. */
+.project-card-summary p {
+    text-align: left;
+}
+.project-card-summary p:first-child {
+    margin-top: 0;
+}
+
+/* Any list-style page (front page, projects): contain the float and
+   keep the Read More link below the card. */
+.posts .post {
+    display: flow-root;
+}
+.posts .read-more-link {
+    clear: right;
+}
+
+/* On narrow screens the float would crowd the text, so stack instead. */
+@media (max-width: 48em) {
+    .project-card-img {
+	float: none;
+	width: 100%;
+	max-width: 100%;
+	margin: 0.75rem 0 1rem;
+    }
+}
+
+/* Projects listing: dividers between entries and left-aligned summaries. */
+.posts.projects {
+    .project-card {
+	margin-bottom: 2.5rem;
+	padding-bottom: 2rem;
+	border-bottom: 1px solid var(--table-border-color);
+    }
+    .project-card:last-child {
+	margin-bottom: 0;
+	padding-bottom: 0;
+	border-bottom: 0;
+    }
+}

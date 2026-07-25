@@ -67,7 +67,7 @@ information.  Enjoy!
 [1]: https://serverfault.com/questions/252150/port-forwarding-on-linux-without-iptables/
 [2]: https://github.com/troglobit/redir
 [3]: https://github.com/troglobit/uredir
-[4]: https://github.com/troglobit/finit
+[4]: https://github.com/finit-project/finit
 
 <!--
   -- Local Variables:

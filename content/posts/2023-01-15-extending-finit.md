@@ -29,7 +29,7 @@ plugins and daemons that share the namespace.  For instance, the Finit
 `keventd` publish the `<sys/pwr/ac>` condition.
 
 > For details see the Finit documentation:
-> <https://github.com/troglobit/finit/blob/master/doc/conditions.md>
+> <https://github.com/finit-project/finit/blob/master/doc/conditions.md>
 
 
 ### Connectivity Check
