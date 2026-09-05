@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://troglobit.com/" />
 
 
-<meta property="og:updated_time" content="2026-07-25T18:30:00&#43;02:00" />
+<meta property="og:updated_time" content="2026-09-05T10:00:00&#43;02:00" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -306,6 +306,10 @@
                 
                         
                 
+                        
+                
+                        
+                
             
         
         
@@ -426,6 +430,10 @@
                 
                         
                 
+                        
+                
+                        
+                
             
         
         
@@ -452,11 +460,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/mdnsd/">Embeddable Multicast DNS daemon</a>
+                                <a href="https://troglobit.com/projects/mg/">Micro Emacs for the terminal</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/merecat/">Merecat httpd</a>
+                                <a href="https://troglobit.com/projects/mdnsd/">Embeddable Multicast DNS daemon</a>
                             </li>
                         
                     
@@ -467,6 +475,10 @@
                 
             
                 
+                
+                        
+                
+                        
                 
                         
                 
@@ -666,6 +678,10 @@
                 
                         
                 
+                        
+                
+                        
+                
             
         
 
@@ -741,6 +757,62 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
                 <div class="posts">
     
     
+    
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/">HowTo: Push to multiple GIT repos with one command</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2015-07-01T00:42:17Z" class="post-date">
+        July 1, 2015
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>1 min read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+
+        
+        
+
+        
+        <p>So, now that I have <a href="http://git.troglobit.com" target="_blank">http://git.troglobit.com</a> setup as a backup GIT repo
+to <a href="https://github.com/troglobit" target="_blank">https://github.com/troglobit</a>, I needed a <em>simple</em> way to always push
+to both repos &ndash; best way for me is to always hook into my regular work
+flow, otherwise I&rsquo;d just forget.  The <a href="1">git-remote(1)</a> man page to the
+rescue, it describes the <code>set-url --add</code> sub-command:</p>
+<pre><code>git remote set-url --add origin ssh://git.troglobit.com:1234/srv/git/watchdogd.git
+</code></pre>
+<p>Now, with a simple <code>git push</code> followed by <code>git push --tags</code> I had now
+pushed to both the GitHub repo as well as my own server!</p>
+        
+        <div class="read-more-link">
+            <a href="/2015/07/01/howto-push-to-multiple-git-repos-with-one-command/">Read More…</a>
+        </div>
+        
+        
+    </article>
     
     <article class="post">
         <div class="info">
@@ -1320,56 +1392,6 @@ little proggy! :-)</p>
         
         New release of uftpd, this time with TFTP blocksize negotiation, RFC 2348. Making it a lot faster to transfer files over TFTP.
 Try it out!
-        
-        
-    </article>
-    
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/">HowTo: Add Multicast Routing to FreeBSD kernel</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2014-09-23T01:55:19Z" class="post-date">
-        September 23, 2014
-      </time>
-      
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>1 min read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-
-        
-        
-
-        
-        This is a very short blog post, mostly intended as a reminder to myself. Basically, there are two methods of adding multicast routing support to the FreeBSD kernel:
-Rebuild the kernel with options MROUTING Load the kernel module: kldload ip_mroute The kernel rebuild assumes the src.txz set was installed previously.
-cd /usr/src cd sys/amd64/conf cat GENERIC | sed 's/GENERIC$/MULTICAST/' &gt; MULTICAST echo 'options MROUTING # Multicast routing' &gt;&gt; MULTICAST echo 'options PIM # Enable for pimd' &gt;&gt; MULTICAST cd - make kernel KERNCONF=MULTICAST reboot That&rsquo;s it.
-        
-        <div class="read-more-link">
-            <a href="/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/">Read More…</a>
-        </div>
         
         
     </article>

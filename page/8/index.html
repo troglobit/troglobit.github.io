@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://troglobit.com/" />
 
 
-<meta property="og:updated_time" content="2026-07-25T18:30:00&#43;02:00" />
+<meta property="og:updated_time" content="2026-09-05T10:00:00&#43;02:00" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -306,6 +306,10 @@
                 
                         
                 
+                        
+                
+                        
+                
             
         
         
@@ -426,6 +430,10 @@
                 
                         
                 
+                        
+                
+                        
+                
             
         
         
@@ -452,11 +460,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/mdnsd/">Embeddable Multicast DNS daemon</a>
+                                <a href="https://troglobit.com/projects/mg/">Micro Emacs for the terminal</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/merecat/">Merecat httpd</a>
+                                <a href="https://troglobit.com/projects/mdnsd/">Embeddable Multicast DNS daemon</a>
                             </li>
                         
                     
@@ -467,6 +475,10 @@
                 
             
                 
+                
+                        
+                
+                        
                 
                         
                 
@@ -666,6 +678,10 @@
                 
                         
                 
+                        
+                
+                        
+                
             
         
 
@@ -741,6 +757,70 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
                 <div class="posts">
     
     
+    
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/howtos/merecat-and-ikiwiki/">HowTo: Set up Merecat with Ikiwiki</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2017-02-11T16:03:39Z" class="post-date">
+        February 11, 2017
+      </time>
+      
+      <time datetime=" 2021-12-09T05:51:00Z" class="post-updated">
+        (updated December 9, 2021)
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>1 min read</span>
+      </span>
+    </div>
+
+    
+    <ul class="tags">
+      
+      <li class="tag-merecat">
+        <a href="https://troglobit.com/tags/merecat">merecat</a>
+      </li>
+      
+    </ul>
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+
+        
+        
+
+        
+        This is a HowTo for setting up ikiwiki with Merecat httpd.
+First install ikiwiki
+$ sudo apt install ikiwiki libcgi-session-perl libcgi-formbuilder-perl Follow the steps to setup a new Wiki or Blog. In this example we set up a wiki in our ~/public_html:
+$ ikiwiki --setup /etc/ikiwiki/auto.setup ... Successfully set up wiki: url: http://localhost/~jocke/wiki srcdir: ~/wiki destdir: ~/public_html/wiki repository: ~/wiki.git To modify settings, edit ~/home.setup and then run:
+$ ikiwiki --setup ~/home.
+        
+        <div class="read-more-link">
+            <a href="/howtos/merecat-and-ikiwiki/">Read More…</a>
+        </div>
+        
+        
+    </article>
     
     <article class="post">
         <div class="info">
@@ -1242,55 +1322,6 @@ The main purpose for my building this is TroglOS, but it is useful for other pur
         Today the new logo for Finit3 was added to the GitHub repo and the homepage
 Gorgeous, isn&rsquo;t it?! :sunglasses:
 This fancy artwork means we&rsquo;re nearing the end of a long and agonizing release cycle where a lot of the internals of Finit have been rewritten and new exciting features have been added! More on this in an upcoming post :smiley:
-        
-        
-    </article>
-    
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/2016/09/02/the-general-idea/">The General Idea</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2016-09-02T23:30:00Z" class="post-date">
-        September 2, 2016
-      </time>
-      
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>1 min read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-
-        
-        
-
-        
-        OK, so here&rsquo;s the general idea: take one teaspoon of a well equipped SBC with Marvell chips you know well, add an awesome WiFi hotspot with USB connection, stir feverishly for several weekends in a row, then sprinkle some AlpineLinux and a custom kernel on top. Enjoy!
-I have no clue if this will actually work, may even try porting my own little thing called TroglOS to the ClearFog first, I don&rsquo;t know, but it will definitely be awesome!
-        
-        <div class="read-more-link">
-            <a href="/2016/09/02/the-general-idea/">Read More…</a>
-        </div>
         
         
     </article>

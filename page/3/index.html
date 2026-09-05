@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://troglobit.com/" />
 
 
-<meta property="og:updated_time" content="2026-07-25T18:30:00&#43;02:00" />
+<meta property="og:updated_time" content="2026-09-05T10:00:00&#43;02:00" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -306,6 +306,10 @@
                 
                         
                 
+                        
+                
+                        
+                
             
         
         
@@ -426,6 +430,10 @@
                 
                         
                 
+                        
+                
+                        
+                
             
         
         
@@ -452,11 +460,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/mdnsd/">Embeddable Multicast DNS daemon</a>
+                                <a href="https://troglobit.com/projects/mg/">Micro Emacs for the terminal</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/merecat/">Merecat httpd</a>
+                                <a href="https://troglobit.com/projects/mdnsd/">Embeddable Multicast DNS daemon</a>
                             </li>
                         
                     
@@ -467,6 +475,10 @@
                 
             
                 
+                
+                        
+                
+                        
                 
                         
                 
@@ -666,6 +678,10 @@
                 
                         
                 
+                        
+                
+                        
+                
             
         
 
@@ -741,6 +757,75 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
                 <div class="posts">
     
     
+    
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/post/2022-01-16-finit-v4.2-released/">Finit v4.2 Released!</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2022-01-16T15:30:23&#43;0100" class="post-date">
+        January 16, 2022
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>3 mins read</span>
+      </span>
+    </div>
+
+    
+    <ul class="tags">
+      
+      <li class="tag-finit">
+        <a href="https://troglobit.com/tags/finit">finit</a>
+      </li>
+      
+      <li class="tag-init">
+        <a href="https://troglobit.com/tags/init">init</a>
+      </li>
+      
+      <li class="tag-opensource">
+        <a href="https://troglobit.com/tags/opensource">opensource</a>
+      </li>
+      
+    </ul>
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+
+        
+        
+
+        
+        <figure class="right-floated"><a href="https://troglobit.com/finit.html"><img src="/images/finit3.png"
+         alt="finit logo"/></a>
+</figure>
+<p>I&rsquo;m very pleased to announce <a href="https://github.com/finit-project/finit/releases/tag/4.2" target="_blank">Finit v4.2</a>!  It comes seven months
+after the last release, v4.1, with a bunch of fixes and some new
+features.  See the release notes for details.</p>
+        
+        <div class="read-more-link">
+            <a href="/post/2022-01-16-finit-v4.2-released/">Read More…</a>
+        </div>
+        
+        
+    </article>
     
     <article class="post">
         <div class="info">
@@ -1290,80 +1375,6 @@ projects as well, with local differences in helper scripts.</p>
         
         <div class="read-more-link">
             <a href="/post/2021-01-24-buildroot-development-checklist/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/post/2021-01-13-emacs-gmail-and-lore-mailing-lists/">Emacs: GMail and Lore Mailing Lists</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2021-01-13T09:29:00&#43;0100" class="post-date">
-        January 13, 2021
-      </time>
-      
-      <time datetime=" 2021-05-11T19:12:00&#43;0100" class="post-updated">
-        (updated May 11, 2021)
-      </time>
-      
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>4 mins read</span>
-      </span>
-    </div>
-
-    
-    <ul class="tags">
-      
-      <li class="tag-notmuch">
-        <a href="https://troglobit.com/tags/notmuch">notmuch</a>
-      </li>
-      
-      <li class="tag-emacs">
-        <a href="https://troglobit.com/tags/emacs">emacs</a>
-      </li>
-      
-      <li class="tag-gmail">
-        <a href="https://troglobit.com/tags/gmail">gmail</a>
-      </li>
-      
-      <li class="tag-lore">
-        <a href="https://troglobit.com/tags/lore">lore</a>
-      </li>
-      
-    </ul>
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-
-        
-        
-
-        
-        With lots of help from the tireless Tobias Waldekranz, I think I&rsquo;ve finally found the perfect &ldquo;magit like&rdquo; email setup. With Emacs, of course. This is the story of how I did it.
-First install notmuch, mbsync (from the isync package), and afew:
-sudo apt install notmuch isync afew Do initial setup of notmuch for your user. I&rsquo;ve opted to store my mail in ~/mail, this is used throughout the text below, ymmv.
-        
-        <div class="read-more-link">
-            <a href="/post/2021-01-13-emacs-gmail-and-lore-mailing-lists/">Read More…</a>
         </div>
         
         

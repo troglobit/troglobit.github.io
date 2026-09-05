@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://troglobit.com/" />
 
 
-<meta property="og:updated_time" content="2026-07-25T18:30:00&#43;02:00" />
+<meta property="og:updated_time" content="2026-09-05T10:00:00&#43;02:00" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -306,6 +306,10 @@
                 
                         
                 
+                        
+                
+                        
+                
             
         
         
@@ -426,6 +430,10 @@
                 
                         
                 
+                        
+                
+                        
+                
             
         
         
@@ -452,11 +460,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/mdnsd/">Embeddable Multicast DNS daemon</a>
+                                <a href="https://troglobit.com/projects/mg/">Micro Emacs for the terminal</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/merecat/">Merecat httpd</a>
+                                <a href="https://troglobit.com/projects/mdnsd/">Embeddable Multicast DNS daemon</a>
                             </li>
                         
                     
@@ -467,6 +475,10 @@
                 
             
                 
+                
+                        
+                
+                        
                 
                         
                 
@@ -666,6 +678,10 @@
                 
                         
                 
+                        
+                
+                        
+                
             
         
 
@@ -741,6 +757,56 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
                 <div class="posts">
     
     
+    
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/">HowTo: Add Multicast Routing to FreeBSD kernel</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2014-09-23T01:55:19Z" class="post-date">
+        September 23, 2014
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>1 min read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+
+        
+        
+
+        
+        This is a very short blog post, mostly intended as a reminder to myself. Basically, there are two methods of adding multicast routing support to the FreeBSD kernel:
+Rebuild the kernel with options MROUTING Load the kernel module: kldload ip_mroute The kernel rebuild assumes the src.txz set was installed previously.
+cd /usr/src cd sys/amd64/conf cat GENERIC | sed 's/GENERIC$/MULTICAST/' &gt; MULTICAST echo 'options MROUTING # Multicast routing' &gt;&gt; MULTICAST echo 'options PIM # Enable for pimd' &gt;&gt; MULTICAST cd - make kernel KERNCONF=MULTICAST reboot That&rsquo;s it.
+        
+        <div class="read-more-link">
+            <a href="/2014/09/23/howto-add-multicast-routing-support-to-the-freebsd-kernel/">Read More…</a>
+        </div>
+        
+        
+    </article>
     
     <article class="post">
         <div class="info">
@@ -1193,59 +1259,6 @@ changes of new releases to projects I was interested in.</p>
         
         <div class="read-more-link">
             <a href="/2014/05/14/new-release-of-the-ddns-client-inadyn/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/2014/05/04/why-write-your-own-ftp-server/">Why write your own FTP server?</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2014-05-04T11:25:09Z" class="post-date">
-        May 4, 2014
-      </time>
-      
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>4 mins read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-
-        
-        
-
-        
-        <p>So, I finally got fed up with all other FTP servers and wrote
-<a href="/uftpd.html">my own</a>.  Why would someone in their right mind do
-something like this 2014?</p>
-<p>As a developer the answer to most such questions is usually; to
-scratch an itch.  For a very long time I&rsquo;ve looked for a really simple
-FTP server that just works, out of the box!</p>
-        
-        <div class="read-more-link">
-            <a href="/2014/05/04/why-write-your-own-ftp-server/">Read More…</a>
         </div>
         
         

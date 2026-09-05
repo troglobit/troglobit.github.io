@@ -2,28 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://troglobit.com/tags/editor/</loc>
+    <lastmod>2026-09-05T10:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/emacs/</loc>
+    <lastmod>2026-09-05T10:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/</loc>
+    <lastmod>2026-09-05T10:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/mg/</loc>
+    <lastmod>2026-09-05T10:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/projects/mg/</loc>
+    <lastmod>2026-09-05T10:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/opensource/</loc>
+    <lastmod>2026-09-05T10:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/projects/</loc>
+    <lastmod>2026-09-05T10:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/</loc>
+    <lastmod>2026-09-05T10:00:00+02:00</lastmod>
+  </url><url>
     <loc>https://troglobit.com/tags/dns-sd/</loc>
     <lastmod>2026-07-25T18:30:00+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/projects/mdnsd/</loc>
     <lastmod>2026-07-25T18:30:00+02:00</lastmod>
   </url><url>
-    <loc>https://troglobit.com/</loc>
-    <lastmod>2026-07-25T18:30:00+02:00</lastmod>
-  </url><url>
     <loc>https://troglobit.com/tags/mdns/</loc>
     <lastmod>2026-07-25T18:30:00+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/tags/mdnsd/</loc>
-    <lastmod>2026-07-25T18:30:00+02:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/tags/opensource/</loc>
-    <lastmod>2026-07-25T18:30:00+02:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/projects/</loc>
-    <lastmod>2026-07-25T18:30:00+02:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/tags/</loc>
     <lastmod>2026-07-25T18:30:00+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/tags/awesome/</loc>
@@ -61,9 +73,6 @@
   </url><url>
     <loc>https://troglobit.com/tags/selfhosting/</loc>
     <lastmod>2026-07-13T16:43:27+02:00</lastmod>
-  </url><url>
-    <loc>https://troglobit.com/tags/emacs/</loc>
-    <lastmod>2026-05-26T22:00:00+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/tags/kg/</loc>
     <lastmod>2026-05-26T22:00:00+02:00</lastmod>

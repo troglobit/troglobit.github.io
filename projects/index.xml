@@ -6,8 +6,15 @@
     <description>Recent content in Projects on Joachim Wiberg</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 25 Jul 2026 18:30:00 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 05 Sep 2026 10:00:00 +0200</lastBuildDate>
     <atom:link href="https://troglobit.com/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Micro Emacs for the terminal</title>
+      <link>https://troglobit.com/projects/mg/</link>
+      <pubDate>Sat, 05 Sep 2026 10:00:00 +0200</pubDate>
+      <guid>https://troglobit.com/projects/mg/</guid>
+      <description>&lt;p&gt;&lt;code&gt;mg&lt;/code&gt; is a small, fast, and portable Emacs-like editor for people who&#xA;cannot, or would rather not, run the real thing.  It keeps the GNU Emacs&#xA;key bindings, so there is no second flavour to learn, and it builds with&#xA;nothing but a C compiler.  Like its ancestors it is in the public domain.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Embeddable Multicast DNS daemon</title>
       <link>https://troglobit.com/projects/mdnsd/</link>
