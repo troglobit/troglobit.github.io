@@ -1,7 +1,10 @@
 {{ define "main" -}}
 <div class="posts">
     {{ $frontPageTypes := default (slice "posts") .Site.Params.front_page_content }}
-    {{ range (.Paginate (where .Site.RegularPages "Type" "in" $frontPageTypes)).Pages }}
+    {{/* By lastmod, like the projects list, so a refreshed page surfaces
+         again.  enableGitInfo is off, so lastmod only moves when set in
+         front matter, and falls back to date where it is not. */}}
+    {{ range (.Paginate (where .Site.RegularPages "Type" "in" $frontPageTypes).ByLastmod.Reverse).Pages }}
     {{ $cardType := in (slice "projects" "howtos") .Type }}
     <article class="post">
         {{ partial "post/info.html" . }}
