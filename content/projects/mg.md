@@ -2,7 +2,7 @@
 name: mg
 title: "Micro Emacs for the terminal"
 date: 2026-09-05 10:00:00 +02:00
-lastmod: 2026-09-05 10:00:00 +02:00
+lastmod: 2026-09-09 10:00:00 +02:00
 aliases: [ /mg.html, /mg ]
 image: /images/mg-card.png
 description: "mg is a small, fast, and portable Emacs-like editor with syntax highlighting and UTF-8 support, descended from MicroEMACS by way of OpenBSD, and in the public domain."
@@ -32,17 +32,20 @@ Features
   edited as characters, and double-width CJK takes the two columns it
   is drawn in
 - Visual mark mode, where the region between mark and dot is shown in
-  reverse video, and shift-select with the arrow keys
+  reverse video, and shift-select with the arrow keys and PgUp/PgDn
 - Side by side windows with `C-x 3`, moving between them with the Meta
   arrow keys, resizing with Meta-Shift, and `C-x +` to balance
 - Line wrap, so a long line continues on the rows below instead of
-  running off the edge
+  running off the edge.  Off by default, `set-default-mode wrap` in
+  `~/.mg` turns it on
 - Smart Tab that indents the line, or the region when the mark is
   active, in the language modes that have an opinion about indentation
 - Builds without curses, on termios and escape sequences alone, for
   systems where terminfo is too much
-- Reads `tags` files, opens gzipped text read-only, and keeps a
-  `(row,col)` modeline like Emacs
+- Reads `tags` files, opens gzipped text read-only, and keeps an Emacs
+  style modeline with `(row,col)` and the major mode
+
+{{% figure src="/images/mg.png" class="center" caption="Mg editing its own source, with the quick help card below" %}}
 
 Language Modes
 --------------
@@ -80,9 +83,14 @@ Get It
 * [Issue Tracker][issues]
 * Man page: [mg.1][man-mg]
 
-Users who clone from GitHub must run `./autogen.sh` first; released
-tarballs already ship a `configure` script, so a C compiler and `make`
-are all you need.
+Releases ship a tarball and a Debian package, `mg2a`, for amd64.  The
+tarball has a `configure` script, so a C compiler and `make` are all you
+need; a clone from GitHub needs `./autogen.sh` first.
+
+There is also a container image, with `~/.mg` and the tutorial working
+when `$HOME` is mapped to `/root`:
+
+    docker run -ti -v $HOME:/root ghcr.io/troglobit/mg:latest
 
 Origin & References
 -------------------
