@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Uftpd on Joachim Wiberg</title>
+    <link>https://troglobit.com/tags/uftpd/</link>
+    <description>Recent content in Uftpd on Joachim Wiberg</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 09 Sep 2026 19:00:00 +0200</lastBuildDate>
+    <atom:link href="https://troglobit.com/tags/uftpd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>No nonsense FTP/TFTP server</title>
+      <link>https://troglobit.com/projects/uftpd/</link>
+      <pubDate>Mon, 29 Jul 2019 20:31:00 +0200</pubDate>
+      <guid>https://troglobit.com/projects/uftpd/</guid>
+      <description>&lt;p&gt;&lt;code&gt;uftpd&lt;/code&gt; is an FTP and TFTP server for the LAN.  There is no&#xA;configuration file and no users to manage.  It serves the &lt;code&gt;ftp&lt;/code&gt; user&amp;rsquo;s&#xA;home directory on the ports &lt;code&gt;/etc/services&lt;/code&gt; gives it, and that is the&#xA;whole setup.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

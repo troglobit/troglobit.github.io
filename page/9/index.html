@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://troglobit.com/" />
 
 
-<meta property="og:updated_time" content="2026-09-05T10:00:00&#43;02:00" />
+<meta property="og:updated_time" content="2026-09-09T19:00:00&#43;02:00" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -310,6 +310,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
         
@@ -434,6 +440,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
         
@@ -460,11 +472,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/mg/">Micro Emacs for the terminal</a>
+                                <a href="https://troglobit.com/projects/uftpd/">No nonsense FTP/TFTP server</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/mdnsd/">Embeddable Multicast DNS daemon</a>
+                                <a href="https://troglobit.com/projects/mg/">Micro Emacs for the terminal</a>
                             </li>
                         
                     
@@ -475,6 +487,12 @@
                 
             
                 
+                
+                        
+                
+                        
+                
+                        
                 
                         
                 
@@ -682,6 +700,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
 
@@ -757,6 +781,170 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
                 <div class="posts">
     
     
+    
+    
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/2016/10/27/new-toolchains/">New Toolchains</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2016-10-27T22:22:44Z" class="post-date">
+        October 27, 2016
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>1 min read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+
+        
+        
+
+        
+        Finally, fresh from the oven, here are the remaining two toolchains I&rsquo;ve promised, based on GCC 6.1 and GLIBC 2.23. Download from the FTP:
+arm-unknown-linux-gnueabi-6.1.0-2.tar.xz powerpc-unknown-linux-gnu-6.1.0-2.tar.xz x86_64-unknown-linux-gnu-6.1.0-2.tar.xz Unpack into /usr/local, and add to your $PATH, e.g.
+export PATH=/usr/local/arm-unknown-linux-gnueabi-6.1.0-2/bin:$PATH The toolchains are built using crosstool-NG on Ubuntu 16.04 64-bit, and are primarily intended for myself and users of TroglOS, but are generic enough to be useful for other purposes as well.
+        
+        <div class="read-more-link">
+            <a href="/2016/10/27/new-toolchains/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/2016/09/26/arm-toolchain-r1/">ARM Toolchain r1</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2016-09-26T22:43:53Z" class="post-date">
+        September 26, 2016
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>1 min read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+
+        
+        
+
+        
+        First GCC 6.1 based ARM (32-bit) toolchain released on my FTP. Built using crosstool-NG for Ubuntu 16.04 (x86_64) with GLIBC 2.23.
+arm-unknown-linux-gnueabi-6.1.0-1.tar.xz Download, unpack into /usr/local, and add to your $PATH
+export PATH=/usr/local/arm-unknown-linux-gnueabi-6.1.0-1/bin:$PATH There&rsquo;s lots of neat stuff included, both a sysroot and a debug-root with GDB and gdbserver for target. For details on using it, see the excellent docs.
+The main purpose for my building this is TroglOS, but it is useful for other purposes as well of course.
+        
+        <div class="read-more-link">
+            <a href="/2016/09/26/arm-toolchain-r1/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/2016/09/21/finit3--almost-there/">Finit3: Almost there ...</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2016-09-21T19:08:37Z" class="post-date">
+        September 21, 2016
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>1 min read</span>
+      </span>
+    </div>
+
+    
+    <ul class="tags">
+      
+      <li class="tag-finit">
+        <a href="https://troglobit.com/tags/finit">finit</a>
+      </li>
+      
+      <li class="tag-init">
+        <a href="https://troglobit.com/tags/init">init</a>
+      </li>
+      
+      <li class="tag-opensource">
+        <a href="https://troglobit.com/tags/opensource">opensource</a>
+      </li>
+      
+    </ul>
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+
+        
+        
+
+        
+        Today the new logo for Finit3 was added to the GitHub repo and the homepage
+Gorgeous, isn&rsquo;t it?! :sunglasses:
+This fancy artwork means we&rsquo;re nearing the end of a long and agonizing release cycle where a lot of the internals of Finit have been rewritten and new exciting features have been added! More on this in an upcoming post :smiley:
+        
+        
+    </article>
     
     <article class="post">
         <div class="info">
@@ -1143,188 +1331,6 @@ Simply touch the PID file instead.</p>
         
         <div class="read-more-link">
             <a href="/2016/04/11/the-key-to-successful-boot/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/2016/04/04/lecture-from-the-unix-beards/">Lecture from the UNIX beards</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2016-04-04T00:14:28Z" class="post-date">
-        April 4, 2016
-      </time>
-      
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>1 min read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-
-        
-        
-
-        
-        After the rm -rf /* disaster that hit me a couple of weeks ago I&rsquo;ve been rebuilding my setup, restoring the few files I&rsquo;ve had backed up, and collecting advice from the elders.
-Turns out there are a few tricks that can save your home directory from accidents like mine. The first one is rather obvious, but I&rsquo;m writing it down anyway:
-Keep separate accounts. If possible, use separate accounts (with different permissions obviously) for different projects.
-        
-        <div class="read-more-link">
-            <a href="/2016/04/04/lecture-from-the-unix-beards/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/2016/03/24/disaster-recovery/">Disaster Recovery</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2016-03-24T22:39:00Z" class="post-date">
-        March 24, 2016
-      </time>
-      
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>3 mins read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-
-        
-        
-
-        
-        <p>Days like these inconspicuously start out just like any other day,
-except on days like these you accidentally manage to erase <code>$HOME</code> and
-have no real backup to rely on &hellip; Maundy Thursday will forever be Black
-Thursday for me, from now on.</p>
-<p>Best thing your can do, after cursing at yourself constantly for a
-couple of hours, is to:</p>
-<ol>
-<li>Come up with a useful backup and <em>restore</em> strategy</li>
-<li>Read up on undeletion tools for Ext4</li>
-<li>Blog about it, naturally</li>
-</ol>
-<p>BUT FIRST &ndash; QUICK &ndash; UNMOUNT OR POWER-OFF YOUR COMPUTER &ndash; PULL OUT THE
-BATTERY &ndash; AND STEP AWAY FROM THE COMPUTER!  Must protect the partition
-from being accidentally written to &ndash; I completely fumbled this step, so
-take heed young people!</p>
-        
-        <div class="read-more-link">
-            <a href="/2016/03/24/disaster-recovery/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/2016/03/07/testing-multicast-with-docker/">Testing multicast with Docker</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2016-03-07T01:37:04Z" class="post-date">
-        March 7, 2016
-      </time>
-      
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>2 mins read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-
-        
-        
-
-        
-        <p>Recently <a href="https://github.com/troglobit/pimd/issues/70" target="_blank">issue #70</a> was
-reported to <a href="https://github.com/troglobit/pimd/" target="_blank">pimd</a>.  That number of
-issues reported is cool in itself, but this was a question about
-<a href="https://www.docker.com" target="_blank">Docker</a> and <code>pimd</code>.</p>
-<p>Up until that point I had only read about this new fad, and played
-around with it a bit <a href="http://www.westermo.com" target="_blank">at work</a> for use as a
-stable build environment for cross-compiling.  I had no idea people
-would want to use a Docker container as a multicast sink.  Basically I
-was baffled.</p>
-<p>The reporter used a Java based tool but simply couldn&rsquo;t get things to
-work properly with <code>pimd</code> running on the host:</p>
-<pre><code>                eth0
- MC sender ---&gt; [ Server host ]    &lt;--- router running pimd
-                       |
-               ________|________
-              /     docker0     \   &lt;--- bridge    ______
-             /         |         \                |      |   &lt;--- MC receiver
-  __________/          |          \_______________|______|_____
- \                     |                            /         /
-  \                     `------------------&gt;-------'         /
-   \________________________________________________________/
-      Container ship
-</code></pre>
-        
-        <div class="read-more-link">
-            <a href="/2016/03/07/testing-multicast-with-docker/">Read More…</a>
         </div>
         
         

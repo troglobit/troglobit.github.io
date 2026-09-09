@@ -3,28 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://troglobit.com/tags/editor/</loc>
-    <lastmod>2026-09-05T10:00:00+02:00</lastmod>
+    <lastmod>2026-09-09T10:00:00+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/tags/emacs/</loc>
-    <lastmod>2026-09-05T10:00:00+02:00</lastmod>
+    <lastmod>2026-09-09T10:00:00+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/</loc>
-    <lastmod>2026-09-05T10:00:00+02:00</lastmod>
+    <lastmod>2026-09-09T19:00:00+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/tags/mg/</loc>
-    <lastmod>2026-09-05T10:00:00+02:00</lastmod>
+    <lastmod>2026-09-09T10:00:00+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/projects/mg/</loc>
-    <lastmod>2026-09-05T10:00:00+02:00</lastmod>
+    <lastmod>2026-09-09T10:00:00+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/tags/opensource/</loc>
-    <lastmod>2026-09-05T10:00:00+02:00</lastmod>
+    <lastmod>2026-09-09T19:00:00+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/projects/</loc>
-    <lastmod>2026-09-05T10:00:00+02:00</lastmod>
+    <lastmod>2026-09-09T19:00:00+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/tags/</loc>
-    <lastmod>2026-09-05T10:00:00+02:00</lastmod>
+    <lastmod>2026-09-09T19:00:00+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/tags/dns-sd/</loc>
     <lastmod>2026-07-25T18:30:00+02:00</lastmod>
@@ -272,8 +272,17 @@
     <loc>https://troglobit.com/tags/merecat/</loc>
     <lastmod>2026-07-25T09:00:00+02:00</lastmod>
   </url><url>
+    <loc>https://troglobit.com/tags/ftp/</loc>
+    <lastmod>2026-09-09T19:00:00+02:00</lastmod>
+  </url><url>
     <loc>https://troglobit.com/projects/uftpd/</loc>
-    <lastmod>2019-07-29T20:31:00+02:00</lastmod>
+    <lastmod>2026-09-09T19:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/tftp/</loc>
+    <lastmod>2026-09-09T19:00:00+02:00</lastmod>
+  </url><url>
+    <loc>https://troglobit.com/tags/uftpd/</loc>
+    <lastmod>2026-09-09T19:00:00+02:00</lastmod>
   </url><url>
     <loc>https://troglobit.com/tags/httpd/</loc>
     <lastmod>2026-07-25T09:00:00+02:00</lastmod>

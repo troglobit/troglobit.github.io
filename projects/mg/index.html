@@ -86,7 +86,7 @@
 <meta property="og:url" content="https://troglobit.com/projects/mg/" />
 
 
-<meta property="og:updated_time" content="2026-09-05T10:00:00&#43;02:00" />
+<meta property="og:updated_time" content="2026-09-09T10:00:00&#43;02:00" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -323,6 +323,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
         
@@ -447,6 +453,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
         
@@ -473,11 +485,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/mg/">Micro Emacs for the terminal</a>
+                                <a href="https://troglobit.com/projects/uftpd/">No nonsense FTP/TFTP server</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/mdnsd/">Embeddable Multicast DNS daemon</a>
+                                <a href="https://troglobit.com/projects/mg/">Micro Emacs for the terminal</a>
                             </li>
                         
                     
@@ -488,6 +500,12 @@
                 
             
                 
+                
+                        
+                
+                        
+                
+                        
                 
                         
                 
@@ -695,6 +713,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
 
@@ -781,6 +805,10 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
         September 5, 2026
       </time>
       
+      <time datetime=" 2026-09-09T10:00:00&#43;0200" class="post-updated">
+        (updated September 9, 2026)
+      </time>
+      
       
       <span> - </span>
       <span class="reading-time">
@@ -839,18 +867,24 @@ follows the file, and <code>M-x font-lock-mode</code> turns the colours off</li>
 edited as characters, and double-width CJK takes the two columns it
 is drawn in</li>
 <li>Visual mark mode, where the region between mark and dot is shown in
-reverse video, and shift-select with the arrow keys</li>
+reverse video, and shift-select with the arrow keys and PgUp/PgDn</li>
 <li>Side by side windows with <code>C-x 3</code>, moving between them with the Meta
 arrow keys, resizing with Meta-Shift, and <code>C-x +</code> to balance</li>
 <li>Line wrap, so a long line continues on the rows below instead of
-running off the edge</li>
+running off the edge.  Off by default, <code>set-default-mode wrap</code> in
+<code>~/.mg</code> turns it on</li>
 <li>Smart Tab that indents the line, or the region when the mark is
 active, in the language modes that have an opinion about indentation</li>
 <li>Builds without curses, on termios and escape sequences alone, for
 systems where terminfo is too much</li>
-<li>Reads <code>tags</code> files, opens gzipped text read-only, and keeps a
-<code>(row,col)</code> modeline like Emacs</li>
+<li>Reads <code>tags</code> files, opens gzipped text read-only, and keeps an Emacs
+style modeline with <code>(row,col)</code> and the major mode</li>
 </ul>
+<figure class="center"><img src="/images/mg.png"
+         alt="Mg editing its own source, with the quick help card below"/><figcaption>
+            <p>Mg editing its own source, with the quick help card below</p>
+        </figcaption>
+</figure>
 <h2 id="language-modes">Language Modes</h2>
 <p>A mode is picked from the file name, or from the <code>#!</code> line when there
 is one, and decides both the colours and how the buffer behaves.  A
@@ -879,9 +913,13 @@ through it.</p>
 <li><a href="https://github.com/troglobit/mg/issues" target="_blank">Issue Tracker</a></li>
 <li>Man page: <a href="https://man.troglobit.com/man1/mg.1.html" target="_blank">mg.1</a></li>
 </ul>
-<p>Users who clone from GitHub must run <code>./autogen.sh</code> first; released
-tarballs already ship a <code>configure</code> script, so a C compiler and <code>make</code>
-are all you need.</p>
+<p>Releases ship a tarball and a Debian package, <code>mg2a</code>, for amd64.  The
+tarball has a <code>configure</code> script, so a C compiler and <code>make</code> are all you
+need; a clone from GitHub needs <code>./autogen.sh</code> first.</p>
+<p>There is also a container image, with <code>~/.mg</code> and the tutorial working
+when <code>$HOME</code> is mapped to <code>/root</code>:</p>
+<pre><code>docker run -ti -v $HOME:/root ghcr.io/troglobit/mg:latest
+</code></pre>
 <h2 id="origin--references">Origin &amp; References</h2>
 <p>Mg is a <a href="https://www.emacswiki.org/emacs/MicroEmacs" target="_blank">Micro Emacs</a> clone created in 1987, based on the <a href="https://github.com/troglobit/MicroEMACS" target="_blank">MicroEMACS</a>
 v30 that Dave Conroy released in 1985.  The name, &ldquo;Micro GNU Emacs&rdquo;, was

@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://troglobit.com/" />
 
 
-<meta property="og:updated_time" content="2026-09-05T10:00:00&#43;02:00" />
+<meta property="og:updated_time" content="2026-09-09T19:00:00&#43;02:00" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -310,6 +310,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
         
@@ -434,6 +440,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
         
@@ -460,11 +472,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/mg/">Micro Emacs for the terminal</a>
+                                <a href="https://troglobit.com/projects/uftpd/">No nonsense FTP/TFTP server</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/mdnsd/">Embeddable Multicast DNS daemon</a>
+                                <a href="https://troglobit.com/projects/mg/">Micro Emacs for the terminal</a>
                             </li>
                         
                     
@@ -475,6 +487,12 @@
                 
             
                 
+                
+                        
+                
+                        
+                
+                        
                 
                         
                 
@@ -682,6 +700,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
 
@@ -758,22 +782,77 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
     
     
     
+    
     <article class="post">
         <div class="info">
   <h1 class="post-title">
-    <a href="https://troglobit.com/projects/mini-snmpd/">Mini SNMP daemon</a>
+    <a href="https://troglobit.com/howtos/mrouting-in-freebsd/">HowTo: Add Multicast Routing to FreeBSD kernel</a>
   </h1>
 
   <div class="headline">
     <div>
       
       
-      <time datetime=" 2020-02-23T09:00:00&#43;0200" class="post-date">
-        February 23, 2020
+      <time datetime=" 2014-09-23T01:55:19&#43;0200" class="post-date">
+        September 23, 2014
       </time>
       
-      <time datetime=" 2026-07-04T09:28:00&#43;0100" class="post-updated">
-        (updated July 4, 2026)
+      <time datetime=" 2021-08-01T08:31:12&#43;0200" class="post-updated">
+        (updated August 1, 2021)
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>1 min read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+
+        
+        
+
+        
+        This is a very short blog post, mostly intended as a reminder to myself. Basically, there are two methods of adding multicast routing support to the FreeBSD kernel:
+Rebuild the kernel with options MROUTING Load the kernel module: kldload ip_mroute The kernel rebuild assumes the src.txz set was installed previously.
+cd /usr/src cd sys/amd64/conf cat GENERIC | sed 's/GENERIC$/MULTICAST/' &gt; MULTICAST echo 'options MROUTING # Multicast routing' &gt;&gt; MULTICAST echo 'options PIM # Enable for pimd' &gt;&gt; MULTICAST cd - make kernel KERNCONF=MULTICAST reboot That&rsquo;s it.
+        
+        <div class="read-more-link">
+            <a href="/howtos/mrouting-in-freebsd/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/post/2021-01-13-emacs-gmail-and-lore-mailing-lists/">Emacs: GMail and Lore Mailing Lists</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2021-01-13T09:29:00&#43;0100" class="post-date">
+        January 13, 2021
+      </time>
+      
+      <time datetime=" 2021-05-11T19:12:00&#43;0100" class="post-updated">
+        (updated May 11, 2021)
       </time>
       
       
@@ -788,176 +867,22 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
     </div>
 
     
-  </div>
-
-  
-  
-
-  
-</div>
-
-
-        
-        
-
-        
-        This is an SNMP server for small and embedded systems, currently Linux and FreeBSD are supported. It is easily portable to other UNIX systems since it&rsquo;s written in C. A stripped binary is ~80 kiB and comes nowhere near the feature set of Net-SNMP, so it has a very low impact on system resources — a good fit for routers, NAS boxes, and other embedded devices.
-See my mini HowTo: Playing with SNMP for a quick introduction to setting up the SNMP tools and MIBs to avoid having to use numerical OIDs.
-        
-        <div class="read-more-link">
-            <a href="/projects/mini-snmpd/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/projects/inadyn/">Small and Simple DDNS Client</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2020-02-20T16:29:00&#43;0200" class="post-date">
-        February 20, 2020
-      </time>
-      
-      <time datetime=" 2024-01-03T10:55:00&#43;0100" class="post-updated">
-        (updated January 3, 2024)
-      </time>
-      
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>2 mins read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-
-        
-        
-
-        
-        In-a-dyn is a small and simple Dynamic DNS, DDNS, client with HTTPS support. It is commonly available in many GNU/Linux distributions, used in off-the-shelf routers and Internet gateways to automate the task of keeping your DNS record up to date with any IP address changes from your ISP. It can also be used in installations with redundant (backup) connections to the Internet.
-Presentation here.
-Example The configuration file on most systems is in /etc/inadyn.
-        
-        <div class="read-more-link">
-            <a href="/projects/inadyn/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/post/2020-02-16-fixing-file-sharing-in-debian/ubuntu/mint/">Fixing file sharing in Debian/Ubuntu/Mint</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2020-02-16T21:06:59&#43;0100" class="post-date">
-        February 16, 2020
-      </time>
-      
-      <time datetime=" 2020-07-13T17:37:00&#43;0100" class="post-updated">
-        (updated July 13, 2020)
-      </time>
-      
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>1 min read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-
-        
-        
-
-        
-        <p>Mounting my ReadyNAS from Nautilus stopped working after upgrading to
-Ubuntu 20.04.  Turns out there was a change in behavior in Sambva v4.11
-that disabled SMB1 protocol by default.  It&rsquo;ll be interesting to see how
-this pans out in the rest of the Linux community &hellip; fortunately there&rsquo;s
-a workaround!</p>
-<blockquote>
-<p><strong>Update:</strong> same on Debian 11 (<em>bullseye</em>) and Linux Mint 20 (<em>Ulyana</em>)</p>
-</blockquote>
-        
-        <div class="read-more-link">
-            <a href="/post/2020-02-16-fixing-file-sharing-in-debian/ubuntu/mint/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/post/2019-11-03-bsd-syslogd-in-linux/">BSD syslogd in Linux</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2019-11-03T23:04:00&#43;0100" class="post-date">
-        November 3, 2019
-      </time>
-      
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>5 mins read</span>
-      </span>
-    </div>
-
-    
     <ul class="tags">
       
-      <li class="tag-opensource">
-        <a href="https://troglobit.com/tags/opensource">opensource</a>
+      <li class="tag-notmuch">
+        <a href="https://troglobit.com/tags/notmuch">notmuch</a>
       </li>
       
-      <li class="tag-sysklogd">
-        <a href="https://troglobit.com/tags/sysklogd">sysklogd</a>
+      <li class="tag-emacs">
+        <a href="https://troglobit.com/tags/emacs">emacs</a>
+      </li>
+      
+      <li class="tag-gmail">
+        <a href="https://troglobit.com/tags/gmail">gmail</a>
+      </li>
+      
+      <li class="tag-lore">
+        <a href="https://troglobit.com/tags/lore">lore</a>
       </li>
       
     </ul>
@@ -975,18 +900,12 @@ a workaround!</p>
         
 
         
-        <p>Some time ago now I was in a meeting with a customer where I first learned of
-the new syslog standard, <a href="https://tools.ietf.org/html/rfc5424" target="_blank">RFC5424</a>.  I say &ldquo;new&rdquo; because, despite it being
-ten years old, it was new to me.</p>
-<p>Three weeks ago I started updating my fork of <a href="https://www.infodrom.org/projects/sysklogd/" target="_blank">sysklogd</a> to be <a href="https://tools.ietf.org/html/rfc5424" target="_blank">RFC5424</a>
-compliant.  I ended up ripping out most of the old code and replacing it with
-fresh DNA strands from FreeBSD and NetBSD.</p>
-<p>The result is a fully RFC compliant <code>syslogd</code>, <strong>and</strong> a <code>libsyslog</code> with a
-replacement <code>syslog.h</code> header for sending RFC5424 events from applications!</p>
-<p><a href="https://github.com/troglobit/sysklogd/" target="_blank">https://github.com/troglobit/sysklogd/</a></p>
+        With lots of help from the tireless Tobias Waldekranz, I think I&rsquo;ve finally found the perfect &ldquo;magit like&rdquo; email setup. With Emacs, of course. This is the story of how I did it.
+First install notmuch, mbsync (from the isync package), and afew:
+sudo apt install notmuch isync afew Do initial setup of notmuch for your user. I&rsquo;ve opted to store my mail in ~/mail, this is used throughout the text below, ymmv.
         
         <div class="read-more-link">
-            <a href="/post/2019-11-03-bsd-syslogd-in-linux/">Read More…</a>
+            <a href="/post/2021-01-13-emacs-gmail-and-lore-mailing-lists/">Read More…</a>
         </div>
         
         
@@ -995,15 +914,15 @@ replacement <code>syslog.h</code> header for sending RFC5424 events from applica
     <article class="post">
         <div class="info">
   <h1 class="post-title">
-    <a href="https://troglobit.com/howtos/merecat-basic-cig-in-c/">Basic CGI in C with Merecat httpd</a>
+    <a href="https://troglobit.com/post/2021-02-12-alpine-linux-with-finit/">Alpine Linux with Finit</a>
   </h1>
 
   <div class="headline">
     <div>
       
       
-      <time datetime=" 2019-08-05T22:00:25&#43;0200" class="post-date">
-        August 5, 2019
+      <time datetime=" 2021-02-12T07:24:06&#43;0100" class="post-date">
+        February 12, 2021
       </time>
       
       
@@ -1013,126 +932,19 @@ replacement <code>syslog.h</code> header for sending RFC5424 events from applica
           
         
 
-        <span>2 mins read</span>
+        <span>3 mins read</span>
       </span>
     </div>
 
     
     <ul class="tags">
       
-      <li class="tag-merecat">
-        <a href="https://troglobit.com/tags/merecat">merecat</a>
+      <li class="tag-finit">
+        <a href="https://troglobit.com/tags/finit">finit</a>
       </li>
       
-    </ul>
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-
-        
-        
-
-        
-        <p>This post is a writeup of how to use basic CGI programs in Merecat httpd v2.32.</p>
-        
-        <div class="read-more-link">
-            <a href="/howtos/merecat-basic-cig-in-c/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/projects/uftpd/">No nonsense FTP/TFTP server</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2019-07-29T20:31:00&#43;0200" class="post-date">
-        July 29, 2019
-      </time>
-      
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>1 min read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-
-        
-        
-
-        
-        
-        <div class="project-card-summary"><p>FTP/TFTP server for Linux that just works™</p></div>
-        <div class="read-more-link">
-            <a href="/projects/uftpd/">Read More…</a>
-        </div>
-        
-    </article>
-    
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/projects/merecat/">Merecat httpd</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2019-07-19T12:35:00&#43;0200" class="post-date">
-        July 19, 2019
-      </time>
-      
-      <time datetime=" 2026-07-25T09:00:00&#43;0200" class="post-updated">
-        (updated July 25, 2026)
-      </time>
-      
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>2 mins read</span>
-      </span>
-    </div>
-
-    
-    <ul class="tags">
-      
-      <li class="tag-merecat">
-        <a href="https://troglobit.com/tags/merecat">merecat</a>
-      </li>
-      
-      <li class="tag-httpd">
-        <a href="https://troglobit.com/tags/httpd">httpd</a>
+      <li class="tag-init">
+        <a href="https://troglobit.com/tags/init">init</a>
       </li>
       
       <li class="tag-opensource">
@@ -1152,32 +964,38 @@ replacement <code>syslog.h</code> header for sending RFC5424 events from applica
 
         
         
-        <a class="project-card-img" href="/projects/merecat/" tabindex="-1" aria-hidden="true">
-            <img src="/images/merecat-card.png" alt="Merecat httpd social card" loading="lazy">
-        </a>
-        
 
         
+        <p><a href="https://alpinelinux.org/" target="_blank">Alpine Linux</a> is an amazing little operating
+system.  It&rsquo;s small, boots quick, and easy to use.  The size alone makes
+it very attractive to container builders.</p>
+<figure class="center"><img src="/images/finit4-screenshot.png"
+         alt="Alpine Linux started with Finit"/><figcaption>
+            <p>Alpine Linux started with Finit</p>
+        </figcaption>
+</figure>
+<p>This blog post details how to set Alpine up with the Finit init system,
+replacing the default OpenRC.</p>
         
-        <div class="project-card-summary"><p>Merecat httpd is a tiny embedded web server forked from thttpd -- HTTPS, CGI, virtual hosts, and a reverse proxy in a ~160 kiB footprint.</p></div>
         <div class="read-more-link">
-            <a href="/projects/merecat/">Read More…</a>
+            <a href="/post/2021-02-12-alpine-linux-with-finit/">Read More…</a>
         </div>
+        
         
     </article>
     
     <article class="post">
         <div class="info">
   <h1 class="post-title">
-    <a href="https://troglobit.com/post/2019-07-18-controlling-display-brightness/">Controlling Display Brightness</a>
+    <a href="https://troglobit.com/post/2020-11-15-backtrace-in-c/">Backtrace in C</a>
   </h1>
 
   <div class="headline">
     <div>
       
       
-      <time datetime=" 2019-07-18T15:13:53&#43;0200" class="post-date">
-        July 18, 2019
+      <time datetime=" 2020-11-15T17:25:00&#43;0100" class="post-date">
+        November 15, 2020
       </time>
       
       
@@ -1205,11 +1023,12 @@ replacement <code>syslog.h</code> header for sending RFC5424 events from applica
         
 
         
-        About a year ago I wrote about a way to control the brightness on my x250. I found a lot of tools, and at the time I saw a lot of potential in light, which I even contributed to a lot.
-However, I ended up not using the evolved versions myself, and it took me a while to digest why. I think the project just outgrew me and what I wanted in such a tool.
+        <p>Reminder to self: remember <code>CFLAGS=-g -Og -rdynamic</code> to allow
+<code>backtrace_symbols()</code> to actually pretty print function names
+in stack traces.</p>
         
         <div class="read-more-link">
-            <a href="/post/2019-07-18-controlling-display-brightness/">Read More…</a>
+            <a href="/post/2020-11-15-backtrace-in-c/">Read More…</a>
         </div>
         
         
@@ -1218,15 +1037,81 @@ However, I ended up not using the evolved versions myself, and it took me a whil
     <article class="post">
         <div class="info">
   <h1 class="post-title">
-    <a href="https://troglobit.com/post/2019-07-07-xscreensaver-fonts/">XScreenSaver Fonts</a>
+    <a href="https://troglobit.com/post/2020-08-23-weird-screen-artifacts-on-x200/">Weird Screen Artifacts on X200</a>
   </h1>
 
   <div class="headline">
     <div>
       
       
-      <time datetime=" 2019-07-07T14:27:58&#43;0200" class="post-date">
-        July 7, 2019
+      <time datetime=" 2020-08-23T14:02:00Z" class="post-date">
+        August 23, 2020
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>1 min read</span>
+      </span>
+    </div>
+
+    
+    <ul class="tags">
+      
+      <li class="tag-ThinkPad">
+        <a href="https://troglobit.com/tags/thinkpad">ThinkPad</a>
+      </li>
+      
+      <li class="tag-X200">
+        <a href="https://troglobit.com/tags/x200">X200</a>
+      </li>
+      
+    </ul>
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+
+        
+        
+
+        
+        I blogged earlier about the awesome little ThinkPad X200 I found and its blinking WiFi LED. Briefly I mentioned an odd issue with X/Wayland on LMDE 4. This turned out to be a HW bug that can only be worked around by disabling hardware acceleration for virtualization:
+https://forums.lenovo.com/t5/Windows-8-1-8-7-Vista-and-XP-Discussions/Bizarre-screen-artifacts-on-R400-Integrated-Graphics-running-Win-7-RTM/m-p/153980?page=1#199768
+The post says it should be sufficient to &ldquo;Disable Virtualization Technology for Directed-IO (VT-d)&rdquo;, but that didn&rsquo;t work for me, and I wanted to keep the 8 GiB of RAM I managed to fit into it.
+        
+        <div class="read-more-link">
+            <a href="/post/2020-08-23-weird-screen-artifacts-on-x200/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/howtos/netbsd-pkgsrc/">HowTo use NetBSD pre-built packages</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2015-07-30T11:13:00&#43;0200" class="post-date">
+        July 30, 2015
+      </time>
+      
+      <time datetime=" 2020-08-22T21:39:00&#43;0100" class="post-updated">
+        (updated August 22, 2020)
       </time>
       
       
@@ -1254,11 +1139,69 @@ However, I ended up not using the evolved versions myself, and it took me a whil
         
 
         
-        <p>I run Awesome on Ubuntu 19.04 with XScreenSaver.  This post is a brief
-writeup of what I did to fix the ugly default fonts.</p>
+        Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.
+Here it is, you&rsquo;d think this be something the installer could set up a default for &hellip;
+PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/ or if you use the latest on an old ThinkPad T42:
+PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/i386/9.0/All/ The simply
+pkg_add -v git Or so you might think!
         
         <div class="read-more-link">
-            <a href="/post/2019-07-07-xscreensaver-fonts/">Read More…</a>
+            <a href="/howtos/netbsd-pkgsrc/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/post/2020-07-17-wireguard-and-dns-timeout/">Wireguard and DNS Timeout</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+        
+          <span>Joachim Wiberg - </span>
+        
+      
+      
+      <time datetime=" 2020-07-17T11:04:09&#43;0200" class="post-date">
+        July 17, 2020
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>2 mins read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+
+        
+        
+
+        
+        <p>For a while now my Wireguard VPN provider has been handing out a bad DNS
+server.  So whenever I do a DNS lookup it takes five (5!) seconds timing
+out, which is quite annoying.</p>
+<p>This blog post is about how you can fix this with <code>openresolv</code> in Ubuntu.</p>
+        
+        <div class="read-more-link">
+            <a href="/post/2020-07-17-wireguard-and-dns-timeout/">Read More…</a>
         </div>
         
         
@@ -1326,6 +1269,116 @@ who want to serve both HTTPS and HTTP content.</p>
         
         <div class="read-more-link">
             <a href="/howtos/merecat-and-lets-encrypt/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/post/2020-02-16-fixing-file-sharing-in-debian/ubuntu/mint/">Fixing file sharing in Debian/Ubuntu/Mint</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2020-02-16T21:06:59&#43;0100" class="post-date">
+        February 16, 2020
+      </time>
+      
+      <time datetime=" 2020-07-13T17:37:00&#43;0100" class="post-updated">
+        (updated July 13, 2020)
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>1 min read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+
+        
+        
+
+        
+        <p>Mounting my ReadyNAS from Nautilus stopped working after upgrading to
+Ubuntu 20.04.  Turns out there was a change in behavior in Sambva v4.11
+that disabled SMB1 protocol by default.  It&rsquo;ll be interesting to see how
+this pans out in the rest of the Linux community &hellip; fortunately there&rsquo;s
+a workaround!</p>
+<blockquote>
+<p><strong>Update:</strong> same on Debian 11 (<em>bullseye</em>) and Linux Mint 20 (<em>Ulyana</em>)</p>
+</blockquote>
+        
+        <div class="read-more-link">
+            <a href="/post/2020-02-16-fixing-file-sharing-in-debian/ubuntu/mint/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/post/2020-06-09-open-source-releases/">Open Source Releases</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2020-06-09T22:48:52&#43;0200" class="post-date">
+        June 9, 2020
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>1 min read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+
+        
+        
+
+        
+        <p>The last couple of months have been crazy.  The downturn in the economy
+due to Covid-19, mass layoffs, social distancing and quarantine.  Not
+to mention the unrest in US and Europe in the wake of George Floyd&rsquo;s
+uneccessary death.</p>
+        
+        <div class="read-more-link">
+            <a href="/post/2020-06-09-open-source-releases/">Read More…</a>
         </div>
         
         

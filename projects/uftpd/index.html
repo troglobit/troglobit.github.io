@@ -58,12 +58,12 @@
 
 
 <!-- Open Graph image and Twitter Card metadata -->
-<meta property="og:image" content="https://troglobit.com/images/profile.jpg" />
-  <meta name="twitter:image" content="https://troglobit.com/images/profile.jpg" />
-  <meta name="twitter:card" content="summary" />
-      <meta property="og:image:width" content="400" />
-      <meta property="og:image:height" content="400" />
-    <meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image" content="https://troglobit.com/images/uftpd-card.png" />
+  <meta name="twitter:image" content="https://troglobit.com/images/uftpd-card.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
 
 <title itemprop="name">Troglobit - No nonsense FTP/TFTP server</title>
 <meta property="og:title" content="Troglobit - No nonsense FTP/TFTP server" />
@@ -73,10 +73,10 @@
 <meta property="og:site_name" content="Joachim Wiberg" />
 
 
-<meta name="description" content="FTP/TFTP server for Linux that just works™" />
-<meta itemprop="description" content="FTP/TFTP server for Linux that just works™" />
-<meta property="og:description" content="FTP/TFTP server for Linux that just works™" />
-<meta name="twitter:description" content="FTP/TFTP server for Linux that just works™" />
+<meta name="description" content="uftpd is a small FTP and TFTP server for the LAN.  No configuration file and no users to manage: it serves the ftp user&#39;s home directory, from inetd or as a standalone daemon." />
+<meta itemprop="description" content="uftpd is a small FTP and TFTP server for the LAN.  No configuration file and no users to manage: it serves the ftp user&#39;s home directory, from inetd or as a standalone daemon." />
+<meta property="og:description" content="uftpd is a small FTP and TFTP server for the LAN.  No configuration file and no users to manage: it serves the ftp user&#39;s home directory, from inetd or as a standalone daemon." />
+<meta name="twitter:description" content="uftpd is a small FTP and TFTP server for the LAN.  No configuration file and no users to manage: it serves the ftp user&#39;s home directory, from inetd or as a standalone daemon." />
 
 
 <base href="https://troglobit.com/projects/uftpd/" />
@@ -86,7 +86,7 @@
 <meta property="og:url" content="https://troglobit.com/projects/uftpd/" />
 
 
-<meta property="og:updated_time" content="2019-07-29T20:31:00&#43;02:00" />
+<meta property="og:updated_time" content="2026-09-09T19:00:00&#43;02:00" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -323,6 +323,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
         
@@ -447,6 +453,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
         
@@ -473,11 +485,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/mg/">Micro Emacs for the terminal</a>
+                                <a href="https://troglobit.com/projects/uftpd/">No nonsense FTP/TFTP server</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/mdnsd/">Embeddable Multicast DNS daemon</a>
+                                <a href="https://troglobit.com/projects/mg/">Micro Emacs for the terminal</a>
                             </li>
                         
                     
@@ -488,6 +500,12 @@
                 
             
                 
+                
+                        
+                
+                        
+                
+                        
                 
                         
                 
@@ -695,6 +713,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
 
@@ -781,6 +805,10 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
         July 29, 2019
       </time>
       
+      <time datetime=" 2026-09-09T19:00:00&#43;0200" class="post-updated">
+        (updated September 9, 2026)
+      </time>
+      
       
       <span> - </span>
       <span class="reading-time">
@@ -788,10 +816,30 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
           
         
 
-        <span>1 min read</span>
+        <span>3 mins read</span>
       </span>
     </div>
 
+    
+    <ul class="tags">
+      
+      <li class="tag-uftpd">
+        <a href="https://troglobit.com/tags/uftpd">uftpd</a>
+      </li>
+      
+      <li class="tag-ftp">
+        <a href="https://troglobit.com/tags/ftp">ftp</a>
+      </li>
+      
+      <li class="tag-tftp">
+        <a href="https://troglobit.com/tags/tftp">tftp</a>
+      </li>
+      
+      <li class="tag-opensource">
+        <a href="https://troglobit.com/tags/opensource">opensource</a>
+      </li>
+      
+    </ul>
     
   </div>
 
@@ -801,42 +849,83 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
   
 </div>
 
-  <p>Tired of confusing configuration files and security features you don&rsquo;t need?</p>
-<p>Try uftpd!</p>
+  <p><code>uftpd</code> is an FTP and TFTP server for the LAN.  There is no
+configuration file and no users to manage.  It serves the <code>ftp</code> user&rsquo;s
+home directory on the ports <code>/etc/services</code> gives it, and that is the
+whole setup.</p>
+<p>Both protocols run in one daemon, over IPv4 and IPv6, from <code>inetd(8)</code> or
+standalone.  Read-only unless you say otherwise.</p>
+<h2 id="features">Features</h2>
 <ul>
-<li>Supports FTP and TFTP</li>
-<li>No configuration file</li>
-<li>Defaults to port <code>ftp/tcp</code> and <code>tftp/udp</code> found in <code>/etc/services</code>, or custom port(s)</li>
-<li>Serves files from the ftp user&rsquo;s $HOME, as specified in <code>/etc/passwd</code>, or custom path</li>
-<li>Can run from <code>inetd(8)</code> or as a standalone daemon</li>
-<li>Can be built and installed as a <code>.deb</code> file, with debconf support</li>
-<li>Can run as root, with chroot and privsep, or as a regular user</li>
-<li>Supports TFTP blocksize negotiation, <a href="http://tools.ietf.org/html/rfc2348" target="_blank">RFC 2348</a></li>
+<li>FTP and TFTP from a single daemon, dual-stack out of the box.  The FTP
+data channel works over IPv6 with <code>EPSV</code> and <code>EPRT</code>; the legacy <code>PASV</code>
+and <code>PORT</code> stay IPv4, as the protocol requires</li>
+<li>No configuration file.  Ports come from <code>/etc/services</code>, or from
+<code>-o ftp=PORT</code> and <code>-o tftp=PORT</code></li>
+<li>Serves the <code>ftp</code> user&rsquo;s <code>$HOME</code> from <code>/etc/passwd</code>, or a path given on
+the command line</li>
+<li>Runs from <code>inetd(8)</code>, neatly tcpwrapped, or as a standalone daemon</li>
+<li>Read-only by default; <code>-o writable</code> allows uploads, over both FTP and
+TFTP</li>
+<li>As root it chroots and drops privileges; as a regular user it serves
+what that user can read</li>
+<li>TFTP block size negotiation, <a href="https://www.rfc-editor.org/rfc/rfc2348" target="_blank">RFC 2348</a>, for transfers that
+are not stuck with 512 byte blocks</li>
+<li><code>-o pasv_addr=ADDR</code> overrides the address handed to clients in passive
+mode, for the NAT setups that need it</li>
+<li>Builds as a <code>.deb</code> with debconf, which sets up <code>inetd.conf</code>, creates
+the <code>ftp</code> user, and prepares <code>/srv/ftp</code></li>
 </ul>
-<p>Basically, it just works!</p>
+<h2 id="running-it">Running It</h2>
+<p>From <code>inetd(8)</code>, which is what the <code>.deb</code> configures, the entries point
+at <code>in.ftpd</code> and <code>in.tftpd</code>, both symlinks to <code>uftpd</code>:</p>
+<pre><code>ftp   stream tcp nowait root /usr/sbin/tcpd in.ftpd
+tftp  dgram  udp wait   root /usr/sbin/tcpd in.tftpd
+</code></pre>
+<p>Standalone, serving a directory of your choosing:</p>
+<pre><code>uftpd -n -l info /srv/tftp
+</code></pre>
+<p><code>-n</code> keeps it in the foreground and <code>-l</code> sets the log level.  Everything
+else has a default worth keeping.  See <strong><a href="https://man.troglobit.com/man8/uftpd.8.html" target="_blank">uftpd(8)</a></strong> for the
+rest.</p>
+<h2 id="netbooting">Netbooting</h2>
+<p>TFTP mostly exists to hand kernels and device trees to bootloaders, which
+is where <code>uftpd</code> earns its keep.  Point U-Boot at it:</p>
+<pre><code>setenv serverip 192.168.1.1
+tftpboot 0x68000000 vmlinuz
+</code></pre>
+<p>Bootloaders are strict clients, and they are why several corners of the
+TFTP code have been sharpened over the years: option acknowledgements
+without padding, retransmit on a duplicate ACK, and block numbers that
+survive the 16-bit rollover on large images.</p>
+<h2 id="get-it">Get It</h2>
+<blockquote>
+<p><a href="https://github.com/troglobit/uftpd/releases" target="_blank">Latest release</a> available on <a href="https://github.com/troglobit/uftpd" target="_blank">GitHub</a></p>
+</blockquote>
 <ul>
-<li><a href="http://github.com/troglobit/uftpd" target="_blank">Repository</a></li>
-<li><a href="https://github.com/troglobit/uftpd/blob/master/README.md" target="_blank">README</a></li>
-<li><a href="https://github.com/troglobit/uftpd/blob/master/TODO.md" target="_blank">TODO</a></li>
-<li><a href="http://github.com/troglobit/uftpd/issues" target="_blank">Issue Tracker</a></li>
-<li><a href="ftp://ftp.troglobit.com/uftpd/uftpd-2.9.tar.xz">uftpd-2.9.tar.xz</a>,
-<a href="ftp://ftp.troglobit.com/uftpd/uftpd-2.9.tar.xz.md5">MD5</a>,</li>
-<li><a href="https://github.com/troglobit/uftpd/releases/tag/v2.9" target="_blank">ChangeLog</a></li>
+<li><a href="https://github.com/troglobit/uftpd" target="_blank">Repository</a></li>
+<li><a href="https://github.com/troglobit/uftpd/releases" target="_blank">Download release tarballs</a></li>
+<li><a href="https://github.com/troglobit/uftpd/blob/master/ChangeLog.md" target="_blank">Release notes / ChangeLog</a></li>
+<li><a href="https://github.com/troglobit/uftpd/issues" target="_blank">Issue Tracker</a></li>
+<li>Man page: <a href="https://man.troglobit.com/man8/uftpd.8.html" target="_blank">uftpd.8</a></li>
 </ul>
-<p>See also the <a href="https://www.openhub.net/p/uftpd/" target="_blank">OpenHub page</a>, the cool
-<a href="http://freshcode.club/projects/uftpd" target="_blank">Fresh(code) page</a>, or the (sadly)
-dormant <a href="http://freecode.com/projects/uftpd" target="_blank">Free(code) page</a>.</p>
-<p>Read <a href="/blog/2014/05/04/why-write-your-own-ftp-server/">my rant</a> if you
-are curious to know why <code>uftpd</code> exists.  It provides a bit of background
-and context :)</p>
-<p><strong>Disclaimer:</strong> <code>uftpd</code> supports both FTP and TFTP, but the latter is
-<a href="http://researchrepository.napier.ac.uk/8746/" target="_blank">not safe to use on the Internet</a>.
-FTP is safer and the <code>uftpd</code> implementation may even be secure.  Some
-of the most common security best practises have been employed, while
-others have been avoided in an effort to keep <code>uftpd</code> user friendly.
-If you want something really secure, you should probably try
-<a href="https://security.appspot.com/vsftpd.html" target="_blank">vsftpd</a>.</p>
-
+<p>Users who clone from GitHub must run <code>./autogen.sh</code> first; released
+tarballs already ship a <code>configure</code> script.  <code>uftpd</code> depends on
+<a href="https://github.com/troglobit/libuev" target="_blank">libuEv</a> and <a href="https://github.com/troglobit/libite" target="_blank">libite</a>, and is licensed under the <a href="https://github.com/troglobit/uftpd/blob/master/LICENSE" target="_blank">ISC
+license</a>.</p>
+<h2 id="security">Security</h2>
+<p><code>uftpd</code> is meant for the LAN.  It is read-only by default, chroots and
+drops privileges when started as root, and has no user database to get
+wrong.</p>
+<p>TFTP has no authentication at all and is <a href="http://researchrepository.napier.ac.uk/8746/" target="_blank">not safe to expose to the
+Internet</a>.  FTP is the safer of the two, though anonymous by
+design.  Some of the common hardening practices are in place and others
+were left out to keep the thing usable, so if you need a server that is
+secure before it is friendly, use <a href="https://security.appspot.com/vsftpd.html" target="_blank">vsftpd</a>.</p>
+<h2 id="origin--references">Origin &amp; References</h2>
+<p>I wrote <code>uftpd</code> because every FTP server I tried wanted a configuration
+file, a user database, and an afternoon, when all I wanted was to move a
+file across the desk.  The <a href="/2014/05/04/why-write-your-own-ftp-server/">longer version is here</a>.</p>
   
   <hr>
 <div class="footer">
@@ -860,7 +949,16 @@ If you want something really secure, you should probably try
     <div class="article-toc ">
     <div class="toc-wrapper">
       <h4 id="contents"></h4>
-      <nav id="TableOfContents"></nav>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#running-it">Running It</a></li>
+    <li><a href="#netbooting">Netbooting</a></li>
+    <li><a href="#get-it">Get It</a></li>
+    <li><a href="#security">Security</a></li>
+    <li><a href="#origin--references">Origin &amp; References</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 

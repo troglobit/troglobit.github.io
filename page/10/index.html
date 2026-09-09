@@ -81,7 +81,7 @@
 <meta property="og:url" content="https://troglobit.com/" />
 
 
-<meta property="og:updated_time" content="2026-09-05T10:00:00&#43;02:00" />
+<meta property="og:updated_time" content="2026-09-09T19:00:00&#43;02:00" />
 
 
 <link rel="sitemap" type="application/xml" title="Sitemap" href='https://troglobit.com/sitemap.xml' />
@@ -310,6 +310,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
         
@@ -434,6 +440,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
         
@@ -460,11 +472,11 @@
                         </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/mg/">Micro Emacs for the terminal</a>
+                                <a href="https://troglobit.com/projects/uftpd/">No nonsense FTP/TFTP server</a>
                             </li>
                         
                             <li class="bullet">
-                                <a href="https://troglobit.com/projects/mdnsd/">Embeddable Multicast DNS daemon</a>
+                                <a href="https://troglobit.com/projects/mg/">Micro Emacs for the terminal</a>
                             </li>
                         
                     
@@ -475,6 +487,12 @@
                 
             
                 
+                
+                        
+                
+                        
+                
+                        
                 
                         
                 
@@ -682,6 +700,12 @@
                 
                         
                 
+                        
+                
+                        
+                
+                        
+                
             
         
 
@@ -758,6 +782,189 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
     
     
     
+    
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/2016/04/04/lecture-from-the-unix-beards/">Lecture from the UNIX beards</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2016-04-04T00:14:28Z" class="post-date">
+        April 4, 2016
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>1 min read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+
+        
+        
+
+        
+        After the rm -rf /* disaster that hit me a couple of weeks ago I&rsquo;ve been rebuilding my setup, restoring the few files I&rsquo;ve had backed up, and collecting advice from the elders.
+Turns out there are a few tricks that can save your home directory from accidents like mine. The first one is rather obvious, but I&rsquo;m writing it down anyway:
+Keep separate accounts. If possible, use separate accounts (with different permissions obviously) for different projects.
+        
+        <div class="read-more-link">
+            <a href="/2016/04/04/lecture-from-the-unix-beards/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/2016/03/24/disaster-recovery/">Disaster Recovery</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2016-03-24T22:39:00Z" class="post-date">
+        March 24, 2016
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>3 mins read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+
+        
+        
+
+        
+        <p>Days like these inconspicuously start out just like any other day,
+except on days like these you accidentally manage to erase <code>$HOME</code> and
+have no real backup to rely on &hellip; Maundy Thursday will forever be Black
+Thursday for me, from now on.</p>
+<p>Best thing your can do, after cursing at yourself constantly for a
+couple of hours, is to:</p>
+<ol>
+<li>Come up with a useful backup and <em>restore</em> strategy</li>
+<li>Read up on undeletion tools for Ext4</li>
+<li>Blog about it, naturally</li>
+</ol>
+<p>BUT FIRST &ndash; QUICK &ndash; UNMOUNT OR POWER-OFF YOUR COMPUTER &ndash; PULL OUT THE
+BATTERY &ndash; AND STEP AWAY FROM THE COMPUTER!  Must protect the partition
+from being accidentally written to &ndash; I completely fumbled this step, so
+take heed young people!</p>
+        
+        <div class="read-more-link">
+            <a href="/2016/03/24/disaster-recovery/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="https://troglobit.com/2016/03/07/testing-multicast-with-docker/">Testing multicast with Docker</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2016-03-07T01:37:04Z" class="post-date">
+        March 7, 2016
+      </time>
+      
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>2 mins read</span>
+      </span>
+    </div>
+
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+
+        
+        
+
+        
+        <p>Recently <a href="https://github.com/troglobit/pimd/issues/70" target="_blank">issue #70</a> was
+reported to <a href="https://github.com/troglobit/pimd/" target="_blank">pimd</a>.  That number of
+issues reported is cool in itself, but this was a question about
+<a href="https://www.docker.com" target="_blank">Docker</a> and <code>pimd</code>.</p>
+<p>Up until that point I had only read about this new fad, and played
+around with it a bit <a href="http://www.westermo.com" target="_blank">at work</a> for use as a
+stable build environment for cross-compiling.  I had no idea people
+would want to use a Docker container as a multicast sink.  Basically I
+was baffled.</p>
+<p>The reporter used a Java based tool but simply couldn&rsquo;t get things to
+work properly with <code>pimd</code> running on the host:</p>
+<pre><code>                eth0
+ MC sender ---&gt; [ Server host ]    &lt;--- router running pimd
+                       |
+               ________|________
+              /     docker0     \   &lt;--- bridge    ______
+             /         |         \                |      |   &lt;--- MC receiver
+  __________/          |          \_______________|______|_____
+ \                     |                            /         /
+  \                     `------------------&gt;-------'         /
+   \________________________________________________________/
+      Container ship
+</code></pre>
+        
+        <div class="read-more-link">
+            <a href="/2016/03/07/testing-multicast-with-docker/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    
     <article class="post">
         <div class="info">
   <h1 class="post-title">
@@ -810,76 +1017,6 @@ improving and adding features to it over the years.</p>
         
         <div class="read-more-link">
             <a href="/2016/03/07/multicast-testing/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/post/2015-11-14-useful-unix-apis/">Useful UNIX API:s</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2015-11-14T11:45:49Z" class="post-date">
-        November 14, 2015
-      </time>
-      
-      <time datetime=" 2020-02-22T09:45:00Z" class="post-updated">
-        (updated February 22, 2020)
-      </time>
-      
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>2 mins read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-
-        
-        
-
-        
-        <p>Had an interesting conversation with a buddy last night.  It started out
-as a shift-reduce problem with Bison and ended up a ping-pong of useful
-UNIX API:s.  We concluded that despite having worked professionally with
-UNIX for over two decades, it is still very satisfying finding gems like
-these.</p>
-<p>Most people are completely unaware they exist and end up rolling their
-own (buggy) implementations.  For instance, string manipulation and
-various forms of linked lists.  Which is why I many years ago extracted
-the <em>frog DNA</em> from <a href="https://github.com/finit-project/finit/" target="_blank">Finit</a> to a
-separate library called <a href="https://github.com/troglobit/libite/" target="_blank">libite</a>,
-or -lite for short.  It imports the OpenBSD <code>strlcpy()</code> family of API:s,
-up-to-date <code>queue.h</code> with the <code>_SAFE</code> iterators, and more.  Some people
-like <a href="https://libbsd.freedesktop.org/wiki/" target="_blank">libbsd</a> for this, but I&rsquo;ve
-found many of the ports incomplete and unsafe and prefer to stay closer
-to the upstream *BSD versions.</p>
-<p><strong>Update:</strong> This post was originally written Nov 14, 2015.  It was a
-Saturday and I remember being extremely inspired when I wrote it.  I&rsquo;ve
-continued adding to it over the years, and still do.  So, as of Jul 2,
-2017 I&rsquo;m bumping the modification date each time I add something new :-)</p>
-        
-        <div class="read-more-link">
-            <a href="/post/2015-11-14-useful-unix-apis/">Read More…</a>
         </div>
         
         
@@ -1143,62 +1280,6 @@ Due to my not really taking much vacation previous years I had saved up for ten 
     <article class="post">
         <div class="info">
   <h1 class="post-title">
-    <a href="https://troglobit.com/howtos/netbsd-pkgsrc/">HowTo use NetBSD pre-built packages</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2015-07-30T11:13:00&#43;0200" class="post-date">
-        July 30, 2015
-      </time>
-      
-      <time datetime=" 2020-08-22T21:39:00&#43;0100" class="post-updated">
-        (updated August 22, 2020)
-      </time>
-      
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>1 min read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-
-        
-        
-
-        
-        Reminder to self: you need to set up the PKG_PATH to the correct FTP URI. Also, use the correct ARCH, otherwise the installer complains. Do not use amd64, but rather x86_64.
-Here it is, you&rsquo;d think this be something the installer could set up a default for &hellip;
-PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/amd64/6.1.5/All/ or if you use the latest on an old ThinkPad T42:
-PKG_PATH=http://ftp.netbsd.org/pub/pkgsrc/packages/NetBSD/i386/9.0/All/ The simply
-pkg_add -v git Or so you might think!
-        
-        <div class="read-more-link">
-            <a href="/howtos/netbsd-pkgsrc/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
     <a href="https://troglobit.com/howtos/pimd-on-openbsd/">HowTo run pimd on OpenBSD</a>
   </h1>
 
@@ -1240,66 +1321,6 @@ First of all, my sincere thanks to the OpenBSD team for, not just an awesome UNI
         
         <div class="read-more-link">
             <a href="/howtos/pimd-on-openbsd/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="https://troglobit.com/2015/07/02/howto-using-lite-with-a-git-based-application/">HowTo: Using -lite with a GIT-based application</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2015-07-02T17:11:55Z" class="post-date">
-        July 2, 2015
-      </time>
-      
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>2 mins read</span>
-      </span>
-    </div>
-
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-
-        
-        
-
-        
-        <p>Years ago while looking for a fast <a href="https://en.wikipedia.org/wiki/Init" target="_blank">init</a> replacement for <a href="http://westermo.com/" target="_blank">work</a>,
-I found <a href="http://helllabs.org/finit/" target="_blank">Finit</a>.  Originally written by <a href="https://github.com/cmatsuoka" target="_blank">Claudio Matsuoka</a> to act
-as a drop-in replacement for the <a href="https://en.wikipedia.org/wiki/Asus_Eee_PC" target="_blank">Asus EeePC</a> <a href="http://wiki.eeeuser.com/boot_process:the_boot_process" target="_blank">fastinit</a>, <em>&ldquo;gaps
-filled with frog DNA …&rdquo;</em></p>
-<p>Until I found Finit I had always been in awe of those venturing into the
-realm of <a href="http://0pointer.net/blog/" target="_blank">PID 1</a>.  However, learning from the simplicity of Claudio&rsquo;s
-code I realized that although PID 1 at times is indistinguishable from
-magic, it is really not that hard to master.  <a href="https://github.com/finit-project/finit" target="_blank">My version of Finit</a>
-is available on GitHub.</p>
-<p>The code is open sourced under the very liberal <a href="http://opensource.org/licenses/MIT" target="_blank">MIT/X11 license</a>,
-and much of its frog DNA has proven very useful to me over the years.
-This blog post is about how that frog DNA can help you fill gaps in your
-projects …</p>
-        
-        <div class="read-more-link">
-            <a href="/2015/07/02/howto-using-lite-with-a-git-based-application/">Read More…</a>
         </div>
         
         
