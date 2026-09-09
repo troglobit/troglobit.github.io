@@ -1,46 +1,122 @@
 ---
 name: uftpd
 title: "No nonsense FTP/TFTP server"
-description: "FTP/TFTP server for Linux that just works™"
 date: 2019-07-29 20:31:00 +0200
-aliases: /uftpd.html
+lastmod: 2026-09-09 19:00:00 +02:00
+aliases: [ /uftpd.html, /uftpd ]
+image: /images/uftpd-card.png
+description: "uftpd is a small FTP and TFTP server for the LAN.  No configuration file and no users to manage: it serves the ftp user's home directory, from inetd or as a standalone daemon."
+tags: [ uftpd, ftp, tftp, opensource ]
 ---
 
-Tired of confusing configuration files and security features you don't need?
+`uftpd` is an FTP and TFTP server for the LAN.  There is no
+configuration file and no users to manage.  It serves the `ftp` user's
+home directory on the ports `/etc/services` gives it, and that is the
+whole setup.
 
-Try uftpd!
+<!--more-->
 
-* Supports FTP and TFTP
-* No configuration file
-* Defaults to port `ftp/tcp` and `tftp/udp` found in `/etc/services`, or custom port(s)
-* Serves files from the ftp user's $HOME, as specified in `/etc/passwd`, or custom path
-* Can run from `inetd(8)` or as a standalone daemon
-* Can be built and installed as a `.deb` file, with debconf support
-* Can run as root, with chroot and privsep, or as a regular user
-* Supports TFTP blocksize negotiation, [RFC 2348](http://tools.ietf.org/html/rfc2348)
+Both protocols run in one daemon, over IPv4 and IPv6, from `inetd(8)` or
+standalone.  Read-only unless you say otherwise.
 
-Basically, it just works!
+Features
+--------
 
-* [Repository](http://github.com/troglobit/uftpd)
-* [README](https://github.com/troglobit/uftpd/blob/master/README.md)
-* [TODO](https://github.com/troglobit/uftpd/blob/master/TODO.md)
-* [Issue Tracker](http://github.com/troglobit/uftpd/issues)
-* [uftpd-2.9.tar.xz](ftp://ftp.troglobit.com/uftpd/uftpd-2.9.tar.xz),
-  [MD5](ftp://ftp.troglobit.com/uftpd/uftpd-2.9.tar.xz.md5),
-* [ChangeLog](https://github.com/troglobit/uftpd/releases/tag/v2.9)
+- FTP and TFTP from a single daemon, dual-stack out of the box.  The FTP
+  data channel works over IPv6 with `EPSV` and `EPRT`; the legacy `PASV`
+  and `PORT` stay IPv4, as the protocol requires
+- No configuration file.  Ports come from `/etc/services`, or from
+  `-o ftp=PORT` and `-o tftp=PORT`
+- Serves the `ftp` user's `$HOME` from `/etc/passwd`, or a path given on
+  the command line
+- Runs from `inetd(8)`, neatly tcpwrapped, or as a standalone daemon
+- Read-only by default; `-o writable` allows uploads, over both FTP and
+  TFTP
+- As root it chroots and drops privileges; as a regular user it serves
+  what that user can read
+- TFTP block size negotiation, [RFC 2348][rfc2348], for transfers that
+  are not stuck with 512 byte blocks
+- `-o pasv_addr=ADDR` overrides the address handed to clients in passive
+  mode, for the NAT setups that need it
+- Builds as a `.deb` with debconf, which sets up `inetd.conf`, creates
+  the `ftp` user, and prepares `/srv/ftp`
 
-See also the [OpenHub page](https://www.openhub.net/p/uftpd/), the cool
-[Fresh(code) page](http://freshcode.club/projects/uftpd), or the (sadly)
-dormant [Free(code) page](http://freecode.com/projects/uftpd).
+Running It
+----------
 
-Read [my rant](/blog/2014/05/04/why-write-your-own-ftp-server/) if you
-are curious to know why `uftpd` exists.  It provides a bit of background
-and context :)
+From `inetd(8)`, which is what the `.deb` configures, the entries point
+at `in.ftpd` and `in.tftpd`, both symlinks to `uftpd`:
 
-**Disclaimer:** `uftpd` supports both FTP and TFTP, but the latter is
-  [not safe to use on the Internet](http://researchrepository.napier.ac.uk/8746/).
-  FTP is safer and the `uftpd` implementation may even be secure.  Some
-  of the most common security best practises have been employed, while
-  others have been avoided in an effort to keep `uftpd` user friendly.
-  If you want something really secure, you should probably try
-  [vsftpd](https://security.appspot.com/vsftpd.html).
+    ftp   stream tcp nowait root /usr/sbin/tcpd in.ftpd
+    tftp  dgram  udp wait   root /usr/sbin/tcpd in.tftpd
+
+Standalone, serving a directory of your choosing:
+
+    uftpd -n -l info /srv/tftp
+
+`-n` keeps it in the foreground and `-l` sets the log level.  Everything
+else has a default worth keeping.  See **[uftpd(8)][man-uftpd]** for the
+rest.
+
+Netbooting
+----------
+
+TFTP mostly exists to hand kernels and device trees to bootloaders, which
+is where `uftpd` earns its keep.  Point U-Boot at it:
+
+    setenv serverip 192.168.1.1
+    tftpboot 0x68000000 vmlinuz
+
+Bootloaders are strict clients, and they are why several corners of the
+TFTP code have been sharpened over the years: option acknowledgements
+without padding, retransmit on a duplicate ACK, and block numbers that
+survive the 16-bit rollover on large images.
+
+Get It
+------
+
+> [Latest release][releases] available on [GitHub][repo]
+
+* [Repository][repo]
+* [Download release tarballs][releases]
+* [Release notes / ChangeLog][changelog]
+* [Issue Tracker][issues]
+* Man page: [uftpd.8][man-uftpd]
+
+Users who clone from GitHub must run `./autogen.sh` first; released
+tarballs already ship a `configure` script.  `uftpd` depends on
+[libuEv][] and [libite][], and is licensed under the [ISC
+license][license].
+
+Security
+--------
+
+`uftpd` is meant for the LAN.  It is read-only by default, chroots and
+drops privileges when started as root, and has no user database to get
+wrong.
+
+TFTP has no authentication at all and is [not safe to expose to the
+Internet][napier].  FTP is the safer of the two, though anonymous by
+design.  Some of the common hardening practices are in place and others
+were left out to keep the thing usable, so if you need a server that is
+secure before it is friendly, use [vsftpd][].
+
+Origin & References
+-------------------
+
+I wrote `uftpd` because every FTP server I tried wanted a configuration
+file, a user database, and an afternoon, when all I wanted was to move a
+file across the desk.  The [longer version is here][rant].
+
+[rfc2348]:   https://www.rfc-editor.org/rfc/rfc2348
+[repo]:      https://github.com/troglobit/uftpd
+[releases]:  https://github.com/troglobit/uftpd/releases
+[changelog]: https://github.com/troglobit/uftpd/blob/master/ChangeLog.md
+[issues]:    https://github.com/troglobit/uftpd/issues
+[license]:   https://github.com/troglobit/uftpd/blob/master/LICENSE
+[libuEv]:    https://github.com/troglobit/libuev
+[libite]:    https://github.com/troglobit/libite
+[man-uftpd]: https://man.troglobit.com/man8/uftpd.8.html
+[napier]:    http://researchrepository.napier.ac.uk/8746/
+[vsftpd]:    https://security.appspot.com/vsftpd.html
+[rant]:      /2014/05/04/why-write-your-own-ftp-server/
