@@ -104,6 +104,11 @@ URxvt.keysym.Control-Shift-Down:  \033[1;6B
 URxvt.keysym.Control-Shift-Right: \033[1;6C
 URxvt.keysym.Control-Shift-Left:  \033[1;6D
 
+! Shift+Insert pastes PRIMARY in urxvt, send it on to the application
+! instead (ESC [ 2 $, CUA paste in mg), Ctrl+Shift+Insert still pastes
+URxvt.keysym.S-Insert:   builtin-string:
+URxvt.keysym.C-S-Insert: builtin:
+
 ! Drop the default tabbedex Shift-Arrow keys, they clash with editors
 ! (e.g. Shift-Down starts a selection in mg), we bind our own below
 URxvt.tabbedex.no-tabbedex-keys: true
@@ -215,6 +220,59 @@ URxvt.keysym.Control-Left:  \033[1;5D
 
 The terminal then hands the application a distinct code for each combo;
 whether it acts on them is up to the application's own key bindings.
+
+Not every application needs that, though.  [mg][1], from the release
+after 4.3, understands rxvt's own codes for Shift, Ctrl and Alt with the
+arrows, Home, End, PgUp, PgDn, Insert and Delete.
+
+Shift+Insert is a different story.  urxvt grabs it and pastes the
+PRIMARY selection, i.e., whatever you last selected with the mouse --
+so the IBM CUA paste in your editor never sees the key, and you get the
+wrong text pasted in.  The two `S-Insert` lines above turn that off:
+`builtin-string:` makes urxvt send the key on as `ESC [ 2 $`, and the
+`C-S-Insert` line keeps Ctrl+Shift+Insert as the PRIMARY paste.  In the
+shell you still have Ctrl+Shift+V and the middle mouse button.
+
+Shift+PgUp and Shift+PgDn are grabbed the same way, for the scrollback.
+If you'd rather have them in your editor, at the cost of scrolling back
+in the shell, add:
+
+```
+URxvt.keysym.S-Prior: builtin-string:
+URxvt.keysym.S-Next:  builtin-string:
+```
+
+### Testing your keys
+
+Remember, running terminals keep their old settings, so after `xrdb
+-merge` open a new one.  Then run `cat -v` and press some keys to see
+what the terminal actually sends, `^[` is ESC:
+
+| Key           | rxvt sends  | xterm sends   |
+|---------------|-------------|---------------|
+| Shift+Right   | `^[[c`      | `^[[1;2C`     |
+| Ctrl+Right    | `^[Oc`      | `^[[1;5C`     |
+| Alt+Up        | `^[^[[A`    | `^[[1;3A`     |
+| Ctrl+Home     | `^[[7^`     | `^[[1;5H`     |
+| Shift+Insert  | `^[[2$`     | `^[[2;2~`     |
+| Ctrl+Insert   | `^[[2^`     | `^[[2;5~`     |
+| Shift+Delete  | `^[[3$`     | `^[[3;2~`     |
+
+If Shift+Insert pastes text instead of printing `^[[2$`, the resource
+did not take.  Press Ctrl+C to get out of `cat`.
+
+With the codes sorted out, open a file in mg and give the keys a spin:
+
+- Shift+arrows, Shift+Home/End mark text
+- Shift+Delete cuts the marked text, Shift+Insert pastes it back
+- Ctrl+Insert copies, Ctrl+Delete kills the next word
+- Ctrl+arrows move by word and paragraph, Ctrl+Home/End to the start
+  and end of the buffer
+- C-x 2 splits the window, Alt+Up/Down moves between the windows, and
+  Alt+Shift+arrows resize them
+
+Ctrl+PgUp and Ctrl+PgDn never reach the editor with the setup above,
+tabbedex uses them to switch tabs.
 
 ### Appendix: Taming xterm
 
