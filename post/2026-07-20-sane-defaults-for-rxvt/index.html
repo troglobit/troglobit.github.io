@@ -812,7 +812,7 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
           
         
 
-        <span>6 mins read</span>
+        <span>7 mins read</span>
       </span>
     </div>
 
@@ -937,6 +937,11 @@ few simple lines of plain text configuration.</p>
 </span></span><span style="display:flex;"><span>URxvt.keysym.Control-Shift-Right: \033[1;6C
 </span></span><span style="display:flex;"><span>URxvt.keysym.Control-Shift-Left:  \033[1;6D
 </span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>! Shift+Insert pastes PRIMARY in urxvt, send it on to the application
+</span></span><span style="display:flex;"><span>! instead (ESC [ 2 $, CUA paste in mg), Ctrl+Shift+Insert still pastes
+</span></span><span style="display:flex;"><span>URxvt.keysym.S-Insert:   builtin-string:
+</span></span><span style="display:flex;"><span>URxvt.keysym.C-S-Insert: builtin:
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>! Drop the default tabbedex Shift-Arrow keys, they clash with editors
 </span></span><span style="display:flex;"><span>! (e.g. Shift-Down starts a selection in mg), we bind our own below
 </span></span><span style="display:flex;"><span>URxvt.tabbedex.no-tabbedex-keys: true
@@ -1026,6 +1031,84 @@ those codes just work), normalise the rest too:</p>
 </span></span><span style="display:flex;"><span>URxvt.keysym.Control-Left:  \033[1;5D
 </span></span></code></pre></div><p>The terminal then hands the application a distinct code for each combo;
 whether it acts on them is up to the application&rsquo;s own key bindings.</p>
+<p>Not every application needs that, though.  <a href="https://github.com/troglobit/mg" target="_blank">mg</a>, from the release
+after 4.3, understands rxvt&rsquo;s own codes for Shift, Ctrl and Alt with the
+arrows, Home, End, PgUp, PgDn, Insert and Delete.</p>
+<p>Shift+Insert is a different story.  urxvt grabs it and pastes the
+PRIMARY selection, i.e., whatever you last selected with the mouse &ndash;
+so the IBM CUA paste in your editor never sees the key, and you get the
+wrong text pasted in.  The two <code>S-Insert</code> lines above turn that off:
+<code>builtin-string:</code> makes urxvt send the key on as <code>ESC [ 2 $</code>, and the
+<code>C-S-Insert</code> line keeps Ctrl+Shift+Insert as the PRIMARY paste.  In the
+shell you still have Ctrl+Shift+V and the middle mouse button.</p>
+<p>Shift+PgUp and Shift+PgDn are grabbed the same way, for the scrollback.
+If you&rsquo;d rather have them in your editor, at the cost of scrolling back
+in the shell, add:</p>
+<div class="highlight"><pre tabindex="0" style="color:#ebdbb2;background-color:#282828;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>URxvt.keysym.S-Prior: builtin-string:
+</span></span><span style="display:flex;"><span>URxvt.keysym.S-Next:  builtin-string:
+</span></span></code></pre></div><h3 id="testing-your-keys">Testing your keys</h3>
+<p>Remember, running terminals keep their old settings, so after <code>xrdb -merge</code> open a new one.  Then run <code>cat -v</code> and press some keys to see
+what the terminal actually sends, <code>^[</code> is ESC:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>rxvt sends</th>
+<th>xterm sends</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Shift+Right</td>
+<td><code>^[[c</code></td>
+<td><code>^[[1;2C</code></td>
+</tr>
+<tr>
+<td>Ctrl+Right</td>
+<td><code>^[Oc</code></td>
+<td><code>^[[1;5C</code></td>
+</tr>
+<tr>
+<td>Alt+Up</td>
+<td><code>^[^[[A</code></td>
+<td><code>^[[1;3A</code></td>
+</tr>
+<tr>
+<td>Ctrl+Home</td>
+<td><code>^[[7^</code></td>
+<td><code>^[[1;5H</code></td>
+</tr>
+<tr>
+<td>Shift+Insert</td>
+<td><code>^[[2$</code></td>
+<td><code>^[[2;2~</code></td>
+</tr>
+<tr>
+<td>Ctrl+Insert</td>
+<td><code>^[[2^</code></td>
+<td><code>^[[2;5~</code></td>
+</tr>
+<tr>
+<td>Shift+Delete</td>
+<td><code>^[[3$</code></td>
+<td><code>^[[3;2~</code></td>
+</tr>
+</tbody>
+</table>
+<p>If Shift+Insert pastes text instead of printing <code>^[[2$</code>, the resource
+did not take.  Press Ctrl+C to get out of <code>cat</code>.</p>
+<p>With the codes sorted out, open a file in mg and give the keys a spin:</p>
+<ul>
+<li>Shift+arrows, Shift+Home/End mark text</li>
+<li>Shift+Delete cuts the marked text, Shift+Insert pastes it back</li>
+<li>Ctrl+Insert copies, Ctrl+Delete kills the next word</li>
+<li>Ctrl+arrows move by word and paragraph, Ctrl+Home/End to the start
+and end of the buffer</li>
+<li>C-x 2 splits the window, Alt+Up/Down moves between the windows, and
+Alt+Shift+arrows resize them</li>
+</ul>
+<p>Ctrl+PgUp and Ctrl+PgDn never reach the editor with the setup above,
+tabbedex uses them to switch tabs.</p>
 <h3 id="appendix-taming-xterm">Appendix: Taming xterm</h3>
 <p>The same file can tidy up good old <code>xterm</code> too, and it&rsquo;s worth having
 around for the odd remote <code>xterm</code> you get thrown into.  One wrinkle:
@@ -1109,6 +1192,7 @@ next launch.</p>
         <li><a href="#installation">Installation</a></li>
         <li><a href="#initial-setup">Initial setup</a></li>
         <li><a href="#taming-rxvt">Taming rxvt</a></li>
+        <li><a href="#testing-your-keys">Testing your keys</a></li>
         <li><a href="#appendix-taming-xterm">Appendix: Taming xterm</a></li>
       </ul>
     </li>
